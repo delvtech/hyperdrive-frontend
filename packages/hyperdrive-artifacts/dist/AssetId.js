@@ -1,17 +1,17 @@
 export const AssetId = {
     "abi": [],
     "bytecode": {
-        "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122076472f0061d77f66902aacd5618613eaad9501072a6cdca7cdb271f3e666bad964736f6c63430008140033",
+        "object": "0x60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220090233ce005429812f2782d2a61c11e2d8d1b4db38f26edf9f09463a1eaa2cf164736f6c63430008140033",
         "sourceMap": "491:4783:119:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;491:4783:119;;;;;;;;;;;;;;;;;",
         "linkReferences": {}
     },
     "deployedBytecode": {
-        "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122076472f0061d77f66902aacd5618613eaad9501072a6cdca7cdb271f3e666bad964736f6c63430008140033",
+        "object": "0x73000000000000000000000000000000000000000030146080604052600080fdfea2646970667358221220090233ce005429812f2782d2a61c11e2d8d1b4db38f26edf9f09463a1eaa2cf164736f6c63430008140033",
         "sourceMap": "491:4783:119:-:0;;;;;;;;",
         "linkReferences": {}
     },
     "methodIdentifiers": {},
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Hyperdrive\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"A library that handles the encoding and decoding of asset IDs for         Hyperdrive.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/AssetId.sol\":\"AssetId\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"kind\":\"dev\",\"methods\":{},\"title\":\"Hyperdrive\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"notice\":\"A library that handles the encoding and decoding of asset IDs for         Hyperdrive.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/libraries/AssetId.sol\":\"AssetId\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339\",\"dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19\",\"dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -62,18 +62,18 @@ export const AssetId = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdrive.sol": {
-                "keccak256": "0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71",
+                "keccak256": "0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5",
                 "urls": [
-                    "bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf",
-                    "dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm"
+                    "bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339",
+                    "dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveCore.sol": {
-                "keccak256": "0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e",
+                "keccak256": "0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f",
                 "urls": [
-                    "bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24",
-                    "dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h"
+                    "bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19",
+                    "dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk"
                 ],
                 "license": "Apache-2.0"
             },
@@ -146,20 +146,20 @@ export const AssetId = {
     },
     "ast": {
         "absolutePath": "contracts/src/libraries/AssetId.sol",
-        "id": 18169,
+        "id": 18010,
         "exportedSymbols": {
             "AssetId": [
-                18168
+                18009
             ],
             "IHyperdrive": [
-                10506
+                10351
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:5236:119",
         "nodes": [
             {
-                "id": 17895,
+                "id": 17736,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:119",
                 "nodes": [],
@@ -170,23 +170,23 @@ export const AssetId = {
                 ]
             },
             {
-                "id": 17897,
+                "id": 17738,
                 "nodeType": "ImportDirective",
                 "src": "64:60:119",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "../interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 18169,
-                "sourceUnit": 10507,
+                "scope": 18010,
+                "sourceUnit": 10352,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 17896,
+                            "id": 17737,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10506,
+                            "referencedDeclaration": 10351,
                             "src": "73:11:119",
                             "typeDescriptions": {}
                         },
@@ -196,12 +196,12 @@ export const AssetId = {
                 "unitAlias": ""
             },
             {
-                "id": 18168,
+                "id": 18009,
                 "nodeType": "ContractDefinition",
                 "src": "491:4783:119",
                 "nodes": [
                     {
-                        "id": 17901,
+                        "id": 17742,
                         "nodeType": "VariableDeclaration",
                         "src": "513:42:119",
                         "nodes": [],
@@ -209,7 +209,7 @@ export const AssetId = {
                         "mutability": "constant",
                         "name": "_LP_ASSET_ID",
                         "nameLocation": "539:12:119",
-                        "scope": 18168,
+                        "scope": 18009,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -217,7 +217,7 @@ export const AssetId = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 17899,
+                            "id": 17740,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "513:7:119",
@@ -228,7 +228,7 @@ export const AssetId = {
                         },
                         "value": {
                             "hexValue": "30",
-                            "id": 17900,
+                            "id": 17741,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -245,7 +245,7 @@ export const AssetId = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 17910,
+                        "id": 17751,
                         "nodeType": "VariableDeclaration",
                         "src": "561:108:119",
                         "nodes": [],
@@ -253,7 +253,7 @@ export const AssetId = {
                         "mutability": "constant",
                         "name": "_WITHDRAWAL_SHARE_ASSET_ID",
                         "nameLocation": "587:26:119",
-                        "scope": 18168,
+                        "scope": 18009,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -261,7 +261,7 @@ export const AssetId = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 17902,
+                            "id": 17743,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "561:7:119",
@@ -275,7 +275,7 @@ export const AssetId = {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                             },
-                            "id": 17909,
+                            "id": 17750,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -284,18 +284,18 @@ export const AssetId = {
                                 "arguments": [
                                     {
                                         "expression": {
-                                            "id": 17905,
+                                            "id": 17746,
                                             "name": "AssetIdPrefix",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 17915,
+                                            "referencedDeclaration": 17756,
                                             "src": "632:13:119",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17915_$",
+                                                "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17756_$",
                                                 "typeString": "type(enum AssetId.AssetIdPrefix)"
                                             }
                                         },
-                                        "id": 17906,
+                                        "id": 17747,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -303,10 +303,10 @@ export const AssetId = {
                                         "memberLocation": "646:15:119",
                                         "memberName": "WithdrawalShare",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 17914,
+                                        "referencedDeclaration": 17755,
                                         "src": "632:29:119",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                             "typeString": "enum AssetId.AssetIdPrefix"
                                         }
                                     }
@@ -314,11 +314,11 @@ export const AssetId = {
                                 "expression": {
                                     "argumentTypes": [
                                         {
-                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                             "typeString": "enum AssetId.AssetIdPrefix"
                                         }
                                     ],
-                                    "id": 17904,
+                                    "id": 17745,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -330,14 +330,14 @@ export const AssetId = {
                                         "typeString": "type(uint256)"
                                     },
                                     "typeName": {
-                                        "id": 17903,
+                                        "id": 17744,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "624:7:119",
                                         "typeDescriptions": {}
                                     }
                                 },
-                                "id": 17907,
+                                "id": 17748,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -357,7 +357,7 @@ export const AssetId = {
                             "operator": "<<",
                             "rightExpression": {
                                 "hexValue": "323438",
-                                "id": 17908,
+                                "id": 17749,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -380,35 +380,35 @@ export const AssetId = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 17915,
+                        "id": 17756,
                         "nodeType": "EnumDefinition",
                         "src": "676:91:119",
                         "nodes": [],
                         "canonicalName": "AssetId.AssetIdPrefix",
                         "members": [
                             {
-                                "id": 17911,
+                                "id": 17752,
                                 "name": "LP",
                                 "nameLocation": "705:2:119",
                                 "nodeType": "EnumValue",
                                 "src": "705:2:119"
                             },
                             {
-                                "id": 17912,
+                                "id": 17753,
                                 "name": "Long",
                                 "nameLocation": "717:4:119",
                                 "nodeType": "EnumValue",
                                 "src": "717:4:119"
                             },
                             {
-                                "id": 17913,
+                                "id": 17754,
                                 "name": "Short",
                                 "nameLocation": "731:5:119",
                                 "nodeType": "EnumValue",
                                 "src": "731:5:119"
                             },
                             {
-                                "id": 17914,
+                                "id": 17755,
                                 "name": "WithdrawalShare",
                                 "nameLocation": "746:15:119",
                                 "nodeType": "EnumValue",
@@ -419,12 +419,12 @@ export const AssetId = {
                         "nameLocation": "681:13:119"
                     },
                     {
-                        "id": 17938,
+                        "id": 17779,
                         "nodeType": "FunctionDefinition",
                         "src": "1198:469:119",
                         "nodes": [],
                         "body": {
-                            "id": 17937,
+                            "id": 17778,
                             "nodeType": "Block",
                             "src": "1321:346:119",
                             "nodes": [],
@@ -435,17 +435,17 @@ export const AssetId = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 17928,
+                                        "id": 17769,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 17926,
+                                            "id": 17767,
                                             "name": "_timestamp",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 17921,
+                                            "referencedDeclaration": 17762,
                                             "src": "1401:10:119",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -456,7 +456,7 @@ export const AssetId = {
                                         "operator": ">",
                                         "rightExpression": {
                                             "hexValue": "30786666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666666",
-                                            "id": 17927,
+                                            "id": 17768,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -476,11 +476,11 @@ export const AssetId = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 17935,
+                                    "id": 17776,
                                     "nodeType": "IfStatement",
                                     "src": "1384:179:119",
                                     "trueBody": {
-                                        "id": 17934,
+                                        "id": 17775,
                                         "nodeType": "Block",
                                         "src": "1501:62:119",
                                         "statements": [
@@ -490,18 +490,18 @@ export const AssetId = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 17929,
+                                                            "id": 17770,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10506,
+                                                            "referencedDeclaration": 10351,
                                                             "src": "1522:11:119",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10351_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 17931,
+                                                        "id": 17772,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -509,14 +509,14 @@ export const AssetId = {
                                                         "memberLocation": "1534:16:119",
                                                         "memberName": "InvalidTimestamp",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10410,
+                                                        "referencedDeclaration": 10255,
                                                         "src": "1522:28:119",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 17932,
+                                                    "id": 17773,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -532,7 +532,7 @@ export const AssetId = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 17933,
+                                                "id": 17774,
                                                 "nodeType": "RevertStatement",
                                                 "src": "1515:37:119"
                                             }
@@ -599,21 +599,21 @@ export const AssetId = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 17919,
+                                            "declaration": 17760,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1630:7:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 17921,
+                                            "declaration": 17762,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1640:10:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 17924,
+                                            "declaration": 17765,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1611:2:119",
@@ -623,14 +623,14 @@ export const AssetId = {
                                     "flags": [
                                         "memory-safe"
                                     ],
-                                    "id": 17936,
+                                    "id": 17777,
                                     "nodeType": "InlineAssembly",
                                     "src": "1572:89:119"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 17916,
+                            "id": 17757,
                             "nodeType": "StructuredDocumentation",
                             "src": "773:420:119",
                             "text": "@dev Encodes a prefix and a timestamp into an asset ID. Asset IDs are\n      used so that LP, long, and short tokens can all be represented in a\n      single MultiToken instance. The zero asset ID indicates the LP\n      token.\n @param _prefix A one byte prefix that specifies the asset type.\n @param _timestamp A timestamp associated with the asset.\n @return id The asset ID."
@@ -641,41 +641,41 @@ export const AssetId = {
                         "name": "encodeAssetId",
                         "nameLocation": "1207:13:119",
                         "parameters": {
-                            "id": 17922,
+                            "id": 17763,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 17919,
+                                    "id": 17760,
                                     "mutability": "mutable",
                                     "name": "_prefix",
                                     "nameLocation": "1244:7:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 17938,
+                                    "scope": 17779,
                                     "src": "1230:21:119",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                         "typeString": "enum AssetId.AssetIdPrefix"
                                     },
                                     "typeName": {
-                                        "id": 17918,
+                                        "id": 17759,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 17917,
+                                            "id": 17758,
                                             "name": "AssetIdPrefix",
                                             "nameLocations": [
                                                 "1230:13:119"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 17915,
+                                            "referencedDeclaration": 17756,
                                             "src": "1230:13:119"
                                         },
-                                        "referencedDeclaration": 17915,
+                                        "referencedDeclaration": 17756,
                                         "src": "1230:13:119",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                             "typeString": "enum AssetId.AssetIdPrefix"
                                         }
                                     },
@@ -683,12 +683,12 @@ export const AssetId = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 17921,
+                                    "id": 17762,
                                     "mutability": "mutable",
                                     "name": "_timestamp",
                                     "nameLocation": "1269:10:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 17938,
+                                    "scope": 17779,
                                     "src": "1261:18:119",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -697,7 +697,7 @@ export const AssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 17920,
+                                        "id": 17761,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1261:7:119",
@@ -712,17 +712,17 @@ export const AssetId = {
                             "src": "1220:65:119"
                         },
                         "returnParameters": {
-                            "id": 17925,
+                            "id": 17766,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 17924,
+                                    "id": 17765,
                                     "mutability": "mutable",
                                     "name": "id",
                                     "nameLocation": "1317:2:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 17938,
+                                    "scope": 17779,
                                     "src": "1309:10:119",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -731,7 +731,7 @@ export const AssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 17923,
+                                        "id": 17764,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1309:7:119",
@@ -745,18 +745,18 @@ export const AssetId = {
                             ],
                             "src": "1308:12:119"
                         },
-                        "scope": 18168,
+                        "scope": 18009,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 17951,
+                        "id": 17792,
                         "nodeType": "FunctionDefinition",
                         "src": "1967:438:119",
                         "nodes": [],
                         "body": {
-                            "id": 17950,
+                            "id": 17791,
                             "nodeType": "Block",
                             "src": "2083:322:119",
                             "nodes": [],
@@ -839,28 +839,28 @@ export const AssetId = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 17941,
+                                            "declaration": 17782,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2206:3:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 17941,
+                                            "declaration": 17782,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2356:3:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 17945,
+                                            "declaration": 17786,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2185:7:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 17947,
+                                            "declaration": 17788,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2239:10:119",
@@ -870,14 +870,14 @@ export const AssetId = {
                                     "flags": [
                                         "memory-safe"
                                     ],
-                                    "id": 17949,
+                                    "id": 17790,
                                     "nodeType": "InlineAssembly",
                                     "src": "2146:253:119"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 17939,
+                            "id": 17780,
                             "nodeType": "StructuredDocumentation",
                             "src": "1673:289:119",
                             "text": "@dev Decodes an encoded asset ID into it's constituent parts of an\n      identifier, data and a timestamp.\n @param _id The asset ID.\n @return _prefix A one byte prefix that specifies the asset type.\n @return _timestamp A timestamp associated with the asset."
@@ -888,17 +888,17 @@ export const AssetId = {
                         "name": "decodeAssetId",
                         "nameLocation": "1976:13:119",
                         "parameters": {
-                            "id": 17942,
+                            "id": 17783,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 17941,
+                                    "id": 17782,
                                     "mutability": "mutable",
                                     "name": "_id",
                                     "nameLocation": "2007:3:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 17951,
+                                    "scope": 17792,
                                     "src": "1999:11:119",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -907,7 +907,7 @@ export const AssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 17940,
+                                        "id": 17781,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1999:7:119",
@@ -922,41 +922,41 @@ export const AssetId = {
                             "src": "1989:27:119"
                         },
                         "returnParameters": {
-                            "id": 17948,
+                            "id": 17789,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 17945,
+                                    "id": 17786,
                                     "mutability": "mutable",
                                     "name": "_prefix",
                                     "nameLocation": "2054:7:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 17951,
+                                    "scope": 17792,
                                     "src": "2040:21:119",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                         "typeString": "enum AssetId.AssetIdPrefix"
                                     },
                                     "typeName": {
-                                        "id": 17944,
+                                        "id": 17785,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 17943,
+                                            "id": 17784,
                                             "name": "AssetIdPrefix",
                                             "nameLocations": [
                                                 "2040:13:119"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 17915,
+                                            "referencedDeclaration": 17756,
                                             "src": "2040:13:119"
                                         },
-                                        "referencedDeclaration": 17915,
+                                        "referencedDeclaration": 17756,
                                         "src": "2040:13:119",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                             "typeString": "enum AssetId.AssetIdPrefix"
                                         }
                                     },
@@ -964,12 +964,12 @@ export const AssetId = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 17947,
+                                    "id": 17788,
                                     "mutability": "mutable",
                                     "name": "_timestamp",
                                     "nameLocation": "2071:10:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 17951,
+                                    "scope": 17792,
                                     "src": "2063:18:119",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -978,7 +978,7 @@ export const AssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 17946,
+                                        "id": 17787,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2063:7:119",
@@ -992,60 +992,60 @@ export const AssetId = {
                             ],
                             "src": "2039:43:119"
                         },
-                        "scope": 18168,
+                        "scope": 18009,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 18029,
+                        "id": 17870,
                         "nodeType": "FunctionDefinition",
                         "src": "2533:693:119",
                         "nodes": [],
                         "body": {
-                            "id": 18028,
+                            "id": 17869,
                             "nodeType": "Block",
                             "src": "2627:599:119",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        17961,
-                                        17963
+                                        17802,
+                                        17804
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 17961,
+                                            "id": 17802,
                                             "mutability": "mutable",
                                             "name": "prefix",
                                             "nameLocation": "2652:6:119",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 18028,
+                                            "scope": 17869,
                                             "src": "2638:20:119",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                 "typeString": "enum AssetId.AssetIdPrefix"
                                             },
                                             "typeName": {
-                                                "id": 17960,
+                                                "id": 17801,
                                                 "nodeType": "UserDefinedTypeName",
                                                 "pathNode": {
-                                                    "id": 17959,
+                                                    "id": 17800,
                                                     "name": "AssetIdPrefix",
                                                     "nameLocations": [
                                                         "2638:13:119"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 17915,
+                                                    "referencedDeclaration": 17756,
                                                     "src": "2638:13:119"
                                                 },
-                                                "referencedDeclaration": 17915,
+                                                "referencedDeclaration": 17756,
                                                 "src": "2638:13:119",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 }
                                             },
@@ -1053,12 +1053,12 @@ export const AssetId = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 17963,
+                                            "id": 17804,
                                             "mutability": "mutable",
                                             "name": "timestamp",
                                             "nameLocation": "2668:9:119",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 18028,
+                                            "scope": 17869,
                                             "src": "2660:17:119",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1067,7 +1067,7 @@ export const AssetId = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 17962,
+                                                "id": 17803,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2660:7:119",
@@ -1079,15 +1079,15 @@ export const AssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 17967,
+                                    "id": 17808,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 17965,
+                                                "id": 17806,
                                                 "name": "_id",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 17954,
+                                                "referencedDeclaration": 17795,
                                                 "src": "2695:3:119",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1102,18 +1102,18 @@ export const AssetId = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 17964,
+                                            "id": 17805,
                                             "name": "decodeAssetId",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 17951,
+                                            "referencedDeclaration": 17792,
                                             "src": "2681:13:119",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$17915_$_t_uint256_$",
+                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$17756_$_t_uint256_$",
                                                 "typeString": "function (uint256) pure returns (enum AssetId.AssetIdPrefix,uint256)"
                                             }
                                         },
-                                        "id": 17966,
+                                        "id": 17807,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1125,7 +1125,7 @@ export const AssetId = {
                                         "src": "2681:18:119",
                                         "tryCall": false,
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_tuple$_t_enum$_AssetIdPrefix_$17915_$_t_uint256_$",
+                                            "typeIdentifier": "t_tuple$_t_enum$_AssetIdPrefix_$17756_$_t_uint256_$",
                                             "typeString": "tuple(enum AssetId.AssetIdPrefix,uint256)"
                                         }
                                     },
@@ -1134,17 +1134,17 @@ export const AssetId = {
                                 },
                                 {
                                     "assignments": [
-                                        17969
+                                        17810
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 17969,
+                                            "id": 17810,
                                             "mutability": "mutable",
                                             "name": "_timestamp",
                                             "nameLocation": "2723:10:119",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 18028,
+                                            "scope": 17869,
                                             "src": "2709:24:119",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -1153,7 +1153,7 @@ export const AssetId = {
                                                 "typeString": "string"
                                             },
                                             "typeName": {
-                                                "id": 17968,
+                                                "id": 17809,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2709:6:119",
@@ -1165,15 +1165,15 @@ export const AssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 17973,
+                                    "id": 17814,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 17971,
+                                                "id": 17812,
                                                 "name": "timestamp",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 17963,
+                                                "referencedDeclaration": 17804,
                                                 "src": "2745:9:119",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1188,18 +1188,18 @@ export const AssetId = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 17970,
+                                            "id": 17811,
                                             "name": "toString",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18167,
+                                            "referencedDeclaration": 18008,
                                             "src": "2736:8:119",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (uint256) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 17972,
+                                        "id": 17813,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1221,23 +1221,23 @@ export const AssetId = {
                                 {
                                     "condition": {
                                         "commonType": {
-                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                             "typeString": "enum AssetId.AssetIdPrefix"
                                         },
-                                        "id": 17977,
+                                        "id": 17818,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 17974,
+                                            "id": 17815,
                                             "name": "prefix",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 17961,
+                                            "referencedDeclaration": 17802,
                                             "src": "2769:6:119",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                 "typeString": "enum AssetId.AssetIdPrefix"
                                             }
                                         },
@@ -1245,18 +1245,18 @@ export const AssetId = {
                                         "operator": "==",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 17975,
+                                                "id": 17816,
                                                 "name": "AssetIdPrefix",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 17915,
+                                                "referencedDeclaration": 17756,
                                                 "src": "2779:13:119",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17915_$",
+                                                    "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17756_$",
                                                     "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                 }
                                             },
-                                            "id": 17976,
+                                            "id": 17817,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -1264,10 +1264,10 @@ export const AssetId = {
                                             "memberLocation": "2793:2:119",
                                             "memberName": "LP",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 17911,
+                                            "referencedDeclaration": 17752,
                                             "src": "2779:16:119",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                 "typeString": "enum AssetId.AssetIdPrefix"
                                             }
                                         },
@@ -1280,23 +1280,23 @@ export const AssetId = {
                                     "falseBody": {
                                         "condition": {
                                             "commonType": {
-                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                 "typeString": "enum AssetId.AssetIdPrefix"
                                             },
-                                            "id": 17986,
+                                            "id": 17827,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 17983,
+                                                "id": 17824,
                                                 "name": "prefix",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 17961,
+                                                "referencedDeclaration": 17802,
                                                 "src": "2855:6:119",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 }
                                             },
@@ -1304,18 +1304,18 @@ export const AssetId = {
                                             "operator": "==",
                                             "rightExpression": {
                                                 "expression": {
-                                                    "id": 17984,
+                                                    "id": 17825,
                                                     "name": "AssetIdPrefix",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17915,
+                                                    "referencedDeclaration": 17756,
                                                     "src": "2865:13:119",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17915_$",
+                                                        "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17756_$",
                                                         "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                     }
                                                 },
-                                                "id": 17985,
+                                                "id": 17826,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -1323,10 +1323,10 @@ export const AssetId = {
                                                 "memberLocation": "2879:4:119",
                                                 "memberName": "Long",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 17912,
+                                                "referencedDeclaration": 17753,
                                                 "src": "2865:18:119",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 }
                                             },
@@ -1339,23 +1339,23 @@ export const AssetId = {
                                         "falseBody": {
                                             "condition": {
                                                 "commonType": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 },
-                                                "id": 18002,
+                                                "id": 17843,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 17999,
+                                                    "id": 17840,
                                                     "name": "prefix",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17961,
+                                                    "referencedDeclaration": 17802,
                                                     "src": "2985:6:119",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                         "typeString": "enum AssetId.AssetIdPrefix"
                                                     }
                                                 },
@@ -1363,18 +1363,18 @@ export const AssetId = {
                                                 "operator": "==",
                                                 "rightExpression": {
                                                     "expression": {
-                                                        "id": 18000,
+                                                        "id": 17841,
                                                         "name": "AssetIdPrefix",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 17915,
+                                                        "referencedDeclaration": 17756,
                                                         "src": "2995:13:119",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17915_$",
+                                                            "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17756_$",
                                                             "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                         }
                                                     },
-                                                    "id": 18001,
+                                                    "id": 17842,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1382,10 +1382,10 @@ export const AssetId = {
                                                     "memberLocation": "3009:5:119",
                                                     "memberName": "Short",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 17913,
+                                                    "referencedDeclaration": 17754,
                                                     "src": "2995:19:119",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                         "typeString": "enum AssetId.AssetIdPrefix"
                                                     }
                                                 },
@@ -1398,23 +1398,23 @@ export const AssetId = {
                                             "falseBody": {
                                                 "condition": {
                                                     "commonType": {
-                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                         "typeString": "enum AssetId.AssetIdPrefix"
                                                     },
-                                                    "id": 18018,
+                                                    "id": 17859,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 18015,
+                                                        "id": 17856,
                                                         "name": "prefix",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 17961,
+                                                        "referencedDeclaration": 17802,
                                                         "src": "3117:6:119",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                             "typeString": "enum AssetId.AssetIdPrefix"
                                                         }
                                                     },
@@ -1422,18 +1422,18 @@ export const AssetId = {
                                                     "operator": "==",
                                                     "rightExpression": {
                                                         "expression": {
-                                                            "id": 18016,
+                                                            "id": 17857,
                                                             "name": "AssetIdPrefix",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 17915,
+                                                            "referencedDeclaration": 17756,
                                                             "src": "3127:13:119",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17915_$",
+                                                                "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17756_$",
                                                                 "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                             }
                                                         },
-                                                        "id": 18017,
+                                                        "id": 17858,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -1441,10 +1441,10 @@ export const AssetId = {
                                                         "memberLocation": "3141:15:119",
                                                         "memberName": "WithdrawalShare",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 17914,
+                                                        "referencedDeclaration": 17755,
                                                         "src": "3127:29:119",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                             "typeString": "enum AssetId.AssetIdPrefix"
                                                         }
                                                     },
@@ -1454,27 +1454,27 @@ export const AssetId = {
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 18024,
+                                                "id": 17865,
                                                 "nodeType": "IfStatement",
                                                 "src": "3113:107:119",
                                                 "trueBody": {
-                                                    "id": 18023,
+                                                    "id": 17864,
                                                     "nodeType": "Block",
                                                     "src": "3158:62:119",
                                                     "statements": [
                                                         {
                                                             "expression": {
-                                                                "id": 18021,
+                                                                "id": 17862,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
-                                                                    "id": 18019,
+                                                                    "id": 17860,
                                                                     "name": "_name",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 17957,
+                                                                    "referencedDeclaration": 17798,
                                                                     "src": "3172:5:119",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -1485,7 +1485,7 @@ export const AssetId = {
                                                                 "operator": "=",
                                                                 "rightHandSide": {
                                                                     "hexValue": "48797065726472697665205769746864726177616c205368617265",
-                                                                    "id": 18020,
+                                                                    "id": 17861,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -1505,34 +1505,34 @@ export const AssetId = {
                                                                     "typeString": "string memory"
                                                                 }
                                                             },
-                                                            "id": 18022,
+                                                            "id": 17863,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "3172:37:119"
                                                         }
                                                     ]
                                                 }
                                             },
-                                            "id": 18025,
+                                            "id": 17866,
                                             "nodeType": "IfStatement",
                                             "src": "2981:239:119",
                                             "trueBody": {
-                                                "id": 18014,
+                                                "id": 17855,
                                                 "nodeType": "Block",
                                                 "src": "3016:91:119",
                                                 "statements": [
                                                     {
                                                         "expression": {
-                                                            "id": 18012,
+                                                            "id": 17853,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "leftHandSide": {
-                                                                "id": 18003,
+                                                                "id": 17844,
                                                                 "name": "_name",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17957,
+                                                                "referencedDeclaration": 17798,
                                                                 "src": "3030:5:119",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1547,7 +1547,7 @@ export const AssetId = {
                                                                         "arguments": [
                                                                             {
                                                                                 "hexValue": "487970657264726976652053686f72743a20",
-                                                                                "id": 18008,
+                                                                                "id": 17849,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
@@ -1562,11 +1562,11 @@ export const AssetId = {
                                                                                 "value": "Hyperdrive Short: "
                                                                             },
                                                                             {
-                                                                                "id": 18009,
+                                                                                "id": 17850,
                                                                                 "name": "_timestamp",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 17969,
+                                                                                "referencedDeclaration": 17810,
                                                                                 "src": "3084:10:119",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1586,7 +1586,7 @@ export const AssetId = {
                                                                                 }
                                                                             ],
                                                                             "expression": {
-                                                                                "id": 18006,
+                                                                                "id": 17847,
                                                                                 "name": "abi",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
@@ -1597,7 +1597,7 @@ export const AssetId = {
                                                                                     "typeString": "abi"
                                                                                 }
                                                                             },
-                                                                            "id": 18007,
+                                                                            "id": 17848,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -1611,7 +1611,7 @@ export const AssetId = {
                                                                                 "typeString": "function () pure returns (bytes memory)"
                                                                             }
                                                                         },
-                                                                        "id": 18010,
+                                                                        "id": 17851,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -1635,7 +1635,7 @@ export const AssetId = {
                                                                             "typeString": "bytes memory"
                                                                         }
                                                                     ],
-                                                                    "id": 18005,
+                                                                    "id": 17846,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -1647,14 +1647,14 @@ export const AssetId = {
                                                                         "typeString": "type(string storage pointer)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 18004,
+                                                                        "id": 17845,
                                                                         "name": "string",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "3038:6:119",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 18011,
+                                                                "id": 17852,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -1676,34 +1676,34 @@ export const AssetId = {
                                                                 "typeString": "string memory"
                                                             }
                                                         },
-                                                        "id": 18013,
+                                                        "id": 17854,
                                                         "nodeType": "ExpressionStatement",
                                                         "src": "3030:66:119"
                                                     }
                                                 ]
                                             }
                                         },
-                                        "id": 18026,
+                                        "id": 17867,
                                         "nodeType": "IfStatement",
                                         "src": "2851:369:119",
                                         "trueBody": {
-                                            "id": 17998,
+                                            "id": 17839,
                                             "nodeType": "Block",
                                             "src": "2885:90:119",
                                             "statements": [
                                                 {
                                                     "expression": {
-                                                        "id": 17996,
+                                                        "id": 17837,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftHandSide": {
-                                                            "id": 17987,
+                                                            "id": 17828,
                                                             "name": "_name",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 17957,
+                                                            "referencedDeclaration": 17798,
                                                             "src": "2899:5:119",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -1718,7 +1718,7 @@ export const AssetId = {
                                                                     "arguments": [
                                                                         {
                                                                             "hexValue": "48797065726472697665204c6f6e673a20",
-                                                                            "id": 17992,
+                                                                            "id": 17833,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -1733,11 +1733,11 @@ export const AssetId = {
                                                                             "value": "Hyperdrive Long: "
                                                                         },
                                                                         {
-                                                                            "id": 17993,
+                                                                            "id": 17834,
                                                                             "name": "_timestamp",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 17969,
+                                                                            "referencedDeclaration": 17810,
                                                                             "src": "2952:10:119",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -1757,7 +1757,7 @@ export const AssetId = {
                                                                             }
                                                                         ],
                                                                         "expression": {
-                                                                            "id": 17990,
+                                                                            "id": 17831,
                                                                             "name": "abi",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
@@ -1768,7 +1768,7 @@ export const AssetId = {
                                                                                 "typeString": "abi"
                                                                             }
                                                                         },
-                                                                        "id": 17991,
+                                                                        "id": 17832,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -1782,7 +1782,7 @@ export const AssetId = {
                                                                             "typeString": "function () pure returns (bytes memory)"
                                                                         }
                                                                     },
-                                                                    "id": 17994,
+                                                                    "id": 17835,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -1806,7 +1806,7 @@ export const AssetId = {
                                                                         "typeString": "bytes memory"
                                                                     }
                                                                 ],
-                                                                "id": 17989,
+                                                                "id": 17830,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1818,14 +1818,14 @@ export const AssetId = {
                                                                     "typeString": "type(string storage pointer)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 17988,
+                                                                    "id": 17829,
                                                                     "name": "string",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "2907:6:119",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 17995,
+                                                            "id": 17836,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1847,34 +1847,34 @@ export const AssetId = {
                                                             "typeString": "string memory"
                                                         }
                                                     },
-                                                    "id": 17997,
+                                                    "id": 17838,
                                                     "nodeType": "ExpressionStatement",
                                                     "src": "2899:65:119"
                                                 }
                                             ]
                                         }
                                     },
-                                    "id": 18027,
+                                    "id": 17868,
                                     "nodeType": "IfStatement",
                                     "src": "2765:455:119",
                                     "trueBody": {
-                                        "id": 17982,
+                                        "id": 17823,
                                         "nodeType": "Block",
                                         "src": "2797:48:119",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 17980,
+                                                    "id": 17821,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 17978,
+                                                        "id": 17819,
                                                         "name": "_name",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 17957,
+                                                        "referencedDeclaration": 17798,
                                                         "src": "2811:5:119",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -1885,7 +1885,7 @@ export const AssetId = {
                                                     "operator": "=",
                                                     "rightHandSide": {
                                                         "hexValue": "48797065726472697665204c50",
-                                                        "id": 17979,
+                                                        "id": 17820,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -1905,7 +1905,7 @@ export const AssetId = {
                                                         "typeString": "string memory"
                                                     }
                                                 },
-                                                "id": 17981,
+                                                "id": 17822,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "2811:23:119"
                                             }
@@ -1915,7 +1915,7 @@ export const AssetId = {
                             ]
                         },
                         "documentation": {
-                            "id": 17952,
+                            "id": 17793,
                             "nodeType": "StructuredDocumentation",
                             "src": "2411:117:119",
                             "text": "@dev Converts an asset ID to a token name.\n @param _id The asset ID.\n @return _name The token name."
@@ -1926,17 +1926,17 @@ export const AssetId = {
                         "name": "assetIdToName",
                         "nameLocation": "2542:13:119",
                         "parameters": {
-                            "id": 17955,
+                            "id": 17796,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 17954,
+                                    "id": 17795,
                                     "mutability": "mutable",
                                     "name": "_id",
                                     "nameLocation": "2573:3:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 18029,
+                                    "scope": 17870,
                                     "src": "2565:11:119",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1945,7 +1945,7 @@ export const AssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 17953,
+                                        "id": 17794,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2565:7:119",
@@ -1960,17 +1960,17 @@ export const AssetId = {
                             "src": "2555:27:119"
                         },
                         "returnParameters": {
-                            "id": 17958,
+                            "id": 17799,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 17957,
+                                    "id": 17798,
                                     "mutability": "mutable",
                                     "name": "_name",
                                     "nameLocation": "2620:5:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 18029,
+                                    "scope": 17870,
                                     "src": "2606:19:119",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1979,7 +1979,7 @@ export const AssetId = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 17956,
+                                        "id": 17797,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2606:6:119",
@@ -1993,60 +1993,60 @@ export const AssetId = {
                             ],
                             "src": "2605:21:119"
                         },
-                        "scope": 18168,
+                        "scope": 18009,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 18107,
+                        "id": 17948,
                         "nodeType": "FunctionDefinition",
                         "src": "3360:689:119",
                         "nodes": [],
                         "body": {
-                            "id": 18106,
+                            "id": 17947,
                             "nodeType": "Block",
                             "src": "3458:591:119",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        18039,
-                                        18041
+                                        17880,
+                                        17882
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 18039,
+                                            "id": 17880,
                                             "mutability": "mutable",
                                             "name": "prefix",
                                             "nameLocation": "3483:6:119",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 18106,
+                                            "scope": 17947,
                                             "src": "3469:20:119",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                 "typeString": "enum AssetId.AssetIdPrefix"
                                             },
                                             "typeName": {
-                                                "id": 18038,
+                                                "id": 17879,
                                                 "nodeType": "UserDefinedTypeName",
                                                 "pathNode": {
-                                                    "id": 18037,
+                                                    "id": 17878,
                                                     "name": "AssetIdPrefix",
                                                     "nameLocations": [
                                                         "3469:13:119"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 17915,
+                                                    "referencedDeclaration": 17756,
                                                     "src": "3469:13:119"
                                                 },
-                                                "referencedDeclaration": 17915,
+                                                "referencedDeclaration": 17756,
                                                 "src": "3469:13:119",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 }
                                             },
@@ -2054,12 +2054,12 @@ export const AssetId = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 18041,
+                                            "id": 17882,
                                             "mutability": "mutable",
                                             "name": "timestamp",
                                             "nameLocation": "3499:9:119",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 18106,
+                                            "scope": 17947,
                                             "src": "3491:17:119",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2068,7 +2068,7 @@ export const AssetId = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 18040,
+                                                "id": 17881,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3491:7:119",
@@ -2080,15 +2080,15 @@ export const AssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 18045,
+                                    "id": 17886,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 18043,
+                                                "id": 17884,
                                                 "name": "_id",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18032,
+                                                "referencedDeclaration": 17873,
                                                 "src": "3526:3:119",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2103,18 +2103,18 @@ export const AssetId = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 18042,
+                                            "id": 17883,
                                             "name": "decodeAssetId",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 17951,
+                                            "referencedDeclaration": 17792,
                                             "src": "3512:13:119",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$17915_$_t_uint256_$",
+                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_enum$_AssetIdPrefix_$17756_$_t_uint256_$",
                                                 "typeString": "function (uint256) pure returns (enum AssetId.AssetIdPrefix,uint256)"
                                             }
                                         },
-                                        "id": 18044,
+                                        "id": 17885,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2126,7 +2126,7 @@ export const AssetId = {
                                         "src": "3512:18:119",
                                         "tryCall": false,
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_tuple$_t_enum$_AssetIdPrefix_$17915_$_t_uint256_$",
+                                            "typeIdentifier": "t_tuple$_t_enum$_AssetIdPrefix_$17756_$_t_uint256_$",
                                             "typeString": "tuple(enum AssetId.AssetIdPrefix,uint256)"
                                         }
                                     },
@@ -2135,17 +2135,17 @@ export const AssetId = {
                                 },
                                 {
                                     "assignments": [
-                                        18047
+                                        17888
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 18047,
+                                            "id": 17888,
                                             "mutability": "mutable",
                                             "name": "_timestamp",
                                             "nameLocation": "3554:10:119",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 18106,
+                                            "scope": 17947,
                                             "src": "3540:24:119",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -2154,7 +2154,7 @@ export const AssetId = {
                                                 "typeString": "string"
                                             },
                                             "typeName": {
-                                                "id": 18046,
+                                                "id": 17887,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3540:6:119",
@@ -2166,15 +2166,15 @@ export const AssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 18051,
+                                    "id": 17892,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 18049,
+                                                "id": 17890,
                                                 "name": "timestamp",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18041,
+                                                "referencedDeclaration": 17882,
                                                 "src": "3576:9:119",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2189,18 +2189,18 @@ export const AssetId = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 18048,
+                                            "id": 17889,
                                             "name": "toString",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18167,
+                                            "referencedDeclaration": 18008,
                                             "src": "3567:8:119",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (uint256) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 18050,
+                                        "id": 17891,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2222,23 +2222,23 @@ export const AssetId = {
                                 {
                                     "condition": {
                                         "commonType": {
-                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                             "typeString": "enum AssetId.AssetIdPrefix"
                                         },
-                                        "id": 18055,
+                                        "id": 17896,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 18052,
+                                            "id": 17893,
                                             "name": "prefix",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18039,
+                                            "referencedDeclaration": 17880,
                                             "src": "3600:6:119",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                 "typeString": "enum AssetId.AssetIdPrefix"
                                             }
                                         },
@@ -2246,18 +2246,18 @@ export const AssetId = {
                                         "operator": "==",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 18053,
+                                                "id": 17894,
                                                 "name": "AssetIdPrefix",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 17915,
+                                                "referencedDeclaration": 17756,
                                                 "src": "3610:13:119",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17915_$",
+                                                    "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17756_$",
                                                     "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                 }
                                             },
-                                            "id": 18054,
+                                            "id": 17895,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -2265,10 +2265,10 @@ export const AssetId = {
                                             "memberLocation": "3624:2:119",
                                             "memberName": "LP",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 17911,
+                                            "referencedDeclaration": 17752,
                                             "src": "3610:16:119",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                 "typeString": "enum AssetId.AssetIdPrefix"
                                             }
                                         },
@@ -2281,23 +2281,23 @@ export const AssetId = {
                                     "falseBody": {
                                         "condition": {
                                             "commonType": {
-                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                 "typeString": "enum AssetId.AssetIdPrefix"
                                             },
-                                            "id": 18064,
+                                            "id": 17905,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 18061,
+                                                "id": 17902,
                                                 "name": "prefix",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18039,
+                                                "referencedDeclaration": 17880,
                                                 "src": "3688:6:119",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 }
                                             },
@@ -2305,18 +2305,18 @@ export const AssetId = {
                                             "operator": "==",
                                             "rightExpression": {
                                                 "expression": {
-                                                    "id": 18062,
+                                                    "id": 17903,
                                                     "name": "AssetIdPrefix",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17915,
+                                                    "referencedDeclaration": 17756,
                                                     "src": "3698:13:119",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17915_$",
+                                                        "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17756_$",
                                                         "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                     }
                                                 },
-                                                "id": 18063,
+                                                "id": 17904,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2324,10 +2324,10 @@ export const AssetId = {
                                                 "memberLocation": "3712:4:119",
                                                 "memberName": "Long",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 17912,
+                                                "referencedDeclaration": 17753,
                                                 "src": "3698:18:119",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 }
                                             },
@@ -2340,23 +2340,23 @@ export const AssetId = {
                                         "falseBody": {
                                             "condition": {
                                                 "commonType": {
-                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                    "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                     "typeString": "enum AssetId.AssetIdPrefix"
                                                 },
-                                                "id": 18080,
+                                                "id": 17921,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 18077,
+                                                    "id": 17918,
                                                     "name": "prefix",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 18039,
+                                                    "referencedDeclaration": 17880,
                                                     "src": "3819:6:119",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                         "typeString": "enum AssetId.AssetIdPrefix"
                                                     }
                                                 },
@@ -2364,18 +2364,18 @@ export const AssetId = {
                                                 "operator": "==",
                                                 "rightExpression": {
                                                     "expression": {
-                                                        "id": 18078,
+                                                        "id": 17919,
                                                         "name": "AssetIdPrefix",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 17915,
+                                                        "referencedDeclaration": 17756,
                                                         "src": "3829:13:119",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17915_$",
+                                                            "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17756_$",
                                                             "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                         }
                                                     },
-                                                    "id": 18079,
+                                                    "id": 17920,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2383,10 +2383,10 @@ export const AssetId = {
                                                     "memberLocation": "3843:5:119",
                                                     "memberName": "Short",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 17913,
+                                                    "referencedDeclaration": 17754,
                                                     "src": "3829:19:119",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                         "typeString": "enum AssetId.AssetIdPrefix"
                                                     }
                                                 },
@@ -2399,23 +2399,23 @@ export const AssetId = {
                                             "falseBody": {
                                                 "condition": {
                                                     "commonType": {
-                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                        "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                         "typeString": "enum AssetId.AssetIdPrefix"
                                                     },
-                                                    "id": 18096,
+                                                    "id": 17937,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 18093,
+                                                        "id": 17934,
                                                         "name": "prefix",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 18039,
+                                                        "referencedDeclaration": 17880,
                                                         "src": "3952:6:119",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                             "typeString": "enum AssetId.AssetIdPrefix"
                                                         }
                                                     },
@@ -2423,18 +2423,18 @@ export const AssetId = {
                                                     "operator": "==",
                                                     "rightExpression": {
                                                         "expression": {
-                                                            "id": 18094,
+                                                            "id": 17935,
                                                             "name": "AssetIdPrefix",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 17915,
+                                                            "referencedDeclaration": 17756,
                                                             "src": "3962:13:119",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17915_$",
+                                                                "typeIdentifier": "t_type$_t_enum$_AssetIdPrefix_$17756_$",
                                                                 "typeString": "type(enum AssetId.AssetIdPrefix)"
                                                             }
                                                         },
-                                                        "id": 18095,
+                                                        "id": 17936,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -2442,10 +2442,10 @@ export const AssetId = {
                                                         "memberLocation": "3976:15:119",
                                                         "memberName": "WithdrawalShare",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 17914,
+                                                        "referencedDeclaration": 17755,
                                                         "src": "3962:29:119",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17915",
+                                                            "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
                                                             "typeString": "enum AssetId.AssetIdPrefix"
                                                         }
                                                     },
@@ -2455,27 +2455,27 @@ export const AssetId = {
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 18102,
+                                                "id": 17943,
                                                 "nodeType": "IfStatement",
                                                 "src": "3948:95:119",
                                                 "trueBody": {
-                                                    "id": 18101,
+                                                    "id": 17942,
                                                     "nodeType": "Block",
                                                     "src": "3993:50:119",
                                                     "statements": [
                                                         {
                                                             "expression": {
-                                                                "id": 18099,
+                                                                "id": 17940,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
-                                                                    "id": 18097,
+                                                                    "id": 17938,
                                                                     "name": "_symbol",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 18035,
+                                                                    "referencedDeclaration": 17876,
                                                                     "src": "4007:7:119",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -2486,7 +2486,7 @@ export const AssetId = {
                                                                 "operator": "=",
                                                                 "rightHandSide": {
                                                                     "hexValue": "485950455244524956452d5753",
-                                                                    "id": 18098,
+                                                                    "id": 17939,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -2506,34 +2506,34 @@ export const AssetId = {
                                                                     "typeString": "string memory"
                                                                 }
                                                             },
-                                                            "id": 18100,
+                                                            "id": 17941,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "4007:25:119"
                                                         }
                                                     ]
                                                 }
                                             },
-                                            "id": 18103,
+                                            "id": 17944,
                                             "nodeType": "IfStatement",
                                             "src": "3815:228:119",
                                             "trueBody": {
-                                                "id": 18092,
+                                                "id": 17933,
                                                 "nodeType": "Block",
                                                 "src": "3850:92:119",
                                                 "statements": [
                                                     {
                                                         "expression": {
-                                                            "id": 18090,
+                                                            "id": 17931,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "leftHandSide": {
-                                                                "id": 18081,
+                                                                "id": 17922,
                                                                 "name": "_symbol",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 18035,
+                                                                "referencedDeclaration": 17876,
                                                                 "src": "3864:7:119",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2548,7 +2548,7 @@ export const AssetId = {
                                                                         "arguments": [
                                                                             {
                                                                                 "hexValue": "485950455244524956452d53484f52543a",
-                                                                                "id": 18086,
+                                                                                "id": 17927,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
@@ -2563,11 +2563,11 @@ export const AssetId = {
                                                                                 "value": "HYPERDRIVE-SHORT:"
                                                                             },
                                                                             {
-                                                                                "id": 18087,
+                                                                                "id": 17928,
                                                                                 "name": "_timestamp",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 18047,
+                                                                                "referencedDeclaration": 17888,
                                                                                 "src": "3919:10:119",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2587,7 +2587,7 @@ export const AssetId = {
                                                                                 }
                                                                             ],
                                                                             "expression": {
-                                                                                "id": 18084,
+                                                                                "id": 17925,
                                                                                 "name": "abi",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
@@ -2598,7 +2598,7 @@ export const AssetId = {
                                                                                     "typeString": "abi"
                                                                                 }
                                                                             },
-                                                                            "id": 18085,
+                                                                            "id": 17926,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -2612,7 +2612,7 @@ export const AssetId = {
                                                                                 "typeString": "function () pure returns (bytes memory)"
                                                                             }
                                                                         },
-                                                                        "id": 18088,
+                                                                        "id": 17929,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -2636,7 +2636,7 @@ export const AssetId = {
                                                                             "typeString": "bytes memory"
                                                                         }
                                                                     ],
-                                                                    "id": 18083,
+                                                                    "id": 17924,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -2648,14 +2648,14 @@ export const AssetId = {
                                                                         "typeString": "type(string storage pointer)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 18082,
+                                                                        "id": 17923,
                                                                         "name": "string",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "3874:6:119",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 18089,
+                                                                "id": 17930,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -2677,34 +2677,34 @@ export const AssetId = {
                                                                 "typeString": "string memory"
                                                             }
                                                         },
-                                                        "id": 18091,
+                                                        "id": 17932,
                                                         "nodeType": "ExpressionStatement",
                                                         "src": "3864:67:119"
                                                     }
                                                 ]
                                             }
                                         },
-                                        "id": 18104,
+                                        "id": 17945,
                                         "nodeType": "IfStatement",
                                         "src": "3684:359:119",
                                         "trueBody": {
-                                            "id": 18076,
+                                            "id": 17917,
                                             "nodeType": "Block",
                                             "src": "3718:91:119",
                                             "statements": [
                                                 {
                                                     "expression": {
-                                                        "id": 18074,
+                                                        "id": 17915,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftHandSide": {
-                                                            "id": 18065,
+                                                            "id": 17906,
                                                             "name": "_symbol",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 18035,
+                                                            "referencedDeclaration": 17876,
                                                             "src": "3732:7:119",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -2719,7 +2719,7 @@ export const AssetId = {
                                                                     "arguments": [
                                                                         {
                                                                             "hexValue": "485950455244524956452d4c4f4e473a",
-                                                                            "id": 18070,
+                                                                            "id": 17911,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -2734,11 +2734,11 @@ export const AssetId = {
                                                                             "value": "HYPERDRIVE-LONG:"
                                                                         },
                                                                         {
-                                                                            "id": 18071,
+                                                                            "id": 17912,
                                                                             "name": "_timestamp",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 18047,
+                                                                            "referencedDeclaration": 17888,
                                                                             "src": "3786:10:119",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -2758,7 +2758,7 @@ export const AssetId = {
                                                                             }
                                                                         ],
                                                                         "expression": {
-                                                                            "id": 18068,
+                                                                            "id": 17909,
                                                                             "name": "abi",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
@@ -2769,7 +2769,7 @@ export const AssetId = {
                                                                                 "typeString": "abi"
                                                                             }
                                                                         },
-                                                                        "id": 18069,
+                                                                        "id": 17910,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -2783,7 +2783,7 @@ export const AssetId = {
                                                                             "typeString": "function () pure returns (bytes memory)"
                                                                         }
                                                                     },
-                                                                    "id": 18072,
+                                                                    "id": 17913,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -2807,7 +2807,7 @@ export const AssetId = {
                                                                         "typeString": "bytes memory"
                                                                     }
                                                                 ],
-                                                                "id": 18067,
+                                                                "id": 17908,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -2819,14 +2819,14 @@ export const AssetId = {
                                                                     "typeString": "type(string storage pointer)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 18066,
+                                                                    "id": 17907,
                                                                     "name": "string",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "3742:6:119",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 18073,
+                                                            "id": 17914,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -2848,34 +2848,34 @@ export const AssetId = {
                                                             "typeString": "string memory"
                                                         }
                                                     },
-                                                    "id": 18075,
+                                                    "id": 17916,
                                                     "nodeType": "ExpressionStatement",
                                                     "src": "3732:66:119"
                                                 }
                                             ]
                                         }
                                     },
-                                    "id": 18105,
+                                    "id": 17946,
                                     "nodeType": "IfStatement",
                                     "src": "3596:447:119",
                                     "trueBody": {
-                                        "id": 18060,
+                                        "id": 17901,
                                         "nodeType": "Block",
                                         "src": "3628:50:119",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 18058,
+                                                    "id": 17899,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 18056,
+                                                        "id": 17897,
                                                         "name": "_symbol",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 18035,
+                                                        "referencedDeclaration": 17876,
                                                         "src": "3642:7:119",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -2886,7 +2886,7 @@ export const AssetId = {
                                                     "operator": "=",
                                                     "rightHandSide": {
                                                         "hexValue": "485950455244524956452d4c50",
-                                                        "id": 18057,
+                                                        "id": 17898,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -2906,7 +2906,7 @@ export const AssetId = {
                                                         "typeString": "string memory"
                                                     }
                                                 },
-                                                "id": 18059,
+                                                "id": 17900,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3642:25:119"
                                             }
@@ -2916,7 +2916,7 @@ export const AssetId = {
                             ]
                         },
                         "documentation": {
-                            "id": 18030,
+                            "id": 17871,
                             "nodeType": "StructuredDocumentation",
                             "src": "3232:123:119",
                             "text": "@dev Converts an asset ID to a token symbol.\n @param _id The asset ID.\n @return _symbol The token symbol."
@@ -2927,17 +2927,17 @@ export const AssetId = {
                         "name": "assetIdToSymbol",
                         "nameLocation": "3369:15:119",
                         "parameters": {
-                            "id": 18033,
+                            "id": 17874,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 18032,
+                                    "id": 17873,
                                     "mutability": "mutable",
                                     "name": "_id",
                                     "nameLocation": "3402:3:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 18107,
+                                    "scope": 17948,
                                     "src": "3394:11:119",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2946,7 +2946,7 @@ export const AssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 18031,
+                                        "id": 17872,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3394:7:119",
@@ -2961,17 +2961,17 @@ export const AssetId = {
                             "src": "3384:27:119"
                         },
                         "returnParameters": {
-                            "id": 18036,
+                            "id": 17877,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 18035,
+                                    "id": 17876,
                                     "mutability": "mutable",
                                     "name": "_symbol",
                                     "nameLocation": "3449:7:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 18107,
+                                    "scope": 17948,
                                     "src": "3435:21:119",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2980,7 +2980,7 @@ export const AssetId = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 18034,
+                                        "id": 17875,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3435:6:119",
@@ -2994,35 +2994,35 @@ export const AssetId = {
                             ],
                             "src": "3434:23:119"
                         },
-                        "scope": 18168,
+                        "scope": 18009,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 18167,
+                        "id": 18008,
                         "nodeType": "FunctionDefinition",
                         "src": "4207:1065:119",
                         "nodes": [],
                         "body": {
-                            "id": 18166,
+                            "id": 18007,
                             "nodeType": "Block",
                             "src": "4298:974:119",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        18116
+                                        17957
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 18116,
+                                            "id": 17957,
                                             "mutability": "mutable",
                                             "name": "maxStringLength",
                                             "nameLocation": "4544:15:119",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 18166,
+                                            "scope": 18007,
                                             "src": "4536:23:119",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3031,7 +3031,7 @@ export const AssetId = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 18115,
+                                                "id": 17956,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4536:7:119",
@@ -3043,10 +3043,10 @@ export const AssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 18118,
+                                    "id": 17959,
                                     "initialValue": {
                                         "hexValue": "3738",
-                                        "id": 18117,
+                                        "id": 17958,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -3065,17 +3065,17 @@ export const AssetId = {
                                 },
                                 {
                                     "assignments": [
-                                        18120
+                                        17961
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 18120,
+                                            "id": 17961,
                                             "mutability": "mutable",
                                             "name": "rawResult",
                                             "nameLocation": "4587:9:119",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 18166,
+                                            "scope": 18007,
                                             "src": "4574:22:119",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -3084,7 +3084,7 @@ export const AssetId = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 18119,
+                                                "id": 17960,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4574:5:119",
@@ -3096,15 +3096,15 @@ export const AssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 18125,
+                                    "id": 17966,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 18123,
+                                                "id": 17964,
                                                 "name": "maxStringLength",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18116,
+                                                "referencedDeclaration": 17957,
                                                 "src": "4609:15:119",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3119,7 +3119,7 @@ export const AssetId = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 18122,
+                                            "id": 17963,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -3131,7 +3131,7 @@ export const AssetId = {
                                                 "typeString": "function (uint256) pure returns (bytes memory)"
                                             },
                                             "typeName": {
-                                                "id": 18121,
+                                                "id": 17962,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4603:5:119",
@@ -3141,7 +3141,7 @@ export const AssetId = {
                                                 }
                                             }
                                         },
-                                        "id": 18124,
+                                        "id": 17965,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3162,17 +3162,17 @@ export const AssetId = {
                                 },
                                 {
                                     "assignments": [
-                                        18127
+                                        17968
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 18127,
+                                            "id": 17968,
                                             "mutability": "mutable",
                                             "name": "digits",
                                             "nameLocation": "4798:6:119",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 18166,
+                                            "scope": 18007,
                                             "src": "4790:14:119",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3181,7 +3181,7 @@ export const AssetId = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 18126,
+                                                "id": 17967,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4790:7:119",
@@ -3193,10 +3193,10 @@ export const AssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 18129,
+                                    "id": 17970,
                                     "initialValue": {
                                         "hexValue": "30",
-                                        "id": 18128,
+                                        "id": 17969,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -3215,37 +3215,37 @@ export const AssetId = {
                                 },
                                 {
                                     "body": {
-                                        "id": 18161,
+                                        "id": 18002,
                                         "nodeType": "Block",
                                         "src": "4848:150:119",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 18156,
+                                                    "id": 17997,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "baseExpression": {
-                                                            "id": 18137,
+                                                            "id": 17978,
                                                             "name": "rawResult",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 18120,
+                                                            "referencedDeclaration": 17961,
                                                             "src": "4862:9:119",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes_memory_ptr",
                                                                 "typeString": "bytes memory"
                                                             }
                                                         },
-                                                        "id": 18143,
+                                                        "id": 17984,
                                                         "indexExpression": {
                                                             "commonType": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             },
-                                                            "id": 18142,
+                                                            "id": 17983,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -3255,17 +3255,17 @@ export const AssetId = {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 },
-                                                                "id": 18140,
+                                                                "id": 17981,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftExpression": {
-                                                                    "id": 18138,
+                                                                    "id": 17979,
                                                                     "name": "maxStringLength",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 18116,
+                                                                    "referencedDeclaration": 17957,
                                                                     "src": "4872:15:119",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -3275,11 +3275,11 @@ export const AssetId = {
                                                                 "nodeType": "BinaryOperation",
                                                                 "operator": "-",
                                                                 "rightExpression": {
-                                                                    "id": 18139,
+                                                                    "id": 17980,
                                                                     "name": "digits",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 18127,
+                                                                    "referencedDeclaration": 17968,
                                                                     "src": "4890:6:119",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -3296,7 +3296,7 @@ export const AssetId = {
                                                             "operator": "-",
                                                             "rightExpression": {
                                                                 "hexValue": "31",
-                                                                "id": 18141,
+                                                                "id": 17982,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3338,7 +3338,7 @@ export const AssetId = {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         },
-                                                                        "id": 18153,
+                                                                        "id": 17994,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -3350,17 +3350,17 @@ export const AssetId = {
                                                                                         "typeIdentifier": "t_uint256",
                                                                                         "typeString": "uint256"
                                                                                     },
-                                                                                    "id": 18150,
+                                                                                    "id": 17991,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": false,
                                                                                     "lValueRequested": false,
                                                                                     "leftExpression": {
-                                                                                        "id": 18148,
+                                                                                        "id": 17989,
                                                                                         "name": "_num",
                                                                                         "nodeType": "Identifier",
                                                                                         "overloadedDeclarations": [],
-                                                                                        "referencedDeclaration": 18110,
+                                                                                        "referencedDeclaration": 17951,
                                                                                         "src": "4935:4:119",
                                                                                         "typeDescriptions": {
                                                                                             "typeIdentifier": "t_uint256",
@@ -3371,7 +3371,7 @@ export const AssetId = {
                                                                                     "operator": "%",
                                                                                     "rightExpression": {
                                                                                         "hexValue": "3130",
-                                                                                        "id": 18149,
+                                                                                        "id": 17990,
                                                                                         "isConstant": false,
                                                                                         "isLValue": false,
                                                                                         "isPure": true,
@@ -3392,7 +3392,7 @@ export const AssetId = {
                                                                                     }
                                                                                 }
                                                                             ],
-                                                                            "id": 18151,
+                                                                            "id": 17992,
                                                                             "isConstant": false,
                                                                             "isInlineArray": false,
                                                                             "isLValue": false,
@@ -3409,7 +3409,7 @@ export const AssetId = {
                                                                         "operator": "+",
                                                                         "rightExpression": {
                                                                             "hexValue": "3438",
-                                                                            "id": 18152,
+                                                                            "id": 17993,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -3437,7 +3437,7 @@ export const AssetId = {
                                                                             "typeString": "uint256"
                                                                         }
                                                                     ],
-                                                                    "id": 18147,
+                                                                    "id": 17988,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -3449,14 +3449,14 @@ export const AssetId = {
                                                                         "typeString": "type(uint8)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 18146,
+                                                                        "id": 17987,
                                                                         "name": "uint8",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "4928:5:119",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 18154,
+                                                                "id": 17995,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -3480,7 +3480,7 @@ export const AssetId = {
                                                                     "typeString": "uint8"
                                                                 }
                                                             ],
-                                                            "id": 18145,
+                                                            "id": 17986,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3492,14 +3492,14 @@ export const AssetId = {
                                                                 "typeString": "type(bytes1)"
                                                             },
                                                             "typeName": {
-                                                                "id": 18144,
+                                                                "id": 17985,
                                                                 "name": "bytes1",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "4904:6:119",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 18155,
+                                                        "id": 17996,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3521,13 +3521,13 @@ export const AssetId = {
                                                         "typeString": "bytes1"
                                                     }
                                                 },
-                                                "id": 18157,
+                                                "id": 17998,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "4862:103:119"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 18159,
+                                                    "id": 18000,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3537,11 +3537,11 @@ export const AssetId = {
                                                     "prefix": false,
                                                     "src": "4979:8:119",
                                                     "subExpression": {
-                                                        "id": 18158,
+                                                        "id": 17999,
                                                         "name": "digits",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 18127,
+                                                        "referencedDeclaration": 17968,
                                                         "src": "4979:6:119",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -3553,7 +3553,7 @@ export const AssetId = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 18160,
+                                                "id": 18001,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "4979:8:119"
                                             }
@@ -3564,17 +3564,17 @@ export const AssetId = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 18132,
+                                        "id": 17973,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 18130,
+                                            "id": 17971,
                                             "name": "_num",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 18110,
+                                            "referencedDeclaration": 17951,
                                             "src": "4825:4:119",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3585,7 +3585,7 @@ export const AssetId = {
                                         "operator": "!=",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 18131,
+                                            "id": 17972,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -3605,20 +3605,20 @@ export const AssetId = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 18162,
+                                    "id": 18003,
                                     "loopExpression": {
                                         "expression": {
-                                            "id": 18135,
+                                            "id": 17976,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftHandSide": {
-                                                "id": 18133,
+                                                "id": 17974,
                                                 "name": "_num",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18110,
+                                                "referencedDeclaration": 17951,
                                                 "src": "4836:4:119",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3629,7 +3629,7 @@ export const AssetId = {
                                             "operator": "/=",
                                             "rightHandSide": {
                                                 "hexValue": "3130",
-                                                "id": 18134,
+                                                "id": 17975,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -3649,7 +3649,7 @@ export const AssetId = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 18136,
+                                        "id": 17977,
                                         "nodeType": "ExpressionStatement",
                                         "src": "4836:10:119"
                                     },
@@ -3739,74 +3739,74 @@ export const AssetId = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 18127,
+                                            "declaration": 17968,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5190:6:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 18127,
+                                            "declaration": 17968,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5226:6:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 18116,
+                                            "declaration": 17957,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5173:15:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 18120,
+                                            "declaration": 17961,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5158:9:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 18113,
+                                            "declaration": 17954,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5144:6:119",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 18113,
+                                            "declaration": 17954,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5218:6:119",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 18163,
+                                    "id": 18004,
                                     "nodeType": "InlineAssembly",
                                     "src": "5121:122:119"
                                 },
                                 {
                                     "expression": {
-                                        "id": 18164,
+                                        "id": 18005,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 18113,
+                                        "referencedDeclaration": 17954,
                                         "src": "5259:6:119",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_memory_ptr",
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 18114,
-                                    "id": 18165,
+                                    "functionReturnParameters": 17955,
+                                    "id": 18006,
                                     "nodeType": "Return",
                                     "src": "5252:13:119"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 18108,
+                            "id": 17949,
                             "nodeType": "StructuredDocumentation",
                             "src": "4055:147:119",
                             "text": "@dev Converts an unsigned integer to a string.\n @param _num The integer to be converted.\n @return result The stringified integer."
@@ -3817,17 +3817,17 @@ export const AssetId = {
                         "name": "toString",
                         "nameLocation": "4216:8:119",
                         "parameters": {
-                            "id": 18111,
+                            "id": 17952,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 18110,
+                                    "id": 17951,
                                     "mutability": "mutable",
                                     "name": "_num",
                                     "nameLocation": "4242:4:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 18167,
+                                    "scope": 18008,
                                     "src": "4234:12:119",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3836,7 +3836,7 @@ export const AssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 18109,
+                                        "id": 17950,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4234:7:119",
@@ -3851,17 +3851,17 @@ export const AssetId = {
                             "src": "4224:28:119"
                         },
                         "returnParameters": {
-                            "id": 18114,
+                            "id": 17955,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 18113,
+                                    "id": 17954,
                                     "mutability": "mutable",
                                     "name": "result",
                                     "nameLocation": "4290:6:119",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 18167,
+                                    "scope": 18008,
                                     "src": "4276:20:119",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3870,7 +3870,7 @@ export const AssetId = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 18112,
+                                        "id": 17953,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4276:6:119",
@@ -3884,7 +3884,7 @@ export const AssetId = {
                             ],
                             "src": "4275:22:119"
                         },
-                        "scope": 18168,
+                        "scope": 18009,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
@@ -3896,18 +3896,18 @@ export const AssetId = {
                 "contractDependencies": [],
                 "contractKind": "library",
                 "documentation": {
-                    "id": 17898,
+                    "id": 17739,
                     "nodeType": "StructuredDocumentation",
                     "src": "126:365:119",
                     "text": "@author DELV\n @title Hyperdrive\n @notice A library that handles the encoding and decoding of asset IDs for\n         Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    18168
+                    18009
                 ],
                 "name": "AssetId",
                 "nameLocation": "499:7:119",
-                "scope": 18169,
+                "scope": 18010,
                 "usedErrors": [],
                 "usedEvents": []
             }

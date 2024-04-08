@@ -224,17 +224,17 @@ export const IHyperdriveGovernedRegistry = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IHyperdriveGovernedRegistry.sol",
-        "id": 11268,
+        "id": 11118,
         "exportedSymbols": {
             "IHyperdriveGovernedRegistry": [
-                11267
+                11117
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:959:91",
         "nodes": [
             {
-                "id": 11237,
+                "id": 11087,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:91",
                 "nodes": [],
@@ -245,18 +245,18 @@ export const IHyperdriveGovernedRegistry = {
                 ]
             },
             {
-                "id": 11267,
+                "id": 11117,
                 "nodeType": "ContractDefinition",
                 "src": "64:933:91",
                 "nodes": [
                     {
-                        "id": 11242,
+                        "id": 11092,
                         "nodeType": "EventDefinition",
                         "src": "164:52:91",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11238,
+                            "id": 11088,
                             "nodeType": "StructuredDocumentation",
                             "src": "108:51:91",
                             "text": "@notice Emitted when governance is transferred."
@@ -265,18 +265,18 @@ export const IHyperdriveGovernedRegistry = {
                         "name": "GovernanceUpdated",
                         "nameLocation": "170:17:91",
                         "parameters": {
-                            "id": 11241,
+                            "id": 11091,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11240,
+                                    "id": 11090,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "governance",
                                     "nameLocation": "204:10:91",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11242,
+                                    "scope": 11092,
                                     "src": "188:26:91",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -285,7 +285,7 @@ export const IHyperdriveGovernedRegistry = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11239,
+                                        "id": 11089,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "188:7:91",
@@ -302,13 +302,13 @@ export const IHyperdriveGovernedRegistry = {
                         }
                     },
                     {
-                        "id": 11249,
+                        "id": 11099,
                         "nodeType": "EventDefinition",
                         "src": "279:70:91",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11243,
+                            "id": 11093,
                             "nodeType": "StructuredDocumentation",
                             "src": "222:52:91",
                             "text": "@notice Emitted when hyperdrive info is updated."
@@ -317,18 +317,18 @@ export const IHyperdriveGovernedRegistry = {
                         "name": "HyperdriveInfoUpdated",
                         "nameLocation": "285:21:91",
                         "parameters": {
-                            "id": 11248,
+                            "id": 11098,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11245,
+                                    "id": 11095,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "hyperdrive",
                                     "nameLocation": "323:10:91",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11249,
+                                    "scope": 11099,
                                     "src": "307:26:91",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -337,7 +337,7 @@ export const IHyperdriveGovernedRegistry = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11244,
+                                        "id": 11094,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "307:7:91",
@@ -351,13 +351,13 @@ export const IHyperdriveGovernedRegistry = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11247,
+                                    "id": 11097,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "343:4:91",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11249,
+                                    "scope": 11099,
                                     "src": "335:12:91",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -366,7 +366,7 @@ export const IHyperdriveGovernedRegistry = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11246,
+                                        "id": 11096,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "335:7:91",
@@ -382,12 +382,12 @@ export const IHyperdriveGovernedRegistry = {
                         }
                     },
                     {
-                        "id": 11252,
+                        "id": 11102,
                         "nodeType": "ErrorDefinition",
                         "src": "409:21:91",
                         "nodes": [],
                         "documentation": {
-                            "id": 11250,
+                            "id": 11100,
                             "nodeType": "StructuredDocumentation",
                             "src": "355:49:91",
                             "text": "@notice Thrown when caller is not governance."
@@ -396,19 +396,19 @@ export const IHyperdriveGovernedRegistry = {
                         "name": "Unauthorized",
                         "nameLocation": "415:12:91",
                         "parameters": {
-                            "id": 11251,
+                            "id": 11101,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "427:2:91"
                         }
                     },
                     {
-                        "id": 11258,
+                        "id": 11108,
                         "nodeType": "FunctionDefinition",
                         "src": "558:56:91",
                         "nodes": [],
                         "documentation": {
-                            "id": 11253,
+                            "id": 11103,
                             "nodeType": "StructuredDocumentation",
                             "src": "436:117:91",
                             "text": "@notice Allows governance to transfer the governance role.\n @param _governance The new governance address."
@@ -420,17 +420,17 @@ export const IHyperdriveGovernedRegistry = {
                         "name": "updateGovernance",
                         "nameLocation": "567:16:91",
                         "parameters": {
-                            "id": 11256,
+                            "id": 11106,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11255,
+                                    "id": 11105,
                                     "mutability": "mutable",
                                     "name": "_governance",
                                     "nameLocation": "592:11:91",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11258,
+                                    "scope": 11108,
                                     "src": "584:19:91",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -439,7 +439,7 @@ export const IHyperdriveGovernedRegistry = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11254,
+                                        "id": 11104,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "584:7:91",
@@ -455,23 +455,23 @@ export const IHyperdriveGovernedRegistry = {
                             "src": "583:21:91"
                         },
                         "returnParameters": {
-                            "id": 11257,
+                            "id": 11107,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "613:0:91"
                         },
-                        "scope": 11267,
+                        "scope": 11117,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11266,
+                        "id": 11116,
                         "nodeType": "FunctionDefinition",
                         "src": "893:102:91",
                         "nodes": [],
                         "documentation": {
-                            "id": 11259,
+                            "id": 11109,
                             "nodeType": "StructuredDocumentation",
                             "src": "620:268:91",
                             "text": "@notice Allows governance to set arbitrary info for a Hyperdrive\n         instance.\n @param _hyperdriveInstance The Hyperdrive instance address.\n @param _data The uint256 value to be set to convey information about the\n        instance."
@@ -483,17 +483,17 @@ export const IHyperdriveGovernedRegistry = {
                         "name": "setHyperdriveInfo",
                         "nameLocation": "902:17:91",
                         "parameters": {
-                            "id": 11264,
+                            "id": 11114,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11261,
+                                    "id": 11111,
                                     "mutability": "mutable",
                                     "name": "_hyperdriveInstance",
                                     "nameLocation": "937:19:91",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11266,
+                                    "scope": 11116,
                                     "src": "929:27:91",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -502,7 +502,7 @@ export const IHyperdriveGovernedRegistry = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11260,
+                                        "id": 11110,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "929:7:91",
@@ -516,12 +516,12 @@ export const IHyperdriveGovernedRegistry = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11263,
+                                    "id": 11113,
                                     "mutability": "mutable",
                                     "name": "_data",
                                     "nameLocation": "974:5:91",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11266,
+                                    "scope": 11116,
                                     "src": "966:13:91",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -530,7 +530,7 @@ export const IHyperdriveGovernedRegistry = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11262,
+                                        "id": 11112,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "966:7:91",
@@ -545,12 +545,12 @@ export const IHyperdriveGovernedRegistry = {
                             "src": "919:66:91"
                         },
                         "returnParameters": {
-                            "id": 11265,
+                            "id": 11115,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "994:0:91"
                         },
-                        "scope": 11267,
+                        "scope": 11117,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
@@ -563,17 +563,17 @@ export const IHyperdriveGovernedRegistry = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11267
+                    11117
                 ],
                 "name": "IHyperdriveGovernedRegistry",
                 "nameLocation": "74:27:91",
-                "scope": 11268,
+                "scope": 11118,
                 "usedErrors": [
-                    11252
+                    11102
                 ],
                 "usedEvents": [
-                    11242,
-                    11249
+                    11092,
+                    11099
                 ]
             }
         ],

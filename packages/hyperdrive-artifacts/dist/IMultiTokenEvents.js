@@ -242,17 +242,17 @@ export const IMultiTokenEvents = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IMultiTokenEvents.sol",
-        "id": 11610,
+        "id": 11460,
         "exportedSymbols": {
             "IMultiTokenEvents": [
-                11609
+                11459
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:741:98",
         "nodes": [
             {
-                "id": 11577,
+                "id": 11427,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:98",
                 "nodes": [],
@@ -263,18 +263,18 @@ export const IMultiTokenEvents = {
                 ]
             },
             {
-                "id": 11609,
+                "id": 11459,
                 "nodeType": "ContractDefinition",
                 "src": "64:715:98",
                 "nodes": [
                     {
-                        "id": 11590,
+                        "id": 11440,
                         "nodeType": "EventDefinition",
                         "src": "179:162:98",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11578,
+                            "id": 11428,
                             "nodeType": "StructuredDocumentation",
                             "src": "98:76:98",
                             "text": "@notice Emitted when tokens are transferred from one account to another."
@@ -283,18 +283,18 @@ export const IMultiTokenEvents = {
                         "name": "TransferSingle",
                         "nameLocation": "185:14:98",
                         "parameters": {
-                            "id": 11589,
+                            "id": 11439,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11580,
+                                    "id": 11430,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "operator",
                                     "nameLocation": "225:8:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11590,
+                                    "scope": 11440,
                                     "src": "209:24:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -303,7 +303,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11579,
+                                        "id": 11429,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "209:7:98",
@@ -317,13 +317,13 @@ export const IMultiTokenEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11582,
+                                    "id": 11432,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "from",
                                     "nameLocation": "259:4:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11590,
+                                    "scope": 11440,
                                     "src": "243:20:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -332,7 +332,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11581,
+                                        "id": 11431,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "243:7:98",
@@ -346,13 +346,13 @@ export const IMultiTokenEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11584,
+                                    "id": 11434,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "289:2:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11590,
+                                    "scope": 11440,
                                     "src": "273:18:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -361,7 +361,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11583,
+                                        "id": 11433,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "273:7:98",
@@ -375,13 +375,13 @@ export const IMultiTokenEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11586,
+                                    "id": 11436,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "id",
                                     "nameLocation": "309:2:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11590,
+                                    "scope": 11440,
                                     "src": "301:10:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -390,7 +390,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11585,
+                                        "id": 11435,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "301:7:98",
@@ -403,13 +403,13 @@ export const IMultiTokenEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11588,
+                                    "id": 11438,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "329:5:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11590,
+                                    "scope": 11440,
                                     "src": "321:13:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -418,7 +418,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11587,
+                                        "id": 11437,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "321:7:98",
@@ -434,13 +434,13 @@ export const IMultiTokenEvents = {
                         }
                     },
                     {
-                        "id": 11599,
+                        "id": 11449,
                         "nodeType": "EventDefinition",
                         "src": "446:108:98",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11591,
+                            "id": 11441,
                             "nodeType": "StructuredDocumentation",
                             "src": "347:94:98",
                             "text": "@notice Emitted when an account changes the allowance for another\n         account."
@@ -449,18 +449,18 @@ export const IMultiTokenEvents = {
                         "name": "Approval",
                         "nameLocation": "452:8:98",
                         "parameters": {
-                            "id": 11598,
+                            "id": 11448,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11593,
+                                    "id": 11443,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "486:5:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11599,
+                                    "scope": 11449,
                                     "src": "470:21:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -469,7 +469,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11592,
+                                        "id": 11442,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "470:7:98",
@@ -483,13 +483,13 @@ export const IMultiTokenEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11595,
+                                    "id": 11445,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "517:7:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11599,
+                                    "scope": 11449,
                                     "src": "501:23:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -498,7 +498,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11594,
+                                        "id": 11444,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "501:7:98",
@@ -512,13 +512,13 @@ export const IMultiTokenEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11597,
+                                    "id": 11447,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "542:5:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11599,
+                                    "scope": 11449,
                                     "src": "534:13:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -527,7 +527,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11596,
+                                        "id": 11446,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "534:7:98",
@@ -543,13 +543,13 @@ export const IMultiTokenEvents = {
                         }
                     },
                     {
-                        "id": 11608,
+                        "id": 11458,
                         "nodeType": "EventDefinition",
                         "src": "660:117:98",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11600,
+                            "id": 11450,
                             "nodeType": "StructuredDocumentation",
                             "src": "560:95:98",
                             "text": "@notice Emitted when an account changes the approval for all of its\n         tokens."
@@ -558,18 +558,18 @@ export const IMultiTokenEvents = {
                         "name": "ApprovalForAll",
                         "nameLocation": "666:14:98",
                         "parameters": {
-                            "id": 11607,
+                            "id": 11457,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11602,
+                                    "id": 11452,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "account",
                                     "nameLocation": "706:7:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11608,
+                                    "scope": 11458,
                                     "src": "690:23:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -578,7 +578,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11601,
+                                        "id": 11451,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "690:7:98",
@@ -592,13 +592,13 @@ export const IMultiTokenEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11604,
+                                    "id": 11454,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "operator",
                                     "nameLocation": "739:8:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11608,
+                                    "scope": 11458,
                                     "src": "723:24:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -607,7 +607,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11603,
+                                        "id": 11453,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "723:7:98",
@@ -621,13 +621,13 @@ export const IMultiTokenEvents = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11606,
+                                    "id": 11456,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "approved",
                                     "nameLocation": "762:8:98",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11608,
+                                    "scope": 11458,
                                     "src": "757:13:98",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -636,7 +636,7 @@ export const IMultiTokenEvents = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 11605,
+                                        "id": 11455,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "757:4:98",
@@ -659,16 +659,16 @@ export const IMultiTokenEvents = {
                 "contractKind": "interface",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    11609
+                    11459
                 ],
                 "name": "IMultiTokenEvents",
                 "nameLocation": "74:17:98",
-                "scope": 11610,
+                "scope": 11460,
                 "usedErrors": [],
                 "usedEvents": [
-                    11590,
-                    11599,
-                    11608
+                    11440,
+                    11449,
+                    11458
                 ]
             }
         ],

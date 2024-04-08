@@ -82,32 +82,32 @@ export const CommonBase = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/Base.sol",
-        "id": 29609,
+        "id": 29683,
         "exportedSymbols": {
             "CommonBase": [
-                29596
+                29670
             ],
             "ScriptBase": [
-                29608
+                29682
             ],
             "StdStorage": [
-                35604
+                35678
             ],
             "TestBase": [
-                29599
+                29673
             ],
             "Vm": [
-                40704
+                40778
             ],
             "VmSafe": [
-                40232
+                40306
             ]
         },
         "nodeType": "SourceUnit",
         "src": "32:1761:144",
         "nodes": [
             {
-                "id": 29535,
+                "id": 29609,
                 "nodeType": "PragmaDirective",
                 "src": "32:31:144",
                 "nodes": [],
@@ -122,23 +122,23 @@ export const CommonBase = {
                 ]
             },
             {
-                "id": 29537,
+                "id": 29611,
                 "nodeType": "ImportDirective",
                 "src": "65:44:144",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdStorage.sol",
                 "file": "./StdStorage.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 29609,
-                "sourceUnit": 37058,
+                "scope": 29683,
+                "sourceUnit": 37132,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 29536,
+                            "id": 29610,
                             "name": "StdStorage",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 35604,
+                            "referencedDeclaration": 35678,
                             "src": "73:10:144",
                             "typeDescriptions": {}
                         },
@@ -148,23 +148,23 @@ export const CommonBase = {
                 "unitAlias": ""
             },
             {
-                "id": 29540,
+                "id": 29614,
                 "nodeType": "ImportDirective",
                 "src": "110:36:144",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/Vm.sol",
                 "file": "./Vm.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 29609,
-                "sourceUnit": 40705,
+                "scope": 29683,
+                "sourceUnit": 40779,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 29538,
+                            "id": 29612,
                             "name": "Vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40704,
+                            "referencedDeclaration": 40778,
                             "src": "118:2:144",
                             "typeDescriptions": {}
                         },
@@ -172,11 +172,11 @@ export const CommonBase = {
                     },
                     {
                         "foreign": {
-                            "id": 29539,
+                            "id": 29613,
                             "name": "VmSafe",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40232,
+                            "referencedDeclaration": 40306,
                             "src": "122:6:144",
                             "typeDescriptions": {}
                         },
@@ -186,12 +186,12 @@ export const CommonBase = {
                 "unitAlias": ""
             },
             {
-                "id": 29596,
+                "id": 29670,
                 "nodeType": "ContractDefinition",
                 "src": "148:1493:144",
                 "nodes": [
                     {
-                        "id": 29554,
+                        "id": 29628,
                         "nodeType": "VariableDeclaration",
                         "src": "254:94:144",
                         "nodes": [],
@@ -199,7 +199,7 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "VM_ADDRESS",
                         "nameLocation": "280:10:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -207,7 +207,7 @@ export const CommonBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29541,
+                            "id": 29615,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "254:7:144",
@@ -227,7 +227,7 @@ export const CommonBase = {
                                                     "arguments": [
                                                         {
                                                             "hexValue": "6865766d20636865617420636f6465",
-                                                            "id": 29549,
+                                                            "id": 29623,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -249,7 +249,7 @@ export const CommonBase = {
                                                                 "typeString": "literal_string \"hevm cheat code\""
                                                             }
                                                         ],
-                                                        "id": 29548,
+                                                        "id": 29622,
                                                         "name": "keccak256",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -260,7 +260,7 @@ export const CommonBase = {
                                                             "typeString": "function (bytes memory) pure returns (bytes32)"
                                                         }
                                                     },
-                                                    "id": 29550,
+                                                    "id": 29624,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -284,7 +284,7 @@ export const CommonBase = {
                                                         "typeString": "bytes32"
                                                     }
                                                 ],
-                                                "id": 29547,
+                                                "id": 29621,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -296,14 +296,14 @@ export const CommonBase = {
                                                     "typeString": "type(uint256)"
                                                 },
                                                 "typeName": {
-                                                    "id": 29546,
+                                                    "id": 29620,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "309:7:144",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 29551,
+                                            "id": 29625,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -327,7 +327,7 @@ export const CommonBase = {
                                                 "typeString": "uint256"
                                             }
                                         ],
-                                        "id": 29545,
+                                        "id": 29619,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -339,14 +339,14 @@ export const CommonBase = {
                                             "typeString": "type(uint160)"
                                         },
                                         "typeName": {
-                                            "id": 29544,
+                                            "id": 29618,
                                             "name": "uint160",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "301:7:144",
                                             "typeDescriptions": {}
                                         }
                                     },
-                                    "id": 29552,
+                                    "id": 29626,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -370,7 +370,7 @@ export const CommonBase = {
                                         "typeString": "uint160"
                                     }
                                 ],
-                                "id": 29543,
+                                "id": 29617,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -382,14 +382,14 @@ export const CommonBase = {
                                     "typeString": "type(address)"
                                 },
                                 "typeName": {
-                                    "id": 29542,
+                                    "id": 29616,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "293:7:144",
                                     "typeDescriptions": {}
                                 }
                             },
-                            "id": 29553,
+                            "id": 29627,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -408,7 +408,7 @@ export const CommonBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29557,
+                        "id": 29631,
                         "nodeType": "VariableDeclaration",
                         "src": "438:78:144",
                         "nodes": [],
@@ -416,7 +416,7 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "CONSOLE",
                         "nameLocation": "464:7:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -424,7 +424,7 @@ export const CommonBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29555,
+                            "id": 29629,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "438:7:144",
@@ -436,7 +436,7 @@ export const CommonBase = {
                         },
                         "value": {
                             "hexValue": "307830303030303030303030303030303030303036333646366537333646366336353265366336663637",
-                            "id": 29556,
+                            "id": 29630,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -453,7 +453,7 @@ export const CommonBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29560,
+                        "id": 29634,
                         "nodeType": "VariableDeclaration",
                         "src": "623:86:144",
                         "nodes": [],
@@ -461,7 +461,7 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "CREATE2_FACTORY",
                         "nameLocation": "649:15:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -469,7 +469,7 @@ export const CommonBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29558,
+                            "id": 29632,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "623:7:144",
@@ -481,7 +481,7 @@ export const CommonBase = {
                         },
                         "value": {
                             "hexValue": "307834653539623434383437623337393537383538383932306341373846624632366330423439353643",
-                            "id": 29559,
+                            "id": 29633,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -498,7 +498,7 @@ export const CommonBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29574,
+                        "id": 29648,
                         "nodeType": "VariableDeclaration",
                         "src": "812:105:144",
                         "nodes": [],
@@ -506,7 +506,7 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "DEFAULT_SENDER",
                         "nameLocation": "838:14:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -514,7 +514,7 @@ export const CommonBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29561,
+                            "id": 29635,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "812:7:144",
@@ -534,7 +534,7 @@ export const CommonBase = {
                                                     "arguments": [
                                                         {
                                                             "hexValue": "666f756e6472792064656661756c742063616c6c6572",
-                                                            "id": 29569,
+                                                            "id": 29643,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -556,7 +556,7 @@ export const CommonBase = {
                                                                 "typeString": "literal_string \"foundry default caller\""
                                                             }
                                                         ],
-                                                        "id": 29568,
+                                                        "id": 29642,
                                                         "name": "keccak256",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -567,7 +567,7 @@ export const CommonBase = {
                                                             "typeString": "function (bytes memory) pure returns (bytes32)"
                                                         }
                                                     },
-                                                    "id": 29570,
+                                                    "id": 29644,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -591,7 +591,7 @@ export const CommonBase = {
                                                         "typeString": "bytes32"
                                                     }
                                                 ],
-                                                "id": 29567,
+                                                "id": 29641,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -603,14 +603,14 @@ export const CommonBase = {
                                                     "typeString": "type(uint256)"
                                                 },
                                                 "typeName": {
-                                                    "id": 29566,
+                                                    "id": 29640,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "871:7:144",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 29571,
+                                            "id": 29645,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -634,7 +634,7 @@ export const CommonBase = {
                                                 "typeString": "uint256"
                                             }
                                         ],
-                                        "id": 29565,
+                                        "id": 29639,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -646,14 +646,14 @@ export const CommonBase = {
                                             "typeString": "type(uint160)"
                                         },
                                         "typeName": {
-                                            "id": 29564,
+                                            "id": 29638,
                                             "name": "uint160",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "863:7:144",
                                             "typeDescriptions": {}
                                         }
                                     },
-                                    "id": 29572,
+                                    "id": 29646,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -677,7 +677,7 @@ export const CommonBase = {
                                         "typeString": "uint160"
                                     }
                                 ],
-                                "id": 29563,
+                                "id": 29637,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -689,14 +689,14 @@ export const CommonBase = {
                                     "typeString": "type(address)"
                                 },
                                 "typeName": {
-                                    "id": 29562,
+                                    "id": 29636,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "855:7:144",
                                     "typeDescriptions": {}
                                 }
                             },
-                            "id": 29573,
+                            "id": 29647,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -715,7 +715,7 @@ export const CommonBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29577,
+                        "id": 29651,
                         "nodeType": "VariableDeclaration",
                         "src": "992:92:144",
                         "nodes": [],
@@ -723,7 +723,7 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "DEFAULT_TEST_CONTRACT",
                         "nameLocation": "1018:21:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -731,7 +731,7 @@ export const CommonBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29575,
+                            "id": 29649,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "992:7:144",
@@ -743,7 +743,7 @@ export const CommonBase = {
                         },
                         "value": {
                             "hexValue": "307835363135644542373938424233453464466130313339644661316233443433334363323362373266",
-                            "id": 29576,
+                            "id": 29650,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -760,7 +760,7 @@ export const CommonBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29580,
+                        "id": 29654,
                         "nodeType": "VariableDeclaration",
                         "src": "1158:89:144",
                         "nodes": [],
@@ -768,7 +768,7 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "MULTICALL3_ADDRESS",
                         "nameLocation": "1184:18:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -776,7 +776,7 @@ export const CommonBase = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 29578,
+                            "id": 29652,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "1158:7:144",
@@ -788,7 +788,7 @@ export const CommonBase = {
                         },
                         "value": {
                             "hexValue": "307863413131626465303539373762333633313136373032383836326245326131373339373643413131",
-                            "id": 29579,
+                            "id": 29653,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -805,7 +805,7 @@ export const CommonBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29583,
+                        "id": 29657,
                         "nodeType": "VariableDeclaration",
                         "src": "1294:130:144",
                         "nodes": [],
@@ -813,7 +813,7 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "SECP256K1_ORDER",
                         "nameLocation": "1320:15:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -821,7 +821,7 @@ export const CommonBase = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 29581,
+                            "id": 29655,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "1294:7:144",
@@ -832,7 +832,7 @@ export const CommonBase = {
                         },
                         "value": {
                             "hexValue": "313135373932303839323337333136313935343233353730393835303038363837393037383532383337353634323739303734393034333832363035313633313431353138313631343934333337",
-                            "id": 29582,
+                            "id": 29656,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -849,7 +849,7 @@ export const CommonBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29586,
+                        "id": 29660,
                         "nodeType": "VariableDeclaration",
                         "src": "1431:126:144",
                         "nodes": [],
@@ -857,7 +857,7 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "UINT256_MAX",
                         "nameLocation": "1457:11:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -865,7 +865,7 @@ export const CommonBase = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 29584,
+                            "id": 29658,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "1431:7:144",
@@ -876,7 +876,7 @@ export const CommonBase = {
                         },
                         "value": {
                             "hexValue": "313135373932303839323337333136313935343233353730393835303038363837393037383533323639393834363635363430353634303339343537353834303037393133313239363339393335",
-                            "id": 29585,
+                            "id": 29659,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -893,7 +893,7 @@ export const CommonBase = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 29592,
+                        "id": 29666,
                         "nodeType": "VariableDeclaration",
                         "src": "1564:40:144",
                         "nodes": [],
@@ -901,41 +901,41 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "vm",
                         "nameLocation": "1585:2:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_Vm_$40704",
+                            "typeIdentifier": "t_contract$_Vm_$40778",
                             "typeString": "contract Vm"
                         },
                         "typeName": {
-                            "id": 29588,
+                            "id": 29662,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 29587,
+                                "id": 29661,
                                 "name": "Vm",
                                 "nameLocations": [
                                     "1564:2:144"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 40704,
+                                "referencedDeclaration": 40778,
                                 "src": "1564:2:144"
                             },
-                            "referencedDeclaration": 40704,
+                            "referencedDeclaration": 40778,
                             "src": "1564:2:144",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Vm_$40704",
+                                "typeIdentifier": "t_contract$_Vm_$40778",
                                 "typeString": "contract Vm"
                             }
                         },
                         "value": {
                             "arguments": [
                                 {
-                                    "id": 29590,
+                                    "id": 29664,
                                     "name": "VM_ADDRESS",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 29554,
+                                    "referencedDeclaration": 29628,
                                     "src": "1593:10:144",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_address",
@@ -950,18 +950,18 @@ export const CommonBase = {
                                         "typeString": "address"
                                     }
                                 ],
-                                "id": 29589,
+                                "id": 29663,
                                 "name": "Vm",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 40704,
+                                "referencedDeclaration": 40778,
                                 "src": "1590:2:144",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_Vm_$40704_$",
+                                    "typeIdentifier": "t_type$_t_contract$_Vm_$40778_$",
                                     "typeString": "type(contract Vm)"
                                 }
                             },
-                            "id": 29591,
+                            "id": 29665,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -973,14 +973,14 @@ export const CommonBase = {
                             "src": "1590:14:144",
                             "tryCall": false,
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_Vm_$40704",
+                                "typeIdentifier": "t_contract$_Vm_$40778",
                                 "typeString": "contract Vm"
                             }
                         },
                         "visibility": "internal"
                     },
                     {
-                        "id": 29595,
+                        "id": 29669,
                         "nodeType": "VariableDeclaration",
                         "src": "1610:28:144",
                         "nodes": [],
@@ -988,30 +988,30 @@ export const CommonBase = {
                         "mutability": "mutable",
                         "name": "stdstore",
                         "nameLocation": "1630:8:144",
-                        "scope": 29596,
+                        "scope": 29670,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_struct$_StdStorage_$35604_storage",
+                            "typeIdentifier": "t_struct$_StdStorage_$35678_storage",
                             "typeString": "struct StdStorage"
                         },
                         "typeName": {
-                            "id": 29594,
+                            "id": 29668,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 29593,
+                                "id": 29667,
                                 "name": "StdStorage",
                                 "nameLocations": [
                                     "1610:10:144"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 35604,
+                                "referencedDeclaration": 35678,
                                 "src": "1610:10:144"
                             },
-                            "referencedDeclaration": 35604,
+                            "referencedDeclaration": 35678,
                             "src": "1610:10:144",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_StdStorage_$35604_storage_ptr",
+                                "typeIdentifier": "t_struct$_StdStorage_$35678_storage_ptr",
                                 "typeString": "struct StdStorage"
                             }
                         },
@@ -1025,16 +1025,16 @@ export const CommonBase = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    29596
+                    29670
                 ],
                 "name": "CommonBase",
                 "nameLocation": "166:10:144",
-                "scope": 29609,
+                "scope": 29683,
                 "usedErrors": [],
                 "usedEvents": []
             },
             {
-                "id": 29599,
+                "id": 29673,
                 "nodeType": "ContractDefinition",
                 "src": "1643:43:144",
                 "nodes": [],
@@ -1042,16 +1042,16 @@ export const CommonBase = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 29597,
+                            "id": 29671,
                             "name": "CommonBase",
                             "nameLocations": [
                                 "1673:10:144"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 29596,
+                            "referencedDeclaration": 29670,
                             "src": "1673:10:144"
                         },
-                        "id": 29598,
+                        "id": 29672,
                         "nodeType": "InheritanceSpecifier",
                         "src": "1673:10:144"
                     }
@@ -1061,22 +1061,22 @@ export const CommonBase = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    29599,
-                    29596
+                    29673,
+                    29670
                 ],
                 "name": "TestBase",
                 "nameLocation": "1661:8:144",
-                "scope": 29609,
+                "scope": 29683,
                 "usedErrors": [],
                 "usedEvents": []
             },
             {
-                "id": 29608,
+                "id": 29682,
                 "nodeType": "ContractDefinition",
                 "src": "1688:104:144",
                 "nodes": [
                     {
-                        "id": 29607,
+                        "id": 29681,
                         "nodeType": "VariableDeclaration",
                         "src": "1737:52:144",
                         "nodes": [],
@@ -1084,41 +1084,41 @@ export const CommonBase = {
                         "mutability": "constant",
                         "name": "vmSafe",
                         "nameLocation": "1762:6:144",
-                        "scope": 29608,
+                        "scope": 29682,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_VmSafe_$40232",
+                            "typeIdentifier": "t_contract$_VmSafe_$40306",
                             "typeString": "contract VmSafe"
                         },
                         "typeName": {
-                            "id": 29603,
+                            "id": 29677,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 29602,
+                                "id": 29676,
                                 "name": "VmSafe",
                                 "nameLocations": [
                                     "1737:6:144"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 40232,
+                                "referencedDeclaration": 40306,
                                 "src": "1737:6:144"
                             },
-                            "referencedDeclaration": 40232,
+                            "referencedDeclaration": 40306,
                             "src": "1737:6:144",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                "typeIdentifier": "t_contract$_VmSafe_$40306",
                                 "typeString": "contract VmSafe"
                             }
                         },
                         "value": {
                             "arguments": [
                                 {
-                                    "id": 29605,
+                                    "id": 29679,
                                     "name": "VM_ADDRESS",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 29554,
+                                    "referencedDeclaration": 29628,
                                     "src": "1778:10:144",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_address",
@@ -1133,18 +1133,18 @@ export const CommonBase = {
                                         "typeString": "address"
                                     }
                                 ],
-                                "id": 29604,
+                                "id": 29678,
                                 "name": "VmSafe",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 40232,
+                                "referencedDeclaration": 40306,
                                 "src": "1771:6:144",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40232_$",
+                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40306_$",
                                     "typeString": "type(contract VmSafe)"
                                 }
                             },
-                            "id": 29606,
+                            "id": 29680,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -1156,7 +1156,7 @@ export const CommonBase = {
                             "src": "1771:18:144",
                             "tryCall": false,
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                "typeIdentifier": "t_contract$_VmSafe_$40306",
                                 "typeString": "contract VmSafe"
                             }
                         },
@@ -1167,16 +1167,16 @@ export const CommonBase = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 29600,
+                            "id": 29674,
                             "name": "CommonBase",
                             "nameLocations": [
                                 "1720:10:144"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 29596,
+                            "referencedDeclaration": 29670,
                             "src": "1720:10:144"
                         },
-                        "id": 29601,
+                        "id": 29675,
                         "nodeType": "InheritanceSpecifier",
                         "src": "1720:10:144"
                     }
@@ -1186,12 +1186,12 @@ export const CommonBase = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    29608,
-                    29596
+                    29682,
+                    29670
                 ],
                 "name": "ScriptBase",
                 "nameLocation": "1706:10:144",
-                "scope": 29609,
+                "scope": 29683,
                 "usedErrors": [],
                 "usedEvents": []
             }

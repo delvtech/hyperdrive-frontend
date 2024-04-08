@@ -1059,20 +1059,20 @@ export const ILido = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/ILido.sol",
-        "id": 11466,
+        "id": 11316,
         "exportedSymbols": {
             "IERC20": [
-                9810
+                9666
             ],
             "ILido": [
-                11465
+                11315
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:2877:95",
         "nodes": [
             {
-                "id": 11388,
+                "id": 11238,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:95",
                 "nodes": [],
@@ -1083,23 +1083,23 @@ export const ILido = {
                 ]
             },
             {
-                "id": 11390,
+                "id": 11240,
                 "nodeType": "ImportDirective",
                 "src": "64:38:95",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IERC20.sol",
                 "file": "./IERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 11466,
-                "sourceUnit": 9811,
+                "scope": 11316,
+                "sourceUnit": 9667,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 11389,
+                            "id": 11239,
                             "name": "IERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 9810,
+                            "referencedDeclaration": 9666,
                             "src": "73:6:95",
                             "typeDescriptions": {}
                         },
@@ -1109,17 +1109,17 @@ export const ILido = {
                 "unitAlias": ""
             },
             {
-                "id": 11465,
+                "id": 11315,
                 "nodeType": "ContractDefinition",
                 "src": "104:2811:95",
                 "nodes": [
                     {
-                        "id": 11400,
+                        "id": 11250,
                         "nodeType": "FunctionDefinition",
                         "src": "362:70:95",
                         "nodes": [],
                         "documentation": {
-                            "id": 11393,
+                            "id": 11243,
                             "nodeType": "StructuredDocumentation",
                             "src": "136:221:95",
                             "text": "@notice Submits ether to stETH to be staked.\n @param _referral The referral address that should get credit in Lido's\n        referral program.\n @return The amount of stETH shares that were minted."
@@ -1131,17 +1131,17 @@ export const ILido = {
                         "name": "submit",
                         "nameLocation": "371:6:95",
                         "parameters": {
-                            "id": 11396,
+                            "id": 11246,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11395,
+                                    "id": 11245,
                                     "mutability": "mutable",
                                     "name": "_referral",
                                     "nameLocation": "386:9:95",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11400,
+                                    "scope": 11250,
                                     "src": "378:17:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1150,7 +1150,7 @@ export const ILido = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11394,
+                                        "id": 11244,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "378:7:95",
@@ -1166,17 +1166,17 @@ export const ILido = {
                             "src": "377:19:95"
                         },
                         "returnParameters": {
-                            "id": 11399,
+                            "id": 11249,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11398,
+                                    "id": 11248,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11400,
+                                    "scope": 11250,
                                     "src": "423:7:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1185,7 +1185,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11397,
+                                        "id": 11247,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "423:7:95",
@@ -1199,18 +1199,18 @@ export const ILido = {
                             ],
                             "src": "422:9:95"
                         },
-                        "scope": 11465,
+                        "scope": 11315,
                         "stateMutability": "payable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11410,
+                        "id": 11260,
                         "nodeType": "FunctionDefinition",
                         "src": "712:116:95",
                         "nodes": [],
                         "documentation": {
-                            "id": 11401,
+                            "id": 11251,
                             "nodeType": "StructuredDocumentation",
                             "src": "438:269:95",
                             "text": "@notice Transfers stETH shares from the caller to a recipient.\n @param _recipient The recipient of the tokens.\n @param _sharesAmount The amount of stETH shares that will be transferred.\n @return The amount of stETH tokens that were transferred."
@@ -1222,17 +1222,17 @@ export const ILido = {
                         "name": "transferShares",
                         "nameLocation": "721:14:95",
                         "parameters": {
-                            "id": 11406,
+                            "id": 11256,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11403,
+                                    "id": 11253,
                                     "mutability": "mutable",
                                     "name": "_recipient",
                                     "nameLocation": "753:10:95",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11410,
+                                    "scope": 11260,
                                     "src": "745:18:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1241,7 +1241,7 @@ export const ILido = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11402,
+                                        "id": 11252,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "745:7:95",
@@ -1255,12 +1255,12 @@ export const ILido = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11405,
+                                    "id": 11255,
                                     "mutability": "mutable",
                                     "name": "_sharesAmount",
                                     "nameLocation": "781:13:95",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11410,
+                                    "scope": 11260,
                                     "src": "773:21:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1269,7 +1269,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11404,
+                                        "id": 11254,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "773:7:95",
@@ -1284,17 +1284,17 @@ export const ILido = {
                             "src": "735:65:95"
                         },
                         "returnParameters": {
-                            "id": 11409,
+                            "id": 11259,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11408,
+                                    "id": 11258,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11410,
+                                    "scope": 11260,
                                     "src": "819:7:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1303,7 +1303,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11407,
+                                        "id": 11257,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "819:7:95",
@@ -1317,18 +1317,18 @@ export const ILido = {
                             ],
                             "src": "818:9:95"
                         },
-                        "scope": 11465,
+                        "scope": 11315,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11422,
+                        "id": 11272,
                         "nodeType": "FunctionDefinition",
                         "src": "1195:145:95",
                         "nodes": [],
                         "documentation": {
-                            "id": 11411,
+                            "id": 11261,
                             "nodeType": "StructuredDocumentation",
                             "src": "834:356:95",
                             "text": "@notice Transfers stETH shares from an owner to a recipient. This draws\n         from the spender's allowance.\n @param _sender The owner of the tokens.\n @param _recipient The recipient of the tokens.\n @param _sharesAmount The amount of tokens that will be transferred.\n @return The amount of stETH tokens transferred."
@@ -1340,17 +1340,17 @@ export const ILido = {
                         "name": "transferSharesFrom",
                         "nameLocation": "1204:18:95",
                         "parameters": {
-                            "id": 11418,
+                            "id": 11268,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11413,
+                                    "id": 11263,
                                     "mutability": "mutable",
                                     "name": "_sender",
                                     "nameLocation": "1240:7:95",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11422,
+                                    "scope": 11272,
                                     "src": "1232:15:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1359,7 +1359,7 @@ export const ILido = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11412,
+                                        "id": 11262,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1232:7:95",
@@ -1373,12 +1373,12 @@ export const ILido = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11415,
+                                    "id": 11265,
                                     "mutability": "mutable",
                                     "name": "_recipient",
                                     "nameLocation": "1265:10:95",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11422,
+                                    "scope": 11272,
                                     "src": "1257:18:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1387,7 +1387,7 @@ export const ILido = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11414,
+                                        "id": 11264,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1257:7:95",
@@ -1401,12 +1401,12 @@ export const ILido = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11417,
+                                    "id": 11267,
                                     "mutability": "mutable",
                                     "name": "_sharesAmount",
                                     "nameLocation": "1293:13:95",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11422,
+                                    "scope": 11272,
                                     "src": "1285:21:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1415,7 +1415,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11416,
+                                        "id": 11266,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1285:7:95",
@@ -1430,17 +1430,17 @@ export const ILido = {
                             "src": "1222:90:95"
                         },
                         "returnParameters": {
-                            "id": 11421,
+                            "id": 11271,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11420,
+                                    "id": 11270,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11422,
+                                    "scope": 11272,
                                     "src": "1331:7:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1449,7 +1449,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11419,
+                                        "id": 11269,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1331:7:95",
@@ -1463,18 +1463,18 @@ export const ILido = {
                             ],
                             "src": "1330:9:95"
                         },
-                        "scope": 11465,
+                        "scope": 11315,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11430,
+                        "id": 11280,
                         "nodeType": "FunctionDefinition",
                         "src": "1604:96:95",
                         "nodes": [],
                         "documentation": {
-                            "id": 11423,
+                            "id": 11273,
                             "nodeType": "StructuredDocumentation",
                             "src": "1346:253:95",
                             "text": "@notice Calculates the amount of stETH shares an amount of stETH tokens\n         are currently worth.\n @param _ethAmount The amount of stETH tokens to convert.\n @return The amount of stETH shares that the stETH tokens are worth."
@@ -1486,17 +1486,17 @@ export const ILido = {
                         "name": "getSharesByPooledEth",
                         "nameLocation": "1613:20:95",
                         "parameters": {
-                            "id": 11426,
+                            "id": 11276,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11425,
+                                    "id": 11275,
                                     "mutability": "mutable",
                                     "name": "_ethAmount",
                                     "nameLocation": "1651:10:95",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11430,
+                                    "scope": 11280,
                                     "src": "1643:18:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1505,7 +1505,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11424,
+                                        "id": 11274,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1643:7:95",
@@ -1520,17 +1520,17 @@ export const ILido = {
                             "src": "1633:34:95"
                         },
                         "returnParameters": {
-                            "id": 11429,
+                            "id": 11279,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11428,
+                                    "id": 11278,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11430,
+                                    "scope": 11280,
                                     "src": "1691:7:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1539,7 +1539,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11427,
+                                        "id": 11277,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1691:7:95",
@@ -1553,18 +1553,18 @@ export const ILido = {
                             ],
                             "src": "1690:9:95"
                         },
-                        "scope": 11465,
+                        "scope": 11315,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11438,
+                        "id": 11288,
                         "nodeType": "FunctionDefinition",
                         "src": "1967:99:95",
                         "nodes": [],
                         "documentation": {
-                            "id": 11431,
+                            "id": 11281,
                             "nodeType": "StructuredDocumentation",
                             "src": "1706:256:95",
                             "text": "@notice Calculates the amount of stETH tokens an amount of stETH shares\n         are currently worth.\n @param _sharesAmount The amount of stETH shares to convert.\n @return The amount of stETH tokens that the stETH shares are worth."
@@ -1576,17 +1576,17 @@ export const ILido = {
                         "name": "getPooledEthByShares",
                         "nameLocation": "1976:20:95",
                         "parameters": {
-                            "id": 11434,
+                            "id": 11284,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11433,
+                                    "id": 11283,
                                     "mutability": "mutable",
                                     "name": "_sharesAmount",
                                     "nameLocation": "2014:13:95",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11438,
+                                    "scope": 11288,
                                     "src": "2006:21:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1595,7 +1595,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11432,
+                                        "id": 11282,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2006:7:95",
@@ -1610,17 +1610,17 @@ export const ILido = {
                             "src": "1996:37:95"
                         },
                         "returnParameters": {
-                            "id": 11437,
+                            "id": 11287,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11436,
+                                    "id": 11286,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11438,
+                                    "scope": 11288,
                                     "src": "2057:7:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1629,7 +1629,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11435,
+                                        "id": 11285,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2057:7:95",
@@ -1643,18 +1643,18 @@ export const ILido = {
                             ],
                             "src": "2056:9:95"
                         },
-                        "scope": 11465,
+                        "scope": 11315,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11444,
+                        "id": 11294,
                         "nodeType": "FunctionDefinition",
                         "src": "2247:60:95",
                         "nodes": [],
                         "documentation": {
-                            "id": 11439,
+                            "id": 11289,
                             "nodeType": "StructuredDocumentation",
                             "src": "2072:170:95",
                             "text": "@notice Gets the total amount of ether that is buffered and waiting\n         to be staked underlying stETH.\n @return The total amount of buffered ether."
@@ -1666,23 +1666,23 @@ export const ILido = {
                         "name": "getBufferedEther",
                         "nameLocation": "2256:16:95",
                         "parameters": {
-                            "id": 11440,
+                            "id": 11290,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2272:2:95"
                         },
                         "returnParameters": {
-                            "id": 11443,
+                            "id": 11293,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11442,
+                                    "id": 11292,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11444,
+                                    "scope": 11294,
                                     "src": "2298:7:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1691,7 +1691,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11441,
+                                        "id": 11291,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2298:7:95",
@@ -1705,18 +1705,18 @@ export const ILido = {
                             ],
                             "src": "2297:9:95"
                         },
-                        "scope": 11465,
+                        "scope": 11315,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11450,
+                        "id": 11300,
                         "nodeType": "FunctionDefinition",
                         "src": "2435:63:95",
                         "nodes": [],
                         "documentation": {
-                            "id": 11445,
+                            "id": 11295,
                             "nodeType": "StructuredDocumentation",
                             "src": "2313:117:95",
                             "text": "@notice Gets the total amount of pooled ether underlying stETH.\n @return The total amount of pooled ether."
@@ -1728,23 +1728,23 @@ export const ILido = {
                         "name": "getTotalPooledEther",
                         "nameLocation": "2444:19:95",
                         "parameters": {
-                            "id": 11446,
+                            "id": 11296,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2463:2:95"
                         },
                         "returnParameters": {
-                            "id": 11449,
+                            "id": 11299,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11448,
+                                    "id": 11298,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11450,
+                                    "scope": 11300,
                                     "src": "2489:7:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1753,7 +1753,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11447,
+                                        "id": 11297,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2489:7:95",
@@ -1767,18 +1767,18 @@ export const ILido = {
                             ],
                             "src": "2488:9:95"
                         },
-                        "scope": 11465,
+                        "scope": 11315,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11456,
+                        "id": 11306,
                         "nodeType": "FunctionDefinition",
                         "src": "2609:58:95",
                         "nodes": [],
                         "documentation": {
-                            "id": 11451,
+                            "id": 11301,
                             "nodeType": "StructuredDocumentation",
                             "src": "2504:100:95",
                             "text": "@notice Gets the total amount of stETH shares.\n @return The total amount of stETH shares."
@@ -1790,23 +1790,23 @@ export const ILido = {
                         "name": "getTotalShares",
                         "nameLocation": "2618:14:95",
                         "parameters": {
-                            "id": 11452,
+                            "id": 11302,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2632:2:95"
                         },
                         "returnParameters": {
-                            "id": 11455,
+                            "id": 11305,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11454,
+                                    "id": 11304,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11456,
+                                    "scope": 11306,
                                     "src": "2658:7:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1815,7 +1815,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11453,
+                                        "id": 11303,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2658:7:95",
@@ -1829,18 +1829,18 @@ export const ILido = {
                             ],
                             "src": "2657:9:95"
                         },
-                        "scope": 11465,
+                        "scope": 11315,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11464,
+                        "id": 11314,
                         "nodeType": "FunctionDefinition",
                         "src": "2845:68:95",
                         "nodes": [],
                         "documentation": {
-                            "id": 11457,
+                            "id": 11307,
                             "nodeType": "StructuredDocumentation",
                             "src": "2673:107:95",
                             "text": "@notice Gets the amount of shares owned by an account.\n @param _account The owner of the shares."
@@ -1852,17 +1852,17 @@ export const ILido = {
                         "name": "sharesOf",
                         "nameLocation": "2854:8:95",
                         "parameters": {
-                            "id": 11460,
+                            "id": 11310,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11459,
+                                    "id": 11309,
                                     "mutability": "mutable",
                                     "name": "_account",
                                     "nameLocation": "2871:8:95",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11464,
+                                    "scope": 11314,
                                     "src": "2863:16:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1871,7 +1871,7 @@ export const ILido = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11458,
+                                        "id": 11308,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2863:7:95",
@@ -1887,17 +1887,17 @@ export const ILido = {
                             "src": "2862:18:95"
                         },
                         "returnParameters": {
-                            "id": 11463,
+                            "id": 11313,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11462,
+                                    "id": 11312,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11464,
+                                    "scope": 11314,
                                     "src": "2904:7:95",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1906,7 +1906,7 @@ export const ILido = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11461,
+                                        "id": 11311,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2904:7:95",
@@ -1920,7 +1920,7 @@ export const ILido = {
                             ],
                             "src": "2903:9:95"
                         },
-                        "scope": 11465,
+                        "scope": 11315,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -1930,16 +1930,16 @@ export const ILido = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 11391,
+                            "id": 11241,
                             "name": "IERC20",
                             "nameLocations": [
                                 "123:6:95"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 9810,
+                            "referencedDeclaration": 9666,
                             "src": "123:6:95"
                         },
-                        "id": 11392,
+                        "id": 11242,
                         "nodeType": "InheritanceSpecifier",
                         "src": "123:6:95"
                     }
@@ -1949,16 +1949,16 @@ export const ILido = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11465,
-                    9810
+                    11315,
+                    9666
                 ],
                 "name": "ILido",
                 "nameLocation": "114:5:95",
-                "scope": 11466,
+                "scope": 11316,
                 "usedErrors": [],
                 "usedEvents": [
-                    9726,
-                    9735
+                    9582,
+                    9591
                 ]
             }
         ],

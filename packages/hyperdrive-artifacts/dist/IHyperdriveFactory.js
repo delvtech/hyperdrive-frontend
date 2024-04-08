@@ -566,7 +566,7 @@ export const IHyperdriveFactory = {
         "linkReferences": {}
     },
     "methodIdentifiers": {},
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DeployerCoordinatorAlreadyAdded\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeployerCoordinatorIndexMismatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeployerCoordinatorNotAdded\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EndIndexTooLarge\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCheckpointDurationResolution\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidDeployConfig\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidDeployerCoordinator\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFees\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFixedAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidIndexes\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxFees\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxFixedAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxTimeStretchAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinFees\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinFixedAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinTimeStretchAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTimeStretchAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReceiveLocked\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransferFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Unauthorized\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newCheckpointDurationResolution\",\"type\":\"uint256\"}],\"name\":\"CheckpointDurationResolutionUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"newDefaultPausers\",\"type\":\"address[]\"}],\"name\":\"DefaultPausersUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"deployerCoordinator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"hyperdrive\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"indexed\":false,\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"config\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"name\":\"Deployed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"deployerCoordinator\",\"type\":\"address\"}],\"name\":\"DeployerCoordinatorAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"deployerCoordinator\",\"type\":\"address\"}],\"name\":\"DeployerCoordinatorRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"hyperdriveGovernance\",\"type\":\"address\"}],\"name\":\"HyperdriveGovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newLinkerCodeHash\",\"type\":\"bytes32\"}],\"name\":\"LinkerCodeHashUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newLinkerFactory\",\"type\":\"address\"}],\"name\":\"LinkerFactoryUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMaxCheckpointDuration\",\"type\":\"uint256\"}],\"name\":\"MaxCheckpointDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"newMaxFees\",\"type\":\"tuple\"}],\"name\":\"MaxFeesUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMaxFixedAPR\",\"type\":\"uint256\"}],\"name\":\"MaxFixedAPRUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMaxPositionDuration\",\"type\":\"uint256\"}],\"name\":\"MaxPositionDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMaxTimeStretchAPR\",\"type\":\"uint256\"}],\"name\":\"MaxTimeStretchAPRUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMinCheckpointDuration\",\"type\":\"uint256\"}],\"name\":\"MinCheckpointDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"newMinFees\",\"type\":\"tuple\"}],\"name\":\"MinFeesUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMinFixedAPR\",\"type\":\"uint256\"}],\"name\":\"MinFixedAPRUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMinPositionDuration\",\"type\":\"uint256\"}],\"name\":\"MinPositionDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMinTimeStretchAPR\",\"type\":\"uint256\"}],\"name\":\"MinTimeStretchAPRUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"DeployerCoordinatorAlreadyAdded()\":[{\"notice\":\"Thrown when governance attempts to add a deployer coordinator         that has already been added.\"}],\"DeployerCoordinatorIndexMismatch()\":[{\"notice\":\"Thrown when governance attempts to remove a deployer coordinator         but specifies the wrong index within the list of deployer         coordinators.\"}],\"DeployerCoordinatorNotAdded()\":[{\"notice\":\"Thrown when governance attempts to remove a deployer coordinator         that was never added.\"}],\"EndIndexTooLarge()\":[{\"notice\":\"Thrown when the ending index of a range is larger than the         underlying list.\"}],\"InvalidCheckpointDuration()\":[{\"notice\":\"Thrown when the checkpoint duration supplied to `deployTarget`         or `deployAndInitialize` isn't a multiple of the checkpoint         duration resolution or isn't within the range specified by the         minimum and maximum checkpoint durations.\"}],\"InvalidCheckpointDurationResolution()\":[{\"notice\":\"Thrown when governance attempts to set the checkpoint duration         resolution to a value that doesn't evenly divide the minimum         checkpoint duration, maximum checkpoint duration, minimum         position duration, or maximum position duration.\"}],\"InvalidDeployConfig()\":[{\"notice\":\"Thrown when the deploy configuration passed to         `deployAndInitialize` has fields set that will be overridden by         governance.\"}],\"InvalidDeployerCoordinator()\":[{\"notice\":\"Thrown when the deployer coordinator passed to         `deployAndInitialize` hasn't been added to the factory.\"}],\"InvalidFees()\":[{\"notice\":\"Thrown when the fee parameters passed to `deployAndInitialize`         aren't within the range specified by the minimum and maximum         fees.\"}],\"InvalidFixedAPR()\":[{\"notice\":\"Thrown when the fixed APR passed to `deployAndInitialize` isn't         within the range specified by the minimum and maximum fixed         APRs.\"}],\"InvalidIndexes()\":[{\"notice\":\"Thrown when the starting index of a range is larger than the         ending index.\"}],\"InvalidMaxCheckpointDuration()\":[{\"notice\":\"Thrown when governance attempts to set the maximum checkpoint         duration to a value that isn't a multiple of the checkpoint         duration resolution or is smaller than the minimum checkpoint         duration.\"}],\"InvalidMaxFees()\":[{\"notice\":\"Thrown when governance attempts to set one of the maximum fee         parameters to a smaller value than the corresponding minimum fee         parameter.\"}],\"InvalidMaxFixedAPR()\":[{\"notice\":\"Thrown when governance attempts to set the maximum fixed APR to         a value that is smaller than the minimum fixed APR.\"}],\"InvalidMaxPositionDuration()\":[{\"notice\":\"Thrown when governance attempts to set the maximum position         duration to a value that isn't a multiple of the checkpoint         duration resolution or is smaller than the minimum position         duration.\"}],\"InvalidMaxTimeStretchAPR()\":[{\"notice\":\"Thrown when governance attempts to set the maximum time stretch         APR to a value that is smaller than the minimum time stretch         APR.\"}],\"InvalidMinCheckpointDuration()\":[{\"notice\":\"Thrown when governance attempts to set the minimum checkpoint         duration to a value that isn't a multiple of the checkpoint         duration resolution or is larger than the maximum checkpoint         duration.\"}],\"InvalidMinFees()\":[{\"notice\":\"Thrown when governance attempts to set one of the minimum fee         parameters to a larger value than the corresponding maximum fee         parameter.\"}],\"InvalidMinFixedAPR()\":[{\"notice\":\"Thrown when governance attempts to set the minimum fixed APR to         a value that is larger than the maximum fixed APR.\"}],\"InvalidMinPositionDuration()\":[{\"notice\":\"Thrown when governance attempts to set the minimum position         duration to a value that isn't a multiple of the checkpoint         duration resolution or is larger than the maximum position         duration.\"}],\"InvalidMinTimeStretchAPR()\":[{\"notice\":\"Thrown when governance attempts to set the minimum time stretch         APR to a value that is larger than the maximum time stretch         APR.\"}],\"InvalidPositionDuration()\":[{\"notice\":\"Thrown when the position duration passed to `deployAndInitialize`         doesn't fall within the range specified by the minimum and         maximum position durations.\"}],\"InvalidTimeStretchAPR()\":[{\"notice\":\"Thrown when a time stretch APR is passed to `deployAndInitialize`         that isn't within the range specified by the minimum and maximum         time stretch APRs or doesn't satisfy the lower and upper safe         bounds implied by the fixed APR.\"}],\"ReceiveLocked()\":[{\"notice\":\"Thrown when ether is sent to the factory when `receive` is         locked.\"}],\"TransferFailed()\":[{\"notice\":\"Thrown when an ether transfer fails.\"}],\"Unauthorized()\":[{\"notice\":\"Thrown when an unauthorized caller attempts to update one of the         governance administered parameters.\"}]},\"events\":{\"CheckpointDurationResolutionUpdated(uint256)\":{\"notice\":\"Emitted when the checkpoint duration resolution is updated.\"},\"DefaultPausersUpdated(address[])\":{\"notice\":\"Emitted when the list of default pausers is updated.\"},\"Deployed(address,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes)\":{\"notice\":\"Emitted when a Hyperdrive pool is deployed.\"},\"DeployerCoordinatorAdded(address)\":{\"notice\":\"Emitted when a deployer coordinator is added.\"},\"DeployerCoordinatorRemoved(address)\":{\"notice\":\"Emitted when a deployer coordinator is removed.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector used in new deployments is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the factory's governance is updated.\"},\"HyperdriveGovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address used in new deployments is         updated.\"},\"LinkerCodeHashUpdated(bytes32)\":{\"notice\":\"Emitted when the linker code hash used in new deployments is         updated.\"},\"LinkerFactoryUpdated(address)\":{\"notice\":\"Emitted when the linker factory used in new deployments is         updated.\"},\"MaxCheckpointDurationUpdated(uint256)\":{\"notice\":\"Emitted when the maximum checkpoint duration is updated.\"},\"MaxFeesUpdated((uint256,uint256,uint256,uint256))\":{\"notice\":\"Emitted when the maximum fees are updated.\"},\"MaxFixedAPRUpdated(uint256)\":{\"notice\":\"Emitted when the maximum fixed APR is updated.\"},\"MaxPositionDurationUpdated(uint256)\":{\"notice\":\"Emitted when the maximum position duration is updated.\"},\"MaxTimeStretchAPRUpdated(uint256)\":{\"notice\":\"Emitted when the maximum time stretch APR is updated.\"},\"MinCheckpointDurationUpdated(uint256)\":{\"notice\":\"Emitted when the minimum checkpoint duration is updated.\"},\"MinFeesUpdated((uint256,uint256,uint256,uint256))\":{\"notice\":\"Emitted when the minimum fees are updated.\"},\"MinFixedAPRUpdated(uint256)\":{\"notice\":\"Emitted when the minimum fixed APR is updated.\"},\"MinPositionDurationUpdated(uint256)\":{\"notice\":\"Emitted when the minimum position duration is updated.\"},\"MinTimeStretchAPRUpdated(uint256)\":{\"notice\":\"Emitted when the minimum time stretch APR is updated.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector used in new deployments is         updated.\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveFactory.sol\":\"IHyperdriveFactory\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveFactory.sol\":{\"keccak256\":\"0x5f7850059953850a99bba38ebd44d8c6346cd151e2d7f7af250a06edec603e9f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://01c6772ed3e05ac9148c2b1cba8efb582d90fc8cd770fc14e80a2807bee93cc6\",\"dweb:/ipfs/QmThmQJSqs7qwKDyVa2NniN7sqT8Ez6zyLGdTMWr3Hfaew\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"DeployerCoordinatorAlreadyAdded\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeployerCoordinatorIndexMismatch\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"DeployerCoordinatorNotAdded\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"EndIndexTooLarge\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidCheckpointDurationResolution\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidDeployConfig\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidDeployerCoordinator\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFees\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFixedAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidIndexes\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxFees\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxFixedAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMaxTimeStretchAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinCheckpointDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinFees\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinFixedAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinTimeStretchAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPositionDuration\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidTimeStretchAPR\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"ReceiveLocked\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransferFailed\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"Unauthorized\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newCheckpointDurationResolution\",\"type\":\"uint256\"}],\"name\":\"CheckpointDurationResolutionUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address[]\",\"name\":\"newDefaultPausers\",\"type\":\"address[]\"}],\"name\":\"DefaultPausersUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"deployerCoordinator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"hyperdrive\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"contract IERC20\",\"name\":\"baseToken\",\"type\":\"address\"},{\"internalType\":\"contract IERC20\",\"name\":\"vaultSharesToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"linkerFactory\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"linkerCodeHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"minimumShareReserves\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"minimumTransactionAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"positionDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"checkpointDuration\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"timeStretch\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"feeCollector\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"sweepCollector\",\"type\":\"address\"},{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"fees\",\"type\":\"tuple\"}],\"indexed\":false,\"internalType\":\"struct IHyperdrive.PoolDeployConfig\",\"name\":\"config\",\"type\":\"tuple\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"extraData\",\"type\":\"bytes\"}],\"name\":\"Deployed\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"deployerCoordinator\",\"type\":\"address\"}],\"name\":\"DeployerCoordinatorAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"deployerCoordinator\",\"type\":\"address\"}],\"name\":\"DeployerCoordinatorRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"governance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"hyperdriveGovernance\",\"type\":\"address\"}],\"name\":\"HyperdriveGovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newLinkerCodeHash\",\"type\":\"bytes32\"}],\"name\":\"LinkerCodeHashUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newLinkerFactory\",\"type\":\"address\"}],\"name\":\"LinkerFactoryUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMaxCheckpointDuration\",\"type\":\"uint256\"}],\"name\":\"MaxCheckpointDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"newMaxFees\",\"type\":\"tuple\"}],\"name\":\"MaxFeesUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMaxFixedAPR\",\"type\":\"uint256\"}],\"name\":\"MaxFixedAPRUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMaxPositionDuration\",\"type\":\"uint256\"}],\"name\":\"MaxPositionDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMaxTimeStretchAPR\",\"type\":\"uint256\"}],\"name\":\"MaxTimeStretchAPRUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMinCheckpointDuration\",\"type\":\"uint256\"}],\"name\":\"MinCheckpointDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"curve\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"flat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceLP\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"governanceZombie\",\"type\":\"uint256\"}],\"indexed\":false,\"internalType\":\"struct IHyperdrive.Fees\",\"name\":\"newMinFees\",\"type\":\"tuple\"}],\"name\":\"MinFeesUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMinFixedAPR\",\"type\":\"uint256\"}],\"name\":\"MinFixedAPRUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMinPositionDuration\",\"type\":\"uint256\"}],\"name\":\"MinPositionDurationUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newMinTimeStretchAPR\",\"type\":\"uint256\"}],\"name\":\"MinTimeStretchAPRUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"errors\":{\"DeployerCoordinatorAlreadyAdded()\":[{\"notice\":\"Thrown when governance attempts to add a deployer coordinator         that has already been added.\"}],\"DeployerCoordinatorIndexMismatch()\":[{\"notice\":\"Thrown when governance attempts to remove a deployer coordinator         but specifies the wrong index within the list of deployer         coordinators.\"}],\"DeployerCoordinatorNotAdded()\":[{\"notice\":\"Thrown when governance attempts to remove a deployer coordinator         that was never added.\"}],\"EndIndexTooLarge()\":[{\"notice\":\"Thrown when the ending index of a range is larger than the         underlying list.\"}],\"InvalidCheckpointDuration()\":[{\"notice\":\"Thrown when the checkpoint duration supplied to `deployTarget`         or `deployAndInitialize` isn't a multiple of the checkpoint         duration resolution or isn't within the range specified by the         minimum and maximum checkpoint durations.\"}],\"InvalidCheckpointDurationResolution()\":[{\"notice\":\"Thrown when governance attempts to set the checkpoint duration         resolution to a value that doesn't evenly divide the minimum         checkpoint duration, maximum checkpoint duration, minimum         position duration, or maximum position duration.\"}],\"InvalidDeployConfig()\":[{\"notice\":\"Thrown when the deploy configuration passed to         `deployAndInitialize` has fields set that will be overridden by         governance.\"}],\"InvalidDeployerCoordinator()\":[{\"notice\":\"Thrown when the deployer coordinator passed to         `deployAndInitialize` hasn't been added to the factory.\"}],\"InvalidFees()\":[{\"notice\":\"Thrown when the fee parameters passed to `deployAndInitialize`         aren't within the range specified by the minimum and maximum         fees.\"}],\"InvalidFixedAPR()\":[{\"notice\":\"Thrown when the fixed APR passed to `deployAndInitialize` isn't         within the range specified by the minimum and maximum fixed         APRs.\"}],\"InvalidIndexes()\":[{\"notice\":\"Thrown when the starting index of a range is larger than the         ending index.\"}],\"InvalidMaxCheckpointDuration()\":[{\"notice\":\"Thrown when governance attempts to set the maximum checkpoint         duration to a value that isn't a multiple of the checkpoint         duration resolution or is smaller than the minimum checkpoint         duration.\"}],\"InvalidMaxFees()\":[{\"notice\":\"Thrown when governance attempts to set one of the maximum fee         parameters to a smaller value than the corresponding minimum fee         parameter.\"}],\"InvalidMaxFixedAPR()\":[{\"notice\":\"Thrown when governance attempts to set the maximum fixed APR to         a value that is smaller than the minimum fixed APR.\"}],\"InvalidMaxPositionDuration()\":[{\"notice\":\"Thrown when governance attempts to set the maximum position         duration to a value that isn't a multiple of the checkpoint         duration resolution or is smaller than the minimum position         duration.\"}],\"InvalidMaxTimeStretchAPR()\":[{\"notice\":\"Thrown when governance attempts to set the maximum time stretch         APR to a value that is smaller than the minimum time stretch         APR.\"}],\"InvalidMinCheckpointDuration()\":[{\"notice\":\"Thrown when governance attempts to set the minimum checkpoint         duration to a value that isn't a multiple of the checkpoint         duration resolution or is larger than the maximum checkpoint         duration.\"}],\"InvalidMinFees()\":[{\"notice\":\"Thrown when governance attempts to set one of the minimum fee         parameters to a larger value than the corresponding maximum fee         parameter.\"}],\"InvalidMinFixedAPR()\":[{\"notice\":\"Thrown when governance attempts to set the minimum fixed APR to         a value that is larger than the maximum fixed APR.\"}],\"InvalidMinPositionDuration()\":[{\"notice\":\"Thrown when governance attempts to set the minimum position         duration to a value that isn't a multiple of the checkpoint         duration resolution or is larger than the maximum position         duration.\"}],\"InvalidMinTimeStretchAPR()\":[{\"notice\":\"Thrown when governance attempts to set the minimum time stretch         APR to a value that is larger than the maximum time stretch         APR.\"}],\"InvalidPositionDuration()\":[{\"notice\":\"Thrown when the position duration passed to `deployAndInitialize`         doesn't fall within the range specified by the minimum and         maximum position durations.\"}],\"InvalidTimeStretchAPR()\":[{\"notice\":\"Thrown when a time stretch APR is passed to `deployAndInitialize`         that isn't within the range specified by the minimum and maximum         time stretch APRs or doesn't satisfy the lower and upper safe         bounds implied by the fixed APR.\"}],\"ReceiveLocked()\":[{\"notice\":\"Thrown when ether is sent to the factory when `receive` is         locked.\"}],\"TransferFailed()\":[{\"notice\":\"Thrown when an ether transfer fails.\"}],\"Unauthorized()\":[{\"notice\":\"Thrown when an unauthorized caller attempts to update one of the         governance administered parameters.\"}]},\"events\":{\"CheckpointDurationResolutionUpdated(uint256)\":{\"notice\":\"Emitted when the checkpoint duration resolution is updated.\"},\"DefaultPausersUpdated(address[])\":{\"notice\":\"Emitted when the list of default pausers is updated.\"},\"Deployed(address,address,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes)\":{\"notice\":\"Emitted when a Hyperdrive pool is deployed.\"},\"DeployerCoordinatorAdded(address)\":{\"notice\":\"Emitted when a deployer coordinator is added.\"},\"DeployerCoordinatorRemoved(address)\":{\"notice\":\"Emitted when a deployer coordinator is removed.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector used in new deployments is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the factory's governance is updated.\"},\"HyperdriveGovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address used in new deployments is         updated.\"},\"LinkerCodeHashUpdated(bytes32)\":{\"notice\":\"Emitted when the linker code hash used in new deployments is         updated.\"},\"LinkerFactoryUpdated(address)\":{\"notice\":\"Emitted when the linker factory used in new deployments is         updated.\"},\"MaxCheckpointDurationUpdated(uint256)\":{\"notice\":\"Emitted when the maximum checkpoint duration is updated.\"},\"MaxFeesUpdated((uint256,uint256,uint256,uint256))\":{\"notice\":\"Emitted when the maximum fees are updated.\"},\"MaxFixedAPRUpdated(uint256)\":{\"notice\":\"Emitted when the maximum fixed APR is updated.\"},\"MaxPositionDurationUpdated(uint256)\":{\"notice\":\"Emitted when the maximum position duration is updated.\"},\"MaxTimeStretchAPRUpdated(uint256)\":{\"notice\":\"Emitted when the maximum time stretch APR is updated.\"},\"MinCheckpointDurationUpdated(uint256)\":{\"notice\":\"Emitted when the minimum checkpoint duration is updated.\"},\"MinFeesUpdated((uint256,uint256,uint256,uint256))\":{\"notice\":\"Emitted when the minimum fees are updated.\"},\"MinFixedAPRUpdated(uint256)\":{\"notice\":\"Emitted when the minimum fixed APR is updated.\"},\"MinPositionDurationUpdated(uint256)\":{\"notice\":\"Emitted when the minimum position duration is updated.\"},\"MinTimeStretchAPRUpdated(uint256)\":{\"notice\":\"Emitted when the minimum time stretch APR is updated.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector used in new deployments is         updated.\"}},\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/IHyperdriveFactory.sol\":\"IHyperdriveFactory\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339\",\"dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19\",\"dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveFactory.sol\":{\"keccak256\":\"0x5f7850059953850a99bba38ebd44d8c6346cd151e2d7f7af250a06edec603e9f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://01c6772ed3e05ac9148c2b1cba8efb582d90fc8cd770fc14e80a2807bee93cc6\",\"dweb:/ipfs/QmThmQJSqs7qwKDyVa2NniN7sqT8Ez6zyLGdTMWr3Hfaew\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -1172,18 +1172,18 @@ export const IHyperdriveFactory = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdrive.sol": {
-                "keccak256": "0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71",
+                "keccak256": "0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5",
                 "urls": [
-                    "bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf",
-                    "dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm"
+                    "bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339",
+                    "dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveCore.sol": {
-                "keccak256": "0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e",
+                "keccak256": "0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f",
                 "urls": [
-                    "bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24",
-                    "dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h"
+                    "bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19",
+                    "dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1256,20 +1256,20 @@ export const IHyperdriveFactory = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IHyperdriveFactory.sol",
-        "id": 11236,
+        "id": 11086,
         "exportedSymbols": {
             "IHyperdrive": [
-                10506
+                10351
             ],
             "IHyperdriveFactory": [
-                11235
+                11085
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:8900:90",
         "nodes": [
             {
-                "id": 11039,
+                "id": 10889,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:90",
                 "nodes": [],
@@ -1280,23 +1280,23 @@ export const IHyperdriveFactory = {
                 ]
             },
             {
-                "id": 11041,
+                "id": 10891,
                 "nodeType": "ImportDirective",
                 "src": "64:48:90",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "./IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 11236,
-                "sourceUnit": 10507,
+                "scope": 11086,
+                "sourceUnit": 10352,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 11040,
+                            "id": 10890,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10506,
+                            "referencedDeclaration": 10351,
                             "src": "73:11:90",
                             "typeDescriptions": {}
                         },
@@ -1306,18 +1306,18 @@ export const IHyperdriveFactory = {
                 "unitAlias": ""
             },
             {
-                "id": 11235,
+                "id": 11085,
                 "nodeType": "ContractDefinition",
                 "src": "114:8824:90",
                 "nodes": [
                     {
-                        "id": 11053,
+                        "id": 10903,
                         "nodeType": "EventDefinition",
                         "src": "229:164:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11042,
+                            "id": 10892,
                             "nodeType": "StructuredDocumentation",
                             "src": "169:55:90",
                             "text": "@notice Emitted when a Hyperdrive pool is deployed."
@@ -1326,18 +1326,18 @@ export const IHyperdriveFactory = {
                         "name": "Deployed",
                         "nameLocation": "235:8:90",
                         "parameters": {
-                            "id": 11052,
+                            "id": 10902,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11044,
+                                    "id": 10894,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "deployerCoordinator",
                                     "nameLocation": "269:19:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11053,
+                                    "scope": 10903,
                                     "src": "253:35:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1346,7 +1346,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11043,
+                                        "id": 10893,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "253:7:90",
@@ -1360,13 +1360,13 @@ export const IHyperdriveFactory = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11046,
+                                    "id": 10896,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "hyperdrive",
                                     "nameLocation": "306:10:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11053,
+                                    "scope": 10903,
                                     "src": "298:18:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1375,7 +1375,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11045,
+                                        "id": 10895,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "298:7:90",
@@ -1389,38 +1389,38 @@ export const IHyperdriveFactory = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11049,
+                                    "id": 10899,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "config",
                                     "nameLocation": "355:6:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11053,
+                                    "scope": 10903,
                                     "src": "326:35:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_memory_ptr",
+                                        "typeIdentifier": "t_struct$_PoolDeployConfig_$10108_memory_ptr",
                                         "typeString": "struct IHyperdrive.PoolDeployConfig"
                                     },
                                     "typeName": {
-                                        "id": 11048,
+                                        "id": 10898,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 11047,
+                                            "id": 10897,
                                             "name": "IHyperdrive.PoolDeployConfig",
                                             "nameLocations": [
                                                 "326:11:90",
                                                 "338:16:90"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10254,
+                                            "referencedDeclaration": 10108,
                                             "src": "326:28:90"
                                         },
-                                        "referencedDeclaration": 10254,
+                                        "referencedDeclaration": 10108,
                                         "src": "326:28:90",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10254_storage_ptr",
+                                            "typeIdentifier": "t_struct$_PoolDeployConfig_$10108_storage_ptr",
                                             "typeString": "struct IHyperdrive.PoolDeployConfig"
                                         }
                                     },
@@ -1428,13 +1428,13 @@ export const IHyperdriveFactory = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11051,
+                                    "id": 10901,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "extraData",
                                     "nameLocation": "377:9:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11053,
+                                    "scope": 10903,
                                     "src": "371:15:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1443,7 +1443,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 11050,
+                                        "id": 10900,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "371:5:90",
@@ -1459,13 +1459,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11058,
+                        "id": 10908,
                         "nodeType": "EventDefinition",
                         "src": "461:68:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11054,
+                            "id": 10904,
                             "nodeType": "StructuredDocumentation",
                             "src": "399:57:90",
                             "text": "@notice Emitted when a deployer coordinator is added."
@@ -1474,18 +1474,18 @@ export const IHyperdriveFactory = {
                         "name": "DeployerCoordinatorAdded",
                         "nameLocation": "467:24:90",
                         "parameters": {
-                            "id": 11057,
+                            "id": 10907,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11056,
+                                    "id": 10906,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "deployerCoordinator",
                                     "nameLocation": "508:19:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11058,
+                                    "scope": 10908,
                                     "src": "492:35:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1494,7 +1494,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11055,
+                                        "id": 10905,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "492:7:90",
@@ -1511,13 +1511,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11063,
+                        "id": 10913,
                         "nodeType": "EventDefinition",
                         "src": "599:70:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11059,
+                            "id": 10909,
                             "nodeType": "StructuredDocumentation",
                             "src": "535:59:90",
                             "text": "@notice Emitted when a deployer coordinator is removed."
@@ -1526,18 +1526,18 @@ export const IHyperdriveFactory = {
                         "name": "DeployerCoordinatorRemoved",
                         "nameLocation": "605:26:90",
                         "parameters": {
-                            "id": 11062,
+                            "id": 10912,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11061,
+                                    "id": 10911,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "deployerCoordinator",
                                     "nameLocation": "648:19:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11063,
+                                    "scope": 10913,
                                     "src": "632:35:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1546,7 +1546,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11060,
+                                        "id": 10910,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "632:7:90",
@@ -1563,13 +1563,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11069,
+                        "id": 10919,
                         "nodeType": "EventDefinition",
                         "src": "744:57:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11064,
+                            "id": 10914,
                             "nodeType": "StructuredDocumentation",
                             "src": "675:64:90",
                             "text": "@notice Emitted when the list of default pausers is updated."
@@ -1578,18 +1578,18 @@ export const IHyperdriveFactory = {
                         "name": "DefaultPausersUpdated",
                         "nameLocation": "750:21:90",
                         "parameters": {
-                            "id": 11068,
+                            "id": 10918,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11067,
+                                    "id": 10917,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newDefaultPausers",
                                     "nameLocation": "782:17:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11069,
+                                    "scope": 10919,
                                     "src": "772:27:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1599,7 +1599,7 @@ export const IHyperdriveFactory = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 11065,
+                                            "id": 10915,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "772:7:90",
@@ -1609,7 +1609,7 @@ export const IHyperdriveFactory = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 11066,
+                                        "id": 10916,
                                         "nodeType": "ArrayTypeName",
                                         "src": "772:9:90",
                                         "typeDescriptions": {
@@ -1624,13 +1624,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11074,
+                        "id": 10924,
                         "nodeType": "EventDefinition",
                         "src": "890:59:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11070,
+                            "id": 10920,
                             "nodeType": "StructuredDocumentation",
                             "src": "807:78:90",
                             "text": "@notice Emitted when the fee collector used in new deployments is updated."
@@ -1639,18 +1639,18 @@ export const IHyperdriveFactory = {
                         "name": "FeeCollectorUpdated",
                         "nameLocation": "896:19:90",
                         "parameters": {
-                            "id": 11073,
+                            "id": 10923,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11072,
+                                    "id": 10922,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "newFeeCollector",
                                     "nameLocation": "932:15:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11074,
+                                    "scope": 10924,
                                     "src": "916:31:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1659,7 +1659,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11071,
+                                        "id": 10921,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "916:7:90",
@@ -1676,13 +1676,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11079,
+                        "id": 10929,
                         "nodeType": "EventDefinition",
                         "src": "1056:63:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11075,
+                            "id": 10925,
                             "nodeType": "StructuredDocumentation",
                             "src": "955:96:90",
                             "text": "@notice Emitted when the sweep collector used in new deployments is\n         updated."
@@ -1691,18 +1691,18 @@ export const IHyperdriveFactory = {
                         "name": "SweepCollectorUpdated",
                         "nameLocation": "1062:21:90",
                         "parameters": {
-                            "id": 11078,
+                            "id": 10928,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11077,
+                                    "id": 10927,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "newSweepCollector",
                                     "nameLocation": "1100:17:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11079,
+                                    "scope": 10929,
                                     "src": "1084:33:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1711,7 +1711,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11076,
+                                        "id": 10926,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1084:7:90",
@@ -1728,13 +1728,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11084,
+                        "id": 10934,
                         "nodeType": "EventDefinition",
                         "src": "1191:52:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11080,
+                            "id": 10930,
                             "nodeType": "StructuredDocumentation",
                             "src": "1125:61:90",
                             "text": "@notice Emitted when the factory's governance is updated."
@@ -1743,18 +1743,18 @@ export const IHyperdriveFactory = {
                         "name": "GovernanceUpdated",
                         "nameLocation": "1197:17:90",
                         "parameters": {
-                            "id": 11083,
+                            "id": 10933,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11082,
+                                    "id": 10932,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "governance",
                                     "nameLocation": "1231:10:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11084,
+                                    "scope": 10934,
                                     "src": "1215:26:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1763,7 +1763,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11081,
+                                        "id": 10931,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1215:7:90",
@@ -1780,13 +1780,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11089,
+                        "id": 10939,
                         "nodeType": "EventDefinition",
                         "src": "1353:72:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11085,
+                            "id": 10935,
                             "nodeType": "StructuredDocumentation",
                             "src": "1249:99:90",
                             "text": "@notice Emitted when the governance address used in new deployments is\n         updated."
@@ -1795,18 +1795,18 @@ export const IHyperdriveFactory = {
                         "name": "HyperdriveGovernanceUpdated",
                         "nameLocation": "1359:27:90",
                         "parameters": {
-                            "id": 11088,
+                            "id": 10938,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11087,
+                                    "id": 10937,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "hyperdriveGovernance",
                                     "nameLocation": "1403:20:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11089,
+                                    "scope": 10939,
                                     "src": "1387:36:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1815,7 +1815,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11086,
+                                        "id": 10936,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1387:7:90",
@@ -1832,13 +1832,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11094,
+                        "id": 10944,
                         "nodeType": "EventDefinition",
                         "src": "1531:61:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11090,
+                            "id": 10940,
                             "nodeType": "StructuredDocumentation",
                             "src": "1431:95:90",
                             "text": "@notice Emitted when the linker factory used in new deployments is\n         updated."
@@ -1847,18 +1847,18 @@ export const IHyperdriveFactory = {
                         "name": "LinkerFactoryUpdated",
                         "nameLocation": "1537:20:90",
                         "parameters": {
-                            "id": 11093,
+                            "id": 10943,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11092,
+                                    "id": 10942,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "newLinkerFactory",
                                     "nameLocation": "1574:16:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11094,
+                                    "scope": 10944,
                                     "src": "1558:32:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1867,7 +1867,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11091,
+                                        "id": 10941,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1558:7:90",
@@ -1884,13 +1884,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11099,
+                        "id": 10949,
                         "nodeType": "EventDefinition",
                         "src": "1700:63:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11095,
+                            "id": 10945,
                             "nodeType": "StructuredDocumentation",
                             "src": "1598:97:90",
                             "text": "@notice Emitted when the linker code hash used in new deployments is\n         updated."
@@ -1899,18 +1899,18 @@ export const IHyperdriveFactory = {
                         "name": "LinkerCodeHashUpdated",
                         "nameLocation": "1706:21:90",
                         "parameters": {
-                            "id": 11098,
+                            "id": 10948,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11097,
+                                    "id": 10947,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "newLinkerCodeHash",
                                     "nameLocation": "1744:17:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11099,
+                                    "scope": 10949,
                                     "src": "1728:33:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1919,7 +1919,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 11096,
+                                        "id": 10946,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1728:7:90",
@@ -1935,13 +1935,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11104,
+                        "id": 10954,
                         "nodeType": "EventDefinition",
                         "src": "1845:97:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11100,
+                            "id": 10950,
                             "nodeType": "StructuredDocumentation",
                             "src": "1769:71:90",
                             "text": "@notice Emitted when the checkpoint duration resolution is updated."
@@ -1950,18 +1950,18 @@ export const IHyperdriveFactory = {
                         "name": "CheckpointDurationResolutionUpdated",
                         "nameLocation": "1851:35:90",
                         "parameters": {
-                            "id": 11103,
+                            "id": 10953,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11102,
+                                    "id": 10952,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newCheckpointDurationResolution",
                                     "nameLocation": "1904:31:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11104,
+                                    "scope": 10954,
                                     "src": "1896:39:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1970,7 +1970,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11101,
+                                        "id": 10951,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1896:7:90",
@@ -1986,13 +1986,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11109,
+                        "id": 10959,
                         "nodeType": "EventDefinition",
                         "src": "2021:69:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11105,
+                            "id": 10955,
                             "nodeType": "StructuredDocumentation",
                             "src": "1948:68:90",
                             "text": "@notice Emitted when the maximum checkpoint duration is updated."
@@ -2001,18 +2001,18 @@ export const IHyperdriveFactory = {
                         "name": "MaxCheckpointDurationUpdated",
                         "nameLocation": "2027:28:90",
                         "parameters": {
-                            "id": 11108,
+                            "id": 10958,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11107,
+                                    "id": 10957,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMaxCheckpointDuration",
                                     "nameLocation": "2064:24:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11109,
+                                    "scope": 10959,
                                     "src": "2056:32:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2021,7 +2021,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11106,
+                                        "id": 10956,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2056:7:90",
@@ -2037,13 +2037,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11114,
+                        "id": 10964,
                         "nodeType": "EventDefinition",
                         "src": "2169:69:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11110,
+                            "id": 10960,
                             "nodeType": "StructuredDocumentation",
                             "src": "2096:68:90",
                             "text": "@notice Emitted when the minimum checkpoint duration is updated."
@@ -2052,18 +2052,18 @@ export const IHyperdriveFactory = {
                         "name": "MinCheckpointDurationUpdated",
                         "nameLocation": "2175:28:90",
                         "parameters": {
-                            "id": 11113,
+                            "id": 10963,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11112,
+                                    "id": 10962,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMinCheckpointDuration",
                                     "nameLocation": "2212:24:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11114,
+                                    "scope": 10964,
                                     "src": "2204:32:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2072,7 +2072,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11111,
+                                        "id": 10961,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2204:7:90",
@@ -2088,13 +2088,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11119,
+                        "id": 10969,
                         "nodeType": "EventDefinition",
                         "src": "2315:65:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11115,
+                            "id": 10965,
                             "nodeType": "StructuredDocumentation",
                             "src": "2244:66:90",
                             "text": "@notice Emitted when the maximum position duration is updated."
@@ -2103,18 +2103,18 @@ export const IHyperdriveFactory = {
                         "name": "MaxPositionDurationUpdated",
                         "nameLocation": "2321:26:90",
                         "parameters": {
-                            "id": 11118,
+                            "id": 10968,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11117,
+                                    "id": 10967,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMaxPositionDuration",
                                     "nameLocation": "2356:22:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11119,
+                                    "scope": 10969,
                                     "src": "2348:30:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2123,7 +2123,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11116,
+                                        "id": 10966,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2348:7:90",
@@ -2139,13 +2139,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11124,
+                        "id": 10974,
                         "nodeType": "EventDefinition",
                         "src": "2457:65:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11120,
+                            "id": 10970,
                             "nodeType": "StructuredDocumentation",
                             "src": "2386:66:90",
                             "text": "@notice Emitted when the minimum position duration is updated."
@@ -2154,18 +2154,18 @@ export const IHyperdriveFactory = {
                         "name": "MinPositionDurationUpdated",
                         "nameLocation": "2463:26:90",
                         "parameters": {
-                            "id": 11123,
+                            "id": 10973,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11122,
+                                    "id": 10972,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMinPositionDuration",
                                     "nameLocation": "2498:22:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11124,
+                                    "scope": 10974,
                                     "src": "2490:30:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2174,7 +2174,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11121,
+                                        "id": 10971,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2490:7:90",
@@ -2190,13 +2190,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11129,
+                        "id": 10979,
                         "nodeType": "EventDefinition",
                         "src": "2591:49:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11125,
+                            "id": 10975,
                             "nodeType": "StructuredDocumentation",
                             "src": "2528:58:90",
                             "text": "@notice Emitted when the maximum fixed APR is updated."
@@ -2205,18 +2205,18 @@ export const IHyperdriveFactory = {
                         "name": "MaxFixedAPRUpdated",
                         "nameLocation": "2597:18:90",
                         "parameters": {
-                            "id": 11128,
+                            "id": 10978,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11127,
+                                    "id": 10977,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMaxFixedAPR",
                                     "nameLocation": "2624:14:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11129,
+                                    "scope": 10979,
                                     "src": "2616:22:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2225,7 +2225,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11126,
+                                        "id": 10976,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2616:7:90",
@@ -2241,13 +2241,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11134,
+                        "id": 10984,
                         "nodeType": "EventDefinition",
                         "src": "2709:49:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11130,
+                            "id": 10980,
                             "nodeType": "StructuredDocumentation",
                             "src": "2646:58:90",
                             "text": "@notice Emitted when the minimum fixed APR is updated."
@@ -2256,18 +2256,18 @@ export const IHyperdriveFactory = {
                         "name": "MinFixedAPRUpdated",
                         "nameLocation": "2715:18:90",
                         "parameters": {
-                            "id": 11133,
+                            "id": 10983,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11132,
+                                    "id": 10982,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMinFixedAPR",
                                     "nameLocation": "2742:14:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11134,
+                                    "scope": 10984,
                                     "src": "2734:22:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2276,7 +2276,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11131,
+                                        "id": 10981,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2734:7:90",
@@ -2292,13 +2292,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11139,
+                        "id": 10989,
                         "nodeType": "EventDefinition",
                         "src": "2834:61:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11135,
+                            "id": 10985,
                             "nodeType": "StructuredDocumentation",
                             "src": "2764:65:90",
                             "text": "@notice Emitted when the maximum time stretch APR is updated."
@@ -2307,18 +2307,18 @@ export const IHyperdriveFactory = {
                         "name": "MaxTimeStretchAPRUpdated",
                         "nameLocation": "2840:24:90",
                         "parameters": {
-                            "id": 11138,
+                            "id": 10988,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11137,
+                                    "id": 10987,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMaxTimeStretchAPR",
                                     "nameLocation": "2873:20:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11139,
+                                    "scope": 10989,
                                     "src": "2865:28:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2327,7 +2327,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11136,
+                                        "id": 10986,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2865:7:90",
@@ -2343,13 +2343,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11144,
+                        "id": 10994,
                         "nodeType": "EventDefinition",
                         "src": "2971:61:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11140,
+                            "id": 10990,
                             "nodeType": "StructuredDocumentation",
                             "src": "2901:65:90",
                             "text": "@notice Emitted when the minimum time stretch APR is updated."
@@ -2358,18 +2358,18 @@ export const IHyperdriveFactory = {
                         "name": "MinTimeStretchAPRUpdated",
                         "nameLocation": "2977:24:90",
                         "parameters": {
-                            "id": 11143,
+                            "id": 10993,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11142,
+                                    "id": 10992,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMinTimeStretchAPR",
                                     "nameLocation": "3010:20:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11144,
+                                    "scope": 10994,
                                     "src": "3002:28:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2378,7 +2378,7 @@ export const IHyperdriveFactory = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11141,
+                                        "id": 10991,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3002:7:90",
@@ -2394,13 +2394,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11150,
+                        "id": 11000,
                         "nodeType": "EventDefinition",
                         "src": "3097:50:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11145,
+                            "id": 10995,
                             "nodeType": "StructuredDocumentation",
                             "src": "3038:54:90",
                             "text": "@notice Emitted when the maximum fees are updated."
@@ -2409,43 +2409,43 @@ export const IHyperdriveFactory = {
                         "name": "MaxFeesUpdated",
                         "nameLocation": "3103:14:90",
                         "parameters": {
-                            "id": 11149,
+                            "id": 10999,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11148,
+                                    "id": 10998,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMaxFees",
                                     "nameLocation": "3135:10:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11150,
+                                    "scope": 11000,
                                     "src": "3118:27:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Fees_$10065_memory_ptr",
                                         "typeString": "struct IHyperdrive.Fees"
                                     },
                                     "typeName": {
-                                        "id": 11147,
+                                        "id": 10997,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 11146,
+                                            "id": 10996,
                                             "name": "IHyperdrive.Fees",
                                             "nameLocations": [
                                                 "3118:11:90",
                                                 "3130:4:90"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10211,
+                                            "referencedDeclaration": 10065,
                                             "src": "3118:16:90"
                                         },
-                                        "referencedDeclaration": 10211,
+                                        "referencedDeclaration": 10065,
                                         "src": "3118:16:90",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Fees_$10211_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Fees_$10065_storage_ptr",
                                             "typeString": "struct IHyperdrive.Fees"
                                         }
                                     },
@@ -2456,13 +2456,13 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11156,
+                        "id": 11006,
                         "nodeType": "EventDefinition",
                         "src": "3212:50:90",
                         "nodes": [],
                         "anonymous": false,
                         "documentation": {
-                            "id": 11151,
+                            "id": 11001,
                             "nodeType": "StructuredDocumentation",
                             "src": "3153:54:90",
                             "text": "@notice Emitted when the minimum fees are updated."
@@ -2471,43 +2471,43 @@ export const IHyperdriveFactory = {
                         "name": "MinFeesUpdated",
                         "nameLocation": "3218:14:90",
                         "parameters": {
-                            "id": 11155,
+                            "id": 11005,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11154,
+                                    "id": 11004,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "newMinFees",
                                     "nameLocation": "3250:10:90",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11156,
+                                    "scope": 11006,
                                     "src": "3233:27:90",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Fees_$10065_memory_ptr",
                                         "typeString": "struct IHyperdrive.Fees"
                                     },
                                     "typeName": {
-                                        "id": 11153,
+                                        "id": 11003,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 11152,
+                                            "id": 11002,
                                             "name": "IHyperdrive.Fees",
                                             "nameLocations": [
                                                 "3233:11:90",
                                                 "3245:4:90"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 10211,
+                                            "referencedDeclaration": 10065,
                                             "src": "3233:16:90"
                                         },
-                                        "referencedDeclaration": 10211,
+                                        "referencedDeclaration": 10065,
                                         "src": "3233:16:90",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Fees_$10211_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Fees_$10065_storage_ptr",
                                             "typeString": "struct IHyperdrive.Fees"
                                         }
                                     },
@@ -2518,12 +2518,12 @@ export const IHyperdriveFactory = {
                         }
                     },
                     {
-                        "id": 11159,
+                        "id": 11009,
                         "nodeType": "ErrorDefinition",
                         "src": "3411:40:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11157,
+                            "id": 11007,
                             "nodeType": "StructuredDocumentation",
                             "src": "3288:118:90",
                             "text": "@notice Thrown when governance attempts to add a deployer coordinator\n         that has already been added."
@@ -2532,19 +2532,19 @@ export const IHyperdriveFactory = {
                         "name": "DeployerCoordinatorAlreadyAdded",
                         "nameLocation": "3417:31:90",
                         "parameters": {
-                            "id": 11158,
+                            "id": 11008,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3448:2:90"
                         }
                     },
                     {
-                        "id": 11162,
+                        "id": 11012,
                         "nodeType": "ErrorDefinition",
                         "src": "3576:36:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11160,
+                            "id": 11010,
                             "nodeType": "StructuredDocumentation",
                             "src": "3457:114:90",
                             "text": "@notice Thrown when governance attempts to remove a deployer coordinator\n         that was never added."
@@ -2553,19 +2553,19 @@ export const IHyperdriveFactory = {
                         "name": "DeployerCoordinatorNotAdded",
                         "nameLocation": "3582:27:90",
                         "parameters": {
-                            "id": 11161,
+                            "id": 11011,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3609:2:90"
                         }
                     },
                     {
-                        "id": 11165,
+                        "id": 11015,
                         "nodeType": "ErrorDefinition",
                         "src": "3803:41:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11163,
+                            "id": 11013,
                             "nodeType": "StructuredDocumentation",
                             "src": "3618:180:90",
                             "text": "@notice Thrown when governance attempts to remove a deployer coordinator\n         but specifies the wrong index within the list of deployer\n         coordinators."
@@ -2574,19 +2574,19 @@ export const IHyperdriveFactory = {
                         "name": "DeployerCoordinatorIndexMismatch",
                         "nameLocation": "3809:32:90",
                         "parameters": {
-                            "id": 11164,
+                            "id": 11014,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3841:2:90"
                         }
                     },
                     {
-                        "id": 11168,
+                        "id": 11018,
                         "nodeType": "ErrorDefinition",
                         "src": "3958:25:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11166,
+                            "id": 11016,
                             "nodeType": "StructuredDocumentation",
                             "src": "3850:103:90",
                             "text": "@notice Thrown when the ending index of a range is larger than the\n         underlying list."
@@ -2595,19 +2595,19 @@ export const IHyperdriveFactory = {
                         "name": "EndIndexTooLarge",
                         "nameLocation": "3964:16:90",
                         "parameters": {
-                            "id": 11167,
+                            "id": 11017,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3980:2:90"
                         }
                     },
                     {
-                        "id": 11171,
+                        "id": 11021,
                         "nodeType": "ErrorDefinition",
                         "src": "4281:34:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11169,
+                            "id": 11019,
                             "nodeType": "StructuredDocumentation",
                             "src": "3989:287:90",
                             "text": "@notice Thrown when the checkpoint duration supplied to `deployTarget`\n         or `deployAndInitialize` isn't a multiple of the checkpoint\n         duration resolution or isn't within the range specified by the\n         minimum and maximum checkpoint durations."
@@ -2616,19 +2616,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidCheckpointDuration",
                         "nameLocation": "4287:25:90",
                         "parameters": {
-                            "id": 11170,
+                            "id": 11020,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "4312:2:90"
                         }
                     },
                     {
-                        "id": 11174,
+                        "id": 11024,
                         "nodeType": "ErrorDefinition",
                         "src": "4616:44:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11172,
+                            "id": 11022,
                             "nodeType": "StructuredDocumentation",
                             "src": "4321:290:90",
                             "text": "@notice Thrown when governance attempts to set the checkpoint duration\n         resolution to a value that doesn't evenly divide the minimum\n         checkpoint duration, maximum checkpoint duration, minimum\n         position duration, or maximum position duration."
@@ -2637,19 +2637,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidCheckpointDurationResolution",
                         "nameLocation": "4622:35:90",
                         "parameters": {
-                            "id": 11173,
+                            "id": 11023,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "4657:2:90"
                         }
                     },
                     {
-                        "id": 11177,
+                        "id": 11027,
                         "nodeType": "ErrorDefinition",
                         "src": "4837:28:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11175,
+                            "id": 11025,
                             "nodeType": "StructuredDocumentation",
                             "src": "4666:166:90",
                             "text": "@notice Thrown when the deploy configuration passed to\n         `deployAndInitialize` has fields set that will be overridden by\n         governance."
@@ -2658,19 +2658,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidDeployConfig",
                         "nameLocation": "4843:19:90",
                         "parameters": {
-                            "id": 11176,
+                            "id": 11026,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "4862:2:90"
                         }
                     },
                     {
-                        "id": 11180,
+                        "id": 11030,
                         "nodeType": "ErrorDefinition",
                         "src": "5006:35:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11178,
+                            "id": 11028,
                             "nodeType": "StructuredDocumentation",
                             "src": "4871:130:90",
                             "text": "@notice Thrown when the deployer coordinator passed to\n         `deployAndInitialize` hasn't been added to the factory."
@@ -2679,19 +2679,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidDeployerCoordinator",
                         "nameLocation": "5012:26:90",
                         "parameters": {
-                            "id": 11179,
+                            "id": 11029,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5038:2:90"
                         }
                     },
                     {
-                        "id": 11183,
+                        "id": 11033,
                         "nodeType": "ErrorDefinition",
                         "src": "5225:20:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11181,
+                            "id": 11031,
                             "nodeType": "StructuredDocumentation",
                             "src": "5047:173:90",
                             "text": "@notice Thrown when the fee parameters passed to `deployAndInitialize`\n         aren't within the range specified by the minimum and maximum\n         fees."
@@ -2700,19 +2700,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidFees",
                         "nameLocation": "5231:11:90",
                         "parameters": {
-                            "id": 11182,
+                            "id": 11032,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5242:2:90"
                         }
                     },
                     {
-                        "id": 11186,
+                        "id": 11036,
                         "nodeType": "ErrorDefinition",
                         "src": "5358:23:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11184,
+                            "id": 11034,
                             "nodeType": "StructuredDocumentation",
                             "src": "5251:102:90",
                             "text": "@notice Thrown when the starting index of a range is larger than the\n         ending index."
@@ -2721,19 +2721,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidIndexes",
                         "nameLocation": "5364:14:90",
                         "parameters": {
-                            "id": 11185,
+                            "id": 11035,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5378:2:90"
                         }
                     },
                     {
-                        "id": 11189,
+                        "id": 11039,
                         "nodeType": "ErrorDefinition",
                         "src": "5573:23:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11187,
+                            "id": 11037,
                             "nodeType": "StructuredDocumentation",
                             "src": "5387:181:90",
                             "text": "@notice Thrown when governance attempts to set one of the maximum fee\n         parameters to a smaller value than the corresponding minimum fee\n         parameter."
@@ -2742,19 +2742,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMaxFees",
                         "nameLocation": "5579:14:90",
                         "parameters": {
-                            "id": 11188,
+                            "id": 11038,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5593:2:90"
                         }
                     },
                     {
-                        "id": 11192,
+                        "id": 11042,
                         "nodeType": "ErrorDefinition",
                         "src": "5787:23:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11190,
+                            "id": 11040,
                             "nodeType": "StructuredDocumentation",
                             "src": "5602:180:90",
                             "text": "@notice Thrown when governance attempts to set one of the minimum fee\n         parameters to a larger value than the corresponding maximum fee\n         parameter."
@@ -2763,19 +2763,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMinFees",
                         "nameLocation": "5793:14:90",
                         "parameters": {
-                            "id": 11191,
+                            "id": 11041,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5807:2:90"
                         }
                     },
                     {
-                        "id": 11195,
+                        "id": 11045,
                         "nodeType": "ErrorDefinition",
                         "src": "6074:37:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11193,
+                            "id": 11043,
                             "nodeType": "StructuredDocumentation",
                             "src": "5816:253:90",
                             "text": "@notice Thrown when governance attempts to set the maximum checkpoint\n         duration to a value that isn't a multiple of the checkpoint\n         duration resolution or is smaller than the minimum checkpoint\n         duration."
@@ -2784,19 +2784,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMaxCheckpointDuration",
                         "nameLocation": "6080:28:90",
                         "parameters": {
-                            "id": 11194,
+                            "id": 11044,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6108:2:90"
                         }
                     },
                     {
-                        "id": 11198,
+                        "id": 11048,
                         "nodeType": "ErrorDefinition",
                         "src": "6374:37:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11196,
+                            "id": 11046,
                             "nodeType": "StructuredDocumentation",
                             "src": "6117:252:90",
                             "text": "@notice Thrown when governance attempts to set the minimum checkpoint\n         duration to a value that isn't a multiple of the checkpoint\n         duration resolution or is larger than the maximum checkpoint\n         duration."
@@ -2805,19 +2805,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMinCheckpointDuration",
                         "nameLocation": "6380:28:90",
                         "parameters": {
-                            "id": 11197,
+                            "id": 11047,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6408:2:90"
                         }
                     },
                     {
-                        "id": 11201,
+                        "id": 11051,
                         "nodeType": "ErrorDefinition",
                         "src": "6671:35:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11199,
+                            "id": 11049,
                             "nodeType": "StructuredDocumentation",
                             "src": "6417:249:90",
                             "text": "@notice Thrown when governance attempts to set the maximum position\n         duration to a value that isn't a multiple of the checkpoint\n         duration resolution or is smaller than the minimum position\n         duration."
@@ -2826,19 +2826,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMaxPositionDuration",
                         "nameLocation": "6677:26:90",
                         "parameters": {
-                            "id": 11200,
+                            "id": 11050,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6703:2:90"
                         }
                     },
                     {
-                        "id": 11204,
+                        "id": 11054,
                         "nodeType": "ErrorDefinition",
                         "src": "6965:35:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11202,
+                            "id": 11052,
                             "nodeType": "StructuredDocumentation",
                             "src": "6712:248:90",
                             "text": "@notice Thrown when governance attempts to set the minimum position\n         duration to a value that isn't a multiple of the checkpoint\n         duration resolution or is larger than the maximum position\n         duration."
@@ -2847,19 +2847,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMinPositionDuration",
                         "nameLocation": "6971:26:90",
                         "parameters": {
-                            "id": 11203,
+                            "id": 11053,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6997:2:90"
                         }
                     },
                     {
-                        "id": 11207,
+                        "id": 11057,
                         "nodeType": "ErrorDefinition",
                         "src": "7207:32:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11205,
+                            "id": 11055,
                             "nodeType": "StructuredDocumentation",
                             "src": "7006:196:90",
                             "text": "@notice Thrown when the position duration passed to `deployAndInitialize`\n         doesn't fall within the range specified by the minimum and\n         maximum position durations."
@@ -2868,19 +2868,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidPositionDuration",
                         "nameLocation": "7213:23:90",
                         "parameters": {
-                            "id": 11206,
+                            "id": 11056,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7236:2:90"
                         }
                     },
                     {
-                        "id": 11210,
+                        "id": 11060,
                         "nodeType": "ErrorDefinition",
                         "src": "7393:27:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11208,
+                            "id": 11058,
                             "nodeType": "StructuredDocumentation",
                             "src": "7245:143:90",
                             "text": "@notice Thrown when governance attempts to set the maximum fixed APR to\n         a value that is smaller than the minimum fixed APR."
@@ -2889,19 +2889,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMaxFixedAPR",
                         "nameLocation": "7399:18:90",
                         "parameters": {
-                            "id": 11209,
+                            "id": 11059,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7417:2:90"
                         }
                     },
                     {
-                        "id": 11213,
+                        "id": 11063,
                         "nodeType": "ErrorDefinition",
                         "src": "7573:27:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11211,
+                            "id": 11061,
                             "nodeType": "StructuredDocumentation",
                             "src": "7426:142:90",
                             "text": "@notice Thrown when governance attempts to set the minimum fixed APR to\n         a value that is larger than the maximum fixed APR."
@@ -2910,19 +2910,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMinFixedAPR",
                         "nameLocation": "7579:18:90",
                         "parameters": {
-                            "id": 11212,
+                            "id": 11062,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7597:2:90"
                         }
                     },
                     {
-                        "id": 11216,
+                        "id": 11066,
                         "nodeType": "ErrorDefinition",
                         "src": "7784:24:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11214,
+                            "id": 11064,
                             "nodeType": "StructuredDocumentation",
                             "src": "7606:173:90",
                             "text": "@notice Thrown when the fixed APR passed to `deployAndInitialize` isn't\n         within the range specified by the minimum and maximum fixed\n         APRs."
@@ -2931,19 +2931,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidFixedAPR",
                         "nameLocation": "7790:15:90",
                         "parameters": {
-                            "id": 11215,
+                            "id": 11065,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7805:2:90"
                         }
                     },
                     {
-                        "id": 11219,
+                        "id": 11069,
                         "nodeType": "ErrorDefinition",
                         "src": "7992:33:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11217,
+                            "id": 11067,
                             "nodeType": "StructuredDocumentation",
                             "src": "7814:173:90",
                             "text": "@notice Thrown when governance attempts to set the maximum time stretch\n         APR to a value that is smaller than the minimum time stretch\n         APR."
@@ -2952,19 +2952,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMaxTimeStretchAPR",
                         "nameLocation": "7998:24:90",
                         "parameters": {
-                            "id": 11218,
+                            "id": 11068,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8022:2:90"
                         }
                     },
                     {
-                        "id": 11222,
+                        "id": 11072,
                         "nodeType": "ErrorDefinition",
                         "src": "8208:33:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11220,
+                            "id": 11070,
                             "nodeType": "StructuredDocumentation",
                             "src": "8031:172:90",
                             "text": "@notice Thrown when governance attempts to set the minimum time stretch\n         APR to a value that is larger than the maximum time stretch\n         APR."
@@ -2973,19 +2973,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidMinTimeStretchAPR",
                         "nameLocation": "8214:24:90",
                         "parameters": {
-                            "id": 11221,
+                            "id": 11071,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8238:2:90"
                         }
                     },
                     {
-                        "id": 11225,
+                        "id": 11075,
                         "nodeType": "ErrorDefinition",
                         "src": "8537:30:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11223,
+                            "id": 11073,
                             "nodeType": "StructuredDocumentation",
                             "src": "8247:285:90",
                             "text": "@notice Thrown when a time stretch APR is passed to `deployAndInitialize`\n         that isn't within the range specified by the minimum and maximum\n         time stretch APRs or doesn't satisfy the lower and upper safe\n         bounds implied by the fixed APR."
@@ -2994,19 +2994,19 @@ export const IHyperdriveFactory = {
                         "name": "InvalidTimeStretchAPR",
                         "nameLocation": "8543:21:90",
                         "parameters": {
-                            "id": 11224,
+                            "id": 11074,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8564:2:90"
                         }
                     },
                     {
-                        "id": 11228,
+                        "id": 11078,
                         "nodeType": "ErrorDefinition",
                         "src": "8672:22:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11226,
+                            "id": 11076,
                             "nodeType": "StructuredDocumentation",
                             "src": "8573:94:90",
                             "text": "@notice Thrown when ether is sent to the factory when `receive` is\n         locked."
@@ -3015,19 +3015,19 @@ export const IHyperdriveFactory = {
                         "name": "ReceiveLocked",
                         "nameLocation": "8678:13:90",
                         "parameters": {
-                            "id": 11227,
+                            "id": 11077,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8691:2:90"
                         }
                     },
                     {
-                        "id": 11231,
+                        "id": 11081,
                         "nodeType": "ErrorDefinition",
                         "src": "8753:23:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11229,
+                            "id": 11079,
                             "nodeType": "StructuredDocumentation",
                             "src": "8700:48:90",
                             "text": "@notice Thrown when an ether transfer fails."
@@ -3036,19 +3036,19 @@ export const IHyperdriveFactory = {
                         "name": "TransferFailed",
                         "nameLocation": "8759:14:90",
                         "parameters": {
-                            "id": 11230,
+                            "id": 11080,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8773:2:90"
                         }
                     },
                     {
-                        "id": 11234,
+                        "id": 11084,
                         "nodeType": "ErrorDefinition",
                         "src": "8915:21:90",
                         "nodes": [],
                         "documentation": {
-                            "id": 11232,
+                            "id": 11082,
                             "nodeType": "StructuredDocumentation",
                             "src": "8782:128:90",
                             "text": "@notice Thrown when an unauthorized caller attempts to update one of the\n         governance administered parameters."
@@ -3057,7 +3057,7 @@ export const IHyperdriveFactory = {
                         "name": "Unauthorized",
                         "nameLocation": "8921:12:90",
                         "parameters": {
-                            "id": 11233,
+                            "id": 11083,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "8933:2:90"
@@ -3071,61 +3071,61 @@ export const IHyperdriveFactory = {
                 "contractKind": "interface",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    11235
+                    11085
                 ],
                 "name": "IHyperdriveFactory",
                 "nameLocation": "124:18:90",
-                "scope": 11236,
+                "scope": 11086,
                 "usedErrors": [
-                    11159,
-                    11162,
-                    11165,
-                    11168,
-                    11171,
-                    11174,
-                    11177,
-                    11180,
-                    11183,
-                    11186,
-                    11189,
-                    11192,
-                    11195,
-                    11198,
-                    11201,
-                    11204,
-                    11207,
-                    11210,
-                    11213,
-                    11216,
-                    11219,
-                    11222,
-                    11225,
-                    11228,
-                    11231,
-                    11234
+                    11009,
+                    11012,
+                    11015,
+                    11018,
+                    11021,
+                    11024,
+                    11027,
+                    11030,
+                    11033,
+                    11036,
+                    11039,
+                    11042,
+                    11045,
+                    11048,
+                    11051,
+                    11054,
+                    11057,
+                    11060,
+                    11063,
+                    11066,
+                    11069,
+                    11072,
+                    11075,
+                    11078,
+                    11081,
+                    11084
                 ],
                 "usedEvents": [
-                    11053,
-                    11058,
-                    11063,
-                    11069,
-                    11074,
-                    11079,
-                    11084,
-                    11089,
-                    11094,
-                    11099,
-                    11104,
-                    11109,
-                    11114,
-                    11119,
-                    11124,
-                    11129,
-                    11134,
-                    11139,
-                    11144,
-                    11150,
-                    11156
+                    10903,
+                    10908,
+                    10913,
+                    10919,
+                    10924,
+                    10929,
+                    10934,
+                    10939,
+                    10944,
+                    10949,
+                    10954,
+                    10959,
+                    10964,
+                    10969,
+                    10974,
+                    10979,
+                    10984,
+                    10989,
+                    10994,
+                    11000,
+                    11006
                 ]
             }
         ],

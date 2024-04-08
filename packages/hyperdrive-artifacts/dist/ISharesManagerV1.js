@@ -810,20 +810,20 @@ export const ISharesManagerV1 = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/ISharesManagerV1.sol",
-        "id": 12325,
+        "id": 12173,
         "exportedSymbols": {
             "IERC20": [
-                9810
+                9666
             ],
             "ISharesManagerV1": [
-                12324
+                12172
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:2808:110",
         "nodes": [
             {
-                "id": 12242,
+                "id": 12090,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:110",
                 "nodes": [],
@@ -834,23 +834,23 @@ export const ISharesManagerV1 = {
                 ]
             },
             {
-                "id": 12244,
+                "id": 12092,
                 "nodeType": "ImportDirective",
                 "src": "64:38:110",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IERC20.sol",
                 "file": "./IERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 12325,
-                "sourceUnit": 9811,
+                "scope": 12173,
+                "sourceUnit": 9667,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 12243,
+                            "id": 12091,
                             "name": "IERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 9810,
+                            "referencedDeclaration": 9666,
                             "src": "73:6:110",
                             "typeDescriptions": {}
                         },
@@ -860,20 +860,20 @@ export const ISharesManagerV1 = {
                 "unitAlias": ""
             },
             {
-                "id": 12324,
+                "id": 12172,
                 "nodeType": "ContractDefinition",
                 "src": "267:2579:110",
                 "nodes": [
                     {
-                        "id": 12253,
+                        "id": 12101,
                         "nodeType": "FunctionDefinition",
                         "src": "401:55:110",
                         "nodes": [],
                         "baseFunctions": [
-                            9791
+                            9647
                         ],
                         "documentation": {
-                            "id": 12248,
+                            "id": 12096,
                             "nodeType": "StructuredDocumentation",
                             "src": "310:86:110",
                             "text": "@notice Retrieve the total token supply\n @return The total supply in shares"
@@ -885,23 +885,23 @@ export const ISharesManagerV1 = {
                         "name": "totalSupply",
                         "nameLocation": "410:11:110",
                         "parameters": {
-                            "id": 12249,
+                            "id": 12097,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "421:2:110"
                         },
                         "returnParameters": {
-                            "id": 12252,
+                            "id": 12100,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12251,
+                                    "id": 12099,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12253,
+                                    "scope": 12101,
                                     "src": "447:7:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -910,7 +910,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12250,
+                                        "id": 12098,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "447:7:110",
@@ -924,18 +924,18 @@ export const ISharesManagerV1 = {
                             ],
                             "src": "446:9:110"
                         },
-                        "scope": 12324,
+                        "scope": 12172,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12259,
+                        "id": 12107,
                         "nodeType": "FunctionDefinition",
                         "src": "571:65:110",
                         "nodes": [],
                         "documentation": {
-                            "id": 12254,
+                            "id": 12102,
                             "nodeType": "StructuredDocumentation",
                             "src": "462:104:110",
                             "text": "@notice Retrieve the total underlying asset supply\n @return The total underlying asset supply"
@@ -947,23 +947,23 @@ export const ISharesManagerV1 = {
                         "name": "totalUnderlyingSupply",
                         "nameLocation": "580:21:110",
                         "parameters": {
-                            "id": 12255,
+                            "id": 12103,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "601:2:110"
                         },
                         "returnParameters": {
-                            "id": 12258,
+                            "id": 12106,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12257,
+                                    "id": 12105,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12259,
+                                    "scope": 12107,
                                     "src": "627:7:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -972,7 +972,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12256,
+                                        "id": 12104,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "627:7:110",
@@ -986,21 +986,21 @@ export const ISharesManagerV1 = {
                             ],
                             "src": "626:9:110"
                         },
-                        "scope": 12324,
+                        "scope": 12172,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12267,
+                        "id": 12115,
                         "nodeType": "FunctionDefinition",
                         "src": "790:67:110",
                         "nodes": [],
                         "baseFunctions": [
-                            9809
+                            9665
                         ],
                         "documentation": {
-                            "id": 12260,
+                            "id": 12108,
                             "nodeType": "StructuredDocumentation",
                             "src": "642:143:110",
                             "text": "@notice Retrieve the balance of an account\n @param _owner Address to be checked\n @return The balance of the account in shares"
@@ -1012,17 +1012,17 @@ export const ISharesManagerV1 = {
                         "name": "balanceOf",
                         "nameLocation": "799:9:110",
                         "parameters": {
-                            "id": 12263,
+                            "id": 12111,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12262,
+                                    "id": 12110,
                                     "mutability": "mutable",
                                     "name": "_owner",
                                     "nameLocation": "817:6:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12267,
+                                    "scope": 12115,
                                     "src": "809:14:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1031,7 +1031,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12261,
+                                        "id": 12109,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "809:7:110",
@@ -1047,17 +1047,17 @@ export const ISharesManagerV1 = {
                             "src": "808:16:110"
                         },
                         "returnParameters": {
-                            "id": 12266,
+                            "id": 12114,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12265,
+                                    "id": 12113,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12267,
+                                    "scope": 12115,
                                     "src": "848:7:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1066,7 +1066,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12264,
+                                        "id": 12112,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "848:7:110",
@@ -1080,18 +1080,18 @@ export const ISharesManagerV1 = {
                             ],
                             "src": "847:9:110"
                         },
-                        "scope": 12324,
+                        "scope": 12172,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12275,
+                        "id": 12123,
                         "nodeType": "FunctionDefinition",
                         "src": "1029:91:110",
                         "nodes": [],
                         "documentation": {
-                            "id": 12268,
+                            "id": 12116,
                             "nodeType": "StructuredDocumentation",
                             "src": "863:161:110",
                             "text": "@notice Retrieve the underlying asset balance of an account\n @param _owner Address to be checked\n @return The underlying balance of the account"
@@ -1103,17 +1103,17 @@ export const ISharesManagerV1 = {
                         "name": "balanceOfUnderlying",
                         "nameLocation": "1038:19:110",
                         "parameters": {
-                            "id": 12271,
+                            "id": 12119,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12270,
+                                    "id": 12118,
                                     "mutability": "mutable",
                                     "name": "_owner",
                                     "nameLocation": "1075:6:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12275,
+                                    "scope": 12123,
                                     "src": "1067:14:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1122,7 +1122,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12269,
+                                        "id": 12117,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1067:7:110",
@@ -1138,17 +1138,17 @@ export const ISharesManagerV1 = {
                             "src": "1057:30:110"
                         },
                         "returnParameters": {
-                            "id": 12274,
+                            "id": 12122,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12273,
+                                    "id": 12121,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12275,
+                                    "scope": 12123,
                                     "src": "1111:7:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1157,7 +1157,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12272,
+                                        "id": 12120,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1111:7:110",
@@ -1171,18 +1171,18 @@ export const ISharesManagerV1 = {
                             ],
                             "src": "1110:9:110"
                         },
-                        "scope": 12324,
+                        "scope": 12172,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12283,
+                        "id": 12131,
                         "nodeType": "FunctionDefinition",
                         "src": "1327:100:110",
                         "nodes": [],
                         "documentation": {
-                            "id": 12276,
+                            "id": 12124,
                             "nodeType": "StructuredDocumentation",
                             "src": "1126:196:110",
                             "text": "@notice Retrieve the underlying asset balance from an amount of shares\n @param _shares Amount of shares to convert\n @return The underlying asset balance represented by the shares"
@@ -1194,17 +1194,17 @@ export const ISharesManagerV1 = {
                         "name": "underlyingBalanceFromShares",
                         "nameLocation": "1336:27:110",
                         "parameters": {
-                            "id": 12279,
+                            "id": 12127,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12278,
+                                    "id": 12126,
                                     "mutability": "mutable",
                                     "name": "_shares",
                                     "nameLocation": "1381:7:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12283,
+                                    "scope": 12131,
                                     "src": "1373:15:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1213,7 +1213,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12277,
+                                        "id": 12125,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1373:7:110",
@@ -1228,17 +1228,17 @@ export const ISharesManagerV1 = {
                             "src": "1363:31:110"
                         },
                         "returnParameters": {
-                            "id": 12282,
+                            "id": 12130,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12281,
+                                    "id": 12129,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12283,
+                                    "scope": 12131,
                                     "src": "1418:7:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1247,7 +1247,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12280,
+                                        "id": 12128,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1418:7:110",
@@ -1261,18 +1261,18 @@ export const ISharesManagerV1 = {
                             ],
                             "src": "1417:9:110"
                         },
-                        "scope": 12324,
+                        "scope": 12172,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12291,
+                        "id": 12139,
                         "nodeType": "FunctionDefinition",
                         "src": "1655:115:110",
                         "nodes": [],
                         "documentation": {
-                            "id": 12284,
+                            "id": 12132,
                             "nodeType": "StructuredDocumentation",
                             "src": "1433:217:110",
                             "text": "@notice Retrieve the shares count from an underlying asset amount\n @param _underlyingAssetAmount Amount of underlying asset to convert\n @return The amount of shares worth the underlying asset amopunt"
@@ -1284,17 +1284,17 @@ export const ISharesManagerV1 = {
                         "name": "sharesFromUnderlyingBalance",
                         "nameLocation": "1664:27:110",
                         "parameters": {
-                            "id": 12287,
+                            "id": 12135,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12286,
+                                    "id": 12134,
                                     "mutability": "mutable",
                                     "name": "_underlyingAssetAmount",
                                     "nameLocation": "1709:22:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12291,
+                                    "scope": 12139,
                                     "src": "1701:30:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1303,7 +1303,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12285,
+                                        "id": 12133,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1701:7:110",
@@ -1318,17 +1318,17 @@ export const ISharesManagerV1 = {
                             "src": "1691:46:110"
                         },
                         "returnParameters": {
-                            "id": 12290,
+                            "id": 12138,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12289,
+                                    "id": 12137,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12291,
+                                    "scope": 12139,
                                     "src": "1761:7:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1337,7 +1337,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12288,
+                                        "id": 12136,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1761:7:110",
@@ -1351,21 +1351,21 @@ export const ISharesManagerV1 = {
                             ],
                             "src": "1760:9:110"
                         },
-                        "scope": 12324,
+                        "scope": 12172,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12301,
+                        "id": 12149,
                         "nodeType": "FunctionDefinition",
                         "src": "1990:71:110",
                         "nodes": [],
                         "baseFunctions": [
-                            9755
+                            9611
                         ],
                         "documentation": {
-                            "id": 12292,
+                            "id": 12140,
                             "nodeType": "StructuredDocumentation",
                             "src": "1776:209:110",
                             "text": "@notice Performs a transfer from the message sender to the provided account\n @param _to Address receiving the tokens\n @param _value Amount of shares to be sent\n @return True if success"
@@ -1377,17 +1377,17 @@ export const ISharesManagerV1 = {
                         "name": "transfer",
                         "nameLocation": "1999:8:110",
                         "parameters": {
-                            "id": 12297,
+                            "id": 12145,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12294,
+                                    "id": 12142,
                                     "mutability": "mutable",
                                     "name": "_to",
                                     "nameLocation": "2016:3:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12301,
+                                    "scope": 12149,
                                     "src": "2008:11:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1396,7 +1396,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12293,
+                                        "id": 12141,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2008:7:110",
@@ -1410,12 +1410,12 @@ export const ISharesManagerV1 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12296,
+                                    "id": 12144,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "2029:6:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12301,
+                                    "scope": 12149,
                                     "src": "2021:14:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1424,7 +1424,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12295,
+                                        "id": 12143,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2021:7:110",
@@ -1439,17 +1439,17 @@ export const ISharesManagerV1 = {
                             "src": "2007:29:110"
                         },
                         "returnParameters": {
-                            "id": 12300,
+                            "id": 12148,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12299,
+                                    "id": 12147,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12301,
+                                    "scope": 12149,
                                     "src": "2055:4:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1458,7 +1458,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 12298,
+                                        "id": 12146,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2055:4:110",
@@ -1472,21 +1472,21 @@ export const ISharesManagerV1 = {
                             ],
                             "src": "2054:6:110"
                         },
-                        "scope": 12324,
+                        "scope": 12172,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12313,
+                        "id": 12161,
                         "nodeType": "FunctionDefinition",
                         "src": "2304:120:110",
                         "nodes": [],
                         "baseFunctions": [
-                            9767
+                            9623
                         ],
                         "documentation": {
-                            "id": 12302,
+                            "id": 12150,
                             "nodeType": "StructuredDocumentation",
                             "src": "2067:232:110",
                             "text": "@notice Performs a transfer between two recipients\n @param _from Address sending the tokens\n @param _to Address receiving the tokens\n @param _value Amount of shares to be sent\n @return True if success"
@@ -1498,17 +1498,17 @@ export const ISharesManagerV1 = {
                         "name": "transferFrom",
                         "nameLocation": "2313:12:110",
                         "parameters": {
-                            "id": 12309,
+                            "id": 12157,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12304,
+                                    "id": 12152,
                                     "mutability": "mutable",
                                     "name": "_from",
                                     "nameLocation": "2343:5:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12313,
+                                    "scope": 12161,
                                     "src": "2335:13:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1517,7 +1517,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12303,
+                                        "id": 12151,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2335:7:110",
@@ -1531,12 +1531,12 @@ export const ISharesManagerV1 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12306,
+                                    "id": 12154,
                                     "mutability": "mutable",
                                     "name": "_to",
                                     "nameLocation": "2366:3:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12313,
+                                    "scope": 12161,
                                     "src": "2358:11:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1545,7 +1545,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12305,
+                                        "id": 12153,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2358:7:110",
@@ -1559,12 +1559,12 @@ export const ISharesManagerV1 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12308,
+                                    "id": 12156,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "2387:6:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12313,
+                                    "scope": 12161,
                                     "src": "2379:14:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1573,7 +1573,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12307,
+                                        "id": 12155,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2379:7:110",
@@ -1588,17 +1588,17 @@ export const ISharesManagerV1 = {
                             "src": "2325:74:110"
                         },
                         "returnParameters": {
-                            "id": 12312,
+                            "id": 12160,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12311,
+                                    "id": 12159,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12313,
+                                    "scope": 12161,
                                     "src": "2418:4:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1607,7 +1607,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 12310,
+                                        "id": 12158,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2418:4:110",
@@ -1621,21 +1621,21 @@ export const ISharesManagerV1 = {
                             ],
                             "src": "2417:6:110"
                         },
-                        "scope": 12324,
+                        "scope": 12172,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 12323,
+                        "id": 12171,
                         "nodeType": "FunctionDefinition",
                         "src": "2769:75:110",
                         "nodes": [],
                         "baseFunctions": [
-                            9745
+                            9601
                         ],
                         "documentation": {
-                            "id": 12314,
+                            "id": 12162,
                             "nodeType": "StructuredDocumentation",
                             "src": "2430:334:110",
                             "text": "@notice Approves an account for future spendings\n @dev An approved account can use transferFrom to transfer funds on behalf of the token owner\n @param _spender Address that is allowed to spend the tokens\n @param _value The allowed amount in shares, will override previous value\n @return True if success"
@@ -1647,17 +1647,17 @@ export const ISharesManagerV1 = {
                         "name": "approve",
                         "nameLocation": "2778:7:110",
                         "parameters": {
-                            "id": 12319,
+                            "id": 12167,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12316,
+                                    "id": 12164,
                                     "mutability": "mutable",
                                     "name": "_spender",
                                     "nameLocation": "2794:8:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12323,
+                                    "scope": 12171,
                                     "src": "2786:16:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1666,7 +1666,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 12315,
+                                        "id": 12163,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2786:7:110",
@@ -1680,12 +1680,12 @@ export const ISharesManagerV1 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 12318,
+                                    "id": 12166,
                                     "mutability": "mutable",
                                     "name": "_value",
                                     "nameLocation": "2812:6:110",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12323,
+                                    "scope": 12171,
                                     "src": "2804:14:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1694,7 +1694,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 12317,
+                                        "id": 12165,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2804:7:110",
@@ -1709,17 +1709,17 @@ export const ISharesManagerV1 = {
                             "src": "2785:34:110"
                         },
                         "returnParameters": {
-                            "id": 12322,
+                            "id": 12170,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 12321,
+                                    "id": 12169,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 12323,
+                                    "scope": 12171,
                                     "src": "2838:4:110",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1728,7 +1728,7 @@ export const ISharesManagerV1 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 12320,
+                                        "id": 12168,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2838:4:110",
@@ -1742,7 +1742,7 @@ export const ISharesManagerV1 = {
                             ],
                             "src": "2837:6:110"
                         },
-                        "scope": 12324,
+                        "scope": 12172,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
@@ -1752,16 +1752,16 @@ export const ISharesManagerV1 = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 12246,
+                            "id": 12094,
                             "name": "IERC20",
                             "nameLocations": [
                                 "297:6:110"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 9810,
+                            "referencedDeclaration": 9666,
                             "src": "297:6:110"
                         },
-                        "id": 12247,
+                        "id": 12095,
                         "nodeType": "InheritanceSpecifier",
                         "src": "297:6:110"
                     }
@@ -1770,23 +1770,23 @@ export const ISharesManagerV1 = {
                 "contractDependencies": [],
                 "contractKind": "interface",
                 "documentation": {
-                    "id": 12245,
+                    "id": 12093,
                     "nodeType": "StructuredDocumentation",
                     "src": "104:163:110",
                     "text": "@title Shares Manager Interface (v1)\n @author Kiln\n @notice This interface exposes methods to handle the shares of the depositor and the ERC20 interface"
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    12324,
-                    9810
+                    12172,
+                    9666
                 ],
                 "name": "ISharesManagerV1",
                 "nameLocation": "277:16:110",
-                "scope": 12325,
+                "scope": 12173,
                 "usedErrors": [],
                 "usedEvents": [
-                    9726,
-                    9735
+                    9582,
+                    9591
                 ]
             }
         ],

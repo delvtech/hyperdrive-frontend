@@ -542,7 +542,7 @@ export declare const RETHBase: {
         readonly linkReferences: {};
     };
     readonly methodIdentifiers: {};
-    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransferFailed\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"checkpointVaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"Rocket Pool has it's own notion of shares to account for the accrual of      interest on the ether pooled in the Rocket Pool protocol. Instead of      maintaining a balance of shares, this integration can simply use Rocket Pool      shares directly.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"RETHHyperdrive\",\"version\":1},\"userdoc\":{\"errors\":{\"TransferFailed()\":[{\"notice\":\"Thrown when an ether transfer fails.\"}]},\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"The base contract for the rETH Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/reth/RETHBase.sol\":\"RETHBase\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/reth/RETHBase.sol\":{\"keccak256\":\"0xf43b80dd5ea7166f6b9eee42127f9ab0e7f8ab20d8b470383a405ca1e0a78f01\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://35fd446d1ca73c007326f5e196886f67a20d7af26c2d7122b66716e61cb62477\",\"dweb:/ipfs/QmXshZGjbPfYDBhZWWMCUhLMDbuPhWChsjvHoxDVQ5fXTP\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/interfaces/IRocketDepositPool.sol\":{\"keccak256\":\"0x0dffab5deeb8fab3cdf6a4f8077f0328fb7724c6ac8413dbb742217054b0394a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://18701aa0e0c62c8be0522628a9bbc3edfcb3b7eeb0db5b5d050a4e85f72308ff\",\"dweb:/ipfs/QmQ6boPdVgN1yDZjkv6pf9hzph6PDb7NHujUPgTJxvwPsz\"]},\"contracts/src/interfaces/IRocketTokenRETH.sol\":{\"keccak256\":\"0x5796efb852a2ddbd07325f14230c90bf86b9229be421d0dda7e73748a786b7a9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3cc5ed3f01c7a6ece0bea2a85c1d4bd75e1b1e58caed8f02688e7df94f12e79f\",\"dweb:/ipfs/QmPpEbox2jwfjZScm3TGywPgi6UWHzproRGZmbCYBg2jy5\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e\",\"dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a\",\"dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9\",\"dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f\",\"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229\",\"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}";
+    readonly rawMetadata: "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TransferFailed\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"checkpointVaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"Rocket Pool has it's own notion of shares to account for the accrual of      interest on the ether pooled in the Rocket Pool protocol. Instead of      maintaining a balance of shares, this integration can simply use Rocket Pool      shares directly.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"RETHHyperdrive\",\"version\":1},\"userdoc\":{\"errors\":{\"TransferFailed()\":[{\"notice\":\"Thrown when an ether transfer fails.\"}]},\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"The base contract for the rETH Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/reth/RETHBase.sol\":\"RETHBase\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/reth/RETHBase.sol\":{\"keccak256\":\"0x1f4a0398906f14db1b87ba6b31395d073206a880a0b5da3f20f4434af60fcbb2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fc57d773d08afbc957c40d19bd6a539ca92dcb143304340c46af9434f105b7e0\",\"dweb:/ipfs/QmckBsZW9HbjqPd5FknBFAqjM42w9YqJ7uSchT1XQWc5Ce\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339\",\"dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19\",\"dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/interfaces/IRocketTokenRETH.sol\":{\"keccak256\":\"0x5796efb852a2ddbd07325f14230c90bf86b9229be421d0dda7e73748a786b7a9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3cc5ed3f01c7a6ece0bea2a85c1d4bd75e1b1e58caed8f02688e7df94f12e79f\",\"dweb:/ipfs/QmPpEbox2jwfjZScm3TGywPgi6UWHzproRGZmbCYBg2jy5\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x6d10a1d7e62a374bd1c6cd1f41e16a8702ef2b25b1dac34479ef8e3b31abd2f3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a60f3227d4de9ab8163bc0625e5e66f1ea17b3b2901ae40547289d5ca6b82186\",\"dweb:/ipfs/QmWF4mUXAAYaTko7pWjje2Jc9XumnaAYURUNuvwSRoS28E\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xde163699e55f6d6bd660fa7a1cf25927d2e895e16663a7c47fa45d6bc4878c2e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9908cf875ad59413154825ea59e2635b16f0020a0e3368ec85b6c7379ab3f19\",\"dweb:/ipfs/QmeX22wqHYurD9J6WTxrQjtqUoh21bFmLm7E1SzCkgQV7d\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x015be7b5e24373828e26b4af217ecbf074c7f4dcab839703d97d7bc560aa40eb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3584c205f552b20d01dc902a687f346e10bde5f1a23f887f97e03b2fbff8e75c\",\"dweb:/ipfs/QmaVzjYr18cZueNaboBeyVb6CtgY2qMxtvNcn6nXzCgM2c\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x44e018888d5a9fe0c3e44d9d814879d8f0c3adb78154edc98ba07da86b976f5a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5e3990bc86aaa8b4eb4b948ed3a26f0b018f1422c6470a00d146aa69e599a90d\",\"dweb:/ipfs/QmWg9hKoQK1po8ZxRC4xrSWePtoJhgndkHXmwLCpCtwAUu\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0x391c141a11e995c912f55247d461c44bcd7d7c70de4c2d98ff9c81e89acd4424\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b4d80a70106debf9f2d4980e38572daeea11bfc398a1258e3b5dc344e9ce646a\",\"dweb:/ipfs/QmbdckkGQcuok6NDZPiUVAQhpG9HvigMwozFZRLe9YcL2n\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x78ca3ee7c212a513f45a44ef42d362c4ab3cc59e246191c57011b86232967189\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://610b23be1ed7decae671a7cc8ae76298b5d3b10bbea532d3c10623462f899786\",\"dweb:/ipfs/QmV6i6JaY8EKYHUAq6r5267eMbQtfA43F3YNSvvxktW6hE\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xa15878749f26b198b59e039cf814143b141698064d341cd8b88cb4a04491551c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b3fdd810b779630fce33fa7d2bfc17d6cca1bd3d646e5c702d09fd277167fde4\",\"dweb:/ipfs/QmW8C19uY5WLkVQfqFRsSU5NtuQDgoqt4jBoMhvuJ7kMn2\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x407ff362f1486784581f506ffd22cbcb74f638deed9e5c086d3639ea8e64025e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e0092121a10538a07f814b1fafdb2f8923ee35c4d0f18af595f65ce36849a797\",\"dweb:/ipfs/QmTVKGwXU2FyywANhcBnutWSu38QaaVqgG9eTYatfjGYGL\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f\",\"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229\",\"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}";
     readonly metadata: {
         readonly compiler: {
             readonly version: "0.8.20+commit.a1b79de6";
@@ -1109,8 +1109,8 @@ export declare const RETHBase: {
         };
         readonly sources: {
             readonly "contracts/src/instances/reth/RETHBase.sol": {
-                readonly keccak256: "0xf43b80dd5ea7166f6b9eee42127f9ab0e7f8ab20d8b470383a405ca1e0a78f01";
-                readonly urls: readonly ["bzz-raw://35fd446d1ca73c007326f5e196886f67a20d7af26c2d7122b66716e61cb62477", "dweb:/ipfs/QmXshZGjbPfYDBhZWWMCUhLMDbuPhWChsjvHoxDVQ5fXTP"];
+                readonly keccak256: "0x1f4a0398906f14db1b87ba6b31395d073206a880a0b5da3f20f4434af60fcbb2";
+                readonly urls: readonly ["bzz-raw://fc57d773d08afbc957c40d19bd6a539ca92dcb143304340c46af9434f105b7e0", "dweb:/ipfs/QmckBsZW9HbjqPd5FknBFAqjM42w9YqJ7uSchT1XQWc5Ce"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IERC20.sol": {
@@ -1119,13 +1119,13 @@ export declare const RETHBase: {
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdrive.sol": {
-                readonly keccak256: "0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71";
-                readonly urls: readonly ["bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf", "dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm"];
+                readonly keccak256: "0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5";
+                readonly urls: readonly ["bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339", "dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdriveCore.sol": {
-                readonly keccak256: "0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e";
-                readonly urls: readonly ["bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24", "dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h"];
+                readonly keccak256: "0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f";
+                readonly urls: readonly ["bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19", "dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/interfaces/IHyperdriveEvents.sol": {
@@ -1163,24 +1163,19 @@ export declare const RETHBase: {
                 readonly urls: readonly ["bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11", "dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR"];
                 readonly license: "Apache-2.0";
             };
-            readonly "contracts/src/interfaces/IRocketDepositPool.sol": {
-                readonly keccak256: "0x0dffab5deeb8fab3cdf6a4f8077f0328fb7724c6ac8413dbb742217054b0394a";
-                readonly urls: readonly ["bzz-raw://18701aa0e0c62c8be0522628a9bbc3edfcb3b7eeb0db5b5d050a4e85f72308ff", "dweb:/ipfs/QmQ6boPdVgN1yDZjkv6pf9hzph6PDb7NHujUPgTJxvwPsz"];
-                readonly license: "Apache-2.0";
-            };
             readonly "contracts/src/interfaces/IRocketTokenRETH.sol": {
                 readonly keccak256: "0x5796efb852a2ddbd07325f14230c90bf86b9229be421d0dda7e73748a786b7a9";
                 readonly urls: readonly ["bzz-raw://3cc5ed3f01c7a6ece0bea2a85c1d4bd75e1b1e58caed8f02688e7df94f12e79f", "dweb:/ipfs/QmPpEbox2jwfjZScm3TGywPgi6UWHzproRGZmbCYBg2jy5"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/internal/HyperdriveBase.sol": {
-                readonly keccak256: "0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb";
-                readonly urls: readonly ["bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6", "dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN"];
+                readonly keccak256: "0x6d10a1d7e62a374bd1c6cd1f41e16a8702ef2b25b1dac34479ef8e3b31abd2f3";
+                readonly urls: readonly ["bzz-raw://a60f3227d4de9ab8163bc0625e5e66f1ea17b3b2901ae40547289d5ca6b82186", "dweb:/ipfs/QmWF4mUXAAYaTko7pWjje2Jc9XumnaAYURUNuvwSRoS28E"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/internal/HyperdriveStorage.sol": {
-                readonly keccak256: "0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4";
-                readonly urls: readonly ["bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e", "dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N"];
+                readonly keccak256: "0xde163699e55f6d6bd660fa7a1cf25927d2e895e16663a7c47fa45d6bc4878c2e";
+                readonly urls: readonly ["bzz-raw://c9908cf875ad59413154825ea59e2635b16f0020a0e3368ec85b6c7379ab3f19", "dweb:/ipfs/QmeX22wqHYurD9J6WTxrQjtqUoh21bFmLm7E1SzCkgQV7d"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/AssetId.sol": {
@@ -1189,33 +1184,33 @@ export declare const RETHBase: {
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/Errors.sol": {
-                readonly keccak256: "0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0";
-                readonly urls: readonly ["bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88", "dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41"];
+                readonly keccak256: "0x015be7b5e24373828e26b4af217ecbf074c7f4dcab839703d97d7bc560aa40eb";
+                readonly urls: readonly ["bzz-raw://3584c205f552b20d01dc902a687f346e10bde5f1a23f887f97e03b2fbff8e75c", "dweb:/ipfs/QmaVzjYr18cZueNaboBeyVb6CtgY2qMxtvNcn6nXzCgM2c"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/FixedPointMath.sol": {
-                readonly keccak256: "0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076";
-                readonly urls: readonly ["bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd", "dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L"];
+                readonly keccak256: "0x44e018888d5a9fe0c3e44d9d814879d8f0c3adb78154edc98ba07da86b976f5a";
+                readonly urls: readonly ["bzz-raw://5e3990bc86aaa8b4eb4b948ed3a26f0b018f1422c6470a00d146aa69e599a90d", "dweb:/ipfs/QmWg9hKoQK1po8ZxRC4xrSWePtoJhgndkHXmwLCpCtwAUu"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/HyperdriveMath.sol": {
-                readonly keccak256: "0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab";
-                readonly urls: readonly ["bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002", "dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY"];
+                readonly keccak256: "0x391c141a11e995c912f55247d461c44bcd7d7c70de4c2d98ff9c81e89acd4424";
+                readonly urls: readonly ["bzz-raw://b4d80a70106debf9f2d4980e38572daeea11bfc398a1258e3b5dc344e9ce646a", "dweb:/ipfs/QmbdckkGQcuok6NDZPiUVAQhpG9HvigMwozFZRLe9YcL2n"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/LPMath.sol": {
-                readonly keccak256: "0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed";
-                readonly urls: readonly ["bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a", "dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX"];
+                readonly keccak256: "0x78ca3ee7c212a513f45a44ef42d362c4ab3cc59e246191c57011b86232967189";
+                readonly urls: readonly ["bzz-raw://610b23be1ed7decae671a7cc8ae76298b5d3b10bbea532d3c10623462f899786", "dweb:/ipfs/QmV6i6JaY8EKYHUAq6r5267eMbQtfA43F3YNSvvxktW6hE"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/SafeCast.sol": {
-                readonly keccak256: "0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148";
-                readonly urls: readonly ["bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8", "dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8"];
+                readonly keccak256: "0xa15878749f26b198b59e039cf814143b141698064d341cd8b88cb4a04491551c";
+                readonly urls: readonly ["bzz-raw://b3fdd810b779630fce33fa7d2bfc17d6cca1bd3d646e5c702d09fd277167fde4", "dweb:/ipfs/QmW8C19uY5WLkVQfqFRsSU5NtuQDgoqt4jBoMhvuJ7kMn2"];
                 readonly license: "Apache-2.0";
             };
             readonly "contracts/src/libraries/YieldSpaceMath.sol": {
-                readonly keccak256: "0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1";
-                readonly urls: readonly ["bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9", "dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh"];
+                readonly keccak256: "0x407ff362f1486784581f506ffd22cbcb74f638deed9e5c086d3639ea8e64025e";
+                readonly urls: readonly ["bzz-raw://e0092121a10538a07f814b1fafdb2f8923ee35c4d0f18af595f65ce36849a797", "dweb:/ipfs/QmTVKGwXU2FyywANhcBnutWSu38QaaVqgG9eTYatfjGYGL"];
                 readonly license: "Apache-2.0";
             };
             readonly "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol": {
@@ -1268,41 +1263,40 @@ export declare const RETHBase: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/instances/reth/RETHBase.sol";
-        readonly id: 9135;
+        readonly id: 9003;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [70783];
-            readonly HyperdriveBase: readonly [13835];
-            readonly IHyperdrive: readonly [10506];
-            readonly IRocketDepositPool: readonly [11897];
-            readonly IRocketTokenRETH: readonly [12240];
-            readonly RETHBase: readonly [9134];
-            readonly SafeERC20: readonly [71213];
+            readonly ERC20: readonly [70857];
+            readonly HyperdriveBase: readonly [13667];
+            readonly IHyperdrive: readonly [10351];
+            readonly IRocketTokenRETH: readonly [12088];
+            readonly RETHBase: readonly [9002];
+            readonly SafeERC20: readonly [71287];
         };
         readonly nodeType: "SourceUnit";
-        readonly src: "39:5594:65";
+        readonly src: "39:5206:65";
         readonly nodes: readonly [{
-            readonly id: 8891;
+            readonly id: 8771;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:65";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 8893;
+            readonly id: 8773;
             readonly nodeType: "ImportDirective";
             readonly src: "64:59:65";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol";
             readonly file: "openzeppelin/token/ERC20/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9135;
-            readonly sourceUnit: 70784;
+            readonly scope: 9003;
+            readonly sourceUnit: 70858;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 8892;
+                    readonly id: 8772;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 70783;
+                    readonly referencedDeclaration: 70857;
                     readonly src: "73:5:65";
                     readonly typeDescriptions: {};
                 };
@@ -1310,22 +1304,22 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 8895;
+            readonly id: 8775;
             readonly nodeType: "ImportDirective";
             readonly src: "124:73:65";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol";
             readonly file: "openzeppelin/token/ERC20/utils/SafeERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9135;
-            readonly sourceUnit: 71214;
+            readonly scope: 9003;
+            readonly sourceUnit: 71288;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 8894;
+                    readonly id: 8774;
                     readonly name: "SafeERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71213;
+                    readonly referencedDeclaration: 71287;
                     readonly src: "133:9:65";
                     readonly typeDescriptions: {};
                 };
@@ -1333,22 +1327,22 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 8897;
+            readonly id: 8777;
             readonly nodeType: "ImportDirective";
             readonly src: "198:67:65";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/internal/HyperdriveBase.sol";
             readonly file: "../../internal/HyperdriveBase.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9135;
-            readonly sourceUnit: 13836;
+            readonly scope: 9003;
+            readonly sourceUnit: 13668;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 8896;
+                    readonly id: 8776;
                     readonly name: "HyperdriveBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 13835;
+                    readonly referencedDeclaration: 13667;
                     readonly src: "207:14:65";
                     readonly typeDescriptions: {};
                 };
@@ -1356,22 +1350,22 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 8899;
+            readonly id: 8779;
             readonly nodeType: "ImportDirective";
             readonly src: "266:63:65";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IHyperdrive.sol";
             readonly file: "../../interfaces/IHyperdrive.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9135;
-            readonly sourceUnit: 10507;
+            readonly scope: 9003;
+            readonly sourceUnit: 10352;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 8898;
+                    readonly id: 8778;
                     readonly name: "IHyperdrive";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 10506;
+                    readonly referencedDeclaration: 10351;
                     readonly src: "275:11:65";
                     readonly typeDescriptions: {};
                 };
@@ -1379,96 +1373,73 @@ export declare const RETHBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 8901;
+            readonly id: 8781;
             readonly nodeType: "ImportDirective";
-            readonly src: "330:77:65";
-            readonly nodes: readonly [];
-            readonly absolutePath: "contracts/src/interfaces/IRocketDepositPool.sol";
-            readonly file: "../../interfaces/IRocketDepositPool.sol";
-            readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9135;
-            readonly sourceUnit: 11898;
-            readonly symbolAliases: readonly [{
-                readonly foreign: {
-                    readonly id: 8900;
-                    readonly name: "IRocketDepositPool";
-                    readonly nodeType: "Identifier";
-                    readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 11897;
-                    readonly src: "339:18:65";
-                    readonly typeDescriptions: {};
-                };
-                readonly nameLocation: "-1:-1:-1";
-            }];
-            readonly unitAlias: "";
-        }, {
-            readonly id: 8903;
-            readonly nodeType: "ImportDirective";
-            readonly src: "408:73:65";
+            readonly src: "330:73:65";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/interfaces/IRocketTokenRETH.sol";
             readonly file: "../../interfaces/IRocketTokenRETH.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 9135;
-            readonly sourceUnit: 12241;
+            readonly scope: 9003;
+            readonly sourceUnit: 12089;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 8902;
+                    readonly id: 8780;
                     readonly name: "IRocketTokenRETH";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 12240;
-                    readonly src: "417:16:65";
+                    readonly referencedDeclaration: 12088;
+                    readonly src: "339:16:65";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 9134;
+            readonly id: 9002;
             readonly nodeType: "ContractDefinition";
-            readonly src: "1091:4541:65";
+            readonly src: "1013:4231:65";
             readonly nodes: readonly [{
-                readonly id: 8910;
+                readonly id: 8788;
                 readonly nodeType: "UsingForDirective";
-                readonly src: "1142:26:65";
+                readonly src: "1064:26:65";
                 readonly nodes: readonly [];
                 readonly global: false;
                 readonly libraryName: {
-                    readonly id: 8907;
+                    readonly id: 8785;
                     readonly name: "SafeERC20";
-                    readonly nameLocations: readonly ["1148:9:65"];
+                    readonly nameLocations: readonly ["1070:9:65"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 71213;
-                    readonly src: "1148:9:65";
+                    readonly referencedDeclaration: 71287;
+                    readonly src: "1070:9:65";
                 };
                 readonly typeName: {
-                    readonly id: 8909;
+                    readonly id: 8787;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 8908;
+                        readonly id: 8786;
                         readonly name: "ERC20";
-                        readonly nameLocations: readonly ["1162:5:65"];
+                        readonly nameLocations: readonly ["1084:5:65"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 70783;
-                        readonly src: "1162:5:65";
+                        readonly referencedDeclaration: 70857;
+                        readonly src: "1084:5:65";
                     };
-                    readonly referencedDeclaration: 70783;
-                    readonly src: "1162:5:65";
+                    readonly referencedDeclaration: 70857;
+                    readonly src: "1084:5:65";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ERC20_$70783";
+                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
                         readonly typeString: "contract ERC20";
                     };
                 };
             }, {
-                readonly id: 8929;
+                readonly id: 8807;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1200:319:65";
+                readonly src: "1122:319:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8928;
+                    readonly id: 8806;
                     readonly nodeType: "Block";
-                    readonly src: "1343:176:65";
+                    readonly src: "1265:176:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly errorCall: {
@@ -1476,33 +1447,33 @@ export declare const RETHBase: {
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
                                 readonly expression: {
-                                    readonly id: 8923;
+                                    readonly id: 8801;
                                     readonly name: "IHyperdrive";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 10506;
-                                    readonly src: "1482:11:65";
+                                    readonly referencedDeclaration: 10351;
+                                    readonly src: "1404:11:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$10506_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$10351_$";
                                         readonly typeString: "type(contract IHyperdrive)";
                                     };
                                 };
-                                readonly id: 8925;
+                                readonly id: 8803;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "1494:16:65";
+                                readonly memberLocation: "1416:16:65";
                                 readonly memberName: "UnsupportedToken";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 10472;
-                                readonly src: "1482:28:65";
+                                readonly referencedDeclaration: 10317;
+                                readonly src: "1404:28:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 8926;
+                            readonly id: 8804;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1511,48 +1482,48 @@ export declare const RETHBase: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1482:30:65";
+                            readonly src: "1404:30:65";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 8927;
+                        readonly id: 8805;
                         readonly nodeType: "RevertStatement";
-                        readonly src: "1475:37:65";
+                        readonly src: "1397:37:65";
                     }];
                 };
-                readonly baseFunctions: readonly [12866];
+                readonly baseFunctions: readonly [12702];
                 readonly documentation: {
-                    readonly id: 8911;
+                    readonly id: 8789;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1174:21:65";
+                    readonly src: "1096:21:65";
                     readonly text: "Yield Source ///";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_depositWithBase";
-                readonly nameLocation: "1209:16:65";
+                readonly nameLocation: "1131:16:65";
                 readonly overrides: {
-                    readonly id: 8917;
+                    readonly id: 8795;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "1307:8:65";
+                    readonly src: "1229:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 8916;
+                    readonly id: 8794;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8913;
+                        readonly id: 8791;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8929;
-                        readonly src: "1235:7:65";
+                        readonly scope: 8807;
+                        readonly src: "1157:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1560,10 +1531,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8912;
+                            readonly id: 8790;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1235:7:65";
+                            readonly src: "1157:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1572,13 +1543,13 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8915;
+                        readonly id: 8793;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8929;
-                        readonly src: "1262:14:65";
+                        readonly scope: 8807;
+                        readonly src: "1184:14:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
@@ -1586,10 +1557,10 @@ export declare const RETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 8914;
+                            readonly id: 8792;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1262:5:65";
+                            readonly src: "1184:5:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes_storage_ptr";
                                 readonly typeString: "bytes";
@@ -1597,20 +1568,20 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1225:67:65";
+                    readonly src: "1147:67:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 8922;
+                    readonly id: 8800;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8919;
+                        readonly id: 8797;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8929;
-                        readonly src: "1325:7:65";
+                        readonly scope: 8807;
+                        readonly src: "1247:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1618,10 +1589,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8918;
+                            readonly id: 8796;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1325:7:65";
+                            readonly src: "1247:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1630,13 +1601,13 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8921;
+                        readonly id: 8799;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8929;
-                        readonly src: "1334:7:65";
+                        readonly scope: 8807;
+                        readonly src: "1256:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1644,10 +1615,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8920;
+                            readonly id: 8798;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1334:7:65";
+                            readonly src: "1256:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1655,88 +1626,88 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1324:18:65";
+                    readonly src: "1246:18:65";
                 };
-                readonly scope: 9134;
+                readonly scope: 9002;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 8955;
+                readonly id: 8833;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "1637:321:65";
+                readonly src: "1559:321:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 8954;
+                    readonly id: 8832;
                     readonly nodeType: "Block";
-                    readonly src: "1753:205:65";
+                    readonly src: "1675:205:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 8945;
+                                    readonly id: 8823;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "1878:3:65";
+                                    readonly src: "1800:3:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 8946;
+                                readonly id: 8824;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "1882:6:65";
+                                readonly memberLocation: "1804:6:65";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "1878:10:65";
+                                readonly src: "1800:10:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 8949;
+                                    readonly id: 8827;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
-                                    readonly src: "1910:4:65";
+                                    readonly src: "1832:4:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_RETHBase_$9134";
+                                        readonly typeIdentifier: "t_contract$_RETHBase_$9002";
                                         readonly typeString: "contract RETHBase";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_RETHBase_$9134";
+                                        readonly typeIdentifier: "t_contract$_RETHBase_$9002";
                                         readonly typeString: "contract RETHBase";
                                     }];
-                                    readonly id: 8948;
+                                    readonly id: 8826;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "1902:7:65";
+                                    readonly src: "1824:7:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_address_$";
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 8947;
+                                        readonly id: 8825;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "1902:7:65";
+                                        readonly src: "1824:7:65";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 8950;
+                                readonly id: 8828;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1745,19 +1716,19 @@ export declare const RETHBase: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "1902:13:65";
+                                readonly src: "1824:13:65";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 8951;
+                                readonly id: 8829;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8932;
-                                readonly src: "1929:12:65";
+                                readonly referencedDeclaration: 8810;
+                                readonly src: "1851:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -1777,42 +1748,42 @@ export declare const RETHBase: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 8941;
+                                            readonly id: 8819;
                                             readonly name: "_vaultSharesToken";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 17695;
-                                            readonly src: "1828:17:65";
+                                            readonly referencedDeclaration: 17536;
+                                            readonly src: "1750:17:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             }];
-                                            readonly id: 8940;
+                                            readonly id: 8818;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "1820:7:65";
+                                            readonly src: "1742:7:65";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_address_$";
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 8939;
+                                                readonly id: 8817;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "1820:7:65";
+                                                readonly src: "1742:7:65";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 8942;
+                                        readonly id: 8820;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1821,7 +1792,7 @@ export declare const RETHBase: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "1820:26:65";
+                                        readonly src: "1742:26:65";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -1833,18 +1804,18 @@ export declare const RETHBase: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 8938;
+                                        readonly id: 8816;
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 70783;
-                                        readonly src: "1814:5:65";
+                                        readonly referencedDeclaration: 70857;
+                                        readonly src: "1736:5:65";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70783_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70857_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
-                                    readonly id: 8943;
+                                    readonly id: 8821;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1853,29 +1824,29 @@ export declare const RETHBase: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "1814:33:65";
+                                    readonly src: "1736:33:65";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$70783";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
-                                readonly id: 8944;
+                                readonly id: 8822;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "1848:16:65";
+                                readonly memberLocation: "1770:16:65";
                                 readonly memberName: "safeTransferFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71000;
-                                readonly src: "1814:50:65";
+                                readonly referencedDeclaration: 71074;
+                                readonly src: "1736:50:65";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$70861_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70861_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$";
                                     readonly typeString: "function (contract IERC20,address,address,uint256)";
                                 };
                             };
-                            readonly id: 8952;
+                            readonly id: 8830;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1884,48 +1855,48 @@ export declare const RETHBase: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "1814:137:65";
+                            readonly src: "1736:137:65";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 8953;
+                        readonly id: 8831;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "1814:137:65";
+                        readonly src: "1736:137:65";
                     }];
                 };
-                readonly baseFunctions: readonly [12874];
+                readonly baseFunctions: readonly [12710];
                 readonly documentation: {
-                    readonly id: 8930;
+                    readonly id: 8808;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1525:107:65";
+                    readonly src: "1447:107:65";
                     readonly text: "@dev Process a deposit in vault shares.\n @param _shareAmount The vault shares amount to deposit.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_depositWithShares";
-                readonly nameLocation: "1646:18:65";
+                readonly nameLocation: "1568:18:65";
                 readonly overrides: {
-                    readonly id: 8936;
+                    readonly id: 8814;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "1744:8:65";
+                    readonly src: "1666:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 8935;
+                    readonly id: 8813;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8932;
+                        readonly id: 8810;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
-                        readonly nameLocation: "1682:12:65";
+                        readonly nameLocation: "1604:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8955;
-                        readonly src: "1674:20:65";
+                        readonly scope: 8833;
+                        readonly src: "1596:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -1933,10 +1904,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8931;
+                            readonly id: 8809;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1674:7:65";
+                            readonly src: "1596:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -1945,13 +1916,13 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8934;
+                        readonly id: 8812;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 8955;
-                        readonly src: "1704:14:65";
+                        readonly scope: 8833;
+                        readonly src: "1626:14:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
@@ -1959,10 +1930,10 @@ export declare const RETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 8933;
+                            readonly id: 8811;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "1704:5:65";
+                            readonly src: "1626:5:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes_storage_ptr";
                                 readonly typeString: "bytes";
@@ -1970,37 +1941,37 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "1664:70:65";
+                    readonly src: "1586:70:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 8937;
+                    readonly id: 8815;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "1753:0:65";
+                    readonly src: "1675:0:65";
                 };
-                readonly scope: 9134;
+                readonly scope: 9002;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9008;
+                readonly id: 8886;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "2254:787:65";
+                readonly src: "2176:787:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9007;
+                    readonly id: 8885;
                     readonly nodeType: "Block";
-                    readonly src: "2433:608:65";
+                    readonly src: "2355:608:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 8975;
+                                readonly id: 8853;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8958;
-                                readonly src: "2604:12:65";
+                                readonly referencedDeclaration: 8836;
+                                readonly src: "2526:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2014,42 +1985,42 @@ export declare const RETHBase: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 8971;
+                                            readonly id: 8849;
                                             readonly name: "_vaultSharesToken";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 17695;
-                                            readonly src: "2579:17:65";
+                                            readonly referencedDeclaration: 17536;
+                                            readonly src: "2501:17:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             }];
-                                            readonly id: 8970;
+                                            readonly id: 8848;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "2571:7:65";
+                                            readonly src: "2493:7:65";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_address_$";
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 8969;
+                                                readonly id: 8847;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "2571:7:65";
+                                                readonly src: "2493:7:65";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 8972;
+                                        readonly id: 8850;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2058,7 +2029,7 @@ export declare const RETHBase: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "2571:26:65";
+                                        readonly src: "2493:26:65";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -2070,18 +2041,18 @@ export declare const RETHBase: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 8968;
+                                        readonly id: 8846;
                                         readonly name: "IRocketTokenRETH";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 12240;
-                                        readonly src: "2554:16:65";
+                                        readonly referencedDeclaration: 12088;
+                                        readonly src: "2476:16:65";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_IRocketTokenRETH_$12240_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_IRocketTokenRETH_$12088_$";
                                             readonly typeString: "type(contract IRocketTokenRETH)";
                                         };
                                     };
-                                    readonly id: 8973;
+                                    readonly id: 8851;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2090,29 +2061,29 @@ export declare const RETHBase: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "2554:44:65";
+                                    readonly src: "2476:44:65";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12240";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12088";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 };
-                                readonly id: 8974;
+                                readonly id: 8852;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "2599:4:65";
+                                readonly memberLocation: "2521:4:65";
                                 readonly memberName: "burn";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12239;
-                                readonly src: "2554:49:65";
+                                readonly referencedDeclaration: 12087;
+                                readonly src: "2476:49:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_uint256_$returns$__$";
                                     readonly typeString: "function (uint256) external";
                                 };
                             };
-                            readonly id: 8976;
+                            readonly id: 8854;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2121,30 +2092,30 @@ export declare const RETHBase: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "2554:63:65";
+                            readonly src: "2476:63:65";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 8977;
+                        readonly id: 8855;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "2554:63:65";
+                        readonly src: "2476:63:65";
                     }, {
                         readonly expression: {
-                            readonly id: 8984;
+                            readonly id: 8862;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 8978;
+                                readonly id: 8856;
                                 readonly name: "amountWithdrawn";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8966;
-                                readonly src: "2750:15:65";
+                                readonly referencedDeclaration: 8844;
+                                readonly src: "2672:15:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2155,42 +2126,42 @@ export declare const RETHBase: {
                             readonly rightHandSide: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 8981;
+                                        readonly id: 8859;
                                         readonly name: "this";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -28;
-                                        readonly src: "2776:4:65";
+                                        readonly src: "2698:4:65";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_RETHBase_$9134";
+                                            readonly typeIdentifier: "t_contract$_RETHBase_$9002";
                                             readonly typeString: "contract RETHBase";
                                         };
                                     }];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_contract$_RETHBase_$9134";
+                                            readonly typeIdentifier: "t_contract$_RETHBase_$9002";
                                             readonly typeString: "contract RETHBase";
                                         }];
-                                        readonly id: 8980;
+                                        readonly id: 8858;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
                                         readonly lValueRequested: false;
                                         readonly nodeType: "ElementaryTypeNameExpression";
-                                        readonly src: "2768:7:65";
+                                        readonly src: "2690:7:65";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_type$_t_address_$";
                                             readonly typeString: "type(address)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 8979;
+                                            readonly id: 8857;
                                             readonly name: "address";
                                             readonly nodeType: "ElementaryTypeName";
-                                            readonly src: "2768:7:65";
+                                            readonly src: "2690:7:65";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 8982;
+                                    readonly id: 8860;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2199,47 +2170,47 @@ export declare const RETHBase: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "2768:13:65";
+                                    readonly src: "2690:13:65";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
                                 };
-                                readonly id: 8983;
+                                readonly id: 8861;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "2782:7:65";
+                                readonly memberLocation: "2704:7:65";
                                 readonly memberName: "balance";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "2768:21:65";
+                                readonly src: "2690:21:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly src: "2750:39:65";
+                            readonly src: "2672:39:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 8985;
+                        readonly id: 8863;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "2750:39:65";
+                        readonly src: "2672:39:65";
                     }, {
-                        readonly assignments: readonly [8987, null];
+                        readonly assignments: readonly [8865, null];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 8987;
+                            readonly id: 8865;
                             readonly mutability: "mutable";
                             readonly name: "success";
-                            readonly nameLocation: "2860:7:65";
+                            readonly nameLocation: "2782:7:65";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 9007;
-                            readonly src: "2855:12:65";
+                            readonly scope: 8885;
+                            readonly src: "2777:12:65";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
                             readonly typeDescriptions: {
@@ -2247,10 +2218,10 @@ export declare const RETHBase: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 8986;
+                                readonly id: 8864;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
-                                readonly src: "2855:4:65";
+                                readonly src: "2777:4:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -2258,18 +2229,18 @@ export declare const RETHBase: {
                             };
                             readonly visibility: "internal";
                         }, null];
-                        readonly id: 8997;
+                        readonly id: 8875;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "";
-                                readonly id: 8995;
+                                readonly id: 8873;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
                                 readonly kind: "string";
                                 readonly lValueRequested: false;
                                 readonly nodeType: "Literal";
-                                readonly src: "2939:2:65";
+                                readonly src: "2861:2:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_stringliteral_c5d2460186f7233c927e7db2dcc703c0e500b653ca82273b7bfad8045d85a470";
                                     readonly typeString: "literal_string \"\"";
@@ -2288,12 +2259,12 @@ export declare const RETHBase: {
                                     }];
                                     readonly expression: {
                                         readonly arguments: readonly [{
-                                            readonly id: 8990;
+                                            readonly id: 8868;
                                             readonly name: "_destination";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 8960;
-                                            readonly src: "2881:12:65";
+                                            readonly referencedDeclaration: 8838;
+                                            readonly src: "2803:12:65";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
@@ -2304,27 +2275,27 @@ export declare const RETHBase: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
                                             }];
-                                            readonly id: 8989;
+                                            readonly id: 8867;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "2873:8:65";
+                                            readonly src: "2795:8:65";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_address_payable_$";
                                                 readonly typeString: "type(address payable)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 8988;
+                                                readonly id: 8866;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "2873:8:65";
+                                                readonly src: "2795:8:65";
                                                 readonly stateMutability: "payable";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 8991;
+                                        readonly id: 8869;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2333,28 +2304,28 @@ export declare const RETHBase: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "2873:21:65";
+                                        readonly src: "2795:21:65";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address_payable";
                                             readonly typeString: "address payable";
                                         };
                                     };
-                                    readonly id: 8992;
+                                    readonly id: 8870;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
-                                    readonly memberLocation: "2895:4:65";
+                                    readonly memberLocation: "2817:4:65";
                                     readonly memberName: "call";
                                     readonly nodeType: "MemberAccess";
-                                    readonly src: "2873:26:65";
+                                    readonly src: "2795:26:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$";
                                         readonly typeString: "function (bytes memory) payable returns (bool,bytes memory)";
                                     };
                                 };
-                                readonly id: 8994;
+                                readonly id: 8872;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2362,24 +2333,24 @@ export declare const RETHBase: {
                                 readonly names: readonly ["value"];
                                 readonly nodeType: "FunctionCallOptions";
                                 readonly options: readonly [{
-                                    readonly id: 8993;
+                                    readonly id: 8871;
                                     readonly name: "amountWithdrawn";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 8966;
-                                    readonly src: "2908:15:65";
+                                    readonly referencedDeclaration: 8844;
+                                    readonly src: "2830:15:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }];
-                                readonly src: "2873:52:65";
+                                readonly src: "2795:52:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_barecall_payable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$value";
                                     readonly typeString: "function (bytes memory) payable returns (bool,bytes memory)";
                                 };
                             };
-                            readonly id: 8996;
+                            readonly id: 8874;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2388,7 +2359,7 @@ export declare const RETHBase: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "2873:78:65";
+                            readonly src: "2795:78:65";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$_t_bool_$_t_bytes_memory_ptr_$";
@@ -2396,10 +2367,10 @@ export declare const RETHBase: {
                             };
                         };
                         readonly nodeType: "VariableDeclarationStatement";
-                        readonly src: "2854:97:65";
+                        readonly src: "2776:97:65";
                     }, {
                         readonly condition: {
-                            readonly id: 8999;
+                            readonly id: 8877;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2407,14 +2378,14 @@ export declare const RETHBase: {
                             readonly nodeType: "UnaryOperation";
                             readonly operator: "!";
                             readonly prefix: true;
-                            readonly src: "2965:8:65";
+                            readonly src: "2887:8:65";
                             readonly subExpression: {
-                                readonly id: 8998;
+                                readonly id: 8876;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 8987;
-                                readonly src: "2966:7:65";
+                                readonly referencedDeclaration: 8865;
+                                readonly src: "2888:7:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
@@ -2425,46 +2396,46 @@ export declare const RETHBase: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 9006;
+                        readonly id: 8884;
                         readonly nodeType: "IfStatement";
-                        readonly src: "2961:74:65";
+                        readonly src: "2883:74:65";
                         readonly trueBody: {
-                            readonly id: 9005;
+                            readonly id: 8883;
                             readonly nodeType: "Block";
-                            readonly src: "2975:60:65";
+                            readonly src: "2897:60:65";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 9000;
+                                            readonly id: 8878;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 10506;
-                                            readonly src: "2996:11:65";
+                                            readonly referencedDeclaration: 10351;
+                                            readonly src: "2918:11:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$10506_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$10351_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 9002;
+                                        readonly id: 8880;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "3008:14:65";
+                                        readonly memberLocation: "2930:14:65";
                                         readonly memberName: "TransferFailed";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10451;
-                                        readonly src: "2996:26:65";
+                                        readonly referencedDeclaration: 10296;
+                                        readonly src: "2918:26:65";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 9003;
+                                    readonly id: 8881;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2473,50 +2444,50 @@ export declare const RETHBase: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "2996:28:65";
+                                    readonly src: "2918:28:65";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 9004;
+                                readonly id: 8882;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "2989:35:65";
+                                readonly src: "2911:35:65";
                             }];
                         };
                     }];
                 };
-                readonly baseFunctions: readonly [12886];
+                readonly baseFunctions: readonly [12722];
                 readonly documentation: {
-                    readonly id: 8956;
+                    readonly id: 8834;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "1964:285:65";
+                    readonly src: "1886:285:65";
                     readonly text: "@dev Process a withdrawal in base and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.\n @return amountWithdrawn The amount of base withdrawn.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_withdrawWithBase";
-                readonly nameLocation: "2263:17:65";
+                readonly nameLocation: "2185:17:65";
                 readonly overrides: {
-                    readonly id: 8964;
+                    readonly id: 8842;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "2390:8:65";
+                    readonly src: "2312:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 8963;
+                    readonly id: 8841;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8958;
+                        readonly id: 8836;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
-                        readonly nameLocation: "2298:12:65";
+                        readonly nameLocation: "2220:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9008;
-                        readonly src: "2290:20:65";
+                        readonly scope: 8886;
+                        readonly src: "2212:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2524,10 +2495,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8957;
+                            readonly id: 8835;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2290:7:65";
+                            readonly src: "2212:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2536,13 +2507,13 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8960;
+                        readonly id: 8838;
                         readonly mutability: "mutable";
                         readonly name: "_destination";
-                        readonly nameLocation: "2328:12:65";
+                        readonly nameLocation: "2250:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9008;
-                        readonly src: "2320:20:65";
+                        readonly scope: 8886;
+                        readonly src: "2242:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2550,10 +2521,10 @@ export declare const RETHBase: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 8959;
+                            readonly id: 8837;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2320:7:65";
+                            readonly src: "2242:7:65";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -2563,13 +2534,13 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 8962;
+                        readonly id: 8840;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9008;
-                        readonly src: "2350:14:65";
+                        readonly scope: 8886;
+                        readonly src: "2272:14:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
@@ -2577,10 +2548,10 @@ export declare const RETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 8961;
+                            readonly id: 8839;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2350:5:65";
+                            readonly src: "2272:5:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes_storage_ptr";
                                 readonly typeString: "bytes";
@@ -2588,20 +2559,20 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2280:100:65";
+                    readonly src: "2202:100:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 8967;
+                    readonly id: 8845;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 8966;
+                        readonly id: 8844;
                         readonly mutability: "mutable";
                         readonly name: "amountWithdrawn";
-                        readonly nameLocation: "2416:15:65";
+                        readonly nameLocation: "2338:15:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9008;
-                        readonly src: "2408:23:65";
+                        readonly scope: 8886;
+                        readonly src: "2330:23:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2609,10 +2580,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 8965;
+                            readonly id: 8843;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "2408:7:65";
+                            readonly src: "2330:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2620,42 +2591,42 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "2407:25:65";
+                    readonly src: "2329:25:65";
                 };
-                readonly scope: 9134;
+                readonly scope: 9002;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9031;
+                readonly id: 8909;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "3283:328:65";
+                readonly src: "3205:328:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9030;
+                    readonly id: 8908;
                     readonly nodeType: "Block";
-                    readonly src: "3430:181:65";
+                    readonly src: "3352:181:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9026;
+                                readonly id: 8904;
                                 readonly name: "_destination";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9013;
-                                readonly src: "3556:12:65";
+                                readonly referencedDeclaration: 8891;
+                                readonly src: "3478:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 9027;
+                                readonly id: 8905;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9011;
-                                readonly src: "3582:12:65";
+                                readonly referencedDeclaration: 8889;
+                                readonly src: "3504:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2672,42 +2643,42 @@ export declare const RETHBase: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 9022;
+                                            readonly id: 8900;
                                             readonly name: "_vaultSharesToken";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 17695;
-                                            readonly src: "3510:17:65";
+                                            readonly referencedDeclaration: 17536;
+                                            readonly src: "3432:17:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             }];
-                                            readonly id: 9021;
+                                            readonly id: 8899;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "3502:7:65";
+                                            readonly src: "3424:7:65";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_address_$";
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 9020;
+                                                readonly id: 8898;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "3502:7:65";
+                                                readonly src: "3424:7:65";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 9023;
+                                        readonly id: 8901;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2716,7 +2687,7 @@ export declare const RETHBase: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "3502:26:65";
+                                        readonly src: "3424:26:65";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -2728,18 +2699,18 @@ export declare const RETHBase: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 9019;
+                                        readonly id: 8897;
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 70783;
-                                        readonly src: "3496:5:65";
+                                        readonly referencedDeclaration: 70857;
+                                        readonly src: "3418:5:65";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70783_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70857_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
-                                    readonly id: 9024;
+                                    readonly id: 8902;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2748,29 +2719,29 @@ export declare const RETHBase: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "3496:33:65";
+                                    readonly src: "3418:33:65";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$70783";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
-                                readonly id: 9025;
+                                readonly id: 8903;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "3530:12:65";
+                                readonly memberLocation: "3452:12:65";
                                 readonly memberName: "safeTransfer";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 70973;
-                                readonly src: "3496:46:65";
+                                readonly referencedDeclaration: 71047;
+                                readonly src: "3418:46:65";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$70861_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70861_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$";
                                     readonly typeString: "function (contract IERC20,address,uint256)";
                                 };
                             };
-                            readonly id: 9028;
+                            readonly id: 8906;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2779,48 +2750,48 @@ export declare const RETHBase: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "3496:108:65";
+                            readonly src: "3418:108:65";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_tuple$__$";
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 9029;
+                        readonly id: 8907;
                         readonly nodeType: "ExpressionStatement";
-                        readonly src: "3496:108:65";
+                        readonly src: "3418:108:65";
                     }];
                 };
-                readonly baseFunctions: readonly [12896];
+                readonly baseFunctions: readonly [12732];
                 readonly documentation: {
-                    readonly id: 9009;
+                    readonly id: 8887;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "3047:231:65";
+                    readonly src: "2969:231:65";
                     readonly text: "@dev Process a withdrawal in vault shares and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_withdrawWithShares";
-                readonly nameLocation: "3292:19:65";
+                readonly nameLocation: "3214:19:65";
                 readonly overrides: {
-                    readonly id: 9017;
+                    readonly id: 8895;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "3421:8:65";
+                    readonly src: "3343:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9016;
+                    readonly id: 8894;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9011;
+                        readonly id: 8889;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
-                        readonly nameLocation: "3329:12:65";
+                        readonly nameLocation: "3251:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9031;
-                        readonly src: "3321:20:65";
+                        readonly scope: 8909;
+                        readonly src: "3243:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2828,10 +2799,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9010;
+                            readonly id: 8888;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3321:7:65";
+                            readonly src: "3243:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -2840,13 +2811,13 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9013;
+                        readonly id: 8891;
                         readonly mutability: "mutable";
                         readonly name: "_destination";
-                        readonly nameLocation: "3359:12:65";
+                        readonly nameLocation: "3281:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9031;
-                        readonly src: "3351:20:65";
+                        readonly scope: 8909;
+                        readonly src: "3273:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -2854,10 +2825,10 @@ export declare const RETHBase: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 9012;
+                            readonly id: 8890;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3351:7:65";
+                            readonly src: "3273:7:65";
                             readonly stateMutability: "nonpayable";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -2867,13 +2838,13 @@ export declare const RETHBase: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 9015;
+                        readonly id: 8893;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9031;
-                        readonly src: "3381:14:65";
+                        readonly scope: 8909;
+                        readonly src: "3303:14:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
                         readonly typeDescriptions: {
@@ -2881,10 +2852,10 @@ export declare const RETHBase: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 9014;
+                            readonly id: 8892;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3381:5:65";
+                            readonly src: "3303:5:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes_storage_ptr";
                                 readonly typeString: "bytes";
@@ -2892,37 +2863,37 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3311:100:65";
+                    readonly src: "3233:100:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9018;
+                    readonly id: 8896;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "3430:0:65";
+                    readonly src: "3352:0:65";
                 };
-                readonly scope: 9134;
+                readonly scope: 9002;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9051;
+                readonly id: 8929;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "3783:237:65";
+                readonly src: "3705:237:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9050;
+                    readonly id: 8928;
                     readonly nodeType: "Block";
-                    readonly src: "3884:136:65";
+                    readonly src: "3806:136:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9047;
+                                readonly id: 8925;
                                 readonly name: "_shareAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9034;
-                                readonly src: "3987:12:65";
+                                readonly referencedDeclaration: 8912;
+                                readonly src: "3909:12:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -2936,42 +2907,42 @@ export declare const RETHBase: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 9043;
+                                            readonly id: 8921;
                                             readonly name: "_vaultSharesToken";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 17695;
-                                            readonly src: "3938:17:65";
+                                            readonly referencedDeclaration: 17536;
+                                            readonly src: "3860:17:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             }];
-                                            readonly id: 9042;
+                                            readonly id: 8920;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "3930:7:65";
+                                            readonly src: "3852:7:65";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_address_$";
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 9041;
+                                                readonly id: 8919;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "3930:7:65";
+                                                readonly src: "3852:7:65";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 9044;
+                                        readonly id: 8922;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2980,7 +2951,7 @@ export declare const RETHBase: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "3930:26:65";
+                                        readonly src: "3852:26:65";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -2992,18 +2963,18 @@ export declare const RETHBase: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 9040;
+                                        readonly id: 8918;
                                         readonly name: "IRocketTokenRETH";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 12240;
-                                        readonly src: "3913:16:65";
+                                        readonly referencedDeclaration: 12088;
+                                        readonly src: "3835:16:65";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_IRocketTokenRETH_$12240_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_IRocketTokenRETH_$12088_$";
                                             readonly typeString: "type(contract IRocketTokenRETH)";
                                         };
                                     };
-                                    readonly id: 9045;
+                                    readonly id: 8923;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3012,29 +2983,29 @@ export declare const RETHBase: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "3913:44:65";
+                                    readonly src: "3835:44:65";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12240";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12088";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 };
-                                readonly id: 9046;
+                                readonly id: 8924;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "3958:11:65";
+                                readonly memberLocation: "3880:11:65";
                                 readonly memberName: "getEthValue";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12199;
-                                readonly src: "3913:56:65";
+                                readonly referencedDeclaration: 12047;
+                                readonly src: "3835:56:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9048;
+                            readonly id: 8926;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3043,49 +3014,49 @@ export declare const RETHBase: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "3913:100:65";
+                            readonly src: "3835:100:65";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 9039;
-                        readonly id: 9049;
+                        readonly functionReturnParameters: 8917;
+                        readonly id: 8927;
                         readonly nodeType: "Return";
-                        readonly src: "3894:119:65";
+                        readonly src: "3816:119:65";
                     }];
                 };
-                readonly baseFunctions: readonly [12930];
+                readonly baseFunctions: readonly [12766];
                 readonly documentation: {
-                    readonly id: 9032;
+                    readonly id: 8910;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "3617:161:65";
+                    readonly src: "3539:161:65";
                     readonly text: "@dev Convert an amount of vault shares to an amount of base.\n @param _shareAmount The vault shares amount.\n @return baseAmount The base amount.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_convertToBase";
-                readonly nameLocation: "3792:14:65";
+                readonly nameLocation: "3714:14:65";
                 readonly overrides: {
-                    readonly id: 9036;
+                    readonly id: 8914;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "3857:8:65";
+                    readonly src: "3779:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9035;
+                    readonly id: 8913;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9034;
+                        readonly id: 8912;
                         readonly mutability: "mutable";
                         readonly name: "_shareAmount";
-                        readonly nameLocation: "3824:12:65";
+                        readonly nameLocation: "3746:12:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9051;
-                        readonly src: "3816:20:65";
+                        readonly scope: 8929;
+                        readonly src: "3738:20:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3093,10 +3064,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9033;
+                            readonly id: 8911;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3816:7:65";
+                            readonly src: "3738:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3104,20 +3075,20 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3806:36:65";
+                    readonly src: "3728:36:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9039;
+                    readonly id: 8917;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9038;
+                        readonly id: 8916;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9051;
-                        readonly src: "3875:7:65";
+                        readonly scope: 8929;
+                        readonly src: "3797:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3125,10 +3096,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9037;
+                            readonly id: 8915;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "3875:7:65";
+                            readonly src: "3797:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3136,31 +3107,31 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "3874:9:65";
+                    readonly src: "3796:9:65";
                 };
-                readonly scope: 9134;
+                readonly scope: 9002;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9071;
+                readonly id: 8949;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "4192:238:65";
+                readonly src: "4114:238:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9070;
+                    readonly id: 8948;
                     readonly nodeType: "Block";
-                    readonly src: "4294:136:65";
+                    readonly src: "4216:136:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 9067;
+                                readonly id: 8945;
                                 readonly name: "_baseAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 9054;
-                                readonly src: "4398:11:65";
+                                readonly referencedDeclaration: 8932;
+                                readonly src: "4320:11:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
@@ -3174,42 +3145,42 @@ export declare const RETHBase: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 9063;
+                                            readonly id: 8941;
                                             readonly name: "_vaultSharesToken";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 17695;
-                                            readonly src: "4348:17:65";
+                                            readonly referencedDeclaration: 17536;
+                                            readonly src: "4270:17:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                                readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                                 readonly typeString: "contract IERC20";
                                             }];
-                                            readonly id: 9062;
+                                            readonly id: 8940;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
                                             readonly lValueRequested: false;
                                             readonly nodeType: "ElementaryTypeNameExpression";
-                                            readonly src: "4340:7:65";
+                                            readonly src: "4262:7:65";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_type$_t_address_$";
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 9061;
+                                                readonly id: 8939;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
-                                                readonly src: "4340:7:65";
+                                                readonly src: "4262:7:65";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 9064;
+                                        readonly id: 8942;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3218,7 +3189,7 @@ export declare const RETHBase: {
                                         readonly nameLocations: readonly [];
                                         readonly names: readonly [];
                                         readonly nodeType: "FunctionCall";
-                                        readonly src: "4340:26:65";
+                                        readonly src: "4262:26:65";
                                         readonly tryCall: false;
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -3230,18 +3201,18 @@ export declare const RETHBase: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 9060;
+                                        readonly id: 8938;
                                         readonly name: "IRocketTokenRETH";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 12240;
-                                        readonly src: "4323:16:65";
+                                        readonly referencedDeclaration: 12088;
+                                        readonly src: "4245:16:65";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_IRocketTokenRETH_$12240_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_IRocketTokenRETH_$12088_$";
                                             readonly typeString: "type(contract IRocketTokenRETH)";
                                         };
                                     };
-                                    readonly id: 9065;
+                                    readonly id: 8943;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3250,29 +3221,29 @@ export declare const RETHBase: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "4323:44:65";
+                                    readonly src: "4245:44:65";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12240";
+                                        readonly typeIdentifier: "t_contract$_IRocketTokenRETH_$12088";
                                         readonly typeString: "contract IRocketTokenRETH";
                                     };
                                 };
-                                readonly id: 9066;
+                                readonly id: 8944;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "4368:12:65";
+                                readonly memberLocation: "4290:12:65";
                                 readonly memberName: "getRethValue";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 12206;
-                                readonly src: "4323:57:65";
+                                readonly referencedDeclaration: 12054;
+                                readonly src: "4245:57:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_uint256_$returns$_t_uint256_$";
                                     readonly typeString: "function (uint256) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9068;
+                            readonly id: 8946;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3281,49 +3252,49 @@ export declare const RETHBase: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "4323:100:65";
+                            readonly src: "4245:100:65";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 9059;
-                        readonly id: 9069;
+                        readonly functionReturnParameters: 8937;
+                        readonly id: 8947;
                         readonly nodeType: "Return";
-                        readonly src: "4304:119:65";
+                        readonly src: "4226:119:65";
                     }];
                 };
-                readonly baseFunctions: readonly [12938];
+                readonly baseFunctions: readonly [12774];
                 readonly documentation: {
-                    readonly id: 9052;
+                    readonly id: 8930;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "4026:161:65";
+                    readonly src: "3948:161:65";
                     readonly text: "@dev Convert an amount of base to an amount of vault shares.\n @param _baseAmount The base amount.\n @return shareAmount The vault shares amount.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_convertToShares";
-                readonly nameLocation: "4201:16:65";
+                readonly nameLocation: "4123:16:65";
                 readonly overrides: {
-                    readonly id: 9056;
+                    readonly id: 8934;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "4267:8:65";
+                    readonly src: "4189:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9055;
+                    readonly id: 8933;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9054;
+                        readonly id: 8932;
                         readonly mutability: "mutable";
                         readonly name: "_baseAmount";
-                        readonly nameLocation: "4235:11:65";
+                        readonly nameLocation: "4157:11:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9071;
-                        readonly src: "4227:19:65";
+                        readonly scope: 8949;
+                        readonly src: "4149:19:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3331,10 +3302,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9053;
+                            readonly id: 8931;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4227:7:65";
+                            readonly src: "4149:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3342,20 +3313,20 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "4217:35:65";
+                    readonly src: "4139:35:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9059;
+                    readonly id: 8937;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9058;
+                        readonly id: 8936;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9071;
-                        readonly src: "4285:7:65";
+                        readonly scope: 8949;
+                        readonly src: "4207:7:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3363,10 +3334,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9057;
+                            readonly id: 8935;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4285:7:65";
+                            readonly src: "4207:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3374,155 +3345,62 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "4284:9:65";
+                    readonly src: "4206:9:65";
                 };
-                readonly scope: 9134;
+                readonly scope: 9002;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9081;
+                readonly id: 8965;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "4550:191:65";
+                readonly src: "4510:179:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9080;
+                    readonly id: 8964;
                     readonly nodeType: "Block";
-                    readonly src: "4613:128:65";
-                    readonly nodes: readonly [];
-                    readonly statements: readonly [{
-                        readonly expression: {
-                            readonly hexValue: "30";
-                            readonly id: 9078;
-                            readonly isConstant: false;
-                            readonly isLValue: false;
-                            readonly isPure: true;
-                            readonly kind: "number";
-                            readonly lValueRequested: false;
-                            readonly nodeType: "Literal";
-                            readonly src: "4733:1:65";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_rational_0_by_1";
-                                readonly typeString: "int_const 0";
-                            };
-                            readonly value: "0";
-                        };
-                        readonly functionReturnParameters: 9077;
-                        readonly id: 9079;
-                        readonly nodeType: "Return";
-                        readonly src: "4726:8:65";
-                    }];
-                };
-                readonly baseFunctions: readonly [12944];
-                readonly documentation: {
-                    readonly id: 9072;
-                    readonly nodeType: "StructuredDocumentation";
-                    readonly src: "4436:109:65";
-                    readonly text: "@dev Gets the total amount of base held by the pool.\n @return baseAmount The total amount of base.";
-                };
-                readonly implemented: true;
-                readonly kind: "function";
-                readonly modifiers: readonly [];
-                readonly name: "_totalBase";
-                readonly nameLocation: "4559:10:65";
-                readonly overrides: {
-                    readonly id: 9074;
-                    readonly nodeType: "OverrideSpecifier";
-                    readonly overrides: readonly [];
-                    readonly src: "4586:8:65";
-                };
-                readonly parameters: {
-                    readonly id: 9073;
-                    readonly nodeType: "ParameterList";
-                    readonly parameters: readonly [];
-                    readonly src: "4569:2:65";
-                };
-                readonly returnParameters: {
-                    readonly id: 9077;
-                    readonly nodeType: "ParameterList";
-                    readonly parameters: readonly [{
-                        readonly constant: false;
-                        readonly id: 9076;
-                        readonly mutability: "mutable";
-                        readonly name: "";
-                        readonly nameLocation: "-1:-1:-1";
-                        readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9081;
-                        readonly src: "4604:7:65";
-                        readonly stateVariable: false;
-                        readonly storageLocation: "default";
-                        readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_uint256";
-                            readonly typeString: "uint256";
-                        };
-                        readonly typeName: {
-                            readonly id: 9075;
-                            readonly name: "uint256";
-                            readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4604:7:65";
-                            readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_uint256";
-                                readonly typeString: "uint256";
-                            };
-                        };
-                        readonly visibility: "internal";
-                    }];
-                    readonly src: "4603:9:65";
-                };
-                readonly scope: 9134;
-                readonly stateMutability: "pure";
-                readonly virtual: false;
-                readonly visibility: "internal";
-            }, {
-                readonly id: 9097;
-                readonly nodeType: "FunctionDefinition";
-                readonly src: "4899:179:65";
-                readonly nodes: readonly [];
-                readonly body: {
-                    readonly id: 9096;
-                    readonly nodeType: "Block";
-                    readonly src: "5012:66:65";
+                    readonly src: "4623:66:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 9092;
+                                    readonly id: 8960;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
-                                    readonly src: "5065:4:65";
+                                    readonly src: "4676:4:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_RETHBase_$9134";
+                                        readonly typeIdentifier: "t_contract$_RETHBase_$9002";
                                         readonly typeString: "contract RETHBase";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_RETHBase_$9134";
+                                        readonly typeIdentifier: "t_contract$_RETHBase_$9002";
                                         readonly typeString: "contract RETHBase";
                                     }];
-                                    readonly id: 9091;
+                                    readonly id: 8959;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "5057:7:65";
+                                    readonly src: "4668:7:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_address_$";
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 9090;
+                                        readonly id: 8958;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "5057:7:65";
+                                        readonly src: "4668:7:65";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 9093;
+                                readonly id: 8961;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3531,7 +3409,7 @@ export declare const RETHBase: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "5057:13:65";
+                                readonly src: "4668:13:65";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -3544,33 +3422,33 @@ export declare const RETHBase: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 9088;
+                                    readonly id: 8956;
                                     readonly name: "_vaultSharesToken";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 17695;
-                                    readonly src: "5029:17:65";
+                                    readonly referencedDeclaration: 17536;
+                                    readonly src: "4640:17:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                         readonly typeString: "contract IERC20";
                                     };
                                 };
-                                readonly id: 9089;
+                                readonly id: 8957;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "5047:9:65";
+                                readonly memberLocation: "4658:9:65";
                                 readonly memberName: "balanceOf";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 9809;
-                                readonly src: "5029:27:65";
+                                readonly referencedDeclaration: 9665;
+                                readonly src: "4640:27:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$returns$_t_uint256_$";
                                     readonly typeString: "function (address) view external returns (uint256)";
                                 };
                             };
-                            readonly id: 9094;
+                            readonly id: 8962;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3579,55 +3457,55 @@ export declare const RETHBase: {
                             readonly nameLocations: readonly [];
                             readonly names: readonly [];
                             readonly nodeType: "FunctionCall";
-                            readonly src: "5029:42:65";
+                            readonly src: "4640:42:65";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 9087;
-                        readonly id: 9095;
+                        readonly functionReturnParameters: 8955;
+                        readonly id: 8963;
                         readonly nodeType: "Return";
-                        readonly src: "5022:49:65";
+                        readonly src: "4633:49:65";
                     }];
                 };
-                readonly baseFunctions: readonly [12950];
+                readonly baseFunctions: readonly [12780];
                 readonly documentation: {
-                    readonly id: 9082;
+                    readonly id: 8950;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "4747:147:65";
+                    readonly src: "4358:147:65";
                     readonly text: "@dev Gets the total amount of shares held by the pool in the yield\n      source.\n @return shareAmount The total amount of shares.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_totalShares";
-                readonly nameLocation: "4908:12:65";
+                readonly nameLocation: "4519:12:65";
                 readonly overrides: {
-                    readonly id: 9084;
+                    readonly id: 8952;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "4961:8:65";
+                    readonly src: "4572:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9083;
+                    readonly id: 8951;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "4920:2:65";
+                    readonly src: "4531:2:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9087;
+                    readonly id: 8955;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 9086;
+                        readonly id: 8954;
                         readonly mutability: "mutable";
                         readonly name: "shareAmount";
-                        readonly nameLocation: "4995:11:65";
+                        readonly nameLocation: "4606:11:65";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 9097;
-                        readonly src: "4987:19:65";
+                        readonly scope: 8965;
+                        readonly src: "4598:19:65";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
@@ -3635,10 +3513,10 @@ export declare const RETHBase: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 9085;
+                            readonly id: 8953;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
-                            readonly src: "4987:7:65";
+                            readonly src: "4598:7:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
@@ -3646,21 +3524,21 @@ export declare const RETHBase: {
                         };
                         readonly visibility: "internal";
                     }];
-                    readonly src: "4986:21:65";
+                    readonly src: "4597:21:65";
                 };
-                readonly scope: 9134;
+                readonly scope: 9002;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9114;
+                readonly id: 8982;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "5162:144:65";
+                readonly src: "4773:145:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9113;
+                    readonly id: 8981;
                     readonly nodeType: "Block";
-                    readonly src: "5215:91:65";
+                    readonly src: "4826:92:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
@@ -3668,102 +3546,102 @@ export declare const RETHBase: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 9105;
+                            readonly id: 8973;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 9102;
+                                    readonly id: 8970;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "5229:3:65";
+                                    readonly src: "4840:3:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 9103;
+                                readonly id: 8971;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "5233:5:65";
+                                readonly memberLocation: "4844:5:65";
                                 readonly memberName: "value";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "5229:9:65";
+                                readonly src: "4840:9:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             };
                             readonly nodeType: "BinaryOperation";
-                            readonly operator: ">";
+                            readonly operator: "!=";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 9104;
+                                readonly id: 8972;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
                                 readonly kind: "number";
                                 readonly lValueRequested: false;
                                 readonly nodeType: "Literal";
-                                readonly src: "5241:1:65";
+                                readonly src: "4853:1:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_rational_0_by_1";
                                     readonly typeString: "int_const 0";
                                 };
                                 readonly value: "0";
                             };
-                            readonly src: "5229:13:65";
+                            readonly src: "4840:14:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 9112;
+                        readonly id: 8980;
                         readonly nodeType: "IfStatement";
-                        readonly src: "5225:75:65";
+                        readonly src: "4836:76:65";
                         readonly trueBody: {
-                            readonly id: 9111;
+                            readonly id: 8979;
                             readonly nodeType: "Block";
-                            readonly src: "5244:56:65";
+                            readonly src: "4856:56:65";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 9106;
+                                            readonly id: 8974;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 10506;
-                                            readonly src: "5265:11:65";
+                                            readonly referencedDeclaration: 10351;
+                                            readonly src: "4877:11:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$10506_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$10351_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 9108;
+                                        readonly id: 8976;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "5277:10:65";
+                                        readonly memberLocation: "4889:10:65";
                                         readonly memberName: "NotPayable";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10425;
-                                        readonly src: "5265:22:65";
+                                        readonly referencedDeclaration: 10270;
+                                        readonly src: "4877:22:65";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 9109;
+                                    readonly id: 8977;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3772,63 +3650,63 @@ export declare const RETHBase: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "5265:24:65";
+                                    readonly src: "4877:24:65";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 9110;
+                                readonly id: 8978;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "5258:31:65";
+                                readonly src: "4870:31:65";
                             }];
                         };
                     }];
                 };
-                readonly baseFunctions: readonly [12900];
+                readonly baseFunctions: readonly [12736];
                 readonly documentation: {
-                    readonly id: 9098;
+                    readonly id: 8966;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "5084:73:65";
+                    readonly src: "4695:73:65";
                     readonly text: "@dev Disallows the contract to receive ether, when opening positions.";
                 };
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [];
                 readonly name: "_checkMessageValue";
-                readonly nameLocation: "5171:18:65";
+                readonly nameLocation: "4782:18:65";
                 readonly overrides: {
-                    readonly id: 9100;
+                    readonly id: 8968;
                     readonly nodeType: "OverrideSpecifier";
                     readonly overrides: readonly [];
-                    readonly src: "5206:8:65";
+                    readonly src: "4817:8:65";
                 };
                 readonly parameters: {
-                    readonly id: 9099;
+                    readonly id: 8967;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "5189:2:65";
+                    readonly src: "4800:2:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9101;
+                    readonly id: 8969;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "5215:0:65";
+                    readonly src: "4826:0:65";
                 };
-                readonly scope: 9134;
+                readonly scope: 9002;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 9133;
+                readonly id: 9001;
                 readonly nodeType: "FunctionDefinition";
-                readonly src: "5481:149:65";
+                readonly src: "5093:149:65";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 9132;
+                    readonly id: 9000;
                     readonly nodeType: "Block";
-                    readonly src: "5508:122:65";
+                    readonly src: "5120:122:65";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
@@ -3836,33 +3714,33 @@ export declare const RETHBase: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
-                            readonly id: 9124;
+                            readonly id: 8992;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 9118;
+                                    readonly id: 8986;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -15;
-                                    readonly src: "5522:3:65";
+                                    readonly src: "5134:3:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_magic_message";
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 9119;
+                                readonly id: 8987;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
-                                readonly memberLocation: "5526:6:65";
+                                readonly memberLocation: "5138:6:65";
                                 readonly memberName: "sender";
                                 readonly nodeType: "MemberAccess";
-                                readonly src: "5522:10:65";
+                                readonly src: "5134:10:65";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
@@ -3872,42 +3750,42 @@ export declare const RETHBase: {
                             readonly operator: "!=";
                             readonly rightExpression: {
                                 readonly arguments: readonly [{
-                                    readonly id: 9122;
+                                    readonly id: 8990;
                                     readonly name: "_vaultSharesToken";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 17695;
-                                    readonly src: "5544:17:65";
+                                    readonly referencedDeclaration: 17536;
+                                    readonly src: "5156:17:65";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                         readonly typeString: "contract IERC20";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_IERC20_$9810";
+                                        readonly typeIdentifier: "t_contract$_IERC20_$9666";
                                         readonly typeString: "contract IERC20";
                                     }];
-                                    readonly id: 9121;
+                                    readonly id: 8989;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
                                     readonly lValueRequested: false;
                                     readonly nodeType: "ElementaryTypeNameExpression";
-                                    readonly src: "5536:7:65";
+                                    readonly src: "5148:7:65";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_type$_t_address_$";
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 9120;
+                                        readonly id: 8988;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
-                                        readonly src: "5536:7:65";
+                                        readonly src: "5148:7:65";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 9123;
+                                readonly id: 8991;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3916,59 +3794,59 @@ export declare const RETHBase: {
                                 readonly nameLocations: readonly [];
                                 readonly names: readonly [];
                                 readonly nodeType: "FunctionCall";
-                                readonly src: "5536:26:65";
+                                readonly src: "5148:26:65";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly src: "5522:40:65";
+                            readonly src: "5134:40:65";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 9131;
+                        readonly id: 8999;
                         readonly nodeType: "IfStatement";
-                        readonly src: "5518:106:65";
+                        readonly src: "5130:106:65";
                         readonly trueBody: {
-                            readonly id: 9130;
+                            readonly id: 8998;
                             readonly nodeType: "Block";
-                            readonly src: "5564:60:65";
+                            readonly src: "5176:60:65";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
                                         readonly expression: {
-                                            readonly id: 9125;
+                                            readonly id: 8993;
                                             readonly name: "IHyperdrive";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 10506;
-                                            readonly src: "5585:11:65";
+                                            readonly referencedDeclaration: 10351;
+                                            readonly src: "5197:11:65";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$10506_$";
+                                                readonly typeIdentifier: "t_type$_t_contract$_IHyperdrive_$10351_$";
                                                 readonly typeString: "type(contract IHyperdrive)";
                                             };
                                         };
-                                        readonly id: 9127;
+                                        readonly id: 8995;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
-                                        readonly memberLocation: "5597:14:65";
+                                        readonly memberLocation: "5209:14:65";
                                         readonly memberName: "TransferFailed";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 10451;
-                                        readonly src: "5585:26:65";
+                                        readonly referencedDeclaration: 10296;
+                                        readonly src: "5197:26:65";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 9128;
+                                    readonly id: 8996;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3977,24 +3855,24 @@ export declare const RETHBase: {
                                     readonly nameLocations: readonly [];
                                     readonly names: readonly [];
                                     readonly nodeType: "FunctionCall";
-                                    readonly src: "5585:28:65";
+                                    readonly src: "5197:28:65";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_tuple$__$";
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 9129;
+                                readonly id: 8997;
                                 readonly nodeType: "RevertStatement";
-                                readonly src: "5578:35:65";
+                                readonly src: "5190:35:65";
                             }];
                         };
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 9115;
+                    readonly id: 8983;
                     readonly nodeType: "StructuredDocumentation";
-                    readonly src: "5312:164:65";
+                    readonly src: "4924:164:65";
                     readonly text: "@dev Allows ether to be received only from the Rocket Pool rETH\n      token contract. Supports withdrawing as ethers from this\n      yield source.";
                 };
                 readonly implemented: true;
@@ -4003,18 +3881,18 @@ export declare const RETHBase: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 9116;
+                    readonly id: 8984;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "5488:2:65";
+                    readonly src: "5100:2:65";
                 };
                 readonly returnParameters: {
-                    readonly id: 9117;
+                    readonly id: 8985;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
-                    readonly src: "5508:0:65";
+                    readonly src: "5120:0:65";
                 };
-                readonly scope: 9134;
+                readonly scope: 9002;
                 readonly stateMutability: "payable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -4022,33 +3900,33 @@ export declare const RETHBase: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 8905;
+                    readonly id: 8783;
                     readonly name: "HyperdriveBase";
-                    readonly nameLocations: readonly ["1121:14:65"];
+                    readonly nameLocations: readonly ["1043:14:65"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 13835;
-                    readonly src: "1121:14:65";
+                    readonly referencedDeclaration: 13667;
+                    readonly src: "1043:14:65";
                 };
-                readonly id: 8906;
+                readonly id: 8784;
                 readonly nodeType: "InheritanceSpecifier";
-                readonly src: "1121:14:65";
+                readonly src: "1043:14:65";
             }];
             readonly canonicalName: "RETHBase";
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 8904;
+                readonly id: 8782;
                 readonly nodeType: "StructuredDocumentation";
-                readonly src: "483:608:65";
+                readonly src: "405:608:65";
                 readonly text: "@author DELV\n @title RETHHyperdrive\n @notice The base contract for the rETH Hyperdrive implementation.\n @dev Rocket Pool has it's own notion of shares to account for the accrual of\n      interest on the ether pooled in the Rocket Pool protocol. Instead of\n      maintaining a balance of shares, this integration can simply use Rocket Pool\n      shares directly.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [9134, 13835, 17893, 71565, 11037, 11609];
+            readonly linearizedBaseContracts: readonly [9002, 13667, 17734, 71639, 10887, 11459];
             readonly name: "RETHBase";
-            readonly nameLocation: "1109:8:65";
-            readonly scope: 9135;
-            readonly usedErrors: readonly [10451, 71510];
-            readonly usedEvents: readonly [10855, 10870, 10889, 10904, 10921, 10940, 10959, 10980, 10995, 11002, 11007, 11012, 11017, 11024, 11029, 11036, 11590, 11599, 11608];
+            readonly nameLocation: "1031:8:65";
+            readonly scope: 9003;
+            readonly usedErrors: readonly [10296, 71584];
+            readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";
     };

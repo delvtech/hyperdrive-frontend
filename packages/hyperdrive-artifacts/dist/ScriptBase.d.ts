@@ -65,40 +65,40 @@ export declare const ScriptBase: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/Base.sol";
-        readonly id: 29609;
+        readonly id: 29683;
         readonly exportedSymbols: {
-            readonly CommonBase: readonly [29596];
-            readonly ScriptBase: readonly [29608];
-            readonly StdStorage: readonly [35604];
-            readonly TestBase: readonly [29599];
-            readonly Vm: readonly [40704];
-            readonly VmSafe: readonly [40232];
+            readonly CommonBase: readonly [29670];
+            readonly ScriptBase: readonly [29682];
+            readonly StdStorage: readonly [35678];
+            readonly TestBase: readonly [29673];
+            readonly Vm: readonly [40778];
+            readonly VmSafe: readonly [40306];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "32:1761:144";
         readonly nodes: readonly [{
-            readonly id: 29535;
+            readonly id: 29609;
             readonly nodeType: "PragmaDirective";
             readonly src: "32:31:144";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 29537;
+            readonly id: 29611;
             readonly nodeType: "ImportDirective";
             readonly src: "65:44:144";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdStorage.sol";
             readonly file: "./StdStorage.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 29609;
-            readonly sourceUnit: 37058;
+            readonly scope: 29683;
+            readonly sourceUnit: 37132;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 29536;
+                    readonly id: 29610;
                     readonly name: "StdStorage";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 35604;
+                    readonly referencedDeclaration: 35678;
                     readonly src: "73:10:144";
                     readonly typeDescriptions: {};
                 };
@@ -106,33 +106,33 @@ export declare const ScriptBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 29540;
+            readonly id: 29614;
             readonly nodeType: "ImportDirective";
             readonly src: "110:36:144";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/Vm.sol";
             readonly file: "./Vm.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 29609;
-            readonly sourceUnit: 40705;
+            readonly scope: 29683;
+            readonly sourceUnit: 40779;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 29538;
+                    readonly id: 29612;
                     readonly name: "Vm";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 40704;
+                    readonly referencedDeclaration: 40778;
                     readonly src: "118:2:144";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 29539;
+                    readonly id: 29613;
                     readonly name: "VmSafe";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 40232;
+                    readonly referencedDeclaration: 40306;
                     readonly src: "122:6:144";
                     readonly typeDescriptions: {};
                 };
@@ -140,11 +140,11 @@ export declare const ScriptBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 29596;
+            readonly id: 29670;
             readonly nodeType: "ContractDefinition";
             readonly src: "148:1493:144";
             readonly nodes: readonly [{
-                readonly id: 29554;
+                readonly id: 29628;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "254:94:144";
                 readonly nodes: readonly [];
@@ -152,7 +152,7 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "VM_ADDRESS";
                 readonly nameLocation: "280:10:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -160,7 +160,7 @@ export declare const ScriptBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29541;
+                    readonly id: 29615;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "254:7:144";
@@ -176,7 +176,7 @@ export declare const ScriptBase: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly hexValue: "6865766d20636865617420636f6465";
-                                    readonly id: 29549;
+                                    readonly id: 29623;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -195,7 +195,7 @@ export declare const ScriptBase: {
                                         readonly typeIdentifier: "t_stringliteral_885cb69240a935d632d79c317109709ecfa91a80626ff3989d68f67f5b1dd12d";
                                         readonly typeString: "literal_string \"hevm cheat code\"";
                                     }];
-                                    readonly id: 29548;
+                                    readonly id: 29622;
                                     readonly name: "keccak256";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -206,7 +206,7 @@ export declare const ScriptBase: {
                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                     };
                                 };
-                                readonly id: 29550;
+                                readonly id: 29624;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -227,7 +227,7 @@ export declare const ScriptBase: {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
-                                readonly id: 29547;
+                                readonly id: 29621;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -239,14 +239,14 @@ export declare const ScriptBase: {
                                     readonly typeString: "type(uint256)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 29546;
+                                    readonly id: 29620;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "309:7:144";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 29551;
+                            readonly id: 29625;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -267,7 +267,7 @@ export declare const ScriptBase: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             }];
-                            readonly id: 29545;
+                            readonly id: 29619;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -279,14 +279,14 @@ export declare const ScriptBase: {
                                 readonly typeString: "type(uint160)";
                             };
                             readonly typeName: {
-                                readonly id: 29544;
+                                readonly id: 29618;
                                 readonly name: "uint160";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "301:7:144";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 29552;
+                        readonly id: 29626;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -307,7 +307,7 @@ export declare const ScriptBase: {
                             readonly typeIdentifier: "t_uint160";
                             readonly typeString: "uint160";
                         }];
-                        readonly id: 29543;
+                        readonly id: 29617;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -319,14 +319,14 @@ export declare const ScriptBase: {
                             readonly typeString: "type(address)";
                         };
                         readonly typeName: {
-                            readonly id: 29542;
+                            readonly id: 29616;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "293:7:144";
                             readonly typeDescriptions: {};
                         };
                     };
-                    readonly id: 29553;
+                    readonly id: 29627;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -344,7 +344,7 @@ export declare const ScriptBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29557;
+                readonly id: 29631;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "438:78:144";
                 readonly nodes: readonly [];
@@ -352,7 +352,7 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "CONSOLE";
                 readonly nameLocation: "464:7:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -360,7 +360,7 @@ export declare const ScriptBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29555;
+                    readonly id: 29629;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "438:7:144";
@@ -372,7 +372,7 @@ export declare const ScriptBase: {
                 };
                 readonly value: {
                     readonly hexValue: "307830303030303030303030303030303030303036333646366537333646366336353265366336663637";
-                    readonly id: 29556;
+                    readonly id: 29630;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -388,7 +388,7 @@ export declare const ScriptBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29560;
+                readonly id: 29634;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "623:86:144";
                 readonly nodes: readonly [];
@@ -396,7 +396,7 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "CREATE2_FACTORY";
                 readonly nameLocation: "649:15:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -404,7 +404,7 @@ export declare const ScriptBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29558;
+                    readonly id: 29632;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "623:7:144";
@@ -416,7 +416,7 @@ export declare const ScriptBase: {
                 };
                 readonly value: {
                     readonly hexValue: "307834653539623434383437623337393537383538383932306341373846624632366330423439353643";
-                    readonly id: 29559;
+                    readonly id: 29633;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -432,7 +432,7 @@ export declare const ScriptBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29574;
+                readonly id: 29648;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "812:105:144";
                 readonly nodes: readonly [];
@@ -440,7 +440,7 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "DEFAULT_SENDER";
                 readonly nameLocation: "838:14:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -448,7 +448,7 @@ export declare const ScriptBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29561;
+                    readonly id: 29635;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "812:7:144";
@@ -464,7 +464,7 @@ export declare const ScriptBase: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly hexValue: "666f756e6472792064656661756c742063616c6c6572";
-                                    readonly id: 29569;
+                                    readonly id: 29643;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -483,7 +483,7 @@ export declare const ScriptBase: {
                                         readonly typeIdentifier: "t_stringliteral_ee6e12ba256a78bc5d3ab9651804c8ab1f12e6bbf3894d4083f33e07309d1f38";
                                         readonly typeString: "literal_string \"foundry default caller\"";
                                     }];
-                                    readonly id: 29568;
+                                    readonly id: 29642;
                                     readonly name: "keccak256";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -494,7 +494,7 @@ export declare const ScriptBase: {
                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                     };
                                 };
-                                readonly id: 29570;
+                                readonly id: 29644;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -515,7 +515,7 @@ export declare const ScriptBase: {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
-                                readonly id: 29567;
+                                readonly id: 29641;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -527,14 +527,14 @@ export declare const ScriptBase: {
                                     readonly typeString: "type(uint256)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 29566;
+                                    readonly id: 29640;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "871:7:144";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 29571;
+                            readonly id: 29645;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -555,7 +555,7 @@ export declare const ScriptBase: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             }];
-                            readonly id: 29565;
+                            readonly id: 29639;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -567,14 +567,14 @@ export declare const ScriptBase: {
                                 readonly typeString: "type(uint160)";
                             };
                             readonly typeName: {
-                                readonly id: 29564;
+                                readonly id: 29638;
                                 readonly name: "uint160";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "863:7:144";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 29572;
+                        readonly id: 29646;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -595,7 +595,7 @@ export declare const ScriptBase: {
                             readonly typeIdentifier: "t_uint160";
                             readonly typeString: "uint160";
                         }];
-                        readonly id: 29563;
+                        readonly id: 29637;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -607,14 +607,14 @@ export declare const ScriptBase: {
                             readonly typeString: "type(address)";
                         };
                         readonly typeName: {
-                            readonly id: 29562;
+                            readonly id: 29636;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "855:7:144";
                             readonly typeDescriptions: {};
                         };
                     };
-                    readonly id: 29573;
+                    readonly id: 29647;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -632,7 +632,7 @@ export declare const ScriptBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29577;
+                readonly id: 29651;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "992:92:144";
                 readonly nodes: readonly [];
@@ -640,7 +640,7 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "DEFAULT_TEST_CONTRACT";
                 readonly nameLocation: "1018:21:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -648,7 +648,7 @@ export declare const ScriptBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29575;
+                    readonly id: 29649;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "992:7:144";
@@ -660,7 +660,7 @@ export declare const ScriptBase: {
                 };
                 readonly value: {
                     readonly hexValue: "307835363135644542373938424233453464466130313339644661316233443433334363323362373266";
-                    readonly id: 29576;
+                    readonly id: 29650;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -676,7 +676,7 @@ export declare const ScriptBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29580;
+                readonly id: 29654;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1158:89:144";
                 readonly nodes: readonly [];
@@ -684,7 +684,7 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "MULTICALL3_ADDRESS";
                 readonly nameLocation: "1184:18:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -692,7 +692,7 @@ export declare const ScriptBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29578;
+                    readonly id: 29652;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1158:7:144";
@@ -704,7 +704,7 @@ export declare const ScriptBase: {
                 };
                 readonly value: {
                     readonly hexValue: "307863413131626465303539373762333633313136373032383836326245326131373339373643413131";
-                    readonly id: 29579;
+                    readonly id: 29653;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -720,7 +720,7 @@ export declare const ScriptBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29583;
+                readonly id: 29657;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1294:130:144";
                 readonly nodes: readonly [];
@@ -728,7 +728,7 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "SECP256K1_ORDER";
                 readonly nameLocation: "1320:15:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -736,7 +736,7 @@ export declare const ScriptBase: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 29581;
+                    readonly id: 29655;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1294:7:144";
@@ -747,7 +747,7 @@ export declare const ScriptBase: {
                 };
                 readonly value: {
                     readonly hexValue: "313135373932303839323337333136313935343233353730393835303038363837393037383532383337353634323739303734393034333832363035313633313431353138313631343934333337";
-                    readonly id: 29582;
+                    readonly id: 29656;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -763,7 +763,7 @@ export declare const ScriptBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29586;
+                readonly id: 29660;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1431:126:144";
                 readonly nodes: readonly [];
@@ -771,7 +771,7 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "UINT256_MAX";
                 readonly nameLocation: "1457:11:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -779,7 +779,7 @@ export declare const ScriptBase: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 29584;
+                    readonly id: 29658;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1431:7:144";
@@ -790,7 +790,7 @@ export declare const ScriptBase: {
                 };
                 readonly value: {
                     readonly hexValue: "313135373932303839323337333136313935343233353730393835303038363837393037383533323639393834363635363430353634303339343537353834303037393133313239363339393335";
-                    readonly id: 29585;
+                    readonly id: 29659;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -806,7 +806,7 @@ export declare const ScriptBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29592;
+                readonly id: 29666;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1564:40:144";
                 readonly nodes: readonly [];
@@ -814,38 +814,38 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "vm";
                 readonly nameLocation: "1585:2:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_Vm_$40704";
+                    readonly typeIdentifier: "t_contract$_Vm_$40778";
                     readonly typeString: "contract Vm";
                 };
                 readonly typeName: {
-                    readonly id: 29588;
+                    readonly id: 29662;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 29587;
+                        readonly id: 29661;
                         readonly name: "Vm";
                         readonly nameLocations: readonly ["1564:2:144"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 40704;
+                        readonly referencedDeclaration: 40778;
                         readonly src: "1564:2:144";
                     };
-                    readonly referencedDeclaration: 40704;
+                    readonly referencedDeclaration: 40778;
                     readonly src: "1564:2:144";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_Vm_$40704";
+                        readonly typeIdentifier: "t_contract$_Vm_$40778";
                         readonly typeString: "contract Vm";
                     };
                 };
                 readonly value: {
                     readonly arguments: readonly [{
-                        readonly id: 29590;
+                        readonly id: 29664;
                         readonly name: "VM_ADDRESS";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 29554;
+                        readonly referencedDeclaration: 29628;
                         readonly src: "1593:10:144";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_address";
@@ -857,18 +857,18 @@ export declare const ScriptBase: {
                             readonly typeIdentifier: "t_address";
                             readonly typeString: "address";
                         }];
-                        readonly id: 29589;
+                        readonly id: 29663;
                         readonly name: "Vm";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 40704;
+                        readonly referencedDeclaration: 40778;
                         readonly src: "1590:2:144";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_type$_t_contract$_Vm_$40704_$";
+                            readonly typeIdentifier: "t_type$_t_contract$_Vm_$40778_$";
                             readonly typeString: "type(contract Vm)";
                         };
                     };
-                    readonly id: 29591;
+                    readonly id: 29665;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -880,13 +880,13 @@ export declare const ScriptBase: {
                     readonly src: "1590:14:144";
                     readonly tryCall: false;
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_Vm_$40704";
+                        readonly typeIdentifier: "t_contract$_Vm_$40778";
                         readonly typeString: "contract Vm";
                     };
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29595;
+                readonly id: 29669;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1610:28:144";
                 readonly nodes: readonly [];
@@ -894,28 +894,28 @@ export declare const ScriptBase: {
                 readonly mutability: "mutable";
                 readonly name: "stdstore";
                 readonly nameLocation: "1630:8:144";
-                readonly scope: 29596;
+                readonly scope: 29670;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_struct$_StdStorage_$35604_storage";
+                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage";
                     readonly typeString: "struct StdStorage";
                 };
                 readonly typeName: {
-                    readonly id: 29594;
+                    readonly id: 29668;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 29593;
+                        readonly id: 29667;
                         readonly name: "StdStorage";
                         readonly nameLocations: readonly ["1610:10:144"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 35604;
+                        readonly referencedDeclaration: 35678;
                         readonly src: "1610:10:144";
                     };
-                    readonly referencedDeclaration: 35604;
+                    readonly referencedDeclaration: 35678;
                     readonly src: "1610:10:144";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_struct$_StdStorage_$35604_storage_ptr";
+                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
                         readonly typeString: "struct StdStorage";
                     };
                 };
@@ -927,28 +927,28 @@ export declare const ScriptBase: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [29596];
+            readonly linearizedBaseContracts: readonly [29670];
             readonly name: "CommonBase";
             readonly nameLocation: "166:10:144";
-            readonly scope: 29609;
+            readonly scope: 29683;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }, {
-            readonly id: 29599;
+            readonly id: 29673;
             readonly nodeType: "ContractDefinition";
             readonly src: "1643:43:144";
             readonly nodes: readonly [];
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 29597;
+                    readonly id: 29671;
                     readonly name: "CommonBase";
                     readonly nameLocations: readonly ["1673:10:144"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 29596;
+                    readonly referencedDeclaration: 29670;
                     readonly src: "1673:10:144";
                 };
-                readonly id: 29598;
+                readonly id: 29672;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1673:10:144";
             }];
@@ -956,18 +956,18 @@ export declare const ScriptBase: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [29599, 29596];
+            readonly linearizedBaseContracts: readonly [29673, 29670];
             readonly name: "TestBase";
             readonly nameLocation: "1661:8:144";
-            readonly scope: 29609;
+            readonly scope: 29683;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }, {
-            readonly id: 29608;
+            readonly id: 29682;
             readonly nodeType: "ContractDefinition";
             readonly src: "1688:104:144";
             readonly nodes: readonly [{
-                readonly id: 29607;
+                readonly id: 29681;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1737:52:144";
                 readonly nodes: readonly [];
@@ -975,38 +975,38 @@ export declare const ScriptBase: {
                 readonly mutability: "constant";
                 readonly name: "vmSafe";
                 readonly nameLocation: "1762:6:144";
-                readonly scope: 29608;
+                readonly scope: 29682;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_VmSafe_$40232";
+                    readonly typeIdentifier: "t_contract$_VmSafe_$40306";
                     readonly typeString: "contract VmSafe";
                 };
                 readonly typeName: {
-                    readonly id: 29603;
+                    readonly id: 29677;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 29602;
+                        readonly id: 29676;
                         readonly name: "VmSafe";
                         readonly nameLocations: readonly ["1737:6:144"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 40232;
+                        readonly referencedDeclaration: 40306;
                         readonly src: "1737:6:144";
                     };
-                    readonly referencedDeclaration: 40232;
+                    readonly referencedDeclaration: 40306;
                     readonly src: "1737:6:144";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_VmSafe_$40232";
+                        readonly typeIdentifier: "t_contract$_VmSafe_$40306";
                         readonly typeString: "contract VmSafe";
                     };
                 };
                 readonly value: {
                     readonly arguments: readonly [{
-                        readonly id: 29605;
+                        readonly id: 29679;
                         readonly name: "VM_ADDRESS";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 29554;
+                        readonly referencedDeclaration: 29628;
                         readonly src: "1778:10:144";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_address";
@@ -1018,18 +1018,18 @@ export declare const ScriptBase: {
                             readonly typeIdentifier: "t_address";
                             readonly typeString: "address";
                         }];
-                        readonly id: 29604;
+                        readonly id: 29678;
                         readonly name: "VmSafe";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 40232;
+                        readonly referencedDeclaration: 40306;
                         readonly src: "1771:6:144";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_type$_t_contract$_VmSafe_$40232_$";
+                            readonly typeIdentifier: "t_type$_t_contract$_VmSafe_$40306_$";
                             readonly typeString: "type(contract VmSafe)";
                         };
                     };
-                    readonly id: 29606;
+                    readonly id: 29680;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -1041,7 +1041,7 @@ export declare const ScriptBase: {
                     readonly src: "1771:18:144";
                     readonly tryCall: false;
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_VmSafe_$40232";
+                        readonly typeIdentifier: "t_contract$_VmSafe_$40306";
                         readonly typeString: "contract VmSafe";
                     };
                 };
@@ -1050,14 +1050,14 @@ export declare const ScriptBase: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 29600;
+                    readonly id: 29674;
                     readonly name: "CommonBase";
                     readonly nameLocations: readonly ["1720:10:144"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 29596;
+                    readonly referencedDeclaration: 29670;
                     readonly src: "1720:10:144";
                 };
-                readonly id: 29601;
+                readonly id: 29675;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1720:10:144";
             }];
@@ -1065,10 +1065,10 @@ export declare const ScriptBase: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [29608, 29596];
+            readonly linearizedBaseContracts: readonly [29682, 29670];
             readonly name: "ScriptBase";
             readonly nameLocation: "1706:10:144";
-            readonly scope: 29609;
+            readonly scope: 29683;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

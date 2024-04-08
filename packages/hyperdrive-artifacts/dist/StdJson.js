@@ -74,20 +74,20 @@ export const stdJson = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/StdJson.sol",
-        "id": 35431,
+        "id": 35505,
         "exportedSymbols": {
             "VmSafe": [
-                40232
+                40306
             ],
             "stdJson": [
-                35430
+                35504
             ]
         },
         "nodeType": "SourceUnit",
         "src": "32:6173:150",
         "nodes": [
             {
-                "id": 34856,
+                "id": 34930,
                 "nodeType": "PragmaDirective",
                 "src": "32:31:150",
                 "nodes": [],
@@ -102,7 +102,7 @@ export const stdJson = {
                 ]
             },
             {
-                "id": 34857,
+                "id": 34931,
                 "nodeType": "PragmaDirective",
                 "src": "65:33:150",
                 "nodes": [],
@@ -112,23 +112,23 @@ export const stdJson = {
                 ]
             },
             {
-                "id": 34859,
+                "id": 34933,
                 "nodeType": "ImportDirective",
                 "src": "100:32:150",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/Vm.sol",
                 "file": "./Vm.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 35431,
-                "sourceUnit": 40705,
+                "scope": 35505,
+                "sourceUnit": 40779,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 34858,
+                            "id": 34932,
                             "name": "VmSafe",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40232,
+                            "referencedDeclaration": 40306,
                             "src": "108:6:150",
                             "typeDescriptions": {}
                         },
@@ -138,12 +138,12 @@ export const stdJson = {
                 "unitAlias": ""
             },
             {
-                "id": 35430,
+                "id": 35504,
                 "nodeType": "ContractDefinition",
                 "src": "830:5374:150",
                 "nodes": [
                     {
-                        "id": 34876,
+                        "id": 34950,
                         "nodeType": "VariableDeclaration",
                         "src": "852:92:150",
                         "nodes": [],
@@ -151,30 +151,30 @@ export const stdJson = {
                         "mutability": "constant",
                         "name": "vm",
                         "nameLocation": "876:2:150",
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_VmSafe_$40232",
+                            "typeIdentifier": "t_contract$_VmSafe_$40306",
                             "typeString": "contract VmSafe"
                         },
                         "typeName": {
-                            "id": 34861,
+                            "id": 34935,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 34860,
+                                "id": 34934,
                                 "name": "VmSafe",
                                 "nameLocations": [
                                     "852:6:150"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 40232,
+                                "referencedDeclaration": 40306,
                                 "src": "852:6:150"
                             },
-                            "referencedDeclaration": 40232,
+                            "referencedDeclaration": 40306,
                             "src": "852:6:150",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                "typeIdentifier": "t_contract$_VmSafe_$40306",
                                 "typeString": "contract VmSafe"
                             }
                         },
@@ -190,7 +190,7 @@ export const stdJson = {
                                                             "arguments": [
                                                                 {
                                                                     "hexValue": "6865766d20636865617420636f6465",
-                                                                    "id": 34870,
+                                                                    "id": 34944,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -212,7 +212,7 @@ export const stdJson = {
                                                                         "typeString": "literal_string \"hevm cheat code\""
                                                                     }
                                                                 ],
-                                                                "id": 34869,
+                                                                "id": 34943,
                                                                 "name": "keccak256",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
@@ -223,7 +223,7 @@ export const stdJson = {
                                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                                 }
                                                             },
-                                                            "id": 34871,
+                                                            "id": 34945,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -247,7 +247,7 @@ export const stdJson = {
                                                                 "typeString": "bytes32"
                                                             }
                                                         ],
-                                                        "id": 34868,
+                                                        "id": 34942,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -259,14 +259,14 @@ export const stdJson = {
                                                             "typeString": "type(uint256)"
                                                         },
                                                         "typeName": {
-                                                            "id": 34867,
+                                                            "id": 34941,
                                                             "name": "uint256",
                                                             "nodeType": "ElementaryTypeName",
                                                             "src": "904:7:150",
                                                             "typeDescriptions": {}
                                                         }
                                                     },
-                                                    "id": 34872,
+                                                    "id": 34946,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -290,7 +290,7 @@ export const stdJson = {
                                                         "typeString": "uint256"
                                                     }
                                                 ],
-                                                "id": 34866,
+                                                "id": 34940,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -302,14 +302,14 @@ export const stdJson = {
                                                     "typeString": "type(uint160)"
                                                 },
                                                 "typeName": {
-                                                    "id": 34865,
+                                                    "id": 34939,
                                                     "name": "uint160",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "896:7:150",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 34873,
+                                            "id": 34947,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -333,7 +333,7 @@ export const stdJson = {
                                                 "typeString": "uint160"
                                             }
                                         ],
-                                        "id": 34864,
+                                        "id": 34938,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -345,14 +345,14 @@ export const stdJson = {
                                             "typeString": "type(address)"
                                         },
                                         "typeName": {
-                                            "id": 34863,
+                                            "id": 34937,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "888:7:150",
                                             "typeDescriptions": {}
                                         }
                                     },
-                                    "id": 34874,
+                                    "id": 34948,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -376,18 +376,18 @@ export const stdJson = {
                                         "typeString": "address"
                                     }
                                 ],
-                                "id": 34862,
+                                "id": 34936,
                                 "name": "VmSafe",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 40232,
+                                "referencedDeclaration": 40306,
                                 "src": "881:6:150",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40232_$",
+                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40306_$",
                                     "typeString": "type(contract VmSafe)"
                                 }
                             },
-                            "id": 34875,
+                            "id": 34949,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -399,19 +399,19 @@ export const stdJson = {
                             "src": "881:63:150",
                             "tryCall": false,
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                "typeIdentifier": "t_contract$_VmSafe_$40306",
                                 "typeString": "contract VmSafe"
                             }
                         },
                         "visibility": "private"
                     },
                     {
-                        "id": 34892,
+                        "id": 34966,
                         "nodeType": "FunctionDefinition",
                         "src": "951:141:150",
                         "nodes": [],
                         "body": {
-                            "id": 34891,
+                            "id": 34965,
                             "nodeType": "Block",
                             "src": "1045:47:150",
                             "nodes": [],
@@ -420,11 +420,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34887,
+                                                "id": 34961,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34878,
+                                                "referencedDeclaration": 34952,
                                                 "src": "1075:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -432,11 +432,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 34888,
+                                                "id": 34962,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34880,
+                                                "referencedDeclaration": 34954,
                                                 "src": "1081:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -456,18 +456,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34885,
+                                                "id": 34959,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "1062:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 34886,
+                                            "id": 34960,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -475,14 +475,14 @@ export const stdJson = {
                                             "memberLocation": "1065:9:150",
                                             "memberName": "parseJson",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39859,
+                                            "referencedDeclaration": 39933,
                                             "src": "1062:12:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) pure external returns (bytes memory)"
                                             }
                                         },
-                                        "id": 34889,
+                                        "id": 34963,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -498,8 +498,8 @@ export const stdJson = {
                                             "typeString": "bytes memory"
                                         }
                                     },
-                                    "functionReturnParameters": 34884,
-                                    "id": 34890,
+                                    "functionReturnParameters": 34958,
+                                    "id": 34964,
                                     "nodeType": "Return",
                                     "src": "1055:30:150"
                                 }
@@ -511,17 +511,17 @@ export const stdJson = {
                         "name": "parseRaw",
                         "nameLocation": "960:8:150",
                         "parameters": {
-                            "id": 34881,
+                            "id": 34955,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34878,
+                                    "id": 34952,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "983:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34892,
+                                    "scope": 34966,
                                     "src": "969:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -530,7 +530,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34877,
+                                        "id": 34951,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "969:6:150",
@@ -543,12 +543,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 34880,
+                                    "id": 34954,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "1003:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34892,
+                                    "scope": 34966,
                                     "src": "989:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -557,7 +557,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34879,
+                                        "id": 34953,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "989:6:150",
@@ -572,17 +572,17 @@ export const stdJson = {
                             "src": "968:39:150"
                         },
                         "returnParameters": {
-                            "id": 34884,
+                            "id": 34958,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34883,
+                                    "id": 34957,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34892,
+                                    "scope": 34966,
                                     "src": "1031:12:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -591,7 +591,7 @@ export const stdJson = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 34882,
+                                        "id": 34956,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1031:5:150",
@@ -605,18 +605,18 @@ export const stdJson = {
                             ],
                             "src": "1030:14:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34908,
+                        "id": 34982,
                         "nodeType": "FunctionDefinition",
                         "src": "1098:135:150",
                         "nodes": [],
                         "body": {
-                            "id": 34907,
+                            "id": 34981,
                             "nodeType": "Block",
                             "src": "1182:51:150",
                             "nodes": [],
@@ -625,11 +625,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34903,
+                                                "id": 34977,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34894,
+                                                "referencedDeclaration": 34968,
                                                 "src": "1216:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -637,11 +637,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 34904,
+                                                "id": 34978,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34896,
+                                                "referencedDeclaration": 34970,
                                                 "src": "1222:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -661,18 +661,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34901,
+                                                "id": 34975,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "1199:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 34902,
+                                            "id": 34976,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -680,14 +680,14 @@ export const stdJson = {
                                             "memberLocation": "1202:13:150",
                                             "memberName": "parseJsonUint",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39875,
+                                            "referencedDeclaration": 39949,
                                             "src": "1199:16:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_uint256_$",
                                                 "typeString": "function (string memory,string memory) external returns (uint256)"
                                             }
                                         },
-                                        "id": 34905,
+                                        "id": 34979,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -703,8 +703,8 @@ export const stdJson = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 34900,
-                                    "id": 34906,
+                                    "functionReturnParameters": 34974,
+                                    "id": 34980,
                                     "nodeType": "Return",
                                     "src": "1192:34:150"
                                 }
@@ -716,17 +716,17 @@ export const stdJson = {
                         "name": "readUint",
                         "nameLocation": "1107:8:150",
                         "parameters": {
-                            "id": 34897,
+                            "id": 34971,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34894,
+                                    "id": 34968,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "1130:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34908,
+                                    "scope": 34982,
                                     "src": "1116:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -735,7 +735,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34893,
+                                        "id": 34967,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1116:6:150",
@@ -748,12 +748,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 34896,
+                                    "id": 34970,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "1150:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34908,
+                                    "scope": 34982,
                                     "src": "1136:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -762,7 +762,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34895,
+                                        "id": 34969,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1136:6:150",
@@ -777,17 +777,17 @@ export const stdJson = {
                             "src": "1115:39:150"
                         },
                         "returnParameters": {
-                            "id": 34900,
+                            "id": 34974,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34899,
+                                    "id": 34973,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34908,
+                                    "scope": 34982,
                                     "src": "1173:7:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -796,7 +796,7 @@ export const stdJson = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 34898,
+                                        "id": 34972,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1173:7:150",
@@ -810,18 +810,18 @@ export const stdJson = {
                             ],
                             "src": "1172:9:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34925,
+                        "id": 34999,
                         "nodeType": "FunctionDefinition",
                         "src": "1239:154:150",
                         "nodes": [],
                         "body": {
-                            "id": 34924,
+                            "id": 34998,
                             "nodeType": "Block",
                             "src": "1337:56:150",
                             "nodes": [],
@@ -830,11 +830,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34920,
+                                                "id": 34994,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34910,
+                                                "referencedDeclaration": 34984,
                                                 "src": "1376:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -842,11 +842,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 34921,
+                                                "id": 34995,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34912,
+                                                "referencedDeclaration": 34986,
                                                 "src": "1382:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -866,18 +866,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34918,
+                                                "id": 34992,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "1354:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 34919,
+                                            "id": 34993,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -885,14 +885,14 @@ export const stdJson = {
                                             "memberLocation": "1357:18:150",
                                             "memberName": "parseJsonUintArray",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39885,
+                                            "referencedDeclaration": 39959,
                                             "src": "1354:21:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_uint256_$dyn_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) external returns (uint256[] memory)"
                                             }
                                         },
-                                        "id": 34922,
+                                        "id": 34996,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -908,8 +908,8 @@ export const stdJson = {
                                             "typeString": "uint256[] memory"
                                         }
                                     },
-                                    "functionReturnParameters": 34917,
-                                    "id": 34923,
+                                    "functionReturnParameters": 34991,
+                                    "id": 34997,
                                     "nodeType": "Return",
                                     "src": "1347:39:150"
                                 }
@@ -921,17 +921,17 @@ export const stdJson = {
                         "name": "readUintArray",
                         "nameLocation": "1248:13:150",
                         "parameters": {
-                            "id": 34913,
+                            "id": 34987,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34910,
+                                    "id": 34984,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "1276:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34925,
+                                    "scope": 34999,
                                     "src": "1262:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -940,7 +940,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34909,
+                                        "id": 34983,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1262:6:150",
@@ -953,12 +953,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 34912,
+                                    "id": 34986,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "1296:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34925,
+                                    "scope": 34999,
                                     "src": "1282:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -967,7 +967,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34911,
+                                        "id": 34985,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1282:6:150",
@@ -982,17 +982,17 @@ export const stdJson = {
                             "src": "1261:39:150"
                         },
                         "returnParameters": {
-                            "id": 34917,
+                            "id": 34991,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34916,
+                                    "id": 34990,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34925,
+                                    "scope": 34999,
                                     "src": "1319:16:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1002,7 +1002,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34914,
+                                            "id": 34988,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "1319:7:150",
@@ -1011,7 +1011,7 @@ export const stdJson = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 34915,
+                                        "id": 34989,
                                         "nodeType": "ArrayTypeName",
                                         "src": "1319:9:150",
                                         "typeDescriptions": {
@@ -1024,18 +1024,18 @@ export const stdJson = {
                             ],
                             "src": "1318:18:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34941,
+                        "id": 35015,
                         "nodeType": "FunctionDefinition",
                         "src": "1399:132:150",
                         "nodes": [],
                         "body": {
-                            "id": 34940,
+                            "id": 35014,
                             "nodeType": "Block",
                             "src": "1481:50:150",
                             "nodes": [],
@@ -1044,11 +1044,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34936,
+                                                "id": 35010,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34927,
+                                                "referencedDeclaration": 35001,
                                                 "src": "1514:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1056,11 +1056,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 34937,
+                                                "id": 35011,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34929,
+                                                "referencedDeclaration": 35003,
                                                 "src": "1520:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1080,18 +1080,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34934,
+                                                "id": 35008,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "1498:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 34935,
+                                            "id": 35009,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1099,14 +1099,14 @@ export const stdJson = {
                                             "memberLocation": "1501:12:150",
                                             "memberName": "parseJsonInt",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39894,
+                                            "referencedDeclaration": 39968,
                                             "src": "1498:15:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_int256_$",
                                                 "typeString": "function (string memory,string memory) external returns (int256)"
                                             }
                                         },
-                                        "id": 34938,
+                                        "id": 35012,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1122,8 +1122,8 @@ export const stdJson = {
                                             "typeString": "int256"
                                         }
                                     },
-                                    "functionReturnParameters": 34933,
-                                    "id": 34939,
+                                    "functionReturnParameters": 35007,
+                                    "id": 35013,
                                     "nodeType": "Return",
                                     "src": "1491:33:150"
                                 }
@@ -1135,17 +1135,17 @@ export const stdJson = {
                         "name": "readInt",
                         "nameLocation": "1408:7:150",
                         "parameters": {
-                            "id": 34930,
+                            "id": 35004,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34927,
+                                    "id": 35001,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "1430:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34941,
+                                    "scope": 35015,
                                     "src": "1416:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1154,7 +1154,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34926,
+                                        "id": 35000,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1416:6:150",
@@ -1167,12 +1167,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 34929,
+                                    "id": 35003,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "1450:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34941,
+                                    "scope": 35015,
                                     "src": "1436:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1181,7 +1181,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34928,
+                                        "id": 35002,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1436:6:150",
@@ -1196,17 +1196,17 @@ export const stdJson = {
                             "src": "1415:39:150"
                         },
                         "returnParameters": {
-                            "id": 34933,
+                            "id": 35007,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34932,
+                                    "id": 35006,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34941,
+                                    "scope": 35015,
                                     "src": "1473:6:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1215,7 +1215,7 @@ export const stdJson = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 34931,
+                                        "id": 35005,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1473:6:150",
@@ -1229,18 +1229,18 @@ export const stdJson = {
                             ],
                             "src": "1472:8:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34958,
+                        "id": 35032,
                         "nodeType": "FunctionDefinition",
                         "src": "1537:151:150",
                         "nodes": [],
                         "body": {
-                            "id": 34957,
+                            "id": 35031,
                             "nodeType": "Block",
                             "src": "1633:55:150",
                             "nodes": [],
@@ -1249,11 +1249,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34953,
+                                                "id": 35027,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34943,
+                                                "referencedDeclaration": 35017,
                                                 "src": "1671:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1261,11 +1261,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 34954,
+                                                "id": 35028,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34945,
+                                                "referencedDeclaration": 35019,
                                                 "src": "1677:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1285,18 +1285,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34951,
+                                                "id": 35025,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "1650:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 34952,
+                                            "id": 35026,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1304,14 +1304,14 @@ export const stdJson = {
                                             "memberLocation": "1653:17:150",
                                             "memberName": "parseJsonIntArray",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39904,
+                                            "referencedDeclaration": 39978,
                                             "src": "1650:20:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_int256_$dyn_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) external returns (int256[] memory)"
                                             }
                                         },
-                                        "id": 34955,
+                                        "id": 35029,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1327,8 +1327,8 @@ export const stdJson = {
                                             "typeString": "int256[] memory"
                                         }
                                     },
-                                    "functionReturnParameters": 34950,
-                                    "id": 34956,
+                                    "functionReturnParameters": 35024,
+                                    "id": 35030,
                                     "nodeType": "Return",
                                     "src": "1643:38:150"
                                 }
@@ -1340,17 +1340,17 @@ export const stdJson = {
                         "name": "readIntArray",
                         "nameLocation": "1546:12:150",
                         "parameters": {
-                            "id": 34946,
+                            "id": 35020,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34943,
+                                    "id": 35017,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "1573:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34958,
+                                    "scope": 35032,
                                     "src": "1559:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1359,7 +1359,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34942,
+                                        "id": 35016,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1559:6:150",
@@ -1372,12 +1372,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 34945,
+                                    "id": 35019,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "1593:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34958,
+                                    "scope": 35032,
                                     "src": "1579:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1386,7 +1386,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34944,
+                                        "id": 35018,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1579:6:150",
@@ -1401,17 +1401,17 @@ export const stdJson = {
                             "src": "1558:39:150"
                         },
                         "returnParameters": {
-                            "id": 34950,
+                            "id": 35024,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34949,
+                                    "id": 35023,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34958,
+                                    "scope": 35032,
                                     "src": "1616:15:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1421,7 +1421,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34947,
+                                            "id": 35021,
                                             "name": "int256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "1616:6:150",
@@ -1430,7 +1430,7 @@ export const stdJson = {
                                                 "typeString": "int256"
                                             }
                                         },
-                                        "id": 34948,
+                                        "id": 35022,
                                         "nodeType": "ArrayTypeName",
                                         "src": "1616:8:150",
                                         "typeDescriptions": {
@@ -1443,18 +1443,18 @@ export const stdJson = {
                             ],
                             "src": "1615:17:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34974,
+                        "id": 35048,
                         "nodeType": "FunctionDefinition",
                         "src": "1694:141:150",
                         "nodes": [],
                         "body": {
-                            "id": 34973,
+                            "id": 35047,
                             "nodeType": "Block",
                             "src": "1781:54:150",
                             "nodes": [],
@@ -1463,11 +1463,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34969,
+                                                "id": 35043,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34960,
+                                                "referencedDeclaration": 35034,
                                                 "src": "1818:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1475,11 +1475,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 34970,
+                                                "id": 35044,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34962,
+                                                "referencedDeclaration": 35036,
                                                 "src": "1824:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1499,18 +1499,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34967,
+                                                "id": 35041,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "1798:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 34968,
+                                            "id": 35042,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1518,14 +1518,14 @@ export const stdJson = {
                                             "memberLocation": "1801:16:150",
                                             "memberName": "parseJsonBytes32",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39989,
+                                            "referencedDeclaration": 40063,
                                             "src": "1798:19:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes32_$",
                                                 "typeString": "function (string memory,string memory) external returns (bytes32)"
                                             }
                                         },
-                                        "id": 34971,
+                                        "id": 35045,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1541,8 +1541,8 @@ export const stdJson = {
                                             "typeString": "bytes32"
                                         }
                                     },
-                                    "functionReturnParameters": 34966,
-                                    "id": 34972,
+                                    "functionReturnParameters": 35040,
+                                    "id": 35046,
                                     "nodeType": "Return",
                                     "src": "1791:37:150"
                                 }
@@ -1554,17 +1554,17 @@ export const stdJson = {
                         "name": "readBytes32",
                         "nameLocation": "1703:11:150",
                         "parameters": {
-                            "id": 34963,
+                            "id": 35037,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34960,
+                                    "id": 35034,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "1729:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34974,
+                                    "scope": 35048,
                                     "src": "1715:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1573,7 +1573,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34959,
+                                        "id": 35033,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1715:6:150",
@@ -1586,12 +1586,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 34962,
+                                    "id": 35036,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "1749:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34974,
+                                    "scope": 35048,
                                     "src": "1735:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1600,7 +1600,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34961,
+                                        "id": 35035,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1735:6:150",
@@ -1615,17 +1615,17 @@ export const stdJson = {
                             "src": "1714:39:150"
                         },
                         "returnParameters": {
-                            "id": 34966,
+                            "id": 35040,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34965,
+                                    "id": 35039,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34974,
+                                    "scope": 35048,
                                     "src": "1772:7:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1634,7 +1634,7 @@ export const stdJson = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 34964,
+                                        "id": 35038,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1772:7:150",
@@ -1648,18 +1648,18 @@ export const stdJson = {
                             ],
                             "src": "1771:9:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34991,
+                        "id": 35065,
                         "nodeType": "FunctionDefinition",
                         "src": "1841:160:150",
                         "nodes": [],
                         "body": {
-                            "id": 34990,
+                            "id": 35064,
                             "nodeType": "Block",
                             "src": "1942:59:150",
                             "nodes": [],
@@ -1668,11 +1668,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34986,
+                                                "id": 35060,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34976,
+                                                "referencedDeclaration": 35050,
                                                 "src": "1984:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1680,11 +1680,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 34987,
+                                                "id": 35061,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34978,
+                                                "referencedDeclaration": 35052,
                                                 "src": "1990:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1704,18 +1704,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34984,
+                                                "id": 35058,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "1959:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 34985,
+                                            "id": 35059,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1723,14 +1723,14 @@ export const stdJson = {
                                             "memberLocation": "1962:21:150",
                                             "memberName": "parseJsonBytes32Array",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39999,
+                                            "referencedDeclaration": 40073,
                                             "src": "1959:24:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_bytes32_$dyn_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) external returns (bytes32[] memory)"
                                             }
                                         },
-                                        "id": 34988,
+                                        "id": 35062,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1746,8 +1746,8 @@ export const stdJson = {
                                             "typeString": "bytes32[] memory"
                                         }
                                     },
-                                    "functionReturnParameters": 34983,
-                                    "id": 34989,
+                                    "functionReturnParameters": 35057,
+                                    "id": 35063,
                                     "nodeType": "Return",
                                     "src": "1952:42:150"
                                 }
@@ -1759,17 +1759,17 @@ export const stdJson = {
                         "name": "readBytes32Array",
                         "nameLocation": "1850:16:150",
                         "parameters": {
-                            "id": 34979,
+                            "id": 35053,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34976,
+                                    "id": 35050,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "1881:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34991,
+                                    "scope": 35065,
                                     "src": "1867:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1778,7 +1778,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34975,
+                                        "id": 35049,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1867:6:150",
@@ -1791,12 +1791,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 34978,
+                                    "id": 35052,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "1901:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34991,
+                                    "scope": 35065,
                                     "src": "1887:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1805,7 +1805,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34977,
+                                        "id": 35051,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1887:6:150",
@@ -1820,17 +1820,17 @@ export const stdJson = {
                             "src": "1866:39:150"
                         },
                         "returnParameters": {
-                            "id": 34983,
+                            "id": 35057,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34982,
+                                    "id": 35056,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34991,
+                                    "scope": 35065,
                                     "src": "1924:16:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1840,7 +1840,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34980,
+                                            "id": 35054,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "1924:7:150",
@@ -1849,7 +1849,7 @@ export const stdJson = {
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 34981,
+                                        "id": 35055,
                                         "nodeType": "ArrayTypeName",
                                         "src": "1924:9:150",
                                         "typeDescriptions": {
@@ -1862,18 +1862,18 @@ export const stdJson = {
                             ],
                             "src": "1923:18:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35007,
+                        "id": 35081,
                         "nodeType": "FunctionDefinition",
                         "src": "2007:145:150",
                         "nodes": [],
                         "body": {
-                            "id": 35006,
+                            "id": 35080,
                             "nodeType": "Block",
                             "src": "2099:53:150",
                             "nodes": [],
@@ -1882,11 +1882,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35002,
+                                                "id": 35076,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34993,
+                                                "referencedDeclaration": 35067,
                                                 "src": "2135:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1894,11 +1894,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35003,
+                                                "id": 35077,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34995,
+                                                "referencedDeclaration": 35069,
                                                 "src": "2141:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1918,18 +1918,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35000,
+                                                "id": 35074,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "2116:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35001,
+                                            "id": 35075,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1937,14 +1937,14 @@ export const stdJson = {
                                             "memberLocation": "2119:15:150",
                                             "memberName": "parseJsonString",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39951,
+                                            "referencedDeclaration": 40025,
                                             "src": "2116:18:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35004,
+                                        "id": 35078,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1960,8 +1960,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 34999,
-                                    "id": 35005,
+                                    "functionReturnParameters": 35073,
+                                    "id": 35079,
                                     "nodeType": "Return",
                                     "src": "2109:36:150"
                                 }
@@ -1973,17 +1973,17 @@ export const stdJson = {
                         "name": "readString",
                         "nameLocation": "2016:10:150",
                         "parameters": {
-                            "id": 34996,
+                            "id": 35070,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34993,
+                                    "id": 35067,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "2041:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35007,
+                                    "scope": 35081,
                                     "src": "2027:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1992,7 +1992,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34992,
+                                        "id": 35066,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2027:6:150",
@@ -2005,12 +2005,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 34995,
+                                    "id": 35069,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "2061:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35007,
+                                    "scope": 35081,
                                     "src": "2047:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2019,7 +2019,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34994,
+                                        "id": 35068,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2047:6:150",
@@ -2034,17 +2034,17 @@ export const stdJson = {
                             "src": "2026:39:150"
                         },
                         "returnParameters": {
-                            "id": 34999,
+                            "id": 35073,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34998,
+                                    "id": 35072,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35007,
+                                    "scope": 35081,
                                     "src": "2084:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2053,7 +2053,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34997,
+                                        "id": 35071,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2084:6:150",
@@ -2067,18 +2067,18 @@ export const stdJson = {
                             ],
                             "src": "2083:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35024,
+                        "id": 35098,
                         "nodeType": "FunctionDefinition",
                         "src": "2158:157:150",
                         "nodes": [],
                         "body": {
-                            "id": 35023,
+                            "id": 35097,
                             "nodeType": "Block",
                             "src": "2257:58:150",
                             "nodes": [],
@@ -2087,11 +2087,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35019,
+                                                "id": 35093,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35009,
+                                                "referencedDeclaration": 35083,
                                                 "src": "2298:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2099,11 +2099,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35020,
+                                                "id": 35094,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35011,
+                                                "referencedDeclaration": 35085,
                                                 "src": "2304:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2123,18 +2123,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35017,
+                                                "id": 35091,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "2274:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35018,
+                                            "id": 35092,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2142,14 +2142,14 @@ export const stdJson = {
                                             "memberLocation": "2277:20:150",
                                             "memberName": "parseJsonStringArray",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39961,
+                                            "referencedDeclaration": 40035,
                                             "src": "2274:23:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_string_memory_ptr_$dyn_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) external returns (string memory[] memory)"
                                             }
                                         },
-                                        "id": 35021,
+                                        "id": 35095,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2165,8 +2165,8 @@ export const stdJson = {
                                             "typeString": "string memory[] memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35016,
-                                    "id": 35022,
+                                    "functionReturnParameters": 35090,
+                                    "id": 35096,
                                     "nodeType": "Return",
                                     "src": "2267:41:150"
                                 }
@@ -2178,17 +2178,17 @@ export const stdJson = {
                         "name": "readStringArray",
                         "nameLocation": "2167:15:150",
                         "parameters": {
-                            "id": 35012,
+                            "id": 35086,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35009,
+                                    "id": 35083,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "2197:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35024,
+                                    "scope": 35098,
                                     "src": "2183:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2197,7 +2197,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35008,
+                                        "id": 35082,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2183:6:150",
@@ -2210,12 +2210,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35011,
+                                    "id": 35085,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "2217:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35024,
+                                    "scope": 35098,
                                     "src": "2203:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2224,7 +2224,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35010,
+                                        "id": 35084,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2203:6:150",
@@ -2239,17 +2239,17 @@ export const stdJson = {
                             "src": "2182:39:150"
                         },
                         "returnParameters": {
-                            "id": 35016,
+                            "id": 35090,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35015,
+                                    "id": 35089,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35024,
+                                    "scope": 35098,
                                     "src": "2240:15:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2259,7 +2259,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35013,
+                                            "id": 35087,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2240:6:150",
@@ -2268,7 +2268,7 @@ export const stdJson = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 35014,
+                                        "id": 35088,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2240:8:150",
                                         "typeDescriptions": {
@@ -2281,18 +2281,18 @@ export const stdJson = {
                             ],
                             "src": "2239:17:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35040,
+                        "id": 35114,
                         "nodeType": "FunctionDefinition",
                         "src": "2321:141:150",
                         "nodes": [],
                         "body": {
-                            "id": 35039,
+                            "id": 35113,
                             "nodeType": "Block",
                             "src": "2408:54:150",
                             "nodes": [],
@@ -2301,11 +2301,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35035,
+                                                "id": 35109,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35026,
+                                                "referencedDeclaration": 35100,
                                                 "src": "2445:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2313,11 +2313,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35036,
+                                                "id": 35110,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35028,
+                                                "referencedDeclaration": 35102,
                                                 "src": "2451:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2337,18 +2337,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35033,
+                                                "id": 35107,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "2425:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35034,
+                                            "id": 35108,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2356,14 +2356,14 @@ export const stdJson = {
                                             "memberLocation": "2428:16:150",
                                             "memberName": "parseJsonAddress",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39932,
+                                            "referencedDeclaration": 40006,
                                             "src": "2425:19:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_address_$",
                                                 "typeString": "function (string memory,string memory) external returns (address)"
                                             }
                                         },
-                                        "id": 35037,
+                                        "id": 35111,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2379,8 +2379,8 @@ export const stdJson = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "functionReturnParameters": 35032,
-                                    "id": 35038,
+                                    "functionReturnParameters": 35106,
+                                    "id": 35112,
                                     "nodeType": "Return",
                                     "src": "2418:37:150"
                                 }
@@ -2392,17 +2392,17 @@ export const stdJson = {
                         "name": "readAddress",
                         "nameLocation": "2330:11:150",
                         "parameters": {
-                            "id": 35029,
+                            "id": 35103,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35026,
+                                    "id": 35100,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "2356:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35040,
+                                    "scope": 35114,
                                     "src": "2342:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2411,7 +2411,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35025,
+                                        "id": 35099,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2342:6:150",
@@ -2424,12 +2424,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35028,
+                                    "id": 35102,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "2376:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35040,
+                                    "scope": 35114,
                                     "src": "2362:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2438,7 +2438,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35027,
+                                        "id": 35101,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2362:6:150",
@@ -2453,17 +2453,17 @@ export const stdJson = {
                             "src": "2341:39:150"
                         },
                         "returnParameters": {
-                            "id": 35032,
+                            "id": 35106,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35031,
+                                    "id": 35105,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35040,
+                                    "scope": 35114,
                                     "src": "2399:7:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2472,7 +2472,7 @@ export const stdJson = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 35030,
+                                        "id": 35104,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2399:7:150",
@@ -2487,18 +2487,18 @@ export const stdJson = {
                             ],
                             "src": "2398:9:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35057,
+                        "id": 35131,
                         "nodeType": "FunctionDefinition",
                         "src": "2468:160:150",
                         "nodes": [],
                         "body": {
-                            "id": 35056,
+                            "id": 35130,
                             "nodeType": "Block",
                             "src": "2569:59:150",
                             "nodes": [],
@@ -2507,11 +2507,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35052,
+                                                "id": 35126,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35042,
+                                                "referencedDeclaration": 35116,
                                                 "src": "2611:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2519,11 +2519,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35053,
+                                                "id": 35127,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35044,
+                                                "referencedDeclaration": 35118,
                                                 "src": "2617:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2543,18 +2543,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35050,
+                                                "id": 35124,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "2586:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35051,
+                                            "id": 35125,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2562,14 +2562,14 @@ export const stdJson = {
                                             "memberLocation": "2589:21:150",
                                             "memberName": "parseJsonAddressArray",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39942,
+                                            "referencedDeclaration": 40016,
                                             "src": "2586:24:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_address_$dyn_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) external returns (address[] memory)"
                                             }
                                         },
-                                        "id": 35054,
+                                        "id": 35128,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2585,8 +2585,8 @@ export const stdJson = {
                                             "typeString": "address[] memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35049,
-                                    "id": 35055,
+                                    "functionReturnParameters": 35123,
+                                    "id": 35129,
                                     "nodeType": "Return",
                                     "src": "2579:42:150"
                                 }
@@ -2598,17 +2598,17 @@ export const stdJson = {
                         "name": "readAddressArray",
                         "nameLocation": "2477:16:150",
                         "parameters": {
-                            "id": 35045,
+                            "id": 35119,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35042,
+                                    "id": 35116,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "2508:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35057,
+                                    "scope": 35131,
                                     "src": "2494:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2617,7 +2617,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35041,
+                                        "id": 35115,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2494:6:150",
@@ -2630,12 +2630,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35044,
+                                    "id": 35118,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "2528:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35057,
+                                    "scope": 35131,
                                     "src": "2514:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2644,7 +2644,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35043,
+                                        "id": 35117,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2514:6:150",
@@ -2659,17 +2659,17 @@ export const stdJson = {
                             "src": "2493:39:150"
                         },
                         "returnParameters": {
-                            "id": 35049,
+                            "id": 35123,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35048,
+                                    "id": 35122,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35057,
+                                    "scope": 35131,
                                     "src": "2551:16:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2679,7 +2679,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35046,
+                                            "id": 35120,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2551:7:150",
@@ -2689,7 +2689,7 @@ export const stdJson = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 35047,
+                                        "id": 35121,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2551:9:150",
                                         "typeDescriptions": {
@@ -2702,18 +2702,18 @@ export const stdJson = {
                             ],
                             "src": "2550:18:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35073,
+                        "id": 35147,
                         "nodeType": "FunctionDefinition",
                         "src": "2634:132:150",
                         "nodes": [],
                         "body": {
-                            "id": 35072,
+                            "id": 35146,
                             "nodeType": "Block",
                             "src": "2715:51:150",
                             "nodes": [],
@@ -2722,11 +2722,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35068,
+                                                "id": 35142,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35059,
+                                                "referencedDeclaration": 35133,
                                                 "src": "2749:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2734,11 +2734,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35069,
+                                                "id": 35143,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35061,
+                                                "referencedDeclaration": 35135,
                                                 "src": "2755:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2758,18 +2758,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35066,
+                                                "id": 35140,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "2732:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35067,
+                                            "id": 35141,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2777,14 +2777,14 @@ export const stdJson = {
                                             "memberLocation": "2735:13:150",
                                             "memberName": "parseJsonBool",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39913,
+                                            "referencedDeclaration": 39987,
                                             "src": "2732:16:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bool_$",
                                                 "typeString": "function (string memory,string memory) external returns (bool)"
                                             }
                                         },
-                                        "id": 35070,
+                                        "id": 35144,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2800,8 +2800,8 @@ export const stdJson = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 35065,
-                                    "id": 35071,
+                                    "functionReturnParameters": 35139,
+                                    "id": 35145,
                                     "nodeType": "Return",
                                     "src": "2725:34:150"
                                 }
@@ -2813,17 +2813,17 @@ export const stdJson = {
                         "name": "readBool",
                         "nameLocation": "2643:8:150",
                         "parameters": {
-                            "id": 35062,
+                            "id": 35136,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35059,
+                                    "id": 35133,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "2666:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35073,
+                                    "scope": 35147,
                                     "src": "2652:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2832,7 +2832,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35058,
+                                        "id": 35132,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2652:6:150",
@@ -2845,12 +2845,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35061,
+                                    "id": 35135,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "2686:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35073,
+                                    "scope": 35147,
                                     "src": "2672:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2859,7 +2859,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35060,
+                                        "id": 35134,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2672:6:150",
@@ -2874,17 +2874,17 @@ export const stdJson = {
                             "src": "2651:39:150"
                         },
                         "returnParameters": {
-                            "id": 35065,
+                            "id": 35139,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35064,
+                                    "id": 35138,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35073,
+                                    "scope": 35147,
                                     "src": "2709:4:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2893,7 +2893,7 @@ export const stdJson = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 35063,
+                                        "id": 35137,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2709:4:150",
@@ -2907,18 +2907,18 @@ export const stdJson = {
                             ],
                             "src": "2708:6:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35090,
+                        "id": 35164,
                         "nodeType": "FunctionDefinition",
                         "src": "2772:151:150",
                         "nodes": [],
                         "body": {
-                            "id": 35089,
+                            "id": 35163,
                             "nodeType": "Block",
                             "src": "2867:56:150",
                             "nodes": [],
@@ -2927,11 +2927,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35085,
+                                                "id": 35159,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35075,
+                                                "referencedDeclaration": 35149,
                                                 "src": "2906:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2939,11 +2939,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35086,
+                                                "id": 35160,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35077,
+                                                "referencedDeclaration": 35151,
                                                 "src": "2912:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2963,18 +2963,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35083,
+                                                "id": 35157,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "2884:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35084,
+                                            "id": 35158,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2982,14 +2982,14 @@ export const stdJson = {
                                             "memberLocation": "2887:18:150",
                                             "memberName": "parseJsonBoolArray",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39923,
+                                            "referencedDeclaration": 39997,
                                             "src": "2884:21:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_bool_$dyn_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) external returns (bool[] memory)"
                                             }
                                         },
-                                        "id": 35087,
+                                        "id": 35161,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3005,8 +3005,8 @@ export const stdJson = {
                                             "typeString": "bool[] memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35082,
-                                    "id": 35088,
+                                    "functionReturnParameters": 35156,
+                                    "id": 35162,
                                     "nodeType": "Return",
                                     "src": "2877:39:150"
                                 }
@@ -3018,17 +3018,17 @@ export const stdJson = {
                         "name": "readBoolArray",
                         "nameLocation": "2781:13:150",
                         "parameters": {
-                            "id": 35078,
+                            "id": 35152,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35075,
+                                    "id": 35149,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "2809:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35090,
+                                    "scope": 35164,
                                     "src": "2795:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3037,7 +3037,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35074,
+                                        "id": 35148,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2795:6:150",
@@ -3050,12 +3050,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35077,
+                                    "id": 35151,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "2829:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35090,
+                                    "scope": 35164,
                                     "src": "2815:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3064,7 +3064,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35076,
+                                        "id": 35150,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2815:6:150",
@@ -3079,17 +3079,17 @@ export const stdJson = {
                             "src": "2794:39:150"
                         },
                         "returnParameters": {
-                            "id": 35082,
+                            "id": 35156,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35081,
+                                    "id": 35155,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35090,
+                                    "scope": 35164,
                                     "src": "2852:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3099,7 +3099,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35079,
+                                            "id": 35153,
                                             "name": "bool",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2852:4:150",
@@ -3108,7 +3108,7 @@ export const stdJson = {
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "id": 35080,
+                                        "id": 35154,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2852:6:150",
                                         "typeDescriptions": {
@@ -3121,18 +3121,18 @@ export const stdJson = {
                             ],
                             "src": "2851:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35106,
+                        "id": 35180,
                         "nodeType": "FunctionDefinition",
                         "src": "2929:142:150",
                         "nodes": [],
                         "body": {
-                            "id": 35105,
+                            "id": 35179,
                             "nodeType": "Block",
                             "src": "3019:52:150",
                             "nodes": [],
@@ -3141,11 +3141,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35101,
+                                                "id": 35175,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35092,
+                                                "referencedDeclaration": 35166,
                                                 "src": "3054:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3153,11 +3153,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35102,
+                                                "id": 35176,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35094,
+                                                "referencedDeclaration": 35168,
                                                 "src": "3060:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3177,18 +3177,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35099,
+                                                "id": 35173,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "3036:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35100,
+                                            "id": 35174,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3196,14 +3196,14 @@ export const stdJson = {
                                             "memberLocation": "3039:14:150",
                                             "memberName": "parseJsonBytes",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39970,
+                                            "referencedDeclaration": 40044,
                                             "src": "3036:17:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_bytes_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) external returns (bytes memory)"
                                             }
                                         },
-                                        "id": 35103,
+                                        "id": 35177,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3219,8 +3219,8 @@ export const stdJson = {
                                             "typeString": "bytes memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35098,
-                                    "id": 35104,
+                                    "functionReturnParameters": 35172,
+                                    "id": 35178,
                                     "nodeType": "Return",
                                     "src": "3029:35:150"
                                 }
@@ -3232,17 +3232,17 @@ export const stdJson = {
                         "name": "readBytes",
                         "nameLocation": "2938:9:150",
                         "parameters": {
-                            "id": 35095,
+                            "id": 35169,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35092,
+                                    "id": 35166,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "2962:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35106,
+                                    "scope": 35180,
                                     "src": "2948:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3251,7 +3251,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35091,
+                                        "id": 35165,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2948:6:150",
@@ -3264,12 +3264,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35094,
+                                    "id": 35168,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "2982:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35106,
+                                    "scope": 35180,
                                     "src": "2968:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3278,7 +3278,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35093,
+                                        "id": 35167,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2968:6:150",
@@ -3293,17 +3293,17 @@ export const stdJson = {
                             "src": "2947:39:150"
                         },
                         "returnParameters": {
-                            "id": 35098,
+                            "id": 35172,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35097,
+                                    "id": 35171,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35106,
+                                    "scope": 35180,
                                     "src": "3005:12:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3312,7 +3312,7 @@ export const stdJson = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 35096,
+                                        "id": 35170,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3005:5:150",
@@ -3326,18 +3326,18 @@ export const stdJson = {
                             ],
                             "src": "3004:14:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35123,
+                        "id": 35197,
                         "nodeType": "FunctionDefinition",
                         "src": "3077:154:150",
                         "nodes": [],
                         "body": {
-                            "id": 35122,
+                            "id": 35196,
                             "nodeType": "Block",
                             "src": "3174:57:150",
                             "nodes": [],
@@ -3346,11 +3346,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35118,
+                                                "id": 35192,
                                                 "name": "json",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35108,
+                                                "referencedDeclaration": 35182,
                                                 "src": "3214:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3358,11 +3358,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35119,
+                                                "id": 35193,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35110,
+                                                "referencedDeclaration": 35184,
                                                 "src": "3220:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3382,18 +3382,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35116,
+                                                "id": 35190,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "3191:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35117,
+                                            "id": 35191,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3401,14 +3401,14 @@ export const stdJson = {
                                             "memberLocation": "3194:19:150",
                                             "memberName": "parseJsonBytesArray",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39980,
+                                            "referencedDeclaration": 40054,
                                             "src": "3191:22:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_array$_t_bytes_memory_ptr_$dyn_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory) external returns (bytes memory[] memory)"
                                             }
                                         },
-                                        "id": 35120,
+                                        "id": 35194,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3424,8 +3424,8 @@ export const stdJson = {
                                             "typeString": "bytes memory[] memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35115,
-                                    "id": 35121,
+                                    "functionReturnParameters": 35189,
+                                    "id": 35195,
                                     "nodeType": "Return",
                                     "src": "3184:40:150"
                                 }
@@ -3437,17 +3437,17 @@ export const stdJson = {
                         "name": "readBytesArray",
                         "nameLocation": "3086:14:150",
                         "parameters": {
-                            "id": 35111,
+                            "id": 35185,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35108,
+                                    "id": 35182,
                                     "mutability": "mutable",
                                     "name": "json",
                                     "nameLocation": "3115:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35123,
+                                    "scope": 35197,
                                     "src": "3101:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3456,7 +3456,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35107,
+                                        "id": 35181,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3101:6:150",
@@ -3469,12 +3469,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35110,
+                                    "id": 35184,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "3135:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35123,
+                                    "scope": 35197,
                                     "src": "3121:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3483,7 +3483,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35109,
+                                        "id": 35183,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3121:6:150",
@@ -3498,17 +3498,17 @@ export const stdJson = {
                             "src": "3100:39:150"
                         },
                         "returnParameters": {
-                            "id": 35115,
+                            "id": 35189,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35114,
+                                    "id": 35188,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35123,
+                                    "scope": 35197,
                                     "src": "3158:14:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3518,7 +3518,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35112,
+                                            "id": 35186,
                                             "name": "bytes",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "3158:5:150",
@@ -3527,7 +3527,7 @@ export const stdJson = {
                                                 "typeString": "bytes"
                                             }
                                         },
-                                        "id": 35113,
+                                        "id": 35187,
                                         "nodeType": "ArrayTypeName",
                                         "src": "3158:7:150",
                                         "typeDescriptions": {
@@ -3540,18 +3540,18 @@ export const stdJson = {
                             ],
                             "src": "3157:16:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35142,
+                        "id": 35216,
                         "nodeType": "FunctionDefinition",
                         "src": "3237:167:150",
                         "nodes": [],
                         "body": {
-                            "id": 35141,
+                            "id": 35215,
                             "nodeType": "Block",
                             "src": "3343:61:150",
                             "nodes": [],
@@ -3560,11 +3560,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35136,
+                                                "id": 35210,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35125,
+                                                "referencedDeclaration": 35199,
                                                 "src": "3377:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3572,11 +3572,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35137,
+                                                "id": 35211,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35127,
+                                                "referencedDeclaration": 35201,
                                                 "src": "3386:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3584,11 +3584,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35138,
+                                                "id": 35212,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35129,
+                                                "referencedDeclaration": 35203,
                                                 "src": "3391:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -3612,18 +3612,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35134,
+                                                "id": 35208,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "3360:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35135,
+                                            "id": 35209,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3631,14 +3631,14 @@ export const stdJson = {
                                             "memberLocation": "3363:13:150",
                                             "memberName": "serializeBool",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40020,
+                                            "referencedDeclaration": 40094,
                                             "src": "3360:16:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_bool_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,bool) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35139,
+                                        "id": 35213,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3654,8 +3654,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35133,
-                                    "id": 35140,
+                                    "functionReturnParameters": 35207,
+                                    "id": 35214,
                                     "nodeType": "Return",
                                     "src": "3353:44:150"
                                 }
@@ -3667,17 +3667,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "3246:9:150",
                         "parameters": {
-                            "id": 35130,
+                            "id": 35204,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35125,
+                                    "id": 35199,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "3270:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35142,
+                                    "scope": 35216,
                                     "src": "3256:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3686,7 +3686,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35124,
+                                        "id": 35198,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3256:6:150",
@@ -3699,12 +3699,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35127,
+                                    "id": 35201,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "3293:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35142,
+                                    "scope": 35216,
                                     "src": "3279:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3713,7 +3713,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35126,
+                                        "id": 35200,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3279:6:150",
@@ -3726,12 +3726,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35129,
+                                    "id": 35203,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3303:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35142,
+                                    "scope": 35216,
                                     "src": "3298:10:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3740,7 +3740,7 @@ export const stdJson = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 35128,
+                                        "id": 35202,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3298:4:150",
@@ -3755,17 +3755,17 @@ export const stdJson = {
                             "src": "3255:54:150"
                         },
                         "returnParameters": {
-                            "id": 35133,
+                            "id": 35207,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35132,
+                                    "id": 35206,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35142,
+                                    "scope": 35216,
                                     "src": "3328:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3774,7 +3774,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35131,
+                                        "id": 35205,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3328:6:150",
@@ -3788,18 +3788,18 @@ export const stdJson = {
                             ],
                             "src": "3327:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35162,
+                        "id": 35236,
                         "nodeType": "FunctionDefinition",
                         "src": "3410:196:150",
                         "nodes": [],
                         "body": {
-                            "id": 35161,
+                            "id": 35235,
                             "nodeType": "Block",
                             "src": "3545:61:150",
                             "nodes": [],
@@ -3808,11 +3808,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35156,
+                                                "id": 35230,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35144,
+                                                "referencedDeclaration": 35218,
                                                 "src": "3579:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3820,11 +3820,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35157,
+                                                "id": 35231,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35146,
+                                                "referencedDeclaration": 35220,
                                                 "src": "3588:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3832,11 +3832,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35158,
+                                                "id": 35232,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35149,
+                                                "referencedDeclaration": 35223,
                                                 "src": "3593:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_bool_$dyn_memory_ptr",
@@ -3860,18 +3860,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35154,
+                                                "id": 35228,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "3562:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35155,
+                                            "id": 35229,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3879,14 +3879,14 @@ export const stdJson = {
                                             "memberLocation": "3565:13:150",
                                             "memberName": "serializeBool",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40098,
+                                            "referencedDeclaration": 40172,
                                             "src": "3562:16:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_bool_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,bool[] memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35159,
+                                        "id": 35233,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3902,8 +3902,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35153,
-                                    "id": 35160,
+                                    "functionReturnParameters": 35227,
+                                    "id": 35234,
                                     "nodeType": "Return",
                                     "src": "3555:44:150"
                                 }
@@ -3915,17 +3915,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "3419:9:150",
                         "parameters": {
-                            "id": 35150,
+                            "id": 35224,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35144,
+                                    "id": 35218,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "3443:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35162,
+                                    "scope": 35236,
                                     "src": "3429:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3934,7 +3934,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35143,
+                                        "id": 35217,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3429:6:150",
@@ -3947,12 +3947,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35146,
+                                    "id": 35220,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "3466:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35162,
+                                    "scope": 35236,
                                     "src": "3452:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3961,7 +3961,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35145,
+                                        "id": 35219,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3452:6:150",
@@ -3974,12 +3974,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35149,
+                                    "id": 35223,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3485:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35162,
+                                    "scope": 35236,
                                     "src": "3471:19:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3989,7 +3989,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35147,
+                                            "id": 35221,
                                             "name": "bool",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "3471:4:150",
@@ -3998,7 +3998,7 @@ export const stdJson = {
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "id": 35148,
+                                        "id": 35222,
                                         "nodeType": "ArrayTypeName",
                                         "src": "3471:6:150",
                                         "typeDescriptions": {
@@ -4012,17 +4012,17 @@ export const stdJson = {
                             "src": "3428:63:150"
                         },
                         "returnParameters": {
-                            "id": 35153,
+                            "id": 35227,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35152,
+                                    "id": 35226,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35162,
+                                    "scope": 35236,
                                     "src": "3526:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4031,7 +4031,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35151,
+                                        "id": 35225,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3526:6:150",
@@ -4045,18 +4045,18 @@ export const stdJson = {
                             ],
                             "src": "3525:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35181,
+                        "id": 35255,
                         "nodeType": "FunctionDefinition",
                         "src": "3612:170:150",
                         "nodes": [],
                         "body": {
-                            "id": 35180,
+                            "id": 35254,
                             "nodeType": "Block",
                             "src": "3721:61:150",
                             "nodes": [],
@@ -4065,11 +4065,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35175,
+                                                "id": 35249,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35164,
+                                                "referencedDeclaration": 35238,
                                                 "src": "3755:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4077,11 +4077,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35176,
+                                                "id": 35250,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35166,
+                                                "referencedDeclaration": 35240,
                                                 "src": "3764:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4089,11 +4089,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35177,
+                                                "id": 35251,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35168,
+                                                "referencedDeclaration": 35242,
                                                 "src": "3769:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4117,18 +4117,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35173,
+                                                "id": 35247,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "3738:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35174,
+                                            "id": 35248,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4136,14 +4136,14 @@ export const stdJson = {
                                             "memberLocation": "3741:13:150",
                                             "memberName": "serializeUint",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40031,
+                                            "referencedDeclaration": 40105,
                                             "src": "3738:16:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,uint256) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35178,
+                                        "id": 35252,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4159,8 +4159,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35172,
-                                    "id": 35179,
+                                    "functionReturnParameters": 35246,
+                                    "id": 35253,
                                     "nodeType": "Return",
                                     "src": "3731:44:150"
                                 }
@@ -4172,17 +4172,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "3621:9:150",
                         "parameters": {
-                            "id": 35169,
+                            "id": 35243,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35164,
+                                    "id": 35238,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "3645:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35181,
+                                    "scope": 35255,
                                     "src": "3631:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4191,7 +4191,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35163,
+                                        "id": 35237,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3631:6:150",
@@ -4204,12 +4204,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35166,
+                                    "id": 35240,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "3668:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35181,
+                                    "scope": 35255,
                                     "src": "3654:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4218,7 +4218,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35165,
+                                        "id": 35239,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3654:6:150",
@@ -4231,12 +4231,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35168,
+                                    "id": 35242,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3681:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35181,
+                                    "scope": 35255,
                                     "src": "3673:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4245,7 +4245,7 @@ export const stdJson = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35167,
+                                        "id": 35241,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3673:7:150",
@@ -4260,17 +4260,17 @@ export const stdJson = {
                             "src": "3630:57:150"
                         },
                         "returnParameters": {
-                            "id": 35172,
+                            "id": 35246,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35171,
+                                    "id": 35245,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35181,
+                                    "scope": 35255,
                                     "src": "3706:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4279,7 +4279,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35170,
+                                        "id": 35244,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3706:6:150",
@@ -4293,18 +4293,18 @@ export const stdJson = {
                             ],
                             "src": "3705:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35201,
+                        "id": 35275,
                         "nodeType": "FunctionDefinition",
                         "src": "3788:199:150",
                         "nodes": [],
                         "body": {
-                            "id": 35200,
+                            "id": 35274,
                             "nodeType": "Block",
                             "src": "3926:61:150",
                             "nodes": [],
@@ -4313,11 +4313,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35195,
+                                                "id": 35269,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35183,
+                                                "referencedDeclaration": 35257,
                                                 "src": "3960:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4325,11 +4325,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35196,
+                                                "id": 35270,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35185,
+                                                "referencedDeclaration": 35259,
                                                 "src": "3969:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4337,11 +4337,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35197,
+                                                "id": 35271,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35188,
+                                                "referencedDeclaration": 35262,
                                                 "src": "3974:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
@@ -4365,18 +4365,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35193,
+                                                "id": 35267,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "3943:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35194,
+                                            "id": 35268,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4384,14 +4384,14 @@ export const stdJson = {
                                             "memberLocation": "3946:13:150",
                                             "memberName": "serializeUint",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40110,
+                                            "referencedDeclaration": 40184,
                                             "src": "3943:16:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_uint256_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,uint256[] memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35198,
+                                        "id": 35272,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4407,8 +4407,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35192,
-                                    "id": 35199,
+                                    "functionReturnParameters": 35266,
+                                    "id": 35273,
                                     "nodeType": "Return",
                                     "src": "3936:44:150"
                                 }
@@ -4420,17 +4420,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "3797:9:150",
                         "parameters": {
-                            "id": 35189,
+                            "id": 35263,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35183,
+                                    "id": 35257,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "3821:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35201,
+                                    "scope": 35275,
                                     "src": "3807:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4439,7 +4439,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35182,
+                                        "id": 35256,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3807:6:150",
@@ -4452,12 +4452,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35185,
+                                    "id": 35259,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "3844:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35201,
+                                    "scope": 35275,
                                     "src": "3830:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4466,7 +4466,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35184,
+                                        "id": 35258,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3830:6:150",
@@ -4479,12 +4479,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35188,
+                                    "id": 35262,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3866:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35201,
+                                    "scope": 35275,
                                     "src": "3849:22:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4494,7 +4494,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35186,
+                                            "id": 35260,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "3849:7:150",
@@ -4503,7 +4503,7 @@ export const stdJson = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 35187,
+                                        "id": 35261,
                                         "nodeType": "ArrayTypeName",
                                         "src": "3849:9:150",
                                         "typeDescriptions": {
@@ -4517,17 +4517,17 @@ export const stdJson = {
                             "src": "3806:66:150"
                         },
                         "returnParameters": {
-                            "id": 35192,
+                            "id": 35266,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35191,
+                                    "id": 35265,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35201,
+                                    "scope": 35275,
                                     "src": "3907:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4536,7 +4536,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35190,
+                                        "id": 35264,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3907:6:150",
@@ -4550,18 +4550,18 @@ export const stdJson = {
                             ],
                             "src": "3906:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35220,
+                        "id": 35294,
                         "nodeType": "FunctionDefinition",
                         "src": "3993:168:150",
                         "nodes": [],
                         "body": {
-                            "id": 35219,
+                            "id": 35293,
                             "nodeType": "Block",
                             "src": "4101:60:150",
                             "nodes": [],
@@ -4570,11 +4570,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35214,
+                                                "id": 35288,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35203,
+                                                "referencedDeclaration": 35277,
                                                 "src": "4134:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4582,11 +4582,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35215,
+                                                "id": 35289,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35205,
+                                                "referencedDeclaration": 35279,
                                                 "src": "4143:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4594,11 +4594,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35216,
+                                                "id": 35290,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35207,
+                                                "referencedDeclaration": 35281,
                                                 "src": "4148:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -4622,18 +4622,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35212,
+                                                "id": 35286,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "4118:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35213,
+                                            "id": 35287,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4641,14 +4641,14 @@ export const stdJson = {
                                             "memberLocation": "4121:12:150",
                                             "memberName": "serializeInt",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40042,
+                                            "referencedDeclaration": 40116,
                                             "src": "4118:15:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_int256_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,int256) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35217,
+                                        "id": 35291,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4664,8 +4664,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35211,
-                                    "id": 35218,
+                                    "functionReturnParameters": 35285,
+                                    "id": 35292,
                                     "nodeType": "Return",
                                     "src": "4111:43:150"
                                 }
@@ -4677,17 +4677,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "4002:9:150",
                         "parameters": {
-                            "id": 35208,
+                            "id": 35282,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35203,
+                                    "id": 35277,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "4026:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35220,
+                                    "scope": 35294,
                                     "src": "4012:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4696,7 +4696,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35202,
+                                        "id": 35276,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4012:6:150",
@@ -4709,12 +4709,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35205,
+                                    "id": 35279,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "4049:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35220,
+                                    "scope": 35294,
                                     "src": "4035:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4723,7 +4723,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35204,
+                                        "id": 35278,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4035:6:150",
@@ -4736,12 +4736,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35207,
+                                    "id": 35281,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4061:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35220,
+                                    "scope": 35294,
                                     "src": "4054:12:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4750,7 +4750,7 @@ export const stdJson = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 35206,
+                                        "id": 35280,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4054:6:150",
@@ -4765,17 +4765,17 @@ export const stdJson = {
                             "src": "4011:56:150"
                         },
                         "returnParameters": {
-                            "id": 35211,
+                            "id": 35285,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35210,
+                                    "id": 35284,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35220,
+                                    "scope": 35294,
                                     "src": "4086:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4784,7 +4784,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35209,
+                                        "id": 35283,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4086:6:150",
@@ -4798,18 +4798,18 @@ export const stdJson = {
                             ],
                             "src": "4085:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35240,
+                        "id": 35314,
                         "nodeType": "FunctionDefinition",
                         "src": "4167:197:150",
                         "nodes": [],
                         "body": {
-                            "id": 35239,
+                            "id": 35313,
                             "nodeType": "Block",
                             "src": "4304:60:150",
                             "nodes": [],
@@ -4818,11 +4818,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35234,
+                                                "id": 35308,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35222,
+                                                "referencedDeclaration": 35296,
                                                 "src": "4337:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4830,11 +4830,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35235,
+                                                "id": 35309,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35224,
+                                                "referencedDeclaration": 35298,
                                                 "src": "4346:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4842,11 +4842,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35236,
+                                                "id": 35310,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35227,
+                                                "referencedDeclaration": 35301,
                                                 "src": "4351:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_int256_$dyn_memory_ptr",
@@ -4870,18 +4870,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35232,
+                                                "id": 35306,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "4321:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35233,
+                                            "id": 35307,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4889,14 +4889,14 @@ export const stdJson = {
                                             "memberLocation": "4324:12:150",
                                             "memberName": "serializeInt",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40122,
+                                            "referencedDeclaration": 40196,
                                             "src": "4321:15:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_int256_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,int256[] memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35237,
+                                        "id": 35311,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4912,8 +4912,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35231,
-                                    "id": 35238,
+                                    "functionReturnParameters": 35305,
+                                    "id": 35312,
                                     "nodeType": "Return",
                                     "src": "4314:43:150"
                                 }
@@ -4925,17 +4925,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "4176:9:150",
                         "parameters": {
-                            "id": 35228,
+                            "id": 35302,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35222,
+                                    "id": 35296,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "4200:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35240,
+                                    "scope": 35314,
                                     "src": "4186:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4944,7 +4944,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35221,
+                                        "id": 35295,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4186:6:150",
@@ -4957,12 +4957,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35224,
+                                    "id": 35298,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "4223:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35240,
+                                    "scope": 35314,
                                     "src": "4209:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4971,7 +4971,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35223,
+                                        "id": 35297,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4209:6:150",
@@ -4984,12 +4984,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35227,
+                                    "id": 35301,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4244:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35240,
+                                    "scope": 35314,
                                     "src": "4228:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4999,7 +4999,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35225,
+                                            "id": 35299,
                                             "name": "int256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4228:6:150",
@@ -5008,7 +5008,7 @@ export const stdJson = {
                                                 "typeString": "int256"
                                             }
                                         },
-                                        "id": 35226,
+                                        "id": 35300,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4228:8:150",
                                         "typeDescriptions": {
@@ -5022,17 +5022,17 @@ export const stdJson = {
                             "src": "4185:65:150"
                         },
                         "returnParameters": {
-                            "id": 35231,
+                            "id": 35305,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35230,
+                                    "id": 35304,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35240,
+                                    "scope": 35314,
                                     "src": "4285:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5041,7 +5041,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35229,
+                                        "id": 35303,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4285:6:150",
@@ -5055,18 +5055,18 @@ export const stdJson = {
                             ],
                             "src": "4284:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35259,
+                        "id": 35333,
                         "nodeType": "FunctionDefinition",
                         "src": "4370:173:150",
                         "nodes": [],
                         "body": {
-                            "id": 35258,
+                            "id": 35332,
                             "nodeType": "Block",
                             "src": "4479:64:150",
                             "nodes": [],
@@ -5075,11 +5075,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35253,
+                                                "id": 35327,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35242,
+                                                "referencedDeclaration": 35316,
                                                 "src": "4516:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5087,11 +5087,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35254,
+                                                "id": 35328,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35244,
+                                                "referencedDeclaration": 35318,
                                                 "src": "4525:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5099,11 +5099,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35255,
+                                                "id": 35329,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35246,
+                                                "referencedDeclaration": 35320,
                                                 "src": "4530:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -5127,18 +5127,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35251,
+                                                "id": 35325,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "4496:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35252,
+                                            "id": 35326,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5146,14 +5146,14 @@ export const stdJson = {
                                             "memberLocation": "4499:16:150",
                                             "memberName": "serializeAddress",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40053,
+                                            "referencedDeclaration": 40127,
                                             "src": "4496:19:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_address_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,address) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35256,
+                                        "id": 35330,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5169,8 +5169,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35250,
-                                    "id": 35257,
+                                    "functionReturnParameters": 35324,
+                                    "id": 35331,
                                     "nodeType": "Return",
                                     "src": "4489:47:150"
                                 }
@@ -5182,17 +5182,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "4379:9:150",
                         "parameters": {
-                            "id": 35247,
+                            "id": 35321,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35242,
+                                    "id": 35316,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "4403:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35259,
+                                    "scope": 35333,
                                     "src": "4389:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5201,7 +5201,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35241,
+                                        "id": 35315,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4389:6:150",
@@ -5214,12 +5214,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35244,
+                                    "id": 35318,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "4426:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35259,
+                                    "scope": 35333,
                                     "src": "4412:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5228,7 +5228,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35243,
+                                        "id": 35317,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4412:6:150",
@@ -5241,12 +5241,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35246,
+                                    "id": 35320,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4439:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35259,
+                                    "scope": 35333,
                                     "src": "4431:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5255,7 +5255,7 @@ export const stdJson = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 35245,
+                                        "id": 35319,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4431:7:150",
@@ -5271,17 +5271,17 @@ export const stdJson = {
                             "src": "4388:57:150"
                         },
                         "returnParameters": {
-                            "id": 35250,
+                            "id": 35324,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35249,
+                                    "id": 35323,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35259,
+                                    "scope": 35333,
                                     "src": "4464:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5290,7 +5290,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35248,
+                                        "id": 35322,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4464:6:150",
@@ -5304,18 +5304,18 @@ export const stdJson = {
                             ],
                             "src": "4463:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35279,
+                        "id": 35353,
                         "nodeType": "FunctionDefinition",
                         "src": "4549:202:150",
                         "nodes": [],
                         "body": {
-                            "id": 35278,
+                            "id": 35352,
                             "nodeType": "Block",
                             "src": "4687:64:150",
                             "nodes": [],
@@ -5324,11 +5324,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35273,
+                                                "id": 35347,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35261,
+                                                "referencedDeclaration": 35335,
                                                 "src": "4724:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5336,11 +5336,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35274,
+                                                "id": 35348,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35263,
+                                                "referencedDeclaration": 35337,
                                                 "src": "4733:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5348,11 +5348,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35275,
+                                                "id": 35349,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35266,
+                                                "referencedDeclaration": 35340,
                                                 "src": "4738:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
@@ -5376,18 +5376,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35271,
+                                                "id": 35345,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "4704:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35272,
+                                            "id": 35346,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5395,14 +5395,14 @@ export const stdJson = {
                                             "memberLocation": "4707:16:150",
                                             "memberName": "serializeAddress",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40134,
+                                            "referencedDeclaration": 40208,
                                             "src": "4704:19:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_address_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,address[] memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35276,
+                                        "id": 35350,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5418,8 +5418,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35270,
-                                    "id": 35277,
+                                    "functionReturnParameters": 35344,
+                                    "id": 35351,
                                     "nodeType": "Return",
                                     "src": "4697:47:150"
                                 }
@@ -5431,17 +5431,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "4558:9:150",
                         "parameters": {
-                            "id": 35267,
+                            "id": 35341,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35261,
+                                    "id": 35335,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "4582:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35279,
+                                    "scope": 35353,
                                     "src": "4568:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5450,7 +5450,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35260,
+                                        "id": 35334,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4568:6:150",
@@ -5463,12 +5463,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35263,
+                                    "id": 35337,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "4605:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35279,
+                                    "scope": 35353,
                                     "src": "4591:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5477,7 +5477,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35262,
+                                        "id": 35336,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4591:6:150",
@@ -5490,12 +5490,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35266,
+                                    "id": 35340,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4627:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35279,
+                                    "scope": 35353,
                                     "src": "4610:22:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5505,7 +5505,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35264,
+                                            "id": 35338,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4610:7:150",
@@ -5515,7 +5515,7 @@ export const stdJson = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 35265,
+                                        "id": 35339,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4610:9:150",
                                         "typeDescriptions": {
@@ -5529,17 +5529,17 @@ export const stdJson = {
                             "src": "4567:66:150"
                         },
                         "returnParameters": {
-                            "id": 35270,
+                            "id": 35344,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35269,
+                                    "id": 35343,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35279,
+                                    "scope": 35353,
                                     "src": "4668:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5548,7 +5548,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35268,
+                                        "id": 35342,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4668:6:150",
@@ -5562,18 +5562,18 @@ export const stdJson = {
                             ],
                             "src": "4667:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35298,
+                        "id": 35372,
                         "nodeType": "FunctionDefinition",
                         "src": "4757:173:150",
                         "nodes": [],
                         "body": {
-                            "id": 35297,
+                            "id": 35371,
                             "nodeType": "Block",
                             "src": "4866:64:150",
                             "nodes": [],
@@ -5582,11 +5582,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35292,
+                                                "id": 35366,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35281,
+                                                "referencedDeclaration": 35355,
                                                 "src": "4903:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5594,11 +5594,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35293,
+                                                "id": 35367,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35283,
+                                                "referencedDeclaration": 35357,
                                                 "src": "4912:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5606,11 +5606,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35294,
+                                                "id": 35368,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35285,
+                                                "referencedDeclaration": 35359,
                                                 "src": "4917:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes32",
@@ -5634,18 +5634,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35290,
+                                                "id": 35364,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "4883:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35291,
+                                            "id": 35365,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5653,14 +5653,14 @@ export const stdJson = {
                                             "memberLocation": "4886:16:150",
                                             "memberName": "serializeBytes32",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40064,
+                                            "referencedDeclaration": 40138,
                                             "src": "4883:19:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_bytes32_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,bytes32) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35295,
+                                        "id": 35369,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5676,8 +5676,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35289,
-                                    "id": 35296,
+                                    "functionReturnParameters": 35363,
+                                    "id": 35370,
                                     "nodeType": "Return",
                                     "src": "4876:47:150"
                                 }
@@ -5689,17 +5689,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "4766:9:150",
                         "parameters": {
-                            "id": 35286,
+                            "id": 35360,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35281,
+                                    "id": 35355,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "4790:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35298,
+                                    "scope": 35372,
                                     "src": "4776:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5708,7 +5708,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35280,
+                                        "id": 35354,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4776:6:150",
@@ -5721,12 +5721,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35283,
+                                    "id": 35357,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "4813:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35298,
+                                    "scope": 35372,
                                     "src": "4799:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5735,7 +5735,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35282,
+                                        "id": 35356,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4799:6:150",
@@ -5748,12 +5748,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35285,
+                                    "id": 35359,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "4826:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35298,
+                                    "scope": 35372,
                                     "src": "4818:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5762,7 +5762,7 @@ export const stdJson = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 35284,
+                                        "id": 35358,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4818:7:150",
@@ -5777,17 +5777,17 @@ export const stdJson = {
                             "src": "4775:57:150"
                         },
                         "returnParameters": {
-                            "id": 35289,
+                            "id": 35363,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35288,
+                                    "id": 35362,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35298,
+                                    "scope": 35372,
                                     "src": "4851:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5796,7 +5796,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35287,
+                                        "id": 35361,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4851:6:150",
@@ -5810,18 +5810,18 @@ export const stdJson = {
                             ],
                             "src": "4850:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35318,
+                        "id": 35392,
                         "nodeType": "FunctionDefinition",
                         "src": "4936:202:150",
                         "nodes": [],
                         "body": {
-                            "id": 35317,
+                            "id": 35391,
                             "nodeType": "Block",
                             "src": "5074:64:150",
                             "nodes": [],
@@ -5830,11 +5830,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35312,
+                                                "id": 35386,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35300,
+                                                "referencedDeclaration": 35374,
                                                 "src": "5111:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5842,11 +5842,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35313,
+                                                "id": 35387,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35302,
+                                                "referencedDeclaration": 35376,
                                                 "src": "5120:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5854,11 +5854,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35314,
+                                                "id": 35388,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35305,
+                                                "referencedDeclaration": 35379,
                                                 "src": "5125:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
@@ -5882,18 +5882,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35310,
+                                                "id": 35384,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "5091:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35311,
+                                            "id": 35385,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5901,14 +5901,14 @@ export const stdJson = {
                                             "memberLocation": "5094:16:150",
                                             "memberName": "serializeBytes32",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40146,
+                                            "referencedDeclaration": 40220,
                                             "src": "5091:19:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_bytes32_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,bytes32[] memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35315,
+                                        "id": 35389,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5924,8 +5924,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35309,
-                                    "id": 35316,
+                                    "functionReturnParameters": 35383,
+                                    "id": 35390,
                                     "nodeType": "Return",
                                     "src": "5084:47:150"
                                 }
@@ -5937,17 +5937,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "4945:9:150",
                         "parameters": {
-                            "id": 35306,
+                            "id": 35380,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35300,
+                                    "id": 35374,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "4969:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35318,
+                                    "scope": 35392,
                                     "src": "4955:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5956,7 +5956,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35299,
+                                        "id": 35373,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4955:6:150",
@@ -5969,12 +5969,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35302,
+                                    "id": 35376,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "4992:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35318,
+                                    "scope": 35392,
                                     "src": "4978:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5983,7 +5983,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35301,
+                                        "id": 35375,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4978:6:150",
@@ -5996,12 +5996,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35305,
+                                    "id": 35379,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "5014:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35318,
+                                    "scope": 35392,
                                     "src": "4997:22:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6011,7 +6011,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35303,
+                                            "id": 35377,
                                             "name": "bytes32",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "4997:7:150",
@@ -6020,7 +6020,7 @@ export const stdJson = {
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "id": 35304,
+                                        "id": 35378,
                                         "nodeType": "ArrayTypeName",
                                         "src": "4997:9:150",
                                         "typeDescriptions": {
@@ -6034,17 +6034,17 @@ export const stdJson = {
                             "src": "4954:66:150"
                         },
                         "returnParameters": {
-                            "id": 35309,
+                            "id": 35383,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35308,
+                                    "id": 35382,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35318,
+                                    "scope": 35392,
                                     "src": "5055:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6053,7 +6053,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35307,
+                                        "id": 35381,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5055:6:150",
@@ -6067,18 +6067,18 @@ export const stdJson = {
                             ],
                             "src": "5054:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35337,
+                        "id": 35411,
                         "nodeType": "FunctionDefinition",
                         "src": "5144:176:150",
                         "nodes": [],
                         "body": {
-                            "id": 35336,
+                            "id": 35410,
                             "nodeType": "Block",
                             "src": "5258:62:150",
                             "nodes": [],
@@ -6087,11 +6087,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35331,
+                                                "id": 35405,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35320,
+                                                "referencedDeclaration": 35394,
                                                 "src": "5293:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6099,11 +6099,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35332,
+                                                "id": 35406,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35322,
+                                                "referencedDeclaration": 35396,
                                                 "src": "5302:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6111,11 +6111,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35333,
+                                                "id": 35407,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35324,
+                                                "referencedDeclaration": 35398,
                                                 "src": "5307:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -6139,18 +6139,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35329,
+                                                "id": 35403,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "5275:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35330,
+                                            "id": 35404,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6158,14 +6158,14 @@ export const stdJson = {
                                             "memberLocation": "5278:14:150",
                                             "memberName": "serializeBytes",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40086,
+                                            "referencedDeclaration": 40160,
                                             "src": "5275:17:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,bytes memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35334,
+                                        "id": 35408,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6181,8 +6181,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35328,
-                                    "id": 35335,
+                                    "functionReturnParameters": 35402,
+                                    "id": 35409,
                                     "nodeType": "Return",
                                     "src": "5268:45:150"
                                 }
@@ -6194,17 +6194,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "5153:9:150",
                         "parameters": {
-                            "id": 35325,
+                            "id": 35399,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35320,
+                                    "id": 35394,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "5177:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35337,
+                                    "scope": 35411,
                                     "src": "5163:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6213,7 +6213,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35319,
+                                        "id": 35393,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5163:6:150",
@@ -6226,12 +6226,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35322,
+                                    "id": 35396,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "5200:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35337,
+                                    "scope": 35411,
                                     "src": "5186:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6240,7 +6240,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35321,
+                                        "id": 35395,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5186:6:150",
@@ -6253,12 +6253,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35324,
+                                    "id": 35398,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "5218:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35337,
+                                    "scope": 35411,
                                     "src": "5205:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6267,7 +6267,7 @@ export const stdJson = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 35323,
+                                        "id": 35397,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5205:5:150",
@@ -6282,17 +6282,17 @@ export const stdJson = {
                             "src": "5162:62:150"
                         },
                         "returnParameters": {
-                            "id": 35328,
+                            "id": 35402,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35327,
+                                    "id": 35401,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35337,
+                                    "scope": 35411,
                                     "src": "5243:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6301,7 +6301,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35326,
+                                        "id": 35400,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5243:6:150",
@@ -6315,18 +6315,18 @@ export const stdJson = {
                             ],
                             "src": "5242:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35357,
+                        "id": 35431,
                         "nodeType": "FunctionDefinition",
                         "src": "5326:198:150",
                         "nodes": [],
                         "body": {
-                            "id": 35356,
+                            "id": 35430,
                             "nodeType": "Block",
                             "src": "5462:62:150",
                             "nodes": [],
@@ -6335,11 +6335,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35351,
+                                                "id": 35425,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35339,
+                                                "referencedDeclaration": 35413,
                                                 "src": "5497:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6347,11 +6347,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35352,
+                                                "id": 35426,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35341,
+                                                "referencedDeclaration": 35415,
                                                 "src": "5506:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6359,11 +6359,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35353,
+                                                "id": 35427,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35344,
+                                                "referencedDeclaration": 35418,
                                                 "src": "5511:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_bytes_memory_ptr_$dyn_memory_ptr",
@@ -6387,18 +6387,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35349,
+                                                "id": 35423,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "5479:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35350,
+                                            "id": 35424,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6406,14 +6406,14 @@ export const stdJson = {
                                             "memberLocation": "5482:14:150",
                                             "memberName": "serializeBytes",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40170,
+                                            "referencedDeclaration": 40244,
                                             "src": "5479:17:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_bytes_memory_ptr_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,bytes memory[] memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35354,
+                                        "id": 35428,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6429,8 +6429,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35348,
-                                    "id": 35355,
+                                    "functionReturnParameters": 35422,
+                                    "id": 35429,
                                     "nodeType": "Return",
                                     "src": "5472:45:150"
                                 }
@@ -6442,17 +6442,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "5335:9:150",
                         "parameters": {
-                            "id": 35345,
+                            "id": 35419,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35339,
+                                    "id": 35413,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "5359:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35357,
+                                    "scope": 35431,
                                     "src": "5345:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6461,7 +6461,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35338,
+                                        "id": 35412,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5345:6:150",
@@ -6474,12 +6474,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35341,
+                                    "id": 35415,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "5382:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35357,
+                                    "scope": 35431,
                                     "src": "5368:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6488,7 +6488,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35340,
+                                        "id": 35414,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5368:6:150",
@@ -6501,12 +6501,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35344,
+                                    "id": 35418,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "5402:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35357,
+                                    "scope": 35431,
                                     "src": "5387:20:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6516,7 +6516,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35342,
+                                            "id": 35416,
                                             "name": "bytes",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5387:5:150",
@@ -6525,7 +6525,7 @@ export const stdJson = {
                                                 "typeString": "bytes"
                                             }
                                         },
-                                        "id": 35343,
+                                        "id": 35417,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5387:7:150",
                                         "typeDescriptions": {
@@ -6539,17 +6539,17 @@ export const stdJson = {
                             "src": "5344:64:150"
                         },
                         "returnParameters": {
-                            "id": 35348,
+                            "id": 35422,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35347,
+                                    "id": 35421,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35357,
+                                    "scope": 35431,
                                     "src": "5443:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6558,7 +6558,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35346,
+                                        "id": 35420,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5443:6:150",
@@ -6572,18 +6572,18 @@ export const stdJson = {
                             ],
                             "src": "5442:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35376,
+                        "id": 35450,
                         "nodeType": "FunctionDefinition",
                         "src": "5530:198:150",
                         "nodes": [],
                         "body": {
-                            "id": 35375,
+                            "id": 35449,
                             "nodeType": "Block",
                             "src": "5665:63:150",
                             "nodes": [],
@@ -6592,11 +6592,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35370,
+                                                "id": 35444,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35359,
+                                                "referencedDeclaration": 35433,
                                                 "src": "5701:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6604,11 +6604,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35371,
+                                                "id": 35445,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35361,
+                                                "referencedDeclaration": 35435,
                                                 "src": "5710:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6616,11 +6616,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35372,
+                                                "id": 35446,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35363,
+                                                "referencedDeclaration": 35437,
                                                 "src": "5715:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6644,18 +6644,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35368,
+                                                "id": 35442,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "5682:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35369,
+                                            "id": 35443,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6663,14 +6663,14 @@ export const stdJson = {
                                             "memberLocation": "5685:15:150",
                                             "memberName": "serializeString",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40075,
+                                            "referencedDeclaration": 40149,
                                             "src": "5682:18:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,string memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35373,
+                                        "id": 35447,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6686,8 +6686,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35367,
-                                    "id": 35374,
+                                    "functionReturnParameters": 35441,
+                                    "id": 35448,
                                     "nodeType": "Return",
                                     "src": "5675:46:150"
                                 }
@@ -6699,17 +6699,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "5539:9:150",
                         "parameters": {
-                            "id": 35364,
+                            "id": 35438,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35359,
+                                    "id": 35433,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "5563:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35376,
+                                    "scope": 35450,
                                     "src": "5549:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6718,7 +6718,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35358,
+                                        "id": 35432,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5549:6:150",
@@ -6731,12 +6731,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35361,
+                                    "id": 35435,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "5586:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35376,
+                                    "scope": 35450,
                                     "src": "5572:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6745,7 +6745,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35360,
+                                        "id": 35434,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5572:6:150",
@@ -6758,12 +6758,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35363,
+                                    "id": 35437,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "5605:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35376,
+                                    "scope": 35450,
                                     "src": "5591:19:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6772,7 +6772,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35362,
+                                        "id": 35436,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5591:6:150",
@@ -6787,17 +6787,17 @@ export const stdJson = {
                             "src": "5548:63:150"
                         },
                         "returnParameters": {
-                            "id": 35367,
+                            "id": 35441,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35366,
+                                    "id": 35440,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35376,
+                                    "scope": 35450,
                                     "src": "5646:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6806,7 +6806,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35365,
+                                        "id": 35439,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5646:6:150",
@@ -6820,18 +6820,18 @@ export const stdJson = {
                             ],
                             "src": "5645:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35396,
+                        "id": 35470,
                         "nodeType": "FunctionDefinition",
                         "src": "5734:200:150",
                         "nodes": [],
                         "body": {
-                            "id": 35395,
+                            "id": 35469,
                             "nodeType": "Block",
                             "src": "5871:63:150",
                             "nodes": [],
@@ -6840,11 +6840,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35390,
+                                                "id": 35464,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35378,
+                                                "referencedDeclaration": 35452,
                                                 "src": "5907:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6852,11 +6852,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35391,
+                                                "id": 35465,
                                                 "name": "key",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35380,
+                                                "referencedDeclaration": 35454,
                                                 "src": "5916:3:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6864,11 +6864,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35392,
+                                                "id": 35466,
                                                 "name": "value",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35383,
+                                                "referencedDeclaration": 35457,
                                                 "src": "5921:5:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
@@ -6892,18 +6892,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35388,
+                                                "id": 35462,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "5888:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35389,
+                                            "id": 35463,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6911,14 +6911,14 @@ export const stdJson = {
                                             "memberLocation": "5891:15:150",
                                             "memberName": "serializeString",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40158,
+                                            "referencedDeclaration": 40232,
                                             "src": "5888:18:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_array$_t_string_memory_ptr_$dyn_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                 "typeString": "function (string memory,string memory,string memory[] memory) external returns (string memory)"
                                             }
                                         },
-                                        "id": 35393,
+                                        "id": 35467,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6934,8 +6934,8 @@ export const stdJson = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 35387,
-                                    "id": 35394,
+                                    "functionReturnParameters": 35461,
+                                    "id": 35468,
                                     "nodeType": "Return",
                                     "src": "5881:46:150"
                                 }
@@ -6947,17 +6947,17 @@ export const stdJson = {
                         "name": "serialize",
                         "nameLocation": "5743:9:150",
                         "parameters": {
-                            "id": 35384,
+                            "id": 35458,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35378,
+                                    "id": 35452,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "5767:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35396,
+                                    "scope": 35470,
                                     "src": "5753:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6966,7 +6966,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35377,
+                                        "id": 35451,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5753:6:150",
@@ -6979,12 +6979,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35380,
+                                    "id": 35454,
                                     "mutability": "mutable",
                                     "name": "key",
                                     "nameLocation": "5790:3:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35396,
+                                    "scope": 35470,
                                     "src": "5776:17:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6993,7 +6993,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35379,
+                                        "id": 35453,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5776:6:150",
@@ -7006,12 +7006,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35383,
+                                    "id": 35457,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "5811:5:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35396,
+                                    "scope": 35470,
                                     "src": "5795:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7021,7 +7021,7 @@ export const stdJson = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 35381,
+                                            "id": 35455,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5795:6:150",
@@ -7030,7 +7030,7 @@ export const stdJson = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 35382,
+                                        "id": 35456,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5795:8:150",
                                         "typeDescriptions": {
@@ -7044,17 +7044,17 @@ export const stdJson = {
                             "src": "5752:65:150"
                         },
                         "returnParameters": {
-                            "id": 35387,
+                            "id": 35461,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35386,
+                                    "id": 35460,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35396,
+                                    "scope": 35470,
                                     "src": "5852:13:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7063,7 +7063,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35385,
+                                        "id": 35459,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5852:6:150",
@@ -7077,18 +7077,18 @@ export const stdJson = {
                             ],
                             "src": "5851:15:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35411,
+                        "id": 35485,
                         "nodeType": "FunctionDefinition",
                         "src": "5940:111:150",
                         "nodes": [],
                         "body": {
-                            "id": 35410,
+                            "id": 35484,
                             "nodeType": "Block",
                             "src": "6007:44:150",
                             "nodes": [],
@@ -7097,11 +7097,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35406,
+                                                "id": 35480,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35398,
+                                                "referencedDeclaration": 35472,
                                                 "src": "6030:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -7109,11 +7109,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35407,
+                                                "id": 35481,
                                                 "name": "path",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35400,
+                                                "referencedDeclaration": 35474,
                                                 "src": "6039:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -7133,18 +7133,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35403,
+                                                "id": 35477,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "6017:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35405,
+                                            "id": 35479,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7152,14 +7152,14 @@ export const stdJson = {
                                             "memberLocation": "6020:9:150",
                                             "memberName": "writeJson",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40177,
+                                            "referencedDeclaration": 40251,
                                             "src": "6017:12:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,string memory) external"
                                             }
                                         },
-                                        "id": 35408,
+                                        "id": 35482,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7175,7 +7175,7 @@ export const stdJson = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 35409,
+                                    "id": 35483,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6017:27:150"
                                 }
@@ -7187,17 +7187,17 @@ export const stdJson = {
                         "name": "write",
                         "nameLocation": "5949:5:150",
                         "parameters": {
-                            "id": 35401,
+                            "id": 35475,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35398,
+                                    "id": 35472,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "5969:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35411,
+                                    "scope": 35485,
                                     "src": "5955:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7206,7 +7206,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35397,
+                                        "id": 35471,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5955:6:150",
@@ -7219,12 +7219,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35400,
+                                    "id": 35474,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "5992:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35411,
+                                    "scope": 35485,
                                     "src": "5978:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7233,7 +7233,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35399,
+                                        "id": 35473,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5978:6:150",
@@ -7248,23 +7248,23 @@ export const stdJson = {
                             "src": "5954:43:150"
                         },
                         "returnParameters": {
-                            "id": 35402,
+                            "id": 35476,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6007:0:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35429,
+                        "id": 35503,
                         "nodeType": "FunctionDefinition",
                         "src": "6057:145:150",
                         "nodes": [],
                         "body": {
-                            "id": 35428,
+                            "id": 35502,
                             "nodeType": "Block",
                             "src": "6148:54:150",
                             "nodes": [],
@@ -7273,11 +7273,11 @@ export const stdJson = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 35423,
+                                                "id": 35497,
                                                 "name": "jsonKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35413,
+                                                "referencedDeclaration": 35487,
                                                 "src": "6171:7:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -7285,11 +7285,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35424,
+                                                "id": 35498,
                                                 "name": "path",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35415,
+                                                "referencedDeclaration": 35489,
                                                 "src": "6180:4:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -7297,11 +7297,11 @@ export const stdJson = {
                                                 }
                                             },
                                             {
-                                                "id": 35425,
+                                                "id": 35499,
                                                 "name": "valueKey",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35417,
+                                                "referencedDeclaration": 35491,
                                                 "src": "6186:8:150",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -7325,18 +7325,18 @@ export const stdJson = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 35420,
+                                                "id": 35494,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34876,
+                                                "referencedDeclaration": 34950,
                                                 "src": "6158:2:150",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_VmSafe_$40232",
+                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
                                                     "typeString": "contract VmSafe"
                                                 }
                                             },
-                                            "id": 35422,
+                                            "id": 35496,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7344,14 +7344,14 @@ export const stdJson = {
                                             "memberLocation": "6161:9:150",
                                             "memberName": "writeJson",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40186,
+                                            "referencedDeclaration": 40260,
                                             "src": "6158:12:150",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,string memory,string memory) external"
                                             }
                                         },
-                                        "id": 35426,
+                                        "id": 35500,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7367,7 +7367,7 @@ export const stdJson = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 35427,
+                                    "id": 35501,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6158:37:150"
                                 }
@@ -7379,17 +7379,17 @@ export const stdJson = {
                         "name": "write",
                         "nameLocation": "6066:5:150",
                         "parameters": {
-                            "id": 35418,
+                            "id": 35492,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35413,
+                                    "id": 35487,
                                     "mutability": "mutable",
                                     "name": "jsonKey",
                                     "nameLocation": "6086:7:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35429,
+                                    "scope": 35503,
                                     "src": "6072:21:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7398,7 +7398,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35412,
+                                        "id": 35486,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6072:6:150",
@@ -7411,12 +7411,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35415,
+                                    "id": 35489,
                                     "mutability": "mutable",
                                     "name": "path",
                                     "nameLocation": "6109:4:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35429,
+                                    "scope": 35503,
                                     "src": "6095:18:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7425,7 +7425,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35414,
+                                        "id": 35488,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6095:6:150",
@@ -7438,12 +7438,12 @@ export const stdJson = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35417,
+                                    "id": 35491,
                                     "mutability": "mutable",
                                     "name": "valueKey",
                                     "nameLocation": "6129:8:150",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35429,
+                                    "scope": 35503,
                                     "src": "6115:22:150",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7452,7 +7452,7 @@ export const stdJson = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 35416,
+                                        "id": 35490,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6115:6:150",
@@ -7467,12 +7467,12 @@ export const stdJson = {
                             "src": "6071:67:150"
                         },
                         "returnParameters": {
-                            "id": 35419,
+                            "id": 35493,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "6148:0:150"
                         },
-                        "scope": 35430,
+                        "scope": 35504,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
@@ -7485,11 +7485,11 @@ export const stdJson = {
                 "contractKind": "library",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    35430
+                    35504
                 ],
                 "name": "stdJson",
                 "nameLocation": "838:7:150",
-                "scope": 35431,
+                "scope": 35505,
                 "usedErrors": [],
                 "usedEvents": []
             }
