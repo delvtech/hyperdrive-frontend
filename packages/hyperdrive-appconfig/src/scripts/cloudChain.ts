@@ -1,10 +1,11 @@
 import "dotenv/config";
-
 import { AddressesJson } from "src/addresses/AddressesJson";
-import { getAppConfigFromAddressesJson } from "src/appconfig/getAppConfigFromAddressesJson";
+
+import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromRegistryAddresses";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { fetchJson } from "src/base/fetchJson";
 import { cloudChain } from "src/chains/cloudChain";
+import { fetchRegistryAddresses } from "src/registry/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
 
 const cloudChainId = +(process.env.CLOUDCHAIN_CHAIN_ID as string);
@@ -16,16 +17,24 @@ const publicClient = createPublicClient({
   transport: http(cloudChainNodeRpcUrl),
 });
 
-fetchJson<AddressesJson>(cloudChainAddressesUrl).then(async (addresses) => {
-  const appConfig = await getAppConfigFromAddressesJson({
-    addresses,
-    chainId: cloudChainId,
-    publicClient,
-  });
+fetchJson<AddressesJson>(cloudChainAddressesUrl)
+  .then((addresses) =>
+    fetchRegistryAddresses({
+      factoryAddress: addresses.factory,
+      registryAddress: addresses.hyperdriveRegistry,
+      publicClient,
+    }),
+  )
+  .then(async (addresses) => {
+    const appConfig = await getAppConfigFromRegistryAddresses({
+      addresses,
+      chainId: cloudChainId,
+      publicClient,
+    });
 
-  writeAppConfigToFile({
-    filename: `./src/generated/${cloudChainId}.appconfig.ts`,
-    appConfig,
-    appConfigName: "cloudChainAppConfig",
+    writeAppConfigToFile({
+      filename: `./src/generated/${cloudChainId}.appconfig.ts`,
+      appConfig,
+      appConfigName: "cloudChainAppConfig",
+    });
   });
-});

@@ -1,6 +1,9 @@
 import { Address } from "viem";
 
+/**
+ * Addresses from the artifacts server that are required to build the AppConfig
+ */
 export interface AddressesJson {
-  erc4626Hyperdrive: Address;
-  stethHyperdrive: Address;
+  factory: Address;
+  hyperdriveRegistry: Address;
 }
