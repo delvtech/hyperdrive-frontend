@@ -1,11 +1,12 @@
 import "dotenv/config";
-import { RegistryAddresses } from "src/addresses/RegistryAddresses";
+import { AddressesJson } from "src/addresses/AddressesJson";
 
 import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromAddressesJson";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { fetchJson } from "src/base/fetchJson";
+import { fetchRegistryAddresses } from "src/base/fetchRegistryAddresses";
 import { localChain } from "src/chains/local";
-import { Address, createPublicClient, http } from "viem";
+import { createPublicClient, http } from "viem";
 
 const localChainId = +(process.env.LOCAL_CHAIN_ID as string);
 const localAddressesUrl = process.env.LOCAL_ADDRESSES_URL as string;
@@ -16,22 +17,24 @@ const publicClient = createPublicClient({
   transport: http(localNodeRpcUrl),
 });
 
-fetchJson<{ stethHyperdrive: Address; erc4626Hyperdrive: Address }>(
-  localAddressesUrl,
-).then(async (addresses) => {
-  const converted: RegistryAddresses = {
-    erc4626Hyperdrive: [addresses.erc4626Hyperdrive],
-    stethHyperdrive: [addresses.stethHyperdrive],
-  };
-  const appConfig = await getAppConfigFromRegistryAddresses({
-    addresses: converted,
-    chainId: localChainId,
-    publicClient,
-  });
+fetchJson<AddressesJson>(localAddressesUrl)
+  .then((addresses) =>
+    fetchRegistryAddresses({
+      factoryAddress: addresses.factory,
+      registryAddress: addresses.hyperdriveRegistry,
+      publicClient,
+    }),
+  )
+  .then(async (registryAddresses) => {
+    const appConfig = await getAppConfigFromRegistryAddresses({
+      addresses: registryAddresses,
+      chainId: localChainId,
+      publicClient,
+    });
 
-  writeAppConfigToFile({
-    filename: `./src/generated/${localChainId}.appconfig.ts`,
-    appConfig,
-    appConfigName: "localChainAppConfig",
+    writeAppConfigToFile({
+      filename: `./src/generated/${localChainId}.appconfig.ts`,
+      appConfig,
+      appConfigName: "localChainAppConfig",
+    });
   });
-});

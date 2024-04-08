@@ -1,57 +1,76 @@
 import { HyperdriveRegistry } from "@delvtech/hyperdrive-artifacts/HyperdriveRegistry";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { Address, parseAbi } from "abitype";
-import {} from "dnum";
 import { RegistryAddresses } from "src/addresses/RegistryAddresses";
-import { PublicClient, getContract } from "viem";
+import { PublicClient, erc20Abi, getContract } from "viem";
 
-/// @notice Gets the number of instances deployed by this factory.
-/// @return The number of instances deployed by this factory.
 const minimalFactoryAbi = [
   "function getNumberOfInstances() external view returns (uint256)",
   "function getInstanceAtIndex(uint256 index) external view returns (address)",
 ] as const;
 
-export async function fetchRegistryAddresses(
-  registryAddress: Address,
-  publicClient: PublicClient,
-): Promise<RegistryAddresses> {
+const stethHyperdriveSharesTokenSymbols = ["stETH"];
+const erc4626HyperdriveSharesTokenSymbols = ["DELV", "sDAI"];
+
+export async function fetchRegistryAddresses({
+  factoryAddress,
+  registryAddress,
+  publicClient,
+}: {
+  factoryAddress: Address;
+  registryAddress: Address;
+  publicClient: PublicClient;
+}): Promise<RegistryAddresses> {
+  // The factory contains a list of all deployed hyperdrives
   const factory = getContract({
-    // TODO: Replace this with the deployed HyperdriveFactory address
-    address: "0x036b75a3e29f174544e12941853e02cc422ef8d3",
+    address: factoryAddress,
     abi: parseAbi(minimalFactoryAbi),
     client: publicClient,
   });
+
+  // The registry is for checking if a hyperdrive is "blessed" for use in the UI
   const registryContract = getContract({
+    address: registryAddress,
     abi: HyperdriveRegistry.abi,
     client: publicClient,
-    address: registryAddress,
   });
 
   const numInstances = await factory.read.getNumberOfInstances();
-  const hyperdrives = {
-    stethHyperdrive: [] as Address[],
-    erc4626Hyperdrive: [] as Address[],
+  const hyperdrives: RegistryAddresses = {
+    stethHyperdrive: [],
+    erc4626Hyperdrive: [],
   };
-  for (let i = 0; i < numInstances; i++) {
-    const hyperdriveInstance = await factory.read.getInstanceAtIndex([
-      BigInt(i),
-    ]);
-    const hyperdriveInstanceExists =
-      await registryContract.read.getHyperdriveInfo([hyperdriveInstance]);
 
-    if (hyperdriveInstanceExists.toString() === "1") {
-      const hyperdrive = new ReadHyperdrive({
-        address: hyperdriveInstance,
-        publicClient,
-      });
-      const baseToken = await hyperdrive.getBaseToken();
-      const baseTokenSymbol = await baseToken.getSymbol();
-      if (baseTokenSymbol === "ETH") {
-        hyperdrives.stethHyperdrive.push(hyperdriveInstance);
-      } else {
-        hyperdrives.erc4626Hyperdrive.push(hyperdriveInstance);
-      }
+  // Check each deployed hyperdrive to see if it's in the registry, and if so,
+  // put it in the correct registry addresses list based on its underlying yield
+  // source
+  for (let i = 0n; i < numInstances; i++) {
+    const hyperdriveAddress = await factory.read.getInstanceAtIndex([i]);
+    const isHyperdriveInRegistry =
+      await registryContract.read.getHyperdriveInfo([hyperdriveAddress]);
+
+    if (!isHyperdriveInRegistry) {
+      break;
+    }
+
+    const hyperdrive = new ReadHyperdrive({
+      address: hyperdriveAddress,
+      publicClient,
+    });
+
+    const { vaultSharesToken } = await hyperdrive.getPoolConfig();
+    const sharesTokenSymbol = await publicClient.readContract({
+      address: vaultSharesToken,
+      abi: erc20Abi,
+      functionName: "symbol",
+    });
+
+    if (stethHyperdriveSharesTokenSymbols.includes(sharesTokenSymbol)) {
+      hyperdrives.stethHyperdrive.push(hyperdriveAddress);
+    }
+
+    if (erc4626HyperdriveSharesTokenSymbols.includes(sharesTokenSymbol)) {
+      hyperdrives.erc4626Hyperdrive.push(hyperdriveAddress);
     }
   }
   return hyperdrives;

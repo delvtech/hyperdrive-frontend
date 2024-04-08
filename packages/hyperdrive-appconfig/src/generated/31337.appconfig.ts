@@ -63,7 +63,7 @@ export const localChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0x5d1a429eec085ba70d80c27190ed1f1f27dc9359",
+      address: "0x5D1A429eec085Ba70d80C27190eD1f1F27DC9359",
       name: "7d BASE-Maker DSR",
       decimals: 18,
       baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
@@ -95,7 +95,7 @@ export const localChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xc9a9eadb4192830738deebda11fd838674653749",
+      address: "0xc9a9eaDB4192830738dEebdA11FD838674653749",
       name: "7d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
