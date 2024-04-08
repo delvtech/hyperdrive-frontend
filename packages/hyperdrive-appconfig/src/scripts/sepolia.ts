@@ -28,6 +28,6 @@ fetchRegistryAddresses({
   writeAppConfigToFile({
     filename: `./src/generated/${sepoliaChainId}.appconfig.ts`,
     appConfig,
-    appConfigName: "sepolaChainAppConfig",
+    appConfigName: "sepoliaAppConfig",
   });
 });
