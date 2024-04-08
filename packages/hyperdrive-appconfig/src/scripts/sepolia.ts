@@ -15,6 +15,7 @@ const publicClient = createPublicClient({
 });
 
 fetchRegistryAddresses({
+  // TODO: Fill these in with the correct sepolia addresses
   factoryAddress: "0x",
   registryAddress: "0x",
   publicClient,
