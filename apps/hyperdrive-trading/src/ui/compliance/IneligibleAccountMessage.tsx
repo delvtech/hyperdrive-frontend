@@ -4,7 +4,7 @@ import { ReactElement, useEffect } from "react";
 import { useAccount } from "wagmi";
 import useAddressScreen from "./hooks/useAddressScreen";
 
-export function IneligibleAccountDialog({
+export function IneligibleAccountMessage({
   className,
 }: {
   className?: string;
