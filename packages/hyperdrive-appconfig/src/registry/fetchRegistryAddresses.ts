@@ -4,10 +4,10 @@ import { Address, parseAbi } from "abitype";
 import { RegistryAddresses } from "src/registry/RegistryAddresses";
 import { PublicClient, erc20Abi, getContract } from "viem";
 
-const minimalFactoryAbi = [
+const minimalFactoryAbi = parseAbi([
   "function getNumberOfInstances() external view returns (uint256)",
   "function getInstanceAtIndex(uint256 index) external view returns (address)",
-] as const;
+] as const);
 
 const stethHyperdriveSharesTokenSymbols = ["stETH"];
 const erc4626HyperdriveSharesTokenSymbols = ["DELV", "sDAI"];
@@ -24,7 +24,7 @@ export async function fetchRegistryAddresses({
   // The factory contains a list of all deployed hyperdrives
   const factory = getContract({
     address: factoryAddress,
-    abi: parseAbi(minimalFactoryAbi),
+    abi: minimalFactoryAbi,
     client: publicClient,
   });
 
@@ -58,6 +58,7 @@ export async function fetchRegistryAddresses({
       publicClient,
     });
 
+    // TODO: use hyperdrive.getSharesToken() once it exists
     const { vaultSharesToken } = await hyperdrive.getPoolConfig();
     const sharesTokenSymbol = await publicClient.readContract({
       address: vaultSharesToken,
