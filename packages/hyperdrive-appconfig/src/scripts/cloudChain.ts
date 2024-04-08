@@ -4,8 +4,8 @@ import { AddressesJson } from "src/addresses/AddressesJson";
 import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromRegistryAddresses";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { fetchJson } from "src/base/fetchJson";
-import { fetchRegistryAddresses } from "src/base/fetchRegistryAddresses";
 import { cloudChain } from "src/chains/cloudChain";
+import { fetchRegistryAddresses } from "src/registry/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
 
 const cloudChainId = +(process.env.CLOUDCHAIN_CHAIN_ID as string);

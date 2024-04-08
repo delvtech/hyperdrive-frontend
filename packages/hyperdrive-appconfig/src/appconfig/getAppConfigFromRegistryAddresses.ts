@@ -1,9 +1,9 @@
-import { RegistryAddresses } from "src/addresses/RegistryAddresses";
 import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getErc4626Hyperdrive } from "src/hyperdrives/erc4626/getErc4626Hyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols/protocols";
+import { RegistryAddresses } from "src/registry/RegistryAddresses";
 import { Tag } from "src/tags";
 import { TokenConfig } from "src/tokens/getTokenConfig";
 import { DAI_ICON_URL, SDAI_ICON_URL } from "src/tokens/tokenIconsUrls";

@@ -2,7 +2,7 @@ import "dotenv/config";
 
 import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromRegistryAddresses";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
-import { fetchRegistryAddresses } from "src/base/fetchRegistryAddresses";
+import { fetchRegistryAddresses } from "src/registry/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
 import { sepolia } from "viem/chains";
 

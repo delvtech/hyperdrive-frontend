@@ -1,7 +1,7 @@
 import { HyperdriveRegistry } from "@delvtech/hyperdrive-artifacts/HyperdriveRegistry";
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { Address, parseAbi } from "abitype";
-import { RegistryAddresses } from "src/addresses/RegistryAddresses";
+import { RegistryAddresses } from "src/registry/RegistryAddresses";
 import { PublicClient, erc20Abi, getContract } from "viem";
 
 const minimalFactoryAbi = [
@@ -28,7 +28,7 @@ export async function fetchRegistryAddresses({
     client: publicClient,
   });
 
-  // The registry is for checking if a hyperdrive is "blessed" for use in the UI
+  // The registry tells you if a hyperdrive is "blessed" for use in the UI
   const registryContract = getContract({
     address: registryAddress,
     abi: HyperdriveRegistry.abi,
