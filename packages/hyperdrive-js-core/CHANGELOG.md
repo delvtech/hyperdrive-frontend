@@ -1,5 +1,13 @@
 # @delvtech/hyperdrive-js-core
 
+## 0.0.3
+
+### Patch Changes
+
+- de73cff: Add default maxIterations to core-js
+- Updated dependencies [de73cff]
+  - @delvtech/hyperdrive-artifacts@0.0.3
+
 ## 0.0.2
 
 ### Patch Changes
