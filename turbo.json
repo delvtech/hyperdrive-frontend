@@ -14,7 +14,8 @@
         "VITE_LOCALHOST_NODE_RPC_URL",
         "VITE_CUSTOM_CHAIN_ADDRESSES_URL",
         "VITE_WALLET_CONNECT_PROJECT_ID",
-        "VITE_SEPOLIA_RPC_URL"
+        "VITE_SEPOLIA_RPC_URL",
+        "VITE_ADDRESS_SCREEN_URL"
       ],
       "outputs": ["dist/**", ".next/**"]
     },
