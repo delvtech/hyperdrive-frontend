@@ -40,7 +40,7 @@ export function MarketStats({
   });
 
   return (
-    <div className="grid grid-cols-2 gap-6 border-y border-neutral-content/20 py-8 sm:grid-cols-3 md:grid-cols-5">
+    <div className="grid grid-cols-2 gap-6 border-y border-neutral-content/20 py-8 sm:grid-cols-3 lg:grid-cols-5">
       <Stat
         label="Yield Source APY"
         value={
