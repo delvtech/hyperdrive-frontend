@@ -8,6 +8,8 @@ import {
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { cloudChain } from "src/chains/cloudChain";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -17,7 +19,8 @@ import { useMintToken } from "src/ui/token/hooks/useMintToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { Address, parseUnits } from "viem";
-import { useAccount, useReadContract } from "wagmi";
+import { foundry, sepolia } from "viem/chains";
+import { useAccount, useChainId, useReadContract } from "wagmi";
 
 export function YourBalanceWell({
   hyperdrive,
@@ -90,6 +93,12 @@ function AvailableAsset({
     destination: account,
   });
 
+  const chainId = useChainId() as SupportedChainId;
+  const isTestnetChain = [cloudChain.id, sepolia.id, foundry.id].includes(
+    chainId,
+  );
+  const hasFaucet = chainId === sepolia.id;
+
   return (
     <div className="flex whitespace-nowrap ">
       <div className="flex items-center gap-1 text-h5 font-bold">
@@ -108,7 +117,7 @@ function AvailableAsset({
         )}
       </div>
 
-      {isEth || tokenBalance === undefined ? undefined : (
+      {(isEth && hasFaucet) || !isEth ? (
         <div className="daisy-dropdown daisy-dropdown-end">
           <div tabIndex={0} role="button" className="daisy-btn daisy-btn-sm">
             <EllipsisVerticalIcon className="h-5" />
@@ -117,33 +126,48 @@ function AvailableAsset({
             tabIndex={0}
             className="daisy-menu daisy-dropdown-content z-[1] w-52 rounded-lg bg-base-100 p-4 shadow"
           >
-            <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
-              <span>Allowance</span>
-              <span className="font-normal">
-                {isUnlimited
-                  ? "Unlimited"
-                  : formatBalance({
-                      balance: allowance || 0n,
-                      decimals: token.decimals,
-                      places: 4,
-                    })}
-              </span>
-            </li>
-            <RevokeAllowanceModalButton
-              allowance={allowance}
-              token={token}
-              spender={spender}
-            />
-            {import.meta.env.DEV ? (
+            {isEth && chainId === sepolia.id ? (
               <li>
-                <button disabled={!mint} onClick={() => mint?.()}>
-                  Mint
-                </button>
+                <a
+                  href="https://faucetlink.to/sepolia"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Go to Sepolia faucet
+                </a>
               </li>
+            ) : undefined}
+            {!isEth && tokenBalance ? (
+              <>
+                <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
+                  <span>Allowance</span>
+                  <span className="font-normal">
+                    {isUnlimited
+                      ? "Unlimited"
+                      : formatBalance({
+                          balance: allowance || 0n,
+                          decimals: token.decimals,
+                          places: 4,
+                        })}
+                  </span>
+                </li>
+                <RevokeAllowanceModalButton
+                  allowance={allowance}
+                  token={token}
+                  spender={spender}
+                />
+                {isTestnetChain ? (
+                  <li>
+                    <button disabled={!mint} onClick={() => mint?.()}>
+                      Mint
+                    </button>
+                  </li>
+                ) : undefined}
+              </>
             ) : undefined}
           </ul>
         </div>
-      )}
+      ) : undefined}
     </div>
   );
 }
