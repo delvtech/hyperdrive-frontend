@@ -165,7 +165,6 @@ export class ReadHyperdriveModel implements IReadHyperdriveModel {
   }
   async getYieldSourceRate(): Promise<bigint> {
     const chainId = await this.publicClient.getChainId();
-    console.log("chainId", chainId);
     switch (chainId) {
       case 31337:
       case 42069:
