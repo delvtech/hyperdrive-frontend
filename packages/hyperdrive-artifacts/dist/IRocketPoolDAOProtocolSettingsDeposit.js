@@ -258,17 +258,17 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IRocketPoolDAOProtocolSettingsDeposit.sol",
-        "id": 11991,
+        "id": 11839,
         "exportedSymbols": {
             "IRocketPoolDAOProtocolSettingsDeposit": [
-                11990
+                11838
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:606:107",
         "nodes": [
             {
-                "id": 11954,
+                "id": 11802,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:107",
                 "nodes": [],
@@ -279,12 +279,12 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                 ]
             },
             {
-                "id": 11990,
+                "id": 11838,
                 "nodeType": "ContractDefinition",
                 "src": "64:580:107",
                 "nodes": [
                     {
-                        "id": 11959,
+                        "id": 11807,
                         "nodeType": "FunctionDefinition",
                         "src": "118:58:107",
                         "nodes": [],
@@ -295,23 +295,23 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                         "name": "getDepositEnabled",
                         "nameLocation": "127:17:107",
                         "parameters": {
-                            "id": 11955,
+                            "id": 11803,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "144:2:107"
                         },
                         "returnParameters": {
-                            "id": 11958,
+                            "id": 11806,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11957,
+                                    "id": 11805,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11959,
+                                    "scope": 11807,
                                     "src": "170:4:107",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -320,7 +320,7 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 11956,
+                                        "id": 11804,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "170:4:107",
@@ -334,13 +334,13 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                             ],
                             "src": "169:6:107"
                         },
-                        "scope": 11990,
+                        "scope": 11838,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11964,
+                        "id": 11812,
                         "nodeType": "FunctionDefinition",
                         "src": "182:65:107",
                         "nodes": [],
@@ -351,23 +351,23 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                         "name": "getAssignDepositsEnabled",
                         "nameLocation": "191:24:107",
                         "parameters": {
-                            "id": 11960,
+                            "id": 11808,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "215:2:107"
                         },
                         "returnParameters": {
-                            "id": 11963,
+                            "id": 11811,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11962,
+                                    "id": 11810,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11964,
+                                    "scope": 11812,
                                     "src": "241:4:107",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -376,7 +376,7 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 11961,
+                                        "id": 11809,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "241:4:107",
@@ -390,13 +390,13 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                             ],
                             "src": "240:6:107"
                         },
-                        "scope": 11990,
+                        "scope": 11838,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11969,
+                        "id": 11817,
                         "nodeType": "FunctionDefinition",
                         "src": "253:61:107",
                         "nodes": [],
@@ -407,23 +407,23 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                         "name": "getMinimumDeposit",
                         "nameLocation": "262:17:107",
                         "parameters": {
-                            "id": 11965,
+                            "id": 11813,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "279:2:107"
                         },
                         "returnParameters": {
-                            "id": 11968,
+                            "id": 11816,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11967,
+                                    "id": 11815,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11969,
+                                    "scope": 11817,
                                     "src": "305:7:107",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -432,7 +432,7 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11966,
+                                        "id": 11814,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "305:7:107",
@@ -446,13 +446,13 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                             ],
                             "src": "304:9:107"
                         },
-                        "scope": 11990,
+                        "scope": 11838,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11974,
+                        "id": 11822,
                         "nodeType": "FunctionDefinition",
                         "src": "320:69:107",
                         "nodes": [],
@@ -463,23 +463,23 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                         "name": "getMaximumDepositPoolSize",
                         "nameLocation": "329:25:107",
                         "parameters": {
-                            "id": 11970,
+                            "id": 11818,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "354:2:107"
                         },
                         "returnParameters": {
-                            "id": 11973,
+                            "id": 11821,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11972,
+                                    "id": 11820,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11974,
+                                    "scope": 11822,
                                     "src": "380:7:107",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -488,7 +488,7 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11971,
+                                        "id": 11819,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "380:7:107",
@@ -502,13 +502,13 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                             ],
                             "src": "379:9:107"
                         },
-                        "scope": 11990,
+                        "scope": 11838,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11979,
+                        "id": 11827,
                         "nodeType": "FunctionDefinition",
                         "src": "395:72:107",
                         "nodes": [],
@@ -519,23 +519,23 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                         "name": "getMaximumDepositAssignments",
                         "nameLocation": "404:28:107",
                         "parameters": {
-                            "id": 11975,
+                            "id": 11823,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "432:2:107"
                         },
                         "returnParameters": {
-                            "id": 11978,
+                            "id": 11826,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11977,
+                                    "id": 11825,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11979,
+                                    "scope": 11827,
                                     "src": "458:7:107",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -544,7 +544,7 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11976,
+                                        "id": 11824,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "458:7:107",
@@ -558,13 +558,13 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                             ],
                             "src": "457:9:107"
                         },
-                        "scope": 11990,
+                        "scope": 11838,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11984,
+                        "id": 11832,
                         "nodeType": "FunctionDefinition",
                         "src": "473:106:107",
                         "nodes": [],
@@ -575,23 +575,23 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                         "name": "getMaximumDepositSocialisedAssignments",
                         "nameLocation": "482:38:107",
                         "parameters": {
-                            "id": 11980,
+                            "id": 11828,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "520:2:107"
                         },
                         "returnParameters": {
-                            "id": 11983,
+                            "id": 11831,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11982,
+                                    "id": 11830,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11984,
+                                    "scope": 11832,
                                     "src": "570:7:107",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -600,7 +600,7 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11981,
+                                        "id": 11829,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "570:7:107",
@@ -614,13 +614,13 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                             ],
                             "src": "569:9:107"
                         },
-                        "scope": 11990,
+                        "scope": 11838,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11989,
+                        "id": 11837,
                         "nodeType": "FunctionDefinition",
                         "src": "585:57:107",
                         "nodes": [],
@@ -631,23 +631,23 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                         "name": "getDepositFee",
                         "nameLocation": "594:13:107",
                         "parameters": {
-                            "id": 11985,
+                            "id": 11833,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "607:2:107"
                         },
                         "returnParameters": {
-                            "id": 11988,
+                            "id": 11836,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11987,
+                                    "id": 11835,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11989,
+                                    "scope": 11837,
                                     "src": "633:7:107",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -656,7 +656,7 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11986,
+                                        "id": 11834,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "633:7:107",
@@ -670,7 +670,7 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                             ],
                             "src": "632:9:107"
                         },
-                        "scope": 11990,
+                        "scope": 11838,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -683,11 +683,11 @@ export const IRocketPoolDAOProtocolSettingsDeposit = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11990
+                    11838
                 ],
                 "name": "IRocketPoolDAOProtocolSettingsDeposit",
                 "nameLocation": "74:37:107",
-                "scope": 11991,
+                "scope": 11839,
                 "usedErrors": [],
                 "usedEvents": []
             }

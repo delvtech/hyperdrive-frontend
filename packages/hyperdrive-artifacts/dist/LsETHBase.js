@@ -660,7 +660,7 @@ export const LsETHBase = {
         "linkReferences": {}
     },
     "methodIdentifiers": {},
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"checkpointVaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"River has it's own notion of shares to account for the accrual of      interest on the ether pooled in the River protocol. Instead of      maintaining a balance of shares, this integration can simply use River's      shares directly.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"LsETHHyperdrive\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"The base contract for the LsETH Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/lseth/LsETHBase.sol\":\"LsETHBase\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/lseth/LsETHBase.sol\":{\"keccak256\":\"0x0e2e4a7ed3f22066aa14d86ea95b229e952d5d78801ab168192a5b2b8ed02993\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f86ff2acf0607e8f8d14805e7283a2816aace3b3c123ce572b386874b1abc209\",\"dweb:/ipfs/QmXeWHRnUTpJvvUktKy9vH5otMQsGJYoFAB8JqHtW38Vdc\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/interfaces/IRiverV1.sol\":{\"keccak256\":\"0xc2f6a1eb3bee83413bddd417044c687f2375eab216de4f6bbeee6c00afc79814\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://07e3bfeecba789bde03e9d7dda046fc5932f19ce19d272a6c79e2486cb5bee65\",\"dweb:/ipfs/QmNtefA3d9X7EWDzjVvmrSeaEQWeENDFPdWBSGjF3TL3Nd\"]},\"contracts/src/interfaces/ISharesManagerV1.sol\":{\"keccak256\":\"0xca5ddd1dff26fc16fbf35e7154c5dee64098f6a0e3e44f9335c62b14d3705a98\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://577579582e9762b9244a47ce465a3de3a848fdf1b8a5b0ad07a5b803d8ef02e4\",\"dweb:/ipfs/QmSkPXPtxhcGB6DfVNYY6ZxdNHnkUupxBmDAgPtooKXzqA\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e\",\"dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a\",\"dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9\",\"dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f\",\"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229\",\"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"ReentrancyGuardReentrantCall\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"AddLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"basePayment\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"CloseShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"fees\",\"type\":\"uint256\"}],\"name\":\"CollectGovernanceFee\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"checkpointTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"checkpointVaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultSharePrice\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedShorts\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturedLongs\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"CreateCheckpoint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newFeeCollector\",\"type\":\"address\"}],\"name\":\"FeeCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGovernance\",\"type\":\"address\"}],\"name\":\"GovernanceUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"apr\",\"type\":\"uint256\"}],\"name\":\"Initialize\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenLong\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"trader\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"uint256\",\"name\":\"assetId\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"maturityTime\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseProceeds\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bondAmount\",\"type\":\"uint256\"}],\"name\":\"OpenShort\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"isPaused\",\"type\":\"bool\"}],\"name\":\"PauseStatusUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newPauser\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"status\",\"type\":\"bool\"}],\"name\":\"PauserUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"}],\"name\":\"RedeemWithdrawalShares\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"provider\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"destination\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"baseAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"vaultShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"asBase\",\"type\":\"bool\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"withdrawalShareAmount\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"lpSharePrice\",\"type\":\"uint256\"}],\"name\":\"RemoveLiquidity\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"collector\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"name\":\"Sweep\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newSweepCollector\",\"type\":\"address\"}],\"name\":\"SweepCollectorUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"}],\"devdoc\":{\"author\":\"DELV\",\"custom:disclaimer\":\"The language used in this code is for coding convenience                    only, and is not intended to, and does not, have any                    particular legal or regulatory significance.\",\"details\":\"River has it's own notion of shares to account for the accrual of      interest on the ether pooled in the River protocol. Instead of      maintaining a balance of shares, this integration can simply use River's      shares directly.\",\"errors\":{\"ReentrancyGuardReentrantCall()\":[{\"details\":\"Unauthorized reentrant call.\"}]},\"kind\":\"dev\",\"methods\":{},\"title\":\"LsETHHyperdrive\",\"version\":1},\"userdoc\":{\"events\":{\"AddLiquidity(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when an LP adds liquidity to the Hyperdrive pool.\"},\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"CloseLong(address,address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is closed.\"},\"CloseShort(address,address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is closed.\"},\"CollectGovernanceFee(address,uint256)\":{\"notice\":\"Emitted when governance fees are collected.\"},\"CreateCheckpoint(uint256,uint256,uint256,uint256,uint256,uint256)\":{\"notice\":\"Emitted when a checkpoint is created.\"},\"FeeCollectorUpdated(address)\":{\"notice\":\"Emitted when the fee collector address is updated.\"},\"GovernanceUpdated(address)\":{\"notice\":\"Emitted when the governance address is updated.\"},\"Initialize(address,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when the Hyperdrive pool is initialized.\"},\"OpenLong(address,uint256,uint256,uint256,uint256,bool,uint256)\":{\"notice\":\"Emitted when a long position is opened.\"},\"OpenShort(address,uint256,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when a short position is opened.\"},\"PauseStatusUpdated(bool)\":{\"notice\":\"Emitted when the pause status is updated.\"},\"PauserUpdated(address,bool)\":{\"notice\":\"Emitted when a pauser is updated.\"},\"RedeemWithdrawalShares(address,address,uint256,uint256,uint256,bool)\":{\"notice\":\"Emitted when an LP redeems withdrawal shares.\"},\"RemoveLiquidity(address,address,uint256,uint256,uint256,bool,uint256,uint256)\":{\"notice\":\"Emitted when an LP removes liquidity from the Hyperdrive pool.\"},\"Sweep(address,address)\":{\"notice\":\"Emitted when tokens are swept.\"},\"SweepCollectorUpdated(address)\":{\"notice\":\"Emitted when the sweep collector address is updated.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{},\"notice\":\"The base contract for the LsETH Hyperdrive implementation.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/instances/lseth/LsETHBase.sol\":\"LsETHBase\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/instances/lseth/LsETHBase.sol\":{\"keccak256\":\"0x325ea45ea36374c812f9370ac402f3658a00726d7f35f15c852ac88a8f40bc05\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0f56e6e94d32cbbf76f34fe5f47e556751b4d21f30adbcfca31817b5cd41a7cc\",\"dweb:/ipfs/QmZTvSqw2YQQEpdrbmfjfaPtZsNErXBwnm2a8HgWn36b6W\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339\",\"dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19\",\"dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/interfaces/IRiverV1.sol\":{\"keccak256\":\"0xc2f6a1eb3bee83413bddd417044c687f2375eab216de4f6bbeee6c00afc79814\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://07e3bfeecba789bde03e9d7dda046fc5932f19ce19d272a6c79e2486cb5bee65\",\"dweb:/ipfs/QmNtefA3d9X7EWDzjVvmrSeaEQWeENDFPdWBSGjF3TL3Nd\"]},\"contracts/src/interfaces/ISharesManagerV1.sol\":{\"keccak256\":\"0xca5ddd1dff26fc16fbf35e7154c5dee64098f6a0e3e44f9335c62b14d3705a98\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://577579582e9762b9244a47ce465a3de3a848fdf1b8a5b0ad07a5b803d8ef02e4\",\"dweb:/ipfs/QmSkPXPtxhcGB6DfVNYY6ZxdNHnkUupxBmDAgPtooKXzqA\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x6d10a1d7e62a374bd1c6cd1f41e16a8702ef2b25b1dac34479ef8e3b31abd2f3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a60f3227d4de9ab8163bc0625e5e66f1ea17b3b2901ae40547289d5ca6b82186\",\"dweb:/ipfs/QmWF4mUXAAYaTko7pWjje2Jc9XumnaAYURUNuvwSRoS28E\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xde163699e55f6d6bd660fa7a1cf25927d2e895e16663a7c47fa45d6bc4878c2e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9908cf875ad59413154825ea59e2635b16f0020a0e3368ec85b6c7379ab3f19\",\"dweb:/ipfs/QmeX22wqHYurD9J6WTxrQjtqUoh21bFmLm7E1SzCkgQV7d\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x015be7b5e24373828e26b4af217ecbf074c7f4dcab839703d97d7bc560aa40eb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3584c205f552b20d01dc902a687f346e10bde5f1a23f887f97e03b2fbff8e75c\",\"dweb:/ipfs/QmaVzjYr18cZueNaboBeyVb6CtgY2qMxtvNcn6nXzCgM2c\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x44e018888d5a9fe0c3e44d9d814879d8f0c3adb78154edc98ba07da86b976f5a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5e3990bc86aaa8b4eb4b948ed3a26f0b018f1422c6470a00d146aa69e599a90d\",\"dweb:/ipfs/QmWg9hKoQK1po8ZxRC4xrSWePtoJhgndkHXmwLCpCtwAUu\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0x391c141a11e995c912f55247d461c44bcd7d7c70de4c2d98ff9c81e89acd4424\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b4d80a70106debf9f2d4980e38572daeea11bfc398a1258e3b5dc344e9ce646a\",\"dweb:/ipfs/QmbdckkGQcuok6NDZPiUVAQhpG9HvigMwozFZRLe9YcL2n\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x78ca3ee7c212a513f45a44ef42d362c4ab3cc59e246191c57011b86232967189\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://610b23be1ed7decae671a7cc8ae76298b5d3b10bbea532d3c10623462f899786\",\"dweb:/ipfs/QmV6i6JaY8EKYHUAq6r5267eMbQtfA43F3YNSvvxktW6hE\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xa15878749f26b198b59e039cf814143b141698064d341cd8b88cb4a04491551c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b3fdd810b779630fce33fa7d2bfc17d6cca1bd3d646e5c702d09fd277167fde4\",\"dweb:/ipfs/QmW8C19uY5WLkVQfqFRsSU5NtuQDgoqt4jBoMhvuJ7kMn2\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x407ff362f1486784581f506ffd22cbcb74f638deed9e5c086d3639ea8e64025e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e0092121a10538a07f814b1fafdb2f8923ee35c4d0f18af595f65ce36849a797\",\"dweb:/ipfs/QmTVKGwXU2FyywANhcBnutWSu38QaaVqgG9eTYatfjGYGL\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f\",\"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229\",\"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -1352,10 +1352,10 @@ export const LsETHBase = {
         },
         "sources": {
             "contracts/src/instances/lseth/LsETHBase.sol": {
-                "keccak256": "0x0e2e4a7ed3f22066aa14d86ea95b229e952d5d78801ab168192a5b2b8ed02993",
+                "keccak256": "0x325ea45ea36374c812f9370ac402f3658a00726d7f35f15c852ac88a8f40bc05",
                 "urls": [
-                    "bzz-raw://f86ff2acf0607e8f8d14805e7283a2816aace3b3c123ce572b386874b1abc209",
-                    "dweb:/ipfs/QmXeWHRnUTpJvvUktKy9vH5otMQsGJYoFAB8JqHtW38Vdc"
+                    "bzz-raw://0f56e6e94d32cbbf76f34fe5f47e556751b4d21f30adbcfca31817b5cd41a7cc",
+                    "dweb:/ipfs/QmZTvSqw2YQQEpdrbmfjfaPtZsNErXBwnm2a8HgWn36b6W"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1368,18 +1368,18 @@ export const LsETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdrive.sol": {
-                "keccak256": "0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71",
+                "keccak256": "0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5",
                 "urls": [
-                    "bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf",
-                    "dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm"
+                    "bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339",
+                    "dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveCore.sol": {
-                "keccak256": "0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e",
+                "keccak256": "0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f",
                 "urls": [
-                    "bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24",
-                    "dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h"
+                    "bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19",
+                    "dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1456,18 +1456,18 @@ export const LsETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveBase.sol": {
-                "keccak256": "0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb",
+                "keccak256": "0x6d10a1d7e62a374bd1c6cd1f41e16a8702ef2b25b1dac34479ef8e3b31abd2f3",
                 "urls": [
-                    "bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6",
-                    "dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN"
+                    "bzz-raw://a60f3227d4de9ab8163bc0625e5e66f1ea17b3b2901ae40547289d5ca6b82186",
+                    "dweb:/ipfs/QmWF4mUXAAYaTko7pWjje2Jc9XumnaAYURUNuvwSRoS28E"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveStorage.sol": {
-                "keccak256": "0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4",
+                "keccak256": "0xde163699e55f6d6bd660fa7a1cf25927d2e895e16663a7c47fa45d6bc4878c2e",
                 "urls": [
-                    "bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e",
-                    "dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N"
+                    "bzz-raw://c9908cf875ad59413154825ea59e2635b16f0020a0e3368ec85b6c7379ab3f19",
+                    "dweb:/ipfs/QmeX22wqHYurD9J6WTxrQjtqUoh21bFmLm7E1SzCkgQV7d"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1480,50 +1480,50 @@ export const LsETHBase = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/Errors.sol": {
-                "keccak256": "0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0",
+                "keccak256": "0x015be7b5e24373828e26b4af217ecbf074c7f4dcab839703d97d7bc560aa40eb",
                 "urls": [
-                    "bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88",
-                    "dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41"
+                    "bzz-raw://3584c205f552b20d01dc902a687f346e10bde5f1a23f887f97e03b2fbff8e75c",
+                    "dweb:/ipfs/QmaVzjYr18cZueNaboBeyVb6CtgY2qMxtvNcn6nXzCgM2c"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/FixedPointMath.sol": {
-                "keccak256": "0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076",
+                "keccak256": "0x44e018888d5a9fe0c3e44d9d814879d8f0c3adb78154edc98ba07da86b976f5a",
                 "urls": [
-                    "bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd",
-                    "dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L"
+                    "bzz-raw://5e3990bc86aaa8b4eb4b948ed3a26f0b018f1422c6470a00d146aa69e599a90d",
+                    "dweb:/ipfs/QmWg9hKoQK1po8ZxRC4xrSWePtoJhgndkHXmwLCpCtwAUu"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/HyperdriveMath.sol": {
-                "keccak256": "0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab",
+                "keccak256": "0x391c141a11e995c912f55247d461c44bcd7d7c70de4c2d98ff9c81e89acd4424",
                 "urls": [
-                    "bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002",
-                    "dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY"
+                    "bzz-raw://b4d80a70106debf9f2d4980e38572daeea11bfc398a1258e3b5dc344e9ce646a",
+                    "dweb:/ipfs/QmbdckkGQcuok6NDZPiUVAQhpG9HvigMwozFZRLe9YcL2n"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/LPMath.sol": {
-                "keccak256": "0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed",
+                "keccak256": "0x78ca3ee7c212a513f45a44ef42d362c4ab3cc59e246191c57011b86232967189",
                 "urls": [
-                    "bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a",
-                    "dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX"
+                    "bzz-raw://610b23be1ed7decae671a7cc8ae76298b5d3b10bbea532d3c10623462f899786",
+                    "dweb:/ipfs/QmV6i6JaY8EKYHUAq6r5267eMbQtfA43F3YNSvvxktW6hE"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/SafeCast.sol": {
-                "keccak256": "0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148",
+                "keccak256": "0xa15878749f26b198b59e039cf814143b141698064d341cd8b88cb4a04491551c",
                 "urls": [
-                    "bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8",
-                    "dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8"
+                    "bzz-raw://b3fdd810b779630fce33fa7d2bfc17d6cca1bd3d646e5c702d09fd277167fde4",
+                    "dweb:/ipfs/QmW8C19uY5WLkVQfqFRsSU5NtuQDgoqt4jBoMhvuJ7kMn2"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/YieldSpaceMath.sol": {
-                "keccak256": "0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1",
+                "keccak256": "0x407ff362f1486784581f506ffd22cbcb74f638deed9e5c086d3639ea8e64025e",
                 "urls": [
-                    "bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9",
-                    "dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh"
+                    "bzz-raw://e0092121a10538a07f814b1fafdb2f8923ee35c4d0f18af595f65ce36849a797",
+                    "dweb:/ipfs/QmTVKGwXU2FyywANhcBnutWSu38QaaVqgG9eTYatfjGYGL"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1604,32 +1604,32 @@ export const LsETHBase = {
     },
     "ast": {
         "absolutePath": "contracts/src/instances/lseth/LsETHBase.sol",
-        "id": 8705,
+        "id": 8587,
         "exportedSymbols": {
             "ERC20": [
-                70783
+                70857
             ],
             "HyperdriveBase": [
-                13835
+                13667
             ],
             "IHyperdrive": [
-                10506
+                10351
             ],
             "IRiverV1": [
-                11834
+                11682
             ],
             "LsETHBase": [
-                8704
+                8586
             ],
             "SafeERC20": [
-                71213
+                71287
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:4509:58",
+        "src": "39:4199:58",
         "nodes": [
             {
-                "id": 8516,
+                "id": 8408,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:58",
                 "nodes": [],
@@ -1640,23 +1640,23 @@ export const LsETHBase = {
                 ]
             },
             {
-                "id": 8518,
+                "id": 8410,
                 "nodeType": "ImportDirective",
                 "src": "64:59:58",
                 "nodes": [],
                 "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
                 "file": "openzeppelin/token/ERC20/ERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 8705,
-                "sourceUnit": 70784,
+                "scope": 8587,
+                "sourceUnit": 70858,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 8517,
+                            "id": 8409,
                             "name": "ERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 70783,
+                            "referencedDeclaration": 70857,
                             "src": "73:5:58",
                             "typeDescriptions": {}
                         },
@@ -1666,23 +1666,23 @@ export const LsETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 8520,
+                "id": 8412,
                 "nodeType": "ImportDirective",
                 "src": "124:73:58",
                 "nodes": [],
                 "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
                 "file": "openzeppelin/token/ERC20/utils/SafeERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 8705,
-                "sourceUnit": 71214,
+                "scope": 8587,
+                "sourceUnit": 71288,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 8519,
+                            "id": 8411,
                             "name": "SafeERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71213,
+                            "referencedDeclaration": 71287,
                             "src": "133:9:58",
                             "typeDescriptions": {}
                         },
@@ -1692,23 +1692,23 @@ export const LsETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 8522,
+                "id": 8414,
                 "nodeType": "ImportDirective",
                 "src": "198:63:58",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "../../interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 8705,
-                "sourceUnit": 10507,
+                "scope": 8587,
+                "sourceUnit": 10352,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 8521,
+                            "id": 8413,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 10506,
+                            "referencedDeclaration": 10351,
                             "src": "207:11:58",
                             "typeDescriptions": {}
                         },
@@ -1718,23 +1718,23 @@ export const LsETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 8524,
+                "id": 8416,
                 "nodeType": "ImportDirective",
                 "src": "262:57:58",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IRiverV1.sol",
                 "file": "../../interfaces/IRiverV1.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 8705,
-                "sourceUnit": 11835,
+                "scope": 8587,
+                "sourceUnit": 11683,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 8523,
+                            "id": 8415,
                             "name": "IRiverV1",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 11834,
+                            "referencedDeclaration": 11682,
                             "src": "271:8:58",
                             "typeDescriptions": {}
                         },
@@ -1744,23 +1744,23 @@ export const LsETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 8526,
+                "id": 8418,
                 "nodeType": "ImportDirective",
                 "src": "320:67:58",
                 "nodes": [],
                 "absolutePath": "contracts/src/internal/HyperdriveBase.sol",
                 "file": "../../internal/HyperdriveBase.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 8705,
-                "sourceUnit": 13836,
+                "scope": 8587,
+                "sourceUnit": 13668,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 8525,
+                            "id": 8417,
                             "name": "HyperdriveBase",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 13835,
+                            "referencedDeclaration": 13667,
                             "src": "329:14:58",
                             "typeDescriptions": {}
                         },
@@ -1770,54 +1770,54 @@ export const LsETHBase = {
                 "unitAlias": ""
             },
             {
-                "id": 8704,
+                "id": 8586,
                 "nodeType": "ContractDefinition",
-                "src": "983:3564:58",
+                "src": "983:3254:58",
                 "nodes": [
                     {
-                        "id": 8533,
+                        "id": 8425,
                         "nodeType": "UsingForDirective",
                         "src": "1035:26:58",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 8530,
+                            "id": 8422,
                             "name": "SafeERC20",
                             "nameLocations": [
                                 "1041:9:58"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 71213,
+                            "referencedDeclaration": 71287,
                             "src": "1041:9:58"
                         },
                         "typeName": {
-                            "id": 8532,
+                            "id": 8424,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 8531,
+                                "id": 8423,
                                 "name": "ERC20",
                                 "nameLocations": [
                                     "1055:5:58"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 70783,
+                                "referencedDeclaration": 70857,
                                 "src": "1055:5:58"
                             },
-                            "referencedDeclaration": 70783,
+                            "referencedDeclaration": 70857,
                             "src": "1055:5:58",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC20_$70783",
+                                "typeIdentifier": "t_contract$_ERC20_$70857",
                                 "typeString": "contract ERC20"
                             }
                         }
                     },
                     {
-                        "id": 8552,
+                        "id": 8444,
                         "nodeType": "FunctionDefinition",
                         "src": "1165:197:58",
                         "nodes": [],
                         "body": {
-                            "id": 8551,
+                            "id": 8443,
                             "nodeType": "Block",
                             "src": "1308:54:58",
                             "nodes": [],
@@ -1828,18 +1828,18 @@ export const LsETHBase = {
                                         "expression": {
                                             "argumentTypes": [],
                                             "expression": {
-                                                "id": 8546,
+                                                "id": 8438,
                                                 "name": "IHyperdrive",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10506,
+                                                "referencedDeclaration": 10351,
                                                 "src": "1325:11:58",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10351_$",
                                                     "typeString": "type(contract IHyperdrive)"
                                                 }
                                             },
-                                            "id": 8548,
+                                            "id": 8440,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1847,14 +1847,14 @@ export const LsETHBase = {
                                             "memberLocation": "1337:16:58",
                                             "memberName": "UnsupportedToken",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10472,
+                                            "referencedDeclaration": 10317,
                                             "src": "1325:28:58",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                 "typeString": "function () pure"
                                             }
                                         },
-                                        "id": 8549,
+                                        "id": 8441,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1870,17 +1870,17 @@ export const LsETHBase = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 8550,
+                                    "id": 8442,
                                     "nodeType": "RevertStatement",
                                     "src": "1318:37:58"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            12866
+                            12702
                         ],
                         "documentation": {
-                            "id": 8534,
+                            "id": 8426,
                             "nodeType": "StructuredDocumentation",
                             "src": "1093:67:58",
                             "text": "@dev Deposits as base asset not supported for this integration."
@@ -1891,23 +1891,23 @@ export const LsETHBase = {
                         "name": "_depositWithBase",
                         "nameLocation": "1174:16:58",
                         "overrides": {
-                            "id": 8540,
+                            "id": 8432,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "1272:8:58"
                         },
                         "parameters": {
-                            "id": 8539,
+                            "id": 8431,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8536,
+                                    "id": 8428,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8552,
+                                    "scope": 8444,
                                     "src": "1200:7:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1916,7 +1916,7 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8535,
+                                        "id": 8427,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1200:7:58",
@@ -1929,12 +1929,12 @@ export const LsETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8538,
+                                    "id": 8430,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8552,
+                                    "scope": 8444,
                                     "src": "1227:14:58",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -1943,7 +1943,7 @@ export const LsETHBase = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 8537,
+                                        "id": 8429,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1227:5:58",
@@ -1958,17 +1958,17 @@ export const LsETHBase = {
                             "src": "1190:67:58"
                         },
                         "returnParameters": {
-                            "id": 8545,
+                            "id": 8437,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8542,
+                                    "id": 8434,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8552,
+                                    "scope": 8444,
                                     "src": "1290:7:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1977,7 +1977,7 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8541,
+                                        "id": 8433,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1290:7:58",
@@ -1990,12 +1990,12 @@ export const LsETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8544,
+                                    "id": 8436,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8552,
+                                    "scope": 8444,
                                     "src": "1299:7:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2004,7 +2004,7 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8543,
+                                        "id": 8435,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1299:7:58",
@@ -2018,18 +2018,18 @@ export const LsETHBase = {
                             ],
                             "src": "1289:18:58"
                         },
-                        "scope": 8704,
+                        "scope": 8586,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 8578,
+                        "id": 8470,
                         "nodeType": "FunctionDefinition",
                         "src": "1480:322:58",
                         "nodes": [],
                         "body": {
-                            "id": 8577,
+                            "id": 8469,
                             "nodeType": "Block",
                             "src": "1596:206:58",
                             "nodes": [],
@@ -2039,7 +2039,7 @@ export const LsETHBase = {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 8568,
+                                                    "id": 8460,
                                                     "name": "msg",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -2050,7 +2050,7 @@ export const LsETHBase = {
                                                         "typeString": "msg"
                                                     }
                                                 },
-                                                "id": 8569,
+                                                "id": 8461,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2067,14 +2067,14 @@ export const LsETHBase = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 8572,
+                                                        "id": 8464,
                                                         "name": "this",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -28,
                                                         "src": "1754:4:58",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_LsETHBase_$8704",
+                                                            "typeIdentifier": "t_contract$_LsETHBase_$8586",
                                                             "typeString": "contract LsETHBase"
                                                         }
                                                     }
@@ -2082,11 +2082,11 @@ export const LsETHBase = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_contract$_LsETHBase_$8704",
+                                                            "typeIdentifier": "t_contract$_LsETHBase_$8586",
                                                             "typeString": "contract LsETHBase"
                                                         }
                                                     ],
-                                                    "id": 8571,
+                                                    "id": 8463,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2098,14 +2098,14 @@ export const LsETHBase = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 8570,
+                                                        "id": 8462,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "1746:7:58",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 8573,
+                                                "id": 8465,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2122,11 +2122,11 @@ export const LsETHBase = {
                                                 }
                                             },
                                             {
-                                                "id": 8574,
+                                                "id": 8466,
                                                 "name": "_shareAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 8555,
+                                                "referencedDeclaration": 8447,
                                                 "src": "1773:12:58",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2154,14 +2154,14 @@ export const LsETHBase = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 8564,
+                                                                "id": 8456,
                                                                 "name": "_vaultSharesToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17695,
+                                                                "referencedDeclaration": 17536,
                                                                 "src": "1672:17:58",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -2169,11 +2169,11 @@ export const LsETHBase = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 8563,
+                                                            "id": 8455,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2185,14 +2185,14 @@ export const LsETHBase = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 8562,
+                                                                "id": 8454,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "1664:7:58",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 8565,
+                                                        "id": 8457,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2216,18 +2216,18 @@ export const LsETHBase = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 8561,
+                                                    "id": 8453,
                                                     "name": "ERC20",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 70783,
+                                                    "referencedDeclaration": 70857,
                                                     "src": "1658:5:58",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70783_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70857_$",
                                                         "typeString": "type(contract ERC20)"
                                                     }
                                                 },
-                                                "id": 8566,
+                                                "id": 8458,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2239,11 +2239,11 @@ export const LsETHBase = {
                                                 "src": "1658:33:58",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ERC20_$70783",
+                                                    "typeIdentifier": "t_contract$_ERC20_$70857",
                                                     "typeString": "contract ERC20"
                                                 }
                                             },
-                                            "id": 8567,
+                                            "id": 8459,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2251,14 +2251,14 @@ export const LsETHBase = {
                                             "memberLocation": "1692:16:58",
                                             "memberName": "safeTransferFrom",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 71000,
+                                            "referencedDeclaration": 71074,
                                             "src": "1658:50:58",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70861_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70861_$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$",
                                                 "typeString": "function (contract IERC20,address,address,uint256)"
                                             }
                                         },
-                                        "id": 8575,
+                                        "id": 8467,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2274,17 +2274,17 @@ export const LsETHBase = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 8576,
+                                    "id": 8468,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1658:137:58"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            12874
+                            12710
                         ],
                         "documentation": {
-                            "id": 8553,
+                            "id": 8445,
                             "nodeType": "StructuredDocumentation",
                             "src": "1368:107:58",
                             "text": "@dev Process a deposit in vault shares.\n @param _shareAmount The vault shares amount to deposit."
@@ -2295,23 +2295,23 @@ export const LsETHBase = {
                         "name": "_depositWithShares",
                         "nameLocation": "1489:18:58",
                         "overrides": {
-                            "id": 8559,
+                            "id": 8451,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "1587:8:58"
                         },
                         "parameters": {
-                            "id": 8558,
+                            "id": 8450,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8555,
+                                    "id": 8447,
                                     "mutability": "mutable",
                                     "name": "_shareAmount",
                                     "nameLocation": "1525:12:58",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8578,
+                                    "scope": 8470,
                                     "src": "1517:20:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2320,7 +2320,7 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8554,
+                                        "id": 8446,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1517:7:58",
@@ -2333,12 +2333,12 @@ export const LsETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8557,
+                                    "id": 8449,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8578,
+                                    "scope": 8470,
                                     "src": "1547:14:58",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2347,7 +2347,7 @@ export const LsETHBase = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 8556,
+                                        "id": 8448,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1547:5:58",
@@ -2362,23 +2362,23 @@ export const LsETHBase = {
                             "src": "1507:70:58"
                         },
                         "returnParameters": {
-                            "id": 8560,
+                            "id": 8452,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1596:0:58"
                         },
-                        "scope": 8704,
+                        "scope": 8586,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 8597,
+                        "id": 8489,
                         "nodeType": "FunctionDefinition",
                         "src": "1883:358:58",
                         "nodes": [],
                         "body": {
-                            "id": 8596,
+                            "id": 8488,
                             "nodeType": "Block",
                             "src": "2045:196:58",
                             "nodes": [],
@@ -2389,18 +2389,18 @@ export const LsETHBase = {
                                         "expression": {
                                             "argumentTypes": [],
                                             "expression": {
-                                                "id": 8591,
+                                                "id": 8483,
                                                 "name": "IHyperdrive",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10506,
+                                                "referencedDeclaration": 10351,
                                                 "src": "2204:11:58",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10351_$",
                                                     "typeString": "type(contract IHyperdrive)"
                                                 }
                                             },
-                                            "id": 8593,
+                                            "id": 8485,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2408,14 +2408,14 @@ export const LsETHBase = {
                                             "memberLocation": "2216:16:58",
                                             "memberName": "UnsupportedToken",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10472,
+                                            "referencedDeclaration": 10317,
                                             "src": "2204:28:58",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                 "typeString": "function () pure"
                                             }
                                         },
-                                        "id": 8594,
+                                        "id": 8486,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2431,17 +2431,17 @@ export const LsETHBase = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 8595,
+                                    "id": 8487,
                                     "nodeType": "RevertStatement",
                                     "src": "2197:37:58"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            12886
+                            12722
                         ],
                         "documentation": {
-                            "id": 8579,
+                            "id": 8471,
                             "nodeType": "StructuredDocumentation",
                             "src": "1808:70:58",
                             "text": "@dev Withdrawals as base asset not supported for this integration."
@@ -2452,23 +2452,23 @@ export const LsETHBase = {
                         "name": "_withdrawWithBase",
                         "nameLocation": "1892:17:58",
                         "overrides": {
-                            "id": 8587,
+                            "id": 8479,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "2018:8:58"
                         },
                         "parameters": {
-                            "id": 8586,
+                            "id": 8478,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8581,
+                                    "id": 8473,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8597,
+                                    "scope": 8489,
                                     "src": "1919:7:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2477,7 +2477,7 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8580,
+                                        "id": 8472,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1919:7:58",
@@ -2490,12 +2490,12 @@ export const LsETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8583,
+                                    "id": 8475,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8597,
+                                    "scope": 8489,
                                     "src": "1946:7:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2504,7 +2504,7 @@ export const LsETHBase = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8582,
+                                        "id": 8474,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1946:7:58",
@@ -2518,12 +2518,12 @@ export const LsETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8585,
+                                    "id": 8477,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8597,
+                                    "scope": 8489,
                                     "src": "1973:14:58",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2532,7 +2532,7 @@ export const LsETHBase = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 8584,
+                                        "id": 8476,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1973:5:58",
@@ -2547,17 +2547,17 @@ export const LsETHBase = {
                             "src": "1909:94:58"
                         },
                         "returnParameters": {
-                            "id": 8590,
+                            "id": 8482,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8589,
+                                    "id": 8481,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8597,
+                                    "scope": 8489,
                                     "src": "2036:7:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2566,7 +2566,7 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8588,
+                                        "id": 8480,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2036:7:58",
@@ -2580,18 +2580,18 @@ export const LsETHBase = {
                             ],
                             "src": "2035:9:58"
                         },
-                        "scope": 8704,
+                        "scope": 8586,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 8620,
+                        "id": 8512,
                         "nodeType": "FunctionDefinition",
                         "src": "2483:329:58",
                         "nodes": [],
                         "body": {
-                            "id": 8619,
+                            "id": 8511,
                             "nodeType": "Block",
                             "src": "2630:182:58",
                             "nodes": [],
@@ -2600,11 +2600,11 @@ export const LsETHBase = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 8615,
+                                                "id": 8507,
                                                 "name": "_destination",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 8602,
+                                                "referencedDeclaration": 8494,
                                                 "src": "2757:12:58",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -2612,11 +2612,11 @@ export const LsETHBase = {
                                                 }
                                             },
                                             {
-                                                "id": 8616,
+                                                "id": 8508,
                                                 "name": "_shareAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 8600,
+                                                "referencedDeclaration": 8492,
                                                 "src": "2783:12:58",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2640,14 +2640,14 @@ export const LsETHBase = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 8611,
+                                                                "id": 8503,
                                                                 "name": "_vaultSharesToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17695,
+                                                                "referencedDeclaration": 17536,
                                                                 "src": "2711:17:58",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -2655,11 +2655,11 @@ export const LsETHBase = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 8610,
+                                                            "id": 8502,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2671,14 +2671,14 @@ export const LsETHBase = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 8609,
+                                                                "id": 8501,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "2703:7:58",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 8612,
+                                                        "id": 8504,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2702,18 +2702,18 @@ export const LsETHBase = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 8608,
+                                                    "id": 8500,
                                                     "name": "ERC20",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 70783,
+                                                    "referencedDeclaration": 70857,
                                                     "src": "2697:5:58",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70783_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70857_$",
                                                         "typeString": "type(contract ERC20)"
                                                     }
                                                 },
-                                                "id": 8613,
+                                                "id": 8505,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2725,11 +2725,11 @@ export const LsETHBase = {
                                                 "src": "2697:33:58",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ERC20_$70783",
+                                                    "typeIdentifier": "t_contract$_ERC20_$70857",
                                                     "typeString": "contract ERC20"
                                                 }
                                             },
-                                            "id": 8614,
+                                            "id": 8506,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2737,14 +2737,14 @@ export const LsETHBase = {
                                             "memberLocation": "2731:12:58",
                                             "memberName": "safeTransfer",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 70973,
+                                            "referencedDeclaration": 71047,
                                             "src": "2697:46:58",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70861_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70861_$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$",
                                                 "typeString": "function (contract IERC20,address,uint256)"
                                             }
                                         },
-                                        "id": 8617,
+                                        "id": 8509,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2760,17 +2760,17 @@ export const LsETHBase = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 8618,
+                                    "id": 8510,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2697:108:58"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            12896
+                            12732
                         ],
                         "documentation": {
-                            "id": 8598,
+                            "id": 8490,
                             "nodeType": "StructuredDocumentation",
                             "src": "2247:231:58",
                             "text": "@dev Process a withdrawal in vault shares and send the proceeds to the\n      destination.\n @param _shareAmount The amount of vault shares to withdraw.\n @param _destination The destination of the withdrawal."
@@ -2781,23 +2781,23 @@ export const LsETHBase = {
                         "name": "_withdrawWithShares",
                         "nameLocation": "2492:19:58",
                         "overrides": {
-                            "id": 8606,
+                            "id": 8498,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "2621:8:58"
                         },
                         "parameters": {
-                            "id": 8605,
+                            "id": 8497,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8600,
+                                    "id": 8492,
                                     "mutability": "mutable",
                                     "name": "_shareAmount",
                                     "nameLocation": "2529:12:58",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8620,
+                                    "scope": 8512,
                                     "src": "2521:20:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2806,7 +2806,7 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8599,
+                                        "id": 8491,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2521:7:58",
@@ -2819,12 +2819,12 @@ export const LsETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8602,
+                                    "id": 8494,
                                     "mutability": "mutable",
                                     "name": "_destination",
                                     "nameLocation": "2559:12:58",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8620,
+                                    "scope": 8512,
                                     "src": "2551:20:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2833,7 +2833,7 @@ export const LsETHBase = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 8601,
+                                        "id": 8493,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2551:7:58",
@@ -2847,12 +2847,12 @@ export const LsETHBase = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 8604,
+                                    "id": 8496,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8620,
+                                    "scope": 8512,
                                     "src": "2581:14:58",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -2861,7 +2861,7 @@ export const LsETHBase = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 8603,
+                                        "id": 8495,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2581:5:58",
@@ -2876,25 +2876,25 @@ export const LsETHBase = {
                             "src": "2511:100:58"
                         },
                         "returnParameters": {
-                            "id": 8607,
+                            "id": 8499,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2630:0:58"
                         },
-                        "scope": 8704,
+                        "scope": 8586,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 8637,
+                        "id": 8529,
                         "nodeType": "FunctionDefinition",
-                        "src": "2919:144:58",
+                        "src": "2919:145:58",
                         "nodes": [],
                         "body": {
-                            "id": 8636,
+                            "id": 8528,
                             "nodeType": "Block",
-                            "src": "2972:91:58",
+                            "src": "2972:92:58",
                             "nodes": [],
                             "statements": [
                                 {
@@ -2903,14 +2903,14 @@ export const LsETHBase = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 8628,
+                                        "id": 8520,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
                                             "expression": {
-                                                "id": 8625,
+                                                "id": 8517,
                                                 "name": "msg",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2921,7 +2921,7 @@ export const LsETHBase = {
                                                     "typeString": "msg"
                                                 }
                                             },
-                                            "id": 8626,
+                                            "id": 8518,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2936,36 +2936,36 @@ export const LsETHBase = {
                                             }
                                         },
                                         "nodeType": "BinaryOperation",
-                                        "operator": ">",
+                                        "operator": "!=",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 8627,
+                                            "id": 8519,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
                                             "kind": "number",
                                             "lValueRequested": false,
                                             "nodeType": "Literal",
-                                            "src": "2998:1:58",
+                                            "src": "2999:1:58",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_rational_0_by_1",
                                                 "typeString": "int_const 0"
                                             },
                                             "value": "0"
                                         },
-                                        "src": "2986:13:58",
+                                        "src": "2986:14:58",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 8635,
+                                    "id": 8527,
                                     "nodeType": "IfStatement",
-                                    "src": "2982:75:58",
+                                    "src": "2982:76:58",
                                     "trueBody": {
-                                        "id": 8634,
+                                        "id": 8526,
                                         "nodeType": "Block",
-                                        "src": "3001:56:58",
+                                        "src": "3002:56:58",
                                         "statements": [
                                             {
                                                 "errorCall": {
@@ -2973,33 +2973,33 @@ export const LsETHBase = {
                                                     "expression": {
                                                         "argumentTypes": [],
                                                         "expression": {
-                                                            "id": 8629,
+                                                            "id": 8521,
                                                             "name": "IHyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 10506,
-                                                            "src": "3022:11:58",
+                                                            "referencedDeclaration": 10351,
+                                                            "src": "3023:11:58",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10351_$",
                                                                 "typeString": "type(contract IHyperdrive)"
                                                             }
                                                         },
-                                                        "id": 8631,
+                                                        "id": 8523,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "3034:10:58",
+                                                        "memberLocation": "3035:10:58",
                                                         "memberName": "NotPayable",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 10425,
-                                                        "src": "3022:22:58",
+                                                        "referencedDeclaration": 10270,
+                                                        "src": "3023:22:58",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                             "typeString": "function () pure"
                                                         }
                                                     },
-                                                    "id": 8632,
+                                                    "id": 8524,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3008,16 +3008,16 @@ export const LsETHBase = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "3022:24:58",
+                                                    "src": "3023:24:58",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_tuple$__$",
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 8633,
+                                                "id": 8525,
                                                 "nodeType": "RevertStatement",
-                                                "src": "3015:31:58"
+                                                "src": "3016:31:58"
                                             }
                                         ]
                                     }
@@ -3025,10 +3025,10 @@ export const LsETHBase = {
                             ]
                         },
                         "baseFunctions": [
-                            12900
+                            12736
                         ],
                         "documentation": {
-                            "id": 8621,
+                            "id": 8513,
                             "nodeType": "StructuredDocumentation",
                             "src": "2818:96:58",
                             "text": "@dev We override the message value check since this integration is\n      not payable."
@@ -3039,49 +3039,49 @@ export const LsETHBase = {
                         "name": "_checkMessageValue",
                         "nameLocation": "2928:18:58",
                         "overrides": {
-                            "id": 8623,
+                            "id": 8515,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "2963:8:58"
                         },
                         "parameters": {
-                            "id": 8622,
+                            "id": 8514,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2946:2:58"
                         },
                         "returnParameters": {
-                            "id": 8624,
+                            "id": 8516,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2972:0:58"
                         },
-                        "scope": 8704,
+                        "scope": 8586,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 8657,
+                        "id": 8549,
                         "nodeType": "FunctionDefinition",
-                        "src": "3235:245:58",
+                        "src": "3236:245:58",
                         "nodes": [],
                         "body": {
-                            "id": 8656,
+                            "id": 8548,
                             "nodeType": "Block",
-                            "src": "3336:144:58",
+                            "src": "3337:144:58",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 8653,
+                                                "id": 8545,
                                                 "name": "_shareAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 8640,
-                                                "src": "3447:12:58",
+                                                "referencedDeclaration": 8532,
+                                                "src": "3448:12:58",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3100,14 +3100,14 @@ export const LsETHBase = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 8649,
+                                                                "id": 8541,
                                                                 "name": "_vaultSharesToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17695,
-                                                                "src": "3382:17:58",
+                                                                "referencedDeclaration": 17536,
+                                                                "src": "3383:17:58",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -3115,30 +3115,30 @@ export const LsETHBase = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 8648,
+                                                            "id": 8540,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "lValueRequested": false,
                                                             "nodeType": "ElementaryTypeNameExpression",
-                                                            "src": "3374:7:58",
+                                                            "src": "3375:7:58",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_type$_t_address_$",
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 8647,
+                                                                "id": 8539,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
-                                                                "src": "3374:7:58",
+                                                                "src": "3375:7:58",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 8650,
+                                                        "id": 8542,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3147,7 +3147,7 @@ export const LsETHBase = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "3374:26:58",
+                                                        "src": "3375:26:58",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -3162,18 +3162,18 @@ export const LsETHBase = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 8646,
+                                                    "id": 8538,
                                                     "name": "IRiverV1",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 11834,
-                                                    "src": "3365:8:58",
+                                                    "referencedDeclaration": 11682,
+                                                    "src": "3366:8:58",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_IRiverV1_$11834_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_IRiverV1_$11682_$",
                                                         "typeString": "type(contract IRiverV1)"
                                                     }
                                                 },
-                                                "id": 8651,
+                                                "id": 8543,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3182,29 +3182,29 @@ export const LsETHBase = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "3365:36:58",
+                                                "src": "3366:36:58",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IRiverV1_$11834",
+                                                    "typeIdentifier": "t_contract$_IRiverV1_$11682",
                                                     "typeString": "contract IRiverV1"
                                                 }
                                             },
-                                            "id": 8652,
+                                            "id": 8544,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "3402:27:58",
+                                            "memberLocation": "3403:27:58",
                                             "memberName": "underlyingBalanceFromShares",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 12283,
-                                            "src": "3365:64:58",
+                                            "referencedDeclaration": 12131,
+                                            "src": "3366:64:58",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 8654,
+                                        "id": 8546,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3213,53 +3213,53 @@ export const LsETHBase = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "3365:108:58",
+                                        "src": "3366:108:58",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 8645,
-                                    "id": 8655,
+                                    "functionReturnParameters": 8537,
+                                    "id": 8547,
                                     "nodeType": "Return",
-                                    "src": "3346:127:58"
+                                    "src": "3347:127:58"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            12930
+                            12766
                         ],
                         "documentation": {
-                            "id": 8638,
+                            "id": 8530,
                             "nodeType": "StructuredDocumentation",
-                            "src": "3069:161:58",
+                            "src": "3070:161:58",
                             "text": "@dev Convert an amount of vault shares to an amount of base.\n @param _shareAmount The vault shares amount.\n @return baseAmount The base amount."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_convertToBase",
-                        "nameLocation": "3244:14:58",
+                        "nameLocation": "3245:14:58",
                         "overrides": {
-                            "id": 8642,
+                            "id": 8534,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
-                            "src": "3309:8:58"
+                            "src": "3310:8:58"
                         },
                         "parameters": {
-                            "id": 8641,
+                            "id": 8533,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8640,
+                                    "id": 8532,
                                     "mutability": "mutable",
                                     "name": "_shareAmount",
-                                    "nameLocation": "3276:12:58",
+                                    "nameLocation": "3277:12:58",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8657,
-                                    "src": "3268:20:58",
+                                    "scope": 8549,
+                                    "src": "3269:20:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3267,10 +3267,10 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8639,
+                                        "id": 8531,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3268:7:58",
+                                        "src": "3269:7:58",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3279,21 +3279,21 @@ export const LsETHBase = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3258:36:58"
+                            "src": "3259:36:58"
                         },
                         "returnParameters": {
-                            "id": 8645,
+                            "id": 8537,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8644,
+                                    "id": 8536,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8657,
-                                    "src": "3327:7:58",
+                                    "scope": 8549,
+                                    "src": "3328:7:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3301,10 +3301,10 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8643,
+                                        "id": 8535,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3327:7:58",
+                                        "src": "3328:7:58",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3313,34 +3313,34 @@ export const LsETHBase = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3326:9:58"
+                            "src": "3327:9:58"
                         },
-                        "scope": 8704,
+                        "scope": 8586,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 8677,
+                        "id": 8569,
                         "nodeType": "FunctionDefinition",
-                        "src": "3652:245:58",
+                        "src": "3653:245:58",
                         "nodes": [],
                         "body": {
-                            "id": 8676,
+                            "id": 8568,
                             "nodeType": "Block",
-                            "src": "3754:143:58",
+                            "src": "3755:143:58",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 8673,
+                                                "id": 8565,
                                                 "name": "_baseAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 8660,
-                                                "src": "3865:11:58",
+                                                "referencedDeclaration": 8552,
+                                                "src": "3866:11:58",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -3359,14 +3359,14 @@ export const LsETHBase = {
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 8669,
+                                                                "id": 8561,
                                                                 "name": "_vaultSharesToken",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 17695,
-                                                                "src": "3800:17:58",
+                                                                "referencedDeclaration": 17536,
+                                                                "src": "3801:17:58",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -3374,30 +3374,30 @@ export const LsETHBase = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 8668,
+                                                            "id": 8560,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "lValueRequested": false,
                                                             "nodeType": "ElementaryTypeNameExpression",
-                                                            "src": "3792:7:58",
+                                                            "src": "3793:7:58",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_type$_t_address_$",
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 8667,
+                                                                "id": 8559,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
-                                                                "src": "3792:7:58",
+                                                                "src": "3793:7:58",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 8670,
+                                                        "id": 8562,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3406,7 +3406,7 @@ export const LsETHBase = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "3792:26:58",
+                                                        "src": "3793:26:58",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -3421,18 +3421,18 @@ export const LsETHBase = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 8666,
+                                                    "id": 8558,
                                                     "name": "IRiverV1",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 11834,
-                                                    "src": "3783:8:58",
+                                                    "referencedDeclaration": 11682,
+                                                    "src": "3784:8:58",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_IRiverV1_$11834_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_IRiverV1_$11682_$",
                                                         "typeString": "type(contract IRiverV1)"
                                                     }
                                                 },
-                                                "id": 8671,
+                                                "id": 8563,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3441,29 +3441,29 @@ export const LsETHBase = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "3783:36:58",
+                                                "src": "3784:36:58",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IRiverV1_$11834",
+                                                    "typeIdentifier": "t_contract$_IRiverV1_$11682",
                                                     "typeString": "contract IRiverV1"
                                                 }
                                             },
-                                            "id": 8672,
+                                            "id": 8564,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "3820:27:58",
+                                            "memberLocation": "3821:27:58",
                                             "memberName": "sharesFromUnderlyingBalance",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 12291,
-                                            "src": "3783:64:58",
+                                            "referencedDeclaration": 12139,
+                                            "src": "3784:64:58",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_view$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 8674,
+                                        "id": 8566,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3472,53 +3472,53 @@ export const LsETHBase = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "3783:107:58",
+                                        "src": "3784:107:58",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 8665,
-                                    "id": 8675,
+                                    "functionReturnParameters": 8557,
+                                    "id": 8567,
                                     "nodeType": "Return",
-                                    "src": "3764:126:58"
+                                    "src": "3765:126:58"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            12938
+                            12774
                         ],
                         "documentation": {
-                            "id": 8658,
+                            "id": 8550,
                             "nodeType": "StructuredDocumentation",
-                            "src": "3486:161:58",
+                            "src": "3487:161:58",
                             "text": "@dev Convert an amount of base to an amount of vault shares.\n @param _baseAmount The base amount.\n @return shareAmount The vault shares amount."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_convertToShares",
-                        "nameLocation": "3661:16:58",
+                        "nameLocation": "3662:16:58",
                         "overrides": {
-                            "id": 8662,
+                            "id": 8554,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
-                            "src": "3727:8:58"
+                            "src": "3728:8:58"
                         },
                         "parameters": {
-                            "id": 8661,
+                            "id": 8553,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8660,
+                                    "id": 8552,
                                     "mutability": "mutable",
                                     "name": "_baseAmount",
-                                    "nameLocation": "3695:11:58",
+                                    "nameLocation": "3696:11:58",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8677,
-                                    "src": "3687:19:58",
+                                    "scope": 8569,
+                                    "src": "3688:19:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3526,10 +3526,10 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8659,
+                                        "id": 8551,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3687:7:58",
+                                        "src": "3688:7:58",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3538,21 +3538,21 @@ export const LsETHBase = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3677:35:58"
+                            "src": "3678:35:58"
                         },
                         "returnParameters": {
-                            "id": 8665,
+                            "id": 8557,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8664,
+                                    "id": 8556,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8677,
-                                    "src": "3745:7:58",
+                                    "scope": 8569,
+                                    "src": "3746:7:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3560,10 +3560,10 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8663,
+                                        "id": 8555,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "3745:7:58",
+                                        "src": "3746:7:58",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3572,122 +3572,22 @@ export const LsETHBase = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "3744:9:58"
+                            "src": "3745:9:58"
                         },
-                        "scope": 8704,
+                        "scope": 8586,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 8687,
+                        "id": 8585,
                         "nodeType": "FunctionDefinition",
-                        "src": "4017:191:58",
+                        "src": "4056:179:58",
                         "nodes": [],
                         "body": {
-                            "id": 8686,
+                            "id": 8584,
                             "nodeType": "Block",
-                            "src": "4080:128:58",
-                            "nodes": [],
-                            "statements": [
-                                {
-                                    "expression": {
-                                        "hexValue": "30",
-                                        "id": 8684,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": true,
-                                        "kind": "number",
-                                        "lValueRequested": false,
-                                        "nodeType": "Literal",
-                                        "src": "4200:1:58",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_rational_0_by_1",
-                                            "typeString": "int_const 0"
-                                        },
-                                        "value": "0"
-                                    },
-                                    "functionReturnParameters": 8683,
-                                    "id": 8685,
-                                    "nodeType": "Return",
-                                    "src": "4193:8:58"
-                                }
-                            ]
-                        },
-                        "baseFunctions": [
-                            12944
-                        ],
-                        "documentation": {
-                            "id": 8678,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "3903:109:58",
-                            "text": "@dev Gets the total amount of base held by the pool.\n @return baseAmount The total amount of base."
-                        },
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "_totalBase",
-                        "nameLocation": "4026:10:58",
-                        "overrides": {
-                            "id": 8680,
-                            "nodeType": "OverrideSpecifier",
-                            "overrides": [],
-                            "src": "4053:8:58"
-                        },
-                        "parameters": {
-                            "id": 8679,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "4036:2:58"
-                        },
-                        "returnParameters": {
-                            "id": 8683,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 8682,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 8687,
-                                    "src": "4071:7:58",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 8681,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "4071:7:58",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "4070:9:58"
-                        },
-                        "scope": 8704,
-                        "stateMutability": "pure",
-                        "virtual": false,
-                        "visibility": "internal"
-                    },
-                    {
-                        "id": 8703,
-                        "nodeType": "FunctionDefinition",
-                        "src": "4366:179:58",
-                        "nodes": [],
-                        "body": {
-                            "id": 8702,
-                            "nodeType": "Block",
-                            "src": "4479:66:58",
+                            "src": "4169:66:58",
                             "nodes": [],
                             "statements": [
                                 {
@@ -3696,14 +3596,14 @@ export const LsETHBase = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 8698,
+                                                        "id": 8580,
                                                         "name": "this",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -28,
-                                                        "src": "4532:4:58",
+                                                        "src": "4222:4:58",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_LsETHBase_$8704",
+                                                            "typeIdentifier": "t_contract$_LsETHBase_$8586",
                                                             "typeString": "contract LsETHBase"
                                                         }
                                                     }
@@ -3711,30 +3611,30 @@ export const LsETHBase = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_contract$_LsETHBase_$8704",
+                                                            "typeIdentifier": "t_contract$_LsETHBase_$8586",
                                                             "typeString": "contract LsETHBase"
                                                         }
                                                     ],
-                                                    "id": 8697,
+                                                    "id": 8579,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
                                                     "nodeType": "ElementaryTypeNameExpression",
-                                                    "src": "4524:7:58",
+                                                    "src": "4214:7:58",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_type$_t_address_$",
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 8696,
+                                                        "id": 8578,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
-                                                        "src": "4524:7:58",
+                                                        "src": "4214:7:58",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 8699,
+                                                "id": 8581,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3743,7 +3643,7 @@ export const LsETHBase = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "4524:13:58",
+                                                "src": "4214:13:58",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -3759,33 +3659,33 @@ export const LsETHBase = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 8694,
+                                                "id": 8576,
                                                 "name": "_vaultSharesToken",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 17695,
-                                                "src": "4496:17:58",
+                                                "referencedDeclaration": 17536,
+                                                "src": "4186:17:58",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
-                                            "id": 8695,
+                                            "id": 8577,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "4514:9:58",
+                                            "memberLocation": "4204:9:58",
                                             "memberName": "balanceOf",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 9809,
-                                            "src": "4496:27:58",
+                                            "referencedDeclaration": 9665,
+                                            "src": "4186:27:58",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_view$_t_address_$returns$_t_uint256_$",
                                                 "typeString": "function (address) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 8700,
+                                        "id": 8582,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3794,59 +3694,59 @@ export const LsETHBase = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "4496:42:58",
+                                        "src": "4186:42:58",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 8693,
-                                    "id": 8701,
+                                    "functionReturnParameters": 8575,
+                                    "id": 8583,
                                     "nodeType": "Return",
-                                    "src": "4489:49:58"
+                                    "src": "4179:49:58"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            12950
+                            12780
                         ],
                         "documentation": {
-                            "id": 8688,
+                            "id": 8570,
                             "nodeType": "StructuredDocumentation",
-                            "src": "4214:147:58",
+                            "src": "3904:147:58",
                             "text": "@dev Gets the total amount of shares held by the pool in the yield\n      source.\n @return shareAmount The total amount of shares."
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_totalShares",
-                        "nameLocation": "4375:12:58",
+                        "nameLocation": "4065:12:58",
                         "overrides": {
-                            "id": 8690,
+                            "id": 8572,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
-                            "src": "4428:8:58"
+                            "src": "4118:8:58"
                         },
                         "parameters": {
-                            "id": 8689,
+                            "id": 8571,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "4387:2:58"
+                            "src": "4077:2:58"
                         },
                         "returnParameters": {
-                            "id": 8693,
+                            "id": 8575,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 8692,
+                                    "id": 8574,
                                     "mutability": "mutable",
                                     "name": "shareAmount",
-                                    "nameLocation": "4462:11:58",
+                                    "nameLocation": "4152:11:58",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 8703,
-                                    "src": "4454:19:58",
+                                    "scope": 8585,
+                                    "src": "4144:19:58",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -3854,10 +3754,10 @@ export const LsETHBase = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 8691,
+                                        "id": 8573,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4454:7:58",
+                                        "src": "4144:7:58",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -3866,9 +3766,9 @@ export const LsETHBase = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4453:21:58"
+                            "src": "4143:21:58"
                         },
-                        "scope": 8704,
+                        "scope": 8586,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "internal"
@@ -3878,16 +3778,16 @@ export const LsETHBase = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 8528,
+                            "id": 8420,
                             "name": "HyperdriveBase",
                             "nameLocations": [
                                 "1014:14:58"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 13835,
+                            "referencedDeclaration": 13667,
                             "src": "1014:14:58"
                         },
-                        "id": 8529,
+                        "id": 8421,
                         "nodeType": "InheritanceSpecifier",
                         "src": "1014:14:58"
                     }
@@ -3896,46 +3796,46 @@ export const LsETHBase = {
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 8527,
+                    "id": 8419,
                     "nodeType": "StructuredDocumentation",
                     "src": "389:594:58",
                     "text": "@author DELV\n @title LsETHHyperdrive\n @notice The base contract for the LsETH Hyperdrive implementation.\n @dev River has it's own notion of shares to account for the accrual of\n      interest on the ether pooled in the River protocol. Instead of\n      maintaining a balance of shares, this integration can simply use River's\n      shares directly.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance."
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    8704,
-                    13835,
-                    17893,
-                    71565,
-                    11037,
-                    11609
+                    8586,
+                    13667,
+                    17734,
+                    71639,
+                    10887,
+                    11459
                 ],
                 "name": "LsETHBase",
                 "nameLocation": "1001:9:58",
-                "scope": 8705,
+                "scope": 8587,
                 "usedErrors": [
-                    71510
+                    71584
                 ],
                 "usedEvents": [
-                    10855,
-                    10870,
-                    10889,
-                    10904,
-                    10921,
-                    10940,
-                    10959,
-                    10980,
-                    10995,
-                    11002,
-                    11007,
-                    11012,
-                    11017,
-                    11024,
-                    11029,
-                    11036,
-                    11590,
-                    11599,
-                    11608
+                    10705,
+                    10720,
+                    10739,
+                    10754,
+                    10771,
+                    10790,
+                    10809,
+                    10830,
+                    10845,
+                    10852,
+                    10857,
+                    10862,
+                    10867,
+                    10874,
+                    10879,
+                    10886,
+                    11440,
+                    11449,
+                    11458
                 ]
             }
         ],

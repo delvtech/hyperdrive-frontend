@@ -270,24 +270,24 @@ export declare const IRocketNetworkBalances: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/src/interfaces/IRocketNetworkBalances.sol";
-        readonly id: 11953;
+        readonly id: 11801;
         readonly exportedSymbols: {
-            readonly IRocketNetworkBalances: readonly [11952];
+            readonly IRocketNetworkBalances: readonly [11800];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:787:106";
         readonly nodes: readonly [{
-            readonly id: 11899;
+            readonly id: 11747;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:106";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 11952;
+            readonly id: 11800;
             readonly nodeType: "ContractDefinition";
             readonly src: "64:761:106";
             readonly nodes: readonly [{
-                readonly id: 11904;
+                readonly id: 11752;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "103:60:106";
                 readonly nodes: readonly [];
@@ -298,22 +298,22 @@ export declare const IRocketNetworkBalances: {
                 readonly name: "getBalancesBlock";
                 readonly nameLocation: "112:16:106";
                 readonly parameters: {
-                    readonly id: 11900;
+                    readonly id: 11748;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "128:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 11903;
+                    readonly id: 11751;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11902;
+                        readonly id: 11750;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11904;
+                        readonly scope: 11752;
                         readonly src: "154:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -322,7 +322,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11901;
+                            readonly id: 11749;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "154:7:106";
@@ -335,12 +335,12 @@ export declare const IRocketNetworkBalances: {
                     }];
                     readonly src: "153:9:106";
                 };
-                readonly scope: 11952;
+                readonly scope: 11800;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11909;
+                readonly id: 11757;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "169:68:106";
                 readonly nodes: readonly [];
@@ -351,22 +351,22 @@ export declare const IRocketNetworkBalances: {
                 readonly name: "getLatestReportableBlock";
                 readonly nameLocation: "178:24:106";
                 readonly parameters: {
-                    readonly id: 11905;
+                    readonly id: 11753;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "202:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 11908;
+                    readonly id: 11756;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11907;
+                        readonly id: 11755;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11909;
+                        readonly scope: 11757;
                         readonly src: "228:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -375,7 +375,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11906;
+                            readonly id: 11754;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "228:7:106";
@@ -388,12 +388,12 @@ export declare const IRocketNetworkBalances: {
                     }];
                     readonly src: "227:9:106";
                 };
-                readonly scope: 11952;
+                readonly scope: 11800;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11914;
+                readonly id: 11762;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "243:62:106";
                 readonly nodes: readonly [];
@@ -404,22 +404,22 @@ export declare const IRocketNetworkBalances: {
                 readonly name: "getTotalETHBalance";
                 readonly nameLocation: "252:18:106";
                 readonly parameters: {
-                    readonly id: 11910;
+                    readonly id: 11758;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "270:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 11913;
+                    readonly id: 11761;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11912;
+                        readonly id: 11760;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11914;
+                        readonly scope: 11762;
                         readonly src: "296:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -428,7 +428,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11911;
+                            readonly id: 11759;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "296:7:106";
@@ -441,12 +441,12 @@ export declare const IRocketNetworkBalances: {
                     }];
                     readonly src: "295:9:106";
                 };
-                readonly scope: 11952;
+                readonly scope: 11800;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11919;
+                readonly id: 11767;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "311:64:106";
                 readonly nodes: readonly [];
@@ -457,22 +457,22 @@ export declare const IRocketNetworkBalances: {
                 readonly name: "getStakingETHBalance";
                 readonly nameLocation: "320:20:106";
                 readonly parameters: {
-                    readonly id: 11915;
+                    readonly id: 11763;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "340:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 11918;
+                    readonly id: 11766;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11917;
+                        readonly id: 11765;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11919;
+                        readonly scope: 11767;
                         readonly src: "366:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -481,7 +481,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11916;
+                            readonly id: 11764;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "366:7:106";
@@ -494,12 +494,12 @@ export declare const IRocketNetworkBalances: {
                     }];
                     readonly src: "365:9:106";
                 };
-                readonly scope: 11952;
+                readonly scope: 11800;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11924;
+                readonly id: 11772;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "381:62:106";
                 readonly nodes: readonly [];
@@ -510,22 +510,22 @@ export declare const IRocketNetworkBalances: {
                 readonly name: "getTotalRETHSupply";
                 readonly nameLocation: "390:18:106";
                 readonly parameters: {
-                    readonly id: 11920;
+                    readonly id: 11768;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "408:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 11923;
+                    readonly id: 11771;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11922;
+                        readonly id: 11770;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11924;
+                        readonly scope: 11772;
                         readonly src: "434:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -534,7 +534,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11921;
+                            readonly id: 11769;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "434:7:106";
@@ -547,12 +547,12 @@ export declare const IRocketNetworkBalances: {
                     }];
                     readonly src: "433:9:106";
                 };
-                readonly scope: 11952;
+                readonly scope: 11800;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11929;
+                readonly id: 11777;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "449:65:106";
                 readonly nodes: readonly [];
@@ -563,22 +563,22 @@ export declare const IRocketNetworkBalances: {
                 readonly name: "getETHUtilizationRate";
                 readonly nameLocation: "458:21:106";
                 readonly parameters: {
-                    readonly id: 11925;
+                    readonly id: 11773;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "479:2:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 11928;
+                    readonly id: 11776;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11927;
+                        readonly id: 11775;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11929;
+                        readonly scope: 11777;
                         readonly src: "505:7:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -587,7 +587,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11926;
+                            readonly id: 11774;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "505:7:106";
@@ -600,12 +600,12 @@ export declare const IRocketNetworkBalances: {
                     }];
                     readonly src: "504:9:106";
                 };
-                readonly scope: 11952;
+                readonly scope: 11800;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11940;
+                readonly id: 11788;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "520:142:106";
                 readonly nodes: readonly [];
@@ -616,16 +616,16 @@ export declare const IRocketNetworkBalances: {
                 readonly name: "submitBalances";
                 readonly nameLocation: "529:14:106";
                 readonly parameters: {
-                    readonly id: 11938;
+                    readonly id: 11786;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11931;
+                        readonly id: 11779;
                         readonly mutability: "mutable";
                         readonly name: "_block";
                         readonly nameLocation: "561:6:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11940;
+                        readonly scope: 11788;
                         readonly src: "553:14:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -634,7 +634,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11930;
+                            readonly id: 11778;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "553:7:106";
@@ -646,12 +646,12 @@ export declare const IRocketNetworkBalances: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11933;
+                        readonly id: 11781;
                         readonly mutability: "mutable";
                         readonly name: "_total";
                         readonly nameLocation: "585:6:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11940;
+                        readonly scope: 11788;
                         readonly src: "577:14:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -660,7 +660,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11932;
+                            readonly id: 11780;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "577:7:106";
@@ -672,12 +672,12 @@ export declare const IRocketNetworkBalances: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11935;
+                        readonly id: 11783;
                         readonly mutability: "mutable";
                         readonly name: "_staking";
                         readonly nameLocation: "609:8:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11940;
+                        readonly scope: 11788;
                         readonly src: "601:16:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -686,7 +686,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11934;
+                            readonly id: 11782;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "601:7:106";
@@ -698,12 +698,12 @@ export declare const IRocketNetworkBalances: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11937;
+                        readonly id: 11785;
                         readonly mutability: "mutable";
                         readonly name: "_rethSupply";
                         readonly nameLocation: "635:11:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11940;
+                        readonly scope: 11788;
                         readonly src: "627:19:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -712,7 +712,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11936;
+                            readonly id: 11784;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "627:7:106";
@@ -726,17 +726,17 @@ export declare const IRocketNetworkBalances: {
                     readonly src: "543:109:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 11939;
+                    readonly id: 11787;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "661:0:106";
                 };
-                readonly scope: 11952;
+                readonly scope: 11800;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 11951;
+                readonly id: 11799;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "668:155:106";
                 readonly nodes: readonly [];
@@ -747,16 +747,16 @@ export declare const IRocketNetworkBalances: {
                 readonly name: "executeUpdateBalances";
                 readonly nameLocation: "677:21:106";
                 readonly parameters: {
-                    readonly id: 11949;
+                    readonly id: 11797;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 11942;
+                        readonly id: 11790;
                         readonly mutability: "mutable";
                         readonly name: "_block";
                         readonly nameLocation: "716:6:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11951;
+                        readonly scope: 11799;
                         readonly src: "708:14:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -765,7 +765,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11941;
+                            readonly id: 11789;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "708:7:106";
@@ -777,12 +777,12 @@ export declare const IRocketNetworkBalances: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11944;
+                        readonly id: 11792;
                         readonly mutability: "mutable";
                         readonly name: "_totalEth";
                         readonly nameLocation: "740:9:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11951;
+                        readonly scope: 11799;
                         readonly src: "732:17:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -791,7 +791,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11943;
+                            readonly id: 11791;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "732:7:106";
@@ -803,12 +803,12 @@ export declare const IRocketNetworkBalances: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11946;
+                        readonly id: 11794;
                         readonly mutability: "mutable";
                         readonly name: "_stakingEth";
                         readonly nameLocation: "767:11:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11951;
+                        readonly scope: 11799;
                         readonly src: "759:19:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -817,7 +817,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11945;
+                            readonly id: 11793;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "759:7:106";
@@ -829,12 +829,12 @@ export declare const IRocketNetworkBalances: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 11948;
+                        readonly id: 11796;
                         readonly mutability: "mutable";
                         readonly name: "_rethSupply";
                         readonly nameLocation: "796:11:106";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 11951;
+                        readonly scope: 11799;
                         readonly src: "788:19:106";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -843,7 +843,7 @@ export declare const IRocketNetworkBalances: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 11947;
+                            readonly id: 11795;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "788:7:106";
@@ -857,12 +857,12 @@ export declare const IRocketNetworkBalances: {
                     readonly src: "698:115:106";
                 };
                 readonly returnParameters: {
-                    readonly id: 11950;
+                    readonly id: 11798;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "822:0:106";
                 };
-                readonly scope: 11952;
+                readonly scope: 11800;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -873,10 +873,10 @@ export declare const IRocketNetworkBalances: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [11952];
+            readonly linearizedBaseContracts: readonly [11800];
             readonly name: "IRocketNetworkBalances";
             readonly nameLocation: "74:22:106";
-            readonly scope: 11953;
+            readonly scope: 11801;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

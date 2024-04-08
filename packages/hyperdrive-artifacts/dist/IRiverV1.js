@@ -818,20 +818,20 @@ export const IRiverV1 = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IRiverV1.sol",
-        "id": 11835,
+        "id": 11683,
         "exportedSymbols": {
             "IRiverV1": [
-                11834
+                11682
             ],
             "ISharesManagerV1": [
-                12324
+                12172
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:216:104",
         "nodes": [
             {
-                "id": 11828,
+                "id": 11676,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:104",
                 "nodes": [],
@@ -842,23 +842,23 @@ export const IRiverV1 = {
                 ]
             },
             {
-                "id": 11830,
+                "id": 11678,
                 "nodeType": "ImportDirective",
                 "src": "64:58:104",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/ISharesManagerV1.sol",
                 "file": "./ISharesManagerV1.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 11835,
-                "sourceUnit": 12325,
+                "scope": 11683,
+                "sourceUnit": 12173,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 11829,
+                            "id": 11677,
                             "name": "ISharesManagerV1",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 12324,
+                            "referencedDeclaration": 12172,
                             "src": "73:16:104",
                             "typeDescriptions": {}
                         },
@@ -868,7 +868,7 @@ export const IRiverV1 = {
                 "unitAlias": ""
             },
             {
-                "id": 11834,
+                "id": 11682,
                 "nodeType": "ContractDefinition",
                 "src": "211:43:104",
                 "nodes": [],
@@ -876,16 +876,16 @@ export const IRiverV1 = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 11832,
+                            "id": 11680,
                             "name": "ISharesManagerV1",
                             "nameLocations": [
                                 "233:16:104"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 12324,
+                            "referencedDeclaration": 12172,
                             "src": "233:16:104"
                         },
-                        "id": 11833,
+                        "id": 11681,
                         "nodeType": "InheritanceSpecifier",
                         "src": "233:16:104"
                     }
@@ -894,24 +894,24 @@ export const IRiverV1 = {
                 "contractDependencies": [],
                 "contractKind": "interface",
                 "documentation": {
-                    "id": 11831,
+                    "id": 11679,
                     "nodeType": "StructuredDocumentation",
                     "src": "124:87:104",
                     "text": "@title River Interface (v1)\n @author Kiln\n @notice The main system interface"
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11834,
-                    12324,
-                    9810
+                    11682,
+                    12172,
+                    9666
                 ],
                 "name": "IRiverV1",
                 "nameLocation": "221:8:104",
-                "scope": 11835,
+                "scope": 11683,
                 "usedErrors": [],
                 "usedEvents": [
-                    9726,
-                    9735
+                    9582,
+                    9591
                 ]
             }
         ],

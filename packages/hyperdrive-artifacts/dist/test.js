@@ -1251,68 +1251,68 @@ export const Test = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/Test.sol",
-        "id": 39168,
+        "id": 39242,
         "exportedSymbols": {
             "DSTest": [
-                29533
+                29607
             ],
             "StdAssertions": [
-                31026
+                31100
             ],
             "StdChains": [
-                31746
+                31820
             ],
             "StdCheats": [
-                34564
+                34638
             ],
             "StdInvariant": [
-                34854
+                34928
             ],
             "StdStorage": [
-                35604
+                35678
             ],
             "StdStyle": [
-                38268
+                38342
             ],
             "StdUtils": [
-                39116
+                39190
             ],
             "Test": [
-                39167
+                39241
             ],
             "TestBase": [
-                29599
+                29673
             ],
             "Vm": [
-                40704
+                40778
             ],
             "console": [
-                48768
+                48842
             ],
             "console2": [
-                56893
+                56967
             ],
             "safeconsole": [
-                70131
+                70205
             ],
             "stdError": [
-                34630
+                34704
             ],
             "stdJson": [
-                35430
+                35504
             ],
             "stdMath": [
-                35572
+                35646
             ],
             "stdStorage": [
-                37057
+                37131
             ]
         },
         "nodeType": "SourceUnit",
         "src": "32:1126:155",
         "nodes": [
             {
-                "id": 39118,
+                "id": 39192,
                 "nodeType": "PragmaDirective",
                 "src": "32:31:155",
                 "nodes": [],
@@ -1327,7 +1327,7 @@ export const Test = {
                 ]
             },
             {
-                "id": 39119,
+                "id": 39193,
                 "nodeType": "PragmaDirective",
                 "src": "65:33:155",
                 "nodes": [],
@@ -1337,23 +1337,23 @@ export const Test = {
                 ]
             },
             {
-                "id": 39121,
+                "id": 39195,
                 "nodeType": "ImportDirective",
                 "src": "160:38:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/console.sol",
                 "file": "./console.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 48769,
+                "scope": 39242,
+                "sourceUnit": 48843,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39120,
+                            "id": 39194,
                             "name": "console",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 48768,
+                            "referencedDeclaration": 48842,
                             "src": "168:7:155",
                             "typeDescriptions": {}
                         },
@@ -1363,23 +1363,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39123,
+                "id": 39197,
                 "nodeType": "ImportDirective",
                 "src": "199:40:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/console2.sol",
                 "file": "./console2.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 56894,
+                "scope": 39242,
+                "sourceUnit": 56968,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39122,
+                            "id": 39196,
                             "name": "console2",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 56893,
+                            "referencedDeclaration": 56967,
                             "src": "207:8:155",
                             "typeDescriptions": {}
                         },
@@ -1389,23 +1389,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39125,
+                "id": 39199,
                 "nodeType": "ImportDirective",
                 "src": "240:46:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/safeconsole.sol",
                 "file": "./safeconsole.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 70132,
+                "scope": 39242,
+                "sourceUnit": 70206,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39124,
+                            "id": 39198,
                             "name": "safeconsole",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 70131,
+                            "referencedDeclaration": 70205,
                             "src": "248:11:155",
                             "typeDescriptions": {}
                         },
@@ -1415,23 +1415,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39127,
+                "id": 39201,
                 "nodeType": "ImportDirective",
                 "src": "287:50:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdAssertions.sol",
                 "file": "./StdAssertions.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 31027,
+                "scope": 39242,
+                "sourceUnit": 31101,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39126,
+                            "id": 39200,
                             "name": "StdAssertions",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 31026,
+                            "referencedDeclaration": 31100,
                             "src": "295:13:155",
                             "typeDescriptions": {}
                         },
@@ -1441,23 +1441,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39129,
+                "id": 39203,
                 "nodeType": "ImportDirective",
                 "src": "338:42:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdChains.sol",
                 "file": "./StdChains.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 31747,
+                "scope": 39242,
+                "sourceUnit": 31821,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39128,
+                            "id": 39202,
                             "name": "StdChains",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 31746,
+                            "referencedDeclaration": 31820,
                             "src": "346:9:155",
                             "typeDescriptions": {}
                         },
@@ -1467,23 +1467,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39131,
+                "id": 39205,
                 "nodeType": "ImportDirective",
                 "src": "381:42:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdCheats.sol",
                 "file": "./StdCheats.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 34565,
+                "scope": 39242,
+                "sourceUnit": 34639,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39130,
+                            "id": 39204,
                             "name": "StdCheats",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 34564,
+                            "referencedDeclaration": 34638,
                             "src": "389:9:155",
                             "typeDescriptions": {}
                         },
@@ -1493,23 +1493,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39133,
+                "id": 39207,
                 "nodeType": "ImportDirective",
                 "src": "424:40:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdError.sol",
                 "file": "./StdError.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 34631,
+                "scope": 39242,
+                "sourceUnit": 34705,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39132,
+                            "id": 39206,
                             "name": "stdError",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 34630,
+                            "referencedDeclaration": 34704,
                             "src": "432:8:155",
                             "typeDescriptions": {}
                         },
@@ -1519,23 +1519,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39135,
+                "id": 39209,
                 "nodeType": "ImportDirective",
                 "src": "465:48:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdInvariant.sol",
                 "file": "./StdInvariant.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 34855,
+                "scope": 39242,
+                "sourceUnit": 34929,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39134,
+                            "id": 39208,
                             "name": "StdInvariant",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 34854,
+                            "referencedDeclaration": 34928,
                             "src": "473:12:155",
                             "typeDescriptions": {}
                         },
@@ -1545,23 +1545,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39137,
+                "id": 39211,
                 "nodeType": "ImportDirective",
                 "src": "514:38:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdJson.sol",
                 "file": "./StdJson.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 35431,
+                "scope": 39242,
+                "sourceUnit": 35505,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39136,
+                            "id": 39210,
                             "name": "stdJson",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 35430,
+                            "referencedDeclaration": 35504,
                             "src": "522:7:155",
                             "typeDescriptions": {}
                         },
@@ -1571,23 +1571,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39139,
+                "id": 39213,
                 "nodeType": "ImportDirective",
                 "src": "553:38:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdMath.sol",
                 "file": "./StdMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 35573,
+                "scope": 39242,
+                "sourceUnit": 35647,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39138,
+                            "id": 39212,
                             "name": "stdMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 35572,
+                            "referencedDeclaration": 35646,
                             "src": "561:7:155",
                             "typeDescriptions": {}
                         },
@@ -1597,23 +1597,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39142,
+                "id": 39216,
                 "nodeType": "ImportDirective",
                 "src": "592:56:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdStorage.sol",
                 "file": "./StdStorage.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 37058,
+                "scope": 39242,
+                "sourceUnit": 37132,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39140,
+                            "id": 39214,
                             "name": "StdStorage",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 35604,
+                            "referencedDeclaration": 35678,
                             "src": "600:10:155",
                             "typeDescriptions": {}
                         },
@@ -1621,11 +1621,11 @@ export const Test = {
                     },
                     {
                         "foreign": {
-                            "id": 39141,
+                            "id": 39215,
                             "name": "stdStorage",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 37057,
+                            "referencedDeclaration": 37131,
                             "src": "612:10:155",
                             "typeDescriptions": {}
                         },
@@ -1635,23 +1635,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39144,
+                "id": 39218,
                 "nodeType": "ImportDirective",
                 "src": "649:40:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdStyle.sol",
                 "file": "./StdStyle.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 38269,
+                "scope": 39242,
+                "sourceUnit": 38343,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39143,
+                            "id": 39217,
                             "name": "StdStyle",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 38268,
+                            "referencedDeclaration": 38342,
                             "src": "657:8:155",
                             "typeDescriptions": {}
                         },
@@ -1661,23 +1661,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39146,
+                "id": 39220,
                 "nodeType": "ImportDirective",
                 "src": "690:40:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdUtils.sol",
                 "file": "./StdUtils.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 39117,
+                "scope": 39242,
+                "sourceUnit": 39191,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39145,
+                            "id": 39219,
                             "name": "StdUtils",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 39116,
+                            "referencedDeclaration": 39190,
                             "src": "698:8:155",
                             "typeDescriptions": {}
                         },
@@ -1687,23 +1687,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39148,
+                "id": 39222,
                 "nodeType": "ImportDirective",
                 "src": "731:28:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/Vm.sol",
                 "file": "./Vm.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 40705,
+                "scope": 39242,
+                "sourceUnit": 40779,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39147,
+                            "id": 39221,
                             "name": "Vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40704,
+                            "referencedDeclaration": 40778,
                             "src": "739:2:155",
                             "typeDescriptions": {}
                         },
@@ -1713,23 +1713,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39150,
+                "id": 39224,
                 "nodeType": "ImportDirective",
                 "src": "781:36:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/Base.sol",
                 "file": "./Base.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 29609,
+                "scope": 39242,
+                "sourceUnit": 29683,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39149,
+                            "id": 39223,
                             "name": "TestBase",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 29599,
+                            "referencedDeclaration": 29673,
                             "src": "789:8:155",
                             "typeDescriptions": {}
                         },
@@ -1739,23 +1739,23 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39152,
+                "id": 39226,
                 "nodeType": "ImportDirective",
                 "src": "818:40:155",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/lib/ds-test/src/test.sol",
                 "file": "ds-test/test.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 39168,
-                "sourceUnit": 29534,
+                "scope": 39242,
+                "sourceUnit": 29608,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 39151,
+                            "id": 39225,
                             "name": "DSTest",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 29533,
+                            "referencedDeclaration": 29607,
                             "src": "826:6:155",
                             "typeDescriptions": {}
                         },
@@ -1765,7 +1765,7 @@ export const Test = {
                 "unitAlias": ""
             },
             {
-                "id": 39167,
+                "id": 39241,
                 "nodeType": "ContractDefinition",
                 "src": "875:282:155",
                 "nodes": [],
@@ -1773,106 +1773,106 @@ export const Test = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 39153,
+                            "id": 39227,
                             "name": "TestBase",
                             "nameLocations": [
                                 "901:8:155"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 29599,
+                            "referencedDeclaration": 29673,
                             "src": "901:8:155"
                         },
-                        "id": 39154,
+                        "id": 39228,
                         "nodeType": "InheritanceSpecifier",
                         "src": "901:8:155"
                     },
                     {
                         "baseName": {
-                            "id": 39155,
+                            "id": 39229,
                             "name": "DSTest",
                             "nameLocations": [
                                 "911:6:155"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 29533,
+                            "referencedDeclaration": 29607,
                             "src": "911:6:155"
                         },
-                        "id": 39156,
+                        "id": 39230,
                         "nodeType": "InheritanceSpecifier",
                         "src": "911:6:155"
                     },
                     {
                         "baseName": {
-                            "id": 39157,
+                            "id": 39231,
                             "name": "StdAssertions",
                             "nameLocations": [
                                 "919:13:155"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 31026,
+                            "referencedDeclaration": 31100,
                             "src": "919:13:155"
                         },
-                        "id": 39158,
+                        "id": 39232,
                         "nodeType": "InheritanceSpecifier",
                         "src": "919:13:155"
                     },
                     {
                         "baseName": {
-                            "id": 39159,
+                            "id": 39233,
                             "name": "StdChains",
                             "nameLocations": [
                                 "934:9:155"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 31746,
+                            "referencedDeclaration": 31820,
                             "src": "934:9:155"
                         },
-                        "id": 39160,
+                        "id": 39234,
                         "nodeType": "InheritanceSpecifier",
                         "src": "934:9:155"
                     },
                     {
                         "baseName": {
-                            "id": 39161,
+                            "id": 39235,
                             "name": "StdCheats",
                             "nameLocations": [
                                 "945:9:155"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 34564,
+                            "referencedDeclaration": 34638,
                             "src": "945:9:155"
                         },
-                        "id": 39162,
+                        "id": 39236,
                         "nodeType": "InheritanceSpecifier",
                         "src": "945:9:155"
                     },
                     {
                         "baseName": {
-                            "id": 39163,
+                            "id": 39237,
                             "name": "StdInvariant",
                             "nameLocations": [
                                 "956:12:155"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 34854,
+                            "referencedDeclaration": 34928,
                             "src": "956:12:155"
                         },
-                        "id": 39164,
+                        "id": 39238,
                         "nodeType": "InheritanceSpecifier",
                         "src": "956:12:155"
                     },
                     {
                         "baseName": {
-                            "id": 39165,
+                            "id": 39239,
                             "name": "StdUtils",
                             "nameLocations": [
                                 "970:8:155"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 39116,
+                            "referencedDeclaration": 39190,
                             "src": "970:8:155"
                         },
-                        "id": 39166,
+                        "id": 39240,
                         "nodeType": "InheritanceSpecifier",
                         "src": "970:8:155"
                     }
@@ -1882,44 +1882,44 @@ export const Test = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    39167,
-                    39116,
-                    34854,
-                    34564,
-                    33800,
-                    31746,
-                    31026,
-                    29533,
-                    29599,
-                    29596
+                    39241,
+                    39190,
+                    34928,
+                    34638,
+                    33874,
+                    31820,
+                    31100,
+                    29607,
+                    29673,
+                    29670
                 ],
                 "name": "Test",
                 "nameLocation": "893:4:155",
-                "scope": 39168,
+                "scope": 39242,
                 "usedErrors": [],
                 "usedEvents": [
-                    27247,
-                    27251,
-                    27255,
-                    27259,
-                    27263,
-                    27267,
-                    27271,
-                    27275,
-                    27281,
-                    27287,
-                    27295,
-                    27303,
-                    27309,
-                    27315,
                     27321,
-                    27327,
-                    29621,
-                    29626,
-                    29631,
-                    29638,
-                    29645,
-                    29652
+                    27325,
+                    27329,
+                    27333,
+                    27337,
+                    27341,
+                    27345,
+                    27349,
+                    27355,
+                    27361,
+                    27369,
+                    27377,
+                    27383,
+                    27389,
+                    27395,
+                    27401,
+                    29695,
+                    29700,
+                    29705,
+                    29712,
+                    29719,
+                    29726
                 ]
             }
         ],

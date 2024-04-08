@@ -638,7 +638,7 @@ export declare const ERC20Mintable: {
         readonly sourceMap: "254:1229:129:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1622:47:171;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;548:25:234;;;536:2;521:18;1622:47:171;;;;;;;;1031:18:172;;;:::i;:::-;;;;;;;:::i;2461:211::-;;;;;;:::i;:::-;;:::i;:::-;;;1622:14:234;;1615:22;1597:41;;1585:2;1570:18;2461:211:172;1457:187:234;1676:49:171;;;;;;:::i;:::-;;;;;;;;;;;;;;;;4390:396;;;;;;:::i;:::-;;:::i;:::-;;1304:26:172;;;;;;3057:592;;;;;;:::i;:::-;;:::i;1083:31::-;;;;;;;;3503:4:234;3491:17;;;3473:36;;3461:2;3446:18;1083:31:172;3331:184:234;5327:177:172;;;:::i;1048:155:129:-;;;;;;:::i;:::-;;:::i;1209:111::-;;;;;;:::i;:::-;;:::i;3448:210:171:-;;;;;;:::i;:::-;;:::i;3853:337::-;;;;;;:::i;:::-;;:::i;1337:44:172:-;;;;;;:::i;:::-;;;;;;;;;;;;;;3006:241:171;;;;;;:::i;:::-;;:::i;313:39:129:-;;;;;1523:434:170;;;;;;:::i;:::-;;:::i;1751:41:172:-;;;;;;:::i;:::-;;;;;;;;;;;;;;562:20:170;;;;;-1:-1:-1;;;;;562:20:170;;;;;;-1:-1:-1;;;;;5327:32:234;;;5309:51;;5297:2;5282:18;562:20:170;5163:203:234;1056:20:172;;;:::i;1326:155:129:-;;;;;;:::i;:::-;;:::i;931:111::-;;;;;;:::i;:::-;;:::i;2678:373:172:-;;;;;;:::i;:::-;;:::i;2336:465:171:-;;;;;;:::i;:::-;;:::i;589:26:170:-;;;;;-1:-1:-1;;;;;589:26:170;;;1369:61:171;;;;;;:::i;:::-;;;;;;;;;;;;-1:-1:-1;;;;;1369:61:171;;;3838:1483:172;;;;;;:::i;:::-;;:::i;1388:64::-;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;1958:186:171;;;;;;:::i;:::-;-1:-1:-1;;;;;;2083:35:171;2051:4;2083:35;;;:22;:35;;;;;;2075:52;;;;;;2131:1;2074:58;:63;;;1958:186;1795:157;;;;;;:::i;:::-;-1:-1:-1;;;;;1908:18:171;;;;1876:4;1908:18;;;:12;:18;;;;;;1939:1;1900:35;;;;;1899:41;:46;;;1795:157;1732:56;;;;;;:::i;:::-;;;;;;;;;;;;;;1963:164:170;;;;;;:::i;:::-;;:::i;1031:18:172:-;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;2461:211::-;2561:10;2535:4;2551:21;;;:9;:21;;;;;;;;-1:-1:-1;;;;;2551:30:172;;;;;;;;;;:39;;;2606:37;2535:4;;2551:30;;2606:37;;;;2584:6;548:25:234;;536:2;521:18;;402:177;2606:37:172;;;;;;;;-1:-1:-1;2661:4:172;2461:211;;;;;:::o;4390:396:171:-;902:33:170;915:10;927:7;;-1:-1:-1;;;;;;927:7:170;902:12;:33::i;:::-;894:58;;;;-1:-1:-1;;;894:58:170;;;;;;;:::i;:::-;;;;;;;;;4535:7:171::1;4531:184;;;-1:-1:-1::0;;;;;;4558:35:171;::::1;4597:18;4558:35:::0;;;:22:::1;:35;::::0;;;;:57;;4605:1:::1;:9;::::0;::::1;;4558:57;::::0;;4531:184:::1;;;-1:-1:-1::0;;;;;;4646:35:171;::::1;4686:18;4646:35:::0;;;:22:::1;:35;::::0;;;;:58;;4694:1:::1;:9;::::0;::::1;;4685:19;4646:58;::::0;;4531:184:::1;4758:11;-1:-1:-1::0;;;;;4730:49:171::1;;4752:4;4730:49;;;4771:7;4730:49;;;;1622:14:234::0;1615:22;1597:41;;1585:2;1570:18;;1457:187;4730:49:171::1;;;;;;;;4390:396:::0;;;:::o;3057:592:172:-;-1:-1:-1;;;;;3209:15:172;;3175:4;3209:15;;;:9;:15;;;;;;;;3225:10;3209:27;;;;;;;;-1:-1:-1;;3287:28:172;;3283:80;;3347:16;3357:6;3347:7;:16;:::i;:::-;-1:-1:-1;;;;;3317:15:172;;;;;;:9;:15;;;;;;;;3333:10;3317:27;;;;;;;:46;3283:80;-1:-1:-1;;;;;3374:15:172;;;;;;:9;:15;;;;;:25;;3393:6;;3374:15;:25;;3393:6;;3374:25;:::i;:::-;;;;-1:-1:-1;;;;;;;3545:13:172;;;;;;;:9;:13;;;;;;;:23;;;;;;3594:26;3545:13;;3594:26;;;-1:-1:-1;;;;;;;;;;;3594:26:172;;;3562:6;548:25:234;;536:2;521:18;;402:177;3594:26:172;;;;;;;;3638:4;3631:11;;;3057:592;;;;;;:::o;5327:177::-;5384:7;5427:16;5410:13;:33;:87;;5473:24;:22;:24::i;:::-;5403:94;;5327:177;:::o;5410:87::-;-1:-1:-1;5446:24:172;;5327:177::o;1048:155:129:-;743:17;739:169;;;801:33;814:10;826:7;;-1:-1:-1;;;;;;826:7:129;801:12;:33::i;:::-;776:121;;;;-1:-1:-1;;;776:121:129;;;;;;;:::i;:::-;1170:26:::1;1176:11;1189:6;1170:5;:26::i;:::-;1048:155:::0;;:::o;1209:111::-;743:17;739:169;;;801:33;814:10;826:7;;-1:-1:-1;;;;;;826:7:129;801:12;:33::i;:::-;776:121;;;;-1:-1:-1;;;776:121:129;;;;;;;:::i;:::-;1288:25:::1;1294:10;1306:6;1288:5;:25::i;:::-;1209:111:::0;:::o;3448:210:171:-;902:33:170;915:10;927:7;;-1:-1:-1;;;;;;927:7:170;902:12;:33::i;:::-;894:58;;;;-1:-1:-1;;;894:58:170;;;;;;;:::i;:::-;-1:-1:-1;;;;;;3549:31:171;::::1;;::::0;;;:18:::1;:31;::::0;;;;;;;;:41;;-1:-1:-1;;3549:41:171::1;::::0;::::1;;::::0;;::::1;::::0;;;3606:45;;1597:41:234;;;3606:45:171::1;::::0;1570:18:234;3606:45:171::1;;;;;;;3448:210:::0;;:::o;3853:337::-;902:33:170;915:10;927:7;;-1:-1:-1;;;;;;927:7:170;902:12;:33::i;:::-;894:58;;;;-1:-1:-1;;;894:58:170;;;;;;;:::i;:::-;3986:7:171::1;3982:150;;;-1:-1:-1::0;;;;;4009:18:171;::::1;4031;4009::::0;;;:12:::1;:18;::::0;;;;:40;;4039:1:::1;:9;::::0;::::1;;4009:40;::::0;;3982:150:::1;;;-1:-1:-1::0;;;;;4080:18:171;::::1;4103;4080::::0;;;:12:::1;:18;::::0;;;;:41;;4111:1:::1;:9;::::0;::::1;;4102:19;4080:41;::::0;;3982:150:::1;4169:4;4147:36;;4163:4;-1:-1:-1::0;;;;;4147:36:171::1;;4175:7;4147:36;;;;1622:14:234::0;1615:22;1597:41;;1585:2;1570:18;;1457:187;3006:241:171;902:33:170;915:10;927:7;;-1:-1:-1;;;;;;927:7:170;902:12;:33::i;:::-;894:58;;;;-1:-1:-1;;;894:58:170;;;;;;;:::i;:::-;-1:-1:-1;;;;;3121:32:171;;::::1;;::::0;;;:24:::1;:32;::::0;;;;;:50;;-1:-1:-1;;;;;;3121:50:171::1;::::0;;::::1;::::0;;::::1;::::0;;3187:53;::::1;::::0;3121:32;3187:53:::1;3006:241:::0;;:::o;1523:434:170:-;1794:5;;-1:-1:-1;;;;;1794:5:170;1780:10;:19;;:76;;-1:-1:-1;1803:9:170;;:53;;-1:-1:-1;;;1803:53:170;;-1:-1:-1;;;;;1803:9:170;;;;:17;;:53;;1821:10;;1841:4;;-1:-1:-1;;;;;;1803:9:170;1848:7;;;1803:53;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1772:85;;;;;;1868:9;:24;;-1:-1:-1;;;;;;1868:24:170;-1:-1:-1;;;;;1868:24:170;;;;;;;;1908:42;;1925:10;;1908:42;;-1:-1:-1;;1908:42:170;1523:434;:::o;1056:20:172:-;;;;;;;:::i;1326:155:129:-;743:17;739:169;;;801:33;814:10;826:7;;-1:-1:-1;;;;;;826:7:129;801:12;:33::i;:::-;776:121;;;;-1:-1:-1;;;776:121:129;;;;;;;:::i;:::-;1448:26:::1;1454:11;1467:6;1448:5;:26::i;931:111::-:0;743:17;739:169;;;801:33;814:10;826:7;;-1:-1:-1;;;;;;826:7:129;801:12;:33::i;:::-;776:121;;;;-1:-1:-1;;;776:121:129;;;;;;;:::i;:::-;1010:25:::1;1016:10;1028:6;1010:5;:25::i;2678:373:172:-:0;2774:10;2748:4;2764:21;;;:9;:21;;;;;:31;;2789:6;;2764:21;2748:4;;2764:31;;2789:6;;2764:31;:::i;:::-;;;;-1:-1:-1;;;;;;;2941:13:172;;;;;;:9;:13;;;;;;;:23;;;;;;2990:32;2999:10;;-1:-1:-1;;;;;;;;;;;2990:32:172;;;2958:6;548:25:234;;536:2;521:18;;402:177;2336:465:171;-1:-1:-1;;;;;2515:32:171;;;2471:4;2515:32;;;:24;:32;;;;;;2471:4;;2515:32;2562:38;;2558:101;;2609:50;;-1:-1:-1;;;2609:50:171;;-1:-1:-1;;;;;2609:23:171;;;;;:50;;2633:4;;2639:6;;2647:11;;2609:50;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;2602:57;;;;;2558:101;-1:-1:-1;;;;;;2689:31:171;;;;;;:18;:31;;;;;;;;;:105;;-1:-1:-1;;;;;;;2759:35:171;;;;;;:22;:35;;;;;;;;;-1:-1:-1;;;;;2738:18:171;;;;:12;:18;;;;;;;:56;2724:70;;2689:105;2670:124;2336:465;-1:-1:-1;;;;;2336:465:171:o;3838:1483:172:-;4057:15;4045:8;:27;;4037:63;;;;-1:-1:-1;;;4037:63:172;;9982:2:234;4037:63:172;;;9964:21:234;10021:2;10001:18;;;9994:30;10060:25;10040:18;;;10033:53;10103:18;;4037:63:172;9780:347:234;4037:63:172;4265:24;4292:805;4428:18;:16;:18::i;:::-;-1:-1:-1;;;;;4873:13:172;;;;;;;:6;:13;;;;;;;;;:15;;;;;;;;4511:449;;4555:165;4511:449;;;10419:25:234;10498:18;;;10491:43;;;;10570:15;;;10550:18;;;10543:43;10602:18;;;10595:34;;;10645:19;;;10638:35;;;;10689:19;;;;10682:35;;;4511:449:172;;;;;;;;;;10391:19:234;;;4511:449:172;;;4472:514;;;;;;;;-1:-1:-1;;;4350:658:172;;;10986:27:234;11029:11;;;11022:27;;;;11065:12;;;11058:28;;;;11102:12;;4350:658:172;;;-1:-1:-1;;4350:658:172;;;;;;;;;4319:707;;4350:658;4319:707;;;;4292:805;;;;;;;;;11352:25:234;11425:4;11413:17;;11393:18;;;11386:45;11447:18;;;11440:34;;;11490:18;;;11483:34;;;11324:19;;4292:805:172;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;4292:805:172;;-1:-1:-1;;4292:805:172;;;-1:-1:-1;;;;;;;5120:30:172;;;;;;:59;;;5174:5;-1:-1:-1;;;;;5154:25:172;:16;-1:-1:-1;;;;;5154:25:172;;5120:59;5112:86;;;;-1:-1:-1;;;5112:86:172;;11730:2:234;5112:86:172;;;11712:21:234;11769:2;11749:18;;;11742:30;-1:-1:-1;;;11788:18:234;;;11781:44;11842:18;;5112:86:172;11528:338:234;5112:86:172;-1:-1:-1;;;;;5213:27:172;;;;;;;:9;:27;;;;;;;;:36;;;;;;;;;;;;;:44;;;5283:31;548:25:234;;;5213:36:172;;5283:31;;;;;521:18:234;5283:31:172;;;;;;;3838:1483;;;;;;;:::o;1963:164:170:-;902:33;915:10;927:7;;-1:-1:-1;;;;;;927:7:170;902:12;:33::i;:::-;894:58;;;;-1:-1:-1;;;894:58:170;;;;;;;:::i;:::-;2046:5:::1;:16:::0;;-1:-1:-1;;;;;;2046:16:170::1;-1:-1:-1::0;;;;;2046:16:170;::::1;::::0;;::::1;::::0;;;2078:42:::1;::::0;2099:10:::1;::::0;2078:42:::1;::::0;-1:-1:-1;;2078:42:170::1;1963:164:::0;:::o;977:540::-;1097:9;;1064:4;;-1:-1:-1;;;;;1097:9:170;1415:27;;;;;:77;;-1:-1:-1;1446:46:170;;-1:-1:-1;;;1446:46:170;;-1:-1:-1;;;;;1446:12:170;;;;;:46;;1459:4;;1473;;1480:11;;1446:46;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;1414:96;;;-1:-1:-1;1505:5:170;;-1:-1:-1;;;;;1497:13:170;;;1505:5;;1497:13;1414:96;1407:103;977:540;-1:-1:-1;;;;977:540:170:o;5510:446:172:-;5575:7;5672:95;5805:4;5789:22;;;;;;:::i;:::-;;;;;;;;;;5640:295;;;13397:25:234;;;;13438:18;;13431:34;;;;5833:14:172;13481:18:234;;;13474:34;5869:13:172;13524:18:234;;;13517:34;5912:4:172;13567:19:234;;;13560:61;13369:19;;5640:295:172;;;;;;;;;;;;5613:336;;;;;;5594:355;;5510:446;:::o;6150:325::-;6235:6;6220:11;;:21;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;;;;6387:13:172;;;;;;:9;:13;;;;;;;;:23;;;;;;6436:32;548:25:234;;;-1:-1:-1;;;;;;;;;;;6436:32:172;521:18:234;6436:32:172;;;;;;;;6150:325;;:::o;6481:328::-;-1:-1:-1;;;;;6553:15:172;;;;;;:9;:15;;;;;:25;;6572:6;;6553:15;:25;;6572:6;;6553:25;:::i;:::-;;;;-1:-1:-1;;6721:11:172;:21;;;;;;;6768:34;;548:25:234;;;-1:-1:-1;;;;;;;6768:34:172;;;-1:-1:-1;;;;;;;;;;;6768:34:172;536:2:234;521:18;6768:34:172;402:177:234;14:131;-1:-1:-1;;;;;89:31:234;;79:42;;69:70;;135:1;132;125:12;150:247;209:6;262:2;250:9;241:7;237:23;233:32;230:52;;;278:1;275;268:12;230:52;317:9;304:23;336:31;361:5;336:31;:::i;584:548::-;696:4;725:2;754;743:9;736:21;786:6;780:13;829:6;824:2;813:9;809:18;802:34;854:1;864:140;878:6;875:1;872:13;864:140;;;973:14;;;969:23;;963:30;939:17;;;958:2;935:26;928:66;893:10;;864:140;;;868:3;1053:1;1048:2;1039:6;1028:9;1024:22;1020:31;1013:42;1123:2;1116;1112:7;1107:2;1099:6;1095:15;1091:29;1080:9;1076:45;1072:54;1064:62;;;;584:548;;;;:::o;1137:315::-;1205:6;1213;1266:2;1254:9;1245:7;1241:23;1237:32;1234:52;;;1282:1;1279;1272:12;1234:52;1321:9;1308:23;1340:31;1365:5;1340:31;:::i;:::-;1390:5;1442:2;1427:18;;;;1414:32;;-1:-1:-1;;;1137:315:234:o;1649:173::-;1716:20;;-1:-1:-1;;;;;;1765:32:234;;1755:43;;1745:71;;1812:1;1809;1802:12;1745:71;1649:173;;;:::o;1827:184::-;1885:6;1938:2;1926:9;1917:7;1913:23;1909:32;1906:52;;;1954:1;1951;1944:12;1906:52;1977:28;1995:9;1977:28;:::i;2016:156::-;2082:20;;2142:4;2131:16;;2121:27;;2111:55;;2162:1;2159;2152:12;2177:118;2263:5;2256:13;2249:21;2242:5;2239:32;2229:60;;2285:1;2282;2275:12;2300:383;2371:6;2379;2387;2440:2;2428:9;2419:7;2415:23;2411:32;2408:52;;;2456:1;2453;2446:12;2408:52;2479:27;2496:9;2479:27;:::i;:::-;2469:37;;2525;2558:2;2547:9;2543:18;2525:37;:::i;:::-;2515:47;;2612:2;2601:9;2597:18;2584:32;2625:28;2647:5;2625:28;:::i;:::-;2672:5;2662:15;;;2300:383;;;;;:::o;2870:456::-;2947:6;2955;2963;3016:2;3004:9;2995:7;2991:23;2987:32;2984:52;;;3032:1;3029;3022:12;2984:52;3071:9;3058:23;3090:31;3115:5;3090:31;:::i;:::-;3140:5;-1:-1:-1;3197:2:234;3182:18;;3169:32;3210:33;3169:32;3210:33;:::i;:::-;2870:456;;3262:7;;-1:-1:-1;;;3316:2:234;3301:18;;;;3288:32;;2870:456::o;3520:180::-;3579:6;3632:2;3620:9;3611:7;3607:23;3603:32;3600:52;;;3648:1;3645;3638:12;3600:52;-1:-1:-1;3671:23:234;;3520:180;-1:-1:-1;3520:180:234:o;3705:313::-;3769:6;3777;3830:2;3818:9;3809:7;3805:23;3801:32;3798:52;;;3846:1;3843;3836:12;3798:52;3869:28;3887:9;3869:28;:::i;:::-;3859:38;;3947:2;3936:9;3932:18;3919:32;3960:28;3982:5;3960:28;:::i;:::-;4007:5;3997:15;;;3705:313;;;;;:::o;4023:452::-;4095:6;4103;4111;4164:2;4152:9;4143:7;4139:23;4135:32;4132:52;;;4180:1;4177;4170:12;4132:52;4219:9;4206:23;4238:31;4263:5;4238:31;:::i;:::-;4288:5;-1:-1:-1;4312:36:234;4344:2;4329:18;;4312:36;:::i;4480:407::-;4567:6;4575;4628:2;4616:9;4607:7;4603:23;4599:32;4596:52;;;4644:1;4641;4634:12;4596:52;4683:9;4670:23;4702:31;4727:5;4702:31;:::i;:::-;4752:5;-1:-1:-1;4809:2:234;4794:18;;4781:32;4822:33;4781:32;4822:33;:::i;5371:460::-;5447:6;5455;5463;5516:2;5504:9;5495:7;5491:23;5487:32;5484:52;;;5532:1;5529;5522:12;5484:52;5571:9;5558:23;5590:31;5615:5;5590:31;:::i;:::-;5640:5;-1:-1:-1;5697:2:234;5682:18;;5669:32;5710:33;5669:32;5710:33;:::i;:::-;5762:7;-1:-1:-1;5788:37:234;5821:2;5806:18;;5788:37;:::i;:::-;5778:47;;5371:460;;;;;:::o;6063:734::-;6174:6;6182;6190;6198;6206;6214;6222;6275:3;6263:9;6254:7;6250:23;6246:33;6243:53;;;6292:1;6289;6282:12;6243:53;6331:9;6318:23;6350:31;6375:5;6350:31;:::i;:::-;6400:5;-1:-1:-1;6457:2:234;6442:18;;6429:32;6470:33;6429:32;6470:33;:::i;:::-;6522:7;-1:-1:-1;6576:2:234;6561:18;;6548:32;;-1:-1:-1;6627:2:234;6612:18;;6599:32;;-1:-1:-1;6650:37:234;6682:3;6667:19;;6650:37;:::i;:::-;6640:47;;6734:3;6723:9;6719:19;6706:33;6696:43;;6786:3;6775:9;6771:19;6758:33;6748:43;;6063:734;;;;;;;;;;:::o;7195:254::-;7260:6;7268;7321:2;7309:9;7300:7;7296:23;7292:32;7289:52;;;7337:1;7334;7327:12;7289:52;7360:27;7377:9;7360:27;:::i;:::-;7350:37;;7406;7439:2;7428:9;7424:18;7406:37;:::i;:::-;7396:47;;7195:254;;;;;:::o;7454:317::-;7520:6;7528;7581:2;7569:9;7560:7;7556:23;7552:32;7549:52;;;7597:1;7594;7587:12;7549:52;7636:9;7623:23;7655:31;7680:5;7655:31;:::i;:::-;7705:5;-1:-1:-1;7729:36:234;7761:2;7746:18;;7729:36;:::i;7776:380::-;7855:1;7851:12;;;;7898;;;7919:61;;7973:4;7965:6;7961:17;7951:27;;7919:61;8026:2;8018:6;8015:14;7995:18;7992:38;7989:161;;8072:10;8067:3;8063:20;8060:1;8053:31;8107:4;8104:1;8097:15;8135:4;8132:1;8125:15;7989:161;;7776:380;;;:::o;8161:336::-;8363:2;8345:21;;;8402:2;8382:18;;;8375:30;-1:-1:-1;;;8436:2:234;8421:18;;8414:42;8488:2;8473:18;;8161:336::o;8502:127::-;8563:10;8558:3;8554:20;8551:1;8544:31;8594:4;8591:1;8584:15;8618:4;8615:1;8608:15;8634:128;8701:9;;;8722:11;;;8719:37;;;8736:18;;:::i;8767:353::-;8969:2;8951:21;;;9008:2;8988:18;;;8981:30;9047:31;9042:2;9027:18;;9020:59;9111:2;9096:18;;8767:353::o;9125:400::-;-1:-1:-1;;;;;9381:15:234;;;9363:34;;9433:15;;;;9428:2;9413:18;;9406:43;-1:-1:-1;;;;;;9485:33:234;;;9480:2;9465:18;;9458:61;9313:2;9298:18;;9125:400::o;9530:245::-;9597:6;9650:2;9638:9;9629:7;9625:23;9621:32;9618:52;;;9666:1;9663;9656:12;9618:52;9698:9;9692:16;9717:28;9739:5;9717:28;:::i;12000:1133::-;12130:3;12159:1;12192:6;12186:13;12222:3;12244:1;12272:9;12268:2;12264:18;12254:28;;12332:2;12321:9;12317:18;12354;12344:61;;12398:4;12390:6;12386:17;12376:27;;12344:61;12424:2;12472;12464:6;12461:14;12441:18;12438:38;12435:165;;-1:-1:-1;;;12499:33:234;;12555:4;12552:1;12545:15;12585:4;12506:3;12573:17;12435:165;12616:18;12643:133;;;;12790:1;12785:323;;;;12609:499;;12643:133;-1:-1:-1;;12676:24:234;;12664:37;;12749:14;;12742:22;12730:35;;12721:45;;;-1:-1:-1;12643:133:234;;12785:323;11947:1;11940:14;;;11984:4;11971:18;;12883:1;12897:165;12911:6;12908:1;12905:13;12897:165;;;12989:14;;12976:11;;;12969:35;13032:16;;;;12926:10;;12897:165;;;12901:3;;13091:6;13086:3;13082:16;13075:23;;12609:499;-1:-1:-1;13124:3:234;;12000:1133;-1:-1:-1;;;;;;;;12000:1133:234:o;13632:125::-;13697:9;;;13718:10;;;13715:36;;;13731:18;;:::i";
         readonly linkReferences: {};
         readonly immutableReferences: {
-            readonly "23368": readonly [{
+            readonly "23357": readonly [{
                 readonly start: 889;
                 readonly length: 32;
             }, {
@@ -654,15 +654,15 @@ export declare const ERC20Mintable: {
                 readonly start: 3209;
                 readonly length: 32;
             }];
-            readonly "72067": readonly [{
+            readonly "72141": readonly [{
                 readonly start: 697;
                 readonly length: 32;
             }];
-            readonly "72081": readonly [{
+            readonly "72155": readonly [{
                 readonly start: 2089;
                 readonly length: 32;
             }];
-            readonly "72083": readonly [{
+            readonly "72157": readonly [{
                 readonly start: 2142;
                 readonly length: 32;
             }];
@@ -1378,38 +1378,38 @@ export declare const ERC20Mintable: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/test/ERC20Mintable.sol";
-        readonly id: 23480;
+        readonly id: 23469;
         readonly exportedSymbols: {
-            readonly Authority: readonly [71737];
-            readonly ERC20: readonly [72430];
-            readonly ERC20Mintable: readonly [23479];
-            readonly MultiRolesAuthority: readonly [72042];
+            readonly Authority: readonly [71811];
+            readonly ERC20: readonly [72504];
+            readonly ERC20Mintable: readonly [23468];
+            readonly MultiRolesAuthority: readonly [72116];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:1445:129";
         readonly nodes: readonly [{
-            readonly id: 23356;
+            readonly id: 23345;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:129";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 23358;
+            readonly id: 23347;
             readonly nodeType: "ImportDirective";
             readonly src: "64:50:129";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/solmate/src/auth/Auth.sol";
             readonly file: "solmate/auth/Auth.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 23480;
-            readonly sourceUnit: 71738;
+            readonly scope: 23469;
+            readonly sourceUnit: 71812;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 23357;
+                    readonly id: 23346;
                     readonly name: "Authority";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71737;
+                    readonly referencedDeclaration: 71811;
                     readonly src: "73:9:129";
                     readonly typeDescriptions: {};
                 };
@@ -1417,22 +1417,22 @@ export declare const ERC20Mintable: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 23360;
+            readonly id: 23349;
             readonly nodeType: "ImportDirective";
             readonly src: "115:87:129";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/solmate/src/auth/authorities/MultiRolesAuthority.sol";
             readonly file: "solmate/auth/authorities/MultiRolesAuthority.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 23480;
-            readonly sourceUnit: 72043;
+            readonly scope: 23469;
+            readonly sourceUnit: 72117;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 23359;
+                    readonly id: 23348;
                     readonly name: "MultiRolesAuthority";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 72042;
+                    readonly referencedDeclaration: 72116;
                     readonly src: "124:19:129";
                     readonly typeDescriptions: {};
                 };
@@ -1440,22 +1440,22 @@ export declare const ERC20Mintable: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 23362;
+            readonly id: 23351;
             readonly nodeType: "ImportDirective";
             readonly src: "203:49:129";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/solmate/src/tokens/ERC20.sol";
             readonly file: "solmate/tokens/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 23480;
-            readonly sourceUnit: 72431;
+            readonly scope: 23469;
+            readonly sourceUnit: 72505;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 23361;
+                    readonly id: 23350;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 72430;
+                    readonly referencedDeclaration: 72504;
                     readonly src: "212:5:129";
                     readonly typeDescriptions: {};
                 };
@@ -1463,11 +1463,11 @@ export declare const ERC20Mintable: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 23479;
+            readonly id: 23468;
             readonly nodeType: "ContractDefinition";
             readonly src: "254:1229:129";
             readonly nodes: readonly [{
-                readonly id: 23368;
+                readonly id: 23357;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "313:39:129";
                 readonly nodes: readonly [];
@@ -1476,7 +1476,7 @@ export declare const ERC20Mintable: {
                 readonly mutability: "immutable";
                 readonly name: "isCompetitionMode";
                 readonly nameLocation: "335:17:129";
-                readonly scope: 23479;
+                readonly scope: 23468;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1484,7 +1484,7 @@ export declare const ERC20Mintable: {
                     readonly typeString: "bool";
                 };
                 readonly typeName: {
-                    readonly id: 23367;
+                    readonly id: 23356;
                     readonly name: "bool";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "313:4:129";
@@ -1495,28 +1495,28 @@ export declare const ERC20Mintable: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 23403;
+                readonly id: 23392;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "359:323:129";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23402;
+                    readonly id: 23391;
                     readonly nodeType: "Block";
                     readonly src: "627:55:129";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 23400;
+                            readonly id: 23389;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 23398;
+                                readonly id: 23387;
                                 readonly name: "isCompetitionMode";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23368;
+                                readonly referencedDeclaration: 23357;
                                 readonly src: "637:17:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -1526,11 +1526,11 @@ export declare const ERC20Mintable: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 23399;
+                                readonly id: 23388;
                                 readonly name: "isCompetitionMode_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23378;
+                                readonly referencedDeclaration: 23367;
                                 readonly src: "657:18:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -1543,7 +1543,7 @@ export declare const ERC20Mintable: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 23401;
+                        readonly id: 23390;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "637:38:129";
                     }];
@@ -1552,58 +1552,58 @@ export declare const ERC20Mintable: {
                 readonly kind: "constructor";
                 readonly modifiers: readonly [{
                     readonly arguments: readonly [{
-                        readonly id: 23381;
+                        readonly id: 23370;
                         readonly name: "name";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 23370;
+                        readonly referencedDeclaration: 23359;
                         readonly src: "529:4:129";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_string_memory_ptr";
                             readonly typeString: "string memory";
                         };
                     }, {
-                        readonly id: 23382;
+                        readonly id: 23371;
                         readonly name: "symbol";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 23372;
+                        readonly referencedDeclaration: 23361;
                         readonly src: "535:6:129";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_string_memory_ptr";
                             readonly typeString: "string memory";
                         };
                     }, {
-                        readonly id: 23383;
+                        readonly id: 23372;
                         readonly name: "decimals";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 23374;
+                        readonly referencedDeclaration: 23363;
                         readonly src: "543:8:129";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_uint8";
                             readonly typeString: "uint8";
                         };
                     }];
-                    readonly id: 23384;
+                    readonly id: 23373;
                     readonly kind: "baseConstructorSpecifier";
                     readonly modifierName: {
-                        readonly id: 23380;
+                        readonly id: 23369;
                         readonly name: "ERC20";
                         readonly nameLocations: readonly ["523:5:129"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 72430;
+                        readonly referencedDeclaration: 72504;
                         readonly src: "523:5:129";
                     };
                     readonly nodeType: "ModifierInvocation";
                     readonly src: "523:29:129";
                 }, {
                     readonly arguments: readonly [{
-                        readonly id: 23386;
+                        readonly id: 23375;
                         readonly name: "admin";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 23376;
+                        readonly referencedDeclaration: 23365;
                         readonly src: "581:5:129";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_address";
@@ -1613,23 +1613,23 @@ export declare const ERC20Mintable: {
                         readonly arguments: readonly [{
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 23392;
+                                    readonly id: 23381;
                                     readonly name: "this";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
                                     readonly referencedDeclaration: -28;
                                     readonly src: "614:4:129";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20Mintable_$23479";
+                                        readonly typeIdentifier: "t_contract$_ERC20Mintable_$23468";
                                         readonly typeString: "contract ERC20Mintable";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_contract$_ERC20Mintable_$23479";
+                                        readonly typeIdentifier: "t_contract$_ERC20Mintable_$23468";
                                         readonly typeString: "contract ERC20Mintable";
                                     }];
-                                    readonly id: 23391;
+                                    readonly id: 23380;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1641,14 +1641,14 @@ export declare const ERC20Mintable: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 23390;
+                                        readonly id: 23379;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "606:7:129";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 23393;
+                                readonly id: 23382;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1669,7 +1669,7 @@ export declare const ERC20Mintable: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }];
-                                readonly id: 23389;
+                                readonly id: 23378;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1681,14 +1681,14 @@ export declare const ERC20Mintable: {
                                     readonly typeString: "type(address)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 23388;
+                                    readonly id: 23377;
                                     readonly name: "address";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "598:7:129";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 23394;
+                            readonly id: 23383;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1709,18 +1709,18 @@ export declare const ERC20Mintable: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             }];
-                            readonly id: 23387;
+                            readonly id: 23376;
                             readonly name: "Authority";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 71737;
+                            readonly referencedDeclaration: 71811;
                             readonly src: "588:9:129";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_type$_t_contract$_Authority_$71737_$";
+                                readonly typeIdentifier: "t_type$_t_contract$_Authority_$71811_$";
                                 readonly typeString: "type(contract Authority)";
                             };
                         };
-                        readonly id: 23395;
+                        readonly id: 23384;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: false;
@@ -1732,18 +1732,18 @@ export declare const ERC20Mintable: {
                         readonly src: "588:33:129";
                         readonly tryCall: false;
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_Authority_$71737";
+                            readonly typeIdentifier: "t_contract$_Authority_$71811";
                             readonly typeString: "contract Authority";
                         };
                     }];
-                    readonly id: 23396;
+                    readonly id: 23385;
                     readonly kind: "baseConstructorSpecifier";
                     readonly modifierName: {
-                        readonly id: 23385;
+                        readonly id: 23374;
                         readonly name: "MultiRolesAuthority";
                         readonly nameLocations: readonly ["561:19:129"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 72042;
+                        readonly referencedDeclaration: 72116;
                         readonly src: "561:19:129";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -1752,16 +1752,16 @@ export declare const ERC20Mintable: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 23379;
+                    readonly id: 23368;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23370;
+                        readonly id: 23359;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "394:4:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23403;
+                        readonly scope: 23392;
                         readonly src: "380:18:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1770,7 +1770,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 23369;
+                            readonly id: 23358;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "380:6:129";
@@ -1782,12 +1782,12 @@ export declare const ERC20Mintable: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23372;
+                        readonly id: 23361;
                         readonly mutability: "mutable";
                         readonly name: "symbol";
                         readonly nameLocation: "422:6:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23403;
+                        readonly scope: 23392;
                         readonly src: "408:20:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1796,7 +1796,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 23371;
+                            readonly id: 23360;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "408:6:129";
@@ -1808,12 +1808,12 @@ export declare const ERC20Mintable: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23374;
+                        readonly id: 23363;
                         readonly mutability: "mutable";
                         readonly name: "decimals";
                         readonly nameLocation: "444:8:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23403;
+                        readonly scope: 23392;
                         readonly src: "438:14:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1822,7 +1822,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 23373;
+                            readonly id: 23362;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "438:5:129";
@@ -1834,12 +1834,12 @@ export declare const ERC20Mintable: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23376;
+                        readonly id: 23365;
                         readonly mutability: "mutable";
                         readonly name: "admin";
                         readonly nameLocation: "470:5:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23403;
+                        readonly scope: 23392;
                         readonly src: "462:13:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1848,7 +1848,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 23375;
+                            readonly id: 23364;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "462:7:129";
@@ -1861,12 +1861,12 @@ export declare const ERC20Mintable: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23378;
+                        readonly id: 23367;
                         readonly mutability: "mutable";
                         readonly name: "isCompetitionMode_";
                         readonly nameLocation: "490:18:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23403;
+                        readonly scope: 23392;
                         readonly src: "485:23:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1875,7 +1875,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 23377;
+                            readonly id: 23366;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "485:4:129";
@@ -1889,43 +1889,43 @@ export declare const ERC20Mintable: {
                     readonly src: "370:144:129";
                 };
                 readonly returnParameters: {
-                    readonly id: 23397;
+                    readonly id: 23386;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "627:0:129";
                 };
-                readonly scope: 23479;
+                readonly scope: 23468;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 23420;
+                readonly id: 23409;
                 readonly nodeType: "ModifierDefinition";
                 readonly src: "688:237:129";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23419;
+                    readonly id: 23408;
                     readonly nodeType: "Block";
                     readonly src: "729:196:129";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 23405;
+                            readonly id: 23394;
                             readonly name: "isCompetitionMode";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 23368;
+                            readonly referencedDeclaration: 23357;
                             readonly src: "743:17:129";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 23417;
+                        readonly id: 23406;
                         readonly nodeType: "IfStatement";
                         readonly src: "739:169:129";
                         readonly trueBody: {
-                            readonly id: 23416;
+                            readonly id: 23405;
                             readonly nodeType: "Block";
                             readonly src: "762:146:129";
                             readonly statements: readonly [{
@@ -1933,7 +1933,7 @@ export declare const ERC20Mintable: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
                                             readonly expression: {
-                                                readonly id: 23408;
+                                                readonly id: 23397;
                                                 readonly name: "msg";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
@@ -1944,7 +1944,7 @@ export declare const ERC20Mintable: {
                                                     readonly typeString: "msg";
                                                 };
                                             };
-                                            readonly id: 23409;
+                                            readonly id: 23398;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -1959,7 +1959,7 @@ export declare const ERC20Mintable: {
                                             };
                                         }, {
                                             readonly expression: {
-                                                readonly id: 23410;
+                                                readonly id: 23399;
                                                 readonly name: "msg";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
@@ -1970,7 +1970,7 @@ export declare const ERC20Mintable: {
                                                     readonly typeString: "msg";
                                                 };
                                             };
-                                            readonly id: 23411;
+                                            readonly id: 23400;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -1992,18 +1992,18 @@ export declare const ERC20Mintable: {
                                                 readonly typeIdentifier: "t_bytes4";
                                                 readonly typeString: "bytes4";
                                             }];
-                                            readonly id: 23407;
+                                            readonly id: 23396;
                                             readonly name: "isAuthorized";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 71669;
+                                            readonly referencedDeclaration: 71743;
                                             readonly src: "801:12:129";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_internal_view$_t_address_$_t_bytes4_$returns$_t_bool_$";
                                                 readonly typeString: "function (address,bytes4) view returns (bool)";
                                             };
                                         };
-                                        readonly id: 23412;
+                                        readonly id: 23401;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2020,7 +2020,7 @@ export declare const ERC20Mintable: {
                                         };
                                     }, {
                                         readonly hexValue: "45524332304d696e7461626c653a206e6f7420617574686f72697a6564";
-                                        readonly id: 23413;
+                                        readonly id: 23402;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2042,7 +2042,7 @@ export declare const ERC20Mintable: {
                                             readonly typeIdentifier: "t_stringliteral_42a18f8e269f112c172999b74d139a2658536f1cd904b7baf70214b5f3a50457";
                                             readonly typeString: "literal_string \"ERC20Mintable: not authorized\"";
                                         }];
-                                        readonly id: 23406;
+                                        readonly id: 23395;
                                         readonly name: "require";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [-18, -18];
@@ -2053,7 +2053,7 @@ export declare const ERC20Mintable: {
                                             readonly typeString: "function (bool,string memory) pure";
                                         };
                                     };
-                                    readonly id: 23414;
+                                    readonly id: 23403;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2069,13 +2069,13 @@ export declare const ERC20Mintable: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 23415;
+                                readonly id: 23404;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "776:121:129";
                             }];
                         };
                     }, {
-                        readonly id: 23418;
+                        readonly id: 23407;
                         readonly nodeType: "PlaceholderStatement";
                         readonly src: "917:1:129";
                     }];
@@ -2083,7 +2083,7 @@ export declare const ERC20Mintable: {
                 readonly name: "requiresAuthDuringCompetition";
                 readonly nameLocation: "697:29:129";
                 readonly parameters: {
-                    readonly id: 23404;
+                    readonly id: 23393;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "726:2:129";
@@ -2091,12 +2091,12 @@ export declare const ERC20Mintable: {
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 23434;
+                readonly id: 23423;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "931:111:129";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23433;
+                    readonly id: 23422;
                     readonly nodeType: "Block";
                     readonly src: "1000:42:129";
                     readonly nodes: readonly [];
@@ -2104,7 +2104,7 @@ export declare const ERC20Mintable: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 23428;
+                                    readonly id: 23417;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2115,7 +2115,7 @@ export declare const ERC20Mintable: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 23429;
+                                readonly id: 23418;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2129,11 +2129,11 @@ export declare const ERC20Mintable: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 23430;
+                                readonly id: 23419;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23422;
+                                readonly referencedDeclaration: 23411;
                                 readonly src: "1028:6:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2148,18 +2148,18 @@ export declare const ERC20Mintable: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 23427;
+                                readonly id: 23416;
                                 readonly name: "_mint";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72401;
+                                readonly referencedDeclaration: 72475;
                                 readonly src: "1010:5:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,uint256)";
                                 };
                             };
-                            readonly id: 23431;
+                            readonly id: 23420;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2175,7 +2175,7 @@ export declare const ERC20Mintable: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 23432;
+                        readonly id: 23421;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1010:25:129";
                     }];
@@ -2184,14 +2184,14 @@ export declare const ERC20Mintable: {
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 23425;
+                    readonly id: 23414;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 23424;
+                        readonly id: 23413;
                         readonly name: "requiresAuthDuringCompetition";
                         readonly nameLocations: readonly ["970:29:129"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 23420;
+                        readonly referencedDeclaration: 23409;
                         readonly src: "970:29:129";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -2200,16 +2200,16 @@ export declare const ERC20Mintable: {
                 readonly name: "mint";
                 readonly nameLocation: "940:4:129";
                 readonly parameters: {
-                    readonly id: 23423;
+                    readonly id: 23412;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23422;
+                        readonly id: 23411;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "953:6:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23434;
+                        readonly scope: 23423;
                         readonly src: "945:14:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2218,7 +2218,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23421;
+                            readonly id: 23410;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "945:7:129";
@@ -2232,44 +2232,44 @@ export declare const ERC20Mintable: {
                     readonly src: "944:16:129";
                 };
                 readonly returnParameters: {
-                    readonly id: 23426;
+                    readonly id: 23415;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1000:0:129";
                 };
-                readonly scope: 23479;
+                readonly scope: 23468;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 23449;
+                readonly id: 23438;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1048:155:129";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23448;
+                    readonly id: 23437;
                     readonly nodeType: "Block";
                     readonly src: "1160:43:129";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 23444;
+                                readonly id: 23433;
                                 readonly name: "destination";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23436;
+                                readonly referencedDeclaration: 23425;
                                 readonly src: "1176:11:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 23445;
+                                readonly id: 23434;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23438;
+                                readonly referencedDeclaration: 23427;
                                 readonly src: "1189:6:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2284,18 +2284,18 @@ export declare const ERC20Mintable: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 23443;
+                                readonly id: 23432;
                                 readonly name: "_mint";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72401;
+                                readonly referencedDeclaration: 72475;
                                 readonly src: "1170:5:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,uint256)";
                                 };
                             };
-                            readonly id: 23446;
+                            readonly id: 23435;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2311,7 +2311,7 @@ export declare const ERC20Mintable: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 23447;
+                        readonly id: 23436;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1170:26:129";
                     }];
@@ -2320,14 +2320,14 @@ export declare const ERC20Mintable: {
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 23441;
+                    readonly id: 23430;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 23440;
+                        readonly id: 23429;
                         readonly name: "requiresAuthDuringCompetition";
                         readonly nameLocations: readonly ["1130:29:129"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 23420;
+                        readonly referencedDeclaration: 23409;
                         readonly src: "1130:29:129";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -2336,16 +2336,16 @@ export declare const ERC20Mintable: {
                 readonly name: "mint";
                 readonly nameLocation: "1057:4:129";
                 readonly parameters: {
-                    readonly id: 23439;
+                    readonly id: 23428;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23436;
+                        readonly id: 23425;
                         readonly mutability: "mutable";
                         readonly name: "destination";
                         readonly nameLocation: "1079:11:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23449;
+                        readonly scope: 23438;
                         readonly src: "1071:19:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2354,7 +2354,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 23435;
+                            readonly id: 23424;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1071:7:129";
@@ -2367,12 +2367,12 @@ export declare const ERC20Mintable: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23438;
+                        readonly id: 23427;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "1108:6:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23449;
+                        readonly scope: 23438;
                         readonly src: "1100:14:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2381,7 +2381,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23437;
+                            readonly id: 23426;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1100:7:129";
@@ -2395,22 +2395,22 @@ export declare const ERC20Mintable: {
                     readonly src: "1061:59:129";
                 };
                 readonly returnParameters: {
-                    readonly id: 23442;
+                    readonly id: 23431;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1160:0:129";
                 };
-                readonly scope: 23479;
+                readonly scope: 23468;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 23463;
+                readonly id: 23452;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1209:111:129";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23462;
+                    readonly id: 23451;
                     readonly nodeType: "Block";
                     readonly src: "1278:42:129";
                     readonly nodes: readonly [];
@@ -2418,7 +2418,7 @@ export declare const ERC20Mintable: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 23457;
+                                    readonly id: 23446;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2429,7 +2429,7 @@ export declare const ERC20Mintable: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 23458;
+                                readonly id: 23447;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2443,11 +2443,11 @@ export declare const ERC20Mintable: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 23459;
+                                readonly id: 23448;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23451;
+                                readonly referencedDeclaration: 23440;
                                 readonly src: "1306:6:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2462,18 +2462,18 @@ export declare const ERC20Mintable: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 23456;
+                                readonly id: 23445;
                                 readonly name: "_burn";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72429;
+                                readonly referencedDeclaration: 72503;
                                 readonly src: "1288:5:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,uint256)";
                                 };
                             };
-                            readonly id: 23460;
+                            readonly id: 23449;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2489,7 +2489,7 @@ export declare const ERC20Mintable: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 23461;
+                        readonly id: 23450;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1288:25:129";
                     }];
@@ -2498,14 +2498,14 @@ export declare const ERC20Mintable: {
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 23454;
+                    readonly id: 23443;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 23453;
+                        readonly id: 23442;
                         readonly name: "requiresAuthDuringCompetition";
                         readonly nameLocations: readonly ["1248:29:129"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 23420;
+                        readonly referencedDeclaration: 23409;
                         readonly src: "1248:29:129";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -2514,16 +2514,16 @@ export declare const ERC20Mintable: {
                 readonly name: "burn";
                 readonly nameLocation: "1218:4:129";
                 readonly parameters: {
-                    readonly id: 23452;
+                    readonly id: 23441;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23451;
+                        readonly id: 23440;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "1231:6:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23463;
+                        readonly scope: 23452;
                         readonly src: "1223:14:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2532,7 +2532,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23450;
+                            readonly id: 23439;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1223:7:129";
@@ -2546,44 +2546,44 @@ export declare const ERC20Mintable: {
                     readonly src: "1222:16:129";
                 };
                 readonly returnParameters: {
-                    readonly id: 23455;
+                    readonly id: 23444;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1278:0:129";
                 };
-                readonly scope: 23479;
+                readonly scope: 23468;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 23478;
+                readonly id: 23467;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1326:155:129";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23477;
+                    readonly id: 23466;
                     readonly nodeType: "Block";
                     readonly src: "1438:43:129";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 23473;
+                                readonly id: 23462;
                                 readonly name: "destination";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23465;
+                                readonly referencedDeclaration: 23454;
                                 readonly src: "1454:11:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 23474;
+                                readonly id: 23463;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23467;
+                                readonly referencedDeclaration: 23456;
                                 readonly src: "1467:6:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2598,18 +2598,18 @@ export declare const ERC20Mintable: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 23472;
+                                readonly id: 23461;
                                 readonly name: "_burn";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72429;
+                                readonly referencedDeclaration: 72503;
                                 readonly src: "1448:5:129";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_nonpayable$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,uint256)";
                                 };
                             };
-                            readonly id: 23475;
+                            readonly id: 23464;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2625,7 +2625,7 @@ export declare const ERC20Mintable: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 23476;
+                        readonly id: 23465;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1448:26:129";
                     }];
@@ -2634,14 +2634,14 @@ export declare const ERC20Mintable: {
                 readonly implemented: true;
                 readonly kind: "function";
                 readonly modifiers: readonly [{
-                    readonly id: 23470;
+                    readonly id: 23459;
                     readonly kind: "modifierInvocation";
                     readonly modifierName: {
-                        readonly id: 23469;
+                        readonly id: 23458;
                         readonly name: "requiresAuthDuringCompetition";
                         readonly nameLocations: readonly ["1408:29:129"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 23420;
+                        readonly referencedDeclaration: 23409;
                         readonly src: "1408:29:129";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -2650,16 +2650,16 @@ export declare const ERC20Mintable: {
                 readonly name: "burn";
                 readonly nameLocation: "1335:4:129";
                 readonly parameters: {
-                    readonly id: 23468;
+                    readonly id: 23457;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23465;
+                        readonly id: 23454;
                         readonly mutability: "mutable";
                         readonly name: "destination";
                         readonly nameLocation: "1357:11:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23478;
+                        readonly scope: 23467;
                         readonly src: "1349:19:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2668,7 +2668,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 23464;
+                            readonly id: 23453;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1349:7:129";
@@ -2681,12 +2681,12 @@ export declare const ERC20Mintable: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23467;
+                        readonly id: 23456;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "1386:6:129";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23478;
+                        readonly scope: 23467;
                         readonly src: "1378:14:129";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2695,7 +2695,7 @@ export declare const ERC20Mintable: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23466;
+                            readonly id: 23455;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1378:7:129";
@@ -2709,12 +2709,12 @@ export declare const ERC20Mintable: {
                     readonly src: "1339:59:129";
                 };
                 readonly returnParameters: {
-                    readonly id: 23471;
+                    readonly id: 23460;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1438:0:129";
                 };
-                readonly scope: 23479;
+                readonly scope: 23468;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -2722,26 +2722,26 @@ export declare const ERC20Mintable: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 23363;
+                    readonly id: 23352;
                     readonly name: "ERC20";
                     readonly nameLocations: readonly ["280:5:129"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 72430;
+                    readonly referencedDeclaration: 72504;
                     readonly src: "280:5:129";
                 };
-                readonly id: 23364;
+                readonly id: 23353;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "280:5:129";
             }, {
                 readonly baseName: {
-                    readonly id: 23365;
+                    readonly id: 23354;
                     readonly name: "MultiRolesAuthority";
                     readonly nameLocations: readonly ["287:19:129"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 72042;
+                    readonly referencedDeclaration: 72116;
                     readonly src: "287:19:129";
                 };
-                readonly id: 23366;
+                readonly id: 23355;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "287:19:129";
             }];
@@ -2749,12 +2749,12 @@ export declare const ERC20Mintable: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [23479, 72042, 71737, 71724, 72430];
+            readonly linearizedBaseContracts: readonly [23468, 72116, 71811, 71798, 72504];
             readonly name: "ERC20Mintable";
             readonly nameLocation: "263:13:129";
-            readonly scope: 23480;
+            readonly scope: 23469;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [71574, 71581, 71755, 71761, 71769, 71776, 72053, 72061];
+            readonly usedEvents: readonly [71648, 71655, 71829, 71835, 71843, 71850, 72127, 72135];
         }];
         readonly license: "Apache-2.0";
     };

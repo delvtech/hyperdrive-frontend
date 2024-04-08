@@ -272,23 +272,23 @@ export const IERC1155Errors = {
     },
     "ast": {
         "absolutePath": "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
-        "id": 70269,
+        "id": 70343,
         "exportedSymbols": {
             "IERC1155Errors": [
-                70268
+                70342
             ],
             "IERC20Errors": [
-                70173
+                70247
             ],
             "IERC721Errors": [
-                70221
+                70295
             ]
         },
         "nodeType": "SourceUnit",
         "src": "112:6420:161",
         "nodes": [
             {
-                "id": 70133,
+                "id": 70207,
                 "nodeType": "PragmaDirective",
                 "src": "112:24:161",
                 "nodes": [],
@@ -300,17 +300,17 @@ export const IERC1155Errors = {
                 ]
             },
             {
-                "id": 70173,
+                "id": 70247,
                 "nodeType": "ContractDefinition",
                 "src": "278:1764:161",
                 "nodes": [
                     {
-                        "id": 70143,
+                        "id": 70217,
                         "nodeType": "ErrorDefinition",
                         "src": "621:80:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70135,
+                            "id": 70209,
                             "nodeType": "StructuredDocumentation",
                             "src": "307:309:161",
                             "text": " @dev Indicates an error related to the current `balance` of a `sender`. Used in transfers.\n @param sender Address whose tokens are being transferred.\n @param balance Current balance for the interacting account.\n @param needed Minimum amount required to perform a transfer."
@@ -319,17 +319,17 @@ export const IERC1155Errors = {
                         "name": "ERC20InsufficientBalance",
                         "nameLocation": "627:24:161",
                         "parameters": {
-                            "id": 70142,
+                            "id": 70216,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70137,
+                                    "id": 70211,
                                     "mutability": "mutable",
                                     "name": "sender",
                                     "nameLocation": "660:6:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70143,
+                                    "scope": 70217,
                                     "src": "652:14:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -338,7 +338,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70136,
+                                        "id": 70210,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "652:7:161",
@@ -352,12 +352,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70139,
+                                    "id": 70213,
                                     "mutability": "mutable",
                                     "name": "balance",
                                     "nameLocation": "676:7:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70143,
+                                    "scope": 70217,
                                     "src": "668:15:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -366,7 +366,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70138,
+                                        "id": 70212,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "668:7:161",
@@ -379,12 +379,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70141,
+                                    "id": 70215,
                                     "mutability": "mutable",
                                     "name": "needed",
                                     "nameLocation": "693:6:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70143,
+                                    "scope": 70217,
                                     "src": "685:14:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -393,7 +393,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70140,
+                                        "id": 70214,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "685:7:161",
@@ -409,12 +409,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70148,
+                        "id": 70222,
                         "nodeType": "ErrorDefinition",
                         "src": "864:41:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70144,
+                            "id": 70218,
                             "nodeType": "StructuredDocumentation",
                             "src": "707:152:161",
                             "text": " @dev Indicates a failure with the token `sender`. Used in transfers.\n @param sender Address whose tokens are being transferred."
@@ -423,17 +423,17 @@ export const IERC1155Errors = {
                         "name": "ERC20InvalidSender",
                         "nameLocation": "870:18:161",
                         "parameters": {
-                            "id": 70147,
+                            "id": 70221,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70146,
+                                    "id": 70220,
                                     "mutability": "mutable",
                                     "name": "sender",
                                     "nameLocation": "897:6:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70148,
+                                    "scope": 70222,
                                     "src": "889:14:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -442,7 +442,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70145,
+                                        "id": 70219,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "889:7:161",
@@ -459,12 +459,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70153,
+                        "id": 70227,
                         "nodeType": "ErrorDefinition",
                         "src": "1075:45:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70149,
+                            "id": 70223,
                             "nodeType": "StructuredDocumentation",
                             "src": "911:159:161",
                             "text": " @dev Indicates a failure with the token `receiver`. Used in transfers.\n @param receiver Address to which tokens are being transferred."
@@ -473,17 +473,17 @@ export const IERC1155Errors = {
                         "name": "ERC20InvalidReceiver",
                         "nameLocation": "1081:20:161",
                         "parameters": {
-                            "id": 70152,
+                            "id": 70226,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70151,
+                                    "id": 70225,
                                     "mutability": "mutable",
                                     "name": "receiver",
                                     "nameLocation": "1110:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70153,
+                                    "scope": 70227,
                                     "src": "1102:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -492,7 +492,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70150,
+                                        "id": 70224,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1102:7:161",
@@ -509,12 +509,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70162,
+                        "id": 70236,
                         "nodeType": "ErrorDefinition",
                         "src": "1476:85:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70154,
+                            "id": 70228,
                             "nodeType": "StructuredDocumentation",
                             "src": "1126:345:161",
                             "text": " @dev Indicates a failure with the `spender`’s `allowance`. Used in transfers.\n @param spender Address that may be allowed to operate on tokens without being their owner.\n @param allowance Amount of tokens a `spender` is allowed to operate with.\n @param needed Minimum amount required to perform a transfer."
@@ -523,17 +523,17 @@ export const IERC1155Errors = {
                         "name": "ERC20InsufficientAllowance",
                         "nameLocation": "1482:26:161",
                         "parameters": {
-                            "id": 70161,
+                            "id": 70235,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70156,
+                                    "id": 70230,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "1517:7:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70162,
+                                    "scope": 70236,
                                     "src": "1509:15:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -542,7 +542,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70155,
+                                        "id": 70229,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1509:7:161",
@@ -556,12 +556,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70158,
+                                    "id": 70232,
                                     "mutability": "mutable",
                                     "name": "allowance",
                                     "nameLocation": "1534:9:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70162,
+                                    "scope": 70236,
                                     "src": "1526:17:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -570,7 +570,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70157,
+                                        "id": 70231,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1526:7:161",
@@ -583,12 +583,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70160,
+                                    "id": 70234,
                                     "mutability": "mutable",
                                     "name": "needed",
                                     "nameLocation": "1553:6:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70162,
+                                    "scope": 70236,
                                     "src": "1545:14:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -597,7 +597,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70159,
+                                        "id": 70233,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1545:7:161",
@@ -613,12 +613,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70167,
+                        "id": 70241,
                         "nodeType": "ErrorDefinition",
                         "src": "1746:45:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70163,
+                            "id": 70237,
                             "nodeType": "StructuredDocumentation",
                             "src": "1567:174:161",
                             "text": " @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.\n @param approver Address initiating an approval operation."
@@ -627,17 +627,17 @@ export const IERC1155Errors = {
                         "name": "ERC20InvalidApprover",
                         "nameLocation": "1752:20:161",
                         "parameters": {
-                            "id": 70166,
+                            "id": 70240,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70165,
+                                    "id": 70239,
                                     "mutability": "mutable",
                                     "name": "approver",
                                     "nameLocation": "1781:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70167,
+                                    "scope": 70241,
                                     "src": "1773:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -646,7 +646,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70164,
+                                        "id": 70238,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1773:7:161",
@@ -663,12 +663,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70172,
+                        "id": 70246,
                         "nodeType": "ErrorDefinition",
                         "src": "1997:43:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70168,
+                            "id": 70242,
                             "nodeType": "StructuredDocumentation",
                             "src": "1797:195:161",
                             "text": " @dev Indicates a failure with the `spender` to be approved. Used in approvals.\n @param spender Address that may be allowed to operate on tokens without being their owner."
@@ -677,17 +677,17 @@ export const IERC1155Errors = {
                         "name": "ERC20InvalidSpender",
                         "nameLocation": "2003:19:161",
                         "parameters": {
-                            "id": 70171,
+                            "id": 70245,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70170,
+                                    "id": 70244,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "2031:7:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70172,
+                                    "scope": 70246,
                                     "src": "2023:15:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -696,7 +696,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70169,
+                                        "id": 70243,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2023:7:161",
@@ -719,40 +719,40 @@ export const IERC1155Errors = {
                 "contractDependencies": [],
                 "contractKind": "interface",
                 "documentation": {
-                    "id": 70134,
+                    "id": 70208,
                     "nodeType": "StructuredDocumentation",
                     "src": "138:139:161",
                     "text": " @dev Standard ERC20 Errors\n Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC20 tokens."
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    70173
+                    70247
                 ],
                 "name": "IERC20Errors",
                 "nameLocation": "288:12:161",
-                "scope": 70269,
+                "scope": 70343,
                 "usedErrors": [
-                    70143,
-                    70148,
-                    70153,
-                    70162,
-                    70167,
-                    70172
+                    70217,
+                    70222,
+                    70227,
+                    70236,
+                    70241,
+                    70246
                 ],
                 "usedEvents": []
             },
             {
-                "id": 70221,
+                "id": 70295,
                 "nodeType": "ContractDefinition",
                 "src": "2186:2092:161",
                 "nodes": [
                     {
-                        "id": 70179,
+                        "id": 70253,
                         "nodeType": "ErrorDefinition",
                         "src": "2440:40:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70175,
+                            "id": 70249,
                             "nodeType": "StructuredDocumentation",
                             "src": "2216:219:161",
                             "text": " @dev Indicates that an address can't be an owner. For example, `address(0)` is a forbidden owner in EIP-20.\n Used in balance queries.\n @param owner Address of the current owner of a token."
@@ -761,17 +761,17 @@ export const IERC1155Errors = {
                         "name": "ERC721InvalidOwner",
                         "nameLocation": "2446:18:161",
                         "parameters": {
-                            "id": 70178,
+                            "id": 70252,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70177,
+                                    "id": 70251,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "2473:5:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70179,
+                                    "scope": 70253,
                                     "src": "2465:13:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -780,7 +780,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70176,
+                                        "id": 70250,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2465:7:161",
@@ -797,12 +797,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70184,
+                        "id": 70258,
                         "nodeType": "ErrorDefinition",
                         "src": "2623:46:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70180,
+                            "id": 70254,
                             "nodeType": "StructuredDocumentation",
                             "src": "2486:132:161",
                             "text": " @dev Indicates a `tokenId` whose `owner` is the zero address.\n @param tokenId Identifier number of a token."
@@ -811,17 +811,17 @@ export const IERC1155Errors = {
                         "name": "ERC721NonexistentToken",
                         "nameLocation": "2629:22:161",
                         "parameters": {
-                            "id": 70183,
+                            "id": 70257,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70182,
+                                    "id": 70256,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "2660:7:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70184,
+                                    "scope": 70258,
                                     "src": "2652:15:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -830,7 +830,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70181,
+                                        "id": 70255,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2652:7:161",
@@ -846,12 +846,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70193,
+                        "id": 70267,
                         "nodeType": "ErrorDefinition",
                         "src": "2969:75:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70185,
+                            "id": 70259,
                             "nodeType": "StructuredDocumentation",
                             "src": "2675:289:161",
                             "text": " @dev Indicates an error related to the ownership over a particular token. Used in transfers.\n @param sender Address whose tokens are being transferred.\n @param tokenId Identifier number of a token.\n @param owner Address of the current owner of a token."
@@ -860,17 +860,17 @@ export const IERC1155Errors = {
                         "name": "ERC721IncorrectOwner",
                         "nameLocation": "2975:20:161",
                         "parameters": {
-                            "id": 70192,
+                            "id": 70266,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70187,
+                                    "id": 70261,
                                     "mutability": "mutable",
                                     "name": "sender",
                                     "nameLocation": "3004:6:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70193,
+                                    "scope": 70267,
                                     "src": "2996:14:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -879,7 +879,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70186,
+                                        "id": 70260,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2996:7:161",
@@ -893,12 +893,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70189,
+                                    "id": 70263,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "3020:7:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70193,
+                                    "scope": 70267,
                                     "src": "3012:15:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -907,7 +907,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70188,
+                                        "id": 70262,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3012:7:161",
@@ -920,12 +920,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70191,
+                                    "id": 70265,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "3037:5:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70193,
+                                    "scope": 70267,
                                     "src": "3029:13:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -934,7 +934,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70190,
+                                        "id": 70264,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3029:7:161",
@@ -951,12 +951,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70198,
+                        "id": 70272,
                         "nodeType": "ErrorDefinition",
                         "src": "3207:42:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70194,
+                            "id": 70268,
                             "nodeType": "StructuredDocumentation",
                             "src": "3050:152:161",
                             "text": " @dev Indicates a failure with the token `sender`. Used in transfers.\n @param sender Address whose tokens are being transferred."
@@ -965,17 +965,17 @@ export const IERC1155Errors = {
                         "name": "ERC721InvalidSender",
                         "nameLocation": "3213:19:161",
                         "parameters": {
-                            "id": 70197,
+                            "id": 70271,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70196,
+                                    "id": 70270,
                                     "mutability": "mutable",
                                     "name": "sender",
                                     "nameLocation": "3241:6:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70198,
+                                    "scope": 70272,
                                     "src": "3233:14:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -984,7 +984,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70195,
+                                        "id": 70269,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3233:7:161",
@@ -1001,12 +1001,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70203,
+                        "id": 70277,
                         "nodeType": "ErrorDefinition",
                         "src": "3419:46:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70199,
+                            "id": 70273,
                             "nodeType": "StructuredDocumentation",
                             "src": "3255:159:161",
                             "text": " @dev Indicates a failure with the token `receiver`. Used in transfers.\n @param receiver Address to which tokens are being transferred."
@@ -1015,17 +1015,17 @@ export const IERC1155Errors = {
                         "name": "ERC721InvalidReceiver",
                         "nameLocation": "3425:21:161",
                         "parameters": {
-                            "id": 70202,
+                            "id": 70276,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70201,
+                                    "id": 70275,
                                     "mutability": "mutable",
                                     "name": "receiver",
                                     "nameLocation": "3455:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70203,
+                                    "scope": 70277,
                                     "src": "3447:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1034,7 +1034,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70200,
+                                        "id": 70274,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3447:7:161",
@@ -1051,12 +1051,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70210,
+                        "id": 70284,
                         "nodeType": "ErrorDefinition",
                         "src": "3723:68:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70204,
+                            "id": 70278,
                             "nodeType": "StructuredDocumentation",
                             "src": "3471:247:161",
                             "text": " @dev Indicates a failure with the `operator`’s approval. Used in transfers.\n @param operator Address that may be allowed to operate on tokens without being their owner.\n @param tokenId Identifier number of a token."
@@ -1065,17 +1065,17 @@ export const IERC1155Errors = {
                         "name": "ERC721InsufficientApproval",
                         "nameLocation": "3729:26:161",
                         "parameters": {
-                            "id": 70209,
+                            "id": 70283,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70206,
+                                    "id": 70280,
                                     "mutability": "mutable",
                                     "name": "operator",
                                     "nameLocation": "3764:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70210,
+                                    "scope": 70284,
                                     "src": "3756:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1084,7 +1084,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70205,
+                                        "id": 70279,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3756:7:161",
@@ -1098,12 +1098,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70208,
+                                    "id": 70282,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "3782:7:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70210,
+                                    "scope": 70284,
                                     "src": "3774:15:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1112,7 +1112,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70207,
+                                        "id": 70281,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3774:7:161",
@@ -1128,12 +1128,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70215,
+                        "id": 70289,
                         "nodeType": "ErrorDefinition",
                         "src": "3976:46:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70211,
+                            "id": 70285,
                             "nodeType": "StructuredDocumentation",
                             "src": "3797:174:161",
                             "text": " @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.\n @param approver Address initiating an approval operation."
@@ -1142,17 +1142,17 @@ export const IERC1155Errors = {
                         "name": "ERC721InvalidApprover",
                         "nameLocation": "3982:21:161",
                         "parameters": {
-                            "id": 70214,
+                            "id": 70288,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70213,
+                                    "id": 70287,
                                     "mutability": "mutable",
                                     "name": "approver",
                                     "nameLocation": "4012:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70215,
+                                    "scope": 70289,
                                     "src": "4004:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1161,7 +1161,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70212,
+                                        "id": 70286,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4004:7:161",
@@ -1178,12 +1178,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70220,
+                        "id": 70294,
                         "nodeType": "ErrorDefinition",
                         "src": "4230:46:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70216,
+                            "id": 70290,
                             "nodeType": "StructuredDocumentation",
                             "src": "4028:197:161",
                             "text": " @dev Indicates a failure with the `operator` to be approved. Used in approvals.\n @param operator Address that may be allowed to operate on tokens without being their owner."
@@ -1192,17 +1192,17 @@ export const IERC1155Errors = {
                         "name": "ERC721InvalidOperator",
                         "nameLocation": "4236:21:161",
                         "parameters": {
-                            "id": 70219,
+                            "id": 70293,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70218,
+                                    "id": 70292,
                                     "mutability": "mutable",
                                     "name": "operator",
                                     "nameLocation": "4266:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70220,
+                                    "scope": 70294,
                                     "src": "4258:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1211,7 +1211,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70217,
+                                        "id": 70291,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4258:7:161",
@@ -1234,42 +1234,42 @@ export const IERC1155Errors = {
                 "contractDependencies": [],
                 "contractKind": "interface",
                 "documentation": {
-                    "id": 70174,
+                    "id": 70248,
                     "nodeType": "StructuredDocumentation",
                     "src": "2044:141:161",
                     "text": " @dev Standard ERC721 Errors\n Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC721 tokens."
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    70221
+                    70295
                 ],
                 "name": "IERC721Errors",
                 "nameLocation": "2196:13:161",
-                "scope": 70269,
+                "scope": 70343,
                 "usedErrors": [
-                    70179,
-                    70184,
-                    70193,
-                    70198,
-                    70203,
-                    70210,
-                    70215,
-                    70220
+                    70253,
+                    70258,
+                    70267,
+                    70272,
+                    70277,
+                    70284,
+                    70289,
+                    70294
                 ],
                 "usedEvents": []
             },
             {
-                "id": 70268,
+                "id": 70342,
                 "nodeType": "ContractDefinition",
                 "src": "4424:2107:161",
                 "nodes": [
                     {
-                        "id": 70233,
+                        "id": 70307,
                         "nodeType": "ErrorDefinition",
                         "src": "4821:99:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70223,
+                            "id": 70297,
                             "nodeType": "StructuredDocumentation",
                             "src": "4455:361:161",
                             "text": " @dev Indicates an error related to the current `balance` of a `sender`. Used in transfers.\n @param sender Address whose tokens are being transferred.\n @param balance Current balance for the interacting account.\n @param needed Minimum amount required to perform a transfer.\n @param tokenId Identifier number of a token."
@@ -1278,17 +1278,17 @@ export const IERC1155Errors = {
                         "name": "ERC1155InsufficientBalance",
                         "nameLocation": "4827:26:161",
                         "parameters": {
-                            "id": 70232,
+                            "id": 70306,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70225,
+                                    "id": 70299,
                                     "mutability": "mutable",
                                     "name": "sender",
                                     "nameLocation": "4862:6:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70233,
+                                    "scope": 70307,
                                     "src": "4854:14:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1297,7 +1297,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70224,
+                                        "id": 70298,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4854:7:161",
@@ -1311,12 +1311,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70227,
+                                    "id": 70301,
                                     "mutability": "mutable",
                                     "name": "balance",
                                     "nameLocation": "4878:7:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70233,
+                                    "scope": 70307,
                                     "src": "4870:15:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1325,7 +1325,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70226,
+                                        "id": 70300,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4870:7:161",
@@ -1338,12 +1338,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70229,
+                                    "id": 70303,
                                     "mutability": "mutable",
                                     "name": "needed",
                                     "nameLocation": "4895:6:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70233,
+                                    "scope": 70307,
                                     "src": "4887:14:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1352,7 +1352,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70228,
+                                        "id": 70302,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4887:7:161",
@@ -1365,12 +1365,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70231,
+                                    "id": 70305,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "4911:7:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70233,
+                                    "scope": 70307,
                                     "src": "4903:15:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1379,7 +1379,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70230,
+                                        "id": 70304,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4903:7:161",
@@ -1395,12 +1395,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70238,
+                        "id": 70312,
                         "nodeType": "ErrorDefinition",
                         "src": "5083:43:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70234,
+                            "id": 70308,
                             "nodeType": "StructuredDocumentation",
                             "src": "4926:152:161",
                             "text": " @dev Indicates a failure with the token `sender`. Used in transfers.\n @param sender Address whose tokens are being transferred."
@@ -1409,17 +1409,17 @@ export const IERC1155Errors = {
                         "name": "ERC1155InvalidSender",
                         "nameLocation": "5089:20:161",
                         "parameters": {
-                            "id": 70237,
+                            "id": 70311,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70236,
+                                    "id": 70310,
                                     "mutability": "mutable",
                                     "name": "sender",
                                     "nameLocation": "5118:6:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70238,
+                                    "scope": 70312,
                                     "src": "5110:14:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1428,7 +1428,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70235,
+                                        "id": 70309,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5110:7:161",
@@ -1445,12 +1445,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70243,
+                        "id": 70317,
                         "nodeType": "ErrorDefinition",
                         "src": "5296:47:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70239,
+                            "id": 70313,
                             "nodeType": "StructuredDocumentation",
                             "src": "5132:159:161",
                             "text": " @dev Indicates a failure with the token `receiver`. Used in transfers.\n @param receiver Address to which tokens are being transferred."
@@ -1459,17 +1459,17 @@ export const IERC1155Errors = {
                         "name": "ERC1155InvalidReceiver",
                         "nameLocation": "5302:22:161",
                         "parameters": {
-                            "id": 70242,
+                            "id": 70316,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70241,
+                                    "id": 70315,
                                     "mutability": "mutable",
                                     "name": "receiver",
                                     "nameLocation": "5333:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70243,
+                                    "scope": 70317,
                                     "src": "5325:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1478,7 +1478,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70240,
+                                        "id": 70314,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5325:7:161",
@@ -1495,12 +1495,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70250,
+                        "id": 70324,
                         "nodeType": "ErrorDefinition",
                         "src": "5610:68:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70244,
+                            "id": 70318,
                             "nodeType": "StructuredDocumentation",
                             "src": "5349:256:161",
                             "text": " @dev Indicates a failure with the `operator`’s approval. Used in transfers.\n @param operator Address that may be allowed to operate on tokens without being their owner.\n @param owner Address of the current owner of a token."
@@ -1509,17 +1509,17 @@ export const IERC1155Errors = {
                         "name": "ERC1155MissingApprovalForAll",
                         "nameLocation": "5616:28:161",
                         "parameters": {
-                            "id": 70249,
+                            "id": 70323,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70246,
+                                    "id": 70320,
                                     "mutability": "mutable",
                                     "name": "operator",
                                     "nameLocation": "5653:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70250,
+                                    "scope": 70324,
                                     "src": "5645:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1528,7 +1528,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70245,
+                                        "id": 70319,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5645:7:161",
@@ -1542,12 +1542,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70248,
+                                    "id": 70322,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "5671:5:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70250,
+                                    "scope": 70324,
                                     "src": "5663:13:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1556,7 +1556,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70247,
+                                        "id": 70321,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5663:7:161",
@@ -1573,12 +1573,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70255,
+                        "id": 70329,
                         "nodeType": "ErrorDefinition",
                         "src": "5863:47:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70251,
+                            "id": 70325,
                             "nodeType": "StructuredDocumentation",
                             "src": "5684:174:161",
                             "text": " @dev Indicates a failure with the `approver` of a token to be approved. Used in approvals.\n @param approver Address initiating an approval operation."
@@ -1587,17 +1587,17 @@ export const IERC1155Errors = {
                         "name": "ERC1155InvalidApprover",
                         "nameLocation": "5869:22:161",
                         "parameters": {
-                            "id": 70254,
+                            "id": 70328,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70253,
+                                    "id": 70327,
                                     "mutability": "mutable",
                                     "name": "approver",
                                     "nameLocation": "5900:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70255,
+                                    "scope": 70329,
                                     "src": "5892:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1606,7 +1606,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70252,
+                                        "id": 70326,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5892:7:161",
@@ -1623,12 +1623,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70260,
+                        "id": 70334,
                         "nodeType": "ErrorDefinition",
                         "src": "6118:47:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70256,
+                            "id": 70330,
                             "nodeType": "StructuredDocumentation",
                             "src": "5916:197:161",
                             "text": " @dev Indicates a failure with the `operator` to be approved. Used in approvals.\n @param operator Address that may be allowed to operate on tokens without being their owner."
@@ -1637,17 +1637,17 @@ export const IERC1155Errors = {
                         "name": "ERC1155InvalidOperator",
                         "nameLocation": "6124:22:161",
                         "parameters": {
-                            "id": 70259,
+                            "id": 70333,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70258,
+                                    "id": 70332,
                                     "mutability": "mutable",
                                     "name": "operator",
                                     "nameLocation": "6155:8:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70260,
+                                    "scope": 70334,
                                     "src": "6147:16:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1656,7 +1656,7 @@ export const IERC1155Errors = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 70257,
+                                        "id": 70331,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6147:7:161",
@@ -1673,12 +1673,12 @@ export const IERC1155Errors = {
                         }
                     },
                     {
-                        "id": 70267,
+                        "id": 70341,
                         "nodeType": "ErrorDefinition",
                         "src": "6456:73:161",
                         "nodes": [],
                         "documentation": {
-                            "id": 70261,
+                            "id": 70335,
                             "nodeType": "StructuredDocumentation",
                             "src": "6171:280:161",
                             "text": " @dev Indicates an array length mismatch between ids and values in a safeBatchTransferFrom operation.\n Used in batch transfers.\n @param idsLength Length of the array of token identifiers\n @param valuesLength Length of the array of token amounts"
@@ -1687,17 +1687,17 @@ export const IERC1155Errors = {
                         "name": "ERC1155InvalidArrayLength",
                         "nameLocation": "6462:25:161",
                         "parameters": {
-                            "id": 70266,
+                            "id": 70340,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 70263,
+                                    "id": 70337,
                                     "mutability": "mutable",
                                     "name": "idsLength",
                                     "nameLocation": "6496:9:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70267,
+                                    "scope": 70341,
                                     "src": "6488:17:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1706,7 +1706,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70262,
+                                        "id": 70336,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6488:7:161",
@@ -1719,12 +1719,12 @@ export const IERC1155Errors = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 70265,
+                                    "id": 70339,
                                     "mutability": "mutable",
                                     "name": "valuesLength",
                                     "nameLocation": "6515:12:161",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 70267,
+                                    "scope": 70341,
                                     "src": "6507:20:161",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1733,7 +1733,7 @@ export const IERC1155Errors = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 70264,
+                                        "id": 70338,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6507:7:161",
@@ -1755,26 +1755,26 @@ export const IERC1155Errors = {
                 "contractDependencies": [],
                 "contractKind": "interface",
                 "documentation": {
-                    "id": 70222,
+                    "id": 70296,
                     "nodeType": "StructuredDocumentation",
                     "src": "4280:143:161",
                     "text": " @dev Standard ERC1155 Errors\n Interface of the https://eips.ethereum.org/EIPS/eip-6093[ERC-6093] custom errors for ERC1155 tokens."
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    70268
+                    70342
                 ],
                 "name": "IERC1155Errors",
                 "nameLocation": "4434:14:161",
-                "scope": 70269,
+                "scope": 70343,
                 "usedErrors": [
-                    70233,
-                    70238,
-                    70243,
-                    70250,
-                    70255,
-                    70260,
-                    70267
+                    70307,
+                    70312,
+                    70317,
+                    70324,
+                    70329,
+                    70334,
+                    70341
                 ],
                 "usedEvents": []
             }

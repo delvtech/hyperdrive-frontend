@@ -500,17 +500,17 @@ export const IMultiTokenRead = {
     },
     "ast": {
         "absolutePath": "contracts/src/interfaces/IMultiTokenRead.sol",
-        "id": 11698,
+        "id": 11548,
         "exportedSymbols": {
             "IMultiTokenRead": [
-                11697
+                11547
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:2172:100",
         "nodes": [
             {
-                "id": 11626,
+                "id": 11476,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:100",
                 "nodes": [],
@@ -521,17 +521,17 @@ export const IMultiTokenRead = {
                 ]
             },
             {
-                "id": 11697,
+                "id": 11547,
                 "nodeType": "ContractDefinition",
                 "src": "64:2146:100",
                 "nodes": [
                     {
-                        "id": 11632,
+                        "id": 11482,
                         "nodeType": "FunctionDefinition",
                         "src": "197:50:100",
                         "nodes": [],
                         "documentation": {
-                            "id": 11627,
+                            "id": 11477,
                             "nodeType": "StructuredDocumentation",
                             "src": "96:96:100",
                             "text": "@notice Gets the decimals of the MultiToken.\n @return The decimals of the MultiToken."
@@ -543,23 +543,23 @@ export const IMultiTokenRead = {
                         "name": "decimals",
                         "nameLocation": "206:8:100",
                         "parameters": {
-                            "id": 11628,
+                            "id": 11478,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "214:2:100"
                         },
                         "returnParameters": {
-                            "id": 11631,
+                            "id": 11481,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11630,
+                                    "id": 11480,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11632,
+                                    "scope": 11482,
                                     "src": "240:5:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -568,7 +568,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 11629,
+                                        "id": 11479,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "240:5:100",
@@ -582,18 +582,18 @@ export const IMultiTokenRead = {
                             ],
                             "src": "239:7:100"
                         },
-                        "scope": 11697,
+                        "scope": 11547,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11640,
+                        "id": 11490,
                         "nodeType": "FunctionDefinition",
                         "src": "387:69:100",
                         "nodes": [],
                         "documentation": {
-                            "id": 11633,
+                            "id": 11483,
                             "nodeType": "StructuredDocumentation",
                             "src": "253:129:100",
                             "text": "@notice Gets the name of the MultiToken.\n @param tokenId The sub-token ID.\n @return The name of the MultiToken."
@@ -605,17 +605,17 @@ export const IMultiTokenRead = {
                         "name": "name",
                         "nameLocation": "396:4:100",
                         "parameters": {
-                            "id": 11636,
+                            "id": 11486,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11635,
+                                    "id": 11485,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "409:7:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11640,
+                                    "scope": 11490,
                                     "src": "401:15:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -624,7 +624,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11634,
+                                        "id": 11484,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "401:7:100",
@@ -639,17 +639,17 @@ export const IMultiTokenRead = {
                             "src": "400:17:100"
                         },
                         "returnParameters": {
-                            "id": 11639,
+                            "id": 11489,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11638,
+                                    "id": 11488,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11640,
+                                    "scope": 11490,
                                     "src": "441:13:100",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -658,7 +658,7 @@ export const IMultiTokenRead = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 11637,
+                                        "id": 11487,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "441:6:100",
@@ -672,18 +672,18 @@ export const IMultiTokenRead = {
                             ],
                             "src": "440:15:100"
                         },
-                        "scope": 11697,
+                        "scope": 11547,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11648,
+                        "id": 11498,
                         "nodeType": "FunctionDefinition",
                         "src": "600:71:100",
                         "nodes": [],
                         "documentation": {
-                            "id": 11641,
+                            "id": 11491,
                             "nodeType": "StructuredDocumentation",
                             "src": "462:133:100",
                             "text": "@notice Gets the symbol of the MultiToken.\n @param tokenId The sub-token ID.\n @return The symbol of the MultiToken."
@@ -695,17 +695,17 @@ export const IMultiTokenRead = {
                         "name": "symbol",
                         "nameLocation": "609:6:100",
                         "parameters": {
-                            "id": 11644,
+                            "id": 11494,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11643,
+                                    "id": 11493,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "624:7:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11648,
+                                    "scope": 11498,
                                     "src": "616:15:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -714,7 +714,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11642,
+                                        "id": 11492,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "616:7:100",
@@ -729,17 +729,17 @@ export const IMultiTokenRead = {
                             "src": "615:17:100"
                         },
                         "returnParameters": {
-                            "id": 11647,
+                            "id": 11497,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11646,
+                                    "id": 11496,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11648,
+                                    "scope": 11498,
                                     "src": "656:13:100",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -748,7 +748,7 @@ export const IMultiTokenRead = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 11645,
+                                        "id": 11495,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "656:6:100",
@@ -762,18 +762,18 @@ export const IMultiTokenRead = {
                             ],
                             "src": "655:15:100"
                         },
-                        "scope": 11697,
+                        "scope": 11547,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11656,
+                        "id": 11506,
                         "nodeType": "FunctionDefinition",
                         "src": "827:70:100",
                         "nodes": [],
                         "documentation": {
-                            "id": 11649,
+                            "id": 11499,
                             "nodeType": "StructuredDocumentation",
                             "src": "677:145:100",
                             "text": "@notice Gets the total supply of the MultiToken.\n @param tokenId The sub-token ID.\n @return The total supply of the MultiToken."
@@ -785,17 +785,17 @@ export const IMultiTokenRead = {
                         "name": "totalSupply",
                         "nameLocation": "836:11:100",
                         "parameters": {
-                            "id": 11652,
+                            "id": 11502,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11651,
+                                    "id": 11501,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "856:7:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11656,
+                                    "scope": 11506,
                                     "src": "848:15:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -804,7 +804,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11650,
+                                        "id": 11500,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "848:7:100",
@@ -819,17 +819,17 @@ export const IMultiTokenRead = {
                             "src": "847:17:100"
                         },
                         "returnParameters": {
-                            "id": 11655,
+                            "id": 11505,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11654,
+                                    "id": 11504,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11656,
+                                    "scope": 11506,
                                     "src": "888:7:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -838,7 +838,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11653,
+                                        "id": 11503,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "888:7:100",
@@ -852,18 +852,18 @@ export const IMultiTokenRead = {
                             ],
                             "src": "887:9:100"
                         },
-                        "scope": 11697,
+                        "scope": 11547,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11666,
+                        "id": 11516,
                         "nodeType": "FunctionDefinition",
                         "src": "1174:109:100",
                         "nodes": [],
                         "documentation": {
-                            "id": 11657,
+                            "id": 11507,
                             "nodeType": "StructuredDocumentation",
                             "src": "903:266:100",
                             "text": "@notice Gets the approval-for-all status of a spender on behalf of an\n         owner.\n @param owner The owner of the tokens.\n @param spender The spender of the tokens.\n @return The approval-for-all status of the spender for the owner."
@@ -875,17 +875,17 @@ export const IMultiTokenRead = {
                         "name": "isApprovedForAll",
                         "nameLocation": "1183:16:100",
                         "parameters": {
-                            "id": 11662,
+                            "id": 11512,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11659,
+                                    "id": 11509,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "1217:5:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11666,
+                                    "scope": 11516,
                                     "src": "1209:13:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -894,7 +894,7 @@ export const IMultiTokenRead = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11658,
+                                        "id": 11508,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1209:7:100",
@@ -908,12 +908,12 @@ export const IMultiTokenRead = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11661,
+                                    "id": 11511,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "1240:7:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11666,
+                                    "scope": 11516,
                                     "src": "1232:15:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -922,7 +922,7 @@ export const IMultiTokenRead = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11660,
+                                        "id": 11510,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1232:7:100",
@@ -938,17 +938,17 @@ export const IMultiTokenRead = {
                             "src": "1199:54:100"
                         },
                         "returnParameters": {
-                            "id": 11665,
+                            "id": 11515,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11664,
+                                    "id": 11514,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11666,
+                                    "scope": 11516,
                                     "src": "1277:4:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -957,7 +957,7 @@ export const IMultiTokenRead = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 11663,
+                                        "id": 11513,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1277:4:100",
@@ -971,18 +971,18 @@ export const IMultiTokenRead = {
                             ],
                             "src": "1276:6:100"
                         },
-                        "scope": 11697,
+                        "scope": 11547,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11678,
+                        "id": 11528,
                         "nodeType": "FunctionDefinition",
                         "src": "1551:138:100",
                         "nodes": [],
                         "documentation": {
-                            "id": 11667,
+                            "id": 11517,
                             "nodeType": "StructuredDocumentation",
                             "src": "1289:257:100",
                             "text": "@notice Gets the allowance of a spender for a sub-token.\n @param tokenId The sub-token ID.\n @param owner The owner of the tokens.\n @param spender The spender of the tokens.\n @return The allowance of the spender for the owner."
@@ -994,17 +994,17 @@ export const IMultiTokenRead = {
                         "name": "perTokenApprovals",
                         "nameLocation": "1560:17:100",
                         "parameters": {
-                            "id": 11674,
+                            "id": 11524,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11669,
+                                    "id": 11519,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "1595:7:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11678,
+                                    "scope": 11528,
                                     "src": "1587:15:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1013,7 +1013,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11668,
+                                        "id": 11518,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1587:7:100",
@@ -1026,12 +1026,12 @@ export const IMultiTokenRead = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11671,
+                                    "id": 11521,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "1620:5:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11678,
+                                    "scope": 11528,
                                     "src": "1612:13:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1040,7 +1040,7 @@ export const IMultiTokenRead = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11670,
+                                        "id": 11520,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1612:7:100",
@@ -1054,12 +1054,12 @@ export const IMultiTokenRead = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11673,
+                                    "id": 11523,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "1643:7:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11678,
+                                    "scope": 11528,
                                     "src": "1635:15:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1068,7 +1068,7 @@ export const IMultiTokenRead = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11672,
+                                        "id": 11522,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1635:7:100",
@@ -1084,17 +1084,17 @@ export const IMultiTokenRead = {
                             "src": "1577:79:100"
                         },
                         "returnParameters": {
-                            "id": 11677,
+                            "id": 11527,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11676,
+                                    "id": 11526,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11678,
+                                    "scope": 11528,
                                     "src": "1680:7:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1103,7 +1103,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11675,
+                                        "id": 11525,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1680:7:100",
@@ -1117,18 +1117,18 @@ export const IMultiTokenRead = {
                             ],
                             "src": "1679:9:100"
                         },
-                        "scope": 11697,
+                        "scope": 11547,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11688,
+                        "id": 11538,
                         "nodeType": "FunctionDefinition",
                         "src": "1887:105:100",
                         "nodes": [],
                         "documentation": {
-                            "id": 11679,
+                            "id": 11529,
                             "nodeType": "StructuredDocumentation",
                             "src": "1695:187:100",
                             "text": "@notice Gets the balance of a spender for a sub-token.\n @param tokenId The sub-token ID.\n @param owner The owner of the tokens.\n @return The balance of the owner."
@@ -1140,17 +1140,17 @@ export const IMultiTokenRead = {
                         "name": "balanceOf",
                         "nameLocation": "1896:9:100",
                         "parameters": {
-                            "id": 11684,
+                            "id": 11534,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11681,
+                                    "id": 11531,
                                     "mutability": "mutable",
                                     "name": "tokenId",
                                     "nameLocation": "1923:7:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11688,
+                                    "scope": 11538,
                                     "src": "1915:15:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1159,7 +1159,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11680,
+                                        "id": 11530,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1915:7:100",
@@ -1172,12 +1172,12 @@ export const IMultiTokenRead = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 11683,
+                                    "id": 11533,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "1948:5:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11688,
+                                    "scope": 11538,
                                     "src": "1940:13:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1186,7 +1186,7 @@ export const IMultiTokenRead = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11682,
+                                        "id": 11532,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1940:7:100",
@@ -1202,17 +1202,17 @@ export const IMultiTokenRead = {
                             "src": "1905:54:100"
                         },
                         "returnParameters": {
-                            "id": 11687,
+                            "id": 11537,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11686,
+                                    "id": 11536,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11688,
+                                    "scope": 11538,
                                     "src": "1983:7:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1221,7 +1221,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11685,
+                                        "id": 11535,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1983:7:100",
@@ -1235,18 +1235,18 @@ export const IMultiTokenRead = {
                             ],
                             "src": "1982:9:100"
                         },
-                        "scope": 11697,
+                        "scope": 11547,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 11696,
+                        "id": 11546,
                         "nodeType": "FunctionDefinition",
                         "src": "2145:63:100",
                         "nodes": [],
                         "documentation": {
-                            "id": 11689,
+                            "id": 11539,
                             "nodeType": "StructuredDocumentation",
                             "src": "1998:142:100",
                             "text": "@notice Gets the permit nonce for an account.\n @param owner The owner of the tokens.\n @return The permit nonce of the owner."
@@ -1258,17 +1258,17 @@ export const IMultiTokenRead = {
                         "name": "nonces",
                         "nameLocation": "2154:6:100",
                         "parameters": {
-                            "id": 11692,
+                            "id": 11542,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11691,
+                                    "id": 11541,
                                     "mutability": "mutable",
                                     "name": "owner",
                                     "nameLocation": "2169:5:100",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11696,
+                                    "scope": 11546,
                                     "src": "2161:13:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1277,7 +1277,7 @@ export const IMultiTokenRead = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 11690,
+                                        "id": 11540,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2161:7:100",
@@ -1293,17 +1293,17 @@ export const IMultiTokenRead = {
                             "src": "2160:15:100"
                         },
                         "returnParameters": {
-                            "id": 11695,
+                            "id": 11545,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 11694,
+                                    "id": 11544,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 11696,
+                                    "scope": 11546,
                                     "src": "2199:7:100",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1312,7 +1312,7 @@ export const IMultiTokenRead = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 11693,
+                                        "id": 11543,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2199:7:100",
@@ -1326,7 +1326,7 @@ export const IMultiTokenRead = {
                             ],
                             "src": "2198:9:100"
                         },
-                        "scope": 11697,
+                        "scope": 11547,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "external"
@@ -1339,11 +1339,11 @@ export const IMultiTokenRead = {
                 "contractKind": "interface",
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    11697
+                    11547
                 ],
                 "name": "IMultiTokenRead",
                 "nameLocation": "74:15:100",
-                "scope": 11698,
+                "scope": 11548,
                 "usedErrors": [],
                 "usedEvents": []
             }

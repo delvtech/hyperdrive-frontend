@@ -616,7 +616,7 @@ export const IMockMultiToken = {
         "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
         "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc"
     },
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"PERMIT_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"__external_transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_who\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"__setBalanceOf\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"batchTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"domainSeparator\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"perTokenApprovals\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permitForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"setApprovalBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"transferFromBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"PERMIT_TYPEHASH()\":{\"returns\":{\"_0\":\"The EIP712 permit typehash of the MultiToken.\"}},\"balanceOf(uint256,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The balance of the owner.\"}},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"params\":{\"from\":\"The source account.\",\"ids\":\"The array of token ids of the asset to transfer.\",\"to\":\"The destination account.\",\"values\":\"The amount of each token to transfer.\"}},\"decimals()\":{\"returns\":{\"_0\":\"The decimals of the MultiToken.\"}},\"domainSeparator()\":{\"returns\":{\"_0\":\"The EIP712 domain separator of the MultiToken.\"}},\"isApprovedForAll(address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\"},\"returns\":{\"_0\":\"The approval-for-all status of the spender for the owner.\"}},\"name(uint256)\":{\"params\":{\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The name of the MultiToken.\"}},\"nonces(address)\":{\"params\":{\"owner\":\"The owner of the tokens.\"},\"returns\":{\"_0\":\"The permit nonce of the owner.\"}},\"perTokenApprovals(uint256,address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\",\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The allowance of the spender for the owner.\"}},\"permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"details\":\"The signature for this function follows EIP 712 standard and should      be generated with the eth_signTypedData JSON RPC call instead of      the eth_sign JSON RPC call. If using out of date parity signing      libraries the v component may need to be adjusted. Also it is very      rare but possible for v to be other values, those values are not      supported.\",\"params\":{\"_approved\":\"A boolean of the approval status to set to.\",\"deadline\":\"The timestamp which the signature must be submitted by        to be valid.\",\"owner\":\"The owner of the account which is having the new approval set.\",\"r\":\"The r component of the ECDSA signature.\",\"s\":\"The s component of the ECDSA signature.\",\"spender\":\"The address which will be allowed to spend owner's tokens.\",\"v\":\"Extra ECDSA data which allows public key recovery from        signature assumed to be 27 or 28.\"}},\"setApproval(uint256,address,uint256)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to        uint256.max will cause the value to never decrement (saving gas        on transfer).\",\"operator\":\"The address who will be able to use the tokens.\",\"tokenID\":\"The asset to approve the use of.\"}},\"setApprovalBridge(uint256,address,uint256,address)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to        uint256.max will cause the value to never decrement [saving gas        on transfer].\",\"caller\":\"The eth address which called the linking contract.\",\"operator\":\"The address who will be able to use the tokens.\",\"tokenID\":\"The asset to approve the use of.\"}},\"setApprovalForAll(address,bool)\":{\"params\":{\"approved\":\"True to approve, false to remove approval.\",\"operator\":\"The eth address which can access the caller's assets.\"}},\"symbol(uint256)\":{\"params\":{\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The symbol of the MultiToken.\"}},\"totalSupply(uint256)\":{\"params\":{\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The total supply of the MultiToken.\"}},\"transferFrom(uint256,address,address,uint256)\":{\"params\":{\"amount\":\"The amount of token to move.\",\"from\":\"The address whose balance will be reduced.\",\"to\":\"The address whose balance will be increased.\",\"tokenID\":\"The token identifier.\"}},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"params\":{\"amount\":\"The amount of token to move.\",\"caller\":\"The msg.sender or the caller of the ERC20Forwarder.\",\"from\":\"The address whose balance will be reduced.\",\"to\":\"The address whose balance will be increased.\",\"tokenID\":\"The token identifier.\"}}},\"version\":1},\"userdoc\":{\"events\":{\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"PERMIT_TYPEHASH()\":{\"notice\":\"Gets the EIP712 permit typehash of the MultiToken.\"},\"balanceOf(uint256,address)\":{\"notice\":\"Gets the balance of a spender for a sub-token.\"},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"notice\":\"Transfers several assets from one account to another.\"},\"decimals()\":{\"notice\":\"Gets the decimals of the MultiToken.\"},\"domainSeparator()\":{\"notice\":\"Gets the EIP712 domain separator of the MultiToken.\"},\"isApprovedForAll(address,address)\":{\"notice\":\"Gets the approval-for-all status of a spender on behalf of an         owner.\"},\"name(uint256)\":{\"notice\":\"Gets the name of the MultiToken.\"},\"nonces(address)\":{\"notice\":\"Gets the permit nonce for an account.\"},\"perTokenApprovals(uint256,address,address)\":{\"notice\":\"Gets the allowance of a spender for a sub-token.\"},\"permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"notice\":\"Allows a caller who is not the owner of an account to execute the         functionality of 'approve' for all assets with the owner's         signature.\"},\"setApproval(uint256,address,uint256)\":{\"notice\":\"Allows a user to set an approval for an individual asset with         specific amount.\"},\"setApprovalBridge(uint256,address,uint256,address)\":{\"notice\":\"Allows the compatibility linking contract to forward calls to         set asset approvals.\"},\"setApprovalForAll(address,bool)\":{\"notice\":\"Allows a user to approve an operator to use all of their assets.\"},\"symbol(uint256)\":{\"notice\":\"Gets the symbol of the MultiToken.\"},\"totalSupply(uint256)\":{\"notice\":\"Gets the total supply of the MultiToken.\"},\"transferFrom(uint256,address,address,uint256)\":{\"notice\":\"Transfers an amount of assets from the source to the destination.\"},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"notice\":\"Permissioned transfer for the bridge to access, only callable by         the ERC20 linking bridge.\"}},\"notice\":\"DEPRECATED: Don't use this for new tests.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/MockMultiToken.sol\":\"IMockMultiToken\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/external/Hyperdrive.sol\":{\"keccak256\":\"0x4d166ec6a8a2e3f2cae2d0f990d1cc40965ec995130d7a7be1af2b9e390d3fd8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2185afc7935052ce78427f3ee5629d4c6d93cbffad776fb281c2b79ff2234d67\",\"dweb:/ipfs/QmT6e2H7pXG3e2BM1EoHTxzWhTwxjGu75AxNkZ4CxyEbw6\"]},\"contracts/src/external/HyperdriveTarget0.sol\":{\"keccak256\":\"0x9cf2186541b5454544930c45d3ca5a7396a9122d7218e42670ae6e77eba7fe92\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6d3da4a8aadd58e9f2ddc4c0fed4b91be1f4d8d572c7cb9eea7c6f2aa416b206\",\"dweb:/ipfs/QmcSDMBvhpkMi2NPqWhbgvK2qBzUaihW28t3KpZMxmCrmF\"]},\"contracts/src/external/HyperdriveTarget1.sol\":{\"keccak256\":\"0xafc075dac84c3c9d5be703d5068cc2a30875f16107b884c8ee416e877422c6da\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://12d86af9b6684898a97a67e268137da7a5fcff8f484c01dd73d92d2b2f1b881e\",\"dweb:/ipfs/QmQg2gg35jjmuG27HWjRVG65gYCdGmCHmCoiDC3GRoAMr7\"]},\"contracts/src/external/HyperdriveTarget2.sol\":{\"keccak256\":\"0xf5501de742b9054f1c8cbf6234e66aac5ca0380016cfa65ecd01840c2e857e79\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3d971dfdd0986a75c0fa5d55fc3b7c4edb8126201a53f325d8bb6df293b94d39\",\"dweb:/ipfs/QmNnJsAcJEoChpJcCneEmwmAQ2n2F1u4YrYFS4hfwyiwVA\"]},\"contracts/src/external/HyperdriveTarget3.sol\":{\"keccak256\":\"0x805a1d075059fa6a4247f49e9b356f8df3da3bd37d778ad88591766c165529e1\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6bbe4411d4b5fe5f9db08e4c4acef28a6cff80c5a9ae75d2d65a35f1616f0d5a\",\"dweb:/ipfs/QmZLYZU9Wz4gZEiY1vm1JT9me13oWj9scVMgV1tbDLMNup\"]},\"contracts/src/external/HyperdriveTarget4.sol\":{\"keccak256\":\"0xfc2c1dfa778f4be903a0a078c7cfb29fdf2caded6b72cf222f5da4b39e512bfa\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8bf1a17cc51013e821f44c426b8911db6f51ea96c0883f00ad98ab70993c2886\",\"dweb:/ipfs/QmdW2jFRm2vgoWQc1thZCPSASezv2dKFjmxayyV715HhFN\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf\",\"dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24\",\"dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveAdmin.sol\":{\"keccak256\":\"0x93481611cf60c586320edf6a95162e96e9d9a3d691360e4b304cfff65af4ee95\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5294c86957cd2e19951fb4e836cae62dca2353c73cbcf4a462e10969b0d1f6ad\",\"dweb:/ipfs/QmT6FfvF9XwsaZhA3wHgBgyQY4mXmnq3uffEqd8V77GC9b\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6\",\"dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN\"]},\"contracts/src/internal/HyperdriveCheckpoint.sol\":{\"keccak256\":\"0x8c1f59668b8f9a7b07b70ec1d7180131a6e610d9f8ff3c99583dac3b0f0e2588\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b2ce3226b9f22f643b58378a5cc6effda1a4f278d0d4262c31c6e7b3a3f48557\",\"dweb:/ipfs/QmdmBETY7MUfozxTWuHeyjpDjKtRFYWierdSajHyeNepHv\"]},\"contracts/src/internal/HyperdriveLP.sol\":{\"keccak256\":\"0x3f1ff106b34d3161e4be0085385bffe4b842cff41687c763de7df1cb4f466976\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c26ba880f9501d0d1366d9f95087b6ba4056c7983d8336aa23d51ae2778e097c\",\"dweb:/ipfs/Qme7virH8wbgnuHfBGsDZjDvPu84msxD6U1BUXPfkpYaER\"]},\"contracts/src/internal/HyperdriveLong.sol\":{\"keccak256\":\"0xe791adb5c58a73ff2c978fcc79153f9042702e2c4fc5d71f60534323d5ba4832\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://7ec4adf40e5f90574c7484ddeeed41cbe1f60b29847b18b169aa3130b8882aa7\",\"dweb:/ipfs/QmeY9y922jhcLzGw9d4VUNNoDkUeFhTJ8ZVThrvqzcGGjm\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x21a9aafb8e23a22c77111e13538fa8f709446e4f3a64ef84b2eebc2aa9d04373\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://41517912353540de5b430587ca8220f9d34d4432d3c723951d5fb618d5907b5d\",\"dweb:/ipfs/QmU3cTCrAq94digVS97s5af1Pu86uGBpmpus6w7828fUbG\"]},\"contracts/src/internal/HyperdriveShort.sol\":{\"keccak256\":\"0xc42b5a9ee5eee3cb9177b136eb9f4b81a4b51d9468f8faa97309934b6b371bc5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b9291237fcdbb8ff97517acd19499cfa4afc6d670a89fd5cc0309a201a7b1006\",\"dweb:/ipfs/QmfQmUwvGhJgPFyNaHvur8AViePBzvSBNAdaZJBwMkY5Je\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e\",\"dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Constants.sol\":{\"keccak256\":\"0xcf133c1d2db33dd318a51f8db58aa188225dd4383499cf82aa35bb49a678e30d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bdfefbcdf520ad8790372e66571a9f0782886e1d754dc83c834b98a19f450418\",\"dweb:/ipfs/QmdVcLsnb29dUJT4GVTWgEmuExEZ1wVhQ9KAJ5pwNTh6WU\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88\",\"dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd\",\"dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002\",\"dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a\",\"dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8\",\"dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9\",\"dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh\"]},\"contracts/test/ERC20Mintable.sol\":{\"keccak256\":\"0xa6b1089f313e782a365731db38adb49895a60cceb9e0815e2c68f01519e0060d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b816baf88a891a35c30eb264c83b27d087778efbb33a8c9b1086f3710e02e7df\",\"dweb:/ipfs/QmV24rEUp75368eJBfgo3MJfj65cvzfbzCD8zFyEaCUaTR\"]},\"contracts/test/MockHyperdrive.sol\":{\"keccak256\":\"0x70110f424c1f1f19ee883acad7b22609b8b2fd2b0da99227bae7e3880d3ee0d1\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4a3766f58274f66e6f8909896cdb27349126fe86da7558124ab088137c695ace\",\"dweb:/ipfs/QmVreuQKTnvPVdgiuQxeSaEwKJrX4L7wtZqfzwNdozwV7S\"]},\"contracts/test/MockMultiToken.sol\":{\"keccak256\":\"0xe92baa5885ee351aa53df66d29fd1af2661bb36be2e26bf8b0d7af10861f0f6c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f03fbfd3f18154c004bb0930dd49333041ef3b40e605fc19479c9e30e9e5e52e\",\"dweb:/ipfs/QmWURBMkqRxVZVxru8JTzkj7tUTCkhKk97igor54AVH5D4\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f\",\"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229\",\"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]},\"lib/solmate/src/auth/Auth.sol\":{\"keccak256\":\"0x6e05238d59cd40172c04c1974eb8f1f6cef4fdc4b6553ef7844a7302b885f76c\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://a9743c21ca0470d9082e4cf00aea53786868c977d40775e6954463658ebb50ac\",\"dweb:/ipfs/QmPFdyrLHUX1zSipTC2tcJ58EzxxPp2TTvCZx9KCgqZn2W\"]},\"lib/solmate/src/auth/authorities/MultiRolesAuthority.sol\":{\"keccak256\":\"0x5544e61f98c0e80a8c4b9b691952122d3547ade0c0ad830ae6d5fd65f2d0dbe3\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://232d9054e5c087e0f416d995753051d352b9f24c5bd823be69a6061757fd1fef\",\"dweb:/ipfs/QmZTwcv8YycBRUWX3NLrxNyKud2SCGtfZJiCasTXpjKM4B\"]},\"lib/solmate/src/tokens/ERC20.sol\":{\"keccak256\":\"0xcdfd8db76b2a3415620e4d18cc5545f3d50de792dbf2c3dd5adb40cbe6f94b10\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://57b3ab70cde374af1cf2c9888636e8de6cf660f087b1c9abd805e9271e19fa35\",\"dweb:/ipfs/QmNrLDBAHYFjpjSd12jerm1AdBkDqEYUUaXgnT854BUZ97\"]},\"test/utils/HyperdriveUtils.sol\":{\"keccak256\":\"0x764719deaf8b833fc87b8436d166030eaa05832bf3d5e259172f431778666e04\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://04c4bd84c0d60f9a7c68604cbe76d0cc88170bb569298749bc97d40b197f62f6\",\"dweb:/ipfs/QmQV6zkCCvLkbta2vDzjbMXKUzYDrAhcEyFA7QSRTVZJ1P\"]}},\"version\":1}",
+    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"ApprovalForAll\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"id\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"TransferSingle\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"PERMIT_TYPEHASH\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"__external_transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_who\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"}],\"name\":\"__setBalanceOf\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256[]\",\"name\":\"ids\",\"type\":\"uint256[]\"},{\"internalType\":\"uint256[]\",\"name\":\"values\",\"type\":\"uint256[]\"}],\"name\":\"batchTransferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"domainSeparator\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"isApprovedForAll\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"nonces\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"perTokenApprovals\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"_approved\",\"type\":\"bool\"},{\"internalType\":\"uint256\",\"name\":\"deadline\",\"type\":\"uint256\"},{\"internalType\":\"uint8\",\"name\":\"v\",\"type\":\"uint8\"},{\"internalType\":\"bytes32\",\"name\":\"r\",\"type\":\"bytes32\"},{\"internalType\":\"bytes32\",\"name\":\"s\",\"type\":\"bytes32\"}],\"name\":\"permitForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"setApproval\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"setApprovalBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"bool\",\"name\":\"approved\",\"type\":\"bool\"}],\"name\":\"setApprovalForAll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenId\",\"type\":\"uint256\"}],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"tokenID\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"caller\",\"type\":\"address\"}],\"name\":\"transferFromBridge\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"PERMIT_TYPEHASH()\":{\"returns\":{\"_0\":\"The EIP712 permit typehash of the MultiToken.\"}},\"balanceOf(uint256,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The balance of the owner.\"}},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"params\":{\"from\":\"The source account.\",\"ids\":\"The array of token ids of the asset to transfer.\",\"to\":\"The destination account.\",\"values\":\"The amount of each token to transfer.\"}},\"decimals()\":{\"returns\":{\"_0\":\"The decimals of the MultiToken.\"}},\"domainSeparator()\":{\"returns\":{\"_0\":\"The EIP712 domain separator of the MultiToken.\"}},\"isApprovedForAll(address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\"},\"returns\":{\"_0\":\"The approval-for-all status of the spender for the owner.\"}},\"name(uint256)\":{\"params\":{\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The name of the MultiToken.\"}},\"nonces(address)\":{\"params\":{\"owner\":\"The owner of the tokens.\"},\"returns\":{\"_0\":\"The permit nonce of the owner.\"}},\"perTokenApprovals(uint256,address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\",\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The allowance of the spender for the owner.\"}},\"permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"details\":\"The signature for this function follows EIP 712 standard and should      be generated with the eth_signTypedData JSON RPC call instead of      the eth_sign JSON RPC call. If using out of date parity signing      libraries the v component may need to be adjusted. Also it is very      rare but possible for v to be other values, those values are not      supported.\",\"params\":{\"_approved\":\"A boolean of the approval status to set to.\",\"deadline\":\"The timestamp which the signature must be submitted by        to be valid.\",\"owner\":\"The owner of the account which is having the new approval set.\",\"r\":\"The r component of the ECDSA signature.\",\"s\":\"The s component of the ECDSA signature.\",\"spender\":\"The address which will be allowed to spend owner's tokens.\",\"v\":\"Extra ECDSA data which allows public key recovery from        signature assumed to be 27 or 28.\"}},\"setApproval(uint256,address,uint256)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to        uint256.max will cause the value to never decrement (saving gas        on transfer).\",\"operator\":\"The address who will be able to use the tokens.\",\"tokenID\":\"The asset to approve the use of.\"}},\"setApprovalBridge(uint256,address,uint256,address)\":{\"params\":{\"amount\":\"The max tokens the approved person can use, setting to        uint256.max will cause the value to never decrement [saving gas        on transfer].\",\"caller\":\"The eth address which called the linking contract.\",\"operator\":\"The address who will be able to use the tokens.\",\"tokenID\":\"The asset to approve the use of.\"}},\"setApprovalForAll(address,bool)\":{\"params\":{\"approved\":\"True to approve, false to remove approval.\",\"operator\":\"The eth address which can access the caller's assets.\"}},\"symbol(uint256)\":{\"params\":{\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The symbol of the MultiToken.\"}},\"totalSupply(uint256)\":{\"params\":{\"tokenId\":\"The sub-token ID.\"},\"returns\":{\"_0\":\"The total supply of the MultiToken.\"}},\"transferFrom(uint256,address,address,uint256)\":{\"params\":{\"amount\":\"The amount of token to move.\",\"from\":\"The address whose balance will be reduced.\",\"to\":\"The address whose balance will be increased.\",\"tokenID\":\"The token identifier.\"}},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"params\":{\"amount\":\"The amount of token to move.\",\"caller\":\"The msg.sender or the caller of the ERC20Forwarder.\",\"from\":\"The address whose balance will be reduced.\",\"to\":\"The address whose balance will be increased.\",\"tokenID\":\"The token identifier.\"}}},\"version\":1},\"userdoc\":{\"events\":{\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an account changes the allowance for another         account.\"},\"ApprovalForAll(address,address,bool)\":{\"notice\":\"Emitted when an account changes the approval for all of its         tokens.\"},\"TransferSingle(address,address,address,uint256,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"PERMIT_TYPEHASH()\":{\"notice\":\"Gets the EIP712 permit typehash of the MultiToken.\"},\"balanceOf(uint256,address)\":{\"notice\":\"Gets the balance of a spender for a sub-token.\"},\"batchTransferFrom(address,address,uint256[],uint256[])\":{\"notice\":\"Transfers several assets from one account to another.\"},\"decimals()\":{\"notice\":\"Gets the decimals of the MultiToken.\"},\"domainSeparator()\":{\"notice\":\"Gets the EIP712 domain separator of the MultiToken.\"},\"isApprovedForAll(address,address)\":{\"notice\":\"Gets the approval-for-all status of a spender on behalf of an         owner.\"},\"name(uint256)\":{\"notice\":\"Gets the name of the MultiToken.\"},\"nonces(address)\":{\"notice\":\"Gets the permit nonce for an account.\"},\"perTokenApprovals(uint256,address,address)\":{\"notice\":\"Gets the allowance of a spender for a sub-token.\"},\"permitForAll(address,address,bool,uint256,uint8,bytes32,bytes32)\":{\"notice\":\"Allows a caller who is not the owner of an account to execute the         functionality of 'approve' for all assets with the owner's         signature.\"},\"setApproval(uint256,address,uint256)\":{\"notice\":\"Allows a user to set an approval for an individual asset with         specific amount.\"},\"setApprovalBridge(uint256,address,uint256,address)\":{\"notice\":\"Allows the compatibility linking contract to forward calls to         set asset approvals.\"},\"setApprovalForAll(address,bool)\":{\"notice\":\"Allows a user to approve an operator to use all of their assets.\"},\"symbol(uint256)\":{\"notice\":\"Gets the symbol of the MultiToken.\"},\"totalSupply(uint256)\":{\"notice\":\"Gets the total supply of the MultiToken.\"},\"transferFrom(uint256,address,address,uint256)\":{\"notice\":\"Transfers an amount of assets from the source to the destination.\"},\"transferFromBridge(uint256,address,address,uint256,address)\":{\"notice\":\"Permissioned transfer for the bridge to access, only callable by         the ERC20 linking bridge.\"}},\"notice\":\"DEPRECATED: Don't use this for new tests.\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/MockMultiToken.sol\":\"IMockMultiToken\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/external/Hyperdrive.sol\":{\"keccak256\":\"0x3478db194907ee23ef666d80699c8c59077585ac00495f7ffd39c2118c5335f4\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ec9adb042acce1841a51f7be158271b4c76c7c0084c682a31377885b72923b10\",\"dweb:/ipfs/QmaRe6yKaUqsbb84DmePqiB3DXnsZ5j3a6SvUxhwRpzFac\"]},\"contracts/src/external/HyperdriveTarget0.sol\":{\"keccak256\":\"0x9cf2186541b5454544930c45d3ca5a7396a9122d7218e42670ae6e77eba7fe92\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6d3da4a8aadd58e9f2ddc4c0fed4b91be1f4d8d572c7cb9eea7c6f2aa416b206\",\"dweb:/ipfs/QmcSDMBvhpkMi2NPqWhbgvK2qBzUaihW28t3KpZMxmCrmF\"]},\"contracts/src/external/HyperdriveTarget1.sol\":{\"keccak256\":\"0x18784df22ef6b0670e65514eff5a0f920c8756bd4ea3bf962412d925e0c4a6cf\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ae184b3c22b3b81dd9309930c939edadfbc9e9da11d043a9884787ffd1c4e8ec\",\"dweb:/ipfs/QmRQUwg4y2uftHWBhzatbg5rTpn6U2CFNYk3k8P2jqvysS\"]},\"contracts/src/external/HyperdriveTarget2.sol\":{\"keccak256\":\"0xd3c189e1c80966b1ee28ea39ac1ae1e0c4b176c0a9ea90497a5fba616b83ed39\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a54eddb841ec9657f9ca2f027be3ee12ff13a6c6b90b47d1b6e9266add95d6c6\",\"dweb:/ipfs/QmQbAnorBMTn6hxTW5XTXYZkP7o4nq7vY3qp472jdxzjYW\"]},\"contracts/src/external/HyperdriveTarget3.sol\":{\"keccak256\":\"0x5bd53a3d57952fc7fb5e72ff5b05cbf59777e396bbc3fec130e1097e1d0bed78\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d1ac2da2ea4bf5a7a740b30cf52aa0f0b31e3cb98cb9a97a142c9c1a73391b7c\",\"dweb:/ipfs/QmPE61DsM5Kd2pJBrk37LY9N3s41d55YayeRKsFWSjzPXD\"]},\"contracts/src/external/HyperdriveTarget4.sol\":{\"keccak256\":\"0x4a0a0c730b5b81d270bab97abfbb5d8bb94afd1bd321af488b6debdcbdbd0b3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://fe9ea75b5f505968d1e4d608e6da81822584159ff3e46e970628e90e29b46df0\",\"dweb:/ipfs/QmejJLk91RvkhLTSVGNFVuL3DetzzngCPB9za2pHeNRtbM\"]},\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/IHyperdrive.sol\":{\"keccak256\":\"0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339\",\"dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz\"]},\"contracts/src/interfaces/IHyperdriveCore.sol\":{\"keccak256\":\"0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19\",\"dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk\"]},\"contracts/src/interfaces/IHyperdriveEvents.sol\":{\"keccak256\":\"0x567b78388802482303910be022299e39a0ef95b4a9a30d6acc4bea0d467fa784\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://338a9f960049c37d13b6e23e5bc2c9e6005366aa99c95168f57f170ef2a4bcfa\",\"dweb:/ipfs/QmaeAwacrvMgJGqrKDSXZkYNYRJ5FvirYFpY3xjbCbJTF9\"]},\"contracts/src/interfaces/IHyperdriveRead.sol\":{\"keccak256\":\"0xfbe341a751b577daa735f836ae9e213b23fffecfb1b7512e4faf3d7807f5b045\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://78ba0c247e48f642f44c30d7771bd752a5fe8bd4a6c10f849f1ad66804149c86\",\"dweb:/ipfs/QmXtSLfErEvA8wqMzXDdqNU9TRMVVgoMibmFSDRJCypi6j\"]},\"contracts/src/interfaces/IMultiToken.sol\":{\"keccak256\":\"0xf5f82b8223e0c1bfcf4f73566a909ba07a9266960dfe2335c1494e06debbbe3f\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://920cf3fd66132a1e98a6a5708ad9a3bb047f4df8848119ab382b51094c1290a7\",\"dweb:/ipfs/QmWL3SyG8L91Coe9DsHz3Ke9tGMvYBf2NgRRDr3Fg5xFzp\"]},\"contracts/src/interfaces/IMultiTokenCore.sol\":{\"keccak256\":\"0x5c27315743bb6ef8a121ecf72cb24d5c144786dedb6526ef010f580eb872e501\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3e102c51bac9c82766c9826d97dc780a05a2bf64703b070757a7531a0851a1ae\",\"dweb:/ipfs/QmXYwbzPbiznj5AeDiX7NNfRE9xyhSx1huTMfMFndrUZWs\"]},\"contracts/src/interfaces/IMultiTokenEvents.sol\":{\"keccak256\":\"0x165f79e628b1975343f979549f3fdb5073a29aeecb03861f41d165961ee39fdb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3c0751cf322944d080a7a6692897807d0cef798268689afc1f6c8f91182a4222\",\"dweb:/ipfs/QmQVWtCgphU9sjqD2q6F6ww62uXDSWZx5KJVj6jFJpXeDK\"]},\"contracts/src/interfaces/IMultiTokenMetadata.sol\":{\"keccak256\":\"0xcc21ad6d3d4e3de354fbc25a472d940e5e2af0b48766404f9efecdac600d72ca\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b48fa111a773c820fe578efdd737d164e3957930ed46f3f304c6a8602a7e26a3\",\"dweb:/ipfs/QmcA7bjBC6ZBvYyojZZx3eKpugHmSrAAA14p14bQugiVKG\"]},\"contracts/src/interfaces/IMultiTokenRead.sol\":{\"keccak256\":\"0xac84dd306f29ae9d6becf764d93545c33f7c37737bb1aeb714c85930d0c074a0\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://d9082a16d5a736ab7ce5670be4f2475ea5c5fdae8ad7096ed9663f84eed96b11\",\"dweb:/ipfs/QmUTH8dZaQJt56UsT7N2aCUCKmjQYj7Ah53rRXk6DuVNUR\"]},\"contracts/src/internal/HyperdriveAdmin.sol\":{\"keccak256\":\"0x98a928423936e48c06552ec01a44687d42219ced71d689596aef6c7052c969a8\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://f0da6702fe7a686ab5b371697112d4d025d9e4f9ff2b0f36276b12ec8542fcfd\",\"dweb:/ipfs/QmQJrxcTRQ4kL6CroF6cdVZuv6S9QUuZrm5BMUTA6o23xN\"]},\"contracts/src/internal/HyperdriveBase.sol\":{\"keccak256\":\"0x6d10a1d7e62a374bd1c6cd1f41e16a8702ef2b25b1dac34479ef8e3b31abd2f3\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a60f3227d4de9ab8163bc0625e5e66f1ea17b3b2901ae40547289d5ca6b82186\",\"dweb:/ipfs/QmWF4mUXAAYaTko7pWjje2Jc9XumnaAYURUNuvwSRoS28E\"]},\"contracts/src/internal/HyperdriveCheckpoint.sol\":{\"keccak256\":\"0x80e136696165d1ea5e1b0dbe7d04c99f3303b59a6e79c8917824892c3e7b4ee7\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bf52ad7b2b9907331275ed5cdc7055d223224a8b539f82d9ba76c6dc67ae5334\",\"dweb:/ipfs/QmU3ncwDV4TkX6C377wgWSHm13ndDcFGLiBHzuHbfED19P\"]},\"contracts/src/internal/HyperdriveLP.sol\":{\"keccak256\":\"0x13a94b5343886983c874d8fb5cd4c9e7aa3f9e52d607a0fcfcbdfeeb64577488\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a7574afd3d91c62cae7a79e17c2cb7e93700aaebc74322f6fe119c61fbdcb4e4\",\"dweb:/ipfs/QmdWHYcuCoZNdQ2jMUg9zkbhsi25UVH5JXxoFm379Va4qF\"]},\"contracts/src/internal/HyperdriveLong.sol\":{\"keccak256\":\"0x02cd58cabac084c23a5abdd3d18e23bbf31629a9f847da7f738ffa83ac4627cc\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://553b6fbe3f08078ca31a6ad1e15088a1724474a2d66abbfaaf4962b52a3572c4\",\"dweb:/ipfs/QmQpVa9HEJmaFKh4tANJXk9UBWzmmAsqVZ8RsfAN1rzVbZ\"]},\"contracts/src/internal/HyperdriveMultiToken.sol\":{\"keccak256\":\"0x21a9aafb8e23a22c77111e13538fa8f709446e4f3a64ef84b2eebc2aa9d04373\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://41517912353540de5b430587ca8220f9d34d4432d3c723951d5fb618d5907b5d\",\"dweb:/ipfs/QmU3cTCrAq94digVS97s5af1Pu86uGBpmpus6w7828fUbG\"]},\"contracts/src/internal/HyperdriveShort.sol\":{\"keccak256\":\"0xffefa815f96836971b6d92fd128fc9a14cd09a01b6845c8bcab7c778bfe1b87c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://ad050506fd4987240b09a7ace16062525491bbf17514e60f64a7b821e1a5c82c\",\"dweb:/ipfs/QmXqhwVmvC6w1rkAF6SpAgU3uim5H24E76LMBvavwJbJsx\"]},\"contracts/src/internal/HyperdriveStorage.sol\":{\"keccak256\":\"0xde163699e55f6d6bd660fa7a1cf25927d2e895e16663a7c47fa45d6bc4878c2e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://c9908cf875ad59413154825ea59e2635b16f0020a0e3368ec85b6c7379ab3f19\",\"dweb:/ipfs/QmeX22wqHYurD9J6WTxrQjtqUoh21bFmLm7E1SzCkgQV7d\"]},\"contracts/src/libraries/AssetId.sol\":{\"keccak256\":\"0x3031a1ec376be333eebe0062c474a22d7f970cb02de62ab6823c6918c0a7f83b\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://6c80cc2fd8b7908b6420ebb21cb99266c93e01d6cdd9d1a41f8847493849b131\",\"dweb:/ipfs/QmeMehWbF2RwQaf6c6yaj5KHjXboDRpzBCtvFnLW4BXBbc\"]},\"contracts/src/libraries/Constants.sol\":{\"keccak256\":\"0xcf133c1d2db33dd318a51f8db58aa188225dd4383499cf82aa35bb49a678e30d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://bdfefbcdf520ad8790372e66571a9f0782886e1d754dc83c834b98a19f450418\",\"dweb:/ipfs/QmdVcLsnb29dUJT4GVTWgEmuExEZ1wVhQ9KAJ5pwNTh6WU\"]},\"contracts/src/libraries/Errors.sol\":{\"keccak256\":\"0x015be7b5e24373828e26b4af217ecbf074c7f4dcab839703d97d7bc560aa40eb\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://3584c205f552b20d01dc902a687f346e10bde5f1a23f887f97e03b2fbff8e75c\",\"dweb:/ipfs/QmaVzjYr18cZueNaboBeyVb6CtgY2qMxtvNcn6nXzCgM2c\"]},\"contracts/src/libraries/FixedPointMath.sol\":{\"keccak256\":\"0x44e018888d5a9fe0c3e44d9d814879d8f0c3adb78154edc98ba07da86b976f5a\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://5e3990bc86aaa8b4eb4b948ed3a26f0b018f1422c6470a00d146aa69e599a90d\",\"dweb:/ipfs/QmWg9hKoQK1po8ZxRC4xrSWePtoJhgndkHXmwLCpCtwAUu\"]},\"contracts/src/libraries/HyperdriveMath.sol\":{\"keccak256\":\"0x391c141a11e995c912f55247d461c44bcd7d7c70de4c2d98ff9c81e89acd4424\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b4d80a70106debf9f2d4980e38572daeea11bfc398a1258e3b5dc344e9ce646a\",\"dweb:/ipfs/QmbdckkGQcuok6NDZPiUVAQhpG9HvigMwozFZRLe9YcL2n\"]},\"contracts/src/libraries/LPMath.sol\":{\"keccak256\":\"0x78ca3ee7c212a513f45a44ef42d362c4ab3cc59e246191c57011b86232967189\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://610b23be1ed7decae671a7cc8ae76298b5d3b10bbea532d3c10623462f899786\",\"dweb:/ipfs/QmV6i6JaY8EKYHUAq6r5267eMbQtfA43F3YNSvvxktW6hE\"]},\"contracts/src/libraries/SafeCast.sol\":{\"keccak256\":\"0xa15878749f26b198b59e039cf814143b141698064d341cd8b88cb4a04491551c\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b3fdd810b779630fce33fa7d2bfc17d6cca1bd3d646e5c702d09fd277167fde4\",\"dweb:/ipfs/QmW8C19uY5WLkVQfqFRsSU5NtuQDgoqt4jBoMhvuJ7kMn2\"]},\"contracts/src/libraries/YieldSpaceMath.sol\":{\"keccak256\":\"0x407ff362f1486784581f506ffd22cbcb74f638deed9e5c086d3639ea8e64025e\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://e0092121a10538a07f814b1fafdb2f8923ee35c4d0f18af595f65ce36849a797\",\"dweb:/ipfs/QmTVKGwXU2FyywANhcBnutWSu38QaaVqgG9eTYatfjGYGL\"]},\"contracts/test/ERC20Mintable.sol\":{\"keccak256\":\"0xa6b1089f313e782a365731db38adb49895a60cceb9e0815e2c68f01519e0060d\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://b816baf88a891a35c30eb264c83b27d087778efbb33a8c9b1086f3710e02e7df\",\"dweb:/ipfs/QmV24rEUp75368eJBfgo3MJfj65cvzfbzCD8zFyEaCUaTR\"]},\"contracts/test/MockHyperdrive.sol\":{\"keccak256\":\"0x203152ee92518ee1b1fa848e79c759b16da17f68487d946416bbf0dbedda1500\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a2c56e50ed287d1e6e915880378635d99f9bc30d70e2f4dc0cc15583c29071e0\",\"dweb:/ipfs/QmcdgPUgckaZWySF4xPoJ6U6iA3MwH6LJ6DXJYWvkYfXES\"]},\"contracts/test/MockMultiToken.sol\":{\"keccak256\":\"0xc9b7e896f14f1ce9487faeee729ac6973a6f25fffcede51a5ae23f3230c95bf2\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://4dd69d17e3ce0bb31b79cb36cde618c5a166ea3ed25a37d1372d7e690f33158d\",\"dweb:/ipfs/QmQgDTMECvqYS1QMEGSuPETwH6ii26dZqBC6UUBgzT4Lok\"]},\"lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol\":{\"keccak256\":\"0x60c65f701957fdd6faea1acb0bb45825791d473693ed9ecb34726fdfaa849dd7\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://ea290300e0efc4d901244949dc4d877fd46e6c5e43dc2b26620e8efab3ab803f\",\"dweb:/ipfs/QmcLLJppxKeJWqHxE2CUkcfhuRTgHSn8J4kijcLa5MYhSt\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol\":{\"keccak256\":\"0xc3e1fa9d1987f8d349dfb4d6fe93bf2ca014b52ba335cfac30bfe71e357e6f80\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://c5703ccdeb7b1d685e375ed719117e9edf2ab4bc544f24f23b0d50ec82257229\",\"dweb:/ipfs/QmTdwkbQq7owpCiyuzE7eh5LrD2ddrBCZ5WHVsWPi1RrTS\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0xc6a8ff0ea489379b61faa647490411b80102578440ab9d84e9a957cc12164e70\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ea104e577e63faea3b69c415637e99e755dcbf64c5833d7140c35a714d6d90c\",\"dweb:/ipfs/Qmau6x4Ns9XdyynRCNNp3RhLqijJjFm7z5fyZazfYFGYdq\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol\":{\"keccak256\":\"0xaa761817f6cd7892fcf158b3c776b34551cde36f48ff9703d53898bc45a94ea2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://0ad7c8d4d08938c8dfc43d75a148863fb324b80cf53e0a36f7e5a4ac29008850\",\"dweb:/ipfs/QmcrhfPgVNf5mkdhQvy1pMv51TFokD3Y4Wa5WZhFqVh8UV\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol\":{\"keccak256\":\"0x6008dabfe393240d73d7dd7688033f72740d570aa422254d29a7dce8568f3aff\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://f5196ec75139918c6c7bb4251b36395e668f1fa6d206beba7e7520e74913940d\",\"dweb:/ipfs/QmSyqjksXxmm2mCG6qRd1yuwLykypkSVBbnBnGqJRcuJMi\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol\":{\"keccak256\":\"0x37bb49513c49c87c4642a891b13b63571bc87013dde806617aa1efb54605f386\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b3036b3a83b7c48f96641f2a9002b9f2dcb6a5958dd670894ada21ae8229b3d0\",\"dweb:/ipfs/QmUNfSBdoVtjhETaUJCYcaC7pTMgbhht926tJ2uXJbiVd3\"]},\"lib/openzeppelin-contracts/contracts/utils/Address.sol\":{\"keccak256\":\"0xaf28a975a78550e45f65e559a3ad6a5ad43b9b8a37366999abd1b7084eb70721\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://b7bd24e224f67f65bfadf85dc2929fa965456bb2415478bd0125471b5ce35245\",\"dweb:/ipfs/QmRaydGr8BTHs1kvaZfsNU69pKzUAGFrvABn1KiRSbE51y\"]},\"lib/openzeppelin-contracts/contracts/utils/Context.sol\":{\"keccak256\":\"0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12\",\"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF\"]},\"lib/openzeppelin-contracts/contracts/utils/ReentrancyGuard.sol\":{\"keccak256\":\"0xf980daa263b661ab8ddee7d4fd833c7da7e7995e2c359ff1f17e67e4112f2236\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://7448ab095d6940130bcf76ba47a2eab14148c83119523b93dd89f6d84edd6c02\",\"dweb:/ipfs/QmawrZ4voKQjH3oomXT3Kuheb3Mnmo2VvVpxg8Ne5UJUrd\"]},\"lib/solmate/src/auth/Auth.sol\":{\"keccak256\":\"0x6e05238d59cd40172c04c1974eb8f1f6cef4fdc4b6553ef7844a7302b885f76c\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://a9743c21ca0470d9082e4cf00aea53786868c977d40775e6954463658ebb50ac\",\"dweb:/ipfs/QmPFdyrLHUX1zSipTC2tcJ58EzxxPp2TTvCZx9KCgqZn2W\"]},\"lib/solmate/src/auth/authorities/MultiRolesAuthority.sol\":{\"keccak256\":\"0x5544e61f98c0e80a8c4b9b691952122d3547ade0c0ad830ae6d5fd65f2d0dbe3\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://232d9054e5c087e0f416d995753051d352b9f24c5bd823be69a6061757fd1fef\",\"dweb:/ipfs/QmZTwcv8YycBRUWX3NLrxNyKud2SCGtfZJiCasTXpjKM4B\"]},\"lib/solmate/src/tokens/ERC20.sol\":{\"keccak256\":\"0xcdfd8db76b2a3415620e4d18cc5545f3d50de792dbf2c3dd5adb40cbe6f94b10\",\"license\":\"AGPL-3.0-only\",\"urls\":[\"bzz-raw://57b3ab70cde374af1cf2c9888636e8de6cf660f087b1c9abd805e9271e19fa35\",\"dweb:/ipfs/QmNrLDBAHYFjpjSd12jerm1AdBkDqEYUUaXgnT854BUZ97\"]},\"test/utils/HyperdriveUtils.sol\":{\"keccak256\":\"0x764719deaf8b833fc87b8436d166030eaa05832bf3d5e259172f431778666e04\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://04c4bd84c0d60f9a7c68604cbe76d0cc88170bb569298749bc97d40b197f62f6\",\"dweb:/ipfs/QmQV6zkCCvLkbta2vDzjbMXKUzYDrAhcEyFA7QSRTVZJ1P\"]}},\"version\":1}",
     "metadata": {
         "compiler": {
             "version": "0.8.20+commit.a1b79de6"
@@ -1417,10 +1417,10 @@ export const IMockMultiToken = {
         },
         "sources": {
             "contracts/src/external/Hyperdrive.sol": {
-                "keccak256": "0x4d166ec6a8a2e3f2cae2d0f990d1cc40965ec995130d7a7be1af2b9e390d3fd8",
+                "keccak256": "0x3478db194907ee23ef666d80699c8c59077585ac00495f7ffd39c2118c5335f4",
                 "urls": [
-                    "bzz-raw://2185afc7935052ce78427f3ee5629d4c6d93cbffad776fb281c2b79ff2234d67",
-                    "dweb:/ipfs/QmT6e2H7pXG3e2BM1EoHTxzWhTwxjGu75AxNkZ4CxyEbw6"
+                    "bzz-raw://ec9adb042acce1841a51f7be158271b4c76c7c0084c682a31377885b72923b10",
+                    "dweb:/ipfs/QmaRe6yKaUqsbb84DmePqiB3DXnsZ5j3a6SvUxhwRpzFac"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1433,34 +1433,34 @@ export const IMockMultiToken = {
                 "license": "Apache-2.0"
             },
             "contracts/src/external/HyperdriveTarget1.sol": {
-                "keccak256": "0xafc075dac84c3c9d5be703d5068cc2a30875f16107b884c8ee416e877422c6da",
+                "keccak256": "0x18784df22ef6b0670e65514eff5a0f920c8756bd4ea3bf962412d925e0c4a6cf",
                 "urls": [
-                    "bzz-raw://12d86af9b6684898a97a67e268137da7a5fcff8f484c01dd73d92d2b2f1b881e",
-                    "dweb:/ipfs/QmQg2gg35jjmuG27HWjRVG65gYCdGmCHmCoiDC3GRoAMr7"
+                    "bzz-raw://ae184b3c22b3b81dd9309930c939edadfbc9e9da11d043a9884787ffd1c4e8ec",
+                    "dweb:/ipfs/QmRQUwg4y2uftHWBhzatbg5rTpn6U2CFNYk3k8P2jqvysS"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/external/HyperdriveTarget2.sol": {
-                "keccak256": "0xf5501de742b9054f1c8cbf6234e66aac5ca0380016cfa65ecd01840c2e857e79",
+                "keccak256": "0xd3c189e1c80966b1ee28ea39ac1ae1e0c4b176c0a9ea90497a5fba616b83ed39",
                 "urls": [
-                    "bzz-raw://3d971dfdd0986a75c0fa5d55fc3b7c4edb8126201a53f325d8bb6df293b94d39",
-                    "dweb:/ipfs/QmNnJsAcJEoChpJcCneEmwmAQ2n2F1u4YrYFS4hfwyiwVA"
+                    "bzz-raw://a54eddb841ec9657f9ca2f027be3ee12ff13a6c6b90b47d1b6e9266add95d6c6",
+                    "dweb:/ipfs/QmQbAnorBMTn6hxTW5XTXYZkP7o4nq7vY3qp472jdxzjYW"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/external/HyperdriveTarget3.sol": {
-                "keccak256": "0x805a1d075059fa6a4247f49e9b356f8df3da3bd37d778ad88591766c165529e1",
+                "keccak256": "0x5bd53a3d57952fc7fb5e72ff5b05cbf59777e396bbc3fec130e1097e1d0bed78",
                 "urls": [
-                    "bzz-raw://6bbe4411d4b5fe5f9db08e4c4acef28a6cff80c5a9ae75d2d65a35f1616f0d5a",
-                    "dweb:/ipfs/QmZLYZU9Wz4gZEiY1vm1JT9me13oWj9scVMgV1tbDLMNup"
+                    "bzz-raw://d1ac2da2ea4bf5a7a740b30cf52aa0f0b31e3cb98cb9a97a142c9c1a73391b7c",
+                    "dweb:/ipfs/QmPE61DsM5Kd2pJBrk37LY9N3s41d55YayeRKsFWSjzPXD"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/external/HyperdriveTarget4.sol": {
-                "keccak256": "0xfc2c1dfa778f4be903a0a078c7cfb29fdf2caded6b72cf222f5da4b39e512bfa",
+                "keccak256": "0x4a0a0c730b5b81d270bab97abfbb5d8bb94afd1bd321af488b6debdcbdbd0b3f",
                 "urls": [
-                    "bzz-raw://8bf1a17cc51013e821f44c426b8911db6f51ea96c0883f00ad98ab70993c2886",
-                    "dweb:/ipfs/QmdW2jFRm2vgoWQc1thZCPSASezv2dKFjmxayyV715HhFN"
+                    "bzz-raw://fe9ea75b5f505968d1e4d608e6da81822584159ff3e46e970628e90e29b46df0",
+                    "dweb:/ipfs/QmejJLk91RvkhLTSVGNFVuL3DetzzngCPB9za2pHeNRtbM"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1473,18 +1473,18 @@ export const IMockMultiToken = {
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdrive.sol": {
-                "keccak256": "0xc293b4229674624983294b673d6fefce53ed8f6f3d9c6bbcb34da25f42ef2c71",
+                "keccak256": "0x8b726cbf87e5dbec80207d47b64bb20e35a9fb42667b9d1612a87ad8b2d361b5",
                 "urls": [
-                    "bzz-raw://084f43e7c42615faabfb6ae9100a8cea6bf9846eb1c433dc08fe634c59cadcaf",
-                    "dweb:/ipfs/QmXW3GgcbQQg5xnfAC6RT2KBL9ii8s1jwbDtZywWXFydpm"
+                    "bzz-raw://b2015112addc7b4ba33c0626a14c963294164906afce52296f3dc209737a7339",
+                    "dweb:/ipfs/QmZYR6qwGspufCtiofdvYbaHhxSrguNnP52rd3y3zXWiDz"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/interfaces/IHyperdriveCore.sol": {
-                "keccak256": "0x68adcd293ff25711add1698b6024faa45beec01eb044bd0103d3020aa96d856e",
+                "keccak256": "0xa48349cf2fcd27ce3aafcffeba25647d289e17653dc1a4e643c3de0b47e5c75f",
                 "urls": [
-                    "bzz-raw://0e0f5e35a7d2c656e249394d25896e5adfb9af3e210c01b9ef5fa81d25a45e24",
-                    "dweb:/ipfs/QmbLASezHPWHcbodqSfw3Qh9NzqekqVPM8FhCXKGTCXL1h"
+                    "bzz-raw://4dee6d2061cc68e3bc52acfa0d35c973785e49170f49d2e09efd50ead85e2a19",
+                    "dweb:/ipfs/QmX6tpGgXTnVGt1CdD796N5kn8YrZWFX1FcRLqtBBhB5qk"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1545,42 +1545,42 @@ export const IMockMultiToken = {
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveAdmin.sol": {
-                "keccak256": "0x93481611cf60c586320edf6a95162e96e9d9a3d691360e4b304cfff65af4ee95",
+                "keccak256": "0x98a928423936e48c06552ec01a44687d42219ced71d689596aef6c7052c969a8",
                 "urls": [
-                    "bzz-raw://5294c86957cd2e19951fb4e836cae62dca2353c73cbcf4a462e10969b0d1f6ad",
-                    "dweb:/ipfs/QmT6FfvF9XwsaZhA3wHgBgyQY4mXmnq3uffEqd8V77GC9b"
+                    "bzz-raw://f0da6702fe7a686ab5b371697112d4d025d9e4f9ff2b0f36276b12ec8542fcfd",
+                    "dweb:/ipfs/QmQJrxcTRQ4kL6CroF6cdVZuv6S9QUuZrm5BMUTA6o23xN"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveBase.sol": {
-                "keccak256": "0x7feb8df22e6f91b1ee70f50f5ca16a7819601bcb88fc5a5fa9cf16c708cc52bb",
+                "keccak256": "0x6d10a1d7e62a374bd1c6cd1f41e16a8702ef2b25b1dac34479ef8e3b31abd2f3",
                 "urls": [
-                    "bzz-raw://60ff7ff4faa45551099b025d03f2438477b5fd1f64f82b78c6ed26cbdafc64f6",
-                    "dweb:/ipfs/QmWtbftziGdSKAEvpRoaWRnTxMNwgUVs2nDN6nFugX1WYN"
+                    "bzz-raw://a60f3227d4de9ab8163bc0625e5e66f1ea17b3b2901ae40547289d5ca6b82186",
+                    "dweb:/ipfs/QmWF4mUXAAYaTko7pWjje2Jc9XumnaAYURUNuvwSRoS28E"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveCheckpoint.sol": {
-                "keccak256": "0x8c1f59668b8f9a7b07b70ec1d7180131a6e610d9f8ff3c99583dac3b0f0e2588",
+                "keccak256": "0x80e136696165d1ea5e1b0dbe7d04c99f3303b59a6e79c8917824892c3e7b4ee7",
                 "urls": [
-                    "bzz-raw://b2ce3226b9f22f643b58378a5cc6effda1a4f278d0d4262c31c6e7b3a3f48557",
-                    "dweb:/ipfs/QmdmBETY7MUfozxTWuHeyjpDjKtRFYWierdSajHyeNepHv"
+                    "bzz-raw://bf52ad7b2b9907331275ed5cdc7055d223224a8b539f82d9ba76c6dc67ae5334",
+                    "dweb:/ipfs/QmU3ncwDV4TkX6C377wgWSHm13ndDcFGLiBHzuHbfED19P"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveLP.sol": {
-                "keccak256": "0x3f1ff106b34d3161e4be0085385bffe4b842cff41687c763de7df1cb4f466976",
+                "keccak256": "0x13a94b5343886983c874d8fb5cd4c9e7aa3f9e52d607a0fcfcbdfeeb64577488",
                 "urls": [
-                    "bzz-raw://c26ba880f9501d0d1366d9f95087b6ba4056c7983d8336aa23d51ae2778e097c",
-                    "dweb:/ipfs/Qme7virH8wbgnuHfBGsDZjDvPu84msxD6U1BUXPfkpYaER"
+                    "bzz-raw://a7574afd3d91c62cae7a79e17c2cb7e93700aaebc74322f6fe119c61fbdcb4e4",
+                    "dweb:/ipfs/QmdWHYcuCoZNdQ2jMUg9zkbhsi25UVH5JXxoFm379Va4qF"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveLong.sol": {
-                "keccak256": "0xe791adb5c58a73ff2c978fcc79153f9042702e2c4fc5d71f60534323d5ba4832",
+                "keccak256": "0x02cd58cabac084c23a5abdd3d18e23bbf31629a9f847da7f738ffa83ac4627cc",
                 "urls": [
-                    "bzz-raw://7ec4adf40e5f90574c7484ddeeed41cbe1f60b29847b18b169aa3130b8882aa7",
-                    "dweb:/ipfs/QmeY9y922jhcLzGw9d4VUNNoDkUeFhTJ8ZVThrvqzcGGjm"
+                    "bzz-raw://553b6fbe3f08078ca31a6ad1e15088a1724474a2d66abbfaaf4962b52a3572c4",
+                    "dweb:/ipfs/QmQpVa9HEJmaFKh4tANJXk9UBWzmmAsqVZ8RsfAN1rzVbZ"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1593,18 +1593,18 @@ export const IMockMultiToken = {
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveShort.sol": {
-                "keccak256": "0xc42b5a9ee5eee3cb9177b136eb9f4b81a4b51d9468f8faa97309934b6b371bc5",
+                "keccak256": "0xffefa815f96836971b6d92fd128fc9a14cd09a01b6845c8bcab7c778bfe1b87c",
                 "urls": [
-                    "bzz-raw://b9291237fcdbb8ff97517acd19499cfa4afc6d670a89fd5cc0309a201a7b1006",
-                    "dweb:/ipfs/QmfQmUwvGhJgPFyNaHvur8AViePBzvSBNAdaZJBwMkY5Je"
+                    "bzz-raw://ad050506fd4987240b09a7ace16062525491bbf17514e60f64a7b821e1a5c82c",
+                    "dweb:/ipfs/QmXqhwVmvC6w1rkAF6SpAgU3uim5H24E76LMBvavwJbJsx"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/internal/HyperdriveStorage.sol": {
-                "keccak256": "0xf965f50c6e452e4011a476c67e6cbea77e558570efb7532dbf1bd586e8705ab4",
+                "keccak256": "0xde163699e55f6d6bd660fa7a1cf25927d2e895e16663a7c47fa45d6bc4878c2e",
                 "urls": [
-                    "bzz-raw://e81b4399e0e27f0a8d47dd7a79f7711d1bd4685e6b98d4ba778e32d1af7de50e",
-                    "dweb:/ipfs/QmQyCBv76GvWPxTjdR6yD7DTuvFAdxTkRp2A9wUgqP778N"
+                    "bzz-raw://c9908cf875ad59413154825ea59e2635b16f0020a0e3368ec85b6c7379ab3f19",
+                    "dweb:/ipfs/QmeX22wqHYurD9J6WTxrQjtqUoh21bFmLm7E1SzCkgQV7d"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1625,50 +1625,50 @@ export const IMockMultiToken = {
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/Errors.sol": {
-                "keccak256": "0x45f48f5b8caec5b751850b7266abd84c7400debfbad0f112847582bb052058b0",
+                "keccak256": "0x015be7b5e24373828e26b4af217ecbf074c7f4dcab839703d97d7bc560aa40eb",
                 "urls": [
-                    "bzz-raw://46c85e0c750cdb752bec5d67a8a0bc8df071d934c568c880d08a5120a1a11d88",
-                    "dweb:/ipfs/Qmc2L1ePB1gqBwUiaAUeoG6hvoPtS2hdY6rhEXzX1SfB41"
+                    "bzz-raw://3584c205f552b20d01dc902a687f346e10bde5f1a23f887f97e03b2fbff8e75c",
+                    "dweb:/ipfs/QmaVzjYr18cZueNaboBeyVb6CtgY2qMxtvNcn6nXzCgM2c"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/FixedPointMath.sol": {
-                "keccak256": "0x631f6529908f62f71775f8c6120afdca3a836fb24fa9fa4701cad54f4a9da076",
+                "keccak256": "0x44e018888d5a9fe0c3e44d9d814879d8f0c3adb78154edc98ba07da86b976f5a",
                 "urls": [
-                    "bzz-raw://2baf6ad8917a3fbb6d040334451f6b4f6936b00518c4cd308b9c6fa11569b2bd",
-                    "dweb:/ipfs/QmXD16vk6MRxmPRqy8ZXSpRA5XxhSf1pnsQH32ARDJTk8L"
+                    "bzz-raw://5e3990bc86aaa8b4eb4b948ed3a26f0b018f1422c6470a00d146aa69e599a90d",
+                    "dweb:/ipfs/QmWg9hKoQK1po8ZxRC4xrSWePtoJhgndkHXmwLCpCtwAUu"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/HyperdriveMath.sol": {
-                "keccak256": "0xcf305dde8aa320d1e1b767734ce8edce456af537525d40e30d5345f09f6e34ab",
+                "keccak256": "0x391c141a11e995c912f55247d461c44bcd7d7c70de4c2d98ff9c81e89acd4424",
                 "urls": [
-                    "bzz-raw://056c9a563f1a9e0133e17463497ad19be517d35b770170122edea50ca9fbe002",
-                    "dweb:/ipfs/QmS6dkVRHzdbv7etumcCtNtm9GuXDCjqZxxhtYfP6keAAY"
+                    "bzz-raw://b4d80a70106debf9f2d4980e38572daeea11bfc398a1258e3b5dc344e9ce646a",
+                    "dweb:/ipfs/QmbdckkGQcuok6NDZPiUVAQhpG9HvigMwozFZRLe9YcL2n"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/LPMath.sol": {
-                "keccak256": "0x52cd64379d1fbb0acdd5152e84ff44ca2b2496e4bb43c0e02b61c28b97141bed",
+                "keccak256": "0x78ca3ee7c212a513f45a44ef42d362c4ab3cc59e246191c57011b86232967189",
                 "urls": [
-                    "bzz-raw://b1d9aadc1b53622adee86e41371c3a4efde7b53cdd5a828b2b733f0e3392b26a",
-                    "dweb:/ipfs/QmXkiVwpe7UxgeC1nYPk2x4wD9NVXuyFsiViyuvrgdtKpX"
+                    "bzz-raw://610b23be1ed7decae671a7cc8ae76298b5d3b10bbea532d3c10623462f899786",
+                    "dweb:/ipfs/QmV6i6JaY8EKYHUAq6r5267eMbQtfA43F3YNSvvxktW6hE"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/SafeCast.sol": {
-                "keccak256": "0xc5282be69c8c85c1a1bbbf1554a501c17599f4b84119339b660018ae90eb7148",
+                "keccak256": "0xa15878749f26b198b59e039cf814143b141698064d341cd8b88cb4a04491551c",
                 "urls": [
-                    "bzz-raw://fd29b570d1e3205d25939b1c0e78e98ae34747a8118703fc5b2c9690791b26c8",
-                    "dweb:/ipfs/QmSdecxKRE66cgEipikK5uS4mUJxz2FgfncCk9iXvkdjG8"
+                    "bzz-raw://b3fdd810b779630fce33fa7d2bfc17d6cca1bd3d646e5c702d09fd277167fde4",
+                    "dweb:/ipfs/QmW8C19uY5WLkVQfqFRsSU5NtuQDgoqt4jBoMhvuJ7kMn2"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/src/libraries/YieldSpaceMath.sol": {
-                "keccak256": "0x92618059cb1370412177754f6d63dc91028226760b4e2c77d13a5686421f5fd1",
+                "keccak256": "0x407ff362f1486784581f506ffd22cbcb74f638deed9e5c086d3639ea8e64025e",
                 "urls": [
-                    "bzz-raw://4c7a27c21f1c57d9bb2857759ce41dd7e2afbc738cf47d3ae8c98639820ec8c9",
-                    "dweb:/ipfs/QmRF2Pz2Ezm5W84o4Fv8tqgrn1umy16i8Pis9H5CSsSSLh"
+                    "bzz-raw://e0092121a10538a07f814b1fafdb2f8923ee35c4d0f18af595f65ce36849a797",
+                    "dweb:/ipfs/QmTVKGwXU2FyywANhcBnutWSu38QaaVqgG9eTYatfjGYGL"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1681,18 +1681,18 @@ export const IMockMultiToken = {
                 "license": "Apache-2.0"
             },
             "contracts/test/MockHyperdrive.sol": {
-                "keccak256": "0x70110f424c1f1f19ee883acad7b22609b8b2fd2b0da99227bae7e3880d3ee0d1",
+                "keccak256": "0x203152ee92518ee1b1fa848e79c759b16da17f68487d946416bbf0dbedda1500",
                 "urls": [
-                    "bzz-raw://4a3766f58274f66e6f8909896cdb27349126fe86da7558124ab088137c695ace",
-                    "dweb:/ipfs/QmVreuQKTnvPVdgiuQxeSaEwKJrX4L7wtZqfzwNdozwV7S"
+                    "bzz-raw://a2c56e50ed287d1e6e915880378635d99f9bc30d70e2f4dc0cc15583c29071e0",
+                    "dweb:/ipfs/QmcdgPUgckaZWySF4xPoJ6U6iA3MwH6LJ6DXJYWvkYfXES"
                 ],
                 "license": "Apache-2.0"
             },
             "contracts/test/MockMultiToken.sol": {
-                "keccak256": "0xe92baa5885ee351aa53df66d29fd1af2661bb36be2e26bf8b0d7af10861f0f6c",
+                "keccak256": "0xc9b7e896f14f1ce9487faeee729ac6973a6f25fffcede51a5ae23f3230c95bf2",
                 "urls": [
-                    "bzz-raw://f03fbfd3f18154c004bb0930dd49333041ef3b40e605fc19479c9e30e9e5e52e",
-                    "dweb:/ipfs/QmWURBMkqRxVZVxru8JTzkj7tUTCkhKk97igor54AVH5D4"
+                    "bzz-raw://4dd69d17e3ce0bb31b79cb36cde618c5a166ea3ed25a37d1372d7e690f33158d",
+                    "dweb:/ipfs/QmQgDTMECvqYS1QMEGSuPETwH6ii26dZqBC6UUBgzT4Lok"
                 ],
                 "license": "Apache-2.0"
             },
@@ -1805,50 +1805,47 @@ export const IMockMultiToken = {
     },
     "ast": {
         "absolutePath": "contracts/test/MockMultiToken.sol",
-        "id": 26883,
+        "id": 26896,
         "exportedSymbols": {
             "HyperdriveMath": [
-                19716
+                19567
             ],
             "HyperdriveMultiToken": [
-                16682
+                16538
             ],
             "HyperdriveStorage": [
-                17893
+                17734
             ],
             "HyperdriveTarget0": [
-                5242
-            ],
-            "HyperdriveUtils": [
-                157393
+                5190
             ],
             "IERC20": [
-                9810
+                9666
             ],
             "IHyperdrive": [
-                10506
+                10351
             ],
             "IMockMultiToken": [
-                26545
+                26556
             ],
             "IMultiToken": [
-                11484
+                11334
             ],
             "MockHyperdriveBase": [
-                24810
+                24803
             ],
             "MockHyperdriveTarget0": [
-                25168
+                25161
             ],
             "MockMultiToken": [
-                26882
+                26895
             ]
         },
         "nodeType": "SourceUnit",
-        "src": "39:8800:140",
+        "src": "39:8751:140",
         "nodes": [
             {
-                "id": 26482,
+                "id": 26495,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:140",
                 "nodes": [],
@@ -1859,180 +1856,24 @@ export const IMockMultiToken = {
                 ]
             },
             {
-                "id": 26484,
+                "id": 26497,
                 "nodeType": "ImportDirective",
                 "src": "64:81:140",
                 "nodes": [],
                 "absolutePath": "contracts/src/external/HyperdriveTarget0.sol",
                 "file": "contracts/src/external/HyperdriveTarget0.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 26883,
-                "sourceUnit": 5243,
+                "scope": 26896,
+                "sourceUnit": 5191,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 26483,
+                            "id": 26496,
                             "name": "HyperdriveTarget0",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 5242,
+                            "referencedDeclaration": 5190,
                             "src": "73:17:140",
-                            "typeDescriptions": {}
-                        },
-                        "nameLocation": "-1:-1:-1"
-                    }
-                ],
-                "unitAlias": ""
-            },
-            {
-                "id": 26486,
-                "nodeType": "ImportDirective",
-                "src": "146:61:140",
-                "nodes": [],
-                "absolutePath": "contracts/src/interfaces/IERC20.sol",
-                "file": "contracts/src/interfaces/IERC20.sol",
-                "nameLocation": "-1:-1:-1",
-                "scope": 26883,
-                "sourceUnit": 9811,
-                "symbolAliases": [
-                    {
-                        "foreign": {
-                            "id": 26485,
-                            "name": "IERC20",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 9810,
-                            "src": "155:6:140",
-                            "typeDescriptions": {}
-                        },
-                        "nameLocation": "-1:-1:-1"
-                    }
-                ],
-                "unitAlias": ""
-            },
-            {
-                "id": 26488,
-                "nodeType": "ImportDirective",
-                "src": "208:71:140",
-                "nodes": [],
-                "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
-                "file": "contracts/src/interfaces/IHyperdrive.sol",
-                "nameLocation": "-1:-1:-1",
-                "scope": 26883,
-                "sourceUnit": 10507,
-                "symbolAliases": [
-                    {
-                        "foreign": {
-                            "id": 26487,
-                            "name": "IHyperdrive",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 10506,
-                            "src": "217:11:140",
-                            "typeDescriptions": {}
-                        },
-                        "nameLocation": "-1:-1:-1"
-                    }
-                ],
-                "unitAlias": ""
-            },
-            {
-                "id": 26490,
-                "nodeType": "ImportDirective",
-                "src": "280:71:140",
-                "nodes": [],
-                "absolutePath": "contracts/src/interfaces/IMultiToken.sol",
-                "file": "contracts/src/interfaces/IMultiToken.sol",
-                "nameLocation": "-1:-1:-1",
-                "scope": 26883,
-                "sourceUnit": 11485,
-                "symbolAliases": [
-                    {
-                        "foreign": {
-                            "id": 26489,
-                            "name": "IMultiToken",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 11484,
-                            "src": "289:11:140",
-                            "typeDescriptions": {}
-                        },
-                        "nameLocation": "-1:-1:-1"
-                    }
-                ],
-                "unitAlias": ""
-            },
-            {
-                "id": 26492,
-                "nodeType": "ImportDirective",
-                "src": "352:87:140",
-                "nodes": [],
-                "absolutePath": "contracts/src/internal/HyperdriveMultiToken.sol",
-                "file": "contracts/src/internal/HyperdriveMultiToken.sol",
-                "nameLocation": "-1:-1:-1",
-                "scope": 26883,
-                "sourceUnit": 16683,
-                "symbolAliases": [
-                    {
-                        "foreign": {
-                            "id": 26491,
-                            "name": "HyperdriveMultiToken",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 16682,
-                            "src": "361:20:140",
-                            "typeDescriptions": {}
-                        },
-                        "nameLocation": "-1:-1:-1"
-                    }
-                ],
-                "unitAlias": ""
-            },
-            {
-                "id": 26494,
-                "nodeType": "ImportDirective",
-                "src": "440:81:140",
-                "nodes": [],
-                "absolutePath": "contracts/src/internal/HyperdriveStorage.sol",
-                "file": "contracts/src/internal/HyperdriveStorage.sol",
-                "nameLocation": "-1:-1:-1",
-                "scope": 26883,
-                "sourceUnit": 17894,
-                "symbolAliases": [
-                    {
-                        "foreign": {
-                            "id": 26493,
-                            "name": "HyperdriveStorage",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 17893,
-                            "src": "449:17:140",
-                            "typeDescriptions": {}
-                        },
-                        "nameLocation": "-1:-1:-1"
-                    }
-                ],
-                "unitAlias": ""
-            },
-            {
-                "id": 26496,
-                "nodeType": "ImportDirective",
-                "src": "522:76:140",
-                "nodes": [],
-                "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
-                "file": "contracts/src/libraries/HyperdriveMath.sol",
-                "nameLocation": "-1:-1:-1",
-                "scope": 26883,
-                "sourceUnit": 19717,
-                "symbolAliases": [
-                    {
-                        "foreign": {
-                            "id": 26495,
-                            "name": "HyperdriveMath",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 19716,
-                            "src": "531:14:140",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -2043,34 +1884,22 @@ export const IMockMultiToken = {
             {
                 "id": 26499,
                 "nodeType": "ImportDirective",
-                "src": "599:94:140",
+                "src": "146:61:140",
                 "nodes": [],
-                "absolutePath": "contracts/test/MockHyperdrive.sol",
-                "file": "contracts/test/MockHyperdrive.sol",
+                "absolutePath": "contracts/src/interfaces/IERC20.sol",
+                "file": "contracts/src/interfaces/IERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 26883,
-                "sourceUnit": 25229,
+                "scope": 26896,
+                "sourceUnit": 9667,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 26497,
-                            "name": "MockHyperdriveBase",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 24810,
-                            "src": "608:18:140",
-                            "typeDescriptions": {}
-                        },
-                        "nameLocation": "-1:-1:-1"
-                    },
-                    {
-                        "foreign": {
                             "id": 26498,
-                            "name": "MockHyperdriveTarget0",
+                            "name": "IERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 25168,
-                            "src": "628:21:140",
+                            "referencedDeclaration": 9666,
+                            "src": "155:6:140",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -2081,22 +1910,22 @@ export const IMockMultiToken = {
             {
                 "id": 26501,
                 "nodeType": "ImportDirective",
-                "src": "694:65:140",
+                "src": "208:71:140",
                 "nodes": [],
-                "absolutePath": "test/utils/HyperdriveUtils.sol",
-                "file": "test/utils/HyperdriveUtils.sol",
+                "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
+                "file": "contracts/src/interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 26883,
-                "sourceUnit": 157394,
+                "scope": 26896,
+                "sourceUnit": 10352,
                 "symbolAliases": [
                     {
                         "foreign": {
                             "id": 26500,
-                            "name": "HyperdriveUtils",
+                            "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 157393,
-                            "src": "703:15:140",
+                            "referencedDeclaration": 10351,
+                            "src": "217:11:140",
                             "typeDescriptions": {}
                         },
                         "nameLocation": "-1:-1:-1"
@@ -2105,187 +1934,190 @@ export const IMockMultiToken = {
                 "unitAlias": ""
             },
             {
-                "id": 26545,
+                "id": 26503,
+                "nodeType": "ImportDirective",
+                "src": "280:71:140",
+                "nodes": [],
+                "absolutePath": "contracts/src/interfaces/IMultiToken.sol",
+                "file": "contracts/src/interfaces/IMultiToken.sol",
+                "nameLocation": "-1:-1:-1",
+                "scope": 26896,
+                "sourceUnit": 11335,
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 26502,
+                            "name": "IMultiToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 11334,
+                            "src": "289:11:140",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "id": 26505,
+                "nodeType": "ImportDirective",
+                "src": "352:87:140",
+                "nodes": [],
+                "absolutePath": "contracts/src/internal/HyperdriveMultiToken.sol",
+                "file": "contracts/src/internal/HyperdriveMultiToken.sol",
+                "nameLocation": "-1:-1:-1",
+                "scope": 26896,
+                "sourceUnit": 16539,
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 26504,
+                            "name": "HyperdriveMultiToken",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 16538,
+                            "src": "361:20:140",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "id": 26507,
+                "nodeType": "ImportDirective",
+                "src": "440:81:140",
+                "nodes": [],
+                "absolutePath": "contracts/src/internal/HyperdriveStorage.sol",
+                "file": "contracts/src/internal/HyperdriveStorage.sol",
+                "nameLocation": "-1:-1:-1",
+                "scope": 26896,
+                "sourceUnit": 17735,
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 26506,
+                            "name": "HyperdriveStorage",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 17734,
+                            "src": "449:17:140",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "id": 26509,
+                "nodeType": "ImportDirective",
+                "src": "522:76:140",
+                "nodes": [],
+                "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
+                "file": "contracts/src/libraries/HyperdriveMath.sol",
+                "nameLocation": "-1:-1:-1",
+                "scope": 26896,
+                "sourceUnit": 19568,
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 26508,
+                            "name": "HyperdriveMath",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 19567,
+                            "src": "531:14:140",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "id": 26512,
+                "nodeType": "ImportDirective",
+                "src": "599:94:140",
+                "nodes": [],
+                "absolutePath": "contracts/test/MockHyperdrive.sol",
+                "file": "contracts/test/MockHyperdrive.sol",
+                "nameLocation": "-1:-1:-1",
+                "scope": 26896,
+                "sourceUnit": 25222,
+                "symbolAliases": [
+                    {
+                        "foreign": {
+                            "id": 26510,
+                            "name": "MockHyperdriveBase",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 24803,
+                            "src": "608:18:140",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    },
+                    {
+                        "foreign": {
+                            "id": 26511,
+                            "name": "MockHyperdriveTarget0",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 25161,
+                            "src": "628:21:140",
+                            "typeDescriptions": {}
+                        },
+                        "nameLocation": "-1:-1:-1"
+                    }
+                ],
+                "unitAlias": ""
+            },
+            {
+                "id": 26556,
                 "nodeType": "ContractDefinition",
-                "src": "807:480:140",
+                "src": "741:480:140",
                 "nodes": [
                     {
-                        "id": 26513,
+                        "id": 26524,
                         "nodeType": "FunctionDefinition",
-                        "src": "854:112:140",
+                        "src": "788:112:140",
                         "nodes": [],
                         "functionSelector": "94a97cdb",
                         "implemented": false,
                         "kind": "function",
                         "modifiers": [],
                         "name": "__setBalanceOf",
-                        "nameLocation": "863:14:140",
+                        "nameLocation": "797:14:140",
                         "parameters": {
-                            "id": 26511,
+                            "id": 26522,
                             "nodeType": "ParameterList",
                             "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 26506,
-                                    "mutability": "mutable",
-                                    "name": "_tokenId",
-                                    "nameLocation": "895:8:140",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 26513,
-                                    "src": "887:16:140",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 26505,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "887:7:140",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 26508,
-                                    "mutability": "mutable",
-                                    "name": "_who",
-                                    "nameLocation": "921:4:140",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 26513,
-                                    "src": "913:12:140",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_address",
-                                        "typeString": "address"
-                                    },
-                                    "typeName": {
-                                        "id": 26507,
-                                        "name": "address",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "913:7:140",
-                                        "stateMutability": "nonpayable",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 26510,
-                                    "mutability": "mutable",
-                                    "name": "_amount",
-                                    "nameLocation": "943:7:140",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 26513,
-                                    "src": "935:15:140",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 26509,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "935:7:140",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "877:79:140"
-                        },
-                        "returnParameters": {
-                            "id": 26512,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "965:0:140"
-                        },
-                        "scope": 26545,
-                        "stateMutability": "nonpayable",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 26526,
-                        "nodeType": "FunctionDefinition",
-                        "src": "972:163:140",
-                        "nodes": [],
-                        "functionSelector": "58af4a0a",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "__external_transferFrom",
-                        "nameLocation": "981:23:140",
-                        "parameters": {
-                            "id": 26524,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 26515,
-                                    "mutability": "mutable",
-                                    "name": "tokenID",
-                                    "nameLocation": "1022:7:140",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 26526,
-                                    "src": "1014:15:140",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 26514,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1014:7:140",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
                                 {
                                     "constant": false,
                                     "id": 26517,
                                     "mutability": "mutable",
-                                    "name": "from",
-                                    "nameLocation": "1047:4:140",
+                                    "name": "_tokenId",
+                                    "nameLocation": "829:8:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26526,
-                                    "src": "1039:12:140",
+                                    "scope": 26524,
+                                    "src": "821:16:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_address",
-                                        "typeString": "address"
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
                                     },
                                     "typeName": {
                                         "id": 26516,
-                                        "name": "address",
+                                        "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1039:7:140",
-                                        "stateMutability": "nonpayable",
+                                        "src": "821:7:140",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
                                         }
                                     },
                                     "visibility": "internal"
@@ -2294,11 +2126,11 @@ export const IMockMultiToken = {
                                     "constant": false,
                                     "id": 26519,
                                     "mutability": "mutable",
-                                    "name": "to",
-                                    "nameLocation": "1069:2:140",
+                                    "name": "_who",
+                                    "nameLocation": "855:4:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26526,
-                                    "src": "1061:10:140",
+                                    "scope": 26524,
+                                    "src": "847:12:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2309,7 +2141,7 @@ export const IMockMultiToken = {
                                         "id": 26518,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1061:7:140",
+                                        "src": "847:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2322,11 +2154,11 @@ export const IMockMultiToken = {
                                     "constant": false,
                                     "id": 26521,
                                     "mutability": "mutable",
-                                    "name": "amount",
-                                    "nameLocation": "1089:6:140",
+                                    "name": "_amount",
+                                    "nameLocation": "877:7:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26526,
-                                    "src": "1081:14:140",
+                                    "scope": 26524,
+                                    "src": "869:15:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2337,7 +2169,63 @@ export const IMockMultiToken = {
                                         "id": 26520,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1081:7:140",
+                                        "src": "869:7:140",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "811:79:140"
+                        },
+                        "returnParameters": {
+                            "id": 26523,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "899:0:140"
+                        },
+                        "scope": 26556,
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 26537,
+                        "nodeType": "FunctionDefinition",
+                        "src": "906:163:140",
+                        "nodes": [],
+                        "functionSelector": "58af4a0a",
+                        "implemented": false,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "__external_transferFrom",
+                        "nameLocation": "915:23:140",
+                        "parameters": {
+                            "id": 26535,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 26526,
+                                    "mutability": "mutable",
+                                    "name": "tokenID",
+                                    "nameLocation": "956:7:140",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 26537,
+                                    "src": "948:15:140",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 26525,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "948:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2347,13 +2235,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26523,
+                                    "id": 26528,
                                     "mutability": "mutable",
-                                    "name": "caller",
-                                    "nameLocation": "1113:6:140",
+                                    "name": "from",
+                                    "nameLocation": "981:4:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26526,
-                                    "src": "1105:14:140",
+                                    "scope": 26537,
+                                    "src": "973:12:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2361,70 +2249,14 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26522,
+                                        "id": 26527,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1105:7:140",
+                                        "src": "973:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1004:121:140"
-                        },
-                        "returnParameters": {
-                            "id": 26525,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "1134:0:140"
-                        },
-                        "scope": 26545,
-                        "stateMutability": "nonpayable",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 26535,
-                        "nodeType": "FunctionDefinition",
-                        "src": "1141:68:140",
-                        "nodes": [],
-                        "functionSelector": "836a1040",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "mint",
-                        "nameLocation": "1150:4:140",
-                        "parameters": {
-                            "id": 26533,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 26528,
-                                    "mutability": "mutable",
-                                    "name": "tokenID",
-                                    "nameLocation": "1163:7:140",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 26535,
-                                    "src": "1155:15:140",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 26527,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1155:7:140",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
                                         }
                                     },
                                     "visibility": "internal"
@@ -2434,10 +2266,10 @@ export const IMockMultiToken = {
                                     "id": 26530,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "1180:2:140",
+                                    "nameLocation": "1003:2:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26535,
-                                    "src": "1172:10:140",
+                                    "scope": 26537,
+                                    "src": "995:10:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2448,7 +2280,7 @@ export const IMockMultiToken = {
                                         "id": 26529,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1172:7:140",
+                                        "src": "995:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2462,10 +2294,10 @@ export const IMockMultiToken = {
                                     "id": 26532,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "1192:6:140",
+                                    "nameLocation": "1023:6:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26535,
-                                    "src": "1184:14:140",
+                                    "scope": 26537,
+                                    "src": "1015:14:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2476,63 +2308,7 @@ export const IMockMultiToken = {
                                         "id": 26531,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1184:7:140",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1154:45:140"
-                        },
-                        "returnParameters": {
-                            "id": 26534,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "1208:0:140"
-                        },
-                        "scope": 26545,
-                        "stateMutability": "nonpayable",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 26544,
-                        "nodeType": "FunctionDefinition",
-                        "src": "1215:70:140",
-                        "nodes": [],
-                        "functionSelector": "9eea5f66",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "burn",
-                        "nameLocation": "1224:4:140",
-                        "parameters": {
-                            "id": 26542,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 26537,
-                                    "mutability": "mutable",
-                                    "name": "tokenID",
-                                    "nameLocation": "1237:7:140",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 26544,
-                                    "src": "1229:15:140",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 26536,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1229:7:140",
+                                        "src": "1015:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2542,13 +2318,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26539,
+                                    "id": 26534,
                                     "mutability": "mutable",
-                                    "name": "from",
-                                    "nameLocation": "1254:4:140",
+                                    "name": "caller",
+                                    "nameLocation": "1047:6:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26544,
-                                    "src": "1246:12:140",
+                                    "scope": 26537,
+                                    "src": "1039:14:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2556,10 +2332,94 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26538,
+                                        "id": 26533,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1246:7:140",
+                                        "src": "1039:7:140",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "938:121:140"
+                        },
+                        "returnParameters": {
+                            "id": 26536,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "1068:0:140"
+                        },
+                        "scope": 26556,
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 26546,
+                        "nodeType": "FunctionDefinition",
+                        "src": "1075:68:140",
+                        "nodes": [],
+                        "functionSelector": "836a1040",
+                        "implemented": false,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "mint",
+                        "nameLocation": "1084:4:140",
+                        "parameters": {
+                            "id": 26544,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 26539,
+                                    "mutability": "mutable",
+                                    "name": "tokenID",
+                                    "nameLocation": "1097:7:140",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 26546,
+                                    "src": "1089:15:140",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 26538,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1089:7:140",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 26541,
+                                    "mutability": "mutable",
+                                    "name": "to",
+                                    "nameLocation": "1114:2:140",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 26546,
+                                    "src": "1106:10:140",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 26540,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1106:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -2570,13 +2430,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26541,
+                                    "id": 26543,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "1268:6:140",
+                                    "nameLocation": "1126:6:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26544,
-                                    "src": "1260:14:140",
+                                    "scope": 26546,
+                                    "src": "1118:14:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -2584,10 +2444,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26540,
+                                        "id": 26542,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1260:7:140",
+                                        "src": "1118:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -2596,15 +2456,126 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1228:47:140"
+                            "src": "1088:45:140"
                         },
                         "returnParameters": {
-                            "id": 26543,
+                            "id": 26545,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "1284:0:140"
+                            "src": "1142:0:140"
                         },
-                        "scope": 26545,
+                        "scope": 26556,
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 26555,
+                        "nodeType": "FunctionDefinition",
+                        "src": "1149:70:140",
+                        "nodes": [],
+                        "functionSelector": "9eea5f66",
+                        "implemented": false,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "burn",
+                        "nameLocation": "1158:4:140",
+                        "parameters": {
+                            "id": 26553,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 26548,
+                                    "mutability": "mutable",
+                                    "name": "tokenID",
+                                    "nameLocation": "1171:7:140",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 26555,
+                                    "src": "1163:15:140",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 26547,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1163:7:140",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 26550,
+                                    "mutability": "mutable",
+                                    "name": "from",
+                                    "nameLocation": "1188:4:140",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 26555,
+                                    "src": "1180:12:140",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_address",
+                                        "typeString": "address"
+                                    },
+                                    "typeName": {
+                                        "id": 26549,
+                                        "name": "address",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1180:7:140",
+                                        "stateMutability": "nonpayable",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_address",
+                                            "typeString": "address"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 26552,
+                                    "mutability": "mutable",
+                                    "name": "amount",
+                                    "nameLocation": "1202:6:140",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 26555,
+                                    "src": "1194:14:140",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 26551,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1194:7:140",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1162:47:140"
+                        },
+                        "returnParameters": {
+                            "id": 26554,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "1218:0:140"
+                        },
+                        "scope": 26556,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
@@ -2614,63 +2585,63 @@ export const IMockMultiToken = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 26503,
+                            "id": 26514,
                             "name": "IMultiToken",
                             "nameLocations": [
-                                "836:11:140"
+                                "770:11:140"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 11484,
-                            "src": "836:11:140"
+                            "referencedDeclaration": 11334,
+                            "src": "770:11:140"
                         },
-                        "id": 26504,
+                        "id": 26515,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "836:11:140"
+                        "src": "770:11:140"
                     }
                 ],
                 "canonicalName": "IMockMultiToken",
                 "contractDependencies": [],
                 "contractKind": "interface",
                 "documentation": {
-                    "id": 26502,
+                    "id": 26513,
                     "nodeType": "StructuredDocumentation",
-                    "src": "761:46:140",
+                    "src": "695:46:140",
                     "text": "DEPRECATED: Don't use this for new tests."
                 },
                 "fullyImplemented": false,
                 "linearizedBaseContracts": [
-                    26545,
-                    11484,
-                    11624,
-                    11575,
-                    11697,
-                    11609
+                    26556,
+                    11334,
+                    11474,
+                    11425,
+                    11547,
+                    11459
                 ],
                 "name": "IMockMultiToken",
-                "nameLocation": "817:15:140",
-                "scope": 26883,
+                "nameLocation": "751:15:140",
+                "scope": 26896,
                 "usedErrors": [],
                 "usedEvents": [
-                    11590,
-                    11599,
-                    11608
+                    11440,
+                    11449,
+                    11458
                 ]
             },
             {
-                "id": 26882,
+                "id": 26895,
                 "nodeType": "ContractDefinition",
-                "src": "1289:7549:140",
+                "src": "1223:7566:140",
                 "nodes": [
                     {
-                        "id": 26551,
+                        "id": 26562,
                         "nodeType": "VariableDeclaration",
-                        "src": "1363:34:140",
+                        "src": "1297:34:140",
                         "nodes": [],
                         "constant": false,
                         "mutability": "immutable",
                         "name": "target0",
-                        "nameLocation": "1390:7:140",
-                        "scope": 26882,
+                        "nameLocation": "1324:7:140",
+                        "scope": 26895,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2678,10 +2649,10 @@ export const IMockMultiToken = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 26550,
+                            "id": 26561,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1363:7:140",
+                            "src": "1297:7:140",
                             "stateMutability": "nonpayable",
                             "typeDescriptions": {
                                 "typeIdentifier": "t_address",
@@ -2691,22 +2662,22 @@ export const IMockMultiToken = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 26557,
+                        "id": 26568,
                         "nodeType": "VariableDeclaration",
-                        "src": "1487:174:140",
+                        "src": "1421:174:140",
                         "nodes": [],
                         "constant": true,
                         "documentation": {
-                            "id": 26552,
+                            "id": 26563,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1404:78:140",
+                            "src": "1338:78:140",
                             "text": "@notice The typehash used to calculate the EIP712 hash for `permitForAll`."
                         },
                         "functionSelector": "30adf81f",
                         "mutability": "constant",
                         "name": "PERMIT_TYPEHASH",
-                        "nameLocation": "1511:15:140",
-                        "scope": 26882,
+                        "nameLocation": "1445:15:140",
+                        "scope": 26895,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2714,10 +2685,10 @@ export const IMockMultiToken = {
                             "typeString": "bytes32"
                         },
                         "typeName": {
-                            "id": 26553,
+                            "id": 26564,
                             "name": "bytes32",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1487:7:140",
+                            "src": "1421:7:140",
                             "typeDescriptions": {
                                 "typeIdentifier": "t_bytes32",
                                 "typeString": "bytes32"
@@ -2727,14 +2698,14 @@ export const IMockMultiToken = {
                             "arguments": [
                                 {
                                     "hexValue": "5065726d6974466f72416c6c2861646472657373206f776e65722c61646472657373207370656e6465722c626f6f6c205f617070726f7665642c75696e74323536206e6f6e63652c75696e7432353620646561646c696e6529",
-                                    "id": 26555,
+                                    "id": 26566,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
                                     "kind": "string",
                                     "lValueRequested": false,
                                     "nodeType": "Literal",
-                                    "src": "1560:91:140",
+                                    "src": "1494:91:140",
                                     "typeDescriptions": {
                                         "typeIdentifier": "t_stringliteral_65619c8664d6db8aae8c236ad19598696159942a4245b23b45565cc18e973673",
                                         "typeString": "literal_string \"PermitForAll(address owner,address spender,bool _approved,uint256 nonce,uint256 deadline)\""
@@ -2749,18 +2720,18 @@ export const IMockMultiToken = {
                                         "typeString": "literal_string \"PermitForAll(address owner,address spender,bool _approved,uint256 nonce,uint256 deadline)\""
                                     }
                                 ],
-                                "id": 26554,
+                                "id": 26565,
                                 "name": "keccak256",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": -8,
-                                "src": "1537:9:140",
+                                "src": "1471:9:140",
                                 "typeDescriptions": {
                                     "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                 }
                             },
-                            "id": 26556,
+                            "id": 26567,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2769,7 +2740,7 @@ export const IMockMultiToken = {
                             "nameLocations": [],
                             "names": [],
                             "nodeType": "FunctionCall",
-                            "src": "1537:124:140",
+                            "src": "1471:124:140",
                             "tryCall": false,
                             "typeDescriptions": {
                                 "typeIdentifier": "t_bytes32",
@@ -2779,22 +2750,22 @@ export const IMockMultiToken = {
                         "visibility": "public"
                     },
                     {
-                        "id": 26560,
+                        "id": 26571,
                         "nodeType": "VariableDeclaration",
-                        "src": "1725:40:140",
+                        "src": "1659:40:140",
                         "nodes": [],
                         "constant": false,
                         "documentation": {
-                            "id": 26558,
+                            "id": 26569,
                             "nodeType": "StructuredDocumentation",
-                            "src": "1668:52:140",
+                            "src": "1602:52:140",
                             "text": "@notice This contract's EIP712 domain separator."
                         },
                         "functionSelector": "f698da25",
                         "mutability": "immutable",
                         "name": "domainSeparator",
-                        "nameLocation": "1750:15:140",
-                        "scope": 26882,
+                        "nameLocation": "1684:15:140",
+                        "scope": 26895,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2802,10 +2773,10 @@ export const IMockMultiToken = {
                             "typeString": "bytes32"
                         },
                         "typeName": {
-                            "id": 26559,
+                            "id": 26570,
                             "name": "bytes32",
                             "nodeType": "ElementaryTypeName",
-                            "src": "1725:7:140",
+                            "src": "1659:7:140",
                             "typeDescriptions": {
                                 "typeIdentifier": "t_bytes32",
                                 "typeString": "bytes32"
@@ -2814,30 +2785,30 @@ export const IMockMultiToken = {
                         "visibility": "public"
                     },
                     {
-                        "id": 26695,
+                        "id": 26706,
                         "nodeType": "FunctionDefinition",
-                        "src": "1815:2898:140",
+                        "src": "1749:2898:140",
                         "nodes": [],
                         "body": {
-                            "id": 26694,
+                            "id": 26705,
                             "nodeType": "Block",
-                            "src": "2879:1834:140",
+                            "src": "2813:1834:140",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 26669,
+                                        "id": 26680,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 26615,
+                                            "id": 26626,
                                             "name": "target0",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26551,
-                                            "src": "2929:7:140",
+                                            "referencedDeclaration": 26562,
+                                            "src": "2863:7:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
@@ -2857,14 +2828,14 @@ export const IMockMultiToken = {
                                                                             "arguments": [
                                                                                 {
                                                                                     "hexValue": "30",
-                                                                                    "id": 26626,
+                                                                                    "id": 26637,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": true,
                                                                                     "kind": "number",
                                                                                     "lValueRequested": false,
                                                                                     "nodeType": "Literal",
-                                                                                    "src": "3074:1:140",
+                                                                                    "src": "3008:1:140",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_rational_0_by_1",
                                                                                         "typeString": "int_const 0"
@@ -2879,26 +2850,26 @@ export const IMockMultiToken = {
                                                                                         "typeString": "int_const 0"
                                                                                     }
                                                                                 ],
-                                                                                "id": 26625,
+                                                                                "id": 26636,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
                                                                                 "lValueRequested": false,
                                                                                 "nodeType": "ElementaryTypeNameExpression",
-                                                                                "src": "3066:7:140",
+                                                                                "src": "3000:7:140",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_type$_t_address_$",
                                                                                     "typeString": "type(address)"
                                                                                 },
                                                                                 "typeName": {
-                                                                                    "id": 26624,
+                                                                                    "id": 26635,
                                                                                     "name": "address",
                                                                                     "nodeType": "ElementaryTypeName",
-                                                                                    "src": "3066:7:140",
+                                                                                    "src": "3000:7:140",
                                                                                     "typeDescriptions": {}
                                                                                 }
                                                                             },
-                                                                            "id": 26627,
+                                                                            "id": 26638,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -2907,7 +2878,7 @@ export const IMockMultiToken = {
                                                                             "nameLocations": [],
                                                                             "names": [],
                                                                             "nodeType": "FunctionCall",
-                                                                            "src": "3066:10:140",
+                                                                            "src": "3000:10:140",
                                                                             "tryCall": false,
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_address",
@@ -2922,18 +2893,18 @@ export const IMockMultiToken = {
                                                                                 "typeString": "address"
                                                                             }
                                                                         ],
-                                                                        "id": 26623,
+                                                                        "id": 26634,
                                                                         "name": "IERC20",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 9810,
-                                                                        "src": "3059:6:140",
+                                                                        "referencedDeclaration": 9666,
+                                                                        "src": "2993:6:140",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IERC20_$9810_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IERC20_$9666_$",
                                                                             "typeString": "type(contract IERC20)"
                                                                         }
                                                                     },
-                                                                    "id": 26628,
+                                                                    "id": 26639,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -2942,10 +2913,10 @@ export const IMockMultiToken = {
                                                                     "nameLocations": [],
                                                                     "names": [],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "3059:18:140",
+                                                                    "src": "2993:18:140",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                        "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                         "typeString": "contract IERC20"
                                                                     }
                                                                 },
@@ -2955,14 +2926,14 @@ export const IMockMultiToken = {
                                                                             "arguments": [
                                                                                 {
                                                                                     "hexValue": "30",
-                                                                                    "id": 26632,
+                                                                                    "id": 26643,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": true,
                                                                                     "kind": "number",
                                                                                     "lValueRequested": false,
                                                                                     "nodeType": "Literal",
-                                                                                    "src": "3132:1:140",
+                                                                                    "src": "3066:1:140",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_rational_0_by_1",
                                                                                         "typeString": "int_const 0"
@@ -2977,26 +2948,26 @@ export const IMockMultiToken = {
                                                                                         "typeString": "int_const 0"
                                                                                     }
                                                                                 ],
-                                                                                "id": 26631,
+                                                                                "id": 26642,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
                                                                                 "lValueRequested": false,
                                                                                 "nodeType": "ElementaryTypeNameExpression",
-                                                                                "src": "3124:7:140",
+                                                                                "src": "3058:7:140",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_type$_t_address_$",
                                                                                     "typeString": "type(address)"
                                                                                 },
                                                                                 "typeName": {
-                                                                                    "id": 26630,
+                                                                                    "id": 26641,
                                                                                     "name": "address",
                                                                                     "nodeType": "ElementaryTypeName",
-                                                                                    "src": "3124:7:140",
+                                                                                    "src": "3058:7:140",
                                                                                     "typeDescriptions": {}
                                                                                 }
                                                                             },
-                                                                            "id": 26633,
+                                                                            "id": 26644,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -3005,7 +2976,7 @@ export const IMockMultiToken = {
                                                                             "nameLocations": [],
                                                                             "names": [],
                                                                             "nodeType": "FunctionCall",
-                                                                            "src": "3124:10:140",
+                                                                            "src": "3058:10:140",
                                                                             "tryCall": false,
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_address",
@@ -3020,18 +2991,18 @@ export const IMockMultiToken = {
                                                                                 "typeString": "address"
                                                                             }
                                                                         ],
-                                                                        "id": 26629,
+                                                                        "id": 26640,
                                                                         "name": "IERC20",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 9810,
-                                                                        "src": "3117:6:140",
+                                                                        "referencedDeclaration": 9666,
+                                                                        "src": "3051:6:140",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_IERC20_$9810_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_IERC20_$9666_$",
                                                                             "typeString": "type(contract IERC20)"
                                                                         }
                                                                     },
-                                                                    "id": 26634,
+                                                                    "id": 26645,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -3040,32 +3011,32 @@ export const IMockMultiToken = {
                                                                     "nameLocations": [],
                                                                     "names": [],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "3117:18:140",
+                                                                    "src": "3051:18:140",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                        "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                         "typeString": "contract IERC20"
                                                                     }
                                                                 },
                                                                 {
-                                                                    "id": 26635,
+                                                                    "id": 26646,
                                                                     "name": "_linkerFactory",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 26564,
-                                                                    "src": "3172:14:140",
+                                                                    "referencedDeclaration": 26575,
+                                                                    "src": "3106:14:140",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
                                                                         "typeString": "address"
                                                                     }
                                                                 },
                                                                 {
-                                                                    "id": 26636,
+                                                                    "id": 26647,
                                                                     "name": "_linkerCodeHash",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 26562,
-                                                                    "src": "3224:15:140",
+                                                                    "referencedDeclaration": 26573,
+                                                                    "src": "3158:15:140",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bytes32",
                                                                         "typeString": "bytes32"
@@ -3073,14 +3044,14 @@ export const IMockMultiToken = {
                                                                 },
                                                                 {
                                                                     "hexValue": "31653138",
-                                                                    "id": 26637,
+                                                                    "id": 26648,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "kind": "number",
                                                                     "lValueRequested": false,
                                                                     "nodeType": "Literal",
-                                                                    "src": "3285:4:140",
+                                                                    "src": "3219:4:140",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_rational_1000000000000000000_by_1",
                                                                         "typeString": "int_const 1000000000000000000"
@@ -3089,14 +3060,14 @@ export const IMockMultiToken = {
                                                                 },
                                                                 {
                                                                     "hexValue": "31653138",
-                                                                    "id": 26638,
+                                                                    "id": 26649,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "kind": "number",
                                                                     "lValueRequested": false,
                                                                     "nodeType": "Literal",
-                                                                    "src": "3333:4:140",
+                                                                    "src": "3267:4:140",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_rational_1000000000000000000_by_1",
                                                                         "typeString": "int_const 1000000000000000000"
@@ -3105,14 +3076,14 @@ export const IMockMultiToken = {
                                                                 },
                                                                 {
                                                                     "hexValue": "31653135",
-                                                                    "id": 26639,
+                                                                    "id": 26650,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "kind": "number",
                                                                     "lValueRequested": false,
                                                                     "nodeType": "Literal",
-                                                                    "src": "3385:4:140",
+                                                                    "src": "3319:4:140",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_rational_1000000000000000_by_1",
                                                                         "typeString": "int_const 1000000000000000"
@@ -3121,14 +3092,14 @@ export const IMockMultiToken = {
                                                                 },
                                                                 {
                                                                     "hexValue": "333635",
-                                                                    "id": 26640,
+                                                                    "id": 26651,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "kind": "number",
                                                                     "lValueRequested": false,
                                                                     "nodeType": "Literal",
-                                                                    "src": "3429:8:140",
+                                                                    "src": "3363:8:140",
                                                                     "subdenomination": "days",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_rational_31536000_by_1",
@@ -3138,14 +3109,14 @@ export const IMockMultiToken = {
                                                                 },
                                                                 {
                                                                     "hexValue": "31",
-                                                                    "id": 26641,
+                                                                    "id": 26652,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "kind": "number",
                                                                     "lValueRequested": false,
                                                                     "nodeType": "Literal",
-                                                                    "src": "3479:6:140",
+                                                                    "src": "3413:6:140",
                                                                     "subdenomination": "days",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_rational_86400_by_1",
@@ -3157,14 +3128,14 @@ export const IMockMultiToken = {
                                                                     "arguments": [
                                                                         {
                                                                             "hexValue": "302e3035653138",
-                                                                            "id": 26644,
+                                                                            "id": 26655,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
                                                                             "kind": "number",
                                                                             "lValueRequested": false,
                                                                             "nodeType": "Literal",
-                                                                            "src": "3581:7:140",
+                                                                            "src": "3515:7:140",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_rational_50000000000000000_by_1",
                                                                                 "typeString": "int_const 50000000000000000"
@@ -3173,14 +3144,14 @@ export const IMockMultiToken = {
                                                                         },
                                                                         {
                                                                             "hexValue": "333635",
-                                                                            "id": 26645,
+                                                                            "id": 26656,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
                                                                             "kind": "number",
                                                                             "lValueRequested": false,
                                                                             "nodeType": "Literal",
-                                                                            "src": "3614:8:140",
+                                                                            "src": "3548:8:140",
                                                                             "subdenomination": "days",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_rational_31536000_by_1",
@@ -3201,33 +3172,33 @@ export const IMockMultiToken = {
                                                                             }
                                                                         ],
                                                                         "expression": {
-                                                                            "id": 26642,
+                                                                            "id": 26653,
                                                                             "name": "HyperdriveMath",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 19716,
-                                                                            "src": "3520:14:140",
+                                                                            "referencedDeclaration": 19567,
+                                                                            "src": "3454:14:140",
                                                                             "typeDescriptions": {
-                                                                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$19716_$",
+                                                                                "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$19567_$",
                                                                                 "typeString": "type(library HyperdriveMath)"
                                                                             }
                                                                         },
-                                                                        "id": 26643,
+                                                                        "id": 26654,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
-                                                                        "memberLocation": "3535:20:140",
+                                                                        "memberLocation": "3469:20:140",
                                                                         "memberName": "calculateTimeStretch",
                                                                         "nodeType": "MemberAccess",
-                                                                        "referencedDeclaration": 19060,
-                                                                        "src": "3520:35:140",
+                                                                        "referencedDeclaration": 18914,
+                                                                        "src": "3454:35:140",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                                         }
                                                                     },
-                                                                    "id": 26646,
+                                                                    "id": 26657,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -3236,7 +3207,7 @@ export const IMockMultiToken = {
                                                                     "nameLocations": [],
                                                                     "names": [],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "3520:124:140",
+                                                                    "src": "3454:124:140",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -3247,14 +3218,14 @@ export const IMockMultiToken = {
                                                                     "arguments": [
                                                                         {
                                                                             "hexValue": "30",
-                                                                            "id": 26649,
+                                                                            "id": 26660,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
                                                                             "kind": "number",
                                                                             "lValueRequested": false,
                                                                             "nodeType": "Literal",
-                                                                            "src": "3686:1:140",
+                                                                            "src": "3620:1:140",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_rational_0_by_1",
                                                                                 "typeString": "int_const 0"
@@ -3269,26 +3240,26 @@ export const IMockMultiToken = {
                                                                                 "typeString": "int_const 0"
                                                                             }
                                                                         ],
-                                                                        "id": 26648,
+                                                                        "id": 26659,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
                                                                         "lValueRequested": false,
                                                                         "nodeType": "ElementaryTypeNameExpression",
-                                                                        "src": "3678:7:140",
+                                                                        "src": "3612:7:140",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_type$_t_address_$",
                                                                             "typeString": "type(address)"
                                                                         },
                                                                         "typeName": {
-                                                                            "id": 26647,
+                                                                            "id": 26658,
                                                                             "name": "address",
                                                                             "nodeType": "ElementaryTypeName",
-                                                                            "src": "3678:7:140",
+                                                                            "src": "3612:7:140",
                                                                             "typeDescriptions": {}
                                                                         }
                                                                     },
-                                                                    "id": 26650,
+                                                                    "id": 26661,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -3297,7 +3268,7 @@ export const IMockMultiToken = {
                                                                     "nameLocations": [],
                                                                     "names": [],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "3678:10:140",
+                                                                    "src": "3612:10:140",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
@@ -3306,176 +3277,6 @@ export const IMockMultiToken = {
                                                                 },
                                                                 {
                                                                     "arguments": [
-                                                                        {
-                                                                            "hexValue": "30",
-                                                                            "id": 26653,
-                                                                            "isConstant": false,
-                                                                            "isLValue": false,
-                                                                            "isPure": true,
-                                                                            "kind": "number",
-                                                                            "lValueRequested": false,
-                                                                            "nodeType": "Literal",
-                                                                            "src": "3732:1:140",
-                                                                            "typeDescriptions": {
-                                                                                "typeIdentifier": "t_rational_0_by_1",
-                                                                                "typeString": "int_const 0"
-                                                                            },
-                                                                            "value": "0"
-                                                                        }
-                                                                    ],
-                                                                    "expression": {
-                                                                        "argumentTypes": [
-                                                                            {
-                                                                                "typeIdentifier": "t_rational_0_by_1",
-                                                                                "typeString": "int_const 0"
-                                                                            }
-                                                                        ],
-                                                                        "id": 26652,
-                                                                        "isConstant": false,
-                                                                        "isLValue": false,
-                                                                        "isPure": true,
-                                                                        "lValueRequested": false,
-                                                                        "nodeType": "ElementaryTypeNameExpression",
-                                                                        "src": "3724:7:140",
-                                                                        "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_address_$",
-                                                                            "typeString": "type(address)"
-                                                                        },
-                                                                        "typeName": {
-                                                                            "id": 26651,
-                                                                            "name": "address",
-                                                                            "nodeType": "ElementaryTypeName",
-                                                                            "src": "3724:7:140",
-                                                                            "typeDescriptions": {}
-                                                                        }
-                                                                    },
-                                                                    "id": 26654,
-                                                                    "isConstant": false,
-                                                                    "isLValue": false,
-                                                                    "isPure": true,
-                                                                    "kind": "typeConversion",
-                                                                    "lValueRequested": false,
-                                                                    "nameLocations": [],
-                                                                    "names": [],
-                                                                    "nodeType": "FunctionCall",
-                                                                    "src": "3724:10:140",
-                                                                    "tryCall": false,
-                                                                    "typeDescriptions": {
-                                                                        "typeIdentifier": "t_address",
-                                                                        "typeString": "address"
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "arguments": [
-                                                                        {
-                                                                            "hexValue": "30",
-                                                                            "id": 26657,
-                                                                            "isConstant": false,
-                                                                            "isLValue": false,
-                                                                            "isPure": true,
-                                                                            "kind": "number",
-                                                                            "lValueRequested": false,
-                                                                            "nodeType": "Literal",
-                                                                            "src": "3780:1:140",
-                                                                            "typeDescriptions": {
-                                                                                "typeIdentifier": "t_rational_0_by_1",
-                                                                                "typeString": "int_const 0"
-                                                                            },
-                                                                            "value": "0"
-                                                                        }
-                                                                    ],
-                                                                    "expression": {
-                                                                        "argumentTypes": [
-                                                                            {
-                                                                                "typeIdentifier": "t_rational_0_by_1",
-                                                                                "typeString": "int_const 0"
-                                                                            }
-                                                                        ],
-                                                                        "id": 26656,
-                                                                        "isConstant": false,
-                                                                        "isLValue": false,
-                                                                        "isPure": true,
-                                                                        "lValueRequested": false,
-                                                                        "nodeType": "ElementaryTypeNameExpression",
-                                                                        "src": "3772:7:140",
-                                                                        "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_address_$",
-                                                                            "typeString": "type(address)"
-                                                                        },
-                                                                        "typeName": {
-                                                                            "id": 26655,
-                                                                            "name": "address",
-                                                                            "nodeType": "ElementaryTypeName",
-                                                                            "src": "3772:7:140",
-                                                                            "typeDescriptions": {}
-                                                                        }
-                                                                    },
-                                                                    "id": 26658,
-                                                                    "isConstant": false,
-                                                                    "isLValue": false,
-                                                                    "isPure": true,
-                                                                    "kind": "typeConversion",
-                                                                    "lValueRequested": false,
-                                                                    "nameLocations": [],
-                                                                    "names": [],
-                                                                    "nodeType": "FunctionCall",
-                                                                    "src": "3772:10:140",
-                                                                    "tryCall": false,
-                                                                    "typeDescriptions": {
-                                                                        "typeIdentifier": "t_address",
-                                                                        "typeString": "address"
-                                                                    }
-                                                                },
-                                                                {
-                                                                    "arguments": [
-                                                                        {
-                                                                            "hexValue": "30",
-                                                                            "id": 26661,
-                                                                            "isConstant": false,
-                                                                            "isLValue": false,
-                                                                            "isPure": true,
-                                                                            "kind": "number",
-                                                                            "lValueRequested": false,
-                                                                            "nodeType": "Literal",
-                                                                            "src": "3860:1:140",
-                                                                            "typeDescriptions": {
-                                                                                "typeIdentifier": "t_rational_0_by_1",
-                                                                                "typeString": "int_const 0"
-                                                                            },
-                                                                            "value": "0"
-                                                                        },
-                                                                        {
-                                                                            "hexValue": "30",
-                                                                            "id": 26662,
-                                                                            "isConstant": false,
-                                                                            "isLValue": false,
-                                                                            "isPure": true,
-                                                                            "kind": "number",
-                                                                            "lValueRequested": false,
-                                                                            "nodeType": "Literal",
-                                                                            "src": "3893:1:140",
-                                                                            "typeDescriptions": {
-                                                                                "typeIdentifier": "t_rational_0_by_1",
-                                                                                "typeString": "int_const 0"
-                                                                            },
-                                                                            "value": "0"
-                                                                        },
-                                                                        {
-                                                                            "hexValue": "30",
-                                                                            "id": 26663,
-                                                                            "isConstant": false,
-                                                                            "isLValue": false,
-                                                                            "isPure": true,
-                                                                            "kind": "number",
-                                                                            "lValueRequested": false,
-                                                                            "nodeType": "Literal",
-                                                                            "src": "3934:1:140",
-                                                                            "typeDescriptions": {
-                                                                                "typeIdentifier": "t_rational_0_by_1",
-                                                                                "typeString": "int_const 0"
-                                                                            },
-                                                                            "value": "0"
-                                                                        },
                                                                         {
                                                                             "hexValue": "30",
                                                                             "id": 26664,
@@ -3485,7 +3286,177 @@ export const IMockMultiToken = {
                                                                             "kind": "number",
                                                                             "lValueRequested": false,
                                                                             "nodeType": "Literal",
-                                                                            "src": "3979:1:140",
+                                                                            "src": "3666:1:140",
+                                                                            "typeDescriptions": {
+                                                                                "typeIdentifier": "t_rational_0_by_1",
+                                                                                "typeString": "int_const 0"
+                                                                            },
+                                                                            "value": "0"
+                                                                        }
+                                                                    ],
+                                                                    "expression": {
+                                                                        "argumentTypes": [
+                                                                            {
+                                                                                "typeIdentifier": "t_rational_0_by_1",
+                                                                                "typeString": "int_const 0"
+                                                                            }
+                                                                        ],
+                                                                        "id": 26663,
+                                                                        "isConstant": false,
+                                                                        "isLValue": false,
+                                                                        "isPure": true,
+                                                                        "lValueRequested": false,
+                                                                        "nodeType": "ElementaryTypeNameExpression",
+                                                                        "src": "3658:7:140",
+                                                                        "typeDescriptions": {
+                                                                            "typeIdentifier": "t_type$_t_address_$",
+                                                                            "typeString": "type(address)"
+                                                                        },
+                                                                        "typeName": {
+                                                                            "id": 26662,
+                                                                            "name": "address",
+                                                                            "nodeType": "ElementaryTypeName",
+                                                                            "src": "3658:7:140",
+                                                                            "typeDescriptions": {}
+                                                                        }
+                                                                    },
+                                                                    "id": 26665,
+                                                                    "isConstant": false,
+                                                                    "isLValue": false,
+                                                                    "isPure": true,
+                                                                    "kind": "typeConversion",
+                                                                    "lValueRequested": false,
+                                                                    "nameLocations": [],
+                                                                    "names": [],
+                                                                    "nodeType": "FunctionCall",
+                                                                    "src": "3658:10:140",
+                                                                    "tryCall": false,
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_address",
+                                                                        "typeString": "address"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "arguments": [
+                                                                        {
+                                                                            "hexValue": "30",
+                                                                            "id": 26668,
+                                                                            "isConstant": false,
+                                                                            "isLValue": false,
+                                                                            "isPure": true,
+                                                                            "kind": "number",
+                                                                            "lValueRequested": false,
+                                                                            "nodeType": "Literal",
+                                                                            "src": "3714:1:140",
+                                                                            "typeDescriptions": {
+                                                                                "typeIdentifier": "t_rational_0_by_1",
+                                                                                "typeString": "int_const 0"
+                                                                            },
+                                                                            "value": "0"
+                                                                        }
+                                                                    ],
+                                                                    "expression": {
+                                                                        "argumentTypes": [
+                                                                            {
+                                                                                "typeIdentifier": "t_rational_0_by_1",
+                                                                                "typeString": "int_const 0"
+                                                                            }
+                                                                        ],
+                                                                        "id": 26667,
+                                                                        "isConstant": false,
+                                                                        "isLValue": false,
+                                                                        "isPure": true,
+                                                                        "lValueRequested": false,
+                                                                        "nodeType": "ElementaryTypeNameExpression",
+                                                                        "src": "3706:7:140",
+                                                                        "typeDescriptions": {
+                                                                            "typeIdentifier": "t_type$_t_address_$",
+                                                                            "typeString": "type(address)"
+                                                                        },
+                                                                        "typeName": {
+                                                                            "id": 26666,
+                                                                            "name": "address",
+                                                                            "nodeType": "ElementaryTypeName",
+                                                                            "src": "3706:7:140",
+                                                                            "typeDescriptions": {}
+                                                                        }
+                                                                    },
+                                                                    "id": 26669,
+                                                                    "isConstant": false,
+                                                                    "isLValue": false,
+                                                                    "isPure": true,
+                                                                    "kind": "typeConversion",
+                                                                    "lValueRequested": false,
+                                                                    "nameLocations": [],
+                                                                    "names": [],
+                                                                    "nodeType": "FunctionCall",
+                                                                    "src": "3706:10:140",
+                                                                    "tryCall": false,
+                                                                    "typeDescriptions": {
+                                                                        "typeIdentifier": "t_address",
+                                                                        "typeString": "address"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "arguments": [
+                                                                        {
+                                                                            "hexValue": "30",
+                                                                            "id": 26672,
+                                                                            "isConstant": false,
+                                                                            "isLValue": false,
+                                                                            "isPure": true,
+                                                                            "kind": "number",
+                                                                            "lValueRequested": false,
+                                                                            "nodeType": "Literal",
+                                                                            "src": "3794:1:140",
+                                                                            "typeDescriptions": {
+                                                                                "typeIdentifier": "t_rational_0_by_1",
+                                                                                "typeString": "int_const 0"
+                                                                            },
+                                                                            "value": "0"
+                                                                        },
+                                                                        {
+                                                                            "hexValue": "30",
+                                                                            "id": 26673,
+                                                                            "isConstant": false,
+                                                                            "isLValue": false,
+                                                                            "isPure": true,
+                                                                            "kind": "number",
+                                                                            "lValueRequested": false,
+                                                                            "nodeType": "Literal",
+                                                                            "src": "3827:1:140",
+                                                                            "typeDescriptions": {
+                                                                                "typeIdentifier": "t_rational_0_by_1",
+                                                                                "typeString": "int_const 0"
+                                                                            },
+                                                                            "value": "0"
+                                                                        },
+                                                                        {
+                                                                            "hexValue": "30",
+                                                                            "id": 26674,
+                                                                            "isConstant": false,
+                                                                            "isLValue": false,
+                                                                            "isPure": true,
+                                                                            "kind": "number",
+                                                                            "lValueRequested": false,
+                                                                            "nodeType": "Literal",
+                                                                            "src": "3868:1:140",
+                                                                            "typeDescriptions": {
+                                                                                "typeIdentifier": "t_rational_0_by_1",
+                                                                                "typeString": "int_const 0"
+                                                                            },
+                                                                            "value": "0"
+                                                                        },
+                                                                        {
+                                                                            "hexValue": "30",
+                                                                            "id": 26675,
+                                                                            "isConstant": false,
+                                                                            "isLValue": false,
+                                                                            "isPure": true,
+                                                                            "kind": "number",
+                                                                            "lValueRequested": false,
+                                                                            "nodeType": "Literal",
+                                                                            "src": "3913:1:140",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_rational_0_by_1",
                                                                                 "typeString": "int_const 0"
@@ -3513,43 +3484,43 @@ export const IMockMultiToken = {
                                                                             }
                                                                         ],
                                                                         "expression": {
-                                                                            "id": 26659,
+                                                                            "id": 26670,
                                                                             "name": "IHyperdrive",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 10506,
-                                                                            "src": "3810:11:140",
+                                                                            "referencedDeclaration": 10351,
+                                                                            "src": "3744:11:140",
                                                                             "typeDescriptions": {
-                                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
+                                                                                "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10351_$",
                                                                                 "typeString": "type(contract IHyperdrive)"
                                                                             }
                                                                         },
-                                                                        "id": 26660,
+                                                                        "id": 26671,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
-                                                                        "memberLocation": "3822:4:140",
+                                                                        "memberLocation": "3756:4:140",
                                                                         "memberName": "Fees",
                                                                         "nodeType": "MemberAccess",
-                                                                        "referencedDeclaration": 10211,
-                                                                        "src": "3810:16:140",
+                                                                        "referencedDeclaration": 10065,
+                                                                        "src": "3744:16:140",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_struct$_Fees_$10211_storage_ptr_$",
+                                                                            "typeIdentifier": "t_type$_t_struct$_Fees_$10065_storage_ptr_$",
                                                                             "typeString": "type(struct IHyperdrive.Fees storage pointer)"
                                                                         }
                                                                     },
-                                                                    "id": 26665,
+                                                                    "id": 26676,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "kind": "structConstructorCall",
                                                                     "lValueRequested": false,
                                                                     "nameLocations": [
-                                                                        "3853:5:140",
-                                                                        "3887:4:140",
-                                                                        "3920:12:140",
-                                                                        "3961:16:140"
+                                                                        "3787:5:140",
+                                                                        "3821:4:140",
+                                                                        "3854:12:140",
+                                                                        "3895:16:140"
                                                                     ],
                                                                     "names": [
                                                                         "curve",
@@ -3558,10 +3529,10 @@ export const IMockMultiToken = {
                                                                         "governanceZombie"
                                                                     ],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "3810:193:140",
+                                                                    "src": "3744:193:140",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
+                                                                        "typeIdentifier": "t_struct$_Fees_$10065_memory_ptr",
                                                                         "typeString": "struct IHyperdrive.Fees memory"
                                                                     }
                                                                 }
@@ -3569,11 +3540,11 @@ export const IMockMultiToken = {
                                                             "expression": {
                                                                 "argumentTypes": [
                                                                     {
-                                                                        "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                        "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                         "typeString": "contract IERC20"
                                                                     },
                                                                     {
-                                                                        "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                                        "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                         "typeString": "contract IERC20"
                                                                     },
                                                                     {
@@ -3621,58 +3592,58 @@ export const IMockMultiToken = {
                                                                         "typeString": "address"
                                                                     },
                                                                     {
-                                                                        "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
+                                                                        "typeIdentifier": "t_struct$_Fees_$10065_memory_ptr",
                                                                         "typeString": "struct IHyperdrive.Fees memory"
                                                                     }
                                                                 ],
                                                                 "expression": {
-                                                                    "id": 26621,
+                                                                    "id": 26632,
                                                                     "name": "IHyperdrive",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 10506,
-                                                                    "src": "3003:11:140",
+                                                                    "referencedDeclaration": 10351,
+                                                                    "src": "2937:11:140",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
+                                                                        "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10351_$",
                                                                         "typeString": "type(contract IHyperdrive)"
                                                                     }
                                                                 },
-                                                                "id": 26622,
+                                                                "id": 26633,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
-                                                                "memberLocation": "3015:10:140",
+                                                                "memberLocation": "2949:10:140",
                                                                 "memberName": "PoolConfig",
                                                                 "nodeType": "MemberAccess",
-                                                                "referencedDeclaration": 10300,
-                                                                "src": "3003:22:140",
+                                                                "referencedDeclaration": 10154,
+                                                                "src": "2937:22:140",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_struct$_PoolConfig_$10300_storage_ptr_$",
+                                                                    "typeIdentifier": "t_type$_t_struct$_PoolConfig_$10154_storage_ptr_$",
                                                                     "typeString": "type(struct IHyperdrive.PoolConfig storage pointer)"
                                                                 }
                                                             },
-                                                            "id": 26666,
+                                                            "id": 26677,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "kind": "structConstructorCall",
                                                             "lValueRequested": false,
                                                             "nameLocations": [
-                                                                "3048:9:140",
-                                                                "3099:16:140",
-                                                                "3157:13:140",
-                                                                "3208:14:140",
-                                                                "3261:22:140",
-                                                                "3311:20:140",
-                                                                "3359:24:140",
-                                                                "3411:16:140",
-                                                                "3459:18:140",
-                                                                "3507:11:140",
-                                                                "3666:10:140",
-                                                                "3710:12:140",
-                                                                "3756:14:140",
-                                                                "3804:4:140"
+                                                                "2982:9:140",
+                                                                "3033:16:140",
+                                                                "3091:13:140",
+                                                                "3142:14:140",
+                                                                "3195:22:140",
+                                                                "3245:20:140",
+                                                                "3293:24:140",
+                                                                "3345:16:140",
+                                                                "3393:18:140",
+                                                                "3441:11:140",
+                                                                "3600:10:140",
+                                                                "3644:12:140",
+                                                                "3690:14:140",
+                                                                "3738:4:140"
                                                             ],
                                                             "names": [
                                                                 "baseToken",
@@ -3691,10 +3662,10 @@ export const IMockMultiToken = {
                                                                 "fees"
                                                             ],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "3003:1019:140",
+                                                            "src": "2937:1019:140",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolConfig_$10154_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolConfig memory"
                                                             }
                                                         }
@@ -3702,43 +3673,43 @@ export const IMockMultiToken = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_PoolConfig_$10154_memory_ptr",
                                                                 "typeString": "struct IHyperdrive.PoolConfig memory"
                                                             }
                                                         ],
-                                                        "id": 26620,
+                                                        "id": 26631,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "NewExpression",
-                                                        "src": "2960:25:140",
+                                                        "src": "2894:25:140",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_creation_nonpayable$_t_struct$_PoolConfig_$10300_memory_ptr_$returns$_t_contract$_MockHyperdriveTarget0_$25168_$",
+                                                            "typeIdentifier": "t_function_creation_nonpayable$_t_struct$_PoolConfig_$10154_memory_ptr_$returns$_t_contract$_MockHyperdriveTarget0_$25161_$",
                                                             "typeString": "function (struct IHyperdrive.PoolConfig memory) returns (contract MockHyperdriveTarget0)"
                                                         },
                                                         "typeName": {
-                                                            "id": 26619,
+                                                            "id": 26630,
                                                             "nodeType": "UserDefinedTypeName",
                                                             "pathNode": {
-                                                                "id": 26618,
+                                                                "id": 26629,
                                                                 "name": "MockHyperdriveTarget0",
                                                                 "nameLocations": [
-                                                                    "2964:21:140"
+                                                                    "2898:21:140"
                                                                 ],
                                                                 "nodeType": "IdentifierPath",
-                                                                "referencedDeclaration": 25168,
-                                                                "src": "2964:21:140"
+                                                                "referencedDeclaration": 25161,
+                                                                "src": "2898:21:140"
                                                             },
-                                                            "referencedDeclaration": 25168,
-                                                            "src": "2964:21:140",
+                                                            "referencedDeclaration": 25161,
+                                                            "src": "2898:21:140",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_contract$_MockHyperdriveTarget0_$25168",
+                                                                "typeIdentifier": "t_contract$_MockHyperdriveTarget0_$25161",
                                                                 "typeString": "contract MockHyperdriveTarget0"
                                                             }
                                                         }
                                                     },
-                                                    "id": 26667,
+                                                    "id": 26678,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3747,10 +3718,10 @@ export const IMockMultiToken = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "2960:1076:140",
+                                                    "src": "2894:1076:140",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_contract$_MockHyperdriveTarget0_$25168",
+                                                        "typeIdentifier": "t_contract$_MockHyperdriveTarget0_$25161",
                                                         "typeString": "contract MockHyperdriveTarget0"
                                                     }
                                                 }
@@ -3758,30 +3729,30 @@ export const IMockMultiToken = {
                                             "expression": {
                                                 "argumentTypes": [
                                                     {
-                                                        "typeIdentifier": "t_contract$_MockHyperdriveTarget0_$25168",
+                                                        "typeIdentifier": "t_contract$_MockHyperdriveTarget0_$25161",
                                                         "typeString": "contract MockHyperdriveTarget0"
                                                     }
                                                 ],
-                                                "id": 26617,
+                                                "id": 26628,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "lValueRequested": false,
                                                 "nodeType": "ElementaryTypeNameExpression",
-                                                "src": "2939:7:140",
+                                                "src": "2873:7:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_type$_t_address_$",
                                                     "typeString": "type(address)"
                                                 },
                                                 "typeName": {
-                                                    "id": 26616,
+                                                    "id": 26627,
                                                     "name": "address",
                                                     "nodeType": "ElementaryTypeName",
-                                                    "src": "2939:7:140",
+                                                    "src": "2873:7:140",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 26668,
+                                            "id": 26679,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3790,37 +3761,37 @@ export const IMockMultiToken = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "2939:1107:140",
+                                            "src": "2873:1107:140",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
                                                 "typeString": "address"
                                             }
                                         },
-                                        "src": "2929:1117:140",
+                                        "src": "2863:1117:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 26670,
+                                    "id": 26681,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "2929:1117:140"
+                                    "src": "2863:1117:140"
                                 },
                                 {
                                     "expression": {
-                                        "id": 26692,
+                                        "id": 26703,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 26671,
+                                            "id": 26682,
                                             "name": "domainSeparator",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26560,
-                                            "src": "4391:15:140",
+                                            "referencedDeclaration": 26571,
+                                            "src": "4325:15:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bytes32",
                                                 "typeString": "bytes32"
@@ -3836,14 +3807,14 @@ export const IMockMultiToken = {
                                                             "arguments": [
                                                                 {
                                                                     "hexValue": "454950373132446f6d61696e28737472696e672076657273696f6e2c75696e7432353620636861696e49642c6164647265737320766572696679696e67436f6e747261637429",
-                                                                    "id": 26676,
+                                                                    "id": 26687,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
                                                                     "kind": "string",
                                                                     "lValueRequested": false,
                                                                     "nodeType": "Literal",
-                                                                    "src": "4491:72:140",
+                                                                    "src": "4425:72:140",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_stringliteral_2aef22f9d7df5f9d21c56d14029233f3fdaa91917727e1eb68e504d27072d6cd",
                                                                         "typeString": "literal_string \"EIP712Domain(string version,uint256 chainId,address verifyingContract)\""
@@ -3858,18 +3829,18 @@ export const IMockMultiToken = {
                                                                         "typeString": "literal_string \"EIP712Domain(string version,uint256 chainId,address verifyingContract)\""
                                                                     }
                                                                 ],
-                                                                "id": 26675,
+                                                                "id": 26686,
                                                                 "name": "keccak256",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": -8,
-                                                                "src": "4460:9:140",
+                                                                "src": "4394:9:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                                 }
                                                             },
-                                                            "id": 26677,
+                                                            "id": 26688,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3878,7 +3849,7 @@ export const IMockMultiToken = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "4460:121:140",
+                                                            "src": "4394:121:140",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes32",
@@ -3891,14 +3862,14 @@ export const IMockMultiToken = {
                                                                     "arguments": [
                                                                         {
                                                                             "hexValue": "31",
-                                                                            "id": 26681,
+                                                                            "id": 26692,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
                                                                             "kind": "string",
                                                                             "lValueRequested": false,
                                                                             "nodeType": "Literal",
-                                                                            "src": "4615:3:140",
+                                                                            "src": "4549:3:140",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_stringliteral_c89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6",
                                                                                 "typeString": "literal_string \"1\""
@@ -3913,26 +3884,26 @@ export const IMockMultiToken = {
                                                                                 "typeString": "literal_string \"1\""
                                                                             }
                                                                         ],
-                                                                        "id": 26680,
+                                                                        "id": 26691,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
                                                                         "lValueRequested": false,
                                                                         "nodeType": "ElementaryTypeNameExpression",
-                                                                        "src": "4609:5:140",
+                                                                        "src": "4543:5:140",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_type$_t_bytes_storage_ptr_$",
                                                                             "typeString": "type(bytes storage pointer)"
                                                                         },
                                                                         "typeName": {
-                                                                            "id": 26679,
+                                                                            "id": 26690,
                                                                             "name": "bytes",
                                                                             "nodeType": "ElementaryTypeName",
-                                                                            "src": "4609:5:140",
+                                                                            "src": "4543:5:140",
                                                                             "typeDescriptions": {}
                                                                         }
                                                                     },
-                                                                    "id": 26682,
+                                                                    "id": 26693,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -3941,7 +3912,7 @@ export const IMockMultiToken = {
                                                                     "nameLocations": [],
                                                                     "names": [],
                                                                     "nodeType": "FunctionCall",
-                                                                    "src": "4609:10:140",
+                                                                    "src": "4543:10:140",
                                                                     "tryCall": false,
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bytes_memory_ptr",
@@ -3956,18 +3927,18 @@ export const IMockMultiToken = {
                                                                         "typeString": "bytes memory"
                                                                     }
                                                                 ],
-                                                                "id": 26678,
+                                                                "id": 26689,
                                                                 "name": "keccak256",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": -8,
-                                                                "src": "4599:9:140",
+                                                                "src": "4533:9:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                                 }
                                                             },
-                                                            "id": 26683,
+                                                            "id": 26694,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3976,7 +3947,7 @@ export const IMockMultiToken = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "4599:21:140",
+                                                            "src": "4533:21:140",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes32",
@@ -3985,26 +3956,26 @@ export const IMockMultiToken = {
                                                         },
                                                         {
                                                             "expression": {
-                                                                "id": 26684,
+                                                                "id": 26695,
                                                                 "name": "block",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": -4,
-                                                                "src": "4638:5:140",
+                                                                "src": "4572:5:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_magic_block",
                                                                     "typeString": "block"
                                                                 }
                                                             },
-                                                            "id": 26685,
+                                                            "id": 26696,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "4644:7:140",
+                                                            "memberLocation": "4578:7:140",
                                                             "memberName": "chainid",
                                                             "nodeType": "MemberAccess",
-                                                            "src": "4638:13:140",
+                                                            "src": "4572:13:140",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
@@ -4013,14 +3984,14 @@ export const IMockMultiToken = {
                                                         {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 26688,
+                                                                    "id": 26699,
                                                                     "name": "this",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
                                                                     "referencedDeclaration": -28,
-                                                                    "src": "4677:4:140",
+                                                                    "src": "4611:4:140",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_contract$_MockMultiToken_$26882",
+                                                                        "typeIdentifier": "t_contract$_MockMultiToken_$26895",
                                                                         "typeString": "contract MockMultiToken"
                                                                     }
                                                                 }
@@ -4028,30 +3999,30 @@ export const IMockMultiToken = {
                                                             "expression": {
                                                                 "argumentTypes": [
                                                                     {
-                                                                        "typeIdentifier": "t_contract$_MockMultiToken_$26882",
+                                                                        "typeIdentifier": "t_contract$_MockMultiToken_$26895",
                                                                         "typeString": "contract MockMultiToken"
                                                                     }
                                                                 ],
-                                                                "id": 26687,
+                                                                "id": 26698,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
                                                                 "lValueRequested": false,
                                                                 "nodeType": "ElementaryTypeNameExpression",
-                                                                "src": "4669:7:140",
+                                                                "src": "4603:7:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_type$_t_address_$",
                                                                     "typeString": "type(address)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 26686,
+                                                                    "id": 26697,
                                                                     "name": "address",
                                                                     "nodeType": "ElementaryTypeName",
-                                                                    "src": "4669:7:140",
+                                                                    "src": "4603:7:140",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 26689,
+                                                            "id": 26700,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -4060,7 +4031,7 @@ export const IMockMultiToken = {
                                                             "nameLocations": [],
                                                             "names": [],
                                                             "nodeType": "FunctionCall",
-                                                            "src": "4669:13:140",
+                                                            "src": "4603:13:140",
                                                             "tryCall": false,
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
@@ -4088,32 +4059,32 @@ export const IMockMultiToken = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 26673,
+                                                            "id": 26684,
                                                             "name": "abi",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
                                                             "referencedDeclaration": -1,
-                                                            "src": "4432:3:140",
+                                                            "src": "4366:3:140",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_magic_abi",
                                                                 "typeString": "abi"
                                                             }
                                                         },
-                                                        "id": 26674,
+                                                        "id": 26685,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "4436:6:140",
+                                                        "memberLocation": "4370:6:140",
                                                         "memberName": "encode",
                                                         "nodeType": "MemberAccess",
-                                                        "src": "4432:10:140",
+                                                        "src": "4366:10:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_abiencode_pure$__$returns$_t_bytes_memory_ptr_$",
                                                             "typeString": "function () pure returns (bytes memory)"
                                                         }
                                                     },
-                                                    "id": 26690,
+                                                    "id": 26701,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4122,7 +4093,7 @@ export const IMockMultiToken = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "4432:264:140",
+                                                    "src": "4366:264:140",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes_memory_ptr",
@@ -4137,18 +4108,18 @@ export const IMockMultiToken = {
                                                         "typeString": "bytes memory"
                                                     }
                                                 ],
-                                                "id": 26672,
+                                                "id": 26683,
                                                 "name": "keccak256",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
                                                 "referencedDeclaration": -8,
-                                                "src": "4409:9:140",
+                                                "src": "4343:9:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_keccak256_pure$_t_bytes_memory_ptr_$returns$_t_bytes32_$",
                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                 }
                                             },
-                                            "id": 26691,
+                                            "id": 26702,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4157,22 +4128,22 @@ export const IMockMultiToken = {
                                             "nameLocations": [],
                                             "names": [],
                                             "nodeType": "FunctionCall",
-                                            "src": "4409:297:140",
+                                            "src": "4343:297:140",
                                             "tryCall": false,
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bytes32",
                                                 "typeString": "bytes32"
                                             }
                                         },
-                                        "src": "4391:315:140",
+                                        "src": "4325:315:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
                                         }
                                     },
-                                    "id": 26693,
+                                    "id": 26704,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "4391:315:140"
+                                    "src": "4325:315:140"
                                 }
                             ]
                         },
@@ -4189,14 +4160,14 @@ export const IMockMultiToken = {
                                                         "arguments": [
                                                             {
                                                                 "hexValue": "30",
-                                                                "id": 26572,
+                                                                "id": 26583,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
                                                                 "kind": "number",
                                                                 "lValueRequested": false,
                                                                 "nodeType": "Literal",
-                                                                "src": "2004:1:140",
+                                                                "src": "1938:1:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_rational_0_by_1",
                                                                     "typeString": "int_const 0"
@@ -4211,26 +4182,26 @@ export const IMockMultiToken = {
                                                                     "typeString": "int_const 0"
                                                                 }
                                                             ],
-                                                            "id": 26571,
+                                                            "id": 26582,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "lValueRequested": false,
                                                             "nodeType": "ElementaryTypeNameExpression",
-                                                            "src": "1996:7:140",
+                                                            "src": "1930:7:140",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_type$_t_address_$",
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 26570,
+                                                                "id": 26581,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
-                                                                "src": "1996:7:140",
+                                                                "src": "1930:7:140",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 26573,
+                                                        "id": 26584,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -4239,7 +4210,7 @@ export const IMockMultiToken = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "1996:10:140",
+                                                        "src": "1930:10:140",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -4254,18 +4225,18 @@ export const IMockMultiToken = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 26569,
+                                                    "id": 26580,
                                                     "name": "IERC20",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 9810,
-                                                    "src": "1989:6:140",
+                                                    "referencedDeclaration": 9666,
+                                                    "src": "1923:6:140",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_IERC20_$9810_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_IERC20_$9666_$",
                                                         "typeString": "type(contract IERC20)"
                                                     }
                                                 },
-                                                "id": 26574,
+                                                "id": 26585,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -4274,10 +4245,10 @@ export const IMockMultiToken = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "1989:18:140",
+                                                "src": "1923:18:140",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
@@ -4287,14 +4258,14 @@ export const IMockMultiToken = {
                                                         "arguments": [
                                                             {
                                                                 "hexValue": "30",
-                                                                "id": 26578,
+                                                                "id": 26589,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
                                                                 "kind": "number",
                                                                 "lValueRequested": false,
                                                                 "nodeType": "Literal",
-                                                                "src": "2058:1:140",
+                                                                "src": "1992:1:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_rational_0_by_1",
                                                                     "typeString": "int_const 0"
@@ -4309,26 +4280,26 @@ export const IMockMultiToken = {
                                                                     "typeString": "int_const 0"
                                                                 }
                                                             ],
-                                                            "id": 26577,
+                                                            "id": 26588,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "lValueRequested": false,
                                                             "nodeType": "ElementaryTypeNameExpression",
-                                                            "src": "2050:7:140",
+                                                            "src": "1984:7:140",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_type$_t_address_$",
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 26576,
+                                                                "id": 26587,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
-                                                                "src": "2050:7:140",
+                                                                "src": "1984:7:140",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 26579,
+                                                        "id": 26590,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -4337,7 +4308,7 @@ export const IMockMultiToken = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "2050:10:140",
+                                                        "src": "1984:10:140",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -4352,18 +4323,18 @@ export const IMockMultiToken = {
                                                             "typeString": "address"
                                                         }
                                                     ],
-                                                    "id": 26575,
+                                                    "id": 26586,
                                                     "name": "IERC20",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 9810,
-                                                    "src": "2043:6:140",
+                                                    "referencedDeclaration": 9666,
+                                                    "src": "1977:6:140",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_IERC20_$9810_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_IERC20_$9666_$",
                                                         "typeString": "type(contract IERC20)"
                                                     }
                                                 },
-                                                "id": 26580,
+                                                "id": 26591,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -4372,32 +4343,32 @@ export const IMockMultiToken = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "2043:18:140",
+                                                "src": "1977:18:140",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
                                             {
-                                                "id": 26581,
+                                                "id": 26592,
                                                 "name": "_linkerFactory",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26564,
-                                                "src": "2094:14:140",
+                                                "referencedDeclaration": 26575,
+                                                "src": "2028:14:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 26582,
+                                                "id": 26593,
                                                 "name": "_linkerCodeHash",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26562,
-                                                "src": "2142:15:140",
+                                                "referencedDeclaration": 26573,
+                                                "src": "2076:15:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes32",
                                                     "typeString": "bytes32"
@@ -4405,14 +4376,14 @@ export const IMockMultiToken = {
                                             },
                                             {
                                                 "hexValue": "31653138",
-                                                "id": 26583,
+                                                "id": 26594,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "2199:4:140",
+                                                "src": "2133:4:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_1000000000000000000_by_1",
                                                     "typeString": "int_const 1000000000000000000"
@@ -4421,14 +4392,14 @@ export const IMockMultiToken = {
                                             },
                                             {
                                                 "hexValue": "31653138",
-                                                "id": 26584,
+                                                "id": 26595,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "2243:4:140",
+                                                "src": "2177:4:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_1000000000000000000_by_1",
                                                     "typeString": "int_const 1000000000000000000"
@@ -4437,14 +4408,14 @@ export const IMockMultiToken = {
                                             },
                                             {
                                                 "hexValue": "31653135",
-                                                "id": 26585,
+                                                "id": 26596,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "2291:4:140",
+                                                "src": "2225:4:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_1000000000000000_by_1",
                                                     "typeString": "int_const 1000000000000000"
@@ -4453,14 +4424,14 @@ export const IMockMultiToken = {
                                             },
                                             {
                                                 "hexValue": "333635",
-                                                "id": 26586,
+                                                "id": 26597,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "2331:8:140",
+                                                "src": "2265:8:140",
                                                 "subdenomination": "days",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_31536000_by_1",
@@ -4470,14 +4441,14 @@ export const IMockMultiToken = {
                                             },
                                             {
                                                 "hexValue": "31",
-                                                "id": 26587,
+                                                "id": 26598,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "number",
                                                 "lValueRequested": false,
                                                 "nodeType": "Literal",
-                                                "src": "2377:6:140",
+                                                "src": "2311:6:140",
                                                 "subdenomination": "days",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_rational_86400_by_1",
@@ -4489,14 +4460,14 @@ export const IMockMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "302e3035653138",
-                                                        "id": 26590,
+                                                        "id": 26601,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "number",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "2471:7:140",
+                                                        "src": "2405:7:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_rational_50000000000000000_by_1",
                                                             "typeString": "int_const 50000000000000000"
@@ -4505,14 +4476,14 @@ export const IMockMultiToken = {
                                                     },
                                                     {
                                                         "hexValue": "333635",
-                                                        "id": 26591,
+                                                        "id": 26602,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "number",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "2500:8:140",
+                                                        "src": "2434:8:140",
                                                         "subdenomination": "days",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_rational_31536000_by_1",
@@ -4533,33 +4504,33 @@ export const IMockMultiToken = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 26588,
+                                                        "id": 26599,
                                                         "name": "HyperdriveMath",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 19716,
-                                                        "src": "2414:14:140",
+                                                        "referencedDeclaration": 19567,
+                                                        "src": "2348:14:140",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$19716_$",
+                                                            "typeIdentifier": "t_type$_t_contract$_HyperdriveMath_$19567_$",
                                                             "typeString": "type(library HyperdriveMath)"
                                                         }
                                                     },
-                                                    "id": 26589,
+                                                    "id": 26600,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "2429:20:140",
+                                                    "memberLocation": "2363:20:140",
                                                     "memberName": "calculateTimeStretch",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 19060,
-                                                    "src": "2414:35:140",
+                                                    "referencedDeclaration": 18914,
+                                                    "src": "2348:35:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                         "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                     }
                                                 },
-                                                "id": 26592,
+                                                "id": 26603,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4568,7 +4539,7 @@ export const IMockMultiToken = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "2414:112:140",
+                                                "src": "2348:112:140",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4579,14 +4550,14 @@ export const IMockMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 26595,
+                                                        "id": 26606,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "number",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "2564:1:140",
+                                                        "src": "2498:1:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_rational_0_by_1",
                                                             "typeString": "int_const 0"
@@ -4601,26 +4572,26 @@ export const IMockMultiToken = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 26594,
+                                                    "id": 26605,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
                                                     "nodeType": "ElementaryTypeNameExpression",
-                                                    "src": "2556:7:140",
+                                                    "src": "2490:7:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_type$_t_address_$",
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 26593,
+                                                        "id": 26604,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
-                                                        "src": "2556:7:140",
+                                                        "src": "2490:7:140",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 26596,
+                                                "id": 26607,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -4629,7 +4600,7 @@ export const IMockMultiToken = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "2556:10:140",
+                                                "src": "2490:10:140",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4640,14 +4611,14 @@ export const IMockMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 26599,
+                                                        "id": 26610,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "number",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "2606:1:140",
+                                                        "src": "2540:1:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_rational_0_by_1",
                                                             "typeString": "int_const 0"
@@ -4662,26 +4633,26 @@ export const IMockMultiToken = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 26598,
+                                                    "id": 26609,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
                                                     "nodeType": "ElementaryTypeNameExpression",
-                                                    "src": "2598:7:140",
+                                                    "src": "2532:7:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_type$_t_address_$",
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 26597,
+                                                        "id": 26608,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
-                                                        "src": "2598:7:140",
+                                                        "src": "2532:7:140",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 26600,
+                                                "id": 26611,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -4690,7 +4661,7 @@ export const IMockMultiToken = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "2598:10:140",
+                                                "src": "2532:10:140",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4701,14 +4672,14 @@ export const IMockMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 26603,
+                                                        "id": 26614,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "number",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "2650:1:140",
+                                                        "src": "2584:1:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_rational_0_by_1",
                                                             "typeString": "int_const 0"
@@ -4723,26 +4694,26 @@ export const IMockMultiToken = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 26602,
+                                                    "id": 26613,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
                                                     "nodeType": "ElementaryTypeNameExpression",
-                                                    "src": "2642:7:140",
+                                                    "src": "2576:7:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_type$_t_address_$",
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 26601,
+                                                        "id": 26612,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
-                                                        "src": "2642:7:140",
+                                                        "src": "2576:7:140",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 26604,
+                                                "id": 26615,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -4751,7 +4722,7 @@ export const IMockMultiToken = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "2642:10:140",
+                                                "src": "2576:10:140",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4762,7 +4733,39 @@ export const IMockMultiToken = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 26607,
+                                                        "id": 26618,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "2656:1:140",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_0_by_1",
+                                                            "typeString": "int_const 0"
+                                                        },
+                                                        "value": "0"
+                                                    },
+                                                    {
+                                                        "hexValue": "30",
+                                                        "id": 26619,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "2685:1:140",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_0_by_1",
+                                                            "typeString": "int_const 0"
+                                                        },
+                                                        "value": "0"
+                                                    },
+                                                    {
+                                                        "hexValue": "30",
+                                                        "id": 26620,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -4778,46 +4781,14 @@ export const IMockMultiToken = {
                                                     },
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 26608,
+                                                        "id": 26621,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "kind": "number",
                                                         "lValueRequested": false,
                                                         "nodeType": "Literal",
-                                                        "src": "2751:1:140",
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_rational_0_by_1",
-                                                            "typeString": "int_const 0"
-                                                        },
-                                                        "value": "0"
-                                                    },
-                                                    {
-                                                        "hexValue": "30",
-                                                        "id": 26609,
-                                                        "isConstant": false,
-                                                        "isLValue": false,
-                                                        "isPure": true,
-                                                        "kind": "number",
-                                                        "lValueRequested": false,
-                                                        "nodeType": "Literal",
-                                                        "src": "2788:1:140",
-                                                        "typeDescriptions": {
-                                                            "typeIdentifier": "t_rational_0_by_1",
-                                                            "typeString": "int_const 0"
-                                                        },
-                                                        "value": "0"
-                                                    },
-                                                    {
-                                                        "hexValue": "30",
-                                                        "id": 26610,
-                                                        "isConstant": false,
-                                                        "isLValue": false,
-                                                        "isPure": true,
-                                                        "kind": "number",
-                                                        "lValueRequested": false,
-                                                        "nodeType": "Literal",
-                                                        "src": "2829:1:140",
+                                                        "src": "2763:1:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_rational_0_by_1",
                                                             "typeString": "int_const 0"
@@ -4845,43 +4816,43 @@ export const IMockMultiToken = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 26605,
+                                                        "id": 26616,
                                                         "name": "IHyperdrive",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 10506,
-                                                        "src": "2676:11:140",
+                                                        "referencedDeclaration": 10351,
+                                                        "src": "2610:11:140",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
+                                                            "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10351_$",
                                                             "typeString": "type(contract IHyperdrive)"
                                                         }
                                                     },
-                                                    "id": 26606,
+                                                    "id": 26617,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "2688:4:140",
+                                                    "memberLocation": "2622:4:140",
                                                     "memberName": "Fees",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 10211,
-                                                    "src": "2676:16:140",
+                                                    "referencedDeclaration": 10065,
+                                                    "src": "2610:16:140",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_Fees_$10211_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_Fees_$10065_storage_ptr_$",
                                                         "typeString": "type(struct IHyperdrive.Fees storage pointer)"
                                                     }
                                                 },
-                                                "id": 26611,
+                                                "id": 26622,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
                                                 "kind": "structConstructorCall",
                                                 "lValueRequested": false,
                                                 "nameLocations": [
-                                                    "2715:5:140",
-                                                    "2745:4:140",
-                                                    "2774:12:140",
-                                                    "2811:16:140"
+                                                    "2649:5:140",
+                                                    "2679:4:140",
+                                                    "2708:12:140",
+                                                    "2745:16:140"
                                                 ],
                                                 "names": [
                                                     "curve",
@@ -4890,10 +4861,10 @@ export const IMockMultiToken = {
                                                     "governanceZombie"
                                                 ],
                                                 "nodeType": "FunctionCall",
-                                                "src": "2676:173:140",
+                                                "src": "2610:173:140",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_Fees_$10065_memory_ptr",
                                                     "typeString": "struct IHyperdrive.Fees memory"
                                                 }
                                             }
@@ -4901,11 +4872,11 @@ export const IMockMultiToken = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                     "typeString": "contract IERC20"
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_contract$_IERC20_$9810",
+                                                    "typeIdentifier": "t_contract$_IERC20_$9666",
                                                     "typeString": "contract IERC20"
                                                 },
                                                 {
@@ -4953,58 +4924,58 @@ export const IMockMultiToken = {
                                                     "typeString": "address"
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_Fees_$10211_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_Fees_$10065_memory_ptr",
                                                     "typeString": "struct IHyperdrive.Fees memory"
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26567,
+                                                "id": 26578,
                                                 "name": "IHyperdrive",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 10506,
-                                                "src": "1937:11:140",
+                                                "referencedDeclaration": 10351,
+                                                "src": "1871:11:140",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10351_$",
                                                     "typeString": "type(contract IHyperdrive)"
                                                 }
                                             },
-                                            "id": 26568,
+                                            "id": 26579,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "1949:10:140",
+                                            "memberLocation": "1883:10:140",
                                             "memberName": "PoolConfig",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 10300,
-                                            "src": "1937:22:140",
+                                            "referencedDeclaration": 10154,
+                                            "src": "1871:22:140",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_type$_t_struct$_PoolConfig_$10300_storage_ptr_$",
+                                                "typeIdentifier": "t_type$_t_struct$_PoolConfig_$10154_storage_ptr_$",
                                                 "typeString": "type(struct IHyperdrive.PoolConfig storage pointer)"
                                             }
                                         },
-                                        "id": 26612,
+                                        "id": 26623,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "kind": "structConstructorCall",
                                         "lValueRequested": false,
                                         "nameLocations": [
-                                            "1978:9:140",
-                                            "2025:16:140",
-                                            "2079:13:140",
-                                            "2126:14:140",
-                                            "2175:22:140",
-                                            "2221:20:140",
-                                            "2265:24:140",
-                                            "2313:16:140",
-                                            "2357:18:140",
-                                            "2401:11:140",
-                                            "2544:10:140",
-                                            "2584:12:140",
-                                            "2626:14:140",
-                                            "2670:4:140"
+                                            "1912:9:140",
+                                            "1959:16:140",
+                                            "2013:13:140",
+                                            "2060:14:140",
+                                            "2109:22:140",
+                                            "2155:20:140",
+                                            "2199:24:140",
+                                            "2247:16:140",
+                                            "2291:18:140",
+                                            "2335:11:140",
+                                            "2478:10:140",
+                                            "2518:12:140",
+                                            "2560:14:140",
+                                            "2604:4:140"
                                         ],
                                         "names": [
                                             "baseToken",
@@ -5023,45 +4994,45 @@ export const IMockMultiToken = {
                                             "fees"
                                         ],
                                         "nodeType": "FunctionCall",
-                                        "src": "1937:927:140",
+                                        "src": "1871:927:140",
                                         "tryCall": false,
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_PoolConfig_$10300_memory_ptr",
+                                            "typeIdentifier": "t_struct$_PoolConfig_$10154_memory_ptr",
                                             "typeString": "struct IHyperdrive.PoolConfig memory"
                                         }
                                     }
                                 ],
-                                "id": 26613,
+                                "id": 26624,
                                 "kind": "baseConstructorSpecifier",
                                 "modifierName": {
-                                    "id": 26566,
+                                    "id": 26577,
                                     "name": "HyperdriveStorage",
                                     "nameLocations": [
-                                        "1906:17:140"
+                                        "1840:17:140"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 17893,
-                                    "src": "1906:17:140"
+                                    "referencedDeclaration": 17734,
+                                    "src": "1840:17:140"
                                 },
                                 "nodeType": "ModifierInvocation",
-                                "src": "1906:968:140"
+                                "src": "1840:968:140"
                             }
                         ],
                         "name": "",
                         "nameLocation": "-1:-1:-1",
                         "parameters": {
-                            "id": 26565,
+                            "id": 26576,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26562,
+                                    "id": 26573,
                                     "mutability": "mutable",
                                     "name": "_linkerCodeHash",
-                                    "nameLocation": "1844:15:140",
+                                    "nameLocation": "1778:15:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26695,
-                                    "src": "1836:23:140",
+                                    "scope": 26706,
+                                    "src": "1770:23:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5069,10 +5040,10 @@ export const IMockMultiToken = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 26561,
+                                        "id": 26572,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1836:7:140",
+                                        "src": "1770:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -5082,13 +5053,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26564,
+                                    "id": 26575,
                                     "mutability": "mutable",
                                     "name": "_linkerFactory",
-                                    "nameLocation": "1877:14:140",
+                                    "nameLocation": "1811:14:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26695,
-                                    "src": "1869:22:140",
+                                    "scope": 26706,
+                                    "src": "1803:22:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -5096,10 +5067,10 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26563,
+                                        "id": 26574,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "1869:7:140",
+                                        "src": "1803:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -5109,45 +5080,45 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "1826:71:140"
+                            "src": "1760:71:140"
                         },
                         "returnParameters": {
-                            "id": 26614,
+                            "id": 26625,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "2879:0:140"
+                            "src": "2813:0:140"
                         },
-                        "scope": 26882,
+                        "scope": 26895,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 26746,
+                        "id": 26757,
                         "nodeType": "FunctionDefinition",
-                        "src": "4876:973:140",
+                        "src": "4810:973:140",
                         "nodes": [],
                         "body": {
-                            "id": 26745,
+                            "id": 26756,
                             "nodeType": "Block",
-                            "src": "4939:910:140",
+                            "src": "4873:910:140",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        26703,
-                                        26705
+                                        26714,
+                                        26716
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 26703,
+                                            "id": 26714,
                                             "mutability": "mutable",
                                             "name": "success",
-                                            "nameLocation": "5084:7:140",
+                                            "nameLocation": "5018:7:140",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 26745,
-                                            "src": "5079:12:140",
+                                            "scope": 26756,
+                                            "src": "5013:12:140",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -5155,10 +5126,10 @@ export const IMockMultiToken = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 26702,
+                                                "id": 26713,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "5079:4:140",
+                                                "src": "5013:4:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -5168,13 +5139,13 @@ export const IMockMultiToken = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 26705,
+                                            "id": 26716,
                                             "mutability": "mutable",
                                             "name": "returndata",
-                                            "nameLocation": "5106:10:140",
+                                            "nameLocation": "5040:10:140",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 26745,
-                                            "src": "5093:23:140",
+                                            "scope": 26756,
+                                            "src": "5027:23:140",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
                                             "typeDescriptions": {
@@ -5182,10 +5153,10 @@ export const IMockMultiToken = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 26704,
+                                                "id": 26715,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "5093:5:140",
+                                                "src": "5027:5:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_storage_ptr",
                                                     "typeString": "bytes"
@@ -5194,16 +5165,16 @@ export const IMockMultiToken = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 26710,
+                                    "id": 26721,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 26708,
+                                                "id": 26719,
                                                 "name": "_data",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26697,
-                                                "src": "5141:5:140",
+                                                "referencedDeclaration": 26708,
+                                                "src": "5075:5:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_calldata_ptr",
                                                     "typeString": "bytes calldata"
@@ -5218,32 +5189,32 @@ export const IMockMultiToken = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26706,
+                                                "id": 26717,
                                                 "name": "target0",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26551,
-                                                "src": "5120:7:140",
+                                                "referencedDeclaration": 26562,
+                                                "src": "5054:7:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
-                                            "id": 26707,
+                                            "id": 26718,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "5128:12:140",
+                                            "memberLocation": "5062:12:140",
                                             "memberName": "delegatecall",
                                             "nodeType": "MemberAccess",
-                                            "src": "5120:20:140",
+                                            "src": "5054:20:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_baredelegatecall_nonpayable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
                                                 "typeString": "function (bytes memory) returns (bool,bytes memory)"
                                             }
                                         },
-                                        "id": 26709,
+                                        "id": 26720,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5252,7 +5223,7 @@ export const IMockMultiToken = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "5120:27:140",
+                                        "src": "5054:27:140",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$_t_bool_$_t_bytes_memory_ptr_$",
@@ -5260,11 +5231,11 @@ export const IMockMultiToken = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "5078:69:140"
+                                    "src": "5012:69:140"
                                 },
                                 {
                                     "condition": {
-                                        "id": 26712,
+                                        "id": 26723,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5272,14 +5243,14 @@ export const IMockMultiToken = {
                                         "nodeType": "UnaryOperation",
                                         "operator": "!",
                                         "prefix": true,
-                                        "src": "5161:8:140",
+                                        "src": "5095:8:140",
                                         "subExpression": {
-                                            "id": 26711,
+                                            "id": 26722,
                                             "name": "success",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26703,
-                                            "src": "5162:7:140",
+                                            "referencedDeclaration": 26714,
+                                            "src": "5096:7:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
@@ -5290,28 +5261,28 @@ export const IMockMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 26742,
+                                    "id": 26753,
                                     "nodeType": "IfStatement",
-                                    "src": "5157:658:140",
+                                    "src": "5091:658:140",
                                     "trueBody": {
-                                        "id": 26741,
+                                        "id": 26752,
                                         "nodeType": "Block",
-                                        "src": "5171:644:140",
+                                        "src": "5105:644:140",
                                         "statements": [
                                             {
                                                 "assignments": [
-                                                    26714
+                                                    26725
                                                 ],
                                                 "declarations": [
                                                     {
                                                         "constant": false,
-                                                        "id": 26714,
+                                                        "id": 26725,
                                                         "mutability": "mutable",
                                                         "name": "selector",
-                                                        "nameLocation": "5192:8:140",
+                                                        "nameLocation": "5126:8:140",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 26741,
-                                                        "src": "5185:15:140",
+                                                        "scope": 26752,
+                                                        "src": "5119:15:140",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
                                                         "typeDescriptions": {
@@ -5319,10 +5290,10 @@ export const IMockMultiToken = {
                                                             "typeString": "bytes4"
                                                         },
                                                         "typeName": {
-                                                            "id": 26713,
+                                                            "id": 26724,
                                                             "name": "bytes4",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "5185:6:140",
+                                                            "src": "5119:6:140",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes4",
                                                                 "typeString": "bytes4"
@@ -5331,16 +5302,16 @@ export const IMockMultiToken = {
                                                         "visibility": "internal"
                                                     }
                                                 ],
-                                                "id": 26719,
+                                                "id": 26730,
                                                 "initialValue": {
                                                     "arguments": [
                                                         {
-                                                            "id": 26717,
+                                                            "id": 26728,
                                                             "name": "returndata",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 26705,
-                                                            "src": "5210:10:140",
+                                                            "referencedDeclaration": 26716,
+                                                            "src": "5144:10:140",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes_memory_ptr",
                                                                 "typeString": "bytes memory"
@@ -5354,26 +5325,26 @@ export const IMockMultiToken = {
                                                                 "typeString": "bytes memory"
                                                             }
                                                         ],
-                                                        "id": 26716,
+                                                        "id": 26727,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "lValueRequested": false,
                                                         "nodeType": "ElementaryTypeNameExpression",
-                                                        "src": "5203:6:140",
+                                                        "src": "5137:6:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_type$_t_bytes4_$",
                                                             "typeString": "type(bytes4)"
                                                         },
                                                         "typeName": {
-                                                            "id": 26715,
+                                                            "id": 26726,
                                                             "name": "bytes4",
                                                             "nodeType": "ElementaryTypeName",
-                                                            "src": "5203:6:140",
+                                                            "src": "5137:6:140",
                                                             "typeDescriptions": {}
                                                         }
                                                     },
-                                                    "id": 26718,
+                                                    "id": 26729,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5382,7 +5353,7 @@ export const IMockMultiToken = {
                                                     "nameLocations": [],
                                                     "names": [],
                                                     "nodeType": "FunctionCall",
-                                                    "src": "5203:18:140",
+                                                    "src": "5137:18:140",
                                                     "tryCall": false,
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes4",
@@ -5390,7 +5361,7 @@ export const IMockMultiToken = {
                                                     }
                                                 },
                                                 "nodeType": "VariableDeclarationStatement",
-                                                "src": "5185:36:140"
+                                                "src": "5119:36:140"
                                             },
                                             {
                                                 "condition": {
@@ -5398,18 +5369,18 @@ export const IMockMultiToken = {
                                                         "typeIdentifier": "t_bytes4",
                                                         "typeString": "bytes4"
                                                     },
-                                                    "id": 26724,
+                                                    "id": 26735,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 26720,
+                                                        "id": 26731,
                                                         "name": "selector",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 26714,
-                                                        "src": "5239:8:140",
+                                                        "referencedDeclaration": 26725,
+                                                        "src": "5173:8:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes4",
                                                             "typeString": "bytes4"
@@ -5420,64 +5391,64 @@ export const IMockMultiToken = {
                                                     "rightExpression": {
                                                         "expression": {
                                                             "expression": {
-                                                                "id": 26721,
+                                                                "id": 26732,
                                                                 "name": "IHyperdrive",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 10506,
-                                                                "src": "5251:11:140",
+                                                                "referencedDeclaration": 10351,
+                                                                "src": "5185:11:140",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10506_$",
+                                                                    "typeIdentifier": "t_type$_t_contract$_IHyperdrive_$10351_$",
                                                                     "typeString": "type(contract IHyperdrive)"
                                                                 }
                                                             },
-                                                            "id": 26722,
+                                                            "id": 26733,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "5263:10:140",
+                                                            "memberLocation": "5197:10:140",
                                                             "memberName": "ReturnData",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 10442,
-                                                            "src": "5251:22:140",
+                                                            "referencedDeclaration": 10287,
+                                                            "src": "5185:22:140",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_error_pure$_t_bytes_memory_ptr_$returns$__$",
                                                                 "typeString": "function (bytes memory) pure"
                                                             }
                                                         },
-                                                        "id": 26723,
+                                                        "id": 26734,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "5274:8:140",
+                                                        "memberLocation": "5208:8:140",
                                                         "memberName": "selector",
                                                         "nodeType": "MemberAccess",
-                                                        "src": "5251:31:140",
+                                                        "src": "5185:31:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes4",
                                                             "typeString": "bytes4"
                                                         }
                                                     },
-                                                    "src": "5239:43:140",
+                                                    "src": "5173:43:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 26727,
+                                                "id": 26738,
                                                 "nodeType": "IfStatement",
-                                                "src": "5235:176:140",
+                                                "src": "5169:176:140",
                                                 "trueBody": {
-                                                    "id": 26726,
+                                                    "id": 26737,
                                                     "nodeType": "Block",
-                                                    "src": "5284:127:140",
+                                                    "src": "5218:127:140",
                                                     "statements": [
                                                         {
                                                             "AST": {
                                                                 "nodeType": "YulBlock",
-                                                                "src": "5311:86:140",
+                                                                "src": "5245:86:140",
                                                                 "statements": [
                                                                     {
                                                                         "expression": {
@@ -5487,12 +5458,12 @@ export const IMockMultiToken = {
                                                                                         {
                                                                                             "name": "returndata",
                                                                                             "nodeType": "YulIdentifier",
-                                                                                            "src": "5344:10:140"
+                                                                                            "src": "5278:10:140"
                                                                                         },
                                                                                         {
                                                                                             "kind": "number",
                                                                                             "nodeType": "YulLiteral",
-                                                                                            "src": "5356:2:140",
+                                                                                            "src": "5290:2:140",
                                                                                             "type": "",
                                                                                             "value": "32"
                                                                                         }
@@ -5500,61 +5471,61 @@ export const IMockMultiToken = {
                                                                                     "functionName": {
                                                                                         "name": "add",
                                                                                         "nodeType": "YulIdentifier",
-                                                                                        "src": "5340:3:140"
+                                                                                        "src": "5274:3:140"
                                                                                     },
                                                                                     "nodeType": "YulFunctionCall",
-                                                                                    "src": "5340:19:140"
+                                                                                    "src": "5274:19:140"
                                                                                 },
                                                                                 {
                                                                                     "arguments": [
                                                                                         {
                                                                                             "name": "returndata",
                                                                                             "nodeType": "YulIdentifier",
-                                                                                            "src": "5367:10:140"
+                                                                                            "src": "5301:10:140"
                                                                                         }
                                                                                     ],
                                                                                     "functionName": {
                                                                                         "name": "mload",
                                                                                         "nodeType": "YulIdentifier",
-                                                                                        "src": "5361:5:140"
+                                                                                        "src": "5295:5:140"
                                                                                     },
                                                                                     "nodeType": "YulFunctionCall",
-                                                                                    "src": "5361:17:140"
+                                                                                    "src": "5295:17:140"
                                                                                 }
                                                                             ],
                                                                             "functionName": {
                                                                                 "name": "revert",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "5333:6:140"
+                                                                                "src": "5267:6:140"
                                                                             },
                                                                             "nodeType": "YulFunctionCall",
-                                                                            "src": "5333:46:140"
+                                                                            "src": "5267:46:140"
                                                                         },
                                                                         "nodeType": "YulExpressionStatement",
-                                                                        "src": "5333:46:140"
+                                                                        "src": "5267:46:140"
                                                                     }
                                                                 ]
                                                             },
                                                             "evmVersion": "paris",
                                                             "externalReferences": [
                                                                 {
-                                                                    "declaration": 26705,
+                                                                    "declaration": 26716,
                                                                     "isOffset": false,
                                                                     "isSlot": false,
-                                                                    "src": "5344:10:140",
+                                                                    "src": "5278:10:140",
                                                                     "valueSize": 1
                                                                 },
                                                                 {
-                                                                    "declaration": 26705,
+                                                                    "declaration": 26716,
                                                                     "isOffset": false,
                                                                     "isSlot": false,
-                                                                    "src": "5367:10:140",
+                                                                    "src": "5301:10:140",
                                                                     "valueSize": 1
                                                                 }
                                                             ],
-                                                            "id": 26725,
+                                                            "id": 26736,
                                                             "nodeType": "InlineAssembly",
-                                                            "src": "5302:95:140"
+                                                            "src": "5236:95:140"
                                                         }
                                                     ]
                                                 }
@@ -5562,7 +5533,7 @@ export const IMockMultiToken = {
                                             {
                                                 "AST": {
                                                     "nodeType": "YulBlock",
-                                                    "src": "5577:138:140",
+                                                    "src": "5511:138:140",
                                                     "statements": [
                                                         {
                                                             "expression": {
@@ -5572,12 +5543,12 @@ export const IMockMultiToken = {
                                                                             {
                                                                                 "name": "returndata",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "5606:10:140"
+                                                                                "src": "5540:10:140"
                                                                             },
                                                                             {
                                                                                 "kind": "number",
                                                                                 "nodeType": "YulLiteral",
-                                                                                "src": "5618:3:140",
+                                                                                "src": "5552:3:140",
                                                                                 "type": "",
                                                                                 "value": "0x4"
                                                                             }
@@ -5585,10 +5556,10 @@ export const IMockMultiToken = {
                                                                         "functionName": {
                                                                             "name": "add",
                                                                             "nodeType": "YulIdentifier",
-                                                                            "src": "5602:3:140"
+                                                                            "src": "5536:3:140"
                                                                         },
                                                                         "nodeType": "YulFunctionCall",
-                                                                        "src": "5602:20:140"
+                                                                        "src": "5536:20:140"
                                                                     },
                                                                     {
                                                                         "arguments": [
@@ -5597,21 +5568,21 @@ export const IMockMultiToken = {
                                                                                     {
                                                                                         "name": "returndata",
                                                                                         "nodeType": "YulIdentifier",
-                                                                                        "src": "5634:10:140"
+                                                                                        "src": "5568:10:140"
                                                                                     }
                                                                                 ],
                                                                                 "functionName": {
                                                                                     "name": "mload",
                                                                                     "nodeType": "YulIdentifier",
-                                                                                    "src": "5628:5:140"
+                                                                                    "src": "5562:5:140"
                                                                                 },
                                                                                 "nodeType": "YulFunctionCall",
-                                                                                "src": "5628:17:140"
+                                                                                "src": "5562:17:140"
                                                                             },
                                                                             {
                                                                                 "kind": "number",
                                                                                 "nodeType": "YulLiteral",
-                                                                                "src": "5647:1:140",
+                                                                                "src": "5581:1:140",
                                                                                 "type": "",
                                                                                 "value": "4"
                                                                             }
@@ -5619,37 +5590,37 @@ export const IMockMultiToken = {
                                                                         "functionName": {
                                                                             "name": "sub",
                                                                             "nodeType": "YulIdentifier",
-                                                                            "src": "5624:3:140"
+                                                                            "src": "5558:3:140"
                                                                         },
                                                                         "nodeType": "YulFunctionCall",
-                                                                        "src": "5624:25:140"
+                                                                        "src": "5558:25:140"
                                                                     }
                                                                 ],
                                                                 "functionName": {
                                                                     "name": "mstore",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "5595:6:140"
+                                                                    "src": "5529:6:140"
                                                                 },
                                                                 "nodeType": "YulFunctionCall",
-                                                                "src": "5595:55:140"
+                                                                "src": "5529:55:140"
                                                             },
                                                             "nodeType": "YulExpressionStatement",
-                                                            "src": "5595:55:140"
+                                                            "src": "5529:55:140"
                                                         },
                                                         {
                                                             "nodeType": "YulAssignment",
-                                                            "src": "5667:34:140",
+                                                            "src": "5601:34:140",
                                                             "value": {
                                                                 "arguments": [
                                                                     {
                                                                         "name": "returndata",
                                                                         "nodeType": "YulIdentifier",
-                                                                        "src": "5685:10:140"
+                                                                        "src": "5619:10:140"
                                                                     },
                                                                     {
                                                                         "kind": "number",
                                                                         "nodeType": "YulLiteral",
-                                                                        "src": "5697:3:140",
+                                                                        "src": "5631:3:140",
                                                                         "type": "",
                                                                         "value": "0x4"
                                                                     }
@@ -5657,16 +5628,16 @@ export const IMockMultiToken = {
                                                                 "functionName": {
                                                                     "name": "add",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "5681:3:140"
+                                                                    "src": "5615:3:140"
                                                                 },
                                                                 "nodeType": "YulFunctionCall",
-                                                                "src": "5681:20:140"
+                                                                "src": "5615:20:140"
                                                             },
                                                             "variableNames": [
                                                                 {
                                                                     "name": "returndata",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "5667:10:140"
+                                                                    "src": "5601:10:140"
                                                                 }
                                                             ]
                                                         }
@@ -5675,52 +5646,52 @@ export const IMockMultiToken = {
                                                 "evmVersion": "paris",
                                                 "externalReferences": [
                                                     {
-                                                        "declaration": 26705,
+                                                        "declaration": 26716,
                                                         "isOffset": false,
                                                         "isSlot": false,
-                                                        "src": "5606:10:140",
+                                                        "src": "5540:10:140",
                                                         "valueSize": 1
                                                     },
                                                     {
-                                                        "declaration": 26705,
+                                                        "declaration": 26716,
                                                         "isOffset": false,
                                                         "isSlot": false,
-                                                        "src": "5634:10:140",
+                                                        "src": "5568:10:140",
                                                         "valueSize": 1
                                                     },
                                                     {
-                                                        "declaration": 26705,
+                                                        "declaration": 26716,
                                                         "isOffset": false,
                                                         "isSlot": false,
-                                                        "src": "5667:10:140",
+                                                        "src": "5601:10:140",
                                                         "valueSize": 1
                                                     },
                                                     {
-                                                        "declaration": 26705,
+                                                        "declaration": 26716,
                                                         "isOffset": false,
                                                         "isSlot": false,
-                                                        "src": "5685:10:140",
+                                                        "src": "5619:10:140",
                                                         "valueSize": 1
                                                     }
                                                 ],
-                                                "id": 26728,
+                                                "id": 26739,
                                                 "nodeType": "InlineAssembly",
-                                                "src": "5568:147:140"
+                                                "src": "5502:147:140"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 26737,
+                                                    "id": 26748,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 26729,
+                                                        "id": 26740,
                                                         "name": "returndata",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 26705,
-                                                        "src": "5728:10:140",
+                                                        "referencedDeclaration": 26716,
+                                                        "src": "5662:10:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                             "typeString": "bytes memory"
@@ -5731,12 +5702,12 @@ export const IMockMultiToken = {
                                                     "rightHandSide": {
                                                         "arguments": [
                                                             {
-                                                                "id": 26732,
+                                                                "id": 26743,
                                                                 "name": "returndata",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26705,
-                                                                "src": "5752:10:140",
+                                                                "referencedDeclaration": 26716,
+                                                                "src": "5686:10:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes_memory_ptr",
                                                                     "typeString": "bytes memory"
@@ -5745,34 +5716,34 @@ export const IMockMultiToken = {
                                                             {
                                                                 "components": [
                                                                     {
-                                                                        "id": 26734,
+                                                                        "id": 26745,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
                                                                         "lValueRequested": false,
                                                                         "nodeType": "ElementaryTypeNameExpression",
-                                                                        "src": "5765:5:140",
+                                                                        "src": "5699:5:140",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_type$_t_bytes_storage_ptr_$",
                                                                             "typeString": "type(bytes storage pointer)"
                                                                         },
                                                                         "typeName": {
-                                                                            "id": 26733,
+                                                                            "id": 26744,
                                                                             "name": "bytes",
                                                                             "nodeType": "ElementaryTypeName",
-                                                                            "src": "5765:5:140",
+                                                                            "src": "5699:5:140",
                                                                             "typeDescriptions": {}
                                                                         }
                                                                     }
                                                                 ],
-                                                                "id": 26735,
+                                                                "id": 26746,
                                                                 "isConstant": false,
                                                                 "isInlineArray": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
                                                                 "lValueRequested": false,
                                                                 "nodeType": "TupleExpression",
-                                                                "src": "5764:7:140",
+                                                                "src": "5698:7:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_type$_t_bytes_storage_ptr_$",
                                                                     "typeString": "type(bytes storage pointer)"
@@ -5791,32 +5762,32 @@ export const IMockMultiToken = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 26730,
+                                                                "id": 26741,
                                                                 "name": "abi",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": -1,
-                                                                "src": "5741:3:140",
+                                                                "src": "5675:3:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_magic_abi",
                                                                     "typeString": "abi"
                                                                 }
                                                             },
-                                                            "id": 26731,
+                                                            "id": 26742,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
                                                             "lValueRequested": false,
-                                                            "memberLocation": "5745:6:140",
+                                                            "memberLocation": "5679:6:140",
                                                             "memberName": "decode",
                                                             "nodeType": "MemberAccess",
-                                                            "src": "5741:10:140",
+                                                            "src": "5675:10:140",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_function_abidecode_pure$__$returns$__$",
                                                                 "typeString": "function () pure"
                                                             }
                                                         },
-                                                        "id": 26736,
+                                                        "id": 26747,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -5825,61 +5796,61 @@ export const IMockMultiToken = {
                                                         "nameLocations": [],
                                                         "names": [],
                                                         "nodeType": "FunctionCall",
-                                                        "src": "5741:31:140",
+                                                        "src": "5675:31:140",
                                                         "tryCall": false,
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                             "typeString": "bytes memory"
                                                         }
                                                     },
-                                                    "src": "5728:44:140",
+                                                    "src": "5662:44:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes_memory_ptr",
                                                         "typeString": "bytes memory"
                                                     }
                                                 },
-                                                "id": 26738,
+                                                "id": 26749,
                                                 "nodeType": "ExpressionStatement",
-                                                "src": "5728:44:140"
+                                                "src": "5662:44:140"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 26739,
+                                                    "id": 26750,
                                                     "name": "returndata",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 26705,
-                                                    "src": "5794:10:140",
+                                                    "referencedDeclaration": 26716,
+                                                    "src": "5728:10:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes_memory_ptr",
                                                         "typeString": "bytes memory"
                                                     }
                                                 },
-                                                "functionReturnParameters": 26701,
-                                                "id": 26740,
+                                                "functionReturnParameters": 26712,
+                                                "id": 26751,
                                                 "nodeType": "Return",
-                                                "src": "5787:17:140"
+                                                "src": "5721:17:140"
                                             }
                                         ]
                                     }
                                 },
                                 {
                                     "expression": {
-                                        "id": 26743,
+                                        "id": 26754,
                                         "name": "returndata",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 26705,
-                                        "src": "5832:10:140",
+                                        "referencedDeclaration": 26716,
+                                        "src": "5766:10:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes_memory_ptr",
                                             "typeString": "bytes memory"
                                         }
                                     },
-                                    "functionReturnParameters": 26701,
-                                    "id": 26744,
+                                    "functionReturnParameters": 26712,
+                                    "id": 26755,
                                     "nodeType": "Return",
-                                    "src": "5825:17:140"
+                                    "src": "5759:17:140"
                                 }
                             ]
                         },
@@ -5889,18 +5860,18 @@ export const IMockMultiToken = {
                         "name": "",
                         "nameLocation": "-1:-1:-1",
                         "parameters": {
-                            "id": 26698,
+                            "id": 26709,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26697,
+                                    "id": 26708,
                                     "mutability": "mutable",
                                     "name": "_data",
-                                    "nameLocation": "4900:5:140",
+                                    "nameLocation": "4834:5:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26746,
-                                    "src": "4885:20:140",
+                                    "scope": 26757,
+                                    "src": "4819:20:140",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
                                     "typeDescriptions": {
@@ -5908,10 +5879,10 @@ export const IMockMultiToken = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 26696,
+                                        "id": 26707,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4885:5:140",
+                                        "src": "4819:5:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes_storage_ptr",
                                             "typeString": "bytes"
@@ -5920,21 +5891,21 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4884:22:140"
+                            "src": "4818:22:140"
                         },
                         "returnParameters": {
-                            "id": 26701,
+                            "id": 26712,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26700,
+                                    "id": 26711,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26746,
-                                    "src": "4925:12:140",
+                                    "scope": 26757,
+                                    "src": "4859:12:140",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
@@ -5942,10 +5913,10 @@ export const IMockMultiToken = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 26699,
+                                        "id": 26710,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "4925:5:140",
+                                        "src": "4859:5:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes_storage_ptr",
                                             "typeString": "bytes"
@@ -5954,81 +5925,81 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "4924:14:140"
+                            "src": "4858:14:140"
                         },
-                        "scope": 26882,
+                        "scope": 26895,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26760,
+                        "id": 26773,
                         "nodeType": "FunctionDefinition",
-                        "src": "5986:132:140",
+                        "src": "5920:149:140",
                         "nodes": [],
                         "body": {
-                            "id": 26759,
+                            "id": 26772,
                             "nodeType": "Block",
-                            "src": "6093:25:140",
+                            "src": "6044:25:140",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "hexValue": "30",
-                                        "id": 26757,
+                                        "id": 26770,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
                                         "kind": "number",
                                         "lValueRequested": false,
                                         "nodeType": "Literal",
-                                        "src": "6110:1:140",
+                                        "src": "6061:1:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_rational_0_by_1",
                                             "typeString": "int_const 0"
                                         },
                                         "value": "0"
                                     },
-                                    "functionReturnParameters": 26756,
-                                    "id": 26758,
+                                    "functionReturnParameters": 26769,
+                                    "id": 26771,
                                     "nodeType": "Return",
-                                    "src": "6103:8:140"
+                                    "src": "6054:8:140"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            12974
+                            12806
                         ],
                         "documentation": {
-                            "id": 26747,
+                            "id": 26758,
                             "nodeType": "StructuredDocumentation",
-                            "src": "5855:18:140",
+                            "src": "5789:18:140",
                             "text": "Overrides ///"
                         },
                         "implemented": true,
                         "kind": "function",
                         "modifiers": [],
                         "name": "_applyCheckpoint",
-                        "nameLocation": "5995:16:140",
+                        "nameLocation": "5929:16:140",
                         "overrides": {
-                            "id": 26753,
+                            "id": 26766,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
-                            "src": "6066:8:140"
+                            "src": "6017:8:140"
                         },
                         "parameters": {
-                            "id": 26752,
+                            "id": 26765,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26749,
+                                    "id": 26760,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26760,
-                                    "src": "6021:7:140",
+                                    "scope": 26773,
+                                    "src": "5955:7:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6036,10 +6007,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26748,
+                                        "id": 26759,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "6021:7:140",
+                                        "src": "5955:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6049,13 +6020,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26751,
+                                    "id": 26762,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26760,
-                                    "src": "6038:7:140",
+                                    "scope": 26773,
+                                    "src": "5972:7:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6063,10 +6034,37 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26750,
+                                        "id": 26761,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "6038:7:140",
+                                        "src": "5972:7:140",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 26764,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 26773,
+                                    "src": "5989:7:140",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 26763,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "5989:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6075,21 +6073,21 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "6011:40:140"
+                            "src": "5945:57:140"
                         },
                         "returnParameters": {
-                            "id": 26756,
+                            "id": 26769,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26755,
+                                    "id": 26768,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26760,
-                                    "src": "6084:7:140",
+                                    "scope": 26773,
+                                    "src": "6035:7:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6097,10 +6095,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26754,
+                                        "id": 26767,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "6084:7:140",
+                                        "src": "6035:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6109,39 +6107,39 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "6083:9:140"
+                            "src": "6034:9:140"
                         },
-                        "scope": 26882,
+                        "scope": 26895,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 26808,
+                        "id": 26821,
                         "nodeType": "FunctionDefinition",
-                        "src": "7307:867:140",
+                        "src": "7258:867:140",
                         "nodes": [],
                         "body": {
-                            "id": 26807,
+                            "id": 26820,
                             "nodeType": "Block",
-                            "src": "7497:677:140",
+                            "src": "7448:677:140",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        26779,
-                                        26781
+                                        26792,
+                                        26794
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 26779,
+                                            "id": 26792,
                                             "mutability": "mutable",
                                             "name": "success",
-                                            "nameLocation": "7513:7:140",
+                                            "nameLocation": "7464:7:140",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 26807,
-                                            "src": "7508:12:140",
+                                            "scope": 26820,
+                                            "src": "7459:12:140",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -6149,10 +6147,10 @@ export const IMockMultiToken = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 26778,
+                                                "id": 26791,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "7508:4:140",
+                                                "src": "7459:4:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
@@ -6162,13 +6160,13 @@ export const IMockMultiToken = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 26781,
+                                            "id": 26794,
                                             "mutability": "mutable",
                                             "name": "result",
-                                            "nameLocation": "7535:6:140",
+                                            "nameLocation": "7486:6:140",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 26807,
-                                            "src": "7522:19:140",
+                                            "scope": 26820,
+                                            "src": "7473:19:140",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
                                             "typeDescriptions": {
@@ -6176,10 +6174,10 @@ export const IMockMultiToken = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 26780,
+                                                "id": 26793,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "7522:5:140",
+                                                "src": "7473:5:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_storage_ptr",
                                                     "typeString": "bytes"
@@ -6188,34 +6186,34 @@ export const IMockMultiToken = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 26800,
+                                    "id": 26813,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "arguments": [
                                                     {
                                                         "expression": {
-                                                            "id": 26786,
+                                                            "id": 26799,
                                                             "name": "HyperdriveTarget0",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 5242,
-                                                            "src": "7611:17:140",
+                                                            "referencedDeclaration": 5190,
+                                                            "src": "7562:17:140",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_type$_t_contract$_HyperdriveTarget0_$5242_$",
+                                                                "typeIdentifier": "t_type$_t_contract$_HyperdriveTarget0_$5190_$",
                                                                 "typeString": "type(contract HyperdriveTarget0)"
                                                             }
                                                         },
-                                                        "id": 26787,
+                                                        "id": 26800,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
                                                         "lValueRequested": false,
-                                                        "memberLocation": "7629:12:140",
+                                                        "memberLocation": "7580:12:140",
                                                         "memberName": "permitForAll",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 4740,
-                                                        "src": "7611:30:140",
+                                                        "referencedDeclaration": 4688,
+                                                        "src": "7562:30:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_declaration_nonpayable$_t_bytes32_$_t_bytes32_$_t_address_$_t_address_$_t_bool_$_t_uint256_$_t_uint8_$_t_bytes32_$_t_bytes32_$returns$__$",
                                                             "typeString": "function HyperdriveTarget0.permitForAll(bytes32,bytes32,address,address,bool,uint256,uint8,bytes32,bytes32)"
@@ -6224,122 +6222,122 @@ export const IMockMultiToken = {
                                                     {
                                                         "components": [
                                                             {
-                                                                "id": 26788,
+                                                                "id": 26801,
                                                                 "name": "domainSeparator",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26560,
-                                                                "src": "7681:15:140",
+                                                                "referencedDeclaration": 26571,
+                                                                "src": "7632:15:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes32",
                                                                     "typeString": "bytes32"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 26789,
+                                                                "id": 26802,
                                                                 "name": "PERMIT_TYPEHASH",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26557,
-                                                                "src": "7718:15:140",
+                                                                "referencedDeclaration": 26568,
+                                                                "src": "7669:15:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes32",
                                                                     "typeString": "bytes32"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 26790,
+                                                                "id": 26803,
                                                                 "name": "owner",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26763,
-                                                                "src": "7755:5:140",
+                                                                "referencedDeclaration": 26776,
+                                                                "src": "7706:5:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 26791,
+                                                                "id": 26804,
                                                                 "name": "spender",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26765,
-                                                                "src": "7782:7:140",
+                                                                "referencedDeclaration": 26778,
+                                                                "src": "7733:7:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
                                                                     "typeString": "address"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 26792,
+                                                                "id": 26805,
                                                                 "name": "_approved",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26767,
-                                                                "src": "7811:9:140",
+                                                                "referencedDeclaration": 26780,
+                                                                "src": "7762:9:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bool",
                                                                     "typeString": "bool"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 26793,
+                                                                "id": 26806,
                                                                 "name": "deadline",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26769,
-                                                                "src": "7842:8:140",
+                                                                "referencedDeclaration": 26782,
+                                                                "src": "7793:8:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 26794,
+                                                                "id": 26807,
                                                                 "name": "v",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26771,
-                                                                "src": "7872:1:140",
+                                                                "referencedDeclaration": 26784,
+                                                                "src": "7823:1:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint8",
                                                                     "typeString": "uint8"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 26795,
+                                                                "id": 26808,
                                                                 "name": "r",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26773,
-                                                                "src": "7895:1:140",
+                                                                "referencedDeclaration": 26786,
+                                                                "src": "7846:1:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes32",
                                                                     "typeString": "bytes32"
                                                                 }
                                                             },
                                                             {
-                                                                "id": 26796,
+                                                                "id": 26809,
                                                                 "name": "s",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 26775,
-                                                                "src": "7918:1:140",
+                                                                "referencedDeclaration": 26788,
+                                                                "src": "7869:1:140",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_bytes32",
                                                                     "typeString": "bytes32"
                                                                 }
                                                             }
                                                         ],
-                                                        "id": 26797,
+                                                        "id": 26810,
                                                         "isConstant": false,
                                                         "isInlineArray": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "nodeType": "TupleExpression",
-                                                        "src": "7659:278:140",
+                                                        "src": "7610:278:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_tuple$_t_bytes32_$_t_bytes32_$_t_address_$_t_address_$_t_bool_$_t_uint256_$_t_uint8_$_t_bytes32_$_t_bytes32_$",
                                                             "typeString": "tuple(bytes32,bytes32,address,address,bool,uint256,uint8,bytes32,bytes32)"
@@ -6358,32 +6356,32 @@ export const IMockMultiToken = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 26784,
+                                                        "id": 26797,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -1,
-                                                        "src": "7579:3:140",
+                                                        "src": "7530:3:140",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_magic_abi",
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 26785,
+                                                    "id": 26798,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
                                                     "lValueRequested": false,
-                                                    "memberLocation": "7583:10:140",
+                                                    "memberLocation": "7534:10:140",
                                                     "memberName": "encodeCall",
                                                     "nodeType": "MemberAccess",
-                                                    "src": "7579:14:140",
+                                                    "src": "7530:14:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_abiencodecall_pure$__$returns$_t_bytes_memory_ptr_$",
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 26798,
+                                                "id": 26811,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -6392,7 +6390,7 @@ export const IMockMultiToken = {
                                                 "nameLocations": [],
                                                 "names": [],
                                                 "nodeType": "FunctionCall",
-                                                "src": "7579:372:140",
+                                                "src": "7530:372:140",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -6408,32 +6406,32 @@ export const IMockMultiToken = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26782,
+                                                "id": 26795,
                                                 "name": "target0",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26551,
-                                                "src": "7545:7:140",
+                                                "referencedDeclaration": 26562,
+                                                "src": "7496:7:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
-                                            "id": 26783,
+                                            "id": 26796,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
-                                            "memberLocation": "7553:12:140",
+                                            "memberLocation": "7504:12:140",
                                             "memberName": "delegatecall",
                                             "nodeType": "MemberAccess",
-                                            "src": "7545:20:140",
+                                            "src": "7496:20:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_baredelegatecall_nonpayable$_t_bytes_memory_ptr_$returns$_t_bool_$_t_bytes_memory_ptr_$",
                                                 "typeString": "function (bytes memory) returns (bool,bytes memory)"
                                             }
                                         },
-                                        "id": 26799,
+                                        "id": 26812,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6442,7 +6440,7 @@ export const IMockMultiToken = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "7545:416:140",
+                                        "src": "7496:416:140",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$_t_bool_$_t_bytes_memory_ptr_$",
@@ -6450,11 +6448,11 @@ export const IMockMultiToken = {
                                         }
                                     },
                                     "nodeType": "VariableDeclarationStatement",
-                                    "src": "7507:454:140"
+                                    "src": "7458:454:140"
                                 },
                                 {
                                     "condition": {
-                                        "id": 26802,
+                                        "id": 26815,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6462,14 +6460,14 @@ export const IMockMultiToken = {
                                         "nodeType": "UnaryOperation",
                                         "operator": "!",
                                         "prefix": true,
-                                        "src": "7975:8:140",
+                                        "src": "7926:8:140",
                                         "subExpression": {
-                                            "id": 26801,
+                                            "id": 26814,
                                             "name": "success",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26779,
-                                            "src": "7976:7:140",
+                                            "referencedDeclaration": 26792,
+                                            "src": "7927:7:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
@@ -6480,18 +6478,18 @@ export const IMockMultiToken = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 26805,
+                                    "id": 26818,
                                     "nodeType": "IfStatement",
-                                    "src": "7971:117:140",
+                                    "src": "7922:117:140",
                                     "trueBody": {
-                                        "id": 26804,
+                                        "id": 26817,
                                         "nodeType": "Block",
-                                        "src": "7985:103:140",
+                                        "src": "7936:103:140",
                                         "statements": [
                                             {
                                                 "AST": {
                                                     "nodeType": "YulBlock",
-                                                    "src": "8008:70:140",
+                                                    "src": "7959:70:140",
                                                     "statements": [
                                                         {
                                                             "expression": {
@@ -6501,12 +6499,12 @@ export const IMockMultiToken = {
                                                                             {
                                                                                 "name": "result",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "8037:6:140"
+                                                                                "src": "7988:6:140"
                                                                             },
                                                                             {
                                                                                 "kind": "number",
                                                                                 "nodeType": "YulLiteral",
-                                                                                "src": "8045:2:140",
+                                                                                "src": "7996:2:140",
                                                                                 "type": "",
                                                                                 "value": "32"
                                                                             }
@@ -6514,61 +6512,61 @@ export const IMockMultiToken = {
                                                                         "functionName": {
                                                                             "name": "add",
                                                                             "nodeType": "YulIdentifier",
-                                                                            "src": "8033:3:140"
+                                                                            "src": "7984:3:140"
                                                                         },
                                                                         "nodeType": "YulFunctionCall",
-                                                                        "src": "8033:15:140"
+                                                                        "src": "7984:15:140"
                                                                     },
                                                                     {
                                                                         "arguments": [
                                                                             {
                                                                                 "name": "result",
                                                                                 "nodeType": "YulIdentifier",
-                                                                                "src": "8056:6:140"
+                                                                                "src": "8007:6:140"
                                                                             }
                                                                         ],
                                                                         "functionName": {
                                                                             "name": "mload",
                                                                             "nodeType": "YulIdentifier",
-                                                                            "src": "8050:5:140"
+                                                                            "src": "8001:5:140"
                                                                         },
                                                                         "nodeType": "YulFunctionCall",
-                                                                        "src": "8050:13:140"
+                                                                        "src": "8001:13:140"
                                                                     }
                                                                 ],
                                                                 "functionName": {
                                                                     "name": "revert",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "8026:6:140"
+                                                                    "src": "7977:6:140"
                                                                 },
                                                                 "nodeType": "YulFunctionCall",
-                                                                "src": "8026:38:140"
+                                                                "src": "7977:38:140"
                                                             },
                                                             "nodeType": "YulExpressionStatement",
-                                                            "src": "8026:38:140"
+                                                            "src": "7977:38:140"
                                                         }
                                                     ]
                                                 },
                                                 "evmVersion": "paris",
                                                 "externalReferences": [
                                                     {
-                                                        "declaration": 26781,
+                                                        "declaration": 26794,
                                                         "isOffset": false,
                                                         "isSlot": false,
-                                                        "src": "8037:6:140",
+                                                        "src": "7988:6:140",
                                                         "valueSize": 1
                                                     },
                                                     {
-                                                        "declaration": 26781,
+                                                        "declaration": 26794,
                                                         "isOffset": false,
                                                         "isSlot": false,
-                                                        "src": "8056:6:140",
+                                                        "src": "8007:6:140",
                                                         "valueSize": 1
                                                     }
                                                 ],
-                                                "id": 26803,
+                                                "id": 26816,
                                                 "nodeType": "InlineAssembly",
-                                                "src": "7999:79:140"
+                                                "src": "7950:79:140"
                                             }
                                         ]
                                     }
@@ -6576,7 +6574,7 @@ export const IMockMultiToken = {
                                 {
                                     "AST": {
                                         "nodeType": "YulBlock",
-                                        "src": "8106:62:140",
+                                        "src": "8057:62:140",
                                         "statements": [
                                             {
                                                 "expression": {
@@ -6586,12 +6584,12 @@ export const IMockMultiToken = {
                                                                 {
                                                                     "name": "result",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "8131:6:140"
+                                                                    "src": "8082:6:140"
                                                                 },
                                                                 {
                                                                     "kind": "number",
                                                                     "nodeType": "YulLiteral",
-                                                                    "src": "8139:2:140",
+                                                                    "src": "8090:2:140",
                                                                     "type": "",
                                                                     "value": "32"
                                                                 }
@@ -6599,68 +6597,68 @@ export const IMockMultiToken = {
                                                             "functionName": {
                                                                 "name": "add",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "8127:3:140"
+                                                                "src": "8078:3:140"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "8127:15:140"
+                                                            "src": "8078:15:140"
                                                         },
                                                         {
                                                             "arguments": [
                                                                 {
                                                                     "name": "result",
                                                                     "nodeType": "YulIdentifier",
-                                                                    "src": "8150:6:140"
+                                                                    "src": "8101:6:140"
                                                                 }
                                                             ],
                                                             "functionName": {
                                                                 "name": "mload",
                                                                 "nodeType": "YulIdentifier",
-                                                                "src": "8144:5:140"
+                                                                "src": "8095:5:140"
                                                             },
                                                             "nodeType": "YulFunctionCall",
-                                                            "src": "8144:13:140"
+                                                            "src": "8095:13:140"
                                                         }
                                                     ],
                                                     "functionName": {
                                                         "name": "return",
                                                         "nodeType": "YulIdentifier",
-                                                        "src": "8120:6:140"
+                                                        "src": "8071:6:140"
                                                     },
                                                     "nodeType": "YulFunctionCall",
-                                                    "src": "8120:38:140"
+                                                    "src": "8071:38:140"
                                                 },
                                                 "nodeType": "YulExpressionStatement",
-                                                "src": "8120:38:140"
+                                                "src": "8071:38:140"
                                             }
                                         ]
                                     },
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 26781,
+                                            "declaration": 26794,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "8131:6:140",
+                                            "src": "8082:6:140",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 26781,
+                                            "declaration": 26794,
                                             "isOffset": false,
                                             "isSlot": false,
-                                            "src": "8150:6:140",
+                                            "src": "8101:6:140",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 26806,
+                                    "id": 26819,
                                     "nodeType": "InlineAssembly",
-                                    "src": "8097:71:140"
+                                    "src": "8048:71:140"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 26761,
+                            "id": 26774,
                             "nodeType": "StructuredDocumentation",
-                            "src": "6148:1154:140",
+                            "src": "6099:1154:140",
                             "text": "@notice Allows a caller who is not the owner of an account to execute the\n      functionality of 'approve' for all assets with the owners signature.\n @param owner The owner of the account which is having the new approval set.\n @param spender The address which will be allowed to spend owner's tokens.\n @param _approved A boolean of the approval status to set to.\n @param deadline The timestamp which the signature must be submitted by\n        to be valid.\n @param v Extra ECDSA data which allows public key recovery from\n        signature assumed to be 27 or 28.\n @param r The r component of the ECDSA signature.\n @param s The s component of the ECDSA signature.\n @dev The signature for this function follows EIP 712 standard and should\n      be generated with the eth_signTypedData JSON RPC call instead of\n      the eth_sign JSON RPC call. If using out of date parity signing\n      libraries the v component may need to be adjusted. Also it is very\n      rare but possible for v to be other values, those values are not\n      supported."
                         },
                         "functionSelector": "9032c726",
@@ -6668,20 +6666,20 @@ export const IMockMultiToken = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "permitForAll",
-                        "nameLocation": "7316:12:140",
+                        "nameLocation": "7267:12:140",
                         "parameters": {
-                            "id": 26776,
+                            "id": 26789,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26763,
+                                    "id": 26776,
                                     "mutability": "mutable",
                                     "name": "owner",
-                                    "nameLocation": "7346:5:140",
+                                    "nameLocation": "7297:5:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26808,
-                                    "src": "7338:13:140",
+                                    "scope": 26821,
+                                    "src": "7289:13:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6689,10 +6687,10 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26762,
+                                        "id": 26775,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7338:7:140",
+                                        "src": "7289:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -6703,13 +6701,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26765,
+                                    "id": 26778,
                                     "mutability": "mutable",
                                     "name": "spender",
-                                    "nameLocation": "7369:7:140",
+                                    "nameLocation": "7320:7:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26808,
-                                    "src": "7361:15:140",
+                                    "scope": 26821,
+                                    "src": "7312:15:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6717,10 +6715,10 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26764,
+                                        "id": 26777,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7361:7:140",
+                                        "src": "7312:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -6731,13 +6729,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26767,
+                                    "id": 26780,
                                     "mutability": "mutable",
                                     "name": "_approved",
-                                    "nameLocation": "7391:9:140",
+                                    "nameLocation": "7342:9:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26808,
-                                    "src": "7386:14:140",
+                                    "scope": 26821,
+                                    "src": "7337:14:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6745,10 +6743,10 @@ export const IMockMultiToken = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 26766,
+                                        "id": 26779,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7386:4:140",
+                                        "src": "7337:4:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
@@ -6758,13 +6756,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26769,
+                                    "id": 26782,
                                     "mutability": "mutable",
                                     "name": "deadline",
-                                    "nameLocation": "7418:8:140",
+                                    "nameLocation": "7369:8:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26808,
-                                    "src": "7410:16:140",
+                                    "scope": 26821,
+                                    "src": "7361:16:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6772,10 +6770,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26768,
+                                        "id": 26781,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7410:7:140",
+                                        "src": "7361:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -6785,13 +6783,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26771,
+                                    "id": 26784,
                                     "mutability": "mutable",
                                     "name": "v",
-                                    "nameLocation": "7442:1:140",
+                                    "nameLocation": "7393:1:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26808,
-                                    "src": "7436:7:140",
+                                    "scope": 26821,
+                                    "src": "7387:7:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6799,10 +6797,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 26770,
+                                        "id": 26783,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7436:5:140",
+                                        "src": "7387:5:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint8",
                                             "typeString": "uint8"
@@ -6812,13 +6810,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26773,
+                                    "id": 26786,
                                     "mutability": "mutable",
                                     "name": "r",
-                                    "nameLocation": "7461:1:140",
+                                    "nameLocation": "7412:1:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26808,
-                                    "src": "7453:9:140",
+                                    "scope": 26821,
+                                    "src": "7404:9:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6826,10 +6824,10 @@ export const IMockMultiToken = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 26772,
+                                        "id": 26785,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7453:7:140",
+                                        "src": "7404:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -6839,13 +6837,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26775,
+                                    "id": 26788,
                                     "mutability": "mutable",
                                     "name": "s",
-                                    "nameLocation": "7480:1:140",
+                                    "nameLocation": "7431:1:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26808,
-                                    "src": "7472:9:140",
+                                    "scope": 26821,
+                                    "src": "7423:9:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -6853,10 +6851,10 @@ export const IMockMultiToken = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 26774,
+                                        "id": 26787,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "7472:7:140",
+                                        "src": "7423:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
@@ -6865,33 +6863,33 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "7328:159:140"
+                            "src": "7279:159:140"
                         },
                         "returnParameters": {
-                            "id": 26777,
+                            "id": 26790,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "7497:0:140"
+                            "src": "7448:0:140"
                         },
-                        "scope": 26882,
+                        "scope": 26895,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26827,
+                        "id": 26840,
                         "nodeType": "FunctionDefinition",
-                        "src": "8199:165:140",
+                        "src": "8150:165:140",
                         "nodes": [],
                         "body": {
-                            "id": 26826,
+                            "id": 26839,
                             "nodeType": "Block",
-                            "src": "8311:53:140",
+                            "src": "8262:53:140",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 26824,
+                                        "id": 26837,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6899,25 +6897,25 @@ export const IMockMultiToken = {
                                         "leftHandSide": {
                                             "baseExpression": {
                                                 "baseExpression": {
-                                                    "id": 26818,
+                                                    "id": 26831,
                                                     "name": "_balanceOf",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 17769,
-                                                    "src": "8321:10:140",
+                                                    "referencedDeclaration": 17610,
+                                                    "src": "8272:10:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_mapping$_t_uint256_$_t_mapping$_t_address_$_t_uint256_$_$",
                                                         "typeString": "mapping(uint256 => mapping(address => uint256))"
                                                     }
                                                 },
-                                                "id": 26821,
+                                                "id": 26834,
                                                 "indexExpression": {
-                                                    "id": 26819,
+                                                    "id": 26832,
                                                     "name": "_tokenId",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 26811,
-                                                    "src": "8332:8:140",
+                                                    "referencedDeclaration": 26824,
+                                                    "src": "8283:8:140",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
@@ -6928,20 +6926,20 @@ export const IMockMultiToken = {
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "nodeType": "IndexAccess",
-                                                "src": "8321:20:140",
+                                                "src": "8272:20:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                                                     "typeString": "mapping(address => uint256)"
                                                 }
                                             },
-                                            "id": 26822,
+                                            "id": 26835,
                                             "indexExpression": {
-                                                "id": 26820,
+                                                "id": 26833,
                                                 "name": "_who",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26813,
-                                                "src": "8342:4:140",
+                                                "referencedDeclaration": 26826,
+                                                "src": "8293:4:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -6952,7 +6950,7 @@ export const IMockMultiToken = {
                                             "isPure": false,
                                             "lValueRequested": true,
                                             "nodeType": "IndexAccess",
-                                            "src": "8321:26:140",
+                                            "src": "8272:26:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
@@ -6961,33 +6959,33 @@ export const IMockMultiToken = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 26823,
+                                            "id": 26836,
                                             "name": "_amount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26815,
-                                            "src": "8350:7:140",
+                                            "referencedDeclaration": 26828,
+                                            "src": "8301:7:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "src": "8321:36:140",
+                                        "src": "8272:36:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 26825,
+                                    "id": 26838,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "8321:36:140"
+                                    "src": "8272:36:140"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 26809,
+                            "id": 26822,
                             "nodeType": "StructuredDocumentation",
-                            "src": "8180:14:140",
+                            "src": "8131:14:140",
                             "text": "Mocks ///"
                         },
                         "functionSelector": "94a97cdb",
@@ -6995,20 +6993,20 @@ export const IMockMultiToken = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "__setBalanceOf",
-                        "nameLocation": "8208:14:140",
+                        "nameLocation": "8159:14:140",
                         "parameters": {
-                            "id": 26816,
+                            "id": 26829,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26811,
+                                    "id": 26824,
                                     "mutability": "mutable",
                                     "name": "_tokenId",
-                                    "nameLocation": "8240:8:140",
+                                    "nameLocation": "8191:8:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26827,
-                                    "src": "8232:16:140",
+                                    "scope": 26840,
+                                    "src": "8183:16:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7016,10 +7014,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26810,
+                                        "id": 26823,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8232:7:140",
+                                        "src": "8183:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7029,13 +7027,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26813,
+                                    "id": 26826,
                                     "mutability": "mutable",
                                     "name": "_who",
-                                    "nameLocation": "8266:4:140",
+                                    "nameLocation": "8217:4:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26827,
-                                    "src": "8258:12:140",
+                                    "scope": 26840,
+                                    "src": "8209:12:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7043,10 +7041,10 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26812,
+                                        "id": 26825,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8258:7:140",
+                                        "src": "8209:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -7057,13 +7055,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26815,
+                                    "id": 26828,
                                     "mutability": "mutable",
                                     "name": "_amount",
-                                    "nameLocation": "8288:7:140",
+                                    "nameLocation": "8239:7:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26827,
-                                    "src": "8280:15:140",
+                                    "scope": 26840,
+                                    "src": "8231:15:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7071,10 +7069,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26814,
+                                        "id": 26827,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8280:7:140",
+                                        "src": "8231:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7083,88 +7081,88 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "8222:79:140"
+                            "src": "8173:79:140"
                         },
                         "returnParameters": {
-                            "id": 26817,
+                            "id": 26830,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "8311:0:140"
+                            "src": "8262:0:140"
                         },
-                        "scope": 26882,
+                        "scope": 26895,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26849,
+                        "id": 26862,
                         "nodeType": "FunctionDefinition",
-                        "src": "8370:228:140",
+                        "src": "8321:228:140",
                         "nodes": [],
                         "body": {
-                            "id": 26848,
+                            "id": 26861,
                             "nodeType": "Block",
-                            "src": "8533:65:140",
+                            "src": "8484:65:140",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26841,
+                                                "id": 26854,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26829,
-                                                "src": "8557:7:140",
+                                                "referencedDeclaration": 26842,
+                                                "src": "8508:7:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 26842,
+                                                "id": 26855,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26831,
-                                                "src": "8566:4:140",
+                                                "referencedDeclaration": 26844,
+                                                "src": "8517:4:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 26843,
+                                                "id": 26856,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26833,
-                                                "src": "8572:2:140",
+                                                "referencedDeclaration": 26846,
+                                                "src": "8523:2:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 26844,
+                                                "id": 26857,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26835,
-                                                "src": "8576:6:140",
+                                                "referencedDeclaration": 26848,
+                                                "src": "8527:6:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 26845,
+                                                "id": 26858,
                                                 "name": "caller",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26837,
-                                                "src": "8584:6:140",
+                                                "referencedDeclaration": 26850,
+                                                "src": "8535:6:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
@@ -7194,18 +7192,18 @@ export const IMockMultiToken = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 26840,
+                                            "id": 26853,
                                             "name": "_transferFrom",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16406,
-                                            "src": "8543:13:140",
+                                            "referencedDeclaration": 16262,
+                                            "src": "8494:13:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_address_$_t_uint256_$_t_address_$returns$__$",
                                                 "typeString": "function (uint256,address,address,uint256,address)"
                                             }
                                         },
-                                        "id": 26846,
+                                        "id": 26859,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7214,16 +7212,16 @@ export const IMockMultiToken = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "8543:48:140",
+                                        "src": "8494:48:140",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 26847,
+                                    "id": 26860,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "8543:48:140"
+                                    "src": "8494:48:140"
                                 }
                             ]
                         },
@@ -7232,20 +7230,20 @@ export const IMockMultiToken = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "__external_transferFrom",
-                        "nameLocation": "8379:23:140",
+                        "nameLocation": "8330:23:140",
                         "parameters": {
-                            "id": 26838,
+                            "id": 26851,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26829,
+                                    "id": 26842,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "8420:7:140",
+                                    "nameLocation": "8371:7:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26849,
-                                    "src": "8412:15:140",
+                                    "scope": 26862,
+                                    "src": "8363:15:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7253,10 +7251,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26828,
+                                        "id": 26841,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8412:7:140",
+                                        "src": "8363:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7266,13 +7264,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26831,
+                                    "id": 26844,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "8445:4:140",
+                                    "nameLocation": "8396:4:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26849,
-                                    "src": "8437:12:140",
+                                    "scope": 26862,
+                                    "src": "8388:12:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7280,10 +7278,10 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26830,
+                                        "id": 26843,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8437:7:140",
+                                        "src": "8388:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -7294,13 +7292,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26833,
+                                    "id": 26846,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "8467:2:140",
+                                    "nameLocation": "8418:2:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26849,
-                                    "src": "8459:10:140",
+                                    "scope": 26862,
+                                    "src": "8410:10:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7308,10 +7306,10 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26832,
+                                        "id": 26845,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8459:7:140",
+                                        "src": "8410:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -7322,13 +7320,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26835,
+                                    "id": 26848,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "8487:6:140",
+                                    "nameLocation": "8438:6:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26849,
-                                    "src": "8479:14:140",
+                                    "scope": 26862,
+                                    "src": "8430:14:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7336,10 +7334,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26834,
+                                        "id": 26847,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8479:7:140",
+                                        "src": "8430:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7349,13 +7347,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26837,
+                                    "id": 26850,
                                     "mutability": "mutable",
                                     "name": "caller",
-                                    "nameLocation": "8511:6:140",
+                                    "nameLocation": "8462:6:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26849,
-                                    "src": "8503:14:140",
+                                    "scope": 26862,
+                                    "src": "8454:14:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7363,10 +7361,10 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26836,
+                                        "id": 26849,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8503:7:140",
+                                        "src": "8454:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -7376,64 +7374,64 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "8402:121:140"
+                            "src": "8353:121:140"
                         },
                         "returnParameters": {
-                            "id": 26839,
+                            "id": 26852,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "8533:0:140"
+                            "src": "8484:0:140"
                         },
-                        "scope": 26882,
+                        "scope": 26895,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26865,
+                        "id": 26878,
                         "nodeType": "FunctionDefinition",
-                        "src": "8604:111:140",
+                        "src": "8555:111:140",
                         "nodes": [],
                         "body": {
-                            "id": 26864,
+                            "id": 26877,
                             "nodeType": "Block",
-                            "src": "8672:43:140",
+                            "src": "8623:43:140",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26859,
+                                                "id": 26872,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26851,
-                                                "src": "8688:7:140",
+                                                "referencedDeclaration": 26864,
+                                                "src": "8639:7:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 26860,
+                                                "id": 26873,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26853,
-                                                "src": "8697:2:140",
+                                                "referencedDeclaration": 26866,
+                                                "src": "8648:2:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 26861,
+                                                "id": 26874,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26855,
-                                                "src": "8701:6:140",
+                                                "referencedDeclaration": 26868,
+                                                "src": "8652:6:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -7455,18 +7453,18 @@ export const IMockMultiToken = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 26858,
+                                            "id": 26871,
                                             "name": "_mint",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16472,
-                                            "src": "8682:5:140",
+                                            "referencedDeclaration": 16328,
+                                            "src": "8633:5:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
                                                 "typeString": "function (uint256,address,uint256)"
                                             }
                                         },
-                                        "id": 26862,
+                                        "id": 26875,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7475,16 +7473,16 @@ export const IMockMultiToken = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "8682:26:140",
+                                        "src": "8633:26:140",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 26863,
+                                    "id": 26876,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "8682:26:140"
+                                    "src": "8633:26:140"
                                 }
                             ]
                         },
@@ -7493,20 +7491,20 @@ export const IMockMultiToken = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "mint",
-                        "nameLocation": "8613:4:140",
+                        "nameLocation": "8564:4:140",
                         "parameters": {
-                            "id": 26856,
+                            "id": 26869,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26851,
+                                    "id": 26864,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "8626:7:140",
+                                    "nameLocation": "8577:7:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26865,
-                                    "src": "8618:15:140",
+                                    "scope": 26878,
+                                    "src": "8569:15:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7514,10 +7512,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26850,
+                                        "id": 26863,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8618:7:140",
+                                        "src": "8569:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7527,13 +7525,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26853,
+                                    "id": 26866,
                                     "mutability": "mutable",
                                     "name": "to",
-                                    "nameLocation": "8643:2:140",
+                                    "nameLocation": "8594:2:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26865,
-                                    "src": "8635:10:140",
+                                    "scope": 26878,
+                                    "src": "8586:10:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7541,10 +7539,10 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26852,
+                                        "id": 26865,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8635:7:140",
+                                        "src": "8586:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -7555,13 +7553,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26855,
+                                    "id": 26868,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "8655:6:140",
+                                    "nameLocation": "8606:6:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26865,
-                                    "src": "8647:14:140",
+                                    "scope": 26878,
+                                    "src": "8598:14:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7569,10 +7567,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26854,
+                                        "id": 26867,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8647:7:140",
+                                        "src": "8598:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7581,64 +7579,64 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "8617:45:140"
+                            "src": "8568:45:140"
                         },
                         "returnParameters": {
-                            "id": 26857,
+                            "id": 26870,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "8672:0:140"
+                            "src": "8623:0:140"
                         },
-                        "scope": 26882,
+                        "scope": 26895,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26881,
+                        "id": 26894,
                         "nodeType": "FunctionDefinition",
-                        "src": "8721:115:140",
+                        "src": "8672:115:140",
                         "nodes": [],
                         "body": {
-                            "id": 26880,
+                            "id": 26893,
                             "nodeType": "Block",
-                            "src": "8791:45:140",
+                            "src": "8742:45:140",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26875,
+                                                "id": 26888,
                                                 "name": "tokenID",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26867,
-                                                "src": "8807:7:140",
+                                                "referencedDeclaration": 26880,
+                                                "src": "8758:7:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 }
                                             },
                                             {
-                                                "id": 26876,
+                                                "id": 26889,
                                                 "name": "from",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26869,
-                                                "src": "8816:4:140",
+                                                "referencedDeclaration": 26882,
+                                                "src": "8767:4:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
                                                     "typeString": "address"
                                                 }
                                             },
                                             {
-                                                "id": 26877,
+                                                "id": 26890,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26871,
-                                                "src": "8822:6:140",
+                                                "referencedDeclaration": 26884,
+                                                "src": "8773:6:140",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -7660,18 +7658,18 @@ export const IMockMultiToken = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 26874,
+                                            "id": 26887,
                                             "name": "_burn",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 16524,
-                                            "src": "8801:5:140",
+                                            "referencedDeclaration": 16380,
+                                            "src": "8752:5:140",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_uint256_$_t_address_$_t_uint256_$returns$__$",
                                                 "typeString": "function (uint256,address,uint256)"
                                             }
                                         },
-                                        "id": 26878,
+                                        "id": 26891,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7680,16 +7678,16 @@ export const IMockMultiToken = {
                                         "nameLocations": [],
                                         "names": [],
                                         "nodeType": "FunctionCall",
-                                        "src": "8801:28:140",
+                                        "src": "8752:28:140",
                                         "tryCall": false,
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_tuple$__$",
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 26879,
+                                    "id": 26892,
                                     "nodeType": "ExpressionStatement",
-                                    "src": "8801:28:140"
+                                    "src": "8752:28:140"
                                 }
                             ]
                         },
@@ -7698,20 +7696,20 @@ export const IMockMultiToken = {
                         "kind": "function",
                         "modifiers": [],
                         "name": "burn",
-                        "nameLocation": "8730:4:140",
+                        "nameLocation": "8681:4:140",
                         "parameters": {
-                            "id": 26872,
+                            "id": 26885,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26867,
+                                    "id": 26880,
                                     "mutability": "mutable",
                                     "name": "tokenID",
-                                    "nameLocation": "8743:7:140",
+                                    "nameLocation": "8694:7:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26881,
-                                    "src": "8735:15:140",
+                                    "scope": 26894,
+                                    "src": "8686:15:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7719,10 +7717,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26866,
+                                        "id": 26879,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8735:7:140",
+                                        "src": "8686:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7732,13 +7730,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26869,
+                                    "id": 26882,
                                     "mutability": "mutable",
                                     "name": "from",
-                                    "nameLocation": "8760:4:140",
+                                    "nameLocation": "8711:4:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26881,
-                                    "src": "8752:12:140",
+                                    "scope": 26894,
+                                    "src": "8703:12:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7746,10 +7744,10 @@ export const IMockMultiToken = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 26868,
+                                        "id": 26881,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8752:7:140",
+                                        "src": "8703:7:140",
                                         "stateMutability": "nonpayable",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -7760,13 +7758,13 @@ export const IMockMultiToken = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26871,
+                                    "id": 26884,
                                     "mutability": "mutable",
                                     "name": "amount",
-                                    "nameLocation": "8774:6:140",
+                                    "nameLocation": "8725:6:140",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26881,
-                                    "src": "8766:14:140",
+                                    "scope": 26894,
+                                    "src": "8717:14:140",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
@@ -7774,10 +7772,10 @@ export const IMockMultiToken = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26870,
+                                        "id": 26883,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
-                                        "src": "8766:7:140",
+                                        "src": "8717:7:140",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
@@ -7786,15 +7784,15 @@ export const IMockMultiToken = {
                                     "visibility": "internal"
                                 }
                             ],
-                            "src": "8734:47:140"
+                            "src": "8685:47:140"
                         },
                         "returnParameters": {
-                            "id": 26873,
+                            "id": 26886,
                             "nodeType": "ParameterList",
                             "parameters": [],
-                            "src": "8791:0:140"
+                            "src": "8742:0:140"
                         },
-                        "scope": 26882,
+                        "scope": 26895,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "external"
@@ -7804,81 +7802,81 @@ export const IMockMultiToken = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 26546,
+                            "id": 26557,
                             "name": "HyperdriveMultiToken",
                             "nameLocations": [
-                                "1316:20:140"
+                                "1250:20:140"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 16682,
-                            "src": "1316:20:140"
+                            "referencedDeclaration": 16538,
+                            "src": "1250:20:140"
                         },
-                        "id": 26547,
+                        "id": 26558,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1316:20:140"
+                        "src": "1250:20:140"
                     },
                     {
                         "baseName": {
-                            "id": 26548,
+                            "id": 26559,
                             "name": "MockHyperdriveBase",
                             "nameLocations": [
-                                "1338:18:140"
+                                "1272:18:140"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 24810,
-                            "src": "1338:18:140"
+                            "referencedDeclaration": 24803,
+                            "src": "1272:18:140"
                         },
-                        "id": 26549,
+                        "id": 26560,
                         "nodeType": "InheritanceSpecifier",
-                        "src": "1338:18:140"
+                        "src": "1272:18:140"
                     }
                 ],
                 "canonicalName": "MockMultiToken",
                 "contractDependencies": [
-                    25168
+                    25161
                 ],
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    26882,
-                    24810,
-                    16682,
-                    13835,
-                    17893,
-                    71565,
-                    11037,
-                    11609
+                    26895,
+                    24803,
+                    16538,
+                    13667,
+                    17734,
+                    71639,
+                    10887,
+                    11459
                 ],
                 "name": "MockMultiToken",
-                "nameLocation": "1298:14:140",
-                "scope": 26883,
+                "nameLocation": "1232:14:140",
+                "scope": 26896,
                 "usedErrors": [
-                    10377,
-                    10413,
-                    10437,
-                    10469,
-                    71510
+                    10225,
+                    10258,
+                    10282,
+                    10314,
+                    71584
                 ],
                 "usedEvents": [
-                    10855,
-                    10870,
-                    10889,
-                    10904,
-                    10921,
-                    10940,
-                    10959,
-                    10980,
-                    10995,
-                    11002,
-                    11007,
-                    11012,
-                    11017,
-                    11024,
-                    11029,
-                    11036,
-                    11590,
-                    11599,
-                    11608
+                    10705,
+                    10720,
+                    10739,
+                    10754,
+                    10771,
+                    10790,
+                    10809,
+                    10830,
+                    10845,
+                    10852,
+                    10857,
+                    10862,
+                    10867,
+                    10874,
+                    10879,
+                    10886,
+                    11440,
+                    11449,
+                    11458
                 ]
             }
         ],

@@ -50,7 +50,7 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
   }: ReadWriteParams<{ time: number }>): Promise<`0x${string}`> {
     const hash = await this.contract.write(
       "checkpoint",
-      { _checkpointTime: BigInt(time) },
+      { _checkpointTime: BigInt(time), _maxIterations: 4n },
       options,
     );
     this.network.waitForTransaction(hash).then(() => {

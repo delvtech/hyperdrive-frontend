@@ -957,58 +957,58 @@ export declare const Test: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/Test.sol";
-        readonly id: 39168;
+        readonly id: 39242;
         readonly exportedSymbols: {
-            readonly DSTest: readonly [29533];
-            readonly StdAssertions: readonly [31026];
-            readonly StdChains: readonly [31746];
-            readonly StdCheats: readonly [34564];
-            readonly StdInvariant: readonly [34854];
-            readonly StdStorage: readonly [35604];
-            readonly StdStyle: readonly [38268];
-            readonly StdUtils: readonly [39116];
-            readonly Test: readonly [39167];
-            readonly TestBase: readonly [29599];
-            readonly Vm: readonly [40704];
-            readonly console: readonly [48768];
-            readonly console2: readonly [56893];
-            readonly safeconsole: readonly [70131];
-            readonly stdError: readonly [34630];
-            readonly stdJson: readonly [35430];
-            readonly stdMath: readonly [35572];
-            readonly stdStorage: readonly [37057];
+            readonly DSTest: readonly [29607];
+            readonly StdAssertions: readonly [31100];
+            readonly StdChains: readonly [31820];
+            readonly StdCheats: readonly [34638];
+            readonly StdInvariant: readonly [34928];
+            readonly StdStorage: readonly [35678];
+            readonly StdStyle: readonly [38342];
+            readonly StdUtils: readonly [39190];
+            readonly Test: readonly [39241];
+            readonly TestBase: readonly [29673];
+            readonly Vm: readonly [40778];
+            readonly console: readonly [48842];
+            readonly console2: readonly [56967];
+            readonly safeconsole: readonly [70205];
+            readonly stdError: readonly [34704];
+            readonly stdJson: readonly [35504];
+            readonly stdMath: readonly [35646];
+            readonly stdStorage: readonly [37131];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "32:1126:155";
         readonly nodes: readonly [{
-            readonly id: 39118;
+            readonly id: 39192;
             readonly nodeType: "PragmaDirective";
             readonly src: "32:31:155";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 39119;
+            readonly id: 39193;
             readonly nodeType: "PragmaDirective";
             readonly src: "65:33:155";
             readonly nodes: readonly [];
             readonly literals: readonly ["experimental", "ABIEncoderV2"];
         }, {
-            readonly id: 39121;
+            readonly id: 39195;
             readonly nodeType: "ImportDirective";
             readonly src: "160:38:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/console.sol";
             readonly file: "./console.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 48769;
+            readonly scope: 39242;
+            readonly sourceUnit: 48843;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39120;
+                    readonly id: 39194;
                     readonly name: "console";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 48768;
+                    readonly referencedDeclaration: 48842;
                     readonly src: "168:7:155";
                     readonly typeDescriptions: {};
                 };
@@ -1016,22 +1016,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39123;
+            readonly id: 39197;
             readonly nodeType: "ImportDirective";
             readonly src: "199:40:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/console2.sol";
             readonly file: "./console2.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 56894;
+            readonly scope: 39242;
+            readonly sourceUnit: 56968;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39122;
+                    readonly id: 39196;
                     readonly name: "console2";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 56893;
+                    readonly referencedDeclaration: 56967;
                     readonly src: "207:8:155";
                     readonly typeDescriptions: {};
                 };
@@ -1039,22 +1039,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39125;
+            readonly id: 39199;
             readonly nodeType: "ImportDirective";
             readonly src: "240:46:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/safeconsole.sol";
             readonly file: "./safeconsole.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 70132;
+            readonly scope: 39242;
+            readonly sourceUnit: 70206;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39124;
+                    readonly id: 39198;
                     readonly name: "safeconsole";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 70131;
+                    readonly referencedDeclaration: 70205;
                     readonly src: "248:11:155";
                     readonly typeDescriptions: {};
                 };
@@ -1062,22 +1062,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39127;
+            readonly id: 39201;
             readonly nodeType: "ImportDirective";
             readonly src: "287:50:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdAssertions.sol";
             readonly file: "./StdAssertions.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 31027;
+            readonly scope: 39242;
+            readonly sourceUnit: 31101;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39126;
+                    readonly id: 39200;
                     readonly name: "StdAssertions";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 31026;
+                    readonly referencedDeclaration: 31100;
                     readonly src: "295:13:155";
                     readonly typeDescriptions: {};
                 };
@@ -1085,22 +1085,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39129;
+            readonly id: 39203;
             readonly nodeType: "ImportDirective";
             readonly src: "338:42:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdChains.sol";
             readonly file: "./StdChains.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 31747;
+            readonly scope: 39242;
+            readonly sourceUnit: 31821;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39128;
+                    readonly id: 39202;
                     readonly name: "StdChains";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 31746;
+                    readonly referencedDeclaration: 31820;
                     readonly src: "346:9:155";
                     readonly typeDescriptions: {};
                 };
@@ -1108,22 +1108,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39131;
+            readonly id: 39205;
             readonly nodeType: "ImportDirective";
             readonly src: "381:42:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdCheats.sol";
             readonly file: "./StdCheats.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 34565;
+            readonly scope: 39242;
+            readonly sourceUnit: 34639;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39130;
+                    readonly id: 39204;
                     readonly name: "StdCheats";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 34564;
+                    readonly referencedDeclaration: 34638;
                     readonly src: "389:9:155";
                     readonly typeDescriptions: {};
                 };
@@ -1131,22 +1131,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39133;
+            readonly id: 39207;
             readonly nodeType: "ImportDirective";
             readonly src: "424:40:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdError.sol";
             readonly file: "./StdError.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 34631;
+            readonly scope: 39242;
+            readonly sourceUnit: 34705;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39132;
+                    readonly id: 39206;
                     readonly name: "stdError";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 34630;
+                    readonly referencedDeclaration: 34704;
                     readonly src: "432:8:155";
                     readonly typeDescriptions: {};
                 };
@@ -1154,22 +1154,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39135;
+            readonly id: 39209;
             readonly nodeType: "ImportDirective";
             readonly src: "465:48:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdInvariant.sol";
             readonly file: "./StdInvariant.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 34855;
+            readonly scope: 39242;
+            readonly sourceUnit: 34929;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39134;
+                    readonly id: 39208;
                     readonly name: "StdInvariant";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 34854;
+                    readonly referencedDeclaration: 34928;
                     readonly src: "473:12:155";
                     readonly typeDescriptions: {};
                 };
@@ -1177,22 +1177,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39137;
+            readonly id: 39211;
             readonly nodeType: "ImportDirective";
             readonly src: "514:38:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdJson.sol";
             readonly file: "./StdJson.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 35431;
+            readonly scope: 39242;
+            readonly sourceUnit: 35505;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39136;
+                    readonly id: 39210;
                     readonly name: "stdJson";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 35430;
+                    readonly referencedDeclaration: 35504;
                     readonly src: "522:7:155";
                     readonly typeDescriptions: {};
                 };
@@ -1200,22 +1200,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39139;
+            readonly id: 39213;
             readonly nodeType: "ImportDirective";
             readonly src: "553:38:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdMath.sol";
             readonly file: "./StdMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 35573;
+            readonly scope: 39242;
+            readonly sourceUnit: 35647;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39138;
+                    readonly id: 39212;
                     readonly name: "stdMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 35572;
+                    readonly referencedDeclaration: 35646;
                     readonly src: "561:7:155";
                     readonly typeDescriptions: {};
                 };
@@ -1223,33 +1223,33 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39142;
+            readonly id: 39216;
             readonly nodeType: "ImportDirective";
             readonly src: "592:56:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdStorage.sol";
             readonly file: "./StdStorage.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 37058;
+            readonly scope: 39242;
+            readonly sourceUnit: 37132;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39140;
+                    readonly id: 39214;
                     readonly name: "StdStorage";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 35604;
+                    readonly referencedDeclaration: 35678;
                     readonly src: "600:10:155";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 39141;
+                    readonly id: 39215;
                     readonly name: "stdStorage";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 37057;
+                    readonly referencedDeclaration: 37131;
                     readonly src: "612:10:155";
                     readonly typeDescriptions: {};
                 };
@@ -1257,22 +1257,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39144;
+            readonly id: 39218;
             readonly nodeType: "ImportDirective";
             readonly src: "649:40:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdStyle.sol";
             readonly file: "./StdStyle.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 38269;
+            readonly scope: 39242;
+            readonly sourceUnit: 38343;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39143;
+                    readonly id: 39217;
                     readonly name: "StdStyle";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 38268;
+                    readonly referencedDeclaration: 38342;
                     readonly src: "657:8:155";
                     readonly typeDescriptions: {};
                 };
@@ -1280,22 +1280,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39146;
+            readonly id: 39220;
             readonly nodeType: "ImportDirective";
             readonly src: "690:40:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdUtils.sol";
             readonly file: "./StdUtils.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 39117;
+            readonly scope: 39242;
+            readonly sourceUnit: 39191;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39145;
+                    readonly id: 39219;
                     readonly name: "StdUtils";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 39116;
+                    readonly referencedDeclaration: 39190;
                     readonly src: "698:8:155";
                     readonly typeDescriptions: {};
                 };
@@ -1303,22 +1303,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39148;
+            readonly id: 39222;
             readonly nodeType: "ImportDirective";
             readonly src: "731:28:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/Vm.sol";
             readonly file: "./Vm.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 40705;
+            readonly scope: 39242;
+            readonly sourceUnit: 40779;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39147;
+                    readonly id: 39221;
                     readonly name: "Vm";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 40704;
+                    readonly referencedDeclaration: 40778;
                     readonly src: "739:2:155";
                     readonly typeDescriptions: {};
                 };
@@ -1326,22 +1326,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39150;
+            readonly id: 39224;
             readonly nodeType: "ImportDirective";
             readonly src: "781:36:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/Base.sol";
             readonly file: "./Base.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 29609;
+            readonly scope: 39242;
+            readonly sourceUnit: 29683;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39149;
+                    readonly id: 39223;
                     readonly name: "TestBase";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 29599;
+                    readonly referencedDeclaration: 29673;
                     readonly src: "789:8:155";
                     readonly typeDescriptions: {};
                 };
@@ -1349,22 +1349,22 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39152;
+            readonly id: 39226;
             readonly nodeType: "ImportDirective";
             readonly src: "818:40:155";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/lib/ds-test/src/test.sol";
             readonly file: "ds-test/test.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 39168;
-            readonly sourceUnit: 29534;
+            readonly scope: 39242;
+            readonly sourceUnit: 29608;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 39151;
+                    readonly id: 39225;
                     readonly name: "DSTest";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 29533;
+                    readonly referencedDeclaration: 29607;
                     readonly src: "826:6:155";
                     readonly typeDescriptions: {};
                 };
@@ -1372,93 +1372,93 @@ export declare const Test: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 39167;
+            readonly id: 39241;
             readonly nodeType: "ContractDefinition";
             readonly src: "875:282:155";
             readonly nodes: readonly [];
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 39153;
+                    readonly id: 39227;
                     readonly name: "TestBase";
                     readonly nameLocations: readonly ["901:8:155"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 29599;
+                    readonly referencedDeclaration: 29673;
                     readonly src: "901:8:155";
                 };
-                readonly id: 39154;
+                readonly id: 39228;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "901:8:155";
             }, {
                 readonly baseName: {
-                    readonly id: 39155;
+                    readonly id: 39229;
                     readonly name: "DSTest";
                     readonly nameLocations: readonly ["911:6:155"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 29533;
+                    readonly referencedDeclaration: 29607;
                     readonly src: "911:6:155";
                 };
-                readonly id: 39156;
+                readonly id: 39230;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "911:6:155";
             }, {
                 readonly baseName: {
-                    readonly id: 39157;
+                    readonly id: 39231;
                     readonly name: "StdAssertions";
                     readonly nameLocations: readonly ["919:13:155"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 31026;
+                    readonly referencedDeclaration: 31100;
                     readonly src: "919:13:155";
                 };
-                readonly id: 39158;
+                readonly id: 39232;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "919:13:155";
             }, {
                 readonly baseName: {
-                    readonly id: 39159;
+                    readonly id: 39233;
                     readonly name: "StdChains";
                     readonly nameLocations: readonly ["934:9:155"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 31746;
+                    readonly referencedDeclaration: 31820;
                     readonly src: "934:9:155";
                 };
-                readonly id: 39160;
+                readonly id: 39234;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "934:9:155";
             }, {
                 readonly baseName: {
-                    readonly id: 39161;
+                    readonly id: 39235;
                     readonly name: "StdCheats";
                     readonly nameLocations: readonly ["945:9:155"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 34564;
+                    readonly referencedDeclaration: 34638;
                     readonly src: "945:9:155";
                 };
-                readonly id: 39162;
+                readonly id: 39236;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "945:9:155";
             }, {
                 readonly baseName: {
-                    readonly id: 39163;
+                    readonly id: 39237;
                     readonly name: "StdInvariant";
                     readonly nameLocations: readonly ["956:12:155"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 34854;
+                    readonly referencedDeclaration: 34928;
                     readonly src: "956:12:155";
                 };
-                readonly id: 39164;
+                readonly id: 39238;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "956:12:155";
             }, {
                 readonly baseName: {
-                    readonly id: 39165;
+                    readonly id: 39239;
                     readonly name: "StdUtils";
                     readonly nameLocations: readonly ["970:8:155"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 39116;
+                    readonly referencedDeclaration: 39190;
                     readonly src: "970:8:155";
                 };
-                readonly id: 39166;
+                readonly id: 39240;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "970:8:155";
             }];
@@ -1466,12 +1466,12 @@ export declare const Test: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [39167, 39116, 34854, 34564, 33800, 31746, 31026, 29533, 29599, 29596];
+            readonly linearizedBaseContracts: readonly [39241, 39190, 34928, 34638, 33874, 31820, 31100, 29607, 29673, 29670];
             readonly name: "Test";
             readonly nameLocation: "893:4:155";
-            readonly scope: 39168;
+            readonly scope: 39242;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [27247, 27251, 27255, 27259, 27263, 27267, 27271, 27275, 27281, 27287, 27295, 27303, 27309, 27315, 27321, 27327, 29621, 29626, 29631, 29638, 29645, 29652];
+            readonly usedEvents: readonly [27321, 27325, 27329, 27333, 27337, 27341, 27345, 27349, 27355, 27361, 27369, 27377, 27383, 27389, 27395, 27401, 29695, 29700, 29705, 29712, 29719, 29726];
         }];
         readonly license: "MIT";
     };

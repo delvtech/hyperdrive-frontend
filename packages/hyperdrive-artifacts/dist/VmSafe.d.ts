@@ -4232,61 +4232,61 @@ export declare const VmSafe: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/Vm.sol";
-        readonly id: 40705;
+        readonly id: 40779;
         readonly exportedSymbols: {
-            readonly Vm: readonly [40704];
-            readonly VmSafe: readonly [40232];
+            readonly Vm: readonly [40778];
+            readonly VmSafe: readonly [40306];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "32:33435:156";
         readonly nodes: readonly [{
-            readonly id: 39169;
+            readonly id: 39243;
             readonly nodeType: "PragmaDirective";
             readonly src: "32:31:156";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 39170;
+            readonly id: 39244;
             readonly nodeType: "PragmaDirective";
             readonly src: "65:33:156";
             readonly nodes: readonly [];
             readonly literals: readonly ["experimental", "ABIEncoderV2"];
         }, {
-            readonly id: 40232;
+            readonly id: 40306;
             readonly nodeType: "ContractDefinition";
             readonly src: "571:21283:156";
             readonly nodes: readonly [{
-                readonly id: 39176;
+                readonly id: 39250;
                 readonly nodeType: "EnumDefinition";
                 readonly src: "594:122:156";
                 readonly nodes: readonly [];
                 readonly canonicalName: "VmSafe.CallerMode";
                 readonly members: readonly [{
-                    readonly id: 39171;
+                    readonly id: 39245;
                     readonly name: "None";
                     readonly nameLocation: "620:4:156";
                     readonly nodeType: "EnumValue";
                     readonly src: "620:4:156";
                 }, {
-                    readonly id: 39172;
+                    readonly id: 39246;
                     readonly name: "Broadcast";
                     readonly nameLocation: "634:9:156";
                     readonly nodeType: "EnumValue";
                     readonly src: "634:9:156";
                 }, {
-                    readonly id: 39173;
+                    readonly id: 39247;
                     readonly name: "RecurrentBroadcast";
                     readonly nameLocation: "653:18:156";
                     readonly nodeType: "EnumValue";
                     readonly src: "653:18:156";
                 }, {
-                    readonly id: 39174;
+                    readonly id: 39248;
                     readonly name: "Prank";
                     readonly nameLocation: "681:5:156";
                     readonly nodeType: "EnumValue";
                     readonly src: "681:5:156";
                 }, {
-                    readonly id: 39175;
+                    readonly id: 39249;
                     readonly name: "RecurrentPrank";
                     readonly nameLocation: "696:14:156";
                     readonly nodeType: "EnumValue";
@@ -4295,19 +4295,19 @@ export declare const VmSafe: {
                 readonly name: "CallerMode";
                 readonly nameLocation: "599:10:156";
             }, {
-                readonly id: 39184;
+                readonly id: 39258;
                 readonly nodeType: "StructDefinition";
                 readonly src: "722:89:156";
                 readonly nodes: readonly [];
                 readonly canonicalName: "VmSafe.Log";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 39179;
+                    readonly id: 39253;
                     readonly mutability: "mutable";
                     readonly name: "topics";
                     readonly nameLocation: "753:6:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39184;
+                    readonly scope: 39258;
                     readonly src: "743:16:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4317,7 +4317,7 @@ export declare const VmSafe: {
                     };
                     readonly typeName: {
                         readonly baseType: {
-                            readonly id: 39177;
+                            readonly id: 39251;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "743:7:156";
@@ -4326,7 +4326,7 @@ export declare const VmSafe: {
                                 readonly typeString: "bytes32";
                             };
                         };
-                        readonly id: 39178;
+                        readonly id: 39252;
                         readonly nodeType: "ArrayTypeName";
                         readonly src: "743:9:156";
                         readonly typeDescriptions: {
@@ -4337,12 +4337,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39181;
+                    readonly id: 39255;
                     readonly mutability: "mutable";
                     readonly name: "data";
                     readonly nameLocation: "775:4:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39184;
+                    readonly scope: 39258;
                     readonly src: "769:10:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4351,7 +4351,7 @@ export declare const VmSafe: {
                         readonly typeString: "bytes";
                     };
                     readonly typeName: {
-                        readonly id: 39180;
+                        readonly id: 39254;
                         readonly name: "bytes";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "769:5:156";
@@ -4363,12 +4363,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39183;
+                    readonly id: 39257;
                     readonly mutability: "mutable";
                     readonly name: "emitter";
                     readonly nameLocation: "797:7:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39184;
+                    readonly scope: 39258;
                     readonly src: "789:15:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4377,7 +4377,7 @@ export declare const VmSafe: {
                         readonly typeString: "address";
                     };
                     readonly typeName: {
-                        readonly id: 39182;
+                        readonly id: 39256;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "789:7:156";
@@ -4391,22 +4391,22 @@ export declare const VmSafe: {
                 }];
                 readonly name: "Log";
                 readonly nameLocation: "729:3:156";
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly visibility: "public";
             }, {
-                readonly id: 39189;
+                readonly id: 39263;
                 readonly nodeType: "StructDefinition";
                 readonly src: "817:58:156";
                 readonly nodes: readonly [];
                 readonly canonicalName: "VmSafe.Rpc";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 39186;
+                    readonly id: 39260;
                     readonly mutability: "mutable";
                     readonly name: "key";
                     readonly nameLocation: "845:3:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39189;
+                    readonly scope: 39263;
                     readonly src: "838:10:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4415,7 +4415,7 @@ export declare const VmSafe: {
                         readonly typeString: "string";
                     };
                     readonly typeName: {
-                        readonly id: 39185;
+                        readonly id: 39259;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "838:6:156";
@@ -4427,12 +4427,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39188;
+                    readonly id: 39262;
                     readonly mutability: "mutable";
                     readonly name: "url";
                     readonly nameLocation: "865:3:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39189;
+                    readonly scope: 39263;
                     readonly src: "858:10:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4441,7 +4441,7 @@ export declare const VmSafe: {
                         readonly typeString: "string";
                     };
                     readonly typeName: {
-                        readonly id: 39187;
+                        readonly id: 39261;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "858:6:156";
@@ -4454,22 +4454,22 @@ export declare const VmSafe: {
                 }];
                 readonly name: "Rpc";
                 readonly nameLocation: "824:3:156";
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly visibility: "public";
             }, {
-                readonly id: 39200;
+                readonly id: 39274;
                 readonly nodeType: "StructDefinition";
                 readonly src: "881:139:156";
                 readonly nodes: readonly [];
                 readonly canonicalName: "VmSafe.DirEntry";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 39191;
+                    readonly id: 39265;
                     readonly mutability: "mutable";
                     readonly name: "errorMessage";
                     readonly nameLocation: "914:12:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39200;
+                    readonly scope: 39274;
                     readonly src: "907:19:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4478,7 +4478,7 @@ export declare const VmSafe: {
                         readonly typeString: "string";
                     };
                     readonly typeName: {
-                        readonly id: 39190;
+                        readonly id: 39264;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "907:6:156";
@@ -4490,12 +4490,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39193;
+                    readonly id: 39267;
                     readonly mutability: "mutable";
                     readonly name: "path";
                     readonly nameLocation: "943:4:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39200;
+                    readonly scope: 39274;
                     readonly src: "936:11:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4504,7 +4504,7 @@ export declare const VmSafe: {
                         readonly typeString: "string";
                     };
                     readonly typeName: {
-                        readonly id: 39192;
+                        readonly id: 39266;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "936:6:156";
@@ -4516,12 +4516,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39195;
+                    readonly id: 39269;
                     readonly mutability: "mutable";
                     readonly name: "depth";
                     readonly nameLocation: "964:5:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39200;
+                    readonly scope: 39274;
                     readonly src: "957:12:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4530,7 +4530,7 @@ export declare const VmSafe: {
                         readonly typeString: "uint64";
                     };
                     readonly typeName: {
-                        readonly id: 39194;
+                        readonly id: 39268;
                         readonly name: "uint64";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "957:6:156";
@@ -4542,12 +4542,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39197;
+                    readonly id: 39271;
                     readonly mutability: "mutable";
                     readonly name: "isDir";
                     readonly nameLocation: "984:5:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39200;
+                    readonly scope: 39274;
                     readonly src: "979:10:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4556,7 +4556,7 @@ export declare const VmSafe: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 39196;
+                        readonly id: 39270;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "979:4:156";
@@ -4568,12 +4568,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39199;
+                    readonly id: 39273;
                     readonly mutability: "mutable";
                     readonly name: "isSymlink";
                     readonly nameLocation: "1004:9:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39200;
+                    readonly scope: 39274;
                     readonly src: "999:14:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4582,7 +4582,7 @@ export declare const VmSafe: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 39198;
+                        readonly id: 39272;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "999:4:156";
@@ -4595,22 +4595,22 @@ export declare const VmSafe: {
                 }];
                 readonly name: "DirEntry";
                 readonly nameLocation: "888:8:156";
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly visibility: "public";
             }, {
-                readonly id: 39215;
+                readonly id: 39289;
                 readonly nodeType: "StructDefinition";
                 readonly src: "1026:193:156";
                 readonly nodes: readonly [];
                 readonly canonicalName: "VmSafe.FsMetadata";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 39202;
+                    readonly id: 39276;
                     readonly mutability: "mutable";
                     readonly name: "isDir";
                     readonly nameLocation: "1059:5:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39215;
+                    readonly scope: 39289;
                     readonly src: "1054:10:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4619,7 +4619,7 @@ export declare const VmSafe: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 39201;
+                        readonly id: 39275;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1054:4:156";
@@ -4631,12 +4631,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39204;
+                    readonly id: 39278;
                     readonly mutability: "mutable";
                     readonly name: "isSymlink";
                     readonly nameLocation: "1079:9:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39215;
+                    readonly scope: 39289;
                     readonly src: "1074:14:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4645,7 +4645,7 @@ export declare const VmSafe: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 39203;
+                        readonly id: 39277;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1074:4:156";
@@ -4657,12 +4657,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39206;
+                    readonly id: 39280;
                     readonly mutability: "mutable";
                     readonly name: "length";
                     readonly nameLocation: "1106:6:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39215;
+                    readonly scope: 39289;
                     readonly src: "1098:14:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4671,7 +4671,7 @@ export declare const VmSafe: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 39205;
+                        readonly id: 39279;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1098:7:156";
@@ -4683,12 +4683,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39208;
+                    readonly id: 39282;
                     readonly mutability: "mutable";
                     readonly name: "readOnly";
                     readonly nameLocation: "1127:8:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39215;
+                    readonly scope: 39289;
                     readonly src: "1122:13:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4697,7 +4697,7 @@ export declare const VmSafe: {
                         readonly typeString: "bool";
                     };
                     readonly typeName: {
-                        readonly id: 39207;
+                        readonly id: 39281;
                         readonly name: "bool";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1122:4:156";
@@ -4709,12 +4709,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39210;
+                    readonly id: 39284;
                     readonly mutability: "mutable";
                     readonly name: "modified";
                     readonly nameLocation: "1153:8:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39215;
+                    readonly scope: 39289;
                     readonly src: "1145:16:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4723,7 +4723,7 @@ export declare const VmSafe: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 39209;
+                        readonly id: 39283;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1145:7:156";
@@ -4735,12 +4735,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39212;
+                    readonly id: 39286;
                     readonly mutability: "mutable";
                     readonly name: "accessed";
                     readonly nameLocation: "1179:8:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39215;
+                    readonly scope: 39289;
                     readonly src: "1171:16:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4749,7 +4749,7 @@ export declare const VmSafe: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 39211;
+                        readonly id: 39285;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1171:7:156";
@@ -4761,12 +4761,12 @@ export declare const VmSafe: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 39214;
+                    readonly id: 39288;
                     readonly mutability: "mutable";
                     readonly name: "created";
                     readonly nameLocation: "1205:7:156";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 39215;
+                    readonly scope: 39289;
                     readonly src: "1197:15:156";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -4775,7 +4775,7 @@ export declare const VmSafe: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 39213;
+                        readonly id: 39287;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1197:7:156";
@@ -4788,10 +4788,10 @@ export declare const VmSafe: {
                 }];
                 readonly name: "FsMetadata";
                 readonly nameLocation: "1033:10:156";
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly visibility: "public";
             }, {
-                readonly id: 39224;
+                readonly id: 39298;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1269:81:156";
                 readonly nodes: readonly [];
@@ -4802,16 +4802,16 @@ export declare const VmSafe: {
                 readonly name: "load";
                 readonly nameLocation: "1278:4:156";
                 readonly parameters: {
-                    readonly id: 39220;
+                    readonly id: 39294;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39217;
+                        readonly id: 39291;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "1291:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39224;
+                        readonly scope: 39298;
                         readonly src: "1283:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4820,7 +4820,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39216;
+                            readonly id: 39290;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1283:7:156";
@@ -4833,12 +4833,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39219;
+                        readonly id: 39293;
                         readonly mutability: "mutable";
                         readonly name: "slot";
                         readonly nameLocation: "1307:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39224;
+                        readonly scope: 39298;
                         readonly src: "1299:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4847,7 +4847,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39218;
+                            readonly id: 39292;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1299:7:156";
@@ -4861,16 +4861,16 @@ export declare const VmSafe: {
                     readonly src: "1282:30:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39223;
+                    readonly id: 39297;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39222;
+                        readonly id: 39296;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "1344:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39224;
+                        readonly scope: 39298;
                         readonly src: "1336:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4879,7 +4879,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39221;
+                            readonly id: 39295;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1336:7:156";
@@ -4892,12 +4892,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "1335:14:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39237;
+                readonly id: 39311;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1373:104:156";
                 readonly nodes: readonly [];
@@ -4908,16 +4908,16 @@ export declare const VmSafe: {
                 readonly name: "sign";
                 readonly nameLocation: "1382:4:156";
                 readonly parameters: {
-                    readonly id: 39229;
+                    readonly id: 39303;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39226;
+                        readonly id: 39300;
                         readonly mutability: "mutable";
                         readonly name: "privateKey";
                         readonly nameLocation: "1395:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39237;
+                        readonly scope: 39311;
                         readonly src: "1387:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4926,7 +4926,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39225;
+                            readonly id: 39299;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1387:7:156";
@@ -4938,12 +4938,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39228;
+                        readonly id: 39302;
                         readonly mutability: "mutable";
                         readonly name: "digest";
                         readonly nameLocation: "1415:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39237;
+                        readonly scope: 39311;
                         readonly src: "1407:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4952,7 +4952,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39227;
+                            readonly id: 39301;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1407:7:156";
@@ -4966,16 +4966,16 @@ export declare const VmSafe: {
                     readonly src: "1386:36:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39236;
+                    readonly id: 39310;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39231;
+                        readonly id: 39305;
                         readonly mutability: "mutable";
                         readonly name: "v";
                         readonly nameLocation: "1452:1:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39237;
+                        readonly scope: 39311;
                         readonly src: "1446:7:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4984,7 +4984,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 39230;
+                            readonly id: 39304;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1446:5:156";
@@ -4996,12 +4996,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39233;
+                        readonly id: 39307;
                         readonly mutability: "mutable";
                         readonly name: "r";
                         readonly nameLocation: "1463:1:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39237;
+                        readonly scope: 39311;
                         readonly src: "1455:9:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5010,7 +5010,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39232;
+                            readonly id: 39306;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1455:7:156";
@@ -5022,12 +5022,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39235;
+                        readonly id: 39309;
                         readonly mutability: "mutable";
                         readonly name: "s";
                         readonly nameLocation: "1474:1:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39237;
+                        readonly scope: 39311;
                         readonly src: "1466:9:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5036,7 +5036,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39234;
+                            readonly id: 39308;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1466:7:156";
@@ -5049,12 +5049,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "1445:31:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39244;
+                readonly id: 39318;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1530:74:156";
                 readonly nodes: readonly [];
@@ -5065,16 +5065,16 @@ export declare const VmSafe: {
                 readonly name: "addr";
                 readonly nameLocation: "1539:4:156";
                 readonly parameters: {
-                    readonly id: 39240;
+                    readonly id: 39314;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39239;
+                        readonly id: 39313;
                         readonly mutability: "mutable";
                         readonly name: "privateKey";
                         readonly nameLocation: "1552:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39244;
+                        readonly scope: 39318;
                         readonly src: "1544:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5083,7 +5083,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39238;
+                            readonly id: 39312;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1544:7:156";
@@ -5097,16 +5097,16 @@ export declare const VmSafe: {
                     readonly src: "1543:20:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39243;
+                    readonly id: 39317;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39242;
+                        readonly id: 39316;
                         readonly mutability: "mutable";
                         readonly name: "keyAddr";
                         readonly nameLocation: "1595:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39244;
+                        readonly scope: 39318;
                         readonly src: "1587:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5115,7 +5115,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39241;
+                            readonly id: 39315;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1587:7:156";
@@ -5129,12 +5129,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "1586:17:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39251;
+                readonly id: 39325;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1645:72:156";
                 readonly nodes: readonly [];
@@ -5145,16 +5145,16 @@ export declare const VmSafe: {
                 readonly name: "getNonce";
                 readonly nameLocation: "1654:8:156";
                 readonly parameters: {
-                    readonly id: 39247;
+                    readonly id: 39321;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39246;
+                        readonly id: 39320;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "1671:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39251;
+                        readonly scope: 39325;
                         readonly src: "1663:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5163,7 +5163,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39245;
+                            readonly id: 39319;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1663:7:156";
@@ -5178,16 +5178,16 @@ export declare const VmSafe: {
                     readonly src: "1662:17:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39250;
+                    readonly id: 39324;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39249;
+                        readonly id: 39323;
                         readonly mutability: "mutable";
                         readonly name: "nonce";
                         readonly nameLocation: "1710:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39251;
+                        readonly scope: 39325;
                         readonly src: "1703:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5196,7 +5196,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 39248;
+                            readonly id: 39322;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1703:6:156";
@@ -5209,12 +5209,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "1702:14:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39259;
+                readonly id: 39333;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1779:84:156";
                 readonly nodes: readonly [];
@@ -5225,16 +5225,16 @@ export declare const VmSafe: {
                 readonly name: "ffi";
                 readonly nameLocation: "1788:3:156";
                 readonly parameters: {
-                    readonly id: 39255;
+                    readonly id: 39329;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39254;
+                        readonly id: 39328;
                         readonly mutability: "mutable";
                         readonly name: "commandInput";
                         readonly nameLocation: "1810:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39259;
+                        readonly scope: 39333;
                         readonly src: "1792:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5244,7 +5244,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39252;
+                                readonly id: 39326;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1792:6:156";
@@ -5253,7 +5253,7 @@ export declare const VmSafe: {
                                     readonly typeString: "string";
                                 };
                             };
-                            readonly id: 39253;
+                            readonly id: 39327;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "1792:8:156";
                             readonly typeDescriptions: {
@@ -5266,16 +5266,16 @@ export declare const VmSafe: {
                     readonly src: "1791:32:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39258;
+                    readonly id: 39332;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39257;
+                        readonly id: 39331;
                         readonly mutability: "mutable";
                         readonly name: "result";
                         readonly nameLocation: "1855:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39259;
+                        readonly scope: 39333;
                         readonly src: "1842:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -5284,7 +5284,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39256;
+                            readonly id: 39330;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1842:5:156";
@@ -5297,12 +5297,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "1841:21:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39266;
+                readonly id: 39340;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1902:70:156";
                 readonly nodes: readonly [];
@@ -5313,16 +5313,16 @@ export declare const VmSafe: {
                 readonly name: "setEnv";
                 readonly nameLocation: "1911:6:156";
                 readonly parameters: {
-                    readonly id: 39264;
+                    readonly id: 39338;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39261;
+                        readonly id: 39335;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "1934:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39266;
+                        readonly scope: 39340;
                         readonly src: "1918:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5331,7 +5331,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39260;
+                            readonly id: 39334;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1918:6:156";
@@ -5343,12 +5343,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39263;
+                        readonly id: 39337;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "1956:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39266;
+                        readonly scope: 39340;
                         readonly src: "1940:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5357,7 +5357,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39262;
+                            readonly id: 39336;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1940:6:156";
@@ -5371,17 +5371,17 @@ export declare const VmSafe: {
                     readonly src: "1917:45:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39265;
+                    readonly id: 39339;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1971:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39273;
+                readonly id: 39347;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2031:74:156";
                 readonly nodes: readonly [];
@@ -5392,16 +5392,16 @@ export declare const VmSafe: {
                 readonly name: "envBool";
                 readonly nameLocation: "2040:7:156";
                 readonly parameters: {
-                    readonly id: 39269;
+                    readonly id: 39343;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39268;
+                        readonly id: 39342;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2064:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39273;
+                        readonly scope: 39347;
                         readonly src: "2048:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5410,7 +5410,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39267;
+                            readonly id: 39341;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2048:6:156";
@@ -5424,16 +5424,16 @@ export declare const VmSafe: {
                     readonly src: "2047:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39272;
+                    readonly id: 39346;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39271;
+                        readonly id: 39345;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2098:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39273;
+                        readonly scope: 39347;
                         readonly src: "2093:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5442,7 +5442,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 39270;
+                            readonly id: 39344;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2093:4:156";
@@ -5455,12 +5455,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2092:12:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39280;
+                readonly id: 39354;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2110:77:156";
                 readonly nodes: readonly [];
@@ -5471,16 +5471,16 @@ export declare const VmSafe: {
                 readonly name: "envUint";
                 readonly nameLocation: "2119:7:156";
                 readonly parameters: {
-                    readonly id: 39276;
+                    readonly id: 39350;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39275;
+                        readonly id: 39349;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2143:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39280;
+                        readonly scope: 39354;
                         readonly src: "2127:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5489,7 +5489,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39274;
+                            readonly id: 39348;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2127:6:156";
@@ -5503,16 +5503,16 @@ export declare const VmSafe: {
                     readonly src: "2126:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39279;
+                    readonly id: 39353;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39278;
+                        readonly id: 39352;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2180:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39280;
+                        readonly scope: 39354;
                         readonly src: "2172:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5521,7 +5521,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39277;
+                            readonly id: 39351;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2172:7:156";
@@ -5534,12 +5534,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2171:15:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39287;
+                readonly id: 39361;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2192:75:156";
                 readonly nodes: readonly [];
@@ -5550,16 +5550,16 @@ export declare const VmSafe: {
                 readonly name: "envInt";
                 readonly nameLocation: "2201:6:156";
                 readonly parameters: {
-                    readonly id: 39283;
+                    readonly id: 39357;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39282;
+                        readonly id: 39356;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2224:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39287;
+                        readonly scope: 39361;
                         readonly src: "2208:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5568,7 +5568,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39281;
+                            readonly id: 39355;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2208:6:156";
@@ -5582,16 +5582,16 @@ export declare const VmSafe: {
                     readonly src: "2207:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39286;
+                    readonly id: 39360;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39285;
+                        readonly id: 39359;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2260:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39287;
+                        readonly scope: 39361;
                         readonly src: "2253:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5600,7 +5600,7 @@ export declare const VmSafe: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 39284;
+                            readonly id: 39358;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2253:6:156";
@@ -5613,12 +5613,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2252:14:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39294;
+                readonly id: 39368;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2272:80:156";
                 readonly nodes: readonly [];
@@ -5629,16 +5629,16 @@ export declare const VmSafe: {
                 readonly name: "envAddress";
                 readonly nameLocation: "2281:10:156";
                 readonly parameters: {
-                    readonly id: 39290;
+                    readonly id: 39364;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39289;
+                        readonly id: 39363;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2308:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39294;
+                        readonly scope: 39368;
                         readonly src: "2292:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5647,7 +5647,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39288;
+                            readonly id: 39362;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2292:6:156";
@@ -5661,16 +5661,16 @@ export declare const VmSafe: {
                     readonly src: "2291:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39293;
+                    readonly id: 39367;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39292;
+                        readonly id: 39366;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2345:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39294;
+                        readonly scope: 39368;
                         readonly src: "2337:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5679,7 +5679,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39291;
+                            readonly id: 39365;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2337:7:156";
@@ -5693,12 +5693,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2336:15:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39301;
+                readonly id: 39375;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2357:80:156";
                 readonly nodes: readonly [];
@@ -5709,16 +5709,16 @@ export declare const VmSafe: {
                 readonly name: "envBytes32";
                 readonly nameLocation: "2366:10:156";
                 readonly parameters: {
-                    readonly id: 39297;
+                    readonly id: 39371;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39296;
+                        readonly id: 39370;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2393:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39301;
+                        readonly scope: 39375;
                         readonly src: "2377:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5727,7 +5727,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39295;
+                            readonly id: 39369;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2377:6:156";
@@ -5741,16 +5741,16 @@ export declare const VmSafe: {
                     readonly src: "2376:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39300;
+                    readonly id: 39374;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39299;
+                        readonly id: 39373;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2430:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39301;
+                        readonly scope: 39375;
                         readonly src: "2422:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5759,7 +5759,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39298;
+                            readonly id: 39372;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2422:7:156";
@@ -5772,12 +5772,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2421:15:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39308;
+                readonly id: 39382;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2442:85:156";
                 readonly nodes: readonly [];
@@ -5788,16 +5788,16 @@ export declare const VmSafe: {
                 readonly name: "envString";
                 readonly nameLocation: "2451:9:156";
                 readonly parameters: {
-                    readonly id: 39304;
+                    readonly id: 39378;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39303;
+                        readonly id: 39377;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2477:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39308;
+                        readonly scope: 39382;
                         readonly src: "2461:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5806,7 +5806,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39302;
+                            readonly id: 39376;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2461:6:156";
@@ -5820,16 +5820,16 @@ export declare const VmSafe: {
                     readonly src: "2460:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39307;
+                    readonly id: 39381;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39306;
+                        readonly id: 39380;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2520:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39308;
+                        readonly scope: 39382;
                         readonly src: "2506:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -5838,7 +5838,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39305;
+                            readonly id: 39379;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2506:6:156";
@@ -5851,12 +5851,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2505:21:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39315;
+                readonly id: 39389;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2532:83:156";
                 readonly nodes: readonly [];
@@ -5867,16 +5867,16 @@ export declare const VmSafe: {
                 readonly name: "envBytes";
                 readonly nameLocation: "2541:8:156";
                 readonly parameters: {
-                    readonly id: 39311;
+                    readonly id: 39385;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39310;
+                        readonly id: 39384;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2566:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39315;
+                        readonly scope: 39389;
                         readonly src: "2550:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5885,7 +5885,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39309;
+                            readonly id: 39383;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2550:6:156";
@@ -5899,16 +5899,16 @@ export declare const VmSafe: {
                     readonly src: "2549:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39314;
+                    readonly id: 39388;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39313;
+                        readonly id: 39387;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2608:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39315;
+                        readonly scope: 39389;
                         readonly src: "2595:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -5917,7 +5917,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39312;
+                            readonly id: 39386;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2595:5:156";
@@ -5930,12 +5930,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2594:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39325;
+                readonly id: 39399;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2665:106:156";
                 readonly nodes: readonly [];
@@ -5946,16 +5946,16 @@ export declare const VmSafe: {
                 readonly name: "envBool";
                 readonly nameLocation: "2674:7:156";
                 readonly parameters: {
-                    readonly id: 39320;
+                    readonly id: 39394;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39317;
+                        readonly id: 39391;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2698:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39325;
+                        readonly scope: 39399;
                         readonly src: "2682:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5964,7 +5964,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39316;
+                            readonly id: 39390;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2682:6:156";
@@ -5976,12 +5976,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39319;
+                        readonly id: 39393;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "2720:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39325;
+                        readonly scope: 39399;
                         readonly src: "2704:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -5990,7 +5990,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39318;
+                            readonly id: 39392;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2704:6:156";
@@ -6004,16 +6004,16 @@ export declare const VmSafe: {
                     readonly src: "2681:45:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39324;
+                    readonly id: 39398;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39323;
+                        readonly id: 39397;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2764:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39325;
+                        readonly scope: 39399;
                         readonly src: "2750:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -6023,7 +6023,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39321;
+                                readonly id: 39395;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2750:4:156";
@@ -6032,7 +6032,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly id: 39322;
+                            readonly id: 39396;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2750:6:156";
                             readonly typeDescriptions: {
@@ -6044,12 +6044,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2749:21:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39335;
+                readonly id: 39409;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2776:109:156";
                 readonly nodes: readonly [];
@@ -6060,16 +6060,16 @@ export declare const VmSafe: {
                 readonly name: "envUint";
                 readonly nameLocation: "2785:7:156";
                 readonly parameters: {
-                    readonly id: 39330;
+                    readonly id: 39404;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39327;
+                        readonly id: 39401;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2809:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39335;
+                        readonly scope: 39409;
                         readonly src: "2793:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6078,7 +6078,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39326;
+                            readonly id: 39400;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2793:6:156";
@@ -6090,12 +6090,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39329;
+                        readonly id: 39403;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "2831:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39335;
+                        readonly scope: 39409;
                         readonly src: "2815:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6104,7 +6104,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39328;
+                            readonly id: 39402;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2815:6:156";
@@ -6118,16 +6118,16 @@ export declare const VmSafe: {
                     readonly src: "2792:45:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39334;
+                    readonly id: 39408;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39333;
+                        readonly id: 39407;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2878:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39335;
+                        readonly scope: 39409;
                         readonly src: "2861:22:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -6137,7 +6137,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39331;
+                                readonly id: 39405;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2861:7:156";
@@ -6146,7 +6146,7 @@ export declare const VmSafe: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 39332;
+                            readonly id: 39406;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2861:9:156";
                             readonly typeDescriptions: {
@@ -6158,12 +6158,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2860:24:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39345;
+                readonly id: 39419;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2890:107:156";
                 readonly nodes: readonly [];
@@ -6174,16 +6174,16 @@ export declare const VmSafe: {
                 readonly name: "envInt";
                 readonly nameLocation: "2899:6:156";
                 readonly parameters: {
-                    readonly id: 39340;
+                    readonly id: 39414;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39337;
+                        readonly id: 39411;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "2922:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39345;
+                        readonly scope: 39419;
                         readonly src: "2906:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6192,7 +6192,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39336;
+                            readonly id: 39410;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2906:6:156";
@@ -6204,12 +6204,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39339;
+                        readonly id: 39413;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "2944:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39345;
+                        readonly scope: 39419;
                         readonly src: "2928:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6218,7 +6218,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39338;
+                            readonly id: 39412;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2928:6:156";
@@ -6232,16 +6232,16 @@ export declare const VmSafe: {
                     readonly src: "2905:45:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39344;
+                    readonly id: 39418;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39343;
+                        readonly id: 39417;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "2990:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39345;
+                        readonly scope: 39419;
                         readonly src: "2974:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -6251,7 +6251,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39341;
+                                readonly id: 39415;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "2974:6:156";
@@ -6260,7 +6260,7 @@ export declare const VmSafe: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 39342;
+                            readonly id: 39416;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "2974:8:156";
                             readonly typeDescriptions: {
@@ -6272,12 +6272,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "2973:23:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39355;
+                readonly id: 39429;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3002:112:156";
                 readonly nodes: readonly [];
@@ -6288,16 +6288,16 @@ export declare const VmSafe: {
                 readonly name: "envAddress";
                 readonly nameLocation: "3011:10:156";
                 readonly parameters: {
-                    readonly id: 39350;
+                    readonly id: 39424;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39347;
+                        readonly id: 39421;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "3038:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39355;
+                        readonly scope: 39429;
                         readonly src: "3022:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6306,7 +6306,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39346;
+                            readonly id: 39420;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3022:6:156";
@@ -6318,12 +6318,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39349;
+                        readonly id: 39423;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "3060:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39355;
+                        readonly scope: 39429;
                         readonly src: "3044:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6332,7 +6332,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39348;
+                            readonly id: 39422;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3044:6:156";
@@ -6346,16 +6346,16 @@ export declare const VmSafe: {
                     readonly src: "3021:45:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39354;
+                    readonly id: 39428;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39353;
+                        readonly id: 39427;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3107:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39355;
+                        readonly scope: 39429;
                         readonly src: "3090:22:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -6365,7 +6365,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39351;
+                                readonly id: 39425;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3090:7:156";
@@ -6375,7 +6375,7 @@ export declare const VmSafe: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 39352;
+                            readonly id: 39426;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "3090:9:156";
                             readonly typeDescriptions: {
@@ -6387,12 +6387,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "3089:24:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39365;
+                readonly id: 39439;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3119:112:156";
                 readonly nodes: readonly [];
@@ -6403,16 +6403,16 @@ export declare const VmSafe: {
                 readonly name: "envBytes32";
                 readonly nameLocation: "3128:10:156";
                 readonly parameters: {
-                    readonly id: 39360;
+                    readonly id: 39434;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39357;
+                        readonly id: 39431;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "3155:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39365;
+                        readonly scope: 39439;
                         readonly src: "3139:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6421,7 +6421,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39356;
+                            readonly id: 39430;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3139:6:156";
@@ -6433,12 +6433,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39359;
+                        readonly id: 39433;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "3177:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39365;
+                        readonly scope: 39439;
                         readonly src: "3161:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6447,7 +6447,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39358;
+                            readonly id: 39432;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3161:6:156";
@@ -6461,16 +6461,16 @@ export declare const VmSafe: {
                     readonly src: "3138:45:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39364;
+                    readonly id: 39438;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39363;
+                        readonly id: 39437;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3224:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39365;
+                        readonly scope: 39439;
                         readonly src: "3207:22:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -6480,7 +6480,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39361;
+                                readonly id: 39435;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3207:7:156";
@@ -6489,7 +6489,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 39362;
+                            readonly id: 39436;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "3207:9:156";
                             readonly typeDescriptions: {
@@ -6501,12 +6501,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "3206:24:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39375;
+                readonly id: 39449;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3236:110:156";
                 readonly nodes: readonly [];
@@ -6517,16 +6517,16 @@ export declare const VmSafe: {
                 readonly name: "envString";
                 readonly nameLocation: "3245:9:156";
                 readonly parameters: {
-                    readonly id: 39370;
+                    readonly id: 39444;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39367;
+                        readonly id: 39441;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "3271:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39375;
+                        readonly scope: 39449;
                         readonly src: "3255:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6535,7 +6535,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39366;
+                            readonly id: 39440;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3255:6:156";
@@ -6547,12 +6547,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39369;
+                        readonly id: 39443;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "3293:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39375;
+                        readonly scope: 39449;
                         readonly src: "3277:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6561,7 +6561,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39368;
+                            readonly id: 39442;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3277:6:156";
@@ -6575,16 +6575,16 @@ export declare const VmSafe: {
                     readonly src: "3254:45:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39374;
+                    readonly id: 39448;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39373;
+                        readonly id: 39447;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3339:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39375;
+                        readonly scope: 39449;
                         readonly src: "3323:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -6594,7 +6594,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39371;
+                                readonly id: 39445;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3323:6:156";
@@ -6603,7 +6603,7 @@ export declare const VmSafe: {
                                     readonly typeString: "string";
                                 };
                             };
-                            readonly id: 39372;
+                            readonly id: 39446;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "3323:8:156";
                             readonly typeDescriptions: {
@@ -6615,12 +6615,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "3322:23:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39385;
+                readonly id: 39459;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3351:108:156";
                 readonly nodes: readonly [];
@@ -6631,16 +6631,16 @@ export declare const VmSafe: {
                 readonly name: "envBytes";
                 readonly nameLocation: "3360:8:156";
                 readonly parameters: {
-                    readonly id: 39380;
+                    readonly id: 39454;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39377;
+                        readonly id: 39451;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "3385:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39385;
+                        readonly scope: 39459;
                         readonly src: "3369:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6649,7 +6649,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39376;
+                            readonly id: 39450;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3369:6:156";
@@ -6661,12 +6661,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39379;
+                        readonly id: 39453;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "3407:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39385;
+                        readonly scope: 39459;
                         readonly src: "3391:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6675,7 +6675,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39378;
+                            readonly id: 39452;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3391:6:156";
@@ -6689,16 +6689,16 @@ export declare const VmSafe: {
                     readonly src: "3368:45:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39384;
+                    readonly id: 39458;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39383;
+                        readonly id: 39457;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3452:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39385;
+                        readonly scope: 39459;
                         readonly src: "3437:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -6708,7 +6708,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39381;
+                                readonly id: 39455;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3437:5:156";
@@ -6717,7 +6717,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes";
                                 };
                             };
-                            readonly id: 39382;
+                            readonly id: 39456;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "3437:7:156";
                             readonly typeDescriptions: {
@@ -6729,12 +6729,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "3436:22:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39394;
+                readonly id: 39468;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3517:86:156";
                 readonly nodes: readonly [];
@@ -6745,16 +6745,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "3526:5:156";
                 readonly parameters: {
-                    readonly id: 39390;
+                    readonly id: 39464;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39387;
+                        readonly id: 39461;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "3548:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39394;
+                        readonly scope: 39468;
                         readonly src: "3532:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6763,7 +6763,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39386;
+                            readonly id: 39460;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3532:6:156";
@@ -6775,12 +6775,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39389;
+                        readonly id: 39463;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "3559:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39394;
+                        readonly scope: 39468;
                         readonly src: "3554:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6789,7 +6789,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 39388;
+                            readonly id: 39462;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3554:4:156";
@@ -6803,16 +6803,16 @@ export declare const VmSafe: {
                     readonly src: "3531:41:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39393;
+                    readonly id: 39467;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39392;
+                        readonly id: 39466;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3596:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39394;
+                        readonly scope: 39468;
                         readonly src: "3591:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6821,7 +6821,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 39391;
+                            readonly id: 39465;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3591:4:156";
@@ -6834,12 +6834,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "3590:12:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39403;
+                readonly id: 39477;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3608:92:156";
                 readonly nodes: readonly [];
@@ -6850,16 +6850,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "3617:5:156";
                 readonly parameters: {
-                    readonly id: 39399;
+                    readonly id: 39473;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39396;
+                        readonly id: 39470;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "3639:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39403;
+                        readonly scope: 39477;
                         readonly src: "3623:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6868,7 +6868,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39395;
+                            readonly id: 39469;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3623:6:156";
@@ -6880,12 +6880,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39398;
+                        readonly id: 39472;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "3653:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39403;
+                        readonly scope: 39477;
                         readonly src: "3645:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6894,7 +6894,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39397;
+                            readonly id: 39471;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3645:7:156";
@@ -6908,16 +6908,16 @@ export declare const VmSafe: {
                     readonly src: "3622:44:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39402;
+                    readonly id: 39476;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39401;
+                        readonly id: 39475;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3693:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39403;
+                        readonly scope: 39477;
                         readonly src: "3685:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6926,7 +6926,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39400;
+                            readonly id: 39474;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3685:7:156";
@@ -6939,12 +6939,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "3684:15:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39412;
+                readonly id: 39486;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3705:90:156";
                 readonly nodes: readonly [];
@@ -6955,16 +6955,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "3714:5:156";
                 readonly parameters: {
-                    readonly id: 39408;
+                    readonly id: 39482;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39405;
+                        readonly id: 39479;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "3736:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39412;
+                        readonly scope: 39486;
                         readonly src: "3720:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -6973,7 +6973,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39404;
+                            readonly id: 39478;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3720:6:156";
@@ -6985,12 +6985,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39407;
+                        readonly id: 39481;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "3749:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39412;
+                        readonly scope: 39486;
                         readonly src: "3742:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6999,7 +6999,7 @@ export declare const VmSafe: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 39406;
+                            readonly id: 39480;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3742:6:156";
@@ -7013,16 +7013,16 @@ export declare const VmSafe: {
                     readonly src: "3719:43:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39411;
+                    readonly id: 39485;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39410;
+                        readonly id: 39484;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3788:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39412;
+                        readonly scope: 39486;
                         readonly src: "3781:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7031,7 +7031,7 @@ export declare const VmSafe: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 39409;
+                            readonly id: 39483;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3781:6:156";
@@ -7044,12 +7044,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "3780:14:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39421;
+                readonly id: 39495;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3800:92:156";
                 readonly nodes: readonly [];
@@ -7060,16 +7060,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "3809:5:156";
                 readonly parameters: {
-                    readonly id: 39417;
+                    readonly id: 39491;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39414;
+                        readonly id: 39488;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "3831:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39421;
+                        readonly scope: 39495;
                         readonly src: "3815:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7078,7 +7078,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39413;
+                            readonly id: 39487;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3815:6:156";
@@ -7090,12 +7090,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39416;
+                        readonly id: 39490;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "3845:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39421;
+                        readonly scope: 39495;
                         readonly src: "3837:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7104,7 +7104,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39415;
+                            readonly id: 39489;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3837:7:156";
@@ -7119,16 +7119,16 @@ export declare const VmSafe: {
                     readonly src: "3814:44:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39420;
+                    readonly id: 39494;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39419;
+                        readonly id: 39493;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3885:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39421;
+                        readonly scope: 39495;
                         readonly src: "3877:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7137,7 +7137,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39418;
+                            readonly id: 39492;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3877:7:156";
@@ -7151,12 +7151,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "3876:15:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39430;
+                readonly id: 39504;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3897:92:156";
                 readonly nodes: readonly [];
@@ -7167,16 +7167,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "3906:5:156";
                 readonly parameters: {
-                    readonly id: 39426;
+                    readonly id: 39500;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39423;
+                        readonly id: 39497;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "3928:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39430;
+                        readonly scope: 39504;
                         readonly src: "3912:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7185,7 +7185,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39422;
+                            readonly id: 39496;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3912:6:156";
@@ -7197,12 +7197,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39425;
+                        readonly id: 39499;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "3942:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39430;
+                        readonly scope: 39504;
                         readonly src: "3934:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7211,7 +7211,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39424;
+                            readonly id: 39498;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3934:7:156";
@@ -7225,16 +7225,16 @@ export declare const VmSafe: {
                     readonly src: "3911:44:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39429;
+                    readonly id: 39503;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39428;
+                        readonly id: 39502;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3982:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39430;
+                        readonly scope: 39504;
                         readonly src: "3974:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7243,7 +7243,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39427;
+                            readonly id: 39501;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3974:7:156";
@@ -7256,12 +7256,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "3973:15:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39439;
+                readonly id: 39513;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3994:106:156";
                 readonly nodes: readonly [];
@@ -7272,16 +7272,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "4003:5:156";
                 readonly parameters: {
-                    readonly id: 39435;
+                    readonly id: 39509;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39432;
+                        readonly id: 39506;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "4025:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39439;
+                        readonly scope: 39513;
                         readonly src: "4009:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7290,7 +7290,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39431;
+                            readonly id: 39505;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4009:6:156";
@@ -7302,12 +7302,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39434;
+                        readonly id: 39508;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "4047:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39439;
+                        readonly scope: 39513;
                         readonly src: "4031:28:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7316,7 +7316,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39433;
+                            readonly id: 39507;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4031:6:156";
@@ -7330,16 +7330,16 @@ export declare const VmSafe: {
                     readonly src: "4008:52:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39438;
+                    readonly id: 39512;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39437;
+                        readonly id: 39511;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "4093:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39439;
+                        readonly scope: 39513;
                         readonly src: "4079:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -7348,7 +7348,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39436;
+                            readonly id: 39510;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4079:6:156";
@@ -7361,12 +7361,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "4078:21:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39448;
+                readonly id: 39522;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4105:104:156";
                 readonly nodes: readonly [];
@@ -7377,16 +7377,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "4114:5:156";
                 readonly parameters: {
-                    readonly id: 39444;
+                    readonly id: 39518;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39441;
+                        readonly id: 39515;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "4136:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39448;
+                        readonly scope: 39522;
                         readonly src: "4120:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7395,7 +7395,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39440;
+                            readonly id: 39514;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4120:6:156";
@@ -7407,12 +7407,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39443;
+                        readonly id: 39517;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "4157:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39448;
+                        readonly scope: 39522;
                         readonly src: "4142:27:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7421,7 +7421,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39442;
+                            readonly id: 39516;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4142:5:156";
@@ -7435,16 +7435,16 @@ export declare const VmSafe: {
                     readonly src: "4119:51:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39447;
+                    readonly id: 39521;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39446;
+                        readonly id: 39520;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "4202:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39448;
+                        readonly scope: 39522;
                         readonly src: "4189:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -7453,7 +7453,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39445;
+                            readonly id: 39519;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4189:5:156";
@@ -7466,12 +7466,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "4188:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39461;
+                readonly id: 39535;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4277:145:156";
                 readonly nodes: readonly [];
@@ -7482,16 +7482,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "4286:5:156";
                 readonly parameters: {
-                    readonly id: 39456;
+                    readonly id: 39530;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39450;
+                        readonly id: 39524;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "4308:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39461;
+                        readonly scope: 39535;
                         readonly src: "4292:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7500,7 +7500,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39449;
+                            readonly id: 39523;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4292:6:156";
@@ -7512,12 +7512,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39452;
+                        readonly id: 39526;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "4330:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39461;
+                        readonly scope: 39535;
                         readonly src: "4314:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7526,7 +7526,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39451;
+                            readonly id: 39525;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4314:6:156";
@@ -7538,12 +7538,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39455;
+                        readonly id: 39529;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "4353:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39461;
+                        readonly scope: 39535;
                         readonly src: "4337:28:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7553,7 +7553,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39453;
+                                readonly id: 39527;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4337:4:156";
@@ -7562,7 +7562,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly id: 39454;
+                            readonly id: 39528;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "4337:6:156";
                             readonly typeDescriptions: {
@@ -7575,16 +7575,16 @@ export declare const VmSafe: {
                     readonly src: "4291:75:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39460;
+                    readonly id: 39534;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39459;
+                        readonly id: 39533;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "4415:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39461;
+                        readonly scope: 39535;
                         readonly src: "4401:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -7594,7 +7594,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39457;
+                                readonly id: 39531;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4401:4:156";
@@ -7603,7 +7603,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly id: 39458;
+                            readonly id: 39532;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "4401:6:156";
                             readonly typeDescriptions: {
@@ -7615,12 +7615,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "4400:21:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39474;
+                readonly id: 39548;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4427:151:156";
                 readonly nodes: readonly [];
@@ -7631,16 +7631,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "4436:5:156";
                 readonly parameters: {
-                    readonly id: 39469;
+                    readonly id: 39543;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39463;
+                        readonly id: 39537;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "4458:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39474;
+                        readonly scope: 39548;
                         readonly src: "4442:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7649,7 +7649,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39462;
+                            readonly id: 39536;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4442:6:156";
@@ -7661,12 +7661,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39465;
+                        readonly id: 39539;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "4480:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39474;
+                        readonly scope: 39548;
                         readonly src: "4464:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7675,7 +7675,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39464;
+                            readonly id: 39538;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4464:6:156";
@@ -7687,12 +7687,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39468;
+                        readonly id: 39542;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "4506:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39474;
+                        readonly scope: 39548;
                         readonly src: "4487:31:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7702,7 +7702,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39466;
+                                readonly id: 39540;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4487:7:156";
@@ -7711,7 +7711,7 @@ export declare const VmSafe: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 39467;
+                            readonly id: 39541;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "4487:9:156";
                             readonly typeDescriptions: {
@@ -7724,16 +7724,16 @@ export declare const VmSafe: {
                     readonly src: "4441:78:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39473;
+                    readonly id: 39547;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39472;
+                        readonly id: 39546;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "4571:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39474;
+                        readonly scope: 39548;
                         readonly src: "4554:22:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -7743,7 +7743,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39470;
+                                readonly id: 39544;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4554:7:156";
@@ -7752,7 +7752,7 @@ export declare const VmSafe: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 39471;
+                            readonly id: 39545;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "4554:9:156";
                             readonly typeDescriptions: {
@@ -7764,12 +7764,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "4553:24:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39487;
+                readonly id: 39561;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4583:149:156";
                 readonly nodes: readonly [];
@@ -7780,16 +7780,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "4592:5:156";
                 readonly parameters: {
-                    readonly id: 39482;
+                    readonly id: 39556;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39476;
+                        readonly id: 39550;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "4614:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39487;
+                        readonly scope: 39561;
                         readonly src: "4598:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7798,7 +7798,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39475;
+                            readonly id: 39549;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4598:6:156";
@@ -7810,12 +7810,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39478;
+                        readonly id: 39552;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "4636:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39487;
+                        readonly scope: 39561;
                         readonly src: "4620:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7824,7 +7824,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39477;
+                            readonly id: 39551;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4620:6:156";
@@ -7836,12 +7836,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39481;
+                        readonly id: 39555;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "4661:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39487;
+                        readonly scope: 39561;
                         readonly src: "4643:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7851,7 +7851,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39479;
+                                readonly id: 39553;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4643:6:156";
@@ -7860,7 +7860,7 @@ export declare const VmSafe: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 39480;
+                            readonly id: 39554;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "4643:8:156";
                             readonly typeDescriptions: {
@@ -7873,16 +7873,16 @@ export declare const VmSafe: {
                     readonly src: "4597:77:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39486;
+                    readonly id: 39560;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39485;
+                        readonly id: 39559;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "4725:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39487;
+                        readonly scope: 39561;
                         readonly src: "4709:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -7892,7 +7892,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39483;
+                                readonly id: 39557;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4709:6:156";
@@ -7901,7 +7901,7 @@ export declare const VmSafe: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 39484;
+                            readonly id: 39558;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "4709:8:156";
                             readonly typeDescriptions: {
@@ -7913,12 +7913,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "4708:23:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39500;
+                readonly id: 39574;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4737:151:156";
                 readonly nodes: readonly [];
@@ -7929,16 +7929,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "4746:5:156";
                 readonly parameters: {
-                    readonly id: 39495;
+                    readonly id: 39569;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39489;
+                        readonly id: 39563;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "4768:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39500;
+                        readonly scope: 39574;
                         readonly src: "4752:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7947,7 +7947,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39488;
+                            readonly id: 39562;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4752:6:156";
@@ -7959,12 +7959,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39491;
+                        readonly id: 39565;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "4790:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39500;
+                        readonly scope: 39574;
                         readonly src: "4774:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -7973,7 +7973,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39490;
+                            readonly id: 39564;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4774:6:156";
@@ -7985,12 +7985,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39494;
+                        readonly id: 39568;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "4816:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39500;
+                        readonly scope: 39574;
                         readonly src: "4797:31:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8000,7 +8000,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39492;
+                                readonly id: 39566;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4797:7:156";
@@ -8010,7 +8010,7 @@ export declare const VmSafe: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 39493;
+                            readonly id: 39567;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "4797:9:156";
                             readonly typeDescriptions: {
@@ -8023,16 +8023,16 @@ export declare const VmSafe: {
                     readonly src: "4751:78:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39499;
+                    readonly id: 39573;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39498;
+                        readonly id: 39572;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "4881:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39500;
+                        readonly scope: 39574;
                         readonly src: "4864:22:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8042,7 +8042,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39496;
+                                readonly id: 39570;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4864:7:156";
@@ -8052,7 +8052,7 @@ export declare const VmSafe: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 39497;
+                            readonly id: 39571;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "4864:9:156";
                             readonly typeDescriptions: {
@@ -8064,12 +8064,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "4863:24:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39513;
+                readonly id: 39587;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4893:151:156";
                 readonly nodes: readonly [];
@@ -8080,16 +8080,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "4902:5:156";
                 readonly parameters: {
-                    readonly id: 39508;
+                    readonly id: 39582;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39502;
+                        readonly id: 39576;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "4924:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39513;
+                        readonly scope: 39587;
                         readonly src: "4908:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8098,7 +8098,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39501;
+                            readonly id: 39575;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4908:6:156";
@@ -8110,12 +8110,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39504;
+                        readonly id: 39578;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "4946:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39513;
+                        readonly scope: 39587;
                         readonly src: "4930:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8124,7 +8124,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39503;
+                            readonly id: 39577;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4930:6:156";
@@ -8136,12 +8136,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39507;
+                        readonly id: 39581;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "4972:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39513;
+                        readonly scope: 39587;
                         readonly src: "4953:31:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8151,7 +8151,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39505;
+                                readonly id: 39579;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4953:7:156";
@@ -8160,7 +8160,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 39506;
+                            readonly id: 39580;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "4953:9:156";
                             readonly typeDescriptions: {
@@ -8173,16 +8173,16 @@ export declare const VmSafe: {
                     readonly src: "4907:78:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39512;
+                    readonly id: 39586;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39511;
+                        readonly id: 39585;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "5037:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39513;
+                        readonly scope: 39587;
                         readonly src: "5020:22:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8192,7 +8192,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39509;
+                                readonly id: 39583;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5020:7:156";
@@ -8201,7 +8201,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 39510;
+                            readonly id: 39584;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "5020:9:156";
                             readonly typeDescriptions: {
@@ -8213,12 +8213,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "5019:24:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39526;
+                readonly id: 39600;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5049:149:156";
                 readonly nodes: readonly [];
@@ -8229,16 +8229,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "5058:5:156";
                 readonly parameters: {
-                    readonly id: 39521;
+                    readonly id: 39595;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39515;
+                        readonly id: 39589;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "5080:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39526;
+                        readonly scope: 39600;
                         readonly src: "5064:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8247,7 +8247,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39514;
+                            readonly id: 39588;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5064:6:156";
@@ -8259,12 +8259,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39517;
+                        readonly id: 39591;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "5102:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39526;
+                        readonly scope: 39600;
                         readonly src: "5086:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8273,7 +8273,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39516;
+                            readonly id: 39590;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5086:6:156";
@@ -8285,12 +8285,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39520;
+                        readonly id: 39594;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "5127:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39526;
+                        readonly scope: 39600;
                         readonly src: "5109:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8300,7 +8300,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39518;
+                                readonly id: 39592;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5109:6:156";
@@ -8309,7 +8309,7 @@ export declare const VmSafe: {
                                     readonly typeString: "string";
                                 };
                             };
-                            readonly id: 39519;
+                            readonly id: 39593;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "5109:8:156";
                             readonly typeDescriptions: {
@@ -8322,16 +8322,16 @@ export declare const VmSafe: {
                     readonly src: "5063:77:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39525;
+                    readonly id: 39599;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39524;
+                        readonly id: 39598;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "5191:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39526;
+                        readonly scope: 39600;
                         readonly src: "5175:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8341,7 +8341,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39522;
+                                readonly id: 39596;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5175:6:156";
@@ -8350,7 +8350,7 @@ export declare const VmSafe: {
                                     readonly typeString: "string";
                                 };
                             };
-                            readonly id: 39523;
+                            readonly id: 39597;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "5175:8:156";
                             readonly typeDescriptions: {
@@ -8362,12 +8362,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "5174:23:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39539;
+                readonly id: 39613;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5203:147:156";
                 readonly nodes: readonly [];
@@ -8378,16 +8378,16 @@ export declare const VmSafe: {
                 readonly name: "envOr";
                 readonly nameLocation: "5212:5:156";
                 readonly parameters: {
-                    readonly id: 39534;
+                    readonly id: 39608;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39528;
+                        readonly id: 39602;
                         readonly mutability: "mutable";
                         readonly name: "name";
                         readonly nameLocation: "5234:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39539;
+                        readonly scope: 39613;
                         readonly src: "5218:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8396,7 +8396,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39527;
+                            readonly id: 39601;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5218:6:156";
@@ -8408,12 +8408,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39530;
+                        readonly id: 39604;
                         readonly mutability: "mutable";
                         readonly name: "delim";
                         readonly nameLocation: "5256:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39539;
+                        readonly scope: 39613;
                         readonly src: "5240:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8422,7 +8422,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39529;
+                            readonly id: 39603;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5240:6:156";
@@ -8434,12 +8434,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39533;
+                        readonly id: 39607;
                         readonly mutability: "mutable";
                         readonly name: "defaultValue";
                         readonly nameLocation: "5280:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39539;
+                        readonly scope: 39613;
                         readonly src: "5263:29:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8449,7 +8449,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39531;
+                                readonly id: 39605;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5263:5:156";
@@ -8458,7 +8458,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes";
                                 };
                             };
-                            readonly id: 39532;
+                            readonly id: 39606;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "5263:7:156";
                             readonly typeDescriptions: {
@@ -8471,16 +8471,16 @@ export declare const VmSafe: {
                     readonly src: "5217:76:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39538;
+                    readonly id: 39612;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39537;
+                        readonly id: 39611;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "5343:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39539;
+                        readonly scope: 39613;
                         readonly src: "5328:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8490,7 +8490,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39535;
+                                readonly id: 39609;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5328:5:156";
@@ -8499,7 +8499,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes";
                                 };
                             };
-                            readonly id: 39536;
+                            readonly id: 39610;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "5328:7:156";
                             readonly typeDescriptions: {
@@ -8511,12 +8511,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "5327:22:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39542;
+                readonly id: 39616;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5399:27:156";
                 readonly nodes: readonly [];
@@ -8527,23 +8527,23 @@ export declare const VmSafe: {
                 readonly name: "record";
                 readonly nameLocation: "5408:6:156";
                 readonly parameters: {
-                    readonly id: 39540;
+                    readonly id: 39614;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5414:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39541;
+                    readonly id: 39615;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5425:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39553;
+                readonly id: 39627;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5523:109:156";
                 readonly nodes: readonly [];
@@ -8554,16 +8554,16 @@ export declare const VmSafe: {
                 readonly name: "accesses";
                 readonly nameLocation: "5532:8:156";
                 readonly parameters: {
-                    readonly id: 39545;
+                    readonly id: 39619;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39544;
+                        readonly id: 39618;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "5549:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39553;
+                        readonly scope: 39627;
                         readonly src: "5541:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -8572,7 +8572,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39543;
+                            readonly id: 39617;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5541:7:156";
@@ -8587,16 +8587,16 @@ export declare const VmSafe: {
                     readonly src: "5540:16:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39552;
+                    readonly id: 39626;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39548;
+                        readonly id: 39622;
                         readonly mutability: "mutable";
                         readonly name: "readSlots";
                         readonly nameLocation: "5592:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39553;
+                        readonly scope: 39627;
                         readonly src: "5575:26:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8606,7 +8606,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39546;
+                                readonly id: 39620;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5575:7:156";
@@ -8615,7 +8615,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 39547;
+                            readonly id: 39621;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "5575:9:156";
                             readonly typeDescriptions: {
@@ -8626,12 +8626,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39551;
+                        readonly id: 39625;
                         readonly mutability: "mutable";
                         readonly name: "writeSlots";
                         readonly nameLocation: "5620:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39553;
+                        readonly scope: 39627;
                         readonly src: "5603:27:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8641,7 +8641,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39549;
+                                readonly id: 39623;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5603:7:156";
@@ -8650,7 +8650,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 39550;
+                            readonly id: 39624;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "5603:9:156";
                             readonly typeDescriptions: {
@@ -8662,12 +8662,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "5574:57:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39560;
+                readonly id: 39634;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5740:101:156";
                 readonly nodes: readonly [];
@@ -8678,16 +8678,16 @@ export declare const VmSafe: {
                 readonly name: "getCode";
                 readonly nameLocation: "5749:7:156";
                 readonly parameters: {
-                    readonly id: 39556;
+                    readonly id: 39630;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39555;
+                        readonly id: 39629;
                         readonly mutability: "mutable";
                         readonly name: "artifactPath";
                         readonly nameLocation: "5773:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39560;
+                        readonly scope: 39634;
                         readonly src: "5757:28:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8696,7 +8696,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39554;
+                            readonly id: 39628;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5757:6:156";
@@ -8710,16 +8710,16 @@ export declare const VmSafe: {
                     readonly src: "5756:30:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39559;
+                    readonly id: 39633;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39558;
+                        readonly id: 39632;
                         readonly mutability: "mutable";
                         readonly name: "creationBytecode";
                         readonly nameLocation: "5823:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39560;
+                        readonly scope: 39634;
                         readonly src: "5810:29:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8728,7 +8728,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39557;
+                            readonly id: 39631;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5810:5:156";
@@ -8741,12 +8741,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "5809:31:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39567;
+                readonly id: 39641;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5949:108:156";
                 readonly nodes: readonly [];
@@ -8757,16 +8757,16 @@ export declare const VmSafe: {
                 readonly name: "getDeployedCode";
                 readonly nameLocation: "5958:15:156";
                 readonly parameters: {
-                    readonly id: 39563;
+                    readonly id: 39637;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39562;
+                        readonly id: 39636;
                         readonly mutability: "mutable";
                         readonly name: "artifactPath";
                         readonly nameLocation: "5990:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39567;
+                        readonly scope: 39641;
                         readonly src: "5974:28:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8775,7 +8775,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39561;
+                            readonly id: 39635;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5974:6:156";
@@ -8789,16 +8789,16 @@ export declare const VmSafe: {
                     readonly src: "5973:30:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39566;
+                    readonly id: 39640;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39565;
+                        readonly id: 39639;
                         readonly mutability: "mutable";
                         readonly name: "runtimeBytecode";
                         readonly nameLocation: "6040:15:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39567;
+                        readonly scope: 39641;
                         readonly src: "6027:28:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8807,7 +8807,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39564;
+                            readonly id: 39638;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6027:5:156";
@@ -8820,12 +8820,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "6026:30:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39574;
+                readonly id: 39648;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6102:67:156";
                 readonly nodes: readonly [];
@@ -8836,16 +8836,16 @@ export declare const VmSafe: {
                 readonly name: "label";
                 readonly nameLocation: "6111:5:156";
                 readonly parameters: {
-                    readonly id: 39572;
+                    readonly id: 39646;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39569;
+                        readonly id: 39643;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "6125:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39574;
+                        readonly scope: 39648;
                         readonly src: "6117:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -8854,7 +8854,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39568;
+                            readonly id: 39642;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6117:7:156";
@@ -8867,12 +8867,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39571;
+                        readonly id: 39645;
                         readonly mutability: "mutable";
                         readonly name: "newLabel";
                         readonly nameLocation: "6150:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39574;
+                        readonly scope: 39648;
                         readonly src: "6134:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -8881,7 +8881,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39570;
+                            readonly id: 39644;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6134:6:156";
@@ -8895,17 +8895,17 @@ export declare const VmSafe: {
                     readonly src: "6116:43:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39573;
+                    readonly id: 39647;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6168:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39581;
+                readonly id: 39655;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6222:81:156";
                 readonly nodes: readonly [];
@@ -8916,16 +8916,16 @@ export declare const VmSafe: {
                 readonly name: "getLabel";
                 readonly nameLocation: "6231:8:156";
                 readonly parameters: {
-                    readonly id: 39577;
+                    readonly id: 39651;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39576;
+                        readonly id: 39650;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "6248:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39581;
+                        readonly scope: 39655;
                         readonly src: "6240:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -8934,7 +8934,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39575;
+                            readonly id: 39649;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6240:7:156";
@@ -8949,16 +8949,16 @@ export declare const VmSafe: {
                     readonly src: "6239:17:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39580;
+                    readonly id: 39654;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39579;
+                        readonly id: 39653;
                         readonly mutability: "mutable";
                         readonly name: "currentLabel";
                         readonly nameLocation: "6289:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39581;
+                        readonly scope: 39655;
                         readonly src: "6275:26:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8967,7 +8967,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39578;
+                            readonly id: 39652;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6275:6:156";
@@ -8980,12 +8980,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "6274:28:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39584;
+                readonly id: 39658;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6470:30:156";
                 readonly nodes: readonly [];
@@ -8996,23 +8996,23 @@ export declare const VmSafe: {
                 readonly name: "broadcast";
                 readonly nameLocation: "6479:9:156";
                 readonly parameters: {
-                    readonly id: 39582;
+                    readonly id: 39656;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6488:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39583;
+                    readonly id: 39657;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6499:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39589;
+                readonly id: 39663;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6659:44:156";
                 readonly nodes: readonly [];
@@ -9023,16 +9023,16 @@ export declare const VmSafe: {
                 readonly name: "broadcast";
                 readonly nameLocation: "6668:9:156";
                 readonly parameters: {
-                    readonly id: 39587;
+                    readonly id: 39661;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39586;
+                        readonly id: 39660;
                         readonly mutability: "mutable";
                         readonly name: "signer";
                         readonly nameLocation: "6686:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39589;
+                        readonly scope: 39663;
                         readonly src: "6678:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9041,7 +9041,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39585;
+                            readonly id: 39659;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6678:7:156";
@@ -9056,17 +9056,17 @@ export declare const VmSafe: {
                     readonly src: "6677:16:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39588;
+                    readonly id: 39662;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6702:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39594;
+                readonly id: 39668;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6866:48:156";
                 readonly nodes: readonly [];
@@ -9077,16 +9077,16 @@ export declare const VmSafe: {
                 readonly name: "broadcast";
                 readonly nameLocation: "6875:9:156";
                 readonly parameters: {
-                    readonly id: 39592;
+                    readonly id: 39666;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39591;
+                        readonly id: 39665;
                         readonly mutability: "mutable";
                         readonly name: "privateKey";
                         readonly nameLocation: "6893:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39594;
+                        readonly scope: 39668;
                         readonly src: "6885:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9095,7 +9095,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39590;
+                            readonly id: 39664;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6885:7:156";
@@ -9109,17 +9109,17 @@ export declare const VmSafe: {
                     readonly src: "6884:20:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39593;
+                    readonly id: 39667;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6913:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39597;
+                readonly id: 39671;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7087:35:156";
                 readonly nodes: readonly [];
@@ -9130,23 +9130,23 @@ export declare const VmSafe: {
                 readonly name: "startBroadcast";
                 readonly nameLocation: "7096:14:156";
                 readonly parameters: {
-                    readonly id: 39595;
+                    readonly id: 39669;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7110:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39596;
+                    readonly id: 39670;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7121:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39602;
+                readonly id: 39676;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7273:49:156";
                 readonly nodes: readonly [];
@@ -9157,16 +9157,16 @@ export declare const VmSafe: {
                 readonly name: "startBroadcast";
                 readonly nameLocation: "7282:14:156";
                 readonly parameters: {
-                    readonly id: 39600;
+                    readonly id: 39674;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39599;
+                        readonly id: 39673;
                         readonly mutability: "mutable";
                         readonly name: "signer";
                         readonly nameLocation: "7305:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39602;
+                        readonly scope: 39676;
                         readonly src: "7297:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9175,7 +9175,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39598;
+                            readonly id: 39672;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7297:7:156";
@@ -9190,17 +9190,17 @@ export declare const VmSafe: {
                     readonly src: "7296:16:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39601;
+                    readonly id: 39675;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7321:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39607;
+                readonly id: 39681;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7477:53:156";
                 readonly nodes: readonly [];
@@ -9211,16 +9211,16 @@ export declare const VmSafe: {
                 readonly name: "startBroadcast";
                 readonly nameLocation: "7486:14:156";
                 readonly parameters: {
-                    readonly id: 39605;
+                    readonly id: 39679;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39604;
+                        readonly id: 39678;
                         readonly mutability: "mutable";
                         readonly name: "privateKey";
                         readonly nameLocation: "7509:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39607;
+                        readonly scope: 39681;
                         readonly src: "7501:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9229,7 +9229,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39603;
+                            readonly id: 39677;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7501:7:156";
@@ -9243,17 +9243,17 @@ export declare const VmSafe: {
                     readonly src: "7500:20:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39606;
+                    readonly id: 39680;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7529:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39610;
+                readonly id: 39684;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7580:34:156";
                 readonly nodes: readonly [];
@@ -9264,23 +9264,23 @@ export declare const VmSafe: {
                 readonly name: "stopBroadcast";
                 readonly nameLocation: "7589:13:156";
                 readonly parameters: {
-                    readonly id: 39608;
+                    readonly id: 39682;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7602:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39609;
+                    readonly id: 39683;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7613:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39615;
+                readonly id: 39689;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7669:66:156";
                 readonly nodes: readonly [];
@@ -9291,22 +9291,22 @@ export declare const VmSafe: {
                 readonly name: "projectRoot";
                 readonly nameLocation: "7678:11:156";
                 readonly parameters: {
-                    readonly id: 39611;
+                    readonly id: 39685;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7689:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39614;
+                    readonly id: 39688;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39613;
+                        readonly id: 39687;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "7729:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39615;
+                        readonly scope: 39689;
                         readonly src: "7715:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -9315,7 +9315,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39612;
+                            readonly id: 39686;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7715:6:156";
@@ -9328,12 +9328,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "7714:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39622;
+                readonly id: 39696;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7831:83:156";
                 readonly nodes: readonly [];
@@ -9344,16 +9344,16 @@ export declare const VmSafe: {
                 readonly name: "readFile";
                 readonly nameLocation: "7840:8:156";
                 readonly parameters: {
-                    readonly id: 39618;
+                    readonly id: 39692;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39617;
+                        readonly id: 39691;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "7865:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39622;
+                        readonly scope: 39696;
                         readonly src: "7849:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9362,7 +9362,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39616;
+                            readonly id: 39690;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7849:6:156";
@@ -9376,16 +9376,16 @@ export declare const VmSafe: {
                     readonly src: "7848:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39621;
+                    readonly id: 39695;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39620;
+                        readonly id: 39694;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "7908:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39622;
+                        readonly scope: 39696;
                         readonly src: "7894:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -9394,7 +9394,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39619;
+                            readonly id: 39693;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7894:6:156";
@@ -9407,12 +9407,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "7893:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39629;
+                readonly id: 39703;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8010:88:156";
                 readonly nodes: readonly [];
@@ -9423,16 +9423,16 @@ export declare const VmSafe: {
                 readonly name: "readFileBinary";
                 readonly nameLocation: "8019:14:156";
                 readonly parameters: {
-                    readonly id: 39625;
+                    readonly id: 39699;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39624;
+                        readonly id: 39698;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "8050:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39629;
+                        readonly scope: 39703;
                         readonly src: "8034:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9441,7 +9441,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39623;
+                            readonly id: 39697;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8034:6:156";
@@ -9455,16 +9455,16 @@ export declare const VmSafe: {
                     readonly src: "8033:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39628;
+                    readonly id: 39702;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39627;
+                        readonly id: 39701;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "8092:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39629;
+                        readonly scope: 39703;
                         readonly src: "8079:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -9473,7 +9473,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39626;
+                            readonly id: 39700;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8079:5:156";
@@ -9486,12 +9486,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "8078:19:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39636;
+                readonly id: 39710;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8145:83:156";
                 readonly nodes: readonly [];
@@ -9502,16 +9502,16 @@ export declare const VmSafe: {
                 readonly name: "readLine";
                 readonly nameLocation: "8154:8:156";
                 readonly parameters: {
-                    readonly id: 39632;
+                    readonly id: 39706;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39631;
+                        readonly id: 39705;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "8179:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39636;
+                        readonly scope: 39710;
                         readonly src: "8163:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9520,7 +9520,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39630;
+                            readonly id: 39704;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8163:6:156";
@@ -9534,16 +9534,16 @@ export declare const VmSafe: {
                     readonly src: "8162:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39635;
+                    readonly id: 39709;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39634;
+                        readonly id: 39708;
                         readonly mutability: "mutable";
                         readonly name: "line";
                         readonly nameLocation: "8222:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39636;
+                        readonly scope: 39710;
                         readonly src: "8208:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -9552,7 +9552,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39633;
+                            readonly id: 39707;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8208:6:156";
@@ -9565,12 +9565,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "8207:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39643;
+                readonly id: 39717;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8394:72:156";
                 readonly nodes: readonly [];
@@ -9581,16 +9581,16 @@ export declare const VmSafe: {
                 readonly name: "writeFile";
                 readonly nameLocation: "8403:9:156";
                 readonly parameters: {
-                    readonly id: 39641;
+                    readonly id: 39715;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39638;
+                        readonly id: 39712;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "8429:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39643;
+                        readonly scope: 39717;
                         readonly src: "8413:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9599,7 +9599,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39637;
+                            readonly id: 39711;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8413:6:156";
@@ -9611,12 +9611,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39640;
+                        readonly id: 39714;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "8451:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39643;
+                        readonly scope: 39717;
                         readonly src: "8435:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9625,7 +9625,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39639;
+                            readonly id: 39713;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8435:6:156";
@@ -9639,17 +9639,17 @@ export declare const VmSafe: {
                     readonly src: "8412:44:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39642;
+                    readonly id: 39716;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8465:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39650;
+                readonly id: 39724;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8641:77:156";
                 readonly nodes: readonly [];
@@ -9660,16 +9660,16 @@ export declare const VmSafe: {
                 readonly name: "writeFileBinary";
                 readonly nameLocation: "8650:15:156";
                 readonly parameters: {
-                    readonly id: 39648;
+                    readonly id: 39722;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39645;
+                        readonly id: 39719;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "8682:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39650;
+                        readonly scope: 39724;
                         readonly src: "8666:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9678,7 +9678,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39644;
+                            readonly id: 39718;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8666:6:156";
@@ -9690,12 +9690,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39647;
+                        readonly id: 39721;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "8703:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39650;
+                        readonly scope: 39724;
                         readonly src: "8688:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9704,7 +9704,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39646;
+                            readonly id: 39720;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8688:5:156";
@@ -9718,17 +9718,17 @@ export declare const VmSafe: {
                     readonly src: "8665:43:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39649;
+                    readonly id: 39723;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8717:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39657;
+                readonly id: 39731;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8836:72:156";
                 readonly nodes: readonly [];
@@ -9739,16 +9739,16 @@ export declare const VmSafe: {
                 readonly name: "writeLine";
                 readonly nameLocation: "8845:9:156";
                 readonly parameters: {
-                    readonly id: 39655;
+                    readonly id: 39729;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39652;
+                        readonly id: 39726;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "8871:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39657;
+                        readonly scope: 39731;
                         readonly src: "8855:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9757,7 +9757,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39651;
+                            readonly id: 39725;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8855:6:156";
@@ -9769,12 +9769,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39654;
+                        readonly id: 39728;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "8893:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39657;
+                        readonly scope: 39731;
                         readonly src: "8877:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9783,7 +9783,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39653;
+                            readonly id: 39727;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8877:6:156";
@@ -9797,17 +9797,17 @@ export declare const VmSafe: {
                     readonly src: "8854:44:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39656;
+                    readonly id: 39730;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8907:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39662;
+                readonly id: 39736;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "9067:50:156";
                 readonly nodes: readonly [];
@@ -9818,16 +9818,16 @@ export declare const VmSafe: {
                 readonly name: "closeFile";
                 readonly nameLocation: "9076:9:156";
                 readonly parameters: {
-                    readonly id: 39660;
+                    readonly id: 39734;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39659;
+                        readonly id: 39733;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "9102:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39662;
+                        readonly scope: 39736;
                         readonly src: "9086:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9836,7 +9836,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39658;
+                            readonly id: 39732;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "9086:6:156";
@@ -9850,17 +9850,17 @@ export declare const VmSafe: {
                     readonly src: "9085:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39661;
+                    readonly id: 39735;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "9116:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39667;
+                readonly id: 39741;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "9443:51:156";
                 readonly nodes: readonly [];
@@ -9871,16 +9871,16 @@ export declare const VmSafe: {
                 readonly name: "removeFile";
                 readonly nameLocation: "9452:10:156";
                 readonly parameters: {
-                    readonly id: 39665;
+                    readonly id: 39739;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39664;
+                        readonly id: 39738;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "9479:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39667;
+                        readonly scope: 39741;
                         readonly src: "9463:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9889,7 +9889,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39663;
+                            readonly id: 39737;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "9463:6:156";
@@ -9903,17 +9903,17 @@ export declare const VmSafe: {
                     readonly src: "9462:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39666;
+                    readonly id: 39740;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "9493:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39674;
+                readonly id: 39748;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "9892:66:156";
                 readonly nodes: readonly [];
@@ -9924,16 +9924,16 @@ export declare const VmSafe: {
                 readonly name: "createDir";
                 readonly nameLocation: "9901:9:156";
                 readonly parameters: {
-                    readonly id: 39672;
+                    readonly id: 39746;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39669;
+                        readonly id: 39743;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "9927:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39674;
+                        readonly scope: 39748;
                         readonly src: "9911:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -9942,7 +9942,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39668;
+                            readonly id: 39742;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "9911:6:156";
@@ -9954,12 +9954,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39671;
+                        readonly id: 39745;
                         readonly mutability: "mutable";
                         readonly name: "recursive";
                         readonly nameLocation: "9938:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39674;
+                        readonly scope: 39748;
                         readonly src: "9933:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9968,7 +9968,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 39670;
+                            readonly id: 39744;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "9933:4:156";
@@ -9982,17 +9982,17 @@ export declare const VmSafe: {
                     readonly src: "9910:38:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39673;
+                    readonly id: 39747;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "9957:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39681;
+                readonly id: 39755;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "10340:66:156";
                 readonly nodes: readonly [];
@@ -10003,16 +10003,16 @@ export declare const VmSafe: {
                 readonly name: "removeDir";
                 readonly nameLocation: "10349:9:156";
                 readonly parameters: {
-                    readonly id: 39679;
+                    readonly id: 39753;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39676;
+                        readonly id: 39750;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "10375:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39681;
+                        readonly scope: 39755;
                         readonly src: "10359:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -10021,7 +10021,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39675;
+                            readonly id: 39749;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10359:6:156";
@@ -10033,12 +10033,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39678;
+                        readonly id: 39752;
                         readonly mutability: "mutable";
                         readonly name: "recursive";
                         readonly nameLocation: "10386:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39681;
+                        readonly scope: 39755;
                         readonly src: "10381:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10047,7 +10047,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 39677;
+                            readonly id: 39751;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10381:4:156";
@@ -10061,17 +10061,17 @@ export declare const VmSafe: {
                     readonly src: "10358:38:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39680;
+                    readonly id: 39754;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "10405:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39690;
+                readonly id: 39764;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "10653:89:156";
                 readonly nodes: readonly [];
@@ -10082,16 +10082,16 @@ export declare const VmSafe: {
                 readonly name: "readDir";
                 readonly nameLocation: "10662:7:156";
                 readonly parameters: {
-                    readonly id: 39684;
+                    readonly id: 39758;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39683;
+                        readonly id: 39757;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "10686:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39690;
+                        readonly scope: 39764;
                         readonly src: "10670:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -10100,7 +10100,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39682;
+                            readonly id: 39756;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10670:6:156";
@@ -10114,47 +10114,47 @@ export declare const VmSafe: {
                     readonly src: "10669:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39689;
+                    readonly id: 39763;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39688;
+                        readonly id: 39762;
                         readonly mutability: "mutable";
                         readonly name: "entries";
                         readonly nameLocation: "10733:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39690;
+                        readonly scope: 39764;
                         readonly src: "10715:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39200_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39274_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct VmSafe.DirEntry[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39686;
+                                readonly id: 39760;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 39685;
+                                    readonly id: 39759;
                                     readonly name: "DirEntry";
                                     readonly nameLocations: readonly ["10715:8:156"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 39200;
+                                    readonly referencedDeclaration: 39274;
                                     readonly src: "10715:8:156";
                                 };
-                                readonly referencedDeclaration: 39200;
+                                readonly referencedDeclaration: 39274;
                                 readonly src: "10715:8:156";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_DirEntry_$39200_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_DirEntry_$39274_storage_ptr";
                                     readonly typeString: "struct VmSafe.DirEntry";
                                 };
                             };
-                            readonly id: 39687;
+                            readonly id: 39761;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "10715:10:156";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39200_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39274_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct VmSafe.DirEntry[]";
                             };
                         };
@@ -10162,12 +10162,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "10714:27:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39701;
+                readonly id: 39775;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "10747:106:156";
                 readonly nodes: readonly [];
@@ -10178,16 +10178,16 @@ export declare const VmSafe: {
                 readonly name: "readDir";
                 readonly nameLocation: "10756:7:156";
                 readonly parameters: {
-                    readonly id: 39695;
+                    readonly id: 39769;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39692;
+                        readonly id: 39766;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "10780:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39701;
+                        readonly scope: 39775;
                         readonly src: "10764:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -10196,7 +10196,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39691;
+                            readonly id: 39765;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10764:6:156";
@@ -10208,12 +10208,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39694;
+                        readonly id: 39768;
                         readonly mutability: "mutable";
                         readonly name: "maxDepth";
                         readonly nameLocation: "10793:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39701;
+                        readonly scope: 39775;
                         readonly src: "10786:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10222,7 +10222,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 39693;
+                            readonly id: 39767;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10786:6:156";
@@ -10236,47 +10236,47 @@ export declare const VmSafe: {
                     readonly src: "10763:39:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39700;
+                    readonly id: 39774;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39699;
+                        readonly id: 39773;
                         readonly mutability: "mutable";
                         readonly name: "entries";
                         readonly nameLocation: "10844:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39701;
+                        readonly scope: 39775;
                         readonly src: "10826:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39200_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39274_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct VmSafe.DirEntry[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39697;
+                                readonly id: 39771;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 39696;
+                                    readonly id: 39770;
                                     readonly name: "DirEntry";
                                     readonly nameLocations: readonly ["10826:8:156"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 39200;
+                                    readonly referencedDeclaration: 39274;
                                     readonly src: "10826:8:156";
                                 };
-                                readonly referencedDeclaration: 39200;
+                                readonly referencedDeclaration: 39274;
                                 readonly src: "10826:8:156";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_DirEntry_$39200_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_DirEntry_$39274_storage_ptr";
                                     readonly typeString: "struct VmSafe.DirEntry";
                                 };
                             };
-                            readonly id: 39698;
+                            readonly id: 39772;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "10826:10:156";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39200_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39274_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct VmSafe.DirEntry[]";
                             };
                         };
@@ -10284,12 +10284,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "10825:27:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39714;
+                readonly id: 39788;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "10858:148:156";
                 readonly nodes: readonly [];
@@ -10300,16 +10300,16 @@ export declare const VmSafe: {
                 readonly name: "readDir";
                 readonly nameLocation: "10867:7:156";
                 readonly parameters: {
-                    readonly id: 39708;
+                    readonly id: 39782;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39703;
+                        readonly id: 39777;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "10891:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39714;
+                        readonly scope: 39788;
                         readonly src: "10875:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -10318,7 +10318,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39702;
+                            readonly id: 39776;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10875:6:156";
@@ -10330,12 +10330,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39705;
+                        readonly id: 39779;
                         readonly mutability: "mutable";
                         readonly name: "maxDepth";
                         readonly nameLocation: "10904:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39714;
+                        readonly scope: 39788;
                         readonly src: "10897:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10344,7 +10344,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 39704;
+                            readonly id: 39778;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10897:6:156";
@@ -10356,12 +10356,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39707;
+                        readonly id: 39781;
                         readonly mutability: "mutable";
                         readonly name: "followLinks";
                         readonly nameLocation: "10919:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39714;
+                        readonly scope: 39788;
                         readonly src: "10914:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10370,7 +10370,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 39706;
+                            readonly id: 39780;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10914:4:156";
@@ -10384,47 +10384,47 @@ export declare const VmSafe: {
                     readonly src: "10874:57:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39713;
+                    readonly id: 39787;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39712;
+                        readonly id: 39786;
                         readonly mutability: "mutable";
                         readonly name: "entries";
                         readonly nameLocation: "10997:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39714;
+                        readonly scope: 39788;
                         readonly src: "10979:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39200_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39274_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct VmSafe.DirEntry[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39710;
+                                readonly id: 39784;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 39709;
+                                    readonly id: 39783;
                                     readonly name: "DirEntry";
                                     readonly nameLocations: readonly ["10979:8:156"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 39200;
+                                    readonly referencedDeclaration: 39274;
                                     readonly src: "10979:8:156";
                                 };
-                                readonly referencedDeclaration: 39200;
+                                readonly referencedDeclaration: 39274;
                                 readonly src: "10979:8:156";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_DirEntry_$39200_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_DirEntry_$39274_storage_ptr";
                                     readonly typeString: "struct VmSafe.DirEntry";
                                 };
                             };
-                            readonly id: 39711;
+                            readonly id: 39785;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "10979:10:156";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39200_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_DirEntry_$39274_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct VmSafe.DirEntry[]";
                             };
                         };
@@ -10432,12 +10432,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "10978:27:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39721;
+                readonly id: 39795;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11260:93:156";
                 readonly nodes: readonly [];
@@ -10448,16 +10448,16 @@ export declare const VmSafe: {
                 readonly name: "readLink";
                 readonly nameLocation: "11269:8:156";
                 readonly parameters: {
-                    readonly id: 39717;
+                    readonly id: 39791;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39716;
+                        readonly id: 39790;
                         readonly mutability: "mutable";
                         readonly name: "linkPath";
                         readonly nameLocation: "11294:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39721;
+                        readonly scope: 39795;
                         readonly src: "11278:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -10466,7 +10466,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39715;
+                            readonly id: 39789;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11278:6:156";
@@ -10480,16 +10480,16 @@ export declare const VmSafe: {
                     readonly src: "11277:26:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39720;
+                    readonly id: 39794;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39719;
+                        readonly id: 39793;
                         readonly mutability: "mutable";
                         readonly name: "targetPath";
                         readonly nameLocation: "11341:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39721;
+                        readonly scope: 39795;
                         readonly src: "11327:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -10498,7 +10498,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39718;
+                            readonly id: 39792;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11327:6:156";
@@ -10511,12 +10511,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "11326:26:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39729;
+                readonly id: 39803;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11450:93:156";
                 readonly nodes: readonly [];
@@ -10527,16 +10527,16 @@ export declare const VmSafe: {
                 readonly name: "fsMetadata";
                 readonly nameLocation: "11459:10:156";
                 readonly parameters: {
-                    readonly id: 39724;
+                    readonly id: 39798;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39723;
+                        readonly id: 39797;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "11486:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39729;
+                        readonly scope: 39803;
                         readonly src: "11470:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -10545,7 +10545,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39722;
+                            readonly id: 39796;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11470:6:156";
@@ -10559,38 +10559,38 @@ export declare const VmSafe: {
                     readonly src: "11469:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39728;
+                    readonly id: 39802;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39727;
+                        readonly id: 39801;
                         readonly mutability: "mutable";
                         readonly name: "metadata";
                         readonly nameLocation: "11533:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39729;
+                        readonly scope: 39803;
                         readonly src: "11515:26:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_FsMetadata_$39215_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_FsMetadata_$39289_memory_ptr";
                             readonly typeString: "struct VmSafe.FsMetadata";
                         };
                         readonly typeName: {
-                            readonly id: 39726;
+                            readonly id: 39800;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 39725;
+                                readonly id: 39799;
                                 readonly name: "FsMetadata";
                                 readonly nameLocations: readonly ["11515:10:156"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 39215;
+                                readonly referencedDeclaration: 39289;
                                 readonly src: "11515:10:156";
                             };
-                            readonly referencedDeclaration: 39215;
+                            readonly referencedDeclaration: 39289;
                             readonly src: "11515:10:156";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_FsMetadata_$39215_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_FsMetadata_$39289_storage_ptr";
                                 readonly typeString: "struct VmSafe.FsMetadata";
                             };
                         };
@@ -10598,12 +10598,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "11514:28:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39736;
+                readonly id: 39810;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11583:88:156";
                 readonly nodes: readonly [];
@@ -10614,16 +10614,16 @@ export declare const VmSafe: {
                 readonly name: "toString";
                 readonly nameLocation: "11592:8:156";
                 readonly parameters: {
-                    readonly id: 39732;
+                    readonly id: 39806;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39731;
+                        readonly id: 39805;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "11609:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39736;
+                        readonly scope: 39810;
                         readonly src: "11601:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10632,7 +10632,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39730;
+                            readonly id: 39804;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11601:7:156";
@@ -10647,16 +10647,16 @@ export declare const VmSafe: {
                     readonly src: "11600:15:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39735;
+                    readonly id: 39809;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39734;
+                        readonly id: 39808;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "11653:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39736;
+                        readonly scope: 39810;
                         readonly src: "11639:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -10665,7 +10665,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39733;
+                            readonly id: 39807;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11639:6:156";
@@ -10678,12 +10678,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "11638:32:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39743;
+                readonly id: 39817;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11676:95:156";
                 readonly nodes: readonly [];
@@ -10694,16 +10694,16 @@ export declare const VmSafe: {
                 readonly name: "toString";
                 readonly nameLocation: "11685:8:156";
                 readonly parameters: {
-                    readonly id: 39739;
+                    readonly id: 39813;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39738;
+                        readonly id: 39812;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "11709:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39743;
+                        readonly scope: 39817;
                         readonly src: "11694:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -10712,7 +10712,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39737;
+                            readonly id: 39811;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11694:5:156";
@@ -10726,16 +10726,16 @@ export declare const VmSafe: {
                     readonly src: "11693:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39742;
+                    readonly id: 39816;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39741;
+                        readonly id: 39815;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "11753:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39743;
+                        readonly scope: 39817;
                         readonly src: "11739:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -10744,7 +10744,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39740;
+                            readonly id: 39814;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11739:6:156";
@@ -10757,12 +10757,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "11738:32:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39750;
+                readonly id: 39824;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11776:88:156";
                 readonly nodes: readonly [];
@@ -10773,16 +10773,16 @@ export declare const VmSafe: {
                 readonly name: "toString";
                 readonly nameLocation: "11785:8:156";
                 readonly parameters: {
-                    readonly id: 39746;
+                    readonly id: 39820;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39745;
+                        readonly id: 39819;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "11802:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39750;
+                        readonly scope: 39824;
                         readonly src: "11794:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10791,7 +10791,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39744;
+                            readonly id: 39818;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11794:7:156";
@@ -10805,16 +10805,16 @@ export declare const VmSafe: {
                     readonly src: "11793:15:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39749;
+                    readonly id: 39823;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39748;
+                        readonly id: 39822;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "11846:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39750;
+                        readonly scope: 39824;
                         readonly src: "11832:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -10823,7 +10823,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39747;
+                            readonly id: 39821;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11832:6:156";
@@ -10836,12 +10836,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "11831:32:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39757;
+                readonly id: 39831;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11869:85:156";
                 readonly nodes: readonly [];
@@ -10852,16 +10852,16 @@ export declare const VmSafe: {
                 readonly name: "toString";
                 readonly nameLocation: "11878:8:156";
                 readonly parameters: {
-                    readonly id: 39753;
+                    readonly id: 39827;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39752;
+                        readonly id: 39826;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "11892:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39757;
+                        readonly scope: 39831;
                         readonly src: "11887:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10870,7 +10870,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 39751;
+                            readonly id: 39825;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11887:4:156";
@@ -10884,16 +10884,16 @@ export declare const VmSafe: {
                     readonly src: "11886:12:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39756;
+                    readonly id: 39830;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39755;
+                        readonly id: 39829;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "11936:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39757;
+                        readonly scope: 39831;
                         readonly src: "11922:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -10902,7 +10902,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39754;
+                            readonly id: 39828;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11922:6:156";
@@ -10915,12 +10915,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "11921:32:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39764;
+                readonly id: 39838;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11959:88:156";
                 readonly nodes: readonly [];
@@ -10931,16 +10931,16 @@ export declare const VmSafe: {
                 readonly name: "toString";
                 readonly nameLocation: "11968:8:156";
                 readonly parameters: {
-                    readonly id: 39760;
+                    readonly id: 39834;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39759;
+                        readonly id: 39833;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "11985:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39764;
+                        readonly scope: 39838;
                         readonly src: "11977:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10949,7 +10949,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39758;
+                            readonly id: 39832;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11977:7:156";
@@ -10963,16 +10963,16 @@ export declare const VmSafe: {
                     readonly src: "11976:15:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39763;
+                    readonly id: 39837;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39762;
+                        readonly id: 39836;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "12029:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39764;
+                        readonly scope: 39838;
                         readonly src: "12015:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -10981,7 +10981,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39761;
+                            readonly id: 39835;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12015:6:156";
@@ -10994,12 +10994,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "12014:32:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39771;
+                readonly id: 39845;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12052:87:156";
                 readonly nodes: readonly [];
@@ -11010,16 +11010,16 @@ export declare const VmSafe: {
                 readonly name: "toString";
                 readonly nameLocation: "12061:8:156";
                 readonly parameters: {
-                    readonly id: 39767;
+                    readonly id: 39841;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39766;
+                        readonly id: 39840;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "12077:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39771;
+                        readonly scope: 39845;
                         readonly src: "12070:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11028,7 +11028,7 @@ export declare const VmSafe: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 39765;
+                            readonly id: 39839;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12070:6:156";
@@ -11042,16 +11042,16 @@ export declare const VmSafe: {
                     readonly src: "12069:14:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39770;
+                    readonly id: 39844;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39769;
+                        readonly id: 39843;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "12121:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39771;
+                        readonly scope: 39845;
                         readonly src: "12107:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -11060,7 +11060,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39768;
+                            readonly id: 39842;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12107:6:156";
@@ -11073,12 +11073,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "12106:32:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39778;
+                readonly id: 39852;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12180:103:156";
                 readonly nodes: readonly [];
@@ -11089,16 +11089,16 @@ export declare const VmSafe: {
                 readonly name: "parseBytes";
                 readonly nameLocation: "12189:10:156";
                 readonly parameters: {
-                    readonly id: 39774;
+                    readonly id: 39848;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39773;
+                        readonly id: 39847;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "12216:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39778;
+                        readonly scope: 39852;
                         readonly src: "12200:32:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11107,7 +11107,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39772;
+                            readonly id: 39846;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12200:6:156";
@@ -11121,16 +11121,16 @@ export declare const VmSafe: {
                     readonly src: "12199:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39777;
+                    readonly id: 39851;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39776;
+                        readonly id: 39850;
                         readonly mutability: "mutable";
                         readonly name: "parsedValue";
                         readonly nameLocation: "12270:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39778;
+                        readonly scope: 39852;
                         readonly src: "12257:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -11139,7 +11139,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39775;
+                            readonly id: 39849;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12257:5:156";
@@ -11152,12 +11152,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "12256:26:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39785;
+                readonly id: 39859;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12288:100:156";
                 readonly nodes: readonly [];
@@ -11168,16 +11168,16 @@ export declare const VmSafe: {
                 readonly name: "parseAddress";
                 readonly nameLocation: "12297:12:156";
                 readonly parameters: {
-                    readonly id: 39781;
+                    readonly id: 39855;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39780;
+                        readonly id: 39854;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "12326:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39785;
+                        readonly scope: 39859;
                         readonly src: "12310:32:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11186,7 +11186,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39779;
+                            readonly id: 39853;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12310:6:156";
@@ -11200,16 +11200,16 @@ export declare const VmSafe: {
                     readonly src: "12309:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39784;
+                    readonly id: 39858;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39783;
+                        readonly id: 39857;
                         readonly mutability: "mutable";
                         readonly name: "parsedValue";
                         readonly nameLocation: "12375:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39785;
+                        readonly scope: 39859;
                         readonly src: "12367:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11218,7 +11218,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39782;
+                            readonly id: 39856;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12367:7:156";
@@ -11232,12 +11232,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "12366:21:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39792;
+                readonly id: 39866;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12393:97:156";
                 readonly nodes: readonly [];
@@ -11248,16 +11248,16 @@ export declare const VmSafe: {
                 readonly name: "parseUint";
                 readonly nameLocation: "12402:9:156";
                 readonly parameters: {
-                    readonly id: 39788;
+                    readonly id: 39862;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39787;
+                        readonly id: 39861;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "12428:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39792;
+                        readonly scope: 39866;
                         readonly src: "12412:32:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11266,7 +11266,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39786;
+                            readonly id: 39860;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12412:6:156";
@@ -11280,16 +11280,16 @@ export declare const VmSafe: {
                     readonly src: "12411:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39791;
+                    readonly id: 39865;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39790;
+                        readonly id: 39864;
                         readonly mutability: "mutable";
                         readonly name: "parsedValue";
                         readonly nameLocation: "12477:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39792;
+                        readonly scope: 39866;
                         readonly src: "12469:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11298,7 +11298,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39789;
+                            readonly id: 39863;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12469:7:156";
@@ -11311,12 +11311,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "12468:21:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39799;
+                readonly id: 39873;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12495:95:156";
                 readonly nodes: readonly [];
@@ -11327,16 +11327,16 @@ export declare const VmSafe: {
                 readonly name: "parseInt";
                 readonly nameLocation: "12504:8:156";
                 readonly parameters: {
-                    readonly id: 39795;
+                    readonly id: 39869;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39794;
+                        readonly id: 39868;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "12529:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39799;
+                        readonly scope: 39873;
                         readonly src: "12513:32:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11345,7 +11345,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39793;
+                            readonly id: 39867;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12513:6:156";
@@ -11359,16 +11359,16 @@ export declare const VmSafe: {
                     readonly src: "12512:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39798;
+                    readonly id: 39872;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39797;
+                        readonly id: 39871;
                         readonly mutability: "mutable";
                         readonly name: "parsedValue";
                         readonly nameLocation: "12577:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39799;
+                        readonly scope: 39873;
                         readonly src: "12570:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11377,7 +11377,7 @@ export declare const VmSafe: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 39796;
+                            readonly id: 39870;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12570:6:156";
@@ -11390,12 +11390,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "12569:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39806;
+                readonly id: 39880;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12595:100:156";
                 readonly nodes: readonly [];
@@ -11406,16 +11406,16 @@ export declare const VmSafe: {
                 readonly name: "parseBytes32";
                 readonly nameLocation: "12604:12:156";
                 readonly parameters: {
-                    readonly id: 39802;
+                    readonly id: 39876;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39801;
+                        readonly id: 39875;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "12633:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39806;
+                        readonly scope: 39880;
                         readonly src: "12617:32:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11424,7 +11424,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39800;
+                            readonly id: 39874;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12617:6:156";
@@ -11438,16 +11438,16 @@ export declare const VmSafe: {
                     readonly src: "12616:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39805;
+                    readonly id: 39879;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39804;
+                        readonly id: 39878;
                         readonly mutability: "mutable";
                         readonly name: "parsedValue";
                         readonly nameLocation: "12682:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39806;
+                        readonly scope: 39880;
                         readonly src: "12674:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11456,7 +11456,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39803;
+                            readonly id: 39877;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12674:7:156";
@@ -11469,12 +11469,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "12673:21:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39813;
+                readonly id: 39887;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12700:94:156";
                 readonly nodes: readonly [];
@@ -11485,16 +11485,16 @@ export declare const VmSafe: {
                 readonly name: "parseBool";
                 readonly nameLocation: "12709:9:156";
                 readonly parameters: {
-                    readonly id: 39809;
+                    readonly id: 39883;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39808;
+                        readonly id: 39882;
                         readonly mutability: "mutable";
                         readonly name: "stringifiedValue";
                         readonly nameLocation: "12735:16:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39813;
+                        readonly scope: 39887;
                         readonly src: "12719:32:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11503,7 +11503,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39807;
+                            readonly id: 39881;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12719:6:156";
@@ -11517,16 +11517,16 @@ export declare const VmSafe: {
                     readonly src: "12718:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39812;
+                    readonly id: 39886;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39811;
+                        readonly id: 39885;
                         readonly mutability: "mutable";
                         readonly name: "parsedValue";
                         readonly nameLocation: "12781:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39813;
+                        readonly scope: 39887;
                         readonly src: "12776:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11535,7 +11535,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 39810;
+                            readonly id: 39884;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "12776:4:156";
@@ -11548,12 +11548,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "12775:18:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39816;
+                readonly id: 39890;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12838:31:156";
                 readonly nodes: readonly [];
@@ -11564,23 +11564,23 @@ export declare const VmSafe: {
                 readonly name: "recordLogs";
                 readonly nameLocation: "12847:10:156";
                 readonly parameters: {
-                    readonly id: 39814;
+                    readonly id: 39888;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "12857:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39815;
+                    readonly id: 39889;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "12868:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39823;
+                readonly id: 39897;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "12908:64:156";
                 readonly nodes: readonly [];
@@ -11591,53 +11591,53 @@ export declare const VmSafe: {
                 readonly name: "getRecordedLogs";
                 readonly nameLocation: "12917:15:156";
                 readonly parameters: {
-                    readonly id: 39817;
+                    readonly id: 39891;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "12932:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39822;
+                    readonly id: 39896;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39821;
+                        readonly id: 39895;
                         readonly mutability: "mutable";
                         readonly name: "logs";
                         readonly nameLocation: "12966:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39823;
+                        readonly scope: 39897;
                         readonly src: "12953:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39184_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct VmSafe.Log[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39819;
+                                readonly id: 39893;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 39818;
+                                    readonly id: 39892;
                                     readonly name: "Log";
                                     readonly nameLocations: readonly ["12953:3:156"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 39184;
+                                    readonly referencedDeclaration: 39258;
                                     readonly src: "12953:3:156";
                                 };
-                                readonly referencedDeclaration: 39184;
+                                readonly referencedDeclaration: 39258;
                                 readonly src: "12953:3:156";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Log_$39184_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Log_$39258_storage_ptr";
                                     readonly typeString: "struct VmSafe.Log";
                                 };
                             };
-                            readonly id: 39820;
+                            readonly id: 39894;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "12953:5:156";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39184_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Log_$39258_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct VmSafe.Log[]";
                             };
                         };
@@ -11645,12 +11645,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "12952:19:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39832;
+                readonly id: 39906;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "13107:102:156";
                 readonly nodes: readonly [];
@@ -11661,16 +11661,16 @@ export declare const VmSafe: {
                 readonly name: "deriveKey";
                 readonly nameLocation: "13116:9:156";
                 readonly parameters: {
-                    readonly id: 39828;
+                    readonly id: 39902;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39825;
+                        readonly id: 39899;
                         readonly mutability: "mutable";
                         readonly name: "mnemonic";
                         readonly nameLocation: "13142:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39832;
+                        readonly scope: 39906;
                         readonly src: "13126:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11679,7 +11679,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39824;
+                            readonly id: 39898;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "13126:6:156";
@@ -11691,12 +11691,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39827;
+                        readonly id: 39901;
                         readonly mutability: "mutable";
                         readonly name: "index";
                         readonly nameLocation: "13159:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39832;
+                        readonly scope: 39906;
                         readonly src: "13152:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11705,7 +11705,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint32";
                         };
                         readonly typeName: {
-                            readonly id: 39826;
+                            readonly id: 39900;
                             readonly name: "uint32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "13152:6:156";
@@ -11719,16 +11719,16 @@ export declare const VmSafe: {
                     readonly src: "13125:40:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39831;
+                    readonly id: 39905;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39830;
+                        readonly id: 39904;
                         readonly mutability: "mutable";
                         readonly name: "privateKey";
                         readonly nameLocation: "13197:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39832;
+                        readonly scope: 39906;
                         readonly src: "13189:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11737,7 +11737,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39829;
+                            readonly id: 39903;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "13189:7:156";
@@ -11750,12 +11750,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "13188:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39843;
+                readonly id: 39917;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "13325:158:156";
                 readonly nodes: readonly [];
@@ -11766,16 +11766,16 @@ export declare const VmSafe: {
                 readonly name: "deriveKey";
                 readonly nameLocation: "13334:9:156";
                 readonly parameters: {
-                    readonly id: 39839;
+                    readonly id: 39913;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39834;
+                        readonly id: 39908;
                         readonly mutability: "mutable";
                         readonly name: "mnemonic";
                         readonly nameLocation: "13360:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39843;
+                        readonly scope: 39917;
                         readonly src: "13344:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11784,7 +11784,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39833;
+                            readonly id: 39907;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "13344:6:156";
@@ -11796,12 +11796,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39836;
+                        readonly id: 39910;
                         readonly mutability: "mutable";
                         readonly name: "derivationPath";
                         readonly nameLocation: "13386:14:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39843;
+                        readonly scope: 39917;
                         readonly src: "13370:30:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11810,7 +11810,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39835;
+                            readonly id: 39909;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "13370:6:156";
@@ -11822,12 +11822,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39838;
+                        readonly id: 39912;
                         readonly mutability: "mutable";
                         readonly name: "index";
                         readonly nameLocation: "13409:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39843;
+                        readonly scope: 39917;
                         readonly src: "13402:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11836,7 +11836,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint32";
                         };
                         readonly typeName: {
-                            readonly id: 39837;
+                            readonly id: 39911;
                             readonly name: "uint32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "13402:6:156";
@@ -11850,16 +11850,16 @@ export declare const VmSafe: {
                     readonly src: "13343:72:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39842;
+                    readonly id: 39916;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39841;
+                        readonly id: 39915;
                         readonly mutability: "mutable";
                         readonly name: "privateKey";
                         readonly nameLocation: "13471:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39843;
+                        readonly scope: 39917;
                         readonly src: "13463:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11868,7 +11868,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39840;
+                            readonly id: 39914;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "13463:7:156";
@@ -11881,12 +11881,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "13462:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39850;
+                readonly id: 39924;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "13564:76:156";
                 readonly nodes: readonly [];
@@ -11897,16 +11897,16 @@ export declare const VmSafe: {
                 readonly name: "rememberKey";
                 readonly nameLocation: "13573:11:156";
                 readonly parameters: {
-                    readonly id: 39846;
+                    readonly id: 39920;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39845;
+                        readonly id: 39919;
                         readonly mutability: "mutable";
                         readonly name: "privateKey";
                         readonly nameLocation: "13593:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39850;
+                        readonly scope: 39924;
                         readonly src: "13585:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11915,7 +11915,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39844;
+                            readonly id: 39918;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "13585:7:156";
@@ -11929,16 +11929,16 @@ export declare const VmSafe: {
                     readonly src: "13584:20:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39849;
+                    readonly id: 39923;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39848;
+                        readonly id: 39922;
                         readonly mutability: "mutable";
                         readonly name: "keyAddr";
                         readonly nameLocation: "13631:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39850;
+                        readonly scope: 39924;
                         readonly src: "13623:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11947,7 +11947,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39847;
+                            readonly id: 39921;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "13623:7:156";
@@ -11961,12 +11961,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "13622:17:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39859;
+                readonly id: 39933;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "14673:114:156";
                 readonly nodes: readonly [];
@@ -11977,16 +11977,16 @@ export declare const VmSafe: {
                 readonly name: "parseJson";
                 readonly nameLocation: "14682:9:156";
                 readonly parameters: {
-                    readonly id: 39855;
+                    readonly id: 39929;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39852;
+                        readonly id: 39926;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "14708:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39859;
+                        readonly scope: 39933;
                         readonly src: "14692:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -11995,7 +11995,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39851;
+                            readonly id: 39925;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "14692:6:156";
@@ -12007,12 +12007,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39854;
+                        readonly id: 39928;
                         readonly mutability: "mutable";
                         readonly name: "key";
                         readonly nameLocation: "14730:3:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39859;
+                        readonly scope: 39933;
                         readonly src: "14714:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12021,7 +12021,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39853;
+                            readonly id: 39927;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "14714:6:156";
@@ -12035,16 +12035,16 @@ export declare const VmSafe: {
                     readonly src: "14691:43:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39858;
+                    readonly id: 39932;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39857;
+                        readonly id: 39931;
                         readonly mutability: "mutable";
                         readonly name: "abiEncodedData";
                         readonly nameLocation: "14771:14:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39859;
+                        readonly scope: 39933;
                         readonly src: "14758:27:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -12053,7 +12053,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39856;
+                            readonly id: 39930;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "14758:5:156";
@@ -12066,12 +12066,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "14757:29:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39866;
+                readonly id: 39940;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "14792:93:156";
                 readonly nodes: readonly [];
@@ -12082,16 +12082,16 @@ export declare const VmSafe: {
                 readonly name: "parseJson";
                 readonly nameLocation: "14801:9:156";
                 readonly parameters: {
-                    readonly id: 39862;
+                    readonly id: 39936;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39861;
+                        readonly id: 39935;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "14827:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39866;
+                        readonly scope: 39940;
                         readonly src: "14811:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12100,7 +12100,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39860;
+                            readonly id: 39934;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "14811:6:156";
@@ -12114,16 +12114,16 @@ export declare const VmSafe: {
                     readonly src: "14810:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39865;
+                    readonly id: 39939;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39864;
+                        readonly id: 39938;
                         readonly mutability: "mutable";
                         readonly name: "abiEncodedData";
                         readonly nameLocation: "14869:14:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39866;
+                        readonly scope: 39940;
                         readonly src: "14856:27:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -12132,7 +12132,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39863;
+                            readonly id: 39937;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "14856:5:156";
@@ -12145,12 +12145,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "14855:29:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39875;
+                readonly id: 39949;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15273:84:156";
                 readonly nodes: readonly [];
@@ -12161,16 +12161,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonUint";
                 readonly nameLocation: "15282:13:156";
                 readonly parameters: {
-                    readonly id: 39871;
+                    readonly id: 39945;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39868;
+                        readonly id: 39942;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39875;
+                        readonly scope: 39949;
                         readonly src: "15296:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12179,7 +12179,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39867;
+                            readonly id: 39941;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15296:6:156";
@@ -12191,12 +12191,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39870;
+                        readonly id: 39944;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39875;
+                        readonly scope: 39949;
                         readonly src: "15313:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12205,7 +12205,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39869;
+                            readonly id: 39943;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15313:6:156";
@@ -12219,16 +12219,16 @@ export declare const VmSafe: {
                     readonly src: "15295:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39874;
+                    readonly id: 39948;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39873;
+                        readonly id: 39947;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39875;
+                        readonly scope: 39949;
                         readonly src: "15348:7:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -12237,7 +12237,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 39872;
+                            readonly id: 39946;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15348:7:156";
@@ -12250,12 +12250,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "15347:9:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39885;
+                readonly id: 39959;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15362:98:156";
                 readonly nodes: readonly [];
@@ -12266,16 +12266,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonUintArray";
                 readonly nameLocation: "15371:18:156";
                 readonly parameters: {
-                    readonly id: 39880;
+                    readonly id: 39954;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39877;
+                        readonly id: 39951;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39885;
+                        readonly scope: 39959;
                         readonly src: "15390:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12284,7 +12284,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39876;
+                            readonly id: 39950;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15390:6:156";
@@ -12296,12 +12296,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39879;
+                        readonly id: 39953;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39885;
+                        readonly scope: 39959;
                         readonly src: "15407:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12310,7 +12310,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39878;
+                            readonly id: 39952;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15407:6:156";
@@ -12324,16 +12324,16 @@ export declare const VmSafe: {
                     readonly src: "15389:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39884;
+                    readonly id: 39958;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39883;
+                        readonly id: 39957;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39885;
+                        readonly scope: 39959;
                         readonly src: "15442:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -12343,7 +12343,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39881;
+                                readonly id: 39955;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "15442:7:156";
@@ -12352,7 +12352,7 @@ export declare const VmSafe: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 39882;
+                            readonly id: 39956;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "15442:9:156";
                             readonly typeDescriptions: {
@@ -12364,12 +12364,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "15441:18:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39894;
+                readonly id: 39968;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15465:82:156";
                 readonly nodes: readonly [];
@@ -12380,16 +12380,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonInt";
                 readonly nameLocation: "15474:12:156";
                 readonly parameters: {
-                    readonly id: 39890;
+                    readonly id: 39964;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39887;
+                        readonly id: 39961;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39894;
+                        readonly scope: 39968;
                         readonly src: "15487:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12398,7 +12398,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39886;
+                            readonly id: 39960;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15487:6:156";
@@ -12410,12 +12410,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39889;
+                        readonly id: 39963;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39894;
+                        readonly scope: 39968;
                         readonly src: "15504:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12424,7 +12424,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39888;
+                            readonly id: 39962;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15504:6:156";
@@ -12438,16 +12438,16 @@ export declare const VmSafe: {
                     readonly src: "15486:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39893;
+                    readonly id: 39967;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39892;
+                        readonly id: 39966;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39894;
+                        readonly scope: 39968;
                         readonly src: "15539:6:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -12456,7 +12456,7 @@ export declare const VmSafe: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 39891;
+                            readonly id: 39965;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15539:6:156";
@@ -12469,12 +12469,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "15538:8:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39904;
+                readonly id: 39978;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15552:96:156";
                 readonly nodes: readonly [];
@@ -12485,16 +12485,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonIntArray";
                 readonly nameLocation: "15561:17:156";
                 readonly parameters: {
-                    readonly id: 39899;
+                    readonly id: 39973;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39896;
+                        readonly id: 39970;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39904;
+                        readonly scope: 39978;
                         readonly src: "15579:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12503,7 +12503,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39895;
+                            readonly id: 39969;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15579:6:156";
@@ -12515,12 +12515,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39898;
+                        readonly id: 39972;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39904;
+                        readonly scope: 39978;
                         readonly src: "15596:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12529,7 +12529,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39897;
+                            readonly id: 39971;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15596:6:156";
@@ -12543,16 +12543,16 @@ export declare const VmSafe: {
                     readonly src: "15578:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39903;
+                    readonly id: 39977;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39902;
+                        readonly id: 39976;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39904;
+                        readonly scope: 39978;
                         readonly src: "15631:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -12562,7 +12562,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39900;
+                                readonly id: 39974;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "15631:6:156";
@@ -12571,7 +12571,7 @@ export declare const VmSafe: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 39901;
+                            readonly id: 39975;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "15631:8:156";
                             readonly typeDescriptions: {
@@ -12583,12 +12583,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "15630:17:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39913;
+                readonly id: 39987;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15653:81:156";
                 readonly nodes: readonly [];
@@ -12599,16 +12599,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonBool";
                 readonly nameLocation: "15662:13:156";
                 readonly parameters: {
-                    readonly id: 39909;
+                    readonly id: 39983;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39906;
+                        readonly id: 39980;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39913;
+                        readonly scope: 39987;
                         readonly src: "15676:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12617,7 +12617,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39905;
+                            readonly id: 39979;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15676:6:156";
@@ -12629,12 +12629,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39908;
+                        readonly id: 39982;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39913;
+                        readonly scope: 39987;
                         readonly src: "15693:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12643,7 +12643,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39907;
+                            readonly id: 39981;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15693:6:156";
@@ -12657,16 +12657,16 @@ export declare const VmSafe: {
                     readonly src: "15675:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39912;
+                    readonly id: 39986;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39911;
+                        readonly id: 39985;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39913;
+                        readonly scope: 39987;
                         readonly src: "15728:4:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -12675,7 +12675,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 39910;
+                            readonly id: 39984;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15728:4:156";
@@ -12688,12 +12688,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "15727:6:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39923;
+                readonly id: 39997;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15739:95:156";
                 readonly nodes: readonly [];
@@ -12704,16 +12704,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonBoolArray";
                 readonly nameLocation: "15748:18:156";
                 readonly parameters: {
-                    readonly id: 39918;
+                    readonly id: 39992;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39915;
+                        readonly id: 39989;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39923;
+                        readonly scope: 39997;
                         readonly src: "15767:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12722,7 +12722,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39914;
+                            readonly id: 39988;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15767:6:156";
@@ -12734,12 +12734,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39917;
+                        readonly id: 39991;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39923;
+                        readonly scope: 39997;
                         readonly src: "15784:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12748,7 +12748,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39916;
+                            readonly id: 39990;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15784:6:156";
@@ -12762,16 +12762,16 @@ export declare const VmSafe: {
                     readonly src: "15766:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39922;
+                    readonly id: 39996;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39921;
+                        readonly id: 39995;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39923;
+                        readonly scope: 39997;
                         readonly src: "15819:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -12781,7 +12781,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39919;
+                                readonly id: 39993;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "15819:4:156";
@@ -12790,7 +12790,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly id: 39920;
+                            readonly id: 39994;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "15819:6:156";
                             readonly typeDescriptions: {
@@ -12802,12 +12802,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "15818:15:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39932;
+                readonly id: 40006;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15839:87:156";
                 readonly nodes: readonly [];
@@ -12818,16 +12818,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonAddress";
                 readonly nameLocation: "15848:16:156";
                 readonly parameters: {
-                    readonly id: 39928;
+                    readonly id: 40002;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39925;
+                        readonly id: 39999;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39932;
+                        readonly scope: 40006;
                         readonly src: "15865:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12836,7 +12836,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39924;
+                            readonly id: 39998;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15865:6:156";
@@ -12848,12 +12848,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39927;
+                        readonly id: 40001;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39932;
+                        readonly scope: 40006;
                         readonly src: "15882:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12862,7 +12862,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39926;
+                            readonly id: 40000;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15882:6:156";
@@ -12876,16 +12876,16 @@ export declare const VmSafe: {
                     readonly src: "15864:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39931;
+                    readonly id: 40005;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39930;
+                        readonly id: 40004;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39932;
+                        readonly scope: 40006;
                         readonly src: "15917:7:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -12894,7 +12894,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 39929;
+                            readonly id: 40003;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15917:7:156";
@@ -12908,12 +12908,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "15916:9:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39942;
+                readonly id: 40016;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "15931:101:156";
                 readonly nodes: readonly [];
@@ -12924,16 +12924,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonAddressArray";
                 readonly nameLocation: "15940:21:156";
                 readonly parameters: {
-                    readonly id: 39937;
+                    readonly id: 40011;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39934;
+                        readonly id: 40008;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39942;
+                        readonly scope: 40016;
                         readonly src: "15962:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12942,7 +12942,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39933;
+                            readonly id: 40007;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15962:6:156";
@@ -12954,12 +12954,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39936;
+                        readonly id: 40010;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39942;
+                        readonly scope: 40016;
                         readonly src: "15979:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -12968,7 +12968,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39935;
+                            readonly id: 40009;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "15979:6:156";
@@ -12982,16 +12982,16 @@ export declare const VmSafe: {
                     readonly src: "15961:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39941;
+                    readonly id: 40015;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39940;
+                        readonly id: 40014;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39942;
+                        readonly scope: 40016;
                         readonly src: "16014:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -13001,7 +13001,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39938;
+                                readonly id: 40012;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "16014:7:156";
@@ -13011,7 +13011,7 @@ export declare const VmSafe: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 39939;
+                            readonly id: 40013;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "16014:9:156";
                             readonly typeDescriptions: {
@@ -13023,12 +13023,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "16013:18:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39951;
+                readonly id: 40025;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "16037:92:156";
                 readonly nodes: readonly [];
@@ -13039,16 +13039,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonString";
                 readonly nameLocation: "16046:15:156";
                 readonly parameters: {
-                    readonly id: 39947;
+                    readonly id: 40021;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39944;
+                        readonly id: 40018;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39951;
+                        readonly scope: 40025;
                         readonly src: "16062:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13057,7 +13057,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39943;
+                            readonly id: 40017;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16062:6:156";
@@ -13069,12 +13069,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39946;
+                        readonly id: 40020;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39951;
+                        readonly scope: 40025;
                         readonly src: "16079:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13083,7 +13083,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39945;
+                            readonly id: 40019;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16079:6:156";
@@ -13097,16 +13097,16 @@ export declare const VmSafe: {
                     readonly src: "16061:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39950;
+                    readonly id: 40024;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39949;
+                        readonly id: 40023;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39951;
+                        readonly scope: 40025;
                         readonly src: "16114:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -13115,7 +13115,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39948;
+                            readonly id: 40022;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16114:6:156";
@@ -13128,12 +13128,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "16113:15:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39961;
+                readonly id: 40035;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "16134:99:156";
                 readonly nodes: readonly [];
@@ -13144,16 +13144,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonStringArray";
                 readonly nameLocation: "16143:20:156";
                 readonly parameters: {
-                    readonly id: 39956;
+                    readonly id: 40030;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39953;
+                        readonly id: 40027;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39961;
+                        readonly scope: 40035;
                         readonly src: "16164:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13162,7 +13162,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39952;
+                            readonly id: 40026;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16164:6:156";
@@ -13174,12 +13174,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39955;
+                        readonly id: 40029;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39961;
+                        readonly scope: 40035;
                         readonly src: "16181:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13188,7 +13188,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39954;
+                            readonly id: 40028;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16181:6:156";
@@ -13202,16 +13202,16 @@ export declare const VmSafe: {
                     readonly src: "16163:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39960;
+                    readonly id: 40034;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39959;
+                        readonly id: 40033;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39961;
+                        readonly scope: 40035;
                         readonly src: "16216:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -13221,7 +13221,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39957;
+                                readonly id: 40031;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "16216:6:156";
@@ -13230,7 +13230,7 @@ export declare const VmSafe: {
                                     readonly typeString: "string";
                                 };
                             };
-                            readonly id: 39958;
+                            readonly id: 40032;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "16216:8:156";
                             readonly typeDescriptions: {
@@ -13242,12 +13242,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "16215:17:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39970;
+                readonly id: 40044;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "16238:90:156";
                 readonly nodes: readonly [];
@@ -13258,16 +13258,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonBytes";
                 readonly nameLocation: "16247:14:156";
                 readonly parameters: {
-                    readonly id: 39966;
+                    readonly id: 40040;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39963;
+                        readonly id: 40037;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39970;
+                        readonly scope: 40044;
                         readonly src: "16262:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13276,7 +13276,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39962;
+                            readonly id: 40036;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16262:6:156";
@@ -13288,12 +13288,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39965;
+                        readonly id: 40039;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39970;
+                        readonly scope: 40044;
                         readonly src: "16279:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13302,7 +13302,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39964;
+                            readonly id: 40038;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16279:6:156";
@@ -13316,16 +13316,16 @@ export declare const VmSafe: {
                     readonly src: "16261:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39969;
+                    readonly id: 40043;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39968;
+                        readonly id: 40042;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39970;
+                        readonly scope: 40044;
                         readonly src: "16314:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -13334,7 +13334,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 39967;
+                            readonly id: 40041;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16314:5:156";
@@ -13347,12 +13347,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "16313:14:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39980;
+                readonly id: 40054;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "16333:97:156";
                 readonly nodes: readonly [];
@@ -13363,16 +13363,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonBytesArray";
                 readonly nameLocation: "16342:19:156";
                 readonly parameters: {
-                    readonly id: 39975;
+                    readonly id: 40049;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39972;
+                        readonly id: 40046;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39980;
+                        readonly scope: 40054;
                         readonly src: "16362:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13381,7 +13381,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39971;
+                            readonly id: 40045;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16362:6:156";
@@ -13393,12 +13393,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39974;
+                        readonly id: 40048;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39980;
+                        readonly scope: 40054;
                         readonly src: "16379:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13407,7 +13407,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39973;
+                            readonly id: 40047;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16379:6:156";
@@ -13421,16 +13421,16 @@ export declare const VmSafe: {
                     readonly src: "16361:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39979;
+                    readonly id: 40053;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39978;
+                        readonly id: 40052;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39980;
+                        readonly scope: 40054;
                         readonly src: "16414:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -13440,7 +13440,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39976;
+                                readonly id: 40050;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "16414:5:156";
@@ -13449,7 +13449,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes";
                                 };
                             };
-                            readonly id: 39977;
+                            readonly id: 40051;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "16414:7:156";
                             readonly typeDescriptions: {
@@ -13461,12 +13461,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "16413:16:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39989;
+                readonly id: 40063;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "16435:87:156";
                 readonly nodes: readonly [];
@@ -13477,16 +13477,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonBytes32";
                 readonly nameLocation: "16444:16:156";
                 readonly parameters: {
-                    readonly id: 39985;
+                    readonly id: 40059;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39982;
+                        readonly id: 40056;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39989;
+                        readonly scope: 40063;
                         readonly src: "16461:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13495,7 +13495,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39981;
+                            readonly id: 40055;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16461:6:156";
@@ -13507,12 +13507,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39984;
+                        readonly id: 40058;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39989;
+                        readonly scope: 40063;
                         readonly src: "16478:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13521,7 +13521,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39983;
+                            readonly id: 40057;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16478:6:156";
@@ -13535,16 +13535,16 @@ export declare const VmSafe: {
                     readonly src: "16460:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39988;
+                    readonly id: 40062;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39987;
+                        readonly id: 40061;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39989;
+                        readonly scope: 40063;
                         readonly src: "16513:7:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -13553,7 +13553,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 39986;
+                            readonly id: 40060;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16513:7:156";
@@ -13566,12 +13566,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "16512:9:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 39999;
+                readonly id: 40073;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "16527:101:156";
                 readonly nodes: readonly [];
@@ -13582,16 +13582,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonBytes32Array";
                 readonly nameLocation: "16536:21:156";
                 readonly parameters: {
-                    readonly id: 39994;
+                    readonly id: 40068;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39991;
+                        readonly id: 40065;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39999;
+                        readonly scope: 40073;
                         readonly src: "16558:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13600,7 +13600,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39990;
+                            readonly id: 40064;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16558:6:156";
@@ -13612,12 +13612,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 39993;
+                        readonly id: 40067;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39999;
+                        readonly scope: 40073;
                         readonly src: "16575:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13626,7 +13626,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 39992;
+                            readonly id: 40066;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16575:6:156";
@@ -13640,16 +13640,16 @@ export declare const VmSafe: {
                     readonly src: "16557:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 39998;
+                    readonly id: 40072;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 39997;
+                        readonly id: 40071;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 39999;
+                        readonly scope: 40073;
                         readonly src: "16610:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -13659,7 +13659,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 39995;
+                                readonly id: 40069;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "16610:7:156";
@@ -13668,7 +13668,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 39996;
+                            readonly id: 40070;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "16610:9:156";
                             readonly typeDescriptions: {
@@ -13680,12 +13680,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "16609:18:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40009;
+                readonly id: 40083;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "16681:106:156";
                 readonly nodes: readonly [];
@@ -13696,16 +13696,16 @@ export declare const VmSafe: {
                 readonly name: "parseJsonKeys";
                 readonly nameLocation: "16690:13:156";
                 readonly parameters: {
-                    readonly id: 40004;
+                    readonly id: 40078;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40001;
+                        readonly id: 40075;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "16720:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40009;
+                        readonly scope: 40083;
                         readonly src: "16704:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13714,7 +13714,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40000;
+                            readonly id: 40074;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16704:6:156";
@@ -13726,12 +13726,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40003;
+                        readonly id: 40077;
                         readonly mutability: "mutable";
                         readonly name: "key";
                         readonly nameLocation: "16742:3:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40009;
+                        readonly scope: 40083;
                         readonly src: "16726:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13740,7 +13740,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40002;
+                            readonly id: 40076;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "16726:6:156";
@@ -13754,16 +13754,16 @@ export declare const VmSafe: {
                     readonly src: "16703:43:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40008;
+                    readonly id: 40082;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40007;
+                        readonly id: 40081;
                         readonly mutability: "mutable";
                         readonly name: "keys";
                         readonly nameLocation: "16781:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40009;
+                        readonly scope: 40083;
                         readonly src: "16765:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -13773,7 +13773,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40005;
+                                readonly id: 40079;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "16765:6:156";
@@ -13782,7 +13782,7 @@ export declare const VmSafe: {
                                     readonly typeString: "string";
                                 };
                             };
-                            readonly id: 40006;
+                            readonly id: 40080;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "16765:8:156";
                             readonly typeDescriptions: {
@@ -13794,12 +13794,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "16764:22:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40020;
+                readonly id: 40094;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "16983:142:156";
                 readonly nodes: readonly [];
@@ -13810,16 +13810,16 @@ export declare const VmSafe: {
                 readonly name: "serializeBool";
                 readonly nameLocation: "16992:13:156";
                 readonly parameters: {
-                    readonly id: 40016;
+                    readonly id: 40090;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40011;
+                        readonly id: 40085;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "17022:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40020;
+                        readonly scope: 40094;
                         readonly src: "17006:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13828,7 +13828,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40010;
+                            readonly id: 40084;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17006:6:156";
@@ -13840,12 +13840,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40013;
+                        readonly id: 40087;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "17049:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40020;
+                        readonly scope: 40094;
                         readonly src: "17033:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13854,7 +13854,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40012;
+                            readonly id: 40086;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17033:6:156";
@@ -13866,12 +13866,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40015;
+                        readonly id: 40089;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "17064:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40020;
+                        readonly scope: 40094;
                         readonly src: "17059:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -13880,7 +13880,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40014;
+                            readonly id: 40088;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17059:4:156";
@@ -13894,16 +13894,16 @@ export declare const VmSafe: {
                     readonly src: "17005:65:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40019;
+                    readonly id: 40093;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40018;
+                        readonly id: 40092;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "17119:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40020;
+                        readonly scope: 40094;
                         readonly src: "17105:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -13912,7 +13912,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40017;
+                            readonly id: 40091;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17105:6:156";
@@ -13925,12 +13925,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "17104:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40031;
+                readonly id: 40105;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "17130:145:156";
                 readonly nodes: readonly [];
@@ -13941,16 +13941,16 @@ export declare const VmSafe: {
                 readonly name: "serializeUint";
                 readonly nameLocation: "17139:13:156";
                 readonly parameters: {
-                    readonly id: 40027;
+                    readonly id: 40101;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40022;
+                        readonly id: 40096;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "17169:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40031;
+                        readonly scope: 40105;
                         readonly src: "17153:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13959,7 +13959,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40021;
+                            readonly id: 40095;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17153:6:156";
@@ -13971,12 +13971,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40024;
+                        readonly id: 40098;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "17196:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40031;
+                        readonly scope: 40105;
                         readonly src: "17180:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -13985,7 +13985,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40023;
+                            readonly id: 40097;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17180:6:156";
@@ -13997,12 +13997,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40026;
+                        readonly id: 40100;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "17214:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40031;
+                        readonly scope: 40105;
                         readonly src: "17206:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -14011,7 +14011,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40025;
+                            readonly id: 40099;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17206:7:156";
@@ -14025,16 +14025,16 @@ export declare const VmSafe: {
                     readonly src: "17152:68:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40030;
+                    readonly id: 40104;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40029;
+                        readonly id: 40103;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "17269:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40031;
+                        readonly scope: 40105;
                         readonly src: "17255:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -14043,7 +14043,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40028;
+                            readonly id: 40102;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17255:6:156";
@@ -14056,12 +14056,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "17254:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40042;
+                readonly id: 40116;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "17280:143:156";
                 readonly nodes: readonly [];
@@ -14072,16 +14072,16 @@ export declare const VmSafe: {
                 readonly name: "serializeInt";
                 readonly nameLocation: "17289:12:156";
                 readonly parameters: {
-                    readonly id: 40038;
+                    readonly id: 40112;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40033;
+                        readonly id: 40107;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "17318:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40042;
+                        readonly scope: 40116;
                         readonly src: "17302:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14090,7 +14090,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40032;
+                            readonly id: 40106;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17302:6:156";
@@ -14102,12 +14102,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40035;
+                        readonly id: 40109;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "17345:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40042;
+                        readonly scope: 40116;
                         readonly src: "17329:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14116,7 +14116,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40034;
+                            readonly id: 40108;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17329:6:156";
@@ -14128,12 +14128,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40037;
+                        readonly id: 40111;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "17362:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40042;
+                        readonly scope: 40116;
                         readonly src: "17355:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -14142,7 +14142,7 @@ export declare const VmSafe: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 40036;
+                            readonly id: 40110;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17355:6:156";
@@ -14156,16 +14156,16 @@ export declare const VmSafe: {
                     readonly src: "17301:67:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40041;
+                    readonly id: 40115;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40040;
+                        readonly id: 40114;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "17417:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40042;
+                        readonly scope: 40116;
                         readonly src: "17403:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -14174,7 +14174,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40039;
+                            readonly id: 40113;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17403:6:156";
@@ -14187,12 +14187,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "17402:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40053;
+                readonly id: 40127;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "17428:148:156";
                 readonly nodes: readonly [];
@@ -14203,16 +14203,16 @@ export declare const VmSafe: {
                 readonly name: "serializeAddress";
                 readonly nameLocation: "17437:16:156";
                 readonly parameters: {
-                    readonly id: 40049;
+                    readonly id: 40123;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40044;
+                        readonly id: 40118;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "17470:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40053;
+                        readonly scope: 40127;
                         readonly src: "17454:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14221,7 +14221,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40043;
+                            readonly id: 40117;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17454:6:156";
@@ -14233,12 +14233,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40046;
+                        readonly id: 40120;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "17497:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40053;
+                        readonly scope: 40127;
                         readonly src: "17481:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14247,7 +14247,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40045;
+                            readonly id: 40119;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17481:6:156";
@@ -14259,12 +14259,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40048;
+                        readonly id: 40122;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "17515:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40053;
+                        readonly scope: 40127;
                         readonly src: "17507:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -14273,7 +14273,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40047;
+                            readonly id: 40121;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17507:7:156";
@@ -14288,16 +14288,16 @@ export declare const VmSafe: {
                     readonly src: "17453:68:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40052;
+                    readonly id: 40126;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40051;
+                        readonly id: 40125;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "17570:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40053;
+                        readonly scope: 40127;
                         readonly src: "17556:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -14306,7 +14306,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40050;
+                            readonly id: 40124;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17556:6:156";
@@ -14319,12 +14319,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "17555:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40064;
+                readonly id: 40138;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "17581:148:156";
                 readonly nodes: readonly [];
@@ -14335,16 +14335,16 @@ export declare const VmSafe: {
                 readonly name: "serializeBytes32";
                 readonly nameLocation: "17590:16:156";
                 readonly parameters: {
-                    readonly id: 40060;
+                    readonly id: 40134;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40055;
+                        readonly id: 40129;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "17623:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40064;
+                        readonly scope: 40138;
                         readonly src: "17607:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14353,7 +14353,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40054;
+                            readonly id: 40128;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17607:6:156";
@@ -14365,12 +14365,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40057;
+                        readonly id: 40131;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "17650:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40064;
+                        readonly scope: 40138;
                         readonly src: "17634:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14379,7 +14379,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40056;
+                            readonly id: 40130;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17634:6:156";
@@ -14391,12 +14391,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40059;
+                        readonly id: 40133;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "17668:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40064;
+                        readonly scope: 40138;
                         readonly src: "17660:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -14405,7 +14405,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40058;
+                            readonly id: 40132;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17660:7:156";
@@ -14419,16 +14419,16 @@ export declare const VmSafe: {
                     readonly src: "17606:68:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40063;
+                    readonly id: 40137;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40062;
+                        readonly id: 40136;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "17723:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40064;
+                        readonly scope: 40138;
                         readonly src: "17709:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -14437,7 +14437,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40061;
+                            readonly id: 40135;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17709:6:156";
@@ -14450,12 +14450,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "17708:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40075;
+                readonly id: 40149;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "17734:155:156";
                 readonly nodes: readonly [];
@@ -14466,16 +14466,16 @@ export declare const VmSafe: {
                 readonly name: "serializeString";
                 readonly nameLocation: "17743:15:156";
                 readonly parameters: {
-                    readonly id: 40071;
+                    readonly id: 40145;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40066;
+                        readonly id: 40140;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "17775:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40075;
+                        readonly scope: 40149;
                         readonly src: "17759:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14484,7 +14484,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40065;
+                            readonly id: 40139;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17759:6:156";
@@ -14496,12 +14496,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40068;
+                        readonly id: 40142;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "17802:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40075;
+                        readonly scope: 40149;
                         readonly src: "17786:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14510,7 +14510,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40067;
+                            readonly id: 40141;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17786:6:156";
@@ -14522,12 +14522,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40070;
+                        readonly id: 40144;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "17828:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40075;
+                        readonly scope: 40149;
                         readonly src: "17812:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14536,7 +14536,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40069;
+                            readonly id: 40143;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17812:6:156";
@@ -14550,16 +14550,16 @@ export declare const VmSafe: {
                     readonly src: "17758:76:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40074;
+                    readonly id: 40148;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40073;
+                        readonly id: 40147;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "17883:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40075;
+                        readonly scope: 40149;
                         readonly src: "17869:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -14568,7 +14568,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40072;
+                            readonly id: 40146;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17869:6:156";
@@ -14581,12 +14581,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "17868:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40086;
+                readonly id: 40160;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "17894:153:156";
                 readonly nodes: readonly [];
@@ -14597,16 +14597,16 @@ export declare const VmSafe: {
                 readonly name: "serializeBytes";
                 readonly nameLocation: "17903:14:156";
                 readonly parameters: {
-                    readonly id: 40082;
+                    readonly id: 40156;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40077;
+                        readonly id: 40151;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "17934:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40086;
+                        readonly scope: 40160;
                         readonly src: "17918:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14615,7 +14615,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40076;
+                            readonly id: 40150;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17918:6:156";
@@ -14627,12 +14627,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40079;
+                        readonly id: 40153;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "17961:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40086;
+                        readonly scope: 40160;
                         readonly src: "17945:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14641,7 +14641,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40078;
+                            readonly id: 40152;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17945:6:156";
@@ -14653,12 +14653,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40081;
+                        readonly id: 40155;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "17986:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40086;
+                        readonly scope: 40160;
                         readonly src: "17971:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14667,7 +14667,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40080;
+                            readonly id: 40154;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "17971:5:156";
@@ -14681,16 +14681,16 @@ export declare const VmSafe: {
                     readonly src: "17917:75:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40085;
+                    readonly id: 40159;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40084;
+                        readonly id: 40158;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "18041:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40086;
+                        readonly scope: 40160;
                         readonly src: "18027:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -14699,7 +14699,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40083;
+                            readonly id: 40157;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18027:6:156";
@@ -14712,12 +14712,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "18026:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40098;
+                readonly id: 40172;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "18053:154:156";
                 readonly nodes: readonly [];
@@ -14728,16 +14728,16 @@ export declare const VmSafe: {
                 readonly name: "serializeBool";
                 readonly nameLocation: "18062:13:156";
                 readonly parameters: {
-                    readonly id: 40094;
+                    readonly id: 40168;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40088;
+                        readonly id: 40162;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "18092:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40098;
+                        readonly scope: 40172;
                         readonly src: "18076:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14746,7 +14746,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40087;
+                            readonly id: 40161;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18076:6:156";
@@ -14758,12 +14758,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40090;
+                        readonly id: 40164;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "18119:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40098;
+                        readonly scope: 40172;
                         readonly src: "18103:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14772,7 +14772,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40089;
+                            readonly id: 40163;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18103:6:156";
@@ -14784,12 +14784,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40093;
+                        readonly id: 40167;
                         readonly mutability: "mutable";
                         readonly name: "values";
                         readonly nameLocation: "18145:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40098;
+                        readonly scope: 40172;
                         readonly src: "18129:22:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14799,7 +14799,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40091;
+                                readonly id: 40165;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "18129:4:156";
@@ -14808,7 +14808,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bool";
                                 };
                             };
-                            readonly id: 40092;
+                            readonly id: 40166;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "18129:6:156";
                             readonly typeDescriptions: {
@@ -14821,16 +14821,16 @@ export declare const VmSafe: {
                     readonly src: "18075:77:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40097;
+                    readonly id: 40171;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40096;
+                        readonly id: 40170;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "18201:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40098;
+                        readonly scope: 40172;
                         readonly src: "18187:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -14839,7 +14839,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40095;
+                            readonly id: 40169;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18187:6:156";
@@ -14852,12 +14852,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "18186:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40110;
+                readonly id: 40184;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "18212:157:156";
                 readonly nodes: readonly [];
@@ -14868,16 +14868,16 @@ export declare const VmSafe: {
                 readonly name: "serializeUint";
                 readonly nameLocation: "18221:13:156";
                 readonly parameters: {
-                    readonly id: 40106;
+                    readonly id: 40180;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40100;
+                        readonly id: 40174;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "18251:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40110;
+                        readonly scope: 40184;
                         readonly src: "18235:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14886,7 +14886,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40099;
+                            readonly id: 40173;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18235:6:156";
@@ -14898,12 +14898,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40102;
+                        readonly id: 40176;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "18278:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40110;
+                        readonly scope: 40184;
                         readonly src: "18262:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14912,7 +14912,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40101;
+                            readonly id: 40175;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18262:6:156";
@@ -14924,12 +14924,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40105;
+                        readonly id: 40179;
                         readonly mutability: "mutable";
                         readonly name: "values";
                         readonly nameLocation: "18307:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40110;
+                        readonly scope: 40184;
                         readonly src: "18288:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -14939,7 +14939,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40103;
+                                readonly id: 40177;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "18288:7:156";
@@ -14948,7 +14948,7 @@ export declare const VmSafe: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 40104;
+                            readonly id: 40178;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "18288:9:156";
                             readonly typeDescriptions: {
@@ -14961,16 +14961,16 @@ export declare const VmSafe: {
                     readonly src: "18234:80:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40109;
+                    readonly id: 40183;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40108;
+                        readonly id: 40182;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "18363:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40110;
+                        readonly scope: 40184;
                         readonly src: "18349:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -14979,7 +14979,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40107;
+                            readonly id: 40181;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18349:6:156";
@@ -14992,12 +14992,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "18348:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40122;
+                readonly id: 40196;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "18374:155:156";
                 readonly nodes: readonly [];
@@ -15008,16 +15008,16 @@ export declare const VmSafe: {
                 readonly name: "serializeInt";
                 readonly nameLocation: "18383:12:156";
                 readonly parameters: {
-                    readonly id: 40118;
+                    readonly id: 40192;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40112;
+                        readonly id: 40186;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "18412:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40122;
+                        readonly scope: 40196;
                         readonly src: "18396:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15026,7 +15026,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40111;
+                            readonly id: 40185;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18396:6:156";
@@ -15038,12 +15038,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40114;
+                        readonly id: 40188;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "18439:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40122;
+                        readonly scope: 40196;
                         readonly src: "18423:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15052,7 +15052,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40113;
+                            readonly id: 40187;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18423:6:156";
@@ -15064,12 +15064,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40117;
+                        readonly id: 40191;
                         readonly mutability: "mutable";
                         readonly name: "values";
                         readonly nameLocation: "18467:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40122;
+                        readonly scope: 40196;
                         readonly src: "18449:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15079,7 +15079,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40115;
+                                readonly id: 40189;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "18449:6:156";
@@ -15088,7 +15088,7 @@ export declare const VmSafe: {
                                     readonly typeString: "int256";
                                 };
                             };
-                            readonly id: 40116;
+                            readonly id: 40190;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "18449:8:156";
                             readonly typeDescriptions: {
@@ -15101,16 +15101,16 @@ export declare const VmSafe: {
                     readonly src: "18395:79:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40121;
+                    readonly id: 40195;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40120;
+                        readonly id: 40194;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "18523:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40122;
+                        readonly scope: 40196;
                         readonly src: "18509:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -15119,7 +15119,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40119;
+                            readonly id: 40193;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18509:6:156";
@@ -15132,12 +15132,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "18508:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40134;
+                readonly id: 40208;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "18534:160:156";
                 readonly nodes: readonly [];
@@ -15148,16 +15148,16 @@ export declare const VmSafe: {
                 readonly name: "serializeAddress";
                 readonly nameLocation: "18543:16:156";
                 readonly parameters: {
-                    readonly id: 40130;
+                    readonly id: 40204;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40124;
+                        readonly id: 40198;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "18576:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40134;
+                        readonly scope: 40208;
                         readonly src: "18560:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15166,7 +15166,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40123;
+                            readonly id: 40197;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18560:6:156";
@@ -15178,12 +15178,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40126;
+                        readonly id: 40200;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "18603:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40134;
+                        readonly scope: 40208;
                         readonly src: "18587:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15192,7 +15192,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40125;
+                            readonly id: 40199;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18587:6:156";
@@ -15204,12 +15204,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40129;
+                        readonly id: 40203;
                         readonly mutability: "mutable";
                         readonly name: "values";
                         readonly nameLocation: "18632:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40134;
+                        readonly scope: 40208;
                         readonly src: "18613:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15219,7 +15219,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40127;
+                                readonly id: 40201;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "18613:7:156";
@@ -15229,7 +15229,7 @@ export declare const VmSafe: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 40128;
+                            readonly id: 40202;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "18613:9:156";
                             readonly typeDescriptions: {
@@ -15242,16 +15242,16 @@ export declare const VmSafe: {
                     readonly src: "18559:80:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40133;
+                    readonly id: 40207;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40132;
+                        readonly id: 40206;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "18688:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40134;
+                        readonly scope: 40208;
                         readonly src: "18674:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -15260,7 +15260,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40131;
+                            readonly id: 40205;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18674:6:156";
@@ -15273,12 +15273,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "18673:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40146;
+                readonly id: 40220;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "18699:160:156";
                 readonly nodes: readonly [];
@@ -15289,16 +15289,16 @@ export declare const VmSafe: {
                 readonly name: "serializeBytes32";
                 readonly nameLocation: "18708:16:156";
                 readonly parameters: {
-                    readonly id: 40142;
+                    readonly id: 40216;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40136;
+                        readonly id: 40210;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "18741:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40146;
+                        readonly scope: 40220;
                         readonly src: "18725:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15307,7 +15307,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40135;
+                            readonly id: 40209;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18725:6:156";
@@ -15319,12 +15319,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40138;
+                        readonly id: 40212;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "18768:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40146;
+                        readonly scope: 40220;
                         readonly src: "18752:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15333,7 +15333,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40137;
+                            readonly id: 40211;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18752:6:156";
@@ -15345,12 +15345,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40141;
+                        readonly id: 40215;
                         readonly mutability: "mutable";
                         readonly name: "values";
                         readonly nameLocation: "18797:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40146;
+                        readonly scope: 40220;
                         readonly src: "18778:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15360,7 +15360,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40139;
+                                readonly id: 40213;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "18778:7:156";
@@ -15369,7 +15369,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 40140;
+                            readonly id: 40214;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "18778:9:156";
                             readonly typeDescriptions: {
@@ -15382,16 +15382,16 @@ export declare const VmSafe: {
                     readonly src: "18724:80:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40145;
+                    readonly id: 40219;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40144;
+                        readonly id: 40218;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "18853:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40146;
+                        readonly scope: 40220;
                         readonly src: "18839:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -15400,7 +15400,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40143;
+                            readonly id: 40217;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18839:6:156";
@@ -15413,12 +15413,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "18838:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40158;
+                readonly id: 40232;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "18864:158:156";
                 readonly nodes: readonly [];
@@ -15429,16 +15429,16 @@ export declare const VmSafe: {
                 readonly name: "serializeString";
                 readonly nameLocation: "18873:15:156";
                 readonly parameters: {
-                    readonly id: 40154;
+                    readonly id: 40228;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40148;
+                        readonly id: 40222;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "18905:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40158;
+                        readonly scope: 40232;
                         readonly src: "18889:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15447,7 +15447,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40147;
+                            readonly id: 40221;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18889:6:156";
@@ -15459,12 +15459,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40150;
+                        readonly id: 40224;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "18932:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40158;
+                        readonly scope: 40232;
                         readonly src: "18916:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15473,7 +15473,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40149;
+                            readonly id: 40223;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "18916:6:156";
@@ -15485,12 +15485,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40153;
+                        readonly id: 40227;
                         readonly mutability: "mutable";
                         readonly name: "values";
                         readonly nameLocation: "18960:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40158;
+                        readonly scope: 40232;
                         readonly src: "18942:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15500,7 +15500,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40151;
+                                readonly id: 40225;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "18942:6:156";
@@ -15509,7 +15509,7 @@ export declare const VmSafe: {
                                     readonly typeString: "string";
                                 };
                             };
-                            readonly id: 40152;
+                            readonly id: 40226;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "18942:8:156";
                             readonly typeDescriptions: {
@@ -15522,16 +15522,16 @@ export declare const VmSafe: {
                     readonly src: "18888:79:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40157;
+                    readonly id: 40231;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40156;
+                        readonly id: 40230;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "19016:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40158;
+                        readonly scope: 40232;
                         readonly src: "19002:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -15540,7 +15540,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40155;
+                            readonly id: 40229;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "19002:6:156";
@@ -15553,12 +15553,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "19001:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40170;
+                readonly id: 40244;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "19027:156:156";
                 readonly nodes: readonly [];
@@ -15569,16 +15569,16 @@ export declare const VmSafe: {
                 readonly name: "serializeBytes";
                 readonly nameLocation: "19036:14:156";
                 readonly parameters: {
-                    readonly id: 40166;
+                    readonly id: 40240;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40160;
+                        readonly id: 40234;
                         readonly mutability: "mutable";
                         readonly name: "objectKey";
                         readonly nameLocation: "19067:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40170;
+                        readonly scope: 40244;
                         readonly src: "19051:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15587,7 +15587,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40159;
+                            readonly id: 40233;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "19051:6:156";
@@ -15599,12 +15599,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40162;
+                        readonly id: 40236;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "19094:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40170;
+                        readonly scope: 40244;
                         readonly src: "19078:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15613,7 +15613,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40161;
+                            readonly id: 40235;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "19078:6:156";
@@ -15625,12 +15625,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40165;
+                        readonly id: 40239;
                         readonly mutability: "mutable";
                         readonly name: "values";
                         readonly nameLocation: "19121:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40170;
+                        readonly scope: 40244;
                         readonly src: "19104:23:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15640,7 +15640,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40163;
+                                readonly id: 40237;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "19104:5:156";
@@ -15649,7 +15649,7 @@ export declare const VmSafe: {
                                     readonly typeString: "bytes";
                                 };
                             };
-                            readonly id: 40164;
+                            readonly id: 40238;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "19104:7:156";
                             readonly typeDescriptions: {
@@ -15662,16 +15662,16 @@ export declare const VmSafe: {
                     readonly src: "19050:78:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40169;
+                    readonly id: 40243;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40168;
+                        readonly id: 40242;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "19177:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40170;
+                        readonly scope: 40244;
                         readonly src: "19163:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -15680,7 +15680,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40167;
+                            readonly id: 40241;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "19163:6:156";
@@ -15693,12 +15693,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "19162:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40177;
+                readonly id: 40251;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "20424:72:156";
                 readonly nodes: readonly [];
@@ -15709,16 +15709,16 @@ export declare const VmSafe: {
                 readonly name: "writeJson";
                 readonly nameLocation: "20433:9:156";
                 readonly parameters: {
-                    readonly id: 40175;
+                    readonly id: 40249;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40172;
+                        readonly id: 40246;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "20459:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40177;
+                        readonly scope: 40251;
                         readonly src: "20443:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15727,7 +15727,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40171;
+                            readonly id: 40245;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "20443:6:156";
@@ -15739,12 +15739,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40174;
+                        readonly id: 40248;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "20481:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40177;
+                        readonly scope: 40251;
                         readonly src: "20465:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15753,7 +15753,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40173;
+                            readonly id: 40247;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "20465:6:156";
@@ -15767,17 +15767,17 @@ export declare const VmSafe: {
                     readonly src: "20442:44:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40176;
+                    readonly id: 40250;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "20495:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40186;
+                readonly id: 40260;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "20717:98:156";
                 readonly nodes: readonly [];
@@ -15788,16 +15788,16 @@ export declare const VmSafe: {
                 readonly name: "writeJson";
                 readonly nameLocation: "20726:9:156";
                 readonly parameters: {
-                    readonly id: 40184;
+                    readonly id: 40258;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40179;
+                        readonly id: 40253;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "20752:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40186;
+                        readonly scope: 40260;
                         readonly src: "20736:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15806,7 +15806,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40178;
+                            readonly id: 40252;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "20736:6:156";
@@ -15818,12 +15818,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40181;
+                        readonly id: 40255;
                         readonly mutability: "mutable";
                         readonly name: "path";
                         readonly nameLocation: "20774:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40186;
+                        readonly scope: 40260;
                         readonly src: "20758:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15832,7 +15832,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40180;
+                            readonly id: 40254;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "20758:6:156";
@@ -15844,12 +15844,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40183;
+                        readonly id: 40257;
                         readonly mutability: "mutable";
                         readonly name: "valueKey";
                         readonly nameLocation: "20796:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40186;
+                        readonly scope: 40260;
                         readonly src: "20780:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15858,7 +15858,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40182;
+                            readonly id: 40256;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "20780:6:156";
@@ -15872,17 +15872,17 @@ export declare const VmSafe: {
                     readonly src: "20735:70:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40185;
+                    readonly id: 40259;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "20814:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40193;
+                readonly id: 40267;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "20867:85:156";
                 readonly nodes: readonly [];
@@ -15893,16 +15893,16 @@ export declare const VmSafe: {
                 readonly name: "rpcUrl";
                 readonly nameLocation: "20876:6:156";
                 readonly parameters: {
-                    readonly id: 40189;
+                    readonly id: 40263;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40188;
+                        readonly id: 40262;
                         readonly mutability: "mutable";
                         readonly name: "rpcAlias";
                         readonly nameLocation: "20899:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40193;
+                        readonly scope: 40267;
                         readonly src: "20883:24:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -15911,7 +15911,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40187;
+                            readonly id: 40261;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "20883:6:156";
@@ -15925,16 +15925,16 @@ export declare const VmSafe: {
                     readonly src: "20882:26:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40192;
+                    readonly id: 40266;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40191;
+                        readonly id: 40265;
                         readonly mutability: "mutable";
                         readonly name: "json";
                         readonly nameLocation: "20946:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40193;
+                        readonly scope: 40267;
                         readonly src: "20932:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -15943,7 +15943,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40190;
+                            readonly id: 40264;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "20932:6:156";
@@ -15956,12 +15956,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "20931:20:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40201;
+                readonly id: 40275;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "21020:67:156";
                 readonly nodes: readonly [];
@@ -15972,22 +15972,22 @@ export declare const VmSafe: {
                 readonly name: "rpcUrls";
                 readonly nameLocation: "21029:7:156";
                 readonly parameters: {
-                    readonly id: 40194;
+                    readonly id: 40268;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21036:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40200;
+                    readonly id: 40274;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40199;
+                        readonly id: 40273;
                         readonly mutability: "mutable";
                         readonly name: "urls";
                         readonly nameLocation: "21081:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40201;
+                        readonly scope: 40275;
                         readonly src: "21062:23:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -15998,7 +15998,7 @@ export declare const VmSafe: {
                         readonly typeName: {
                             readonly baseType: {
                                 readonly baseType: {
-                                    readonly id: 40195;
+                                    readonly id: 40269;
                                     readonly name: "string";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "21062:6:156";
@@ -16007,10 +16007,10 @@ export declare const VmSafe: {
                                         readonly typeString: "string";
                                     };
                                 };
-                                readonly id: 40197;
+                                readonly id: 40271;
                                 readonly length: {
                                     readonly hexValue: "32";
-                                    readonly id: 40196;
+                                    readonly id: 40270;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -16031,7 +16031,7 @@ export declare const VmSafe: {
                                     readonly typeString: "string[2]";
                                 };
                             };
-                            readonly id: 40198;
+                            readonly id: 40272;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "21062:11:156";
                             readonly typeDescriptions: {
@@ -16043,12 +16043,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "21061:25:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40208;
+                readonly id: 40282;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "21150:67:156";
                 readonly nodes: readonly [];
@@ -16059,53 +16059,53 @@ export declare const VmSafe: {
                 readonly name: "rpcUrlStructs";
                 readonly nameLocation: "21159:13:156";
                 readonly parameters: {
-                    readonly id: 40202;
+                    readonly id: 40276;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21172:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40207;
+                    readonly id: 40281;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40206;
+                        readonly id: 40280;
                         readonly mutability: "mutable";
                         readonly name: "urls";
                         readonly nameLocation: "21211:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40208;
+                        readonly scope: 40282;
                         readonly src: "21198:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_array$_t_struct$_Rpc_$39189_memory_ptr_$dyn_memory_ptr";
+                            readonly typeIdentifier: "t_array$_t_struct$_Rpc_$39263_memory_ptr_$dyn_memory_ptr";
                             readonly typeString: "struct VmSafe.Rpc[]";
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40204;
+                                readonly id: 40278;
                                 readonly nodeType: "UserDefinedTypeName";
                                 readonly pathNode: {
-                                    readonly id: 40203;
+                                    readonly id: 40277;
                                     readonly name: "Rpc";
                                     readonly nameLocations: readonly ["21198:3:156"];
                                     readonly nodeType: "IdentifierPath";
-                                    readonly referencedDeclaration: 39189;
+                                    readonly referencedDeclaration: 39263;
                                     readonly src: "21198:3:156";
                                 };
-                                readonly referencedDeclaration: 39189;
+                                readonly referencedDeclaration: 39263;
                                 readonly src: "21198:3:156";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Rpc_$39189_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_Rpc_$39263_storage_ptr";
                                     readonly typeString: "struct VmSafe.Rpc";
                                 };
                             };
-                            readonly id: 40205;
+                            readonly id: 40279;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "21198:5:156";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_array$_t_struct$_Rpc_$39189_storage_$dyn_storage_ptr";
+                                readonly typeIdentifier: "t_array$_t_struct$_Rpc_$39263_storage_$dyn_storage_ptr";
                                 readonly typeString: "struct VmSafe.Rpc[]";
                             };
                         };
@@ -16113,12 +16113,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "21197:19:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40213;
+                readonly id: 40287;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "21310:46:156";
                 readonly nodes: readonly [];
@@ -16129,16 +16129,16 @@ export declare const VmSafe: {
                 readonly name: "assume";
                 readonly nameLocation: "21319:6:156";
                 readonly parameters: {
-                    readonly id: 40211;
+                    readonly id: 40285;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40210;
+                        readonly id: 40284;
                         readonly mutability: "mutable";
                         readonly name: "condition";
                         readonly nameLocation: "21331:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40213;
+                        readonly scope: 40287;
                         readonly src: "21326:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16147,7 +16147,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40209;
+                            readonly id: 40283;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "21326:4:156";
@@ -16161,17 +16161,17 @@ export declare const VmSafe: {
                     readonly src: "21325:16:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40212;
+                    readonly id: 40286;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21355:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40216;
+                readonly id: 40290;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "21445:37:156";
                 readonly nodes: readonly [];
@@ -16182,23 +16182,23 @@ export declare const VmSafe: {
                 readonly name: "pauseGasMetering";
                 readonly nameLocation: "21454:16:156";
                 readonly parameters: {
-                    readonly id: 40214;
+                    readonly id: 40288;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21470:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40215;
+                    readonly id: 40289;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21481:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40219;
+                readonly id: 40293;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "21570:38:156";
                 readonly nodes: readonly [];
@@ -16209,23 +16209,23 @@ export declare const VmSafe: {
                 readonly name: "resumeGasMetering";
                 readonly nameLocation: "21579:17:156";
                 readonly parameters: {
-                    readonly id: 40217;
+                    readonly id: 40291;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21596:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40218;
+                    readonly id: 40292;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21607:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40224;
+                readonly id: 40298;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "21667:51:156";
                 readonly nodes: readonly [];
@@ -16236,16 +16236,16 @@ export declare const VmSafe: {
                 readonly name: "breakpoint";
                 readonly nameLocation: "21676:10:156";
                 readonly parameters: {
-                    readonly id: 40222;
+                    readonly id: 40296;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40221;
+                        readonly id: 40295;
                         readonly mutability: "mutable";
                         readonly name: "char";
                         readonly nameLocation: "21703:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40224;
+                        readonly scope: 40298;
                         readonly src: "21687:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -16254,7 +16254,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40220;
+                            readonly id: 40294;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "21687:6:156";
@@ -16268,17 +16268,17 @@ export declare const VmSafe: {
                     readonly src: "21686:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40223;
+                    readonly id: 40297;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21717:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40231;
+                readonly id: 40305;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "21789:63:156";
                 readonly nodes: readonly [];
@@ -16289,16 +16289,16 @@ export declare const VmSafe: {
                 readonly name: "breakpoint";
                 readonly nameLocation: "21798:10:156";
                 readonly parameters: {
-                    readonly id: 40229;
+                    readonly id: 40303;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40226;
+                        readonly id: 40300;
                         readonly mutability: "mutable";
                         readonly name: "char";
                         readonly nameLocation: "21825:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40231;
+                        readonly scope: 40305;
                         readonly src: "21809:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -16307,7 +16307,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40225;
+                            readonly id: 40299;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "21809:6:156";
@@ -16319,12 +16319,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40228;
+                        readonly id: 40302;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "21836:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40231;
+                        readonly scope: 40305;
                         readonly src: "21831:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16333,7 +16333,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40227;
+                            readonly id: 40301;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "21831:4:156";
@@ -16347,12 +16347,12 @@ export declare const VmSafe: {
                     readonly src: "21808:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40230;
+                    readonly id: 40304;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21851:0:156";
                 };
-                readonly scope: 40232;
+                readonly scope: 40306;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -16363,18 +16363,18 @@ export declare const VmSafe: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [40232];
+            readonly linearizedBaseContracts: readonly [40306];
             readonly name: "VmSafe";
             readonly nameLocation: "581:6:156";
-            readonly scope: 40705;
+            readonly scope: 40779;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }, {
-            readonly id: 40704;
+            readonly id: 40778;
             readonly nodeType: "ContractDefinition";
             readonly src: "21856:11610:156";
             readonly nodes: readonly [{
-                readonly id: 40239;
+                readonly id: 40313;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "21913:45:156";
                 readonly nodes: readonly [];
@@ -16385,16 +16385,16 @@ export declare const VmSafe: {
                 readonly name: "warp";
                 readonly nameLocation: "21922:4:156";
                 readonly parameters: {
-                    readonly id: 40237;
+                    readonly id: 40311;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40236;
+                        readonly id: 40310;
                         readonly mutability: "mutable";
                         readonly name: "newTimestamp";
                         readonly nameLocation: "21935:12:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40239;
+                        readonly scope: 40313;
                         readonly src: "21927:20:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16403,7 +16403,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40235;
+                            readonly id: 40309;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "21927:7:156";
@@ -16417,17 +16417,17 @@ export declare const VmSafe: {
                     readonly src: "21926:22:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40238;
+                    readonly id: 40312;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "21957:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40244;
+                readonly id: 40318;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "21988:42:156";
                 readonly nodes: readonly [];
@@ -16438,16 +16438,16 @@ export declare const VmSafe: {
                 readonly name: "roll";
                 readonly nameLocation: "21997:4:156";
                 readonly parameters: {
-                    readonly id: 40242;
+                    readonly id: 40316;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40241;
+                        readonly id: 40315;
                         readonly mutability: "mutable";
                         readonly name: "newHeight";
                         readonly nameLocation: "22010:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40244;
+                        readonly scope: 40318;
                         readonly src: "22002:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16456,7 +16456,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40240;
+                            readonly id: 40314;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22002:7:156";
@@ -16470,17 +16470,17 @@ export declare const VmSafe: {
                     readonly src: "22001:19:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40243;
+                    readonly id: 40317;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "22029:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40249;
+                readonly id: 40323;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "22061:42:156";
                 readonly nodes: readonly [];
@@ -16491,16 +16491,16 @@ export declare const VmSafe: {
                 readonly name: "fee";
                 readonly nameLocation: "22070:3:156";
                 readonly parameters: {
-                    readonly id: 40247;
+                    readonly id: 40321;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40246;
+                        readonly id: 40320;
                         readonly mutability: "mutable";
                         readonly name: "newBasefee";
                         readonly nameLocation: "22082:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40249;
+                        readonly scope: 40323;
                         readonly src: "22074:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16509,7 +16509,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40245;
+                            readonly id: 40319;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22074:7:156";
@@ -16523,17 +16523,17 @@ export declare const VmSafe: {
                     readonly src: "22073:20:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40248;
+                    readonly id: 40322;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "22102:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40254;
+                readonly id: 40328;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "22279:52:156";
                 readonly nodes: readonly [];
@@ -16544,16 +16544,16 @@ export declare const VmSafe: {
                 readonly name: "difficulty";
                 readonly nameLocation: "22288:10:156";
                 readonly parameters: {
-                    readonly id: 40252;
+                    readonly id: 40326;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40251;
+                        readonly id: 40325;
                         readonly mutability: "mutable";
                         readonly name: "newDifficulty";
                         readonly nameLocation: "22307:13:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40254;
+                        readonly scope: 40328;
                         readonly src: "22299:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16562,7 +16562,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40250;
+                            readonly id: 40324;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22299:7:156";
@@ -16576,17 +16576,17 @@ export declare const VmSafe: {
                     readonly src: "22298:23:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40253;
+                    readonly id: 40327;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "22330:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40259;
+                readonly id: 40333;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "22501:52:156";
                 readonly nodes: readonly [];
@@ -16597,16 +16597,16 @@ export declare const VmSafe: {
                 readonly name: "prevrandao";
                 readonly nameLocation: "22510:10:156";
                 readonly parameters: {
-                    readonly id: 40257;
+                    readonly id: 40331;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40256;
+                        readonly id: 40330;
                         readonly mutability: "mutable";
                         readonly name: "newPrevrandao";
                         readonly nameLocation: "22529:13:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40259;
+                        readonly scope: 40333;
                         readonly src: "22521:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16615,7 +16615,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40255;
+                            readonly id: 40329;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22521:7:156";
@@ -16629,17 +16629,17 @@ export declare const VmSafe: {
                     readonly src: "22520:23:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40258;
+                    readonly id: 40332;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "22552:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40264;
+                readonly id: 40338;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "22584:46:156";
                 readonly nodes: readonly [];
@@ -16650,16 +16650,16 @@ export declare const VmSafe: {
                 readonly name: "chainId";
                 readonly nameLocation: "22593:7:156";
                 readonly parameters: {
-                    readonly id: 40262;
+                    readonly id: 40336;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40261;
+                        readonly id: 40335;
                         readonly mutability: "mutable";
                         readonly name: "newChainId";
                         readonly nameLocation: "22609:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40264;
+                        readonly scope: 40338;
                         readonly src: "22601:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16668,7 +16668,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40260;
+                            readonly id: 40334;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22601:7:156";
@@ -16682,17 +16682,17 @@ export declare const VmSafe: {
                     readonly src: "22600:20:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40263;
+                    readonly id: 40337;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "22629:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40269;
+                readonly id: 40343;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "22659:50:156";
                 readonly nodes: readonly [];
@@ -16703,16 +16703,16 @@ export declare const VmSafe: {
                 readonly name: "txGasPrice";
                 readonly nameLocation: "22668:10:156";
                 readonly parameters: {
-                    readonly id: 40267;
+                    readonly id: 40341;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40266;
+                        readonly id: 40340;
                         readonly mutability: "mutable";
                         readonly name: "newGasPrice";
                         readonly nameLocation: "22687:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40269;
+                        readonly scope: 40343;
                         readonly src: "22679:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16721,7 +16721,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40265;
+                            readonly id: 40339;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22679:7:156";
@@ -16735,17 +16735,17 @@ export declare const VmSafe: {
                     readonly src: "22678:21:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40268;
+                    readonly id: 40342;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "22708:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40278;
+                readonly id: 40352;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "22765:69:156";
                 readonly nodes: readonly [];
@@ -16756,16 +16756,16 @@ export declare const VmSafe: {
                 readonly name: "store";
                 readonly nameLocation: "22774:5:156";
                 readonly parameters: {
-                    readonly id: 40276;
+                    readonly id: 40350;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40271;
+                        readonly id: 40345;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "22788:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40278;
+                        readonly scope: 40352;
                         readonly src: "22780:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16774,7 +16774,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40270;
+                            readonly id: 40344;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22780:7:156";
@@ -16787,12 +16787,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40273;
+                        readonly id: 40347;
                         readonly mutability: "mutable";
                         readonly name: "slot";
                         readonly nameLocation: "22804:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40278;
+                        readonly scope: 40352;
                         readonly src: "22796:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16801,7 +16801,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40272;
+                            readonly id: 40346;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22796:7:156";
@@ -16813,12 +16813,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40275;
+                        readonly id: 40349;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "22818:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40278;
+                        readonly scope: 40352;
                         readonly src: "22810:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16827,7 +16827,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40274;
+                            readonly id: 40348;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22810:7:156";
@@ -16841,17 +16841,17 @@ export declare const VmSafe: {
                     readonly src: "22779:45:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40277;
+                    readonly id: 40351;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "22833:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40285;
+                readonly id: 40359;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "22929:61:156";
                 readonly nodes: readonly [];
@@ -16862,16 +16862,16 @@ export declare const VmSafe: {
                 readonly name: "setNonce";
                 readonly nameLocation: "22938:8:156";
                 readonly parameters: {
-                    readonly id: 40283;
+                    readonly id: 40357;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40280;
+                        readonly id: 40354;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "22955:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40285;
+                        readonly scope: 40359;
                         readonly src: "22947:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16880,7 +16880,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40279;
+                            readonly id: 40353;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22947:7:156";
@@ -16893,12 +16893,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40282;
+                        readonly id: 40356;
                         readonly mutability: "mutable";
                         readonly name: "newNonce";
                         readonly nameLocation: "22971:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40285;
+                        readonly scope: 40359;
                         readonly src: "22964:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16907,7 +16907,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40281;
+                            readonly id: 40355;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "22964:6:156";
@@ -16921,17 +16921,17 @@ export declare const VmSafe: {
                     readonly src: "22946:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40284;
+                    readonly id: 40358;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "22989:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40292;
+                readonly id: 40366;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "23053:67:156";
                 readonly nodes: readonly [];
@@ -16942,16 +16942,16 @@ export declare const VmSafe: {
                 readonly name: "setNonceUnsafe";
                 readonly nameLocation: "23062:14:156";
                 readonly parameters: {
-                    readonly id: 40290;
+                    readonly id: 40364;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40287;
+                        readonly id: 40361;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "23085:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40292;
+                        readonly scope: 40366;
                         readonly src: "23077:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16960,7 +16960,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40286;
+                            readonly id: 40360;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "23077:7:156";
@@ -16973,12 +16973,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40289;
+                        readonly id: 40363;
                         readonly mutability: "mutable";
                         readonly name: "newNonce";
                         readonly nameLocation: "23101:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40292;
+                        readonly scope: 40366;
                         readonly src: "23094:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16987,7 +16987,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40288;
+                            readonly id: 40362;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "23094:6:156";
@@ -17001,17 +17001,17 @@ export declare const VmSafe: {
                     readonly src: "23076:34:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40291;
+                    readonly id: 40365;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "23119:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40297;
+                readonly id: 40371;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "23205:46:156";
                 readonly nodes: readonly [];
@@ -17022,16 +17022,16 @@ export declare const VmSafe: {
                 readonly name: "resetNonce";
                 readonly nameLocation: "23214:10:156";
                 readonly parameters: {
-                    readonly id: 40295;
+                    readonly id: 40369;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40294;
+                        readonly id: 40368;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "23233:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40297;
+                        readonly scope: 40371;
                         readonly src: "23225:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17040,7 +17040,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40293;
+                            readonly id: 40367;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "23225:7:156";
@@ -17055,17 +17055,17 @@ export declare const VmSafe: {
                     readonly src: "23224:17:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40296;
+                    readonly id: 40370;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "23250:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40302;
+                readonly id: 40376;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "23321:43:156";
                 readonly nodes: readonly [];
@@ -17076,16 +17076,16 @@ export declare const VmSafe: {
                 readonly name: "prank";
                 readonly nameLocation: "23330:5:156";
                 readonly parameters: {
-                    readonly id: 40300;
+                    readonly id: 40374;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40299;
+                        readonly id: 40373;
                         readonly mutability: "mutable";
                         readonly name: "msgSender";
                         readonly nameLocation: "23344:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40302;
+                        readonly scope: 40376;
                         readonly src: "23336:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17094,7 +17094,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40298;
+                            readonly id: 40372;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "23336:7:156";
@@ -17109,17 +17109,17 @@ export declare const VmSafe: {
                     readonly src: "23335:19:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40301;
+                    readonly id: 40375;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "23363:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40307;
+                readonly id: 40381;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "23466:48:156";
                 readonly nodes: readonly [];
@@ -17130,16 +17130,16 @@ export declare const VmSafe: {
                 readonly name: "startPrank";
                 readonly nameLocation: "23475:10:156";
                 readonly parameters: {
-                    readonly id: 40305;
+                    readonly id: 40379;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40304;
+                        readonly id: 40378;
                         readonly mutability: "mutable";
                         readonly name: "msgSender";
                         readonly nameLocation: "23494:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40307;
+                        readonly scope: 40381;
                         readonly src: "23486:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17148,7 +17148,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40303;
+                            readonly id: 40377;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "23486:7:156";
@@ -17163,17 +17163,17 @@ export declare const VmSafe: {
                     readonly src: "23485:19:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40306;
+                    readonly id: 40380;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "23513:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40314;
+                readonly id: 40388;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "23626:61:156";
                 readonly nodes: readonly [];
@@ -17184,16 +17184,16 @@ export declare const VmSafe: {
                 readonly name: "prank";
                 readonly nameLocation: "23635:5:156";
                 readonly parameters: {
-                    readonly id: 40312;
+                    readonly id: 40386;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40309;
+                        readonly id: 40383;
                         readonly mutability: "mutable";
                         readonly name: "msgSender";
                         readonly nameLocation: "23649:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40314;
+                        readonly scope: 40388;
                         readonly src: "23641:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17202,7 +17202,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40308;
+                            readonly id: 40382;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "23641:7:156";
@@ -17215,12 +17215,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40311;
+                        readonly id: 40385;
                         readonly mutability: "mutable";
                         readonly name: "txOrigin";
                         readonly nameLocation: "23668:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40314;
+                        readonly scope: 40388;
                         readonly src: "23660:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17229,7 +17229,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40310;
+                            readonly id: 40384;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "23660:7:156";
@@ -17244,17 +17244,17 @@ export declare const VmSafe: {
                     readonly src: "23640:37:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40313;
+                    readonly id: 40387;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "23686:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40321;
+                readonly id: 40395;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "23831:66:156";
                 readonly nodes: readonly [];
@@ -17265,16 +17265,16 @@ export declare const VmSafe: {
                 readonly name: "startPrank";
                 readonly nameLocation: "23840:10:156";
                 readonly parameters: {
-                    readonly id: 40319;
+                    readonly id: 40393;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40316;
+                        readonly id: 40390;
                         readonly mutability: "mutable";
                         readonly name: "msgSender";
                         readonly nameLocation: "23859:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40321;
+                        readonly scope: 40395;
                         readonly src: "23851:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17283,7 +17283,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40315;
+                            readonly id: 40389;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "23851:7:156";
@@ -17296,12 +17296,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40318;
+                        readonly id: 40392;
                         readonly mutability: "mutable";
                         readonly name: "txOrigin";
                         readonly nameLocation: "23878:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40321;
+                        readonly scope: 40395;
                         readonly src: "23870:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17310,7 +17310,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40317;
+                            readonly id: 40391;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "23870:7:156";
@@ -17325,17 +17325,17 @@ export declare const VmSafe: {
                     readonly src: "23850:37:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40320;
+                    readonly id: 40394;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "23896:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40324;
+                readonly id: 40398;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "23967:30:156";
                 readonly nodes: readonly [];
@@ -17346,23 +17346,23 @@ export declare const VmSafe: {
                 readonly name: "stopPrank";
                 readonly nameLocation: "23976:9:156";
                 readonly parameters: {
-                    readonly id: 40322;
+                    readonly id: 40396;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "23985:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40323;
+                    readonly id: 40397;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "23996:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40334;
+                readonly id: 40408;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "24122:101:156";
                 readonly nodes: readonly [];
@@ -17373,56 +17373,56 @@ export declare const VmSafe: {
                 readonly name: "readCallers";
                 readonly nameLocation: "24131:11:156";
                 readonly parameters: {
-                    readonly id: 40325;
+                    readonly id: 40399;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "24142:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40333;
+                    readonly id: 40407;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40328;
+                        readonly id: 40402;
                         readonly mutability: "mutable";
                         readonly name: "callerMode";
                         readonly nameLocation: "24174:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40334;
+                        readonly scope: 40408;
                         readonly src: "24163:21:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_enum$_CallerMode_$39176";
+                            readonly typeIdentifier: "t_enum$_CallerMode_$39250";
                             readonly typeString: "enum VmSafe.CallerMode";
                         };
                         readonly typeName: {
-                            readonly id: 40327;
+                            readonly id: 40401;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 40326;
+                                readonly id: 40400;
                                 readonly name: "CallerMode";
                                 readonly nameLocations: readonly ["24163:10:156"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 39176;
+                                readonly referencedDeclaration: 39250;
                                 readonly src: "24163:10:156";
                             };
-                            readonly referencedDeclaration: 39176;
+                            readonly referencedDeclaration: 39250;
                             readonly src: "24163:10:156";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_enum$_CallerMode_$39176";
+                                readonly typeIdentifier: "t_enum$_CallerMode_$39250";
                                 readonly typeString: "enum VmSafe.CallerMode";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40330;
+                        readonly id: 40404;
                         readonly mutability: "mutable";
                         readonly name: "msgSender";
                         readonly nameLocation: "24194:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40334;
+                        readonly scope: 40408;
                         readonly src: "24186:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17431,7 +17431,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40329;
+                            readonly id: 40403;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "24186:7:156";
@@ -17444,12 +17444,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40332;
+                        readonly id: 40406;
                         readonly mutability: "mutable";
                         readonly name: "txOrigin";
                         readonly nameLocation: "24213:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40334;
+                        readonly scope: 40408;
                         readonly src: "24205:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17458,7 +17458,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40331;
+                            readonly id: 40405;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "24205:7:156";
@@ -17472,12 +17472,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "24162:60:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40341;
+                readonly id: 40415;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "24260:60:156";
                 readonly nodes: readonly [];
@@ -17488,16 +17488,16 @@ export declare const VmSafe: {
                 readonly name: "deal";
                 readonly nameLocation: "24269:4:156";
                 readonly parameters: {
-                    readonly id: 40339;
+                    readonly id: 40413;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40336;
+                        readonly id: 40410;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "24282:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40341;
+                        readonly scope: 40415;
                         readonly src: "24274:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17506,7 +17506,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40335;
+                            readonly id: 40409;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "24274:7:156";
@@ -17519,12 +17519,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40338;
+                        readonly id: 40412;
                         readonly mutability: "mutable";
                         readonly name: "newBalance";
                         readonly nameLocation: "24299:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40341;
+                        readonly scope: 40415;
                         readonly src: "24291:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17533,7 +17533,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40337;
+                            readonly id: 40411;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "24291:7:156";
@@ -17547,17 +17547,17 @@ export declare const VmSafe: {
                     readonly src: "24273:37:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40340;
+                    readonly id: 40414;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "24319:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40348;
+                readonly id: 40422;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "24354:74:156";
                 readonly nodes: readonly [];
@@ -17568,16 +17568,16 @@ export declare const VmSafe: {
                 readonly name: "etch";
                 readonly nameLocation: "24363:4:156";
                 readonly parameters: {
-                    readonly id: 40346;
+                    readonly id: 40420;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40343;
+                        readonly id: 40417;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "24376:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40348;
+                        readonly scope: 40422;
                         readonly src: "24368:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17586,7 +17586,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40342;
+                            readonly id: 40416;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "24368:7:156";
@@ -17599,12 +17599,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40345;
+                        readonly id: 40419;
                         readonly mutability: "mutable";
                         readonly name: "newRuntimeBytecode";
                         readonly nameLocation: "24399:18:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40348;
+                        readonly scope: 40422;
                         readonly src: "24384:33:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -17613,7 +17613,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40344;
+                            readonly id: 40418;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "24384:5:156";
@@ -17627,17 +17627,17 @@ export declare const VmSafe: {
                     readonly src: "24367:51:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40347;
+                    readonly id: 40421;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "24427:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40353;
+                readonly id: 40427;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "24504:38:156";
                 readonly nodes: readonly [];
@@ -17648,16 +17648,16 @@ export declare const VmSafe: {
                 readonly name: "skip";
                 readonly nameLocation: "24513:4:156";
                 readonly parameters: {
-                    readonly id: 40351;
+                    readonly id: 40425;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40350;
+                        readonly id: 40424;
                         readonly mutability: "mutable";
                         readonly name: "skipTest";
                         readonly nameLocation: "24523:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40353;
+                        readonly scope: 40427;
                         readonly src: "24518:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17666,7 +17666,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40349;
+                            readonly id: 40423;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "24518:4:156";
@@ -17680,17 +17680,17 @@ export declare const VmSafe: {
                     readonly src: "24517:15:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40352;
+                    readonly id: 40426;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "24541:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40358;
+                readonly id: 40432;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "24584:58:156";
                 readonly nodes: readonly [];
@@ -17701,16 +17701,16 @@ export declare const VmSafe: {
                 readonly name: "expectRevert";
                 readonly nameLocation: "24593:12:156";
                 readonly parameters: {
-                    readonly id: 40356;
+                    readonly id: 40430;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40355;
+                        readonly id: 40429;
                         readonly mutability: "mutable";
                         readonly name: "revertData";
                         readonly nameLocation: "24621:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40358;
+                        readonly scope: 40432;
                         readonly src: "24606:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -17719,7 +17719,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40354;
+                            readonly id: 40428;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "24606:5:156";
@@ -17733,17 +17733,17 @@ export declare const VmSafe: {
                     readonly src: "24605:27:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40357;
+                    readonly id: 40431;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "24641:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40363;
+                readonly id: 40437;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "24647:50:156";
                 readonly nodes: readonly [];
@@ -17754,16 +17754,16 @@ export declare const VmSafe: {
                 readonly name: "expectRevert";
                 readonly nameLocation: "24656:12:156";
                 readonly parameters: {
-                    readonly id: 40361;
+                    readonly id: 40435;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40360;
+                        readonly id: 40434;
                         readonly mutability: "mutable";
                         readonly name: "revertData";
                         readonly nameLocation: "24676:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40363;
+                        readonly scope: 40437;
                         readonly src: "24669:17:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17772,7 +17772,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 40359;
+                            readonly id: 40433;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "24669:6:156";
@@ -17786,17 +17786,17 @@ export declare const VmSafe: {
                     readonly src: "24668:19:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40362;
+                    readonly id: 40436;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "24696:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40366;
+                readonly id: 40440;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "24702:33:156";
                 readonly nodes: readonly [];
@@ -17807,23 +17807,23 @@ export declare const VmSafe: {
                 readonly name: "expectRevert";
                 readonly nameLocation: "24711:12:156";
                 readonly parameters: {
-                    readonly id: 40364;
+                    readonly id: 40438;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "24723:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40365;
+                    readonly id: 40439;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "24734:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40369;
+                readonly id: 40443;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "25067:31:156";
                 readonly nodes: readonly [];
@@ -17834,23 +17834,23 @@ export declare const VmSafe: {
                 readonly name: "expectEmit";
                 readonly nameLocation: "25076:10:156";
                 readonly parameters: {
-                    readonly id: 40367;
+                    readonly id: 40441;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "25086:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40368;
+                    readonly id: 40442;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "25097:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40374;
+                readonly id: 40448;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "25103:46:156";
                 readonly nodes: readonly [];
@@ -17861,16 +17861,16 @@ export declare const VmSafe: {
                 readonly name: "expectEmit";
                 readonly nameLocation: "25112:10:156";
                 readonly parameters: {
-                    readonly id: 40372;
+                    readonly id: 40446;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40371;
+                        readonly id: 40445;
                         readonly mutability: "mutable";
                         readonly name: "emitter";
                         readonly nameLocation: "25131:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40374;
+                        readonly scope: 40448;
                         readonly src: "25123:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17879,7 +17879,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40370;
+                            readonly id: 40444;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25123:7:156";
@@ -17894,17 +17894,17 @@ export declare const VmSafe: {
                     readonly src: "25122:17:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40373;
+                    readonly id: 40447;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "25148:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40385;
+                readonly id: 40459;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "25559:99:156";
                 readonly nodes: readonly [];
@@ -17915,16 +17915,16 @@ export declare const VmSafe: {
                 readonly name: "expectEmit";
                 readonly nameLocation: "25568:10:156";
                 readonly parameters: {
-                    readonly id: 40383;
+                    readonly id: 40457;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40376;
+                        readonly id: 40450;
                         readonly mutability: "mutable";
                         readonly name: "checkTopic1";
                         readonly nameLocation: "25584:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40385;
+                        readonly scope: 40459;
                         readonly src: "25579:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17933,7 +17933,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40375;
+                            readonly id: 40449;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25579:4:156";
@@ -17945,12 +17945,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40378;
+                        readonly id: 40452;
                         readonly mutability: "mutable";
                         readonly name: "checkTopic2";
                         readonly nameLocation: "25602:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40385;
+                        readonly scope: 40459;
                         readonly src: "25597:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17959,7 +17959,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40377;
+                            readonly id: 40451;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25597:4:156";
@@ -17971,12 +17971,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40380;
+                        readonly id: 40454;
                         readonly mutability: "mutable";
                         readonly name: "checkTopic3";
                         readonly nameLocation: "25620:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40385;
+                        readonly scope: 40459;
                         readonly src: "25615:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17985,7 +17985,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40379;
+                            readonly id: 40453;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25615:4:156";
@@ -17997,12 +17997,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40382;
+                        readonly id: 40456;
                         readonly mutability: "mutable";
                         readonly name: "checkData";
                         readonly nameLocation: "25638:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40385;
+                        readonly scope: 40459;
                         readonly src: "25633:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18011,7 +18011,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40381;
+                            readonly id: 40455;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25633:4:156";
@@ -18025,17 +18025,17 @@ export declare const VmSafe: {
                     readonly src: "25578:70:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40384;
+                    readonly id: 40458;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "25657:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40398;
+                readonly id: 40472;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "25663:124:156";
                 readonly nodes: readonly [];
@@ -18046,16 +18046,16 @@ export declare const VmSafe: {
                 readonly name: "expectEmit";
                 readonly nameLocation: "25672:10:156";
                 readonly parameters: {
-                    readonly id: 40396;
+                    readonly id: 40470;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40387;
+                        readonly id: 40461;
                         readonly mutability: "mutable";
                         readonly name: "checkTopic1";
                         readonly nameLocation: "25688:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40398;
+                        readonly scope: 40472;
                         readonly src: "25683:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18064,7 +18064,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40386;
+                            readonly id: 40460;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25683:4:156";
@@ -18076,12 +18076,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40389;
+                        readonly id: 40463;
                         readonly mutability: "mutable";
                         readonly name: "checkTopic2";
                         readonly nameLocation: "25706:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40398;
+                        readonly scope: 40472;
                         readonly src: "25701:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18090,7 +18090,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40388;
+                            readonly id: 40462;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25701:4:156";
@@ -18102,12 +18102,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40391;
+                        readonly id: 40465;
                         readonly mutability: "mutable";
                         readonly name: "checkTopic3";
                         readonly nameLocation: "25724:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40398;
+                        readonly scope: 40472;
                         readonly src: "25719:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18116,7 +18116,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40390;
+                            readonly id: 40464;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25719:4:156";
@@ -18128,12 +18128,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40393;
+                        readonly id: 40467;
                         readonly mutability: "mutable";
                         readonly name: "checkData";
                         readonly nameLocation: "25742:9:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40398;
+                        readonly scope: 40472;
                         readonly src: "25737:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18142,7 +18142,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40392;
+                            readonly id: 40466;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25737:4:156";
@@ -18154,12 +18154,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40395;
+                        readonly id: 40469;
                         readonly mutability: "mutable";
                         readonly name: "emitter";
                         readonly nameLocation: "25761:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40398;
+                        readonly scope: 40472;
                         readonly src: "25753:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18168,7 +18168,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40394;
+                            readonly id: 40468;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "25753:7:156";
@@ -18183,17 +18183,17 @@ export declare const VmSafe: {
                     readonly src: "25682:87:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40397;
+                    readonly id: 40471;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "25786:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40407;
+                readonly id: 40481;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "26043:91:156";
                 readonly nodes: readonly [];
@@ -18204,16 +18204,16 @@ export declare const VmSafe: {
                 readonly name: "mockCall";
                 readonly nameLocation: "26052:8:156";
                 readonly parameters: {
-                    readonly id: 40405;
+                    readonly id: 40479;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40400;
+                        readonly id: 40474;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "26069:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40407;
+                        readonly scope: 40481;
                         readonly src: "26061:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18222,7 +18222,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40399;
+                            readonly id: 40473;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26061:7:156";
@@ -18235,12 +18235,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40402;
+                        readonly id: 40476;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "26092:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40407;
+                        readonly scope: 40481;
                         readonly src: "26077:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18249,7 +18249,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40401;
+                            readonly id: 40475;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26077:5:156";
@@ -18261,12 +18261,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40404;
+                        readonly id: 40478;
                         readonly mutability: "mutable";
                         readonly name: "returnData";
                         readonly nameLocation: "26113:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40407;
+                        readonly scope: 40481;
                         readonly src: "26098:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18275,7 +18275,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40403;
+                            readonly id: 40477;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26098:5:156";
@@ -18289,17 +18289,17 @@ export declare const VmSafe: {
                     readonly src: "26060:64:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40406;
+                    readonly id: 40480;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "26133:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40418;
+                readonly id: 40492;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "26302:109:156";
                 readonly nodes: readonly [];
@@ -18310,16 +18310,16 @@ export declare const VmSafe: {
                 readonly name: "mockCall";
                 readonly nameLocation: "26311:8:156";
                 readonly parameters: {
-                    readonly id: 40416;
+                    readonly id: 40490;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40409;
+                        readonly id: 40483;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "26328:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40418;
+                        readonly scope: 40492;
                         readonly src: "26320:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18328,7 +18328,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40408;
+                            readonly id: 40482;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26320:7:156";
@@ -18341,12 +18341,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40411;
+                        readonly id: 40485;
                         readonly mutability: "mutable";
                         readonly name: "msgValue";
                         readonly nameLocation: "26344:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40418;
+                        readonly scope: 40492;
                         readonly src: "26336:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18355,7 +18355,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40410;
+                            readonly id: 40484;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26336:7:156";
@@ -18367,12 +18367,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40413;
+                        readonly id: 40487;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "26369:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40418;
+                        readonly scope: 40492;
                         readonly src: "26354:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18381,7 +18381,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40412;
+                            readonly id: 40486;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26354:5:156";
@@ -18393,12 +18393,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40415;
+                        readonly id: 40489;
                         readonly mutability: "mutable";
                         readonly name: "returnData";
                         readonly nameLocation: "26390:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40418;
+                        readonly scope: 40492;
                         readonly src: "26375:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18407,7 +18407,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40414;
+                            readonly id: 40488;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26375:5:156";
@@ -18421,17 +18421,17 @@ export declare const VmSafe: {
                     readonly src: "26319:82:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40417;
+                    readonly id: 40491;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "26410:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40427;
+                readonly id: 40501;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "26480:97:156";
                 readonly nodes: readonly [];
@@ -18442,16 +18442,16 @@ export declare const VmSafe: {
                 readonly name: "mockCallRevert";
                 readonly nameLocation: "26489:14:156";
                 readonly parameters: {
-                    readonly id: 40425;
+                    readonly id: 40499;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40420;
+                        readonly id: 40494;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "26512:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40427;
+                        readonly scope: 40501;
                         readonly src: "26504:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18460,7 +18460,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40419;
+                            readonly id: 40493;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26504:7:156";
@@ -18473,12 +18473,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40422;
+                        readonly id: 40496;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "26535:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40427;
+                        readonly scope: 40501;
                         readonly src: "26520:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18487,7 +18487,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40421;
+                            readonly id: 40495;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26520:5:156";
@@ -18499,12 +18499,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40424;
+                        readonly id: 40498;
                         readonly mutability: "mutable";
                         readonly name: "revertData";
                         readonly nameLocation: "26556:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40427;
+                        readonly scope: 40501;
                         readonly src: "26541:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18513,7 +18513,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40423;
+                            readonly id: 40497;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26541:5:156";
@@ -18527,17 +18527,17 @@ export declare const VmSafe: {
                     readonly src: "26503:64:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40426;
+                    readonly id: 40500;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "26576:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40438;
+                readonly id: 40512;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "26673:123:156";
                 readonly nodes: readonly [];
@@ -18548,16 +18548,16 @@ export declare const VmSafe: {
                 readonly name: "mockCallRevert";
                 readonly nameLocation: "26682:14:156";
                 readonly parameters: {
-                    readonly id: 40436;
+                    readonly id: 40510;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40429;
+                        readonly id: 40503;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "26705:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40438;
+                        readonly scope: 40512;
                         readonly src: "26697:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18566,7 +18566,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40428;
+                            readonly id: 40502;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26697:7:156";
@@ -18579,12 +18579,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40431;
+                        readonly id: 40505;
                         readonly mutability: "mutable";
                         readonly name: "msgValue";
                         readonly nameLocation: "26721:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40438;
+                        readonly scope: 40512;
                         readonly src: "26713:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18593,7 +18593,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40430;
+                            readonly id: 40504;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26713:7:156";
@@ -18605,12 +18605,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40433;
+                        readonly id: 40507;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "26746:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40438;
+                        readonly scope: 40512;
                         readonly src: "26731:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18619,7 +18619,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40432;
+                            readonly id: 40506;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26731:5:156";
@@ -18631,12 +18631,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40435;
+                        readonly id: 40509;
                         readonly mutability: "mutable";
                         readonly name: "revertData";
                         readonly nameLocation: "26767:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40438;
+                        readonly scope: 40512;
                         readonly src: "26752:25:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18645,7 +18645,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40434;
+                            readonly id: 40508;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "26752:5:156";
@@ -18659,17 +18659,17 @@ export declare const VmSafe: {
                     readonly src: "26696:82:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40437;
+                    readonly id: 40511;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "26795:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40441;
+                readonly id: 40515;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "26832:37:156";
                 readonly nodes: readonly [];
@@ -18680,23 +18680,23 @@ export declare const VmSafe: {
                 readonly name: "clearMockedCalls";
                 readonly nameLocation: "26841:16:156";
                 readonly parameters: {
-                    readonly id: 40439;
+                    readonly id: 40513;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "26857:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40440;
+                    readonly id: 40514;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "26868:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40448;
+                readonly id: 40522;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "26997:66:156";
                 readonly nodes: readonly [];
@@ -18707,16 +18707,16 @@ export declare const VmSafe: {
                 readonly name: "expectCall";
                 readonly nameLocation: "27006:10:156";
                 readonly parameters: {
-                    readonly id: 40446;
+                    readonly id: 40520;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40443;
+                        readonly id: 40517;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "27025:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40448;
+                        readonly scope: 40522;
                         readonly src: "27017:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18725,7 +18725,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40442;
+                            readonly id: 40516;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27017:7:156";
@@ -18738,12 +18738,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40445;
+                        readonly id: 40519;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "27048:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40448;
+                        readonly scope: 40522;
                         readonly src: "27033:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18752,7 +18752,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40444;
+                            readonly id: 40518;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27033:5:156";
@@ -18766,17 +18766,17 @@ export declare const VmSafe: {
                     readonly src: "27016:37:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40447;
+                    readonly id: 40521;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "27062:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40457;
+                readonly id: 40531;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "27148:80:156";
                 readonly nodes: readonly [];
@@ -18787,16 +18787,16 @@ export declare const VmSafe: {
                 readonly name: "expectCall";
                 readonly nameLocation: "27157:10:156";
                 readonly parameters: {
-                    readonly id: 40455;
+                    readonly id: 40529;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40450;
+                        readonly id: 40524;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "27176:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40457;
+                        readonly scope: 40531;
                         readonly src: "27168:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18805,7 +18805,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40449;
+                            readonly id: 40523;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27168:7:156";
@@ -18818,12 +18818,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40452;
+                        readonly id: 40526;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "27199:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40457;
+                        readonly scope: 40531;
                         readonly src: "27184:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18832,7 +18832,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40451;
+                            readonly id: 40525;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27184:5:156";
@@ -18844,12 +18844,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40454;
+                        readonly id: 40528;
                         readonly mutability: "mutable";
                         readonly name: "count";
                         readonly nameLocation: "27212:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40457;
+                        readonly scope: 40531;
                         readonly src: "27205:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18858,7 +18858,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40453;
+                            readonly id: 40527;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27205:6:156";
@@ -18872,17 +18872,17 @@ export declare const VmSafe: {
                     readonly src: "27167:51:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40456;
+                    readonly id: 40530;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "27227:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40466;
+                readonly id: 40540;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "27311:84:156";
                 readonly nodes: readonly [];
@@ -18893,16 +18893,16 @@ export declare const VmSafe: {
                 readonly name: "expectCall";
                 readonly nameLocation: "27320:10:156";
                 readonly parameters: {
-                    readonly id: 40464;
+                    readonly id: 40538;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40459;
+                        readonly id: 40533;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "27339:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40466;
+                        readonly scope: 40540;
                         readonly src: "27331:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18911,7 +18911,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40458;
+                            readonly id: 40532;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27331:7:156";
@@ -18924,12 +18924,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40461;
+                        readonly id: 40535;
                         readonly mutability: "mutable";
                         readonly name: "msgValue";
                         readonly nameLocation: "27355:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40466;
+                        readonly scope: 40540;
                         readonly src: "27347:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -18938,7 +18938,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40460;
+                            readonly id: 40534;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27347:7:156";
@@ -18950,12 +18950,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40463;
+                        readonly id: 40537;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "27380:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40466;
+                        readonly scope: 40540;
                         readonly src: "27365:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -18964,7 +18964,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40462;
+                            readonly id: 40536;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27365:5:156";
@@ -18978,17 +18978,17 @@ export declare const VmSafe: {
                     readonly src: "27330:55:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40465;
+                    readonly id: 40539;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "27394:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40477;
+                readonly id: 40551;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "27493:98:156";
                 readonly nodes: readonly [];
@@ -18999,16 +18999,16 @@ export declare const VmSafe: {
                 readonly name: "expectCall";
                 readonly nameLocation: "27502:10:156";
                 readonly parameters: {
-                    readonly id: 40475;
+                    readonly id: 40549;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40468;
+                        readonly id: 40542;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "27521:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40477;
+                        readonly scope: 40551;
                         readonly src: "27513:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19017,7 +19017,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40467;
+                            readonly id: 40541;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27513:7:156";
@@ -19030,12 +19030,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40470;
+                        readonly id: 40544;
                         readonly mutability: "mutable";
                         readonly name: "msgValue";
                         readonly nameLocation: "27537:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40477;
+                        readonly scope: 40551;
                         readonly src: "27529:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19044,7 +19044,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40469;
+                            readonly id: 40543;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27529:7:156";
@@ -19056,12 +19056,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40472;
+                        readonly id: 40546;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "27562:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40477;
+                        readonly scope: 40551;
                         readonly src: "27547:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -19070,7 +19070,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40471;
+                            readonly id: 40545;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27547:5:156";
@@ -19082,12 +19082,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40474;
+                        readonly id: 40548;
                         readonly mutability: "mutable";
                         readonly name: "count";
                         readonly nameLocation: "27575:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40477;
+                        readonly scope: 40551;
                         readonly src: "27568:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19096,7 +19096,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40473;
+                            readonly id: 40547;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27568:6:156";
@@ -19110,17 +19110,17 @@ export declare const VmSafe: {
                     readonly src: "27512:69:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40476;
+                    readonly id: 40550;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "27590:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40488;
+                readonly id: 40562;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "27680:96:156";
                 readonly nodes: readonly [];
@@ -19131,16 +19131,16 @@ export declare const VmSafe: {
                 readonly name: "expectCall";
                 readonly nameLocation: "27689:10:156";
                 readonly parameters: {
-                    readonly id: 40486;
+                    readonly id: 40560;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40479;
+                        readonly id: 40553;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "27708:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40488;
+                        readonly scope: 40562;
                         readonly src: "27700:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19149,7 +19149,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40478;
+                            readonly id: 40552;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27700:7:156";
@@ -19162,12 +19162,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40481;
+                        readonly id: 40555;
                         readonly mutability: "mutable";
                         readonly name: "msgValue";
                         readonly nameLocation: "27724:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40488;
+                        readonly scope: 40562;
                         readonly src: "27716:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19176,7 +19176,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40480;
+                            readonly id: 40554;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27716:7:156";
@@ -19188,12 +19188,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40483;
+                        readonly id: 40557;
                         readonly mutability: "mutable";
                         readonly name: "gas";
                         readonly nameLocation: "27741:3:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40488;
+                        readonly scope: 40562;
                         readonly src: "27734:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19202,7 +19202,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40482;
+                            readonly id: 40556;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27734:6:156";
@@ -19214,12 +19214,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40485;
+                        readonly id: 40559;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "27761:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40488;
+                        readonly scope: 40562;
                         readonly src: "27746:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -19228,7 +19228,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40484;
+                            readonly id: 40558;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27746:5:156";
@@ -19242,17 +19242,17 @@ export declare const VmSafe: {
                     readonly src: "27699:67:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40487;
+                    readonly id: 40561;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "27775:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40501;
+                readonly id: 40575;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "27881:110:156";
                 readonly nodes: readonly [];
@@ -19263,16 +19263,16 @@ export declare const VmSafe: {
                 readonly name: "expectCall";
                 readonly nameLocation: "27890:10:156";
                 readonly parameters: {
-                    readonly id: 40499;
+                    readonly id: 40573;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40490;
+                        readonly id: 40564;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "27909:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40501;
+                        readonly scope: 40575;
                         readonly src: "27901:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19281,7 +19281,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40489;
+                            readonly id: 40563;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27901:7:156";
@@ -19294,12 +19294,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40492;
+                        readonly id: 40566;
                         readonly mutability: "mutable";
                         readonly name: "msgValue";
                         readonly nameLocation: "27925:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40501;
+                        readonly scope: 40575;
                         readonly src: "27917:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19308,7 +19308,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40491;
+                            readonly id: 40565;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27917:7:156";
@@ -19320,12 +19320,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40494;
+                        readonly id: 40568;
                         readonly mutability: "mutable";
                         readonly name: "gas";
                         readonly nameLocation: "27942:3:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40501;
+                        readonly scope: 40575;
                         readonly src: "27935:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19334,7 +19334,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40493;
+                            readonly id: 40567;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27935:6:156";
@@ -19346,12 +19346,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40496;
+                        readonly id: 40570;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "27962:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40501;
+                        readonly scope: 40575;
                         readonly src: "27947:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -19360,7 +19360,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40495;
+                            readonly id: 40569;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27947:5:156";
@@ -19372,12 +19372,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40498;
+                        readonly id: 40572;
                         readonly mutability: "mutable";
                         readonly name: "count";
                         readonly nameLocation: "27975:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40501;
+                        readonly scope: 40575;
                         readonly src: "27968:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19386,7 +19386,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40497;
+                            readonly id: 40571;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "27968:6:156";
@@ -19400,17 +19400,17 @@ export declare const VmSafe: {
                     readonly src: "27900:81:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40500;
+                    readonly id: 40574;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "27990:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40512;
+                readonly id: 40586;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "28105:105:156";
                 readonly nodes: readonly [];
@@ -19421,16 +19421,16 @@ export declare const VmSafe: {
                 readonly name: "expectCallMinGas";
                 readonly nameLocation: "28114:16:156";
                 readonly parameters: {
-                    readonly id: 40510;
+                    readonly id: 40584;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40503;
+                        readonly id: 40577;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "28139:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40512;
+                        readonly scope: 40586;
                         readonly src: "28131:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19439,7 +19439,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40502;
+                            readonly id: 40576;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28131:7:156";
@@ -19452,12 +19452,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40505;
+                        readonly id: 40579;
                         readonly mutability: "mutable";
                         readonly name: "msgValue";
                         readonly nameLocation: "28155:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40512;
+                        readonly scope: 40586;
                         readonly src: "28147:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19466,7 +19466,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40504;
+                            readonly id: 40578;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28147:7:156";
@@ -19478,12 +19478,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40507;
+                        readonly id: 40581;
                         readonly mutability: "mutable";
                         readonly name: "minGas";
                         readonly nameLocation: "28172:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40512;
+                        readonly scope: 40586;
                         readonly src: "28165:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19492,7 +19492,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40506;
+                            readonly id: 40580;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28165:6:156";
@@ -19504,12 +19504,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40509;
+                        readonly id: 40583;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "28195:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40512;
+                        readonly scope: 40586;
                         readonly src: "28180:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -19518,7 +19518,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40508;
+                            readonly id: 40582;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28180:5:156";
@@ -19532,17 +19532,17 @@ export declare const VmSafe: {
                     readonly src: "28130:70:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40511;
+                    readonly id: 40585;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "28209:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40525;
+                readonly id: 40599;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "28339:127:156";
                 readonly nodes: readonly [];
@@ -19553,16 +19553,16 @@ export declare const VmSafe: {
                 readonly name: "expectCallMinGas";
                 readonly nameLocation: "28348:16:156";
                 readonly parameters: {
-                    readonly id: 40523;
+                    readonly id: 40597;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40514;
+                        readonly id: 40588;
                         readonly mutability: "mutable";
                         readonly name: "callee";
                         readonly nameLocation: "28373:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40525;
+                        readonly scope: 40599;
                         readonly src: "28365:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19571,7 +19571,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40513;
+                            readonly id: 40587;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28365:7:156";
@@ -19584,12 +19584,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40516;
+                        readonly id: 40590;
                         readonly mutability: "mutable";
                         readonly name: "msgValue";
                         readonly nameLocation: "28389:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40525;
+                        readonly scope: 40599;
                         readonly src: "28381:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19598,7 +19598,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40515;
+                            readonly id: 40589;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28381:7:156";
@@ -19610,12 +19610,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40518;
+                        readonly id: 40592;
                         readonly mutability: "mutable";
                         readonly name: "minGas";
                         readonly nameLocation: "28406:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40525;
+                        readonly scope: 40599;
                         readonly src: "28399:13:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19624,7 +19624,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40517;
+                            readonly id: 40591;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28399:6:156";
@@ -19636,12 +19636,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40520;
+                        readonly id: 40594;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "28429:4:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40525;
+                        readonly scope: 40599;
                         readonly src: "28414:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -19650,7 +19650,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 40519;
+                            readonly id: 40593;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28414:5:156";
@@ -19662,12 +19662,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40522;
+                        readonly id: 40596;
                         readonly mutability: "mutable";
                         readonly name: "count";
                         readonly nameLocation: "28442:5:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40525;
+                        readonly scope: 40599;
                         readonly src: "28435:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19676,7 +19676,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40521;
+                            readonly id: 40595;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28435:6:156";
@@ -19690,17 +19690,17 @@ export declare const VmSafe: {
                     readonly src: "28364:84:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40524;
+                    readonly id: 40598;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "28465:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40532;
+                readonly id: 40606;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "28692:59:156";
                 readonly nodes: readonly [];
@@ -19711,16 +19711,16 @@ export declare const VmSafe: {
                 readonly name: "expectSafeMemory";
                 readonly nameLocation: "28701:16:156";
                 readonly parameters: {
-                    readonly id: 40530;
+                    readonly id: 40604;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40527;
+                        readonly id: 40601;
                         readonly mutability: "mutable";
                         readonly name: "min";
                         readonly nameLocation: "28725:3:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40532;
+                        readonly scope: 40606;
                         readonly src: "28718:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19729,7 +19729,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40526;
+                            readonly id: 40600;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28718:6:156";
@@ -19741,12 +19741,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40529;
+                        readonly id: 40603;
                         readonly mutability: "mutable";
                         readonly name: "max";
                         readonly nameLocation: "28737:3:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40532;
+                        readonly scope: 40606;
                         readonly src: "28730:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19755,7 +19755,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40528;
+                            readonly id: 40602;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "28730:6:156";
@@ -19769,17 +19769,17 @@ export declare const VmSafe: {
                     readonly src: "28717:24:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40531;
+                    readonly id: 40605;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "28750:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40539;
+                readonly id: 40613;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "28989:63:156";
                 readonly nodes: readonly [];
@@ -19790,16 +19790,16 @@ export declare const VmSafe: {
                 readonly name: "expectSafeMemoryCall";
                 readonly nameLocation: "28998:20:156";
                 readonly parameters: {
-                    readonly id: 40537;
+                    readonly id: 40611;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40534;
+                        readonly id: 40608;
                         readonly mutability: "mutable";
                         readonly name: "min";
                         readonly nameLocation: "29026:3:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40539;
+                        readonly scope: 40613;
                         readonly src: "29019:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19808,7 +19808,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40533;
+                            readonly id: 40607;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29019:6:156";
@@ -19820,12 +19820,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40536;
+                        readonly id: 40610;
                         readonly mutability: "mutable";
                         readonly name: "max";
                         readonly nameLocation: "29038:3:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40539;
+                        readonly scope: 40613;
                         readonly src: "29031:10:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19834,7 +19834,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint64";
                         };
                         readonly typeName: {
-                            readonly id: 40535;
+                            readonly id: 40609;
                             readonly name: "uint64";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29031:6:156";
@@ -19848,17 +19848,17 @@ export declare const VmSafe: {
                     readonly src: "29018:24:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40538;
+                    readonly id: 40612;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "29051:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40544;
+                readonly id: 40618;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "29084:48:156";
                 readonly nodes: readonly [];
@@ -19869,16 +19869,16 @@ export declare const VmSafe: {
                 readonly name: "coinbase";
                 readonly nameLocation: "29093:8:156";
                 readonly parameters: {
-                    readonly id: 40542;
+                    readonly id: 40616;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40541;
+                        readonly id: 40615;
                         readonly mutability: "mutable";
                         readonly name: "newCoinbase";
                         readonly nameLocation: "29110:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40544;
+                        readonly scope: 40618;
                         readonly src: "29102:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19887,7 +19887,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40540;
+                            readonly id: 40614;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29102:7:156";
@@ -19902,17 +19902,17 @@ export declare const VmSafe: {
                     readonly src: "29101:21:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40543;
+                    readonly id: 40617;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "29131:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40549;
+                readonly id: 40623;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "29282:58:156";
                 readonly nodes: readonly [];
@@ -19923,22 +19923,22 @@ export declare const VmSafe: {
                 readonly name: "snapshot";
                 readonly nameLocation: "29291:8:156";
                 readonly parameters: {
-                    readonly id: 40545;
+                    readonly id: 40619;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "29299:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40548;
+                    readonly id: 40622;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40547;
+                        readonly id: 40621;
                         readonly mutability: "mutable";
                         readonly name: "snapshotId";
                         readonly nameLocation: "29328:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40549;
+                        readonly scope: 40623;
                         readonly src: "29320:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19947,7 +19947,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40546;
+                            readonly id: 40620;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29320:7:156";
@@ -19960,12 +19960,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "29319:20:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40556;
+                readonly id: 40630;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "29532:70:156";
                 readonly nodes: readonly [];
@@ -19976,16 +19976,16 @@ export declare const VmSafe: {
                 readonly name: "revertTo";
                 readonly nameLocation: "29541:8:156";
                 readonly parameters: {
-                    readonly id: 40552;
+                    readonly id: 40626;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40551;
+                        readonly id: 40625;
                         readonly mutability: "mutable";
                         readonly name: "snapshotId";
                         readonly nameLocation: "29558:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40556;
+                        readonly scope: 40630;
                         readonly src: "29550:18:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -19994,7 +19994,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40550;
+                            readonly id: 40624;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29550:7:156";
@@ -20008,16 +20008,16 @@ export declare const VmSafe: {
                     readonly src: "29549:20:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40555;
+                    readonly id: 40629;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40554;
+                        readonly id: 40628;
                         readonly mutability: "mutable";
                         readonly name: "success";
                         readonly nameLocation: "29593:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40556;
+                        readonly scope: 40630;
                         readonly src: "29588:12:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20026,7 +20026,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40553;
+                            readonly id: 40627;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29588:4:156";
@@ -20039,12 +20039,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "29587:14:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40565;
+                readonly id: 40639;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "29706:103:156";
                 readonly nodes: readonly [];
@@ -20055,16 +20055,16 @@ export declare const VmSafe: {
                 readonly name: "createFork";
                 readonly nameLocation: "29715:10:156";
                 readonly parameters: {
-                    readonly id: 40561;
+                    readonly id: 40635;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40558;
+                        readonly id: 40632;
                         readonly mutability: "mutable";
                         readonly name: "urlOrAlias";
                         readonly nameLocation: "29742:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40565;
+                        readonly scope: 40639;
                         readonly src: "29726:26:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -20073,7 +20073,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40557;
+                            readonly id: 40631;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29726:6:156";
@@ -20085,12 +20085,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40560;
+                        readonly id: 40634;
                         readonly mutability: "mutable";
                         readonly name: "blockNumber";
                         readonly nameLocation: "29762:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40565;
+                        readonly scope: 40639;
                         readonly src: "29754:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20099,7 +20099,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40559;
+                            readonly id: 40633;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29754:7:156";
@@ -20113,16 +20113,16 @@ export declare const VmSafe: {
                     readonly src: "29725:49:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40564;
+                    readonly id: 40638;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40563;
+                        readonly id: 40637;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "29801:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40565;
+                        readonly scope: 40639;
                         readonly src: "29793:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20131,7 +20131,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40562;
+                            readonly id: 40636;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29793:7:156";
@@ -20144,12 +20144,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "29792:16:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40572;
+                readonly id: 40646;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "29926:82:156";
                 readonly nodes: readonly [];
@@ -20160,16 +20160,16 @@ export declare const VmSafe: {
                 readonly name: "createFork";
                 readonly nameLocation: "29935:10:156";
                 readonly parameters: {
-                    readonly id: 40568;
+                    readonly id: 40642;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40567;
+                        readonly id: 40641;
                         readonly mutability: "mutable";
                         readonly name: "urlOrAlias";
                         readonly nameLocation: "29962:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40572;
+                        readonly scope: 40646;
                         readonly src: "29946:26:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -20178,7 +20178,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40566;
+                            readonly id: 40640;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29946:6:156";
@@ -20192,16 +20192,16 @@ export declare const VmSafe: {
                     readonly src: "29945:28:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40571;
+                    readonly id: 40645;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40570;
+                        readonly id: 40644;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "30000:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40572;
+                        readonly scope: 40646;
                         readonly src: "29992:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20210,7 +20210,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40569;
+                            readonly id: 40643;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "29992:7:156";
@@ -20223,12 +20223,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "29991:16:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40581;
+                readonly id: 40655;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "30229:98:156";
                 readonly nodes: readonly [];
@@ -20239,16 +20239,16 @@ export declare const VmSafe: {
                 readonly name: "createFork";
                 readonly nameLocation: "30238:10:156";
                 readonly parameters: {
-                    readonly id: 40577;
+                    readonly id: 40651;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40574;
+                        readonly id: 40648;
                         readonly mutability: "mutable";
                         readonly name: "urlOrAlias";
                         readonly nameLocation: "30265:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40581;
+                        readonly scope: 40655;
                         readonly src: "30249:26:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -20257,7 +20257,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40573;
+                            readonly id: 40647;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "30249:6:156";
@@ -20269,12 +20269,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40576;
+                        readonly id: 40650;
                         readonly mutability: "mutable";
                         readonly name: "txHash";
                         readonly nameLocation: "30285:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40581;
+                        readonly scope: 40655;
                         readonly src: "30277:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20283,7 +20283,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40575;
+                            readonly id: 40649;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "30277:7:156";
@@ -20297,16 +20297,16 @@ export declare const VmSafe: {
                     readonly src: "30248:44:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40580;
+                    readonly id: 40654;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40579;
+                        readonly id: 40653;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "30319:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40581;
+                        readonly scope: 40655;
                         readonly src: "30311:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20315,7 +20315,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40578;
+                            readonly id: 40652;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "30311:7:156";
@@ -20328,12 +20328,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "30310:16:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40590;
+                readonly id: 40664;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "30450:109:156";
                 readonly nodes: readonly [];
@@ -20344,16 +20344,16 @@ export declare const VmSafe: {
                 readonly name: "createSelectFork";
                 readonly nameLocation: "30459:16:156";
                 readonly parameters: {
-                    readonly id: 40586;
+                    readonly id: 40660;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40583;
+                        readonly id: 40657;
                         readonly mutability: "mutable";
                         readonly name: "urlOrAlias";
                         readonly nameLocation: "30492:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40590;
+                        readonly scope: 40664;
                         readonly src: "30476:26:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -20362,7 +20362,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40582;
+                            readonly id: 40656;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "30476:6:156";
@@ -20374,12 +20374,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40585;
+                        readonly id: 40659;
                         readonly mutability: "mutable";
                         readonly name: "blockNumber";
                         readonly nameLocation: "30512:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40590;
+                        readonly scope: 40664;
                         readonly src: "30504:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20388,7 +20388,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40584;
+                            readonly id: 40658;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "30504:7:156";
@@ -20402,16 +20402,16 @@ export declare const VmSafe: {
                     readonly src: "30475:49:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40589;
+                    readonly id: 40663;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40588;
+                        readonly id: 40662;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "30551:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40590;
+                        readonly scope: 40664;
                         readonly src: "30543:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20420,7 +20420,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40587;
+                            readonly id: 40661;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "30543:7:156";
@@ -20433,12 +20433,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "30542:16:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40599;
+                readonly id: 40673;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "30793:104:156";
                 readonly nodes: readonly [];
@@ -20449,16 +20449,16 @@ export declare const VmSafe: {
                 readonly name: "createSelectFork";
                 readonly nameLocation: "30802:16:156";
                 readonly parameters: {
-                    readonly id: 40595;
+                    readonly id: 40669;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40592;
+                        readonly id: 40666;
                         readonly mutability: "mutable";
                         readonly name: "urlOrAlias";
                         readonly nameLocation: "30835:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40599;
+                        readonly scope: 40673;
                         readonly src: "30819:26:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -20467,7 +20467,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40591;
+                            readonly id: 40665;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "30819:6:156";
@@ -20479,12 +20479,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40594;
+                        readonly id: 40668;
                         readonly mutability: "mutable";
                         readonly name: "txHash";
                         readonly nameLocation: "30855:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40599;
+                        readonly scope: 40673;
                         readonly src: "30847:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20493,7 +20493,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40593;
+                            readonly id: 40667;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "30847:7:156";
@@ -20507,16 +20507,16 @@ export declare const VmSafe: {
                     readonly src: "30818:44:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40598;
+                    readonly id: 40672;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40597;
+                        readonly id: 40671;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "30889:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40599;
+                        readonly scope: 40673;
                         readonly src: "30881:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20525,7 +20525,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40596;
+                            readonly id: 40670;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "30881:7:156";
@@ -20538,12 +20538,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "30880:16:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40606;
+                readonly id: 40680;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "31031:88:156";
                 readonly nodes: readonly [];
@@ -20554,16 +20554,16 @@ export declare const VmSafe: {
                 readonly name: "createSelectFork";
                 readonly nameLocation: "31040:16:156";
                 readonly parameters: {
-                    readonly id: 40602;
+                    readonly id: 40676;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40601;
+                        readonly id: 40675;
                         readonly mutability: "mutable";
                         readonly name: "urlOrAlias";
                         readonly nameLocation: "31073:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40606;
+                        readonly scope: 40680;
                         readonly src: "31057:26:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -20572,7 +20572,7 @@ export declare const VmSafe: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 40600;
+                            readonly id: 40674;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "31057:6:156";
@@ -20586,16 +20586,16 @@ export declare const VmSafe: {
                     readonly src: "31056:28:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40605;
+                    readonly id: 40679;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40604;
+                        readonly id: 40678;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "31111:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40606;
+                        readonly scope: 40680;
                         readonly src: "31103:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20604,7 +20604,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40603;
+                            readonly id: 40677;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "31103:7:156";
@@ -20617,12 +20617,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "31102:16:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40611;
+                readonly id: 40685;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "31230:45:156";
                 readonly nodes: readonly [];
@@ -20633,16 +20633,16 @@ export declare const VmSafe: {
                 readonly name: "selectFork";
                 readonly nameLocation: "31239:10:156";
                 readonly parameters: {
-                    readonly id: 40609;
+                    readonly id: 40683;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40608;
+                        readonly id: 40682;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "31258:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40611;
+                        readonly scope: 40685;
                         readonly src: "31250:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20651,7 +20651,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40607;
+                            readonly id: 40681;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "31250:7:156";
@@ -20665,22 +20665,22 @@ export declare const VmSafe: {
                     readonly src: "31249:16:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40610;
+                    readonly id: 40684;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "31274:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40617;
+                readonly id: 40691;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "31381:61:156";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 40612;
+                    readonly id: 40686;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "31280:96:156";
                     readonly text: "Returns the identifier of the currently active fork. Reverts if no fork is currently active.";
@@ -20692,22 +20692,22 @@ export declare const VmSafe: {
                 readonly name: "activeFork";
                 readonly nameLocation: "31390:10:156";
                 readonly parameters: {
-                    readonly id: 40613;
+                    readonly id: 40687;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "31400:2:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40616;
+                    readonly id: 40690;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40615;
+                        readonly id: 40689;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "31434:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40617;
+                        readonly scope: 40691;
                         readonly src: "31426:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20716,7 +20716,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40614;
+                            readonly id: 40688;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "31426:7:156";
@@ -20729,12 +20729,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "31425:16:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40622;
+                readonly id: 40696;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "31577:48:156";
                 readonly nodes: readonly [];
@@ -20745,16 +20745,16 @@ export declare const VmSafe: {
                 readonly name: "rollFork";
                 readonly nameLocation: "31586:8:156";
                 readonly parameters: {
-                    readonly id: 40620;
+                    readonly id: 40694;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40619;
+                        readonly id: 40693;
                         readonly mutability: "mutable";
                         readonly name: "blockNumber";
                         readonly nameLocation: "31603:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40622;
+                        readonly scope: 40696;
                         readonly src: "31595:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20763,7 +20763,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40618;
+                            readonly id: 40692;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "31595:7:156";
@@ -20777,17 +20777,17 @@ export declare const VmSafe: {
                     readonly src: "31594:21:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40621;
+                    readonly id: 40695;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "31624:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40627;
+                readonly id: 40701;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "31835:43:156";
                 readonly nodes: readonly [];
@@ -20798,16 +20798,16 @@ export declare const VmSafe: {
                 readonly name: "rollFork";
                 readonly nameLocation: "31844:8:156";
                 readonly parameters: {
-                    readonly id: 40625;
+                    readonly id: 40699;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40624;
+                        readonly id: 40698;
                         readonly mutability: "mutable";
                         readonly name: "txHash";
                         readonly nameLocation: "31861:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40627;
+                        readonly scope: 40701;
                         readonly src: "31853:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20816,7 +20816,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40623;
+                            readonly id: 40697;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "31853:7:156";
@@ -20830,17 +20830,17 @@ export declare const VmSafe: {
                     readonly src: "31852:16:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40626;
+                    readonly id: 40700;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "31877:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40634;
+                readonly id: 40708;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "31935:64:156";
                 readonly nodes: readonly [];
@@ -20851,16 +20851,16 @@ export declare const VmSafe: {
                 readonly name: "rollFork";
                 readonly nameLocation: "31944:8:156";
                 readonly parameters: {
-                    readonly id: 40632;
+                    readonly id: 40706;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40629;
+                        readonly id: 40703;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "31961:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40634;
+                        readonly scope: 40708;
                         readonly src: "31953:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20869,7 +20869,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40628;
+                            readonly id: 40702;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "31953:7:156";
@@ -20881,12 +20881,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40631;
+                        readonly id: 40705;
                         readonly mutability: "mutable";
                         readonly name: "blockNumber";
                         readonly nameLocation: "31977:11:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40634;
+                        readonly scope: 40708;
                         readonly src: "31969:19:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20895,7 +20895,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40630;
+                            readonly id: 40704;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "31969:7:156";
@@ -20909,17 +20909,17 @@ export declare const VmSafe: {
                     readonly src: "31952:37:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40633;
+                    readonly id: 40707;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "31998:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40641;
+                readonly id: 40715;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "32132:59:156";
                 readonly nodes: readonly [];
@@ -20930,16 +20930,16 @@ export declare const VmSafe: {
                 readonly name: "rollFork";
                 readonly nameLocation: "32141:8:156";
                 readonly parameters: {
-                    readonly id: 40639;
+                    readonly id: 40713;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40636;
+                        readonly id: 40710;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "32158:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40641;
+                        readonly scope: 40715;
                         readonly src: "32150:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20948,7 +20948,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40635;
+                            readonly id: 40709;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32150:7:156";
@@ -20960,12 +20960,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40638;
+                        readonly id: 40712;
                         readonly mutability: "mutable";
                         readonly name: "txHash";
                         readonly nameLocation: "32174:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40641;
+                        readonly scope: 40715;
                         readonly src: "32166:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -20974,7 +20974,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40637;
+                            readonly id: 40711;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32166:7:156";
@@ -20988,17 +20988,17 @@ export declare const VmSafe: {
                     readonly src: "32149:32:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40640;
+                    readonly id: 40714;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "32190:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40646;
+                readonly id: 40720;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "32390:50:156";
                 readonly nodes: readonly [];
@@ -21009,16 +21009,16 @@ export declare const VmSafe: {
                 readonly name: "makePersistent";
                 readonly nameLocation: "32399:14:156";
                 readonly parameters: {
-                    readonly id: 40644;
+                    readonly id: 40718;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40643;
+                        readonly id: 40717;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "32422:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40646;
+                        readonly scope: 40720;
                         readonly src: "32414:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21027,7 +21027,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40642;
+                            readonly id: 40716;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32414:7:156";
@@ -21042,17 +21042,17 @@ export declare const VmSafe: {
                     readonly src: "32413:17:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40645;
+                    readonly id: 40719;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "32439:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40653;
+                readonly id: 40727;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "32445:69:156";
                 readonly nodes: readonly [];
@@ -21063,16 +21063,16 @@ export declare const VmSafe: {
                 readonly name: "makePersistent";
                 readonly nameLocation: "32454:14:156";
                 readonly parameters: {
-                    readonly id: 40651;
+                    readonly id: 40725;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40648;
+                        readonly id: 40722;
                         readonly mutability: "mutable";
                         readonly name: "account0";
                         readonly nameLocation: "32477:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40653;
+                        readonly scope: 40727;
                         readonly src: "32469:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21081,7 +21081,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40647;
+                            readonly id: 40721;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32469:7:156";
@@ -21094,12 +21094,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40650;
+                        readonly id: 40724;
                         readonly mutability: "mutable";
                         readonly name: "account1";
                         readonly nameLocation: "32495:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40653;
+                        readonly scope: 40727;
                         readonly src: "32487:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21108,7 +21108,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40649;
+                            readonly id: 40723;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32487:7:156";
@@ -21123,17 +21123,17 @@ export declare const VmSafe: {
                     readonly src: "32468:36:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40652;
+                    readonly id: 40726;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "32513:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40662;
+                readonly id: 40736;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "32519:87:156";
                 readonly nodes: readonly [];
@@ -21144,16 +21144,16 @@ export declare const VmSafe: {
                 readonly name: "makePersistent";
                 readonly nameLocation: "32528:14:156";
                 readonly parameters: {
-                    readonly id: 40660;
+                    readonly id: 40734;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40655;
+                        readonly id: 40729;
                         readonly mutability: "mutable";
                         readonly name: "account0";
                         readonly nameLocation: "32551:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40662;
+                        readonly scope: 40736;
                         readonly src: "32543:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21162,7 +21162,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40654;
+                            readonly id: 40728;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32543:7:156";
@@ -21175,12 +21175,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40657;
+                        readonly id: 40731;
                         readonly mutability: "mutable";
                         readonly name: "account1";
                         readonly nameLocation: "32569:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40662;
+                        readonly scope: 40736;
                         readonly src: "32561:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21189,7 +21189,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40656;
+                            readonly id: 40730;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32561:7:156";
@@ -21202,12 +21202,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40659;
+                        readonly id: 40733;
                         readonly mutability: "mutable";
                         readonly name: "account2";
                         readonly nameLocation: "32587:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40662;
+                        readonly scope: 40736;
                         readonly src: "32579:16:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21216,7 +21216,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40658;
+                            readonly id: 40732;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32579:7:156";
@@ -21231,17 +21231,17 @@ export declare const VmSafe: {
                     readonly src: "32542:54:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40661;
+                    readonly id: 40735;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "32605:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40668;
+                readonly id: 40742;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "32611:62:156";
                 readonly nodes: readonly [];
@@ -21252,16 +21252,16 @@ export declare const VmSafe: {
                 readonly name: "makePersistent";
                 readonly nameLocation: "32620:14:156";
                 readonly parameters: {
-                    readonly id: 40666;
+                    readonly id: 40740;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40665;
+                        readonly id: 40739;
                         readonly mutability: "mutable";
                         readonly name: "accounts";
                         readonly nameLocation: "32654:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40668;
+                        readonly scope: 40742;
                         readonly src: "32635:27:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -21271,7 +21271,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40663;
+                                readonly id: 40737;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "32635:7:156";
@@ -21281,7 +21281,7 @@ export declare const VmSafe: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 40664;
+                            readonly id: 40738;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "32635:9:156";
                             readonly typeDescriptions: {
@@ -21294,17 +21294,17 @@ export declare const VmSafe: {
                     readonly src: "32634:29:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40667;
+                    readonly id: 40741;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "32672:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40673;
+                readonly id: 40747;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "32767:52:156";
                 readonly nodes: readonly [];
@@ -21315,16 +21315,16 @@ export declare const VmSafe: {
                 readonly name: "revokePersistent";
                 readonly nameLocation: "32776:16:156";
                 readonly parameters: {
-                    readonly id: 40671;
+                    readonly id: 40745;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40670;
+                        readonly id: 40744;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "32801:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40673;
+                        readonly scope: 40747;
                         readonly src: "32793:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21333,7 +21333,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40669;
+                            readonly id: 40743;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32793:7:156";
@@ -21348,17 +21348,17 @@ export declare const VmSafe: {
                     readonly src: "32792:17:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40672;
+                    readonly id: 40746;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "32818:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40679;
+                readonly id: 40753;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "32824:64:156";
                 readonly nodes: readonly [];
@@ -21369,16 +21369,16 @@ export declare const VmSafe: {
                 readonly name: "revokePersistent";
                 readonly nameLocation: "32833:16:156";
                 readonly parameters: {
-                    readonly id: 40677;
+                    readonly id: 40751;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40676;
+                        readonly id: 40750;
                         readonly mutability: "mutable";
                         readonly name: "accounts";
                         readonly nameLocation: "32869:8:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40679;
+                        readonly scope: 40753;
                         readonly src: "32850:27:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "calldata";
@@ -21388,7 +21388,7 @@ export declare const VmSafe: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 40674;
+                                readonly id: 40748;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "32850:7:156";
@@ -21398,7 +21398,7 @@ export declare const VmSafe: {
                                     readonly typeString: "address";
                                 };
                             };
-                            readonly id: 40675;
+                            readonly id: 40749;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "32850:9:156";
                             readonly typeDescriptions: {
@@ -21411,17 +21411,17 @@ export declare const VmSafe: {
                     readonly src: "32849:29:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40678;
+                    readonly id: 40752;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "32887:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40686;
+                readonly id: 40760;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "32952:79:156";
                 readonly nodes: readonly [];
@@ -21432,16 +21432,16 @@ export declare const VmSafe: {
                 readonly name: "isPersistent";
                 readonly nameLocation: "32961:12:156";
                 readonly parameters: {
-                    readonly id: 40682;
+                    readonly id: 40756;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40681;
+                        readonly id: 40755;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "32982:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40686;
+                        readonly scope: 40760;
                         readonly src: "32974:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21450,7 +21450,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40680;
+                            readonly id: 40754;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "32974:7:156";
@@ -21465,16 +21465,16 @@ export declare const VmSafe: {
                     readonly src: "32973:17:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40685;
+                    readonly id: 40759;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40684;
+                        readonly id: 40758;
                         readonly mutability: "mutable";
                         readonly name: "persistent";
                         readonly nameLocation: "33019:10:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40686;
+                        readonly scope: 40760;
                         readonly src: "33014:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21483,7 +21483,7 @@ export declare const VmSafe: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 40683;
+                            readonly id: 40757;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "33014:4:156";
@@ -21496,12 +21496,12 @@ export declare const VmSafe: {
                     }];
                     readonly src: "33013:17:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40691;
+                readonly id: 40765;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "33112:51:156";
                 readonly nodes: readonly [];
@@ -21512,16 +21512,16 @@ export declare const VmSafe: {
                 readonly name: "allowCheatcodes";
                 readonly nameLocation: "33121:15:156";
                 readonly parameters: {
-                    readonly id: 40689;
+                    readonly id: 40763;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40688;
+                        readonly id: 40762;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "33145:7:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40691;
+                        readonly scope: 40765;
                         readonly src: "33137:15:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21530,7 +21530,7 @@ export declare const VmSafe: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 40687;
+                            readonly id: 40761;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "33137:7:156";
@@ -21545,17 +21545,17 @@ export declare const VmSafe: {
                     readonly src: "33136:17:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40690;
+                    readonly id: 40764;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "33162:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40696;
+                readonly id: 40770;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "33263:43:156";
                 readonly nodes: readonly [];
@@ -21566,16 +21566,16 @@ export declare const VmSafe: {
                 readonly name: "transact";
                 readonly nameLocation: "33272:8:156";
                 readonly parameters: {
-                    readonly id: 40694;
+                    readonly id: 40768;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40693;
+                        readonly id: 40767;
                         readonly mutability: "mutable";
                         readonly name: "txHash";
                         readonly nameLocation: "33289:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40696;
+                        readonly scope: 40770;
                         readonly src: "33281:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21584,7 +21584,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40692;
+                            readonly id: 40766;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "33281:7:156";
@@ -21598,17 +21598,17 @@ export declare const VmSafe: {
                     readonly src: "33280:16:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40695;
+                    readonly id: 40769;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "33305:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 40703;
+                readonly id: 40777;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "33405:59:156";
                 readonly nodes: readonly [];
@@ -21619,16 +21619,16 @@ export declare const VmSafe: {
                 readonly name: "transact";
                 readonly nameLocation: "33414:8:156";
                 readonly parameters: {
-                    readonly id: 40701;
+                    readonly id: 40775;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 40698;
+                        readonly id: 40772;
                         readonly mutability: "mutable";
                         readonly name: "forkId";
                         readonly nameLocation: "33431:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40703;
+                        readonly scope: 40777;
                         readonly src: "33423:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21637,7 +21637,7 @@ export declare const VmSafe: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 40697;
+                            readonly id: 40771;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "33423:7:156";
@@ -21649,12 +21649,12 @@ export declare const VmSafe: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 40700;
+                        readonly id: 40774;
                         readonly mutability: "mutable";
                         readonly name: "txHash";
                         readonly nameLocation: "33447:6:156";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 40703;
+                        readonly scope: 40777;
                         readonly src: "33439:14:156";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -21663,7 +21663,7 @@ export declare const VmSafe: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 40699;
+                            readonly id: 40773;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "33439:7:156";
@@ -21677,12 +21677,12 @@ export declare const VmSafe: {
                     readonly src: "33422:32:156";
                 };
                 readonly returnParameters: {
-                    readonly id: 40702;
+                    readonly id: 40776;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "33463:0:156";
                 };
-                readonly scope: 40704;
+                readonly scope: 40778;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -21690,14 +21690,14 @@ export declare const VmSafe: {
             readonly abstract: false;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 40233;
+                    readonly id: 40307;
                     readonly name: "VmSafe";
                     readonly nameLocations: readonly ["21872:6:156"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 40232;
+                    readonly referencedDeclaration: 40306;
                     readonly src: "21872:6:156";
                 };
-                readonly id: 40234;
+                readonly id: 40308;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "21872:6:156";
             }];
@@ -21705,10 +21705,10 @@ export declare const VmSafe: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "interface";
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [40704, 40232];
+            readonly linearizedBaseContracts: readonly [40778, 40306];
             readonly name: "Vm";
             readonly nameLocation: "21866:2:156";
-            readonly scope: 40705;
+            readonly scope: 40779;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];
