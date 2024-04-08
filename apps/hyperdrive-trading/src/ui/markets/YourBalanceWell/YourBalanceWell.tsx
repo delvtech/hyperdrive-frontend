@@ -128,7 +128,13 @@ function AvailableAsset({
           >
             {isEth && chainId === sepolia.id ? (
               <li>
-                <button onClick={() => mint?.()}>Go to Sepolia faucet</button>
+                <a
+                  href="https://faucetlink.to/sepolia"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Go to Sepolia faucet
+                </a>
               </li>
             ) : undefined}
             {!isEth && tokenBalance ? (
