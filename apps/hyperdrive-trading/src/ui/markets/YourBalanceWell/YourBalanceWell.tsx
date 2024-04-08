@@ -8,6 +8,8 @@ import {
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { cloudChain } from "src/chains/cloudChain";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
@@ -17,7 +19,8 @@ import { useMintToken } from "src/ui/token/hooks/useMintToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { Address, parseUnits } from "viem";
-import { useAccount, useReadContract } from "wagmi";
+import { foundry, sepolia } from "viem/chains";
+import { useAccount, useChainId, useReadContract } from "wagmi";
 
 export function YourBalanceWell({
   hyperdrive,
@@ -83,6 +86,7 @@ function AvailableAsset({
     query: { enabled: !isEth },
   });
   const isUnlimited = !!totalSupply && !!allowance && allowance > totalSupply;
+  const chainId = useChainId() as SupportedChainId;
 
   const { mint } = useMintToken({
     amount: parseUnits("500000000", token.decimals),
@@ -134,7 +138,7 @@ function AvailableAsset({
               token={token}
               spender={spender}
             />
-            {import.meta.env.DEV ? (
+            {[cloudChain.id, sepolia.id, foundry.id].includes(chainId) ? (
               <li>
                 <button disabled={!mint} onClick={() => mint?.()}>
                   Mint
