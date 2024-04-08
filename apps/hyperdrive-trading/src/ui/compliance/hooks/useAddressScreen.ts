@@ -2,8 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 
 const url = import.meta.env.VITE_ADDRESS_SCREEN_URL;
 
-export default function useAddressScreen(address: string | null | undefined): {
-  pass: boolean | null | undefined;
+export default function useAddressScreen(address: string | undefined): {
+  isIneligible: boolean | null | undefined;
   error: unknown;
 } {
   const { data: result, error } = useQuery<APIResponse>({
@@ -17,8 +17,12 @@ export default function useAddressScreen(address: string | null | undefined): {
         body: JSON.stringify({ address }),
       }).then((res) => res.json()),
   });
+
+  const eligibleStatus = result?.data;
+
   return {
-    pass: result?.data ?? undefined,
+    isIneligible:
+      typeof eligibleStatus === "boolean" ? !eligibleStatus : eligibleStatus,
     error: result?.error ?? error,
   };
 }

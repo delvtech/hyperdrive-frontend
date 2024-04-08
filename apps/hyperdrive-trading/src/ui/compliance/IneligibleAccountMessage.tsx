@@ -10,17 +10,17 @@ export function IneligibleAccountMessage({
   className?: string;
 }): ReactElement | undefined {
   const { address } = useAccount();
-  const { pass } = useAddressScreen(address);
+  const { isIneligible } = useAddressScreen(address);
   const navigate = useNavigate();
   const isVoid = !!useMatchRoute()({ to: "/void" });
 
   useEffect(() => {
-    if (pass === false && !isVoid) {
+    if (isIneligible && !isVoid) {
       navigate({ to: "/void" });
     }
-  }, [pass, isVoid, navigate]);
+  }, [isIneligible, isVoid, navigate]);
 
-  return pass === false ? (
+  return isIneligible ? (
     <div
       className={classNames(
         "flex w-screen flex-col items-center justify-center gap-4",
