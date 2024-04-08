@@ -86,13 +86,18 @@ function AvailableAsset({
     query: { enabled: !isEth },
   });
   const isUnlimited = !!totalSupply && !!allowance && allowance > totalSupply;
-  const chainId = useChainId() as SupportedChainId;
 
   const { mint } = useMintToken({
     amount: parseUnits("500000000", token.decimals),
     token: token,
     destination: account,
   });
+
+  const chainId = useChainId() as SupportedChainId;
+  const isTestnetChain = [cloudChain.id, sepolia.id, foundry.id].includes(
+    chainId,
+  );
+  const hasFaucet = chainId === sepolia.id;
 
   return (
     <div className="flex whitespace-nowrap ">
@@ -112,7 +117,7 @@ function AvailableAsset({
         )}
       </div>
 
-      {isEth || tokenBalance === undefined ? undefined : (
+      {(isEth && hasFaucet) || !isEth ? (
         <div className="daisy-dropdown daisy-dropdown-end">
           <div tabIndex={0} role="button" className="daisy-btn daisy-btn-sm">
             <EllipsisVerticalIcon className="h-5" />
@@ -121,33 +126,42 @@ function AvailableAsset({
             tabIndex={0}
             className="daisy-menu daisy-dropdown-content z-[1] w-52 rounded-lg bg-base-100 p-4 shadow"
           >
-            <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
-              <span>Allowance</span>
-              <span className="font-normal">
-                {isUnlimited
-                  ? "Unlimited"
-                  : formatBalance({
-                      balance: allowance || 0n,
-                      decimals: token.decimals,
-                      places: 4,
-                    })}
-              </span>
-            </li>
-            <RevokeAllowanceModalButton
-              allowance={allowance}
-              token={token}
-              spender={spender}
-            />
-            {[cloudChain.id, sepolia.id, foundry.id].includes(chainId) ? (
+            {isEth && chainId === sepolia.id ? (
               <li>
-                <button disabled={!mint} onClick={() => mint?.()}>
-                  Mint
-                </button>
+                <button onClick={() => mint?.()}>Go to Sepolia faucet</button>
               </li>
+            ) : undefined}
+            {!isEth && tokenBalance ? (
+              <>
+                <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
+                  <span>Allowance</span>
+                  <span className="font-normal">
+                    {isUnlimited
+                      ? "Unlimited"
+                      : formatBalance({
+                          balance: allowance || 0n,
+                          decimals: token.decimals,
+                          places: 4,
+                        })}
+                  </span>
+                </li>
+                <RevokeAllowanceModalButton
+                  allowance={allowance}
+                  token={token}
+                  spender={spender}
+                />
+                {isTestnetChain ? (
+                  <li>
+                    <button disabled={!mint} onClick={() => mint?.()}>
+                      Mint
+                    </button>
+                  </li>
+                ) : undefined}
+              </>
             ) : undefined}
           </ul>
         </div>
-      )}
+      ) : undefined}
     </div>
   );
 }
