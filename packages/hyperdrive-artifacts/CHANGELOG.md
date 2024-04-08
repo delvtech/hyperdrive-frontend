@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 0.0.3
+
+### Patch Changes
+
+- de73cff: Upgrade to contracts version 0.13.0
+
 ## 0.0.2
 
 ### Patch Changes

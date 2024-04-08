@@ -1,6 +1,6 @@
 {
   "name": "@hyperdrive/appconfig",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "license": "AGPL-3.0",
   "type": "module",
@@ -17,8 +17,8 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@delvtech/hyperdrive-artifacts": "^0.0.2",
-    "@delvtech/hyperdrive-viem": "^0.0.2",
+    "@delvtech/hyperdrive-artifacts": "^0.0.3",
+    "@delvtech/hyperdrive-viem": "^0.0.3",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
