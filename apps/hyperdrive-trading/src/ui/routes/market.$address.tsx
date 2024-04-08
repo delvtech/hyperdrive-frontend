@@ -1,4 +1,4 @@
-import { FileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 
 import { Market } from "src/ui/markets/Market";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
@@ -9,7 +9,7 @@ const marketRouteParams = z.object({
   openOrClosed: z.enum(["Open", "Closed"]).catch("Open"),
 });
 
-export const Route = new FileRoute(MARKET_DETAILS_ROUTE).createRoute({
+export const Route = createFileRoute(MARKET_DETAILS_ROUTE)({
   component: () => <Market />,
   validateSearch: marketRouteParams,
   loaderDeps: ({ search: { position, openOrClosed } }) => {

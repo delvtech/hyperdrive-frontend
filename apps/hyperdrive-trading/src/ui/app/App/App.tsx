@@ -1,6 +1,6 @@
 import { ReactElement, StrictMode } from "react";
 
-import { Router, RouterProvider } from "@tanstack/react-router";
+import { createRouter, RouterProvider } from "@tanstack/react-router";
 
 // Import the generated route tree
 import { routeTree } from "src/routeTree.gen";
@@ -8,7 +8,7 @@ import { TermsOfUseAndPrivacyPolicyModal } from "src/ui/compliance/TermsOfUseAnd
 import { useClearLocalStorageOnNewVersion } from "src/ui/version/useClearLocalStorageOnNewVersion";
 
 // Create a new router instance
-const router = new Router({ routeTree });
+const router = createRouter({ routeTree });
 
 // Register the router instance for type safety
 declare module "@tanstack/react-router" {
