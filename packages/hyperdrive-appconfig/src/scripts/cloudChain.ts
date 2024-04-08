@@ -1,7 +1,7 @@
 import "dotenv/config";
 import { AddressesJson } from "src/addresses/AddressesJson";
 
-import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromAddressesJson";
+import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromRegistryAddresses";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { fetchJson } from "src/base/fetchJson";
 import { fetchRegistryAddresses } from "src/base/fetchRegistryAddresses";

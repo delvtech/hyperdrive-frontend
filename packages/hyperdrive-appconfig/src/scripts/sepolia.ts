@@ -1,6 +1,6 @@
 import "dotenv/config";
 
-import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromAddressesJson";
+import { getAppConfigFromRegistryAddresses } from "src/appconfig/getAppConfigFromRegistryAddresses";
 import { writeAppConfigToFile } from "src/appconfig/writeAppConfigToFile";
 import { fetchRegistryAddresses } from "src/base/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
