@@ -13,9 +13,10 @@ export function Market(): ReactElement {
     (hyperdrive) => hyperdrive.address === address,
   );
 
+  const title = market ? `${market?.name} - Hyperdrive` : "Pool not found";
   return (
     <div className="flex justify-center bg-base-100 px-4 py-8">
-      <CommonHeadTags />
+      <CommonHeadTags title={title} />
       {appConfig ? (
         <MarketDetailsBody hyperdrive={market ?? appConfig?.hyperdrives[0]} />
       ) : null}
