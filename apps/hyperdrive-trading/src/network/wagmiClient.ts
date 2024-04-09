@@ -32,6 +32,9 @@ const customWallets = [];
 if (VITE_LOCALHOST_NODE_RPC_URL && VITE_LOCALHOST_NODE_RPC_URL) {
   chains.push(foundry);
   transports[foundry.id] = http(VITE_LOCALHOST_NODE_RPC_URL);
+  if (capsuleWallet) {
+    customWallets.push(capsuleWallet);
+  }
 }
 
 // CloudChain
