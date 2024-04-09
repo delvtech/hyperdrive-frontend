@@ -1,13 +1,16 @@
 import { ERC20 } from "@delvtech/hyperdrive-artifacts/ERC20";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import {
+  EmptyExtensions,
   HyperdriveConfig,
   TokenConfig,
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
+import classNames from "classnames";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { MAX_UINT256 } from "src/base/constants";
 import { cloudChain } from "src/chains/cloudChain";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
@@ -15,10 +18,13 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { RevokeAllowanceModalButton } from "src/ui/token/RevokeAllowanceModalButton";
+import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
+import { useDepositBaseForShares } from "src/ui/token/hooks/useDepositBaseForShares";
+import { useMaxMintAmount } from "src/ui/token/hooks/useMaxMintAmount";
 import { useMintToken } from "src/ui/token/hooks/useMintToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { Address, parseUnits } from "viem";
+import { Address } from "viem";
 import { foundry, sepolia } from "viem/chains";
 import { useAccount, useChainId, useReadContract } from "wagmi";
 
@@ -46,29 +52,43 @@ export function YourBalanceWell({
       <div className="flex flex-col">
         <p className="mb-2 text-sm text-neutral-content">Available Assets</p>
         <div className="flex flex-col gap-2">
-          <AvailableAsset token={baseToken} spender={hyperdrive.address} />
-          <AvailableAsset token={sharesToken} spender={hyperdrive.address} />
+          <AvailableAsset
+            targetToken={baseToken}
+            baseToken={baseToken}
+            spender={hyperdrive.address}
+          />
+          <AvailableAsset
+            targetToken={sharesToken}
+            baseToken={baseToken}
+            spender={hyperdrive.address}
+          />
         </div>
       </div>
     </Well>
   );
 }
 function AvailableAsset({
-  token,
+  targetToken,
+  baseToken,
   spender,
 }: {
   spender: Address;
-  token: TokenConfig<any>;
+  baseToken: TokenConfig<EmptyExtensions>;
+  targetToken: TokenConfig<any>;
 }) {
   const { address: account } = useAccount();
-  const isEth = token.address === ETH_MAGIC_NUMBER;
-  const { balance: tokenBalance, status: tokenBalanceStatus } = useTokenBalance(
-    {
+  const isEth = targetToken.address === ETH_MAGIC_NUMBER;
+  const { balance: targetTokenBalance, status: targetTokenBalanceStatus } =
+    useTokenBalance({
       account: account,
-      tokenAddress: token.address,
-      decimals: token.decimals,
-    },
-  );
+      tokenAddress: targetToken.address,
+      decimals: targetToken.decimals,
+    });
+  const { balance: baseTokenBalance } = useTokenBalance({
+    account: account,
+    tokenAddress: baseToken.address,
+    decimals: baseToken.decimals,
+  });
 
   // If you can spend more than the total supply of the token, then it's
   // effectively an infinite approval. See revoke.cash:
@@ -76,20 +96,62 @@ function AvailableAsset({
   const { tokenAllowance: allowance } = useTokenAllowance({
     account,
     spender,
-    tokenAddress: token.address,
+    tokenAddress: targetToken.address,
     enabled: !isEth,
   });
   const { data: totalSupply } = useReadContract({
     abi: ERC20.abi,
     functionName: "totalSupply",
-    address: token.address,
+    address: targetToken.address,
     query: { enabled: !isEth },
   });
   const isUnlimited = !!totalSupply && !!allowance && allowance > totalSupply;
 
+  const { maxMintAmount } = useMaxMintAmount(baseToken);
+
+  let baseAmountToDepositForShares = undefined;
+  if (maxMintAmount && baseTokenBalance?.value) {
+    baseAmountToDepositForShares =
+      maxMintAmount < baseTokenBalance?.value
+        ? maxMintAmount
+        : baseTokenBalance?.value;
+  }
+
+  const isSharesTokenTargetToken =
+    targetToken.address !== baseToken.address && !isEth;
+
+  const { approve: approveSharesTokenToSpendBaseToken } = useApproveToken({
+    tokenAddress: baseToken.address,
+    spender: targetToken.address,
+    amount: MAX_UINT256,
+    enabled: isSharesTokenTargetToken,
+  });
+  const { tokenAllowance: sharesTokenToSpendBaseTokenAllowance } =
+    useTokenAllowance({
+      account,
+      spender: targetToken.address,
+      tokenAddress: baseToken.address,
+      enabled: !isEth,
+    });
+
+  const hasEnoughAllowanceForDepositingBaseForSharesTokens =
+    !!baseAmountToDepositForShares &&
+    !!sharesTokenToSpendBaseTokenAllowance &&
+    sharesTokenToSpendBaseTokenAllowance >= baseAmountToDepositForShares;
+
+  const { depositBaseForShares } = useDepositBaseForShares({
+    sharesToken: targetToken,
+    baseTokenSymbol: baseToken.symbol,
+    baseAmount: baseAmountToDepositForShares,
+    destination: account,
+    enabled:
+      isSharesTokenTargetToken &&
+      !!maxMintAmount &&
+      hasEnoughAllowanceForDepositingBaseForSharesTokens,
+  });
+
   const { mint } = useMintToken({
-    amount: parseUnits("500000000", token.decimals),
-    token: token,
+    token: baseToken,
     destination: account,
   });
 
@@ -102,17 +164,18 @@ function AvailableAsset({
   return (
     <div className="flex whitespace-nowrap ">
       <div className="flex items-center gap-1 text-h5 font-bold">
-        {tokenBalanceStatus === "loading" || tokenBalance === undefined ? (
+        {targetTokenBalanceStatus === "loading" ||
+        targetTokenBalance === undefined ? (
           <Skeleton className="w-52" />
         ) : (
           <>
-            <img src={token.iconUrl} className="h-8 rounded-full  p-1" />
+            <img src={targetToken.iconUrl} className="h-8 rounded-full  p-1" />
             {formatBalance({
-              balance: tokenBalance.value || 0n,
-              decimals: token.decimals,
+              balance: targetTokenBalance.value || 0n,
+              decimals: targetToken.decimals,
               places: 4,
             })}{" "}
-            {token.symbol}
+            {targetToken.symbol}
           </>
         )}
       </div>
@@ -137,7 +200,7 @@ function AvailableAsset({
                 </a>
               </li>
             ) : undefined}
-            {!isEth && tokenBalance ? (
+            {!isEth && targetTokenBalance ? (
               <>
                 <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
                   <span>Allowance</span>
@@ -146,17 +209,52 @@ function AvailableAsset({
                       ? "Unlimited"
                       : formatBalance({
                           balance: allowance || 0n,
-                          decimals: token.decimals,
+                          decimals: targetToken.decimals,
                           places: 4,
                         })}
                   </span>
                 </li>
                 <RevokeAllowanceModalButton
                   allowance={allowance}
-                  token={token}
+                  token={targetToken}
                   spender={spender}
                 />
-                {isTestnetChain ? (
+                {isTestnetChain && isSharesTokenTargetToken ? (
+                  <>
+                    <li
+                      className={classNames(
+                        !approveSharesTokenToSpendBaseToken ||
+                          hasEnoughAllowanceForDepositingBaseForSharesTokens
+                          ? "daisy-disabled"
+                          : undefined,
+                      )}
+                    >
+                      <button
+                        disabled={
+                          !approveSharesTokenToSpendBaseToken ||
+                          hasEnoughAllowanceForDepositingBaseForSharesTokens
+                        }
+                        onClick={() => approveSharesTokenToSpendBaseToken?.()}
+                      >
+                        {`1. Approve ${targetToken.symbol} for ${baseToken.symbol}`}
+                      </button>
+                    </li>
+                    <li
+                      className={classNames(
+                        !depositBaseForShares ? "daisy-disabled" : undefined,
+                      )}
+                    >
+                      <button
+                        disabled={!depositBaseForShares}
+                        onClick={() => depositBaseForShares?.()}
+                      >
+                        {`2. Deposit ${baseToken.symbol} for ${targetToken.symbol}`}
+                      </button>
+                    </li>
+                  </>
+                ) : undefined}
+
+                {isTestnetChain && !isSharesTokenTargetToken ? (
                   <li>
                     <button disabled={!mint} onClick={() => mint?.()}>
                       Mint
