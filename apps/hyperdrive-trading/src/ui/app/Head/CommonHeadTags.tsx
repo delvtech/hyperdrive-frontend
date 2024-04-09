@@ -5,9 +5,9 @@ interface CommonHeadTagsProps {
   description?: string;
 }
 
-const defaultTitle = "Hyperdrive Trading";
+const defaultTitle = "Hyperdrive";
 const defaultDescription =
-  "Hyperdrive is the next research leap from the Delv team on variable and fixed rate primitives. No preset expiration dates, no fragmented liquidity, and no LP rollovers, aka everlasting liquidity.";
+  "Hyperdrive is the next research leap from the DELV team on variable and fixed rate primitives. No preset expiration dates, no fragmented liquidity, and no LP rollovers, aka everlasting liquidity.";
 
 export function CommonHeadTags({
   title = defaultTitle,
