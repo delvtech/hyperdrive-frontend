@@ -18,7 +18,7 @@ export const cloudChainAppConfig: AppConfig = {
   ],
   tokens: [
     {
-      address: "0x34099867329Cb7b5883dD25B5FFE05bb00c4d143",
+      address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
       decimals: 18,
       name: "sDai",
       symbol: "SDAI",
@@ -30,7 +30,7 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
       decimals: 18,
       name: "Multi Collateral DAI",
       symbol: "DAI",
@@ -40,7 +40,7 @@ export const cloudChainAppConfig: AppConfig = {
       extensions: {},
     },
     {
-      address: "0x036B75A3e29f174544E12941853E02cC422Ef8D3",
+      address: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
       decimals: 18,
       name: "Liquid staked Ether 2.0",
       symbol: "stETH",
@@ -63,18 +63,18 @@ export const cloudChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0xd7d501b17Db64837Aa802F5C908F1D6C5Cb0f57e",
+      address: "0x6557CCf6405BB61ac8a7cF231bE8e954C2c01A1b",
       name: "365d DAI-Maker DSR",
       decimals: 18,
-      baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
-      sharesToken: "0x34099867329Cb7b5883dD25B5FFE05bb00c4d143",
+      baseToken: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      sharesToken: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
-        vaultSharesToken: "0x34099867329Cb7b5883dD25B5FFE05bb00c4d143",
-        linkerFactory: "0x8B035e50565eD7De0BA828f073c04392335A6794",
+        baseToken: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+        vaultSharesToken: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+        linkerFactory: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
         linkerCodeHash:
           "0x04f5e793aa939acd876ec5abe78a78653fcde948ab4bbb1eb9fd5643edfdd659",
         initialVaultSharePrice: 1000000000000000000n,
@@ -95,18 +95,18 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x2c865d19576141447AeB11e0b9a15abB366e4991",
+      address: "0x6b70e6811aabEFE93b83014a1F4D97f0A1c4B958",
       name: "365d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0x036B75A3e29f174544E12941853E02cC422Ef8D3",
+      sharesToken: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: false,
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0x036B75A3e29f174544E12941853E02cC422Ef8D3",
-        linkerFactory: "0x8B035e50565eD7De0BA828f073c04392335A6794",
+        vaultSharesToken: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
+        linkerFactory: "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6",
         linkerCodeHash:
           "0x04f5e793aa939acd876ec5abe78a78653fcde948ab4bbb1eb9fd5643edfdd659",
         initialVaultSharePrice: 1000000029965753424n,
