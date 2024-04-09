@@ -40,7 +40,7 @@ export const cloudChainAppConfig: AppConfig = {
       extensions: {},
     },
     {
-      address: "0x23F23Dc2456fe59a0aaF64F19c65b748967fE181",
+      address: "0x036B75A3e29f174544E12941853E02cC422Ef8D3",
       decimals: 18,
       name: "Liquid staked Ether 2.0",
       symbol: "stETH",
@@ -63,7 +63,7 @@ export const cloudChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0xccd217665d938221e646d0ddd5fe645d241882cf",
+      address: "0xd7d501b17Db64837Aa802F5C908F1D6C5Cb0f57e",
       name: "365d DAI-Maker DSR",
       decimals: 18,
       baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
@@ -74,9 +74,9 @@ export const cloudChainAppConfig: AppConfig = {
       poolConfig: {
         baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
         vaultSharesToken: "0x34099867329Cb7b5883dD25B5FFE05bb00c4d143",
-        linkerFactory: "0x8d4928532f2DD0E2f31F447d7902197E54DB2302",
+        linkerFactory: "0x8B035e50565eD7De0BA828f073c04392335A6794",
         linkerCodeHash:
-          "0xc100b08b59c34b99d6f22bd4001a5ae93f5b3d1c5dd12190a656aeae9d02c646",
+          "0x04f5e793aa939acd876ec5abe78a78653fcde948ab4bbb1eb9fd5643edfdd659",
         initialVaultSharePrice: 1000000000000000000n,
         minimumShareReserves: 10000000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
@@ -95,20 +95,20 @@ export const cloudChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x4b4c503330b1f89ed70aae78c79451db91df8596",
+      address: "0x2c865d19576141447AeB11e0b9a15abB366e4991",
       name: "365d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0x23F23Dc2456fe59a0aaF64F19c65b748967fE181",
+      sharesToken: "0x036B75A3e29f174544E12941853E02cC422Ef8D3",
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: false,
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0x23F23Dc2456fe59a0aaF64F19c65b748967fE181",
-        linkerFactory: "0x8d4928532f2DD0E2f31F447d7902197E54DB2302",
+        vaultSharesToken: "0x036B75A3e29f174544E12941853E02cC422Ef8D3",
+        linkerFactory: "0x8B035e50565eD7De0BA828f073c04392335A6794",
         linkerCodeHash:
-          "0xc100b08b59c34b99d6f22bd4001a5ae93f5b3d1c5dd12190a656aeae9d02c646",
+          "0x04f5e793aa939acd876ec5abe78a78653fcde948ab4bbb1eb9fd5643edfdd659",
         initialVaultSharePrice: 1000000029965753424n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,

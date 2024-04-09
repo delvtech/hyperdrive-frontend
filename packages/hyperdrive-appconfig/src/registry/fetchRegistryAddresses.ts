@@ -9,8 +9,13 @@ const minimalFactoryAbi = parseAbi([
   "function getInstanceAtIndex(uint256 index) external view returns (address)",
 ] as const);
 
-const stethHyperdriveSharesTokenSymbols = ["stETH"];
-const erc4626HyperdriveSharesTokenSymbols = ["DELV", "sDAI"];
+// These hardcoded lists of shares token symbols help us to identify what kind
+// of hyperdrive a pool is, eg: steth, sDai, etc.
+const stethHyperdriveSharesTokenSymbols: Uppercase<string>[] = ["STETH"];
+const erc4626HyperdriveSharesTokenSymbols: Uppercase<string>[] = [
+  "DELV",
+  "SDAI",
+];
 
 export async function fetchRegistryAddresses({
   factoryAddress,
@@ -60,11 +65,13 @@ export async function fetchRegistryAddresses({
 
     // TODO: use hyperdrive.getSharesToken() once it exists
     const { vaultSharesToken } = await hyperdrive.getPoolConfig();
-    const sharesTokenSymbol = await publicClient.readContract({
-      address: vaultSharesToken,
-      abi: erc20Abi,
-      functionName: "symbol",
-    });
+    const sharesTokenSymbol = (
+      await publicClient.readContract({
+        address: vaultSharesToken,
+        abi: erc20Abi,
+        functionName: "symbol",
+      })
+    ).toUpperCase() as Uppercase<string>;
 
     if (stethHyperdriveSharesTokenSymbols.includes(sharesTokenSymbol)) {
       hyperdrives.stethHyperdrive.push(hyperdriveAddress);
