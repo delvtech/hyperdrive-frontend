@@ -429,7 +429,7 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
-    if (checkpointEvents.length) {
+    if (!checkpointEvents.length) {
       return { lpApy: 0 };
     }
 
