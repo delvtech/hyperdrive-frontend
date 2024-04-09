@@ -6,7 +6,6 @@ import { fetchRegistryAddresses } from "src/registry/fetchRegistryAddresses";
 import { createPublicClient, http } from "viem";
 import { sepolia } from "viem/chains";
 
-const sepoliaChainId = +(process.env.SEPOLIA_CHAIN_ID as string);
 const sepoliaNodeRpcUrl = process.env.SEPOLIA_NODE_RPC_URL as string;
 
 const publicClient = createPublicClient({
@@ -15,19 +14,18 @@ const publicClient = createPublicClient({
 });
 
 fetchRegistryAddresses({
-  // TODO: Fill these in with the correct sepolia addresses
-  factoryAddress: "0x",
-  registryAddress: "0x",
+  factoryAddress: "0xCe170D68d5D5eDbe64Db7F4bB2cddc8148A4CfF4",
+  registryAddress: "0xBD209b0d25E2017039761ad500e972EAd74B42c8",
   publicClient,
 }).then(async (addresses) => {
   const appConfig = await getAppConfigFromRegistryAddresses({
     addresses,
-    chainId: sepoliaChainId,
+    chainId: sepolia.id,
     publicClient,
   });
 
   writeAppConfigToFile({
-    filename: `./src/generated/${sepoliaChainId}.appconfig.ts`,
+    filename: `./src/generated/${sepolia.id}.appconfig.ts`,
     appConfig,
     appConfigName: "sepoliaAppConfig",
   });
