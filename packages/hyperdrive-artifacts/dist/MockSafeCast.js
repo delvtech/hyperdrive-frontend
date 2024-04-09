@@ -392,10 +392,10 @@ export const MockSafeCast = {
     },
     "ast": {
         "absolutePath": "contracts/test/MockSafeCast.sol",
-        "id": 26976,
+        "id": 27082,
         "exportedSymbols": {
             "MockSafeCast": [
-                26975
+                27081
             ],
             "SafeCast": [
                 21815
@@ -405,7 +405,7 @@ export const MockSafeCast = {
         "src": "39:660:141",
         "nodes": [
             {
-                "id": 26897,
+                "id": 27003,
                 "nodeType": "PragmaDirective",
                 "src": "39:24:141",
                 "nodes": [],
@@ -417,19 +417,19 @@ export const MockSafeCast = {
                 ]
             },
             {
-                "id": 26899,
+                "id": 27005,
                 "nodeType": "ImportDirective",
                 "src": "65:57:141",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/SafeCast.sol",
                 "file": "../src/libraries/SafeCast.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 26976,
+                "scope": 27082,
                 "sourceUnit": 21816,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 26898,
+                            "id": 27004,
                             "name": "SafeCast",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -443,34 +443,34 @@ export const MockSafeCast = {
                 "unitAlias": ""
             },
             {
-                "id": 26975,
+                "id": 27081,
                 "nodeType": "ContractDefinition",
                 "src": "124:574:141",
                 "nodes": [
                     {
-                        "id": 26914,
+                        "id": 27020,
                         "nodeType": "FunctionDefinition",
                         "src": "152:106:141",
                         "nodes": [],
                         "body": {
-                            "id": 26913,
+                            "id": 27019,
                             "nodeType": "Block",
                             "src": "216:42:141",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 26911,
+                                        "id": 27017,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 26906,
+                                            "id": 27012,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26904,
+                                            "referencedDeclaration": 27010,
                                             "src": "226:1:141",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint112",
@@ -482,11 +482,11 @@ export const MockSafeCast = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 26909,
+                                                    "id": 27015,
                                                     "name": "x",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 26901,
+                                                    "referencedDeclaration": 27007,
                                                     "src": "249:1:141",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -502,7 +502,7 @@ export const MockSafeCast = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 26907,
+                                                    "id": 27013,
                                                     "name": "SafeCast",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -513,7 +513,7 @@ export const MockSafeCast = {
                                                         "typeString": "type(library SafeCast)"
                                                     }
                                                 },
-                                                "id": 26908,
+                                                "id": 27014,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -528,7 +528,7 @@ export const MockSafeCast = {
                                                     "typeString": "function (uint256) pure returns (uint112)"
                                                 }
                                             },
-                                            "id": 26910,
+                                            "id": 27016,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -550,7 +550,7 @@ export const MockSafeCast = {
                                             "typeString": "uint112"
                                         }
                                     },
-                                    "id": 26912,
+                                    "id": 27018,
                                     "nodeType": "ExpressionStatement",
                                     "src": "226:25:141"
                                 }
@@ -563,17 +563,17 @@ export const MockSafeCast = {
                         "name": "toUint112",
                         "nameLocation": "161:9:141",
                         "parameters": {
-                            "id": 26902,
+                            "id": 27008,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26901,
+                                    "id": 27007,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "179:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26914,
+                                    "scope": 27020,
                                     "src": "171:9:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -582,7 +582,7 @@ export const MockSafeCast = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26900,
+                                        "id": 27006,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "171:7:141",
@@ -597,17 +597,17 @@ export const MockSafeCast = {
                             "src": "170:11:141"
                         },
                         "returnParameters": {
-                            "id": 26905,
+                            "id": 27011,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26904,
+                                    "id": 27010,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "213:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26914,
+                                    "scope": 27020,
                                     "src": "205:9:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -616,7 +616,7 @@ export const MockSafeCast = {
                                         "typeString": "uint112"
                                     },
                                     "typeName": {
-                                        "id": 26903,
+                                        "id": 27009,
                                         "name": "uint112",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "205:7:141",
@@ -630,35 +630,35 @@ export const MockSafeCast = {
                             ],
                             "src": "204:11:141"
                         },
-                        "scope": 26975,
+                        "scope": 27081,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26929,
+                        "id": 27035,
                         "nodeType": "FunctionDefinition",
                         "src": "264:106:141",
                         "nodes": [],
                         "body": {
-                            "id": 26928,
+                            "id": 27034,
                             "nodeType": "Block",
                             "src": "328:42:141",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 26926,
+                                        "id": 27032,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 26921,
+                                            "id": 27027,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26919,
+                                            "referencedDeclaration": 27025,
                                             "src": "338:1:141",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint128",
@@ -670,11 +670,11 @@ export const MockSafeCast = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 26924,
+                                                    "id": 27030,
                                                     "name": "x",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 26916,
+                                                    "referencedDeclaration": 27022,
                                                     "src": "361:1:141",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -690,7 +690,7 @@ export const MockSafeCast = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 26922,
+                                                    "id": 27028,
                                                     "name": "SafeCast",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -701,7 +701,7 @@ export const MockSafeCast = {
                                                         "typeString": "type(library SafeCast)"
                                                     }
                                                 },
-                                                "id": 26923,
+                                                "id": 27029,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -716,7 +716,7 @@ export const MockSafeCast = {
                                                     "typeString": "function (uint256) pure returns (uint128)"
                                                 }
                                             },
-                                            "id": 26925,
+                                            "id": 27031,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -738,7 +738,7 @@ export const MockSafeCast = {
                                             "typeString": "uint128"
                                         }
                                     },
-                                    "id": 26927,
+                                    "id": 27033,
                                     "nodeType": "ExpressionStatement",
                                     "src": "338:25:141"
                                 }
@@ -751,17 +751,17 @@ export const MockSafeCast = {
                         "name": "toUint128",
                         "nameLocation": "273:9:141",
                         "parameters": {
-                            "id": 26917,
+                            "id": 27023,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26916,
+                                    "id": 27022,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "291:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26929,
+                                    "scope": 27035,
                                     "src": "283:9:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -770,7 +770,7 @@ export const MockSafeCast = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26915,
+                                        "id": 27021,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "283:7:141",
@@ -785,17 +785,17 @@ export const MockSafeCast = {
                             "src": "282:11:141"
                         },
                         "returnParameters": {
-                            "id": 26920,
+                            "id": 27026,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26919,
+                                    "id": 27025,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "325:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26929,
+                                    "scope": 27035,
                                     "src": "317:9:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -804,7 +804,7 @@ export const MockSafeCast = {
                                         "typeString": "uint128"
                                     },
                                     "typeName": {
-                                        "id": 26918,
+                                        "id": 27024,
                                         "name": "uint128",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "317:7:141",
@@ -818,35 +818,35 @@ export const MockSafeCast = {
                             ],
                             "src": "316:11:141"
                         },
-                        "scope": 26975,
+                        "scope": 27081,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26944,
+                        "id": 27050,
                         "nodeType": "FunctionDefinition",
                         "src": "376:103:141",
                         "nodes": [],
                         "body": {
-                            "id": 26943,
+                            "id": 27049,
                             "nodeType": "Block",
                             "src": "438:41:141",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 26941,
+                                        "id": 27047,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 26936,
+                                            "id": 27042,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26934,
+                                            "referencedDeclaration": 27040,
                                             "src": "448:1:141",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int128",
@@ -858,11 +858,11 @@ export const MockSafeCast = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 26939,
+                                                    "id": 27045,
                                                     "name": "x",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 26931,
+                                                    "referencedDeclaration": 27037,
                                                     "src": "470:1:141",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -878,7 +878,7 @@ export const MockSafeCast = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 26937,
+                                                    "id": 27043,
                                                     "name": "SafeCast",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -889,7 +889,7 @@ export const MockSafeCast = {
                                                         "typeString": "type(library SafeCast)"
                                                     }
                                                 },
-                                                "id": 26938,
+                                                "id": 27044,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -904,7 +904,7 @@ export const MockSafeCast = {
                                                     "typeString": "function (uint256) pure returns (int128)"
                                                 }
                                             },
-                                            "id": 26940,
+                                            "id": 27046,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -926,7 +926,7 @@ export const MockSafeCast = {
                                             "typeString": "int128"
                                         }
                                     },
-                                    "id": 26942,
+                                    "id": 27048,
                                     "nodeType": "ExpressionStatement",
                                     "src": "448:24:141"
                                 }
@@ -939,17 +939,17 @@ export const MockSafeCast = {
                         "name": "toInt128",
                         "nameLocation": "385:8:141",
                         "parameters": {
-                            "id": 26932,
+                            "id": 27038,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26931,
+                                    "id": 27037,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "402:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26944,
+                                    "scope": 27050,
                                     "src": "394:9:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -958,7 +958,7 @@ export const MockSafeCast = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26930,
+                                        "id": 27036,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "394:7:141",
@@ -973,17 +973,17 @@ export const MockSafeCast = {
                             "src": "393:11:141"
                         },
                         "returnParameters": {
-                            "id": 26935,
+                            "id": 27041,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26934,
+                                    "id": 27040,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "435:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26944,
+                                    "scope": 27050,
                                     "src": "428:8:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -992,7 +992,7 @@ export const MockSafeCast = {
                                         "typeString": "int128"
                                     },
                                     "typeName": {
-                                        "id": 26933,
+                                        "id": 27039,
                                         "name": "int128",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "428:6:141",
@@ -1006,35 +1006,35 @@ export const MockSafeCast = {
                             ],
                             "src": "427:10:141"
                         },
-                        "scope": 26975,
+                        "scope": 27081,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26959,
+                        "id": 27065,
                         "nodeType": "FunctionDefinition",
                         "src": "485:102:141",
                         "nodes": [],
                         "body": {
-                            "id": 26958,
+                            "id": 27064,
                             "nodeType": "Block",
                             "src": "546:41:141",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 26956,
+                                        "id": 27062,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 26951,
+                                            "id": 27057,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26949,
+                                            "referencedDeclaration": 27055,
                                             "src": "556:1:141",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int128",
@@ -1046,11 +1046,11 @@ export const MockSafeCast = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 26954,
+                                                    "id": 27060,
                                                     "name": "x",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 26946,
+                                                    "referencedDeclaration": 27052,
                                                     "src": "578:1:141",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -1066,7 +1066,7 @@ export const MockSafeCast = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 26952,
+                                                    "id": 27058,
                                                     "name": "SafeCast",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -1077,7 +1077,7 @@ export const MockSafeCast = {
                                                         "typeString": "type(library SafeCast)"
                                                     }
                                                 },
-                                                "id": 26953,
+                                                "id": 27059,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1092,7 +1092,7 @@ export const MockSafeCast = {
                                                     "typeString": "function (int256) pure returns (int128)"
                                                 }
                                             },
-                                            "id": 26955,
+                                            "id": 27061,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1114,7 +1114,7 @@ export const MockSafeCast = {
                                             "typeString": "int128"
                                         }
                                     },
-                                    "id": 26957,
+                                    "id": 27063,
                                     "nodeType": "ExpressionStatement",
                                     "src": "556:24:141"
                                 }
@@ -1127,17 +1127,17 @@ export const MockSafeCast = {
                         "name": "toInt128",
                         "nameLocation": "494:8:141",
                         "parameters": {
-                            "id": 26947,
+                            "id": 27053,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26946,
+                                    "id": 27052,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "510:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26959,
+                                    "scope": 27065,
                                     "src": "503:8:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1146,7 +1146,7 @@ export const MockSafeCast = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 26945,
+                                        "id": 27051,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "503:6:141",
@@ -1161,17 +1161,17 @@ export const MockSafeCast = {
                             "src": "502:10:141"
                         },
                         "returnParameters": {
-                            "id": 26950,
+                            "id": 27056,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26949,
+                                    "id": 27055,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "543:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26959,
+                                    "scope": 27065,
                                     "src": "536:8:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1180,7 +1180,7 @@ export const MockSafeCast = {
                                         "typeString": "int128"
                                     },
                                     "typeName": {
-                                        "id": 26948,
+                                        "id": 27054,
                                         "name": "int128",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "536:6:141",
@@ -1194,35 +1194,35 @@ export const MockSafeCast = {
                             ],
                             "src": "535:10:141"
                         },
-                        "scope": 26975,
+                        "scope": 27081,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26974,
+                        "id": 27080,
                         "nodeType": "FunctionDefinition",
                         "src": "593:103:141",
                         "nodes": [],
                         "body": {
-                            "id": 26973,
+                            "id": 27079,
                             "nodeType": "Block",
                             "src": "655:41:141",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 26971,
+                                        "id": 27077,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 26966,
+                                            "id": 27072,
                                             "name": "y",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 26964,
+                                            "referencedDeclaration": 27070,
                                             "src": "665:1:141",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -1234,11 +1234,11 @@ export const MockSafeCast = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 26969,
+                                                    "id": 27075,
                                                     "name": "x",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 26961,
+                                                    "referencedDeclaration": 27067,
                                                     "src": "687:1:141",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1254,7 +1254,7 @@ export const MockSafeCast = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 26967,
+                                                    "id": 27073,
                                                     "name": "SafeCast",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -1265,7 +1265,7 @@ export const MockSafeCast = {
                                                         "typeString": "type(library SafeCast)"
                                                     }
                                                 },
-                                                "id": 26968,
+                                                "id": 27074,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1280,7 +1280,7 @@ export const MockSafeCast = {
                                                     "typeString": "function (uint256) pure returns (int256)"
                                                 }
                                             },
-                                            "id": 26970,
+                                            "id": 27076,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1302,7 +1302,7 @@ export const MockSafeCast = {
                                             "typeString": "int256"
                                         }
                                     },
-                                    "id": 26972,
+                                    "id": 27078,
                                     "nodeType": "ExpressionStatement",
                                     "src": "665:24:141"
                                 }
@@ -1315,17 +1315,17 @@ export const MockSafeCast = {
                         "name": "toInt256",
                         "nameLocation": "602:8:141",
                         "parameters": {
-                            "id": 26962,
+                            "id": 27068,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26961,
+                                    "id": 27067,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "619:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26974,
+                                    "scope": 27080,
                                     "src": "611:9:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1334,7 +1334,7 @@ export const MockSafeCast = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26960,
+                                        "id": 27066,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "611:7:141",
@@ -1349,17 +1349,17 @@ export const MockSafeCast = {
                             "src": "610:11:141"
                         },
                         "returnParameters": {
-                            "id": 26965,
+                            "id": 27071,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26964,
+                                    "id": 27070,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "652:1:141",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26974,
+                                    "scope": 27080,
                                     "src": "645:8:141",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1368,7 +1368,7 @@ export const MockSafeCast = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 26963,
+                                        "id": 27069,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "645:6:141",
@@ -1382,7 +1382,7 @@ export const MockSafeCast = {
                             ],
                             "src": "644:10:141"
                         },
-                        "scope": 26975,
+                        "scope": 27081,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
@@ -1395,11 +1395,11 @@ export const MockSafeCast = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    26975
+                    27081
                 ],
                 "name": "MockSafeCast",
                 "nameLocation": "133:12:141",
-                "scope": 26976,
+                "scope": 27082,
                 "usedErrors": [
                     10305,
                     10308,

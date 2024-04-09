@@ -2177,11 +2177,11 @@ export declare const LsETHTarget1: {
                 readonly text: "@author DELV\n @title LsETHTarget1\n @notice LsETHHyperdrive's target1 logic contract.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [8694, 8586, 5278, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [8694, 8586, 5278, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71745, 10887, 11459];
             readonly name: "LsETHTarget1";
             readonly nameLocation: "576:12:61";
             readonly scope: 8695;
-            readonly usedErrors: readonly [10219, 10225, 10228, 10249, 10255, 10258, 10264, 10273, 10282, 10293, 10305, 10308, 10311, 10314, 10317, 71014, 71295, 71300, 71303, 71584];
+            readonly usedErrors: readonly [10219, 10225, 10228, 10249, 10255, 10258, 10264, 10273, 10282, 10293, 10305, 10308, 10311, 10314, 10317, 71120, 71401, 71406, 71409, 71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

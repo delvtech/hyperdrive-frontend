@@ -18,7 +18,7 @@ export const localChainAppConfig: AppConfig = {
   ],
   tokens: [
     {
-      address: "0x34099867329Cb7b5883dD25B5FFE05bb00c4d143",
+      address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
       decimals: 18,
       name: "Delvnet Yield Source",
       symbol: "DELV",
@@ -30,7 +30,7 @@ export const localChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
+      address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
       decimals: 18,
       name: "Base",
       symbol: "BASE",
@@ -40,7 +40,7 @@ export const localChainAppConfig: AppConfig = {
       extensions: {},
     },
     {
-      address: "0x6c0Fdf4eBa793A1e20CB9F02bD17a07a24a79af5",
+      address: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
       decimals: 18,
       name: "Liquid staked Ether 2.0",
       symbol: "stETH",
@@ -63,18 +63,18 @@ export const localChainAppConfig: AppConfig = {
   ],
   hyperdrives: [
     {
-      address: "0xC85bD20AFE9fA74435EdbB7AFF734A27cFC9759D",
+      address: "0x6aB5F325E26955Ff082e9F6DD9ff1213e5af268A",
       name: "7d BASE-Maker DSR",
       decimals: 18,
-      baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
-      sharesToken: "0x34099867329Cb7b5883dD25B5FFE05bb00c4d143",
+      baseToken: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+      sharesToken: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        baseToken: "0x5A17F92aAaEf087c72Bb810f314CA15E18bc3EA3",
-        vaultSharesToken: "0x34099867329Cb7b5883dD25B5FFE05bb00c4d143",
-        linkerFactory: "0x23F23Dc2456fe59a0aaF64F19c65b748967fE181",
+        baseToken: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
+        vaultSharesToken: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
+        linkerFactory: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
         linkerCodeHash:
           "0x04f5e793aa939acd876ec5abe78a78653fcde948ab4bbb1eb9fd5643edfdd659",
         initialVaultSharePrice: 1000000000000000000n,
@@ -95,18 +95,18 @@ export const localChainAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x2BAa19F6bfbf98c4D94Aa61eED91A27308149651",
+      address: "0x0b08d532Cb70Eb5F73794e52bA7bc24F4F8eDc51",
       name: "7d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0x6c0Fdf4eBa793A1e20CB9F02bD17a07a24a79af5",
+      sharesToken: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: false,
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0x6c0Fdf4eBa793A1e20CB9F02bD17a07a24a79af5",
-        linkerFactory: "0x23F23Dc2456fe59a0aaF64F19c65b748967fE181",
+        vaultSharesToken: "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9",
+        linkerFactory: "0x5FC8d32690cc91D4c39d9d3abcBD16989F875707",
         linkerCodeHash:
           "0x04f5e793aa939acd876ec5abe78a78653fcde948ab4bbb1eb9fd5643edfdd659",
         initialVaultSharePrice: 1000000029965753424n,

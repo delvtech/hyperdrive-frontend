@@ -523,24 +523,24 @@ export declare const ERC20: {
     };
     readonly ast: {
         readonly absolutePath: "lib/solmate/src/tokens/ERC20.sol";
-        readonly id: 72505;
+        readonly id: 72611;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [72504];
+            readonly ERC20: readonly [72610];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "42:6770:172";
         readonly nodes: readonly [{
-            readonly id: 72118;
+            readonly id: 72224;
             readonly nodeType: "PragmaDirective";
             readonly src: "42:24:172";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.8", ".0"];
         }, {
-            readonly id: 72504;
+            readonly id: 72610;
             readonly nodeType: "ContractDefinition";
             readonly src: "474:6337:172";
             readonly nodes: readonly [{
-                readonly id: 72127;
+                readonly id: 72233;
                 readonly nodeType: "EventDefinition";
                 readonly src: "683:73:172";
                 readonly nodes: readonly [];
@@ -549,17 +549,17 @@ export declare const ERC20: {
                 readonly name: "Transfer";
                 readonly nameLocation: "689:8:172";
                 readonly parameters: {
-                    readonly id: 72126;
+                    readonly id: 72232;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72121;
+                        readonly id: 72227;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "from";
                         readonly nameLocation: "714:4:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72127;
+                        readonly scope: 72233;
                         readonly src: "698:20:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -568,7 +568,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72120;
+                            readonly id: 72226;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "698:7:172";
@@ -581,13 +581,13 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72123;
+                        readonly id: 72229;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "to";
                         readonly nameLocation: "736:2:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72127;
+                        readonly scope: 72233;
                         readonly src: "720:18:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -596,7 +596,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72122;
+                            readonly id: 72228;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "720:7:172";
@@ -609,13 +609,13 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72125;
+                        readonly id: 72231;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "748:6:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72127;
+                        readonly scope: 72233;
                         readonly src: "740:14:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -624,7 +624,7 @@ export declare const ERC20: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 72124;
+                            readonly id: 72230;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "740:7:172";
@@ -638,7 +638,7 @@ export declare const ERC20: {
                     readonly src: "697:58:172";
                 };
             }, {
-                readonly id: 72135;
+                readonly id: 72241;
                 readonly nodeType: "EventDefinition";
                 readonly src: "762:79:172";
                 readonly nodes: readonly [];
@@ -647,17 +647,17 @@ export declare const ERC20: {
                 readonly name: "Approval";
                 readonly nameLocation: "768:8:172";
                 readonly parameters: {
-                    readonly id: 72134;
+                    readonly id: 72240;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72129;
+                        readonly id: 72235;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "owner";
                         readonly nameLocation: "793:5:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72135;
+                        readonly scope: 72241;
                         readonly src: "777:21:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -666,7 +666,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72128;
+                            readonly id: 72234;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "777:7:172";
@@ -679,13 +679,13 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72131;
+                        readonly id: 72237;
                         readonly indexed: true;
                         readonly mutability: "mutable";
                         readonly name: "spender";
                         readonly nameLocation: "816:7:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72135;
+                        readonly scope: 72241;
                         readonly src: "800:23:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -694,7 +694,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72130;
+                            readonly id: 72236;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "800:7:172";
@@ -707,13 +707,13 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72133;
+                        readonly id: 72239;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "833:6:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72135;
+                        readonly scope: 72241;
                         readonly src: "825:14:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -722,7 +722,7 @@ export declare const ERC20: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 72132;
+                            readonly id: 72238;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "825:7:172";
@@ -736,7 +736,7 @@ export declare const ERC20: {
                     readonly src: "776:64:172";
                 };
             }, {
-                readonly id: 72137;
+                readonly id: 72243;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1031:18:172";
                 readonly nodes: readonly [];
@@ -745,7 +745,7 @@ export declare const ERC20: {
                 readonly mutability: "mutable";
                 readonly name: "name";
                 readonly nameLocation: "1045:4:172";
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -753,7 +753,7 @@ export declare const ERC20: {
                     readonly typeString: "string";
                 };
                 readonly typeName: {
-                    readonly id: 72136;
+                    readonly id: 72242;
                     readonly name: "string";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1031:6:172";
@@ -764,7 +764,7 @@ export declare const ERC20: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72139;
+                readonly id: 72245;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1056:20:172";
                 readonly nodes: readonly [];
@@ -773,7 +773,7 @@ export declare const ERC20: {
                 readonly mutability: "mutable";
                 readonly name: "symbol";
                 readonly nameLocation: "1070:6:172";
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -781,7 +781,7 @@ export declare const ERC20: {
                     readonly typeString: "string";
                 };
                 readonly typeName: {
-                    readonly id: 72138;
+                    readonly id: 72244;
                     readonly name: "string";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1056:6:172";
@@ -792,7 +792,7 @@ export declare const ERC20: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72141;
+                readonly id: 72247;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1083:31:172";
                 readonly nodes: readonly [];
@@ -801,7 +801,7 @@ export declare const ERC20: {
                 readonly mutability: "immutable";
                 readonly name: "decimals";
                 readonly nameLocation: "1106:8:172";
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -809,7 +809,7 @@ export declare const ERC20: {
                     readonly typeString: "uint8";
                 };
                 readonly typeName: {
-                    readonly id: 72140;
+                    readonly id: 72246;
                     readonly name: "uint8";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1083:5:172";
@@ -820,7 +820,7 @@ export declare const ERC20: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72143;
+                readonly id: 72249;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1304:26:172";
                 readonly nodes: readonly [];
@@ -829,7 +829,7 @@ export declare const ERC20: {
                 readonly mutability: "mutable";
                 readonly name: "totalSupply";
                 readonly nameLocation: "1319:11:172";
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -837,7 +837,7 @@ export declare const ERC20: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 72142;
+                    readonly id: 72248;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1304:7:172";
@@ -848,7 +848,7 @@ export declare const ERC20: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72147;
+                readonly id: 72253;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1337:44:172";
                 readonly nodes: readonly [];
@@ -857,7 +857,7 @@ export declare const ERC20: {
                 readonly mutability: "mutable";
                 readonly name: "balanceOf";
                 readonly nameLocation: "1372:9:172";
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -865,11 +865,11 @@ export declare const ERC20: {
                     readonly typeString: "mapping(address => uint256)";
                 };
                 readonly typeName: {
-                    readonly id: 72146;
+                    readonly id: 72252;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 72144;
+                        readonly id: 72250;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1345:7:172";
@@ -887,7 +887,7 @@ export declare const ERC20: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 72145;
+                        readonly id: 72251;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1356:7:172";
@@ -899,7 +899,7 @@ export declare const ERC20: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72153;
+                readonly id: 72259;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1388:64:172";
                 readonly nodes: readonly [];
@@ -908,7 +908,7 @@ export declare const ERC20: {
                 readonly mutability: "mutable";
                 readonly name: "allowance";
                 readonly nameLocation: "1443:9:172";
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -916,11 +916,11 @@ export declare const ERC20: {
                     readonly typeString: "mapping(address => mapping(address => uint256))";
                 };
                 readonly typeName: {
-                    readonly id: 72152;
+                    readonly id: 72258;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 72148;
+                        readonly id: 72254;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1396:7:172";
@@ -938,11 +938,11 @@ export declare const ERC20: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 72151;
+                        readonly id: 72257;
                         readonly keyName: "";
                         readonly keyNameLocation: "-1:-1:-1";
                         readonly keyType: {
-                            readonly id: 72149;
+                            readonly id: 72255;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1415:7:172";
@@ -960,7 +960,7 @@ export declare const ERC20: {
                         readonly valueName: "";
                         readonly valueNameLocation: "-1:-1:-1";
                         readonly valueType: {
-                            readonly id: 72150;
+                            readonly id: 72256;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1426:7:172";
@@ -973,7 +973,7 @@ export declare const ERC20: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72155;
+                readonly id: 72261;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1643:43:172";
                 readonly nodes: readonly [];
@@ -981,7 +981,7 @@ export declare const ERC20: {
                 readonly mutability: "immutable";
                 readonly name: "INITIAL_CHAIN_ID";
                 readonly nameLocation: "1670:16:172";
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -989,7 +989,7 @@ export declare const ERC20: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 72154;
+                    readonly id: 72260;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1643:7:172";
@@ -1000,7 +1000,7 @@ export declare const ERC20: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 72157;
+                readonly id: 72263;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1693:51:172";
                 readonly nodes: readonly [];
@@ -1008,7 +1008,7 @@ export declare const ERC20: {
                 readonly mutability: "immutable";
                 readonly name: "INITIAL_DOMAIN_SEPARATOR";
                 readonly nameLocation: "1720:24:172";
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1016,7 +1016,7 @@ export declare const ERC20: {
                     readonly typeString: "bytes32";
                 };
                 readonly typeName: {
-                    readonly id: 72156;
+                    readonly id: 72262;
                     readonly name: "bytes32";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1693:7:172";
@@ -1027,7 +1027,7 @@ export declare const ERC20: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 72161;
+                readonly id: 72267;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1751:41:172";
                 readonly nodes: readonly [];
@@ -1036,7 +1036,7 @@ export declare const ERC20: {
                 readonly mutability: "mutable";
                 readonly name: "nonces";
                 readonly nameLocation: "1786:6:172";
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -1044,11 +1044,11 @@ export declare const ERC20: {
                     readonly typeString: "mapping(address => uint256)";
                 };
                 readonly typeName: {
-                    readonly id: 72160;
+                    readonly id: 72266;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 72158;
+                        readonly id: 72264;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1759:7:172";
@@ -1066,7 +1066,7 @@ export declare const ERC20: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 72159;
+                        readonly id: 72265;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "1770:7:172";
@@ -1078,28 +1078,28 @@ export declare const ERC20: {
                 };
                 readonly visibility: "public";
             }, {
-                readonly id: 72193;
+                readonly id: 72299;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1981:292:172";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72192;
+                    readonly id: 72298;
                     readonly nodeType: "Block";
                     readonly src: "2084:189:172";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 72172;
+                            readonly id: 72278;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 72170;
+                                readonly id: 72276;
                                 readonly name: "name";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72137;
+                                readonly referencedDeclaration: 72243;
                                 readonly src: "2094:4:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_storage";
@@ -1109,11 +1109,11 @@ export declare const ERC20: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 72171;
+                                readonly id: 72277;
                                 readonly name: "_name";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72163;
+                                readonly referencedDeclaration: 72269;
                                 readonly src: "2101:5:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -1126,22 +1126,22 @@ export declare const ERC20: {
                                 readonly typeString: "string storage ref";
                             };
                         };
-                        readonly id: 72173;
+                        readonly id: 72279;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2094:12:172";
                     }, {
                         readonly expression: {
-                            readonly id: 72176;
+                            readonly id: 72282;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 72174;
+                                readonly id: 72280;
                                 readonly name: "symbol";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72139;
+                                readonly referencedDeclaration: 72245;
                                 readonly src: "2116:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_storage";
@@ -1151,11 +1151,11 @@ export declare const ERC20: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 72175;
+                                readonly id: 72281;
                                 readonly name: "_symbol";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72165;
+                                readonly referencedDeclaration: 72271;
                                 readonly src: "2125:7:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -1168,22 +1168,22 @@ export declare const ERC20: {
                                 readonly typeString: "string storage ref";
                             };
                         };
-                        readonly id: 72177;
+                        readonly id: 72283;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2116:16:172";
                     }, {
                         readonly expression: {
-                            readonly id: 72180;
+                            readonly id: 72286;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 72178;
+                                readonly id: 72284;
                                 readonly name: "decimals";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72141;
+                                readonly referencedDeclaration: 72247;
                                 readonly src: "2142:8:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint8";
@@ -1193,11 +1193,11 @@ export declare const ERC20: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 72179;
+                                readonly id: 72285;
                                 readonly name: "_decimals";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72167;
+                                readonly referencedDeclaration: 72273;
                                 readonly src: "2153:9:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint8";
@@ -1210,22 +1210,22 @@ export declare const ERC20: {
                                 readonly typeString: "uint8";
                             };
                         };
-                        readonly id: 72181;
+                        readonly id: 72287;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2142:20:172";
                     }, {
                         readonly expression: {
-                            readonly id: 72185;
+                            readonly id: 72291;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 72182;
+                                readonly id: 72288;
                                 readonly name: "INITIAL_CHAIN_ID";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72155;
+                                readonly referencedDeclaration: 72261;
                                 readonly src: "2173:16:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1236,7 +1236,7 @@ export declare const ERC20: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly expression: {
-                                    readonly id: 72183;
+                                    readonly id: 72289;
                                     readonly name: "block";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -1247,7 +1247,7 @@ export declare const ERC20: {
                                         readonly typeString: "block";
                                     };
                                 };
-                                readonly id: 72184;
+                                readonly id: 72290;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1267,22 +1267,22 @@ export declare const ERC20: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 72186;
+                        readonly id: 72292;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2173:32:172";
                     }, {
                         readonly expression: {
-                            readonly id: 72190;
+                            readonly id: 72296;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 72187;
+                                readonly id: 72293;
                                 readonly name: "INITIAL_DOMAIN_SEPARATOR";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72157;
+                                readonly referencedDeclaration: 72263;
                                 readonly src: "2215:24:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
@@ -1295,18 +1295,18 @@ export declare const ERC20: {
                                 readonly arguments: readonly [];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [];
-                                    readonly id: 72188;
+                                    readonly id: 72294;
                                     readonly name: "computeDomainSeparator";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72447;
+                                    readonly referencedDeclaration: 72553;
                                     readonly src: "2242:22:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_view$__$returns$_t_bytes32_$";
                                         readonly typeString: "function () view returns (bytes32)";
                                     };
                                 };
-                                readonly id: 72189;
+                                readonly id: 72295;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1328,7 +1328,7 @@ export declare const ERC20: {
                                 readonly typeString: "bytes32";
                             };
                         };
-                        readonly id: 72191;
+                        readonly id: 72297;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2215:51:172";
                     }];
@@ -1339,16 +1339,16 @@ export declare const ERC20: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 72168;
+                    readonly id: 72274;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72163;
+                        readonly id: 72269;
                         readonly mutability: "mutable";
                         readonly name: "_name";
                         readonly nameLocation: "2016:5:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72193;
+                        readonly scope: 72299;
                         readonly src: "2002:19:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1357,7 +1357,7 @@ export declare const ERC20: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 72162;
+                            readonly id: 72268;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2002:6:172";
@@ -1369,12 +1369,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72165;
+                        readonly id: 72271;
                         readonly mutability: "mutable";
                         readonly name: "_symbol";
                         readonly nameLocation: "2045:7:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72193;
+                        readonly scope: 72299;
                         readonly src: "2031:21:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1383,7 +1383,7 @@ export declare const ERC20: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 72164;
+                            readonly id: 72270;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2031:6:172";
@@ -1395,12 +1395,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72167;
+                        readonly id: 72273;
                         readonly mutability: "mutable";
                         readonly name: "_decimals";
                         readonly nameLocation: "2068:9:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72193;
+                        readonly scope: 72299;
                         readonly src: "2062:15:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1409,7 +1409,7 @@ export declare const ERC20: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 72166;
+                            readonly id: 72272;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2062:5:172";
@@ -1423,28 +1423,28 @@ export declare const ERC20: {
                     readonly src: "1992:91:172";
                 };
                 readonly returnParameters: {
-                    readonly id: 72169;
+                    readonly id: 72275;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "2084:0:172";
                 };
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 72221;
+                readonly id: 72327;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2461:211:172";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72220;
+                    readonly id: 72326;
                     readonly nodeType: "Block";
                     readonly src: "2541:131:172";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 72209;
+                            readonly id: 72315;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1452,21 +1452,21 @@ export declare const ERC20: {
                             readonly leftHandSide: {
                                 readonly baseExpression: {
                                     readonly baseExpression: {
-                                        readonly id: 72202;
+                                        readonly id: 72308;
                                         readonly name: "allowance";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72153;
+                                        readonly referencedDeclaration: 72259;
                                         readonly src: "2551:9:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$";
                                             readonly typeString: "mapping(address => mapping(address => uint256))";
                                         };
                                     };
-                                    readonly id: 72206;
+                                    readonly id: 72312;
                                     readonly indexExpression: {
                                         readonly expression: {
-                                            readonly id: 72203;
+                                            readonly id: 72309;
                                             readonly name: "msg";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -1477,7 +1477,7 @@ export declare const ERC20: {
                                                 readonly typeString: "msg";
                                             };
                                         };
-                                        readonly id: 72204;
+                                        readonly id: 72310;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1502,13 +1502,13 @@ export declare const ERC20: {
                                         readonly typeString: "mapping(address => uint256)";
                                     };
                                 };
-                                readonly id: 72207;
+                                readonly id: 72313;
                                 readonly indexExpression: {
-                                    readonly id: 72205;
+                                    readonly id: 72311;
                                     readonly name: "spender";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72195;
+                                    readonly referencedDeclaration: 72301;
                                     readonly src: "2573:7:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -1529,11 +1529,11 @@ export declare const ERC20: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 72208;
+                                readonly id: 72314;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72197;
+                                readonly referencedDeclaration: 72303;
                                 readonly src: "2584:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1546,14 +1546,14 @@ export declare const ERC20: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 72210;
+                        readonly id: 72316;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2551:39:172";
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 72212;
+                                    readonly id: 72318;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -1564,7 +1564,7 @@ export declare const ERC20: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 72213;
+                                readonly id: 72319;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1578,22 +1578,22 @@ export declare const ERC20: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72214;
+                                readonly id: 72320;
                                 readonly name: "spender";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72195;
+                                readonly referencedDeclaration: 72301;
                                 readonly src: "2627:7:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72215;
+                                readonly id: 72321;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72197;
+                                readonly referencedDeclaration: 72303;
                                 readonly src: "2636:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1611,18 +1611,18 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 72211;
+                                readonly id: 72317;
                                 readonly name: "Approval";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72135;
+                                readonly referencedDeclaration: 72241;
                                 readonly src: "2606:8:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,address,uint256)";
                                 };
                             };
-                            readonly id: 72216;
+                            readonly id: 72322;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1638,13 +1638,13 @@ export declare const ERC20: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72217;
+                        readonly id: 72323;
                         readonly nodeType: "EmitStatement";
                         readonly src: "2601:42:172";
                     }, {
                         readonly expression: {
                             readonly hexValue: "74727565";
-                            readonly id: 72218;
+                            readonly id: 72324;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -1658,8 +1658,8 @@ export declare const ERC20: {
                             };
                             readonly value: "true";
                         };
-                        readonly functionReturnParameters: 72201;
-                        readonly id: 72219;
+                        readonly functionReturnParameters: 72307;
+                        readonly id: 72325;
                         readonly nodeType: "Return";
                         readonly src: "2654:11:172";
                     }];
@@ -1671,16 +1671,16 @@ export declare const ERC20: {
                 readonly name: "approve";
                 readonly nameLocation: "2470:7:172";
                 readonly parameters: {
-                    readonly id: 72198;
+                    readonly id: 72304;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72195;
+                        readonly id: 72301;
                         readonly mutability: "mutable";
                         readonly name: "spender";
                         readonly nameLocation: "2486:7:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72221;
+                        readonly scope: 72327;
                         readonly src: "2478:15:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1689,7 +1689,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72194;
+                            readonly id: 72300;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2478:7:172";
@@ -1702,12 +1702,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72197;
+                        readonly id: 72303;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "2503:6:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72221;
+                        readonly scope: 72327;
                         readonly src: "2495:14:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1716,7 +1716,7 @@ export declare const ERC20: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 72196;
+                            readonly id: 72302;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2495:7:172";
@@ -1730,16 +1730,16 @@ export declare const ERC20: {
                     readonly src: "2477:33:172";
                 };
                 readonly returnParameters: {
-                    readonly id: 72201;
+                    readonly id: 72307;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72200;
+                        readonly id: 72306;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72221;
+                        readonly scope: 72327;
                         readonly src: "2535:4:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1748,7 +1748,7 @@ export declare const ERC20: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72199;
+                            readonly id: 72305;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2535:4:172";
@@ -1761,44 +1761,44 @@ export declare const ERC20: {
                     }];
                     readonly src: "2534:6:172";
                 };
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72254;
+                readonly id: 72360;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2678:373:172";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72253;
+                    readonly id: 72359;
                     readonly nodeType: "Block";
                     readonly src: "2754:297:172";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 72235;
+                            readonly id: 72341;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 72230;
+                                    readonly id: 72336;
                                     readonly name: "balanceOf";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72147;
+                                    readonly referencedDeclaration: 72253;
                                     readonly src: "2764:9:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_address_$_t_uint256_$";
                                         readonly typeString: "mapping(address => uint256)";
                                     };
                                 };
-                                readonly id: 72233;
+                                readonly id: 72339;
                                 readonly indexExpression: {
                                     readonly expression: {
-                                        readonly id: 72231;
+                                        readonly id: 72337;
                                         readonly name: "msg";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -1809,7 +1809,7 @@ export declare const ERC20: {
                                             readonly typeString: "msg";
                                         };
                                     };
-                                    readonly id: 72232;
+                                    readonly id: 72338;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1837,11 +1837,11 @@ export declare const ERC20: {
                             readonly nodeType: "Assignment";
                             readonly operator: "-=";
                             readonly rightHandSide: {
-                                readonly id: 72234;
+                                readonly id: 72340;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72225;
+                                readonly referencedDeclaration: 72331;
                                 readonly src: "2789:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1854,40 +1854,40 @@ export declare const ERC20: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 72236;
+                        readonly id: 72342;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "2764:31:172";
                     }, {
-                        readonly id: 72243;
+                        readonly id: 72349;
                         readonly nodeType: "UncheckedBlock";
                         readonly src: "2917:58:172";
                         readonly statements: readonly [{
                             readonly expression: {
-                                readonly id: 72241;
+                                readonly id: 72347;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
                                     readonly baseExpression: {
-                                        readonly id: 72237;
+                                        readonly id: 72343;
                                         readonly name: "balanceOf";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72147;
+                                        readonly referencedDeclaration: 72253;
                                         readonly src: "2941:9:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_mapping$_t_address_$_t_uint256_$";
                                             readonly typeString: "mapping(address => uint256)";
                                         };
                                     };
-                                    readonly id: 72239;
+                                    readonly id: 72345;
                                     readonly indexExpression: {
-                                        readonly id: 72238;
+                                        readonly id: 72344;
                                         readonly name: "to";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72223;
+                                        readonly referencedDeclaration: 72329;
                                         readonly src: "2951:2:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -1908,11 +1908,11 @@ export declare const ERC20: {
                                 readonly nodeType: "Assignment";
                                 readonly operator: "+=";
                                 readonly rightHandSide: {
-                                    readonly id: 72240;
+                                    readonly id: 72346;
                                     readonly name: "amount";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72225;
+                                    readonly referencedDeclaration: 72331;
                                     readonly src: "2958:6:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1925,7 +1925,7 @@ export declare const ERC20: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 72242;
+                            readonly id: 72348;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "2941:23:172";
                         }];
@@ -1933,7 +1933,7 @@ export declare const ERC20: {
                         readonly eventCall: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 72245;
+                                    readonly id: 72351;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -1944,7 +1944,7 @@ export declare const ERC20: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 72246;
+                                readonly id: 72352;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1958,22 +1958,22 @@ export declare const ERC20: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72247;
+                                readonly id: 72353;
                                 readonly name: "to";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72223;
+                                readonly referencedDeclaration: 72329;
                                 readonly src: "3011:2:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72248;
+                                readonly id: 72354;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72225;
+                                readonly referencedDeclaration: 72331;
                                 readonly src: "3015:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1991,18 +1991,18 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 72244;
+                                readonly id: 72350;
                                 readonly name: "Transfer";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72127;
+                                readonly referencedDeclaration: 72233;
                                 readonly src: "2990:8:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,address,uint256)";
                                 };
                             };
-                            readonly id: 72249;
+                            readonly id: 72355;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2018,13 +2018,13 @@ export declare const ERC20: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72250;
+                        readonly id: 72356;
                         readonly nodeType: "EmitStatement";
                         readonly src: "2985:37:172";
                     }, {
                         readonly expression: {
                             readonly hexValue: "74727565";
-                            readonly id: 72251;
+                            readonly id: 72357;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -2038,8 +2038,8 @@ export declare const ERC20: {
                             };
                             readonly value: "true";
                         };
-                        readonly functionReturnParameters: 72229;
-                        readonly id: 72252;
+                        readonly functionReturnParameters: 72335;
+                        readonly id: 72358;
                         readonly nodeType: "Return";
                         readonly src: "3033:11:172";
                     }];
@@ -2051,16 +2051,16 @@ export declare const ERC20: {
                 readonly name: "transfer";
                 readonly nameLocation: "2687:8:172";
                 readonly parameters: {
-                    readonly id: 72226;
+                    readonly id: 72332;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72223;
+                        readonly id: 72329;
                         readonly mutability: "mutable";
                         readonly name: "to";
                         readonly nameLocation: "2704:2:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72254;
+                        readonly scope: 72360;
                         readonly src: "2696:10:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2069,7 +2069,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72222;
+                            readonly id: 72328;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2696:7:172";
@@ -2082,12 +2082,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72225;
+                        readonly id: 72331;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "2716:6:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72254;
+                        readonly scope: 72360;
                         readonly src: "2708:14:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2096,7 +2096,7 @@ export declare const ERC20: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 72224;
+                            readonly id: 72330;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2708:7:172";
@@ -2110,16 +2110,16 @@ export declare const ERC20: {
                     readonly src: "2695:28:172";
                 };
                 readonly returnParameters: {
-                    readonly id: 72229;
+                    readonly id: 72335;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72228;
+                        readonly id: 72334;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72254;
+                        readonly scope: 72360;
                         readonly src: "2748:4:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2128,7 +2128,7 @@ export declare const ERC20: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72227;
+                            readonly id: 72333;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2748:4:172";
@@ -2141,30 +2141,30 @@ export declare const ERC20: {
                     }];
                     readonly src: "2747:6:172";
                 };
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72315;
+                readonly id: 72421;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3057:592:172";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72314;
+                    readonly id: 72420;
                     readonly nodeType: "Block";
                     readonly src: "3181:468:172";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [72266];
+                        readonly assignments: readonly [72372];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 72266;
+                            readonly id: 72372;
                             readonly mutability: "mutable";
                             readonly name: "allowed";
                             readonly nameLocation: "3199:7:172";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 72314;
+                            readonly scope: 72420;
                             readonly src: "3191:15:172";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2173,7 +2173,7 @@ export declare const ERC20: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 72265;
+                                readonly id: 72371;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3191:7:172";
@@ -2184,28 +2184,28 @@ export declare const ERC20: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 72273;
+                        readonly id: 72379;
                         readonly initialValue: {
                             readonly baseExpression: {
                                 readonly baseExpression: {
-                                    readonly id: 72267;
+                                    readonly id: 72373;
                                     readonly name: "allowance";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72153;
+                                    readonly referencedDeclaration: 72259;
                                     readonly src: "3209:9:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$";
                                         readonly typeString: "mapping(address => mapping(address => uint256))";
                                     };
                                 };
-                                readonly id: 72269;
+                                readonly id: 72375;
                                 readonly indexExpression: {
-                                    readonly id: 72268;
+                                    readonly id: 72374;
                                     readonly name: "from";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72256;
+                                    readonly referencedDeclaration: 72362;
                                     readonly src: "3219:4:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -2223,10 +2223,10 @@ export declare const ERC20: {
                                     readonly typeString: "mapping(address => uint256)";
                                 };
                             };
-                            readonly id: 72272;
+                            readonly id: 72378;
                             readonly indexExpression: {
                                 readonly expression: {
-                                    readonly id: 72270;
+                                    readonly id: 72376;
                                     readonly name: "msg";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2237,7 +2237,7 @@ export declare const ERC20: {
                                         readonly typeString: "msg";
                                     };
                                 };
-                                readonly id: 72271;
+                                readonly id: 72377;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2270,17 +2270,17 @@ export declare const ERC20: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 72280;
+                            readonly id: 72386;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 72274;
+                                readonly id: 72380;
                                 readonly name: "allowed";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72266;
+                                readonly referencedDeclaration: 72372;
                                 readonly src: "3287:7:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2292,7 +2292,7 @@ export declare const ERC20: {
                             readonly rightExpression: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 72277;
+                                        readonly id: 72383;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2304,7 +2304,7 @@ export declare const ERC20: {
                                             readonly typeString: "type(uint256)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 72276;
+                                            readonly id: 72382;
                                             readonly name: "uint256";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "3303:7:172";
@@ -2316,7 +2316,7 @@ export declare const ERC20: {
                                             readonly typeIdentifier: "t_type$_t_uint256_$";
                                             readonly typeString: "type(uint256)";
                                         }];
-                                        readonly id: 72275;
+                                        readonly id: 72381;
                                         readonly name: "type";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -2327,7 +2327,7 @@ export declare const ERC20: {
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 72278;
+                                    readonly id: 72384;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2343,7 +2343,7 @@ export declare const ERC20: {
                                         readonly typeString: "type(uint256)";
                                     };
                                 };
-                                readonly id: 72279;
+                                readonly id: 72385;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2363,12 +2363,12 @@ export declare const ERC20: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 72292;
+                        readonly id: 72398;
                         readonly nodeType: "IfStatement";
                         readonly src: "3283:80:172";
                         readonly trueBody: {
                             readonly expression: {
-                                readonly id: 72290;
+                                readonly id: 72396;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2376,24 +2376,24 @@ export declare const ERC20: {
                                 readonly leftHandSide: {
                                     readonly baseExpression: {
                                         readonly baseExpression: {
-                                            readonly id: 72281;
+                                            readonly id: 72387;
                                             readonly name: "allowance";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72153;
+                                            readonly referencedDeclaration: 72259;
                                             readonly src: "3317:9:172";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$";
                                                 readonly typeString: "mapping(address => mapping(address => uint256))";
                                             };
                                         };
-                                        readonly id: 72285;
+                                        readonly id: 72391;
                                         readonly indexExpression: {
-                                            readonly id: 72282;
+                                            readonly id: 72388;
                                             readonly name: "from";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72256;
+                                            readonly referencedDeclaration: 72362;
                                             readonly src: "3327:4:172";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -2411,10 +2411,10 @@ export declare const ERC20: {
                                             readonly typeString: "mapping(address => uint256)";
                                         };
                                     };
-                                    readonly id: 72286;
+                                    readonly id: 72392;
                                     readonly indexExpression: {
                                         readonly expression: {
-                                            readonly id: 72283;
+                                            readonly id: 72389;
                                             readonly name: "msg";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -2425,7 +2425,7 @@ export declare const ERC20: {
                                                 readonly typeString: "msg";
                                             };
                                         };
-                                        readonly id: 72284;
+                                        readonly id: 72390;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2457,17 +2457,17 @@ export declare const ERC20: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 72289;
+                                    readonly id: 72395;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 72287;
+                                        readonly id: 72393;
                                         readonly name: "allowed";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72266;
+                                        readonly referencedDeclaration: 72372;
                                         readonly src: "3347:7:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -2477,11 +2477,11 @@ export declare const ERC20: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "-";
                                     readonly rightExpression: {
-                                        readonly id: 72288;
+                                        readonly id: 72394;
                                         readonly name: "amount";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72260;
+                                        readonly referencedDeclaration: 72366;
                                         readonly src: "3357:6:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -2500,37 +2500,37 @@ export declare const ERC20: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 72291;
+                            readonly id: 72397;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "3317:46:172";
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 72297;
+                            readonly id: 72403;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 72293;
+                                    readonly id: 72399;
                                     readonly name: "balanceOf";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72147;
+                                    readonly referencedDeclaration: 72253;
                                     readonly src: "3374:9:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_address_$_t_uint256_$";
                                         readonly typeString: "mapping(address => uint256)";
                                     };
                                 };
-                                readonly id: 72295;
+                                readonly id: 72401;
                                 readonly indexExpression: {
-                                    readonly id: 72294;
+                                    readonly id: 72400;
                                     readonly name: "from";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72256;
+                                    readonly referencedDeclaration: 72362;
                                     readonly src: "3384:4:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -2551,11 +2551,11 @@ export declare const ERC20: {
                             readonly nodeType: "Assignment";
                             readonly operator: "-=";
                             readonly rightHandSide: {
-                                readonly id: 72296;
+                                readonly id: 72402;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72260;
+                                readonly referencedDeclaration: 72366;
                                 readonly src: "3393:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2568,40 +2568,40 @@ export declare const ERC20: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 72298;
+                        readonly id: 72404;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3374:25:172";
                     }, {
-                        readonly id: 72305;
+                        readonly id: 72411;
                         readonly nodeType: "UncheckedBlock";
                         readonly src: "3521:58:172";
                         readonly statements: readonly [{
                             readonly expression: {
-                                readonly id: 72303;
+                                readonly id: 72409;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
                                     readonly baseExpression: {
-                                        readonly id: 72299;
+                                        readonly id: 72405;
                                         readonly name: "balanceOf";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72147;
+                                        readonly referencedDeclaration: 72253;
                                         readonly src: "3545:9:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_mapping$_t_address_$_t_uint256_$";
                                             readonly typeString: "mapping(address => uint256)";
                                         };
                                     };
-                                    readonly id: 72301;
+                                    readonly id: 72407;
                                     readonly indexExpression: {
-                                        readonly id: 72300;
+                                        readonly id: 72406;
                                         readonly name: "to";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72258;
+                                        readonly referencedDeclaration: 72364;
                                         readonly src: "3555:2:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -2622,11 +2622,11 @@ export declare const ERC20: {
                                 readonly nodeType: "Assignment";
                                 readonly operator: "+=";
                                 readonly rightHandSide: {
-                                    readonly id: 72302;
+                                    readonly id: 72408;
                                     readonly name: "amount";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72260;
+                                    readonly referencedDeclaration: 72366;
                                     readonly src: "3562:6:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -2639,40 +2639,40 @@ export declare const ERC20: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 72304;
+                            readonly id: 72410;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "3545:23:172";
                         }];
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 72307;
+                                readonly id: 72413;
                                 readonly name: "from";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72256;
+                                readonly referencedDeclaration: 72362;
                                 readonly src: "3603:4:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72308;
+                                readonly id: 72414;
                                 readonly name: "to";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72258;
+                                readonly referencedDeclaration: 72364;
                                 readonly src: "3609:2:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72309;
+                                readonly id: 72415;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72260;
+                                readonly referencedDeclaration: 72366;
                                 readonly src: "3613:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2690,18 +2690,18 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 72306;
+                                readonly id: 72412;
                                 readonly name: "Transfer";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72127;
+                                readonly referencedDeclaration: 72233;
                                 readonly src: "3594:8:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,address,uint256)";
                                 };
                             };
-                            readonly id: 72310;
+                            readonly id: 72416;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2717,13 +2717,13 @@ export declare const ERC20: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72311;
+                        readonly id: 72417;
                         readonly nodeType: "EmitStatement";
                         readonly src: "3589:31:172";
                     }, {
                         readonly expression: {
                             readonly hexValue: "74727565";
-                            readonly id: 72312;
+                            readonly id: 72418;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -2737,8 +2737,8 @@ export declare const ERC20: {
                             };
                             readonly value: "true";
                         };
-                        readonly functionReturnParameters: 72264;
-                        readonly id: 72313;
+                        readonly functionReturnParameters: 72370;
+                        readonly id: 72419;
                         readonly nodeType: "Return";
                         readonly src: "3631:11:172";
                     }];
@@ -2750,16 +2750,16 @@ export declare const ERC20: {
                 readonly name: "transferFrom";
                 readonly nameLocation: "3066:12:172";
                 readonly parameters: {
-                    readonly id: 72261;
+                    readonly id: 72367;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72256;
+                        readonly id: 72362;
                         readonly mutability: "mutable";
                         readonly name: "from";
                         readonly nameLocation: "3096:4:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72315;
+                        readonly scope: 72421;
                         readonly src: "3088:12:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2768,7 +2768,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72255;
+                            readonly id: 72361;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3088:7:172";
@@ -2781,12 +2781,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72258;
+                        readonly id: 72364;
                         readonly mutability: "mutable";
                         readonly name: "to";
                         readonly nameLocation: "3118:2:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72315;
+                        readonly scope: 72421;
                         readonly src: "3110:10:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2795,7 +2795,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72257;
+                            readonly id: 72363;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3110:7:172";
@@ -2808,12 +2808,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72260;
+                        readonly id: 72366;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "3138:6:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72315;
+                        readonly scope: 72421;
                         readonly src: "3130:14:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2822,7 +2822,7 @@ export declare const ERC20: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 72259;
+                            readonly id: 72365;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3130:7:172";
@@ -2836,16 +2836,16 @@ export declare const ERC20: {
                     readonly src: "3078:72:172";
                 };
                 readonly returnParameters: {
-                    readonly id: 72264;
+                    readonly id: 72370;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72263;
+                        readonly id: 72369;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72315;
+                        readonly scope: 72421;
                         readonly src: "3175:4:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2854,7 +2854,7 @@ export declare const ERC20: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 72262;
+                            readonly id: 72368;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3175:4:172";
@@ -2867,17 +2867,17 @@ export declare const ERC20: {
                     }];
                     readonly src: "3174:6:172";
                 };
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72402;
+                readonly id: 72508;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3838:1483:172";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72401;
+                    readonly id: 72507;
                     readonly nodeType: "Block";
                     readonly src: "4027:1294:172";
                     readonly nodes: readonly [];
@@ -2888,17 +2888,17 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 72336;
+                                readonly id: 72442;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 72333;
+                                    readonly id: 72439;
                                     readonly name: "deadline";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72323;
+                                    readonly referencedDeclaration: 72429;
                                     readonly src: "4045:8:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -2909,7 +2909,7 @@ export declare const ERC20: {
                                 readonly operator: ">=";
                                 readonly rightExpression: {
                                     readonly expression: {
-                                        readonly id: 72334;
+                                        readonly id: 72440;
                                         readonly name: "block";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -2920,7 +2920,7 @@ export declare const ERC20: {
                                             readonly typeString: "block";
                                         };
                                     };
-                                    readonly id: 72335;
+                                    readonly id: 72441;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2941,7 +2941,7 @@ export declare const ERC20: {
                                 };
                             }, {
                                 readonly hexValue: "5045524d49545f444541444c494e455f45585049524544";
-                                readonly id: 72337;
+                                readonly id: 72443;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2963,7 +2963,7 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_stringliteral_dd18cfd81b4c1281b56302a044e7f751a261543590362c41d86af048f8ed4b3e";
                                     readonly typeString: "literal_string \"PERMIT_DEADLINE_EXPIRED\"";
                                 }];
-                                readonly id: 72332;
+                                readonly id: 72438;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -2974,7 +2974,7 @@ export declare const ERC20: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 72338;
+                            readonly id: 72444;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2990,23 +2990,23 @@ export declare const ERC20: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72339;
+                        readonly id: 72445;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4037:63:172";
                     }, {
-                        readonly id: 72394;
+                        readonly id: 72500;
                         readonly nodeType: "UncheckedBlock";
                         readonly src: "4241:1027:172";
                         readonly statements: readonly [{
-                            readonly assignments: readonly [72341];
+                            readonly assignments: readonly [72447];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 72341;
+                                readonly id: 72447;
                                 readonly mutability: "mutable";
                                 readonly name: "recoveredAddress";
                                 readonly nameLocation: "4273:16:172";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 72394;
+                                readonly scope: 72500;
                                 readonly src: "4265:24:172";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -3015,7 +3015,7 @@ export declare const ERC20: {
                                     readonly typeString: "address";
                                 };
                                 readonly typeName: {
-                                    readonly id: 72340;
+                                    readonly id: 72446;
                                     readonly name: "address";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "4265:7:172";
@@ -3027,13 +3027,13 @@ export declare const ERC20: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 72371;
+                            readonly id: 72477;
                             readonly initialValue: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
                                             readonly hexValue: "1901";
-                                            readonly id: 72346;
+                                            readonly id: 72452;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -3050,18 +3050,18 @@ export declare const ERC20: {
                                             readonly arguments: readonly [];
                                             readonly expression: {
                                                 readonly argumentTypes: readonly [];
-                                                readonly id: 72347;
+                                                readonly id: 72453;
                                                 readonly name: "DOMAIN_SEPARATOR";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 72417;
+                                                readonly referencedDeclaration: 72523;
                                                 readonly src: "4428:16:172";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_internal_view$__$returns$_t_bytes32_$";
                                                     readonly typeString: "function () view returns (bytes32)";
                                                 };
                                             };
-                                            readonly id: 72348;
+                                            readonly id: 72454;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3081,7 +3081,7 @@ export declare const ERC20: {
                                                 readonly arguments: readonly [{
                                                     readonly arguments: readonly [{
                                                         readonly hexValue: "5065726d69742861646472657373206f776e65722c61646472657373207370656e6465722c75696e743235362076616c75652c75696e74323536206e6f6e63652c75696e7432353620646561646c696e6529";
-                                                        readonly id: 72353;
+                                                        readonly id: 72459;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -3100,7 +3100,7 @@ export declare const ERC20: {
                                                             readonly typeIdentifier: "t_stringliteral_6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9";
                                                             readonly typeString: "literal_string \"Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)\"";
                                                         }];
-                                                        readonly id: 72352;
+                                                        readonly id: 72458;
                                                         readonly name: "keccak256";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
@@ -3111,7 +3111,7 @@ export declare const ERC20: {
                                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                                         };
                                                     };
-                                                    readonly id: 72354;
+                                                    readonly id: 72460;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -3127,40 +3127,40 @@ export declare const ERC20: {
                                                         readonly typeString: "bytes32";
                                                     };
                                                 }, {
-                                                    readonly id: 72355;
+                                                    readonly id: 72461;
                                                     readonly name: "owner";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72317;
+                                                    readonly referencedDeclaration: 72423;
                                                     readonly src: "4754:5:172";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_address";
                                                         readonly typeString: "address";
                                                     };
                                                 }, {
-                                                    readonly id: 72356;
+                                                    readonly id: 72462;
                                                     readonly name: "spender";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72319;
+                                                    readonly referencedDeclaration: 72425;
                                                     readonly src: "4793:7:172";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_address";
                                                         readonly typeString: "address";
                                                     };
                                                 }, {
-                                                    readonly id: 72357;
+                                                    readonly id: 72463;
                                                     readonly name: "value";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72321;
+                                                    readonly referencedDeclaration: 72427;
                                                     readonly src: "4834:5:172";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
                                                         readonly typeString: "uint256";
                                                     };
                                                 }, {
-                                                    readonly id: 72361;
+                                                    readonly id: 72467;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -3171,24 +3171,24 @@ export declare const ERC20: {
                                                     readonly src: "4873:15:172";
                                                     readonly subExpression: {
                                                         readonly baseExpression: {
-                                                            readonly id: 72358;
+                                                            readonly id: 72464;
                                                             readonly name: "nonces";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 72161;
+                                                            readonly referencedDeclaration: 72267;
                                                             readonly src: "4873:6:172";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_uint256_$";
                                                                 readonly typeString: "mapping(address => uint256)";
                                                             };
                                                         };
-                                                        readonly id: 72360;
+                                                        readonly id: 72466;
                                                         readonly indexExpression: {
-                                                            readonly id: 72359;
+                                                            readonly id: 72465;
                                                             readonly name: "owner";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 72317;
+                                                            readonly referencedDeclaration: 72423;
                                                             readonly src: "4880:5:172";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_address";
@@ -3211,11 +3211,11 @@ export declare const ERC20: {
                                                         readonly typeString: "uint256";
                                                     };
                                                 }, {
-                                                    readonly id: 72362;
+                                                    readonly id: 72468;
                                                     readonly name: "deadline";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 72323;
+                                                    readonly referencedDeclaration: 72429;
                                                     readonly src: "4922:8:172";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -3243,7 +3243,7 @@ export declare const ERC20: {
                                                         readonly typeString: "uint256";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 72350;
+                                                        readonly id: 72456;
                                                         readonly name: "abi";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
@@ -3254,7 +3254,7 @@ export declare const ERC20: {
                                                             readonly typeString: "abi";
                                                         };
                                                     };
-                                                    readonly id: 72351;
+                                                    readonly id: 72457;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -3268,7 +3268,7 @@ export declare const ERC20: {
                                                         readonly typeString: "function () pure returns (bytes memory)";
                                                     };
                                                 };
-                                                readonly id: 72363;
+                                                readonly id: 72469;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -3289,7 +3289,7 @@ export declare const ERC20: {
                                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                                     readonly typeString: "bytes memory";
                                                 }];
-                                                readonly id: 72349;
+                                                readonly id: 72455;
                                                 readonly name: "keccak256";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
@@ -3300,7 +3300,7 @@ export declare const ERC20: {
                                                     readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                                 };
                                             };
-                                            readonly id: 72364;
+                                            readonly id: 72470;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -3328,7 +3328,7 @@ export declare const ERC20: {
                                                 readonly typeString: "bytes32";
                                             }];
                                             readonly expression: {
-                                                readonly id: 72344;
+                                                readonly id: 72450;
                                                 readonly name: "abi";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
@@ -3339,7 +3339,7 @@ export declare const ERC20: {
                                                     readonly typeString: "abi";
                                                 };
                                             };
-                                            readonly id: 72345;
+                                            readonly id: 72451;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -3353,7 +3353,7 @@ export declare const ERC20: {
                                                 readonly typeString: "function () pure returns (bytes memory)";
                                             };
                                         };
-                                        readonly id: 72365;
+                                        readonly id: 72471;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3374,7 +3374,7 @@ export declare const ERC20: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                             readonly typeString: "bytes memory";
                                         }];
-                                        readonly id: 72343;
+                                        readonly id: 72449;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -3385,7 +3385,7 @@ export declare const ERC20: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 72366;
+                                    readonly id: 72472;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3401,33 +3401,33 @@ export declare const ERC20: {
                                         readonly typeString: "bytes32";
                                     };
                                 }, {
-                                    readonly id: 72367;
+                                    readonly id: 72473;
                                     readonly name: "v";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72325;
+                                    readonly referencedDeclaration: 72431;
                                     readonly src: "5044:1:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint8";
                                         readonly typeString: "uint8";
                                     };
                                 }, {
-                                    readonly id: 72368;
+                                    readonly id: 72474;
                                     readonly name: "r";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72327;
+                                    readonly referencedDeclaration: 72433;
                                     readonly src: "5063:1:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     };
                                 }, {
-                                    readonly id: 72369;
+                                    readonly id: 72475;
                                     readonly name: "s";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72329;
+                                    readonly referencedDeclaration: 72435;
                                     readonly src: "5082:1:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes32";
@@ -3448,7 +3448,7 @@ export declare const ERC20: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     }];
-                                    readonly id: 72342;
+                                    readonly id: 72448;
                                     readonly name: "ecrecover";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -3459,7 +3459,7 @@ export declare const ERC20: {
                                         readonly typeString: "function (bytes32,uint8,bytes32,bytes32) pure returns (address)";
                                     };
                                 };
-                                readonly id: 72370;
+                                readonly id: 72476;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3484,7 +3484,7 @@ export declare const ERC20: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
-                                    readonly id: 72382;
+                                    readonly id: 72488;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3494,17 +3494,17 @@ export declare const ERC20: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
-                                        readonly id: 72378;
+                                        readonly id: 72484;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 72373;
+                                            readonly id: 72479;
                                             readonly name: "recoveredAddress";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72341;
+                                            readonly referencedDeclaration: 72447;
                                             readonly src: "5120:16:172";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -3516,7 +3516,7 @@ export declare const ERC20: {
                                         readonly rightExpression: {
                                             readonly arguments: readonly [{
                                                 readonly hexValue: "30";
-                                                readonly id: 72376;
+                                                readonly id: 72482;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3535,7 +3535,7 @@ export declare const ERC20: {
                                                     readonly typeIdentifier: "t_rational_0_by_1";
                                                     readonly typeString: "int_const 0";
                                                 }];
-                                                readonly id: 72375;
+                                                readonly id: 72481;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -3547,14 +3547,14 @@ export declare const ERC20: {
                                                     readonly typeString: "type(address)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 72374;
+                                                    readonly id: 72480;
                                                     readonly name: "address";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "5140:7:172";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 72377;
+                                            readonly id: 72483;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -3583,17 +3583,17 @@ export declare const ERC20: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
-                                        readonly id: 72381;
+                                        readonly id: 72487;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 72379;
+                                            readonly id: 72485;
                                             readonly name: "recoveredAddress";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72341;
+                                            readonly referencedDeclaration: 72447;
                                             readonly src: "5154:16:172";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -3603,11 +3603,11 @@ export declare const ERC20: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: "==";
                                         readonly rightExpression: {
-                                            readonly id: 72380;
+                                            readonly id: 72486;
                                             readonly name: "owner";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72317;
+                                            readonly referencedDeclaration: 72423;
                                             readonly src: "5174:5:172";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -3627,7 +3627,7 @@ export declare const ERC20: {
                                     };
                                 }, {
                                     readonly hexValue: "494e56414c49445f5349474e4552";
-                                    readonly id: 72383;
+                                    readonly id: 72489;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3649,7 +3649,7 @@ export declare const ERC20: {
                                         readonly typeIdentifier: "t_stringliteral_ba2319f5fa9f0c8e55f0d6899910b7354e6f643d1d349de47190066d85e68a1c";
                                         readonly typeString: "literal_string \"INVALID_SIGNER\"";
                                     }];
-                                    readonly id: 72372;
+                                    readonly id: 72478;
                                     readonly name: "require";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [-18, -18];
@@ -3660,7 +3660,7 @@ export declare const ERC20: {
                                         readonly typeString: "function (bool,string memory) pure";
                                     };
                                 };
-                                readonly id: 72384;
+                                readonly id: 72490;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3676,12 +3676,12 @@ export declare const ERC20: {
                                     readonly typeString: "tuple()";
                                 };
                             };
-                            readonly id: 72385;
+                            readonly id: 72491;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "5112:86:172";
                         }, {
                             readonly expression: {
-                                readonly id: 72392;
+                                readonly id: 72498;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3689,24 +3689,24 @@ export declare const ERC20: {
                                 readonly leftHandSide: {
                                     readonly baseExpression: {
                                         readonly baseExpression: {
-                                            readonly id: 72386;
+                                            readonly id: 72492;
                                             readonly name: "allowance";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72153;
+                                            readonly referencedDeclaration: 72259;
                                             readonly src: "5213:9:172";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_address_$_t_uint256_$_$";
                                                 readonly typeString: "mapping(address => mapping(address => uint256))";
                                             };
                                         };
-                                        readonly id: 72389;
+                                        readonly id: 72495;
                                         readonly indexExpression: {
-                                            readonly id: 72387;
+                                            readonly id: 72493;
                                             readonly name: "recoveredAddress";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72341;
+                                            readonly referencedDeclaration: 72447;
                                             readonly src: "5223:16:172";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -3724,13 +3724,13 @@ export declare const ERC20: {
                                             readonly typeString: "mapping(address => uint256)";
                                         };
                                     };
-                                    readonly id: 72390;
+                                    readonly id: 72496;
                                     readonly indexExpression: {
-                                        readonly id: 72388;
+                                        readonly id: 72494;
                                         readonly name: "spender";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72319;
+                                        readonly referencedDeclaration: 72425;
                                         readonly src: "5241:7:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -3751,11 +3751,11 @@ export declare const ERC20: {
                                 readonly nodeType: "Assignment";
                                 readonly operator: "=";
                                 readonly rightHandSide: {
-                                    readonly id: 72391;
+                                    readonly id: 72497;
                                     readonly name: "value";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72321;
+                                    readonly referencedDeclaration: 72427;
                                     readonly src: "5252:5:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -3768,40 +3768,40 @@ export declare const ERC20: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 72393;
+                            readonly id: 72499;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "5213:44:172";
                         }];
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 72396;
+                                readonly id: 72502;
                                 readonly name: "owner";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72317;
+                                readonly referencedDeclaration: 72423;
                                 readonly src: "5292:5:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72397;
+                                readonly id: 72503;
                                 readonly name: "spender";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72319;
+                                readonly referencedDeclaration: 72425;
                                 readonly src: "5299:7:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72398;
+                                readonly id: 72504;
                                 readonly name: "value";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72321;
+                                readonly referencedDeclaration: 72427;
                                 readonly src: "5308:5:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3819,18 +3819,18 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 72395;
+                                readonly id: 72501;
                                 readonly name: "Approval";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72135;
+                                readonly referencedDeclaration: 72241;
                                 readonly src: "5283:8:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,address,uint256)";
                                 };
                             };
-                            readonly id: 72399;
+                            readonly id: 72505;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3846,7 +3846,7 @@ export declare const ERC20: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72400;
+                        readonly id: 72506;
                         readonly nodeType: "EmitStatement";
                         readonly src: "5278:36:172";
                     }];
@@ -3858,16 +3858,16 @@ export declare const ERC20: {
                 readonly name: "permit";
                 readonly nameLocation: "3847:6:172";
                 readonly parameters: {
-                    readonly id: 72330;
+                    readonly id: 72436;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72317;
+                        readonly id: 72423;
                         readonly mutability: "mutable";
                         readonly name: "owner";
                         readonly nameLocation: "3871:5:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72402;
+                        readonly scope: 72508;
                         readonly src: "3863:13:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3876,7 +3876,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72316;
+                            readonly id: 72422;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3863:7:172";
@@ -3889,12 +3889,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72319;
+                        readonly id: 72425;
                         readonly mutability: "mutable";
                         readonly name: "spender";
                         readonly nameLocation: "3894:7:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72402;
+                        readonly scope: 72508;
                         readonly src: "3886:15:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3903,7 +3903,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72318;
+                            readonly id: 72424;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3886:7:172";
@@ -3916,12 +3916,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72321;
+                        readonly id: 72427;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3919:5:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72402;
+                        readonly scope: 72508;
                         readonly src: "3911:13:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3930,7 +3930,7 @@ export declare const ERC20: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 72320;
+                            readonly id: 72426;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3911:7:172";
@@ -3942,12 +3942,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72323;
+                        readonly id: 72429;
                         readonly mutability: "mutable";
                         readonly name: "deadline";
                         readonly nameLocation: "3942:8:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72402;
+                        readonly scope: 72508;
                         readonly src: "3934:16:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3956,7 +3956,7 @@ export declare const ERC20: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 72322;
+                            readonly id: 72428;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3934:7:172";
@@ -3968,12 +3968,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72325;
+                        readonly id: 72431;
                         readonly mutability: "mutable";
                         readonly name: "v";
                         readonly nameLocation: "3966:1:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72402;
+                        readonly scope: 72508;
                         readonly src: "3960:7:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3982,7 +3982,7 @@ export declare const ERC20: {
                             readonly typeString: "uint8";
                         };
                         readonly typeName: {
-                            readonly id: 72324;
+                            readonly id: 72430;
                             readonly name: "uint8";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3960:5:172";
@@ -3994,12 +3994,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72327;
+                        readonly id: 72433;
                         readonly mutability: "mutable";
                         readonly name: "r";
                         readonly nameLocation: "3985:1:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72402;
+                        readonly scope: 72508;
                         readonly src: "3977:9:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4008,7 +4008,7 @@ export declare const ERC20: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 72326;
+                            readonly id: 72432;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3977:7:172";
@@ -4020,12 +4020,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72329;
+                        readonly id: 72435;
                         readonly mutability: "mutable";
                         readonly name: "s";
                         readonly nameLocation: "4004:1:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72402;
+                        readonly scope: 72508;
                         readonly src: "3996:9:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4034,7 +4034,7 @@ export declare const ERC20: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 72328;
+                            readonly id: 72434;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3996:7:172";
@@ -4048,22 +4048,22 @@ export declare const ERC20: {
                     readonly src: "3853:158:172";
                 };
                 readonly returnParameters: {
-                    readonly id: 72331;
+                    readonly id: 72437;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4027:0:172";
                 };
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72417;
+                readonly id: 72523;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5327:177:172";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72416;
+                    readonly id: 72522;
                     readonly nodeType: "Block";
                     readonly src: "5393:111:172";
                     readonly nodes: readonly [];
@@ -4074,14 +4074,14 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 72410;
+                                readonly id: 72516;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 72407;
+                                        readonly id: 72513;
                                         readonly name: "block";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -4092,7 +4092,7 @@ export declare const ERC20: {
                                             readonly typeString: "block";
                                         };
                                     };
-                                    readonly id: 72408;
+                                    readonly id: 72514;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4109,11 +4109,11 @@ export declare const ERC20: {
                                 readonly nodeType: "BinaryOperation";
                                 readonly operator: "==";
                                 readonly rightExpression: {
-                                    readonly id: 72409;
+                                    readonly id: 72515;
                                     readonly name: "INITIAL_CHAIN_ID";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72155;
+                                    readonly referencedDeclaration: 72261;
                                     readonly src: "5427:16:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -4130,18 +4130,18 @@ export declare const ERC20: {
                                 readonly arguments: readonly [];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [];
-                                    readonly id: 72412;
+                                    readonly id: 72518;
                                     readonly name: "computeDomainSeparator";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72447;
+                                    readonly referencedDeclaration: 72553;
                                     readonly src: "5473:22:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_view$__$returns$_t_bytes32_$";
                                         readonly typeString: "function () view returns (bytes32)";
                                     };
                                 };
-                                readonly id: 72413;
+                                readonly id: 72519;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4157,7 +4157,7 @@ export declare const ERC20: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 72414;
+                            readonly id: 72520;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4165,11 +4165,11 @@ export declare const ERC20: {
                             readonly nodeType: "Conditional";
                             readonly src: "5410:87:172";
                             readonly trueExpression: {
-                                readonly id: 72411;
+                                readonly id: 72517;
                                 readonly name: "INITIAL_DOMAIN_SEPARATOR";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72157;
+                                readonly referencedDeclaration: 72263;
                                 readonly src: "5446:24:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
@@ -4181,8 +4181,8 @@ export declare const ERC20: {
                                 readonly typeString: "bytes32";
                             };
                         };
-                        readonly functionReturnParameters: 72406;
-                        readonly id: 72415;
+                        readonly functionReturnParameters: 72512;
+                        readonly id: 72521;
                         readonly nodeType: "Return";
                         readonly src: "5403:94:172";
                     }];
@@ -4194,22 +4194,22 @@ export declare const ERC20: {
                 readonly name: "DOMAIN_SEPARATOR";
                 readonly nameLocation: "5336:16:172";
                 readonly parameters: {
-                    readonly id: 72403;
+                    readonly id: 72509;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5352:2:172";
                 };
                 readonly returnParameters: {
-                    readonly id: 72406;
+                    readonly id: 72512;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72405;
+                        readonly id: 72511;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72417;
+                        readonly scope: 72523;
                         readonly src: "5384:7:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4218,7 +4218,7 @@ export declare const ERC20: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 72404;
+                            readonly id: 72510;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5384:7:172";
@@ -4231,17 +4231,17 @@ export declare const ERC20: {
                     }];
                     readonly src: "5383:9:172";
                 };
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateMutability: "view";
                 readonly virtual: true;
                 readonly visibility: "public";
             }, {
-                readonly id: 72447;
+                readonly id: 72553;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5510:446:172";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72446;
+                    readonly id: 72552;
                     readonly nodeType: "Block";
                     readonly src: "5584:372:172";
                     readonly nodes: readonly [];
@@ -4251,7 +4251,7 @@ export declare const ERC20: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "454950373132446f6d61696e28737472696e67206e616d652c737472696e672076657273696f6e2c75696e7432353620636861696e49642c6164647265737320766572696679696e67436f6e747261637429";
-                                        readonly id: 72426;
+                                        readonly id: 72532;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -4270,7 +4270,7 @@ export declare const ERC20: {
                                             readonly typeIdentifier: "t_stringliteral_8b73c3c69bb8fe3d512ecc4cf759cc79239f7b179b0ffacaa9a75d522b39400f";
                                             readonly typeString: "literal_string \"EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)\"";
                                         }];
-                                        readonly id: 72425;
+                                        readonly id: 72531;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -4281,7 +4281,7 @@ export declare const ERC20: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 72427;
+                                    readonly id: 72533;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -4299,11 +4299,11 @@ export declare const ERC20: {
                                 }, {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 72431;
+                                            readonly id: 72537;
                                             readonly name: "name";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 72137;
+                                            readonly referencedDeclaration: 72243;
                                             readonly src: "5805:4:172";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_string_storage";
@@ -4315,7 +4315,7 @@ export declare const ERC20: {
                                                 readonly typeIdentifier: "t_string_storage";
                                                 readonly typeString: "string storage ref";
                                             }];
-                                            readonly id: 72430;
+                                            readonly id: 72536;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -4327,14 +4327,14 @@ export declare const ERC20: {
                                                 readonly typeString: "type(bytes storage pointer)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 72429;
+                                                readonly id: 72535;
                                                 readonly name: "bytes";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "5799:5:172";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 72432;
+                                        readonly id: 72538;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -4355,7 +4355,7 @@ export declare const ERC20: {
                                             readonly typeIdentifier: "t_bytes_storage_ptr";
                                             readonly typeString: "bytes storage pointer";
                                         }];
-                                        readonly id: 72428;
+                                        readonly id: 72534;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -4366,7 +4366,7 @@ export declare const ERC20: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 72433;
+                                    readonly id: 72539;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4384,7 +4384,7 @@ export declare const ERC20: {
                                 }, {
                                     readonly arguments: readonly [{
                                         readonly hexValue: "31";
-                                        readonly id: 72435;
+                                        readonly id: 72541;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -4403,7 +4403,7 @@ export declare const ERC20: {
                                             readonly typeIdentifier: "t_stringliteral_c89efdaa54c0f20c7adf612882df0950f5a951637e0307cdcb4c672f298b8bc6";
                                             readonly typeString: "literal_string \"1\"";
                                         }];
-                                        readonly id: 72434;
+                                        readonly id: 72540;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -4414,7 +4414,7 @@ export declare const ERC20: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 72436;
+                                    readonly id: 72542;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -4431,7 +4431,7 @@ export declare const ERC20: {
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 72437;
+                                        readonly id: 72543;
                                         readonly name: "block";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -4442,7 +4442,7 @@ export declare const ERC20: {
                                             readonly typeString: "block";
                                         };
                                     };
-                                    readonly id: 72438;
+                                    readonly id: 72544;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4457,23 +4457,23 @@ export declare const ERC20: {
                                     };
                                 }, {
                                     readonly arguments: readonly [{
-                                        readonly id: 72441;
+                                        readonly id: 72547;
                                         readonly name: "this";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -28;
                                         readonly src: "5912:4:172";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_ERC20_$72504";
+                                            readonly typeIdentifier: "t_contract$_ERC20_$72610";
                                             readonly typeString: "contract ERC20";
                                         };
                                     }];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_contract$_ERC20_$72504";
+                                            readonly typeIdentifier: "t_contract$_ERC20_$72610";
                                             readonly typeString: "contract ERC20";
                                         }];
-                                        readonly id: 72440;
+                                        readonly id: 72546;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -4485,14 +4485,14 @@ export declare const ERC20: {
                                             readonly typeString: "type(address)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 72439;
+                                            readonly id: 72545;
                                             readonly name: "address";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "5904:7:172";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 72442;
+                                    readonly id: 72548;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4526,7 +4526,7 @@ export declare const ERC20: {
                                         readonly typeString: "address";
                                     }];
                                     readonly expression: {
-                                        readonly id: 72423;
+                                        readonly id: 72529;
                                         readonly name: "abi";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -4537,7 +4537,7 @@ export declare const ERC20: {
                                             readonly typeString: "abi";
                                         };
                                     };
-                                    readonly id: 72424;
+                                    readonly id: 72530;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -4551,7 +4551,7 @@ export declare const ERC20: {
                                         readonly typeString: "function () pure returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 72443;
+                                readonly id: 72549;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4572,7 +4572,7 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                     readonly typeString: "bytes memory";
                                 }];
-                                readonly id: 72422;
+                                readonly id: 72528;
                                 readonly name: "keccak256";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
@@ -4583,7 +4583,7 @@ export declare const ERC20: {
                                     readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                 };
                             };
-                            readonly id: 72444;
+                            readonly id: 72550;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4599,8 +4599,8 @@ export declare const ERC20: {
                                 readonly typeString: "bytes32";
                             };
                         };
-                        readonly functionReturnParameters: 72421;
-                        readonly id: 72445;
+                        readonly functionReturnParameters: 72527;
+                        readonly id: 72551;
                         readonly nodeType: "Return";
                         readonly src: "5594:355:172";
                     }];
@@ -4611,22 +4611,22 @@ export declare const ERC20: {
                 readonly name: "computeDomainSeparator";
                 readonly nameLocation: "5519:22:172";
                 readonly parameters: {
-                    readonly id: 72418;
+                    readonly id: 72524;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5541:2:172";
                 };
                 readonly returnParameters: {
-                    readonly id: 72421;
+                    readonly id: 72527;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72420;
+                        readonly id: 72526;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72447;
+                        readonly scope: 72553;
                         readonly src: "5575:7:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4635,7 +4635,7 @@ export declare const ERC20: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 72419;
+                            readonly id: 72525;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5575:7:172";
@@ -4648,33 +4648,33 @@ export declare const ERC20: {
                     }];
                     readonly src: "5574:9:172";
                 };
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateMutability: "view";
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 72475;
+                readonly id: 72581;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6150:325:172";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72474;
+                    readonly id: 72580;
                     readonly nodeType: "Block";
                     readonly src: "6210:265:172";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 72456;
+                            readonly id: 72562;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 72454;
+                                readonly id: 72560;
                                 readonly name: "totalSupply";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72143;
+                                readonly referencedDeclaration: 72249;
                                 readonly src: "6220:11:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4684,11 +4684,11 @@ export declare const ERC20: {
                             readonly nodeType: "Assignment";
                             readonly operator: "+=";
                             readonly rightHandSide: {
-                                readonly id: 72455;
+                                readonly id: 72561;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72451;
+                                readonly referencedDeclaration: 72557;
                                 readonly src: "6235:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4701,40 +4701,40 @@ export declare const ERC20: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 72457;
+                        readonly id: 72563;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "6220:21:172";
                     }, {
-                        readonly id: 72464;
+                        readonly id: 72570;
                         readonly nodeType: "UncheckedBlock";
                         readonly src: "6363:58:172";
                         readonly statements: readonly [{
                             readonly expression: {
-                                readonly id: 72462;
+                                readonly id: 72568;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
                                     readonly baseExpression: {
-                                        readonly id: 72458;
+                                        readonly id: 72564;
                                         readonly name: "balanceOf";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72147;
+                                        readonly referencedDeclaration: 72253;
                                         readonly src: "6387:9:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_mapping$_t_address_$_t_uint256_$";
                                             readonly typeString: "mapping(address => uint256)";
                                         };
                                     };
-                                    readonly id: 72460;
+                                    readonly id: 72566;
                                     readonly indexExpression: {
-                                        readonly id: 72459;
+                                        readonly id: 72565;
                                         readonly name: "to";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 72449;
+                                        readonly referencedDeclaration: 72555;
                                         readonly src: "6397:2:172";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -4755,11 +4755,11 @@ export declare const ERC20: {
                                 readonly nodeType: "Assignment";
                                 readonly operator: "+=";
                                 readonly rightHandSide: {
-                                    readonly id: 72461;
+                                    readonly id: 72567;
                                     readonly name: "amount";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72451;
+                                    readonly referencedDeclaration: 72557;
                                     readonly src: "6404:6:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -4772,7 +4772,7 @@ export declare const ERC20: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 72463;
+                            readonly id: 72569;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "6387:23:172";
                         }];
@@ -4781,7 +4781,7 @@ export declare const ERC20: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly hexValue: "30";
-                                    readonly id: 72468;
+                                    readonly id: 72574;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -4800,7 +4800,7 @@ export declare const ERC20: {
                                         readonly typeIdentifier: "t_rational_0_by_1";
                                         readonly typeString: "int_const 0";
                                     }];
-                                    readonly id: 72467;
+                                    readonly id: 72573;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -4812,14 +4812,14 @@ export declare const ERC20: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 72466;
+                                        readonly id: 72572;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "6445:7:172";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 72469;
+                                readonly id: 72575;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -4835,22 +4835,22 @@ export declare const ERC20: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72470;
+                                readonly id: 72576;
                                 readonly name: "to";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72449;
+                                readonly referencedDeclaration: 72555;
                                 readonly src: "6457:2:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72471;
+                                readonly id: 72577;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72451;
+                                readonly referencedDeclaration: 72557;
                                 readonly src: "6461:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4868,18 +4868,18 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 72465;
+                                readonly id: 72571;
                                 readonly name: "Transfer";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72127;
+                                readonly referencedDeclaration: 72233;
                                 readonly src: "6436:8:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,address,uint256)";
                                 };
                             };
-                            readonly id: 72472;
+                            readonly id: 72578;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4895,7 +4895,7 @@ export declare const ERC20: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72473;
+                        readonly id: 72579;
                         readonly nodeType: "EmitStatement";
                         readonly src: "6431:37:172";
                     }];
@@ -4906,16 +4906,16 @@ export declare const ERC20: {
                 readonly name: "_mint";
                 readonly nameLocation: "6159:5:172";
                 readonly parameters: {
-                    readonly id: 72452;
+                    readonly id: 72558;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72449;
+                        readonly id: 72555;
                         readonly mutability: "mutable";
                         readonly name: "to";
                         readonly nameLocation: "6173:2:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72475;
+                        readonly scope: 72581;
                         readonly src: "6165:10:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4924,7 +4924,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72448;
+                            readonly id: 72554;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6165:7:172";
@@ -4937,12 +4937,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72451;
+                        readonly id: 72557;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "6185:6:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72475;
+                        readonly scope: 72581;
                         readonly src: "6177:14:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -4951,7 +4951,7 @@ export declare const ERC20: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 72450;
+                            readonly id: 72556;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6177:7:172";
@@ -4965,52 +4965,52 @@ export declare const ERC20: {
                     readonly src: "6164:28:172";
                 };
                 readonly returnParameters: {
-                    readonly id: 72453;
+                    readonly id: 72559;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6210:0:172";
                 };
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 72503;
+                readonly id: 72609;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6481:328:172";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 72502;
+                    readonly id: 72608;
                     readonly nodeType: "Block";
                     readonly src: "6543:266:172";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 72486;
+                            readonly id: 72592;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 72482;
+                                    readonly id: 72588;
                                     readonly name: "balanceOf";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72147;
+                                    readonly referencedDeclaration: 72253;
                                     readonly src: "6553:9:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_address_$_t_uint256_$";
                                         readonly typeString: "mapping(address => uint256)";
                                     };
                                 };
-                                readonly id: 72484;
+                                readonly id: 72590;
                                 readonly indexExpression: {
-                                    readonly id: 72483;
+                                    readonly id: 72589;
                                     readonly name: "from";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72477;
+                                    readonly referencedDeclaration: 72583;
                                     readonly src: "6563:4:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -5031,11 +5031,11 @@ export declare const ERC20: {
                             readonly nodeType: "Assignment";
                             readonly operator: "-=";
                             readonly rightHandSide: {
-                                readonly id: 72485;
+                                readonly id: 72591;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72479;
+                                readonly referencedDeclaration: 72585;
                                 readonly src: "6572:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5048,26 +5048,26 @@ export declare const ERC20: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 72487;
+                        readonly id: 72593;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "6553:25:172";
                     }, {
-                        readonly id: 72492;
+                        readonly id: 72598;
                         readonly nodeType: "UncheckedBlock";
                         readonly src: "6697:56:172";
                         readonly statements: readonly [{
                             readonly expression: {
-                                readonly id: 72490;
+                                readonly id: 72596;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 72488;
+                                    readonly id: 72594;
                                     readonly name: "totalSupply";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72143;
+                                    readonly referencedDeclaration: 72249;
                                     readonly src: "6721:11:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -5077,11 +5077,11 @@ export declare const ERC20: {
                                 readonly nodeType: "Assignment";
                                 readonly operator: "-=";
                                 readonly rightHandSide: {
-                                    readonly id: 72489;
+                                    readonly id: 72595;
                                     readonly name: "amount";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 72479;
+                                    readonly referencedDeclaration: 72585;
                                     readonly src: "6736:6:172";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -5094,18 +5094,18 @@ export declare const ERC20: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 72491;
+                            readonly id: 72597;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "6721:21:172";
                         }];
                     }, {
                         readonly eventCall: {
                             readonly arguments: readonly [{
-                                readonly id: 72494;
+                                readonly id: 72600;
                                 readonly name: "from";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72477;
+                                readonly referencedDeclaration: 72583;
                                 readonly src: "6777:4:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -5114,7 +5114,7 @@ export declare const ERC20: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "30";
-                                    readonly id: 72497;
+                                    readonly id: 72603;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -5133,7 +5133,7 @@ export declare const ERC20: {
                                         readonly typeIdentifier: "t_rational_0_by_1";
                                         readonly typeString: "int_const 0";
                                     }];
-                                    readonly id: 72496;
+                                    readonly id: 72602;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -5145,14 +5145,14 @@ export declare const ERC20: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 72495;
+                                        readonly id: 72601;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "6783:7:172";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 72498;
+                                readonly id: 72604;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -5168,11 +5168,11 @@ export declare const ERC20: {
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 72499;
+                                readonly id: 72605;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72479;
+                                readonly referencedDeclaration: 72585;
                                 readonly src: "6795:6:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -5190,18 +5190,18 @@ export declare const ERC20: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 72493;
+                                readonly id: 72599;
                                 readonly name: "Transfer";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 72127;
+                                readonly referencedDeclaration: 72233;
                                 readonly src: "6768:8:172";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$__$";
                                     readonly typeString: "function (address,address,uint256)";
                                 };
                             };
-                            readonly id: 72500;
+                            readonly id: 72606;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -5217,7 +5217,7 @@ export declare const ERC20: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 72501;
+                        readonly id: 72607;
                         readonly nodeType: "EmitStatement";
                         readonly src: "6763:39:172";
                     }];
@@ -5228,16 +5228,16 @@ export declare const ERC20: {
                 readonly name: "_burn";
                 readonly nameLocation: "6490:5:172";
                 readonly parameters: {
-                    readonly id: 72480;
+                    readonly id: 72586;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 72477;
+                        readonly id: 72583;
                         readonly mutability: "mutable";
                         readonly name: "from";
                         readonly nameLocation: "6504:4:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72503;
+                        readonly scope: 72609;
                         readonly src: "6496:12:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5246,7 +5246,7 @@ export declare const ERC20: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 72476;
+                            readonly id: 72582;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6496:7:172";
@@ -5259,12 +5259,12 @@ export declare const ERC20: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 72479;
+                        readonly id: 72585;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "6518:6:172";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 72503;
+                        readonly scope: 72609;
                         readonly src: "6510:14:172";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -5273,7 +5273,7 @@ export declare const ERC20: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 72478;
+                            readonly id: 72584;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6510:7:172";
@@ -5287,12 +5287,12 @@ export declare const ERC20: {
                     readonly src: "6495:30:172";
                 };
                 readonly returnParameters: {
-                    readonly id: 72481;
+                    readonly id: 72587;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "6543:0:172";
                 };
-                readonly scope: 72504;
+                readonly scope: 72610;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "internal";
@@ -5303,18 +5303,18 @@ export declare const ERC20: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 72119;
+                readonly id: 72225;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "68:406:172";
                 readonly text: "@notice Modern and gas efficient ERC20 + EIP-2612 implementation.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/tokens/ERC20.sol)\n @author Modified from Uniswap (https://github.com/Uniswap/uniswap-v2-core/blob/master/contracts/UniswapV2ERC20.sol)\n @dev Do not manually set balances without updating totalSupply, as the sum of all user balances must not exceed it.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [72504];
+            readonly linearizedBaseContracts: readonly [72610];
             readonly name: "ERC20";
             readonly nameLocation: "492:5:172";
-            readonly scope: 72505;
+            readonly scope: 72611;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [72127, 72135];
+            readonly usedEvents: readonly [72233, 72241];
         }];
         readonly license: "AGPL-3.0-only";
     };

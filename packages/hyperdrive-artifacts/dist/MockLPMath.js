@@ -1933,20 +1933,20 @@ export const MockLPMath = {
     },
     "ast": {
         "absolutePath": "contracts/test/MockLPMath.sol",
-        "id": 26149,
+        "id": 26252,
         "exportedSymbols": {
             "LPMath": [
                 21642
             ],
             "MockLPMath": [
-                26148
+                26251
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:3317:138",
         "nodes": [
             {
-                "id": 25969,
+                "id": 26072,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:138",
                 "nodes": [],
@@ -1957,19 +1957,19 @@ export const MockLPMath = {
                 ]
             },
             {
-                "id": 25971,
+                "id": 26074,
                 "nodeType": "ImportDirective",
                 "src": "64:60:138",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/LPMath.sol",
                 "file": "contracts/src/libraries/LPMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 26149,
+                "scope": 26252,
                 "sourceUnit": 21643,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 25970,
+                            "id": 26073,
                             "name": "LPMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -1983,34 +1983,34 @@ export const MockLPMath = {
                 "unitAlias": ""
             },
             {
-                "id": 26148,
+                "id": 26251,
                 "nodeType": "ContractDefinition",
                 "src": "126:3229:138",
                 "nodes": [
                     {
-                        "id": 26014,
+                        "id": 26117,
                         "nodeType": "FunctionDefinition",
                         "src": "152:786:138",
                         "nodes": [],
                         "body": {
-                            "id": 26013,
+                            "id": 26116,
                             "nodeType": "Block",
                             "src": "529:409:138",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25991
+                                        26094
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25991,
+                                            "id": 26094,
                                             "mutability": "mutable",
                                             "name": "success",
                                             "nameLocation": "544:7:138",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 26013,
+                                            "scope": 26116,
                                             "src": "539:12:138",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2019,7 +2019,7 @@ export const MockLPMath = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 25990,
+                                                "id": 26093,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "539:4:138",
@@ -2031,13 +2031,13 @@ export const MockLPMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25992,
+                                    "id": 26095,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "539:12:138"
                                 },
                                 {
                                     "expression": {
-                                        "id": 26006,
+                                        "id": 26109,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2045,11 +2045,11 @@ export const MockLPMath = {
                                         "leftHandSide": {
                                             "components": [
                                                 {
-                                                    "id": 25993,
+                                                    "id": 26096,
                                                     "name": "shareReserves",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25984,
+                                                    "referencedDeclaration": 26087,
                                                     "src": "562:13:138",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2057,11 +2057,11 @@ export const MockLPMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 25994,
+                                                    "id": 26097,
                                                     "name": "shareAdjustment",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25986,
+                                                    "referencedDeclaration": 26089,
                                                     "src": "577:15:138",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -2069,11 +2069,11 @@ export const MockLPMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 25995,
+                                                    "id": 26098,
                                                     "name": "bondReserves",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25988,
+                                                    "referencedDeclaration": 26091,
                                                     "src": "594:12:138",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2081,11 +2081,11 @@ export const MockLPMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 25996,
+                                                    "id": 26099,
                                                     "name": "success",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25991,
+                                                    "referencedDeclaration": 26094,
                                                     "src": "608:7:138",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
@@ -2093,7 +2093,7 @@ export const MockLPMath = {
                                                     }
                                                 }
                                             ],
-                                            "id": 25997,
+                                            "id": 26100,
                                             "isConstant": false,
                                             "isInlineArray": false,
                                             "isLValue": true,
@@ -2111,11 +2111,11 @@ export const MockLPMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 26000,
+                                                    "id": 26103,
                                                     "name": "_shareReserves",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25973,
+                                                    "referencedDeclaration": 26076,
                                                     "src": "685:14:138",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2123,11 +2123,11 @@ export const MockLPMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 26001,
+                                                    "id": 26104,
                                                     "name": "_shareAdjustment",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25975,
+                                                    "referencedDeclaration": 26078,
                                                     "src": "717:16:138",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -2135,11 +2135,11 @@ export const MockLPMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 26002,
+                                                    "id": 26105,
                                                     "name": "_bondReserves",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25977,
+                                                    "referencedDeclaration": 26080,
                                                     "src": "751:13:138",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2147,11 +2147,11 @@ export const MockLPMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 26003,
+                                                    "id": 26106,
                                                     "name": "_minimumShareReserves",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25979,
+                                                    "referencedDeclaration": 26082,
                                                     "src": "782:21:138",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2159,11 +2159,11 @@ export const MockLPMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 26004,
+                                                    "id": 26107,
                                                     "name": "_shareReservesDelta",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25981,
+                                                    "referencedDeclaration": 26084,
                                                     "src": "821:19:138",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -2195,7 +2195,7 @@ export const MockLPMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 25998,
+                                                    "id": 26101,
                                                     "name": "LPMath",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -2206,7 +2206,7 @@ export const MockLPMath = {
                                                         "typeString": "type(library LPMath)"
                                                     }
                                                 },
-                                                "id": 25999,
+                                                "id": 26102,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2221,7 +2221,7 @@ export const MockLPMath = {
                                                     "typeString": "function (uint256,int256,uint256,uint256,int256) pure returns (uint256,int256,uint256,bool)"
                                                 }
                                             },
-                                            "id": 26005,
+                                            "id": 26108,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2243,7 +2243,7 @@ export const MockLPMath = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 26007,
+                                    "id": 26110,
                                     "nodeType": "ExpressionStatement",
                                     "src": "561:293:138"
                                 },
@@ -2251,11 +2251,11 @@ export const MockLPMath = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26009,
+                                                "id": 26112,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25991,
+                                                "referencedDeclaration": 26094,
                                                 "src": "872:7:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -2264,7 +2264,7 @@ export const MockLPMath = {
                                             },
                                             {
                                                 "hexValue": "4d6f636b4c504d6174683a2063616c63756c6174655570646174654c697175696469747953616665206661696c6564",
-                                                "id": 26010,
+                                                "id": 26113,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2290,7 +2290,7 @@ export const MockLPMath = {
                                                     "typeString": "literal_string \"MockLPMath: calculateUpdateLiquiditySafe failed\""
                                                 }
                                             ],
-                                            "id": 26008,
+                                            "id": 26111,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -2304,7 +2304,7 @@ export const MockLPMath = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 26011,
+                                        "id": 26114,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2320,7 +2320,7 @@ export const MockLPMath = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 26012,
+                                    "id": 26115,
                                     "nodeType": "ExpressionStatement",
                                     "src": "864:67:138"
                                 }
@@ -2333,17 +2333,17 @@ export const MockLPMath = {
                         "name": "calculateUpdateLiquidity",
                         "nameLocation": "161:24:138",
                         "parameters": {
-                            "id": 25982,
+                            "id": 26085,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25973,
+                                    "id": 26076,
                                     "mutability": "mutable",
                                     "name": "_shareReserves",
                                     "nameLocation": "203:14:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26014,
+                                    "scope": 26117,
                                     "src": "195:22:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2352,7 +2352,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25972,
+                                        "id": 26075,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "195:7:138",
@@ -2365,12 +2365,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25975,
+                                    "id": 26078,
                                     "mutability": "mutable",
                                     "name": "_shareAdjustment",
                                     "nameLocation": "234:16:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26014,
+                                    "scope": 26117,
                                     "src": "227:23:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2379,7 +2379,7 @@ export const MockLPMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 25974,
+                                        "id": 26077,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "227:6:138",
@@ -2392,12 +2392,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25977,
+                                    "id": 26080,
                                     "mutability": "mutable",
                                     "name": "_bondReserves",
                                     "nameLocation": "268:13:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26014,
+                                    "scope": 26117,
                                     "src": "260:21:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2406,7 +2406,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25976,
+                                        "id": 26079,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "260:7:138",
@@ -2419,12 +2419,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25979,
+                                    "id": 26082,
                                     "mutability": "mutable",
                                     "name": "_minimumShareReserves",
                                     "nameLocation": "299:21:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26014,
+                                    "scope": 26117,
                                     "src": "291:29:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2433,7 +2433,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25978,
+                                        "id": 26081,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "291:7:138",
@@ -2446,12 +2446,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25981,
+                                    "id": 26084,
                                     "mutability": "mutable",
                                     "name": "_shareReservesDelta",
                                     "nameLocation": "337:19:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26014,
+                                    "scope": 26117,
                                     "src": "330:26:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2460,7 +2460,7 @@ export const MockLPMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 25980,
+                                        "id": 26083,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "330:6:138",
@@ -2475,17 +2475,17 @@ export const MockLPMath = {
                             "src": "185:177:138"
                         },
                         "returnParameters": {
-                            "id": 25989,
+                            "id": 26092,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25984,
+                                    "id": 26087,
                                     "mutability": "mutable",
                                     "name": "shareReserves",
                                     "nameLocation": "431:13:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26014,
+                                    "scope": 26117,
                                     "src": "423:21:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2494,7 +2494,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25983,
+                                        "id": 26086,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "423:7:138",
@@ -2507,12 +2507,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25986,
+                                    "id": 26089,
                                     "mutability": "mutable",
                                     "name": "shareAdjustment",
                                     "nameLocation": "465:15:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26014,
+                                    "scope": 26117,
                                     "src": "458:22:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2521,7 +2521,7 @@ export const MockLPMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 25985,
+                                        "id": 26088,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "458:6:138",
@@ -2534,12 +2534,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25988,
+                                    "id": 26091,
                                     "mutability": "mutable",
                                     "name": "bondReserves",
                                     "nameLocation": "502:12:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26014,
+                                    "scope": 26117,
                                     "src": "494:20:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2548,7 +2548,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25987,
+                                        "id": 26090,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "494:7:138",
@@ -2562,18 +2562,18 @@ export const MockLPMath = {
                             ],
                             "src": "409:115:138"
                         },
-                        "scope": 26148,
+                        "scope": 26251,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26028,
+                        "id": 26131,
                         "nodeType": "FunctionDefinition",
                         "src": "944:180:138",
                         "nodes": [],
                         "body": {
-                            "id": 26027,
+                            "id": 26130,
                             "nodeType": "Block",
                             "src": "1063:61:138",
                             "nodes": [],
@@ -2582,11 +2582,11 @@ export const MockLPMath = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26024,
+                                                "id": 26127,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26017,
+                                                "referencedDeclaration": 26120,
                                                 "src": "1109:7:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_struct$_PresentValueParams_$19776_memory_ptr",
@@ -2602,7 +2602,7 @@ export const MockLPMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26022,
+                                                "id": 26125,
                                                 "name": "LPMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2613,7 +2613,7 @@ export const MockLPMath = {
                                                     "typeString": "type(library LPMath)"
                                                 }
                                             },
-                                            "id": 26023,
+                                            "id": 26126,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2628,7 +2628,7 @@ export const MockLPMath = {
                                                 "typeString": "function (struct LPMath.PresentValueParams memory) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 26025,
+                                        "id": 26128,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2644,8 +2644,8 @@ export const MockLPMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 26021,
-                                    "id": 26026,
+                                    "functionReturnParameters": 26124,
+                                    "id": 26129,
                                     "nodeType": "Return",
                                     "src": "1073:44:138"
                                 }
@@ -2658,17 +2658,17 @@ export const MockLPMath = {
                         "name": "calculatePresentValue",
                         "nameLocation": "953:21:138",
                         "parameters": {
-                            "id": 26018,
+                            "id": 26121,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26017,
+                                    "id": 26120,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "1017:7:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26028,
+                                    "scope": 26131,
                                     "src": "984:40:138",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2677,10 +2677,10 @@ export const MockLPMath = {
                                         "typeString": "struct LPMath.PresentValueParams"
                                     },
                                     "typeName": {
-                                        "id": 26016,
+                                        "id": 26119,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 26015,
+                                            "id": 26118,
                                             "name": "LPMath.PresentValueParams",
                                             "nameLocations": [
                                                 "984:6:138",
@@ -2703,17 +2703,17 @@ export const MockLPMath = {
                             "src": "974:56:138"
                         },
                         "returnParameters": {
-                            "id": 26021,
+                            "id": 26124,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26020,
+                                    "id": 26123,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26028,
+                                    "scope": 26131,
                                     "src": "1054:7:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2722,7 +2722,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26019,
+                                        "id": 26122,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1054:7:138",
@@ -2736,18 +2736,18 @@ export const MockLPMath = {
                             ],
                             "src": "1053:9:138"
                         },
-                        "scope": 26148,
+                        "scope": 26251,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26042,
+                        "id": 26145,
                         "nodeType": "FunctionDefinition",
                         "src": "1130:179:138",
                         "nodes": [],
                         "body": {
-                            "id": 26041,
+                            "id": 26144,
                             "nodeType": "Block",
                             "src": "1248:61:138",
                             "nodes": [],
@@ -2756,11 +2756,11 @@ export const MockLPMath = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26038,
+                                                "id": 26141,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26031,
+                                                "referencedDeclaration": 26134,
                                                 "src": "1294:7:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_struct$_PresentValueParams_$19776_memory_ptr",
@@ -2776,7 +2776,7 @@ export const MockLPMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26036,
+                                                "id": 26139,
                                                 "name": "LPMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2787,7 +2787,7 @@ export const MockLPMath = {
                                                     "typeString": "type(library LPMath)"
                                                 }
                                             },
-                                            "id": 26037,
+                                            "id": 26140,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2802,7 +2802,7 @@ export const MockLPMath = {
                                                 "typeString": "function (struct LPMath.PresentValueParams memory) pure returns (int256)"
                                             }
                                         },
-                                        "id": 26039,
+                                        "id": 26142,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2818,8 +2818,8 @@ export const MockLPMath = {
                                             "typeString": "int256"
                                         }
                                     },
-                                    "functionReturnParameters": 26035,
-                                    "id": 26040,
+                                    "functionReturnParameters": 26138,
+                                    "id": 26143,
                                     "nodeType": "Return",
                                     "src": "1258:44:138"
                                 }
@@ -2832,17 +2832,17 @@ export const MockLPMath = {
                         "name": "calculateNetFlatTrade",
                         "nameLocation": "1139:21:138",
                         "parameters": {
-                            "id": 26032,
+                            "id": 26135,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26031,
+                                    "id": 26134,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "1203:7:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26042,
+                                    "scope": 26145,
                                     "src": "1170:40:138",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2851,10 +2851,10 @@ export const MockLPMath = {
                                         "typeString": "struct LPMath.PresentValueParams"
                                     },
                                     "typeName": {
-                                        "id": 26030,
+                                        "id": 26133,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 26029,
+                                            "id": 26132,
                                             "name": "LPMath.PresentValueParams",
                                             "nameLocations": [
                                                 "1170:6:138",
@@ -2877,17 +2877,17 @@ export const MockLPMath = {
                             "src": "1160:56:138"
                         },
                         "returnParameters": {
-                            "id": 26035,
+                            "id": 26138,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26034,
+                                    "id": 26137,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26042,
+                                    "scope": 26145,
                                     "src": "1240:6:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2896,7 +2896,7 @@ export const MockLPMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 26033,
+                                        "id": 26136,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1240:6:138",
@@ -2910,36 +2910,36 @@ export const MockLPMath = {
                             ],
                             "src": "1239:8:138"
                         },
-                        "scope": 26148,
+                        "scope": 26251,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26067,
+                        "id": 26170,
                         "nodeType": "FunctionDefinition",
                         "src": "1315:335:138",
                         "nodes": [],
                         "body": {
-                            "id": 26066,
+                            "id": 26169,
                             "nodeType": "Block",
                             "src": "1434:216:138",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        26051,
-                                        26053
+                                        26154,
+                                        26156
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 26051,
+                                            "id": 26154,
                                             "mutability": "mutable",
                                             "name": "netCurveTrade",
                                             "nameLocation": "1452:13:138",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 26066,
+                                            "scope": 26169,
                                             "src": "1445:20:138",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2948,7 +2948,7 @@ export const MockLPMath = {
                                                 "typeString": "int256"
                                             },
                                             "typeName": {
-                                                "id": 26050,
+                                                "id": 26153,
                                                 "name": "int256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1445:6:138",
@@ -2961,12 +2961,12 @@ export const MockLPMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 26053,
+                                            "id": 26156,
                                             "mutability": "mutable",
                                             "name": "success",
                                             "nameLocation": "1472:7:138",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 26066,
+                                            "scope": 26169,
                                             "src": "1467:12:138",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2975,7 +2975,7 @@ export const MockLPMath = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 26052,
+                                                "id": 26155,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1467:4:138",
@@ -2987,15 +2987,15 @@ export const MockLPMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 26058,
+                                    "id": 26161,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 26056,
+                                                "id": 26159,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26045,
+                                                "referencedDeclaration": 26148,
                                                 "src": "1530:7:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_struct$_PresentValueParams_$19776_memory_ptr",
@@ -3011,7 +3011,7 @@ export const MockLPMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26054,
+                                                "id": 26157,
                                                 "name": "LPMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3022,7 +3022,7 @@ export const MockLPMath = {
                                                     "typeString": "type(library LPMath)"
                                                 }
                                             },
-                                            "id": 26055,
+                                            "id": 26158,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3037,7 +3037,7 @@ export const MockLPMath = {
                                                 "typeString": "function (struct LPMath.PresentValueParams memory) pure returns (int256,bool)"
                                             }
                                         },
-                                        "id": 26057,
+                                        "id": 26160,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3060,11 +3060,11 @@ export const MockLPMath = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26060,
+                                                "id": 26163,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26053,
+                                                "referencedDeclaration": 26156,
                                                 "src": "1556:7:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -3073,7 +3073,7 @@ export const MockLPMath = {
                                             },
                                             {
                                                 "hexValue": "4d6f636b4c504d6174683a2063616c63756c6174654e65744375727665547261646553616665206661696c6564",
-                                                "id": 26061,
+                                                "id": 26164,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -3099,7 +3099,7 @@ export const MockLPMath = {
                                                     "typeString": "literal_string \"MockLPMath: calculateNetCurveTradeSafe failed\""
                                                 }
                                             ],
-                                            "id": 26059,
+                                            "id": 26162,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -3113,7 +3113,7 @@ export const MockLPMath = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 26062,
+                                        "id": 26165,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3129,25 +3129,25 @@ export const MockLPMath = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 26063,
+                                    "id": 26166,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1548:65:138"
                                 },
                                 {
                                     "expression": {
-                                        "id": 26064,
+                                        "id": 26167,
                                         "name": "netCurveTrade",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 26051,
+                                        "referencedDeclaration": 26154,
                                         "src": "1630:13:138",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         }
                                     },
-                                    "functionReturnParameters": 26049,
-                                    "id": 26065,
+                                    "functionReturnParameters": 26152,
+                                    "id": 26168,
                                     "nodeType": "Return",
                                     "src": "1623:20:138"
                                 }
@@ -3160,17 +3160,17 @@ export const MockLPMath = {
                         "name": "calculateNetCurveTrade",
                         "nameLocation": "1324:22:138",
                         "parameters": {
-                            "id": 26046,
+                            "id": 26149,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26045,
+                                    "id": 26148,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "1389:7:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26067,
+                                    "scope": 26170,
                                     "src": "1356:40:138",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3179,10 +3179,10 @@ export const MockLPMath = {
                                         "typeString": "struct LPMath.PresentValueParams"
                                     },
                                     "typeName": {
-                                        "id": 26044,
+                                        "id": 26147,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 26043,
+                                            "id": 26146,
                                             "name": "LPMath.PresentValueParams",
                                             "nameLocations": [
                                                 "1356:6:138",
@@ -3205,17 +3205,17 @@ export const MockLPMath = {
                             "src": "1346:56:138"
                         },
                         "returnParameters": {
-                            "id": 26049,
+                            "id": 26152,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26048,
+                                    "id": 26151,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26067,
+                                    "scope": 26170,
                                     "src": "1426:6:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3224,7 +3224,7 @@ export const MockLPMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 26047,
+                                        "id": 26150,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1426:6:138",
@@ -3238,18 +3238,18 @@ export const MockLPMath = {
                             ],
                             "src": "1425:8:138"
                         },
-                        "scope": 26148,
+                        "scope": 26251,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26084,
+                        "id": 26187,
                         "nodeType": "FunctionDefinition",
                         "src": "1656:368:138",
                         "nodes": [],
                         "body": {
-                            "id": 26083,
+                            "id": 26186,
                             "nodeType": "Block",
                             "src": "1852:172:138",
                             "nodes": [],
@@ -3258,11 +3258,11 @@ export const MockLPMath = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26079,
+                                                "id": 26182,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26070,
+                                                "referencedDeclaration": 26173,
                                                 "src": "1959:7:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_struct$_DistributeExcessIdleParams_$20264_memory_ptr",
@@ -3270,11 +3270,11 @@ export const MockLPMath = {
                                                 }
                                             },
                                             {
-                                                "id": 26080,
+                                                "id": 26183,
                                                 "name": "_shareReservesDelta",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26072,
+                                                "referencedDeclaration": 26175,
                                                 "src": "1984:19:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3294,7 +3294,7 @@ export const MockLPMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26077,
+                                                "id": 26180,
                                                 "name": "LPMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3305,7 +3305,7 @@ export const MockLPMath = {
                                                     "typeString": "type(library LPMath)"
                                                 }
                                             },
-                                            "id": 26078,
+                                            "id": 26181,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3320,7 +3320,7 @@ export const MockLPMath = {
                                                 "typeString": "function (struct LPMath.DistributeExcessIdleParams memory,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 26081,
+                                        "id": 26184,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3336,8 +3336,8 @@ export const MockLPMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 26076,
-                                    "id": 26082,
+                                    "functionReturnParameters": 26179,
+                                    "id": 26185,
                                     "nodeType": "Return",
                                     "src": "1862:155:138"
                                 }
@@ -3350,17 +3350,17 @@ export const MockLPMath = {
                         "name": "calculateDistributeExcessIdleWithdrawalSharesRedeemed",
                         "nameLocation": "1665:53:138",
                         "parameters": {
-                            "id": 26073,
+                            "id": 26176,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26070,
+                                    "id": 26173,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "1769:7:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26084,
+                                    "scope": 26187,
                                     "src": "1728:48:138",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3369,10 +3369,10 @@ export const MockLPMath = {
                                         "typeString": "struct LPMath.DistributeExcessIdleParams"
                                     },
                                     "typeName": {
-                                        "id": 26069,
+                                        "id": 26172,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 26068,
+                                            "id": 26171,
                                             "name": "LPMath.DistributeExcessIdleParams",
                                             "nameLocations": [
                                                 "1728:6:138",
@@ -3393,12 +3393,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26072,
+                                    "id": 26175,
                                     "mutability": "mutable",
                                     "name": "_shareReservesDelta",
                                     "nameLocation": "1794:19:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26084,
+                                    "scope": 26187,
                                     "src": "1786:27:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3407,7 +3407,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26071,
+                                        "id": 26174,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1786:7:138",
@@ -3422,17 +3422,17 @@ export const MockLPMath = {
                             "src": "1718:101:138"
                         },
                         "returnParameters": {
-                            "id": 26076,
+                            "id": 26179,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26075,
+                                    "id": 26178,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26084,
+                                    "scope": 26187,
                                     "src": "1843:7:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3441,7 +3441,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26074,
+                                        "id": 26177,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1843:7:138",
@@ -3455,18 +3455,18 @@ export const MockLPMath = {
                             ],
                             "src": "1842:9:138"
                         },
-                        "scope": 26148,
+                        "scope": 26251,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26106,
+                        "id": 26209,
                         "nodeType": "FunctionDefinition",
                         "src": "2030:504:138",
                         "nodes": [],
                         "body": {
-                            "id": 26105,
+                            "id": 26208,
                             "nodeType": "Block",
                             "src": "2267:267:138",
                             "nodes": [],
@@ -3475,11 +3475,11 @@ export const MockLPMath = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26098,
+                                                "id": 26201,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26087,
+                                                "referencedDeclaration": 26190,
                                                 "src": "2363:7:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_struct$_DistributeExcessIdleParams_$20264_memory_ptr",
@@ -3487,11 +3487,11 @@ export const MockLPMath = {
                                                 }
                                             },
                                             {
-                                                "id": 26099,
+                                                "id": 26202,
                                                 "name": "_originalEffectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26089,
+                                                "referencedDeclaration": 26192,
                                                 "src": "2388:31:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3499,11 +3499,11 @@ export const MockLPMath = {
                                                 }
                                             },
                                             {
-                                                "id": 26100,
+                                                "id": 26203,
                                                 "name": "_maxShareReservesDelta",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26091,
+                                                "referencedDeclaration": 26194,
                                                 "src": "2437:22:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3512,7 +3512,7 @@ export const MockLPMath = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 26101,
+                                                    "id": 26204,
                                                     "name": "LPMath",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -3523,7 +3523,7 @@ export const MockLPMath = {
                                                         "typeString": "type(library LPMath)"
                                                     }
                                                 },
-                                                "id": 26102,
+                                                "id": 26205,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -3559,7 +3559,7 @@ export const MockLPMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26096,
+                                                "id": 26199,
                                                 "name": "LPMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3570,7 +3570,7 @@ export const MockLPMath = {
                                                     "typeString": "type(library LPMath)"
                                                 }
                                             },
-                                            "id": 26097,
+                                            "id": 26200,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3585,7 +3585,7 @@ export const MockLPMath = {
                                                 "typeString": "function (struct LPMath.DistributeExcessIdleParams memory,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 26103,
+                                        "id": 26206,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3601,8 +3601,8 @@ export const MockLPMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 26095,
-                                    "id": 26104,
+                                    "functionReturnParameters": 26198,
+                                    "id": 26207,
                                     "nodeType": "Return",
                                     "src": "2277:250:138"
                                 }
@@ -3615,17 +3615,17 @@ export const MockLPMath = {
                         "name": "calculateDistributeExcessIdleShareProceeds",
                         "nameLocation": "2039:42:138",
                         "parameters": {
-                            "id": 26092,
+                            "id": 26195,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26087,
+                                    "id": 26190,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "2132:7:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26106,
+                                    "scope": 26209,
                                     "src": "2091:48:138",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3634,10 +3634,10 @@ export const MockLPMath = {
                                         "typeString": "struct LPMath.DistributeExcessIdleParams"
                                     },
                                     "typeName": {
-                                        "id": 26086,
+                                        "id": 26189,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 26085,
+                                            "id": 26188,
                                             "name": "LPMath.DistributeExcessIdleParams",
                                             "nameLocations": [
                                                 "2091:6:138",
@@ -3658,12 +3658,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26089,
+                                    "id": 26192,
                                     "mutability": "mutable",
                                     "name": "_originalEffectiveShareReserves",
                                     "nameLocation": "2157:31:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26106,
+                                    "scope": 26209,
                                     "src": "2149:39:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3672,7 +3672,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26088,
+                                        "id": 26191,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2149:7:138",
@@ -3685,12 +3685,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26091,
+                                    "id": 26194,
                                     "mutability": "mutable",
                                     "name": "_maxShareReservesDelta",
                                     "nameLocation": "2206:22:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26106,
+                                    "scope": 26209,
                                     "src": "2198:30:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3699,7 +3699,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26090,
+                                        "id": 26193,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2198:7:138",
@@ -3714,17 +3714,17 @@ export const MockLPMath = {
                             "src": "2081:153:138"
                         },
                         "returnParameters": {
-                            "id": 26095,
+                            "id": 26198,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26094,
+                                    "id": 26197,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26106,
+                                    "scope": 26209,
                                     "src": "2258:7:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3733,7 +3733,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26093,
+                                        "id": 26196,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2258:7:138",
@@ -3747,18 +3747,18 @@ export const MockLPMath = {
                             ],
                             "src": "2257:9:138"
                         },
-                        "scope": 26148,
+                        "scope": 26251,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26125,
+                        "id": 26228,
                         "nodeType": "FunctionDefinition",
                         "src": "2540:360:138",
                         "nodes": [],
                         "body": {
-                            "id": 26124,
+                            "id": 26227,
                             "nodeType": "Block",
                             "src": "2735:165:138",
                             "nodes": [],
@@ -3767,11 +3767,11 @@ export const MockLPMath = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26120,
+                                                "id": 26223,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26109,
+                                                "referencedDeclaration": 26212,
                                                 "src": "2823:7:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_struct$_DistributeExcessIdleParams_$20264_memory_ptr",
@@ -3779,11 +3779,11 @@ export const MockLPMath = {
                                                 }
                                             },
                                             {
-                                                "id": 26121,
+                                                "id": 26224,
                                                 "name": "_originalEffectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26111,
+                                                "referencedDeclaration": 26214,
                                                 "src": "2848:31:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3803,7 +3803,7 @@ export const MockLPMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26118,
+                                                "id": 26221,
                                                 "name": "LPMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3814,7 +3814,7 @@ export const MockLPMath = {
                                                     "typeString": "type(library LPMath)"
                                                 }
                                             },
-                                            "id": 26119,
+                                            "id": 26222,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3829,7 +3829,7 @@ export const MockLPMath = {
                                                 "typeString": "function (struct LPMath.DistributeExcessIdleParams memory,uint256) pure returns (uint256,bool)"
                                             }
                                         },
-                                        "id": 26122,
+                                        "id": 26225,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3845,8 +3845,8 @@ export const MockLPMath = {
                                             "typeString": "tuple(uint256,bool)"
                                         }
                                     },
-                                    "functionReturnParameters": 26117,
-                                    "id": 26123,
+                                    "functionReturnParameters": 26220,
+                                    "id": 26226,
                                     "nodeType": "Return",
                                     "src": "2745:148:138"
                                 }
@@ -3859,17 +3859,17 @@ export const MockLPMath = {
                         "name": "calculateMaxShareReservesDeltaSafe",
                         "nameLocation": "2549:34:138",
                         "parameters": {
-                            "id": 26112,
+                            "id": 26215,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26109,
+                                    "id": 26212,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "2634:7:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26125,
+                                    "scope": 26228,
                                     "src": "2593:48:138",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3878,10 +3878,10 @@ export const MockLPMath = {
                                         "typeString": "struct LPMath.DistributeExcessIdleParams"
                                     },
                                     "typeName": {
-                                        "id": 26108,
+                                        "id": 26211,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 26107,
+                                            "id": 26210,
                                             "name": "LPMath.DistributeExcessIdleParams",
                                             "nameLocations": [
                                                 "2593:6:138",
@@ -3902,12 +3902,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26111,
+                                    "id": 26214,
                                     "mutability": "mutable",
                                     "name": "_originalEffectiveShareReserves",
                                     "nameLocation": "2659:31:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26125,
+                                    "scope": 26228,
                                     "src": "2651:39:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3916,7 +3916,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26110,
+                                        "id": 26213,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2651:7:138",
@@ -3931,17 +3931,17 @@ export const MockLPMath = {
                             "src": "2583:113:138"
                         },
                         "returnParameters": {
-                            "id": 26117,
+                            "id": 26220,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26114,
+                                    "id": 26217,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26125,
+                                    "scope": 26228,
                                     "src": "2720:7:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3950,7 +3950,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26113,
+                                        "id": 26216,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2720:7:138",
@@ -3963,12 +3963,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26116,
+                                    "id": 26219,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26125,
+                                    "scope": 26228,
                                     "src": "2729:4:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3977,7 +3977,7 @@ export const MockLPMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 26115,
+                                        "id": 26218,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2729:4:138",
@@ -3991,18 +3991,18 @@ export const MockLPMath = {
                             ],
                             "src": "2719:15:138"
                         },
-                        "scope": 26148,
+                        "scope": 26251,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 26147,
+                        "id": 26250,
                         "nodeType": "FunctionDefinition",
                         "src": "2906:447:138",
                         "nodes": [],
                         "body": {
-                            "id": 26146,
+                            "id": 26249,
                             "nodeType": "Block",
                             "src": "3144:209:138",
                             "nodes": [],
@@ -4011,11 +4011,11 @@ export const MockLPMath = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 26141,
+                                                "id": 26244,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26128,
+                                                "referencedDeclaration": 26231,
                                                 "src": "3247:7:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_struct$_DistributeExcessIdleParams_$20264_memory_ptr",
@@ -4023,11 +4023,11 @@ export const MockLPMath = {
                                                 }
                                             },
                                             {
-                                                "id": 26142,
+                                                "id": 26245,
                                                 "name": "_originalEffectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26130,
+                                                "referencedDeclaration": 26233,
                                                 "src": "3272:31:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4035,11 +4035,11 @@ export const MockLPMath = {
                                                 }
                                             },
                                             {
-                                                "id": 26143,
+                                                "id": 26246,
                                                 "name": "_bondAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26132,
+                                                "referencedDeclaration": 26235,
                                                 "src": "3321:11:138",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -4063,7 +4063,7 @@ export const MockLPMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26139,
+                                                "id": 26242,
                                                 "name": "LPMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -4074,7 +4074,7 @@ export const MockLPMath = {
                                                     "typeString": "type(library LPMath)"
                                                 }
                                             },
-                                            "id": 26140,
+                                            "id": 26243,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4089,7 +4089,7 @@ export const MockLPMath = {
                                                 "typeString": "function (struct LPMath.DistributeExcessIdleParams memory,uint256,int256) pure returns (uint256,bool)"
                                             }
                                         },
-                                        "id": 26144,
+                                        "id": 26247,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4105,8 +4105,8 @@ export const MockLPMath = {
                                             "typeString": "tuple(uint256,bool)"
                                         }
                                     },
-                                    "functionReturnParameters": 26138,
-                                    "id": 26145,
+                                    "functionReturnParameters": 26241,
+                                    "id": 26248,
                                     "nodeType": "Return",
                                     "src": "3154:192:138"
                                 }
@@ -4119,17 +4119,17 @@ export const MockLPMath = {
                         "name": "calculateSharesDeltaGivenBondsDeltaDerivativeSafe",
                         "nameLocation": "2915:49:138",
                         "parameters": {
-                            "id": 26133,
+                            "id": 26236,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26128,
+                                    "id": 26231,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "3015:7:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26147,
+                                    "scope": 26250,
                                     "src": "2974:48:138",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4138,10 +4138,10 @@ export const MockLPMath = {
                                         "typeString": "struct LPMath.DistributeExcessIdleParams"
                                     },
                                     "typeName": {
-                                        "id": 26127,
+                                        "id": 26230,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 26126,
+                                            "id": 26229,
                                             "name": "LPMath.DistributeExcessIdleParams",
                                             "nameLocations": [
                                                 "2974:6:138",
@@ -4162,12 +4162,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26130,
+                                    "id": 26233,
                                     "mutability": "mutable",
                                     "name": "_originalEffectiveShareReserves",
                                     "nameLocation": "3040:31:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26147,
+                                    "scope": 26250,
                                     "src": "3032:39:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4176,7 +4176,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26129,
+                                        "id": 26232,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3032:7:138",
@@ -4189,12 +4189,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26132,
+                                    "id": 26235,
                                     "mutability": "mutable",
                                     "name": "_bondAmount",
                                     "nameLocation": "3088:11:138",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26147,
+                                    "scope": 26250,
                                     "src": "3081:18:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4203,7 +4203,7 @@ export const MockLPMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 26131,
+                                        "id": 26234,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3081:6:138",
@@ -4218,17 +4218,17 @@ export const MockLPMath = {
                             "src": "2964:141:138"
                         },
                         "returnParameters": {
-                            "id": 26138,
+                            "id": 26241,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26135,
+                                    "id": 26238,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26147,
+                                    "scope": 26250,
                                     "src": "3129:7:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4237,7 +4237,7 @@ export const MockLPMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26134,
+                                        "id": 26237,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3129:7:138",
@@ -4250,12 +4250,12 @@ export const MockLPMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26137,
+                                    "id": 26240,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 26147,
+                                    "scope": 26250,
                                     "src": "3138:4:138",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4264,7 +4264,7 @@ export const MockLPMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 26136,
+                                        "id": 26239,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3138:4:138",
@@ -4278,7 +4278,7 @@ export const MockLPMath = {
                             ],
                             "src": "3128:15:138"
                         },
-                        "scope": 26148,
+                        "scope": 26251,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
@@ -4291,11 +4291,11 @@ export const MockLPMath = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    26148
+                    26251
                 ],
                 "name": "MockLPMath",
                 "nameLocation": "135:10:138",
-                "scope": 26149,
+                "scope": 26252,
                 "usedErrors": [
                     10219,
                     10249,

@@ -1831,23 +1831,23 @@ export const MockHyperdriveMath = {
     },
     "ast": {
         "absolutePath": "contracts/test/MockHyperdriveMath.sol",
-        "id": 25968,
+        "id": 26071,
         "exportedSymbols": {
             "HyperdriveMath": [
                 19567
             ],
             "HyperdriveUtils": [
-                158488
+                158674
             ],
             "MockHyperdriveMath": [
-                25967
+                26070
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:8241:137",
         "nodes": [
             {
-                "id": 25479,
+                "id": 25582,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:137",
                 "nodes": [],
@@ -1858,19 +1858,19 @@ export const MockHyperdriveMath = {
                 ]
             },
             {
-                "id": 25481,
+                "id": 25584,
                 "nodeType": "ImportDirective",
                 "src": "64:76:137",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/HyperdriveMath.sol",
                 "file": "contracts/src/libraries/HyperdriveMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 25968,
+                "scope": 26071,
                 "sourceUnit": 19568,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 25480,
+                            "id": 25583,
                             "name": "HyperdriveMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -1884,23 +1884,23 @@ export const MockHyperdriveMath = {
                 "unitAlias": ""
             },
             {
-                "id": 25483,
+                "id": 25586,
                 "nodeType": "ImportDirective",
                 "src": "141:65:137",
                 "nodes": [],
                 "absolutePath": "test/utils/HyperdriveUtils.sol",
                 "file": "test/utils/HyperdriveUtils.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 25968,
-                "sourceUnit": 158489,
+                "scope": 26071,
+                "sourceUnit": 158675,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 25482,
+                            "id": 25585,
                             "name": "HyperdriveUtils",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 158488,
+                            "referencedDeclaration": 158674,
                             "src": "150:15:137",
                             "typeDescriptions": {}
                         },
@@ -1910,34 +1910,34 @@ export const MockHyperdriveMath = {
                 "unitAlias": ""
             },
             {
-                "id": 25967,
+                "id": 26070,
                 "nodeType": "ContractDefinition",
                 "src": "208:8071:137",
                 "nodes": [
                     {
-                        "id": 25512,
+                        "id": 25615,
                         "nodeType": "FunctionDefinition",
                         "src": "242:498:137",
                         "nodes": [],
                         "body": {
-                            "id": 25511,
+                            "id": 25614,
                             "nodeType": "Block",
                             "src": "484:256:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25499
+                                        25602
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25499,
+                                            "id": 25602,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "502:6:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25511,
+                                            "scope": 25614,
                                             "src": "494:14:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1946,7 +1946,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25498,
+                                                "id": 25601,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "494:7:137",
@@ -1958,15 +1958,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25508,
+                                    "id": 25611,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25502,
+                                                "id": 25605,
                                                 "name": "_effectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25485,
+                                                "referencedDeclaration": 25588,
                                                 "src": "556:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1974,11 +1974,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25503,
+                                                "id": 25606,
                                                 "name": "_bondReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25487,
+                                                "referencedDeclaration": 25590,
                                                 "src": "593:13:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1986,11 +1986,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25504,
+                                                "id": 25607,
                                                 "name": "_initialVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25489,
+                                                "referencedDeclaration": 25592,
                                                 "src": "620:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1998,11 +1998,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25505,
+                                                "id": 25608,
                                                 "name": "_positionDuration",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25491,
+                                                "referencedDeclaration": 25594,
                                                 "src": "657:17:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2010,11 +2010,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25506,
+                                                "id": 25609,
                                                 "name": "_timeStretch",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25493,
+                                                "referencedDeclaration": 25596,
                                                 "src": "688:12:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2046,7 +2046,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25500,
+                                                "id": 25603,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2057,7 +2057,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25501,
+                                            "id": 25604,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2072,7 +2072,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 25507,
+                                        "id": 25610,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2093,19 +2093,19 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 25509,
+                                        "id": 25612,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 25499,
+                                        "referencedDeclaration": 25602,
                                         "src": "727:6:137",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 25497,
-                                    "id": 25510,
+                                    "functionReturnParameters": 25600,
+                                    "id": 25613,
                                     "nodeType": "Return",
                                     "src": "720:13:137"
                                 }
@@ -2118,17 +2118,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateSpotAPR",
                         "nameLocation": "251:16:137",
                         "parameters": {
-                            "id": 25494,
+                            "id": 25597,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25485,
+                                    "id": 25588,
                                     "mutability": "mutable",
                                     "name": "_effectiveShareReserves",
                                     "nameLocation": "285:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25512,
+                                    "scope": 25615,
                                     "src": "277:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2137,7 +2137,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25484,
+                                        "id": 25587,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "277:7:137",
@@ -2150,12 +2150,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25487,
+                                    "id": 25590,
                                     "mutability": "mutable",
                                     "name": "_bondReserves",
                                     "nameLocation": "326:13:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25512,
+                                    "scope": 25615,
                                     "src": "318:21:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2164,7 +2164,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25486,
+                                        "id": 25589,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "318:7:137",
@@ -2177,12 +2177,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25489,
+                                    "id": 25592,
                                     "mutability": "mutable",
                                     "name": "_initialVaultSharePrice",
                                     "nameLocation": "357:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25512,
+                                    "scope": 25615,
                                     "src": "349:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2191,7 +2191,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25488,
+                                        "id": 25591,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "349:7:137",
@@ -2204,12 +2204,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25491,
+                                    "id": 25594,
                                     "mutability": "mutable",
                                     "name": "_positionDuration",
                                     "nameLocation": "398:17:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25512,
+                                    "scope": 25615,
                                     "src": "390:25:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2218,7 +2218,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25490,
+                                        "id": 25593,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "390:7:137",
@@ -2231,12 +2231,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25493,
+                                    "id": 25596,
                                     "mutability": "mutable",
                                     "name": "_timeStretch",
                                     "nameLocation": "433:12:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25512,
+                                    "scope": 25615,
                                     "src": "425:20:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2245,7 +2245,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25492,
+                                        "id": 25595,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "425:7:137",
@@ -2260,17 +2260,17 @@ export const MockHyperdriveMath = {
                             "src": "267:184:137"
                         },
                         "returnParameters": {
-                            "id": 25497,
+                            "id": 25600,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25496,
+                                    "id": 25599,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25512,
+                                    "scope": 25615,
                                     "src": "475:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2279,7 +2279,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25495,
+                                        "id": 25598,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "475:7:137",
@@ -2293,35 +2293,35 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "474:9:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25541,
+                        "id": 25644,
                         "nodeType": "FunctionDefinition",
                         "src": "746:504:137",
                         "nodes": [],
                         "body": {
-                            "id": 25540,
+                            "id": 25643,
                             "nodeType": "Block",
                             "src": "991:259:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25528
+                                        25631
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25528,
+                                            "id": 25631,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "1009:6:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25540,
+                                            "scope": 25643,
                                             "src": "1001:14:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2330,7 +2330,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25527,
+                                                "id": 25630,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1001:7:137",
@@ -2342,15 +2342,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25537,
+                                    "id": 25640,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25531,
+                                                "id": 25634,
                                                 "name": "_effectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25514,
+                                                "referencedDeclaration": 25617,
                                                 "src": "1075:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2358,11 +2358,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25532,
+                                                "id": 25635,
                                                 "name": "_initialVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25516,
+                                                "referencedDeclaration": 25619,
                                                 "src": "1112:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2370,11 +2370,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25533,
+                                                "id": 25636,
                                                 "name": "_apr",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25518,
+                                                "referencedDeclaration": 25621,
                                                 "src": "1149:4:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2382,11 +2382,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25534,
+                                                "id": 25637,
                                                 "name": "_positionDuration",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25520,
+                                                "referencedDeclaration": 25623,
                                                 "src": "1167:17:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2394,11 +2394,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25535,
+                                                "id": 25638,
                                                 "name": "_timeStretch",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25522,
+                                                "referencedDeclaration": 25625,
                                                 "src": "1198:12:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2430,7 +2430,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25529,
+                                                "id": 25632,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2441,7 +2441,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25530,
+                                            "id": 25633,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2456,7 +2456,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 25536,
+                                        "id": 25639,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2477,19 +2477,19 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 25538,
+                                        "id": 25641,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 25528,
+                                        "referencedDeclaration": 25631,
                                         "src": "1237:6:137",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 25526,
-                                    "id": 25539,
+                                    "functionReturnParameters": 25629,
+                                    "id": 25642,
                                     "nodeType": "Return",
                                     "src": "1230:13:137"
                                 }
@@ -2502,17 +2502,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateInitialBondReserves",
                         "nameLocation": "755:28:137",
                         "parameters": {
-                            "id": 25523,
+                            "id": 25626,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25514,
+                                    "id": 25617,
                                     "mutability": "mutable",
                                     "name": "_effectiveShareReserves",
                                     "nameLocation": "801:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25541,
+                                    "scope": 25644,
                                     "src": "793:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2521,7 +2521,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25513,
+                                        "id": 25616,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "793:7:137",
@@ -2534,12 +2534,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25516,
+                                    "id": 25619,
                                     "mutability": "mutable",
                                     "name": "_initialVaultSharePrice",
                                     "nameLocation": "842:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25541,
+                                    "scope": 25644,
                                     "src": "834:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2548,7 +2548,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25515,
+                                        "id": 25618,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "834:7:137",
@@ -2561,12 +2561,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25518,
+                                    "id": 25621,
                                     "mutability": "mutable",
                                     "name": "_apr",
                                     "nameLocation": "883:4:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25541,
+                                    "scope": 25644,
                                     "src": "875:12:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2575,7 +2575,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25517,
+                                        "id": 25620,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "875:7:137",
@@ -2588,12 +2588,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25520,
+                                    "id": 25623,
                                     "mutability": "mutable",
                                     "name": "_positionDuration",
                                     "nameLocation": "905:17:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25541,
+                                    "scope": 25644,
                                     "src": "897:25:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2602,7 +2602,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25519,
+                                        "id": 25622,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "897:7:137",
@@ -2615,12 +2615,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25522,
+                                    "id": 25625,
                                     "mutability": "mutable",
                                     "name": "_timeStretch",
                                     "nameLocation": "940:12:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25541,
+                                    "scope": 25644,
                                     "src": "932:20:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2629,7 +2629,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25521,
+                                        "id": 25624,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "932:7:137",
@@ -2644,17 +2644,17 @@ export const MockHyperdriveMath = {
                             "src": "783:175:137"
                         },
                         "returnParameters": {
-                            "id": 25526,
+                            "id": 25629,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25525,
+                                    "id": 25628,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25541,
+                                    "scope": 25644,
                                     "src": "982:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2663,7 +2663,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25524,
+                                        "id": 25627,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "982:7:137",
@@ -2677,35 +2677,35 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "981:9:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25573,
+                        "id": 25676,
                         "nodeType": "FunctionDefinition",
                         "src": "1256:548:137",
                         "nodes": [],
                         "body": {
-                            "id": 25572,
+                            "id": 25675,
                             "nodeType": "Block",
                             "src": "1525:279:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25559
+                                        25662
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25559,
+                                            "id": 25662,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "1543:6:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25572,
+                                            "scope": 25675,
                                             "src": "1535:14:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2714,7 +2714,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25558,
+                                                "id": 25661,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1535:7:137",
@@ -2726,15 +2726,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25569,
+                                    "id": 25672,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25562,
+                                                "id": 25665,
                                                 "name": "_effectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25543,
+                                                "referencedDeclaration": 25646,
                                                 "src": "1598:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2742,11 +2742,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25563,
+                                                "id": 25666,
                                                 "name": "_bondReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25545,
+                                                "referencedDeclaration": 25648,
                                                 "src": "1635:13:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2754,11 +2754,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25564,
+                                                "id": 25667,
                                                 "name": "_amountIn",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25547,
+                                                "referencedDeclaration": 25650,
                                                 "src": "1662:9:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2766,11 +2766,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25565,
+                                                "id": 25668,
                                                 "name": "_timeStretch",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25549,
+                                                "referencedDeclaration": 25652,
                                                 "src": "1685:12:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2778,11 +2778,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25566,
+                                                "id": 25669,
                                                 "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25551,
+                                                "referencedDeclaration": 25654,
                                                 "src": "1711:16:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2790,11 +2790,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25567,
+                                                "id": 25670,
                                                 "name": "_initialVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25553,
+                                                "referencedDeclaration": 25656,
                                                 "src": "1741:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2830,7 +2830,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25560,
+                                                "id": 25663,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2841,7 +2841,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25561,
+                                            "id": 25664,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2856,7 +2856,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 25568,
+                                        "id": 25671,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2877,19 +2877,19 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 25570,
+                                        "id": 25673,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 25559,
+                                        "referencedDeclaration": 25662,
                                         "src": "1791:6:137",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 25557,
-                                    "id": 25571,
+                                    "functionReturnParameters": 25660,
+                                    "id": 25674,
                                     "nodeType": "Return",
                                     "src": "1784:13:137"
                                 }
@@ -2902,17 +2902,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateOpenLong",
                         "nameLocation": "1265:17:137",
                         "parameters": {
-                            "id": 25554,
+                            "id": 25657,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25543,
+                                    "id": 25646,
                                     "mutability": "mutable",
                                     "name": "_effectiveShareReserves",
                                     "nameLocation": "1300:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25573,
+                                    "scope": 25676,
                                     "src": "1292:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2921,7 +2921,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25542,
+                                        "id": 25645,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1292:7:137",
@@ -2934,12 +2934,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25545,
+                                    "id": 25648,
                                     "mutability": "mutable",
                                     "name": "_bondReserves",
                                     "nameLocation": "1341:13:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25573,
+                                    "scope": 25676,
                                     "src": "1333:21:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2948,7 +2948,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25544,
+                                        "id": 25647,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1333:7:137",
@@ -2961,12 +2961,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25547,
+                                    "id": 25650,
                                     "mutability": "mutable",
                                     "name": "_amountIn",
                                     "nameLocation": "1372:9:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25573,
+                                    "scope": 25676,
                                     "src": "1364:17:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2975,7 +2975,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25546,
+                                        "id": 25649,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1364:7:137",
@@ -2988,12 +2988,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25549,
+                                    "id": 25652,
                                     "mutability": "mutable",
                                     "name": "_timeStretch",
                                     "nameLocation": "1399:12:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25573,
+                                    "scope": 25676,
                                     "src": "1391:20:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3002,7 +3002,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25548,
+                                        "id": 25651,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1391:7:137",
@@ -3015,12 +3015,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25551,
+                                    "id": 25654,
                                     "mutability": "mutable",
                                     "name": "_vaultSharePrice",
                                     "nameLocation": "1429:16:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25573,
+                                    "scope": 25676,
                                     "src": "1421:24:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3029,7 +3029,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25550,
+                                        "id": 25653,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1421:7:137",
@@ -3042,12 +3042,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25553,
+                                    "id": 25656,
                                     "mutability": "mutable",
                                     "name": "_initialVaultSharePrice",
                                     "nameLocation": "1463:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25573,
+                                    "scope": 25676,
                                     "src": "1455:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3056,7 +3056,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25552,
+                                        "id": 25655,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1455:7:137",
@@ -3071,17 +3071,17 @@ export const MockHyperdriveMath = {
                             "src": "1282:210:137"
                         },
                         "returnParameters": {
-                            "id": 25557,
+                            "id": 25660,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25556,
+                                    "id": 25659,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25573,
+                                    "scope": 25676,
                                     "src": "1516:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3090,7 +3090,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25555,
+                                        "id": 25658,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1516:7:137",
@@ -3104,37 +3104,37 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "1515:9:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25619,
+                        "id": 25722,
                         "nodeType": "FunctionDefinition",
                         "src": "1810:751:137",
                         "nodes": [],
                         "body": {
-                            "id": 25618,
+                            "id": 25721,
                             "nodeType": "Block",
                             "src": "2140:421:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25597,
-                                        25599,
-                                        25601
+                                        25700,
+                                        25702,
+                                        25704
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25597,
+                                            "id": 25700,
                                             "mutability": "mutable",
                                             "name": "result1",
                                             "nameLocation": "2159:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25618,
+                                            "scope": 25721,
                                             "src": "2151:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3143,7 +3143,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25596,
+                                                "id": 25699,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2151:7:137",
@@ -3156,12 +3156,12 @@ export const MockHyperdriveMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 25599,
+                                            "id": 25702,
                                             "mutability": "mutable",
                                             "name": "result2",
                                             "nameLocation": "2176:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25618,
+                                            "scope": 25721,
                                             "src": "2168:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3170,7 +3170,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25598,
+                                                "id": 25701,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2168:7:137",
@@ -3183,12 +3183,12 @@ export const MockHyperdriveMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 25601,
+                                            "id": 25704,
                                             "mutability": "mutable",
                                             "name": "result3",
                                             "nameLocation": "2193:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25618,
+                                            "scope": 25721,
                                             "src": "2185:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3197,7 +3197,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25600,
+                                                "id": 25703,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2185:7:137",
@@ -3209,15 +3209,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25612,
+                                    "id": 25715,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25604,
+                                                "id": 25707,
                                                 "name": "_effectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25575,
+                                                "referencedDeclaration": 25678,
                                                 "src": "2268:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3225,11 +3225,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25605,
+                                                "id": 25708,
                                                 "name": "_bondReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25577,
+                                                "referencedDeclaration": 25680,
                                                 "src": "2309:13:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3237,11 +3237,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25606,
+                                                "id": 25709,
                                                 "name": "_amountIn",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25579,
+                                                "referencedDeclaration": 25682,
                                                 "src": "2340:9:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3249,11 +3249,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25607,
+                                                "id": 25710,
                                                 "name": "_normalizedTimeRemaining",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25581,
+                                                "referencedDeclaration": 25684,
                                                 "src": "2367:24:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3261,11 +3261,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25608,
+                                                "id": 25711,
                                                 "name": "_timeStretch",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25583,
+                                                "referencedDeclaration": 25686,
                                                 "src": "2409:12:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3273,11 +3273,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25609,
+                                                "id": 25712,
                                                 "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25585,
+                                                "referencedDeclaration": 25688,
                                                 "src": "2439:16:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3285,11 +3285,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25610,
+                                                "id": 25713,
                                                 "name": "_initialVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25587,
+                                                "referencedDeclaration": 25690,
                                                 "src": "2473:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3329,7 +3329,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25602,
+                                                "id": 25705,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3340,7 +3340,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25603,
+                                            "id": 25706,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3355,7 +3355,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)"
                                             }
                                         },
-                                        "id": 25611,
+                                        "id": 25714,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3378,11 +3378,11 @@ export const MockHyperdriveMath = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 25613,
+                                                "id": 25716,
                                                 "name": "result1",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25597,
+                                                "referencedDeclaration": 25700,
                                                 "src": "2528:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3390,11 +3390,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25614,
+                                                "id": 25717,
                                                 "name": "result2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25599,
+                                                "referencedDeclaration": 25702,
                                                 "src": "2537:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3402,11 +3402,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25615,
+                                                "id": 25718,
                                                 "name": "result3",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25601,
+                                                "referencedDeclaration": 25704,
                                                 "src": "2546:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3414,7 +3414,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             }
                                         ],
-                                        "id": 25616,
+                                        "id": 25719,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -3427,8 +3427,8 @@ export const MockHyperdriveMath = {
                                             "typeString": "tuple(uint256,uint256,uint256)"
                                         }
                                     },
-                                    "functionReturnParameters": 25595,
-                                    "id": 25617,
+                                    "functionReturnParameters": 25698,
+                                    "id": 25720,
                                     "nodeType": "Return",
                                     "src": "2520:34:137"
                                 }
@@ -3441,17 +3441,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateCloseLong",
                         "nameLocation": "1819:18:137",
                         "parameters": {
-                            "id": 25588,
+                            "id": 25691,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25575,
+                                    "id": 25678,
                                     "mutability": "mutable",
                                     "name": "_effectiveShareReserves",
                                     "nameLocation": "1855:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "1847:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3460,7 +3460,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25574,
+                                        "id": 25677,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1847:7:137",
@@ -3473,12 +3473,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25577,
+                                    "id": 25680,
                                     "mutability": "mutable",
                                     "name": "_bondReserves",
                                     "nameLocation": "1896:13:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "1888:21:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3487,7 +3487,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25576,
+                                        "id": 25679,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1888:7:137",
@@ -3500,12 +3500,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25579,
+                                    "id": 25682,
                                     "mutability": "mutable",
                                     "name": "_amountIn",
                                     "nameLocation": "1927:9:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "1919:17:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3514,7 +3514,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25578,
+                                        "id": 25681,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1919:7:137",
@@ -3527,12 +3527,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25581,
+                                    "id": 25684,
                                     "mutability": "mutable",
                                     "name": "_normalizedTimeRemaining",
                                     "nameLocation": "1954:24:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "1946:32:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3541,7 +3541,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25580,
+                                        "id": 25683,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1946:7:137",
@@ -3554,12 +3554,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25583,
+                                    "id": 25686,
                                     "mutability": "mutable",
                                     "name": "_timeStretch",
                                     "nameLocation": "1996:12:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "1988:20:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3568,7 +3568,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25582,
+                                        "id": 25685,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1988:7:137",
@@ -3581,12 +3581,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25585,
+                                    "id": 25688,
                                     "mutability": "mutable",
                                     "name": "_vaultSharePrice",
                                     "nameLocation": "2026:16:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "2018:24:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3595,7 +3595,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25584,
+                                        "id": 25687,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2018:7:137",
@@ -3608,12 +3608,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25587,
+                                    "id": 25690,
                                     "mutability": "mutable",
                                     "name": "_initialVaultSharePrice",
                                     "nameLocation": "2060:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "2052:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3622,7 +3622,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25586,
+                                        "id": 25689,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2052:7:137",
@@ -3637,17 +3637,17 @@ export const MockHyperdriveMath = {
                             "src": "1837:252:137"
                         },
                         "returnParameters": {
-                            "id": 25595,
+                            "id": 25698,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25590,
+                                    "id": 25693,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "2113:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3656,7 +3656,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25589,
+                                        "id": 25692,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2113:7:137",
@@ -3669,12 +3669,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25592,
+                                    "id": 25695,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "2122:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3683,7 +3683,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25591,
+                                        "id": 25694,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2122:7:137",
@@ -3696,12 +3696,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25594,
+                                    "id": 25697,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25619,
+                                    "scope": 25722,
                                     "src": "2131:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3710,7 +3710,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25593,
+                                        "id": 25696,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2131:7:137",
@@ -3724,35 +3724,35 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "2112:27:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25651,
+                        "id": 25754,
                         "nodeType": "FunctionDefinition",
                         "src": "2567:550:137",
                         "nodes": [],
                         "body": {
-                            "id": 25650,
+                            "id": 25753,
                             "nodeType": "Block",
                             "src": "2837:280:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25637
+                                        25740
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25637,
+                                            "id": 25740,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "2855:6:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25650,
+                                            "scope": 25753,
                                             "src": "2847:14:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3761,7 +3761,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25636,
+                                                "id": 25739,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2847:7:137",
@@ -3773,15 +3773,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25647,
+                                    "id": 25750,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25640,
+                                                "id": 25743,
                                                 "name": "_effectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25621,
+                                                "referencedDeclaration": 25724,
                                                 "src": "2911:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3789,11 +3789,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25641,
+                                                "id": 25744,
                                                 "name": "_bondReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25623,
+                                                "referencedDeclaration": 25726,
                                                 "src": "2948:13:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3801,11 +3801,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25642,
+                                                "id": 25745,
                                                 "name": "_amountIn",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25625,
+                                                "referencedDeclaration": 25728,
                                                 "src": "2975:9:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3813,11 +3813,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25643,
+                                                "id": 25746,
                                                 "name": "_timeStretch",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25627,
+                                                "referencedDeclaration": 25730,
                                                 "src": "2998:12:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3825,11 +3825,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25644,
+                                                "id": 25747,
                                                 "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25629,
+                                                "referencedDeclaration": 25732,
                                                 "src": "3024:16:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3837,11 +3837,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25645,
+                                                "id": 25748,
                                                 "name": "_initialVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25631,
+                                                "referencedDeclaration": 25734,
                                                 "src": "3054:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3877,7 +3877,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25638,
+                                                "id": 25741,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3888,7 +3888,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25639,
+                                            "id": 25742,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3903,7 +3903,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 25646,
+                                        "id": 25749,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3924,19 +3924,19 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 25648,
+                                        "id": 25751,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 25637,
+                                        "referencedDeclaration": 25740,
                                         "src": "3104:6:137",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 25635,
-                                    "id": 25649,
+                                    "functionReturnParameters": 25738,
+                                    "id": 25752,
                                     "nodeType": "Return",
                                     "src": "3097:13:137"
                                 }
@@ -3949,17 +3949,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateOpenShort",
                         "nameLocation": "2576:18:137",
                         "parameters": {
-                            "id": 25632,
+                            "id": 25735,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25621,
+                                    "id": 25724,
                                     "mutability": "mutable",
                                     "name": "_effectiveShareReserves",
                                     "nameLocation": "2612:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25651,
+                                    "scope": 25754,
                                     "src": "2604:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3968,7 +3968,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25620,
+                                        "id": 25723,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2604:7:137",
@@ -3981,12 +3981,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25623,
+                                    "id": 25726,
                                     "mutability": "mutable",
                                     "name": "_bondReserves",
                                     "nameLocation": "2653:13:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25651,
+                                    "scope": 25754,
                                     "src": "2645:21:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3995,7 +3995,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25622,
+                                        "id": 25725,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2645:7:137",
@@ -4008,12 +4008,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25625,
+                                    "id": 25728,
                                     "mutability": "mutable",
                                     "name": "_amountIn",
                                     "nameLocation": "2684:9:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25651,
+                                    "scope": 25754,
                                     "src": "2676:17:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4022,7 +4022,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25624,
+                                        "id": 25727,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2676:7:137",
@@ -4035,12 +4035,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25627,
+                                    "id": 25730,
                                     "mutability": "mutable",
                                     "name": "_timeStretch",
                                     "nameLocation": "2711:12:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25651,
+                                    "scope": 25754,
                                     "src": "2703:20:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4049,7 +4049,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25626,
+                                        "id": 25729,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2703:7:137",
@@ -4062,12 +4062,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25629,
+                                    "id": 25732,
                                     "mutability": "mutable",
                                     "name": "_vaultSharePrice",
                                     "nameLocation": "2741:16:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25651,
+                                    "scope": 25754,
                                     "src": "2733:24:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4076,7 +4076,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25628,
+                                        "id": 25731,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2733:7:137",
@@ -4089,12 +4089,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25631,
+                                    "id": 25734,
                                     "mutability": "mutable",
                                     "name": "_initialVaultSharePrice",
                                     "nameLocation": "2775:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25651,
+                                    "scope": 25754,
                                     "src": "2767:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4103,7 +4103,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25630,
+                                        "id": 25733,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2767:7:137",
@@ -4118,17 +4118,17 @@ export const MockHyperdriveMath = {
                             "src": "2594:210:137"
                         },
                         "returnParameters": {
-                            "id": 25635,
+                            "id": 25738,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25634,
+                                    "id": 25737,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25651,
+                                    "scope": 25754,
                                     "src": "2828:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4137,7 +4137,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25633,
+                                        "id": 25736,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2828:7:137",
@@ -4151,37 +4151,37 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "2827:9:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25697,
+                        "id": 25800,
                         "nodeType": "FunctionDefinition",
                         "src": "3123:755:137",
                         "nodes": [],
                         "body": {
-                            "id": 25696,
+                            "id": 25799,
                             "nodeType": "Block",
                             "src": "3455:423:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25675,
-                                        25677,
-                                        25679
+                                        25778,
+                                        25780,
+                                        25782
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25675,
+                                            "id": 25778,
                                             "mutability": "mutable",
                                             "name": "result1",
                                             "nameLocation": "3474:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25696,
+                                            "scope": 25799,
                                             "src": "3466:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4190,7 +4190,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25674,
+                                                "id": 25777,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3466:7:137",
@@ -4203,12 +4203,12 @@ export const MockHyperdriveMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 25677,
+                                            "id": 25780,
                                             "mutability": "mutable",
                                             "name": "result2",
                                             "nameLocation": "3491:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25696,
+                                            "scope": 25799,
                                             "src": "3483:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4217,7 +4217,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25676,
+                                                "id": 25779,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3483:7:137",
@@ -4230,12 +4230,12 @@ export const MockHyperdriveMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 25679,
+                                            "id": 25782,
                                             "mutability": "mutable",
                                             "name": "result3",
                                             "nameLocation": "3508:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25696,
+                                            "scope": 25799,
                                             "src": "3500:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4244,7 +4244,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25678,
+                                                "id": 25781,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3500:7:137",
@@ -4256,15 +4256,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25690,
+                                    "id": 25793,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25682,
+                                                "id": 25785,
                                                 "name": "_effectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25653,
+                                                "referencedDeclaration": 25756,
                                                 "src": "3584:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4272,11 +4272,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25683,
+                                                "id": 25786,
                                                 "name": "_bondReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25655,
+                                                "referencedDeclaration": 25758,
                                                 "src": "3625:13:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4284,11 +4284,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25684,
+                                                "id": 25787,
                                                 "name": "_amountOut",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25657,
+                                                "referencedDeclaration": 25760,
                                                 "src": "3656:10:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4296,11 +4296,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25685,
+                                                "id": 25788,
                                                 "name": "_normalizedTimeRemaining",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25659,
+                                                "referencedDeclaration": 25762,
                                                 "src": "3684:24:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4308,11 +4308,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25686,
+                                                "id": 25789,
                                                 "name": "_timeStretch",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25661,
+                                                "referencedDeclaration": 25764,
                                                 "src": "3726:12:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4320,11 +4320,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25687,
+                                                "id": 25790,
                                                 "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25663,
+                                                "referencedDeclaration": 25766,
                                                 "src": "3756:16:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4332,11 +4332,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25688,
+                                                "id": 25791,
                                                 "name": "_initialVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25665,
+                                                "referencedDeclaration": 25768,
                                                 "src": "3790:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4376,7 +4376,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25680,
+                                                "id": 25783,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -4387,7 +4387,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25681,
+                                            "id": 25784,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4402,7 +4402,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,uint256,uint256)"
                                             }
                                         },
-                                        "id": 25689,
+                                        "id": 25792,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4425,11 +4425,11 @@ export const MockHyperdriveMath = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 25691,
+                                                "id": 25794,
                                                 "name": "result1",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25675,
+                                                "referencedDeclaration": 25778,
                                                 "src": "3845:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4437,11 +4437,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25692,
+                                                "id": 25795,
                                                 "name": "result2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25677,
+                                                "referencedDeclaration": 25780,
                                                 "src": "3854:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4449,11 +4449,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25693,
+                                                "id": 25796,
                                                 "name": "result3",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25679,
+                                                "referencedDeclaration": 25782,
                                                 "src": "3863:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4461,7 +4461,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             }
                                         ],
-                                        "id": 25694,
+                                        "id": 25797,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -4474,8 +4474,8 @@ export const MockHyperdriveMath = {
                                             "typeString": "tuple(uint256,uint256,uint256)"
                                         }
                                     },
-                                    "functionReturnParameters": 25673,
-                                    "id": 25695,
+                                    "functionReturnParameters": 25776,
+                                    "id": 25798,
                                     "nodeType": "Return",
                                     "src": "3837:34:137"
                                 }
@@ -4488,17 +4488,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateCloseShort",
                         "nameLocation": "3132:19:137",
                         "parameters": {
-                            "id": 25666,
+                            "id": 25769,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25653,
+                                    "id": 25756,
                                     "mutability": "mutable",
                                     "name": "_effectiveShareReserves",
                                     "nameLocation": "3169:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3161:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4507,7 +4507,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25652,
+                                        "id": 25755,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3161:7:137",
@@ -4520,12 +4520,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25655,
+                                    "id": 25758,
                                     "mutability": "mutable",
                                     "name": "_bondReserves",
                                     "nameLocation": "3210:13:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3202:21:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4534,7 +4534,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25654,
+                                        "id": 25757,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3202:7:137",
@@ -4547,12 +4547,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25657,
+                                    "id": 25760,
                                     "mutability": "mutable",
                                     "name": "_amountOut",
                                     "nameLocation": "3241:10:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3233:18:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4561,7 +4561,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25656,
+                                        "id": 25759,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3233:7:137",
@@ -4574,12 +4574,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25659,
+                                    "id": 25762,
                                     "mutability": "mutable",
                                     "name": "_normalizedTimeRemaining",
                                     "nameLocation": "3269:24:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3261:32:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4588,7 +4588,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25658,
+                                        "id": 25761,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3261:7:137",
@@ -4601,12 +4601,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25661,
+                                    "id": 25764,
                                     "mutability": "mutable",
                                     "name": "_timeStretch",
                                     "nameLocation": "3311:12:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3303:20:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4615,7 +4615,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25660,
+                                        "id": 25763,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3303:7:137",
@@ -4628,12 +4628,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25663,
+                                    "id": 25766,
                                     "mutability": "mutable",
                                     "name": "_vaultSharePrice",
                                     "nameLocation": "3341:16:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3333:24:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4642,7 +4642,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25662,
+                                        "id": 25765,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3333:7:137",
@@ -4655,12 +4655,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25665,
+                                    "id": 25768,
                                     "mutability": "mutable",
                                     "name": "_initialVaultSharePrice",
                                     "nameLocation": "3375:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3367:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4669,7 +4669,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25664,
+                                        "id": 25767,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3367:7:137",
@@ -4684,17 +4684,17 @@ export const MockHyperdriveMath = {
                             "src": "3151:253:137"
                         },
                         "returnParameters": {
-                            "id": 25673,
+                            "id": 25776,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25668,
+                                    "id": 25771,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3428:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4703,7 +4703,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25667,
+                                        "id": 25770,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3428:7:137",
@@ -4716,12 +4716,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25670,
+                                    "id": 25773,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3437:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4730,7 +4730,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25669,
+                                        "id": 25772,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3437:7:137",
@@ -4743,12 +4743,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25672,
+                                    "id": 25775,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25697,
+                                    "scope": 25800,
                                     "src": "3446:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4757,7 +4757,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25671,
+                                        "id": 25774,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3446:7:137",
@@ -4771,13 +4771,13 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "3427:27:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25708,
+                        "id": 25811,
                         "nodeType": "StructDefinition",
                         "src": "3884:217:137",
                         "nodes": [],
@@ -4785,12 +4785,12 @@ export const MockHyperdriveMath = {
                         "members": [
                             {
                                 "constant": false,
-                                "id": 25699,
+                                "id": 25802,
                                 "mutability": "mutable",
                                 "name": "shareProceeds",
                                 "nameLocation": "3939:13:137",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 25708,
+                                "scope": 25811,
                                 "src": "3931:21:137",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -4799,7 +4799,7 @@ export const MockHyperdriveMath = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 25698,
+                                    "id": 25801,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "3931:7:137",
@@ -4812,12 +4812,12 @@ export const MockHyperdriveMath = {
                             },
                             {
                                 "constant": false,
-                                "id": 25701,
+                                "id": 25804,
                                 "mutability": "mutable",
                                 "name": "shareReservesDelta",
                                 "nameLocation": "3970:18:137",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 25708,
+                                "scope": 25811,
                                 "src": "3962:26:137",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -4826,7 +4826,7 @@ export const MockHyperdriveMath = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 25700,
+                                    "id": 25803,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "3962:7:137",
@@ -4839,12 +4839,12 @@ export const MockHyperdriveMath = {
                             },
                             {
                                 "constant": false,
-                                "id": 25703,
+                                "id": 25806,
                                 "mutability": "mutable",
                                 "name": "shareCurveDelta",
                                 "nameLocation": "4006:15:137",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 25708,
+                                "scope": 25811,
                                 "src": "3998:23:137",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -4853,7 +4853,7 @@ export const MockHyperdriveMath = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 25702,
+                                    "id": 25805,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "3998:7:137",
@@ -4866,12 +4866,12 @@ export const MockHyperdriveMath = {
                             },
                             {
                                 "constant": false,
-                                "id": 25705,
+                                "id": 25808,
                                 "mutability": "mutable",
                                 "name": "shareAdjustmentDelta",
                                 "nameLocation": "4038:20:137",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 25708,
+                                "scope": 25811,
                                 "src": "4031:27:137",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -4880,7 +4880,7 @@ export const MockHyperdriveMath = {
                                     "typeString": "int256"
                                 },
                                 "typeName": {
-                                    "id": 25704,
+                                    "id": 25807,
                                     "name": "int256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "4031:6:137",
@@ -4893,12 +4893,12 @@ export const MockHyperdriveMath = {
                             },
                             {
                                 "constant": false,
-                                "id": 25707,
+                                "id": 25810,
                                 "mutability": "mutable",
                                 "name": "totalGovernanceFee",
                                 "nameLocation": "4076:18:137",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 25708,
+                                "scope": 25811,
                                 "src": "4068:26:137",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -4907,7 +4907,7 @@ export const MockHyperdriveMath = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 25706,
+                                    "id": 25809,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "4068:7:137",
@@ -4921,70 +4921,70 @@ export const MockHyperdriveMath = {
                         ],
                         "name": "NegativeInterestOnCloseOutput",
                         "nameLocation": "3891:29:137",
-                        "scope": 25967,
+                        "scope": 26070,
                         "visibility": "public"
                     },
                     {
-                        "id": 25776,
+                        "id": 25879,
                         "nodeType": "FunctionDefinition",
                         "src": "4107:1113:137",
                         "nodes": [],
                         "body": {
-                            "id": 25775,
+                            "id": 25878,
                             "nodeType": "Block",
                             "src": "4461:759:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25737
+                                        25840
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25737,
+                                            "id": 25840,
                                             "mutability": "mutable",
                                             "name": "output",
                                             "nameLocation": "4508:6:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25775,
+                                            "scope": 25878,
                                             "src": "4471:43:137",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                 "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput"
                                             },
                                             "typeName": {
-                                                "id": 25736,
+                                                "id": 25839,
                                                 "nodeType": "UserDefinedTypeName",
                                                 "pathNode": {
-                                                    "id": 25735,
+                                                    "id": 25838,
                                                     "name": "NegativeInterestOnCloseOutput",
                                                     "nameLocations": [
                                                         "4471:29:137"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 25708,
+                                                    "referencedDeclaration": 25811,
                                                     "src": "4471:29:137"
                                                 },
-                                                "referencedDeclaration": 25708,
+                                                "referencedDeclaration": 25811,
                                                 "src": "4471:29:137",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_storage_ptr",
+                                                    "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_storage_ptr",
                                                     "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput"
                                                 }
                                             },
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25738,
+                                    "id": 25841,
                                     "nodeType": "VariableDeclarationStatement",
                                     "src": "4471:43:137"
                                 },
                                 {
                                     "expression": {
-                                        "id": 25761,
+                                        "id": 25864,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4993,18 +4993,18 @@ export const MockHyperdriveMath = {
                                             "components": [
                                                 {
                                                     "expression": {
-                                                        "id": 25739,
+                                                        "id": 25842,
                                                         "name": "output",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 25737,
+                                                        "referencedDeclaration": 25840,
                                                         "src": "4538:6:137",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                             "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                         }
                                                     },
-                                                    "id": 25741,
+                                                    "id": 25844,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -5012,7 +5012,7 @@ export const MockHyperdriveMath = {
                                                     "memberLocation": "4545:13:137",
                                                     "memberName": "shareProceeds",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 25699,
+                                                    "referencedDeclaration": 25802,
                                                     "src": "4538:20:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5021,18 +5021,18 @@ export const MockHyperdriveMath = {
                                                 },
                                                 {
                                                     "expression": {
-                                                        "id": 25742,
+                                                        "id": 25845,
                                                         "name": "output",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 25737,
+                                                        "referencedDeclaration": 25840,
                                                         "src": "4572:6:137",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                             "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                         }
                                                     },
-                                                    "id": 25743,
+                                                    "id": 25846,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -5040,7 +5040,7 @@ export const MockHyperdriveMath = {
                                                     "memberLocation": "4579:18:137",
                                                     "memberName": "shareReservesDelta",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 25701,
+                                                    "referencedDeclaration": 25804,
                                                     "src": "4572:25:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5049,18 +5049,18 @@ export const MockHyperdriveMath = {
                                                 },
                                                 {
                                                     "expression": {
-                                                        "id": 25744,
+                                                        "id": 25847,
                                                         "name": "output",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 25737,
+                                                        "referencedDeclaration": 25840,
                                                         "src": "4611:6:137",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                             "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                         }
                                                     },
-                                                    "id": 25745,
+                                                    "id": 25848,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -5068,7 +5068,7 @@ export const MockHyperdriveMath = {
                                                     "memberLocation": "4618:15:137",
                                                     "memberName": "shareCurveDelta",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 25703,
+                                                    "referencedDeclaration": 25806,
                                                     "src": "4611:22:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5077,18 +5077,18 @@ export const MockHyperdriveMath = {
                                                 },
                                                 {
                                                     "expression": {
-                                                        "id": 25746,
+                                                        "id": 25849,
                                                         "name": "output",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 25737,
+                                                        "referencedDeclaration": 25840,
                                                         "src": "4647:6:137",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                             "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                         }
                                                     },
-                                                    "id": 25747,
+                                                    "id": 25850,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -5096,7 +5096,7 @@ export const MockHyperdriveMath = {
                                                     "memberLocation": "4654:20:137",
                                                     "memberName": "shareAdjustmentDelta",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 25705,
+                                                    "referencedDeclaration": 25808,
                                                     "src": "4647:27:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -5105,18 +5105,18 @@ export const MockHyperdriveMath = {
                                                 },
                                                 {
                                                     "expression": {
-                                                        "id": 25748,
+                                                        "id": 25851,
                                                         "name": "output",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 25737,
+                                                        "referencedDeclaration": 25840,
                                                         "src": "4688:6:137",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                             "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                         }
                                                     },
-                                                    "id": 25749,
+                                                    "id": 25852,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -5124,7 +5124,7 @@ export const MockHyperdriveMath = {
                                                     "memberLocation": "4695:18:137",
                                                     "memberName": "totalGovernanceFee",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 25707,
+                                                    "referencedDeclaration": 25810,
                                                     "src": "4688:25:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5132,7 +5132,7 @@ export const MockHyperdriveMath = {
                                                     }
                                                 }
                                             ],
-                                            "id": 25750,
+                                            "id": 25853,
                                             "isConstant": false,
                                             "isInlineArray": false,
                                             "isLValue": true,
@@ -5150,11 +5150,11 @@ export const MockHyperdriveMath = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 25753,
+                                                    "id": 25856,
                                                     "name": "_shareProceeds",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25710,
+                                                    "referencedDeclaration": 25813,
                                                     "src": "4787:14:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5162,11 +5162,11 @@ export const MockHyperdriveMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 25754,
+                                                    "id": 25857,
                                                     "name": "_shareReservesDelta",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25712,
+                                                    "referencedDeclaration": 25815,
                                                     "src": "4815:19:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5174,11 +5174,11 @@ export const MockHyperdriveMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 25755,
+                                                    "id": 25858,
                                                     "name": "_shareCurveDelta",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25714,
+                                                    "referencedDeclaration": 25817,
                                                     "src": "4848:16:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5186,11 +5186,11 @@ export const MockHyperdriveMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 25756,
+                                                    "id": 25859,
                                                     "name": "_totalGovernanceFee",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25716,
+                                                    "referencedDeclaration": 25819,
                                                     "src": "4878:19:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5198,11 +5198,11 @@ export const MockHyperdriveMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 25757,
+                                                    "id": 25860,
                                                     "name": "_openVaultSharePrice",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25718,
+                                                    "referencedDeclaration": 25821,
                                                     "src": "4911:20:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5210,11 +5210,11 @@ export const MockHyperdriveMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 25758,
+                                                    "id": 25861,
                                                     "name": "_closeVaultSharePrice",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25720,
+                                                    "referencedDeclaration": 25823,
                                                     "src": "4945:21:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -5222,11 +5222,11 @@ export const MockHyperdriveMath = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 25759,
+                                                    "id": 25862,
                                                     "name": "_isLong",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25722,
+                                                    "referencedDeclaration": 25825,
                                                     "src": "4980:7:137",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bool",
@@ -5266,7 +5266,7 @@ export const MockHyperdriveMath = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 25751,
+                                                    "id": 25854,
                                                     "name": "HyperdriveMath",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
@@ -5277,7 +5277,7 @@ export const MockHyperdriveMath = {
                                                         "typeString": "type(library HyperdriveMath)"
                                                     }
                                                 },
-                                                "id": 25752,
+                                                "id": 25855,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -5292,7 +5292,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256,bool) pure returns (uint256,uint256,uint256,int256,uint256)"
                                                 }
                                             },
-                                            "id": 25760,
+                                            "id": 25863,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5314,7 +5314,7 @@ export const MockHyperdriveMath = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 25762,
+                                    "id": 25865,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4524:473:137"
                                 },
@@ -5323,18 +5323,18 @@ export const MockHyperdriveMath = {
                                         "components": [
                                             {
                                                 "expression": {
-                                                    "id": 25763,
+                                                    "id": 25866,
                                                     "name": "output",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25737,
+                                                    "referencedDeclaration": 25840,
                                                     "src": "5028:6:137",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                         "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                     }
                                                 },
-                                                "id": 25764,
+                                                "id": 25867,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
@@ -5342,7 +5342,7 @@ export const MockHyperdriveMath = {
                                                 "memberLocation": "5035:13:137",
                                                 "memberName": "shareProceeds",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 25699,
+                                                "referencedDeclaration": 25802,
                                                 "src": "5028:20:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5351,18 +5351,18 @@ export const MockHyperdriveMath = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 25765,
+                                                    "id": 25868,
                                                     "name": "output",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25737,
+                                                    "referencedDeclaration": 25840,
                                                     "src": "5062:6:137",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                         "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                     }
                                                 },
-                                                "id": 25766,
+                                                "id": 25869,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
@@ -5370,7 +5370,7 @@ export const MockHyperdriveMath = {
                                                 "memberLocation": "5069:18:137",
                                                 "memberName": "shareReservesDelta",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 25701,
+                                                "referencedDeclaration": 25804,
                                                 "src": "5062:25:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5379,18 +5379,18 @@ export const MockHyperdriveMath = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 25767,
+                                                    "id": 25870,
                                                     "name": "output",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25737,
+                                                    "referencedDeclaration": 25840,
                                                     "src": "5101:6:137",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                         "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                     }
                                                 },
-                                                "id": 25768,
+                                                "id": 25871,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
@@ -5398,7 +5398,7 @@ export const MockHyperdriveMath = {
                                                 "memberLocation": "5108:15:137",
                                                 "memberName": "shareCurveDelta",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 25703,
+                                                "referencedDeclaration": 25806,
                                                 "src": "5101:22:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5407,18 +5407,18 @@ export const MockHyperdriveMath = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 25769,
+                                                    "id": 25872,
                                                     "name": "output",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25737,
+                                                    "referencedDeclaration": 25840,
                                                     "src": "5137:6:137",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                         "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                     }
                                                 },
-                                                "id": 25770,
+                                                "id": 25873,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
@@ -5426,7 +5426,7 @@ export const MockHyperdriveMath = {
                                                 "memberLocation": "5144:20:137",
                                                 "memberName": "shareAdjustmentDelta",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 25705,
+                                                "referencedDeclaration": 25808,
                                                 "src": "5137:27:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -5435,18 +5435,18 @@ export const MockHyperdriveMath = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 25771,
+                                                    "id": 25874,
                                                     "name": "output",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 25737,
+                                                    "referencedDeclaration": 25840,
                                                     "src": "5178:6:137",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25708_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_NegativeInterestOnCloseOutput_$25811_memory_ptr",
                                                         "typeString": "struct MockHyperdriveMath.NegativeInterestOnCloseOutput memory"
                                                     }
                                                 },
-                                                "id": 25772,
+                                                "id": 25875,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
@@ -5454,7 +5454,7 @@ export const MockHyperdriveMath = {
                                                 "memberLocation": "5185:18:137",
                                                 "memberName": "totalGovernanceFee",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 25707,
+                                                "referencedDeclaration": 25810,
                                                 "src": "5178:25:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5462,7 +5462,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             }
                                         ],
-                                        "id": 25773,
+                                        "id": 25876,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -5475,8 +5475,8 @@ export const MockHyperdriveMath = {
                                             "typeString": "tuple(uint256,uint256,uint256,int256,uint256)"
                                         }
                                     },
-                                    "functionReturnParameters": 25734,
-                                    "id": 25774,
+                                    "functionReturnParameters": 25837,
+                                    "id": 25877,
                                     "nodeType": "Return",
                                     "src": "5007:206:137"
                                 }
@@ -5489,17 +5489,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateNegativeInterestOnClose",
                         "nameLocation": "4116:32:137",
                         "parameters": {
-                            "id": 25723,
+                            "id": 25826,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25710,
+                                    "id": 25813,
                                     "mutability": "mutable",
                                     "name": "_shareProceeds",
                                     "nameLocation": "4166:14:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4158:22:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5508,7 +5508,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25709,
+                                        "id": 25812,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4158:7:137",
@@ -5521,12 +5521,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25712,
+                                    "id": 25815,
                                     "mutability": "mutable",
                                     "name": "_shareReservesDelta",
                                     "nameLocation": "4198:19:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4190:27:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5535,7 +5535,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25711,
+                                        "id": 25814,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4190:7:137",
@@ -5548,12 +5548,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25714,
+                                    "id": 25817,
                                     "mutability": "mutable",
                                     "name": "_shareCurveDelta",
                                     "nameLocation": "4235:16:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4227:24:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5562,7 +5562,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25713,
+                                        "id": 25816,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4227:7:137",
@@ -5575,12 +5575,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25716,
+                                    "id": 25819,
                                     "mutability": "mutable",
                                     "name": "_totalGovernanceFee",
                                     "nameLocation": "4269:19:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4261:27:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5589,7 +5589,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25715,
+                                        "id": 25818,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4261:7:137",
@@ -5602,12 +5602,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25718,
+                                    "id": 25821,
                                     "mutability": "mutable",
                                     "name": "_openVaultSharePrice",
                                     "nameLocation": "4306:20:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4298:28:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5616,7 +5616,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25717,
+                                        "id": 25820,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4298:7:137",
@@ -5629,12 +5629,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25720,
+                                    "id": 25823,
                                     "mutability": "mutable",
                                     "name": "_closeVaultSharePrice",
                                     "nameLocation": "4344:21:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4336:29:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5643,7 +5643,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25719,
+                                        "id": 25822,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4336:7:137",
@@ -5656,12 +5656,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25722,
+                                    "id": 25825,
                                     "mutability": "mutable",
                                     "name": "_isLong",
                                     "nameLocation": "4380:7:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4375:12:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5670,7 +5670,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 25721,
+                                        "id": 25824,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4375:4:137",
@@ -5685,17 +5685,17 @@ export const MockHyperdriveMath = {
                             "src": "4148:245:137"
                         },
                         "returnParameters": {
-                            "id": 25734,
+                            "id": 25837,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25725,
+                                    "id": 25828,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4417:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5704,7 +5704,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25724,
+                                        "id": 25827,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4417:7:137",
@@ -5717,12 +5717,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25727,
+                                    "id": 25830,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4426:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5731,7 +5731,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25726,
+                                        "id": 25829,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4426:7:137",
@@ -5744,12 +5744,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25729,
+                                    "id": 25832,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4435:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5758,7 +5758,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25728,
+                                        "id": 25831,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4435:7:137",
@@ -5771,12 +5771,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25731,
+                                    "id": 25834,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4444:6:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5785,7 +5785,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 25730,
+                                        "id": 25833,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4444:6:137",
@@ -5798,12 +5798,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25733,
+                                    "id": 25836,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25776,
+                                    "scope": 25879,
                                     "src": "4452:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5812,7 +5812,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25732,
+                                        "id": 25835,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4452:7:137",
@@ -5826,35 +5826,35 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "4416:44:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25796,
+                        "id": 25899,
                         "nodeType": "FunctionDefinition",
                         "src": "5226:272:137",
                         "nodes": [],
                         "body": {
-                            "id": 25795,
+                            "id": 25898,
                             "nodeType": "Block",
                             "src": "5349:149:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25786
+                                        25889
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25786,
+                                            "id": 25889,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "5367:6:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25795,
+                                            "scope": 25898,
                                             "src": "5359:14:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -5863,7 +5863,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25785,
+                                                "id": 25888,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5359:7:137",
@@ -5875,15 +5875,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25792,
+                                    "id": 25895,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25789,
+                                                "id": 25892,
                                                 "name": "apr",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25778,
+                                                "referencedDeclaration": 25881,
                                                 "src": "5425:3:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5891,11 +5891,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25790,
+                                                "id": 25893,
                                                 "name": "positionDuration",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25780,
+                                                "referencedDeclaration": 25883,
                                                 "src": "5442:16:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5915,7 +5915,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25787,
+                                                "id": 25890,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -5926,7 +5926,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25788,
+                                            "id": 25891,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5941,7 +5941,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 25791,
+                                        "id": 25894,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5962,19 +5962,19 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 25793,
+                                        "id": 25896,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 25786,
+                                        "referencedDeclaration": 25889,
                                         "src": "5485:6:137",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 25784,
-                                    "id": 25794,
+                                    "functionReturnParameters": 25887,
+                                    "id": 25897,
                                     "nodeType": "Return",
                                     "src": "5478:13:137"
                                 }
@@ -5987,17 +5987,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateTimeStretch",
                         "nameLocation": "5235:20:137",
                         "parameters": {
-                            "id": 25781,
+                            "id": 25884,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25778,
+                                    "id": 25881,
                                     "mutability": "mutable",
                                     "name": "apr",
                                     "nameLocation": "5273:3:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25796,
+                                    "scope": 25899,
                                     "src": "5265:11:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6006,7 +6006,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25777,
+                                        "id": 25880,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5265:7:137",
@@ -6019,12 +6019,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25780,
+                                    "id": 25883,
                                     "mutability": "mutable",
                                     "name": "positionDuration",
                                     "nameLocation": "5294:16:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25796,
+                                    "scope": 25899,
                                     "src": "5286:24:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6033,7 +6033,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25779,
+                                        "id": 25882,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5286:7:137",
@@ -6048,17 +6048,17 @@ export const MockHyperdriveMath = {
                             "src": "5255:61:137"
                         },
                         "returnParameters": {
-                            "id": 25784,
+                            "id": 25887,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25783,
+                                    "id": 25886,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25796,
+                                    "scope": 25899,
                                     "src": "5340:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6067,7 +6067,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25782,
+                                        "id": 25885,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5340:7:137",
@@ -6081,36 +6081,36 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "5339:9:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25826,
+                        "id": 25929,
                         "nodeType": "FunctionDefinition",
                         "src": "5504:409:137",
                         "nodes": [],
                         "body": {
-                            "id": 25825,
+                            "id": 25928,
                             "nodeType": "Block",
                             "src": "5700:213:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25811,
-                                        25813
+                                        25914,
+                                        25916
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25811,
+                                            "id": 25914,
                                             "mutability": "mutable",
                                             "name": "result1",
                                             "nameLocation": "5719:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25825,
+                                            "scope": 25928,
                                             "src": "5711:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6119,7 +6119,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25810,
+                                                "id": 25913,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5711:7:137",
@@ -6132,12 +6132,12 @@ export const MockHyperdriveMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 25813,
+                                            "id": 25916,
                                             "mutability": "mutable",
                                             "name": "result2",
                                             "nameLocation": "5736:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25825,
+                                            "scope": 25928,
                                             "src": "5728:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6146,7 +6146,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25812,
+                                                "id": 25915,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5728:7:137",
@@ -6158,27 +6158,27 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25820,
+                                    "id": 25923,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25816,
+                                                "id": 25919,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25799,
+                                                "referencedDeclaration": 25902,
                                                 "src": "5793:7:137",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156514_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156700_memory_ptr",
                                                     "typeString": "struct HyperdriveUtils.MaxTradeParams memory"
                                                 }
                                             },
                                             {
-                                                "id": 25817,
+                                                "id": 25920,
                                                 "name": "_checkpointExposure",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25801,
+                                                "referencedDeclaration": 25904,
                                                 "src": "5814:19:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -6186,11 +6186,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25818,
+                                                "id": 25921,
                                                 "name": "_maxIterations",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25803,
+                                                "referencedDeclaration": 25906,
                                                 "src": "5847:14:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6201,7 +6201,7 @@ export const MockHyperdriveMath = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156514_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156700_memory_ptr",
                                                     "typeString": "struct HyperdriveUtils.MaxTradeParams memory"
                                                 },
                                                 {
@@ -6214,18 +6214,18 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25814,
+                                                "id": 25917,
                                                 "name": "HyperdriveUtils",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 158488,
+                                                "referencedDeclaration": 158674,
                                                 "src": "5747:15:137",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveUtils_$158488_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveUtils_$158674_$",
                                                     "typeString": "type(library HyperdriveUtils)"
                                                 }
                                             },
-                                            "id": 25815,
+                                            "id": 25918,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6233,14 +6233,14 @@ export const MockHyperdriveMath = {
                                             "memberLocation": "5763:16:137",
                                             "memberName": "calculateMaxLong",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 156707,
+                                            "referencedDeclaration": 156893,
                                             "src": "5747:32:137",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_MaxTradeParams_$156514_memory_ptr_$_t_int256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$",
+                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_MaxTradeParams_$156700_memory_ptr_$_t_int256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$",
                                                 "typeString": "function (struct HyperdriveUtils.MaxTradeParams memory,int256,uint256) pure returns (uint256,uint256)"
                                             }
                                         },
-                                        "id": 25819,
+                                        "id": 25922,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6263,11 +6263,11 @@ export const MockHyperdriveMath = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 25821,
+                                                "id": 25924,
                                                 "name": "result1",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25811,
+                                                "referencedDeclaration": 25914,
                                                 "src": "5889:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6275,11 +6275,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25822,
+                                                "id": 25925,
                                                 "name": "result2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25813,
+                                                "referencedDeclaration": 25916,
                                                 "src": "5898:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6287,7 +6287,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             }
                                         ],
-                                        "id": 25823,
+                                        "id": 25926,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -6300,8 +6300,8 @@ export const MockHyperdriveMath = {
                                             "typeString": "tuple(uint256,uint256)"
                                         }
                                     },
-                                    "functionReturnParameters": 25809,
-                                    "id": 25824,
+                                    "functionReturnParameters": 25912,
+                                    "id": 25927,
                                     "nodeType": "Return",
                                     "src": "5881:25:137"
                                 }
@@ -6314,42 +6314,42 @@ export const MockHyperdriveMath = {
                         "name": "calculateMaxLong",
                         "nameLocation": "5513:16:137",
                         "parameters": {
-                            "id": 25804,
+                            "id": 25907,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25799,
+                                    "id": 25902,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "5577:7:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25826,
+                                    "scope": 25929,
                                     "src": "5539:45:137",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_MaxTradeParams_$156514_memory_ptr",
+                                        "typeIdentifier": "t_struct$_MaxTradeParams_$156700_memory_ptr",
                                         "typeString": "struct HyperdriveUtils.MaxTradeParams"
                                     },
                                     "typeName": {
-                                        "id": 25798,
+                                        "id": 25901,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 25797,
+                                            "id": 25900,
                                             "name": "HyperdriveUtils.MaxTradeParams",
                                             "nameLocations": [
                                                 "5539:15:137",
                                                 "5555:14:137"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 156514,
+                                            "referencedDeclaration": 156700,
                                             "src": "5539:30:137"
                                         },
-                                        "referencedDeclaration": 156514,
+                                        "referencedDeclaration": 156700,
                                         "src": "5539:30:137",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_MaxTradeParams_$156514_storage_ptr",
+                                            "typeIdentifier": "t_struct$_MaxTradeParams_$156700_storage_ptr",
                                             "typeString": "struct HyperdriveUtils.MaxTradeParams"
                                         }
                                     },
@@ -6357,12 +6357,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25801,
+                                    "id": 25904,
                                     "mutability": "mutable",
                                     "name": "_checkpointExposure",
                                     "nameLocation": "5601:19:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25826,
+                                    "scope": 25929,
                                     "src": "5594:26:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6371,7 +6371,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 25800,
+                                        "id": 25903,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5594:6:137",
@@ -6384,12 +6384,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25803,
+                                    "id": 25906,
                                     "mutability": "mutable",
                                     "name": "_maxIterations",
                                     "nameLocation": "5638:14:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25826,
+                                    "scope": 25929,
                                     "src": "5630:22:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6398,7 +6398,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25802,
+                                        "id": 25905,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5630:7:137",
@@ -6413,17 +6413,17 @@ export const MockHyperdriveMath = {
                             "src": "5529:129:137"
                         },
                         "returnParameters": {
-                            "id": 25809,
+                            "id": 25912,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25806,
+                                    "id": 25909,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25826,
+                                    "scope": 25929,
                                     "src": "5682:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6432,7 +6432,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25805,
+                                        "id": 25908,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5682:7:137",
@@ -6445,12 +6445,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25808,
+                                    "id": 25911,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25826,
+                                    "scope": 25929,
                                     "src": "5691:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6459,7 +6459,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25807,
+                                        "id": 25910,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5691:7:137",
@@ -6473,36 +6473,36 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "5681:18:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25856,
+                        "id": 25959,
                         "nodeType": "FunctionDefinition",
                         "src": "5919:455:137",
                         "nodes": [],
                         "body": {
-                            "id": 25855,
+                            "id": 25958,
                             "nodeType": "Block",
                             "src": "6124:250:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25841,
-                                        25843
+                                        25944,
+                                        25946
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25841,
+                                            "id": 25944,
                                             "mutability": "mutable",
                                             "name": "result1",
                                             "nameLocation": "6143:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25855,
+                                            "scope": 25958,
                                             "src": "6135:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6511,7 +6511,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25840,
+                                                "id": 25943,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "6135:7:137",
@@ -6524,12 +6524,12 @@ export const MockHyperdriveMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 25843,
+                                            "id": 25946,
                                             "mutability": "mutable",
                                             "name": "result2",
                                             "nameLocation": "6160:7:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25855,
+                                            "scope": 25958,
                                             "src": "6152:15:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6538,7 +6538,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25842,
+                                                "id": 25945,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "6152:7:137",
@@ -6550,27 +6550,27 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25850,
+                                    "id": 25953,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25846,
+                                                "id": 25949,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25829,
+                                                "referencedDeclaration": 25932,
                                                 "src": "6242:7:137",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156514_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156700_memory_ptr",
                                                     "typeString": "struct HyperdriveUtils.MaxTradeParams memory"
                                                 }
                                             },
                                             {
-                                                "id": 25847,
+                                                "id": 25950,
                                                 "name": "_effectiveShareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25831,
+                                                "referencedDeclaration": 25934,
                                                 "src": "6267:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6578,11 +6578,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25848,
+                                                "id": 25951,
                                                 "name": "_spotPrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25833,
+                                                "referencedDeclaration": 25936,
                                                 "src": "6308:10:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6593,7 +6593,7 @@ export const MockHyperdriveMath = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156514_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156700_memory_ptr",
                                                     "typeString": "struct HyperdriveUtils.MaxTradeParams memory"
                                                 },
                                                 {
@@ -6606,18 +6606,18 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25844,
+                                                "id": 25947,
                                                 "name": "HyperdriveUtils",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 158488,
+                                                "referencedDeclaration": 158674,
                                                 "src": "6171:15:137",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveUtils_$158488_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveUtils_$158674_$",
                                                     "typeString": "type(library HyperdriveUtils)"
                                                 }
                                             },
-                                            "id": 25845,
+                                            "id": 25948,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6625,14 +6625,14 @@ export const MockHyperdriveMath = {
                                             "memberLocation": "6200:24:137",
                                             "memberName": "calculateAbsoluteMaxLong",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 156901,
+                                            "referencedDeclaration": 157087,
                                             "src": "6171:53:137",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_MaxTradeParams_$156514_memory_ptr_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$",
+                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_MaxTradeParams_$156700_memory_ptr_$_t_uint256_$_t_uint256_$returns$_t_uint256_$_t_uint256_$",
                                                 "typeString": "function (struct HyperdriveUtils.MaxTradeParams memory,uint256,uint256) pure returns (uint256,uint256)"
                                             }
                                         },
-                                        "id": 25849,
+                                        "id": 25952,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6655,11 +6655,11 @@ export const MockHyperdriveMath = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 25851,
+                                                "id": 25954,
                                                 "name": "result1",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25841,
+                                                "referencedDeclaration": 25944,
                                                 "src": "6350:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6667,11 +6667,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25852,
+                                                "id": 25955,
                                                 "name": "result2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25843,
+                                                "referencedDeclaration": 25946,
                                                 "src": "6359:7:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6679,7 +6679,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             }
                                         ],
-                                        "id": 25853,
+                                        "id": 25956,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -6692,8 +6692,8 @@ export const MockHyperdriveMath = {
                                             "typeString": "tuple(uint256,uint256)"
                                         }
                                     },
-                                    "functionReturnParameters": 25839,
-                                    "id": 25854,
+                                    "functionReturnParameters": 25942,
+                                    "id": 25957,
                                     "nodeType": "Return",
                                     "src": "6342:25:137"
                                 }
@@ -6706,42 +6706,42 @@ export const MockHyperdriveMath = {
                         "name": "calculateAbsoluteMaxLong",
                         "nameLocation": "5928:24:137",
                         "parameters": {
-                            "id": 25834,
+                            "id": 25937,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25829,
+                                    "id": 25932,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "6000:7:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25856,
+                                    "scope": 25959,
                                     "src": "5962:45:137",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_MaxTradeParams_$156514_memory_ptr",
+                                        "typeIdentifier": "t_struct$_MaxTradeParams_$156700_memory_ptr",
                                         "typeString": "struct HyperdriveUtils.MaxTradeParams"
                                     },
                                     "typeName": {
-                                        "id": 25828,
+                                        "id": 25931,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 25827,
+                                            "id": 25930,
                                             "name": "HyperdriveUtils.MaxTradeParams",
                                             "nameLocations": [
                                                 "5962:15:137",
                                                 "5978:14:137"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 156514,
+                                            "referencedDeclaration": 156700,
                                             "src": "5962:30:137"
                                         },
-                                        "referencedDeclaration": 156514,
+                                        "referencedDeclaration": 156700,
                                         "src": "5962:30:137",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_MaxTradeParams_$156514_storage_ptr",
+                                            "typeIdentifier": "t_struct$_MaxTradeParams_$156700_storage_ptr",
                                             "typeString": "struct HyperdriveUtils.MaxTradeParams"
                                         }
                                     },
@@ -6749,12 +6749,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25831,
+                                    "id": 25934,
                                     "mutability": "mutable",
                                     "name": "_effectiveShareReserves",
                                     "nameLocation": "6025:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25856,
+                                    "scope": 25959,
                                     "src": "6017:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6763,7 +6763,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25830,
+                                        "id": 25933,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6017:7:137",
@@ -6776,12 +6776,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25833,
+                                    "id": 25936,
                                     "mutability": "mutable",
                                     "name": "_spotPrice",
                                     "nameLocation": "6066:10:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25856,
+                                    "scope": 25959,
                                     "src": "6058:18:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6790,7 +6790,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25832,
+                                        "id": 25935,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6058:7:137",
@@ -6805,17 +6805,17 @@ export const MockHyperdriveMath = {
                             "src": "5952:130:137"
                         },
                         "returnParameters": {
-                            "id": 25839,
+                            "id": 25942,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25836,
+                                    "id": 25939,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25856,
+                                    "scope": 25959,
                                     "src": "6106:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6824,7 +6824,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25835,
+                                        "id": 25938,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6106:7:137",
@@ -6837,12 +6837,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25838,
+                                    "id": 25941,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25856,
+                                    "scope": 25959,
                                     "src": "6115:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6851,7 +6851,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25837,
+                                        "id": 25940,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6115:7:137",
@@ -6865,18 +6865,18 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "6105:18:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25876,
+                        "id": 25979,
                         "nodeType": "FunctionDefinition",
                         "src": "6380:365:137",
                         "nodes": [],
                         "body": {
-                            "id": 25875,
+                            "id": 25978,
                             "nodeType": "Block",
                             "src": "6568:177:137",
                             "nodes": [],
@@ -6885,23 +6885,23 @@ export const MockHyperdriveMath = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 25870,
+                                                "id": 25973,
                                                 "name": "_params",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25859,
+                                                "referencedDeclaration": 25962,
                                                 "src": "6648:7:137",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156514_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156700_memory_ptr",
                                                     "typeString": "struct HyperdriveUtils.MaxTradeParams memory"
                                                 }
                                             },
                                             {
-                                                "id": 25871,
+                                                "id": 25974,
                                                 "name": "_checkpointExposure",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25861,
+                                                "referencedDeclaration": 25964,
                                                 "src": "6673:19:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -6909,11 +6909,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25872,
+                                                "id": 25975,
                                                 "name": "_maxIterations",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25863,
+                                                "referencedDeclaration": 25966,
                                                 "src": "6710:14:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6924,7 +6924,7 @@ export const MockHyperdriveMath = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156514_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_MaxTradeParams_$156700_memory_ptr",
                                                     "typeString": "struct HyperdriveUtils.MaxTradeParams memory"
                                                 },
                                                 {
@@ -6937,18 +6937,18 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25868,
+                                                "id": 25971,
                                                 "name": "HyperdriveUtils",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 158488,
+                                                "referencedDeclaration": 158674,
                                                 "src": "6597:15:137",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveUtils_$158488_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_HyperdriveUtils_$158674_$",
                                                     "typeString": "type(library HyperdriveUtils)"
                                                 }
                                             },
-                                            "id": 25869,
+                                            "id": 25972,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6956,14 +6956,14 @@ export const MockHyperdriveMath = {
                                             "memberLocation": "6613:17:137",
                                             "memberName": "calculateMaxShort",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 157637,
+                                            "referencedDeclaration": 157823,
                                             "src": "6597:33:137",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_MaxTradeParams_$156514_memory_ptr_$_t_int256_$_t_uint256_$returns$_t_uint256_$",
+                                                "typeIdentifier": "t_function_internal_pure$_t_struct$_MaxTradeParams_$156700_memory_ptr_$_t_int256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (struct HyperdriveUtils.MaxTradeParams memory,int256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 25873,
+                                        "id": 25976,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6979,8 +6979,8 @@ export const MockHyperdriveMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 25867,
-                                    "id": 25874,
+                                    "functionReturnParameters": 25970,
+                                    "id": 25977,
                                     "nodeType": "Return",
                                     "src": "6578:160:137"
                                 }
@@ -6993,42 +6993,42 @@ export const MockHyperdriveMath = {
                         "name": "calculateMaxShort",
                         "nameLocation": "6389:17:137",
                         "parameters": {
-                            "id": 25864,
+                            "id": 25967,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25859,
+                                    "id": 25962,
                                     "mutability": "mutable",
                                     "name": "_params",
                                     "nameLocation": "6454:7:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25876,
+                                    "scope": 25979,
                                     "src": "6416:45:137",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_MaxTradeParams_$156514_memory_ptr",
+                                        "typeIdentifier": "t_struct$_MaxTradeParams_$156700_memory_ptr",
                                         "typeString": "struct HyperdriveUtils.MaxTradeParams"
                                     },
                                     "typeName": {
-                                        "id": 25858,
+                                        "id": 25961,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 25857,
+                                            "id": 25960,
                                             "name": "HyperdriveUtils.MaxTradeParams",
                                             "nameLocations": [
                                                 "6416:15:137",
                                                 "6432:14:137"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 156514,
+                                            "referencedDeclaration": 156700,
                                             "src": "6416:30:137"
                                         },
-                                        "referencedDeclaration": 156514,
+                                        "referencedDeclaration": 156700,
                                         "src": "6416:30:137",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_MaxTradeParams_$156514_storage_ptr",
+                                            "typeIdentifier": "t_struct$_MaxTradeParams_$156700_storage_ptr",
                                             "typeString": "struct HyperdriveUtils.MaxTradeParams"
                                         }
                                     },
@@ -7036,12 +7036,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25861,
+                                    "id": 25964,
                                     "mutability": "mutable",
                                     "name": "_checkpointExposure",
                                     "nameLocation": "6478:19:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25876,
+                                    "scope": 25979,
                                     "src": "6471:26:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7050,7 +7050,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 25860,
+                                        "id": 25963,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6471:6:137",
@@ -7063,12 +7063,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25863,
+                                    "id": 25966,
                                     "mutability": "mutable",
                                     "name": "_maxIterations",
                                     "nameLocation": "6515:14:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25876,
+                                    "scope": 25979,
                                     "src": "6507:22:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7077,7 +7077,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25862,
+                                        "id": 25965,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6507:7:137",
@@ -7092,17 +7092,17 @@ export const MockHyperdriveMath = {
                             "src": "6406:129:137"
                         },
                         "returnParameters": {
-                            "id": 25867,
+                            "id": 25970,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25866,
+                                    "id": 25969,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25876,
+                                    "scope": 25979,
                                     "src": "6559:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7111,7 +7111,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25865,
+                                        "id": 25968,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6559:7:137",
@@ -7125,35 +7125,35 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "6558:9:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25902,
+                        "id": 26005,
                         "nodeType": "FunctionDefinition",
                         "src": "6751:418:137",
                         "nodes": [],
                         "body": {
-                            "id": 25901,
+                            "id": 26004,
                             "nodeType": "Block",
                             "src": "6951:218:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25890
+                                        25993
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25890,
+                                            "id": 25993,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "6969:6:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25901,
+                                            "scope": 26004,
                                             "src": "6961:14:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -7162,7 +7162,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25889,
+                                                "id": 25992,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "6961:7:137",
@@ -7174,15 +7174,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25898,
+                                    "id": 26001,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25893,
+                                                "id": 25996,
                                                 "name": "_shareReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25878,
+                                                "referencedDeclaration": 25981,
                                                 "src": "7025:14:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7190,11 +7190,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25894,
+                                                "id": 25997,
                                                 "name": "_bondReserves",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25880,
+                                                "referencedDeclaration": 25983,
                                                 "src": "7053:13:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7202,11 +7202,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25895,
+                                                "id": 25998,
                                                 "name": "_initialVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25882,
+                                                "referencedDeclaration": 25985,
                                                 "src": "7080:23:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7214,11 +7214,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25896,
+                                                "id": 25999,
                                                 "name": "_timeStretch",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25884,
+                                                "referencedDeclaration": 25987,
                                                 "src": "7117:12:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7246,7 +7246,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25891,
+                                                "id": 25994,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -7257,7 +7257,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25892,
+                                            "id": 25995,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7272,7 +7272,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 25897,
+                                        "id": 26000,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7293,19 +7293,19 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 25899,
+                                        "id": 26002,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 25890,
+                                        "referencedDeclaration": 25993,
                                         "src": "7156:6:137",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 25888,
-                                    "id": 25900,
+                                    "functionReturnParameters": 25991,
+                                    "id": 26003,
                                     "nodeType": "Return",
                                     "src": "7149:13:137"
                                 }
@@ -7318,17 +7318,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateSpotPrice",
                         "nameLocation": "6760:18:137",
                         "parameters": {
-                            "id": 25885,
+                            "id": 25988,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25878,
+                                    "id": 25981,
                                     "mutability": "mutable",
                                     "name": "_shareReserves",
                                     "nameLocation": "6796:14:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25902,
+                                    "scope": 26005,
                                     "src": "6788:22:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7337,7 +7337,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25877,
+                                        "id": 25980,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6788:7:137",
@@ -7350,12 +7350,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25880,
+                                    "id": 25983,
                                     "mutability": "mutable",
                                     "name": "_bondReserves",
                                     "nameLocation": "6828:13:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25902,
+                                    "scope": 26005,
                                     "src": "6820:21:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7364,7 +7364,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25879,
+                                        "id": 25982,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6820:7:137",
@@ -7377,12 +7377,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25882,
+                                    "id": 25985,
                                     "mutability": "mutable",
                                     "name": "_initialVaultSharePrice",
                                     "nameLocation": "6859:23:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25902,
+                                    "scope": 26005,
                                     "src": "6851:31:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7391,7 +7391,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25881,
+                                        "id": 25984,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6851:7:137",
@@ -7404,12 +7404,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25884,
+                                    "id": 25987,
                                     "mutability": "mutable",
                                     "name": "_timeStretch",
                                     "nameLocation": "6900:12:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25902,
+                                    "scope": 26005,
                                     "src": "6892:20:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7418,7 +7418,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25883,
+                                        "id": 25986,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6892:7:137",
@@ -7433,17 +7433,17 @@ export const MockHyperdriveMath = {
                             "src": "6778:140:137"
                         },
                         "returnParameters": {
-                            "id": 25888,
+                            "id": 25991,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25887,
+                                    "id": 25990,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25902,
+                                    "scope": 26005,
                                     "src": "6942:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7452,7 +7452,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25886,
+                                        "id": 25989,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6942:7:137",
@@ -7466,35 +7466,35 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "6941:9:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25934,
+                        "id": 26037,
                         "nodeType": "FunctionDefinition",
                         "src": "7175:546:137",
                         "nodes": [],
                         "body": {
-                            "id": 25933,
+                            "id": 26036,
                             "nodeType": "Block",
                             "src": "7443:278:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25920
+                                        26023
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25920,
+                                            "id": 26023,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "7461:6:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25933,
+                                            "scope": 26036,
                                             "src": "7453:14:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -7503,7 +7503,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25919,
+                                                "id": 26022,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "7453:7:137",
@@ -7515,15 +7515,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25930,
+                                    "id": 26033,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25923,
+                                                "id": 26026,
                                                 "name": "_bondAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25904,
+                                                "referencedDeclaration": 26007,
                                                 "src": "7523:11:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7531,11 +7531,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25924,
+                                                "id": 26027,
                                                 "name": "_shareAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25906,
+                                                "referencedDeclaration": 26009,
                                                 "src": "7548:12:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7543,11 +7543,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25925,
+                                                "id": 26028,
                                                 "name": "_openVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25908,
+                                                "referencedDeclaration": 26011,
                                                 "src": "7574:20:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7555,11 +7555,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25926,
+                                                "id": 26029,
                                                 "name": "_closeVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25910,
+                                                "referencedDeclaration": 26013,
                                                 "src": "7608:21:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7567,11 +7567,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25927,
+                                                "id": 26030,
                                                 "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25912,
+                                                "referencedDeclaration": 26015,
                                                 "src": "7643:16:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7579,11 +7579,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25928,
+                                                "id": 26031,
                                                 "name": "_flatFee",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25914,
+                                                "referencedDeclaration": 26017,
                                                 "src": "7673:8:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7619,7 +7619,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25921,
+                                                "id": 26024,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -7630,7 +7630,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25922,
+                                            "id": 26025,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7645,7 +7645,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 25929,
+                                        "id": 26032,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7666,19 +7666,19 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 25931,
+                                        "id": 26034,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 25920,
+                                        "referencedDeclaration": 26023,
                                         "src": "7708:6:137",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 25918,
-                                    "id": 25932,
+                                    "functionReturnParameters": 26021,
+                                    "id": 26035,
                                     "nodeType": "Return",
                                     "src": "7701:13:137"
                                 }
@@ -7691,17 +7691,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateShortProceedsUp",
                         "nameLocation": "7184:24:137",
                         "parameters": {
-                            "id": 25915,
+                            "id": 26018,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25904,
+                                    "id": 26007,
                                     "mutability": "mutable",
                                     "name": "_bondAmount",
                                     "nameLocation": "7226:11:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25934,
+                                    "scope": 26037,
                                     "src": "7218:19:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7710,7 +7710,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25903,
+                                        "id": 26006,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7218:7:137",
@@ -7723,12 +7723,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25906,
+                                    "id": 26009,
                                     "mutability": "mutable",
                                     "name": "_shareAmount",
                                     "nameLocation": "7255:12:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25934,
+                                    "scope": 26037,
                                     "src": "7247:20:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7737,7 +7737,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25905,
+                                        "id": 26008,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7247:7:137",
@@ -7750,12 +7750,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25908,
+                                    "id": 26011,
                                     "mutability": "mutable",
                                     "name": "_openVaultSharePrice",
                                     "nameLocation": "7285:20:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25934,
+                                    "scope": 26037,
                                     "src": "7277:28:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7764,7 +7764,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25907,
+                                        "id": 26010,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7277:7:137",
@@ -7777,12 +7777,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25910,
+                                    "id": 26013,
                                     "mutability": "mutable",
                                     "name": "_closeVaultSharePrice",
                                     "nameLocation": "7323:21:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25934,
+                                    "scope": 26037,
                                     "src": "7315:29:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7791,7 +7791,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25909,
+                                        "id": 26012,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7315:7:137",
@@ -7804,12 +7804,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25912,
+                                    "id": 26015,
                                     "mutability": "mutable",
                                     "name": "_vaultSharePrice",
                                     "nameLocation": "7362:16:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25934,
+                                    "scope": 26037,
                                     "src": "7354:24:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7818,7 +7818,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25911,
+                                        "id": 26014,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7354:7:137",
@@ -7831,12 +7831,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25914,
+                                    "id": 26017,
                                     "mutability": "mutable",
                                     "name": "_flatFee",
                                     "nameLocation": "7396:8:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25934,
+                                    "scope": 26037,
                                     "src": "7388:16:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7845,7 +7845,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25913,
+                                        "id": 26016,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7388:7:137",
@@ -7860,17 +7860,17 @@ export const MockHyperdriveMath = {
                             "src": "7208:202:137"
                         },
                         "returnParameters": {
-                            "id": 25918,
+                            "id": 26021,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25917,
+                                    "id": 26020,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25934,
+                                    "scope": 26037,
                                     "src": "7434:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7879,7 +7879,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25916,
+                                        "id": 26019,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7434:7:137",
@@ -7893,35 +7893,35 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "7433:9:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 25966,
+                        "id": 26069,
                         "nodeType": "FunctionDefinition",
                         "src": "7727:550:137",
                         "nodes": [],
                         "body": {
-                            "id": 25965,
+                            "id": 26068,
                             "nodeType": "Block",
                             "src": "7997:280:137",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        25952
+                                        26055
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 25952,
+                                            "id": 26055,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "8015:6:137",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 25965,
+                                            "scope": 26068,
                                             "src": "8007:14:137",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -7930,7 +7930,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 25951,
+                                                "id": 26054,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "8007:7:137",
@@ -7942,15 +7942,15 @@ export const MockHyperdriveMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 25962,
+                                    "id": 26065,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 25955,
+                                                "id": 26058,
                                                 "name": "_bondAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25936,
+                                                "referencedDeclaration": 26039,
                                                 "src": "8079:11:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7958,11 +7958,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25956,
+                                                "id": 26059,
                                                 "name": "_shareAmount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25938,
+                                                "referencedDeclaration": 26041,
                                                 "src": "8104:12:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7970,11 +7970,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25957,
+                                                "id": 26060,
                                                 "name": "_openVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25940,
+                                                "referencedDeclaration": 26043,
                                                 "src": "8130:20:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7982,11 +7982,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25958,
+                                                "id": 26061,
                                                 "name": "_closeVaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25942,
+                                                "referencedDeclaration": 26045,
                                                 "src": "8164:21:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7994,11 +7994,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25959,
+                                                "id": 26062,
                                                 "name": "_vaultSharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25944,
+                                                "referencedDeclaration": 26047,
                                                 "src": "8199:16:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -8006,11 +8006,11 @@ export const MockHyperdriveMath = {
                                                 }
                                             },
                                             {
-                                                "id": 25960,
+                                                "id": 26063,
                                                 "name": "_flatFee",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 25946,
+                                                "referencedDeclaration": 26049,
                                                 "src": "8229:8:137",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -8046,7 +8046,7 @@ export const MockHyperdriveMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 25953,
+                                                "id": 26056,
                                                 "name": "HyperdriveMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -8057,7 +8057,7 @@ export const MockHyperdriveMath = {
                                                     "typeString": "type(library HyperdriveMath)"
                                                 }
                                             },
-                                            "id": 25954,
+                                            "id": 26057,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -8072,7 +8072,7 @@ export const MockHyperdriveMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 25961,
+                                        "id": 26064,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8093,19 +8093,19 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 25963,
+                                        "id": 26066,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 25952,
+                                        "referencedDeclaration": 26055,
                                         "src": "8264:6:137",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 25950,
-                                    "id": 25964,
+                                    "functionReturnParameters": 26053,
+                                    "id": 26067,
                                     "nodeType": "Return",
                                     "src": "8257:13:137"
                                 }
@@ -8118,17 +8118,17 @@ export const MockHyperdriveMath = {
                         "name": "calculateShortProceedsDown",
                         "nameLocation": "7736:26:137",
                         "parameters": {
-                            "id": 25947,
+                            "id": 26050,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25936,
+                                    "id": 26039,
                                     "mutability": "mutable",
                                     "name": "_bondAmount",
                                     "nameLocation": "7780:11:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25966,
+                                    "scope": 26069,
                                     "src": "7772:19:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8137,7 +8137,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25935,
+                                        "id": 26038,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7772:7:137",
@@ -8150,12 +8150,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25938,
+                                    "id": 26041,
                                     "mutability": "mutable",
                                     "name": "_shareAmount",
                                     "nameLocation": "7809:12:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25966,
+                                    "scope": 26069,
                                     "src": "7801:20:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8164,7 +8164,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25937,
+                                        "id": 26040,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7801:7:137",
@@ -8177,12 +8177,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25940,
+                                    "id": 26043,
                                     "mutability": "mutable",
                                     "name": "_openVaultSharePrice",
                                     "nameLocation": "7839:20:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25966,
+                                    "scope": 26069,
                                     "src": "7831:28:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8191,7 +8191,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25939,
+                                        "id": 26042,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7831:7:137",
@@ -8204,12 +8204,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25942,
+                                    "id": 26045,
                                     "mutability": "mutable",
                                     "name": "_closeVaultSharePrice",
                                     "nameLocation": "7877:21:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25966,
+                                    "scope": 26069,
                                     "src": "7869:29:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8218,7 +8218,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25941,
+                                        "id": 26044,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7869:7:137",
@@ -8231,12 +8231,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25944,
+                                    "id": 26047,
                                     "mutability": "mutable",
                                     "name": "_vaultSharePrice",
                                     "nameLocation": "7916:16:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25966,
+                                    "scope": 26069,
                                     "src": "7908:24:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8245,7 +8245,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25943,
+                                        "id": 26046,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7908:7:137",
@@ -8258,12 +8258,12 @@ export const MockHyperdriveMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 25946,
+                                    "id": 26049,
                                     "mutability": "mutable",
                                     "name": "_flatFee",
                                     "nameLocation": "7950:8:137",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25966,
+                                    "scope": 26069,
                                     "src": "7942:16:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8272,7 +8272,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25945,
+                                        "id": 26048,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7942:7:137",
@@ -8287,17 +8287,17 @@ export const MockHyperdriveMath = {
                             "src": "7762:202:137"
                         },
                         "returnParameters": {
-                            "id": 25950,
+                            "id": 26053,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 25949,
+                                    "id": 26052,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 25966,
+                                    "scope": 26069,
                                     "src": "7988:7:137",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8306,7 +8306,7 @@ export const MockHyperdriveMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 25948,
+                                        "id": 26051,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7988:7:137",
@@ -8320,7 +8320,7 @@ export const MockHyperdriveMath = {
                             ],
                             "src": "7987:9:137"
                         },
-                        "scope": 25967,
+                        "scope": 26070,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
@@ -8333,11 +8333,11 @@ export const MockHyperdriveMath = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    25967
+                    26070
                 ],
                 "name": "MockHyperdriveMath",
                 "nameLocation": "217:18:137",
-                "scope": 25968,
+                "scope": 26071,
                 "usedErrors": [
                     10219,
                     10228,

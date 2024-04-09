@@ -4069,7 +4069,7 @@ export const EzETHBase = {
                     8136,
                     13667,
                     17734,
-                    71639,
+                    71745,
                     10887,
                     11459
                 ],
@@ -4077,7 +4077,7 @@ export const EzETHBase = {
                 "nameLocation": "899:9:51",
                 "scope": 8137,
                 "usedErrors": [
-                    71584
+                    71690
                 ],
                 "usedEvents": [
                     10705,

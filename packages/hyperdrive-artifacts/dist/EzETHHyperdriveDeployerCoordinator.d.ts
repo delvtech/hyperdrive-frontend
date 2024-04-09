@@ -1478,7 +1478,7 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
         readonly absolutePath: "contracts/src/deployers/ezeth/EzETHHyperdriveDeployerCoordinator.sol";
         readonly id: 1918;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [70857];
+            readonly ERC20: readonly [70963];
             readonly ETH: readonly [18015];
             readonly EzETHHyperdriveDeployerCoordinator: readonly [1917];
             readonly FixedPointMath: readonly [18822];
@@ -1489,7 +1489,7 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
             readonly IRenzoOracle: readonly [11663];
             readonly IRestakeManager: readonly [11608];
             readonly ONE: readonly [18039];
-            readonly SafeERC20: readonly [71287];
+            readonly SafeERC20: readonly [71393];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:6465:9";
@@ -1508,14 +1508,14 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
             readonly file: "openzeppelin/token/ERC20/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 1918;
-            readonly sourceUnit: 70858;
+            readonly sourceUnit: 70964;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 1649;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 70857;
+                    readonly referencedDeclaration: 70963;
                     readonly src: "73:5:9";
                     readonly typeDescriptions: {};
                 };
@@ -1531,14 +1531,14 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
             readonly file: "openzeppelin/token/ERC20/utils/SafeERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 1918;
-            readonly sourceUnit: 71288;
+            readonly sourceUnit: 71394;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 1651;
                     readonly name: "SafeERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71287;
+                    readonly referencedDeclaration: 71393;
                     readonly src: "133:9:9";
                     readonly typeDescriptions: {};
                 };
@@ -1743,7 +1743,7 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
                     readonly name: "SafeERC20";
                     readonly nameLocations: readonly ["1162:9:9"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 71287;
+                    readonly referencedDeclaration: 71393;
                     readonly src: "1162:9:9";
                 };
                 readonly typeName: {
@@ -1754,13 +1754,13 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
                         readonly name: "ERC20";
                         readonly nameLocations: readonly ["1176:5:9"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 70857;
+                        readonly referencedDeclaration: 70963;
                         readonly src: "1176:5:9";
                     };
-                    readonly referencedDeclaration: 70857;
+                    readonly referencedDeclaration: 70963;
                     readonly src: "1176:5:9";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
+                        readonly typeIdentifier: "t_contract$_ERC20_$70963";
                         readonly typeString: "contract ERC20";
                     };
                 };
@@ -2779,10 +2779,10 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 70857;
+                                        readonly referencedDeclaration: 70963;
                                         readonly src: "3767:5:9";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70857_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70963_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
@@ -2798,7 +2798,7 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
                                     readonly src: "3767:21:9";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$70963";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
@@ -2810,10 +2810,10 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
                                 readonly memberLocation: "3789:16:9";
                                 readonly memberName: "safeTransferFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71074;
+                                readonly referencedDeclaration: 71180;
                                 readonly src: "3767:38:9";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$";
                                     readonly typeString: "function (contract IERC20,address,address,uint256)";
                                 };
                             };
@@ -2973,10 +2973,10 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 70857;
+                                        readonly referencedDeclaration: 70963;
                                         readonly src: "3896:5:9";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70857_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70963_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
@@ -2992,7 +2992,7 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
                                     readonly src: "3896:21:9";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$70963";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
@@ -3004,10 +3004,10 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
                                 readonly memberLocation: "3918:12:9";
                                 readonly memberName: "forceApprove";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71195;
+                                readonly referencedDeclaration: 71301;
                                 readonly src: "3896:34:9";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$";
                                     readonly typeString: "function (contract IERC20,address,uint256)";
                                 };
                             };
@@ -4567,7 +4567,7 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
             readonly name: "EzETHHyperdriveDeployerCoordinator";
             readonly nameLocation: "1082:34:9";
             readonly scope: 1918;
-            readonly usedErrors: readonly [10270, 10317, 10577, 10580, 10583, 10586, 10589, 10592, 10595, 10598, 10601, 10604, 10607, 10610, 10613, 10616, 10619, 10622, 10625, 10628, 10631, 10634, 71014, 71295, 71300, 71303];
+            readonly usedErrors: readonly [10270, 10317, 10577, 10580, 10583, 10586, 10589, 10592, 10595, 10598, 10601, 10604, 10607, 10610, 10613, 10616, 10619, 10622, 10625, 10628, 10631, 10634, 71120, 71401, 71406, 71409];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";

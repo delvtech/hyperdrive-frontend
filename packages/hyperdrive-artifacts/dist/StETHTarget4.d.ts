@@ -2172,11 +2172,11 @@ export declare const StETHTarget4: {
                 readonly text: "@author DELV\n @title StETHTarget4\n @notice StETHHyperdrive's target4 logic contract.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [9571, 9388, 5562, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [9571, 9388, 5562, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71745, 10887, 11459];
             readonly name: "StETHTarget4";
             readonly nameLocation: "576:12:78";
             readonly scope: 9572;
-            readonly usedErrors: readonly [10219, 10228, 10231, 10249, 10255, 10258, 10261, 10264, 10267, 10273, 10279, 10282, 10293, 10296, 10305, 10308, 10311, 10314, 10320, 71584];
+            readonly usedErrors: readonly [10219, 10228, 10231, 10249, 10255, 10258, 10261, 10264, 10267, 10273, 10279, 10282, 10293, 10296, 10305, 10308, 10311, 10314, 10320, 71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

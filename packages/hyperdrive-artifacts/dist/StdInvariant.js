@@ -333,17 +333,17 @@ export const StdInvariant = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/StdInvariant.sol",
-        "id": 34929,
+        "id": 35035,
         "exportedSymbols": {
             "StdInvariant": [
-                34928
+                35034
             ]
         },
         "nodeType": "SourceUnit",
         "src": "32:3043:149",
         "nodes": [
             {
-                "id": 34706,
+                "id": 34812,
                 "nodeType": "PragmaDirective",
                 "src": "32:31:149",
                 "nodes": [],
@@ -358,7 +358,7 @@ export const StdInvariant = {
                 ]
             },
             {
-                "id": 34707,
+                "id": 34813,
                 "nodeType": "PragmaDirective",
                 "src": "65:33:149",
                 "nodes": [],
@@ -368,12 +368,12 @@ export const StdInvariant = {
                 ]
             },
             {
-                "id": 34928,
+                "id": 35034,
                 "nodeType": "ContractDefinition",
                 "src": "100:2974:149",
                 "nodes": [
                     {
-                        "id": 34713,
+                        "id": 34819,
                         "nodeType": "StructDefinition",
                         "src": "137:77:149",
                         "nodes": [],
@@ -381,12 +381,12 @@ export const StdInvariant = {
                         "members": [
                             {
                                 "constant": false,
-                                "id": 34709,
+                                "id": 34815,
                                 "mutability": "mutable",
                                 "name": "addr",
                                 "nameLocation": "175:4:149",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 34713,
+                                "scope": 34819,
                                 "src": "167:12:149",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -395,7 +395,7 @@ export const StdInvariant = {
                                     "typeString": "address"
                                 },
                                 "typeName": {
-                                    "id": 34708,
+                                    "id": 34814,
                                     "name": "address",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "167:7:149",
@@ -409,12 +409,12 @@ export const StdInvariant = {
                             },
                             {
                                 "constant": false,
-                                "id": 34712,
+                                "id": 34818,
                                 "mutability": "mutable",
                                 "name": "selectors",
                                 "nameLocation": "198:9:149",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 34713,
+                                "scope": 34819,
                                 "src": "189:18:149",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -424,7 +424,7 @@ export const StdInvariant = {
                                 },
                                 "typeName": {
                                     "baseType": {
-                                        "id": 34710,
+                                        "id": 34816,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "189:6:149",
@@ -433,7 +433,7 @@ export const StdInvariant = {
                                             "typeString": "bytes4"
                                         }
                                     },
-                                    "id": 34711,
+                                    "id": 34817,
                                     "nodeType": "ArrayTypeName",
                                     "src": "189:8:149",
                                     "typeDescriptions": {
@@ -446,11 +446,11 @@ export const StdInvariant = {
                         ],
                         "name": "FuzzSelector",
                         "nameLocation": "144:12:149",
-                        "scope": 34928,
+                        "scope": 35034,
                         "visibility": "public"
                     },
                     {
-                        "id": 34716,
+                        "id": 34822,
                         "nodeType": "VariableDeclaration",
                         "src": "220:36:149",
                         "nodes": [],
@@ -458,7 +458,7 @@ export const StdInvariant = {
                         "mutability": "mutable",
                         "name": "_excludedContracts",
                         "nameLocation": "238:18:149",
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -467,7 +467,7 @@ export const StdInvariant = {
                         },
                         "typeName": {
                             "baseType": {
-                                "id": 34714,
+                                "id": 34820,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "220:7:149",
@@ -477,7 +477,7 @@ export const StdInvariant = {
                                     "typeString": "address"
                                 }
                             },
-                            "id": 34715,
+                            "id": 34821,
                             "nodeType": "ArrayTypeName",
                             "src": "220:9:149",
                             "typeDescriptions": {
@@ -488,7 +488,7 @@ export const StdInvariant = {
                         "visibility": "private"
                     },
                     {
-                        "id": 34719,
+                        "id": 34825,
                         "nodeType": "VariableDeclaration",
                         "src": "262:34:149",
                         "nodes": [],
@@ -496,7 +496,7 @@ export const StdInvariant = {
                         "mutability": "mutable",
                         "name": "_excludedSenders",
                         "nameLocation": "280:16:149",
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -505,7 +505,7 @@ export const StdInvariant = {
                         },
                         "typeName": {
                             "baseType": {
-                                "id": 34717,
+                                "id": 34823,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "262:7:149",
@@ -515,7 +515,7 @@ export const StdInvariant = {
                                     "typeString": "address"
                                 }
                             },
-                            "id": 34718,
+                            "id": 34824,
                             "nodeType": "ArrayTypeName",
                             "src": "262:9:149",
                             "typeDescriptions": {
@@ -526,7 +526,7 @@ export const StdInvariant = {
                         "visibility": "private"
                     },
                     {
-                        "id": 34722,
+                        "id": 34828,
                         "nodeType": "VariableDeclaration",
                         "src": "302:36:149",
                         "nodes": [],
@@ -534,7 +534,7 @@ export const StdInvariant = {
                         "mutability": "mutable",
                         "name": "_targetedContracts",
                         "nameLocation": "320:18:149",
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -543,7 +543,7 @@ export const StdInvariant = {
                         },
                         "typeName": {
                             "baseType": {
-                                "id": 34720,
+                                "id": 34826,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "302:7:149",
@@ -553,7 +553,7 @@ export const StdInvariant = {
                                     "typeString": "address"
                                 }
                             },
-                            "id": 34721,
+                            "id": 34827,
                             "nodeType": "ArrayTypeName",
                             "src": "302:9:149",
                             "typeDescriptions": {
@@ -564,7 +564,7 @@ export const StdInvariant = {
                         "visibility": "private"
                     },
                     {
-                        "id": 34725,
+                        "id": 34831,
                         "nodeType": "VariableDeclaration",
                         "src": "344:34:149",
                         "nodes": [],
@@ -572,7 +572,7 @@ export const StdInvariant = {
                         "mutability": "mutable",
                         "name": "_targetedSenders",
                         "nameLocation": "362:16:149",
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -581,7 +581,7 @@ export const StdInvariant = {
                         },
                         "typeName": {
                             "baseType": {
-                                "id": 34723,
+                                "id": 34829,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "344:7:149",
@@ -591,7 +591,7 @@ export const StdInvariant = {
                                     "typeString": "address"
                                 }
                             },
-                            "id": 34724,
+                            "id": 34830,
                             "nodeType": "ArrayTypeName",
                             "src": "344:9:149",
                             "typeDescriptions": {
@@ -602,7 +602,7 @@ export const StdInvariant = {
                         "visibility": "private"
                     },
                     {
-                        "id": 34728,
+                        "id": 34834,
                         "nodeType": "VariableDeclaration",
                         "src": "385:35:149",
                         "nodes": [],
@@ -610,7 +610,7 @@ export const StdInvariant = {
                         "mutability": "mutable",
                         "name": "_excludedArtifacts",
                         "nameLocation": "402:18:149",
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -619,7 +619,7 @@ export const StdInvariant = {
                         },
                         "typeName": {
                             "baseType": {
-                                "id": 34726,
+                                "id": 34832,
                                 "name": "string",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "385:6:149",
@@ -628,7 +628,7 @@ export const StdInvariant = {
                                     "typeString": "string"
                                 }
                             },
-                            "id": 34727,
+                            "id": 34833,
                             "nodeType": "ArrayTypeName",
                             "src": "385:8:149",
                             "typeDescriptions": {
@@ -639,7 +639,7 @@ export const StdInvariant = {
                         "visibility": "private"
                     },
                     {
-                        "id": 34731,
+                        "id": 34837,
                         "nodeType": "VariableDeclaration",
                         "src": "426:35:149",
                         "nodes": [],
@@ -647,7 +647,7 @@ export const StdInvariant = {
                         "mutability": "mutable",
                         "name": "_targetedArtifacts",
                         "nameLocation": "443:18:149",
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -656,7 +656,7 @@ export const StdInvariant = {
                         },
                         "typeName": {
                             "baseType": {
-                                "id": 34729,
+                                "id": 34835,
                                 "name": "string",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "426:6:149",
@@ -665,7 +665,7 @@ export const StdInvariant = {
                                     "typeString": "string"
                                 }
                             },
-                            "id": 34730,
+                            "id": 34836,
                             "nodeType": "ArrayTypeName",
                             "src": "426:8:149",
                             "typeDescriptions": {
@@ -676,7 +676,7 @@ export const StdInvariant = {
                         "visibility": "private"
                     },
                     {
-                        "id": 34735,
+                        "id": 34841,
                         "nodeType": "VariableDeclaration",
                         "src": "468:49:149",
                         "nodes": [],
@@ -684,46 +684,46 @@ export const StdInvariant = {
                         "mutability": "mutable",
                         "name": "_targetedArtifactSelectors",
                         "nameLocation": "491:26:149",
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage",
                             "typeString": "struct StdInvariant.FuzzSelector[]"
                         },
                         "typeName": {
                             "baseType": {
-                                "id": 34733,
+                                "id": 34839,
                                 "nodeType": "UserDefinedTypeName",
                                 "pathNode": {
-                                    "id": 34732,
+                                    "id": 34838,
                                     "name": "FuzzSelector",
                                     "nameLocations": [
                                         "468:12:149"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 34713,
+                                    "referencedDeclaration": 34819,
                                     "src": "468:12:149"
                                 },
-                                "referencedDeclaration": 34713,
+                                "referencedDeclaration": 34819,
                                 "src": "468:12:149",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_FuzzSelector_$34713_storage_ptr",
+                                    "typeIdentifier": "t_struct$_FuzzSelector_$34819_storage_ptr",
                                     "typeString": "struct StdInvariant.FuzzSelector"
                                 }
                             },
-                            "id": 34734,
+                            "id": 34840,
                             "nodeType": "ArrayTypeName",
                             "src": "468:14:149",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage_ptr",
                                 "typeString": "struct StdInvariant.FuzzSelector[]"
                             }
                         },
                         "visibility": "private"
                     },
                     {
-                        "id": 34739,
+                        "id": 34845,
                         "nodeType": "VariableDeclaration",
                         "src": "523:41:149",
                         "nodes": [],
@@ -731,51 +731,51 @@ export const StdInvariant = {
                         "mutability": "mutable",
                         "name": "_targetedSelectors",
                         "nameLocation": "546:18:149",
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage",
+                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage",
                             "typeString": "struct StdInvariant.FuzzSelector[]"
                         },
                         "typeName": {
                             "baseType": {
-                                "id": 34737,
+                                "id": 34843,
                                 "nodeType": "UserDefinedTypeName",
                                 "pathNode": {
-                                    "id": 34736,
+                                    "id": 34842,
                                     "name": "FuzzSelector",
                                     "nameLocations": [
                                         "523:12:149"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 34713,
+                                    "referencedDeclaration": 34819,
                                     "src": "523:12:149"
                                 },
-                                "referencedDeclaration": 34713,
+                                "referencedDeclaration": 34819,
                                 "src": "523:12:149",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_FuzzSelector_$34713_storage_ptr",
+                                    "typeIdentifier": "t_struct$_FuzzSelector_$34819_storage_ptr",
                                     "typeString": "struct StdInvariant.FuzzSelector"
                                 }
                             },
-                            "id": 34738,
+                            "id": 34844,
                             "nodeType": "ArrayTypeName",
                             "src": "523:14:149",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage_ptr",
+                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage_ptr",
                                 "typeString": "struct StdInvariant.FuzzSelector[]"
                             }
                         },
                         "visibility": "private"
                     },
                     {
-                        "id": 34751,
+                        "id": 34857,
                         "nodeType": "FunctionDefinition",
                         "src": "649:126:149",
                         "nodes": [],
                         "body": {
-                            "id": 34750,
+                            "id": 34856,
                             "nodeType": "Block",
                             "src": "713:62:149",
                             "nodes": [],
@@ -784,11 +784,11 @@ export const StdInvariant = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34747,
+                                                "id": 34853,
                                                 "name": "newExcludedContract_",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34741,
+                                                "referencedDeclaration": 34847,
                                                 "src": "747:20:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -804,18 +804,18 @@ export const StdInvariant = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34744,
+                                                "id": 34850,
                                                 "name": "_excludedContracts",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34716,
+                                                "referencedDeclaration": 34822,
                                                 "src": "723:18:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_address_$dyn_storage",
                                                     "typeString": "address[] storage ref"
                                                 }
                                             },
-                                            "id": 34746,
+                                            "id": 34852,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -829,7 +829,7 @@ export const StdInvariant = {
                                                 "typeString": "function (address[] storage pointer,address)"
                                             }
                                         },
-                                        "id": 34748,
+                                        "id": 34854,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -845,7 +845,7 @@ export const StdInvariant = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 34749,
+                                    "id": 34855,
                                     "nodeType": "ExpressionStatement",
                                     "src": "723:45:149"
                                 }
@@ -857,17 +857,17 @@ export const StdInvariant = {
                         "name": "excludeContract",
                         "nameLocation": "658:15:149",
                         "parameters": {
-                            "id": 34742,
+                            "id": 34848,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34741,
+                                    "id": 34847,
                                     "mutability": "mutable",
                                     "name": "newExcludedContract_",
                                     "nameLocation": "682:20:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34751,
+                                    "scope": 34857,
                                     "src": "674:28:149",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -876,7 +876,7 @@ export const StdInvariant = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 34740,
+                                        "id": 34846,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "674:7:149",
@@ -892,23 +892,23 @@ export const StdInvariant = {
                             "src": "673:30:149"
                         },
                         "returnParameters": {
-                            "id": 34743,
+                            "id": 34849,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "713:0:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34763,
+                        "id": 34869,
                         "nodeType": "FunctionDefinition",
                         "src": "781:118:149",
                         "nodes": [],
                         "body": {
-                            "id": 34762,
+                            "id": 34868,
                             "nodeType": "Block",
                             "src": "841:58:149",
                             "nodes": [],
@@ -917,11 +917,11 @@ export const StdInvariant = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34759,
+                                                "id": 34865,
                                                 "name": "newExcludedSender_",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34753,
+                                                "referencedDeclaration": 34859,
                                                 "src": "873:18:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -937,18 +937,18 @@ export const StdInvariant = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34756,
+                                                "id": 34862,
                                                 "name": "_excludedSenders",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34719,
+                                                "referencedDeclaration": 34825,
                                                 "src": "851:16:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_address_$dyn_storage",
                                                     "typeString": "address[] storage ref"
                                                 }
                                             },
-                                            "id": 34758,
+                                            "id": 34864,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -962,7 +962,7 @@ export const StdInvariant = {
                                                 "typeString": "function (address[] storage pointer,address)"
                                             }
                                         },
-                                        "id": 34760,
+                                        "id": 34866,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -978,7 +978,7 @@ export const StdInvariant = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 34761,
+                                    "id": 34867,
                                     "nodeType": "ExpressionStatement",
                                     "src": "851:41:149"
                                 }
@@ -990,17 +990,17 @@ export const StdInvariant = {
                         "name": "excludeSender",
                         "nameLocation": "790:13:149",
                         "parameters": {
-                            "id": 34754,
+                            "id": 34860,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34753,
+                                    "id": 34859,
                                     "mutability": "mutable",
                                     "name": "newExcludedSender_",
                                     "nameLocation": "812:18:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34763,
+                                    "scope": 34869,
                                     "src": "804:26:149",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1009,7 +1009,7 @@ export const StdInvariant = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 34752,
+                                        "id": 34858,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "804:7:149",
@@ -1025,23 +1025,23 @@ export const StdInvariant = {
                             "src": "803:28:149"
                         },
                         "returnParameters": {
-                            "id": 34755,
+                            "id": 34861,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "841:0:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34775,
+                        "id": 34881,
                         "nodeType": "FunctionDefinition",
                         "src": "905:132:149",
                         "nodes": [],
                         "body": {
-                            "id": 34774,
+                            "id": 34880,
                             "nodeType": "Block",
                             "src": "975:62:149",
                             "nodes": [],
@@ -1050,11 +1050,11 @@ export const StdInvariant = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34771,
+                                                "id": 34877,
                                                 "name": "newExcludedArtifact_",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34765,
+                                                "referencedDeclaration": 34871,
                                                 "src": "1009:20:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1070,18 +1070,18 @@ export const StdInvariant = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34768,
+                                                "id": 34874,
                                                 "name": "_excludedArtifacts",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34728,
+                                                "referencedDeclaration": 34834,
                                                 "src": "985:18:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                                                     "typeString": "string storage ref[] storage ref"
                                                 }
                                             },
-                                            "id": 34770,
+                                            "id": 34876,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1095,7 +1095,7 @@ export const StdInvariant = {
                                                 "typeString": "function (string storage ref[] storage pointer,string storage ref)"
                                             }
                                         },
-                                        "id": 34772,
+                                        "id": 34878,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1111,7 +1111,7 @@ export const StdInvariant = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 34773,
+                                    "id": 34879,
                                     "nodeType": "ExpressionStatement",
                                     "src": "985:45:149"
                                 }
@@ -1123,17 +1123,17 @@ export const StdInvariant = {
                         "name": "excludeArtifact",
                         "nameLocation": "914:15:149",
                         "parameters": {
-                            "id": 34766,
+                            "id": 34872,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34765,
+                                    "id": 34871,
                                     "mutability": "mutable",
                                     "name": "newExcludedArtifact_",
                                     "nameLocation": "944:20:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34775,
+                                    "scope": 34881,
                                     "src": "930:34:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1142,7 +1142,7 @@ export const StdInvariant = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34764,
+                                        "id": 34870,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "930:6:149",
@@ -1157,23 +1157,23 @@ export const StdInvariant = {
                             "src": "929:36:149"
                         },
                         "returnParameters": {
-                            "id": 34767,
+                            "id": 34873,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "975:0:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34787,
+                        "id": 34893,
                         "nodeType": "FunctionDefinition",
                         "src": "1043:131:149",
                         "nodes": [],
                         "body": {
-                            "id": 34786,
+                            "id": 34892,
                             "nodeType": "Block",
                             "src": "1112:62:149",
                             "nodes": [],
@@ -1182,11 +1182,11 @@ export const StdInvariant = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34783,
+                                                "id": 34889,
                                                 "name": "newTargetedArtifact_",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34777,
+                                                "referencedDeclaration": 34883,
                                                 "src": "1146:20:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1202,18 +1202,18 @@ export const StdInvariant = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34780,
+                                                "id": 34886,
                                                 "name": "_targetedArtifacts",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34731,
+                                                "referencedDeclaration": 34837,
                                                 "src": "1122:18:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
                                                     "typeString": "string storage ref[] storage ref"
                                                 }
                                             },
-                                            "id": 34782,
+                                            "id": 34888,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1227,7 +1227,7 @@ export const StdInvariant = {
                                                 "typeString": "function (string storage ref[] storage pointer,string storage ref)"
                                             }
                                         },
-                                        "id": 34784,
+                                        "id": 34890,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1243,7 +1243,7 @@ export const StdInvariant = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 34785,
+                                    "id": 34891,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1122:45:149"
                                 }
@@ -1255,17 +1255,17 @@ export const StdInvariant = {
                         "name": "targetArtifact",
                         "nameLocation": "1052:14:149",
                         "parameters": {
-                            "id": 34778,
+                            "id": 34884,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34777,
+                                    "id": 34883,
                                     "mutability": "mutable",
                                     "name": "newTargetedArtifact_",
                                     "nameLocation": "1081:20:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34787,
+                                    "scope": 34893,
                                     "src": "1067:34:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1274,7 +1274,7 @@ export const StdInvariant = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 34776,
+                                        "id": 34882,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1067:6:149",
@@ -1289,23 +1289,23 @@ export const StdInvariant = {
                             "src": "1066:36:149"
                         },
                         "returnParameters": {
-                            "id": 34779,
+                            "id": 34885,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1112:0:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34800,
+                        "id": 34906,
                         "nodeType": "FunctionDefinition",
                         "src": "1180:169:149",
                         "nodes": [],
                         "body": {
-                            "id": 34799,
+                            "id": 34905,
                             "nodeType": "Block",
                             "src": "1271:78:149",
                             "nodes": [],
@@ -1314,14 +1314,14 @@ export const StdInvariant = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34796,
+                                                "id": 34902,
                                                 "name": "newTargetedArtifactSelector_",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34790,
+                                                "referencedDeclaration": 34896,
                                                 "src": "1313:28:149",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_FuzzSelector_$34713_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_FuzzSelector_$34819_memory_ptr",
                                                     "typeString": "struct StdInvariant.FuzzSelector memory"
                                                 }
                                             }
@@ -1329,23 +1329,23 @@ export const StdInvariant = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_FuzzSelector_$34713_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_FuzzSelector_$34819_memory_ptr",
                                                     "typeString": "struct StdInvariant.FuzzSelector memory"
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34793,
+                                                "id": 34899,
                                                 "name": "_targetedArtifactSelectors",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34735,
+                                                "referencedDeclaration": 34841,
                                                 "src": "1281:26:149",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage",
+                                                    "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage",
                                                     "typeString": "struct StdInvariant.FuzzSelector storage ref[] storage ref"
                                                 }
                                             },
-                                            "id": 34795,
+                                            "id": 34901,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1355,11 +1355,11 @@ export const StdInvariant = {
                                             "nodeType": "MemberAccess",
                                             "src": "1281:31:149",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$34713_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage_ptr_$",
+                                                "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$34819_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage_ptr_$",
                                                 "typeString": "function (struct StdInvariant.FuzzSelector storage ref[] storage pointer,struct StdInvariant.FuzzSelector storage ref)"
                                             }
                                         },
-                                        "id": 34797,
+                                        "id": 34903,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1375,7 +1375,7 @@ export const StdInvariant = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 34798,
+                                    "id": 34904,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1281:61:149"
                                 }
@@ -1387,41 +1387,41 @@ export const StdInvariant = {
                         "name": "targetArtifactSelector",
                         "nameLocation": "1189:22:149",
                         "parameters": {
-                            "id": 34791,
+                            "id": 34897,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34790,
+                                    "id": 34896,
                                     "mutability": "mutable",
                                     "name": "newTargetedArtifactSelector_",
                                     "nameLocation": "1232:28:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34800,
+                                    "scope": 34906,
                                     "src": "1212:48:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_FuzzSelector_$34713_memory_ptr",
+                                        "typeIdentifier": "t_struct$_FuzzSelector_$34819_memory_ptr",
                                         "typeString": "struct StdInvariant.FuzzSelector"
                                     },
                                     "typeName": {
-                                        "id": 34789,
+                                        "id": 34895,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 34788,
+                                            "id": 34894,
                                             "name": "FuzzSelector",
                                             "nameLocations": [
                                                 "1212:12:149"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 34713,
+                                            "referencedDeclaration": 34819,
                                             "src": "1212:12:149"
                                         },
-                                        "referencedDeclaration": 34713,
+                                        "referencedDeclaration": 34819,
                                         "src": "1212:12:149",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_FuzzSelector_$34713_storage_ptr",
+                                            "typeIdentifier": "t_struct$_FuzzSelector_$34819_storage_ptr",
                                             "typeString": "struct StdInvariant.FuzzSelector"
                                         }
                                     },
@@ -1431,23 +1431,23 @@ export const StdInvariant = {
                             "src": "1211:50:149"
                         },
                         "returnParameters": {
-                            "id": 34792,
+                            "id": 34898,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1271:0:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34812,
+                        "id": 34918,
                         "nodeType": "FunctionDefinition",
                         "src": "1355:125:149",
                         "nodes": [],
                         "body": {
-                            "id": 34811,
+                            "id": 34917,
                             "nodeType": "Block",
                             "src": "1418:62:149",
                             "nodes": [],
@@ -1456,11 +1456,11 @@ export const StdInvariant = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34808,
+                                                "id": 34914,
                                                 "name": "newTargetedContract_",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34802,
+                                                "referencedDeclaration": 34908,
                                                 "src": "1452:20:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -1476,18 +1476,18 @@ export const StdInvariant = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34805,
+                                                "id": 34911,
                                                 "name": "_targetedContracts",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34722,
+                                                "referencedDeclaration": 34828,
                                                 "src": "1428:18:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_address_$dyn_storage",
                                                     "typeString": "address[] storage ref"
                                                 }
                                             },
-                                            "id": 34807,
+                                            "id": 34913,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1501,7 +1501,7 @@ export const StdInvariant = {
                                                 "typeString": "function (address[] storage pointer,address)"
                                             }
                                         },
-                                        "id": 34809,
+                                        "id": 34915,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1517,7 +1517,7 @@ export const StdInvariant = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 34810,
+                                    "id": 34916,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1428:45:149"
                                 }
@@ -1529,17 +1529,17 @@ export const StdInvariant = {
                         "name": "targetContract",
                         "nameLocation": "1364:14:149",
                         "parameters": {
-                            "id": 34803,
+                            "id": 34909,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34802,
+                                    "id": 34908,
                                     "mutability": "mutable",
                                     "name": "newTargetedContract_",
                                     "nameLocation": "1387:20:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34812,
+                                    "scope": 34918,
                                     "src": "1379:28:149",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1548,7 +1548,7 @@ export const StdInvariant = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 34801,
+                                        "id": 34907,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1379:7:149",
@@ -1564,23 +1564,23 @@ export const StdInvariant = {
                             "src": "1378:30:149"
                         },
                         "returnParameters": {
-                            "id": 34804,
+                            "id": 34910,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1418:0:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34825,
+                        "id": 34931,
                         "nodeType": "FunctionDefinition",
                         "src": "1486:137:149",
                         "nodes": [],
                         "body": {
-                            "id": 34824,
+                            "id": 34930,
                             "nodeType": "Block",
                             "src": "1561:62:149",
                             "nodes": [],
@@ -1589,14 +1589,14 @@ export const StdInvariant = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34821,
+                                                "id": 34927,
                                                 "name": "newTargetedSelector_",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34815,
+                                                "referencedDeclaration": 34921,
                                                 "src": "1595:20:149",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_FuzzSelector_$34713_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_FuzzSelector_$34819_memory_ptr",
                                                     "typeString": "struct StdInvariant.FuzzSelector memory"
                                                 }
                                             }
@@ -1604,23 +1604,23 @@ export const StdInvariant = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_struct$_FuzzSelector_$34713_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_FuzzSelector_$34819_memory_ptr",
                                                     "typeString": "struct StdInvariant.FuzzSelector memory"
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34818,
+                                                "id": 34924,
                                                 "name": "_targetedSelectors",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34739,
+                                                "referencedDeclaration": 34845,
                                                 "src": "1571:18:149",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage",
+                                                    "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage",
                                                     "typeString": "struct StdInvariant.FuzzSelector storage ref[] storage ref"
                                                 }
                                             },
-                                            "id": 34820,
+                                            "id": 34926,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1630,11 +1630,11 @@ export const StdInvariant = {
                                             "nodeType": "MemberAccess",
                                             "src": "1571:23:149",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$34713_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage_ptr_$",
+                                                "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage_ptr_$_t_struct$_FuzzSelector_$34819_storage_$returns$__$attached_to$_t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage_ptr_$",
                                                 "typeString": "function (struct StdInvariant.FuzzSelector storage ref[] storage pointer,struct StdInvariant.FuzzSelector storage ref)"
                                             }
                                         },
-                                        "id": 34822,
+                                        "id": 34928,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1650,7 +1650,7 @@ export const StdInvariant = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 34823,
+                                    "id": 34929,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1571:45:149"
                                 }
@@ -1662,41 +1662,41 @@ export const StdInvariant = {
                         "name": "targetSelector",
                         "nameLocation": "1495:14:149",
                         "parameters": {
-                            "id": 34816,
+                            "id": 34922,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34815,
+                                    "id": 34921,
                                     "mutability": "mutable",
                                     "name": "newTargetedSelector_",
                                     "nameLocation": "1530:20:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34825,
+                                    "scope": 34931,
                                     "src": "1510:40:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_FuzzSelector_$34713_memory_ptr",
+                                        "typeIdentifier": "t_struct$_FuzzSelector_$34819_memory_ptr",
                                         "typeString": "struct StdInvariant.FuzzSelector"
                                     },
                                     "typeName": {
-                                        "id": 34814,
+                                        "id": 34920,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 34813,
+                                            "id": 34919,
                                             "name": "FuzzSelector",
                                             "nameLocations": [
                                                 "1510:12:149"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 34713,
+                                            "referencedDeclaration": 34819,
                                             "src": "1510:12:149"
                                         },
-                                        "referencedDeclaration": 34713,
+                                        "referencedDeclaration": 34819,
                                         "src": "1510:12:149",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_FuzzSelector_$34713_storage_ptr",
+                                            "typeIdentifier": "t_struct$_FuzzSelector_$34819_storage_ptr",
                                             "typeString": "struct StdInvariant.FuzzSelector"
                                         }
                                     },
@@ -1706,23 +1706,23 @@ export const StdInvariant = {
                             "src": "1509:42:149"
                         },
                         "returnParameters": {
-                            "id": 34817,
+                            "id": 34923,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1561:0:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34837,
+                        "id": 34943,
                         "nodeType": "FunctionDefinition",
                         "src": "1629:117:149",
                         "nodes": [],
                         "body": {
-                            "id": 34836,
+                            "id": 34942,
                             "nodeType": "Block",
                             "src": "1688:58:149",
                             "nodes": [],
@@ -1731,11 +1731,11 @@ export const StdInvariant = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 34833,
+                                                "id": 34939,
                                                 "name": "newTargetedSender_",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34827,
+                                                "referencedDeclaration": 34933,
                                                 "src": "1720:18:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -1751,18 +1751,18 @@ export const StdInvariant = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 34830,
+                                                "id": 34936,
                                                 "name": "_targetedSenders",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 34725,
+                                                "referencedDeclaration": 34831,
                                                 "src": "1698:16:149",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_address_$dyn_storage",
                                                     "typeString": "address[] storage ref"
                                                 }
                                             },
-                                            "id": 34832,
+                                            "id": 34938,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1776,7 +1776,7 @@ export const StdInvariant = {
                                                 "typeString": "function (address[] storage pointer,address)"
                                             }
                                         },
-                                        "id": 34834,
+                                        "id": 34940,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1792,7 +1792,7 @@ export const StdInvariant = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 34835,
+                                    "id": 34941,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1698:41:149"
                                 }
@@ -1804,17 +1804,17 @@ export const StdInvariant = {
                         "name": "targetSender",
                         "nameLocation": "1638:12:149",
                         "parameters": {
-                            "id": 34828,
+                            "id": 34934,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34827,
+                                    "id": 34933,
                                     "mutability": "mutable",
                                     "name": "newTargetedSender_",
                                     "nameLocation": "1659:18:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34837,
+                                    "scope": 34943,
                                     "src": "1651:26:149",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1823,7 +1823,7 @@ export const StdInvariant = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 34826,
+                                        "id": 34932,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1651:7:149",
@@ -1839,40 +1839,40 @@ export const StdInvariant = {
                             "src": "1650:28:149"
                         },
                         "returnParameters": {
-                            "id": 34829,
+                            "id": 34935,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1688:0:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 34848,
+                        "id": 34954,
                         "nodeType": "FunctionDefinition",
                         "src": "1875:141:149",
                         "nodes": [],
                         "body": {
-                            "id": 34847,
+                            "id": 34953,
                             "nodeType": "Block",
                             "src": "1960:56:149",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 34845,
+                                        "id": 34951,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 34843,
+                                            "id": 34949,
                                             "name": "excludedArtifacts_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34841,
+                                            "referencedDeclaration": 34947,
                                             "src": "1970:18:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
@@ -1882,11 +1882,11 @@ export const StdInvariant = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 34844,
+                                            "id": 34950,
                                             "name": "_excludedArtifacts",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34728,
+                                            "referencedDeclaration": 34834,
                                             "src": "1991:18:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
@@ -1899,7 +1899,7 @@ export const StdInvariant = {
                                             "typeString": "string memory[] memory"
                                         }
                                     },
-                                    "id": 34846,
+                                    "id": 34952,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1970:39:149"
                                 }
@@ -1912,23 +1912,23 @@ export const StdInvariant = {
                         "name": "excludeArtifacts",
                         "nameLocation": "1884:16:149",
                         "parameters": {
-                            "id": 34838,
+                            "id": 34944,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1900:2:149"
                         },
                         "returnParameters": {
-                            "id": 34842,
+                            "id": 34948,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34841,
+                                    "id": 34947,
                                     "mutability": "mutable",
                                     "name": "excludedArtifacts_",
                                     "nameLocation": "1940:18:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34848,
+                                    "scope": 34954,
                                     "src": "1924:34:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1938,7 +1938,7 @@ export const StdInvariant = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34839,
+                                            "id": 34945,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "1924:6:149",
@@ -1947,7 +1947,7 @@ export const StdInvariant = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 34840,
+                                        "id": 34946,
                                         "nodeType": "ArrayTypeName",
                                         "src": "1924:8:149",
                                         "typeDescriptions": {
@@ -1960,35 +1960,35 @@ export const StdInvariant = {
                             ],
                             "src": "1923:36:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 34859,
+                        "id": 34965,
                         "nodeType": "FunctionDefinition",
                         "src": "2022:142:149",
                         "nodes": [],
                         "body": {
-                            "id": 34858,
+                            "id": 34964,
                             "nodeType": "Block",
                             "src": "2108:56:149",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 34856,
+                                        "id": 34962,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 34854,
+                                            "id": 34960,
                                             "name": "excludedContracts_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34852,
+                                            "referencedDeclaration": 34958,
                                             "src": "2118:18:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
@@ -1998,11 +1998,11 @@ export const StdInvariant = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 34855,
+                                            "id": 34961,
                                             "name": "_excludedContracts",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34716,
+                                            "referencedDeclaration": 34822,
                                             "src": "2139:18:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_address_$dyn_storage",
@@ -2015,7 +2015,7 @@ export const StdInvariant = {
                                             "typeString": "address[] memory"
                                         }
                                     },
-                                    "id": 34857,
+                                    "id": 34963,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2118:39:149"
                                 }
@@ -2028,23 +2028,23 @@ export const StdInvariant = {
                         "name": "excludeContracts",
                         "nameLocation": "2031:16:149",
                         "parameters": {
-                            "id": 34849,
+                            "id": 34955,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2047:2:149"
                         },
                         "returnParameters": {
-                            "id": 34853,
+                            "id": 34959,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34852,
+                                    "id": 34958,
                                     "mutability": "mutable",
                                     "name": "excludedContracts_",
                                     "nameLocation": "2088:18:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34859,
+                                    "scope": 34965,
                                     "src": "2071:35:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2054,7 +2054,7 @@ export const StdInvariant = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34850,
+                                            "id": 34956,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2071:7:149",
@@ -2064,7 +2064,7 @@ export const StdInvariant = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 34851,
+                                        "id": 34957,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2071:9:149",
                                         "typeDescriptions": {
@@ -2077,35 +2077,35 @@ export const StdInvariant = {
                             ],
                             "src": "2070:37:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 34870,
+                        "id": 34976,
                         "nodeType": "FunctionDefinition",
                         "src": "2170:134:149",
                         "nodes": [],
                         "body": {
-                            "id": 34869,
+                            "id": 34975,
                             "nodeType": "Block",
                             "src": "2252:52:149",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 34867,
+                                        "id": 34973,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 34865,
+                                            "id": 34971,
                                             "name": "excludedSenders_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34863,
+                                            "referencedDeclaration": 34969,
                                             "src": "2262:16:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
@@ -2115,11 +2115,11 @@ export const StdInvariant = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 34866,
+                                            "id": 34972,
                                             "name": "_excludedSenders",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34719,
+                                            "referencedDeclaration": 34825,
                                             "src": "2281:16:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_address_$dyn_storage",
@@ -2132,7 +2132,7 @@ export const StdInvariant = {
                                             "typeString": "address[] memory"
                                         }
                                     },
-                                    "id": 34868,
+                                    "id": 34974,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2262:35:149"
                                 }
@@ -2145,23 +2145,23 @@ export const StdInvariant = {
                         "name": "excludeSenders",
                         "nameLocation": "2179:14:149",
                         "parameters": {
-                            "id": 34860,
+                            "id": 34966,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2193:2:149"
                         },
                         "returnParameters": {
-                            "id": 34864,
+                            "id": 34970,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34863,
+                                    "id": 34969,
                                     "mutability": "mutable",
                                     "name": "excludedSenders_",
                                     "nameLocation": "2234:16:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34870,
+                                    "scope": 34976,
                                     "src": "2217:33:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2171,7 +2171,7 @@ export const StdInvariant = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34861,
+                                            "id": 34967,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2217:7:149",
@@ -2181,7 +2181,7 @@ export const StdInvariant = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 34862,
+                                        "id": 34968,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2217:9:149",
                                         "typeDescriptions": {
@@ -2194,35 +2194,35 @@ export const StdInvariant = {
                             ],
                             "src": "2216:35:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 34881,
+                        "id": 34987,
                         "nodeType": "FunctionDefinition",
                         "src": "2310:140:149",
                         "nodes": [],
                         "body": {
-                            "id": 34880,
+                            "id": 34986,
                             "nodeType": "Block",
                             "src": "2394:56:149",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 34878,
+                                        "id": 34984,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 34876,
+                                            "id": 34982,
                                             "name": "targetedArtifacts_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34874,
+                                            "referencedDeclaration": 34980,
                                             "src": "2404:18:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_string_memory_ptr_$dyn_memory_ptr",
@@ -2232,11 +2232,11 @@ export const StdInvariant = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 34877,
+                                            "id": 34983,
                                             "name": "_targetedArtifacts",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34731,
+                                            "referencedDeclaration": 34837,
                                             "src": "2425:18:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_string_storage_$dyn_storage",
@@ -2249,7 +2249,7 @@ export const StdInvariant = {
                                             "typeString": "string memory[] memory"
                                         }
                                     },
-                                    "id": 34879,
+                                    "id": 34985,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2404:39:149"
                                 }
@@ -2262,23 +2262,23 @@ export const StdInvariant = {
                         "name": "targetArtifacts",
                         "nameLocation": "2319:15:149",
                         "parameters": {
-                            "id": 34871,
+                            "id": 34977,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2334:2:149"
                         },
                         "returnParameters": {
-                            "id": 34875,
+                            "id": 34981,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34874,
+                                    "id": 34980,
                                     "mutability": "mutable",
                                     "name": "targetedArtifacts_",
                                     "nameLocation": "2374:18:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34881,
+                                    "scope": 34987,
                                     "src": "2358:34:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2288,7 +2288,7 @@ export const StdInvariant = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34872,
+                                            "id": 34978,
                                             "name": "string",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2358:6:149",
@@ -2297,7 +2297,7 @@ export const StdInvariant = {
                                                 "typeString": "string"
                                             }
                                         },
-                                        "id": 34873,
+                                        "id": 34979,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2358:8:149",
                                         "typeDescriptions": {
@@ -2310,62 +2310,62 @@ export const StdInvariant = {
                             ],
                             "src": "2357:36:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 34893,
+                        "id": 34999,
                         "nodeType": "FunctionDefinition",
                         "src": "2456:178:149",
                         "nodes": [],
                         "body": {
-                            "id": 34892,
+                            "id": 34998,
                             "nodeType": "Block",
                             "src": "2562:72:149",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 34890,
+                                        "id": 34996,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 34888,
+                                            "id": 34994,
                                             "name": "targetedArtifactSelectors_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34886,
+                                            "referencedDeclaration": 34992,
                                             "src": "2572:26:149",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_memory_ptr_$dyn_memory_ptr",
+                                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_memory_ptr_$dyn_memory_ptr",
                                                 "typeString": "struct StdInvariant.FuzzSelector memory[] memory"
                                             }
                                         },
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 34889,
+                                            "id": 34995,
                                             "name": "_targetedArtifactSelectors",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34735,
+                                            "referencedDeclaration": 34841,
                                             "src": "2601:26:149",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage",
+                                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage",
                                                 "typeString": "struct StdInvariant.FuzzSelector storage ref[] storage ref"
                                             }
                                         },
                                         "src": "2572:55:149",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_memory_ptr_$dyn_memory_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_memory_ptr_$dyn_memory_ptr",
                                             "typeString": "struct StdInvariant.FuzzSelector memory[] memory"
                                         }
                                     },
-                                    "id": 34891,
+                                    "id": 34997,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2572:55:149"
                                 }
@@ -2378,56 +2378,56 @@ export const StdInvariant = {
                         "name": "targetArtifactSelectors",
                         "nameLocation": "2465:23:149",
                         "parameters": {
-                            "id": 34882,
+                            "id": 34988,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2488:2:149"
                         },
                         "returnParameters": {
-                            "id": 34887,
+                            "id": 34993,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34886,
+                                    "id": 34992,
                                     "mutability": "mutable",
                                     "name": "targetedArtifactSelectors_",
                                     "nameLocation": "2534:26:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34893,
+                                    "scope": 34999,
                                     "src": "2512:48:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct StdInvariant.FuzzSelector[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34884,
+                                            "id": 34990,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 34883,
+                                                "id": 34989,
                                                 "name": "FuzzSelector",
                                                 "nameLocations": [
                                                     "2512:12:149"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 34713,
+                                                "referencedDeclaration": 34819,
                                                 "src": "2512:12:149"
                                             },
-                                            "referencedDeclaration": 34713,
+                                            "referencedDeclaration": 34819,
                                             "src": "2512:12:149",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_FuzzSelector_$34713_storage_ptr",
+                                                "typeIdentifier": "t_struct$_FuzzSelector_$34819_storage_ptr",
                                                 "typeString": "struct StdInvariant.FuzzSelector"
                                             }
                                         },
-                                        "id": 34885,
+                                        "id": 34991,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2512:14:149",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage_ptr",
                                             "typeString": "struct StdInvariant.FuzzSelector[]"
                                         }
                                     },
@@ -2436,35 +2436,35 @@ export const StdInvariant = {
                             ],
                             "src": "2511:50:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 34904,
+                        "id": 35010,
                         "nodeType": "FunctionDefinition",
                         "src": "2640:141:149",
                         "nodes": [],
                         "body": {
-                            "id": 34903,
+                            "id": 35009,
                             "nodeType": "Block",
                             "src": "2725:56:149",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 34901,
+                                        "id": 35007,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 34899,
+                                            "id": 35005,
                                             "name": "targetedContracts_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34897,
+                                            "referencedDeclaration": 35003,
                                             "src": "2735:18:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
@@ -2474,11 +2474,11 @@ export const StdInvariant = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 34900,
+                                            "id": 35006,
                                             "name": "_targetedContracts",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34722,
+                                            "referencedDeclaration": 34828,
                                             "src": "2756:18:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_address_$dyn_storage",
@@ -2491,7 +2491,7 @@ export const StdInvariant = {
                                             "typeString": "address[] memory"
                                         }
                                     },
-                                    "id": 34902,
+                                    "id": 35008,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2735:39:149"
                                 }
@@ -2504,23 +2504,23 @@ export const StdInvariant = {
                         "name": "targetContracts",
                         "nameLocation": "2649:15:149",
                         "parameters": {
-                            "id": 34894,
+                            "id": 35000,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2664:2:149"
                         },
                         "returnParameters": {
-                            "id": 34898,
+                            "id": 35004,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34897,
+                                    "id": 35003,
                                     "mutability": "mutable",
                                     "name": "targetedContracts_",
                                     "nameLocation": "2705:18:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34904,
+                                    "scope": 35010,
                                     "src": "2688:35:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2530,7 +2530,7 @@ export const StdInvariant = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34895,
+                                            "id": 35001,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2688:7:149",
@@ -2540,7 +2540,7 @@ export const StdInvariant = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 34896,
+                                        "id": 35002,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2688:9:149",
                                         "typeDescriptions": {
@@ -2553,62 +2553,62 @@ export const StdInvariant = {
                             ],
                             "src": "2687:37:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 34916,
+                        "id": 35022,
                         "nodeType": "FunctionDefinition",
                         "src": "2787:146:149",
                         "nodes": [],
                         "body": {
-                            "id": 34915,
+                            "id": 35021,
                             "nodeType": "Block",
                             "src": "2877:56:149",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 34913,
+                                        "id": 35019,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 34911,
+                                            "id": 35017,
                                             "name": "targetedSelectors_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34909,
+                                            "referencedDeclaration": 35015,
                                             "src": "2887:18:149",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_memory_ptr_$dyn_memory_ptr",
+                                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_memory_ptr_$dyn_memory_ptr",
                                                 "typeString": "struct StdInvariant.FuzzSelector memory[] memory"
                                             }
                                         },
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 34912,
+                                            "id": 35018,
                                             "name": "_targetedSelectors",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34739,
+                                            "referencedDeclaration": 34845,
                                             "src": "2908:18:149",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage",
+                                                "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage",
                                                 "typeString": "struct StdInvariant.FuzzSelector storage ref[] storage ref"
                                             }
                                         },
                                         "src": "2887:39:149",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_memory_ptr_$dyn_memory_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_memory_ptr_$dyn_memory_ptr",
                                             "typeString": "struct StdInvariant.FuzzSelector memory[] memory"
                                         }
                                     },
-                                    "id": 34914,
+                                    "id": 35020,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2887:39:149"
                                 }
@@ -2621,56 +2621,56 @@ export const StdInvariant = {
                         "name": "targetSelectors",
                         "nameLocation": "2796:15:149",
                         "parameters": {
-                            "id": 34905,
+                            "id": 35011,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2811:2:149"
                         },
                         "returnParameters": {
-                            "id": 34910,
+                            "id": 35016,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34909,
+                                    "id": 35015,
                                     "mutability": "mutable",
                                     "name": "targetedSelectors_",
                                     "nameLocation": "2857:18:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34916,
+                                    "scope": 35022,
                                     "src": "2835:40:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct StdInvariant.FuzzSelector[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34907,
+                                            "id": 35013,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 34906,
+                                                "id": 35012,
                                                 "name": "FuzzSelector",
                                                 "nameLocations": [
                                                     "2835:12:149"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 34713,
+                                                "referencedDeclaration": 34819,
                                                 "src": "2835:12:149"
                                             },
-                                            "referencedDeclaration": 34713,
+                                            "referencedDeclaration": 34819,
                                             "src": "2835:12:149",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_FuzzSelector_$34713_storage_ptr",
+                                                "typeIdentifier": "t_struct$_FuzzSelector_$34819_storage_ptr",
                                                 "typeString": "struct StdInvariant.FuzzSelector"
                                             }
                                         },
-                                        "id": 34908,
+                                        "id": 35014,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2835:14:149",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34713_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_FuzzSelector_$34819_storage_$dyn_storage_ptr",
                                             "typeString": "struct StdInvariant.FuzzSelector[]"
                                         }
                                     },
@@ -2679,35 +2679,35 @@ export const StdInvariant = {
                             ],
                             "src": "2834:42:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 34927,
+                        "id": 35033,
                         "nodeType": "FunctionDefinition",
                         "src": "2939:133:149",
                         "nodes": [],
                         "body": {
-                            "id": 34926,
+                            "id": 35032,
                             "nodeType": "Block",
                             "src": "3020:52:149",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 34924,
+                                        "id": 35030,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 34922,
+                                            "id": 35028,
                                             "name": "targetedSenders_",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34920,
+                                            "referencedDeclaration": 35026,
                                             "src": "3030:16:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
@@ -2717,11 +2717,11 @@ export const StdInvariant = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 34923,
+                                            "id": 35029,
                                             "name": "_targetedSenders",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 34725,
+                                            "referencedDeclaration": 34831,
                                             "src": "3049:16:149",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_array$_t_address_$dyn_storage",
@@ -2734,7 +2734,7 @@ export const StdInvariant = {
                                             "typeString": "address[] memory"
                                         }
                                     },
-                                    "id": 34925,
+                                    "id": 35031,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3030:35:149"
                                 }
@@ -2747,23 +2747,23 @@ export const StdInvariant = {
                         "name": "targetSenders",
                         "nameLocation": "2948:13:149",
                         "parameters": {
-                            "id": 34917,
+                            "id": 35023,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2961:2:149"
                         },
                         "returnParameters": {
-                            "id": 34921,
+                            "id": 35027,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 34920,
+                                    "id": 35026,
                                     "mutability": "mutable",
                                     "name": "targetedSenders_",
                                     "nameLocation": "3002:16:149",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 34927,
+                                    "scope": 35033,
                                     "src": "2985:33:149",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -2773,7 +2773,7 @@ export const StdInvariant = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 34918,
+                                            "id": 35024,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2985:7:149",
@@ -2783,7 +2783,7 @@ export const StdInvariant = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 34919,
+                                        "id": 35025,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2985:9:149",
                                         "typeDescriptions": {
@@ -2796,7 +2796,7 @@ export const StdInvariant = {
                             ],
                             "src": "2984:35:149"
                         },
-                        "scope": 34928,
+                        "scope": 35034,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
@@ -2809,11 +2809,11 @@ export const StdInvariant = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    34928
+                    35034
                 ],
                 "name": "StdInvariant",
                 "nameLocation": "118:12:149",
-                "scope": 34929,
+                "scope": 35035,
                 "usedErrors": [],
                 "usedEvents": []
             }

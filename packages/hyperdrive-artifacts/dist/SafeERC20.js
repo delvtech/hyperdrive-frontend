@@ -156,26 +156,26 @@ export const SafeERC20 = {
     },
     "ast": {
         "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/utils/SafeERC20.sol",
-        "id": 71288,
+        "id": 71394,
         "exportedSymbols": {
             "Address": [
-                71540
+                71646
             ],
             "IERC20": [
-                70935
+                71041
             ],
             "IERC20Permit": [
-                70997
+                71103
             ],
             "SafeERC20": [
-                71287
+                71393
             ]
         },
         "nodeType": "SourceUnit",
         "src": "115:5655:166",
         "nodes": [
             {
-                "id": 70999,
+                "id": 71105,
                 "nodeType": "PragmaDirective",
                 "src": "115:24:166",
                 "nodes": [],
@@ -187,23 +187,23 @@ export const SafeERC20 = {
                 ]
             },
             {
-                "id": 71001,
+                "id": 71107,
                 "nodeType": "ImportDirective",
                 "src": "141:37:166",
                 "nodes": [],
                 "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
                 "file": "../IERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 71288,
-                "sourceUnit": 70936,
+                "scope": 71394,
+                "sourceUnit": 71042,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 71000,
+                            "id": 71106,
                             "name": "IERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 70935,
+                            "referencedDeclaration": 71041,
                             "src": "149:6:166",
                             "typeDescriptions": {}
                         },
@@ -213,23 +213,23 @@ export const SafeERC20 = {
                 "unitAlias": ""
             },
             {
-                "id": 71003,
+                "id": 71109,
                 "nodeType": "ImportDirective",
                 "src": "179:60:166",
                 "nodes": [],
                 "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Permit.sol",
                 "file": "../extensions/IERC20Permit.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 71288,
-                "sourceUnit": 70998,
+                "scope": 71394,
+                "sourceUnit": 71104,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 71002,
+                            "id": 71108,
                             "name": "IERC20Permit",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 70997,
+                            "referencedDeclaration": 71103,
                             "src": "187:12:166",
                             "typeDescriptions": {}
                         },
@@ -239,23 +239,23 @@ export const SafeERC20 = {
                 "unitAlias": ""
             },
             {
-                "id": 71005,
+                "id": 71111,
                 "nodeType": "ImportDirective",
                 "src": "240:51:166",
                 "nodes": [],
                 "absolutePath": "lib/openzeppelin-contracts/contracts/utils/Address.sol",
                 "file": "../../../utils/Address.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 71288,
-                "sourceUnit": 71541,
+                "scope": 71394,
+                "sourceUnit": 71647,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 71004,
+                            "id": 71110,
                             "name": "Address",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71540,
+                            "referencedDeclaration": 71646,
                             "src": "248:7:166",
                             "typeDescriptions": {}
                         },
@@ -265,28 +265,28 @@ export const SafeERC20 = {
                 "unitAlias": ""
             },
             {
-                "id": 71287,
+                "id": 71393,
                 "nodeType": "ContractDefinition",
                 "src": "751:5018:166",
                 "nodes": [
                     {
-                        "id": 71009,
+                        "id": 71115,
                         "nodeType": "UsingForDirective",
                         "src": "775:26:166",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 71007,
+                            "id": 71113,
                             "name": "Address",
                             "nameLocations": [
                                 "781:7:166"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 71540,
+                            "referencedDeclaration": 71646,
                             "src": "781:7:166"
                         },
                         "typeName": {
-                            "id": 71008,
+                            "id": 71114,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "793:7:166",
@@ -298,12 +298,12 @@ export const SafeERC20 = {
                         }
                     },
                     {
-                        "id": 71014,
+                        "id": 71120,
                         "nodeType": "ErrorDefinition",
                         "src": "876:46:166",
                         "nodes": [],
                         "documentation": {
-                            "id": 71010,
+                            "id": 71116,
                             "nodeType": "StructuredDocumentation",
                             "src": "807:64:166",
                             "text": " @dev An operation with an ERC20 token failed."
@@ -312,17 +312,17 @@ export const SafeERC20 = {
                         "name": "SafeERC20FailedOperation",
                         "nameLocation": "882:24:166",
                         "parameters": {
-                            "id": 71013,
+                            "id": 71119,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71012,
+                                    "id": 71118,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "915:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71014,
+                                    "scope": 71120,
                                     "src": "907:13:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -331,7 +331,7 @@ export const SafeERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71011,
+                                        "id": 71117,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "907:7:166",
@@ -348,12 +348,12 @@ export const SafeERC20 = {
                         }
                     },
                     {
-                        "id": 71023,
+                        "id": 71129,
                         "nodeType": "ErrorDefinition",
                         "src": "1004:109:166",
                         "nodes": [],
                         "documentation": {
-                            "id": 71015,
+                            "id": 71121,
                             "nodeType": "StructuredDocumentation",
                             "src": "928:71:166",
                             "text": " @dev Indicates a failed `decreaseAllowance` request."
@@ -362,17 +362,17 @@ export const SafeERC20 = {
                         "name": "SafeERC20FailedDecreaseAllowance",
                         "nameLocation": "1010:32:166",
                         "parameters": {
-                            "id": 71022,
+                            "id": 71128,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71017,
+                                    "id": 71123,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "1051:7:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71023,
+                                    "scope": 71129,
                                     "src": "1043:15:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -381,7 +381,7 @@ export const SafeERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71016,
+                                        "id": 71122,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1043:7:166",
@@ -395,12 +395,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71019,
+                                    "id": 71125,
                                     "mutability": "mutable",
                                     "name": "currentAllowance",
                                     "nameLocation": "1068:16:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71023,
+                                    "scope": 71129,
                                     "src": "1060:24:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -409,7 +409,7 @@ export const SafeERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71018,
+                                        "id": 71124,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1060:7:166",
@@ -422,12 +422,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71021,
+                                    "id": 71127,
                                     "mutability": "mutable",
                                     "name": "requestedDecrease",
                                     "nameLocation": "1094:17:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71023,
+                                    "scope": 71129,
                                     "src": "1086:25:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -436,7 +436,7 @@ export const SafeERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71020,
+                                        "id": 71126,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1086:7:166",
@@ -452,12 +452,12 @@ export const SafeERC20 = {
                         }
                     },
                     {
-                        "id": 71047,
+                        "id": 71153,
                         "nodeType": "FunctionDefinition",
                         "src": "1303:160:166",
                         "nodes": [],
                         "body": {
-                            "id": 71046,
+                            "id": 71152,
                             "nodeType": "Block",
                             "src": "1375:88:166",
                             "nodes": [],
@@ -466,14 +466,14 @@ export const SafeERC20 = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 71035,
+                                                "id": 71141,
                                                 "name": "token",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71027,
+                                                "referencedDeclaration": 71133,
                                                 "src": "1405:5:166",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                    "typeIdentifier": "t_contract$_IERC20_$71041",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
@@ -481,18 +481,18 @@ export const SafeERC20 = {
                                                 "arguments": [
                                                     {
                                                         "expression": {
-                                                            "id": 71038,
+                                                            "id": 71144,
                                                             "name": "token",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71027,
+                                                            "referencedDeclaration": 71133,
                                                             "src": "1427:5:166",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                 "typeString": "contract IERC20"
                                                             }
                                                         },
-                                                        "id": 71039,
+                                                        "id": 71145,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -500,7 +500,7 @@ export const SafeERC20 = {
                                                         "memberLocation": "1433:8:166",
                                                         "memberName": "transfer",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 70902,
+                                                        "referencedDeclaration": 71008,
                                                         "src": "1427:14:166",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -510,11 +510,11 @@ export const SafeERC20 = {
                                                     {
                                                         "components": [
                                                             {
-                                                                "id": 71040,
+                                                                "id": 71146,
                                                                 "name": "to",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71029,
+                                                                "referencedDeclaration": 71135,
                                                                 "src": "1444:2:166",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
@@ -522,11 +522,11 @@ export const SafeERC20 = {
                                                                 }
                                                             },
                                                             {
-                                                                "id": 71041,
+                                                                "id": 71147,
                                                                 "name": "value",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71031,
+                                                                "referencedDeclaration": 71137,
                                                                 "src": "1448:5:166",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -534,7 +534,7 @@ export const SafeERC20 = {
                                                                 }
                                                             }
                                                         ],
-                                                        "id": 71042,
+                                                        "id": 71148,
                                                         "isConstant": false,
                                                         "isInlineArray": false,
                                                         "isLValue": false,
@@ -560,7 +560,7 @@ export const SafeERC20 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 71036,
+                                                        "id": 71142,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -571,7 +571,7 @@ export const SafeERC20 = {
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 71037,
+                                                    "id": 71143,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -585,7 +585,7 @@ export const SafeERC20 = {
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 71043,
+                                                "id": 71149,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -605,7 +605,7 @@ export const SafeERC20 = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                    "typeIdentifier": "t_contract$_IERC20_$71041",
                                                     "typeString": "contract IERC20"
                                                 },
                                                 {
@@ -613,18 +613,18 @@ export const SafeERC20 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 71034,
+                                            "id": 71140,
                                             "name": "_callOptionalReturn",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71237,
+                                            "referencedDeclaration": 71343,
                                             "src": "1385:19:166",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_bytes_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (contract IERC20,bytes memory)"
                                             }
                                         },
-                                        "id": 71044,
+                                        "id": 71150,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -640,14 +640,14 @@ export const SafeERC20 = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 71045,
+                                    "id": 71151,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1385:71:166"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 71024,
+                            "id": 71130,
                             "nodeType": "StructuredDocumentation",
                             "src": "1119:179:166",
                             "text": " @dev Transfer `value` amount of `token` from the calling contract to `to`. If `token` returns no value,\n non-reverting calls are assumed to be successful."
@@ -658,41 +658,41 @@ export const SafeERC20 = {
                         "name": "safeTransfer",
                         "nameLocation": "1312:12:166",
                         "parameters": {
-                            "id": 71032,
+                            "id": 71138,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71027,
+                                    "id": 71133,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "1332:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71047,
+                                    "scope": 71153,
                                     "src": "1325:12:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 71026,
+                                        "id": 71132,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71025,
+                                            "id": 71131,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "1325:6:166"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 70935,
+                                            "referencedDeclaration": 71041,
                                             "src": "1325:6:166"
                                         },
-                                        "referencedDeclaration": 70935,
+                                        "referencedDeclaration": 71041,
                                         "src": "1325:6:166",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                             "typeString": "contract IERC20"
                                         }
                                     },
@@ -700,12 +700,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71029,
+                                    "id": 71135,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "1347:2:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71047,
+                                    "scope": 71153,
                                     "src": "1339:10:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -714,7 +714,7 @@ export const SafeERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71028,
+                                        "id": 71134,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1339:7:166",
@@ -728,12 +728,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71031,
+                                    "id": 71137,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "1359:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71047,
+                                    "scope": 71153,
                                     "src": "1351:13:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -742,7 +742,7 @@ export const SafeERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71030,
+                                        "id": 71136,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1351:7:166",
@@ -757,23 +757,23 @@ export const SafeERC20 = {
                             "src": "1324:41:166"
                         },
                         "returnParameters": {
-                            "id": 71033,
+                            "id": 71139,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1375:0:166"
                         },
-                        "scope": 71287,
+                        "scope": 71393,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 71074,
+                        "id": 71180,
                         "nodeType": "FunctionDefinition",
                         "src": "1702:188:166",
                         "nodes": [],
                         "body": {
-                            "id": 71073,
+                            "id": 71179,
                             "nodeType": "Block",
                             "src": "1792:98:166",
                             "nodes": [],
@@ -782,14 +782,14 @@ export const SafeERC20 = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 71061,
+                                                "id": 71167,
                                                 "name": "token",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71051,
+                                                "referencedDeclaration": 71157,
                                                 "src": "1822:5:166",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                    "typeIdentifier": "t_contract$_IERC20_$71041",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
@@ -797,18 +797,18 @@ export const SafeERC20 = {
                                                 "arguments": [
                                                     {
                                                         "expression": {
-                                                            "id": 71064,
+                                                            "id": 71170,
                                                             "name": "token",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71051,
+                                                            "referencedDeclaration": 71157,
                                                             "src": "1844:5:166",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                 "typeString": "contract IERC20"
                                                             }
                                                         },
-                                                        "id": 71065,
+                                                        "id": 71171,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -816,7 +816,7 @@ export const SafeERC20 = {
                                                         "memberLocation": "1850:12:166",
                                                         "memberName": "transferFrom",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 70934,
+                                                        "referencedDeclaration": 71040,
                                                         "src": "1844:18:166",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -826,11 +826,11 @@ export const SafeERC20 = {
                                                     {
                                                         "components": [
                                                             {
-                                                                "id": 71066,
+                                                                "id": 71172,
                                                                 "name": "from",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71053,
+                                                                "referencedDeclaration": 71159,
                                                                 "src": "1865:4:166",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
@@ -838,11 +838,11 @@ export const SafeERC20 = {
                                                                 }
                                                             },
                                                             {
-                                                                "id": 71067,
+                                                                "id": 71173,
                                                                 "name": "to",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71055,
+                                                                "referencedDeclaration": 71161,
                                                                 "src": "1871:2:166",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_address",
@@ -850,11 +850,11 @@ export const SafeERC20 = {
                                                                 }
                                                             },
                                                             {
-                                                                "id": 71068,
+                                                                "id": 71174,
                                                                 "name": "value",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71057,
+                                                                "referencedDeclaration": 71163,
                                                                 "src": "1875:5:166",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -862,7 +862,7 @@ export const SafeERC20 = {
                                                                 }
                                                             }
                                                         ],
-                                                        "id": 71069,
+                                                        "id": 71175,
                                                         "isConstant": false,
                                                         "isInlineArray": false,
                                                         "isLValue": false,
@@ -888,7 +888,7 @@ export const SafeERC20 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 71062,
+                                                        "id": 71168,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -899,7 +899,7 @@ export const SafeERC20 = {
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 71063,
+                                                    "id": 71169,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -913,7 +913,7 @@ export const SafeERC20 = {
                                                         "typeString": "function () pure returns (bytes memory)"
                                                     }
                                                 },
-                                                "id": 71070,
+                                                "id": 71176,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -933,7 +933,7 @@ export const SafeERC20 = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                    "typeIdentifier": "t_contract$_IERC20_$71041",
                                                     "typeString": "contract IERC20"
                                                 },
                                                 {
@@ -941,18 +941,18 @@ export const SafeERC20 = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 71060,
+                                            "id": 71166,
                                             "name": "_callOptionalReturn",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71237,
+                                            "referencedDeclaration": 71343,
                                             "src": "1802:19:166",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_bytes_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_bytes_memory_ptr_$returns$__$",
                                                 "typeString": "function (contract IERC20,bytes memory)"
                                             }
                                         },
-                                        "id": 71071,
+                                        "id": 71177,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -968,14 +968,14 @@ export const SafeERC20 = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 71072,
+                                    "id": 71178,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1802:81:166"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 71048,
+                            "id": 71154,
                             "nodeType": "StructuredDocumentation",
                             "src": "1469:228:166",
                             "text": " @dev Transfer `value` amount of `token` from `from` to `to`, spending the approval given by `from` to the\n calling contract. If `token` returns no value, non-reverting calls are assumed to be successful."
@@ -986,41 +986,41 @@ export const SafeERC20 = {
                         "name": "safeTransferFrom",
                         "nameLocation": "1711:16:166",
                         "parameters": {
-                            "id": 71058,
+                            "id": 71164,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71051,
+                                    "id": 71157,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "1735:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71074,
+                                    "scope": 71180,
                                     "src": "1728:12:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 71050,
+                                        "id": 71156,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71049,
+                                            "id": 71155,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "1728:6:166"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 70935,
+                                            "referencedDeclaration": 71041,
                                             "src": "1728:6:166"
                                         },
-                                        "referencedDeclaration": 70935,
+                                        "referencedDeclaration": 71041,
                                         "src": "1728:6:166",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                             "typeString": "contract IERC20"
                                         }
                                     },
@@ -1028,12 +1028,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71053,
+                                    "id": 71159,
                                     "mutability": "mutable",
                                     "name": "from",
                                     "nameLocation": "1750:4:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71074,
+                                    "scope": 71180,
                                     "src": "1742:12:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1042,7 +1042,7 @@ export const SafeERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71052,
+                                        "id": 71158,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1742:7:166",
@@ -1056,12 +1056,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71055,
+                                    "id": 71161,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "1764:2:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71074,
+                                    "scope": 71180,
                                     "src": "1756:10:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1070,7 +1070,7 @@ export const SafeERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71054,
+                                        "id": 71160,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1756:7:166",
@@ -1084,12 +1084,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71057,
+                                    "id": 71163,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "1776:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71074,
+                                    "scope": 71180,
                                     "src": "1768:13:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1098,7 +1098,7 @@ export const SafeERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71056,
+                                        "id": 71162,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1768:7:166",
@@ -1113,40 +1113,40 @@ export const SafeERC20 = {
                             "src": "1727:55:166"
                         },
                         "returnParameters": {
-                            "id": 71059,
+                            "id": 71165,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1792:0:166"
                         },
-                        "scope": 71287,
+                        "scope": 71393,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 71105,
+                        "id": 71211,
                         "nodeType": "FunctionDefinition",
                         "src": "2081:225:166",
                         "nodes": [],
                         "body": {
-                            "id": 71104,
+                            "id": 71210,
                             "nodeType": "Block",
                             "src": "2167:139:166",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        71086
+                                        71192
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 71086,
+                                            "id": 71192,
                                             "mutability": "mutable",
                                             "name": "oldAllowance",
                                             "nameLocation": "2185:12:166",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 71104,
+                                            "scope": 71210,
                                             "src": "2177:20:166",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1155,7 +1155,7 @@ export const SafeERC20 = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 71085,
+                                                "id": 71191,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2177:7:166",
@@ -1167,20 +1167,20 @@ export const SafeERC20 = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 71095,
+                                    "id": 71201,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 71091,
+                                                        "id": 71197,
                                                         "name": "this",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
                                                         "referencedDeclaration": -28,
                                                         "src": "2224:4:166",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_SafeERC20_$71287",
+                                                            "typeIdentifier": "t_contract$_SafeERC20_$71393",
                                                             "typeString": "library SafeERC20"
                                                         }
                                                     }
@@ -1188,11 +1188,11 @@ export const SafeERC20 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_contract$_SafeERC20_$71287",
+                                                            "typeIdentifier": "t_contract$_SafeERC20_$71393",
                                                             "typeString": "library SafeERC20"
                                                         }
                                                     ],
-                                                    "id": 71090,
+                                                    "id": 71196,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1204,14 +1204,14 @@ export const SafeERC20 = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 71089,
+                                                        "id": 71195,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "2216:7:166",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 71092,
+                                                "id": 71198,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1228,11 +1228,11 @@ export const SafeERC20 = {
                                                 }
                                             },
                                             {
-                                                "id": 71093,
+                                                "id": 71199,
                                                 "name": "spender",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71080,
+                                                "referencedDeclaration": 71186,
                                                 "src": "2231:7:166",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -1252,18 +1252,18 @@ export const SafeERC20 = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 71087,
+                                                "id": 71193,
                                                 "name": "token",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71078,
+                                                "referencedDeclaration": 71184,
                                                 "src": "2200:5:166",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                    "typeIdentifier": "t_contract$_IERC20_$71041",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
-                                            "id": 71088,
+                                            "id": 71194,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1271,14 +1271,14 @@ export const SafeERC20 = {
                                             "memberLocation": "2206:9:166",
                                             "memberName": "allowance",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 70912,
+                                            "referencedDeclaration": 71018,
                                             "src": "2200:15:166",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_view$_t_address_$_t_address_$returns$_t_uint256_$",
                                                 "typeString": "function (address,address) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 71094,
+                                        "id": 71200,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1301,23 +1301,23 @@ export const SafeERC20 = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 71097,
+                                                "id": 71203,
                                                 "name": "token",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71078,
+                                                "referencedDeclaration": 71184,
                                                 "src": "2262:5:166",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                    "typeIdentifier": "t_contract$_IERC20_$71041",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
                                             {
-                                                "id": 71098,
+                                                "id": 71204,
                                                 "name": "spender",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71080,
+                                                "referencedDeclaration": 71186,
                                                 "src": "2269:7:166",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -1329,17 +1329,17 @@ export const SafeERC20 = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 71101,
+                                                "id": 71207,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 71099,
+                                                    "id": 71205,
                                                     "name": "oldAllowance",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71086,
+                                                    "referencedDeclaration": 71192,
                                                     "src": "2278:12:166",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1349,11 +1349,11 @@ export const SafeERC20 = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "+",
                                                 "rightExpression": {
-                                                    "id": 71100,
+                                                    "id": 71206,
                                                     "name": "value",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71082,
+                                                    "referencedDeclaration": 71188,
                                                     "src": "2293:5:166",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1370,7 +1370,7 @@ export const SafeERC20 = {
                                         "expression": {
                                             "argumentTypes": [
                                                 {
-                                                    "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                    "typeIdentifier": "t_contract$_IERC20_$71041",
                                                     "typeString": "contract IERC20"
                                                 },
                                                 {
@@ -1382,18 +1382,18 @@ export const SafeERC20 = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 71096,
+                                            "id": 71202,
                                             "name": "forceApprove",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71195,
+                                            "referencedDeclaration": 71301,
                                             "src": "2249:12:166",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_uint256_$returns$__$",
                                                 "typeString": "function (contract IERC20,address,uint256)"
                                             }
                                         },
-                                        "id": 71102,
+                                        "id": 71208,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1409,14 +1409,14 @@ export const SafeERC20 = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 71103,
+                                    "id": 71209,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2249:50:166"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 71075,
+                            "id": 71181,
                             "nodeType": "StructuredDocumentation",
                             "src": "1896:180:166",
                             "text": " @dev Increase the calling contract's allowance toward `spender` by `value`. If `token` returns no value,\n non-reverting calls are assumed to be successful."
@@ -1427,41 +1427,41 @@ export const SafeERC20 = {
                         "name": "safeIncreaseAllowance",
                         "nameLocation": "2090:21:166",
                         "parameters": {
-                            "id": 71083,
+                            "id": 71189,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71078,
+                                    "id": 71184,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "2119:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71105,
+                                    "scope": 71211,
                                     "src": "2112:12:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 71077,
+                                        "id": 71183,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71076,
+                                            "id": 71182,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "2112:6:166"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 70935,
+                                            "referencedDeclaration": 71041,
                                             "src": "2112:6:166"
                                         },
-                                        "referencedDeclaration": 70935,
+                                        "referencedDeclaration": 71041,
                                         "src": "2112:6:166",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                             "typeString": "contract IERC20"
                                         }
                                     },
@@ -1469,12 +1469,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71080,
+                                    "id": 71186,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "2134:7:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71105,
+                                    "scope": 71211,
                                     "src": "2126:15:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1483,7 +1483,7 @@ export const SafeERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71079,
+                                        "id": 71185,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2126:7:166",
@@ -1497,12 +1497,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71082,
+                                    "id": 71188,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "2151:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71105,
+                                    "scope": 71211,
                                     "src": "2143:13:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1511,7 +1511,7 @@ export const SafeERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71081,
+                                        "id": 71187,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2143:7:166",
@@ -1526,45 +1526,45 @@ export const SafeERC20 = {
                             "src": "2111:46:166"
                         },
                         "returnParameters": {
-                            "id": 71084,
+                            "id": 71190,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2167:0:166"
                         },
-                        "scope": 71287,
+                        "scope": 71393,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 71148,
+                        "id": 71254,
                         "nodeType": "FunctionDefinition",
                         "src": "2509:468:166",
                         "nodes": [],
                         "body": {
-                            "id": 71147,
+                            "id": 71253,
                             "nodeType": "Block",
                             "src": "2607:370:166",
                             "nodes": [],
                             "statements": [
                                 {
-                                    "id": 71146,
+                                    "id": 71252,
                                     "nodeType": "UncheckedBlock",
                                     "src": "2617:354:166",
                                     "statements": [
                                         {
                                             "assignments": [
-                                                71117
+                                                71223
                                             ],
                                             "declarations": [
                                                 {
                                                     "constant": false,
-                                                    "id": 71117,
+                                                    "id": 71223,
                                                     "mutability": "mutable",
                                                     "name": "currentAllowance",
                                                     "nameLocation": "2649:16:166",
                                                     "nodeType": "VariableDeclaration",
-                                                    "scope": 71146,
+                                                    "scope": 71252,
                                                     "src": "2641:24:166",
                                                     "stateVariable": false,
                                                     "storageLocation": "default",
@@ -1573,7 +1573,7 @@ export const SafeERC20 = {
                                                         "typeString": "uint256"
                                                     },
                                                     "typeName": {
-                                                        "id": 71116,
+                                                        "id": 71222,
                                                         "name": "uint256",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "2641:7:166",
@@ -1585,20 +1585,20 @@ export const SafeERC20 = {
                                                     "visibility": "internal"
                                                 }
                                             ],
-                                            "id": 71126,
+                                            "id": 71232,
                                             "initialValue": {
                                                 "arguments": [
                                                     {
                                                         "arguments": [
                                                             {
-                                                                "id": 71122,
+                                                                "id": 71228,
                                                                 "name": "this",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
                                                                 "referencedDeclaration": -28,
                                                                 "src": "2692:4:166",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_SafeERC20_$71287",
+                                                                    "typeIdentifier": "t_contract$_SafeERC20_$71393",
                                                                     "typeString": "library SafeERC20"
                                                                 }
                                                             }
@@ -1606,11 +1606,11 @@ export const SafeERC20 = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_SafeERC20_$71287",
+                                                                    "typeIdentifier": "t_contract$_SafeERC20_$71393",
                                                                     "typeString": "library SafeERC20"
                                                                 }
                                                             ],
-                                                            "id": 71121,
+                                                            "id": 71227,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -1622,14 +1622,14 @@ export const SafeERC20 = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 71120,
+                                                                "id": 71226,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "2684:7:166",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 71123,
+                                                        "id": 71229,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1646,11 +1646,11 @@ export const SafeERC20 = {
                                                         }
                                                     },
                                                     {
-                                                        "id": 71124,
+                                                        "id": 71230,
                                                         "name": "spender",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71111,
+                                                        "referencedDeclaration": 71217,
                                                         "src": "2699:7:166",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -1670,18 +1670,18 @@ export const SafeERC20 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 71118,
+                                                        "id": 71224,
                                                         "name": "token",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71109,
+                                                        "referencedDeclaration": 71215,
                                                         "src": "2668:5:166",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                                             "typeString": "contract IERC20"
                                                         }
                                                     },
-                                                    "id": 71119,
+                                                    "id": 71225,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1689,14 +1689,14 @@ export const SafeERC20 = {
                                                     "memberLocation": "2674:9:166",
                                                     "memberName": "allowance",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 70912,
+                                                    "referencedDeclaration": 71018,
                                                     "src": "2668:15:166",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_function_external_view$_t_address_$_t_address_$returns$_t_uint256_$",
                                                         "typeString": "function (address,address) view external returns (uint256)"
                                                     }
                                                 },
-                                                "id": 71125,
+                                                "id": 71231,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1721,17 +1721,17 @@ export const SafeERC20 = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 71129,
+                                                "id": 71235,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 71127,
+                                                    "id": 71233,
                                                     "name": "currentAllowance",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71117,
+                                                    "referencedDeclaration": 71223,
                                                     "src": "2725:16:166",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1741,11 +1741,11 @@ export const SafeERC20 = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "<",
                                                 "rightExpression": {
-                                                    "id": 71128,
+                                                    "id": 71234,
                                                     "name": "requestedDecrease",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71113,
+                                                    "referencedDeclaration": 71219,
                                                     "src": "2744:17:166",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1758,11 +1758,11 @@ export const SafeERC20 = {
                                                     "typeString": "bool"
                                                 }
                                             },
-                                            "id": 71137,
+                                            "id": 71243,
                                             "nodeType": "IfStatement",
                                             "src": "2721:160:166",
                                             "trueBody": {
-                                                "id": 71136,
+                                                "id": 71242,
                                                 "nodeType": "Block",
                                                 "src": "2763:118:166",
                                                 "statements": [
@@ -1770,11 +1770,11 @@ export const SafeERC20 = {
                                                         "errorCall": {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 71131,
+                                                                    "id": 71237,
                                                                     "name": "spender",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 71111,
+                                                                    "referencedDeclaration": 71217,
                                                                     "src": "2821:7:166",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_address",
@@ -1782,11 +1782,11 @@ export const SafeERC20 = {
                                                                     }
                                                                 },
                                                                 {
-                                                                    "id": 71132,
+                                                                    "id": 71238,
                                                                     "name": "currentAllowance",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 71117,
+                                                                    "referencedDeclaration": 71223,
                                                                     "src": "2830:16:166",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -1794,11 +1794,11 @@ export const SafeERC20 = {
                                                                     }
                                                                 },
                                                                 {
-                                                                    "id": 71133,
+                                                                    "id": 71239,
                                                                     "name": "requestedDecrease",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 71113,
+                                                                    "referencedDeclaration": 71219,
                                                                     "src": "2848:17:166",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -1821,18 +1821,18 @@ export const SafeERC20 = {
                                                                         "typeString": "uint256"
                                                                     }
                                                                 ],
-                                                                "id": 71130,
+                                                                "id": 71236,
                                                                 "name": "SafeERC20FailedDecreaseAllowance",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71023,
+                                                                "referencedDeclaration": 71129,
                                                                 "src": "2788:32:166",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_error_pure$_t_address_$_t_uint256_$_t_uint256_$returns$__$",
                                                                     "typeString": "function (address,uint256,uint256) pure"
                                                                 }
                                                             },
-                                                            "id": 71134,
+                                                            "id": 71240,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1848,7 +1848,7 @@ export const SafeERC20 = {
                                                                 "typeString": "tuple()"
                                                             }
                                                         },
-                                                        "id": 71135,
+                                                        "id": 71241,
                                                         "nodeType": "RevertStatement",
                                                         "src": "2781:85:166"
                                                     }
@@ -1859,23 +1859,23 @@ export const SafeERC20 = {
                                             "expression": {
                                                 "arguments": [
                                                     {
-                                                        "id": 71139,
+                                                        "id": 71245,
                                                         "name": "token",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71109,
+                                                        "referencedDeclaration": 71215,
                                                         "src": "2907:5:166",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                                             "typeString": "contract IERC20"
                                                         }
                                                     },
                                                     {
-                                                        "id": 71140,
+                                                        "id": 71246,
                                                         "name": "spender",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71111,
+                                                        "referencedDeclaration": 71217,
                                                         "src": "2914:7:166",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -1887,17 +1887,17 @@ export const SafeERC20 = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 71143,
+                                                        "id": 71249,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 71141,
+                                                            "id": 71247,
                                                             "name": "currentAllowance",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71117,
+                                                            "referencedDeclaration": 71223,
                                                             "src": "2923:16:166",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -1907,11 +1907,11 @@ export const SafeERC20 = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "-",
                                                         "rightExpression": {
-                                                            "id": 71142,
+                                                            "id": 71248,
                                                             "name": "requestedDecrease",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71113,
+                                                            "referencedDeclaration": 71219,
                                                             "src": "2942:17:166",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -1928,7 +1928,7 @@ export const SafeERC20 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                                             "typeString": "contract IERC20"
                                                         },
                                                         {
@@ -1940,18 +1940,18 @@ export const SafeERC20 = {
                                                             "typeString": "uint256"
                                                         }
                                                     ],
-                                                    "id": 71138,
+                                                    "id": 71244,
                                                     "name": "forceApprove",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71195,
+                                                    "referencedDeclaration": 71301,
                                                     "src": "2894:12:166",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$",
+                                                        "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_uint256_$returns$__$",
                                                         "typeString": "function (contract IERC20,address,uint256)"
                                                     }
                                                 },
-                                                "id": 71144,
+                                                "id": 71250,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1967,7 +1967,7 @@ export const SafeERC20 = {
                                                     "typeString": "tuple()"
                                                 }
                                             },
-                                            "id": 71145,
+                                            "id": 71251,
                                             "nodeType": "ExpressionStatement",
                                             "src": "2894:66:166"
                                         }
@@ -1976,7 +1976,7 @@ export const SafeERC20 = {
                             ]
                         },
                         "documentation": {
-                            "id": 71106,
+                            "id": 71212,
                             "nodeType": "StructuredDocumentation",
                             "src": "2312:192:166",
                             "text": " @dev Decrease the calling contract's allowance toward `spender` by `requestedDecrease`. If `token` returns no\n value, non-reverting calls are assumed to be successful."
@@ -1987,41 +1987,41 @@ export const SafeERC20 = {
                         "name": "safeDecreaseAllowance",
                         "nameLocation": "2518:21:166",
                         "parameters": {
-                            "id": 71114,
+                            "id": 71220,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71109,
+                                    "id": 71215,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "2547:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71148,
+                                    "scope": 71254,
                                     "src": "2540:12:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 71108,
+                                        "id": 71214,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71107,
+                                            "id": 71213,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "2540:6:166"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 70935,
+                                            "referencedDeclaration": 71041,
                                             "src": "2540:6:166"
                                         },
-                                        "referencedDeclaration": 70935,
+                                        "referencedDeclaration": 71041,
                                         "src": "2540:6:166",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                             "typeString": "contract IERC20"
                                         }
                                     },
@@ -2029,12 +2029,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71111,
+                                    "id": 71217,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "2562:7:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71148,
+                                    "scope": 71254,
                                     "src": "2554:15:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2043,7 +2043,7 @@ export const SafeERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71110,
+                                        "id": 71216,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2554:7:166",
@@ -2057,12 +2057,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71113,
+                                    "id": 71219,
                                     "mutability": "mutable",
                                     "name": "requestedDecrease",
                                     "nameLocation": "2579:17:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71148,
+                                    "scope": 71254,
                                     "src": "2571:25:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2071,7 +2071,7 @@ export const SafeERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71112,
+                                        "id": 71218,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2571:7:166",
@@ -2086,40 +2086,40 @@ export const SafeERC20 = {
                             "src": "2539:58:166"
                         },
                         "returnParameters": {
-                            "id": 71115,
+                            "id": 71221,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2607:0:166"
                         },
-                        "scope": 71287,
+                        "scope": 71393,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 71195,
+                        "id": 71301,
                         "nodeType": "FunctionDefinition",
                         "src": "3296:380:166",
                         "nodes": [],
                         "body": {
-                            "id": 71194,
+                            "id": 71300,
                             "nodeType": "Block",
                             "src": "3373:303:166",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        71160
+                                        71266
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 71160,
+                                            "id": 71266,
                                             "mutability": "mutable",
                                             "name": "approvalCall",
                                             "nameLocation": "3396:12:166",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 71194,
+                                            "scope": 71300,
                                             "src": "3383:25:166",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -2128,7 +2128,7 @@ export const SafeERC20 = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 71159,
+                                                "id": 71265,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3383:5:166",
@@ -2140,23 +2140,23 @@ export const SafeERC20 = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 71169,
+                                    "id": 71275,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 71163,
+                                                    "id": 71269,
                                                     "name": "token",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71152,
+                                                    "referencedDeclaration": 71258,
                                                     "src": "3426:5:166",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                                         "typeString": "contract IERC20"
                                                     }
                                                 },
-                                                "id": 71164,
+                                                "id": 71270,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2164,7 +2164,7 @@ export const SafeERC20 = {
                                                 "memberLocation": "3432:7:166",
                                                 "memberName": "approve",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 70922,
+                                                "referencedDeclaration": 71028,
                                                 "src": "3426:13:166",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -2174,11 +2174,11 @@ export const SafeERC20 = {
                                             {
                                                 "components": [
                                                     {
-                                                        "id": 71165,
+                                                        "id": 71271,
                                                         "name": "spender",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71154,
+                                                        "referencedDeclaration": 71260,
                                                         "src": "3442:7:166",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -2186,11 +2186,11 @@ export const SafeERC20 = {
                                                         }
                                                     },
                                                     {
-                                                        "id": 71166,
+                                                        "id": 71272,
                                                         "name": "value",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71156,
+                                                        "referencedDeclaration": 71262,
                                                         "src": "3451:5:166",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -2198,7 +2198,7 @@ export const SafeERC20 = {
                                                         }
                                                     }
                                                 ],
-                                                "id": 71167,
+                                                "id": 71273,
                                                 "isConstant": false,
                                                 "isInlineArray": false,
                                                 "isLValue": false,
@@ -2224,7 +2224,7 @@ export const SafeERC20 = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 71161,
+                                                "id": 71267,
                                                 "name": "abi",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2235,7 +2235,7 @@ export const SafeERC20 = {
                                                     "typeString": "abi"
                                                 }
                                             },
-                                            "id": 71162,
+                                            "id": 71268,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -2249,7 +2249,7 @@ export const SafeERC20 = {
                                                 "typeString": "function () pure returns (bytes memory)"
                                             }
                                         },
-                                        "id": 71168,
+                                        "id": 71274,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2270,7 +2270,7 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "condition": {
-                                        "id": 71174,
+                                        "id": 71280,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2282,23 +2282,23 @@ export const SafeERC20 = {
                                         "subExpression": {
                                             "arguments": [
                                                 {
-                                                    "id": 71171,
+                                                    "id": 71277,
                                                     "name": "token",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71152,
+                                                    "referencedDeclaration": 71258,
                                                     "src": "3498:5:166",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                                         "typeString": "contract IERC20"
                                                     }
                                                 },
                                                 {
-                                                    "id": 71172,
+                                                    "id": 71278,
                                                     "name": "approvalCall",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71160,
+                                                    "referencedDeclaration": 71266,
                                                     "src": "3505:12:166",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes_memory_ptr",
@@ -2309,7 +2309,7 @@ export const SafeERC20 = {
                                             "expression": {
                                                 "argumentTypes": [
                                                     {
-                                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                                         "typeString": "contract IERC20"
                                                     },
                                                     {
@@ -2317,18 +2317,18 @@ export const SafeERC20 = {
                                                         "typeString": "bytes memory"
                                                     }
                                                 ],
-                                                "id": 71170,
+                                                "id": 71276,
                                                 "name": "_callOptionalReturnBool",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71286,
+                                                "referencedDeclaration": 71392,
                                                 "src": "3474:23:166",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_bytes_memory_ptr_$returns$_t_bool_$",
+                                                    "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_bytes_memory_ptr_$returns$_t_bool_$",
                                                     "typeString": "function (contract IERC20,bytes memory) returns (bool)"
                                                 }
                                             },
-                                            "id": 71173,
+                                            "id": 71279,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2349,11 +2349,11 @@ export const SafeERC20 = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 71193,
+                                    "id": 71299,
                                     "nodeType": "IfStatement",
                                     "src": "3469:201:166",
                                     "trueBody": {
-                                        "id": 71192,
+                                        "id": 71298,
                                         "nodeType": "Block",
                                         "src": "3520:150:166",
                                         "statements": [
@@ -2361,14 +2361,14 @@ export const SafeERC20 = {
                                                 "expression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 71176,
+                                                            "id": 71282,
                                                             "name": "token",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71152,
+                                                            "referencedDeclaration": 71258,
                                                             "src": "3554:5:166",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                 "typeString": "contract IERC20"
                                                             }
                                                         },
@@ -2376,18 +2376,18 @@ export const SafeERC20 = {
                                                             "arguments": [
                                                                 {
                                                                     "expression": {
-                                                                        "id": 71179,
+                                                                        "id": 71285,
                                                                         "name": "token",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 71152,
+                                                                        "referencedDeclaration": 71258,
                                                                         "src": "3576:5:166",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                             "typeString": "contract IERC20"
                                                                         }
                                                                     },
-                                                                    "id": 71180,
+                                                                    "id": 71286,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -2395,7 +2395,7 @@ export const SafeERC20 = {
                                                                     "memberLocation": "3582:7:166",
                                                                     "memberName": "approve",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 70922,
+                                                                    "referencedDeclaration": 71028,
                                                                     "src": "3576:13:166",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$_t_bool_$",
@@ -2405,11 +2405,11 @@ export const SafeERC20 = {
                                                                 {
                                                                     "components": [
                                                                         {
-                                                                            "id": 71181,
+                                                                            "id": 71287,
                                                                             "name": "spender",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 71154,
+                                                                            "referencedDeclaration": 71260,
                                                                             "src": "3592:7:166",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_address",
@@ -2418,7 +2418,7 @@ export const SafeERC20 = {
                                                                         },
                                                                         {
                                                                             "hexValue": "30",
-                                                                            "id": 71182,
+                                                                            "id": 71288,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -2433,7 +2433,7 @@ export const SafeERC20 = {
                                                                             "value": "0"
                                                                         }
                                                                     ],
-                                                                    "id": 71183,
+                                                                    "id": 71289,
                                                                     "isConstant": false,
                                                                     "isInlineArray": false,
                                                                     "isLValue": false,
@@ -2459,7 +2459,7 @@ export const SafeERC20 = {
                                                                     }
                                                                 ],
                                                                 "expression": {
-                                                                    "id": 71177,
+                                                                    "id": 71283,
                                                                     "name": "abi",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
@@ -2470,7 +2470,7 @@ export const SafeERC20 = {
                                                                         "typeString": "abi"
                                                                     }
                                                                 },
-                                                                "id": 71178,
+                                                                "id": 71284,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -2484,7 +2484,7 @@ export const SafeERC20 = {
                                                                     "typeString": "function () pure returns (bytes memory)"
                                                                 }
                                                             },
-                                                            "id": 71184,
+                                                            "id": 71290,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -2504,7 +2504,7 @@ export const SafeERC20 = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                 "typeString": "contract IERC20"
                                                             },
                                                             {
@@ -2512,18 +2512,18 @@ export const SafeERC20 = {
                                                                 "typeString": "bytes memory"
                                                             }
                                                         ],
-                                                        "id": 71175,
+                                                        "id": 71281,
                                                         "name": "_callOptionalReturn",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71237,
+                                                        "referencedDeclaration": 71343,
                                                         "src": "3534:19:166",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_bytes_memory_ptr_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_bytes_memory_ptr_$returns$__$",
                                                             "typeString": "function (contract IERC20,bytes memory)"
                                                         }
                                                     },
-                                                    "id": 71185,
+                                                    "id": 71291,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2539,7 +2539,7 @@ export const SafeERC20 = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 71186,
+                                                "id": 71292,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3534:71:166"
                                             },
@@ -2547,23 +2547,23 @@ export const SafeERC20 = {
                                                 "expression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 71188,
+                                                            "id": 71294,
                                                             "name": "token",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71152,
+                                                            "referencedDeclaration": 71258,
                                                             "src": "3639:5:166",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                 "typeString": "contract IERC20"
                                                             }
                                                         },
                                                         {
-                                                            "id": 71189,
+                                                            "id": 71295,
                                                             "name": "approvalCall",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71160,
+                                                            "referencedDeclaration": 71266,
                                                             "src": "3646:12:166",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes_memory_ptr",
@@ -2574,7 +2574,7 @@ export const SafeERC20 = {
                                                     "expression": {
                                                         "argumentTypes": [
                                                             {
-                                                                "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                 "typeString": "contract IERC20"
                                                             },
                                                             {
@@ -2582,18 +2582,18 @@ export const SafeERC20 = {
                                                                 "typeString": "bytes memory"
                                                             }
                                                         ],
-                                                        "id": 71187,
+                                                        "id": 71293,
                                                         "name": "_callOptionalReturn",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71237,
+                                                        "referencedDeclaration": 71343,
                                                         "src": "3619:19:166",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_bytes_memory_ptr_$returns$__$",
+                                                            "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_bytes_memory_ptr_$returns$__$",
                                                             "typeString": "function (contract IERC20,bytes memory)"
                                                         }
                                                     },
-                                                    "id": 71190,
+                                                    "id": 71296,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2609,7 +2609,7 @@ export const SafeERC20 = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 71191,
+                                                "id": 71297,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3619:40:166"
                                             }
@@ -2619,7 +2619,7 @@ export const SafeERC20 = {
                             ]
                         },
                         "documentation": {
-                            "id": 71149,
+                            "id": 71255,
                             "nodeType": "StructuredDocumentation",
                             "src": "2983:308:166",
                             "text": " @dev Set the calling contract's allowance toward `spender` to `value`. If `token` returns no value,\n non-reverting calls are assumed to be successful. Meant to be used with tokens that require the approval\n to be set to zero before setting it to a non-zero value, such as USDT."
@@ -2630,41 +2630,41 @@ export const SafeERC20 = {
                         "name": "forceApprove",
                         "nameLocation": "3305:12:166",
                         "parameters": {
-                            "id": 71157,
+                            "id": 71263,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71152,
+                                    "id": 71258,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "3325:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71195,
+                                    "scope": 71301,
                                     "src": "3318:12:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 71151,
+                                        "id": 71257,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71150,
+                                            "id": 71256,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "3318:6:166"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 70935,
+                                            "referencedDeclaration": 71041,
                                             "src": "3318:6:166"
                                         },
-                                        "referencedDeclaration": 70935,
+                                        "referencedDeclaration": 71041,
                                         "src": "3318:6:166",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                             "typeString": "contract IERC20"
                                         }
                                     },
@@ -2672,12 +2672,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71154,
+                                    "id": 71260,
                                     "mutability": "mutable",
                                     "name": "spender",
                                     "nameLocation": "3340:7:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71195,
+                                    "scope": 71301,
                                     "src": "3332:15:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2686,7 +2686,7 @@ export const SafeERC20 = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71153,
+                                        "id": 71259,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3332:7:166",
@@ -2700,12 +2700,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71156,
+                                    "id": 71262,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "3357:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71195,
+                                    "scope": 71301,
                                     "src": "3349:13:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2714,7 +2714,7 @@ export const SafeERC20 = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 71155,
+                                        "id": 71261,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3349:7:166",
@@ -2729,40 +2729,40 @@ export const SafeERC20 = {
                             "src": "3317:46:166"
                         },
                         "returnParameters": {
-                            "id": 71158,
+                            "id": 71264,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3373:0:166"
                         },
-                        "scope": 71287,
+                        "scope": 71393,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 71237,
+                        "id": 71343,
                         "nodeType": "FunctionDefinition",
                         "src": "4059:629:166",
                         "nodes": [],
                         "body": {
-                            "id": 71236,
+                            "id": 71342,
                             "nodeType": "Block",
                             "src": "4129:559:166",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        71205
+                                        71311
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 71205,
+                                            "id": 71311,
                                             "mutability": "mutable",
                                             "name": "returndata",
                                             "nameLocation": "4491:10:166",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 71236,
+                                            "scope": 71342,
                                             "src": "4478:23:166",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -2771,7 +2771,7 @@ export const SafeERC20 = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 71204,
+                                                "id": 71310,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4478:5:166",
@@ -2783,15 +2783,15 @@ export const SafeERC20 = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 71213,
+                                    "id": 71319,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 71211,
+                                                "id": 71317,
                                                 "name": "data",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71201,
+                                                "referencedDeclaration": 71307,
                                                 "src": "4532:4:166",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -2809,14 +2809,14 @@ export const SafeERC20 = {
                                             "expression": {
                                                 "arguments": [
                                                     {
-                                                        "id": 71208,
+                                                        "id": 71314,
                                                         "name": "token",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71199,
+                                                        "referencedDeclaration": 71305,
                                                         "src": "4512:5:166",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                                             "typeString": "contract IERC20"
                                                         }
                                                     }
@@ -2824,11 +2824,11 @@ export const SafeERC20 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                                             "typeString": "contract IERC20"
                                                         }
                                                     ],
-                                                    "id": 71207,
+                                                    "id": 71313,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2840,14 +2840,14 @@ export const SafeERC20 = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 71206,
+                                                        "id": 71312,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "4504:7:166",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 71209,
+                                                "id": 71315,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2863,7 +2863,7 @@ export const SafeERC20 = {
                                                     "typeString": "address"
                                                 }
                                             },
-                                            "id": 71210,
+                                            "id": 71316,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2871,14 +2871,14 @@ export const SafeERC20 = {
                                             "memberLocation": "4519:12:166",
                                             "memberName": "functionCall",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 71361,
+                                            "referencedDeclaration": 71467,
                                             "src": "4504:27:166",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_bytes_memory_ptr_$returns$_t_bytes_memory_ptr_$attached_to$_t_address_$",
                                                 "typeString": "function (address,bytes memory) returns (bytes memory)"
                                             }
                                         },
-                                        "id": 71212,
+                                        "id": 71318,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2903,7 +2903,7 @@ export const SafeERC20 = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 71226,
+                                        "id": 71332,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2913,25 +2913,25 @@ export const SafeERC20 = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 71217,
+                                            "id": 71323,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
                                                 "expression": {
-                                                    "id": 71214,
+                                                    "id": 71320,
                                                     "name": "returndata",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71205,
+                                                    "referencedDeclaration": 71311,
                                                     "src": "4551:10:166",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes_memory_ptr",
                                                         "typeString": "bytes memory"
                                                     }
                                                 },
-                                                "id": 71215,
+                                                "id": 71321,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2949,7 +2949,7 @@ export const SafeERC20 = {
                                             "operator": "!=",
                                             "rightExpression": {
                                                 "hexValue": "30",
-                                                "id": 71216,
+                                                "id": 71322,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2972,7 +2972,7 @@ export const SafeERC20 = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "&&",
                                         "rightExpression": {
-                                            "id": 71225,
+                                            "id": 71331,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2984,11 +2984,11 @@ export const SafeERC20 = {
                                             "subExpression": {
                                                 "arguments": [
                                                     {
-                                                        "id": 71220,
+                                                        "id": 71326,
                                                         "name": "returndata",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71205,
+                                                        "referencedDeclaration": 71311,
                                                         "src": "4589:10:166",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -2998,7 +2998,7 @@ export const SafeERC20 = {
                                                     {
                                                         "components": [
                                                             {
-                                                                "id": 71222,
+                                                                "id": 71328,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3010,7 +3010,7 @@ export const SafeERC20 = {
                                                                     "typeString": "type(bool)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 71221,
+                                                                    "id": 71327,
                                                                     "name": "bool",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "4602:4:166",
@@ -3018,7 +3018,7 @@ export const SafeERC20 = {
                                                                 }
                                                             }
                                                         ],
-                                                        "id": 71223,
+                                                        "id": 71329,
                                                         "isConstant": false,
                                                         "isInlineArray": false,
                                                         "isLValue": false,
@@ -3044,7 +3044,7 @@ export const SafeERC20 = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 71218,
+                                                        "id": 71324,
                                                         "name": "abi",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
@@ -3055,7 +3055,7 @@ export const SafeERC20 = {
                                                             "typeString": "abi"
                                                         }
                                                     },
-                                                    "id": 71219,
+                                                    "id": 71325,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3069,7 +3069,7 @@ export const SafeERC20 = {
                                                         "typeString": "function () pure"
                                                     }
                                                 },
-                                                "id": 71224,
+                                                "id": 71330,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3096,11 +3096,11 @@ export const SafeERC20 = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 71235,
+                                    "id": 71341,
                                     "nodeType": "IfStatement",
                                     "src": "4547:135:166",
                                     "trueBody": {
-                                        "id": 71234,
+                                        "id": 71340,
                                         "nodeType": "Block",
                                         "src": "4610:72:166",
                                         "statements": [
@@ -3110,14 +3110,14 @@ export const SafeERC20 = {
                                                         {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 71230,
+                                                                    "id": 71336,
                                                                     "name": "token",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 71199,
+                                                                    "referencedDeclaration": 71305,
                                                                     "src": "4664:5:166",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                         "typeString": "contract IERC20"
                                                                     }
                                                                 }
@@ -3125,11 +3125,11 @@ export const SafeERC20 = {
                                                             "expression": {
                                                                 "argumentTypes": [
                                                                     {
-                                                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                         "typeString": "contract IERC20"
                                                                     }
                                                                 ],
-                                                                "id": 71229,
+                                                                "id": 71335,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3141,14 +3141,14 @@ export const SafeERC20 = {
                                                                     "typeString": "type(address)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 71228,
+                                                                    "id": 71334,
                                                                     "name": "address",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "4656:7:166",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 71231,
+                                                            "id": 71337,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -3172,18 +3172,18 @@ export const SafeERC20 = {
                                                                 "typeString": "address"
                                                             }
                                                         ],
-                                                        "id": 71227,
+                                                        "id": 71333,
                                                         "name": "SafeERC20FailedOperation",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71014,
+                                                        "referencedDeclaration": 71120,
                                                         "src": "4631:24:166",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_error_pure$_t_address_$returns$__$",
                                                             "typeString": "function (address) pure"
                                                         }
                                                     },
-                                                    "id": 71232,
+                                                    "id": 71338,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3199,7 +3199,7 @@ export const SafeERC20 = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 71233,
+                                                "id": 71339,
                                                 "nodeType": "RevertStatement",
                                                 "src": "4624:47:166"
                                             }
@@ -3209,7 +3209,7 @@ export const SafeERC20 = {
                             ]
                         },
                         "documentation": {
-                            "id": 71196,
+                            "id": 71302,
                             "nodeType": "StructuredDocumentation",
                             "src": "3682:372:166",
                             "text": " @dev Imitates a Solidity high-level call (i.e. a regular function call to a contract), relaxing the requirement\n on the return value: the return value is optional (but if data is returned, it must not be false).\n @param token The token targeted by the call.\n @param data The call data (encoded using abi.encode or one of its variants)."
@@ -3220,41 +3220,41 @@ export const SafeERC20 = {
                         "name": "_callOptionalReturn",
                         "nameLocation": "4068:19:166",
                         "parameters": {
-                            "id": 71202,
+                            "id": 71308,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71199,
+                                    "id": 71305,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "4095:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71237,
+                                    "scope": 71343,
                                     "src": "4088:12:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 71198,
+                                        "id": 71304,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71197,
+                                            "id": 71303,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "4088:6:166"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 70935,
+                                            "referencedDeclaration": 71041,
                                             "src": "4088:6:166"
                                         },
-                                        "referencedDeclaration": 70935,
+                                        "referencedDeclaration": 71041,
                                         "src": "4088:6:166",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                             "typeString": "contract IERC20"
                                         }
                                     },
@@ -3262,12 +3262,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71201,
+                                    "id": 71307,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "4115:4:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71237,
+                                    "scope": 71343,
                                     "src": "4102:17:166",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3276,7 +3276,7 @@ export const SafeERC20 = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 71200,
+                                        "id": 71306,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4102:5:166",
@@ -3291,41 +3291,41 @@ export const SafeERC20 = {
                             "src": "4087:33:166"
                         },
                         "returnParameters": {
-                            "id": 71203,
+                            "id": 71309,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "4129:0:166"
                         },
-                        "scope": 71287,
+                        "scope": 71393,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "private"
                     },
                     {
-                        "id": 71286,
+                        "id": 71392,
                         "nodeType": "FunctionDefinition",
                         "src": "5189:578:166",
                         "nodes": [],
                         "body": {
-                            "id": 71285,
+                            "id": 71391,
                             "nodeType": "Block",
                             "src": "5278:489:166",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        71249,
-                                        71251
+                                        71355,
+                                        71357
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 71249,
+                                            "id": 71355,
                                             "mutability": "mutable",
                                             "name": "success",
                                             "nameLocation": "5579:7:166",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 71285,
+                                            "scope": 71391,
                                             "src": "5574:12:166",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3334,7 +3334,7 @@ export const SafeERC20 = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 71248,
+                                                "id": 71354,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5574:4:166",
@@ -3347,12 +3347,12 @@ export const SafeERC20 = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 71251,
+                                            "id": 71357,
                                             "mutability": "mutable",
                                             "name": "returndata",
                                             "nameLocation": "5601:10:166",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 71285,
+                                            "scope": 71391,
                                             "src": "5588:23:166",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -3361,7 +3361,7 @@ export const SafeERC20 = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 71250,
+                                                "id": 71356,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5588:5:166",
@@ -3373,15 +3373,15 @@ export const SafeERC20 = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 71259,
+                                    "id": 71365,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 71257,
+                                                "id": 71363,
                                                 "name": "data",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71243,
+                                                "referencedDeclaration": 71349,
                                                 "src": "5635:4:166",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -3399,14 +3399,14 @@ export const SafeERC20 = {
                                             "expression": {
                                                 "arguments": [
                                                     {
-                                                        "id": 71254,
+                                                        "id": 71360,
                                                         "name": "token",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71241,
+                                                        "referencedDeclaration": 71347,
                                                         "src": "5623:5:166",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                                             "typeString": "contract IERC20"
                                                         }
                                                     }
@@ -3414,11 +3414,11 @@ export const SafeERC20 = {
                                                 "expression": {
                                                     "argumentTypes": [
                                                         {
-                                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                                             "typeString": "contract IERC20"
                                                         }
                                                     ],
-                                                    "id": 71253,
+                                                    "id": 71359,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3430,14 +3430,14 @@ export const SafeERC20 = {
                                                         "typeString": "type(address)"
                                                     },
                                                     "typeName": {
-                                                        "id": 71252,
+                                                        "id": 71358,
                                                         "name": "address",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "5615:7:166",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 71255,
+                                                "id": 71361,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3453,7 +3453,7 @@ export const SafeERC20 = {
                                                     "typeString": "address"
                                                 }
                                             },
-                                            "id": 71256,
+                                            "id": 71362,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3467,7 +3467,7 @@ export const SafeERC20 = {
                                                 "typeString": "function (bytes memory) payable returns (bool,bytes memory)"
                                             }
                                         },
-                                        "id": 71258,
+                                        "id": 71364,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3492,7 +3492,7 @@ export const SafeERC20 = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 71283,
+                                        "id": 71389,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3502,17 +3502,17 @@ export const SafeERC20 = {
                                                 "typeIdentifier": "t_bool",
                                                 "typeString": "bool"
                                             },
-                                            "id": 71274,
+                                            "id": 71380,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 71260,
+                                                "id": 71366,
                                                 "name": "success",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71249,
+                                                "referencedDeclaration": 71355,
                                                 "src": "5657:7:166",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -3528,7 +3528,7 @@ export const SafeERC20 = {
                                                             "typeIdentifier": "t_bool",
                                                             "typeString": "bool"
                                                         },
-                                                        "id": 71272,
+                                                        "id": 71378,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3538,25 +3538,25 @@ export const SafeERC20 = {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             },
-                                                            "id": 71264,
+                                                            "id": 71370,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "leftExpression": {
                                                                 "expression": {
-                                                                    "id": 71261,
+                                                                    "id": 71367,
                                                                     "name": "returndata",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 71251,
+                                                                    "referencedDeclaration": 71357,
                                                                     "src": "5669:10:166",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bytes_memory_ptr",
                                                                         "typeString": "bytes memory"
                                                                     }
                                                                 },
-                                                                "id": 71262,
+                                                                "id": 71368,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -3574,7 +3574,7 @@ export const SafeERC20 = {
                                                             "operator": "==",
                                                             "rightExpression": {
                                                                 "hexValue": "30",
-                                                                "id": 71263,
+                                                                "id": 71369,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3599,11 +3599,11 @@ export const SafeERC20 = {
                                                         "rightExpression": {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 71267,
+                                                                    "id": 71373,
                                                                     "name": "returndata",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 71251,
+                                                                    "referencedDeclaration": 71357,
                                                                     "src": "5706:10:166",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bytes_memory_ptr",
@@ -3613,7 +3613,7 @@ export const SafeERC20 = {
                                                                 {
                                                                     "components": [
                                                                         {
-                                                                            "id": 71269,
+                                                                            "id": 71375,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -3625,7 +3625,7 @@ export const SafeERC20 = {
                                                                                 "typeString": "type(bool)"
                                                                             },
                                                                             "typeName": {
-                                                                                "id": 71268,
+                                                                                "id": 71374,
                                                                                 "name": "bool",
                                                                                 "nodeType": "ElementaryTypeName",
                                                                                 "src": "5719:4:166",
@@ -3633,7 +3633,7 @@ export const SafeERC20 = {
                                                                             }
                                                                         }
                                                                     ],
-                                                                    "id": 71270,
+                                                                    "id": 71376,
                                                                     "isConstant": false,
                                                                     "isInlineArray": false,
                                                                     "isLValue": false,
@@ -3659,7 +3659,7 @@ export const SafeERC20 = {
                                                                     }
                                                                 ],
                                                                 "expression": {
-                                                                    "id": 71265,
+                                                                    "id": 71371,
                                                                     "name": "abi",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
@@ -3670,7 +3670,7 @@ export const SafeERC20 = {
                                                                         "typeString": "abi"
                                                                     }
                                                                 },
-                                                                "id": 71266,
+                                                                "id": 71372,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3684,7 +3684,7 @@ export const SafeERC20 = {
                                                                     "typeString": "function () pure"
                                                                 }
                                                             },
-                                                            "id": 71271,
+                                                            "id": 71377,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -3707,7 +3707,7 @@ export const SafeERC20 = {
                                                         }
                                                     }
                                                 ],
-                                                "id": 71273,
+                                                "id": 71379,
                                                 "isConstant": false,
                                                 "isInlineArray": false,
                                                 "isLValue": false,
@@ -3733,7 +3733,7 @@ export const SafeERC20 = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 71282,
+                                            "id": 71388,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3743,14 +3743,14 @@ export const SafeERC20 = {
                                                     "expression": {
                                                         "arguments": [
                                                             {
-                                                                "id": 71277,
+                                                                "id": 71383,
                                                                 "name": "token",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 71241,
+                                                                "referencedDeclaration": 71347,
                                                                 "src": "5738:5:166",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             }
@@ -3758,11 +3758,11 @@ export const SafeERC20 = {
                                                         "expression": {
                                                             "argumentTypes": [
                                                                 {
-                                                                    "typeIdentifier": "t_contract$_IERC20_$70935",
+                                                                    "typeIdentifier": "t_contract$_IERC20_$71041",
                                                                     "typeString": "contract IERC20"
                                                                 }
                                                             ],
-                                                            "id": 71276,
+                                                            "id": 71382,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3774,14 +3774,14 @@ export const SafeERC20 = {
                                                                 "typeString": "type(address)"
                                                             },
                                                             "typeName": {
-                                                                "id": 71275,
+                                                                "id": 71381,
                                                                 "name": "address",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "5730:7:166",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 71278,
+                                                        "id": 71384,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3797,7 +3797,7 @@ export const SafeERC20 = {
                                                             "typeString": "address"
                                                         }
                                                     },
-                                                    "id": 71279,
+                                                    "id": 71385,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3811,7 +3811,7 @@ export const SafeERC20 = {
                                                         "typeString": "bytes memory"
                                                     }
                                                 },
-                                                "id": 71280,
+                                                "id": 71386,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3829,7 +3829,7 @@ export const SafeERC20 = {
                                             "operator": ">",
                                             "rightExpression": {
                                                 "hexValue": "30",
-                                                "id": 71281,
+                                                "id": 71387,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -3855,15 +3855,15 @@ export const SafeERC20 = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 71247,
-                                    "id": 71284,
+                                    "functionReturnParameters": 71353,
+                                    "id": 71390,
                                     "nodeType": "Return",
                                     "src": "5650:110:166"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 71238,
+                            "id": 71344,
                             "nodeType": "StructuredDocumentation",
                             "src": "4694:490:166",
                             "text": " @dev Imitates a Solidity high-level call (i.e. a regular function call to a contract), relaxing the requirement\n on the return value: the return value is optional (but if data is returned, it must not be false).\n @param token The token targeted by the call.\n @param data The call data (encoded using abi.encode or one of its variants).\n This is a variant of {_callOptionalReturn} that silents catches all reverts and returns a bool instead."
@@ -3874,41 +3874,41 @@ export const SafeERC20 = {
                         "name": "_callOptionalReturnBool",
                         "nameLocation": "5198:23:166",
                         "parameters": {
-                            "id": 71244,
+                            "id": 71350,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71241,
+                                    "id": 71347,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "5229:5:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71286,
+                                    "scope": 71392,
                                     "src": "5222:12:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_IERC20_$70935",
+                                        "typeIdentifier": "t_contract$_IERC20_$71041",
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 71240,
+                                        "id": 71346,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71239,
+                                            "id": 71345,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "5222:6:166"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 70935,
+                                            "referencedDeclaration": 71041,
                                             "src": "5222:6:166"
                                         },
-                                        "referencedDeclaration": 70935,
+                                        "referencedDeclaration": 71041,
                                         "src": "5222:6:166",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_IERC20_$70935",
+                                            "typeIdentifier": "t_contract$_IERC20_$71041",
                                             "typeString": "contract IERC20"
                                         }
                                     },
@@ -3916,12 +3916,12 @@ export const SafeERC20 = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71243,
+                                    "id": 71349,
                                     "mutability": "mutable",
                                     "name": "data",
                                     "nameLocation": "5249:4:166",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71286,
+                                    "scope": 71392,
                                     "src": "5236:17:166",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3930,7 +3930,7 @@ export const SafeERC20 = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 71242,
+                                        "id": 71348,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5236:5:166",
@@ -3945,17 +3945,17 @@ export const SafeERC20 = {
                             "src": "5221:33:166"
                         },
                         "returnParameters": {
-                            "id": 71247,
+                            "id": 71353,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71246,
+                                    "id": 71352,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71286,
+                                    "scope": 71392,
                                     "src": "5272:4:166",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3964,7 +3964,7 @@ export const SafeERC20 = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 71245,
+                                        "id": 71351,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5272:4:166",
@@ -3978,7 +3978,7 @@ export const SafeERC20 = {
                             ],
                             "src": "5271:6:166"
                         },
-                        "scope": 71287,
+                        "scope": 71393,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "private"
@@ -3990,21 +3990,21 @@ export const SafeERC20 = {
                 "contractDependencies": [],
                 "contractKind": "library",
                 "documentation": {
-                    "id": 71006,
+                    "id": 71112,
                     "nodeType": "StructuredDocumentation",
                     "src": "293:457:166",
                     "text": " @title SafeERC20\n @dev Wrappers around ERC20 operations that throw on failure (when the token\n contract returns false). Tokens that return no value (and instead revert or\n throw on failure) are also supported, non-reverting calls are assumed to be\n successful.\n To use this library you can add a `using SafeERC20 for IERC20;` statement to your contract,\n which allows you to call the safe operations as `token.safeTransfer(...)`, etc."
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    71287
+                    71393
                 ],
                 "name": "SafeERC20",
                 "nameLocation": "759:9:166",
-                "scope": 71288,
+                "scope": 71394,
                 "usedErrors": [
-                    71014,
-                    71023
+                    71120,
+                    71129
                 ],
                 "usedEvents": []
             }

@@ -1494,32 +1494,32 @@ export declare const MockLPMath: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/test/MockLPMath.sol";
-        readonly id: 26149;
+        readonly id: 26252;
         readonly exportedSymbols: {
             readonly LPMath: readonly [21642];
-            readonly MockLPMath: readonly [26148];
+            readonly MockLPMath: readonly [26251];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:3317:138";
         readonly nodes: readonly [{
-            readonly id: 25969;
+            readonly id: 26072;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:138";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 25971;
+            readonly id: 26074;
             readonly nodeType: "ImportDirective";
             readonly src: "64:60:138";
             readonly nodes: readonly [];
             readonly absolutePath: "contracts/src/libraries/LPMath.sol";
             readonly file: "contracts/src/libraries/LPMath.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 26149;
+            readonly scope: 26252;
             readonly sourceUnit: 21643;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 25970;
+                    readonly id: 26073;
                     readonly name: "LPMath";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
@@ -1531,29 +1531,29 @@ export declare const MockLPMath: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 26148;
+            readonly id: 26251;
             readonly nodeType: "ContractDefinition";
             readonly src: "126:3229:138";
             readonly nodes: readonly [{
-                readonly id: 26014;
+                readonly id: 26117;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "152:786:138";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26013;
+                    readonly id: 26116;
                     readonly nodeType: "Block";
                     readonly src: "529:409:138";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [25991];
+                        readonly assignments: readonly [26094];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 25991;
+                            readonly id: 26094;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "544:7:138";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26013;
+                            readonly scope: 26116;
                             readonly src: "539:12:138";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1562,7 +1562,7 @@ export declare const MockLPMath: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 25990;
+                                readonly id: 26093;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "539:4:138";
@@ -1573,63 +1573,63 @@ export declare const MockLPMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 25992;
+                        readonly id: 26095;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "539:12:138";
                     }, {
                         readonly expression: {
-                            readonly id: 26006;
+                            readonly id: 26109;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly components: readonly [{
-                                    readonly id: 25993;
+                                    readonly id: 26096;
                                     readonly name: "shareReserves";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 25984;
+                                    readonly referencedDeclaration: 26087;
                                     readonly src: "562:13:138";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 25994;
+                                    readonly id: 26097;
                                     readonly name: "shareAdjustment";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 25986;
+                                    readonly referencedDeclaration: 26089;
                                     readonly src: "577:15:138";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
                                 }, {
-                                    readonly id: 25995;
+                                    readonly id: 26098;
                                     readonly name: "bondReserves";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 25988;
+                                    readonly referencedDeclaration: 26091;
                                     readonly src: "594:12:138";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 25996;
+                                    readonly id: 26099;
                                     readonly name: "success";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 25991;
+                                    readonly referencedDeclaration: 26094;
                                     readonly src: "608:7:138";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
                                 }];
-                                readonly id: 25997;
+                                readonly id: 26100;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: true;
@@ -1646,55 +1646,55 @@ export declare const MockLPMath: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 26000;
+                                    readonly id: 26103;
                                     readonly name: "_shareReserves";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 25973;
+                                    readonly referencedDeclaration: 26076;
                                     readonly src: "685:14:138";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 26001;
+                                    readonly id: 26104;
                                     readonly name: "_shareAdjustment";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 25975;
+                                    readonly referencedDeclaration: 26078;
                                     readonly src: "717:16:138";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
                                         readonly typeString: "int256";
                                     };
                                 }, {
-                                    readonly id: 26002;
+                                    readonly id: 26105;
                                     readonly name: "_bondReserves";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 25977;
+                                    readonly referencedDeclaration: 26080;
                                     readonly src: "751:13:138";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 26003;
+                                    readonly id: 26106;
                                     readonly name: "_minimumShareReserves";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 25979;
+                                    readonly referencedDeclaration: 26082;
                                     readonly src: "782:21:138";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 26004;
+                                    readonly id: 26107;
                                     readonly name: "_shareReservesDelta";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 25981;
+                                    readonly referencedDeclaration: 26084;
                                     readonly src: "821:19:138";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_int256";
@@ -1719,7 +1719,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "int256";
                                     }];
                                     readonly expression: {
-                                        readonly id: 25998;
+                                        readonly id: 26101;
                                         readonly name: "LPMath";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -1730,7 +1730,7 @@ export declare const MockLPMath: {
                                             readonly typeString: "type(library LPMath)";
                                         };
                                     };
-                                    readonly id: 25999;
+                                    readonly id: 26102;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1745,7 +1745,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "function (uint256,int256,uint256,uint256,int256) pure returns (uint256,int256,uint256,bool)";
                                     };
                                 };
-                                readonly id: 26005;
+                                readonly id: 26108;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1767,17 +1767,17 @@ export declare const MockLPMath: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 26007;
+                        readonly id: 26110;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "561:293:138";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 26009;
+                                readonly id: 26112;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 25991;
+                                readonly referencedDeclaration: 26094;
                                 readonly src: "872:7:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -1785,7 +1785,7 @@ export declare const MockLPMath: {
                                 };
                             }, {
                                 readonly hexValue: "4d6f636b4c504d6174683a2063616c63756c6174655570646174654c697175696469747953616665206661696c6564";
-                                readonly id: 26010;
+                                readonly id: 26113;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1807,7 +1807,7 @@ export declare const MockLPMath: {
                                     readonly typeIdentifier: "t_stringliteral_a260cd0f079848025f7f6e1b33f9fb2847d1ba104c4f2118aead307845a2156c";
                                     readonly typeString: "literal_string \"MockLPMath: calculateUpdateLiquiditySafe failed\"";
                                 }];
-                                readonly id: 26008;
+                                readonly id: 26111;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -1818,7 +1818,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 26011;
+                            readonly id: 26114;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1834,7 +1834,7 @@ export declare const MockLPMath: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 26012;
+                        readonly id: 26115;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "864:67:138";
                     }];
@@ -1846,16 +1846,16 @@ export declare const MockLPMath: {
                 readonly name: "calculateUpdateLiquidity";
                 readonly nameLocation: "161:24:138";
                 readonly parameters: {
-                    readonly id: 25982;
+                    readonly id: 26085;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 25973;
+                        readonly id: 26076;
                         readonly mutability: "mutable";
                         readonly name: "_shareReserves";
                         readonly nameLocation: "203:14:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26014;
+                        readonly scope: 26117;
                         readonly src: "195:22:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1864,7 +1864,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25972;
+                            readonly id: 26075;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "195:7:138";
@@ -1876,12 +1876,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25975;
+                        readonly id: 26078;
                         readonly mutability: "mutable";
                         readonly name: "_shareAdjustment";
                         readonly nameLocation: "234:16:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26014;
+                        readonly scope: 26117;
                         readonly src: "227:23:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1890,7 +1890,7 @@ export declare const MockLPMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 25974;
+                            readonly id: 26077;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "227:6:138";
@@ -1902,12 +1902,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25977;
+                        readonly id: 26080;
                         readonly mutability: "mutable";
                         readonly name: "_bondReserves";
                         readonly nameLocation: "268:13:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26014;
+                        readonly scope: 26117;
                         readonly src: "260:21:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1916,7 +1916,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25976;
+                            readonly id: 26079;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "260:7:138";
@@ -1928,12 +1928,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25979;
+                        readonly id: 26082;
                         readonly mutability: "mutable";
                         readonly name: "_minimumShareReserves";
                         readonly nameLocation: "299:21:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26014;
+                        readonly scope: 26117;
                         readonly src: "291:29:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1942,7 +1942,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25978;
+                            readonly id: 26081;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "291:7:138";
@@ -1954,12 +1954,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25981;
+                        readonly id: 26084;
                         readonly mutability: "mutable";
                         readonly name: "_shareReservesDelta";
                         readonly nameLocation: "337:19:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26014;
+                        readonly scope: 26117;
                         readonly src: "330:26:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1968,7 +1968,7 @@ export declare const MockLPMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 25980;
+                            readonly id: 26083;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "330:6:138";
@@ -1982,16 +1982,16 @@ export declare const MockLPMath: {
                     readonly src: "185:177:138";
                 };
                 readonly returnParameters: {
-                    readonly id: 25989;
+                    readonly id: 26092;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 25984;
+                        readonly id: 26087;
                         readonly mutability: "mutable";
                         readonly name: "shareReserves";
                         readonly nameLocation: "431:13:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26014;
+                        readonly scope: 26117;
                         readonly src: "423:21:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2000,7 +2000,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25983;
+                            readonly id: 26086;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "423:7:138";
@@ -2012,12 +2012,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25986;
+                        readonly id: 26089;
                         readonly mutability: "mutable";
                         readonly name: "shareAdjustment";
                         readonly nameLocation: "465:15:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26014;
+                        readonly scope: 26117;
                         readonly src: "458:22:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2026,7 +2026,7 @@ export declare const MockLPMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 25985;
+                            readonly id: 26088;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "458:6:138";
@@ -2038,12 +2038,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 25988;
+                        readonly id: 26091;
                         readonly mutability: "mutable";
                         readonly name: "bondReserves";
                         readonly nameLocation: "502:12:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26014;
+                        readonly scope: 26117;
                         readonly src: "494:20:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2052,7 +2052,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 25987;
+                            readonly id: 26090;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "494:7:138";
@@ -2065,28 +2065,28 @@ export declare const MockLPMath: {
                     }];
                     readonly src: "409:115:138";
                 };
-                readonly scope: 26148;
+                readonly scope: 26251;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26028;
+                readonly id: 26131;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "944:180:138";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26027;
+                    readonly id: 26130;
                     readonly nodeType: "Block";
                     readonly src: "1063:61:138";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 26024;
+                                readonly id: 26127;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26017;
+                                readonly referencedDeclaration: 26120;
                                 readonly src: "1109:7:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_PresentValueParams_$19776_memory_ptr";
@@ -2099,7 +2099,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "struct LPMath.PresentValueParams memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26022;
+                                    readonly id: 26125;
                                     readonly name: "LPMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2110,7 +2110,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "type(library LPMath)";
                                     };
                                 };
-                                readonly id: 26023;
+                                readonly id: 26126;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2125,7 +2125,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "function (struct LPMath.PresentValueParams memory) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26025;
+                            readonly id: 26128;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2141,8 +2141,8 @@ export declare const MockLPMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26021;
-                        readonly id: 26026;
+                        readonly functionReturnParameters: 26124;
+                        readonly id: 26129;
                         readonly nodeType: "Return";
                         readonly src: "1073:44:138";
                     }];
@@ -2154,16 +2154,16 @@ export declare const MockLPMath: {
                 readonly name: "calculatePresentValue";
                 readonly nameLocation: "953:21:138";
                 readonly parameters: {
-                    readonly id: 26018;
+                    readonly id: 26121;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26017;
+                        readonly id: 26120;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "1017:7:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26028;
+                        readonly scope: 26131;
                         readonly src: "984:40:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2172,10 +2172,10 @@ export declare const MockLPMath: {
                             readonly typeString: "struct LPMath.PresentValueParams";
                         };
                         readonly typeName: {
-                            readonly id: 26016;
+                            readonly id: 26119;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26015;
+                                readonly id: 26118;
                                 readonly name: "LPMath.PresentValueParams";
                                 readonly nameLocations: readonly ["984:6:138", "991:18:138"];
                                 readonly nodeType: "IdentifierPath";
@@ -2194,16 +2194,16 @@ export declare const MockLPMath: {
                     readonly src: "974:56:138";
                 };
                 readonly returnParameters: {
-                    readonly id: 26021;
+                    readonly id: 26124;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26020;
+                        readonly id: 26123;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26028;
+                        readonly scope: 26131;
                         readonly src: "1054:7:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2212,7 +2212,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26019;
+                            readonly id: 26122;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1054:7:138";
@@ -2225,28 +2225,28 @@ export declare const MockLPMath: {
                     }];
                     readonly src: "1053:9:138";
                 };
-                readonly scope: 26148;
+                readonly scope: 26251;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26042;
+                readonly id: 26145;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1130:179:138";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26041;
+                    readonly id: 26144;
                     readonly nodeType: "Block";
                     readonly src: "1248:61:138";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 26038;
+                                readonly id: 26141;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26031;
+                                readonly referencedDeclaration: 26134;
                                 readonly src: "1294:7:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_PresentValueParams_$19776_memory_ptr";
@@ -2259,7 +2259,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "struct LPMath.PresentValueParams memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26036;
+                                    readonly id: 26139;
                                     readonly name: "LPMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2270,7 +2270,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "type(library LPMath)";
                                     };
                                 };
-                                readonly id: 26037;
+                                readonly id: 26140;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2285,7 +2285,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "function (struct LPMath.PresentValueParams memory) pure returns (int256)";
                                 };
                             };
-                            readonly id: 26039;
+                            readonly id: 26142;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2301,8 +2301,8 @@ export declare const MockLPMath: {
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly functionReturnParameters: 26035;
-                        readonly id: 26040;
+                        readonly functionReturnParameters: 26138;
+                        readonly id: 26143;
                         readonly nodeType: "Return";
                         readonly src: "1258:44:138";
                     }];
@@ -2314,16 +2314,16 @@ export declare const MockLPMath: {
                 readonly name: "calculateNetFlatTrade";
                 readonly nameLocation: "1139:21:138";
                 readonly parameters: {
-                    readonly id: 26032;
+                    readonly id: 26135;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26031;
+                        readonly id: 26134;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "1203:7:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26042;
+                        readonly scope: 26145;
                         readonly src: "1170:40:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2332,10 +2332,10 @@ export declare const MockLPMath: {
                             readonly typeString: "struct LPMath.PresentValueParams";
                         };
                         readonly typeName: {
-                            readonly id: 26030;
+                            readonly id: 26133;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26029;
+                                readonly id: 26132;
                                 readonly name: "LPMath.PresentValueParams";
                                 readonly nameLocations: readonly ["1170:6:138", "1177:18:138"];
                                 readonly nodeType: "IdentifierPath";
@@ -2354,16 +2354,16 @@ export declare const MockLPMath: {
                     readonly src: "1160:56:138";
                 };
                 readonly returnParameters: {
-                    readonly id: 26035;
+                    readonly id: 26138;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26034;
+                        readonly id: 26137;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26042;
+                        readonly scope: 26145;
                         readonly src: "1240:6:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2372,7 +2372,7 @@ export declare const MockLPMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 26033;
+                            readonly id: 26136;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1240:6:138";
@@ -2385,30 +2385,30 @@ export declare const MockLPMath: {
                     }];
                     readonly src: "1239:8:138";
                 };
-                readonly scope: 26148;
+                readonly scope: 26251;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26067;
+                readonly id: 26170;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1315:335:138";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26066;
+                    readonly id: 26169;
                     readonly nodeType: "Block";
                     readonly src: "1434:216:138";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [26051, 26053];
+                        readonly assignments: readonly [26154, 26156];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 26051;
+                            readonly id: 26154;
                             readonly mutability: "mutable";
                             readonly name: "netCurveTrade";
                             readonly nameLocation: "1452:13:138";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26066;
+                            readonly scope: 26169;
                             readonly src: "1445:20:138";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2417,7 +2417,7 @@ export declare const MockLPMath: {
                                 readonly typeString: "int256";
                             };
                             readonly typeName: {
-                                readonly id: 26050;
+                                readonly id: 26153;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1445:6:138";
@@ -2429,12 +2429,12 @@ export declare const MockLPMath: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 26053;
+                            readonly id: 26156;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "1472:7:138";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 26066;
+                            readonly scope: 26169;
                             readonly src: "1467:12:138";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -2443,7 +2443,7 @@ export declare const MockLPMath: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 26052;
+                                readonly id: 26155;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1467:4:138";
@@ -2454,14 +2454,14 @@ export declare const MockLPMath: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 26058;
+                        readonly id: 26161;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 26056;
+                                readonly id: 26159;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26045;
+                                readonly referencedDeclaration: 26148;
                                 readonly src: "1530:7:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_PresentValueParams_$19776_memory_ptr";
@@ -2474,7 +2474,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "struct LPMath.PresentValueParams memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26054;
+                                    readonly id: 26157;
                                     readonly name: "LPMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2485,7 +2485,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "type(library LPMath)";
                                     };
                                 };
-                                readonly id: 26055;
+                                readonly id: 26158;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2500,7 +2500,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "function (struct LPMath.PresentValueParams memory) pure returns (int256,bool)";
                                 };
                             };
-                            readonly id: 26057;
+                            readonly id: 26160;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2521,11 +2521,11 @@ export declare const MockLPMath: {
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 26060;
+                                readonly id: 26163;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26053;
+                                readonly referencedDeclaration: 26156;
                                 readonly src: "1556:7:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -2533,7 +2533,7 @@ export declare const MockLPMath: {
                                 };
                             }, {
                                 readonly hexValue: "4d6f636b4c504d6174683a2063616c63756c6174654e65744375727665547261646553616665206661696c6564";
-                                readonly id: 26061;
+                                readonly id: 26164;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2555,7 +2555,7 @@ export declare const MockLPMath: {
                                     readonly typeIdentifier: "t_stringliteral_2d6b234109070984815d54c0ad886a5e811642efea043271318956686e5476d9";
                                     readonly typeString: "literal_string \"MockLPMath: calculateNetCurveTradeSafe failed\"";
                                 }];
-                                readonly id: 26059;
+                                readonly id: 26162;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -2566,7 +2566,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 26062;
+                            readonly id: 26165;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2582,24 +2582,24 @@ export declare const MockLPMath: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 26063;
+                        readonly id: 26166;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1548:65:138";
                     }, {
                         readonly expression: {
-                            readonly id: 26064;
+                            readonly id: 26167;
                             readonly name: "netCurveTrade";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 26051;
+                            readonly referencedDeclaration: 26154;
                             readonly src: "1630:13:138";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly functionReturnParameters: 26049;
-                        readonly id: 26065;
+                        readonly functionReturnParameters: 26152;
+                        readonly id: 26168;
                         readonly nodeType: "Return";
                         readonly src: "1623:20:138";
                     }];
@@ -2611,16 +2611,16 @@ export declare const MockLPMath: {
                 readonly name: "calculateNetCurveTrade";
                 readonly nameLocation: "1324:22:138";
                 readonly parameters: {
-                    readonly id: 26046;
+                    readonly id: 26149;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26045;
+                        readonly id: 26148;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "1389:7:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26067;
+                        readonly scope: 26170;
                         readonly src: "1356:40:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2629,10 +2629,10 @@ export declare const MockLPMath: {
                             readonly typeString: "struct LPMath.PresentValueParams";
                         };
                         readonly typeName: {
-                            readonly id: 26044;
+                            readonly id: 26147;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26043;
+                                readonly id: 26146;
                                 readonly name: "LPMath.PresentValueParams";
                                 readonly nameLocations: readonly ["1356:6:138", "1363:18:138"];
                                 readonly nodeType: "IdentifierPath";
@@ -2651,16 +2651,16 @@ export declare const MockLPMath: {
                     readonly src: "1346:56:138";
                 };
                 readonly returnParameters: {
-                    readonly id: 26049;
+                    readonly id: 26152;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26048;
+                        readonly id: 26151;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26067;
+                        readonly scope: 26170;
                         readonly src: "1426:6:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2669,7 +2669,7 @@ export declare const MockLPMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 26047;
+                            readonly id: 26150;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1426:6:138";
@@ -2682,39 +2682,39 @@ export declare const MockLPMath: {
                     }];
                     readonly src: "1425:8:138";
                 };
-                readonly scope: 26148;
+                readonly scope: 26251;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26084;
+                readonly id: 26187;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1656:368:138";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26083;
+                    readonly id: 26186;
                     readonly nodeType: "Block";
                     readonly src: "1852:172:138";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 26079;
+                                readonly id: 26182;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26070;
+                                readonly referencedDeclaration: 26173;
                                 readonly src: "1959:7:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_DistributeExcessIdleParams_$20264_memory_ptr";
                                     readonly typeString: "struct LPMath.DistributeExcessIdleParams memory";
                                 };
                             }, {
-                                readonly id: 26080;
+                                readonly id: 26183;
                                 readonly name: "_shareReservesDelta";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26072;
+                                readonly referencedDeclaration: 26175;
                                 readonly src: "1984:19:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2730,7 +2730,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26077;
+                                    readonly id: 26180;
                                     readonly name: "LPMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2741,7 +2741,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "type(library LPMath)";
                                     };
                                 };
-                                readonly id: 26078;
+                                readonly id: 26181;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2756,7 +2756,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "function (struct LPMath.DistributeExcessIdleParams memory,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26081;
+                            readonly id: 26184;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2772,8 +2772,8 @@ export declare const MockLPMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26076;
-                        readonly id: 26082;
+                        readonly functionReturnParameters: 26179;
+                        readonly id: 26185;
                         readonly nodeType: "Return";
                         readonly src: "1862:155:138";
                     }];
@@ -2785,16 +2785,16 @@ export declare const MockLPMath: {
                 readonly name: "calculateDistributeExcessIdleWithdrawalSharesRedeemed";
                 readonly nameLocation: "1665:53:138";
                 readonly parameters: {
-                    readonly id: 26073;
+                    readonly id: 26176;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26070;
+                        readonly id: 26173;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "1769:7:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26084;
+                        readonly scope: 26187;
                         readonly src: "1728:48:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2803,10 +2803,10 @@ export declare const MockLPMath: {
                             readonly typeString: "struct LPMath.DistributeExcessIdleParams";
                         };
                         readonly typeName: {
-                            readonly id: 26069;
+                            readonly id: 26172;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26068;
+                                readonly id: 26171;
                                 readonly name: "LPMath.DistributeExcessIdleParams";
                                 readonly nameLocations: readonly ["1728:6:138", "1735:26:138"];
                                 readonly nodeType: "IdentifierPath";
@@ -2823,12 +2823,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26072;
+                        readonly id: 26175;
                         readonly mutability: "mutable";
                         readonly name: "_shareReservesDelta";
                         readonly nameLocation: "1794:19:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26084;
+                        readonly scope: 26187;
                         readonly src: "1786:27:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2837,7 +2837,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26071;
+                            readonly id: 26174;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1786:7:138";
@@ -2851,16 +2851,16 @@ export declare const MockLPMath: {
                     readonly src: "1718:101:138";
                 };
                 readonly returnParameters: {
-                    readonly id: 26076;
+                    readonly id: 26179;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26075;
+                        readonly id: 26178;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26084;
+                        readonly scope: 26187;
                         readonly src: "1843:7:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2869,7 +2869,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26074;
+                            readonly id: 26177;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1843:7:138";
@@ -2882,50 +2882,50 @@ export declare const MockLPMath: {
                     }];
                     readonly src: "1842:9:138";
                 };
-                readonly scope: 26148;
+                readonly scope: 26251;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26106;
+                readonly id: 26209;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2030:504:138";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26105;
+                    readonly id: 26208;
                     readonly nodeType: "Block";
                     readonly src: "2267:267:138";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 26098;
+                                readonly id: 26201;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26087;
+                                readonly referencedDeclaration: 26190;
                                 readonly src: "2363:7:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_DistributeExcessIdleParams_$20264_memory_ptr";
                                     readonly typeString: "struct LPMath.DistributeExcessIdleParams memory";
                                 };
                             }, {
-                                readonly id: 26099;
+                                readonly id: 26202;
                                 readonly name: "_originalEffectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26089;
+                                readonly referencedDeclaration: 26192;
                                 readonly src: "2388:31:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26100;
+                                readonly id: 26203;
                                 readonly name: "_maxShareReservesDelta";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26091;
+                                readonly referencedDeclaration: 26194;
                                 readonly src: "2437:22:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2933,7 +2933,7 @@ export declare const MockLPMath: {
                                 };
                             }, {
                                 readonly expression: {
-                                    readonly id: 26101;
+                                    readonly id: 26204;
                                     readonly name: "LPMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2944,7 +2944,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "type(library LPMath)";
                                     };
                                 };
-                                readonly id: 26102;
+                                readonly id: 26205;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2974,7 +2974,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26096;
+                                    readonly id: 26199;
                                     readonly name: "LPMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -2985,7 +2985,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "type(library LPMath)";
                                     };
                                 };
-                                readonly id: 26097;
+                                readonly id: 26200;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3000,7 +3000,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "function (struct LPMath.DistributeExcessIdleParams memory,uint256,uint256,uint256) pure returns (uint256)";
                                 };
                             };
-                            readonly id: 26103;
+                            readonly id: 26206;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3016,8 +3016,8 @@ export declare const MockLPMath: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 26095;
-                        readonly id: 26104;
+                        readonly functionReturnParameters: 26198;
+                        readonly id: 26207;
                         readonly nodeType: "Return";
                         readonly src: "2277:250:138";
                     }];
@@ -3029,16 +3029,16 @@ export declare const MockLPMath: {
                 readonly name: "calculateDistributeExcessIdleShareProceeds";
                 readonly nameLocation: "2039:42:138";
                 readonly parameters: {
-                    readonly id: 26092;
+                    readonly id: 26195;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26087;
+                        readonly id: 26190;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "2132:7:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26106;
+                        readonly scope: 26209;
                         readonly src: "2091:48:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -3047,10 +3047,10 @@ export declare const MockLPMath: {
                             readonly typeString: "struct LPMath.DistributeExcessIdleParams";
                         };
                         readonly typeName: {
-                            readonly id: 26086;
+                            readonly id: 26189;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26085;
+                                readonly id: 26188;
                                 readonly name: "LPMath.DistributeExcessIdleParams";
                                 readonly nameLocations: readonly ["2091:6:138", "2098:26:138"];
                                 readonly nodeType: "IdentifierPath";
@@ -3067,12 +3067,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26089;
+                        readonly id: 26192;
                         readonly mutability: "mutable";
                         readonly name: "_originalEffectiveShareReserves";
                         readonly nameLocation: "2157:31:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26106;
+                        readonly scope: 26209;
                         readonly src: "2149:39:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3081,7 +3081,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26088;
+                            readonly id: 26191;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2149:7:138";
@@ -3093,12 +3093,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26091;
+                        readonly id: 26194;
                         readonly mutability: "mutable";
                         readonly name: "_maxShareReservesDelta";
                         readonly nameLocation: "2206:22:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26106;
+                        readonly scope: 26209;
                         readonly src: "2198:30:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3107,7 +3107,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26090;
+                            readonly id: 26193;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2198:7:138";
@@ -3121,16 +3121,16 @@ export declare const MockLPMath: {
                     readonly src: "2081:153:138";
                 };
                 readonly returnParameters: {
-                    readonly id: 26095;
+                    readonly id: 26198;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26094;
+                        readonly id: 26197;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26106;
+                        readonly scope: 26209;
                         readonly src: "2258:7:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3139,7 +3139,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26093;
+                            readonly id: 26196;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2258:7:138";
@@ -3152,39 +3152,39 @@ export declare const MockLPMath: {
                     }];
                     readonly src: "2257:9:138";
                 };
-                readonly scope: 26148;
+                readonly scope: 26251;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26125;
+                readonly id: 26228;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2540:360:138";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26124;
+                    readonly id: 26227;
                     readonly nodeType: "Block";
                     readonly src: "2735:165:138";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 26120;
+                                readonly id: 26223;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26109;
+                                readonly referencedDeclaration: 26212;
                                 readonly src: "2823:7:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_DistributeExcessIdleParams_$20264_memory_ptr";
                                     readonly typeString: "struct LPMath.DistributeExcessIdleParams memory";
                                 };
                             }, {
-                                readonly id: 26121;
+                                readonly id: 26224;
                                 readonly name: "_originalEffectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26111;
+                                readonly referencedDeclaration: 26214;
                                 readonly src: "2848:31:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -3200,7 +3200,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26118;
+                                    readonly id: 26221;
                                     readonly name: "LPMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -3211,7 +3211,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "type(library LPMath)";
                                     };
                                 };
-                                readonly id: 26119;
+                                readonly id: 26222;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3226,7 +3226,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "function (struct LPMath.DistributeExcessIdleParams memory,uint256) pure returns (uint256,bool)";
                                 };
                             };
-                            readonly id: 26122;
+                            readonly id: 26225;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3242,8 +3242,8 @@ export declare const MockLPMath: {
                                 readonly typeString: "tuple(uint256,bool)";
                             };
                         };
-                        readonly functionReturnParameters: 26117;
-                        readonly id: 26123;
+                        readonly functionReturnParameters: 26220;
+                        readonly id: 26226;
                         readonly nodeType: "Return";
                         readonly src: "2745:148:138";
                     }];
@@ -3255,16 +3255,16 @@ export declare const MockLPMath: {
                 readonly name: "calculateMaxShareReservesDeltaSafe";
                 readonly nameLocation: "2549:34:138";
                 readonly parameters: {
-                    readonly id: 26112;
+                    readonly id: 26215;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26109;
+                        readonly id: 26212;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "2634:7:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26125;
+                        readonly scope: 26228;
                         readonly src: "2593:48:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -3273,10 +3273,10 @@ export declare const MockLPMath: {
                             readonly typeString: "struct LPMath.DistributeExcessIdleParams";
                         };
                         readonly typeName: {
-                            readonly id: 26108;
+                            readonly id: 26211;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26107;
+                                readonly id: 26210;
                                 readonly name: "LPMath.DistributeExcessIdleParams";
                                 readonly nameLocations: readonly ["2593:6:138", "2600:26:138"];
                                 readonly nodeType: "IdentifierPath";
@@ -3293,12 +3293,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26111;
+                        readonly id: 26214;
                         readonly mutability: "mutable";
                         readonly name: "_originalEffectiveShareReserves";
                         readonly nameLocation: "2659:31:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26125;
+                        readonly scope: 26228;
                         readonly src: "2651:39:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3307,7 +3307,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26110;
+                            readonly id: 26213;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2651:7:138";
@@ -3321,16 +3321,16 @@ export declare const MockLPMath: {
                     readonly src: "2583:113:138";
                 };
                 readonly returnParameters: {
-                    readonly id: 26117;
+                    readonly id: 26220;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26114;
+                        readonly id: 26217;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26125;
+                        readonly scope: 26228;
                         readonly src: "2720:7:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3339,7 +3339,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26113;
+                            readonly id: 26216;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2720:7:138";
@@ -3351,12 +3351,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26116;
+                        readonly id: 26219;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26125;
+                        readonly scope: 26228;
                         readonly src: "2729:4:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3365,7 +3365,7 @@ export declare const MockLPMath: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 26115;
+                            readonly id: 26218;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2729:4:138";
@@ -3378,50 +3378,50 @@ export declare const MockLPMath: {
                     }];
                     readonly src: "2719:15:138";
                 };
-                readonly scope: 26148;
+                readonly scope: 26251;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 26147;
+                readonly id: 26250;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2906:447:138";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 26146;
+                    readonly id: 26249;
                     readonly nodeType: "Block";
                     readonly src: "3144:209:138";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 26141;
+                                readonly id: 26244;
                                 readonly name: "_params";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26128;
+                                readonly referencedDeclaration: 26231;
                                 readonly src: "3247:7:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_struct$_DistributeExcessIdleParams_$20264_memory_ptr";
                                     readonly typeString: "struct LPMath.DistributeExcessIdleParams memory";
                                 };
                             }, {
-                                readonly id: 26142;
+                                readonly id: 26245;
                                 readonly name: "_originalEffectiveShareReserves";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26130;
+                                readonly referencedDeclaration: 26233;
                                 readonly src: "3272:31:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
                             }, {
-                                readonly id: 26143;
+                                readonly id: 26246;
                                 readonly name: "_bondAmount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 26132;
+                                readonly referencedDeclaration: 26235;
                                 readonly src: "3321:11:138";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -3440,7 +3440,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "int256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 26139;
+                                    readonly id: 26242;
                                     readonly name: "LPMath";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -3451,7 +3451,7 @@ export declare const MockLPMath: {
                                         readonly typeString: "type(library LPMath)";
                                     };
                                 };
-                                readonly id: 26140;
+                                readonly id: 26243;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3466,7 +3466,7 @@ export declare const MockLPMath: {
                                     readonly typeString: "function (struct LPMath.DistributeExcessIdleParams memory,uint256,int256) pure returns (uint256,bool)";
                                 };
                             };
-                            readonly id: 26144;
+                            readonly id: 26247;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3482,8 +3482,8 @@ export declare const MockLPMath: {
                                 readonly typeString: "tuple(uint256,bool)";
                             };
                         };
-                        readonly functionReturnParameters: 26138;
-                        readonly id: 26145;
+                        readonly functionReturnParameters: 26241;
+                        readonly id: 26248;
                         readonly nodeType: "Return";
                         readonly src: "3154:192:138";
                     }];
@@ -3495,16 +3495,16 @@ export declare const MockLPMath: {
                 readonly name: "calculateSharesDeltaGivenBondsDeltaDerivativeSafe";
                 readonly nameLocation: "2915:49:138";
                 readonly parameters: {
-                    readonly id: 26133;
+                    readonly id: 26236;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26128;
+                        readonly id: 26231;
                         readonly mutability: "mutable";
                         readonly name: "_params";
                         readonly nameLocation: "3015:7:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26147;
+                        readonly scope: 26250;
                         readonly src: "2974:48:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -3513,10 +3513,10 @@ export declare const MockLPMath: {
                             readonly typeString: "struct LPMath.DistributeExcessIdleParams";
                         };
                         readonly typeName: {
-                            readonly id: 26127;
+                            readonly id: 26230;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 26126;
+                                readonly id: 26229;
                                 readonly name: "LPMath.DistributeExcessIdleParams";
                                 readonly nameLocations: readonly ["2974:6:138", "2981:26:138"];
                                 readonly nodeType: "IdentifierPath";
@@ -3533,12 +3533,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26130;
+                        readonly id: 26233;
                         readonly mutability: "mutable";
                         readonly name: "_originalEffectiveShareReserves";
                         readonly nameLocation: "3040:31:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26147;
+                        readonly scope: 26250;
                         readonly src: "3032:39:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3547,7 +3547,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26129;
+                            readonly id: 26232;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3032:7:138";
@@ -3559,12 +3559,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26132;
+                        readonly id: 26235;
                         readonly mutability: "mutable";
                         readonly name: "_bondAmount";
                         readonly nameLocation: "3088:11:138";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26147;
+                        readonly scope: 26250;
                         readonly src: "3081:18:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3573,7 +3573,7 @@ export declare const MockLPMath: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 26131;
+                            readonly id: 26234;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3081:6:138";
@@ -3587,16 +3587,16 @@ export declare const MockLPMath: {
                     readonly src: "2964:141:138";
                 };
                 readonly returnParameters: {
-                    readonly id: 26138;
+                    readonly id: 26241;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 26135;
+                        readonly id: 26238;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26147;
+                        readonly scope: 26250;
                         readonly src: "3129:7:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3605,7 +3605,7 @@ export declare const MockLPMath: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 26134;
+                            readonly id: 26237;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3129:7:138";
@@ -3617,12 +3617,12 @@ export declare const MockLPMath: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 26137;
+                        readonly id: 26240;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 26147;
+                        readonly scope: 26250;
                         readonly src: "3138:4:138";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -3631,7 +3631,7 @@ export declare const MockLPMath: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 26136;
+                            readonly id: 26239;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3138:4:138";
@@ -3644,7 +3644,7 @@ export declare const MockLPMath: {
                     }];
                     readonly src: "3128:15:138";
                 };
-                readonly scope: 26148;
+                readonly scope: 26251;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -3655,10 +3655,10 @@ export declare const MockLPMath: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [26148];
+            readonly linearizedBaseContracts: readonly [26251];
             readonly name: "MockLPMath";
             readonly nameLocation: "135:10:138";
-            readonly scope: 26149;
+            readonly scope: 26252;
             readonly usedErrors: readonly [10219, 10249, 10258, 10314];
             readonly usedEvents: readonly [];
         }];

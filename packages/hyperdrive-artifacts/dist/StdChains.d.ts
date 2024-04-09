@@ -60,36 +60,36 @@ export declare const StdChains: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/StdChains.sol";
-        readonly id: 31821;
+        readonly id: 31927;
         readonly exportedSymbols: {
-            readonly StdChains: readonly [31820];
-            readonly VmSafe: readonly [40306];
+            readonly StdChains: readonly [31926];
+            readonly VmSafe: readonly [40412];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "32:10885:146";
         readonly nodes: readonly [{
-            readonly id: 31102;
+            readonly id: 31208;
             readonly nodeType: "PragmaDirective";
             readonly src: "32:31:146";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 31104;
+            readonly id: 31210;
             readonly nodeType: "ImportDirective";
             readonly src: "65:32:146";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/Vm.sol";
             readonly file: "./Vm.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 31821;
-            readonly sourceUnit: 40779;
+            readonly scope: 31927;
+            readonly sourceUnit: 40885;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 31103;
+                    readonly id: 31209;
                     readonly name: "VmSafe";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 40306;
+                    readonly referencedDeclaration: 40412;
                     readonly src: "73:6:146";
                     readonly typeDescriptions: {};
                 };
@@ -97,11 +97,11 @@ export declare const StdChains: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 31820;
+            readonly id: 31926;
             readonly nodeType: "ContractDefinition";
             readonly src: "1899:9017:146";
             readonly nodes: readonly [{
-                readonly id: 31122;
+                readonly id: 31228;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1933:92:146";
                 readonly nodes: readonly [];
@@ -109,28 +109,28 @@ export declare const StdChains: {
                 readonly mutability: "constant";
                 readonly name: "vm";
                 readonly nameLocation: "1957:2:146";
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                    readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                     readonly typeString: "contract VmSafe";
                 };
                 readonly typeName: {
-                    readonly id: 31107;
+                    readonly id: 31213;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 31106;
+                        readonly id: 31212;
                         readonly name: "VmSafe";
                         readonly nameLocations: readonly ["1933:6:146"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 40306;
+                        readonly referencedDeclaration: 40412;
                         readonly src: "1933:6:146";
                     };
-                    readonly referencedDeclaration: 40306;
+                    readonly referencedDeclaration: 40412;
                     readonly src: "1933:6:146";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                        readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                         readonly typeString: "contract VmSafe";
                     };
                 };
@@ -141,7 +141,7 @@ export declare const StdChains: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "6865766d20636865617420636f6465";
-                                        readonly id: 31116;
+                                        readonly id: 31222;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -160,7 +160,7 @@ export declare const StdChains: {
                                             readonly typeIdentifier: "t_stringliteral_885cb69240a935d632d79c317109709ecfa91a80626ff3989d68f67f5b1dd12d";
                                             readonly typeString: "literal_string \"hevm cheat code\"";
                                         }];
-                                        readonly id: 31115;
+                                        readonly id: 31221;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -171,7 +171,7 @@ export declare const StdChains: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 31117;
+                                    readonly id: 31223;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -192,7 +192,7 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     }];
-                                    readonly id: 31114;
+                                    readonly id: 31220;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -204,14 +204,14 @@ export declare const StdChains: {
                                         readonly typeString: "type(uint256)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 31113;
+                                        readonly id: 31219;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "1985:7:146";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 31118;
+                                readonly id: 31224;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -232,7 +232,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 31112;
+                                readonly id: 31218;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -244,14 +244,14 @@ export declare const StdChains: {
                                     readonly typeString: "type(uint160)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 31111;
+                                    readonly id: 31217;
                                     readonly name: "uint160";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "1977:7:146";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 31119;
+                            readonly id: 31225;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -272,7 +272,7 @@ export declare const StdChains: {
                                 readonly typeIdentifier: "t_uint160";
                                 readonly typeString: "uint160";
                             }];
-                            readonly id: 31110;
+                            readonly id: 31216;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -284,14 +284,14 @@ export declare const StdChains: {
                                 readonly typeString: "type(address)";
                             };
                             readonly typeName: {
-                                readonly id: 31109;
+                                readonly id: 31215;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1969:7:146";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 31120;
+                        readonly id: 31226;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -312,18 +312,18 @@ export declare const StdChains: {
                             readonly typeIdentifier: "t_address";
                             readonly typeString: "address";
                         }];
-                        readonly id: 31108;
+                        readonly id: 31214;
                         readonly name: "VmSafe";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 40306;
+                        readonly referencedDeclaration: 40412;
                         readonly src: "1962:6:146";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_type$_t_contract$_VmSafe_$40306_$";
+                            readonly typeIdentifier: "t_type$_t_contract$_VmSafe_$40412_$";
                             readonly typeString: "type(contract VmSafe)";
                         };
                     };
-                    readonly id: 31121;
+                    readonly id: 31227;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -335,13 +335,13 @@ export declare const StdChains: {
                     readonly src: "1962:63:146";
                     readonly tryCall: false;
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                        readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                         readonly typeString: "contract VmSafe";
                     };
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 31124;
+                readonly id: 31230;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "2032:33:146";
                 readonly nodes: readonly [];
@@ -349,7 +349,7 @@ export declare const StdChains: {
                 readonly mutability: "mutable";
                 readonly name: "stdChainsInitialized";
                 readonly nameLocation: "2045:20:146";
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -357,7 +357,7 @@ export declare const StdChains: {
                     readonly typeString: "bool";
                 };
                 readonly typeName: {
-                    readonly id: 31123;
+                    readonly id: 31229;
                     readonly name: "bool";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "2032:4:146";
@@ -368,19 +368,19 @@ export declare const StdChains: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 31131;
+                readonly id: 31237;
                 readonly nodeType: "StructDefinition";
                 readonly src: "2072:93:146";
                 readonly nodes: readonly [];
                 readonly canonicalName: "StdChains.ChainData";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 31126;
+                    readonly id: 31232;
                     readonly mutability: "mutable";
                     readonly name: "name";
                     readonly nameLocation: "2106:4:146";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 31131;
+                    readonly scope: 31237;
                     readonly src: "2099:11:146";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -389,7 +389,7 @@ export declare const StdChains: {
                         readonly typeString: "string";
                     };
                     readonly typeName: {
-                        readonly id: 31125;
+                        readonly id: 31231;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2099:6:146";
@@ -401,12 +401,12 @@ export declare const StdChains: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 31128;
+                    readonly id: 31234;
                     readonly mutability: "mutable";
                     readonly name: "chainId";
                     readonly nameLocation: "2128:7:146";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 31131;
+                    readonly scope: 31237;
                     readonly src: "2120:15:146";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -415,7 +415,7 @@ export declare const StdChains: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 31127;
+                        readonly id: 31233;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2120:7:146";
@@ -427,12 +427,12 @@ export declare const StdChains: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 31130;
+                    readonly id: 31236;
                     readonly mutability: "mutable";
                     readonly name: "rpcUrl";
                     readonly nameLocation: "2152:6:146";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 31131;
+                    readonly scope: 31237;
                     readonly src: "2145:13:146";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -441,7 +441,7 @@ export declare const StdChains: {
                         readonly typeString: "string";
                     };
                     readonly typeName: {
-                        readonly id: 31129;
+                        readonly id: 31235;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2145:6:146";
@@ -454,22 +454,22 @@ export declare const StdChains: {
                 }];
                 readonly name: "ChainData";
                 readonly nameLocation: "2079:9:146";
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly visibility: "public";
             }, {
-                readonly id: 31140;
+                readonly id: 31246;
                 readonly nodeType: "StructDefinition";
                 readonly src: "2171:598:146";
                 readonly nodes: readonly [];
                 readonly canonicalName: "StdChains.Chain";
                 readonly members: readonly [{
                     readonly constant: false;
-                    readonly id: 31133;
+                    readonly id: 31239;
                     readonly mutability: "mutable";
                     readonly name: "name";
                     readonly nameLocation: "2228:4:146";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 31140;
+                    readonly scope: 31246;
                     readonly src: "2221:11:146";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -478,7 +478,7 @@ export declare const StdChains: {
                         readonly typeString: "string";
                     };
                     readonly typeName: {
-                        readonly id: 31132;
+                        readonly id: 31238;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2221:6:146";
@@ -490,12 +490,12 @@ export declare const StdChains: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 31135;
+                    readonly id: 31241;
                     readonly mutability: "mutable";
                     readonly name: "chainId";
                     readonly nameLocation: "2283:7:146";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 31140;
+                    readonly scope: 31246;
                     readonly src: "2275:15:146";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -504,7 +504,7 @@ export declare const StdChains: {
                         readonly typeString: "uint256";
                     };
                     readonly typeName: {
-                        readonly id: 31134;
+                        readonly id: 31240;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2275:7:146";
@@ -516,12 +516,12 @@ export declare const StdChains: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 31137;
+                    readonly id: 31243;
                     readonly mutability: "mutable";
                     readonly name: "chainAlias";
                     readonly nameLocation: "2383:10:146";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 31140;
+                    readonly scope: 31246;
                     readonly src: "2376:17:146";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -530,7 +530,7 @@ export declare const StdChains: {
                         readonly typeString: "string";
                     };
                     readonly typeName: {
-                        readonly id: 31136;
+                        readonly id: 31242;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2376:6:146";
@@ -542,12 +542,12 @@ export declare const StdChains: {
                     readonly visibility: "internal";
                 }, {
                     readonly constant: false;
-                    readonly id: 31139;
+                    readonly id: 31245;
                     readonly mutability: "mutable";
                     readonly name: "rpcUrl";
                     readonly nameLocation: "2756:6:146";
                     readonly nodeType: "VariableDeclaration";
-                    readonly scope: 31140;
+                    readonly scope: 31246;
                     readonly src: "2749:13:146";
                     readonly stateVariable: false;
                     readonly storageLocation: "default";
@@ -556,7 +556,7 @@ export declare const StdChains: {
                         readonly typeString: "string";
                     };
                     readonly typeName: {
-                        readonly id: 31138;
+                        readonly id: 31244;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2749:6:146";
@@ -569,10 +569,10 @@ export declare const StdChains: {
                 }];
                 readonly name: "Chain";
                 readonly nameLocation: "2178:5:146";
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly visibility: "public";
             }, {
-                readonly id: 31145;
+                readonly id: 31251;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "2873:39:146";
                 readonly nodes: readonly [];
@@ -580,19 +580,19 @@ export declare const StdChains: {
                 readonly mutability: "mutable";
                 readonly name: "chains";
                 readonly nameLocation: "2906:6:146";
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$";
+                    readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$";
                     readonly typeString: "mapping(string => struct StdChains.Chain)";
                 };
                 readonly typeName: {
-                    readonly id: 31144;
+                    readonly id: 31250;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 31141;
+                        readonly id: 31247;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2881:6:146";
@@ -604,33 +604,33 @@ export declare const StdChains: {
                     readonly nodeType: "Mapping";
                     readonly src: "2873:24:146";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$";
+                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$";
                         readonly typeString: "mapping(string => struct StdChains.Chain)";
                     };
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 31143;
+                        readonly id: 31249;
                         readonly nodeType: "UserDefinedTypeName";
                         readonly pathNode: {
-                            readonly id: 31142;
+                            readonly id: 31248;
                             readonly name: "Chain";
                             readonly nameLocations: readonly ["2891:5:146"];
                             readonly nodeType: "IdentifierPath";
-                            readonly referencedDeclaration: 31140;
+                            readonly referencedDeclaration: 31246;
                             readonly src: "2891:5:146";
                         };
-                        readonly referencedDeclaration: 31140;
+                        readonly referencedDeclaration: 31246;
                         readonly src: "2891:5:146";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Chain_$31140_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_Chain_$31246_storage_ptr";
                             readonly typeString: "struct StdChains.Chain";
                         };
                     };
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 31149;
+                readonly id: 31255;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "2978:48:146";
                 readonly nodes: readonly [];
@@ -638,7 +638,7 @@ export declare const StdChains: {
                 readonly mutability: "mutable";
                 readonly name: "defaultRpcUrls";
                 readonly nameLocation: "3012:14:146";
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -646,11 +646,11 @@ export declare const StdChains: {
                     readonly typeString: "mapping(string => string)";
                 };
                 readonly typeName: {
-                    readonly id: 31148;
+                    readonly id: 31254;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 31146;
+                        readonly id: 31252;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2986:6:146";
@@ -668,7 +668,7 @@ export declare const StdChains: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 31147;
+                        readonly id: 31253;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "2996:6:146";
@@ -680,7 +680,7 @@ export declare const StdChains: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 31153;
+                readonly id: 31259;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "3075:44:146";
                 readonly nodes: readonly [];
@@ -688,7 +688,7 @@ export declare const StdChains: {
                 readonly mutability: "mutable";
                 readonly name: "idToAlias";
                 readonly nameLocation: "3110:9:146";
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -696,11 +696,11 @@ export declare const StdChains: {
                     readonly typeString: "mapping(uint256 => string)";
                 };
                 readonly typeName: {
-                    readonly id: 31152;
+                    readonly id: 31258;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 31150;
+                        readonly id: 31256;
                         readonly name: "uint256";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "3083:7:146";
@@ -718,7 +718,7 @@ export declare const StdChains: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 31151;
+                        readonly id: 31257;
                         readonly name: "string";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "3094:6:146";
@@ -730,7 +730,7 @@ export declare const StdChains: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 31156;
+                readonly id: 31262;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "3126:44:146";
                 readonly nodes: readonly [];
@@ -738,7 +738,7 @@ export declare const StdChains: {
                 readonly mutability: "mutable";
                 readonly name: "fallbackToDefaultRpcUrls";
                 readonly nameLocation: "3139:24:146";
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -746,7 +746,7 @@ export declare const StdChains: {
                     readonly typeString: "bool";
                 };
                 readonly typeName: {
-                    readonly id: 31154;
+                    readonly id: 31260;
                     readonly name: "bool";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "3126:4:146";
@@ -757,7 +757,7 @@ export declare const StdChains: {
                 };
                 readonly value: {
                     readonly hexValue: "74727565";
-                    readonly id: 31155;
+                    readonly id: 31261;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -773,12 +773,12 @@ export declare const StdChains: {
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 31208;
+                readonly id: 31314;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3255:524:146";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 31207;
+                    readonly id: 31313;
                     readonly nodeType: "Block";
                     readonly src: "3345:434:146";
                     readonly nodes: readonly [];
@@ -789,7 +789,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 31171;
+                                readonly id: 31277;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -797,11 +797,11 @@ export declare const StdChains: {
                                 readonly leftExpression: {
                                     readonly expression: {
                                         readonly arguments: readonly [{
-                                            readonly id: 31167;
+                                            readonly id: 31273;
                                             readonly name: "chainAlias";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 31158;
+                                            readonly referencedDeclaration: 31264;
                                             readonly src: "3369:10:146";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_string_memory_ptr";
@@ -813,7 +813,7 @@ export declare const StdChains: {
                                                 readonly typeIdentifier: "t_string_memory_ptr";
                                                 readonly typeString: "string memory";
                                             }];
-                                            readonly id: 31166;
+                                            readonly id: 31272;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -825,14 +825,14 @@ export declare const StdChains: {
                                                 readonly typeString: "type(bytes storage pointer)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 31165;
+                                                readonly id: 31271;
                                                 readonly name: "bytes";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "3363:5:146";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 31168;
+                                        readonly id: 31274;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -848,7 +848,7 @@ export declare const StdChains: {
                                             readonly typeString: "bytes memory";
                                         };
                                     };
-                                    readonly id: 31169;
+                                    readonly id: 31275;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -866,7 +866,7 @@ export declare const StdChains: {
                                 readonly operator: "!=";
                                 readonly rightExpression: {
                                     readonly hexValue: "30";
-                                    readonly id: 31170;
+                                    readonly id: 31276;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -887,7 +887,7 @@ export declare const StdChains: {
                                 };
                             }, {
                                 readonly hexValue: "537464436861696e7320676574436861696e28737472696e67293a20436861696e20616c6961732063616e6e6f742062652074686520656d70747920737472696e672e";
-                                readonly id: 31172;
+                                readonly id: 31278;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -909,7 +909,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_3d920aad82cc068f1a73b0fb2c703d0169baa46c8c67097012e1aca0cc8c8b70";
                                     readonly typeString: "literal_string \"StdChains getChain(string): Chain alias cannot be the empty string.\"";
                                 }];
-                                readonly id: 31164;
+                                readonly id: 31270;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -920,7 +920,7 @@ export declare const StdChains: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 31173;
+                            readonly id: 31279;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -936,7 +936,7 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31174;
+                        readonly id: 31280;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3355:109:146";
                     }, {
@@ -944,18 +944,18 @@ export declare const StdChains: {
                             readonly arguments: readonly [];
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
-                                readonly id: 31175;
+                                readonly id: 31281;
                                 readonly name: "initializeStdChains";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31782;
+                                readonly referencedDeclaration: 31888;
                                 readonly src: "3475:19:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_nonpayable$__$returns$__$";
                                     readonly typeString: "function ()";
                                 };
                             };
-                            readonly id: 31176;
+                            readonly id: 31282;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -971,25 +971,25 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31177;
+                        readonly id: 31283;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3475:21:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31182;
+                            readonly id: 31288;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 31178;
+                                readonly id: 31284;
                                 readonly name: "chain";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31162;
+                                readonly referencedDeclaration: 31268;
                                 readonly src: "3506:5:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                     readonly typeString: "struct StdChains.Chain memory";
                                 };
                             };
@@ -997,24 +997,24 @@ export declare const StdChains: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 31179;
+                                    readonly id: 31285;
                                     readonly name: "chains";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31145;
+                                    readonly referencedDeclaration: 31251;
                                     readonly src: "3514:6:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$";
+                                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$";
                                         readonly typeString: "mapping(string memory => struct StdChains.Chain storage ref)";
                                     };
                                 };
-                                readonly id: 31181;
+                                readonly id: 31287;
                                 readonly indexExpression: {
-                                    readonly id: 31180;
+                                    readonly id: 31286;
                                     readonly name: "chainAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31158;
+                                    readonly referencedDeclaration: 31264;
                                     readonly src: "3521:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -1028,17 +1028,17 @@ export declare const StdChains: {
                                 readonly nodeType: "IndexAccess";
                                 readonly src: "3514:18:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_storage";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_storage";
                                     readonly typeString: "struct StdChains.Chain storage ref";
                                 };
                             };
                             readonly src: "3506:26:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                 readonly typeString: "struct StdChains.Chain memory";
                             };
                         };
-                        readonly id: 31183;
+                        readonly id: 31289;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3506:26:146";
                     }, {
@@ -1048,25 +1048,25 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 31188;
+                                readonly id: 31294;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 31185;
+                                        readonly id: 31291;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31162;
+                                        readonly referencedDeclaration: 31268;
                                         readonly src: "3563:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                             readonly typeString: "struct StdChains.Chain memory";
                                         };
                                     };
-                                    readonly id: 31186;
+                                    readonly id: 31292;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -1074,7 +1074,7 @@ export declare const StdChains: {
                                     readonly memberLocation: "3569:7:146";
                                     readonly memberName: "chainId";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31135;
+                                    readonly referencedDeclaration: 31241;
                                     readonly src: "3563:13:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1085,7 +1085,7 @@ export declare const StdChains: {
                                 readonly operator: "!=";
                                 readonly rightExpression: {
                                     readonly hexValue: "30";
-                                    readonly id: 31187;
+                                    readonly id: 31293;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1108,7 +1108,7 @@ export declare const StdChains: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "537464436861696e7320676574436861696e28737472696e67293a20436861696e207769746820616c6961732022";
-                                        readonly id: 31193;
+                                        readonly id: 31299;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1122,11 +1122,11 @@ export declare const StdChains: {
                                         };
                                         readonly value: "StdChains getChain(string): Chain with alias \"";
                                     }, {
-                                        readonly id: 31194;
+                                        readonly id: 31300;
                                         readonly name: "chainAlias";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31158;
+                                        readonly referencedDeclaration: 31264;
                                         readonly src: "3670:10:146";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_string_memory_ptr";
@@ -1134,7 +1134,7 @@ export declare const StdChains: {
                                         };
                                     }, {
                                         readonly hexValue: "22206e6f7420666f756e642e";
-                                        readonly id: 31195;
+                                        readonly id: 31301;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1160,7 +1160,7 @@ export declare const StdChains: {
                                             readonly typeString: "literal_string \"\" not found.\"";
                                         }];
                                         readonly expression: {
-                                            readonly id: 31191;
+                                            readonly id: 31297;
                                             readonly name: "abi";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -1171,7 +1171,7 @@ export declare const StdChains: {
                                                 readonly typeString: "abi";
                                             };
                                         };
-                                        readonly id: 31192;
+                                        readonly id: 31298;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1185,7 +1185,7 @@ export declare const StdChains: {
                                             readonly typeString: "function () pure returns (bytes memory)";
                                         };
                                     };
-                                    readonly id: 31196;
+                                    readonly id: 31302;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1206,7 +1206,7 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     }];
-                                    readonly id: 31190;
+                                    readonly id: 31296;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1218,14 +1218,14 @@ export declare const StdChains: {
                                         readonly typeString: "type(string storage pointer)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 31189;
+                                        readonly id: 31295;
                                         readonly name: "string";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "3595:6:146";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 31197;
+                                readonly id: 31303;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1249,7 +1249,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
                                     readonly typeString: "string memory";
                                 }];
-                                readonly id: 31184;
+                                readonly id: 31290;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -1260,7 +1260,7 @@ export declare const StdChains: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 31198;
+                            readonly id: 31304;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1276,25 +1276,25 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31199;
+                        readonly id: 31305;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3542:167:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31205;
+                            readonly id: 31311;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 31200;
+                                readonly id: 31306;
                                 readonly name: "chain";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31162;
+                                readonly referencedDeclaration: 31268;
                                 readonly src: "3720:5:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                     readonly typeString: "struct StdChains.Chain memory";
                                 };
                             };
@@ -1302,25 +1302,25 @@ export declare const StdChains: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 31202;
+                                    readonly id: 31308;
                                     readonly name: "chainAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31158;
+                                    readonly referencedDeclaration: 31264;
                                     readonly src: "3754:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
                                         readonly typeString: "string memory";
                                     };
                                 }, {
-                                    readonly id: 31203;
+                                    readonly id: 31309;
                                     readonly name: "chain";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31162;
+                                    readonly referencedDeclaration: 31268;
                                     readonly src: "3766:5:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                         readonly typeString: "struct StdChains.Chain memory";
                                     };
                                 }];
@@ -1329,21 +1329,21 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
                                         readonly typeString: "string memory";
                                     }, {
-                                        readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                         readonly typeString: "struct StdChains.Chain memory";
                                     }];
-                                    readonly id: 31201;
+                                    readonly id: 31307;
                                     readonly name: "getChainWithUpdatedRpcUrl";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31590;
+                                    readonly referencedDeclaration: 31696;
                                     readonly src: "3728:25:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_Chain_$31140_memory_ptr_$returns$_t_struct$_Chain_$31140_memory_ptr_$";
+                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_Chain_$31246_memory_ptr_$returns$_t_struct$_Chain_$31246_memory_ptr_$";
                                         readonly typeString: "function (string memory,struct StdChains.Chain memory) returns (struct StdChains.Chain memory)";
                                     };
                                 };
-                                readonly id: 31204;
+                                readonly id: 31310;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1355,17 +1355,17 @@ export declare const StdChains: {
                                 readonly src: "3728:44:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                     readonly typeString: "struct StdChains.Chain memory";
                                 };
                             };
                             readonly src: "3720:52:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                 readonly typeString: "struct StdChains.Chain memory";
                             };
                         };
-                        readonly id: 31206;
+                        readonly id: 31312;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3720:52:146";
                     }];
@@ -1376,16 +1376,16 @@ export declare const StdChains: {
                 readonly name: "getChain";
                 readonly nameLocation: "3264:8:146";
                 readonly parameters: {
-                    readonly id: 31159;
+                    readonly id: 31265;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31158;
+                        readonly id: 31264;
                         readonly mutability: "mutable";
                         readonly name: "chainAlias";
                         readonly nameLocation: "3287:10:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31208;
+                        readonly scope: 31314;
                         readonly src: "3273:24:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1394,7 +1394,7 @@ export declare const StdChains: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 31157;
+                            readonly id: 31263;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3273:6:146";
@@ -1408,38 +1408,38 @@ export declare const StdChains: {
                     readonly src: "3272:26:146";
                 };
                 readonly returnParameters: {
-                    readonly id: 31163;
+                    readonly id: 31269;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31162;
+                        readonly id: 31268;
                         readonly mutability: "mutable";
                         readonly name: "chain";
                         readonly nameLocation: "3338:5:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31208;
+                        readonly scope: 31314;
                         readonly src: "3325:18:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                             readonly typeString: "struct StdChains.Chain";
                         };
                         readonly typeName: {
-                            readonly id: 31161;
+                            readonly id: 31267;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 31160;
+                                readonly id: 31266;
                                 readonly name: "Chain";
                                 readonly nameLocations: readonly ["3325:5:146"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 31140;
+                                readonly referencedDeclaration: 31246;
                                 readonly src: "3325:5:146";
                             };
-                            readonly referencedDeclaration: 31140;
+                            readonly referencedDeclaration: 31246;
                             readonly src: "3325:5:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_storage_ptr";
                                 readonly typeString: "struct StdChains.Chain";
                             };
                         };
@@ -1447,17 +1447,17 @@ export declare const StdChains: {
                     }];
                     readonly src: "3324:20:146";
                 };
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 31265;
+                readonly id: 31371;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3785:541:146";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 31264;
+                    readonly id: 31370;
                     readonly nodeType: "Block";
                     readonly src: "3866:460:146";
                     readonly nodes: readonly [];
@@ -1468,17 +1468,17 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 31219;
+                                readonly id: 31325;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
-                                    readonly id: 31217;
+                                    readonly id: 31323;
                                     readonly name: "chainId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31210;
+                                    readonly referencedDeclaration: 31316;
                                     readonly src: "3884:7:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1489,7 +1489,7 @@ export declare const StdChains: {
                                 readonly operator: "!=";
                                 readonly rightExpression: {
                                     readonly hexValue: "30";
-                                    readonly id: 31218;
+                                    readonly id: 31324;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1510,7 +1510,7 @@ export declare const StdChains: {
                                 };
                             }, {
                                 readonly hexValue: "537464436861696e7320676574436861696e2875696e74323536293a20436861696e2049442063616e6e6f7420626520302e";
-                                readonly id: 31220;
+                                readonly id: 31326;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1532,7 +1532,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_64f1cd082b277ed92a70b6890cc1e3b6ebd77bc6c9299e7ce82305de04926a4a";
                                     readonly typeString: "literal_string \"StdChains getChain(uint256): Chain ID cannot be 0.\"";
                                 }];
-                                readonly id: 31216;
+                                readonly id: 31322;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -1543,7 +1543,7 @@ export declare const StdChains: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 31221;
+                            readonly id: 31327;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1559,7 +1559,7 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31222;
+                        readonly id: 31328;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3876:75:146";
                     }, {
@@ -1567,18 +1567,18 @@ export declare const StdChains: {
                             readonly arguments: readonly [];
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
-                                readonly id: 31223;
+                                readonly id: 31329;
                                 readonly name: "initializeStdChains";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31782;
+                                readonly referencedDeclaration: 31888;
                                 readonly src: "3961:19:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_nonpayable$__$returns$__$";
                                     readonly typeString: "function ()";
                                 };
                             };
-                            readonly id: 31224;
+                            readonly id: 31330;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1594,19 +1594,19 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31225;
+                        readonly id: 31331;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3961:21:146";
                     }, {
-                        readonly assignments: readonly [31227];
+                        readonly assignments: readonly [31333];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 31227;
+                            readonly id: 31333;
                             readonly mutability: "mutable";
                             readonly name: "chainAlias";
                             readonly nameLocation: "4006:10:146";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 31264;
+                            readonly scope: 31370;
                             readonly src: "3992:24:146";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -1615,7 +1615,7 @@ export declare const StdChains: {
                                 readonly typeString: "string";
                             };
                             readonly typeName: {
-                                readonly id: 31226;
+                                readonly id: 31332;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3992:6:146";
@@ -1626,27 +1626,27 @@ export declare const StdChains: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 31231;
+                        readonly id: 31337;
                         readonly initialValue: {
                             readonly baseExpression: {
-                                readonly id: 31228;
+                                readonly id: 31334;
                                 readonly name: "idToAlias";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31153;
+                                readonly referencedDeclaration: 31259;
                                 readonly src: "4019:9:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_mapping$_t_uint256_$_t_string_storage_$";
                                     readonly typeString: "mapping(uint256 => string storage ref)";
                                 };
                             };
-                            readonly id: 31230;
+                            readonly id: 31336;
                             readonly indexExpression: {
-                                readonly id: 31229;
+                                readonly id: 31335;
                                 readonly name: "chainId";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31210;
+                                readonly referencedDeclaration: 31316;
                                 readonly src: "4029:7:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1668,20 +1668,20 @@ export declare const StdChains: {
                         readonly src: "3992:45:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31236;
+                            readonly id: 31342;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 31232;
+                                readonly id: 31338;
                                 readonly name: "chain";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31214;
+                                readonly referencedDeclaration: 31320;
                                 readonly src: "4048:5:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                     readonly typeString: "struct StdChains.Chain memory";
                                 };
                             };
@@ -1689,24 +1689,24 @@ export declare const StdChains: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 31233;
+                                    readonly id: 31339;
                                     readonly name: "chains";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31145;
+                                    readonly referencedDeclaration: 31251;
                                     readonly src: "4056:6:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$";
+                                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$";
                                         readonly typeString: "mapping(string memory => struct StdChains.Chain storage ref)";
                                     };
                                 };
-                                readonly id: 31235;
+                                readonly id: 31341;
                                 readonly indexExpression: {
-                                    readonly id: 31234;
+                                    readonly id: 31340;
                                     readonly name: "chainAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31227;
+                                    readonly referencedDeclaration: 31333;
                                     readonly src: "4063:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -1720,17 +1720,17 @@ export declare const StdChains: {
                                 readonly nodeType: "IndexAccess";
                                 readonly src: "4056:18:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_storage";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_storage";
                                     readonly typeString: "struct StdChains.Chain storage ref";
                                 };
                             };
                             readonly src: "4048:26:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                 readonly typeString: "struct StdChains.Chain memory";
                             };
                         };
-                        readonly id: 31237;
+                        readonly id: 31343;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4048:26:146";
                     }, {
@@ -1740,25 +1740,25 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 31242;
+                                readonly id: 31348;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 31239;
+                                        readonly id: 31345;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31214;
+                                        readonly referencedDeclaration: 31320;
                                         readonly src: "4106:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                             readonly typeString: "struct StdChains.Chain memory";
                                         };
                                     };
-                                    readonly id: 31240;
+                                    readonly id: 31346;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -1766,7 +1766,7 @@ export declare const StdChains: {
                                     readonly memberLocation: "4112:7:146";
                                     readonly memberName: "chainId";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31135;
+                                    readonly referencedDeclaration: 31241;
                                     readonly src: "4106:13:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1777,7 +1777,7 @@ export declare const StdChains: {
                                 readonly operator: "!=";
                                 readonly rightExpression: {
                                     readonly hexValue: "30";
-                                    readonly id: 31241;
+                                    readonly id: 31347;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1800,7 +1800,7 @@ export declare const StdChains: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "537464436861696e7320676574436861696e2875696e74323536293a20436861696e207769746820494420";
-                                        readonly id: 31247;
+                                        readonly id: 31353;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1815,11 +1815,11 @@ export declare const StdChains: {
                                         readonly value: "StdChains getChain(uint256): Chain with ID ";
                                     }, {
                                         readonly arguments: readonly [{
-                                            readonly id: 31250;
+                                            readonly id: 31356;
                                             readonly name: "chainId";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 31210;
+                                            readonly referencedDeclaration: 31316;
                                             readonly src: "4221:7:146";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -1832,18 +1832,18 @@ export declare const StdChains: {
                                                 readonly typeString: "uint256";
                                             }];
                                             readonly expression: {
-                                                readonly id: 31248;
+                                                readonly id: 31354;
                                                 readonly name: "vm";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 31122;
+                                                readonly referencedDeclaration: 31228;
                                                 readonly src: "4209:2:146";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                                                    readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                                                     readonly typeString: "contract VmSafe";
                                                 };
                                             };
-                                            readonly id: 31249;
+                                            readonly id: 31355;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -1851,14 +1851,14 @@ export declare const StdChains: {
                                             readonly memberLocation: "4212:8:146";
                                             readonly memberName: "toString";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 39838;
+                                            readonly referencedDeclaration: 39944;
                                             readonly src: "4209:11:146";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$";
                                                 readonly typeString: "function (uint256) pure external returns (string memory)";
                                             };
                                         };
-                                        readonly id: 31251;
+                                        readonly id: 31357;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1875,7 +1875,7 @@ export declare const StdChains: {
                                         };
                                     }, {
                                         readonly hexValue: "206e6f7420666f756e642e";
-                                        readonly id: 31252;
+                                        readonly id: 31358;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1901,7 +1901,7 @@ export declare const StdChains: {
                                             readonly typeString: "literal_string \" not found.\"";
                                         }];
                                         readonly expression: {
-                                            readonly id: 31245;
+                                            readonly id: 31351;
                                             readonly name: "abi";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -1912,7 +1912,7 @@ export declare const StdChains: {
                                                 readonly typeString: "abi";
                                             };
                                         };
-                                        readonly id: 31246;
+                                        readonly id: 31352;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1926,7 +1926,7 @@ export declare const StdChains: {
                                             readonly typeString: "function () pure returns (bytes memory)";
                                         };
                                     };
-                                    readonly id: 31253;
+                                    readonly id: 31359;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1947,7 +1947,7 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     }];
-                                    readonly id: 31244;
+                                    readonly id: 31350;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -1959,14 +1959,14 @@ export declare const StdChains: {
                                         readonly typeString: "type(string storage pointer)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 31243;
+                                        readonly id: 31349;
                                         readonly name: "string";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "4138:6:146";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 31254;
+                                readonly id: 31360;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1990,7 +1990,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
                                     readonly typeString: "string memory";
                                 }];
-                                readonly id: 31238;
+                                readonly id: 31344;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -2001,7 +2001,7 @@ export declare const StdChains: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 31255;
+                            readonly id: 31361;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2017,25 +2017,25 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31256;
+                        readonly id: 31362;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4085:171:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31262;
+                            readonly id: 31368;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 31257;
+                                readonly id: 31363;
                                 readonly name: "chain";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31214;
+                                readonly referencedDeclaration: 31320;
                                 readonly src: "4267:5:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                     readonly typeString: "struct StdChains.Chain memory";
                                 };
                             };
@@ -2043,25 +2043,25 @@ export declare const StdChains: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 31259;
+                                    readonly id: 31365;
                                     readonly name: "chainAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31227;
+                                    readonly referencedDeclaration: 31333;
                                     readonly src: "4301:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
                                         readonly typeString: "string memory";
                                     };
                                 }, {
-                                    readonly id: 31260;
+                                    readonly id: 31366;
                                     readonly name: "chain";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31214;
+                                    readonly referencedDeclaration: 31320;
                                     readonly src: "4313:5:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                         readonly typeString: "struct StdChains.Chain memory";
                                     };
                                 }];
@@ -2070,21 +2070,21 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
                                         readonly typeString: "string memory";
                                     }, {
-                                        readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                         readonly typeString: "struct StdChains.Chain memory";
                                     }];
-                                    readonly id: 31258;
+                                    readonly id: 31364;
                                     readonly name: "getChainWithUpdatedRpcUrl";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31590;
+                                    readonly referencedDeclaration: 31696;
                                     readonly src: "4275:25:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_Chain_$31140_memory_ptr_$returns$_t_struct$_Chain_$31140_memory_ptr_$";
+                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_Chain_$31246_memory_ptr_$returns$_t_struct$_Chain_$31246_memory_ptr_$";
                                         readonly typeString: "function (string memory,struct StdChains.Chain memory) returns (struct StdChains.Chain memory)";
                                     };
                                 };
-                                readonly id: 31261;
+                                readonly id: 31367;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2096,17 +2096,17 @@ export declare const StdChains: {
                                 readonly src: "4275:44:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                     readonly typeString: "struct StdChains.Chain memory";
                                 };
                             };
                             readonly src: "4267:52:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                 readonly typeString: "struct StdChains.Chain memory";
                             };
                         };
-                        readonly id: 31263;
+                        readonly id: 31369;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4267:52:146";
                     }];
@@ -2117,16 +2117,16 @@ export declare const StdChains: {
                 readonly name: "getChain";
                 readonly nameLocation: "3794:8:146";
                 readonly parameters: {
-                    readonly id: 31211;
+                    readonly id: 31317;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31210;
+                        readonly id: 31316;
                         readonly mutability: "mutable";
                         readonly name: "chainId";
                         readonly nameLocation: "3811:7:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31265;
+                        readonly scope: 31371;
                         readonly src: "3803:15:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2135,7 +2135,7 @@ export declare const StdChains: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 31209;
+                            readonly id: 31315;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3803:7:146";
@@ -2149,38 +2149,38 @@ export declare const StdChains: {
                     readonly src: "3802:17:146";
                 };
                 readonly returnParameters: {
-                    readonly id: 31215;
+                    readonly id: 31321;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31214;
+                        readonly id: 31320;
                         readonly mutability: "mutable";
                         readonly name: "chain";
                         readonly nameLocation: "3859:5:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31265;
+                        readonly scope: 31371;
                         readonly src: "3846:18:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                             readonly typeString: "struct StdChains.Chain";
                         };
                         readonly typeName: {
-                            readonly id: 31213;
+                            readonly id: 31319;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 31212;
+                                readonly id: 31318;
                                 readonly name: "Chain";
                                 readonly nameLocations: readonly ["3846:5:146"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 31140;
+                                readonly referencedDeclaration: 31246;
                                 readonly src: "3846:5:146";
                             };
-                            readonly referencedDeclaration: 31140;
+                            readonly referencedDeclaration: 31246;
                             readonly src: "3846:5:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_storage_ptr";
                                 readonly typeString: "struct StdChains.Chain";
                             };
                         };
@@ -2188,17 +2188,17 @@ export declare const StdChains: {
                     }];
                     readonly src: "3845:20:146";
                 };
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 31375;
+                readonly id: 31481;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4397:1173:146";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 31374;
+                    readonly id: 31480;
                     readonly nodeType: "Block";
                     readonly src: "4482:1088:146";
                     readonly nodes: readonly [];
@@ -2209,7 +2209,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 31280;
+                                readonly id: 31386;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2217,11 +2217,11 @@ export declare const StdChains: {
                                 readonly leftExpression: {
                                     readonly expression: {
                                         readonly arguments: readonly [{
-                                            readonly id: 31276;
+                                            readonly id: 31382;
                                             readonly name: "chainAlias";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 31267;
+                                            readonly referencedDeclaration: 31373;
                                             readonly src: "4519:10:146";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_string_memory_ptr";
@@ -2233,7 +2233,7 @@ export declare const StdChains: {
                                                 readonly typeIdentifier: "t_string_memory_ptr";
                                                 readonly typeString: "string memory";
                                             }];
-                                            readonly id: 31275;
+                                            readonly id: 31381;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -2245,14 +2245,14 @@ export declare const StdChains: {
                                                 readonly typeString: "type(bytes storage pointer)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 31274;
+                                                readonly id: 31380;
                                                 readonly name: "bytes";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "4513:5:146";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 31277;
+                                        readonly id: 31383;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2268,7 +2268,7 @@ export declare const StdChains: {
                                             readonly typeString: "bytes memory";
                                         };
                                     };
-                                    readonly id: 31278;
+                                    readonly id: 31384;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2286,7 +2286,7 @@ export declare const StdChains: {
                                 readonly operator: "!=";
                                 readonly rightExpression: {
                                     readonly hexValue: "30";
-                                    readonly id: 31279;
+                                    readonly id: 31385;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2307,7 +2307,7 @@ export declare const StdChains: {
                                 };
                             }, {
                                 readonly hexValue: "537464436861696e7320736574436861696e28737472696e672c436861696e44617461293a20436861696e20616c6961732063616e6e6f742062652074686520656d70747920737472696e672e";
-                                readonly id: 31281;
+                                readonly id: 31387;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2329,7 +2329,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_30b2334ec57cbeeece39c6405e10d3437560135ecd84835d6b9144db1d575354";
                                     readonly typeString: "literal_string \"StdChains setChain(string,ChainData): Chain alias cannot be the empty string.\"";
                                 }];
-                                readonly id: 31273;
+                                readonly id: 31379;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -2340,7 +2340,7 @@ export declare const StdChains: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 31282;
+                            readonly id: 31388;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2356,7 +2356,7 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31283;
+                        readonly id: 31389;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4492:153:146";
                     }, {
@@ -2366,25 +2366,25 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 31288;
+                                readonly id: 31394;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 31285;
+                                        readonly id: 31391;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31270;
+                                        readonly referencedDeclaration: 31376;
                                         readonly src: "4664:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                             readonly typeString: "struct StdChains.ChainData memory";
                                         };
                                     };
-                                    readonly id: 31286;
+                                    readonly id: 31392;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -2392,7 +2392,7 @@ export declare const StdChains: {
                                     readonly memberLocation: "4670:7:146";
                                     readonly memberName: "chainId";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31128;
+                                    readonly referencedDeclaration: 31234;
                                     readonly src: "4664:13:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -2403,7 +2403,7 @@ export declare const StdChains: {
                                 readonly operator: "!=";
                                 readonly rightExpression: {
                                     readonly hexValue: "30";
-                                    readonly id: 31287;
+                                    readonly id: 31393;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2424,7 +2424,7 @@ export declare const StdChains: {
                                 };
                             }, {
                                 readonly hexValue: "537464436861696e7320736574436861696e28737472696e672c436861696e44617461293a20436861696e2049442063616e6e6f7420626520302e";
-                                readonly id: 31289;
+                                readonly id: 31395;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2446,7 +2446,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_ab0ba8dace83d80dc1941286e8d0551223497db1b420e58abff2f3db2ad3fbf4";
                                     readonly typeString: "literal_string \"StdChains setChain(string,ChainData): Chain ID cannot be 0.\"";
                                 }];
-                                readonly id: 31284;
+                                readonly id: 31390;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -2457,7 +2457,7 @@ export declare const StdChains: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 31290;
+                            readonly id: 31396;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2473,7 +2473,7 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31291;
+                        readonly id: 31397;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4656:90:146";
                     }, {
@@ -2481,18 +2481,18 @@ export declare const StdChains: {
                             readonly arguments: readonly [];
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
-                                readonly id: 31292;
+                                readonly id: 31398;
                                 readonly name: "initializeStdChains";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31782;
+                                readonly referencedDeclaration: 31888;
                                 readonly src: "4757:19:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_nonpayable$__$returns$__$";
                                     readonly typeString: "function ()";
                                 };
                             };
-                            readonly id: 31293;
+                            readonly id: 31399;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2508,19 +2508,19 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31294;
+                        readonly id: 31400;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4757:21:146";
                     }, {
-                        readonly assignments: readonly [31296];
+                        readonly assignments: readonly [31402];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 31296;
+                            readonly id: 31402;
                             readonly mutability: "mutable";
                             readonly name: "foundAlias";
                             readonly nameLocation: "4802:10:146";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 31374;
+                            readonly scope: 31480;
                             readonly src: "4788:24:146";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -2529,7 +2529,7 @@ export declare const StdChains: {
                                 readonly typeString: "string";
                             };
                             readonly typeName: {
-                                readonly id: 31295;
+                                readonly id: 31401;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4788:6:146";
@@ -2540,35 +2540,35 @@ export declare const StdChains: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 31301;
+                        readonly id: 31407;
                         readonly initialValue: {
                             readonly baseExpression: {
-                                readonly id: 31297;
+                                readonly id: 31403;
                                 readonly name: "idToAlias";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31153;
+                                readonly referencedDeclaration: 31259;
                                 readonly src: "4815:9:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_mapping$_t_uint256_$_t_string_storage_$";
                                     readonly typeString: "mapping(uint256 => string storage ref)";
                                 };
                             };
-                            readonly id: 31300;
+                            readonly id: 31406;
                             readonly indexExpression: {
                                 readonly expression: {
-                                    readonly id: 31298;
+                                    readonly id: 31404;
                                     readonly name: "chain";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31270;
+                                    readonly referencedDeclaration: 31376;
                                     readonly src: "4825:5:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                         readonly typeString: "struct StdChains.ChainData memory";
                                     };
                                 };
-                                readonly id: 31299;
+                                readonly id: 31405;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -2576,7 +2576,7 @@ export declare const StdChains: {
                                 readonly memberLocation: "4831:7:146";
                                 readonly memberName: "chainId";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 31128;
+                                readonly referencedDeclaration: 31234;
                                 readonly src: "4825:13:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -2603,7 +2603,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
-                                readonly id: 31323;
+                                readonly id: 31429;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2613,7 +2613,7 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
-                                    readonly id: 31309;
+                                    readonly id: 31415;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2621,11 +2621,11 @@ export declare const StdChains: {
                                     readonly leftExpression: {
                                         readonly expression: {
                                             readonly arguments: readonly [{
-                                                readonly id: 31305;
+                                                readonly id: 31411;
                                                 readonly name: "foundAlias";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 31296;
+                                                readonly referencedDeclaration: 31402;
                                                 readonly src: "4877:10:146";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -2637,7 +2637,7 @@ export declare const StdChains: {
                                                     readonly typeIdentifier: "t_string_memory_ptr";
                                                     readonly typeString: "string memory";
                                                 }];
-                                                readonly id: 31304;
+                                                readonly id: 31410;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -2649,14 +2649,14 @@ export declare const StdChains: {
                                                     readonly typeString: "type(bytes storage pointer)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 31303;
+                                                    readonly id: 31409;
                                                     readonly name: "bytes";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "4871:5:146";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 31306;
+                                            readonly id: 31412;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2672,7 +2672,7 @@ export declare const StdChains: {
                                                 readonly typeString: "bytes memory";
                                             };
                                         };
-                                        readonly id: 31307;
+                                        readonly id: 31413;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2690,7 +2690,7 @@ export declare const StdChains: {
                                     readonly operator: "==";
                                     readonly rightExpression: {
                                         readonly hexValue: "30";
-                                        readonly id: 31308;
+                                        readonly id: 31414;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2717,7 +2717,7 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     };
-                                    readonly id: 31322;
+                                    readonly id: 31428;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2725,11 +2725,11 @@ export declare const StdChains: {
                                     readonly leftExpression: {
                                         readonly arguments: readonly [{
                                             readonly arguments: readonly [{
-                                                readonly id: 31313;
+                                                readonly id: 31419;
                                                 readonly name: "foundAlias";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 31296;
+                                                readonly referencedDeclaration: 31402;
                                                 readonly src: "4920:10:146";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -2741,7 +2741,7 @@ export declare const StdChains: {
                                                     readonly typeIdentifier: "t_string_memory_ptr";
                                                     readonly typeString: "string memory";
                                                 }];
-                                                readonly id: 31312;
+                                                readonly id: 31418;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -2753,14 +2753,14 @@ export declare const StdChains: {
                                                     readonly typeString: "type(bytes storage pointer)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 31311;
+                                                    readonly id: 31417;
                                                     readonly name: "bytes";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "4914:5:146";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 31314;
+                                            readonly id: 31420;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2781,7 +2781,7 @@ export declare const StdChains: {
                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                                 readonly typeString: "bytes memory";
                                             }];
-                                            readonly id: 31310;
+                                            readonly id: 31416;
                                             readonly name: "keccak256";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -2792,7 +2792,7 @@ export declare const StdChains: {
                                                 readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                             };
                                         };
-                                        readonly id: 31315;
+                                        readonly id: 31421;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2813,11 +2813,11 @@ export declare const StdChains: {
                                     readonly rightExpression: {
                                         readonly arguments: readonly [{
                                             readonly arguments: readonly [{
-                                                readonly id: 31319;
+                                                readonly id: 31425;
                                                 readonly name: "chainAlias";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 31267;
+                                                readonly referencedDeclaration: 31373;
                                                 readonly src: "4952:10:146";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -2829,7 +2829,7 @@ export declare const StdChains: {
                                                     readonly typeIdentifier: "t_string_memory_ptr";
                                                     readonly typeString: "string memory";
                                                 }];
-                                                readonly id: 31318;
+                                                readonly id: 31424;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -2841,14 +2841,14 @@ export declare const StdChains: {
                                                     readonly typeString: "type(bytes storage pointer)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 31317;
+                                                    readonly id: 31423;
                                                     readonly name: "bytes";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "4946:5:146";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 31320;
+                                            readonly id: 31426;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2869,7 +2869,7 @@ export declare const StdChains: {
                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                                 readonly typeString: "bytes memory";
                                             }];
-                                            readonly id: 31316;
+                                            readonly id: 31422;
                                             readonly name: "keccak256";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -2880,7 +2880,7 @@ export declare const StdChains: {
                                                 readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                             };
                                         };
-                                        readonly id: 31321;
+                                        readonly id: 31427;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2911,7 +2911,7 @@ export declare const StdChains: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "537464436861696e7320736574436861696e28737472696e672c436861696e44617461293a20436861696e20494420";
-                                        readonly id: 31328;
+                                        readonly id: 31434;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -2927,18 +2927,18 @@ export declare const StdChains: {
                                     }, {
                                         readonly arguments: readonly [{
                                             readonly expression: {
-                                                readonly id: 31331;
+                                                readonly id: 31437;
                                                 readonly name: "chain";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 31270;
+                                                readonly referencedDeclaration: 31376;
                                                 readonly src: "5123:5:146";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                                     readonly typeString: "struct StdChains.ChainData memory";
                                                 };
                                             };
-                                            readonly id: 31332;
+                                            readonly id: 31438;
                                             readonly isConstant: false;
                                             readonly isLValue: true;
                                             readonly isPure: false;
@@ -2946,7 +2946,7 @@ export declare const StdChains: {
                                             readonly memberLocation: "5129:7:146";
                                             readonly memberName: "chainId";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 31128;
+                                            readonly referencedDeclaration: 31234;
                                             readonly src: "5123:13:146";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -2959,18 +2959,18 @@ export declare const StdChains: {
                                                 readonly typeString: "uint256";
                                             }];
                                             readonly expression: {
-                                                readonly id: 31329;
+                                                readonly id: 31435;
                                                 readonly name: "vm";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 31122;
+                                                readonly referencedDeclaration: 31228;
                                                 readonly src: "5111:2:146";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                                                    readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                                                     readonly typeString: "contract VmSafe";
                                                 };
                                             };
-                                            readonly id: 31330;
+                                            readonly id: 31436;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2978,14 +2978,14 @@ export declare const StdChains: {
                                             readonly memberLocation: "5114:8:146";
                                             readonly memberName: "toString";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 39838;
+                                            readonly referencedDeclaration: 39944;
                                             readonly src: "5111:11:146";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$";
                                                 readonly typeString: "function (uint256) pure external returns (string memory)";
                                             };
                                         };
-                                        readonly id: 31333;
+                                        readonly id: 31439;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -3002,7 +3002,7 @@ export declare const StdChains: {
                                         };
                                     }, {
                                         readonly hexValue: "20616c726561647920757365642062792022";
-                                        readonly id: 31334;
+                                        readonly id: 31440;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -3016,11 +3016,11 @@ export declare const StdChains: {
                                         };
                                         readonly value: " already used by \"";
                                     }, {
-                                        readonly id: 31335;
+                                        readonly id: 31441;
                                         readonly name: "foundAlias";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31296;
+                                        readonly referencedDeclaration: 31402;
                                         readonly src: "5202:10:146";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_string_memory_ptr";
@@ -3028,7 +3028,7 @@ export declare const StdChains: {
                                         };
                                     }, {
                                         readonly hexValue: "222e";
-                                        readonly id: 31336;
+                                        readonly id: 31442;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -3060,7 +3060,7 @@ export declare const StdChains: {
                                             readonly typeString: "literal_string \"\".\"";
                                         }];
                                         readonly expression: {
-                                            readonly id: 31326;
+                                            readonly id: 31432;
                                             readonly name: "abi";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -3071,7 +3071,7 @@ export declare const StdChains: {
                                                 readonly typeString: "abi";
                                             };
                                         };
-                                        readonly id: 31327;
+                                        readonly id: 31433;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -3085,7 +3085,7 @@ export declare const StdChains: {
                                             readonly typeString: "function () pure returns (bytes memory)";
                                         };
                                     };
-                                    readonly id: 31337;
+                                    readonly id: 31443;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -3106,7 +3106,7 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     }];
-                                    readonly id: 31325;
+                                    readonly id: 31431;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -3118,14 +3118,14 @@ export declare const StdChains: {
                                         readonly typeString: "type(string storage pointer)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 31324;
+                                        readonly id: 31430;
                                         readonly name: "string";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "4978:6:146";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 31338;
+                                readonly id: 31444;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3149,7 +3149,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
                                     readonly typeString: "string memory";
                                 }];
-                                readonly id: 31302;
+                                readonly id: 31408;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -3160,7 +3160,7 @@ export declare const StdChains: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 31339;
+                            readonly id: 31445;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3176,19 +3176,19 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31340;
+                        readonly id: 31446;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4850:431:146";
                     }, {
-                        readonly assignments: readonly [31342];
+                        readonly assignments: readonly [31448];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 31342;
+                            readonly id: 31448;
                             readonly mutability: "mutable";
                             readonly name: "oldChainId";
                             readonly nameLocation: "5300:10:146";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 31374;
+                            readonly scope: 31480;
                             readonly src: "5292:18:146";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -3197,7 +3197,7 @@ export declare const StdChains: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 31341;
+                                readonly id: 31447;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5292:7:146";
@@ -3208,28 +3208,28 @@ export declare const StdChains: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 31347;
+                        readonly id: 31453;
                         readonly initialValue: {
                             readonly expression: {
                                 readonly baseExpression: {
-                                    readonly id: 31343;
+                                    readonly id: 31449;
                                     readonly name: "chains";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31145;
+                                    readonly referencedDeclaration: 31251;
                                     readonly src: "5313:6:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$";
+                                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$";
                                         readonly typeString: "mapping(string memory => struct StdChains.Chain storage ref)";
                                     };
                                 };
-                                readonly id: 31345;
+                                readonly id: 31451;
                                 readonly indexExpression: {
-                                    readonly id: 31344;
+                                    readonly id: 31450;
                                     readonly name: "chainAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31267;
+                                    readonly referencedDeclaration: 31373;
                                     readonly src: "5320:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -3243,11 +3243,11 @@ export declare const StdChains: {
                                 readonly nodeType: "IndexAccess";
                                 readonly src: "5313:18:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_storage";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_storage";
                                     readonly typeString: "struct StdChains.Chain storage ref";
                                 };
                             };
-                            readonly id: 31346;
+                            readonly id: 31452;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -3255,7 +3255,7 @@ export declare const StdChains: {
                             readonly memberLocation: "5332:7:146";
                             readonly memberName: "chainId";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 31135;
+                            readonly referencedDeclaration: 31241;
                             readonly src: "5313:26:146";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -3266,7 +3266,7 @@ export declare const StdChains: {
                         readonly src: "5292:47:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31351;
+                            readonly id: 31457;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3277,24 +3277,24 @@ export declare const StdChains: {
                             readonly src: "5349:28:146";
                             readonly subExpression: {
                                 readonly baseExpression: {
-                                    readonly id: 31348;
+                                    readonly id: 31454;
                                     readonly name: "idToAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31153;
+                                    readonly referencedDeclaration: 31259;
                                     readonly src: "5356:9:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_uint256_$_t_string_storage_$";
                                         readonly typeString: "mapping(uint256 => string storage ref)";
                                     };
                                 };
-                                readonly id: 31350;
+                                readonly id: 31456;
                                 readonly indexExpression: {
-                                    readonly id: 31349;
+                                    readonly id: 31455;
                                     readonly name: "oldChainId";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31342;
+                                    readonly referencedDeclaration: 31448;
                                     readonly src: "5366:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -3317,36 +3317,36 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31352;
+                        readonly id: 31458;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "5349:28:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31365;
+                            readonly id: 31471;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 31353;
+                                    readonly id: 31459;
                                     readonly name: "chains";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31145;
+                                    readonly referencedDeclaration: 31251;
                                     readonly src: "5388:6:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$";
+                                        readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$";
                                         readonly typeString: "mapping(string memory => struct StdChains.Chain storage ref)";
                                     };
                                 };
-                                readonly id: 31355;
+                                readonly id: 31461;
                                 readonly indexExpression: {
-                                    readonly id: 31354;
+                                    readonly id: 31460;
                                     readonly name: "chainAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31267;
+                                    readonly referencedDeclaration: 31373;
                                     readonly src: "5395:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -3360,7 +3360,7 @@ export declare const StdChains: {
                                 readonly nodeType: "IndexAccess";
                                 readonly src: "5388:18:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_storage";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_storage";
                                     readonly typeString: "struct StdChains.Chain storage ref";
                                 };
                             };
@@ -3369,18 +3369,18 @@ export declare const StdChains: {
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
                                     readonly expression: {
-                                        readonly id: 31357;
+                                        readonly id: 31463;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31270;
+                                        readonly referencedDeclaration: 31376;
                                         readonly src: "5434:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                             readonly typeString: "struct StdChains.ChainData memory";
                                         };
                                     };
-                                    readonly id: 31358;
+                                    readonly id: 31464;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -3388,7 +3388,7 @@ export declare const StdChains: {
                                     readonly memberLocation: "5440:4:146";
                                     readonly memberName: "name";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31126;
+                                    readonly referencedDeclaration: 31232;
                                     readonly src: "5434:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -3396,18 +3396,18 @@ export declare const StdChains: {
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 31359;
+                                        readonly id: 31465;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31270;
+                                        readonly referencedDeclaration: 31376;
                                         readonly src: "5455:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                             readonly typeString: "struct StdChains.ChainData memory";
                                         };
                                     };
-                                    readonly id: 31360;
+                                    readonly id: 31466;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -3415,18 +3415,18 @@ export declare const StdChains: {
                                     readonly memberLocation: "5461:7:146";
                                     readonly memberName: "chainId";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31128;
+                                    readonly referencedDeclaration: 31234;
                                     readonly src: "5455:13:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     };
                                 }, {
-                                    readonly id: 31361;
+                                    readonly id: 31467;
                                     readonly name: "chainAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31267;
+                                    readonly referencedDeclaration: 31373;
                                     readonly src: "5482:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -3434,18 +3434,18 @@ export declare const StdChains: {
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 31362;
+                                        readonly id: 31468;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31270;
+                                        readonly referencedDeclaration: 31376;
                                         readonly src: "5502:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                             readonly typeString: "struct StdChains.ChainData memory";
                                         };
                                     };
-                                    readonly id: 31363;
+                                    readonly id: 31469;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -3453,7 +3453,7 @@ export declare const StdChains: {
                                     readonly memberLocation: "5508:6:146";
                                     readonly memberName: "rpcUrl";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31130;
+                                    readonly referencedDeclaration: 31236;
                                     readonly src: "5502:12:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -3474,18 +3474,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
                                         readonly typeString: "string memory";
                                     }];
-                                    readonly id: 31356;
+                                    readonly id: 31462;
                                     readonly name: "Chain";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31140;
+                                    readonly referencedDeclaration: 31246;
                                     readonly src: "5421:5:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_Chain_$31140_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_Chain_$31246_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.Chain storage pointer)";
                                     };
                                 };
-                                readonly id: 31364;
+                                readonly id: 31470;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3497,54 +3497,54 @@ export declare const StdChains: {
                                 readonly src: "5421:95:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                     readonly typeString: "struct StdChains.Chain memory";
                                 };
                             };
                             readonly src: "5388:128:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_storage";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_storage";
                                 readonly typeString: "struct StdChains.Chain storage ref";
                             };
                         };
-                        readonly id: 31366;
+                        readonly id: 31472;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "5388:128:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31372;
+                            readonly id: 31478;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 31367;
+                                    readonly id: 31473;
                                     readonly name: "idToAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31153;
+                                    readonly referencedDeclaration: 31259;
                                     readonly src: "5526:9:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_uint256_$_t_string_storage_$";
                                         readonly typeString: "mapping(uint256 => string storage ref)";
                                     };
                                 };
-                                readonly id: 31370;
+                                readonly id: 31476;
                                 readonly indexExpression: {
                                     readonly expression: {
-                                        readonly id: 31368;
+                                        readonly id: 31474;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31270;
+                                        readonly referencedDeclaration: 31376;
                                         readonly src: "5536:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                             readonly typeString: "struct StdChains.ChainData memory";
                                         };
                                     };
-                                    readonly id: 31369;
+                                    readonly id: 31475;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -3552,7 +3552,7 @@ export declare const StdChains: {
                                     readonly memberLocation: "5542:7:146";
                                     readonly memberName: "chainId";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31128;
+                                    readonly referencedDeclaration: 31234;
                                     readonly src: "5536:13:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -3573,11 +3573,11 @@ export declare const StdChains: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 31371;
+                                readonly id: 31477;
                                 readonly name: "chainAlias";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31267;
+                                readonly referencedDeclaration: 31373;
                                 readonly src: "5553:10:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -3590,7 +3590,7 @@ export declare const StdChains: {
                                 readonly typeString: "string storage ref";
                             };
                         };
-                        readonly id: 31373;
+                        readonly id: 31479;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "5526:37:146";
                     }];
@@ -3601,16 +3601,16 @@ export declare const StdChains: {
                 readonly name: "setChain";
                 readonly nameLocation: "4406:8:146";
                 readonly parameters: {
-                    readonly id: 31271;
+                    readonly id: 31377;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31267;
+                        readonly id: 31373;
                         readonly mutability: "mutable";
                         readonly name: "chainAlias";
                         readonly nameLocation: "4429:10:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31375;
+                        readonly scope: 31481;
                         readonly src: "4415:24:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -3619,7 +3619,7 @@ export declare const StdChains: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 31266;
+                            readonly id: 31372;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4415:6:146";
@@ -3631,34 +3631,34 @@ export declare const StdChains: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 31270;
+                        readonly id: 31376;
                         readonly mutability: "mutable";
                         readonly name: "chain";
                         readonly nameLocation: "4458:5:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31375;
+                        readonly scope: 31481;
                         readonly src: "4441:22:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                             readonly typeString: "struct StdChains.ChainData";
                         };
                         readonly typeName: {
-                            readonly id: 31269;
+                            readonly id: 31375;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 31268;
+                                readonly id: 31374;
                                 readonly name: "ChainData";
                                 readonly nameLocations: readonly ["4441:9:146"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 31131;
+                                readonly referencedDeclaration: 31237;
                                 readonly src: "4441:9:146";
                             };
-                            readonly referencedDeclaration: 31131;
+                            readonly referencedDeclaration: 31237;
                             readonly src: "4441:9:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_ChainData_$31131_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_ChainData_$31237_storage_ptr";
                                 readonly typeString: "struct StdChains.ChainData";
                             };
                         };
@@ -3667,33 +3667,33 @@ export declare const StdChains: {
                     readonly src: "4414:50:146";
                 };
                 readonly returnParameters: {
-                    readonly id: 31272;
+                    readonly id: 31378;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4482:0:146";
                 };
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 31396;
+                readonly id: 31502;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5641:195:146";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 31395;
+                    readonly id: 31501;
                     readonly nodeType: "Block";
                     readonly src: "5722:114:146";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 31384;
+                                readonly id: 31490;
                                 readonly name: "chainAlias";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31377;
+                                readonly referencedDeclaration: 31483;
                                 readonly src: "5741:10:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -3702,18 +3702,18 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly expression: {
-                                        readonly id: 31386;
+                                        readonly id: 31492;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31380;
+                                        readonly referencedDeclaration: 31486;
                                         readonly src: "5770:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                             readonly typeString: "struct StdChains.Chain memory";
                                         };
                                     };
-                                    readonly id: 31387;
+                                    readonly id: 31493;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -3721,7 +3721,7 @@ export declare const StdChains: {
                                     readonly memberLocation: "5776:4:146";
                                     readonly memberName: "name";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31133;
+                                    readonly referencedDeclaration: 31239;
                                     readonly src: "5770:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -3729,18 +3729,18 @@ export declare const StdChains: {
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 31388;
+                                        readonly id: 31494;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31380;
+                                        readonly referencedDeclaration: 31486;
                                         readonly src: "5791:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                             readonly typeString: "struct StdChains.Chain memory";
                                         };
                                     };
-                                    readonly id: 31389;
+                                    readonly id: 31495;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -3748,7 +3748,7 @@ export declare const StdChains: {
                                     readonly memberLocation: "5797:7:146";
                                     readonly memberName: "chainId";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31135;
+                                    readonly referencedDeclaration: 31241;
                                     readonly src: "5791:13:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -3756,18 +3756,18 @@ export declare const StdChains: {
                                     };
                                 }, {
                                     readonly expression: {
-                                        readonly id: 31390;
+                                        readonly id: 31496;
                                         readonly name: "chain";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31380;
+                                        readonly referencedDeclaration: 31486;
                                         readonly src: "5814:5:146";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                             readonly typeString: "struct StdChains.Chain memory";
                                         };
                                     };
-                                    readonly id: 31391;
+                                    readonly id: 31497;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -3775,7 +3775,7 @@ export declare const StdChains: {
                                     readonly memberLocation: "5820:6:146";
                                     readonly memberName: "rpcUrl";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 31139;
+                                    readonly referencedDeclaration: 31245;
                                     readonly src: "5814:12:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -3793,18 +3793,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
                                         readonly typeString: "string memory";
                                     }];
-                                    readonly id: 31385;
+                                    readonly id: 31491;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "5753:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31392;
+                                readonly id: 31498;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -3816,7 +3816,7 @@ export declare const StdChains: {
                                 readonly src: "5753:75:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -3825,21 +3825,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
                                     readonly typeString: "string memory";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31383;
+                                readonly id: 31489;
                                 readonly name: "setChain";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [31375, 31396];
-                                readonly referencedDeclaration: 31375;
+                                readonly overloadedDeclarations: readonly [31481, 31502];
+                                readonly referencedDeclaration: 31481;
                                 readonly src: "5732:8:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31393;
+                            readonly id: 31499;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -3855,7 +3855,7 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31394;
+                        readonly id: 31500;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "5732:97:146";
                     }];
@@ -3866,16 +3866,16 @@ export declare const StdChains: {
                 readonly name: "setChain";
                 readonly nameLocation: "5650:8:146";
                 readonly parameters: {
-                    readonly id: 31381;
+                    readonly id: 31487;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31377;
+                        readonly id: 31483;
                         readonly mutability: "mutable";
                         readonly name: "chainAlias";
                         readonly nameLocation: "5673:10:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31396;
+                        readonly scope: 31502;
                         readonly src: "5659:24:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -3884,7 +3884,7 @@ export declare const StdChains: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 31376;
+                            readonly id: 31482;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5659:6:146";
@@ -3896,34 +3896,34 @@ export declare const StdChains: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 31380;
+                        readonly id: 31486;
                         readonly mutability: "mutable";
                         readonly name: "chain";
                         readonly nameLocation: "5698:5:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31396;
+                        readonly scope: 31502;
                         readonly src: "5685:18:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                             readonly typeString: "struct StdChains.Chain";
                         };
                         readonly typeName: {
-                            readonly id: 31379;
+                            readonly id: 31485;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 31378;
+                                readonly id: 31484;
                                 readonly name: "Chain";
                                 readonly nameLocations: readonly ["5685:5:146"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 31140;
+                                readonly referencedDeclaration: 31246;
                                 readonly src: "5685:5:146";
                             };
-                            readonly referencedDeclaration: 31140;
+                            readonly referencedDeclaration: 31246;
                             readonly src: "5685:5:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_storage_ptr";
                                 readonly typeString: "struct StdChains.Chain";
                             };
                         };
@@ -3932,35 +3932,35 @@ export declare const StdChains: {
                     readonly src: "5658:46:146";
                 };
                 readonly returnParameters: {
-                    readonly id: 31382;
+                    readonly id: 31488;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5722:0:146";
                 };
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: true;
                 readonly visibility: "internal";
             }, {
-                readonly id: 31473;
+                readonly id: 31579;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5842:451:146";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 31472;
+                    readonly id: 31578;
                     readonly nodeType: "Block";
                     readonly src: "5916:377:146";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [31404];
+                        readonly assignments: readonly [31510];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 31404;
+                            readonly id: 31510;
                             readonly mutability: "mutable";
                             readonly name: "strb";
                             readonly nameLocation: "5939:4:146";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 31472;
+                            readonly scope: 31578;
                             readonly src: "5926:17:146";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -3969,7 +3969,7 @@ export declare const StdChains: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 31403;
+                                readonly id: 31509;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5926:5:146";
@@ -3980,14 +3980,14 @@ export declare const StdChains: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 31409;
+                        readonly id: 31515;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 31407;
+                                readonly id: 31513;
                                 readonly name: "str";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31398;
+                                readonly referencedDeclaration: 31504;
                                 readonly src: "5952:3:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -3999,7 +3999,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
                                     readonly typeString: "string memory";
                                 }];
-                                readonly id: 31406;
+                                readonly id: 31512;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -4011,14 +4011,14 @@ export declare const StdChains: {
                                     readonly typeString: "type(bytes storage pointer)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 31405;
+                                    readonly id: 31511;
                                     readonly name: "bytes";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "5946:5:146";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 31408;
+                            readonly id: 31514;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4037,15 +4037,15 @@ export declare const StdChains: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "5926:30:146";
                     }, {
-                        readonly assignments: readonly [31411];
+                        readonly assignments: readonly [31517];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 31411;
+                            readonly id: 31517;
                             readonly mutability: "mutable";
                             readonly name: "copy";
                             readonly nameLocation: "5979:4:146";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 31472;
+                            readonly scope: 31578;
                             readonly src: "5966:17:146";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -4054,7 +4054,7 @@ export declare const StdChains: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 31410;
+                                readonly id: 31516;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5966:5:146";
@@ -4065,22 +4065,22 @@ export declare const StdChains: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 31417;
+                        readonly id: 31523;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly expression: {
-                                    readonly id: 31414;
+                                    readonly id: 31520;
                                     readonly name: "strb";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31404;
+                                    readonly referencedDeclaration: 31510;
                                     readonly src: "5996:4:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     };
                                 };
-                                readonly id: 31415;
+                                readonly id: 31521;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4099,7 +4099,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 31413;
+                                readonly id: 31519;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -4111,7 +4111,7 @@ export declare const StdChains: {
                                     readonly typeString: "function (uint256) pure returns (bytes memory)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 31412;
+                                    readonly id: 31518;
                                     readonly name: "bytes";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "5990:5:146";
@@ -4121,7 +4121,7 @@ export declare const StdChains: {
                                     };
                                 };
                             };
-                            readonly id: 31416;
+                            readonly id: 31522;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4141,19 +4141,19 @@ export declare const StdChains: {
                         readonly src: "5966:42:146";
                     }, {
                         readonly body: {
-                            readonly id: 31465;
+                            readonly id: 31571;
                             readonly nodeType: "Block";
                             readonly src: "6060:198:146";
                             readonly statements: readonly [{
-                                readonly assignments: readonly [31430];
+                                readonly assignments: readonly [31536];
                                 readonly declarations: readonly [{
                                     readonly constant: false;
-                                    readonly id: 31430;
+                                    readonly id: 31536;
                                     readonly mutability: "mutable";
                                     readonly name: "b";
                                     readonly nameLocation: "6081:1:146";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 31465;
+                                    readonly scope: 31571;
                                     readonly src: "6074:8:146";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -4162,7 +4162,7 @@ export declare const StdChains: {
                                         readonly typeString: "bytes1";
                                     };
                                     readonly typeName: {
-                                        readonly id: 31429;
+                                        readonly id: 31535;
                                         readonly name: "bytes1";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "6074:6:146";
@@ -4173,27 +4173,27 @@ export declare const StdChains: {
                                     };
                                     readonly visibility: "internal";
                                 }];
-                                readonly id: 31434;
+                                readonly id: 31540;
                                 readonly initialValue: {
                                     readonly baseExpression: {
-                                        readonly id: 31431;
+                                        readonly id: 31537;
                                         readonly name: "strb";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31404;
+                                        readonly referencedDeclaration: 31510;
                                         readonly src: "6085:4:146";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                             readonly typeString: "bytes memory";
                                         };
                                     };
-                                    readonly id: 31433;
+                                    readonly id: 31539;
                                     readonly indexExpression: {
-                                        readonly id: 31432;
+                                        readonly id: 31538;
                                         readonly name: "i";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31419;
+                                        readonly referencedDeclaration: 31525;
                                         readonly src: "6090:1:146";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -4219,7 +4219,7 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
-                                    readonly id: 31441;
+                                    readonly id: 31547;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4229,17 +4229,17 @@ export declare const StdChains: {
                                             readonly typeIdentifier: "t_bytes1";
                                             readonly typeString: "bytes1";
                                         };
-                                        readonly id: 31437;
+                                        readonly id: 31543;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 31435;
+                                            readonly id: 31541;
                                             readonly name: "b";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 31430;
+                                            readonly referencedDeclaration: 31536;
                                             readonly src: "6110:1:146";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_bytes1";
@@ -4250,7 +4250,7 @@ export declare const StdChains: {
                                         readonly operator: ">=";
                                         readonly rightExpression: {
                                             readonly hexValue: "30783631";
-                                            readonly id: 31436;
+                                            readonly id: 31542;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -4277,17 +4277,17 @@ export declare const StdChains: {
                                             readonly typeIdentifier: "t_bytes1";
                                             readonly typeString: "bytes1";
                                         };
-                                        readonly id: 31440;
+                                        readonly id: 31546;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 31438;
+                                            readonly id: 31544;
                                             readonly name: "b";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 31430;
+                                            readonly referencedDeclaration: 31536;
                                             readonly src: "6123:1:146";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_bytes1";
@@ -4298,7 +4298,7 @@ export declare const StdChains: {
                                         readonly operator: "<=";
                                         readonly rightExpression: {
                                             readonly hexValue: "30783741";
-                                            readonly id: 31439;
+                                            readonly id: 31545;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -4325,36 +4325,36 @@ export declare const StdChains: {
                                     };
                                 };
                                 readonly falseBody: {
-                                    readonly id: 31463;
+                                    readonly id: 31569;
                                     readonly nodeType: "Block";
                                     readonly src: "6204:44:146";
                                     readonly statements: readonly [{
                                         readonly expression: {
-                                            readonly id: 31461;
+                                            readonly id: 31567;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftHandSide: {
                                                 readonly baseExpression: {
-                                                    readonly id: 31457;
+                                                    readonly id: 31563;
                                                     readonly name: "copy";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 31411;
+                                                    readonly referencedDeclaration: 31517;
                                                     readonly src: "6222:4:146";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                                         readonly typeString: "bytes memory";
                                                     };
                                                 };
-                                                readonly id: 31459;
+                                                readonly id: 31565;
                                                 readonly indexExpression: {
-                                                    readonly id: 31458;
+                                                    readonly id: 31564;
                                                     readonly name: "i";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 31419;
+                                                    readonly referencedDeclaration: 31525;
                                                     readonly src: "6227:1:146";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -4375,11 +4375,11 @@ export declare const StdChains: {
                                             readonly nodeType: "Assignment";
                                             readonly operator: "=";
                                             readonly rightHandSide: {
-                                                readonly id: 31460;
+                                                readonly id: 31566;
                                                 readonly name: "b";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 31430;
+                                                readonly referencedDeclaration: 31536;
                                                 readonly src: "6232:1:146";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_bytes1";
@@ -4392,45 +4392,45 @@ export declare const StdChains: {
                                                 readonly typeString: "bytes1";
                                             };
                                         };
-                                        readonly id: 31462;
+                                        readonly id: 31568;
                                         readonly nodeType: "ExpressionStatement";
                                         readonly src: "6222:11:146";
                                     }];
                                 };
-                                readonly id: 31464;
+                                readonly id: 31570;
                                 readonly nodeType: "IfStatement";
                                 readonly src: "6106:142:146";
                                 readonly trueBody: {
-                                    readonly id: 31456;
+                                    readonly id: 31562;
                                     readonly nodeType: "Block";
                                     readonly src: "6134:64:146";
                                     readonly statements: readonly [{
                                         readonly expression: {
-                                            readonly id: 31454;
+                                            readonly id: 31560;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
                                             readonly lValueRequested: false;
                                             readonly leftHandSide: {
                                                 readonly baseExpression: {
-                                                    readonly id: 31442;
+                                                    readonly id: 31548;
                                                     readonly name: "copy";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 31411;
+                                                    readonly referencedDeclaration: 31517;
                                                     readonly src: "6152:4:146";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                                         readonly typeString: "bytes memory";
                                                     };
                                                 };
-                                                readonly id: 31444;
+                                                readonly id: 31550;
                                                 readonly indexExpression: {
-                                                    readonly id: 31443;
+                                                    readonly id: 31549;
                                                     readonly name: "i";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 31419;
+                                                    readonly referencedDeclaration: 31525;
                                                     readonly src: "6157:1:146";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -4456,18 +4456,18 @@ export declare const StdChains: {
                                                         readonly typeIdentifier: "t_uint8";
                                                         readonly typeString: "uint8";
                                                     };
-                                                    readonly id: 31452;
+                                                    readonly id: 31558;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftExpression: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 31449;
+                                                            readonly id: 31555;
                                                             readonly name: "b";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 31430;
+                                                            readonly referencedDeclaration: 31536;
                                                             readonly src: "6175:1:146";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_bytes1";
@@ -4479,7 +4479,7 @@ export declare const StdChains: {
                                                                 readonly typeIdentifier: "t_bytes1";
                                                                 readonly typeString: "bytes1";
                                                             }];
-                                                            readonly id: 31448;
+                                                            readonly id: 31554;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: true;
@@ -4491,14 +4491,14 @@ export declare const StdChains: {
                                                                 readonly typeString: "type(uint8)";
                                                             };
                                                             readonly typeName: {
-                                                                readonly id: 31447;
+                                                                readonly id: 31553;
                                                                 readonly name: "uint8";
                                                                 readonly nodeType: "ElementaryTypeName";
                                                                 readonly src: "6169:5:146";
                                                                 readonly typeDescriptions: {};
                                                             };
                                                         };
-                                                        readonly id: 31450;
+                                                        readonly id: 31556;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -4518,7 +4518,7 @@ export declare const StdChains: {
                                                     readonly operator: "-";
                                                     readonly rightExpression: {
                                                         readonly hexValue: "3332";
-                                                        readonly id: 31451;
+                                                        readonly id: 31557;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -4543,7 +4543,7 @@ export declare const StdChains: {
                                                         readonly typeIdentifier: "t_uint8";
                                                         readonly typeString: "uint8";
                                                     }];
-                                                    readonly id: 31446;
+                                                    readonly id: 31552;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -4555,14 +4555,14 @@ export declare const StdChains: {
                                                         readonly typeString: "type(bytes1)";
                                                     };
                                                     readonly typeName: {
-                                                        readonly id: 31445;
+                                                        readonly id: 31551;
                                                         readonly name: "bytes1";
                                                         readonly nodeType: "ElementaryTypeName";
                                                         readonly src: "6162:6:146";
                                                         readonly typeDescriptions: {};
                                                     };
                                                 };
-                                                readonly id: 31453;
+                                                readonly id: 31559;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -4584,7 +4584,7 @@ export declare const StdChains: {
                                                 readonly typeString: "bytes1";
                                             };
                                         };
-                                        readonly id: 31455;
+                                        readonly id: 31561;
                                         readonly nodeType: "ExpressionStatement";
                                         readonly src: "6152:31:146";
                                     }];
@@ -4596,17 +4596,17 @@ export declare const StdChains: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 31425;
+                            readonly id: 31531;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 31422;
+                                readonly id: 31528;
                                 readonly name: "i";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31419;
+                                readonly referencedDeclaration: 31525;
                                 readonly src: "6038:1:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -4617,18 +4617,18 @@ export declare const StdChains: {
                             readonly operator: "<";
                             readonly rightExpression: {
                                 readonly expression: {
-                                    readonly id: 31423;
+                                    readonly id: 31529;
                                     readonly name: "strb";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31404;
+                                    readonly referencedDeclaration: 31510;
                                     readonly src: "6042:4:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     };
                                 };
-                                readonly id: 31424;
+                                readonly id: 31530;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4648,17 +4648,17 @@ export declare const StdChains: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 31466;
+                        readonly id: 31572;
                         readonly initializationExpression: {
-                            readonly assignments: readonly [31419];
+                            readonly assignments: readonly [31525];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 31419;
+                                readonly id: 31525;
                                 readonly mutability: "mutable";
                                 readonly name: "i";
                                 readonly nameLocation: "6031:1:146";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 31466;
+                                readonly scope: 31572;
                                 readonly src: "6023:9:146";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -4667,7 +4667,7 @@ export declare const StdChains: {
                                     readonly typeString: "uint256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 31418;
+                                    readonly id: 31524;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "6023:7:146";
@@ -4678,10 +4678,10 @@ export declare const StdChains: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 31421;
+                            readonly id: 31527;
                             readonly initialValue: {
                                 readonly hexValue: "30";
-                                readonly id: 31420;
+                                readonly id: 31526;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -4700,7 +4700,7 @@ export declare const StdChains: {
                         };
                         readonly loopExpression: {
                             readonly expression: {
-                                readonly id: 31427;
+                                readonly id: 31533;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4710,11 +4710,11 @@ export declare const StdChains: {
                                 readonly prefix: false;
                                 readonly src: "6055:3:146";
                                 readonly subExpression: {
-                                    readonly id: 31426;
+                                    readonly id: 31532;
                                     readonly name: "i";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31419;
+                                    readonly referencedDeclaration: 31525;
                                     readonly src: "6055:1:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -4726,7 +4726,7 @@ export declare const StdChains: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 31428;
+                            readonly id: 31534;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "6055:3:146";
                         };
@@ -4735,11 +4735,11 @@ export declare const StdChains: {
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 31469;
+                                readonly id: 31575;
                                 readonly name: "copy";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31411;
+                                readonly referencedDeclaration: 31517;
                                 readonly src: "6281:4:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -4751,7 +4751,7 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                     readonly typeString: "bytes memory";
                                 }];
-                                readonly id: 31468;
+                                readonly id: 31574;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -4763,14 +4763,14 @@ export declare const StdChains: {
                                     readonly typeString: "type(string storage pointer)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 31467;
+                                    readonly id: 31573;
                                     readonly name: "string";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "6274:6:146";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 31470;
+                            readonly id: 31576;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4786,8 +4786,8 @@ export declare const StdChains: {
                                 readonly typeString: "string memory";
                             };
                         };
-                        readonly functionReturnParameters: 31402;
-                        readonly id: 31471;
+                        readonly functionReturnParameters: 31508;
+                        readonly id: 31577;
                         readonly nodeType: "Return";
                         readonly src: "6267:19:146";
                     }];
@@ -4798,16 +4798,16 @@ export declare const StdChains: {
                 readonly name: "_toUpper";
                 readonly nameLocation: "5851:8:146";
                 readonly parameters: {
-                    readonly id: 31399;
+                    readonly id: 31505;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31398;
+                        readonly id: 31504;
                         readonly mutability: "mutable";
                         readonly name: "str";
                         readonly nameLocation: "5874:3:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31473;
+                        readonly scope: 31579;
                         readonly src: "5860:17:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -4816,7 +4816,7 @@ export declare const StdChains: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 31397;
+                            readonly id: 31503;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5860:6:146";
@@ -4830,16 +4830,16 @@ export declare const StdChains: {
                     readonly src: "5859:19:146";
                 };
                 readonly returnParameters: {
-                    readonly id: 31402;
+                    readonly id: 31508;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31401;
+                        readonly id: 31507;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31473;
+                        readonly scope: 31579;
                         readonly src: "5901:13:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -4848,7 +4848,7 @@ export declare const StdChains: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 31400;
+                            readonly id: 31506;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5901:6:146";
@@ -4861,17 +4861,17 @@ export declare const StdChains: {
                     }];
                     readonly src: "5900:15:146";
                 };
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "private";
             }, {
-                readonly id: 31590;
+                readonly id: 31696;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6429:1218:146";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 31589;
+                    readonly id: 31695;
                     readonly nodeType: "Block";
                     readonly src: "6541:1106:146";
                     readonly nodes: readonly [];
@@ -4881,7 +4881,7 @@ export declare const StdChains: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 31491;
+                            readonly id: 31597;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -4890,18 +4890,18 @@ export declare const StdChains: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly expression: {
-                                            readonly id: 31486;
+                                            readonly id: 31592;
                                             readonly name: "chain";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 31478;
+                                            readonly referencedDeclaration: 31584;
                                             readonly src: "6561:5:146";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                                readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                                 readonly typeString: "struct StdChains.Chain memory";
                                             };
                                         };
-                                        readonly id: 31487;
+                                        readonly id: 31593;
                                         readonly isConstant: false;
                                         readonly isLValue: true;
                                         readonly isPure: false;
@@ -4909,7 +4909,7 @@ export declare const StdChains: {
                                         readonly memberLocation: "6567:6:146";
                                         readonly memberName: "rpcUrl";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 31139;
+                                        readonly referencedDeclaration: 31245;
                                         readonly src: "6561:12:146";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_string_memory_ptr";
@@ -4921,7 +4921,7 @@ export declare const StdChains: {
                                             readonly typeIdentifier: "t_string_memory_ptr";
                                             readonly typeString: "string memory";
                                         }];
-                                        readonly id: 31485;
+                                        readonly id: 31591;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -4933,14 +4933,14 @@ export declare const StdChains: {
                                             readonly typeString: "type(bytes storage pointer)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 31484;
+                                            readonly id: 31590;
                                             readonly name: "bytes";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "6555:5:146";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 31488;
+                                    readonly id: 31594;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4956,7 +4956,7 @@ export declare const StdChains: {
                                         readonly typeString: "bytes memory";
                                     };
                                 };
-                                readonly id: 31489;
+                                readonly id: 31595;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -4974,7 +4974,7 @@ export declare const StdChains: {
                             readonly operator: "==";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 31490;
+                                readonly id: 31596;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -4994,40 +4994,40 @@ export declare const StdChains: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 31586;
+                        readonly id: 31692;
                         readonly nodeType: "IfStatement";
                         readonly src: "6551:1068:146";
                         readonly trueBody: {
-                            readonly id: 31585;
+                            readonly id: 31691;
                             readonly nodeType: "Block";
                             readonly src: "6588:1031:146";
                             readonly statements: readonly [{
                                 readonly clauses: readonly [{
                                     readonly block: {
-                                        readonly id: 31505;
+                                        readonly id: 31611;
                                         readonly nodeType: "Block";
                                         readonly src: "6665:60:146";
                                         readonly statements: readonly [{
                                             readonly expression: {
-                                                readonly id: 31503;
+                                                readonly id: 31609;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftHandSide: {
                                                     readonly expression: {
-                                                        readonly id: 31499;
+                                                        readonly id: 31605;
                                                         readonly name: "chain";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 31478;
+                                                        readonly referencedDeclaration: 31584;
                                                         readonly src: "6683:5:146";
                                                         readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                                             readonly typeString: "struct StdChains.Chain memory";
                                                         };
                                                     };
-                                                    readonly id: 31501;
+                                                    readonly id: 31607;
                                                     readonly isConstant: false;
                                                     readonly isLValue: true;
                                                     readonly isPure: false;
@@ -5035,7 +5035,7 @@ export declare const StdChains: {
                                                     readonly memberLocation: "6689:6:146";
                                                     readonly memberName: "rpcUrl";
                                                     readonly nodeType: "MemberAccess";
-                                                    readonly referencedDeclaration: 31139;
+                                                    readonly referencedDeclaration: 31245;
                                                     readonly src: "6683:12:146";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -5045,11 +5045,11 @@ export declare const StdChains: {
                                                 readonly nodeType: "Assignment";
                                                 readonly operator: "=";
                                                 readonly rightHandSide: {
-                                                    readonly id: 31502;
+                                                    readonly id: 31608;
                                                     readonly name: "configRpcUrl";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 31497;
+                                                    readonly referencedDeclaration: 31603;
                                                     readonly src: "6698:12:146";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -5062,25 +5062,25 @@ export declare const StdChains: {
                                                     readonly typeString: "string memory";
                                                 };
                                             };
-                                            readonly id: 31504;
+                                            readonly id: 31610;
                                             readonly nodeType: "ExpressionStatement";
                                             readonly src: "6683:27:146";
                                         }];
                                     };
                                     readonly errorName: "";
-                                    readonly id: 31506;
+                                    readonly id: 31612;
                                     readonly nodeType: "TryCatchClause";
                                     readonly parameters: {
-                                        readonly id: 31498;
+                                        readonly id: 31604;
                                         readonly nodeType: "ParameterList";
                                         readonly parameters: readonly [{
                                             readonly constant: false;
-                                            readonly id: 31497;
+                                            readonly id: 31603;
                                             readonly mutability: "mutable";
                                             readonly name: "configRpcUrl";
                                             readonly nameLocation: "6651:12:146";
                                             readonly nodeType: "VariableDeclaration";
-                                            readonly scope: 31506;
+                                            readonly scope: 31612;
                                             readonly src: "6637:26:146";
                                             readonly stateVariable: false;
                                             readonly storageLocation: "memory";
@@ -5089,7 +5089,7 @@ export declare const StdChains: {
                                                 readonly typeString: "string";
                                             };
                                             readonly typeName: {
-                                                readonly id: 31496;
+                                                readonly id: 31602;
                                                 readonly name: "string";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "6637:6:146";
@@ -5105,19 +5105,19 @@ export declare const StdChains: {
                                     readonly src: "6628:97:146";
                                 }, {
                                     readonly block: {
-                                        readonly id: 31582;
+                                        readonly id: 31688;
                                         readonly nodeType: "Block";
                                         readonly src: "6751:858:146";
                                         readonly statements: readonly [{
-                                            readonly assignments: readonly [31511];
+                                            readonly assignments: readonly [31617];
                                             readonly declarations: readonly [{
                                                 readonly constant: false;
-                                                readonly id: 31511;
+                                                readonly id: 31617;
                                                 readonly mutability: "mutable";
                                                 readonly name: "envName";
                                                 readonly nameLocation: "6783:7:146";
                                                 readonly nodeType: "VariableDeclaration";
-                                                readonly scope: 31582;
+                                                readonly scope: 31688;
                                                 readonly src: "6769:21:146";
                                                 readonly stateVariable: false;
                                                 readonly storageLocation: "memory";
@@ -5126,7 +5126,7 @@ export declare const StdChains: {
                                                     readonly typeString: "string";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 31510;
+                                                    readonly id: 31616;
                                                     readonly name: "string";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "6769:6:146";
@@ -5137,16 +5137,16 @@ export declare const StdChains: {
                                                 };
                                                 readonly visibility: "internal";
                                             }];
-                                            readonly id: 31522;
+                                            readonly id: 31628;
                                             readonly initialValue: {
                                                 readonly arguments: readonly [{
                                                     readonly arguments: readonly [{
                                                         readonly arguments: readonly [{
-                                                            readonly id: 31517;
+                                                            readonly id: 31623;
                                                             readonly name: "chainAlias";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 31475;
+                                                            readonly referencedDeclaration: 31581;
                                                             readonly src: "6826:10:146";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_string_memory_ptr";
@@ -5158,18 +5158,18 @@ export declare const StdChains: {
                                                                 readonly typeIdentifier: "t_string_memory_ptr";
                                                                 readonly typeString: "string memory";
                                                             }];
-                                                            readonly id: 31516;
+                                                            readonly id: 31622;
                                                             readonly name: "_toUpper";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 31473;
+                                                            readonly referencedDeclaration: 31579;
                                                             readonly src: "6817:8:146";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$";
                                                                 readonly typeString: "function (string memory) pure returns (string memory)";
                                                             };
                                                         };
-                                                        readonly id: 31518;
+                                                        readonly id: 31624;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -5186,7 +5186,7 @@ export declare const StdChains: {
                                                         };
                                                     }, {
                                                         readonly hexValue: "5f5250435f55524c";
-                                                        readonly id: 31519;
+                                                        readonly id: 31625;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -5209,7 +5209,7 @@ export declare const StdChains: {
                                                             readonly typeString: "literal_string \"_RPC_URL\"";
                                                         }];
                                                         readonly expression: {
-                                                            readonly id: 31514;
+                                                            readonly id: 31620;
                                                             readonly name: "abi";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
@@ -5220,7 +5220,7 @@ export declare const StdChains: {
                                                                 readonly typeString: "abi";
                                                             };
                                                         };
-                                                        readonly id: 31515;
+                                                        readonly id: 31621;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -5234,7 +5234,7 @@ export declare const StdChains: {
                                                             readonly typeString: "function () pure returns (bytes memory)";
                                                         };
                                                     };
-                                                    readonly id: 31520;
+                                                    readonly id: 31626;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -5255,7 +5255,7 @@ export declare const StdChains: {
                                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                                         readonly typeString: "bytes memory";
                                                     }];
-                                                    readonly id: 31513;
+                                                    readonly id: 31619;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -5267,14 +5267,14 @@ export declare const StdChains: {
                                                         readonly typeString: "type(string storage pointer)";
                                                     };
                                                     readonly typeName: {
-                                                        readonly id: 31512;
+                                                        readonly id: 31618;
                                                         readonly name: "string";
                                                         readonly nodeType: "ElementaryTypeName";
                                                         readonly src: "6793:6:146";
                                                         readonly typeDescriptions: {};
                                                     };
                                                 };
-                                                readonly id: 31521;
+                                                readonly id: 31627;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5294,11 +5294,11 @@ export declare const StdChains: {
                                             readonly src: "6769:82:146";
                                         }, {
                                             readonly condition: {
-                                                readonly id: 31523;
+                                                readonly id: 31629;
                                                 readonly name: "fallbackToDefaultRpcUrls";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 31156;
+                                                readonly referencedDeclaration: 31262;
                                                 readonly src: "6873:24:146";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_bool";
@@ -5306,30 +5306,30 @@ export declare const StdChains: {
                                                 };
                                             };
                                             readonly falseBody: {
-                                                readonly id: 31546;
+                                                readonly id: 31652;
                                                 readonly nodeType: "Block";
                                                 readonly src: "7006:77:146";
                                                 readonly statements: readonly [{
                                                     readonly expression: {
-                                                        readonly id: 31544;
+                                                        readonly id: 31650;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
                                                         readonly lValueRequested: false;
                                                         readonly leftHandSide: {
                                                             readonly expression: {
-                                                                readonly id: 31537;
+                                                                readonly id: 31643;
                                                                 readonly name: "chain";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 31478;
+                                                                readonly referencedDeclaration: 31584;
                                                                 readonly src: "7028:5:146";
                                                                 readonly typeDescriptions: {
-                                                                    readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                                                    readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                                                     readonly typeString: "struct StdChains.Chain memory";
                                                                 };
                                                             };
-                                                            readonly id: 31539;
+                                                            readonly id: 31645;
                                                             readonly isConstant: false;
                                                             readonly isLValue: true;
                                                             readonly isPure: false;
@@ -5337,7 +5337,7 @@ export declare const StdChains: {
                                                             readonly memberLocation: "7034:6:146";
                                                             readonly memberName: "rpcUrl";
                                                             readonly nodeType: "MemberAccess";
-                                                            readonly referencedDeclaration: 31139;
+                                                            readonly referencedDeclaration: 31245;
                                                             readonly src: "7028:12:146";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_string_memory_ptr";
@@ -5348,11 +5348,11 @@ export declare const StdChains: {
                                                         readonly operator: "=";
                                                         readonly rightHandSide: {
                                                             readonly arguments: readonly [{
-                                                                readonly id: 31542;
+                                                                readonly id: 31648;
                                                                 readonly name: "envName";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 31511;
+                                                                readonly referencedDeclaration: 31617;
                                                                 readonly src: "7056:7:146";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -5365,18 +5365,18 @@ export declare const StdChains: {
                                                                     readonly typeString: "string memory";
                                                                 }];
                                                                 readonly expression: {
-                                                                    readonly id: 31540;
+                                                                    readonly id: 31646;
                                                                     readonly name: "vm";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 31122;
+                                                                    readonly referencedDeclaration: 31228;
                                                                     readonly src: "7043:2:146";
                                                                     readonly typeDescriptions: {
-                                                                        readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                                                                        readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                                                                         readonly typeString: "contract VmSafe";
                                                                     };
                                                                 };
-                                                                readonly id: 31541;
+                                                                readonly id: 31647;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: false;
@@ -5384,14 +5384,14 @@ export declare const StdChains: {
                                                                 readonly memberLocation: "7046:9:146";
                                                                 readonly memberName: "envString";
                                                                 readonly nodeType: "MemberAccess";
-                                                                readonly referencedDeclaration: 39382;
+                                                                readonly referencedDeclaration: 39488;
                                                                 readonly src: "7043:12:146";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$";
                                                                     readonly typeString: "function (string memory) view external returns (string memory)";
                                                                 };
                                                             };
-                                                            readonly id: 31543;
+                                                            readonly id: 31649;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -5413,39 +5413,39 @@ export declare const StdChains: {
                                                             readonly typeString: "string memory";
                                                         };
                                                     };
-                                                    readonly id: 31545;
+                                                    readonly id: 31651;
                                                     readonly nodeType: "ExpressionStatement";
                                                     readonly src: "7028:36:146";
                                                 }];
                                             };
-                                            readonly id: 31547;
+                                            readonly id: 31653;
                                             readonly nodeType: "IfStatement";
                                             readonly src: "6869:214:146";
                                             readonly trueBody: {
-                                                readonly id: 31536;
+                                                readonly id: 31642;
                                                 readonly nodeType: "Block";
                                                 readonly src: "6899:101:146";
                                                 readonly statements: readonly [{
                                                     readonly expression: {
-                                                        readonly id: 31534;
+                                                        readonly id: 31640;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
                                                         readonly lValueRequested: false;
                                                         readonly leftHandSide: {
                                                             readonly expression: {
-                                                                readonly id: 31524;
+                                                                readonly id: 31630;
                                                                 readonly name: "chain";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 31478;
+                                                                readonly referencedDeclaration: 31584;
                                                                 readonly src: "6921:5:146";
                                                                 readonly typeDescriptions: {
-                                                                    readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                                                    readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                                                     readonly typeString: "struct StdChains.Chain memory";
                                                                 };
                                                             };
-                                                            readonly id: 31526;
+                                                            readonly id: 31632;
                                                             readonly isConstant: false;
                                                             readonly isLValue: true;
                                                             readonly isPure: false;
@@ -5453,7 +5453,7 @@ export declare const StdChains: {
                                                             readonly memberLocation: "6927:6:146";
                                                             readonly memberName: "rpcUrl";
                                                             readonly nodeType: "MemberAccess";
-                                                            readonly referencedDeclaration: 31139;
+                                                            readonly referencedDeclaration: 31245;
                                                             readonly src: "6921:12:146";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_string_memory_ptr";
@@ -5464,11 +5464,11 @@ export declare const StdChains: {
                                                         readonly operator: "=";
                                                         readonly rightHandSide: {
                                                             readonly arguments: readonly [{
-                                                                readonly id: 31529;
+                                                                readonly id: 31635;
                                                                 readonly name: "envName";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 31511;
+                                                                readonly referencedDeclaration: 31617;
                                                                 readonly src: "6945:7:146";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -5476,24 +5476,24 @@ export declare const StdChains: {
                                                                 };
                                                             }, {
                                                                 readonly baseExpression: {
-                                                                    readonly id: 31530;
+                                                                    readonly id: 31636;
                                                                     readonly name: "defaultRpcUrls";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 31149;
+                                                                    readonly referencedDeclaration: 31255;
                                                                     readonly src: "6954:14:146";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_string_storage_$";
                                                                         readonly typeString: "mapping(string memory => string storage ref)";
                                                                     };
                                                                 };
-                                                                readonly id: 31532;
+                                                                readonly id: 31638;
                                                                 readonly indexExpression: {
-                                                                    readonly id: 31531;
+                                                                    readonly id: 31637;
                                                                     readonly name: "chainAlias";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 31475;
+                                                                    readonly referencedDeclaration: 31581;
                                                                     readonly src: "6969:10:146";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -5520,18 +5520,18 @@ export declare const StdChains: {
                                                                     readonly typeString: "string storage ref";
                                                                 }];
                                                                 readonly expression: {
-                                                                    readonly id: 31527;
+                                                                    readonly id: 31633;
                                                                     readonly name: "vm";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 31122;
+                                                                    readonly referencedDeclaration: 31228;
                                                                     readonly src: "6936:2:146";
                                                                     readonly typeDescriptions: {
-                                                                        readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                                                                        readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                                                                         readonly typeString: "contract VmSafe";
                                                                     };
                                                                 };
-                                                                readonly id: 31528;
+                                                                readonly id: 31634;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: false;
@@ -5539,14 +5539,14 @@ export declare const StdChains: {
                                                                 readonly memberLocation: "6939:5:146";
                                                                 readonly memberName: "envOr";
                                                                 readonly nodeType: "MemberAccess";
-                                                                readonly referencedDeclaration: 39513;
+                                                                readonly referencedDeclaration: 39619;
                                                                 readonly src: "6936:8:146";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$";
                                                                     readonly typeString: "function (string memory,string memory) external returns (string memory)";
                                                                 };
                                                             };
-                                                            readonly id: 31533;
+                                                            readonly id: 31639;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -5568,21 +5568,21 @@ export declare const StdChains: {
                                                             readonly typeString: "string memory";
                                                         };
                                                     };
-                                                    readonly id: 31535;
+                                                    readonly id: 31641;
                                                     readonly nodeType: "ExpressionStatement";
                                                     readonly src: "6921:60:146";
                                                 }];
                                             };
                                         }, {
-                                            readonly assignments: readonly [31549];
+                                            readonly assignments: readonly [31655];
                                             readonly declarations: readonly [{
                                                 readonly constant: false;
-                                                readonly id: 31549;
+                                                readonly id: 31655;
                                                 readonly mutability: "mutable";
                                                 readonly name: "notFoundError";
                                                 readonly nameLocation: "7175:13:146";
                                                 readonly nodeType: "VariableDeclaration";
-                                                readonly scope: 31582;
+                                                readonly scope: 31688;
                                                 readonly src: "7162:26:146";
                                                 readonly stateVariable: false;
                                                 readonly storageLocation: "memory";
@@ -5591,7 +5591,7 @@ export declare const StdChains: {
                                                     readonly typeString: "bytes";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 31548;
+                                                    readonly id: 31654;
                                                     readonly name: "bytes";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "7162:5:146";
@@ -5602,11 +5602,11 @@ export declare const StdChains: {
                                                 };
                                                 readonly visibility: "internal";
                                             }];
-                                            readonly id: 31562;
+                                            readonly id: 31668;
                                             readonly initialValue: {
                                                 readonly arguments: readonly [{
                                                     readonly hexValue: "4368656174436f64654572726f72";
-                                                    readonly id: 31552;
+                                                    readonly id: 31658;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -5623,7 +5623,7 @@ export declare const StdChains: {
                                                     readonly arguments: readonly [{
                                                         readonly arguments: readonly [{
                                                             readonly hexValue: "696e76616c6964207270632075726c20";
-                                                            readonly id: 31557;
+                                                            readonly id: 31663;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: true;
@@ -5637,11 +5637,11 @@ export declare const StdChains: {
                                                             };
                                                             readonly value: "invalid rpc url ";
                                                         }, {
-                                                            readonly id: 31558;
+                                                            readonly id: 31664;
                                                             readonly name: "chainAlias";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 31475;
+                                                            readonly referencedDeclaration: 31581;
                                                             readonly src: "7297:10:146";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_string_memory_ptr";
@@ -5657,7 +5657,7 @@ export declare const StdChains: {
                                                                 readonly typeString: "string memory";
                                                             }];
                                                             readonly expression: {
-                                                                readonly id: 31555;
+                                                                readonly id: 31661;
                                                                 readonly name: "abi";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
@@ -5668,7 +5668,7 @@ export declare const StdChains: {
                                                                     readonly typeString: "abi";
                                                                 };
                                                             };
-                                                            readonly id: 31556;
+                                                            readonly id: 31662;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: true;
@@ -5682,7 +5682,7 @@ export declare const StdChains: {
                                                                 readonly typeString: "function () pure returns (bytes memory)";
                                                             };
                                                         };
-                                                        readonly id: 31559;
+                                                        readonly id: 31665;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -5703,7 +5703,7 @@ export declare const StdChains: {
                                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                                             readonly typeString: "bytes memory";
                                                         }];
-                                                        readonly id: 31554;
+                                                        readonly id: 31660;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -5715,14 +5715,14 @@ export declare const StdChains: {
                                                             readonly typeString: "type(string storage pointer)";
                                                         };
                                                         readonly typeName: {
-                                                            readonly id: 31553;
+                                                            readonly id: 31659;
                                                             readonly name: "string";
                                                             readonly nodeType: "ElementaryTypeName";
                                                             readonly src: "7253:6:146";
                                                             readonly typeDescriptions: {};
                                                         };
                                                     };
-                                                    readonly id: 31560;
+                                                    readonly id: 31666;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -5747,7 +5747,7 @@ export declare const StdChains: {
                                                         readonly typeString: "string memory";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 31550;
+                                                        readonly id: 31656;
                                                         readonly name: "abi";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
@@ -5758,7 +5758,7 @@ export declare const StdChains: {
                                                             readonly typeString: "abi";
                                                         };
                                                     };
-                                                    readonly id: 31551;
+                                                    readonly id: 31657;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -5772,7 +5772,7 @@ export declare const StdChains: {
                                                         readonly typeString: "function (string memory) pure returns (bytes memory)";
                                                     };
                                                 };
-                                                readonly id: 31561;
+                                                readonly id: 31667;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5796,7 +5796,7 @@ export declare const StdChains: {
                                                     readonly typeIdentifier: "t_bool";
                                                     readonly typeString: "bool";
                                                 };
-                                                readonly id: 31578;
+                                                readonly id: 31684;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5806,18 +5806,18 @@ export declare const StdChains: {
                                                         readonly typeIdentifier: "t_bytes32";
                                                         readonly typeString: "bytes32";
                                                     };
-                                                    readonly id: 31569;
+                                                    readonly id: 31675;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftExpression: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 31564;
+                                                            readonly id: 31670;
                                                             readonly name: "notFoundError";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 31549;
+                                                            readonly referencedDeclaration: 31655;
                                                             readonly src: "7342:13:146";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -5829,7 +5829,7 @@ export declare const StdChains: {
                                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                                                 readonly typeString: "bytes memory";
                                                             }];
-                                                            readonly id: 31563;
+                                                            readonly id: 31669;
                                                             readonly name: "keccak256";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
@@ -5840,7 +5840,7 @@ export declare const StdChains: {
                                                                 readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                                             };
                                                         };
-                                                        readonly id: 31565;
+                                                        readonly id: 31671;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -5860,11 +5860,11 @@ export declare const StdChains: {
                                                     readonly operator: "!=";
                                                     readonly rightExpression: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 31567;
+                                                            readonly id: 31673;
                                                             readonly name: "err";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 31508;
+                                                            readonly referencedDeclaration: 31614;
                                                             readonly src: "7370:3:146";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -5876,7 +5876,7 @@ export declare const StdChains: {
                                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                                                 readonly typeString: "bytes memory";
                                                             }];
-                                                            readonly id: 31566;
+                                                            readonly id: 31672;
                                                             readonly name: "keccak256";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
@@ -5887,7 +5887,7 @@ export declare const StdChains: {
                                                                 readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                                             };
                                                         };
-                                                        readonly id: 31568;
+                                                        readonly id: 31674;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -5916,7 +5916,7 @@ export declare const StdChains: {
                                                         readonly typeIdentifier: "t_uint256";
                                                         readonly typeString: "uint256";
                                                     };
-                                                    readonly id: 31577;
+                                                    readonly id: 31683;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -5925,18 +5925,18 @@ export declare const StdChains: {
                                                         readonly expression: {
                                                             readonly arguments: readonly [{
                                                                 readonly expression: {
-                                                                    readonly id: 31572;
+                                                                    readonly id: 31678;
                                                                     readonly name: "chain";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 31478;
+                                                                    readonly referencedDeclaration: 31584;
                                                                     readonly src: "7384:5:146";
                                                                     readonly typeDescriptions: {
-                                                                        readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                                                        readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                                                         readonly typeString: "struct StdChains.Chain memory";
                                                                     };
                                                                 };
-                                                                readonly id: 31573;
+                                                                readonly id: 31679;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: true;
                                                                 readonly isPure: false;
@@ -5944,7 +5944,7 @@ export declare const StdChains: {
                                                                 readonly memberLocation: "7390:6:146";
                                                                 readonly memberName: "rpcUrl";
                                                                 readonly nodeType: "MemberAccess";
-                                                                readonly referencedDeclaration: 31139;
+                                                                readonly referencedDeclaration: 31245;
                                                                 readonly src: "7384:12:146";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -5956,7 +5956,7 @@ export declare const StdChains: {
                                                                     readonly typeIdentifier: "t_string_memory_ptr";
                                                                     readonly typeString: "string memory";
                                                                 }];
-                                                                readonly id: 31571;
+                                                                readonly id: 31677;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: true;
@@ -5968,14 +5968,14 @@ export declare const StdChains: {
                                                                     readonly typeString: "type(bytes storage pointer)";
                                                                 };
                                                                 readonly typeName: {
-                                                                    readonly id: 31570;
+                                                                    readonly id: 31676;
                                                                     readonly name: "bytes";
                                                                     readonly nodeType: "ElementaryTypeName";
                                                                     readonly src: "7378:5:146";
                                                                     readonly typeDescriptions: {};
                                                                 };
                                                             };
-                                                            readonly id: 31574;
+                                                            readonly id: 31680;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -5991,7 +5991,7 @@ export declare const StdChains: {
                                                                 readonly typeString: "bytes memory";
                                                             };
                                                         };
-                                                        readonly id: 31575;
+                                                        readonly id: 31681;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -6009,7 +6009,7 @@ export declare const StdChains: {
                                                     readonly operator: "==";
                                                     readonly rightExpression: {
                                                         readonly hexValue: "30";
-                                                        readonly id: 31576;
+                                                        readonly id: 31682;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -6035,11 +6035,11 @@ export declare const StdChains: {
                                                     readonly typeString: "bool";
                                                 };
                                             };
-                                            readonly id: 31581;
+                                            readonly id: 31687;
                                             readonly nodeType: "IfStatement";
                                             readonly src: "7328:267:146";
                                             readonly trueBody: {
-                                                readonly id: 31580;
+                                                readonly id: 31686;
                                                 readonly nodeType: "Block";
                                                 readonly src: "7411:184:146";
                                                 readonly statements: readonly [{
@@ -6096,19 +6096,19 @@ export declare const StdChains: {
                                                     readonly documentation: "@solidity memory-safe-assembly";
                                                     readonly evmVersion: "paris";
                                                     readonly externalReferences: readonly [{
-                                                        readonly declaration: 31508;
+                                                        readonly declaration: 31614;
                                                         readonly isOffset: false;
                                                         readonly isSlot: false;
                                                         readonly src: "7538:3:146";
                                                         readonly valueSize: 1;
                                                     }, {
-                                                        readonly declaration: 31508;
+                                                        readonly declaration: 31614;
                                                         readonly isOffset: false;
                                                         readonly isSlot: false;
                                                         readonly src: "7550:3:146";
                                                         readonly valueSize: 1;
                                                     }];
-                                                    readonly id: 31579;
+                                                    readonly id: 31685;
                                                     readonly nodeType: "InlineAssembly";
                                                     readonly src: "7488:89:146";
                                                 }];
@@ -6116,19 +6116,19 @@ export declare const StdChains: {
                                         }];
                                     };
                                     readonly errorName: "";
-                                    readonly id: 31583;
+                                    readonly id: 31689;
                                     readonly nodeType: "TryCatchClause";
                                     readonly parameters: {
-                                        readonly id: 31509;
+                                        readonly id: 31615;
                                         readonly nodeType: "ParameterList";
                                         readonly parameters: readonly [{
                                             readonly constant: false;
-                                            readonly id: 31508;
+                                            readonly id: 31614;
                                             readonly mutability: "mutable";
                                             readonly name: "err";
                                             readonly nameLocation: "6746:3:146";
                                             readonly nodeType: "VariableDeclaration";
-                                            readonly scope: 31583;
+                                            readonly scope: 31689;
                                             readonly src: "6733:16:146";
                                             readonly stateVariable: false;
                                             readonly storageLocation: "memory";
@@ -6137,7 +6137,7 @@ export declare const StdChains: {
                                                 readonly typeString: "bytes";
                                             };
                                             readonly typeName: {
-                                                readonly id: 31507;
+                                                readonly id: 31613;
                                                 readonly name: "bytes";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "6733:5:146";
@@ -6154,11 +6154,11 @@ export declare const StdChains: {
                                 }];
                                 readonly externalCall: {
                                     readonly arguments: readonly [{
-                                        readonly id: 31494;
+                                        readonly id: 31600;
                                         readonly name: "chainAlias";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 31475;
+                                        readonly referencedDeclaration: 31581;
                                         readonly src: "6616:10:146";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_string_memory_ptr";
@@ -6171,18 +6171,18 @@ export declare const StdChains: {
                                             readonly typeString: "string memory";
                                         }];
                                         readonly expression: {
-                                            readonly id: 31492;
+                                            readonly id: 31598;
                                             readonly name: "vm";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 31122;
+                                            readonly referencedDeclaration: 31228;
                                             readonly src: "6606:2:146";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                                                readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                                                 readonly typeString: "contract VmSafe";
                                             };
                                         };
-                                        readonly id: 31493;
+                                        readonly id: 31599;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -6190,14 +6190,14 @@ export declare const StdChains: {
                                         readonly memberLocation: "6609:6:146";
                                         readonly memberName: "rpcUrl";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 40267;
+                                        readonly referencedDeclaration: 40373;
                                         readonly src: "6606:9:146";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$";
                                             readonly typeString: "function (string memory) view external returns (string memory)";
                                         };
                                     };
-                                    readonly id: 31495;
+                                    readonly id: 31601;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -6213,26 +6213,26 @@ export declare const StdChains: {
                                         readonly typeString: "string memory";
                                     };
                                 };
-                                readonly id: 31584;
+                                readonly id: 31690;
                                 readonly nodeType: "TryStatement";
                                 readonly src: "6602:1007:146";
                             }];
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 31587;
+                            readonly id: 31693;
                             readonly name: "chain";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 31478;
+                            readonly referencedDeclaration: 31584;
                             readonly src: "7635:5:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                                 readonly typeString: "struct StdChains.Chain memory";
                             };
                         };
-                        readonly functionReturnParameters: 31483;
-                        readonly id: 31588;
+                        readonly functionReturnParameters: 31589;
+                        readonly id: 31694;
                         readonly nodeType: "Return";
                         readonly src: "7628:12:146";
                     }];
@@ -6243,16 +6243,16 @@ export declare const StdChains: {
                 readonly name: "getChainWithUpdatedRpcUrl";
                 readonly nameLocation: "6438:25:146";
                 readonly parameters: {
-                    readonly id: 31479;
+                    readonly id: 31585;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31475;
+                        readonly id: 31581;
                         readonly mutability: "mutable";
                         readonly name: "chainAlias";
                         readonly nameLocation: "6478:10:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31590;
+                        readonly scope: 31696;
                         readonly src: "6464:24:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -6261,7 +6261,7 @@ export declare const StdChains: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 31474;
+                            readonly id: 31580;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6464:6:146";
@@ -6273,34 +6273,34 @@ export declare const StdChains: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 31478;
+                        readonly id: 31584;
                         readonly mutability: "mutable";
                         readonly name: "chain";
                         readonly nameLocation: "6503:5:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31590;
+                        readonly scope: 31696;
                         readonly src: "6490:18:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                             readonly typeString: "struct StdChains.Chain";
                         };
                         readonly typeName: {
-                            readonly id: 31477;
+                            readonly id: 31583;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 31476;
+                                readonly id: 31582;
                                 readonly name: "Chain";
                                 readonly nameLocations: readonly ["6490:5:146"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 31140;
+                                readonly referencedDeclaration: 31246;
                                 readonly src: "6490:5:146";
                             };
-                            readonly referencedDeclaration: 31140;
+                            readonly referencedDeclaration: 31246;
                             readonly src: "6490:5:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_storage_ptr";
                                 readonly typeString: "struct StdChains.Chain";
                             };
                         };
@@ -6309,38 +6309,38 @@ export declare const StdChains: {
                     readonly src: "6463:46:146";
                 };
                 readonly returnParameters: {
-                    readonly id: 31483;
+                    readonly id: 31589;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31482;
+                        readonly id: 31588;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31590;
+                        readonly scope: 31696;
                         readonly src: "6527:12:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_Chain_$31140_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_Chain_$31246_memory_ptr";
                             readonly typeString: "struct StdChains.Chain";
                         };
                         readonly typeName: {
-                            readonly id: 31481;
+                            readonly id: 31587;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 31480;
+                                readonly id: 31586;
                                 readonly name: "Chain";
                                 readonly nameLocations: readonly ["6527:5:146"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 31140;
+                                readonly referencedDeclaration: 31246;
                                 readonly src: "6527:5:146";
                             };
-                            readonly referencedDeclaration: 31140;
+                            readonly referencedDeclaration: 31246;
                             readonly src: "6527:5:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_Chain_$31140_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_Chain_$31246_storage_ptr";
                                 readonly typeString: "struct StdChains.Chain";
                             };
                         };
@@ -6348,33 +6348,33 @@ export declare const StdChains: {
                     }];
                     readonly src: "6526:14:146";
                 };
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "private";
             }, {
-                readonly id: 31600;
+                readonly id: 31706;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7653:117:146";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 31599;
+                    readonly id: 31705;
                     readonly nodeType: "Block";
                     readonly src: "7716:54:146";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 31597;
+                            readonly id: 31703;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 31595;
+                                readonly id: 31701;
                                 readonly name: "fallbackToDefaultRpcUrls";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31156;
+                                readonly referencedDeclaration: 31262;
                                 readonly src: "7726:24:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -6384,11 +6384,11 @@ export declare const StdChains: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 31596;
+                                readonly id: 31702;
                                 readonly name: "useDefault";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31592;
+                                readonly referencedDeclaration: 31698;
                                 readonly src: "7753:10:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -6401,7 +6401,7 @@ export declare const StdChains: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 31598;
+                        readonly id: 31704;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "7726:37:146";
                     }];
@@ -6412,16 +6412,16 @@ export declare const StdChains: {
                 readonly name: "setFallbackToDefaultRpcUrls";
                 readonly nameLocation: "7662:27:146";
                 readonly parameters: {
-                    readonly id: 31593;
+                    readonly id: 31699;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31592;
+                        readonly id: 31698;
                         readonly mutability: "mutable";
                         readonly name: "useDefault";
                         readonly nameLocation: "7695:10:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31600;
+                        readonly scope: 31706;
                         readonly src: "7690:15:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6430,7 +6430,7 @@ export declare const StdChains: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 31591;
+                            readonly id: 31697;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7690:4:146";
@@ -6444,60 +6444,60 @@ export declare const StdChains: {
                     readonly src: "7689:17:146";
                 };
                 readonly returnParameters: {
-                    readonly id: 31594;
+                    readonly id: 31700;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7716:0:146";
                 };
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 31782;
+                readonly id: 31888;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7776:2751:146";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 31781;
+                    readonly id: 31887;
                     readonly nodeType: "Block";
                     readonly src: "7815:2712:146";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 31603;
+                            readonly id: 31709;
                             readonly name: "stdChainsInitialized";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 31124;
+                            readonly referencedDeclaration: 31230;
                             readonly src: "7829:20:146";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bool";
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 31605;
+                        readonly id: 31711;
                         readonly nodeType: "IfStatement";
                         readonly src: "7825:33:146";
                         readonly trueBody: {
-                            readonly functionReturnParameters: 31602;
-                            readonly id: 31604;
+                            readonly functionReturnParameters: 31708;
+                            readonly id: 31710;
                             readonly nodeType: "Return";
                             readonly src: "7851:7:146";
                         };
                     }, {
                         readonly expression: {
-                            readonly id: 31608;
+                            readonly id: 31714;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 31606;
+                                readonly id: 31712;
                                 readonly name: "stdChainsInitialized";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31124;
+                                readonly referencedDeclaration: 31230;
                                 readonly src: "7868:20:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -6508,7 +6508,7 @@ export declare const StdChains: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly hexValue: "74727565";
-                                readonly id: 31607;
+                                readonly id: 31713;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -6528,14 +6528,14 @@ export declare const StdChains: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 31609;
+                        readonly id: 31715;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "7868:27:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "616e76696c";
-                                readonly id: 31611;
+                                readonly id: 31717;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -6551,7 +6551,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "416e76696c";
-                                    readonly id: 31613;
+                                    readonly id: 31719;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6566,7 +6566,7 @@ export declare const StdChains: {
                                     readonly value: "Anvil";
                                 }, {
                                     readonly hexValue: "3331333337";
-                                    readonly id: 31614;
+                                    readonly id: 31720;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6581,7 +6581,7 @@ export declare const StdChains: {
                                     readonly value: "31337";
                                 }, {
                                     readonly hexValue: "687474703a2f2f3132372e302e302e313a38353435";
-                                    readonly id: 31615;
+                                    readonly id: 31721;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6606,18 +6606,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_308a18cf3d9de3b161a842ef1e873581d7b16a5d4ea08170e123f95d25f33fe0";
                                         readonly typeString: "literal_string \"http://127.0.0.1:8545\"";
                                     }];
-                                    readonly id: 31612;
+                                    readonly id: 31718;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "8027:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31616;
+                                readonly id: 31722;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -6629,7 +6629,7 @@ export declare const StdChains: {
                                 readonly src: "8027:50:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -6638,21 +6638,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_a3d859b77cebfdf9da3b485434702c5090ff9e91b7b86c670ebb15f8a00eb72b";
                                     readonly typeString: "literal_string \"anvil\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31610;
+                                readonly id: 31716;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "7992:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31617;
+                            readonly id: 31723;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6668,14 +6668,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31618;
+                        readonly id: 31724;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "7992:86:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "6d61696e6e6574";
-                                readonly id: 31620;
+                                readonly id: 31726;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -6691,7 +6691,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "4d61696e6e6574";
-                                    readonly id: 31622;
+                                    readonly id: 31728;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6706,7 +6706,7 @@ export declare const StdChains: {
                                     readonly value: "Mainnet";
                                 }, {
                                     readonly hexValue: "31";
-                                    readonly id: 31623;
+                                    readonly id: 31729;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6721,7 +6721,7 @@ export declare const StdChains: {
                                     readonly value: "1";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f6d61696e6e65742e696e667572612e696f2f76332f6239373934616431646466383464666238633334643662623564636132303031";
-                                    readonly id: 31624;
+                                    readonly id: 31730;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6746,18 +6746,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_1373fea4c12f646a43ebc6d1ea0e596114d1b5b436526018c86d996c7250aef0";
                                         readonly typeString: "literal_string \"https://mainnet.infura.io/v3/b9794ad1ddf84dfb8c34d6bb5dca2001\"";
                                     }];
-                                    readonly id: 31621;
+                                    readonly id: 31727;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "8138:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31625;
+                                readonly id: 31731;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -6769,7 +6769,7 @@ export declare const StdChains: {
                                 readonly src: "8138:88:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -6778,21 +6778,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_7beafa94c8bfb8f1c1a43104a34f72c524268aafbfe83bff17485539345c66ff";
                                     readonly typeString: "literal_string \"mainnet\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31619;
+                                readonly id: 31725;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "8088:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31626;
+                            readonly id: 31732;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6808,14 +6808,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31627;
+                        readonly id: 31733;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "8088:148:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "676f65726c69";
-                                readonly id: 31629;
+                                readonly id: 31735;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -6831,7 +6831,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "476f65726c69";
-                                    readonly id: 31631;
+                                    readonly id: 31737;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6846,7 +6846,7 @@ export declare const StdChains: {
                                     readonly value: "Goerli";
                                 }, {
                                     readonly hexValue: "35";
-                                    readonly id: 31632;
+                                    readonly id: 31738;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6861,7 +6861,7 @@ export declare const StdChains: {
                                     readonly value: "5";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f676f65726c692e696e667572612e696f2f76332f6239373934616431646466383464666238633334643662623564636132303031";
-                                    readonly id: 31633;
+                                    readonly id: 31739;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6886,18 +6886,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_eb46d1ff6486ad38c99bfbe75b668c3e422a65114b7e15a3a7eeca36edb48a42";
                                         readonly typeString: "literal_string \"https://goerli.infura.io/v3/b9794ad1ddf84dfb8c34d6bb5dca2001\"";
                                     }];
-                                    readonly id: 31630;
+                                    readonly id: 31736;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "8295:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31634;
+                                readonly id: 31740;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -6909,7 +6909,7 @@ export declare const StdChains: {
                                 readonly src: "8295:86:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -6918,21 +6918,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_e24dd81d18a6354d406364c0fc25f4237534cee10d0c3099c9c2a6aa50d7dd0a";
                                     readonly typeString: "literal_string \"goerli\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31628;
+                                readonly id: 31734;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "8246:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31635;
+                            readonly id: 31741;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6948,14 +6948,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31636;
+                        readonly id: 31742;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "8246:145:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "7365706f6c6961";
-                                readonly id: 31638;
+                                readonly id: 31744;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -6971,7 +6971,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "5365706f6c6961";
-                                    readonly id: 31640;
+                                    readonly id: 31746;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -6986,7 +6986,7 @@ export declare const StdChains: {
                                     readonly value: "Sepolia";
                                 }, {
                                     readonly hexValue: "3131313535313131";
-                                    readonly id: 31641;
+                                    readonly id: 31747;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7001,7 +7001,7 @@ export declare const StdChains: {
                                     readonly value: "11155111";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f7365706f6c69612e696e667572612e696f2f76332f6239373934616431646466383464666238633334643662623564636132303031";
-                                    readonly id: 31642;
+                                    readonly id: 31748;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7026,18 +7026,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_167447379e730a7d89231aec25edd721d4e0b02c818e31467228ef4a7c09810f";
                                         readonly typeString: "literal_string \"https://sepolia.infura.io/v3/b9794ad1ddf84dfb8c34d6bb5dca2001\"";
                                     }];
-                                    readonly id: 31639;
+                                    readonly id: 31745;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "8451:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31643;
+                                readonly id: 31749;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7049,7 +7049,7 @@ export declare const StdChains: {
                                 readonly src: "8451:95:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -7058,21 +7058,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_e1f58df0b51f34f4835aba989f0aa2f2e66218cab53207bafd3dbf37270bd39a";
                                     readonly typeString: "literal_string \"sepolia\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31637;
+                                readonly id: 31743;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "8401:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31644;
+                            readonly id: 31750;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7088,14 +7088,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31645;
+                        readonly id: 31751;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "8401:155:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "6f7074696d69736d";
-                                readonly id: 31647;
+                                readonly id: 31753;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7111,7 +7111,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "4f7074696d69736d";
-                                    readonly id: 31649;
+                                    readonly id: 31755;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7126,7 +7126,7 @@ export declare const StdChains: {
                                     readonly value: "Optimism";
                                 }, {
                                     readonly hexValue: "3130";
-                                    readonly id: 31650;
+                                    readonly id: 31756;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7141,7 +7141,7 @@ export declare const StdChains: {
                                     readonly value: "10";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f6d61696e6e65742e6f7074696d69736d2e696f";
-                                    readonly id: 31651;
+                                    readonly id: 31757;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7166,18 +7166,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_38b9211512154272cdc8d9677b3720aef06041b8d31b5e68a6ffc7a4bb22d93e";
                                         readonly typeString: "literal_string \"https://mainnet.optimism.io\"";
                                     }];
-                                    readonly id: 31648;
+                                    readonly id: 31754;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "8604:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31652;
+                                readonly id: 31758;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7189,7 +7189,7 @@ export declare const StdChains: {
                                 readonly src: "8604:56:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -7198,21 +7198,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_09d0f27659ee556a8134fa56941e42400e672aecc2d4cfc61cdb0fcea4590e05";
                                     readonly typeString: "literal_string \"optimism\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31646;
+                                readonly id: 31752;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "8566:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31653;
+                            readonly id: 31759;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7228,14 +7228,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31654;
+                        readonly id: 31760;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "8566:95:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "6f7074696d69736d5f676f65726c69";
-                                readonly id: 31656;
+                                readonly id: 31762;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7251,7 +7251,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "4f7074696d69736d20476f65726c69";
-                                    readonly id: 31658;
+                                    readonly id: 31764;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7266,7 +7266,7 @@ export declare const StdChains: {
                                     readonly value: "Optimism Goerli";
                                 }, {
                                     readonly hexValue: "343230";
-                                    readonly id: 31659;
+                                    readonly id: 31765;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7281,7 +7281,7 @@ export declare const StdChains: {
                                     readonly value: "420";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f676f65726c692e6f7074696d69736d2e696f";
-                                    readonly id: 31660;
+                                    readonly id: 31766;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7306,18 +7306,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_ef3dbe59ba72d73e51c1959c67c0485880270dce59b4642a5dff6497ea5e55ad";
                                         readonly typeString: "literal_string \"https://goerli.optimism.io\"";
                                     }];
-                                    readonly id: 31657;
+                                    readonly id: 31763;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "8716:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31661;
+                                readonly id: 31767;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7329,7 +7329,7 @@ export declare const StdChains: {
                                 readonly src: "8716:63:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -7338,21 +7338,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_ecf3b2cc678a701bfbf2329b12e6edf723c3043a32339c2eea2efb7c9533c09c";
                                     readonly typeString: "literal_string \"optimism_goerli\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31655;
+                                readonly id: 31761;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "8671:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31662;
+                            readonly id: 31768;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7368,14 +7368,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31663;
+                        readonly id: 31769;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "8671:109:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "617262697472756d5f6f6e65";
-                                readonly id: 31665;
+                                readonly id: 31771;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7391,7 +7391,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "417262697472756d204f6e65";
-                                    readonly id: 31667;
+                                    readonly id: 31773;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7406,7 +7406,7 @@ export declare const StdChains: {
                                     readonly value: "Arbitrum One";
                                 }, {
                                     readonly hexValue: "3432313631";
-                                    readonly id: 31668;
+                                    readonly id: 31774;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7421,7 +7421,7 @@ export declare const StdChains: {
                                     readonly value: "42161";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f617262312e617262697472756d2e696f2f727063";
-                                    readonly id: 31669;
+                                    readonly id: 31775;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7446,18 +7446,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_ff28c1a1bf3c117d5956efad529d0ee22dcfc0fe5cbf5a03e0bdfcc3c6cac126";
                                         readonly typeString: "literal_string \"https://arb1.arbitrum.io/rpc\"";
                                     }];
-                                    readonly id: 31666;
+                                    readonly id: 31772;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "8832:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31670;
+                                readonly id: 31776;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7469,7 +7469,7 @@ export declare const StdChains: {
                                 readonly src: "8832:64:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -7478,21 +7478,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_e4b44cea7839e0679ac5072602932da9b25ebfb3a9ac42625d9c583a7b6b2eb4";
                                     readonly typeString: "literal_string \"arbitrum_one\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31664;
+                                readonly id: 31770;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "8790:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31671;
+                            readonly id: 31777;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7508,14 +7508,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31672;
+                        readonly id: 31778;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "8790:107:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "617262697472756d5f6f6e655f676f65726c69";
-                                readonly id: 31674;
+                                readonly id: 31780;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7531,7 +7531,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "417262697472756d204f6e6520476f65726c69";
-                                    readonly id: 31676;
+                                    readonly id: 31782;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7546,7 +7546,7 @@ export declare const StdChains: {
                                     readonly value: "Arbitrum One Goerli";
                                 }, {
                                     readonly hexValue: "343231363133";
-                                    readonly id: 31677;
+                                    readonly id: 31783;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7561,7 +7561,7 @@ export declare const StdChains: {
                                     readonly value: "421613";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f676f65726c692d726f6c6c75702e617262697472756d2e696f2f727063";
-                                    readonly id: 31678;
+                                    readonly id: 31784;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7586,18 +7586,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_d65fa49ed6bf0763184aace821262295f8ad23c20b74cd1f836fe5e06f5dd8ea";
                                         readonly typeString: "literal_string \"https://goerli-rollup.arbitrum.io/rpc\"";
                                     }];
-                                    readonly id: 31675;
+                                    readonly id: 31781;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "8969:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31679;
+                                readonly id: 31785;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7609,7 +7609,7 @@ export declare const StdChains: {
                                 readonly src: "8969:81:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -7618,21 +7618,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_9c5068a3a5cdbd747f13200fdd6f590995f99bde231a5dcfa62a5f92af1dc3d4";
                                     readonly typeString: "literal_string \"arbitrum_one_goerli\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31673;
+                                readonly id: 31779;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "8907:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31680;
+                            readonly id: 31786;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7648,14 +7648,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31681;
+                        readonly id: 31787;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "8907:153:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "617262697472756d5f6e6f7661";
-                                readonly id: 31683;
+                                readonly id: 31789;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7671,7 +7671,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "417262697472756d204e6f7661";
-                                    readonly id: 31685;
+                                    readonly id: 31791;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7686,7 +7686,7 @@ export declare const StdChains: {
                                     readonly value: "Arbitrum Nova";
                                 }, {
                                     readonly hexValue: "3432313730";
-                                    readonly id: 31686;
+                                    readonly id: 31792;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7701,7 +7701,7 @@ export declare const StdChains: {
                                     readonly value: "42170";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f6e6f76612e617262697472756d2e696f2f727063";
-                                    readonly id: 31687;
+                                    readonly id: 31793;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7726,18 +7726,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_a77f0a686c95785c75ada33247e30dc9ac80330a7f8eb521bebdf48f492ee4ac";
                                         readonly typeString: "literal_string \"https://nova.arbitrum.io/rpc\"";
                                     }];
-                                    readonly id: 31684;
+                                    readonly id: 31790;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "9113:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31688;
+                                readonly id: 31794;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7749,7 +7749,7 @@ export declare const StdChains: {
                                 readonly src: "9113:65:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -7758,21 +7758,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_9338ed1403277416ebb39d4e992ebf5c49e6dded5ec79963ea5fc261cbd7fdac";
                                     readonly typeString: "literal_string \"arbitrum_nova\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31682;
+                                readonly id: 31788;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "9070:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31689;
+                            readonly id: 31795;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7788,14 +7788,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31690;
+                        readonly id: 31796;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9070:109:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "706f6c79676f6e";
-                                readonly id: 31692;
+                                readonly id: 31798;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7811,7 +7811,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "506f6c79676f6e";
-                                    readonly id: 31694;
+                                    readonly id: 31800;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7826,7 +7826,7 @@ export declare const StdChains: {
                                     readonly value: "Polygon";
                                 }, {
                                     readonly hexValue: "313337";
-                                    readonly id: 31695;
+                                    readonly id: 31801;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7841,7 +7841,7 @@ export declare const StdChains: {
                                     readonly value: "137";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f706f6c79676f6e2d7270632e636f6d";
-                                    readonly id: 31696;
+                                    readonly id: 31802;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7866,18 +7866,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_fda46ab670b83929623b4aa9bcfa97ff7b7376fa90a24a450a8561482232c5c0";
                                         readonly typeString: "literal_string \"https://polygon-rpc.com\"";
                                     }];
-                                    readonly id: 31693;
+                                    readonly id: 31799;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "9226:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31697;
+                                readonly id: 31803;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7889,7 +7889,7 @@ export declare const StdChains: {
                                 readonly src: "9226:52:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -7898,21 +7898,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_ac63fa1fe369e75c38d62f0f4d465b48b3cd5159f0fb416332899402031d1408";
                                     readonly typeString: "literal_string \"polygon\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31691;
+                                readonly id: 31797;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "9189:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31698;
+                            readonly id: 31804;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7928,14 +7928,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31699;
+                        readonly id: 31805;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9189:90:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "706f6c79676f6e5f6d756d626169";
-                                readonly id: 31701;
+                                readonly id: 31807;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -7951,7 +7951,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "506f6c79676f6e204d756d626169";
-                                    readonly id: 31703;
+                                    readonly id: 31809;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7966,7 +7966,7 @@ export declare const StdChains: {
                                     readonly value: "Polygon Mumbai";
                                 }, {
                                     readonly hexValue: "3830303031";
-                                    readonly id: 31704;
+                                    readonly id: 31810;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7981,7 +7981,7 @@ export declare const StdChains: {
                                     readonly value: "80001";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f7270632d6d756d6261692e6d61746963766967696c2e636f6d";
-                                    readonly id: 31705;
+                                    readonly id: 31811;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8006,18 +8006,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_73b526a6131ddfd959c21485254bd24a6ab94de746e87b78a515c1d42c7ee121";
                                         readonly typeString: "literal_string \"https://rpc-mumbai.maticvigil.com\"";
                                     }];
-                                    readonly id: 31702;
+                                    readonly id: 31808;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "9346:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31706;
+                                readonly id: 31812;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8029,7 +8029,7 @@ export declare const StdChains: {
                                 readonly src: "9346:71:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -8038,21 +8038,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_a7308364e169f5f44de3933205a00d3632b7366702c91dff3452b4dbf6ed70f0";
                                     readonly typeString: "literal_string \"polygon_mumbai\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31700;
+                                readonly id: 31806;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "9289:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31707;
+                            readonly id: 31813;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8068,14 +8068,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31708;
+                        readonly id: 31814;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9289:138:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "6176616c616e636865";
-                                readonly id: 31710;
+                                readonly id: 31816;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8091,7 +8091,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "4176616c616e636865";
-                                    readonly id: 31712;
+                                    readonly id: 31818;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8106,7 +8106,7 @@ export declare const StdChains: {
                                     readonly value: "Avalanche";
                                 }, {
                                     readonly hexValue: "3433313134";
-                                    readonly id: 31713;
+                                    readonly id: 31819;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8121,7 +8121,7 @@ export declare const StdChains: {
                                     readonly value: "43114";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f6170692e617661782e6e6574776f726b2f6578742f62632f432f727063";
-                                    readonly id: 31714;
+                                    readonly id: 31820;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8146,18 +8146,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_429365eac47ed6b261c38927d854e528b743fc5a678b1b4ba631c511f305886a";
                                         readonly typeString: "literal_string \"https://api.avax.network/ext/bc/C/rpc\"";
                                     }];
-                                    readonly id: 31711;
+                                    readonly id: 31817;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "9476:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31715;
+                                readonly id: 31821;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8169,7 +8169,7 @@ export declare const StdChains: {
                                 readonly src: "9476:70:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -8178,21 +8178,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_6e8b0d92516ee4289145e3b78cea58daac177b1c618beeedbc6cdabd388a6e55";
                                     readonly typeString: "literal_string \"avalanche\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31709;
+                                readonly id: 31815;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "9437:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31716;
+                            readonly id: 31822;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8208,14 +8208,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31717;
+                        readonly id: 31823;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9437:110:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "6176616c616e6368655f66756a69";
-                                readonly id: 31719;
+                                readonly id: 31825;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8231,7 +8231,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "4176616c616e6368652046756a69";
-                                    readonly id: 31721;
+                                    readonly id: 31827;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8246,7 +8246,7 @@ export declare const StdChains: {
                                     readonly value: "Avalanche Fuji";
                                 }, {
                                     readonly hexValue: "3433313133";
-                                    readonly id: 31722;
+                                    readonly id: 31828;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8261,7 +8261,7 @@ export declare const StdChains: {
                                     readonly value: "43113";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f6170692e617661782d746573742e6e6574776f726b2f6578742f62632f432f727063";
-                                    readonly id: 31723;
+                                    readonly id: 31829;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8286,18 +8286,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_d6621ea822eabf6c190358ea82de0c52d3503dcce8117b3366a8a3bd96eb422d";
                                         readonly typeString: "literal_string \"https://api.avax-test.network/ext/bc/C/rpc\"";
                                     }];
-                                    readonly id: 31720;
+                                    readonly id: 31826;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "9614:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31724;
+                                readonly id: 31830;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8309,7 +8309,7 @@ export declare const StdChains: {
                                 readonly src: "9614:80:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -8318,21 +8318,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_a1920d2f80060f1c83444622c7eb5adf4484bed8a537b8d13eae53bd800aa692";
                                     readonly typeString: "literal_string \"avalanche_fuji\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31718;
+                                readonly id: 31824;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "9557:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31725;
+                            readonly id: 31831;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8348,14 +8348,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31726;
+                        readonly id: 31832;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9557:147:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "626e625f736d6172745f636861696e";
-                                readonly id: 31728;
+                                readonly id: 31834;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8371,7 +8371,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "424e4220536d61727420436861696e";
-                                    readonly id: 31730;
+                                    readonly id: 31836;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8386,7 +8386,7 @@ export declare const StdChains: {
                                     readonly value: "BNB Smart Chain";
                                 }, {
                                     readonly hexValue: "3536";
-                                    readonly id: 31731;
+                                    readonly id: 31837;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8401,7 +8401,7 @@ export declare const StdChains: {
                                     readonly value: "56";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f6273632d6461746173656564312e62696e616e63652e6f7267";
-                                    readonly id: 31732;
+                                    readonly id: 31838;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8426,18 +8426,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_e2b4215bd50ab260c8c9f18e36ea07b1f952450853bcf024123d5767a40d4719";
                                         readonly typeString: "literal_string \"https://bsc-dataseed1.binance.org\"";
                                     }];
-                                    readonly id: 31729;
+                                    readonly id: 31835;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "9772:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31733;
+                                readonly id: 31839;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8449,7 +8449,7 @@ export declare const StdChains: {
                                 readonly src: "9772:69:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -8458,21 +8458,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_fa8b17ae9aa26749f5dc3a3bb333e0019db0c257f3541e870f73bb48b574361e";
                                     readonly typeString: "literal_string \"bnb_smart_chain\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31727;
+                                readonly id: 31833;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "9714:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31734;
+                            readonly id: 31840;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8488,14 +8488,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31735;
+                        readonly id: 31841;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9714:137:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "626e625f736d6172745f636861696e5f746573746e6574";
-                                readonly id: 31737;
+                                readonly id: 31843;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8511,7 +8511,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "424e4220536d61727420436861696e20546573746e6574";
-                                    readonly id: 31739;
+                                    readonly id: 31845;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8526,7 +8526,7 @@ export declare const StdChains: {
                                     readonly value: "BNB Smart Chain Testnet";
                                 }, {
                                     readonly hexValue: "3937";
-                                    readonly id: 31740;
+                                    readonly id: 31846;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8541,7 +8541,7 @@ export declare const StdChains: {
                                     readonly value: "97";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f7270632e616e6b722e636f6d2f6273635f746573746e65745f63686170656c";
-                                    readonly id: 31741;
+                                    readonly id: 31847;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8566,18 +8566,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_6660930de41ed298fb6a2348f33b08e5736a3823e6ffb86942097b237e075960";
                                         readonly typeString: "literal_string \"https://rpc.ankr.com/bsc_testnet_chapel\"";
                                     }];
-                                    readonly id: 31738;
+                                    readonly id: 31844;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "9939:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31742;
+                                readonly id: 31848;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8589,7 +8589,7 @@ export declare const StdChains: {
                                 readonly src: "9939:83:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -8598,21 +8598,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_1813de9892ab9db3d0c3b0c3eed9c8b820fe0c7e205bed860e6e89f4d7f75f29";
                                     readonly typeString: "literal_string \"bnb_smart_chain_testnet\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31736;
+                                readonly id: 31842;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "9861:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31743;
+                            readonly id: 31849;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8628,14 +8628,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31744;
+                        readonly id: 31850;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9861:171:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "676e6f7369735f636861696e";
-                                readonly id: 31746;
+                                readonly id: 31852;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8651,7 +8651,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "476e6f73697320436861696e";
-                                    readonly id: 31748;
+                                    readonly id: 31854;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8666,7 +8666,7 @@ export declare const StdChains: {
                                     readonly value: "Gnosis Chain";
                                 }, {
                                     readonly hexValue: "313030";
-                                    readonly id: 31749;
+                                    readonly id: 31855;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8681,7 +8681,7 @@ export declare const StdChains: {
                                     readonly value: "100";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f7270632e676e6f736973636861696e2e636f6d";
-                                    readonly id: 31750;
+                                    readonly id: 31856;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8706,18 +8706,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_127e02590d58e22164456f76136047039faabc2ca27eb41939081a3e775b50df";
                                         readonly typeString: "literal_string \"https://rpc.gnosischain.com\"";
                                     }];
-                                    readonly id: 31747;
+                                    readonly id: 31853;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "10084:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31751;
+                                readonly id: 31857;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8729,7 +8729,7 @@ export declare const StdChains: {
                                 readonly src: "10084:61:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -8738,21 +8738,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_847b7ed4df59b2dfcdba377bf4ac481c502926169e9af948ee2dd45c0e6df595";
                                     readonly typeString: "literal_string \"gnosis_chain\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31745;
+                                readonly id: 31851;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "10042:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31752;
+                            readonly id: 31858;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8768,14 +8768,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31753;
+                        readonly id: 31859;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10042:104:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "6d6f6f6e6265616d";
-                                readonly id: 31755;
+                                readonly id: 31861;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8791,7 +8791,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "4d6f6f6e6265616d";
-                                    readonly id: 31757;
+                                    readonly id: 31863;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8806,7 +8806,7 @@ export declare const StdChains: {
                                     readonly value: "Moonbeam";
                                 }, {
                                     readonly hexValue: "31323834";
-                                    readonly id: 31758;
+                                    readonly id: 31864;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8821,7 +8821,7 @@ export declare const StdChains: {
                                     readonly value: "1284";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f7270632e6170692e6d6f6f6e6265616d2e6e6574776f726b";
-                                    readonly id: 31759;
+                                    readonly id: 31865;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8846,18 +8846,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_cf5d37a68a82777d3f0adcdf64b39d98f1e820688e4ced698cd753bbd1e32191";
                                         readonly typeString: "literal_string \"https://rpc.api.moonbeam.network\"";
                                     }];
-                                    readonly id: 31756;
+                                    readonly id: 31862;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "10194:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31760;
+                                readonly id: 31866;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8869,7 +8869,7 @@ export declare const StdChains: {
                                 readonly src: "10194:63:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -8878,21 +8878,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_26aaddd9933ae745bc6e39b5e8962c0d0eef85597e0bdcb35ce7e0d96b84735d";
                                     readonly typeString: "literal_string \"moonbeam\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31754;
+                                readonly id: 31860;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "10156:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31761;
+                            readonly id: 31867;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8908,14 +8908,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31762;
+                        readonly id: 31868;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10156:102:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "6d6f6f6e7269766572";
-                                readonly id: 31764;
+                                readonly id: 31870;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8931,7 +8931,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "4d6f6f6e7269766572";
-                                    readonly id: 31766;
+                                    readonly id: 31872;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8946,7 +8946,7 @@ export declare const StdChains: {
                                     readonly value: "Moonriver";
                                 }, {
                                     readonly hexValue: "31323835";
-                                    readonly id: 31767;
+                                    readonly id: 31873;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8961,7 +8961,7 @@ export declare const StdChains: {
                                     readonly value: "1285";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f7270632e6170692e6d6f6f6e72697665722e6d6f6f6e6265616d2e6e6574776f726b";
-                                    readonly id: 31768;
+                                    readonly id: 31874;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8986,18 +8986,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_cdf0715ef9b420dea4501d55a4c023de5bc6e2be267c3e3ec8345021a77f3e46";
                                         readonly typeString: "literal_string \"https://rpc.api.moonriver.moonbeam.network\"";
                                     }];
-                                    readonly id: 31765;
+                                    readonly id: 31871;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "10320:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31769;
+                                readonly id: 31875;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9009,7 +9009,7 @@ export declare const StdChains: {
                                 readonly src: "10320:74:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -9018,21 +9018,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_2eb4cae4af32e190d8881d6d0a59016ff55092d3a70bcf6b321432516acfd74a";
                                     readonly typeString: "literal_string \"moonriver\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31763;
+                                readonly id: 31869;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "10268:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31770;
+                            readonly id: 31876;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -9048,14 +9048,14 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31771;
+                        readonly id: 31877;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10268:136:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "6d6f6f6e62617365";
-                                readonly id: 31773;
+                                readonly id: 31879;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9071,7 +9071,7 @@ export declare const StdChains: {
                             }, {
                                 readonly arguments: readonly [{
                                     readonly hexValue: "4d6f6f6e62617365";
-                                    readonly id: 31775;
+                                    readonly id: 31881;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -9086,7 +9086,7 @@ export declare const StdChains: {
                                     readonly value: "Moonbase";
                                 }, {
                                     readonly hexValue: "31323837";
-                                    readonly id: 31776;
+                                    readonly id: 31882;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -9101,7 +9101,7 @@ export declare const StdChains: {
                                     readonly value: "1287";
                                 }, {
                                     readonly hexValue: "68747470733a2f2f7270632e746573746e65742e6d6f6f6e6265616d2e6e6574776f726b";
-                                    readonly id: 31777;
+                                    readonly id: 31883;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -9126,18 +9126,18 @@ export declare const StdChains: {
                                         readonly typeIdentifier: "t_stringliteral_611da7a50d9bf940412b47209c78030562dd2047afcf97dad69e15217355b585";
                                         readonly typeString: "literal_string \"https://rpc.testnet.moonbeam.network\"";
                                     }];
-                                    readonly id: 31774;
+                                    readonly id: 31880;
                                     readonly name: "ChainData";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31131;
+                                    readonly referencedDeclaration: 31237;
                                     readonly src: "10452:9:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31131_storage_ptr_$";
+                                        readonly typeIdentifier: "t_type$_t_struct$_ChainData_$31237_storage_ptr_$";
                                         readonly typeString: "type(struct StdChains.ChainData storage pointer)";
                                     };
                                 };
-                                readonly id: 31778;
+                                readonly id: 31884;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9149,7 +9149,7 @@ export declare const StdChains: {
                                 readonly src: "10452:67:146";
                                 readonly tryCall: false;
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -9158,21 +9158,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_stringliteral_ccd05eb377a4954d8471e48341881dadc4d2a36094f09ce309d35b3b6204f44e";
                                     readonly typeString: "literal_string \"moonbase\"";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31772;
+                                readonly id: 31878;
                                 readonly name: "setChainWithDefaultRpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31819;
+                                readonly referencedDeclaration: 31925;
                                 readonly src: "10414:25:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31779;
+                            readonly id: 31885;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -9188,7 +9188,7 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31780;
+                        readonly id: 31886;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10414:106:146";
                     }];
@@ -9199,41 +9199,41 @@ export declare const StdChains: {
                 readonly name: "initializeStdChains";
                 readonly nameLocation: "7785:19:146";
                 readonly parameters: {
-                    readonly id: 31601;
+                    readonly id: 31707;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7804:2:146";
                 };
                 readonly returnParameters: {
-                    readonly id: 31602;
+                    readonly id: 31708;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "7815:0:146";
                 };
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "private";
             }, {
-                readonly id: 31819;
+                readonly id: 31925;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "10609:305:146";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 31818;
+                    readonly id: 31924;
                     readonly nodeType: "Block";
                     readonly src: "10702:212:146";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [31791];
+                        readonly assignments: readonly [31897];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 31791;
+                            readonly id: 31897;
                             readonly mutability: "mutable";
                             readonly name: "rpcUrl";
                             readonly nameLocation: "10726:6:146";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 31818;
+                            readonly scope: 31924;
                             readonly src: "10712:20:146";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -9242,7 +9242,7 @@ export declare const StdChains: {
                                 readonly typeString: "string";
                             };
                             readonly typeName: {
-                                readonly id: 31790;
+                                readonly id: 31896;
                                 readonly name: "string";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "10712:6:146";
@@ -9253,21 +9253,21 @@ export declare const StdChains: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 31794;
+                        readonly id: 31900;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 31792;
+                                readonly id: 31898;
                                 readonly name: "chain";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31787;
+                                readonly referencedDeclaration: 31893;
                                 readonly src: "10735:5:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             };
-                            readonly id: 31793;
+                            readonly id: 31899;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -9275,7 +9275,7 @@ export declare const StdChains: {
                             readonly memberLocation: "10741:6:146";
                             readonly memberName: "rpcUrl";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 31130;
+                            readonly referencedDeclaration: 31236;
                             readonly src: "10735:12:146";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_string_memory_ptr";
@@ -9286,31 +9286,31 @@ export declare const StdChains: {
                         readonly src: "10712:35:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31799;
+                            readonly id: 31905;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly baseExpression: {
-                                    readonly id: 31795;
+                                    readonly id: 31901;
                                     readonly name: "defaultRpcUrls";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31149;
+                                    readonly referencedDeclaration: 31255;
                                     readonly src: "10757:14:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_mapping$_t_string_memory_ptr_$_t_string_storage_$";
                                         readonly typeString: "mapping(string memory => string storage ref)";
                                     };
                                 };
-                                readonly id: 31797;
+                                readonly id: 31903;
                                 readonly indexExpression: {
-                                    readonly id: 31796;
+                                    readonly id: 31902;
                                     readonly name: "chainAlias";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31784;
+                                    readonly referencedDeclaration: 31890;
                                     readonly src: "10772:10:146";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -9331,11 +9331,11 @@ export declare const StdChains: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 31798;
+                                readonly id: 31904;
                                 readonly name: "rpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31791;
+                                readonly referencedDeclaration: 31897;
                                 readonly src: "10786:6:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -9348,30 +9348,30 @@ export declare const StdChains: {
                                 readonly typeString: "string storage ref";
                             };
                         };
-                        readonly id: 31800;
+                        readonly id: 31906;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10757:35:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31805;
+                            readonly id: 31911;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly expression: {
-                                    readonly id: 31801;
+                                    readonly id: 31907;
                                     readonly name: "chain";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31787;
+                                    readonly referencedDeclaration: 31893;
                                     readonly src: "10802:5:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                         readonly typeString: "struct StdChains.ChainData memory";
                                     };
                                 };
-                                readonly id: 31803;
+                                readonly id: 31909;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -9379,7 +9379,7 @@ export declare const StdChains: {
                                 readonly memberLocation: "10808:6:146";
                                 readonly memberName: "rpcUrl";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 31130;
+                                readonly referencedDeclaration: 31236;
                                 readonly src: "10802:12:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -9390,7 +9390,7 @@ export declare const StdChains: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly hexValue: "";
-                                readonly id: 31804;
+                                readonly id: 31910;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9410,31 +9410,31 @@ export declare const StdChains: {
                                 readonly typeString: "string memory";
                             };
                         };
-                        readonly id: 31806;
+                        readonly id: 31912;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10802:17:146";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 31808;
+                                readonly id: 31914;
                                 readonly name: "chainAlias";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31784;
+                                readonly referencedDeclaration: 31890;
                                 readonly src: "10838:10:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
                                     readonly typeString: "string memory";
                                 };
                             }, {
-                                readonly id: 31809;
+                                readonly id: 31915;
                                 readonly name: "chain";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31787;
+                                readonly referencedDeclaration: 31893;
                                 readonly src: "10850:5:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 };
                             }];
@@ -9443,21 +9443,21 @@ export declare const StdChains: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
                                     readonly typeString: "string memory";
                                 }, {
-                                    readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                    readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                     readonly typeString: "struct StdChains.ChainData memory";
                                 }];
-                                readonly id: 31807;
+                                readonly id: 31913;
                                 readonly name: "setChain";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [31375, 31396];
-                                readonly referencedDeclaration: 31375;
+                                readonly overloadedDeclarations: readonly [31481, 31502];
+                                readonly referencedDeclaration: 31481;
                                 readonly src: "10829:8:146";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$";
                                     readonly typeString: "function (string memory,struct StdChains.ChainData memory)";
                                 };
                             };
-                            readonly id: 31810;
+                            readonly id: 31916;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -9473,30 +9473,30 @@ export declare const StdChains: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 31811;
+                        readonly id: 31917;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10829:27:146";
                     }, {
                         readonly expression: {
-                            readonly id: 31816;
+                            readonly id: 31922;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly expression: {
-                                    readonly id: 31812;
+                                    readonly id: 31918;
                                     readonly name: "chain";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 31787;
+                                    readonly referencedDeclaration: 31893;
                                     readonly src: "10866:5:146";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                                        readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                                         readonly typeString: "struct StdChains.ChainData memory";
                                     };
                                 };
-                                readonly id: 31814;
+                                readonly id: 31920;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -9504,7 +9504,7 @@ export declare const StdChains: {
                                 readonly memberLocation: "10872:6:146";
                                 readonly memberName: "rpcUrl";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 31130;
+                                readonly referencedDeclaration: 31236;
                                 readonly src: "10866:12:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -9514,11 +9514,11 @@ export declare const StdChains: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 31815;
+                                readonly id: 31921;
                                 readonly name: "rpcUrl";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 31791;
+                                readonly referencedDeclaration: 31897;
                                 readonly src: "10881:6:146";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -9531,7 +9531,7 @@ export declare const StdChains: {
                                 readonly typeString: "string memory";
                             };
                         };
-                        readonly id: 31817;
+                        readonly id: 31923;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10866:21:146";
                     }];
@@ -9542,16 +9542,16 @@ export declare const StdChains: {
                 readonly name: "setChainWithDefaultRpcUrl";
                 readonly nameLocation: "10618:25:146";
                 readonly parameters: {
-                    readonly id: 31788;
+                    readonly id: 31894;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 31784;
+                        readonly id: 31890;
                         readonly mutability: "mutable";
                         readonly name: "chainAlias";
                         readonly nameLocation: "10658:10:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31819;
+                        readonly scope: 31925;
                         readonly src: "10644:24:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -9560,7 +9560,7 @@ export declare const StdChains: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 31783;
+                            readonly id: 31889;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10644:6:146";
@@ -9572,34 +9572,34 @@ export declare const StdChains: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 31787;
+                        readonly id: 31893;
                         readonly mutability: "mutable";
                         readonly name: "chain";
                         readonly nameLocation: "10687:5:146";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 31819;
+                        readonly scope: 31925;
                         readonly src: "10670:22:146";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_ChainData_$31131_memory_ptr";
+                            readonly typeIdentifier: "t_struct$_ChainData_$31237_memory_ptr";
                             readonly typeString: "struct StdChains.ChainData";
                         };
                         readonly typeName: {
-                            readonly id: 31786;
+                            readonly id: 31892;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 31785;
+                                readonly id: 31891;
                                 readonly name: "ChainData";
                                 readonly nameLocations: readonly ["10670:9:146"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 31131;
+                                readonly referencedDeclaration: 31237;
                                 readonly src: "10670:9:146";
                             };
-                            readonly referencedDeclaration: 31131;
+                            readonly referencedDeclaration: 31237;
                             readonly src: "10670:9:146";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_ChainData_$31131_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_ChainData_$31237_storage_ptr";
                                 readonly typeString: "struct StdChains.ChainData";
                             };
                         };
@@ -9608,12 +9608,12 @@ export declare const StdChains: {
                     readonly src: "10643:50:146";
                 };
                 readonly returnParameters: {
-                    readonly id: 31789;
+                    readonly id: 31895;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "10702:0:146";
                 };
-                readonly scope: 31820;
+                readonly scope: 31926;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "private";
@@ -9624,16 +9624,16 @@ export declare const StdChains: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 31105;
+                readonly id: 31211;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "99:1799:146";
                 readonly text: " StdChains provides information about EVM compatible chains that can be used in scripts/tests.\n For each chain, the chain's name, chain ID, and a default RPC URL are provided. Chains are\n identified by their alias, which is the same as the alias in the `[rpc_endpoints]` section of\n the `foundry.toml` file. For best UX, ensure the alias in the `foundry.toml` file match the\n alias used in this contract, which can be found as the first argument to the\n `setChainWithDefaultRpcUrl` call in the `initializeStdChains` function.\n There are two main ways to use this contract:\n   1. Set a chain with `setChain(string memory chainAlias, ChainData memory chain)` or\n      `setChain(string memory chainAlias, Chain memory chain)`\n   2. Get a chain with `getChain(string memory chainAlias)` or `getChain(uint256 chainId)`.\n The first time either of those are used, chains are initialized with the default set of RPC URLs.\n This is done in `initializeStdChains`, which uses `setChainWithDefaultRpcUrl`. Defaults are recorded in\n `defaultRpcUrls`.\n The `setChain` function is straightforward, and it simply saves off the given chain data.\n The `getChain` methods use `getChainWithUpdatedRpcUrl` to return a chain. For example, let's say\n we want to retrieve the RPC URL for `mainnet`:\n   - If you have specified data with `setChain`, it will return that.\n   - If you have configured a mainnet RPC URL in `foundry.toml`, it will return the URL, provided it\n     is valid (e.g. a URL is specified, or an environment variable is given and exists).\n   - If neither of the above conditions is met, the default data is returned.\n Summarizing the above, the prioritization hierarchy is `setChain` -> `foundry.toml` -> environment variable -> defaults.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [31820];
+            readonly linearizedBaseContracts: readonly [31926];
             readonly name: "StdChains";
             readonly nameLocation: "1917:9:146";
-            readonly scope: 31821;
+            readonly scope: 31927;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

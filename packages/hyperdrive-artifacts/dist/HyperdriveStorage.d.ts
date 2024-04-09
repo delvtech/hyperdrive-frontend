@@ -144,7 +144,7 @@ export declare const HyperdriveStorage: {
             readonly HyperdriveStorage: readonly [17734];
             readonly IERC20: readonly [9666];
             readonly IHyperdrive: readonly [10351];
-            readonly ReentrancyGuard: readonly [71639];
+            readonly ReentrancyGuard: readonly [71745];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:7069:118";
@@ -163,14 +163,14 @@ export declare const HyperdriveStorage: {
             readonly file: "openzeppelin/utils/ReentrancyGuard.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 17735;
-            readonly sourceUnit: 71640;
+            readonly sourceUnit: 71746;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 17515;
                     readonly name: "ReentrancyGuard";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71639;
+                    readonly referencedDeclaration: 71745;
                     readonly src: "73:15:118";
                     readonly typeDescriptions: {};
                 };
@@ -2593,7 +2593,7 @@ export declare const HyperdriveStorage: {
                     readonly name: "ReentrancyGuard";
                     readonly nameLocations: readonly ["669:15:118"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 71639;
+                    readonly referencedDeclaration: 71745;
                     readonly src: "669:15:118";
                 };
                 readonly id: 17525;
@@ -2610,11 +2610,11 @@ export declare const HyperdriveStorage: {
                 readonly text: "@author DELV\n @title HyperdriveStorage\n @notice Hyperdrive's storage contract.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [17734, 71639];
+            readonly linearizedBaseContracts: readonly [17734, 71745];
             readonly name: "HyperdriveStorage";
             readonly nameLocation: "648:17:118";
             readonly scope: 17735;
-            readonly usedErrors: readonly [71584];
+            readonly usedErrors: readonly [71690];
             readonly usedEvents: readonly [];
         }];
         readonly license: "Apache-2.0";

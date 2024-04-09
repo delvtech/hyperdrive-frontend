@@ -65,40 +65,40 @@ export declare const CommonBase: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/Base.sol";
-        readonly id: 29683;
+        readonly id: 29789;
         readonly exportedSymbols: {
-            readonly CommonBase: readonly [29670];
-            readonly ScriptBase: readonly [29682];
-            readonly StdStorage: readonly [35678];
-            readonly TestBase: readonly [29673];
-            readonly Vm: readonly [40778];
-            readonly VmSafe: readonly [40306];
+            readonly CommonBase: readonly [29776];
+            readonly ScriptBase: readonly [29788];
+            readonly StdStorage: readonly [35784];
+            readonly TestBase: readonly [29779];
+            readonly Vm: readonly [40884];
+            readonly VmSafe: readonly [40412];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "32:1761:144";
         readonly nodes: readonly [{
-            readonly id: 29609;
+            readonly id: 29715;
             readonly nodeType: "PragmaDirective";
             readonly src: "32:31:144";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 29611;
+            readonly id: 29717;
             readonly nodeType: "ImportDirective";
             readonly src: "65:44:144";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/StdStorage.sol";
             readonly file: "./StdStorage.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 29683;
-            readonly sourceUnit: 37132;
+            readonly scope: 29789;
+            readonly sourceUnit: 37238;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 29610;
+                    readonly id: 29716;
                     readonly name: "StdStorage";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 35678;
+                    readonly referencedDeclaration: 35784;
                     readonly src: "73:10:144";
                     readonly typeDescriptions: {};
                 };
@@ -106,33 +106,33 @@ export declare const CommonBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 29614;
+            readonly id: 29720;
             readonly nodeType: "ImportDirective";
             readonly src: "110:36:144";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/Vm.sol";
             readonly file: "./Vm.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 29683;
-            readonly sourceUnit: 40779;
+            readonly scope: 29789;
+            readonly sourceUnit: 40885;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 29612;
+                    readonly id: 29718;
                     readonly name: "Vm";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 40778;
+                    readonly referencedDeclaration: 40884;
                     readonly src: "118:2:144";
                     readonly typeDescriptions: {};
                 };
                 readonly nameLocation: "-1:-1:-1";
             }, {
                 readonly foreign: {
-                    readonly id: 29613;
+                    readonly id: 29719;
                     readonly name: "VmSafe";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 40306;
+                    readonly referencedDeclaration: 40412;
                     readonly src: "122:6:144";
                     readonly typeDescriptions: {};
                 };
@@ -140,11 +140,11 @@ export declare const CommonBase: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 29670;
+            readonly id: 29776;
             readonly nodeType: "ContractDefinition";
             readonly src: "148:1493:144";
             readonly nodes: readonly [{
-                readonly id: 29628;
+                readonly id: 29734;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "254:94:144";
                 readonly nodes: readonly [];
@@ -152,7 +152,7 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "VM_ADDRESS";
                 readonly nameLocation: "280:10:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -160,7 +160,7 @@ export declare const CommonBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29615;
+                    readonly id: 29721;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "254:7:144";
@@ -176,7 +176,7 @@ export declare const CommonBase: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly hexValue: "6865766d20636865617420636f6465";
-                                    readonly id: 29623;
+                                    readonly id: 29729;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -195,7 +195,7 @@ export declare const CommonBase: {
                                         readonly typeIdentifier: "t_stringliteral_885cb69240a935d632d79c317109709ecfa91a80626ff3989d68f67f5b1dd12d";
                                         readonly typeString: "literal_string \"hevm cheat code\"";
                                     }];
-                                    readonly id: 29622;
+                                    readonly id: 29728;
                                     readonly name: "keccak256";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -206,7 +206,7 @@ export declare const CommonBase: {
                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                     };
                                 };
-                                readonly id: 29624;
+                                readonly id: 29730;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -227,7 +227,7 @@ export declare const CommonBase: {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
-                                readonly id: 29621;
+                                readonly id: 29727;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -239,14 +239,14 @@ export declare const CommonBase: {
                                     readonly typeString: "type(uint256)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 29620;
+                                    readonly id: 29726;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "309:7:144";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 29625;
+                            readonly id: 29731;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -267,7 +267,7 @@ export declare const CommonBase: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             }];
-                            readonly id: 29619;
+                            readonly id: 29725;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -279,14 +279,14 @@ export declare const CommonBase: {
                                 readonly typeString: "type(uint160)";
                             };
                             readonly typeName: {
-                                readonly id: 29618;
+                                readonly id: 29724;
                                 readonly name: "uint160";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "301:7:144";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 29626;
+                        readonly id: 29732;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -307,7 +307,7 @@ export declare const CommonBase: {
                             readonly typeIdentifier: "t_uint160";
                             readonly typeString: "uint160";
                         }];
-                        readonly id: 29617;
+                        readonly id: 29723;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -319,14 +319,14 @@ export declare const CommonBase: {
                             readonly typeString: "type(address)";
                         };
                         readonly typeName: {
-                            readonly id: 29616;
+                            readonly id: 29722;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "293:7:144";
                             readonly typeDescriptions: {};
                         };
                     };
-                    readonly id: 29627;
+                    readonly id: 29733;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -344,7 +344,7 @@ export declare const CommonBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29631;
+                readonly id: 29737;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "438:78:144";
                 readonly nodes: readonly [];
@@ -352,7 +352,7 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "CONSOLE";
                 readonly nameLocation: "464:7:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -360,7 +360,7 @@ export declare const CommonBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29629;
+                    readonly id: 29735;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "438:7:144";
@@ -372,7 +372,7 @@ export declare const CommonBase: {
                 };
                 readonly value: {
                     readonly hexValue: "307830303030303030303030303030303030303036333646366537333646366336353265366336663637";
-                    readonly id: 29630;
+                    readonly id: 29736;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -388,7 +388,7 @@ export declare const CommonBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29634;
+                readonly id: 29740;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "623:86:144";
                 readonly nodes: readonly [];
@@ -396,7 +396,7 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "CREATE2_FACTORY";
                 readonly nameLocation: "649:15:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -404,7 +404,7 @@ export declare const CommonBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29632;
+                    readonly id: 29738;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "623:7:144";
@@ -416,7 +416,7 @@ export declare const CommonBase: {
                 };
                 readonly value: {
                     readonly hexValue: "307834653539623434383437623337393537383538383932306341373846624632366330423439353643";
-                    readonly id: 29633;
+                    readonly id: 29739;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -432,7 +432,7 @@ export declare const CommonBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29648;
+                readonly id: 29754;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "812:105:144";
                 readonly nodes: readonly [];
@@ -440,7 +440,7 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "DEFAULT_SENDER";
                 readonly nameLocation: "838:14:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -448,7 +448,7 @@ export declare const CommonBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29635;
+                    readonly id: 29741;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "812:7:144";
@@ -464,7 +464,7 @@ export declare const CommonBase: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly hexValue: "666f756e6472792064656661756c742063616c6c6572";
-                                    readonly id: 29643;
+                                    readonly id: 29749;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -483,7 +483,7 @@ export declare const CommonBase: {
                                         readonly typeIdentifier: "t_stringliteral_ee6e12ba256a78bc5d3ab9651804c8ab1f12e6bbf3894d4083f33e07309d1f38";
                                         readonly typeString: "literal_string \"foundry default caller\"";
                                     }];
-                                    readonly id: 29642;
+                                    readonly id: 29748;
                                     readonly name: "keccak256";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -494,7 +494,7 @@ export declare const CommonBase: {
                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                     };
                                 };
-                                readonly id: 29644;
+                                readonly id: 29750;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -515,7 +515,7 @@ export declare const CommonBase: {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
-                                readonly id: 29641;
+                                readonly id: 29747;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -527,14 +527,14 @@ export declare const CommonBase: {
                                     readonly typeString: "type(uint256)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 29640;
+                                    readonly id: 29746;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "871:7:144";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 29645;
+                            readonly id: 29751;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -555,7 +555,7 @@ export declare const CommonBase: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             }];
-                            readonly id: 29639;
+                            readonly id: 29745;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -567,14 +567,14 @@ export declare const CommonBase: {
                                 readonly typeString: "type(uint160)";
                             };
                             readonly typeName: {
-                                readonly id: 29638;
+                                readonly id: 29744;
                                 readonly name: "uint160";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "863:7:144";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 29646;
+                        readonly id: 29752;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -595,7 +595,7 @@ export declare const CommonBase: {
                             readonly typeIdentifier: "t_uint160";
                             readonly typeString: "uint160";
                         }];
-                        readonly id: 29637;
+                        readonly id: 29743;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -607,14 +607,14 @@ export declare const CommonBase: {
                             readonly typeString: "type(address)";
                         };
                         readonly typeName: {
-                            readonly id: 29636;
+                            readonly id: 29742;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "855:7:144";
                             readonly typeDescriptions: {};
                         };
                     };
-                    readonly id: 29647;
+                    readonly id: 29753;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -632,7 +632,7 @@ export declare const CommonBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29651;
+                readonly id: 29757;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "992:92:144";
                 readonly nodes: readonly [];
@@ -640,7 +640,7 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "DEFAULT_TEST_CONTRACT";
                 readonly nameLocation: "1018:21:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -648,7 +648,7 @@ export declare const CommonBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29649;
+                    readonly id: 29755;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "992:7:144";
@@ -660,7 +660,7 @@ export declare const CommonBase: {
                 };
                 readonly value: {
                     readonly hexValue: "307835363135644542373938424233453464466130313339644661316233443433334363323362373266";
-                    readonly id: 29650;
+                    readonly id: 29756;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -676,7 +676,7 @@ export declare const CommonBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29654;
+                readonly id: 29760;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1158:89:144";
                 readonly nodes: readonly [];
@@ -684,7 +684,7 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "MULTICALL3_ADDRESS";
                 readonly nameLocation: "1184:18:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -692,7 +692,7 @@ export declare const CommonBase: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 29652;
+                    readonly id: 29758;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1158:7:144";
@@ -704,7 +704,7 @@ export declare const CommonBase: {
                 };
                 readonly value: {
                     readonly hexValue: "307863413131626465303539373762333633313136373032383836326245326131373339373643413131";
-                    readonly id: 29653;
+                    readonly id: 29759;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -720,7 +720,7 @@ export declare const CommonBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29657;
+                readonly id: 29763;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1294:130:144";
                 readonly nodes: readonly [];
@@ -728,7 +728,7 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "SECP256K1_ORDER";
                 readonly nameLocation: "1320:15:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -736,7 +736,7 @@ export declare const CommonBase: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 29655;
+                    readonly id: 29761;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1294:7:144";
@@ -747,7 +747,7 @@ export declare const CommonBase: {
                 };
                 readonly value: {
                     readonly hexValue: "313135373932303839323337333136313935343233353730393835303038363837393037383532383337353634323739303734393034333832363035313633313431353138313631343934333337";
-                    readonly id: 29656;
+                    readonly id: 29762;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -763,7 +763,7 @@ export declare const CommonBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29660;
+                readonly id: 29766;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1431:126:144";
                 readonly nodes: readonly [];
@@ -771,7 +771,7 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "UINT256_MAX";
                 readonly nameLocation: "1457:11:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -779,7 +779,7 @@ export declare const CommonBase: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 29658;
+                    readonly id: 29764;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "1431:7:144";
@@ -790,7 +790,7 @@ export declare const CommonBase: {
                 };
                 readonly value: {
                     readonly hexValue: "313135373932303839323337333136313935343233353730393835303038363837393037383533323639393834363635363430353634303339343537353834303037393133313239363339393335";
-                    readonly id: 29659;
+                    readonly id: 29765;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -806,7 +806,7 @@ export declare const CommonBase: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29666;
+                readonly id: 29772;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1564:40:144";
                 readonly nodes: readonly [];
@@ -814,38 +814,38 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "vm";
                 readonly nameLocation: "1585:2:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_Vm_$40778";
+                    readonly typeIdentifier: "t_contract$_Vm_$40884";
                     readonly typeString: "contract Vm";
                 };
                 readonly typeName: {
-                    readonly id: 29662;
+                    readonly id: 29768;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 29661;
+                        readonly id: 29767;
                         readonly name: "Vm";
                         readonly nameLocations: readonly ["1564:2:144"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 40778;
+                        readonly referencedDeclaration: 40884;
                         readonly src: "1564:2:144";
                     };
-                    readonly referencedDeclaration: 40778;
+                    readonly referencedDeclaration: 40884;
                     readonly src: "1564:2:144";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                         readonly typeString: "contract Vm";
                     };
                 };
                 readonly value: {
                     readonly arguments: readonly [{
-                        readonly id: 29664;
+                        readonly id: 29770;
                         readonly name: "VM_ADDRESS";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 29628;
+                        readonly referencedDeclaration: 29734;
                         readonly src: "1593:10:144";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_address";
@@ -857,18 +857,18 @@ export declare const CommonBase: {
                             readonly typeIdentifier: "t_address";
                             readonly typeString: "address";
                         }];
-                        readonly id: 29663;
+                        readonly id: 29769;
                         readonly name: "Vm";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 40778;
+                        readonly referencedDeclaration: 40884;
                         readonly src: "1590:2:144";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_type$_t_contract$_Vm_$40778_$";
+                            readonly typeIdentifier: "t_type$_t_contract$_Vm_$40884_$";
                             readonly typeString: "type(contract Vm)";
                         };
                     };
-                    readonly id: 29665;
+                    readonly id: 29771;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -880,13 +880,13 @@ export declare const CommonBase: {
                     readonly src: "1590:14:144";
                     readonly tryCall: false;
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                         readonly typeString: "contract Vm";
                     };
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 29669;
+                readonly id: 29775;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1610:28:144";
                 readonly nodes: readonly [];
@@ -894,28 +894,28 @@ export declare const CommonBase: {
                 readonly mutability: "mutable";
                 readonly name: "stdstore";
                 readonly nameLocation: "1630:8:144";
-                readonly scope: 29670;
+                readonly scope: 29776;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage";
+                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage";
                     readonly typeString: "struct StdStorage";
                 };
                 readonly typeName: {
-                    readonly id: 29668;
+                    readonly id: 29774;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 29667;
+                        readonly id: 29773;
                         readonly name: "StdStorage";
                         readonly nameLocations: readonly ["1610:10:144"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 35678;
+                        readonly referencedDeclaration: 35784;
                         readonly src: "1610:10:144";
                     };
-                    readonly referencedDeclaration: 35678;
+                    readonly referencedDeclaration: 35784;
                     readonly src: "1610:10:144";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                         readonly typeString: "struct StdStorage";
                     };
                 };
@@ -927,28 +927,28 @@ export declare const CommonBase: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [29670];
+            readonly linearizedBaseContracts: readonly [29776];
             readonly name: "CommonBase";
             readonly nameLocation: "166:10:144";
-            readonly scope: 29683;
+            readonly scope: 29789;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }, {
-            readonly id: 29673;
+            readonly id: 29779;
             readonly nodeType: "ContractDefinition";
             readonly src: "1643:43:144";
             readonly nodes: readonly [];
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 29671;
+                    readonly id: 29777;
                     readonly name: "CommonBase";
                     readonly nameLocations: readonly ["1673:10:144"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 29670;
+                    readonly referencedDeclaration: 29776;
                     readonly src: "1673:10:144";
                 };
-                readonly id: 29672;
+                readonly id: 29778;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1673:10:144";
             }];
@@ -956,18 +956,18 @@ export declare const CommonBase: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [29673, 29670];
+            readonly linearizedBaseContracts: readonly [29779, 29776];
             readonly name: "TestBase";
             readonly nameLocation: "1661:8:144";
-            readonly scope: 29683;
+            readonly scope: 29789;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }, {
-            readonly id: 29682;
+            readonly id: 29788;
             readonly nodeType: "ContractDefinition";
             readonly src: "1688:104:144";
             readonly nodes: readonly [{
-                readonly id: 29681;
+                readonly id: 29787;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "1737:52:144";
                 readonly nodes: readonly [];
@@ -975,38 +975,38 @@ export declare const CommonBase: {
                 readonly mutability: "constant";
                 readonly name: "vmSafe";
                 readonly nameLocation: "1762:6:144";
-                readonly scope: 29682;
+                readonly scope: 29788;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                    readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                     readonly typeString: "contract VmSafe";
                 };
                 readonly typeName: {
-                    readonly id: 29677;
+                    readonly id: 29783;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 29676;
+                        readonly id: 29782;
                         readonly name: "VmSafe";
                         readonly nameLocations: readonly ["1737:6:144"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 40306;
+                        readonly referencedDeclaration: 40412;
                         readonly src: "1737:6:144";
                     };
-                    readonly referencedDeclaration: 40306;
+                    readonly referencedDeclaration: 40412;
                     readonly src: "1737:6:144";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                        readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                         readonly typeString: "contract VmSafe";
                     };
                 };
                 readonly value: {
                     readonly arguments: readonly [{
-                        readonly id: 29679;
+                        readonly id: 29785;
                         readonly name: "VM_ADDRESS";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 29628;
+                        readonly referencedDeclaration: 29734;
                         readonly src: "1778:10:144";
                         readonly typeDescriptions: {
                             readonly typeIdentifier: "t_address";
@@ -1018,18 +1018,18 @@ export declare const CommonBase: {
                             readonly typeIdentifier: "t_address";
                             readonly typeString: "address";
                         }];
-                        readonly id: 29678;
+                        readonly id: 29784;
                         readonly name: "VmSafe";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 40306;
+                        readonly referencedDeclaration: 40412;
                         readonly src: "1771:6:144";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_type$_t_contract$_VmSafe_$40306_$";
+                            readonly typeIdentifier: "t_type$_t_contract$_VmSafe_$40412_$";
                             readonly typeString: "type(contract VmSafe)";
                         };
                     };
-                    readonly id: 29680;
+                    readonly id: 29786;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -1041,7 +1041,7 @@ export declare const CommonBase: {
                     readonly src: "1771:18:144";
                     readonly tryCall: false;
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_VmSafe_$40306";
+                        readonly typeIdentifier: "t_contract$_VmSafe_$40412";
                         readonly typeString: "contract VmSafe";
                     };
                 };
@@ -1050,14 +1050,14 @@ export declare const CommonBase: {
             readonly abstract: true;
             readonly baseContracts: readonly [{
                 readonly baseName: {
-                    readonly id: 29674;
+                    readonly id: 29780;
                     readonly name: "CommonBase";
                     readonly nameLocations: readonly ["1720:10:144"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 29670;
+                    readonly referencedDeclaration: 29776;
                     readonly src: "1720:10:144";
                 };
-                readonly id: 29675;
+                readonly id: 29781;
                 readonly nodeType: "InheritanceSpecifier";
                 readonly src: "1720:10:144";
             }];
@@ -1065,10 +1065,10 @@ export declare const CommonBase: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [29682, 29670];
+            readonly linearizedBaseContracts: readonly [29788, 29776];
             readonly name: "ScriptBase";
             readonly nameLocation: "1706:10:144";
-            readonly scope: 29683;
+            readonly scope: 29789;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

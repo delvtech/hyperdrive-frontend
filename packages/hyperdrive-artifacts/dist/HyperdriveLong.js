@@ -4093,7 +4093,7 @@ export const HyperdriveLong = {
                                         "2086:12:115"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71603,
+                                    "referencedDeclaration": 71709,
                                     "src": "2086:12:115"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -6993,7 +6993,7 @@ export const HyperdriveLong = {
                                         "6526:12:115"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71603,
+                                    "referencedDeclaration": 71709,
                                     "src": "6526:12:115"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -13624,7 +13624,7 @@ export const HyperdriveLong = {
                     16538,
                     13667,
                     17734,
-                    71639,
+                    71745,
                     10887,
                     11459
                 ],
@@ -13632,7 +13632,7 @@ export const HyperdriveLong = {
                 "nameLocation": "937:14:115",
                 "scope": 16055,
                 "usedErrors": [
-                    71584
+                    71690
                 ],
                 "usedEvents": [
                     10705,

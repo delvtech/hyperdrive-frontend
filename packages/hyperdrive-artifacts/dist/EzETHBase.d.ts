@@ -3551,11 +3551,11 @@ export declare const EzETHBase: {
                 readonly text: "@author DELV\n @title ezETH Base Contract\n @notice The base contract for the ezETH Hyperdrive implementation.\n @dev ezETH shares are held separately in the ezETH token contract.  The\n      value of those tokens w.r.t. ETH are found by calling the\n      RestakeManager's calculateTVL for the total pooled ETH value and\n      dividing by the totalSupply of ezETH.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [8136, 13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [8136, 13667, 17734, 71745, 10887, 11459];
             readonly name: "EzETHBase";
             readonly nameLocation: "899:9:51";
             readonly scope: 8137;
-            readonly usedErrors: readonly [71584];
+            readonly usedErrors: readonly [71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

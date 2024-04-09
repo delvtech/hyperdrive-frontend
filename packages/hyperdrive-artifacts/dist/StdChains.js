@@ -74,20 +74,20 @@ export const StdChains = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/StdChains.sol",
-        "id": 31821,
+        "id": 31927,
         "exportedSymbols": {
             "StdChains": [
-                31820
+                31926
             ],
             "VmSafe": [
-                40306
+                40412
             ]
         },
         "nodeType": "SourceUnit",
         "src": "32:10885:146",
         "nodes": [
             {
-                "id": 31102,
+                "id": 31208,
                 "nodeType": "PragmaDirective",
                 "src": "32:31:146",
                 "nodes": [],
@@ -102,23 +102,23 @@ export const StdChains = {
                 ]
             },
             {
-                "id": 31104,
+                "id": 31210,
                 "nodeType": "ImportDirective",
                 "src": "65:32:146",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/Vm.sol",
                 "file": "./Vm.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 31821,
-                "sourceUnit": 40779,
+                "scope": 31927,
+                "sourceUnit": 40885,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 31103,
+                            "id": 31209,
                             "name": "VmSafe",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40306,
+                            "referencedDeclaration": 40412,
                             "src": "73:6:146",
                             "typeDescriptions": {}
                         },
@@ -128,12 +128,12 @@ export const StdChains = {
                 "unitAlias": ""
             },
             {
-                "id": 31820,
+                "id": 31926,
                 "nodeType": "ContractDefinition",
                 "src": "1899:9017:146",
                 "nodes": [
                     {
-                        "id": 31122,
+                        "id": 31228,
                         "nodeType": "VariableDeclaration",
                         "src": "1933:92:146",
                         "nodes": [],
@@ -141,30 +141,30 @@ export const StdChains = {
                         "mutability": "constant",
                         "name": "vm",
                         "nameLocation": "1957:2:146",
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_contract$_VmSafe_$40306",
+                            "typeIdentifier": "t_contract$_VmSafe_$40412",
                             "typeString": "contract VmSafe"
                         },
                         "typeName": {
-                            "id": 31107,
+                            "id": 31213,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 31106,
+                                "id": 31212,
                                 "name": "VmSafe",
                                 "nameLocations": [
                                     "1933:6:146"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 40306,
+                                "referencedDeclaration": 40412,
                                 "src": "1933:6:146"
                             },
-                            "referencedDeclaration": 40306,
+                            "referencedDeclaration": 40412,
                             "src": "1933:6:146",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40306",
+                                "typeIdentifier": "t_contract$_VmSafe_$40412",
                                 "typeString": "contract VmSafe"
                             }
                         },
@@ -180,7 +180,7 @@ export const StdChains = {
                                                             "arguments": [
                                                                 {
                                                                     "hexValue": "6865766d20636865617420636f6465",
-                                                                    "id": 31116,
+                                                                    "id": 31222,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -202,7 +202,7 @@ export const StdChains = {
                                                                         "typeString": "literal_string \"hevm cheat code\""
                                                                     }
                                                                 ],
-                                                                "id": 31115,
+                                                                "id": 31221,
                                                                 "name": "keccak256",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
@@ -213,7 +213,7 @@ export const StdChains = {
                                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                                 }
                                                             },
-                                                            "id": 31117,
+                                                            "id": 31223,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -237,7 +237,7 @@ export const StdChains = {
                                                                 "typeString": "bytes32"
                                                             }
                                                         ],
-                                                        "id": 31114,
+                                                        "id": 31220,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -249,14 +249,14 @@ export const StdChains = {
                                                             "typeString": "type(uint256)"
                                                         },
                                                         "typeName": {
-                                                            "id": 31113,
+                                                            "id": 31219,
                                                             "name": "uint256",
                                                             "nodeType": "ElementaryTypeName",
                                                             "src": "1985:7:146",
                                                             "typeDescriptions": {}
                                                         }
                                                     },
-                                                    "id": 31118,
+                                                    "id": 31224,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -280,7 +280,7 @@ export const StdChains = {
                                                         "typeString": "uint256"
                                                     }
                                                 ],
-                                                "id": 31112,
+                                                "id": 31218,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -292,14 +292,14 @@ export const StdChains = {
                                                     "typeString": "type(uint160)"
                                                 },
                                                 "typeName": {
-                                                    "id": 31111,
+                                                    "id": 31217,
                                                     "name": "uint160",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "1977:7:146",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 31119,
+                                            "id": 31225,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -323,7 +323,7 @@ export const StdChains = {
                                                 "typeString": "uint160"
                                             }
                                         ],
-                                        "id": 31110,
+                                        "id": 31216,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -335,14 +335,14 @@ export const StdChains = {
                                             "typeString": "type(address)"
                                         },
                                         "typeName": {
-                                            "id": 31109,
+                                            "id": 31215,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "1969:7:146",
                                             "typeDescriptions": {}
                                         }
                                     },
-                                    "id": 31120,
+                                    "id": 31226,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -366,18 +366,18 @@ export const StdChains = {
                                         "typeString": "address"
                                     }
                                 ],
-                                "id": 31108,
+                                "id": 31214,
                                 "name": "VmSafe",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 40306,
+                                "referencedDeclaration": 40412,
                                 "src": "1962:6:146",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40306_$",
+                                    "typeIdentifier": "t_type$_t_contract$_VmSafe_$40412_$",
                                     "typeString": "type(contract VmSafe)"
                                 }
                             },
-                            "id": 31121,
+                            "id": 31227,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -389,14 +389,14 @@ export const StdChains = {
                             "src": "1962:63:146",
                             "tryCall": false,
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_VmSafe_$40306",
+                                "typeIdentifier": "t_contract$_VmSafe_$40412",
                                 "typeString": "contract VmSafe"
                             }
                         },
                         "visibility": "private"
                     },
                     {
-                        "id": 31124,
+                        "id": 31230,
                         "nodeType": "VariableDeclaration",
                         "src": "2032:33:146",
                         "nodes": [],
@@ -404,7 +404,7 @@ export const StdChains = {
                         "mutability": "mutable",
                         "name": "stdChainsInitialized",
                         "nameLocation": "2045:20:146",
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -412,7 +412,7 @@ export const StdChains = {
                             "typeString": "bool"
                         },
                         "typeName": {
-                            "id": 31123,
+                            "id": 31229,
                             "name": "bool",
                             "nodeType": "ElementaryTypeName",
                             "src": "2032:4:146",
@@ -424,7 +424,7 @@ export const StdChains = {
                         "visibility": "private"
                     },
                     {
-                        "id": 31131,
+                        "id": 31237,
                         "nodeType": "StructDefinition",
                         "src": "2072:93:146",
                         "nodes": [],
@@ -432,12 +432,12 @@ export const StdChains = {
                         "members": [
                             {
                                 "constant": false,
-                                "id": 31126,
+                                "id": 31232,
                                 "mutability": "mutable",
                                 "name": "name",
                                 "nameLocation": "2106:4:146",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 31131,
+                                "scope": 31237,
                                 "src": "2099:11:146",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -446,7 +446,7 @@ export const StdChains = {
                                     "typeString": "string"
                                 },
                                 "typeName": {
-                                    "id": 31125,
+                                    "id": 31231,
                                     "name": "string",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "2099:6:146",
@@ -459,12 +459,12 @@ export const StdChains = {
                             },
                             {
                                 "constant": false,
-                                "id": 31128,
+                                "id": 31234,
                                 "mutability": "mutable",
                                 "name": "chainId",
                                 "nameLocation": "2128:7:146",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 31131,
+                                "scope": 31237,
                                 "src": "2120:15:146",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -473,7 +473,7 @@ export const StdChains = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 31127,
+                                    "id": 31233,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "2120:7:146",
@@ -486,12 +486,12 @@ export const StdChains = {
                             },
                             {
                                 "constant": false,
-                                "id": 31130,
+                                "id": 31236,
                                 "mutability": "mutable",
                                 "name": "rpcUrl",
                                 "nameLocation": "2152:6:146",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 31131,
+                                "scope": 31237,
                                 "src": "2145:13:146",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -500,7 +500,7 @@ export const StdChains = {
                                     "typeString": "string"
                                 },
                                 "typeName": {
-                                    "id": 31129,
+                                    "id": 31235,
                                     "name": "string",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "2145:6:146",
@@ -514,11 +514,11 @@ export const StdChains = {
                         ],
                         "name": "ChainData",
                         "nameLocation": "2079:9:146",
-                        "scope": 31820,
+                        "scope": 31926,
                         "visibility": "public"
                     },
                     {
-                        "id": 31140,
+                        "id": 31246,
                         "nodeType": "StructDefinition",
                         "src": "2171:598:146",
                         "nodes": [],
@@ -526,12 +526,12 @@ export const StdChains = {
                         "members": [
                             {
                                 "constant": false,
-                                "id": 31133,
+                                "id": 31239,
                                 "mutability": "mutable",
                                 "name": "name",
                                 "nameLocation": "2228:4:146",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 31140,
+                                "scope": 31246,
                                 "src": "2221:11:146",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -540,7 +540,7 @@ export const StdChains = {
                                     "typeString": "string"
                                 },
                                 "typeName": {
-                                    "id": 31132,
+                                    "id": 31238,
                                     "name": "string",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "2221:6:146",
@@ -553,12 +553,12 @@ export const StdChains = {
                             },
                             {
                                 "constant": false,
-                                "id": 31135,
+                                "id": 31241,
                                 "mutability": "mutable",
                                 "name": "chainId",
                                 "nameLocation": "2283:7:146",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 31140,
+                                "scope": 31246,
                                 "src": "2275:15:146",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -567,7 +567,7 @@ export const StdChains = {
                                     "typeString": "uint256"
                                 },
                                 "typeName": {
-                                    "id": 31134,
+                                    "id": 31240,
                                     "name": "uint256",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "2275:7:146",
@@ -580,12 +580,12 @@ export const StdChains = {
                             },
                             {
                                 "constant": false,
-                                "id": 31137,
+                                "id": 31243,
                                 "mutability": "mutable",
                                 "name": "chainAlias",
                                 "nameLocation": "2383:10:146",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 31140,
+                                "scope": 31246,
                                 "src": "2376:17:146",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -594,7 +594,7 @@ export const StdChains = {
                                     "typeString": "string"
                                 },
                                 "typeName": {
-                                    "id": 31136,
+                                    "id": 31242,
                                     "name": "string",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "2376:6:146",
@@ -607,12 +607,12 @@ export const StdChains = {
                             },
                             {
                                 "constant": false,
-                                "id": 31139,
+                                "id": 31245,
                                 "mutability": "mutable",
                                 "name": "rpcUrl",
                                 "nameLocation": "2756:6:146",
                                 "nodeType": "VariableDeclaration",
-                                "scope": 31140,
+                                "scope": 31246,
                                 "src": "2749:13:146",
                                 "stateVariable": false,
                                 "storageLocation": "default",
@@ -621,7 +621,7 @@ export const StdChains = {
                                     "typeString": "string"
                                 },
                                 "typeName": {
-                                    "id": 31138,
+                                    "id": 31244,
                                     "name": "string",
                                     "nodeType": "ElementaryTypeName",
                                     "src": "2749:6:146",
@@ -635,11 +635,11 @@ export const StdChains = {
                         ],
                         "name": "Chain",
                         "nameLocation": "2178:5:146",
-                        "scope": 31820,
+                        "scope": 31926,
                         "visibility": "public"
                     },
                     {
-                        "id": 31145,
+                        "id": 31251,
                         "nodeType": "VariableDeclaration",
                         "src": "2873:39:146",
                         "nodes": [],
@@ -647,19 +647,19 @@ export const StdChains = {
                         "mutability": "mutable",
                         "name": "chains",
                         "nameLocation": "2906:6:146",
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$",
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$",
                             "typeString": "mapping(string => struct StdChains.Chain)"
                         },
                         "typeName": {
-                            "id": 31144,
+                            "id": 31250,
                             "keyName": "",
                             "keyNameLocation": "-1:-1:-1",
                             "keyType": {
-                                "id": 31141,
+                                "id": 31247,
                                 "name": "string",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "2881:6:146",
@@ -671,28 +671,28 @@ export const StdChains = {
                             "nodeType": "Mapping",
                             "src": "2873:24:146",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$",
+                                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$",
                                 "typeString": "mapping(string => struct StdChains.Chain)"
                             },
                             "valueName": "",
                             "valueNameLocation": "-1:-1:-1",
                             "valueType": {
-                                "id": 31143,
+                                "id": 31249,
                                 "nodeType": "UserDefinedTypeName",
                                 "pathNode": {
-                                    "id": 31142,
+                                    "id": 31248,
                                     "name": "Chain",
                                     "nameLocations": [
                                         "2891:5:146"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 31140,
+                                    "referencedDeclaration": 31246,
                                     "src": "2891:5:146"
                                 },
-                                "referencedDeclaration": 31140,
+                                "referencedDeclaration": 31246,
                                 "src": "2891:5:146",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_Chain_$31140_storage_ptr",
+                                    "typeIdentifier": "t_struct$_Chain_$31246_storage_ptr",
                                     "typeString": "struct StdChains.Chain"
                                 }
                             }
@@ -700,7 +700,7 @@ export const StdChains = {
                         "visibility": "private"
                     },
                     {
-                        "id": 31149,
+                        "id": 31255,
                         "nodeType": "VariableDeclaration",
                         "src": "2978:48:146",
                         "nodes": [],
@@ -708,7 +708,7 @@ export const StdChains = {
                         "mutability": "mutable",
                         "name": "defaultRpcUrls",
                         "nameLocation": "3012:14:146",
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -716,11 +716,11 @@ export const StdChains = {
                             "typeString": "mapping(string => string)"
                         },
                         "typeName": {
-                            "id": 31148,
+                            "id": 31254,
                             "keyName": "",
                             "keyNameLocation": "-1:-1:-1",
                             "keyType": {
-                                "id": 31146,
+                                "id": 31252,
                                 "name": "string",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "2986:6:146",
@@ -738,7 +738,7 @@ export const StdChains = {
                             "valueName": "",
                             "valueNameLocation": "-1:-1:-1",
                             "valueType": {
-                                "id": 31147,
+                                "id": 31253,
                                 "name": "string",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "2996:6:146",
@@ -751,7 +751,7 @@ export const StdChains = {
                         "visibility": "private"
                     },
                     {
-                        "id": 31153,
+                        "id": 31259,
                         "nodeType": "VariableDeclaration",
                         "src": "3075:44:146",
                         "nodes": [],
@@ -759,7 +759,7 @@ export const StdChains = {
                         "mutability": "mutable",
                         "name": "idToAlias",
                         "nameLocation": "3110:9:146",
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -767,11 +767,11 @@ export const StdChains = {
                             "typeString": "mapping(uint256 => string)"
                         },
                         "typeName": {
-                            "id": 31152,
+                            "id": 31258,
                             "keyName": "",
                             "keyNameLocation": "-1:-1:-1",
                             "keyType": {
-                                "id": 31150,
+                                "id": 31256,
                                 "name": "uint256",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "3083:7:146",
@@ -789,7 +789,7 @@ export const StdChains = {
                             "valueName": "",
                             "valueNameLocation": "-1:-1:-1",
                             "valueType": {
-                                "id": 31151,
+                                "id": 31257,
                                 "name": "string",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "3094:6:146",
@@ -802,7 +802,7 @@ export const StdChains = {
                         "visibility": "private"
                     },
                     {
-                        "id": 31156,
+                        "id": 31262,
                         "nodeType": "VariableDeclaration",
                         "src": "3126:44:146",
                         "nodes": [],
@@ -810,7 +810,7 @@ export const StdChains = {
                         "mutability": "mutable",
                         "name": "fallbackToDefaultRpcUrls",
                         "nameLocation": "3139:24:146",
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -818,7 +818,7 @@ export const StdChains = {
                             "typeString": "bool"
                         },
                         "typeName": {
-                            "id": 31154,
+                            "id": 31260,
                             "name": "bool",
                             "nodeType": "ElementaryTypeName",
                             "src": "3126:4:146",
@@ -829,7 +829,7 @@ export const StdChains = {
                         },
                         "value": {
                             "hexValue": "74727565",
-                            "id": 31155,
+                            "id": 31261,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -846,12 +846,12 @@ export const StdChains = {
                         "visibility": "private"
                     },
                     {
-                        "id": 31208,
+                        "id": 31314,
                         "nodeType": "FunctionDefinition",
                         "src": "3255:524:146",
                         "nodes": [],
                         "body": {
-                            "id": 31207,
+                            "id": 31313,
                             "nodeType": "Block",
                             "src": "3345:434:146",
                             "nodes": [],
@@ -864,7 +864,7 @@ export const StdChains = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 31171,
+                                                "id": 31277,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -873,11 +873,11 @@ export const StdChains = {
                                                     "expression": {
                                                         "arguments": [
                                                             {
-                                                                "id": 31167,
+                                                                "id": 31273,
                                                                 "name": "chainAlias",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 31158,
+                                                                "referencedDeclaration": 31264,
                                                                 "src": "3369:10:146",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -892,7 +892,7 @@ export const StdChains = {
                                                                     "typeString": "string memory"
                                                                 }
                                                             ],
-                                                            "id": 31166,
+                                                            "id": 31272,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -904,14 +904,14 @@ export const StdChains = {
                                                                 "typeString": "type(bytes storage pointer)"
                                                             },
                                                             "typeName": {
-                                                                "id": 31165,
+                                                                "id": 31271,
                                                                 "name": "bytes",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "3363:5:146",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 31168,
+                                                        "id": 31274,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -927,7 +927,7 @@ export const StdChains = {
                                                             "typeString": "bytes memory"
                                                         }
                                                     },
-                                                    "id": 31169,
+                                                    "id": 31275,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -945,7 +945,7 @@ export const StdChains = {
                                                 "operator": "!=",
                                                 "rightExpression": {
                                                     "hexValue": "30",
-                                                    "id": 31170,
+                                                    "id": 31276,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -967,7 +967,7 @@ export const StdChains = {
                                             },
                                             {
                                                 "hexValue": "537464436861696e7320676574436861696e28737472696e67293a20436861696e20616c6961732063616e6e6f742062652074686520656d70747920737472696e672e",
-                                                "id": 31172,
+                                                "id": 31278,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -993,7 +993,7 @@ export const StdChains = {
                                                     "typeString": "literal_string \"StdChains getChain(string): Chain alias cannot be the empty string.\""
                                                 }
                                             ],
-                                            "id": 31164,
+                                            "id": 31270,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -1007,7 +1007,7 @@ export const StdChains = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 31173,
+                                        "id": 31279,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1023,7 +1023,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31174,
+                                    "id": 31280,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3355:109:146"
                                 },
@@ -1032,18 +1032,18 @@ export const StdChains = {
                                         "arguments": [],
                                         "expression": {
                                             "argumentTypes": [],
-                                            "id": 31175,
+                                            "id": 31281,
                                             "name": "initializeStdChains",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31782,
+                                            "referencedDeclaration": 31888,
                                             "src": "3475:19:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
                                                 "typeString": "function ()"
                                             }
                                         },
-                                        "id": 31176,
+                                        "id": 31282,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1059,26 +1059,26 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31177,
+                                    "id": 31283,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3475:21:146"
                                 },
                                 {
                                     "expression": {
-                                        "id": 31182,
+                                        "id": 31288,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 31178,
+                                            "id": 31284,
                                             "name": "chain",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31162,
+                                            "referencedDeclaration": 31268,
                                             "src": "3506:5:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                 "typeString": "struct StdChains.Chain memory"
                                             }
                                         },
@@ -1086,24 +1086,24 @@ export const StdChains = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "baseExpression": {
-                                                "id": 31179,
+                                                "id": 31285,
                                                 "name": "chains",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31145,
+                                                "referencedDeclaration": 31251,
                                                 "src": "3514:6:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$",
+                                                    "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$",
                                                     "typeString": "mapping(string memory => struct StdChains.Chain storage ref)"
                                                 }
                                             },
-                                            "id": 31181,
+                                            "id": 31287,
                                             "indexExpression": {
-                                                "id": 31180,
+                                                "id": 31286,
                                                 "name": "chainAlias",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31158,
+                                                "referencedDeclaration": 31264,
                                                 "src": "3521:10:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1117,17 +1117,17 @@ export const StdChains = {
                                             "nodeType": "IndexAccess",
                                             "src": "3514:18:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_storage",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_storage",
                                                 "typeString": "struct StdChains.Chain storage ref"
                                             }
                                         },
                                         "src": "3506:26:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                             "typeString": "struct StdChains.Chain memory"
                                         }
                                     },
-                                    "id": 31183,
+                                    "id": 31289,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3506:26:146"
                                 },
@@ -1139,25 +1139,25 @@ export const StdChains = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 31188,
+                                                "id": 31294,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
                                                     "expression": {
-                                                        "id": 31185,
+                                                        "id": 31291,
                                                         "name": "chain",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 31162,
+                                                        "referencedDeclaration": 31268,
                                                         "src": "3563:5:146",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                             "typeString": "struct StdChains.Chain memory"
                                                         }
                                                     },
-                                                    "id": 31186,
+                                                    "id": 31292,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -1165,7 +1165,7 @@ export const StdChains = {
                                                     "memberLocation": "3569:7:146",
                                                     "memberName": "chainId",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 31135,
+                                                    "referencedDeclaration": 31241,
                                                     "src": "3563:13:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1176,7 +1176,7 @@ export const StdChains = {
                                                 "operator": "!=",
                                                 "rightExpression": {
                                                     "hexValue": "30",
-                                                    "id": 31187,
+                                                    "id": 31293,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1202,7 +1202,7 @@ export const StdChains = {
                                                         "arguments": [
                                                             {
                                                                 "hexValue": "537464436861696e7320676574436861696e28737472696e67293a20436861696e207769746820616c6961732022",
-                                                                "id": 31193,
+                                                                "id": 31299,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1217,11 +1217,11 @@ export const StdChains = {
                                                                 "value": "StdChains getChain(string): Chain with alias \""
                                                             },
                                                             {
-                                                                "id": 31194,
+                                                                "id": 31300,
                                                                 "name": "chainAlias",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 31158,
+                                                                "referencedDeclaration": 31264,
                                                                 "src": "3670:10:146",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1230,7 +1230,7 @@ export const StdChains = {
                                                             },
                                                             {
                                                                 "hexValue": "22206e6f7420666f756e642e",
-                                                                "id": 31195,
+                                                                "id": 31301,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1261,7 +1261,7 @@ export const StdChains = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 31191,
+                                                                "id": 31297,
                                                                 "name": "abi",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
@@ -1272,7 +1272,7 @@ export const StdChains = {
                                                                     "typeString": "abi"
                                                                 }
                                                             },
-                                                            "id": 31192,
+                                                            "id": 31298,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -1286,7 +1286,7 @@ export const StdChains = {
                                                                 "typeString": "function () pure returns (bytes memory)"
                                                             }
                                                         },
-                                                        "id": 31196,
+                                                        "id": 31302,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1310,7 +1310,7 @@ export const StdChains = {
                                                             "typeString": "bytes memory"
                                                         }
                                                     ],
-                                                    "id": 31190,
+                                                    "id": 31296,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1322,14 +1322,14 @@ export const StdChains = {
                                                         "typeString": "type(string storage pointer)"
                                                     },
                                                     "typeName": {
-                                                        "id": 31189,
+                                                        "id": 31295,
                                                         "name": "string",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "3595:6:146",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 31197,
+                                                "id": 31303,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1357,7 +1357,7 @@ export const StdChains = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 31184,
+                                            "id": 31290,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -1371,7 +1371,7 @@ export const StdChains = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 31198,
+                                        "id": 31304,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1387,26 +1387,26 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31199,
+                                    "id": 31305,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3542:167:146"
                                 },
                                 {
                                     "expression": {
-                                        "id": 31205,
+                                        "id": 31311,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 31200,
+                                            "id": 31306,
                                             "name": "chain",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31162,
+                                            "referencedDeclaration": 31268,
                                             "src": "3720:5:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                 "typeString": "struct StdChains.Chain memory"
                                             }
                                         },
@@ -1415,11 +1415,11 @@ export const StdChains = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 31202,
+                                                    "id": 31308,
                                                     "name": "chainAlias",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31158,
+                                                    "referencedDeclaration": 31264,
                                                     "src": "3754:10:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -1427,14 +1427,14 @@ export const StdChains = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 31203,
+                                                    "id": 31309,
                                                     "name": "chain",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31162,
+                                                    "referencedDeclaration": 31268,
                                                     "src": "3766:5:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                         "typeString": "struct StdChains.Chain memory"
                                                     }
                                                 }
@@ -1446,22 +1446,22 @@ export const StdChains = {
                                                         "typeString": "string memory"
                                                     },
                                                     {
-                                                        "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                         "typeString": "struct StdChains.Chain memory"
                                                     }
                                                 ],
-                                                "id": 31201,
+                                                "id": 31307,
                                                 "name": "getChainWithUpdatedRpcUrl",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31590,
+                                                "referencedDeclaration": 31696,
                                                 "src": "3728:25:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_Chain_$31140_memory_ptr_$returns$_t_struct$_Chain_$31140_memory_ptr_$",
+                                                    "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_Chain_$31246_memory_ptr_$returns$_t_struct$_Chain_$31246_memory_ptr_$",
                                                     "typeString": "function (string memory,struct StdChains.Chain memory) returns (struct StdChains.Chain memory)"
                                                 }
                                             },
-                                            "id": 31204,
+                                            "id": 31310,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1473,17 +1473,17 @@ export const StdChains = {
                                             "src": "3728:44:146",
                                             "tryCall": false,
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                 "typeString": "struct StdChains.Chain memory"
                                             }
                                         },
                                         "src": "3720:52:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                             "typeString": "struct StdChains.Chain memory"
                                         }
                                     },
-                                    "id": 31206,
+                                    "id": 31312,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3720:52:146"
                                 }
@@ -1495,17 +1495,17 @@ export const StdChains = {
                         "name": "getChain",
                         "nameLocation": "3264:8:146",
                         "parameters": {
-                            "id": 31159,
+                            "id": 31265,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31158,
+                                    "id": 31264,
                                     "mutability": "mutable",
                                     "name": "chainAlias",
                                     "nameLocation": "3287:10:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31208,
+                                    "scope": 31314,
                                     "src": "3273:24:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1514,7 +1514,7 @@ export const StdChains = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 31157,
+                                        "id": 31263,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3273:6:146",
@@ -1529,41 +1529,41 @@ export const StdChains = {
                             "src": "3272:26:146"
                         },
                         "returnParameters": {
-                            "id": 31163,
+                            "id": 31269,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31162,
+                                    "id": 31268,
                                     "mutability": "mutable",
                                     "name": "chain",
                                     "nameLocation": "3338:5:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31208,
+                                    "scope": 31314,
                                     "src": "3325:18:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                         "typeString": "struct StdChains.Chain"
                                     },
                                     "typeName": {
-                                        "id": 31161,
+                                        "id": 31267,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 31160,
+                                            "id": 31266,
                                             "name": "Chain",
                                             "nameLocations": [
                                                 "3325:5:146"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 31140,
+                                            "referencedDeclaration": 31246,
                                             "src": "3325:5:146"
                                         },
-                                        "referencedDeclaration": 31140,
+                                        "referencedDeclaration": 31246,
                                         "src": "3325:5:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_storage_ptr",
                                             "typeString": "struct StdChains.Chain"
                                         }
                                     },
@@ -1572,18 +1572,18 @@ export const StdChains = {
                             ],
                             "src": "3324:20:146"
                         },
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 31265,
+                        "id": 31371,
                         "nodeType": "FunctionDefinition",
                         "src": "3785:541:146",
                         "nodes": [],
                         "body": {
-                            "id": 31264,
+                            "id": 31370,
                             "nodeType": "Block",
                             "src": "3866:460:146",
                             "nodes": [],
@@ -1596,17 +1596,17 @@ export const StdChains = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 31219,
+                                                "id": 31325,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 31217,
+                                                    "id": 31323,
                                                     "name": "chainId",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31210,
+                                                    "referencedDeclaration": 31316,
                                                     "src": "3884:7:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1617,7 +1617,7 @@ export const StdChains = {
                                                 "operator": "!=",
                                                 "rightExpression": {
                                                     "hexValue": "30",
-                                                    "id": 31218,
+                                                    "id": 31324,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1639,7 +1639,7 @@ export const StdChains = {
                                             },
                                             {
                                                 "hexValue": "537464436861696e7320676574436861696e2875696e74323536293a20436861696e2049442063616e6e6f7420626520302e",
-                                                "id": 31220,
+                                                "id": 31326,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -1665,7 +1665,7 @@ export const StdChains = {
                                                     "typeString": "literal_string \"StdChains getChain(uint256): Chain ID cannot be 0.\""
                                                 }
                                             ],
-                                            "id": 31216,
+                                            "id": 31322,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -1679,7 +1679,7 @@ export const StdChains = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 31221,
+                                        "id": 31327,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1695,7 +1695,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31222,
+                                    "id": 31328,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3876:75:146"
                                 },
@@ -1704,18 +1704,18 @@ export const StdChains = {
                                         "arguments": [],
                                         "expression": {
                                             "argumentTypes": [],
-                                            "id": 31223,
+                                            "id": 31329,
                                             "name": "initializeStdChains",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31782,
+                                            "referencedDeclaration": 31888,
                                             "src": "3961:19:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
                                                 "typeString": "function ()"
                                             }
                                         },
-                                        "id": 31224,
+                                        "id": 31330,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1731,23 +1731,23 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31225,
+                                    "id": 31331,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3961:21:146"
                                 },
                                 {
                                     "assignments": [
-                                        31227
+                                        31333
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 31227,
+                                            "id": 31333,
                                             "mutability": "mutable",
                                             "name": "chainAlias",
                                             "nameLocation": "4006:10:146",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 31264,
+                                            "scope": 31370,
                                             "src": "3992:24:146",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -1756,7 +1756,7 @@ export const StdChains = {
                                                 "typeString": "string"
                                             },
                                             "typeName": {
-                                                "id": 31226,
+                                                "id": 31332,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3992:6:146",
@@ -1768,27 +1768,27 @@ export const StdChains = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 31231,
+                                    "id": 31337,
                                     "initialValue": {
                                         "baseExpression": {
-                                            "id": 31228,
+                                            "id": 31334,
                                             "name": "idToAlias",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31153,
+                                            "referencedDeclaration": 31259,
                                             "src": "4019:9:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
                                                 "typeString": "mapping(uint256 => string storage ref)"
                                             }
                                         },
-                                        "id": 31230,
+                                        "id": 31336,
                                         "indexExpression": {
-                                            "id": 31229,
+                                            "id": 31335,
                                             "name": "chainId",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31210,
+                                            "referencedDeclaration": 31316,
                                             "src": "4029:7:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -1811,20 +1811,20 @@ export const StdChains = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 31236,
+                                        "id": 31342,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 31232,
+                                            "id": 31338,
                                             "name": "chain",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31214,
+                                            "referencedDeclaration": 31320,
                                             "src": "4048:5:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                 "typeString": "struct StdChains.Chain memory"
                                             }
                                         },
@@ -1832,24 +1832,24 @@ export const StdChains = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "baseExpression": {
-                                                "id": 31233,
+                                                "id": 31339,
                                                 "name": "chains",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31145,
+                                                "referencedDeclaration": 31251,
                                                 "src": "4056:6:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$",
+                                                    "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$",
                                                     "typeString": "mapping(string memory => struct StdChains.Chain storage ref)"
                                                 }
                                             },
-                                            "id": 31235,
+                                            "id": 31341,
                                             "indexExpression": {
-                                                "id": 31234,
+                                                "id": 31340,
                                                 "name": "chainAlias",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31227,
+                                                "referencedDeclaration": 31333,
                                                 "src": "4063:10:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1863,17 +1863,17 @@ export const StdChains = {
                                             "nodeType": "IndexAccess",
                                             "src": "4056:18:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_storage",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_storage",
                                                 "typeString": "struct StdChains.Chain storage ref"
                                             }
                                         },
                                         "src": "4048:26:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                             "typeString": "struct StdChains.Chain memory"
                                         }
                                     },
-                                    "id": 31237,
+                                    "id": 31343,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4048:26:146"
                                 },
@@ -1885,25 +1885,25 @@ export const StdChains = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 31242,
+                                                "id": 31348,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
                                                     "expression": {
-                                                        "id": 31239,
+                                                        "id": 31345,
                                                         "name": "chain",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 31214,
+                                                        "referencedDeclaration": 31320,
                                                         "src": "4106:5:146",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                             "typeString": "struct StdChains.Chain memory"
                                                         }
                                                     },
-                                                    "id": 31240,
+                                                    "id": 31346,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -1911,7 +1911,7 @@ export const StdChains = {
                                                     "memberLocation": "4112:7:146",
                                                     "memberName": "chainId",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 31135,
+                                                    "referencedDeclaration": 31241,
                                                     "src": "4106:13:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1922,7 +1922,7 @@ export const StdChains = {
                                                 "operator": "!=",
                                                 "rightExpression": {
                                                     "hexValue": "30",
-                                                    "id": 31241,
+                                                    "id": 31347,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1948,7 +1948,7 @@ export const StdChains = {
                                                         "arguments": [
                                                             {
                                                                 "hexValue": "537464436861696e7320676574436861696e2875696e74323536293a20436861696e207769746820494420",
-                                                                "id": 31247,
+                                                                "id": 31353,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1965,11 +1965,11 @@ export const StdChains = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 31250,
+                                                                        "id": 31356,
                                                                         "name": "chainId",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31210,
+                                                                        "referencedDeclaration": 31316,
                                                                         "src": "4221:7:146",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -1985,18 +1985,18 @@ export const StdChains = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 31248,
+                                                                        "id": 31354,
                                                                         "name": "vm",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31122,
+                                                                        "referencedDeclaration": 31228,
                                                                         "src": "4209:2:146",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_contract$_VmSafe_$40306",
+                                                                            "typeIdentifier": "t_contract$_VmSafe_$40412",
                                                                             "typeString": "contract VmSafe"
                                                                         }
                                                                     },
-                                                                    "id": 31249,
+                                                                    "id": 31355,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -2004,14 +2004,14 @@ export const StdChains = {
                                                                     "memberLocation": "4212:8:146",
                                                                     "memberName": "toString",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 39838,
+                                                                    "referencedDeclaration": 39944,
                                                                     "src": "4209:11:146",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                                     }
                                                                 },
-                                                                "id": 31251,
+                                                                "id": 31357,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -2029,7 +2029,7 @@ export const StdChains = {
                                                             },
                                                             {
                                                                 "hexValue": "206e6f7420666f756e642e",
-                                                                "id": 31252,
+                                                                "id": 31358,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -2060,7 +2060,7 @@ export const StdChains = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 31245,
+                                                                "id": 31351,
                                                                 "name": "abi",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
@@ -2071,7 +2071,7 @@ export const StdChains = {
                                                                     "typeString": "abi"
                                                                 }
                                                             },
-                                                            "id": 31246,
+                                                            "id": 31352,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2085,7 +2085,7 @@ export const StdChains = {
                                                                 "typeString": "function () pure returns (bytes memory)"
                                                             }
                                                         },
-                                                        "id": 31253,
+                                                        "id": 31359,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2109,7 +2109,7 @@ export const StdChains = {
                                                             "typeString": "bytes memory"
                                                         }
                                                     ],
-                                                    "id": 31244,
+                                                    "id": 31350,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2121,14 +2121,14 @@ export const StdChains = {
                                                         "typeString": "type(string storage pointer)"
                                                     },
                                                     "typeName": {
-                                                        "id": 31243,
+                                                        "id": 31349,
                                                         "name": "string",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "4138:6:146",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 31254,
+                                                "id": 31360,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2156,7 +2156,7 @@ export const StdChains = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 31238,
+                                            "id": 31344,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -2170,7 +2170,7 @@ export const StdChains = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 31255,
+                                        "id": 31361,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2186,26 +2186,26 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31256,
+                                    "id": 31362,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4085:171:146"
                                 },
                                 {
                                     "expression": {
-                                        "id": 31262,
+                                        "id": 31368,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 31257,
+                                            "id": 31363,
                                             "name": "chain",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31214,
+                                            "referencedDeclaration": 31320,
                                             "src": "4267:5:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                 "typeString": "struct StdChains.Chain memory"
                                             }
                                         },
@@ -2214,11 +2214,11 @@ export const StdChains = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 31259,
+                                                    "id": 31365,
                                                     "name": "chainAlias",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31227,
+                                                    "referencedDeclaration": 31333,
                                                     "src": "4301:10:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -2226,14 +2226,14 @@ export const StdChains = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 31260,
+                                                    "id": 31366,
                                                     "name": "chain",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31214,
+                                                    "referencedDeclaration": 31320,
                                                     "src": "4313:5:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                         "typeString": "struct StdChains.Chain memory"
                                                     }
                                                 }
@@ -2245,22 +2245,22 @@ export const StdChains = {
                                                         "typeString": "string memory"
                                                     },
                                                     {
-                                                        "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                         "typeString": "struct StdChains.Chain memory"
                                                     }
                                                 ],
-                                                "id": 31258,
+                                                "id": 31364,
                                                 "name": "getChainWithUpdatedRpcUrl",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31590,
+                                                "referencedDeclaration": 31696,
                                                 "src": "4275:25:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_Chain_$31140_memory_ptr_$returns$_t_struct$_Chain_$31140_memory_ptr_$",
+                                                    "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_Chain_$31246_memory_ptr_$returns$_t_struct$_Chain_$31246_memory_ptr_$",
                                                     "typeString": "function (string memory,struct StdChains.Chain memory) returns (struct StdChains.Chain memory)"
                                                 }
                                             },
-                                            "id": 31261,
+                                            "id": 31367,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2272,17 +2272,17 @@ export const StdChains = {
                                             "src": "4275:44:146",
                                             "tryCall": false,
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                 "typeString": "struct StdChains.Chain memory"
                                             }
                                         },
                                         "src": "4267:52:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                             "typeString": "struct StdChains.Chain memory"
                                         }
                                     },
-                                    "id": 31263,
+                                    "id": 31369,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4267:52:146"
                                 }
@@ -2294,17 +2294,17 @@ export const StdChains = {
                         "name": "getChain",
                         "nameLocation": "3794:8:146",
                         "parameters": {
-                            "id": 31211,
+                            "id": 31317,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31210,
+                                    "id": 31316,
                                     "mutability": "mutable",
                                     "name": "chainId",
                                     "nameLocation": "3811:7:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31265,
+                                    "scope": 31371,
                                     "src": "3803:15:146",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2313,7 +2313,7 @@ export const StdChains = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 31209,
+                                        "id": 31315,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3803:7:146",
@@ -2328,41 +2328,41 @@ export const StdChains = {
                             "src": "3802:17:146"
                         },
                         "returnParameters": {
-                            "id": 31215,
+                            "id": 31321,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31214,
+                                    "id": 31320,
                                     "mutability": "mutable",
                                     "name": "chain",
                                     "nameLocation": "3859:5:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31265,
+                                    "scope": 31371,
                                     "src": "3846:18:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                         "typeString": "struct StdChains.Chain"
                                     },
                                     "typeName": {
-                                        "id": 31213,
+                                        "id": 31319,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 31212,
+                                            "id": 31318,
                                             "name": "Chain",
                                             "nameLocations": [
                                                 "3846:5:146"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 31140,
+                                            "referencedDeclaration": 31246,
                                             "src": "3846:5:146"
                                         },
-                                        "referencedDeclaration": 31140,
+                                        "referencedDeclaration": 31246,
                                         "src": "3846:5:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_storage_ptr",
                                             "typeString": "struct StdChains.Chain"
                                         }
                                     },
@@ -2371,18 +2371,18 @@ export const StdChains = {
                             ],
                             "src": "3845:20:146"
                         },
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 31375,
+                        "id": 31481,
                         "nodeType": "FunctionDefinition",
                         "src": "4397:1173:146",
                         "nodes": [],
                         "body": {
-                            "id": 31374,
+                            "id": 31480,
                             "nodeType": "Block",
                             "src": "4482:1088:146",
                             "nodes": [],
@@ -2395,7 +2395,7 @@ export const StdChains = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 31280,
+                                                "id": 31386,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2404,11 +2404,11 @@ export const StdChains = {
                                                     "expression": {
                                                         "arguments": [
                                                             {
-                                                                "id": 31276,
+                                                                "id": 31382,
                                                                 "name": "chainAlias",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 31267,
+                                                                "referencedDeclaration": 31373,
                                                                 "src": "4519:10:146",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -2423,7 +2423,7 @@ export const StdChains = {
                                                                     "typeString": "string memory"
                                                                 }
                                                             ],
-                                                            "id": 31275,
+                                                            "id": 31381,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2435,14 +2435,14 @@ export const StdChains = {
                                                                 "typeString": "type(bytes storage pointer)"
                                                             },
                                                             "typeName": {
-                                                                "id": 31274,
+                                                                "id": 31380,
                                                                 "name": "bytes",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "4513:5:146",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 31277,
+                                                        "id": 31383,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2458,7 +2458,7 @@ export const StdChains = {
                                                             "typeString": "bytes memory"
                                                         }
                                                     },
-                                                    "id": 31278,
+                                                    "id": 31384,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2476,7 +2476,7 @@ export const StdChains = {
                                                 "operator": "!=",
                                                 "rightExpression": {
                                                     "hexValue": "30",
-                                                    "id": 31279,
+                                                    "id": 31385,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2498,7 +2498,7 @@ export const StdChains = {
                                             },
                                             {
                                                 "hexValue": "537464436861696e7320736574436861696e28737472696e672c436861696e44617461293a20436861696e20616c6961732063616e6e6f742062652074686520656d70747920737472696e672e",
-                                                "id": 31281,
+                                                "id": 31387,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2524,7 +2524,7 @@ export const StdChains = {
                                                     "typeString": "literal_string \"StdChains setChain(string,ChainData): Chain alias cannot be the empty string.\""
                                                 }
                                             ],
-                                            "id": 31273,
+                                            "id": 31379,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -2538,7 +2538,7 @@ export const StdChains = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 31282,
+                                        "id": 31388,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2554,7 +2554,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31283,
+                                    "id": 31389,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4492:153:146"
                                 },
@@ -2566,25 +2566,25 @@ export const StdChains = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 31288,
+                                                "id": 31394,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
                                                     "expression": {
-                                                        "id": 31285,
+                                                        "id": 31391,
                                                         "name": "chain",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 31270,
+                                                        "referencedDeclaration": 31376,
                                                         "src": "4664:5:146",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                             "typeString": "struct StdChains.ChainData memory"
                                                         }
                                                     },
-                                                    "id": 31286,
+                                                    "id": 31392,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -2592,7 +2592,7 @@ export const StdChains = {
                                                     "memberLocation": "4670:7:146",
                                                     "memberName": "chainId",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 31128,
+                                                    "referencedDeclaration": 31234,
                                                     "src": "4664:13:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2603,7 +2603,7 @@ export const StdChains = {
                                                 "operator": "!=",
                                                 "rightExpression": {
                                                     "hexValue": "30",
-                                                    "id": 31287,
+                                                    "id": 31393,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2625,7 +2625,7 @@ export const StdChains = {
                                             },
                                             {
                                                 "hexValue": "537464436861696e7320736574436861696e28737472696e672c436861696e44617461293a20436861696e2049442063616e6e6f7420626520302e",
-                                                "id": 31289,
+                                                "id": 31395,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2651,7 +2651,7 @@ export const StdChains = {
                                                     "typeString": "literal_string \"StdChains setChain(string,ChainData): Chain ID cannot be 0.\""
                                                 }
                                             ],
-                                            "id": 31284,
+                                            "id": 31390,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -2665,7 +2665,7 @@ export const StdChains = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 31290,
+                                        "id": 31396,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2681,7 +2681,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31291,
+                                    "id": 31397,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4656:90:146"
                                 },
@@ -2690,18 +2690,18 @@ export const StdChains = {
                                         "arguments": [],
                                         "expression": {
                                             "argumentTypes": [],
-                                            "id": 31292,
+                                            "id": 31398,
                                             "name": "initializeStdChains",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31782,
+                                            "referencedDeclaration": 31888,
                                             "src": "4757:19:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
                                                 "typeString": "function ()"
                                             }
                                         },
-                                        "id": 31293,
+                                        "id": 31399,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2717,23 +2717,23 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31294,
+                                    "id": 31400,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4757:21:146"
                                 },
                                 {
                                     "assignments": [
-                                        31296
+                                        31402
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 31296,
+                                            "id": 31402,
                                             "mutability": "mutable",
                                             "name": "foundAlias",
                                             "nameLocation": "4802:10:146",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 31374,
+                                            "scope": 31480,
                                             "src": "4788:24:146",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -2742,7 +2742,7 @@ export const StdChains = {
                                                 "typeString": "string"
                                             },
                                             "typeName": {
-                                                "id": 31295,
+                                                "id": 31401,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4788:6:146",
@@ -2754,35 +2754,35 @@ export const StdChains = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 31301,
+                                    "id": 31407,
                                     "initialValue": {
                                         "baseExpression": {
-                                            "id": 31297,
+                                            "id": 31403,
                                             "name": "idToAlias",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31153,
+                                            "referencedDeclaration": 31259,
                                             "src": "4815:9:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
                                                 "typeString": "mapping(uint256 => string storage ref)"
                                             }
                                         },
-                                        "id": 31300,
+                                        "id": 31406,
                                         "indexExpression": {
                                             "expression": {
-                                                "id": 31298,
+                                                "id": 31404,
                                                 "name": "chain",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31270,
+                                                "referencedDeclaration": 31376,
                                                 "src": "4825:5:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             },
-                                            "id": 31299,
+                                            "id": 31405,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
@@ -2790,7 +2790,7 @@ export const StdChains = {
                                             "memberLocation": "4831:7:146",
                                             "memberName": "chainId",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 31128,
+                                            "referencedDeclaration": 31234,
                                             "src": "4825:13:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -2819,7 +2819,7 @@ export const StdChains = {
                                                     "typeIdentifier": "t_bool",
                                                     "typeString": "bool"
                                                 },
-                                                "id": 31323,
+                                                "id": 31429,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2829,7 +2829,7 @@ export const StdChains = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 31309,
+                                                    "id": 31415,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2838,11 +2838,11 @@ export const StdChains = {
                                                         "expression": {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 31305,
+                                                                    "id": 31411,
                                                                     "name": "foundAlias",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 31296,
+                                                                    "referencedDeclaration": 31402,
                                                                     "src": "4877:10:146",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -2857,7 +2857,7 @@ export const StdChains = {
                                                                         "typeString": "string memory"
                                                                     }
                                                                 ],
-                                                                "id": 31304,
+                                                                "id": 31410,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -2869,14 +2869,14 @@ export const StdChains = {
                                                                     "typeString": "type(bytes storage pointer)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 31303,
+                                                                    "id": 31409,
                                                                     "name": "bytes",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "4871:5:146",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 31306,
+                                                            "id": 31412,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -2892,7 +2892,7 @@ export const StdChains = {
                                                                 "typeString": "bytes memory"
                                                             }
                                                         },
-                                                        "id": 31307,
+                                                        "id": 31413,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2910,7 +2910,7 @@ export const StdChains = {
                                                     "operator": "==",
                                                     "rightExpression": {
                                                         "hexValue": "30",
-                                                        "id": 31308,
+                                                        "id": 31414,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -2937,7 +2937,7 @@ export const StdChains = {
                                                         "typeIdentifier": "t_bytes32",
                                                         "typeString": "bytes32"
                                                     },
-                                                    "id": 31322,
+                                                    "id": 31428,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2947,11 +2947,11 @@ export const StdChains = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 31313,
+                                                                        "id": 31419,
                                                                         "name": "foundAlias",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31296,
+                                                                        "referencedDeclaration": 31402,
                                                                         "src": "4920:10:146",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -2966,7 +2966,7 @@ export const StdChains = {
                                                                             "typeString": "string memory"
                                                                         }
                                                                     ],
-                                                                    "id": 31312,
+                                                                    "id": 31418,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -2978,14 +2978,14 @@ export const StdChains = {
                                                                         "typeString": "type(bytes storage pointer)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 31311,
+                                                                        "id": 31417,
                                                                         "name": "bytes",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "4914:5:146",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 31314,
+                                                                "id": 31420,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -3009,7 +3009,7 @@ export const StdChains = {
                                                                     "typeString": "bytes memory"
                                                                 }
                                                             ],
-                                                            "id": 31310,
+                                                            "id": 31416,
                                                             "name": "keccak256",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -3020,7 +3020,7 @@ export const StdChains = {
                                                                 "typeString": "function (bytes memory) pure returns (bytes32)"
                                                             }
                                                         },
-                                                        "id": 31315,
+                                                        "id": 31421,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3043,11 +3043,11 @@ export const StdChains = {
                                                             {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 31319,
+                                                                        "id": 31425,
                                                                         "name": "chainAlias",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31267,
+                                                                        "referencedDeclaration": 31373,
                                                                         "src": "4952:10:146",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -3062,7 +3062,7 @@ export const StdChains = {
                                                                             "typeString": "string memory"
                                                                         }
                                                                     ],
-                                                                    "id": 31318,
+                                                                    "id": 31424,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -3074,14 +3074,14 @@ export const StdChains = {
                                                                         "typeString": "type(bytes storage pointer)"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 31317,
+                                                                        "id": 31423,
                                                                         "name": "bytes",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "4946:5:146",
                                                                         "typeDescriptions": {}
                                                                     }
                                                                 },
-                                                                "id": 31320,
+                                                                "id": 31426,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -3105,7 +3105,7 @@ export const StdChains = {
                                                                     "typeString": "bytes memory"
                                                                 }
                                                             ],
-                                                            "id": 31316,
+                                                            "id": 31422,
                                                             "name": "keccak256",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -3116,7 +3116,7 @@ export const StdChains = {
                                                                 "typeString": "function (bytes memory) pure returns (bytes32)"
                                                             }
                                                         },
-                                                        "id": 31321,
+                                                        "id": 31427,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3150,7 +3150,7 @@ export const StdChains = {
                                                         "arguments": [
                                                             {
                                                                 "hexValue": "537464436861696e7320736574436861696e28737472696e672c436861696e44617461293a20436861696e20494420",
-                                                                "id": 31328,
+                                                                "id": 31434,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3168,18 +3168,18 @@ export const StdChains = {
                                                                 "arguments": [
                                                                     {
                                                                         "expression": {
-                                                                            "id": 31331,
+                                                                            "id": 31437,
                                                                             "name": "chain",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 31270,
+                                                                            "referencedDeclaration": 31376,
                                                                             "src": "5123:5:146",
                                                                             "typeDescriptions": {
-                                                                                "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                                                "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                                                 "typeString": "struct StdChains.ChainData memory"
                                                                             }
                                                                         },
-                                                                        "id": 31332,
+                                                                        "id": 31438,
                                                                         "isConstant": false,
                                                                         "isLValue": true,
                                                                         "isPure": false,
@@ -3187,7 +3187,7 @@ export const StdChains = {
                                                                         "memberLocation": "5129:7:146",
                                                                         "memberName": "chainId",
                                                                         "nodeType": "MemberAccess",
-                                                                        "referencedDeclaration": 31128,
+                                                                        "referencedDeclaration": 31234,
                                                                         "src": "5123:13:146",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -3203,18 +3203,18 @@ export const StdChains = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 31329,
+                                                                        "id": 31435,
                                                                         "name": "vm",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31122,
+                                                                        "referencedDeclaration": 31228,
                                                                         "src": "5111:2:146",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_contract$_VmSafe_$40306",
+                                                                            "typeIdentifier": "t_contract$_VmSafe_$40412",
                                                                             "typeString": "contract VmSafe"
                                                                         }
                                                                     },
-                                                                    "id": 31330,
+                                                                    "id": 31436,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -3222,14 +3222,14 @@ export const StdChains = {
                                                                     "memberLocation": "5114:8:146",
                                                                     "memberName": "toString",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 39838,
+                                                                    "referencedDeclaration": 39944,
                                                                     "src": "5111:11:146",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_external_pure$_t_uint256_$returns$_t_string_memory_ptr_$",
                                                                         "typeString": "function (uint256) pure external returns (string memory)"
                                                                     }
                                                                 },
-                                                                "id": 31333,
+                                                                "id": 31439,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -3247,7 +3247,7 @@ export const StdChains = {
                                                             },
                                                             {
                                                                 "hexValue": "20616c726561647920757365642062792022",
-                                                                "id": 31334,
+                                                                "id": 31440,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3262,11 +3262,11 @@ export const StdChains = {
                                                                 "value": " already used by \""
                                                             },
                                                             {
-                                                                "id": 31335,
+                                                                "id": 31441,
                                                                 "name": "foundAlias",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 31296,
+                                                                "referencedDeclaration": 31402,
                                                                 "src": "5202:10:146",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3275,7 +3275,7 @@ export const StdChains = {
                                                             },
                                                             {
                                                                 "hexValue": "222e",
-                                                                "id": 31336,
+                                                                "id": 31442,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3314,7 +3314,7 @@ export const StdChains = {
                                                                 }
                                                             ],
                                                             "expression": {
-                                                                "id": 31326,
+                                                                "id": 31432,
                                                                 "name": "abi",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
@@ -3325,7 +3325,7 @@ export const StdChains = {
                                                                     "typeString": "abi"
                                                                 }
                                                             },
-                                                            "id": 31327,
+                                                            "id": 31433,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3339,7 +3339,7 @@ export const StdChains = {
                                                                 "typeString": "function () pure returns (bytes memory)"
                                                             }
                                                         },
-                                                        "id": 31337,
+                                                        "id": 31443,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3363,7 +3363,7 @@ export const StdChains = {
                                                             "typeString": "bytes memory"
                                                         }
                                                     ],
-                                                    "id": 31325,
+                                                    "id": 31431,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3375,14 +3375,14 @@ export const StdChains = {
                                                         "typeString": "type(string storage pointer)"
                                                     },
                                                     "typeName": {
-                                                        "id": 31324,
+                                                        "id": 31430,
                                                         "name": "string",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "4978:6:146",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 31338,
+                                                "id": 31444,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3410,7 +3410,7 @@ export const StdChains = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 31302,
+                                            "id": 31408,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -3424,7 +3424,7 @@ export const StdChains = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 31339,
+                                        "id": 31445,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3440,23 +3440,23 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31340,
+                                    "id": 31446,
                                     "nodeType": "ExpressionStatement",
                                     "src": "4850:431:146"
                                 },
                                 {
                                     "assignments": [
-                                        31342
+                                        31448
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 31342,
+                                            "id": 31448,
                                             "mutability": "mutable",
                                             "name": "oldChainId",
                                             "nameLocation": "5300:10:146",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 31374,
+                                            "scope": 31480,
                                             "src": "5292:18:146",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3465,7 +3465,7 @@ export const StdChains = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 31341,
+                                                "id": 31447,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5292:7:146",
@@ -3477,28 +3477,28 @@ export const StdChains = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 31347,
+                                    "id": 31453,
                                     "initialValue": {
                                         "expression": {
                                             "baseExpression": {
-                                                "id": 31343,
+                                                "id": 31449,
                                                 "name": "chains",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31145,
+                                                "referencedDeclaration": 31251,
                                                 "src": "5313:6:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$",
+                                                    "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$",
                                                     "typeString": "mapping(string memory => struct StdChains.Chain storage ref)"
                                                 }
                                             },
-                                            "id": 31345,
+                                            "id": 31451,
                                             "indexExpression": {
-                                                "id": 31344,
+                                                "id": 31450,
                                                 "name": "chainAlias",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31267,
+                                                "referencedDeclaration": 31373,
                                                 "src": "5320:10:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3512,11 +3512,11 @@ export const StdChains = {
                                             "nodeType": "IndexAccess",
                                             "src": "5313:18:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_storage",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_storage",
                                                 "typeString": "struct StdChains.Chain storage ref"
                                             }
                                         },
-                                        "id": 31346,
+                                        "id": 31452,
                                         "isConstant": false,
                                         "isLValue": true,
                                         "isPure": false,
@@ -3524,7 +3524,7 @@ export const StdChains = {
                                         "memberLocation": "5332:7:146",
                                         "memberName": "chainId",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 31135,
+                                        "referencedDeclaration": 31241,
                                         "src": "5313:26:146",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
@@ -3536,7 +3536,7 @@ export const StdChains = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 31351,
+                                        "id": 31457,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3547,24 +3547,24 @@ export const StdChains = {
                                         "src": "5349:28:146",
                                         "subExpression": {
                                             "baseExpression": {
-                                                "id": 31348,
+                                                "id": 31454,
                                                 "name": "idToAlias",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31153,
+                                                "referencedDeclaration": 31259,
                                                 "src": "5356:9:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
                                                     "typeString": "mapping(uint256 => string storage ref)"
                                                 }
                                             },
-                                            "id": 31350,
+                                            "id": 31456,
                                             "indexExpression": {
-                                                "id": 31349,
+                                                "id": 31455,
                                                 "name": "oldChainId",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31342,
+                                                "referencedDeclaration": 31448,
                                                 "src": "5366:10:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3587,37 +3587,37 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31352,
+                                    "id": 31458,
                                     "nodeType": "ExpressionStatement",
                                     "src": "5349:28:146"
                                 },
                                 {
                                     "expression": {
-                                        "id": 31365,
+                                        "id": 31471,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "baseExpression": {
-                                                "id": 31353,
+                                                "id": 31459,
                                                 "name": "chains",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31145,
+                                                "referencedDeclaration": 31251,
                                                 "src": "5388:6:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31140_storage_$",
+                                                    "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Chain_$31246_storage_$",
                                                     "typeString": "mapping(string memory => struct StdChains.Chain storage ref)"
                                                 }
                                             },
-                                            "id": 31355,
+                                            "id": 31461,
                                             "indexExpression": {
-                                                "id": 31354,
+                                                "id": 31460,
                                                 "name": "chainAlias",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31267,
+                                                "referencedDeclaration": 31373,
                                                 "src": "5395:10:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -3631,7 +3631,7 @@ export const StdChains = {
                                             "nodeType": "IndexAccess",
                                             "src": "5388:18:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_storage",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_storage",
                                                 "typeString": "struct StdChains.Chain storage ref"
                                             }
                                         },
@@ -3641,18 +3641,18 @@ export const StdChains = {
                                             "arguments": [
                                                 {
                                                     "expression": {
-                                                        "id": 31357,
+                                                        "id": 31463,
                                                         "name": "chain",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 31270,
+                                                        "referencedDeclaration": 31376,
                                                         "src": "5434:5:146",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                             "typeString": "struct StdChains.ChainData memory"
                                                         }
                                                     },
-                                                    "id": 31358,
+                                                    "id": 31464,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -3660,7 +3660,7 @@ export const StdChains = {
                                                     "memberLocation": "5440:4:146",
                                                     "memberName": "name",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 31126,
+                                                    "referencedDeclaration": 31232,
                                                     "src": "5434:10:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -3669,18 +3669,18 @@ export const StdChains = {
                                                 },
                                                 {
                                                     "expression": {
-                                                        "id": 31359,
+                                                        "id": 31465,
                                                         "name": "chain",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 31270,
+                                                        "referencedDeclaration": 31376,
                                                         "src": "5455:5:146",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                             "typeString": "struct StdChains.ChainData memory"
                                                         }
                                                     },
-                                                    "id": 31360,
+                                                    "id": 31466,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -3688,7 +3688,7 @@ export const StdChains = {
                                                     "memberLocation": "5461:7:146",
                                                     "memberName": "chainId",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 31128,
+                                                    "referencedDeclaration": 31234,
                                                     "src": "5455:13:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -3696,11 +3696,11 @@ export const StdChains = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 31361,
+                                                    "id": 31467,
                                                     "name": "chainAlias",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31267,
+                                                    "referencedDeclaration": 31373,
                                                     "src": "5482:10:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -3709,18 +3709,18 @@ export const StdChains = {
                                                 },
                                                 {
                                                     "expression": {
-                                                        "id": 31362,
+                                                        "id": 31468,
                                                         "name": "chain",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 31270,
+                                                        "referencedDeclaration": 31376,
                                                         "src": "5502:5:146",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                            "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                             "typeString": "struct StdChains.ChainData memory"
                                                         }
                                                     },
-                                                    "id": 31363,
+                                                    "id": 31469,
                                                     "isConstant": false,
                                                     "isLValue": true,
                                                     "isPure": false,
@@ -3728,7 +3728,7 @@ export const StdChains = {
                                                     "memberLocation": "5508:6:146",
                                                     "memberName": "rpcUrl",
                                                     "nodeType": "MemberAccess",
-                                                    "referencedDeclaration": 31130,
+                                                    "referencedDeclaration": 31236,
                                                     "src": "5502:12:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -3755,18 +3755,18 @@ export const StdChains = {
                                                         "typeString": "string memory"
                                                     }
                                                 ],
-                                                "id": 31356,
+                                                "id": 31462,
                                                 "name": "Chain",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31140,
+                                                "referencedDeclaration": 31246,
                                                 "src": "5421:5:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_struct$_Chain_$31140_storage_ptr_$",
+                                                    "typeIdentifier": "t_type$_t_struct$_Chain_$31246_storage_ptr_$",
                                                     "typeString": "type(struct StdChains.Chain storage pointer)"
                                                 }
                                             },
-                                            "id": 31364,
+                                            "id": 31470,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3788,55 +3788,55 @@ export const StdChains = {
                                             "src": "5421:95:146",
                                             "tryCall": false,
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                 "typeString": "struct StdChains.Chain memory"
                                             }
                                         },
                                         "src": "5388:128:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_storage",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_storage",
                                             "typeString": "struct StdChains.Chain storage ref"
                                         }
                                     },
-                                    "id": 31366,
+                                    "id": 31472,
                                     "nodeType": "ExpressionStatement",
                                     "src": "5388:128:146"
                                 },
                                 {
                                     "expression": {
-                                        "id": 31372,
+                                        "id": 31478,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "baseExpression": {
-                                                "id": 31367,
+                                                "id": 31473,
                                                 "name": "idToAlias",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31153,
+                                                "referencedDeclaration": 31259,
                                                 "src": "5526:9:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_uint256_$_t_string_storage_$",
                                                     "typeString": "mapping(uint256 => string storage ref)"
                                                 }
                                             },
-                                            "id": 31370,
+                                            "id": 31476,
                                             "indexExpression": {
                                                 "expression": {
-                                                    "id": 31368,
+                                                    "id": 31474,
                                                     "name": "chain",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31270,
+                                                    "referencedDeclaration": 31376,
                                                     "src": "5536:5:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                        "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                         "typeString": "struct StdChains.ChainData memory"
                                                     }
                                                 },
-                                                "id": 31369,
+                                                "id": 31475,
                                                 "isConstant": false,
                                                 "isLValue": true,
                                                 "isPure": false,
@@ -3844,7 +3844,7 @@ export const StdChains = {
                                                 "memberLocation": "5542:7:146",
                                                 "memberName": "chainId",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 31128,
+                                                "referencedDeclaration": 31234,
                                                 "src": "5536:13:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3865,11 +3865,11 @@ export const StdChains = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 31371,
+                                            "id": 31477,
                                             "name": "chainAlias",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31267,
+                                            "referencedDeclaration": 31373,
                                             "src": "5553:10:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -3882,7 +3882,7 @@ export const StdChains = {
                                             "typeString": "string storage ref"
                                         }
                                     },
-                                    "id": 31373,
+                                    "id": 31479,
                                     "nodeType": "ExpressionStatement",
                                     "src": "5526:37:146"
                                 }
@@ -3894,17 +3894,17 @@ export const StdChains = {
                         "name": "setChain",
                         "nameLocation": "4406:8:146",
                         "parameters": {
-                            "id": 31271,
+                            "id": 31377,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31267,
+                                    "id": 31373,
                                     "mutability": "mutable",
                                     "name": "chainAlias",
                                     "nameLocation": "4429:10:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31375,
+                                    "scope": 31481,
                                     "src": "4415:24:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3913,7 +3913,7 @@ export const StdChains = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 31266,
+                                        "id": 31372,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4415:6:146",
@@ -3926,36 +3926,36 @@ export const StdChains = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 31270,
+                                    "id": 31376,
                                     "mutability": "mutable",
                                     "name": "chain",
                                     "nameLocation": "4458:5:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31375,
+                                    "scope": 31481,
                                     "src": "4441:22:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                        "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                         "typeString": "struct StdChains.ChainData"
                                     },
                                     "typeName": {
-                                        "id": 31269,
+                                        "id": 31375,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 31268,
+                                            "id": 31374,
                                             "name": "ChainData",
                                             "nameLocations": [
                                                 "4441:9:146"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 31131,
+                                            "referencedDeclaration": 31237,
                                             "src": "4441:9:146"
                                         },
-                                        "referencedDeclaration": 31131,
+                                        "referencedDeclaration": 31237,
                                         "src": "4441:9:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_ChainData_$31131_storage_ptr",
+                                            "typeIdentifier": "t_struct$_ChainData_$31237_storage_ptr",
                                             "typeString": "struct StdChains.ChainData"
                                         }
                                     },
@@ -3965,23 +3965,23 @@ export const StdChains = {
                             "src": "4414:50:146"
                         },
                         "returnParameters": {
-                            "id": 31272,
+                            "id": 31378,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "4482:0:146"
                         },
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 31396,
+                        "id": 31502,
                         "nodeType": "FunctionDefinition",
                         "src": "5641:195:146",
                         "nodes": [],
                         "body": {
-                            "id": 31395,
+                            "id": 31501,
                             "nodeType": "Block",
                             "src": "5722:114:146",
                             "nodes": [],
@@ -3990,11 +3990,11 @@ export const StdChains = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 31384,
+                                                "id": 31490,
                                                 "name": "chainAlias",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31377,
+                                                "referencedDeclaration": 31483,
                                                 "src": "5741:10:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4005,18 +4005,18 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "expression": {
-                                                            "id": 31386,
+                                                            "id": 31492,
                                                             "name": "chain",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 31380,
+                                                            "referencedDeclaration": 31486,
                                                             "src": "5770:5:146",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                                 "typeString": "struct StdChains.Chain memory"
                                                             }
                                                         },
-                                                        "id": 31387,
+                                                        "id": 31493,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
@@ -4024,7 +4024,7 @@ export const StdChains = {
                                                         "memberLocation": "5776:4:146",
                                                         "memberName": "name",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 31133,
+                                                        "referencedDeclaration": 31239,
                                                         "src": "5770:10:146",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -4033,18 +4033,18 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "expression": {
-                                                            "id": 31388,
+                                                            "id": 31494,
                                                             "name": "chain",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 31380,
+                                                            "referencedDeclaration": 31486,
                                                             "src": "5791:5:146",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                                 "typeString": "struct StdChains.Chain memory"
                                                             }
                                                         },
-                                                        "id": 31389,
+                                                        "id": 31495,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
@@ -4052,7 +4052,7 @@ export const StdChains = {
                                                         "memberLocation": "5797:7:146",
                                                         "memberName": "chainId",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 31135,
+                                                        "referencedDeclaration": 31241,
                                                         "src": "5791:13:146",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -4061,18 +4061,18 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "expression": {
-                                                            "id": 31390,
+                                                            "id": 31496,
                                                             "name": "chain",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 31380,
+                                                            "referencedDeclaration": 31486,
                                                             "src": "5814:5:146",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                                 "typeString": "struct StdChains.Chain memory"
                                                             }
                                                         },
-                                                        "id": 31391,
+                                                        "id": 31497,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
@@ -4080,7 +4080,7 @@ export const StdChains = {
                                                         "memberLocation": "5820:6:146",
                                                         "memberName": "rpcUrl",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 31139,
+                                                        "referencedDeclaration": 31245,
                                                         "src": "5814:12:146",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -4103,18 +4103,18 @@ export const StdChains = {
                                                             "typeString": "string memory"
                                                         }
                                                     ],
-                                                    "id": 31385,
+                                                    "id": 31491,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "5753:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31392,
+                                                "id": 31498,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4134,7 +4134,7 @@ export const StdChains = {
                                                 "src": "5753:75:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -4146,25 +4146,25 @@ export const StdChains = {
                                                     "typeString": "string memory"
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31383,
+                                            "id": 31489,
                                             "name": "setChain",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                31375,
-                                                31396
+                                                31481,
+                                                31502
                                             ],
-                                            "referencedDeclaration": 31375,
+                                            "referencedDeclaration": 31481,
                                             "src": "5732:8:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31393,
+                                        "id": 31499,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4180,7 +4180,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31394,
+                                    "id": 31500,
                                     "nodeType": "ExpressionStatement",
                                     "src": "5732:97:146"
                                 }
@@ -4192,17 +4192,17 @@ export const StdChains = {
                         "name": "setChain",
                         "nameLocation": "5650:8:146",
                         "parameters": {
-                            "id": 31381,
+                            "id": 31487,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31377,
+                                    "id": 31483,
                                     "mutability": "mutable",
                                     "name": "chainAlias",
                                     "nameLocation": "5673:10:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31396,
+                                    "scope": 31502,
                                     "src": "5659:24:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4211,7 +4211,7 @@ export const StdChains = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 31376,
+                                        "id": 31482,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5659:6:146",
@@ -4224,36 +4224,36 @@ export const StdChains = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 31380,
+                                    "id": 31486,
                                     "mutability": "mutable",
                                     "name": "chain",
                                     "nameLocation": "5698:5:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31396,
+                                    "scope": 31502,
                                     "src": "5685:18:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                         "typeString": "struct StdChains.Chain"
                                     },
                                     "typeName": {
-                                        "id": 31379,
+                                        "id": 31485,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 31378,
+                                            "id": 31484,
                                             "name": "Chain",
                                             "nameLocations": [
                                                 "5685:5:146"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 31140,
+                                            "referencedDeclaration": 31246,
                                             "src": "5685:5:146"
                                         },
-                                        "referencedDeclaration": 31140,
+                                        "referencedDeclaration": 31246,
                                         "src": "5685:5:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_storage_ptr",
                                             "typeString": "struct StdChains.Chain"
                                         }
                                     },
@@ -4263,40 +4263,40 @@ export const StdChains = {
                             "src": "5658:46:146"
                         },
                         "returnParameters": {
-                            "id": 31382,
+                            "id": 31488,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5722:0:146"
                         },
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "internal"
                     },
                     {
-                        "id": 31473,
+                        "id": 31579,
                         "nodeType": "FunctionDefinition",
                         "src": "5842:451:146",
                         "nodes": [],
                         "body": {
-                            "id": 31472,
+                            "id": 31578,
                             "nodeType": "Block",
                             "src": "5916:377:146",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        31404
+                                        31510
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 31404,
+                                            "id": 31510,
                                             "mutability": "mutable",
                                             "name": "strb",
                                             "nameLocation": "5939:4:146",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 31472,
+                                            "scope": 31578,
                                             "src": "5926:17:146",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -4305,7 +4305,7 @@ export const StdChains = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 31403,
+                                                "id": 31509,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5926:5:146",
@@ -4317,15 +4317,15 @@ export const StdChains = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 31409,
+                                    "id": 31515,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 31407,
+                                                "id": 31513,
                                                 "name": "str",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31398,
+                                                "referencedDeclaration": 31504,
                                                 "src": "5952:3:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4340,7 +4340,7 @@ export const StdChains = {
                                                     "typeString": "string memory"
                                                 }
                                             ],
-                                            "id": 31406,
+                                            "id": 31512,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -4352,14 +4352,14 @@ export const StdChains = {
                                                 "typeString": "type(bytes storage pointer)"
                                             },
                                             "typeName": {
-                                                "id": 31405,
+                                                "id": 31511,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5946:5:146",
                                                 "typeDescriptions": {}
                                             }
                                         },
-                                        "id": 31408,
+                                        "id": 31514,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4380,17 +4380,17 @@ export const StdChains = {
                                 },
                                 {
                                     "assignments": [
-                                        31411
+                                        31517
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 31411,
+                                            "id": 31517,
                                             "mutability": "mutable",
                                             "name": "copy",
                                             "nameLocation": "5979:4:146",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 31472,
+                                            "scope": 31578,
                                             "src": "5966:17:146",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -4399,7 +4399,7 @@ export const StdChains = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 31410,
+                                                "id": 31516,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5966:5:146",
@@ -4411,23 +4411,23 @@ export const StdChains = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 31417,
+                                    "id": 31523,
                                     "initialValue": {
                                         "arguments": [
                                             {
                                                 "expression": {
-                                                    "id": 31414,
+                                                    "id": 31520,
                                                     "name": "strb",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31404,
+                                                    "referencedDeclaration": 31510,
                                                     "src": "5996:4:146",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes_memory_ptr",
                                                         "typeString": "bytes memory"
                                                     }
                                                 },
-                                                "id": 31415,
+                                                "id": 31521,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4449,7 +4449,7 @@ export const StdChains = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 31413,
+                                            "id": 31519,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -4461,7 +4461,7 @@ export const StdChains = {
                                                 "typeString": "function (uint256) pure returns (bytes memory)"
                                             },
                                             "typeName": {
-                                                "id": 31412,
+                                                "id": 31518,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5990:5:146",
@@ -4471,7 +4471,7 @@ export const StdChains = {
                                                 }
                                             }
                                         },
-                                        "id": 31416,
+                                        "id": 31522,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4492,23 +4492,23 @@ export const StdChains = {
                                 },
                                 {
                                     "body": {
-                                        "id": 31465,
+                                        "id": 31571,
                                         "nodeType": "Block",
                                         "src": "6060:198:146",
                                         "statements": [
                                             {
                                                 "assignments": [
-                                                    31430
+                                                    31536
                                                 ],
                                                 "declarations": [
                                                     {
                                                         "constant": false,
-                                                        "id": 31430,
+                                                        "id": 31536,
                                                         "mutability": "mutable",
                                                         "name": "b",
                                                         "nameLocation": "6081:1:146",
                                                         "nodeType": "VariableDeclaration",
-                                                        "scope": 31465,
+                                                        "scope": 31571,
                                                         "src": "6074:8:146",
                                                         "stateVariable": false,
                                                         "storageLocation": "default",
@@ -4517,7 +4517,7 @@ export const StdChains = {
                                                             "typeString": "bytes1"
                                                         },
                                                         "typeName": {
-                                                            "id": 31429,
+                                                            "id": 31535,
                                                             "name": "bytes1",
                                                             "nodeType": "ElementaryTypeName",
                                                             "src": "6074:6:146",
@@ -4529,27 +4529,27 @@ export const StdChains = {
                                                         "visibility": "internal"
                                                     }
                                                 ],
-                                                "id": 31434,
+                                                "id": 31540,
                                                 "initialValue": {
                                                     "baseExpression": {
-                                                        "id": 31431,
+                                                        "id": 31537,
                                                         "name": "strb",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 31404,
+                                                        "referencedDeclaration": 31510,
                                                         "src": "6085:4:146",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                             "typeString": "bytes memory"
                                                         }
                                                     },
-                                                    "id": 31433,
+                                                    "id": 31539,
                                                     "indexExpression": {
-                                                        "id": 31432,
+                                                        "id": 31538,
                                                         "name": "i",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 31419,
+                                                        "referencedDeclaration": 31525,
                                                         "src": "6090:1:146",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -4576,7 +4576,7 @@ export const StdChains = {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     },
-                                                    "id": 31441,
+                                                    "id": 31547,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4586,17 +4586,17 @@ export const StdChains = {
                                                             "typeIdentifier": "t_bytes1",
                                                             "typeString": "bytes1"
                                                         },
-                                                        "id": 31437,
+                                                        "id": 31543,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 31435,
+                                                            "id": 31541,
                                                             "name": "b",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 31430,
+                                                            "referencedDeclaration": 31536,
                                                             "src": "6110:1:146",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes1",
@@ -4607,7 +4607,7 @@ export const StdChains = {
                                                         "operator": ">=",
                                                         "rightExpression": {
                                                             "hexValue": "30783631",
-                                                            "id": 31436,
+                                                            "id": 31542,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -4634,17 +4634,17 @@ export const StdChains = {
                                                             "typeIdentifier": "t_bytes1",
                                                             "typeString": "bytes1"
                                                         },
-                                                        "id": 31440,
+                                                        "id": 31546,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 31438,
+                                                            "id": 31544,
                                                             "name": "b",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 31430,
+                                                            "referencedDeclaration": 31536,
                                                             "src": "6123:1:146",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes1",
@@ -4655,7 +4655,7 @@ export const StdChains = {
                                                         "operator": "<=",
                                                         "rightExpression": {
                                                             "hexValue": "30783741",
-                                                            "id": 31439,
+                                                            "id": 31545,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -4682,37 +4682,37 @@ export const StdChains = {
                                                     }
                                                 },
                                                 "falseBody": {
-                                                    "id": 31463,
+                                                    "id": 31569,
                                                     "nodeType": "Block",
                                                     "src": "6204:44:146",
                                                     "statements": [
                                                         {
                                                             "expression": {
-                                                                "id": 31461,
+                                                                "id": 31567,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
                                                                     "baseExpression": {
-                                                                        "id": 31457,
+                                                                        "id": 31563,
                                                                         "name": "copy",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31411,
+                                                                        "referencedDeclaration": 31517,
                                                                         "src": "6222:4:146",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                                             "typeString": "bytes memory"
                                                                         }
                                                                     },
-                                                                    "id": 31459,
+                                                                    "id": 31565,
                                                                     "indexExpression": {
-                                                                        "id": 31458,
+                                                                        "id": 31564,
                                                                         "name": "i",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31419,
+                                                                        "referencedDeclaration": 31525,
                                                                         "src": "6227:1:146",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -4733,11 +4733,11 @@ export const StdChains = {
                                                                 "nodeType": "Assignment",
                                                                 "operator": "=",
                                                                 "rightHandSide": {
-                                                                    "id": 31460,
+                                                                    "id": 31566,
                                                                     "name": "b",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 31430,
+                                                                    "referencedDeclaration": 31536,
                                                                     "src": "6232:1:146",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_bytes1",
@@ -4750,47 +4750,47 @@ export const StdChains = {
                                                                     "typeString": "bytes1"
                                                                 }
                                                             },
-                                                            "id": 31462,
+                                                            "id": 31568,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "6222:11:146"
                                                         }
                                                     ]
                                                 },
-                                                "id": 31464,
+                                                "id": 31570,
                                                 "nodeType": "IfStatement",
                                                 "src": "6106:142:146",
                                                 "trueBody": {
-                                                    "id": 31456,
+                                                    "id": 31562,
                                                     "nodeType": "Block",
                                                     "src": "6134:64:146",
                                                     "statements": [
                                                         {
                                                             "expression": {
-                                                                "id": 31454,
+                                                                "id": 31560,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
                                                                     "baseExpression": {
-                                                                        "id": 31442,
+                                                                        "id": 31548,
                                                                         "name": "copy",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31411,
+                                                                        "referencedDeclaration": 31517,
                                                                         "src": "6152:4:146",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                                             "typeString": "bytes memory"
                                                                         }
                                                                     },
-                                                                    "id": 31444,
+                                                                    "id": 31550,
                                                                     "indexExpression": {
-                                                                        "id": 31443,
+                                                                        "id": 31549,
                                                                         "name": "i",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31419,
+                                                                        "referencedDeclaration": 31525,
                                                                         "src": "6157:1:146",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -4817,7 +4817,7 @@ export const StdChains = {
                                                                                 "typeIdentifier": "t_uint8",
                                                                                 "typeString": "uint8"
                                                                             },
-                                                                            "id": 31452,
+                                                                            "id": 31558,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -4825,11 +4825,11 @@ export const StdChains = {
                                                                             "leftExpression": {
                                                                                 "arguments": [
                                                                                     {
-                                                                                        "id": 31449,
+                                                                                        "id": 31555,
                                                                                         "name": "b",
                                                                                         "nodeType": "Identifier",
                                                                                         "overloadedDeclarations": [],
-                                                                                        "referencedDeclaration": 31430,
+                                                                                        "referencedDeclaration": 31536,
                                                                                         "src": "6175:1:146",
                                                                                         "typeDescriptions": {
                                                                                             "typeIdentifier": "t_bytes1",
@@ -4844,7 +4844,7 @@ export const StdChains = {
                                                                                             "typeString": "bytes1"
                                                                                         }
                                                                                     ],
-                                                                                    "id": 31448,
+                                                                                    "id": 31554,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": true,
@@ -4856,14 +4856,14 @@ export const StdChains = {
                                                                                         "typeString": "type(uint8)"
                                                                                     },
                                                                                     "typeName": {
-                                                                                        "id": 31447,
+                                                                                        "id": 31553,
                                                                                         "name": "uint8",
                                                                                         "nodeType": "ElementaryTypeName",
                                                                                         "src": "6169:5:146",
                                                                                         "typeDescriptions": {}
                                                                                     }
                                                                                 },
-                                                                                "id": 31450,
+                                                                                "id": 31556,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
@@ -4883,7 +4883,7 @@ export const StdChains = {
                                                                             "operator": "-",
                                                                             "rightExpression": {
                                                                                 "hexValue": "3332",
-                                                                                "id": 31451,
+                                                                                "id": 31557,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
@@ -4911,7 +4911,7 @@ export const StdChains = {
                                                                                 "typeString": "uint8"
                                                                             }
                                                                         ],
-                                                                        "id": 31446,
+                                                                        "id": 31552,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -4923,14 +4923,14 @@ export const StdChains = {
                                                                             "typeString": "type(bytes1)"
                                                                         },
                                                                         "typeName": {
-                                                                            "id": 31445,
+                                                                            "id": 31551,
                                                                             "name": "bytes1",
                                                                             "nodeType": "ElementaryTypeName",
                                                                             "src": "6162:6:146",
                                                                             "typeDescriptions": {}
                                                                         }
                                                                     },
-                                                                    "id": 31453,
+                                                                    "id": 31559,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -4952,7 +4952,7 @@ export const StdChains = {
                                                                     "typeString": "bytes1"
                                                                 }
                                                             },
-                                                            "id": 31455,
+                                                            "id": 31561,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "6152:31:146"
                                                         }
@@ -4966,17 +4966,17 @@ export const StdChains = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 31425,
+                                        "id": 31531,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 31422,
+                                            "id": 31528,
                                             "name": "i",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31419,
+                                            "referencedDeclaration": 31525,
                                             "src": "6038:1:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -4987,18 +4987,18 @@ export const StdChains = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 31423,
+                                                "id": 31529,
                                                 "name": "strb",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31404,
+                                                "referencedDeclaration": 31510,
                                                 "src": "6042:4:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
                                                     "typeString": "bytes memory"
                                                 }
                                             },
-                                            "id": 31424,
+                                            "id": 31530,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5018,20 +5018,20 @@ export const StdChains = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 31466,
+                                    "id": 31572,
                                     "initializationExpression": {
                                         "assignments": [
-                                            31419
+                                            31525
                                         ],
                                         "declarations": [
                                             {
                                                 "constant": false,
-                                                "id": 31419,
+                                                "id": 31525,
                                                 "mutability": "mutable",
                                                 "name": "i",
                                                 "nameLocation": "6031:1:146",
                                                 "nodeType": "VariableDeclaration",
-                                                "scope": 31466,
+                                                "scope": 31572,
                                                 "src": "6023:9:146",
                                                 "stateVariable": false,
                                                 "storageLocation": "default",
@@ -5040,7 +5040,7 @@ export const StdChains = {
                                                     "typeString": "uint256"
                                                 },
                                                 "typeName": {
-                                                    "id": 31418,
+                                                    "id": 31524,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "6023:7:146",
@@ -5052,10 +5052,10 @@ export const StdChains = {
                                                 "visibility": "internal"
                                             }
                                         ],
-                                        "id": 31421,
+                                        "id": 31527,
                                         "initialValue": {
                                             "hexValue": "30",
-                                            "id": 31420,
+                                            "id": 31526,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -5074,7 +5074,7 @@ export const StdChains = {
                                     },
                                     "loopExpression": {
                                         "expression": {
-                                            "id": 31427,
+                                            "id": 31533,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5084,11 +5084,11 @@ export const StdChains = {
                                             "prefix": false,
                                             "src": "6055:3:146",
                                             "subExpression": {
-                                                "id": 31426,
+                                                "id": 31532,
                                                 "name": "i",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31419,
+                                                "referencedDeclaration": 31525,
                                                 "src": "6055:1:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5100,7 +5100,7 @@ export const StdChains = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 31428,
+                                        "id": 31534,
                                         "nodeType": "ExpressionStatement",
                                         "src": "6055:3:146"
                                     },
@@ -5111,11 +5111,11 @@ export const StdChains = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 31469,
+                                                "id": 31575,
                                                 "name": "copy",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31411,
+                                                "referencedDeclaration": 31517,
                                                 "src": "6281:4:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
@@ -5130,7 +5130,7 @@ export const StdChains = {
                                                     "typeString": "bytes memory"
                                                 }
                                             ],
-                                            "id": 31468,
+                                            "id": 31574,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -5142,14 +5142,14 @@ export const StdChains = {
                                                 "typeString": "type(string storage pointer)"
                                             },
                                             "typeName": {
-                                                "id": 31467,
+                                                "id": 31573,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "6274:6:146",
                                                 "typeDescriptions": {}
                                             }
                                         },
-                                        "id": 31470,
+                                        "id": 31576,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5165,8 +5165,8 @@ export const StdChains = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 31402,
-                                    "id": 31471,
+                                    "functionReturnParameters": 31508,
+                                    "id": 31577,
                                     "nodeType": "Return",
                                     "src": "6267:19:146"
                                 }
@@ -5178,17 +5178,17 @@ export const StdChains = {
                         "name": "_toUpper",
                         "nameLocation": "5851:8:146",
                         "parameters": {
-                            "id": 31399,
+                            "id": 31505,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31398,
+                                    "id": 31504,
                                     "mutability": "mutable",
                                     "name": "str",
                                     "nameLocation": "5874:3:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31473,
+                                    "scope": 31579,
                                     "src": "5860:17:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5197,7 +5197,7 @@ export const StdChains = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 31397,
+                                        "id": 31503,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5860:6:146",
@@ -5212,17 +5212,17 @@ export const StdChains = {
                             "src": "5859:19:146"
                         },
                         "returnParameters": {
-                            "id": 31402,
+                            "id": 31508,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31401,
+                                    "id": 31507,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31473,
+                                    "scope": 31579,
                                     "src": "5901:13:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5231,7 +5231,7 @@ export const StdChains = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 31400,
+                                        "id": 31506,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5901:6:146",
@@ -5245,18 +5245,18 @@ export const StdChains = {
                             ],
                             "src": "5900:15:146"
                         },
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "private"
                     },
                     {
-                        "id": 31590,
+                        "id": 31696,
                         "nodeType": "FunctionDefinition",
                         "src": "6429:1218:146",
                         "nodes": [],
                         "body": {
-                            "id": 31589,
+                            "id": 31695,
                             "nodeType": "Block",
                             "src": "6541:1106:146",
                             "nodes": [],
@@ -5267,7 +5267,7 @@ export const StdChains = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 31491,
+                                        "id": 31597,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5277,18 +5277,18 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "expression": {
-                                                            "id": 31486,
+                                                            "id": 31592,
                                                             "name": "chain",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 31478,
+                                                            "referencedDeclaration": 31584,
                                                             "src": "6561:5:146",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                                 "typeString": "struct StdChains.Chain memory"
                                                             }
                                                         },
-                                                        "id": 31487,
+                                                        "id": 31593,
                                                         "isConstant": false,
                                                         "isLValue": true,
                                                         "isPure": false,
@@ -5296,7 +5296,7 @@ export const StdChains = {
                                                         "memberLocation": "6567:6:146",
                                                         "memberName": "rpcUrl",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 31139,
+                                                        "referencedDeclaration": 31245,
                                                         "src": "6561:12:146",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -5311,7 +5311,7 @@ export const StdChains = {
                                                             "typeString": "string memory"
                                                         }
                                                     ],
-                                                    "id": 31485,
+                                                    "id": 31591,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -5323,14 +5323,14 @@ export const StdChains = {
                                                         "typeString": "type(bytes storage pointer)"
                                                     },
                                                     "typeName": {
-                                                        "id": 31484,
+                                                        "id": 31590,
                                                         "name": "bytes",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "6555:5:146",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 31488,
+                                                "id": 31594,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -5346,7 +5346,7 @@ export const StdChains = {
                                                     "typeString": "bytes memory"
                                                 }
                                             },
-                                            "id": 31489,
+                                            "id": 31595,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5364,7 +5364,7 @@ export const StdChains = {
                                         "operator": "==",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 31490,
+                                            "id": 31596,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -5384,11 +5384,11 @@ export const StdChains = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 31586,
+                                    "id": 31692,
                                     "nodeType": "IfStatement",
                                     "src": "6551:1068:146",
                                     "trueBody": {
-                                        "id": 31585,
+                                        "id": 31691,
                                         "nodeType": "Block",
                                         "src": "6588:1031:146",
                                         "statements": [
@@ -5396,31 +5396,31 @@ export const StdChains = {
                                                 "clauses": [
                                                     {
                                                         "block": {
-                                                            "id": 31505,
+                                                            "id": 31611,
                                                             "nodeType": "Block",
                                                             "src": "6665:60:146",
                                                             "statements": [
                                                                 {
                                                                     "expression": {
-                                                                        "id": 31503,
+                                                                        "id": 31609,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
                                                                         "leftHandSide": {
                                                                             "expression": {
-                                                                                "id": 31499,
+                                                                                "id": 31605,
                                                                                 "name": "chain",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 31478,
+                                                                                "referencedDeclaration": 31584,
                                                                                 "src": "6683:5:146",
                                                                                 "typeDescriptions": {
-                                                                                    "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                                                    "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                                                     "typeString": "struct StdChains.Chain memory"
                                                                                 }
                                                                             },
-                                                                            "id": 31501,
+                                                                            "id": 31607,
                                                                             "isConstant": false,
                                                                             "isLValue": true,
                                                                             "isPure": false,
@@ -5428,7 +5428,7 @@ export const StdChains = {
                                                                             "memberLocation": "6689:6:146",
                                                                             "memberName": "rpcUrl",
                                                                             "nodeType": "MemberAccess",
-                                                                            "referencedDeclaration": 31139,
+                                                                            "referencedDeclaration": 31245,
                                                                             "src": "6683:12:146",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -5438,11 +5438,11 @@ export const StdChains = {
                                                                         "nodeType": "Assignment",
                                                                         "operator": "=",
                                                                         "rightHandSide": {
-                                                                            "id": 31502,
+                                                                            "id": 31608,
                                                                             "name": "configRpcUrl",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 31497,
+                                                                            "referencedDeclaration": 31603,
                                                                             "src": "6698:12:146",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -5455,27 +5455,27 @@ export const StdChains = {
                                                                             "typeString": "string memory"
                                                                         }
                                                                     },
-                                                                    "id": 31504,
+                                                                    "id": 31610,
                                                                     "nodeType": "ExpressionStatement",
                                                                     "src": "6683:27:146"
                                                                 }
                                                             ]
                                                         },
                                                         "errorName": "",
-                                                        "id": 31506,
+                                                        "id": 31612,
                                                         "nodeType": "TryCatchClause",
                                                         "parameters": {
-                                                            "id": 31498,
+                                                            "id": 31604,
                                                             "nodeType": "ParameterList",
                                                             "parameters": [
                                                                 {
                                                                     "constant": false,
-                                                                    "id": 31497,
+                                                                    "id": 31603,
                                                                     "mutability": "mutable",
                                                                     "name": "configRpcUrl",
                                                                     "nameLocation": "6651:12:146",
                                                                     "nodeType": "VariableDeclaration",
-                                                                    "scope": 31506,
+                                                                    "scope": 31612,
                                                                     "src": "6637:26:146",
                                                                     "stateVariable": false,
                                                                     "storageLocation": "memory",
@@ -5484,7 +5484,7 @@ export const StdChains = {
                                                                         "typeString": "string"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 31496,
+                                                                        "id": 31602,
                                                                         "name": "string",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "6637:6:146",
@@ -5502,23 +5502,23 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "block": {
-                                                            "id": 31582,
+                                                            "id": 31688,
                                                             "nodeType": "Block",
                                                             "src": "6751:858:146",
                                                             "statements": [
                                                                 {
                                                                     "assignments": [
-                                                                        31511
+                                                                        31617
                                                                     ],
                                                                     "declarations": [
                                                                         {
                                                                             "constant": false,
-                                                                            "id": 31511,
+                                                                            "id": 31617,
                                                                             "mutability": "mutable",
                                                                             "name": "envName",
                                                                             "nameLocation": "6783:7:146",
                                                                             "nodeType": "VariableDeclaration",
-                                                                            "scope": 31582,
+                                                                            "scope": 31688,
                                                                             "src": "6769:21:146",
                                                                             "stateVariable": false,
                                                                             "storageLocation": "memory",
@@ -5527,7 +5527,7 @@ export const StdChains = {
                                                                                 "typeString": "string"
                                                                             },
                                                                             "typeName": {
-                                                                                "id": 31510,
+                                                                                "id": 31616,
                                                                                 "name": "string",
                                                                                 "nodeType": "ElementaryTypeName",
                                                                                 "src": "6769:6:146",
@@ -5539,7 +5539,7 @@ export const StdChains = {
                                                                             "visibility": "internal"
                                                                         }
                                                                     ],
-                                                                    "id": 31522,
+                                                                    "id": 31628,
                                                                     "initialValue": {
                                                                         "arguments": [
                                                                             {
@@ -5547,11 +5547,11 @@ export const StdChains = {
                                                                                     {
                                                                                         "arguments": [
                                                                                             {
-                                                                                                "id": 31517,
+                                                                                                "id": 31623,
                                                                                                 "name": "chainAlias",
                                                                                                 "nodeType": "Identifier",
                                                                                                 "overloadedDeclarations": [],
-                                                                                                "referencedDeclaration": 31475,
+                                                                                                "referencedDeclaration": 31581,
                                                                                                 "src": "6826:10:146",
                                                                                                 "typeDescriptions": {
                                                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5566,18 +5566,18 @@ export const StdChains = {
                                                                                                     "typeString": "string memory"
                                                                                                 }
                                                                                             ],
-                                                                                            "id": 31516,
+                                                                                            "id": 31622,
                                                                                             "name": "_toUpper",
                                                                                             "nodeType": "Identifier",
                                                                                             "overloadedDeclarations": [],
-                                                                                            "referencedDeclaration": 31473,
+                                                                                            "referencedDeclaration": 31579,
                                                                                             "src": "6817:8:146",
                                                                                             "typeDescriptions": {
                                                                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                                                                 "typeString": "function (string memory) pure returns (string memory)"
                                                                                             }
                                                                                         },
-                                                                                        "id": 31518,
+                                                                                        "id": 31624,
                                                                                         "isConstant": false,
                                                                                         "isLValue": false,
                                                                                         "isPure": false,
@@ -5595,7 +5595,7 @@ export const StdChains = {
                                                                                     },
                                                                                     {
                                                                                         "hexValue": "5f5250435f55524c",
-                                                                                        "id": 31519,
+                                                                                        "id": 31625,
                                                                                         "isConstant": false,
                                                                                         "isLValue": false,
                                                                                         "isPure": true,
@@ -5622,7 +5622,7 @@ export const StdChains = {
                                                                                         }
                                                                                     ],
                                                                                     "expression": {
-                                                                                        "id": 31514,
+                                                                                        "id": 31620,
                                                                                         "name": "abi",
                                                                                         "nodeType": "Identifier",
                                                                                         "overloadedDeclarations": [],
@@ -5633,7 +5633,7 @@ export const StdChains = {
                                                                                             "typeString": "abi"
                                                                                         }
                                                                                     },
-                                                                                    "id": 31515,
+                                                                                    "id": 31621,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": true,
@@ -5647,7 +5647,7 @@ export const StdChains = {
                                                                                         "typeString": "function () pure returns (bytes memory)"
                                                                                     }
                                                                                 },
-                                                                                "id": 31520,
+                                                                                "id": 31626,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
@@ -5671,7 +5671,7 @@ export const StdChains = {
                                                                                     "typeString": "bytes memory"
                                                                                 }
                                                                             ],
-                                                                            "id": 31513,
+                                                                            "id": 31619,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -5683,14 +5683,14 @@ export const StdChains = {
                                                                                 "typeString": "type(string storage pointer)"
                                                                             },
                                                                             "typeName": {
-                                                                                "id": 31512,
+                                                                                "id": 31618,
                                                                                 "name": "string",
                                                                                 "nodeType": "ElementaryTypeName",
                                                                                 "src": "6793:6:146",
                                                                                 "typeDescriptions": {}
                                                                             }
                                                                         },
-                                                                        "id": 31521,
+                                                                        "id": 31627,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -5711,11 +5711,11 @@ export const StdChains = {
                                                                 },
                                                                 {
                                                                     "condition": {
-                                                                        "id": 31523,
+                                                                        "id": 31629,
                                                                         "name": "fallbackToDefaultRpcUrls",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 31156,
+                                                                        "referencedDeclaration": 31262,
                                                                         "src": "6873:24:146",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bool",
@@ -5723,31 +5723,31 @@ export const StdChains = {
                                                                         }
                                                                     },
                                                                     "falseBody": {
-                                                                        "id": 31546,
+                                                                        "id": 31652,
                                                                         "nodeType": "Block",
                                                                         "src": "7006:77:146",
                                                                         "statements": [
                                                                             {
                                                                                 "expression": {
-                                                                                    "id": 31544,
+                                                                                    "id": 31650,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": false,
                                                                                     "lValueRequested": false,
                                                                                     "leftHandSide": {
                                                                                         "expression": {
-                                                                                            "id": 31537,
+                                                                                            "id": 31643,
                                                                                             "name": "chain",
                                                                                             "nodeType": "Identifier",
                                                                                             "overloadedDeclarations": [],
-                                                                                            "referencedDeclaration": 31478,
+                                                                                            "referencedDeclaration": 31584,
                                                                                             "src": "7028:5:146",
                                                                                             "typeDescriptions": {
-                                                                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                                                                 "typeString": "struct StdChains.Chain memory"
                                                                                             }
                                                                                         },
-                                                                                        "id": 31539,
+                                                                                        "id": 31645,
                                                                                         "isConstant": false,
                                                                                         "isLValue": true,
                                                                                         "isPure": false,
@@ -5755,7 +5755,7 @@ export const StdChains = {
                                                                                         "memberLocation": "7034:6:146",
                                                                                         "memberName": "rpcUrl",
                                                                                         "nodeType": "MemberAccess",
-                                                                                        "referencedDeclaration": 31139,
+                                                                                        "referencedDeclaration": 31245,
                                                                                         "src": "7028:12:146",
                                                                                         "typeDescriptions": {
                                                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -5767,11 +5767,11 @@ export const StdChains = {
                                                                                     "rightHandSide": {
                                                                                         "arguments": [
                                                                                             {
-                                                                                                "id": 31542,
+                                                                                                "id": 31648,
                                                                                                 "name": "envName",
                                                                                                 "nodeType": "Identifier",
                                                                                                 "overloadedDeclarations": [],
-                                                                                                "referencedDeclaration": 31511,
+                                                                                                "referencedDeclaration": 31617,
                                                                                                 "src": "7056:7:146",
                                                                                                 "typeDescriptions": {
                                                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5787,18 +5787,18 @@ export const StdChains = {
                                                                                                 }
                                                                                             ],
                                                                                             "expression": {
-                                                                                                "id": 31540,
+                                                                                                "id": 31646,
                                                                                                 "name": "vm",
                                                                                                 "nodeType": "Identifier",
                                                                                                 "overloadedDeclarations": [],
-                                                                                                "referencedDeclaration": 31122,
+                                                                                                "referencedDeclaration": 31228,
                                                                                                 "src": "7043:2:146",
                                                                                                 "typeDescriptions": {
-                                                                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
+                                                                                                    "typeIdentifier": "t_contract$_VmSafe_$40412",
                                                                                                     "typeString": "contract VmSafe"
                                                                                                 }
                                                                                             },
-                                                                                            "id": 31541,
+                                                                                            "id": 31647,
                                                                                             "isConstant": false,
                                                                                             "isLValue": false,
                                                                                             "isPure": false,
@@ -5806,14 +5806,14 @@ export const StdChains = {
                                                                                             "memberLocation": "7046:9:146",
                                                                                             "memberName": "envString",
                                                                                             "nodeType": "MemberAccess",
-                                                                                            "referencedDeclaration": 39382,
+                                                                                            "referencedDeclaration": 39488,
                                                                                             "src": "7043:12:146",
                                                                                             "typeDescriptions": {
                                                                                                 "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                                                                 "typeString": "function (string memory) view external returns (string memory)"
                                                                                             }
                                                                                         },
-                                                                                        "id": 31543,
+                                                                                        "id": 31649,
                                                                                         "isConstant": false,
                                                                                         "isLValue": false,
                                                                                         "isPure": false,
@@ -5835,41 +5835,41 @@ export const StdChains = {
                                                                                         "typeString": "string memory"
                                                                                     }
                                                                                 },
-                                                                                "id": 31545,
+                                                                                "id": 31651,
                                                                                 "nodeType": "ExpressionStatement",
                                                                                 "src": "7028:36:146"
                                                                             }
                                                                         ]
                                                                     },
-                                                                    "id": 31547,
+                                                                    "id": 31653,
                                                                     "nodeType": "IfStatement",
                                                                     "src": "6869:214:146",
                                                                     "trueBody": {
-                                                                        "id": 31536,
+                                                                        "id": 31642,
                                                                         "nodeType": "Block",
                                                                         "src": "6899:101:146",
                                                                         "statements": [
                                                                             {
                                                                                 "expression": {
-                                                                                    "id": 31534,
+                                                                                    "id": 31640,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": false,
                                                                                     "lValueRequested": false,
                                                                                     "leftHandSide": {
                                                                                         "expression": {
-                                                                                            "id": 31524,
+                                                                                            "id": 31630,
                                                                                             "name": "chain",
                                                                                             "nodeType": "Identifier",
                                                                                             "overloadedDeclarations": [],
-                                                                                            "referencedDeclaration": 31478,
+                                                                                            "referencedDeclaration": 31584,
                                                                                             "src": "6921:5:146",
                                                                                             "typeDescriptions": {
-                                                                                                "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                                                                "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                                                                 "typeString": "struct StdChains.Chain memory"
                                                                                             }
                                                                                         },
-                                                                                        "id": 31526,
+                                                                                        "id": 31632,
                                                                                         "isConstant": false,
                                                                                         "isLValue": true,
                                                                                         "isPure": false,
@@ -5877,7 +5877,7 @@ export const StdChains = {
                                                                                         "memberLocation": "6927:6:146",
                                                                                         "memberName": "rpcUrl",
                                                                                         "nodeType": "MemberAccess",
-                                                                                        "referencedDeclaration": 31139,
+                                                                                        "referencedDeclaration": 31245,
                                                                                         "src": "6921:12:146",
                                                                                         "typeDescriptions": {
                                                                                             "typeIdentifier": "t_string_memory_ptr",
@@ -5889,11 +5889,11 @@ export const StdChains = {
                                                                                     "rightHandSide": {
                                                                                         "arguments": [
                                                                                             {
-                                                                                                "id": 31529,
+                                                                                                "id": 31635,
                                                                                                 "name": "envName",
                                                                                                 "nodeType": "Identifier",
                                                                                                 "overloadedDeclarations": [],
-                                                                                                "referencedDeclaration": 31511,
+                                                                                                "referencedDeclaration": 31617,
                                                                                                 "src": "6945:7:146",
                                                                                                 "typeDescriptions": {
                                                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5902,24 +5902,24 @@ export const StdChains = {
                                                                                             },
                                                                                             {
                                                                                                 "baseExpression": {
-                                                                                                    "id": 31530,
+                                                                                                    "id": 31636,
                                                                                                     "name": "defaultRpcUrls",
                                                                                                     "nodeType": "Identifier",
                                                                                                     "overloadedDeclarations": [],
-                                                                                                    "referencedDeclaration": 31149,
+                                                                                                    "referencedDeclaration": 31255,
                                                                                                     "src": "6954:14:146",
                                                                                                     "typeDescriptions": {
                                                                                                         "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_string_storage_$",
                                                                                                         "typeString": "mapping(string memory => string storage ref)"
                                                                                                     }
                                                                                                 },
-                                                                                                "id": 31532,
+                                                                                                "id": 31638,
                                                                                                 "indexExpression": {
-                                                                                                    "id": 31531,
+                                                                                                    "id": 31637,
                                                                                                     "name": "chainAlias",
                                                                                                     "nodeType": "Identifier",
                                                                                                     "overloadedDeclarations": [],
-                                                                                                    "referencedDeclaration": 31475,
+                                                                                                    "referencedDeclaration": 31581,
                                                                                                     "src": "6969:10:146",
                                                                                                     "typeDescriptions": {
                                                                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -5950,18 +5950,18 @@ export const StdChains = {
                                                                                                 }
                                                                                             ],
                                                                                             "expression": {
-                                                                                                "id": 31527,
+                                                                                                "id": 31633,
                                                                                                 "name": "vm",
                                                                                                 "nodeType": "Identifier",
                                                                                                 "overloadedDeclarations": [],
-                                                                                                "referencedDeclaration": 31122,
+                                                                                                "referencedDeclaration": 31228,
                                                                                                 "src": "6936:2:146",
                                                                                                 "typeDescriptions": {
-                                                                                                    "typeIdentifier": "t_contract$_VmSafe_$40306",
+                                                                                                    "typeIdentifier": "t_contract$_VmSafe_$40412",
                                                                                                     "typeString": "contract VmSafe"
                                                                                                 }
                                                                                             },
-                                                                                            "id": 31528,
+                                                                                            "id": 31634,
                                                                                             "isConstant": false,
                                                                                             "isLValue": false,
                                                                                             "isPure": false,
@@ -5969,14 +5969,14 @@ export const StdChains = {
                                                                                             "memberLocation": "6939:5:146",
                                                                                             "memberName": "envOr",
                                                                                             "nodeType": "MemberAccess",
-                                                                                            "referencedDeclaration": 39513,
+                                                                                            "referencedDeclaration": 39619,
                                                                                             "src": "6936:8:146",
                                                                                             "typeDescriptions": {
                                                                                                 "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                                                                 "typeString": "function (string memory,string memory) external returns (string memory)"
                                                                                             }
                                                                                         },
-                                                                                        "id": 31533,
+                                                                                        "id": 31639,
                                                                                         "isConstant": false,
                                                                                         "isLValue": false,
                                                                                         "isPure": false,
@@ -5998,7 +5998,7 @@ export const StdChains = {
                                                                                         "typeString": "string memory"
                                                                                     }
                                                                                 },
-                                                                                "id": 31535,
+                                                                                "id": 31641,
                                                                                 "nodeType": "ExpressionStatement",
                                                                                 "src": "6921:60:146"
                                                                             }
@@ -6007,17 +6007,17 @@ export const StdChains = {
                                                                 },
                                                                 {
                                                                     "assignments": [
-                                                                        31549
+                                                                        31655
                                                                     ],
                                                                     "declarations": [
                                                                         {
                                                                             "constant": false,
-                                                                            "id": 31549,
+                                                                            "id": 31655,
                                                                             "mutability": "mutable",
                                                                             "name": "notFoundError",
                                                                             "nameLocation": "7175:13:146",
                                                                             "nodeType": "VariableDeclaration",
-                                                                            "scope": 31582,
+                                                                            "scope": 31688,
                                                                             "src": "7162:26:146",
                                                                             "stateVariable": false,
                                                                             "storageLocation": "memory",
@@ -6026,7 +6026,7 @@ export const StdChains = {
                                                                                 "typeString": "bytes"
                                                                             },
                                                                             "typeName": {
-                                                                                "id": 31548,
+                                                                                "id": 31654,
                                                                                 "name": "bytes",
                                                                                 "nodeType": "ElementaryTypeName",
                                                                                 "src": "7162:5:146",
@@ -6038,12 +6038,12 @@ export const StdChains = {
                                                                             "visibility": "internal"
                                                                         }
                                                                     ],
-                                                                    "id": 31562,
+                                                                    "id": 31668,
                                                                     "initialValue": {
                                                                         "arguments": [
                                                                             {
                                                                                 "hexValue": "4368656174436f64654572726f72",
-                                                                                "id": 31552,
+                                                                                "id": 31658,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
@@ -6063,7 +6063,7 @@ export const StdChains = {
                                                                                         "arguments": [
                                                                                             {
                                                                                                 "hexValue": "696e76616c6964207270632075726c20",
-                                                                                                "id": 31557,
+                                                                                                "id": 31663,
                                                                                                 "isConstant": false,
                                                                                                 "isLValue": false,
                                                                                                 "isPure": true,
@@ -6078,11 +6078,11 @@ export const StdChains = {
                                                                                                 "value": "invalid rpc url "
                                                                                             },
                                                                                             {
-                                                                                                "id": 31558,
+                                                                                                "id": 31664,
                                                                                                 "name": "chainAlias",
                                                                                                 "nodeType": "Identifier",
                                                                                                 "overloadedDeclarations": [],
-                                                                                                "referencedDeclaration": 31475,
+                                                                                                "referencedDeclaration": 31581,
                                                                                                 "src": "7297:10:146",
                                                                                                 "typeDescriptions": {
                                                                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -6102,7 +6102,7 @@ export const StdChains = {
                                                                                                 }
                                                                                             ],
                                                                                             "expression": {
-                                                                                                "id": 31555,
+                                                                                                "id": 31661,
                                                                                                 "name": "abi",
                                                                                                 "nodeType": "Identifier",
                                                                                                 "overloadedDeclarations": [],
@@ -6113,7 +6113,7 @@ export const StdChains = {
                                                                                                     "typeString": "abi"
                                                                                                 }
                                                                                             },
-                                                                                            "id": 31556,
+                                                                                            "id": 31662,
                                                                                             "isConstant": false,
                                                                                             "isLValue": false,
                                                                                             "isPure": true,
@@ -6127,7 +6127,7 @@ export const StdChains = {
                                                                                                 "typeString": "function () pure returns (bytes memory)"
                                                                                             }
                                                                                         },
-                                                                                        "id": 31559,
+                                                                                        "id": 31665,
                                                                                         "isConstant": false,
                                                                                         "isLValue": false,
                                                                                         "isPure": false,
@@ -6151,7 +6151,7 @@ export const StdChains = {
                                                                                             "typeString": "bytes memory"
                                                                                         }
                                                                                     ],
-                                                                                    "id": 31554,
+                                                                                    "id": 31660,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": true,
@@ -6163,14 +6163,14 @@ export const StdChains = {
                                                                                         "typeString": "type(string storage pointer)"
                                                                                     },
                                                                                     "typeName": {
-                                                                                        "id": 31553,
+                                                                                        "id": 31659,
                                                                                         "name": "string",
                                                                                         "nodeType": "ElementaryTypeName",
                                                                                         "src": "7253:6:146",
                                                                                         "typeDescriptions": {}
                                                                                     }
                                                                                 },
-                                                                                "id": 31560,
+                                                                                "id": 31666,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
@@ -6199,7 +6199,7 @@ export const StdChains = {
                                                                                 }
                                                                             ],
                                                                             "expression": {
-                                                                                "id": 31550,
+                                                                                "id": 31656,
                                                                                 "name": "abi",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
@@ -6210,7 +6210,7 @@ export const StdChains = {
                                                                                     "typeString": "abi"
                                                                                 }
                                                                             },
-                                                                            "id": 31551,
+                                                                            "id": 31657,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -6224,7 +6224,7 @@ export const StdChains = {
                                                                                 "typeString": "function (string memory) pure returns (bytes memory)"
                                                                             }
                                                                         },
-                                                                        "id": 31561,
+                                                                        "id": 31667,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -6249,7 +6249,7 @@ export const StdChains = {
                                                                             "typeIdentifier": "t_bool",
                                                                             "typeString": "bool"
                                                                         },
-                                                                        "id": 31578,
+                                                                        "id": 31684,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -6259,7 +6259,7 @@ export const StdChains = {
                                                                                 "typeIdentifier": "t_bytes32",
                                                                                 "typeString": "bytes32"
                                                                             },
-                                                                            "id": 31569,
+                                                                            "id": 31675,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -6267,11 +6267,11 @@ export const StdChains = {
                                                                             "leftExpression": {
                                                                                 "arguments": [
                                                                                     {
-                                                                                        "id": 31564,
+                                                                                        "id": 31670,
                                                                                         "name": "notFoundError",
                                                                                         "nodeType": "Identifier",
                                                                                         "overloadedDeclarations": [],
-                                                                                        "referencedDeclaration": 31549,
+                                                                                        "referencedDeclaration": 31655,
                                                                                         "src": "7342:13:146",
                                                                                         "typeDescriptions": {
                                                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -6286,7 +6286,7 @@ export const StdChains = {
                                                                                             "typeString": "bytes memory"
                                                                                         }
                                                                                     ],
-                                                                                    "id": 31563,
+                                                                                    "id": 31669,
                                                                                     "name": "keccak256",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
@@ -6297,7 +6297,7 @@ export const StdChains = {
                                                                                         "typeString": "function (bytes memory) pure returns (bytes32)"
                                                                                     }
                                                                                 },
-                                                                                "id": 31565,
+                                                                                "id": 31671,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
@@ -6318,11 +6318,11 @@ export const StdChains = {
                                                                             "rightExpression": {
                                                                                 "arguments": [
                                                                                     {
-                                                                                        "id": 31567,
+                                                                                        "id": 31673,
                                                                                         "name": "err",
                                                                                         "nodeType": "Identifier",
                                                                                         "overloadedDeclarations": [],
-                                                                                        "referencedDeclaration": 31508,
+                                                                                        "referencedDeclaration": 31614,
                                                                                         "src": "7370:3:146",
                                                                                         "typeDescriptions": {
                                                                                             "typeIdentifier": "t_bytes_memory_ptr",
@@ -6337,7 +6337,7 @@ export const StdChains = {
                                                                                             "typeString": "bytes memory"
                                                                                         }
                                                                                     ],
-                                                                                    "id": 31566,
+                                                                                    "id": 31672,
                                                                                     "name": "keccak256",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
@@ -6348,7 +6348,7 @@ export const StdChains = {
                                                                                         "typeString": "function (bytes memory) pure returns (bytes32)"
                                                                                     }
                                                                                 },
-                                                                                "id": 31568,
+                                                                                "id": 31674,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
@@ -6377,7 +6377,7 @@ export const StdChains = {
                                                                                 "typeIdentifier": "t_uint256",
                                                                                 "typeString": "uint256"
                                                                             },
-                                                                            "id": 31577,
+                                                                            "id": 31683,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -6387,18 +6387,18 @@ export const StdChains = {
                                                                                     "arguments": [
                                                                                         {
                                                                                             "expression": {
-                                                                                                "id": 31572,
+                                                                                                "id": 31678,
                                                                                                 "name": "chain",
                                                                                                 "nodeType": "Identifier",
                                                                                                 "overloadedDeclarations": [],
-                                                                                                "referencedDeclaration": 31478,
+                                                                                                "referencedDeclaration": 31584,
                                                                                                 "src": "7384:5:146",
                                                                                                 "typeDescriptions": {
-                                                                                                    "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                                                                                    "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                                                                                     "typeString": "struct StdChains.Chain memory"
                                                                                                 }
                                                                                             },
-                                                                                            "id": 31573,
+                                                                                            "id": 31679,
                                                                                             "isConstant": false,
                                                                                             "isLValue": true,
                                                                                             "isPure": false,
@@ -6406,7 +6406,7 @@ export const StdChains = {
                                                                                             "memberLocation": "7390:6:146",
                                                                                             "memberName": "rpcUrl",
                                                                                             "nodeType": "MemberAccess",
-                                                                                            "referencedDeclaration": 31139,
+                                                                                            "referencedDeclaration": 31245,
                                                                                             "src": "7384:12:146",
                                                                                             "typeDescriptions": {
                                                                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -6421,7 +6421,7 @@ export const StdChains = {
                                                                                                 "typeString": "string memory"
                                                                                             }
                                                                                         ],
-                                                                                        "id": 31571,
+                                                                                        "id": 31677,
                                                                                         "isConstant": false,
                                                                                         "isLValue": false,
                                                                                         "isPure": true,
@@ -6433,14 +6433,14 @@ export const StdChains = {
                                                                                             "typeString": "type(bytes storage pointer)"
                                                                                         },
                                                                                         "typeName": {
-                                                                                            "id": 31570,
+                                                                                            "id": 31676,
                                                                                             "name": "bytes",
                                                                                             "nodeType": "ElementaryTypeName",
                                                                                             "src": "7378:5:146",
                                                                                             "typeDescriptions": {}
                                                                                         }
                                                                                     },
-                                                                                    "id": 31574,
+                                                                                    "id": 31680,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": false,
@@ -6456,7 +6456,7 @@ export const StdChains = {
                                                                                         "typeString": "bytes memory"
                                                                                     }
                                                                                 },
-                                                                                "id": 31575,
+                                                                                "id": 31681,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
@@ -6474,7 +6474,7 @@ export const StdChains = {
                                                                             "operator": "==",
                                                                             "rightExpression": {
                                                                                 "hexValue": "30",
-                                                                                "id": 31576,
+                                                                                "id": 31682,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
@@ -6500,11 +6500,11 @@ export const StdChains = {
                                                                             "typeString": "bool"
                                                                         }
                                                                     },
-                                                                    "id": 31581,
+                                                                    "id": 31687,
                                                                     "nodeType": "IfStatement",
                                                                     "src": "7328:267:146",
                                                                     "trueBody": {
-                                                                        "id": 31580,
+                                                                        "id": 31686,
                                                                         "nodeType": "Block",
                                                                         "src": "7411:184:146",
                                                                         "statements": [
@@ -6573,21 +6573,21 @@ export const StdChains = {
                                                                                 "evmVersion": "paris",
                                                                                 "externalReferences": [
                                                                                     {
-                                                                                        "declaration": 31508,
+                                                                                        "declaration": 31614,
                                                                                         "isOffset": false,
                                                                                         "isSlot": false,
                                                                                         "src": "7538:3:146",
                                                                                         "valueSize": 1
                                                                                     },
                                                                                     {
-                                                                                        "declaration": 31508,
+                                                                                        "declaration": 31614,
                                                                                         "isOffset": false,
                                                                                         "isSlot": false,
                                                                                         "src": "7550:3:146",
                                                                                         "valueSize": 1
                                                                                     }
                                                                                 ],
-                                                                                "id": 31579,
+                                                                                "id": 31685,
                                                                                 "nodeType": "InlineAssembly",
                                                                                 "src": "7488:89:146"
                                                                             }
@@ -6597,20 +6597,20 @@ export const StdChains = {
                                                             ]
                                                         },
                                                         "errorName": "",
-                                                        "id": 31583,
+                                                        "id": 31689,
                                                         "nodeType": "TryCatchClause",
                                                         "parameters": {
-                                                            "id": 31509,
+                                                            "id": 31615,
                                                             "nodeType": "ParameterList",
                                                             "parameters": [
                                                                 {
                                                                     "constant": false,
-                                                                    "id": 31508,
+                                                                    "id": 31614,
                                                                     "mutability": "mutable",
                                                                     "name": "err",
                                                                     "nameLocation": "6746:3:146",
                                                                     "nodeType": "VariableDeclaration",
-                                                                    "scope": 31583,
+                                                                    "scope": 31689,
                                                                     "src": "6733:16:146",
                                                                     "stateVariable": false,
                                                                     "storageLocation": "memory",
@@ -6619,7 +6619,7 @@ export const StdChains = {
                                                                         "typeString": "bytes"
                                                                     },
                                                                     "typeName": {
-                                                                        "id": 31507,
+                                                                        "id": 31613,
                                                                         "name": "bytes",
                                                                         "nodeType": "ElementaryTypeName",
                                                                         "src": "6733:5:146",
@@ -6639,11 +6639,11 @@ export const StdChains = {
                                                 "externalCall": {
                                                     "arguments": [
                                                         {
-                                                            "id": 31494,
+                                                            "id": 31600,
                                                             "name": "chainAlias",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 31475,
+                                                            "referencedDeclaration": 31581,
                                                             "src": "6616:10:146",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -6659,18 +6659,18 @@ export const StdChains = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 31492,
+                                                            "id": 31598,
                                                             "name": "vm",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 31122,
+                                                            "referencedDeclaration": 31228,
                                                             "src": "6606:2:146",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_contract$_VmSafe_$40306",
+                                                                "typeIdentifier": "t_contract$_VmSafe_$40412",
                                                                 "typeString": "contract VmSafe"
                                                             }
                                                         },
-                                                        "id": 31493,
+                                                        "id": 31599,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -6678,14 +6678,14 @@ export const StdChains = {
                                                         "memberLocation": "6609:6:146",
                                                         "memberName": "rpcUrl",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 40267,
+                                                        "referencedDeclaration": 40373,
                                                         "src": "6606:9:146",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                                             "typeString": "function (string memory) view external returns (string memory)"
                                                         }
                                                     },
-                                                    "id": 31495,
+                                                    "id": 31601,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -6701,7 +6701,7 @@ export const StdChains = {
                                                         "typeString": "string memory"
                                                     }
                                                 },
-                                                "id": 31584,
+                                                "id": 31690,
                                                 "nodeType": "TryStatement",
                                                 "src": "6602:1007:146"
                                             }
@@ -6710,19 +6710,19 @@ export const StdChains = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 31587,
+                                        "id": 31693,
                                         "name": "chain",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 31478,
+                                        "referencedDeclaration": 31584,
                                         "src": "7635:5:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                             "typeString": "struct StdChains.Chain memory"
                                         }
                                     },
-                                    "functionReturnParameters": 31483,
-                                    "id": 31588,
+                                    "functionReturnParameters": 31589,
+                                    "id": 31694,
                                     "nodeType": "Return",
                                     "src": "7628:12:146"
                                 }
@@ -6734,17 +6734,17 @@ export const StdChains = {
                         "name": "getChainWithUpdatedRpcUrl",
                         "nameLocation": "6438:25:146",
                         "parameters": {
-                            "id": 31479,
+                            "id": 31585,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31475,
+                                    "id": 31581,
                                     "mutability": "mutable",
                                     "name": "chainAlias",
                                     "nameLocation": "6478:10:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31590,
+                                    "scope": 31696,
                                     "src": "6464:24:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6753,7 +6753,7 @@ export const StdChains = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 31474,
+                                        "id": 31580,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6464:6:146",
@@ -6766,36 +6766,36 @@ export const StdChains = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 31478,
+                                    "id": 31584,
                                     "mutability": "mutable",
                                     "name": "chain",
                                     "nameLocation": "6503:5:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31590,
+                                    "scope": 31696,
                                     "src": "6490:18:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                         "typeString": "struct StdChains.Chain"
                                     },
                                     "typeName": {
-                                        "id": 31477,
+                                        "id": 31583,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 31476,
+                                            "id": 31582,
                                             "name": "Chain",
                                             "nameLocations": [
                                                 "6490:5:146"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 31140,
+                                            "referencedDeclaration": 31246,
                                             "src": "6490:5:146"
                                         },
-                                        "referencedDeclaration": 31140,
+                                        "referencedDeclaration": 31246,
                                         "src": "6490:5:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_storage_ptr",
                                             "typeString": "struct StdChains.Chain"
                                         }
                                     },
@@ -6805,41 +6805,41 @@ export const StdChains = {
                             "src": "6463:46:146"
                         },
                         "returnParameters": {
-                            "id": 31483,
+                            "id": 31589,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31482,
+                                    "id": 31588,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31590,
+                                    "scope": 31696,
                                     "src": "6527:12:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_Chain_$31140_memory_ptr",
+                                        "typeIdentifier": "t_struct$_Chain_$31246_memory_ptr",
                                         "typeString": "struct StdChains.Chain"
                                     },
                                     "typeName": {
-                                        "id": 31481,
+                                        "id": 31587,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 31480,
+                                            "id": 31586,
                                             "name": "Chain",
                                             "nameLocations": [
                                                 "6527:5:146"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 31140,
+                                            "referencedDeclaration": 31246,
                                             "src": "6527:5:146"
                                         },
-                                        "referencedDeclaration": 31140,
+                                        "referencedDeclaration": 31246,
                                         "src": "6527:5:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_Chain_$31140_storage_ptr",
+                                            "typeIdentifier": "t_struct$_Chain_$31246_storage_ptr",
                                             "typeString": "struct StdChains.Chain"
                                         }
                                     },
@@ -6848,35 +6848,35 @@ export const StdChains = {
                             ],
                             "src": "6526:14:146"
                         },
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "private"
                     },
                     {
-                        "id": 31600,
+                        "id": 31706,
                         "nodeType": "FunctionDefinition",
                         "src": "7653:117:146",
                         "nodes": [],
                         "body": {
-                            "id": 31599,
+                            "id": 31705,
                             "nodeType": "Block",
                             "src": "7716:54:146",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 31597,
+                                        "id": 31703,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 31595,
+                                            "id": 31701,
                                             "name": "fallbackToDefaultRpcUrls",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31156,
+                                            "referencedDeclaration": 31262,
                                             "src": "7726:24:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
@@ -6886,11 +6886,11 @@ export const StdChains = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 31596,
+                                            "id": 31702,
                                             "name": "useDefault",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31592,
+                                            "referencedDeclaration": 31698,
                                             "src": "7753:10:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
@@ -6903,7 +6903,7 @@ export const StdChains = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 31598,
+                                    "id": 31704,
                                     "nodeType": "ExpressionStatement",
                                     "src": "7726:37:146"
                                 }
@@ -6915,17 +6915,17 @@ export const StdChains = {
                         "name": "setFallbackToDefaultRpcUrls",
                         "nameLocation": "7662:27:146",
                         "parameters": {
-                            "id": 31593,
+                            "id": 31699,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31592,
+                                    "id": 31698,
                                     "mutability": "mutable",
                                     "name": "useDefault",
                                     "nameLocation": "7695:10:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31600,
+                                    "scope": 31706,
                                     "src": "7690:15:146",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6934,7 +6934,7 @@ export const StdChains = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 31591,
+                                        "id": 31697,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7690:4:146",
@@ -6949,63 +6949,63 @@ export const StdChains = {
                             "src": "7689:17:146"
                         },
                         "returnParameters": {
-                            "id": 31594,
+                            "id": 31700,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7716:0:146"
                         },
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 31782,
+                        "id": 31888,
                         "nodeType": "FunctionDefinition",
                         "src": "7776:2751:146",
                         "nodes": [],
                         "body": {
-                            "id": 31781,
+                            "id": 31887,
                             "nodeType": "Block",
                             "src": "7815:2712:146",
                             "nodes": [],
                             "statements": [
                                 {
                                     "condition": {
-                                        "id": 31603,
+                                        "id": 31709,
                                         "name": "stdChainsInitialized",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 31124,
+                                        "referencedDeclaration": 31230,
                                         "src": "7829:20:146",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 31605,
+                                    "id": 31711,
                                     "nodeType": "IfStatement",
                                     "src": "7825:33:146",
                                     "trueBody": {
-                                        "functionReturnParameters": 31602,
-                                        "id": 31604,
+                                        "functionReturnParameters": 31708,
+                                        "id": 31710,
                                         "nodeType": "Return",
                                         "src": "7851:7:146"
                                     }
                                 },
                                 {
                                     "expression": {
-                                        "id": 31608,
+                                        "id": 31714,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 31606,
+                                            "id": 31712,
                                             "name": "stdChainsInitialized",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31124,
+                                            "referencedDeclaration": 31230,
                                             "src": "7868:20:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
@@ -7016,7 +7016,7 @@ export const StdChains = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "hexValue": "74727565",
-                                            "id": 31607,
+                                            "id": 31713,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -7036,7 +7036,7 @@ export const StdChains = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 31609,
+                                    "id": 31715,
                                     "nodeType": "ExpressionStatement",
                                     "src": "7868:27:146"
                                 },
@@ -7045,7 +7045,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "616e76696c",
-                                                "id": 31611,
+                                                "id": 31717,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7063,7 +7063,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "416e76696c",
-                                                        "id": 31613,
+                                                        "id": 31719,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7079,7 +7079,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3331333337",
-                                                        "id": 31614,
+                                                        "id": 31720,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7095,7 +7095,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "687474703a2f2f3132372e302e302e313a38353435",
-                                                        "id": 31615,
+                                                        "id": 31721,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7125,18 +7125,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"http://127.0.0.1:8545\""
                                                         }
                                                     ],
-                                                    "id": 31612,
+                                                    "id": 31718,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "8027:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31616,
+                                                "id": 31722,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7148,7 +7148,7 @@ export const StdChains = {
                                                 "src": "8027:50:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -7160,22 +7160,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"anvil\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31610,
+                                            "id": 31716,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "7992:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31617,
+                                        "id": 31723,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7191,7 +7191,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31618,
+                                    "id": 31724,
                                     "nodeType": "ExpressionStatement",
                                     "src": "7992:86:146"
                                 },
@@ -7200,7 +7200,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "6d61696e6e6574",
-                                                "id": 31620,
+                                                "id": 31726,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7218,7 +7218,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "4d61696e6e6574",
-                                                        "id": 31622,
+                                                        "id": 31728,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7234,7 +7234,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "31",
-                                                        "id": 31623,
+                                                        "id": 31729,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7250,7 +7250,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f6d61696e6e65742e696e667572612e696f2f76332f6239373934616431646466383464666238633334643662623564636132303031",
-                                                        "id": 31624,
+                                                        "id": 31730,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7280,18 +7280,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://mainnet.infura.io/v3/b9794ad1ddf84dfb8c34d6bb5dca2001\""
                                                         }
                                                     ],
-                                                    "id": 31621,
+                                                    "id": 31727,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "8138:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31625,
+                                                "id": 31731,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7303,7 +7303,7 @@ export const StdChains = {
                                                 "src": "8138:88:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -7315,22 +7315,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"mainnet\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31619,
+                                            "id": 31725,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "8088:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31626,
+                                        "id": 31732,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7346,7 +7346,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31627,
+                                    "id": 31733,
                                     "nodeType": "ExpressionStatement",
                                     "src": "8088:148:146"
                                 },
@@ -7355,7 +7355,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "676f65726c69",
-                                                "id": 31629,
+                                                "id": 31735,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7373,7 +7373,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "476f65726c69",
-                                                        "id": 31631,
+                                                        "id": 31737,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7389,7 +7389,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "35",
-                                                        "id": 31632,
+                                                        "id": 31738,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7405,7 +7405,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f676f65726c692e696e667572612e696f2f76332f6239373934616431646466383464666238633334643662623564636132303031",
-                                                        "id": 31633,
+                                                        "id": 31739,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7435,18 +7435,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://goerli.infura.io/v3/b9794ad1ddf84dfb8c34d6bb5dca2001\""
                                                         }
                                                     ],
-                                                    "id": 31630,
+                                                    "id": 31736,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "8295:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31634,
+                                                "id": 31740,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7458,7 +7458,7 @@ export const StdChains = {
                                                 "src": "8295:86:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -7470,22 +7470,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"goerli\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31628,
+                                            "id": 31734,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "8246:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31635,
+                                        "id": 31741,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7501,7 +7501,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31636,
+                                    "id": 31742,
                                     "nodeType": "ExpressionStatement",
                                     "src": "8246:145:146"
                                 },
@@ -7510,7 +7510,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "7365706f6c6961",
-                                                "id": 31638,
+                                                "id": 31744,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7528,7 +7528,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "5365706f6c6961",
-                                                        "id": 31640,
+                                                        "id": 31746,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7544,7 +7544,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3131313535313131",
-                                                        "id": 31641,
+                                                        "id": 31747,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7560,7 +7560,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f7365706f6c69612e696e667572612e696f2f76332f6239373934616431646466383464666238633334643662623564636132303031",
-                                                        "id": 31642,
+                                                        "id": 31748,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7590,18 +7590,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://sepolia.infura.io/v3/b9794ad1ddf84dfb8c34d6bb5dca2001\""
                                                         }
                                                     ],
-                                                    "id": 31639,
+                                                    "id": 31745,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "8451:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31643,
+                                                "id": 31749,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7613,7 +7613,7 @@ export const StdChains = {
                                                 "src": "8451:95:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -7625,22 +7625,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"sepolia\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31637,
+                                            "id": 31743,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "8401:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31644,
+                                        "id": 31750,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7656,7 +7656,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31645,
+                                    "id": 31751,
                                     "nodeType": "ExpressionStatement",
                                     "src": "8401:155:146"
                                 },
@@ -7665,7 +7665,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "6f7074696d69736d",
-                                                "id": 31647,
+                                                "id": 31753,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7683,7 +7683,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "4f7074696d69736d",
-                                                        "id": 31649,
+                                                        "id": 31755,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7699,7 +7699,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3130",
-                                                        "id": 31650,
+                                                        "id": 31756,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7715,7 +7715,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f6d61696e6e65742e6f7074696d69736d2e696f",
-                                                        "id": 31651,
+                                                        "id": 31757,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7745,18 +7745,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://mainnet.optimism.io\""
                                                         }
                                                     ],
-                                                    "id": 31648,
+                                                    "id": 31754,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "8604:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31652,
+                                                "id": 31758,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7768,7 +7768,7 @@ export const StdChains = {
                                                 "src": "8604:56:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -7780,22 +7780,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"optimism\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31646,
+                                            "id": 31752,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "8566:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31653,
+                                        "id": 31759,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7811,7 +7811,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31654,
+                                    "id": 31760,
                                     "nodeType": "ExpressionStatement",
                                     "src": "8566:95:146"
                                 },
@@ -7820,7 +7820,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "6f7074696d69736d5f676f65726c69",
-                                                "id": 31656,
+                                                "id": 31762,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7838,7 +7838,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "4f7074696d69736d20476f65726c69",
-                                                        "id": 31658,
+                                                        "id": 31764,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7854,7 +7854,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "343230",
-                                                        "id": 31659,
+                                                        "id": 31765,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7870,7 +7870,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f676f65726c692e6f7074696d69736d2e696f",
-                                                        "id": 31660,
+                                                        "id": 31766,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7900,18 +7900,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://goerli.optimism.io\""
                                                         }
                                                     ],
-                                                    "id": 31657,
+                                                    "id": 31763,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "8716:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31661,
+                                                "id": 31767,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7923,7 +7923,7 @@ export const StdChains = {
                                                 "src": "8716:63:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -7935,22 +7935,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"optimism_goerli\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31655,
+                                            "id": 31761,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "8671:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31662,
+                                        "id": 31768,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7966,7 +7966,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31663,
+                                    "id": 31769,
                                     "nodeType": "ExpressionStatement",
                                     "src": "8671:109:146"
                                 },
@@ -7975,7 +7975,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "617262697472756d5f6f6e65",
-                                                "id": 31665,
+                                                "id": 31771,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -7993,7 +7993,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "417262697472756d204f6e65",
-                                                        "id": 31667,
+                                                        "id": 31773,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8009,7 +8009,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3432313631",
-                                                        "id": 31668,
+                                                        "id": 31774,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8025,7 +8025,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f617262312e617262697472756d2e696f2f727063",
-                                                        "id": 31669,
+                                                        "id": 31775,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8055,18 +8055,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://arb1.arbitrum.io/rpc\""
                                                         }
                                                     ],
-                                                    "id": 31666,
+                                                    "id": 31772,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "8832:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31670,
+                                                "id": 31776,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8078,7 +8078,7 @@ export const StdChains = {
                                                 "src": "8832:64:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -8090,22 +8090,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"arbitrum_one\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31664,
+                                            "id": 31770,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "8790:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31671,
+                                        "id": 31777,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8121,7 +8121,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31672,
+                                    "id": 31778,
                                     "nodeType": "ExpressionStatement",
                                     "src": "8790:107:146"
                                 },
@@ -8130,7 +8130,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "617262697472756d5f6f6e655f676f65726c69",
-                                                "id": 31674,
+                                                "id": 31780,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8148,7 +8148,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "417262697472756d204f6e6520476f65726c69",
-                                                        "id": 31676,
+                                                        "id": 31782,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8164,7 +8164,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "343231363133",
-                                                        "id": 31677,
+                                                        "id": 31783,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8180,7 +8180,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f676f65726c692d726f6c6c75702e617262697472756d2e696f2f727063",
-                                                        "id": 31678,
+                                                        "id": 31784,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8210,18 +8210,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://goerli-rollup.arbitrum.io/rpc\""
                                                         }
                                                     ],
-                                                    "id": 31675,
+                                                    "id": 31781,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "8969:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31679,
+                                                "id": 31785,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8233,7 +8233,7 @@ export const StdChains = {
                                                 "src": "8969:81:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -8245,22 +8245,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"arbitrum_one_goerli\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31673,
+                                            "id": 31779,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "8907:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31680,
+                                        "id": 31786,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8276,7 +8276,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31681,
+                                    "id": 31787,
                                     "nodeType": "ExpressionStatement",
                                     "src": "8907:153:146"
                                 },
@@ -8285,7 +8285,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "617262697472756d5f6e6f7661",
-                                                "id": 31683,
+                                                "id": 31789,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8303,7 +8303,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "417262697472756d204e6f7661",
-                                                        "id": 31685,
+                                                        "id": 31791,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8319,7 +8319,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3432313730",
-                                                        "id": 31686,
+                                                        "id": 31792,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8335,7 +8335,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f6e6f76612e617262697472756d2e696f2f727063",
-                                                        "id": 31687,
+                                                        "id": 31793,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8365,18 +8365,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://nova.arbitrum.io/rpc\""
                                                         }
                                                     ],
-                                                    "id": 31684,
+                                                    "id": 31790,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "9113:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31688,
+                                                "id": 31794,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8388,7 +8388,7 @@ export const StdChains = {
                                                 "src": "9113:65:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -8400,22 +8400,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"arbitrum_nova\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31682,
+                                            "id": 31788,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "9070:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31689,
+                                        "id": 31795,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8431,7 +8431,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31690,
+                                    "id": 31796,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9070:109:146"
                                 },
@@ -8440,7 +8440,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "706f6c79676f6e",
-                                                "id": 31692,
+                                                "id": 31798,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8458,7 +8458,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "506f6c79676f6e",
-                                                        "id": 31694,
+                                                        "id": 31800,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8474,7 +8474,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "313337",
-                                                        "id": 31695,
+                                                        "id": 31801,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8490,7 +8490,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f706f6c79676f6e2d7270632e636f6d",
-                                                        "id": 31696,
+                                                        "id": 31802,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8520,18 +8520,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://polygon-rpc.com\""
                                                         }
                                                     ],
-                                                    "id": 31693,
+                                                    "id": 31799,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "9226:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31697,
+                                                "id": 31803,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8543,7 +8543,7 @@ export const StdChains = {
                                                 "src": "9226:52:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -8555,22 +8555,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"polygon\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31691,
+                                            "id": 31797,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "9189:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31698,
+                                        "id": 31804,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8586,7 +8586,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31699,
+                                    "id": 31805,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9189:90:146"
                                 },
@@ -8595,7 +8595,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "706f6c79676f6e5f6d756d626169",
-                                                "id": 31701,
+                                                "id": 31807,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8613,7 +8613,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "506f6c79676f6e204d756d626169",
-                                                        "id": 31703,
+                                                        "id": 31809,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8629,7 +8629,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3830303031",
-                                                        "id": 31704,
+                                                        "id": 31810,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8645,7 +8645,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f7270632d6d756d6261692e6d61746963766967696c2e636f6d",
-                                                        "id": 31705,
+                                                        "id": 31811,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8675,18 +8675,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://rpc-mumbai.maticvigil.com\""
                                                         }
                                                     ],
-                                                    "id": 31702,
+                                                    "id": 31808,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "9346:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31706,
+                                                "id": 31812,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8698,7 +8698,7 @@ export const StdChains = {
                                                 "src": "9346:71:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -8710,22 +8710,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"polygon_mumbai\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31700,
+                                            "id": 31806,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "9289:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31707,
+                                        "id": 31813,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8741,7 +8741,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31708,
+                                    "id": 31814,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9289:138:146"
                                 },
@@ -8750,7 +8750,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "6176616c616e636865",
-                                                "id": 31710,
+                                                "id": 31816,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8768,7 +8768,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "4176616c616e636865",
-                                                        "id": 31712,
+                                                        "id": 31818,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8784,7 +8784,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3433313134",
-                                                        "id": 31713,
+                                                        "id": 31819,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8800,7 +8800,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f6170692e617661782e6e6574776f726b2f6578742f62632f432f727063",
-                                                        "id": 31714,
+                                                        "id": 31820,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8830,18 +8830,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://api.avax.network/ext/bc/C/rpc\""
                                                         }
                                                     ],
-                                                    "id": 31711,
+                                                    "id": 31817,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "9476:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31715,
+                                                "id": 31821,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8853,7 +8853,7 @@ export const StdChains = {
                                                 "src": "9476:70:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -8865,22 +8865,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"avalanche\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31709,
+                                            "id": 31815,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "9437:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31716,
+                                        "id": 31822,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8896,7 +8896,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31717,
+                                    "id": 31823,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9437:110:146"
                                 },
@@ -8905,7 +8905,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "6176616c616e6368655f66756a69",
-                                                "id": 31719,
+                                                "id": 31825,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -8923,7 +8923,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "4176616c616e6368652046756a69",
-                                                        "id": 31721,
+                                                        "id": 31827,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8939,7 +8939,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3433313133",
-                                                        "id": 31722,
+                                                        "id": 31828,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8955,7 +8955,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f6170692e617661782d746573742e6e6574776f726b2f6578742f62632f432f727063",
-                                                        "id": 31723,
+                                                        "id": 31829,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8985,18 +8985,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://api.avax-test.network/ext/bc/C/rpc\""
                                                         }
                                                     ],
-                                                    "id": 31720,
+                                                    "id": 31826,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "9614:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31724,
+                                                "id": 31830,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9008,7 +9008,7 @@ export const StdChains = {
                                                 "src": "9614:80:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -9020,22 +9020,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"avalanche_fuji\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31718,
+                                            "id": 31824,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "9557:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31725,
+                                        "id": 31831,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9051,7 +9051,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31726,
+                                    "id": 31832,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9557:147:146"
                                 },
@@ -9060,7 +9060,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "626e625f736d6172745f636861696e",
-                                                "id": 31728,
+                                                "id": 31834,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9078,7 +9078,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "424e4220536d61727420436861696e",
-                                                        "id": 31730,
+                                                        "id": 31836,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9094,7 +9094,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3536",
-                                                        "id": 31731,
+                                                        "id": 31837,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9110,7 +9110,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f6273632d6461746173656564312e62696e616e63652e6f7267",
-                                                        "id": 31732,
+                                                        "id": 31838,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9140,18 +9140,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://bsc-dataseed1.binance.org\""
                                                         }
                                                     ],
-                                                    "id": 31729,
+                                                    "id": 31835,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "9772:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31733,
+                                                "id": 31839,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9163,7 +9163,7 @@ export const StdChains = {
                                                 "src": "9772:69:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -9175,22 +9175,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"bnb_smart_chain\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31727,
+                                            "id": 31833,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "9714:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31734,
+                                        "id": 31840,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9206,7 +9206,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31735,
+                                    "id": 31841,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9714:137:146"
                                 },
@@ -9215,7 +9215,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "626e625f736d6172745f636861696e5f746573746e6574",
-                                                "id": 31737,
+                                                "id": 31843,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9233,7 +9233,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "424e4220536d61727420436861696e20546573746e6574",
-                                                        "id": 31739,
+                                                        "id": 31845,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9249,7 +9249,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "3937",
-                                                        "id": 31740,
+                                                        "id": 31846,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9265,7 +9265,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f7270632e616e6b722e636f6d2f6273635f746573746e65745f63686170656c",
-                                                        "id": 31741,
+                                                        "id": 31847,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9295,18 +9295,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://rpc.ankr.com/bsc_testnet_chapel\""
                                                         }
                                                     ],
-                                                    "id": 31738,
+                                                    "id": 31844,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "9939:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31742,
+                                                "id": 31848,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9318,7 +9318,7 @@ export const StdChains = {
                                                 "src": "9939:83:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -9330,22 +9330,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"bnb_smart_chain_testnet\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31736,
+                                            "id": 31842,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "9861:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31743,
+                                        "id": 31849,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9361,7 +9361,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31744,
+                                    "id": 31850,
                                     "nodeType": "ExpressionStatement",
                                     "src": "9861:171:146"
                                 },
@@ -9370,7 +9370,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "676e6f7369735f636861696e",
-                                                "id": 31746,
+                                                "id": 31852,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9388,7 +9388,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "476e6f73697320436861696e",
-                                                        "id": 31748,
+                                                        "id": 31854,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9404,7 +9404,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "313030",
-                                                        "id": 31749,
+                                                        "id": 31855,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9420,7 +9420,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f7270632e676e6f736973636861696e2e636f6d",
-                                                        "id": 31750,
+                                                        "id": 31856,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9450,18 +9450,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://rpc.gnosischain.com\""
                                                         }
                                                     ],
-                                                    "id": 31747,
+                                                    "id": 31853,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "10084:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31751,
+                                                "id": 31857,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9473,7 +9473,7 @@ export const StdChains = {
                                                 "src": "10084:61:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -9485,22 +9485,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"gnosis_chain\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31745,
+                                            "id": 31851,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "10042:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31752,
+                                        "id": 31858,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9516,7 +9516,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31753,
+                                    "id": 31859,
                                     "nodeType": "ExpressionStatement",
                                     "src": "10042:104:146"
                                 },
@@ -9525,7 +9525,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "6d6f6f6e6265616d",
-                                                "id": 31755,
+                                                "id": 31861,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9543,7 +9543,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "4d6f6f6e6265616d",
-                                                        "id": 31757,
+                                                        "id": 31863,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9559,7 +9559,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "31323834",
-                                                        "id": 31758,
+                                                        "id": 31864,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9575,7 +9575,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f7270632e6170692e6d6f6f6e6265616d2e6e6574776f726b",
-                                                        "id": 31759,
+                                                        "id": 31865,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9605,18 +9605,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://rpc.api.moonbeam.network\""
                                                         }
                                                     ],
-                                                    "id": 31756,
+                                                    "id": 31862,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "10194:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31760,
+                                                "id": 31866,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9628,7 +9628,7 @@ export const StdChains = {
                                                 "src": "10194:63:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -9640,22 +9640,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"moonbeam\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31754,
+                                            "id": 31860,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "10156:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31761,
+                                        "id": 31867,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9671,7 +9671,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31762,
+                                    "id": 31868,
                                     "nodeType": "ExpressionStatement",
                                     "src": "10156:102:146"
                                 },
@@ -9680,7 +9680,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "6d6f6f6e7269766572",
-                                                "id": 31764,
+                                                "id": 31870,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9698,7 +9698,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "4d6f6f6e7269766572",
-                                                        "id": 31766,
+                                                        "id": 31872,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9714,7 +9714,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "31323835",
-                                                        "id": 31767,
+                                                        "id": 31873,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9730,7 +9730,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f7270632e6170692e6d6f6f6e72697665722e6d6f6f6e6265616d2e6e6574776f726b",
-                                                        "id": 31768,
+                                                        "id": 31874,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9760,18 +9760,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://rpc.api.moonriver.moonbeam.network\""
                                                         }
                                                     ],
-                                                    "id": 31765,
+                                                    "id": 31871,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "10320:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31769,
+                                                "id": 31875,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9783,7 +9783,7 @@ export const StdChains = {
                                                 "src": "10320:74:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -9795,22 +9795,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"moonriver\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31763,
+                                            "id": 31869,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "10268:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31770,
+                                        "id": 31876,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9826,7 +9826,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31771,
+                                    "id": 31877,
                                     "nodeType": "ExpressionStatement",
                                     "src": "10268:136:146"
                                 },
@@ -9835,7 +9835,7 @@ export const StdChains = {
                                         "arguments": [
                                             {
                                                 "hexValue": "6d6f6f6e62617365",
-                                                "id": 31773,
+                                                "id": 31879,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9853,7 +9853,7 @@ export const StdChains = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "4d6f6f6e62617365",
-                                                        "id": 31775,
+                                                        "id": 31881,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9869,7 +9869,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "31323837",
-                                                        "id": 31776,
+                                                        "id": 31882,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9885,7 +9885,7 @@ export const StdChains = {
                                                     },
                                                     {
                                                         "hexValue": "68747470733a2f2f7270632e746573746e65742e6d6f6f6e6265616d2e6e6574776f726b",
-                                                        "id": 31777,
+                                                        "id": 31883,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -9915,18 +9915,18 @@ export const StdChains = {
                                                             "typeString": "literal_string \"https://rpc.testnet.moonbeam.network\""
                                                         }
                                                     ],
-                                                    "id": 31774,
+                                                    "id": 31880,
                                                     "name": "ChainData",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 31131,
+                                                    "referencedDeclaration": 31237,
                                                     "src": "10452:9:146",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31131_storage_ptr_$",
+                                                        "typeIdentifier": "t_type$_t_struct$_ChainData_$31237_storage_ptr_$",
                                                         "typeString": "type(struct StdChains.ChainData storage pointer)"
                                                     }
                                                 },
-                                                "id": 31778,
+                                                "id": 31884,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -9938,7 +9938,7 @@ export const StdChains = {
                                                 "src": "10452:67:146",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -9950,22 +9950,22 @@ export const StdChains = {
                                                     "typeString": "literal_string \"moonbase\""
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31772,
+                                            "id": 31878,
                                             "name": "setChainWithDefaultRpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31819,
+                                            "referencedDeclaration": 31925,
                                             "src": "10414:25:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31779,
+                                        "id": 31885,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -9981,7 +9981,7 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31780,
+                                    "id": 31886,
                                     "nodeType": "ExpressionStatement",
                                     "src": "10414:106:146"
                                 }
@@ -9993,46 +9993,46 @@ export const StdChains = {
                         "name": "initializeStdChains",
                         "nameLocation": "7785:19:146",
                         "parameters": {
-                            "id": 31601,
+                            "id": 31707,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7804:2:146"
                         },
                         "returnParameters": {
-                            "id": 31602,
+                            "id": 31708,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "7815:0:146"
                         },
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "private"
                     },
                     {
-                        "id": 31819,
+                        "id": 31925,
                         "nodeType": "FunctionDefinition",
                         "src": "10609:305:146",
                         "nodes": [],
                         "body": {
-                            "id": 31818,
+                            "id": 31924,
                             "nodeType": "Block",
                             "src": "10702:212:146",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        31791
+                                        31897
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 31791,
+                                            "id": 31897,
                                             "mutability": "mutable",
                                             "name": "rpcUrl",
                                             "nameLocation": "10726:6:146",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 31818,
+                                            "scope": 31924,
                                             "src": "10712:20:146",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -10041,7 +10041,7 @@ export const StdChains = {
                                                 "typeString": "string"
                                             },
                                             "typeName": {
-                                                "id": 31790,
+                                                "id": 31896,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "10712:6:146",
@@ -10053,21 +10053,21 @@ export const StdChains = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 31794,
+                                    "id": 31900,
                                     "initialValue": {
                                         "expression": {
-                                            "id": 31792,
+                                            "id": 31898,
                                             "name": "chain",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31787,
+                                            "referencedDeclaration": 31893,
                                             "src": "10735:5:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                 "typeString": "struct StdChains.ChainData memory"
                                             }
                                         },
-                                        "id": 31793,
+                                        "id": 31899,
                                         "isConstant": false,
                                         "isLValue": true,
                                         "isPure": false,
@@ -10075,7 +10075,7 @@ export const StdChains = {
                                         "memberLocation": "10741:6:146",
                                         "memberName": "rpcUrl",
                                         "nodeType": "MemberAccess",
-                                        "referencedDeclaration": 31130,
+                                        "referencedDeclaration": 31236,
                                         "src": "10735:12:146",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_memory_ptr",
@@ -10087,31 +10087,31 @@ export const StdChains = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 31799,
+                                        "id": 31905,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "baseExpression": {
-                                                "id": 31795,
+                                                "id": 31901,
                                                 "name": "defaultRpcUrls",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31149,
+                                                "referencedDeclaration": 31255,
                                                 "src": "10757:14:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_string_storage_$",
                                                     "typeString": "mapping(string memory => string storage ref)"
                                                 }
                                             },
-                                            "id": 31797,
+                                            "id": 31903,
                                             "indexExpression": {
-                                                "id": 31796,
+                                                "id": 31902,
                                                 "name": "chainAlias",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31784,
+                                                "referencedDeclaration": 31890,
                                                 "src": "10772:10:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -10132,11 +10132,11 @@ export const StdChains = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 31798,
+                                            "id": 31904,
                                             "name": "rpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31791,
+                                            "referencedDeclaration": 31897,
                                             "src": "10786:6:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -10149,31 +10149,31 @@ export const StdChains = {
                                             "typeString": "string storage ref"
                                         }
                                     },
-                                    "id": 31800,
+                                    "id": 31906,
                                     "nodeType": "ExpressionStatement",
                                     "src": "10757:35:146"
                                 },
                                 {
                                     "expression": {
-                                        "id": 31805,
+                                        "id": 31911,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "expression": {
-                                                "id": 31801,
+                                                "id": 31907,
                                                 "name": "chain",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31787,
+                                                "referencedDeclaration": 31893,
                                                 "src": "10802:5:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             },
-                                            "id": 31803,
+                                            "id": 31909,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
@@ -10181,7 +10181,7 @@ export const StdChains = {
                                             "memberLocation": "10808:6:146",
                                             "memberName": "rpcUrl",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 31130,
+                                            "referencedDeclaration": 31236,
                                             "src": "10802:12:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -10192,7 +10192,7 @@ export const StdChains = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "hexValue": "",
-                                            "id": 31804,
+                                            "id": 31910,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -10212,7 +10212,7 @@ export const StdChains = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "id": 31806,
+                                    "id": 31912,
                                     "nodeType": "ExpressionStatement",
                                     "src": "10802:17:146"
                                 },
@@ -10220,11 +10220,11 @@ export const StdChains = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 31808,
+                                                "id": 31914,
                                                 "name": "chainAlias",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31784,
+                                                "referencedDeclaration": 31890,
                                                 "src": "10838:10:146",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -10232,14 +10232,14 @@ export const StdChains = {
                                                 }
                                             },
                                             {
-                                                "id": 31809,
+                                                "id": 31915,
                                                 "name": "chain",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31787,
+                                                "referencedDeclaration": 31893,
                                                 "src": "10850:5:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             }
@@ -10251,25 +10251,25 @@ export const StdChains = {
                                                     "typeString": "string memory"
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             ],
-                                            "id": 31807,
+                                            "id": 31913,
                                             "name": "setChain",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                31375,
-                                                31396
+                                                31481,
+                                                31502
                                             ],
-                                            "referencedDeclaration": 31375,
+                                            "referencedDeclaration": 31481,
                                             "src": "10829:8:146",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31131_memory_ptr_$returns$__$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$_t_struct$_ChainData_$31237_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,struct StdChains.ChainData memory)"
                                             }
                                         },
-                                        "id": 31810,
+                                        "id": 31916,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -10285,31 +10285,31 @@ export const StdChains = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 31811,
+                                    "id": 31917,
                                     "nodeType": "ExpressionStatement",
                                     "src": "10829:27:146"
                                 },
                                 {
                                     "expression": {
-                                        "id": 31816,
+                                        "id": 31922,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "expression": {
-                                                "id": 31812,
+                                                "id": 31918,
                                                 "name": "chain",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 31787,
+                                                "referencedDeclaration": 31893,
                                                 "src": "10866:5:146",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                                    "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                                     "typeString": "struct StdChains.ChainData memory"
                                                 }
                                             },
-                                            "id": 31814,
+                                            "id": 31920,
                                             "isConstant": false,
                                             "isLValue": true,
                                             "isPure": false,
@@ -10317,7 +10317,7 @@ export const StdChains = {
                                             "memberLocation": "10872:6:146",
                                             "memberName": "rpcUrl",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 31130,
+                                            "referencedDeclaration": 31236,
                                             "src": "10866:12:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -10327,11 +10327,11 @@ export const StdChains = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 31815,
+                                            "id": 31921,
                                             "name": "rpcUrl",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 31791,
+                                            "referencedDeclaration": 31897,
                                             "src": "10881:6:146",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_string_memory_ptr",
@@ -10344,7 +10344,7 @@ export const StdChains = {
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "id": 31817,
+                                    "id": 31923,
                                     "nodeType": "ExpressionStatement",
                                     "src": "10866:21:146"
                                 }
@@ -10356,17 +10356,17 @@ export const StdChains = {
                         "name": "setChainWithDefaultRpcUrl",
                         "nameLocation": "10618:25:146",
                         "parameters": {
-                            "id": 31788,
+                            "id": 31894,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 31784,
+                                    "id": 31890,
                                     "mutability": "mutable",
                                     "name": "chainAlias",
                                     "nameLocation": "10658:10:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31819,
+                                    "scope": 31925,
                                     "src": "10644:24:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -10375,7 +10375,7 @@ export const StdChains = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 31783,
+                                        "id": 31889,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "10644:6:146",
@@ -10388,36 +10388,36 @@ export const StdChains = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 31787,
+                                    "id": 31893,
                                     "mutability": "mutable",
                                     "name": "chain",
                                     "nameLocation": "10687:5:146",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 31819,
+                                    "scope": 31925,
                                     "src": "10670:22:146",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_ChainData_$31131_memory_ptr",
+                                        "typeIdentifier": "t_struct$_ChainData_$31237_memory_ptr",
                                         "typeString": "struct StdChains.ChainData"
                                     },
                                     "typeName": {
-                                        "id": 31786,
+                                        "id": 31892,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 31785,
+                                            "id": 31891,
                                             "name": "ChainData",
                                             "nameLocations": [
                                                 "10670:9:146"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 31131,
+                                            "referencedDeclaration": 31237,
                                             "src": "10670:9:146"
                                         },
-                                        "referencedDeclaration": 31131,
+                                        "referencedDeclaration": 31237,
                                         "src": "10670:9:146",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_struct$_ChainData_$31131_storage_ptr",
+                                            "typeIdentifier": "t_struct$_ChainData_$31237_storage_ptr",
                                             "typeString": "struct StdChains.ChainData"
                                         }
                                     },
@@ -10427,12 +10427,12 @@ export const StdChains = {
                             "src": "10643:50:146"
                         },
                         "returnParameters": {
-                            "id": 31789,
+                            "id": 31895,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "10702:0:146"
                         },
-                        "scope": 31820,
+                        "scope": 31926,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "private"
@@ -10444,18 +10444,18 @@ export const StdChains = {
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 31105,
+                    "id": 31211,
                     "nodeType": "StructuredDocumentation",
                     "src": "99:1799:146",
                     "text": " StdChains provides information about EVM compatible chains that can be used in scripts/tests.\n For each chain, the chain's name, chain ID, and a default RPC URL are provided. Chains are\n identified by their alias, which is the same as the alias in the `[rpc_endpoints]` section of\n the `foundry.toml` file. For best UX, ensure the alias in the `foundry.toml` file match the\n alias used in this contract, which can be found as the first argument to the\n `setChainWithDefaultRpcUrl` call in the `initializeStdChains` function.\n There are two main ways to use this contract:\n   1. Set a chain with `setChain(string memory chainAlias, ChainData memory chain)` or\n      `setChain(string memory chainAlias, Chain memory chain)`\n   2. Get a chain with `getChain(string memory chainAlias)` or `getChain(uint256 chainId)`.\n The first time either of those are used, chains are initialized with the default set of RPC URLs.\n This is done in `initializeStdChains`, which uses `setChainWithDefaultRpcUrl`. Defaults are recorded in\n `defaultRpcUrls`.\n The `setChain` function is straightforward, and it simply saves off the given chain data.\n The `getChain` methods use `getChainWithUpdatedRpcUrl` to return a chain. For example, let's say\n we want to retrieve the RPC URL for `mainnet`:\n   - If you have specified data with `setChain`, it will return that.\n   - If you have configured a mainnet RPC URL in `foundry.toml`, it will return the URL, provided it\n     is valid (e.g. a URL is specified, or an environment variable is given and exists).\n   - If neither of the above conditions is met, the default data is returned.\n Summarizing the above, the prioritization hierarchy is `setChain` -> `foundry.toml` -> environment variable -> defaults."
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    31820
+                    31926
                 ],
                 "name": "StdChains",
                 "nameLocation": "1917:9:146",
-                "scope": 31821,
+                "scope": 31927,
                 "usedErrors": [],
                 "usedEvents": []
             }

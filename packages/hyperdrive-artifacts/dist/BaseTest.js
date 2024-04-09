@@ -1540,10 +1540,10 @@ export const BaseTest = {
     },
     "ast": {
         "absolutePath": "test/utils/BaseTest.sol",
-        "id": 152052,
+        "id": 152233,
         "exportedSymbols": {
             "BaseTest": [
-                152051
+                152232
             ],
             "ERC20ForwarderFactory": [
                 23343
@@ -1552,17 +1552,17 @@ export const BaseTest = {
                 9666
             ],
             "Test": [
-                39241
+                39347
             ],
             "console2": [
-                56967
+                57073
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:3395:228",
         "nodes": [
             {
-                "id": 151674,
+                "id": 151855,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:228",
                 "nodes": [],
@@ -1573,23 +1573,23 @@ export const BaseTest = {
                 ]
             },
             {
-                "id": 151676,
+                "id": 151857,
                 "nodeType": "ImportDirective",
                 "src": "64:50:228",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/console2.sol",
                 "file": "forge-std/console2.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 152052,
-                "sourceUnit": 56968,
+                "scope": 152233,
+                "sourceUnit": 57074,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 151675,
+                            "id": 151856,
                             "name": "console2",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 56967,
+                            "referencedDeclaration": 57073,
                             "src": "73:8:228",
                             "typeDescriptions": {}
                         },
@@ -1599,23 +1599,23 @@ export const BaseTest = {
                 "unitAlias": ""
             },
             {
-                "id": 151678,
+                "id": 151859,
                 "nodeType": "ImportDirective",
                 "src": "115:42:228",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/Test.sol",
                 "file": "forge-std/Test.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 152052,
-                "sourceUnit": 39242,
+                "scope": 152233,
+                "sourceUnit": 39348,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 151677,
+                            "id": 151858,
                             "name": "Test",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 39241,
+                            "referencedDeclaration": 39347,
                             "src": "124:4:228",
                             "typeDescriptions": {}
                         },
@@ -1625,19 +1625,19 @@ export const BaseTest = {
                 "unitAlias": ""
             },
             {
-                "id": 151680,
+                "id": 151861,
                 "nodeType": "ImportDirective",
                 "src": "158:61:228",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IERC20.sol",
                 "file": "contracts/src/interfaces/IERC20.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 152052,
+                "scope": 152233,
                 "sourceUnit": 9667,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 151679,
+                            "id": 151860,
                             "name": "IERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -1651,19 +1651,19 @@ export const BaseTest = {
                 "unitAlias": ""
             },
             {
-                "id": 151682,
+                "id": 151863,
                 "nodeType": "ImportDirective",
                 "src": "220:86:228",
                 "nodes": [],
                 "absolutePath": "contracts/src/token/ERC20ForwarderFactory.sol",
                 "file": "contracts/src/token/ERC20ForwarderFactory.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 152052,
+                "scope": 152233,
                 "sourceUnit": 23344,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 151681,
+                            "id": 151862,
                             "name": "ERC20ForwarderFactory",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -1677,12 +1677,12 @@ export const BaseTest = {
                 "unitAlias": ""
             },
             {
-                "id": 152051,
+                "id": 152232,
                 "nodeType": "ContractDefinition",
                 "src": "308:3125:228",
                 "nodes": [
                     {
-                        "id": 151687,
+                        "id": 151868,
                         "nodeType": "VariableDeclaration",
                         "src": "340:38:228",
                         "nodes": [],
@@ -1690,7 +1690,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "forwarderFactory",
                         "nameLocation": "362:16:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1698,10 +1698,10 @@ export const BaseTest = {
                             "typeString": "contract ERC20ForwarderFactory"
                         },
                         "typeName": {
-                            "id": 151686,
+                            "id": 151867,
                             "nodeType": "UserDefinedTypeName",
                             "pathNode": {
-                                "id": 151685,
+                                "id": 151866,
                                 "name": "ERC20ForwarderFactory",
                                 "nameLocations": [
                                     "340:21:228"
@@ -1720,7 +1720,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151689,
+                        "id": 151870,
                         "nodeType": "VariableDeclaration",
                         "src": "385:13:228",
                         "nodes": [],
@@ -1728,7 +1728,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "alice",
                         "nameLocation": "393:5:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1736,7 +1736,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151688,
+                            "id": 151869,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "385:7:228",
@@ -1749,7 +1749,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151691,
+                        "id": 151872,
                         "nodeType": "VariableDeclaration",
                         "src": "404:11:228",
                         "nodes": [],
@@ -1757,7 +1757,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "bob",
                         "nameLocation": "412:3:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1765,7 +1765,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151690,
+                            "id": 151871,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "404:7:228",
@@ -1778,7 +1778,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151693,
+                        "id": 151874,
                         "nodeType": "VariableDeclaration",
                         "src": "421:14:228",
                         "nodes": [],
@@ -1786,7 +1786,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "celine",
                         "nameLocation": "429:6:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1794,7 +1794,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151692,
+                            "id": 151873,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "421:7:228",
@@ -1807,7 +1807,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151695,
+                        "id": 151876,
                         "nodeType": "VariableDeclaration",
                         "src": "441:11:228",
                         "nodes": [],
@@ -1815,7 +1815,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "dan",
                         "nameLocation": "449:3:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1823,7 +1823,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151694,
+                            "id": 151875,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "441:7:228",
@@ -1836,7 +1836,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151697,
+                        "id": 151878,
                         "nodeType": "VariableDeclaration",
                         "src": "458:11:228",
                         "nodes": [],
@@ -1844,7 +1844,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "eve",
                         "nameLocation": "466:3:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1852,7 +1852,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151696,
+                            "id": 151877,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "458:7:228",
@@ -1865,7 +1865,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151699,
+                        "id": 151880,
                         "nodeType": "VariableDeclaration",
                         "src": "476:14:228",
                         "nodes": [],
@@ -1873,7 +1873,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "minter",
                         "nameLocation": "484:6:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1881,7 +1881,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151698,
+                            "id": 151879,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "476:7:228",
@@ -1894,7 +1894,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151701,
+                        "id": 151882,
                         "nodeType": "VariableDeclaration",
                         "src": "496:16:228",
                         "nodes": [],
@@ -1902,7 +1902,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "deployer",
                         "nameLocation": "504:8:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1910,7 +1910,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151700,
+                            "id": 151881,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "496:7:228",
@@ -1923,7 +1923,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151703,
+                        "id": 151884,
                         "nodeType": "VariableDeclaration",
                         "src": "518:20:228",
                         "nodes": [],
@@ -1931,7 +1931,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "feeCollector",
                         "nameLocation": "526:12:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1939,7 +1939,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151702,
+                            "id": 151883,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "518:7:228",
@@ -1952,7 +1952,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151705,
+                        "id": 151886,
                         "nodeType": "VariableDeclaration",
                         "src": "544:22:228",
                         "nodes": [],
@@ -1960,7 +1960,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "sweepCollector",
                         "nameLocation": "552:14:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1968,7 +1968,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151704,
+                            "id": 151885,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "544:7:228",
@@ -1981,7 +1981,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151707,
+                        "id": 151888,
                         "nodeType": "VariableDeclaration",
                         "src": "572:18:228",
                         "nodes": [],
@@ -1989,7 +1989,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "governance",
                         "nameLocation": "580:10:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1997,7 +1997,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151706,
+                            "id": 151887,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "572:7:228",
@@ -2010,7 +2010,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151709,
+                        "id": 151890,
                         "nodeType": "VariableDeclaration",
                         "src": "596:14:228",
                         "nodes": [],
@@ -2018,7 +2018,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "pauser",
                         "nameLocation": "604:6:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2026,7 +2026,7 @@ export const BaseTest = {
                             "typeString": "address"
                         },
                         "typeName": {
-                            "id": 151708,
+                            "id": 151889,
                             "name": "address",
                             "nodeType": "ElementaryTypeName",
                             "src": "596:7:228",
@@ -2039,7 +2039,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151711,
+                        "id": 151892,
                         "nodeType": "ErrorDefinition",
                         "src": "617:29:228",
                         "nodes": [],
@@ -2047,14 +2047,14 @@ export const BaseTest = {
                         "name": "WhaleBalanceExceeded",
                         "nameLocation": "623:20:228",
                         "parameters": {
-                            "id": 151710,
+                            "id": 151891,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "643:2:228"
                         }
                     },
                     {
-                        "id": 151713,
+                        "id": 151894,
                         "nodeType": "ErrorDefinition",
                         "src": "651:24:228",
                         "nodes": [],
@@ -2062,14 +2062,14 @@ export const BaseTest = {
                         "name": "WhaleIsContract",
                         "nameLocation": "657:15:228",
                         "parameters": {
-                            "id": 151712,
+                            "id": 151893,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "672:2:228"
                         }
                     },
                     {
-                        "id": 151715,
+                        "id": 151896,
                         "nodeType": "VariableDeclaration",
                         "src": "681:21:228",
                         "nodes": [],
@@ -2077,7 +2077,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "mainnetForkId",
                         "nameLocation": "689:13:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2085,7 +2085,7 @@ export const BaseTest = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 151714,
+                            "id": 151895,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "681:7:228",
@@ -2097,7 +2097,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151717,
+                        "id": 151898,
                         "nodeType": "VariableDeclaration",
                         "src": "708:20:228",
                         "nodes": [],
@@ -2105,7 +2105,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "goerliForkId",
                         "nameLocation": "716:12:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2113,7 +2113,7 @@ export const BaseTest = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 151716,
+                            "id": 151897,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "708:7:228",
@@ -2125,7 +2125,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151719,
+                        "id": 151900,
                         "nodeType": "VariableDeclaration",
                         "src": "735:16:228",
                         "nodes": [],
@@ -2133,7 +2133,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "__init__",
                         "nameLocation": "743:8:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2141,7 +2141,7 @@ export const BaseTest = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 151718,
+                            "id": 151899,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "735:7:228",
@@ -2153,7 +2153,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151725,
+                        "id": 151906,
                         "nodeType": "VariableDeclaration",
                         "src": "789:56:228",
                         "nodes": [],
@@ -2161,7 +2161,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "MAINNET_RPC_URL",
                         "nameLocation": "796:15:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2169,7 +2169,7 @@ export const BaseTest = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 151720,
+                            "id": 151901,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "789:6:228",
@@ -2182,7 +2182,7 @@ export const BaseTest = {
                             "arguments": [
                                 {
                                     "hexValue": "4d41494e4e45545f5250435f55524c",
-                                    "id": 151723,
+                                    "id": 151904,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -2205,18 +2205,18 @@ export const BaseTest = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 151721,
+                                    "id": 151902,
                                     "name": "vm",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 29666,
+                                    "referencedDeclaration": 29772,
                                     "src": "814:2:228",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_Vm_$40778",
+                                        "typeIdentifier": "t_contract$_Vm_$40884",
                                         "typeString": "contract Vm"
                                     }
                                 },
-                                "id": 151722,
+                                "id": 151903,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -2224,14 +2224,14 @@ export const BaseTest = {
                                 "memberLocation": "817:9:228",
                                 "memberName": "envString",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 39382,
+                                "referencedDeclaration": 39488,
                                 "src": "814:12:228",
                                 "typeDescriptions": {
                                     "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                     "typeString": "function (string memory) view external returns (string memory)"
                                 }
                             },
-                            "id": 151724,
+                            "id": 151905,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2250,7 +2250,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151731,
+                        "id": 151912,
                         "nodeType": "VariableDeclaration",
                         "src": "851:54:228",
                         "nodes": [],
@@ -2258,7 +2258,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "GOERLI_RPC_URL",
                         "nameLocation": "858:14:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2266,7 +2266,7 @@ export const BaseTest = {
                             "typeString": "string"
                         },
                         "typeName": {
-                            "id": 151726,
+                            "id": 151907,
                             "name": "string",
                             "nodeType": "ElementaryTypeName",
                             "src": "851:6:228",
@@ -2279,7 +2279,7 @@ export const BaseTest = {
                             "arguments": [
                                 {
                                     "hexValue": "474f45524c495f5250435f55524c",
-                                    "id": 151729,
+                                    "id": 151910,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -2302,18 +2302,18 @@ export const BaseTest = {
                                     }
                                 ],
                                 "expression": {
-                                    "id": 151727,
+                                    "id": 151908,
                                     "name": "vm",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 29666,
+                                    "referencedDeclaration": 29772,
                                     "src": "875:2:228",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_Vm_$40778",
+                                        "typeIdentifier": "t_contract$_Vm_$40884",
                                         "typeString": "contract Vm"
                                     }
                                 },
-                                "id": 151728,
+                                "id": 151909,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -2321,14 +2321,14 @@ export const BaseTest = {
                                 "memberLocation": "878:9:228",
                                 "memberName": "envString",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 39382,
+                                "referencedDeclaration": 39488,
                                 "src": "875:12:228",
                                 "typeDescriptions": {
                                     "typeIdentifier": "t_function_external_view$_t_string_memory_ptr_$returns$_t_string_memory_ptr_$",
                                     "typeString": "function (string memory) view external returns (string memory)"
                                 }
                             },
-                            "id": 151730,
+                            "id": 151911,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
@@ -2347,7 +2347,7 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151733,
+                        "id": 151914,
                         "nodeType": "VariableDeclaration",
                         "src": "912:13:228",
                         "nodes": [],
@@ -2355,7 +2355,7 @@ export const BaseTest = {
                         "mutability": "mutable",
                         "name": "isForked",
                         "nameLocation": "917:8:228",
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -2363,7 +2363,7 @@ export const BaseTest = {
                             "typeString": "bool"
                         },
                         "typeName": {
-                            "id": 151732,
+                            "id": 151913,
                             "name": "bool",
                             "nodeType": "ElementaryTypeName",
                             "src": "912:4:228",
@@ -2375,29 +2375,29 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151808,
+                        "id": 151989,
                         "nodeType": "FunctionDefinition",
                         "src": "932:526:228",
                         "nodes": [],
                         "body": {
-                            "id": 151807,
+                            "id": 151988,
                             "nodeType": "Block",
                             "src": "964:494:228",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 151740,
+                                        "id": 151921,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151736,
+                                            "id": 151917,
                                             "name": "alice",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151689,
+                                            "referencedDeclaration": 151870,
                                             "src": "974:5:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2410,7 +2410,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "616c696365",
-                                                    "id": 151738,
+                                                    "id": 151919,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2432,18 +2432,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"alice\""
                                                     }
                                                 ],
-                                                "id": 151737,
+                                                "id": 151918,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "982:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151739,
+                                            "id": 151920,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2465,23 +2465,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151741,
+                                    "id": 151922,
                                     "nodeType": "ExpressionStatement",
                                     "src": "974:27:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151746,
+                                        "id": 151927,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151742,
+                                            "id": 151923,
                                             "name": "bob",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151691,
+                                            "referencedDeclaration": 151872,
                                             "src": "1011:3:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2494,7 +2494,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "626f62",
-                                                    "id": 151744,
+                                                    "id": 151925,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2516,18 +2516,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"bob\""
                                                     }
                                                 ],
-                                                "id": 151743,
+                                                "id": 151924,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1017:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151745,
+                                            "id": 151926,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2549,23 +2549,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151747,
+                                    "id": 151928,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1011:23:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151752,
+                                        "id": 151933,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151748,
+                                            "id": 151929,
                                             "name": "celine",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151693,
+                                            "referencedDeclaration": 151874,
                                             "src": "1044:6:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2578,7 +2578,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "63656c696e65",
-                                                    "id": 151750,
+                                                    "id": 151931,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2600,18 +2600,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"celine\""
                                                     }
                                                 ],
-                                                "id": 151749,
+                                                "id": 151930,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1053:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151751,
+                                            "id": 151932,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2633,23 +2633,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151753,
+                                    "id": 151934,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1044:29:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151758,
+                                        "id": 151939,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151754,
+                                            "id": 151935,
                                             "name": "dan",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151695,
+                                            "referencedDeclaration": 151876,
                                             "src": "1083:3:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2662,7 +2662,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "64616e",
-                                                    "id": 151756,
+                                                    "id": 151937,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2684,18 +2684,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"dan\""
                                                     }
                                                 ],
-                                                "id": 151755,
+                                                "id": 151936,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1089:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151757,
+                                            "id": 151938,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2717,23 +2717,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151759,
+                                    "id": 151940,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1083:23:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151764,
+                                        "id": 151945,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151760,
+                                            "id": 151941,
                                             "name": "eve",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151697,
+                                            "referencedDeclaration": 151878,
                                             "src": "1116:3:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2746,7 +2746,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "657665",
-                                                    "id": 151762,
+                                                    "id": 151943,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2768,18 +2768,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"eve\""
                                                     }
                                                 ],
-                                                "id": 151761,
+                                                "id": 151942,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1122:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151763,
+                                            "id": 151944,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2801,23 +2801,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151765,
+                                    "id": 151946,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1116:23:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151770,
+                                        "id": 151951,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151766,
+                                            "id": 151947,
                                             "name": "deployer",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151701,
+                                            "referencedDeclaration": 151882,
                                             "src": "1150:8:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2830,7 +2830,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "6465706c6f796572",
-                                                    "id": 151768,
+                                                    "id": 151949,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2852,18 +2852,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"deployer\""
                                                     }
                                                 ],
-                                                "id": 151767,
+                                                "id": 151948,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1161:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151769,
+                                            "id": 151950,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2885,23 +2885,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151771,
+                                    "id": 151952,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1150:33:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151776,
+                                        "id": 151957,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151772,
+                                            "id": 151953,
                                             "name": "minter",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151699,
+                                            "referencedDeclaration": 151880,
                                             "src": "1193:6:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2914,7 +2914,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "6d696e746572",
-                                                    "id": 151774,
+                                                    "id": 151955,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2936,18 +2936,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"minter\""
                                                     }
                                                 ],
-                                                "id": 151773,
+                                                "id": 151954,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1202:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151775,
+                                            "id": 151956,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2969,23 +2969,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151777,
+                                    "id": 151958,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1193:29:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151782,
+                                        "id": 151963,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151778,
+                                            "id": 151959,
                                             "name": "feeCollector",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151703,
+                                            "referencedDeclaration": 151884,
                                             "src": "1232:12:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2998,7 +2998,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "666565436f6c6c6563746f72",
-                                                    "id": 151780,
+                                                    "id": 151961,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3020,18 +3020,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"feeCollector\""
                                                     }
                                                 ],
-                                                "id": 151779,
+                                                "id": 151960,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1247:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151781,
+                                            "id": 151962,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3053,23 +3053,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151783,
+                                    "id": 151964,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1232:41:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151788,
+                                        "id": 151969,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151784,
+                                            "id": 151965,
                                             "name": "sweepCollector",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151705,
+                                            "referencedDeclaration": 151886,
                                             "src": "1283:14:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -3082,7 +3082,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "7377656570436f6c6c6563746f72",
-                                                    "id": 151786,
+                                                    "id": 151967,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3104,18 +3104,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"sweepCollector\""
                                                     }
                                                 ],
-                                                "id": 151785,
+                                                "id": 151966,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1300:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151787,
+                                            "id": 151968,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3137,23 +3137,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151789,
+                                    "id": 151970,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1283:45:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151794,
+                                        "id": 151975,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151790,
+                                            "id": 151971,
                                             "name": "governance",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151707,
+                                            "referencedDeclaration": 151888,
                                             "src": "1338:10:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -3166,7 +3166,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "676f7665726e616e6365",
-                                                    "id": 151792,
+                                                    "id": 151973,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3188,18 +3188,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"governance\""
                                                     }
                                                 ],
-                                                "id": 151791,
+                                                "id": 151972,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1351:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151793,
+                                            "id": 151974,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3221,23 +3221,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151795,
+                                    "id": 151976,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1338:37:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151800,
+                                        "id": 151981,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151796,
+                                            "id": 151977,
                                             "name": "pauser",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151709,
+                                            "referencedDeclaration": 151890,
                                             "src": "1385:6:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -3250,7 +3250,7 @@ export const BaseTest = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "706175736572",
-                                                    "id": 151798,
+                                                    "id": 151979,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3272,18 +3272,18 @@ export const BaseTest = {
                                                         "typeString": "literal_string \"pauser\""
                                                     }
                                                 ],
-                                                "id": 151797,
+                                                "id": 151978,
                                                 "name": "createUser",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151906,
+                                                "referencedDeclaration": 152087,
                                                 "src": "1394:10:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_nonpayable$_t_string_memory_ptr_$returns$_t_address_$",
                                                     "typeString": "function (string memory) returns (address)"
                                                 }
                                             },
-                                            "id": 151799,
+                                            "id": 151980,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3305,23 +3305,23 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151801,
+                                    "id": 151982,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1385:29:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151805,
+                                        "id": 151986,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151802,
+                                            "id": 151983,
                                             "name": "__init__",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151719,
+                                            "referencedDeclaration": 151900,
                                             "src": "1425:8:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3332,7 +3332,7 @@ export const BaseTest = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "expression": {
-                                                "id": 151803,
+                                                "id": 151984,
                                                 "name": "block",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3343,7 +3343,7 @@ export const BaseTest = {
                                                     "typeString": "block"
                                                 }
                                             },
-                                            "id": 151804,
+                                            "id": 151985,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3363,7 +3363,7 @@ export const BaseTest = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 151806,
+                                    "id": 151987,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1425:26:228"
                                 }
@@ -3376,46 +3376,46 @@ export const BaseTest = {
                         "name": "setUp",
                         "nameLocation": "941:5:228",
                         "parameters": {
-                            "id": 151734,
+                            "id": 151915,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "946:2:228"
                         },
                         "returnParameters": {
-                            "id": 151735,
+                            "id": 151916,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "964:0:228"
                         },
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "public"
                     },
                     {
-                        "id": 151837,
+                        "id": 152018,
                         "nodeType": "ModifierDefinition",
                         "src": "1464:217:228",
                         "nodes": [],
                         "body": {
-                            "id": 151836,
+                            "id": 152017,
                             "nodeType": "Block",
                             "src": "1509:172:228",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 151817,
+                                        "id": 151998,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151812,
+                                            "id": 151993,
                                             "name": "mainnetForkId",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151715,
+                                            "referencedDeclaration": 151896,
                                             "src": "1519:13:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3427,11 +3427,11 @@ export const BaseTest = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 151815,
+                                                    "id": 151996,
                                                     "name": "MAINNET_RPC_URL",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 151725,
+                                                    "referencedDeclaration": 151906,
                                                     "src": "1549:15:228",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_string_storage",
@@ -3447,18 +3447,18 @@ export const BaseTest = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 151813,
+                                                    "id": 151994,
                                                     "name": "vm",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 29666,
+                                                    "referencedDeclaration": 29772,
                                                     "src": "1535:2:228",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_contract$_Vm_$40778",
+                                                        "typeIdentifier": "t_contract$_Vm_$40884",
                                                         "typeString": "contract Vm"
                                                     }
                                                 },
-                                                "id": 151814,
+                                                "id": 151995,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3466,14 +3466,14 @@ export const BaseTest = {
                                                 "memberLocation": "1538:10:228",
                                                 "memberName": "createFork",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 40646,
+                                                "referencedDeclaration": 40752,
                                                 "src": "1535:13:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_uint256_$",
                                                     "typeString": "function (string memory) external returns (uint256)"
                                                 }
                                             },
-                                            "id": 151816,
+                                            "id": 151997,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3495,7 +3495,7 @@ export const BaseTest = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 151818,
+                                    "id": 151999,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1519:46:228"
                                 },
@@ -3503,11 +3503,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151822,
+                                                "id": 152003,
                                                 "name": "mainnetForkId",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151715,
+                                                "referencedDeclaration": 151896,
                                                 "src": "1589:13:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3523,18 +3523,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151819,
+                                                "id": 152000,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 29666,
+                                                "referencedDeclaration": 29772,
                                                 "src": "1575:2:228",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Vm_$40778",
+                                                    "typeIdentifier": "t_contract$_Vm_$40884",
                                                     "typeString": "contract Vm"
                                                 }
                                             },
-                                            "id": 151821,
+                                            "id": 152002,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3542,14 +3542,14 @@ export const BaseTest = {
                                             "memberLocation": "1578:10:228",
                                             "memberName": "selectFork",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40685,
+                                            "referencedDeclaration": 40791,
                                             "src": "1575:13:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
                                                 "typeString": "function (uint256) external"
                                             }
                                         },
-                                        "id": 151823,
+                                        "id": 152004,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3565,7 +3565,7 @@ export const BaseTest = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 151824,
+                                    "id": 152005,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1575:28:228"
                                 },
@@ -3573,11 +3573,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151828,
+                                                "id": 152009,
                                                 "name": "blockNumber",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151810,
+                                                "referencedDeclaration": 151991,
                                                 "src": "1625:11:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3593,18 +3593,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151825,
+                                                "id": 152006,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 29666,
+                                                "referencedDeclaration": 29772,
                                                 "src": "1613:2:228",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Vm_$40778",
+                                                    "typeIdentifier": "t_contract$_Vm_$40884",
                                                     "typeString": "contract Vm"
                                                 }
                                             },
-                                            "id": 151827,
+                                            "id": 152008,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3612,14 +3612,14 @@ export const BaseTest = {
                                             "memberLocation": "1616:8:228",
                                             "memberName": "rollFork",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40696,
+                                            "referencedDeclaration": 40802,
                                             "src": "1613:11:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
                                                 "typeString": "function (uint256) external"
                                             }
                                         },
-                                        "id": 151829,
+                                        "id": 152010,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3635,23 +3635,23 @@ export const BaseTest = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 151830,
+                                    "id": 152011,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1613:24:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151833,
+                                        "id": 152014,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151831,
+                                            "id": 152012,
                                             "name": "isForked",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151733,
+                                            "referencedDeclaration": 151914,
                                             "src": "1647:8:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
@@ -3662,7 +3662,7 @@ export const BaseTest = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "hexValue": "74727565",
-                                            "id": 151832,
+                                            "id": 152013,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -3682,12 +3682,12 @@ export const BaseTest = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 151834,
+                                    "id": 152015,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1647:15:228"
                                 },
                                 {
-                                    "id": 151835,
+                                    "id": 152016,
                                     "nodeType": "PlaceholderStatement",
                                     "src": "1673:1:228"
                                 }
@@ -3696,17 +3696,17 @@ export const BaseTest = {
                         "name": "__mainnet_fork",
                         "nameLocation": "1473:14:228",
                         "parameters": {
-                            "id": 151811,
+                            "id": 151992,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 151810,
+                                    "id": 151991,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
                                     "nameLocation": "1496:11:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151837,
+                                    "scope": 152018,
                                     "src": "1488:19:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3715,7 +3715,7 @@ export const BaseTest = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 151809,
+                                        "id": 151990,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1488:7:228",
@@ -3733,29 +3733,29 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151866,
+                        "id": 152047,
                         "nodeType": "ModifierDefinition",
                         "src": "1687:213:228",
                         "nodes": [],
                         "body": {
-                            "id": 151865,
+                            "id": 152046,
                             "nodeType": "Block",
                             "src": "1731:169:228",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 151846,
+                                        "id": 152027,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151841,
+                                            "id": 152022,
                                             "name": "goerliForkId",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151717,
+                                            "referencedDeclaration": 151898,
                                             "src": "1741:12:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3767,11 +3767,11 @@ export const BaseTest = {
                                         "rightHandSide": {
                                             "arguments": [
                                                 {
-                                                    "id": 151844,
+                                                    "id": 152025,
                                                     "name": "GOERLI_RPC_URL",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 151731,
+                                                    "referencedDeclaration": 151912,
                                                     "src": "1770:14:228",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_string_storage",
@@ -3787,18 +3787,18 @@ export const BaseTest = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 151842,
+                                                    "id": 152023,
                                                     "name": "vm",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 29666,
+                                                    "referencedDeclaration": 29772,
                                                     "src": "1756:2:228",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_contract$_Vm_$40778",
+                                                        "typeIdentifier": "t_contract$_Vm_$40884",
                                                         "typeString": "contract Vm"
                                                     }
                                                 },
-                                                "id": 151843,
+                                                "id": 152024,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -3806,14 +3806,14 @@ export const BaseTest = {
                                                 "memberLocation": "1759:10:228",
                                                 "memberName": "createFork",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 40646,
+                                                "referencedDeclaration": 40752,
                                                 "src": "1756:13:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_external_nonpayable$_t_string_memory_ptr_$returns$_t_uint256_$",
                                                     "typeString": "function (string memory) external returns (uint256)"
                                                 }
                                             },
-                                            "id": 151845,
+                                            "id": 152026,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3835,7 +3835,7 @@ export const BaseTest = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 151847,
+                                    "id": 152028,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1741:44:228"
                                 },
@@ -3843,11 +3843,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151851,
+                                                "id": 152032,
                                                 "name": "goerliForkId",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151717,
+                                                "referencedDeclaration": 151898,
                                                 "src": "1809:12:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3863,18 +3863,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151848,
+                                                "id": 152029,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 29666,
+                                                "referencedDeclaration": 29772,
                                                 "src": "1795:2:228",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Vm_$40778",
+                                                    "typeIdentifier": "t_contract$_Vm_$40884",
                                                     "typeString": "contract Vm"
                                                 }
                                             },
-                                            "id": 151850,
+                                            "id": 152031,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3882,14 +3882,14 @@ export const BaseTest = {
                                             "memberLocation": "1798:10:228",
                                             "memberName": "selectFork",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40685,
+                                            "referencedDeclaration": 40791,
                                             "src": "1795:13:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
                                                 "typeString": "function (uint256) external"
                                             }
                                         },
-                                        "id": 151852,
+                                        "id": 152033,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3905,7 +3905,7 @@ export const BaseTest = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 151853,
+                                    "id": 152034,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1795:27:228"
                                 },
@@ -3913,11 +3913,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151857,
+                                                "id": 152038,
                                                 "name": "blockNumber",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151839,
+                                                "referencedDeclaration": 152020,
                                                 "src": "1844:11:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3933,18 +3933,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151854,
+                                                "id": 152035,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 29666,
+                                                "referencedDeclaration": 29772,
                                                 "src": "1832:2:228",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Vm_$40778",
+                                                    "typeIdentifier": "t_contract$_Vm_$40884",
                                                     "typeString": "contract Vm"
                                                 }
                                             },
-                                            "id": 151856,
+                                            "id": 152037,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3952,14 +3952,14 @@ export const BaseTest = {
                                             "memberLocation": "1835:8:228",
                                             "memberName": "rollFork",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40696,
+                                            "referencedDeclaration": 40802,
                                             "src": "1832:11:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_uint256_$returns$__$",
                                                 "typeString": "function (uint256) external"
                                             }
                                         },
-                                        "id": 151858,
+                                        "id": 152039,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3975,23 +3975,23 @@ export const BaseTest = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 151859,
+                                    "id": 152040,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1832:24:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151862,
+                                        "id": 152043,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151860,
+                                            "id": 152041,
                                             "name": "isForked",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151733,
+                                            "referencedDeclaration": 151914,
                                             "src": "1866:8:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
@@ -4002,7 +4002,7 @@ export const BaseTest = {
                                         "operator": "=",
                                         "rightHandSide": {
                                             "hexValue": "74727565",
-                                            "id": 151861,
+                                            "id": 152042,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -4022,12 +4022,12 @@ export const BaseTest = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 151863,
+                                    "id": 152044,
                                     "nodeType": "ExpressionStatement",
                                     "src": "1866:15:228"
                                 },
                                 {
-                                    "id": 151864,
+                                    "id": 152045,
                                     "nodeType": "PlaceholderStatement",
                                     "src": "1892:1:228"
                                 }
@@ -4036,17 +4036,17 @@ export const BaseTest = {
                         "name": "__goerli_fork",
                         "nameLocation": "1696:13:228",
                         "parameters": {
-                            "id": 151840,
+                            "id": 152021,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 151839,
+                                    "id": 152020,
                                     "mutability": "mutable",
                                     "name": "blockNumber",
                                     "nameLocation": "1718:11:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151866,
+                                    "scope": 152047,
                                     "src": "1710:19:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4055,7 +4055,7 @@ export const BaseTest = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 151838,
+                                        "id": 152019,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1710:7:228",
@@ -4073,29 +4073,29 @@ export const BaseTest = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 151906,
+                        "id": 152087,
                         "nodeType": "FunctionDefinition",
                         "src": "1928:218:228",
                         "nodes": [],
                         "body": {
-                            "id": 151905,
+                            "id": 152086,
                             "nodeType": "Block",
                             "src": "1999:147:228",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 151889,
+                                        "id": 152070,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 151873,
+                                            "id": 152054,
                                             "name": "_user",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151871,
+                                            "referencedDeclaration": 152052,
                                             "src": "2009:5:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -4115,11 +4115,11 @@ export const BaseTest = {
                                                                         {
                                                                             "arguments": [
                                                                                 {
-                                                                                    "id": 151883,
+                                                                                    "id": 152064,
                                                                                     "name": "name",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
-                                                                                    "referencedDeclaration": 151868,
+                                                                                    "referencedDeclaration": 152049,
                                                                                     "src": "2062:4:228",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_string_memory_ptr",
@@ -4135,7 +4135,7 @@ export const BaseTest = {
                                                                                     }
                                                                                 ],
                                                                                 "expression": {
-                                                                                    "id": 151881,
+                                                                                    "id": 152062,
                                                                                     "name": "abi",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
@@ -4146,7 +4146,7 @@ export const BaseTest = {
                                                                                         "typeString": "abi"
                                                                                     }
                                                                                 },
-                                                                                "id": 151882,
+                                                                                "id": 152063,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
@@ -4160,7 +4160,7 @@ export const BaseTest = {
                                                                                     "typeString": "function () pure returns (bytes memory)"
                                                                                 }
                                                                             },
-                                                                            "id": 151884,
+                                                                            "id": 152065,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -4184,7 +4184,7 @@ export const BaseTest = {
                                                                                 "typeString": "bytes memory"
                                                                             }
                                                                         ],
-                                                                        "id": 151880,
+                                                                        "id": 152061,
                                                                         "name": "keccak256",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
@@ -4195,7 +4195,7 @@ export const BaseTest = {
                                                                             "typeString": "function (bytes memory) pure returns (bytes32)"
                                                                         }
                                                                     },
-                                                                    "id": 151885,
+                                                                    "id": 152066,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -4219,7 +4219,7 @@ export const BaseTest = {
                                                                         "typeString": "bytes32"
                                                                     }
                                                                 ],
-                                                                "id": 151879,
+                                                                "id": 152060,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -4231,14 +4231,14 @@ export const BaseTest = {
                                                                     "typeString": "type(uint256)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 151878,
+                                                                    "id": 152059,
                                                                     "name": "uint256",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "2033:7:228",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 151886,
+                                                            "id": 152067,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -4262,7 +4262,7 @@ export const BaseTest = {
                                                                 "typeString": "uint256"
                                                             }
                                                         ],
-                                                        "id": 151877,
+                                                        "id": 152058,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -4274,14 +4274,14 @@ export const BaseTest = {
                                                             "typeString": "type(uint160)"
                                                         },
                                                         "typeName": {
-                                                            "id": 151876,
+                                                            "id": 152057,
                                                             "name": "uint160",
                                                             "nodeType": "ElementaryTypeName",
                                                             "src": "2025:7:228",
                                                             "typeDescriptions": {}
                                                         }
                                                     },
-                                                    "id": 151887,
+                                                    "id": 152068,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4305,7 +4305,7 @@ export const BaseTest = {
                                                         "typeString": "uint160"
                                                     }
                                                 ],
-                                                "id": 151875,
+                                                "id": 152056,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -4317,14 +4317,14 @@ export const BaseTest = {
                                                     "typeString": "type(address)"
                                                 },
                                                 "typeName": {
-                                                    "id": 151874,
+                                                    "id": 152055,
                                                     "name": "address",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "2017:7:228",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 151888,
+                                            "id": 152069,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4346,7 +4346,7 @@ export const BaseTest = {
                                             "typeString": "address"
                                         }
                                     },
-                                    "id": 151890,
+                                    "id": 152071,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2009:62:228"
                                 },
@@ -4354,11 +4354,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151894,
+                                                "id": 152075,
                                                 "name": "_user",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151871,
+                                                "referencedDeclaration": 152052,
                                                 "src": "2090:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4366,11 +4366,11 @@ export const BaseTest = {
                                                 }
                                             },
                                             {
-                                                "id": 151895,
+                                                "id": 152076,
                                                 "name": "name",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151868,
+                                                "referencedDeclaration": 152049,
                                                 "src": "2097:4:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -4390,18 +4390,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151891,
+                                                "id": 152072,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 29666,
+                                                "referencedDeclaration": 29772,
                                                 "src": "2081:2:228",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Vm_$40778",
+                                                    "typeIdentifier": "t_contract$_Vm_$40884",
                                                     "typeString": "contract Vm"
                                                 }
                                             },
-                                            "id": 151893,
+                                            "id": 152074,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4409,14 +4409,14 @@ export const BaseTest = {
                                             "memberLocation": "2084:5:228",
                                             "memberName": "label",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 39648,
+                                            "referencedDeclaration": 39754,
                                             "src": "2081:8:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (address,string memory) external"
                                             }
                                         },
-                                        "id": 151896,
+                                        "id": 152077,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4432,7 +4432,7 @@ export const BaseTest = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 151897,
+                                    "id": 152078,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2081:21:228"
                                 },
@@ -4440,11 +4440,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151901,
+                                                "id": 152082,
                                                 "name": "_user",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151871,
+                                                "referencedDeclaration": 152052,
                                                 "src": "2120:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4453,7 +4453,7 @@ export const BaseTest = {
                                             },
                                             {
                                                 "hexValue": "3130303030",
-                                                "id": 151902,
+                                                "id": 152083,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -4481,18 +4481,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151898,
+                                                "id": 152079,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 29666,
+                                                "referencedDeclaration": 29772,
                                                 "src": "2112:2:228",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Vm_$40778",
+                                                    "typeIdentifier": "t_contract$_Vm_$40884",
                                                     "typeString": "contract Vm"
                                                 }
                                             },
-                                            "id": 151900,
+                                            "id": 152081,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4500,14 +4500,14 @@ export const BaseTest = {
                                             "memberLocation": "2115:4:228",
                                             "memberName": "deal",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40415,
+                                            "referencedDeclaration": 40521,
                                             "src": "2112:7:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
                                                 "typeString": "function (address,uint256) external"
                                             }
                                         },
-                                        "id": 151903,
+                                        "id": 152084,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4523,7 +4523,7 @@ export const BaseTest = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 151904,
+                                    "id": 152085,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2112:27:228"
                                 }
@@ -4536,17 +4536,17 @@ export const BaseTest = {
                         "name": "createUser",
                         "nameLocation": "1937:10:228",
                         "parameters": {
-                            "id": 151869,
+                            "id": 152050,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 151868,
+                                    "id": 152049,
                                     "mutability": "mutable",
                                     "name": "name",
                                     "nameLocation": "1962:4:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151906,
+                                    "scope": 152087,
                                     "src": "1948:18:228",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4555,7 +4555,7 @@ export const BaseTest = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 151867,
+                                        "id": 152048,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1948:6:228",
@@ -4570,17 +4570,17 @@ export const BaseTest = {
                             "src": "1947:20:228"
                         },
                         "returnParameters": {
-                            "id": 151872,
+                            "id": 152053,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 151871,
+                                    "id": 152052,
                                     "mutability": "mutable",
                                     "name": "_user",
                                     "nameLocation": "1992:5:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151906,
+                                    "scope": 152087,
                                     "src": "1984:13:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4589,7 +4589,7 @@ export const BaseTest = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 151870,
+                                        "id": 152051,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1984:7:228",
@@ -4604,18 +4604,18 @@ export const BaseTest = {
                             ],
                             "src": "1983:15:228"
                         },
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 151929,
+                        "id": 152110,
                         "nodeType": "FunctionDefinition",
                         "src": "2152:198:228",
                         "nodes": [],
                         "body": {
-                            "id": 151928,
+                            "id": 152109,
                             "nodeType": "Block",
                             "src": "2271:79:228",
                             "nodes": [],
@@ -4624,11 +4624,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151919,
+                                                "id": 152100,
                                                 "name": "whale",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151908,
+                                                "referencedDeclaration": 152089,
                                                 "src": "2302:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4636,11 +4636,11 @@ export const BaseTest = {
                                                 }
                                             },
                                             {
-                                                "id": 151920,
+                                                "id": 152101,
                                                 "name": "token",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151911,
+                                                "referencedDeclaration": 152092,
                                                 "src": "2309:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_contract$_IERC20_$9666",
@@ -4650,11 +4650,11 @@ export const BaseTest = {
                                             {
                                                 "arguments": [
                                                     {
-                                                        "id": 151923,
+                                                        "id": 152104,
                                                         "name": "whale",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 151908,
+                                                        "referencedDeclaration": 152089,
                                                         "src": "2332:5:228",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -4670,18 +4670,18 @@ export const BaseTest = {
                                                         }
                                                     ],
                                                     "expression": {
-                                                        "id": 151921,
+                                                        "id": 152102,
                                                         "name": "token",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 151911,
+                                                        "referencedDeclaration": 152092,
                                                         "src": "2316:5:228",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_contract$_IERC20_$9666",
                                                             "typeString": "contract IERC20"
                                                         }
                                                     },
-                                                    "id": 151922,
+                                                    "id": 152103,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4696,7 +4696,7 @@ export const BaseTest = {
                                                         "typeString": "function (address) view external returns (uint256)"
                                                     }
                                                 },
-                                                "id": 151924,
+                                                "id": 152105,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -4713,11 +4713,11 @@ export const BaseTest = {
                                                 }
                                             },
                                             {
-                                                "id": 151925,
+                                                "id": 152106,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151913,
+                                                "referencedDeclaration": 152094,
                                                 "src": "2340:2:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4744,21 +4744,21 @@ export const BaseTest = {
                                                     "typeString": "address"
                                                 }
                                             ],
-                                            "id": 151918,
+                                            "id": 152099,
                                             "name": "whaleTransfer",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                151929,
-                                                151985
+                                                152110,
+                                                152166
                                             ],
-                                            "referencedDeclaration": 151985,
+                                            "referencedDeclaration": 152166,
                                             "src": "2288:13:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_contract$_IERC20_$9666_$_t_uint256_$_t_address_$returns$_t_uint256_$",
                                                 "typeString": "function (address,contract IERC20,uint256,address) returns (uint256)"
                                             }
                                         },
-                                        "id": 151926,
+                                        "id": 152107,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4774,8 +4774,8 @@ export const BaseTest = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 151917,
-                                    "id": 151927,
+                                    "functionReturnParameters": 152098,
+                                    "id": 152108,
                                     "nodeType": "Return",
                                     "src": "2281:62:228"
                                 }
@@ -4788,17 +4788,17 @@ export const BaseTest = {
                         "name": "whaleTransfer",
                         "nameLocation": "2161:13:228",
                         "parameters": {
-                            "id": 151914,
+                            "id": 152095,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 151908,
+                                    "id": 152089,
                                     "mutability": "mutable",
                                     "name": "whale",
                                     "nameLocation": "2192:5:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151929,
+                                    "scope": 152110,
                                     "src": "2184:13:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4807,7 +4807,7 @@ export const BaseTest = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 151907,
+                                        "id": 152088,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2184:7:228",
@@ -4821,12 +4821,12 @@ export const BaseTest = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 151911,
+                                    "id": 152092,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "2214:5:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151929,
+                                    "scope": 152110,
                                     "src": "2207:12:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4835,10 +4835,10 @@ export const BaseTest = {
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 151910,
+                                        "id": 152091,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 151909,
+                                            "id": 152090,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "2207:6:228"
@@ -4858,12 +4858,12 @@ export const BaseTest = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 151913,
+                                    "id": 152094,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "2237:2:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151929,
+                                    "scope": 152110,
                                     "src": "2229:10:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4872,7 +4872,7 @@ export const BaseTest = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 151912,
+                                        "id": 152093,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2229:7:228",
@@ -4888,17 +4888,17 @@ export const BaseTest = {
                             "src": "2174:71:228"
                         },
                         "returnParameters": {
-                            "id": 151917,
+                            "id": 152098,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 151916,
+                                    "id": 152097,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151929,
+                                    "scope": 152110,
                                     "src": "2262:7:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4907,7 +4907,7 @@ export const BaseTest = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 151915,
+                                        "id": 152096,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2262:7:228",
@@ -4921,35 +4921,35 @@ export const BaseTest = {
                             ],
                             "src": "2261:9:228"
                         },
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 151985,
+                        "id": 152166,
                         "nodeType": "FunctionDefinition",
                         "src": "2356:417:228",
                         "nodes": [],
                         "body": {
-                            "id": 151984,
+                            "id": 152165,
                             "nodeType": "Block",
                             "src": "2499:274:228",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        151944
+                                        152125
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 151944,
+                                            "id": 152125,
                                             "mutability": "mutable",
                                             "name": "whaleBalance",
                                             "nameLocation": "2517:12:228",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 151984,
+                                            "scope": 152165,
                                             "src": "2509:20:228",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4958,7 +4958,7 @@ export const BaseTest = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 151943,
+                                                "id": 152124,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2509:7:228",
@@ -4970,15 +4970,15 @@ export const BaseTest = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 151949,
+                                    "id": 152130,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 151947,
+                                                "id": 152128,
                                                 "name": "whale",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151931,
+                                                "referencedDeclaration": 152112,
                                                 "src": "2548:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -4994,18 +4994,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151945,
+                                                "id": 152126,
                                                 "name": "token",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151934,
+                                                "referencedDeclaration": 152115,
                                                 "src": "2532:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_contract$_IERC20_$9666",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
-                                            "id": 151946,
+                                            "id": 152127,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5020,7 +5020,7 @@ export const BaseTest = {
                                                 "typeString": "function (address) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 151948,
+                                        "id": 152129,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5045,17 +5045,17 @@ export const BaseTest = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 151952,
+                                        "id": 152133,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 151950,
+                                            "id": 152131,
                                             "name": "amount",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151936,
+                                            "referencedDeclaration": 152117,
                                             "src": "2568:6:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -5065,11 +5065,11 @@ export const BaseTest = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">",
                                         "rightExpression": {
-                                            "id": 151951,
+                                            "id": 152132,
                                             "name": "whaleBalance",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 151944,
+                                            "referencedDeclaration": 152125,
                                             "src": "2577:12:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -5082,7 +5082,7 @@ export const BaseTest = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 151956,
+                                    "id": 152137,
                                     "nodeType": "IfStatement",
                                     "src": "2564:56:228",
                                     "trueBody": {
@@ -5090,18 +5090,18 @@ export const BaseTest = {
                                             "arguments": [],
                                             "expression": {
                                                 "argumentTypes": [],
-                                                "id": 151953,
+                                                "id": 152134,
                                                 "name": "WhaleBalanceExceeded",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151711,
+                                                "referencedDeclaration": 151892,
                                                 "src": "2598:20:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_error_pure$__$returns$__$",
                                                     "typeString": "function () pure"
                                                 }
                                             },
-                                            "id": 151954,
+                                            "id": 152135,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5117,7 +5117,7 @@ export const BaseTest = {
                                                 "typeString": "tuple()"
                                             }
                                         },
-                                        "id": 151955,
+                                        "id": 152136,
                                         "nodeType": "RevertStatement",
                                         "src": "2591:29:228"
                                     }
@@ -5128,18 +5128,18 @@ export const BaseTest = {
                                         "expression": {
                                             "argumentTypes": [],
                                             "expression": {
-                                                "id": 151957,
+                                                "id": 152138,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 29666,
+                                                "referencedDeclaration": 29772,
                                                 "src": "2630:2:228",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Vm_$40778",
+                                                    "typeIdentifier": "t_contract$_Vm_$40884",
                                                     "typeString": "contract Vm"
                                                 }
                                             },
-                                            "id": 151959,
+                                            "id": 152140,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5147,14 +5147,14 @@ export const BaseTest = {
                                             "memberLocation": "2633:9:228",
                                             "memberName": "stopPrank",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40398,
+                                            "referencedDeclaration": 40504,
                                             "src": "2630:12:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$__$returns$__$",
                                                 "typeString": "function () external"
                                             }
                                         },
-                                        "id": 151960,
+                                        "id": 152141,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5170,7 +5170,7 @@ export const BaseTest = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 151961,
+                                    "id": 152142,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2630:14:228"
                                 },
@@ -5178,11 +5178,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151965,
+                                                "id": 152146,
                                                 "name": "whale",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151931,
+                                                "referencedDeclaration": 152112,
                                                 "src": "2668:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -5198,18 +5198,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151962,
+                                                "id": 152143,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 29666,
+                                                "referencedDeclaration": 29772,
                                                 "src": "2654:2:228",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Vm_$40778",
+                                                    "typeIdentifier": "t_contract$_Vm_$40884",
                                                     "typeString": "contract Vm"
                                                 }
                                             },
-                                            "id": 151964,
+                                            "id": 152145,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5217,14 +5217,14 @@ export const BaseTest = {
                                             "memberLocation": "2657:10:228",
                                             "memberName": "startPrank",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40381,
+                                            "referencedDeclaration": 40487,
                                             "src": "2654:13:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
                                                 "typeString": "function (address) external"
                                             }
                                         },
-                                        "id": 151966,
+                                        "id": 152147,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5240,7 +5240,7 @@ export const BaseTest = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 151967,
+                                    "id": 152148,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2654:20:228"
                                 },
@@ -5248,11 +5248,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151971,
+                                                "id": 152152,
                                                 "name": "whale",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151931,
+                                                "referencedDeclaration": 152112,
                                                 "src": "2692:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -5261,7 +5261,7 @@ export const BaseTest = {
                                             },
                                             {
                                                 "hexValue": "31",
-                                                "id": 151972,
+                                                "id": 152153,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -5289,18 +5289,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151968,
+                                                "id": 152149,
                                                 "name": "vm",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 29666,
+                                                "referencedDeclaration": 29772,
                                                 "src": "2684:2:228",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Vm_$40778",
+                                                    "typeIdentifier": "t_contract$_Vm_$40884",
                                                     "typeString": "contract Vm"
                                                 }
                                             },
-                                            "id": 151970,
+                                            "id": 152151,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5308,14 +5308,14 @@ export const BaseTest = {
                                             "memberLocation": "2687:4:228",
                                             "memberName": "deal",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 40415,
+                                            "referencedDeclaration": 40521,
                                             "src": "2684:7:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$returns$__$",
                                                 "typeString": "function (address,uint256) external"
                                             }
                                         },
-                                        "id": 151973,
+                                        "id": 152154,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5331,7 +5331,7 @@ export const BaseTest = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 151974,
+                                    "id": 152155,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2684:23:228"
                                 },
@@ -5339,11 +5339,11 @@ export const BaseTest = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 151978,
+                                                "id": 152159,
                                                 "name": "to",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151938,
+                                                "referencedDeclaration": 152119,
                                                 "src": "2732:2:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -5351,11 +5351,11 @@ export const BaseTest = {
                                                 }
                                             },
                                             {
-                                                "id": 151979,
+                                                "id": 152160,
                                                 "name": "amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151936,
+                                                "referencedDeclaration": 152117,
                                                 "src": "2736:6:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5375,18 +5375,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 151975,
+                                                "id": 152156,
                                                 "name": "token",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151934,
+                                                "referencedDeclaration": 152115,
                                                 "src": "2717:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_contract$_IERC20_$9666",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
-                                            "id": 151977,
+                                            "id": 152158,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5401,7 +5401,7 @@ export const BaseTest = {
                                                 "typeString": "function (address,uint256) external returns (bool)"
                                             }
                                         },
-                                        "id": 151980,
+                                        "id": 152161,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5417,25 +5417,25 @@ export const BaseTest = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 151981,
+                                    "id": 152162,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2717:26:228"
                                 },
                                 {
                                     "expression": {
-                                        "id": 151982,
+                                        "id": 152163,
                                         "name": "amount",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 151936,
+                                        "referencedDeclaration": 152117,
                                         "src": "2760:6:228",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 151942,
-                                    "id": 151983,
+                                    "functionReturnParameters": 152123,
+                                    "id": 152164,
                                     "nodeType": "Return",
                                     "src": "2753:13:228"
                                 }
@@ -5448,17 +5448,17 @@ export const BaseTest = {
                         "name": "whaleTransfer",
                         "nameLocation": "2365:13:228",
                         "parameters": {
-                            "id": 151939,
+                            "id": 152120,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 151931,
+                                    "id": 152112,
                                     "mutability": "mutable",
                                     "name": "whale",
                                     "nameLocation": "2396:5:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151985,
+                                    "scope": 152166,
                                     "src": "2388:13:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5467,7 +5467,7 @@ export const BaseTest = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 151930,
+                                        "id": 152111,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2388:7:228",
@@ -5481,12 +5481,12 @@ export const BaseTest = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 151934,
+                                    "id": 152115,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "2418:5:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151985,
+                                    "scope": 152166,
                                     "src": "2411:12:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5495,10 +5495,10 @@ export const BaseTest = {
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 151933,
+                                        "id": 152114,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 151932,
+                                            "id": 152113,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "2411:6:228"
@@ -5518,12 +5518,12 @@ export const BaseTest = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 151936,
+                                    "id": 152117,
                                     "mutability": "mutable",
                                     "name": "amount",
                                     "nameLocation": "2441:6:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151985,
+                                    "scope": 152166,
                                     "src": "2433:14:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5532,7 +5532,7 @@ export const BaseTest = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 151935,
+                                        "id": 152116,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2433:7:228",
@@ -5545,12 +5545,12 @@ export const BaseTest = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 151938,
+                                    "id": 152119,
                                     "mutability": "mutable",
                                     "name": "to",
                                     "nameLocation": "2465:2:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151985,
+                                    "scope": 152166,
                                     "src": "2457:10:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5559,7 +5559,7 @@ export const BaseTest = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 151937,
+                                        "id": 152118,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2457:7:228",
@@ -5575,17 +5575,17 @@ export const BaseTest = {
                             "src": "2378:95:228"
                         },
                         "returnParameters": {
-                            "id": 151942,
+                            "id": 152123,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 151941,
+                                    "id": 152122,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 151985,
+                                    "scope": 152166,
                                     "src": "2490:7:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5594,7 +5594,7 @@ export const BaseTest = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 151940,
+                                        "id": 152121,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2490:7:228",
@@ -5608,35 +5608,35 @@ export const BaseTest = {
                             ],
                             "src": "2489:9:228"
                         },
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 152050,
+                        "id": 152231,
                         "nodeType": "FunctionDefinition",
                         "src": "2779:652:228",
                         "nodes": [],
                         "body": {
-                            "id": 152049,
+                            "id": 152230,
                             "nodeType": "Block",
                             "src": "2925:506:228",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        151999
+                                        152180
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 151999,
+                                            "id": 152180,
                                             "mutability": "mutable",
                                             "name": "sourceBalance",
                                             "nameLocation": "2943:13:228",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 152049,
+                                            "scope": 152230,
                                             "src": "2935:21:228",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -5645,7 +5645,7 @@ export const BaseTest = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 151998,
+                                                "id": 152179,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2935:7:228",
@@ -5657,15 +5657,15 @@ export const BaseTest = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 152004,
+                                    "id": 152185,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 152002,
+                                                "id": 152183,
                                                 "name": "source",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151992,
+                                                "referencedDeclaration": 152173,
                                                 "src": "2975:6:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -5681,18 +5681,18 @@ export const BaseTest = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 152000,
+                                                "id": 152181,
                                                 "name": "token",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151990,
+                                                "referencedDeclaration": 152171,
                                                 "src": "2959:5:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_contract$_IERC20_$9666",
                                                     "typeString": "contract IERC20"
                                                 }
                                             },
-                                            "id": 152001,
+                                            "id": 152182,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5707,7 +5707,7 @@ export const BaseTest = {
                                                 "typeString": "function (address) view external returns (uint256)"
                                             }
                                         },
-                                        "id": 152003,
+                                        "id": 152184,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5728,7 +5728,7 @@ export const BaseTest = {
                                 },
                                 {
                                     "body": {
-                                        "id": 152047,
+                                        "id": 152228,
                                         "nodeType": "Block",
                                         "src": "3038:387:228",
                                         "statements": [
@@ -5736,11 +5736,11 @@ export const BaseTest = {
                                                 "expression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 152017,
+                                                            "id": 152198,
                                                             "name": "source",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 151992,
+                                                            "referencedDeclaration": 152173,
                                                             "src": "3134:6:228",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
@@ -5748,11 +5748,11 @@ export const BaseTest = {
                                                             }
                                                         },
                                                         {
-                                                            "id": 152018,
+                                                            "id": 152199,
                                                             "name": "token",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 151990,
+                                                            "referencedDeclaration": 152171,
                                                             "src": "3158:5:228",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_contract$_IERC20_$9666",
@@ -5764,17 +5764,17 @@ export const BaseTest = {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             },
-                                                            "id": 152022,
+                                                            "id": 152203,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
                                                             "lValueRequested": false,
                                                             "leftExpression": {
-                                                                "id": 152019,
+                                                                "id": 152200,
                                                                 "name": "sourceBalance",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 151999,
+                                                                "referencedDeclaration": 152180,
                                                                 "src": "3181:13:228",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -5785,18 +5785,18 @@ export const BaseTest = {
                                                             "operator": "/",
                                                             "rightExpression": {
                                                                 "expression": {
-                                                                    "id": 152020,
+                                                                    "id": 152201,
                                                                     "name": "accounts",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 151995,
+                                                                    "referencedDeclaration": 152176,
                                                                     "src": "3197:8:228",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                                                                         "typeString": "address[] memory"
                                                                     }
                                                                 },
-                                                                "id": 152021,
+                                                                "id": 152202,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5818,24 +5818,24 @@ export const BaseTest = {
                                                         },
                                                         {
                                                             "baseExpression": {
-                                                                "id": 152023,
+                                                                "id": 152204,
                                                                 "name": "accounts",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 151995,
+                                                                "referencedDeclaration": 152176,
                                                                 "src": "3230:8:228",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                                                                     "typeString": "address[] memory"
                                                                 }
                                                             },
-                                                            "id": 152025,
+                                                            "id": 152206,
                                                             "indexExpression": {
-                                                                "id": 152024,
+                                                                "id": 152205,
                                                                 "name": "i",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 152006,
+                                                                "referencedDeclaration": 152187,
                                                                 "src": "3239:1:228",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -5873,21 +5873,21 @@ export const BaseTest = {
                                                                 "typeString": "address"
                                                             }
                                                         ],
-                                                        "id": 152016,
+                                                        "id": 152197,
                                                         "name": "whaleTransfer",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [
-                                                            151929,
-                                                            151985
+                                                            152110,
+                                                            152166
                                                         ],
-                                                        "referencedDeclaration": 151985,
+                                                        "referencedDeclaration": 152166,
                                                         "src": "3103:13:228",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_nonpayable$_t_address_$_t_contract$_IERC20_$9666_$_t_uint256_$_t_address_$returns$_t_uint256_$",
                                                             "typeString": "function (address,contract IERC20,uint256,address) returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 152026,
+                                                    "id": 152207,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5903,7 +5903,7 @@ export const BaseTest = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 152027,
+                                                "id": 152208,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3103:152:228"
                                             },
@@ -5912,24 +5912,24 @@ export const BaseTest = {
                                                     "arguments": [
                                                         {
                                                             "baseExpression": {
-                                                                "id": 152031,
+                                                                "id": 152212,
                                                                 "name": "accounts",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 151995,
+                                                                "referencedDeclaration": 152176,
                                                                 "src": "3344:8:228",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                                                                     "typeString": "address[] memory"
                                                                 }
                                                             },
-                                                            "id": 152033,
+                                                            "id": 152214,
                                                             "indexExpression": {
-                                                                "id": 152032,
+                                                                "id": 152213,
                                                                 "name": "i",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 152006,
+                                                                "referencedDeclaration": 152187,
                                                                 "src": "3353:1:228",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_uint256",
@@ -5956,18 +5956,18 @@ export const BaseTest = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 152028,
+                                                            "id": 152209,
                                                             "name": "vm",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 29666,
+                                                            "referencedDeclaration": 29772,
                                                             "src": "3330:2:228",
                                                             "typeDescriptions": {
-                                                                "typeIdentifier": "t_contract$_Vm_$40778",
+                                                                "typeIdentifier": "t_contract$_Vm_$40884",
                                                                 "typeString": "contract Vm"
                                                             }
                                                         },
-                                                        "id": 152030,
+                                                        "id": 152211,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -5975,14 +5975,14 @@ export const BaseTest = {
                                                         "memberLocation": "3333:10:228",
                                                         "memberName": "startPrank",
                                                         "nodeType": "MemberAccess",
-                                                        "referencedDeclaration": 40381,
+                                                        "referencedDeclaration": 40487,
                                                         "src": "3330:13:228",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_external_nonpayable$_t_address_$returns$__$",
                                                             "typeString": "function (address) external"
                                                         }
                                                     },
-                                                    "id": 152034,
+                                                    "id": 152215,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -5998,7 +5998,7 @@ export const BaseTest = {
                                                         "typeString": "tuple()"
                                                     }
                                                 },
-                                                "id": 152035,
+                                                "id": 152216,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3330:26:228"
                                             },
@@ -6006,11 +6006,11 @@ export const BaseTest = {
                                                 "expression": {
                                                     "arguments": [
                                                         {
-                                                            "id": 152039,
+                                                            "id": 152220,
                                                             "name": "hyperdrive",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 151987,
+                                                            "referencedDeclaration": 152168,
                                                             "src": "3384:10:228",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
@@ -6021,7 +6021,7 @@ export const BaseTest = {
                                                             "expression": {
                                                                 "arguments": [
                                                                     {
-                                                                        "id": 152042,
+                                                                        "id": 152223,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -6033,7 +6033,7 @@ export const BaseTest = {
                                                                             "typeString": "type(uint256)"
                                                                         },
                                                                         "typeName": {
-                                                                            "id": 152041,
+                                                                            "id": 152222,
                                                                             "name": "uint256",
                                                                             "nodeType": "ElementaryTypeName",
                                                                             "src": "3401:7:228",
@@ -6048,7 +6048,7 @@ export const BaseTest = {
                                                                             "typeString": "type(uint256)"
                                                                         }
                                                                     ],
-                                                                    "id": 152040,
+                                                                    "id": 152221,
                                                                     "name": "type",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
@@ -6059,7 +6059,7 @@ export const BaseTest = {
                                                                         "typeString": "function () pure"
                                                                     }
                                                                 },
-                                                                "id": 152043,
+                                                                "id": 152224,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -6075,7 +6075,7 @@ export const BaseTest = {
                                                                     "typeString": "type(uint256)"
                                                                 }
                                                             },
-                                                            "id": 152044,
+                                                            "id": 152225,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -6102,18 +6102,18 @@ export const BaseTest = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 152036,
+                                                            "id": 152217,
                                                             "name": "token",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 151990,
+                                                            "referencedDeclaration": 152171,
                                                             "src": "3370:5:228",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_contract$_IERC20_$9666",
                                                                 "typeString": "contract IERC20"
                                                             }
                                                         },
-                                                        "id": 152038,
+                                                        "id": 152219,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -6128,7 +6128,7 @@ export const BaseTest = {
                                                             "typeString": "function (address,uint256) external returns (bool)"
                                                         }
                                                     },
-                                                    "id": 152045,
+                                                    "id": 152226,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -6144,7 +6144,7 @@ export const BaseTest = {
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 152046,
+                                                "id": 152227,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3370:44:228"
                                             }
@@ -6155,17 +6155,17 @@ export const BaseTest = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 152012,
+                                        "id": 152193,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 152009,
+                                            "id": 152190,
                                             "name": "i",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 152006,
+                                            "referencedDeclaration": 152187,
                                             "src": "3012:1:228",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -6176,18 +6176,18 @@ export const BaseTest = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 152010,
+                                                "id": 152191,
                                                 "name": "accounts",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 151995,
+                                                "referencedDeclaration": 152176,
                                                 "src": "3016:8:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_address_$dyn_memory_ptr",
                                                     "typeString": "address[] memory"
                                                 }
                                             },
-                                            "id": 152011,
+                                            "id": 152192,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6207,20 +6207,20 @@ export const BaseTest = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 152048,
+                                    "id": 152229,
                                     "initializationExpression": {
                                         "assignments": [
-                                            152006
+                                            152187
                                         ],
                                         "declarations": [
                                             {
                                                 "constant": false,
-                                                "id": 152006,
+                                                "id": 152187,
                                                 "mutability": "mutable",
                                                 "name": "i",
                                                 "nameLocation": "3005:1:228",
                                                 "nodeType": "VariableDeclaration",
-                                                "scope": 152048,
+                                                "scope": 152229,
                                                 "src": "2997:9:228",
                                                 "stateVariable": false,
                                                 "storageLocation": "default",
@@ -6229,7 +6229,7 @@ export const BaseTest = {
                                                     "typeString": "uint256"
                                                 },
                                                 "typeName": {
-                                                    "id": 152005,
+                                                    "id": 152186,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "2997:7:228",
@@ -6241,10 +6241,10 @@ export const BaseTest = {
                                                 "visibility": "internal"
                                             }
                                         ],
-                                        "id": 152008,
+                                        "id": 152189,
                                         "initialValue": {
                                             "hexValue": "30",
-                                            "id": 152007,
+                                            "id": 152188,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -6263,7 +6263,7 @@ export const BaseTest = {
                                     },
                                     "loopExpression": {
                                         "expression": {
-                                            "id": 152014,
+                                            "id": 152195,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -6273,11 +6273,11 @@ export const BaseTest = {
                                             "prefix": false,
                                             "src": "3033:3:228",
                                             "subExpression": {
-                                                "id": 152013,
+                                                "id": 152194,
                                                 "name": "i",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 152006,
+                                                "referencedDeclaration": 152187,
                                                 "src": "3033:1:228",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6289,7 +6289,7 @@ export const BaseTest = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 152015,
+                                        "id": 152196,
                                         "nodeType": "ExpressionStatement",
                                         "src": "3033:3:228"
                                     },
@@ -6304,17 +6304,17 @@ export const BaseTest = {
                         "name": "fundAccounts",
                         "nameLocation": "2788:12:228",
                         "parameters": {
-                            "id": 151996,
+                            "id": 152177,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 151987,
+                                    "id": 152168,
                                     "mutability": "mutable",
                                     "name": "hyperdrive",
                                     "nameLocation": "2818:10:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 152050,
+                                    "scope": 152231,
                                     "src": "2810:18:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6323,7 +6323,7 @@ export const BaseTest = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 151986,
+                                        "id": 152167,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2810:7:228",
@@ -6337,12 +6337,12 @@ export const BaseTest = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 151990,
+                                    "id": 152171,
                                     "mutability": "mutable",
                                     "name": "token",
                                     "nameLocation": "2845:5:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 152050,
+                                    "scope": 152231,
                                     "src": "2838:12:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6351,10 +6351,10 @@ export const BaseTest = {
                                         "typeString": "contract IERC20"
                                     },
                                     "typeName": {
-                                        "id": 151989,
+                                        "id": 152170,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 151988,
+                                            "id": 152169,
                                             "name": "IERC20",
                                             "nameLocations": [
                                                 "2838:6:228"
@@ -6374,12 +6374,12 @@ export const BaseTest = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 151992,
+                                    "id": 152173,
                                     "mutability": "mutable",
                                     "name": "source",
                                     "nameLocation": "2868:6:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 152050,
+                                    "scope": 152231,
                                     "src": "2860:14:228",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6388,7 +6388,7 @@ export const BaseTest = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 151991,
+                                        "id": 152172,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2860:7:228",
@@ -6402,12 +6402,12 @@ export const BaseTest = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 151995,
+                                    "id": 152176,
                                     "mutability": "mutable",
                                     "name": "accounts",
                                     "nameLocation": "2901:8:228",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 152050,
+                                    "scope": 152231,
                                     "src": "2884:25:228",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -6417,7 +6417,7 @@ export const BaseTest = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 151993,
+                                            "id": 152174,
                                             "name": "address",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "2884:7:228",
@@ -6427,7 +6427,7 @@ export const BaseTest = {
                                                 "typeString": "address"
                                             }
                                         },
-                                        "id": 151994,
+                                        "id": 152175,
                                         "nodeType": "ArrayTypeName",
                                         "src": "2884:9:228",
                                         "typeDescriptions": {
@@ -6441,12 +6441,12 @@ export const BaseTest = {
                             "src": "2800:115:228"
                         },
                         "returnParameters": {
-                            "id": 151997,
+                            "id": 152178,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "2925:0:228"
                         },
-                        "scope": 152051,
+                        "scope": 152232,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "internal"
@@ -6456,16 +6456,16 @@ export const BaseTest = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 151683,
+                            "id": 151864,
                             "name": "Test",
                             "nameLocations": [
                                 "329:4:228"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 39241,
+                            "referencedDeclaration": 39347,
                             "src": "329:4:228"
                         },
-                        "id": 151684,
+                        "id": 151865,
                         "nodeType": "InheritanceSpecifier",
                         "src": "329:4:228"
                     }
@@ -6475,48 +6475,48 @@ export const BaseTest = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    152051,
-                    39241,
-                    39190,
-                    34928,
-                    34638,
-                    33874,
-                    31820,
-                    31100,
-                    29607,
-                    29673,
-                    29670
+                    152232,
+                    39347,
+                    39296,
+                    35034,
+                    34744,
+                    33980,
+                    31926,
+                    31206,
+                    29713,
+                    29779,
+                    29776
                 ],
                 "name": "BaseTest",
                 "nameLocation": "317:8:228",
-                "scope": 152052,
+                "scope": 152233,
                 "usedErrors": [
-                    151711,
-                    151713
+                    151892,
+                    151894
                 ],
                 "usedEvents": [
-                    27321,
-                    27325,
-                    27329,
-                    27333,
-                    27337,
-                    27341,
-                    27345,
-                    27349,
-                    27355,
-                    27361,
-                    27369,
-                    27377,
-                    27383,
-                    27389,
-                    27395,
-                    27401,
-                    29695,
-                    29700,
-                    29705,
-                    29712,
-                    29719,
-                    29726
+                    27427,
+                    27431,
+                    27435,
+                    27439,
+                    27443,
+                    27447,
+                    27451,
+                    27455,
+                    27461,
+                    27467,
+                    27475,
+                    27483,
+                    27489,
+                    27495,
+                    27501,
+                    27507,
+                    29801,
+                    29806,
+                    29811,
+                    29818,
+                    29825,
+                    29832
                 ]
             }
         ],

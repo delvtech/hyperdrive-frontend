@@ -1129,10 +1129,10 @@ export const MockYieldSpaceMath = {
     },
     "ast": {
         "absolutePath": "contracts/test/MockYieldSpaceMath.sol",
-        "id": 27316,
+        "id": 27422,
         "exportedSymbols": {
             "MockYieldSpaceMath": [
-                27315
+                27421
             ],
             "YieldSpaceMath": [
                 22783
@@ -1142,7 +1142,7 @@ export const MockYieldSpaceMath = {
         "src": "39:3742:142",
         "nodes": [
             {
-                "id": 26977,
+                "id": 27083,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:142",
                 "nodes": [],
@@ -1153,19 +1153,19 @@ export const MockYieldSpaceMath = {
                 ]
             },
             {
-                "id": 26979,
+                "id": 27085,
                 "nodeType": "ImportDirective",
                 "src": "64:69:142",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/YieldSpaceMath.sol",
                 "file": "../src/libraries/YieldSpaceMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 27316,
+                "scope": 27422,
                 "sourceUnit": 22784,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 26978,
+                            "id": 27084,
                             "name": "YieldSpaceMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -1179,34 +1179,34 @@ export const MockYieldSpaceMath = {
                 "unitAlias": ""
             },
             {
-                "id": 27315,
+                "id": 27421,
                 "nodeType": "ContractDefinition",
                 "src": "135:3645:142",
                 "nodes": [
                     {
-                        "id": 27011,
+                        "id": 27117,
                         "nodeType": "FunctionDefinition",
                         "src": "169:408:142",
                         "nodes": [],
                         "body": {
-                            "id": 27010,
+                            "id": 27116,
                             "nodeType": "Block",
                             "src": "368:209:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        26997
+                                        27103
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 26997,
+                                            "id": 27103,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "386:6:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27010,
+                                            "scope": 27116,
                                             "src": "378:14:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1215,7 +1215,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 26996,
+                                                "id": 27102,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "378:7:142",
@@ -1227,15 +1227,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27007,
+                                    "id": 27113,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27000,
+                                                "id": 27106,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26981,
+                                                "referencedDeclaration": 27087,
                                                 "src": "458:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1243,11 +1243,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27001,
+                                                "id": 27107,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26983,
+                                                "referencedDeclaration": 27089,
                                                 "src": "474:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1255,11 +1255,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27002,
+                                                "id": 27108,
                                                 "name": "dz",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26985,
+                                                "referencedDeclaration": 27091,
                                                 "src": "489:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1267,11 +1267,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27003,
+                                                "id": 27109,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26987,
+                                                "referencedDeclaration": 27093,
                                                 "src": "505:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1279,11 +1279,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27004,
+                                                "id": 27110,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26989,
+                                                "referencedDeclaration": 27095,
                                                 "src": "520:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1291,11 +1291,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27005,
+                                                "id": 27111,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 26991,
+                                                "referencedDeclaration": 27097,
                                                 "src": "535:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1331,7 +1331,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 26998,
+                                                "id": 27104,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -1342,7 +1342,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 26999,
+                                            "id": 27105,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1357,7 +1357,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 27006,
+                                        "id": 27112,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1378,19 +1378,19 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 27008,
+                                        "id": 27114,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 26997,
+                                        "referencedDeclaration": 27103,
                                         "src": "564:6:142",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 26995,
-                                    "id": 27009,
+                                    "functionReturnParameters": 27101,
+                                    "id": 27115,
                                     "nodeType": "Return",
                                     "src": "557:13:142"
                                 }
@@ -1403,17 +1403,17 @@ export const MockYieldSpaceMath = {
                         "name": "calculateBondsOutGivenSharesInDown",
                         "nameLocation": "178:34:142",
                         "parameters": {
-                            "id": 26992,
+                            "id": 27098,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26981,
+                                    "id": 27087,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "230:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27011,
+                                    "scope": 27117,
                                     "src": "222:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1422,7 +1422,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26980,
+                                        "id": 27086,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "222:7:142",
@@ -1435,12 +1435,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26983,
+                                    "id": 27089,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "250:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27011,
+                                    "scope": 27117,
                                     "src": "242:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1449,7 +1449,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26982,
+                                        "id": 27088,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "242:7:142",
@@ -1462,12 +1462,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26985,
+                                    "id": 27091,
                                     "mutability": "mutable",
                                     "name": "dz",
                                     "nameLocation": "269:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27011,
+                                    "scope": 27117,
                                     "src": "261:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1476,7 +1476,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26984,
+                                        "id": 27090,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "261:7:142",
@@ -1489,12 +1489,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26987,
+                                    "id": 27093,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "289:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27011,
+                                    "scope": 27117,
                                     "src": "281:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1503,7 +1503,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26986,
+                                        "id": 27092,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "281:7:142",
@@ -1516,12 +1516,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26989,
+                                    "id": 27095,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "308:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27011,
+                                    "scope": 27117,
                                     "src": "300:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1530,7 +1530,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26988,
+                                        "id": 27094,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "300:7:142",
@@ -1543,12 +1543,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 26991,
+                                    "id": 27097,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "327:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27011,
+                                    "scope": 27117,
                                     "src": "319:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1557,7 +1557,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26990,
+                                        "id": 27096,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "319:7:142",
@@ -1572,17 +1572,17 @@ export const MockYieldSpaceMath = {
                             "src": "212:123:142"
                         },
                         "returnParameters": {
-                            "id": 26995,
+                            "id": 27101,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 26994,
+                                    "id": 27100,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27011,
+                                    "scope": 27117,
                                     "src": "359:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1591,7 +1591,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 26993,
+                                        "id": 27099,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "359:7:142",
@@ -1605,35 +1605,35 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "358:9:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 27043,
+                        "id": 27149,
                         "nodeType": "FunctionDefinition",
                         "src": "583:404:142",
                         "nodes": [],
                         "body": {
-                            "id": 27042,
+                            "id": 27148,
                             "nodeType": "Block",
                             "src": "780:207:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        27029
+                                        27135
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 27029,
+                                            "id": 27135,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "798:6:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27042,
+                                            "scope": 27148,
                                             "src": "790:14:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1642,7 +1642,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 27028,
+                                                "id": 27134,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "790:7:142",
@@ -1654,15 +1654,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27039,
+                                    "id": 27145,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27032,
+                                                "id": 27138,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27013,
+                                                "referencedDeclaration": 27119,
                                                 "src": "868:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1670,11 +1670,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27033,
+                                                "id": 27139,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27015,
+                                                "referencedDeclaration": 27121,
                                                 "src": "884:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1682,11 +1682,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27034,
+                                                "id": 27140,
                                                 "name": "dy",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27017,
+                                                "referencedDeclaration": 27123,
                                                 "src": "899:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1694,11 +1694,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27035,
+                                                "id": 27141,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27019,
+                                                "referencedDeclaration": 27125,
                                                 "src": "915:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1706,11 +1706,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27036,
+                                                "id": 27142,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27021,
+                                                "referencedDeclaration": 27127,
                                                 "src": "930:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1718,11 +1718,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27037,
+                                                "id": 27143,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27023,
+                                                "referencedDeclaration": 27129,
                                                 "src": "945:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1758,7 +1758,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 27030,
+                                                "id": 27136,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -1769,7 +1769,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 27031,
+                                            "id": 27137,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1784,7 +1784,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 27038,
+                                        "id": 27144,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1805,19 +1805,19 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 27040,
+                                        "id": 27146,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 27029,
+                                        "referencedDeclaration": 27135,
                                         "src": "974:6:142",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 27027,
-                                    "id": 27041,
+                                    "functionReturnParameters": 27133,
+                                    "id": 27147,
                                     "nodeType": "Return",
                                     "src": "967:13:142"
                                 }
@@ -1830,17 +1830,17 @@ export const MockYieldSpaceMath = {
                         "name": "calculateSharesInGivenBondsOutUp",
                         "nameLocation": "592:32:142",
                         "parameters": {
-                            "id": 27024,
+                            "id": 27130,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27013,
+                                    "id": 27119,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "642:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27043,
+                                    "scope": 27149,
                                     "src": "634:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1849,7 +1849,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27012,
+                                        "id": 27118,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "634:7:142",
@@ -1862,12 +1862,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27015,
+                                    "id": 27121,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "662:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27043,
+                                    "scope": 27149,
                                     "src": "654:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1876,7 +1876,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27014,
+                                        "id": 27120,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "654:7:142",
@@ -1889,12 +1889,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27017,
+                                    "id": 27123,
                                     "mutability": "mutable",
                                     "name": "dy",
                                     "nameLocation": "681:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27043,
+                                    "scope": 27149,
                                     "src": "673:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1903,7 +1903,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27016,
+                                        "id": 27122,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "673:7:142",
@@ -1916,12 +1916,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27019,
+                                    "id": 27125,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "701:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27043,
+                                    "scope": 27149,
                                     "src": "693:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1930,7 +1930,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27018,
+                                        "id": 27124,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "693:7:142",
@@ -1943,12 +1943,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27021,
+                                    "id": 27127,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "720:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27043,
+                                    "scope": 27149,
                                     "src": "712:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1957,7 +1957,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27020,
+                                        "id": 27126,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "712:7:142",
@@ -1970,12 +1970,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27023,
+                                    "id": 27129,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "739:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27043,
+                                    "scope": 27149,
                                     "src": "731:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1984,7 +1984,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27022,
+                                        "id": 27128,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "731:7:142",
@@ -1999,17 +1999,17 @@ export const MockYieldSpaceMath = {
                             "src": "624:123:142"
                         },
                         "returnParameters": {
-                            "id": 27027,
+                            "id": 27133,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27026,
+                                    "id": 27132,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27043,
+                                    "scope": 27149,
                                     "src": "771:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2018,7 +2018,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27025,
+                                        "id": 27131,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "771:7:142",
@@ -2032,35 +2032,35 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "770:9:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 27075,
+                        "id": 27181,
                         "nodeType": "FunctionDefinition",
                         "src": "993:408:142",
                         "nodes": [],
                         "body": {
-                            "id": 27074,
+                            "id": 27180,
                             "nodeType": "Block",
                             "src": "1192:209:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        27061
+                                        27167
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 27061,
+                                            "id": 27167,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "1210:6:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27074,
+                                            "scope": 27180,
                                             "src": "1202:14:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2069,7 +2069,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 27060,
+                                                "id": 27166,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1202:7:142",
@@ -2081,15 +2081,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27071,
+                                    "id": 27177,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27064,
+                                                "id": 27170,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27045,
+                                                "referencedDeclaration": 27151,
                                                 "src": "1282:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2097,11 +2097,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27065,
+                                                "id": 27171,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27047,
+                                                "referencedDeclaration": 27153,
                                                 "src": "1298:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2109,11 +2109,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27066,
+                                                "id": 27172,
                                                 "name": "dy",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27049,
+                                                "referencedDeclaration": 27155,
                                                 "src": "1313:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2121,11 +2121,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27067,
+                                                "id": 27173,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27051,
+                                                "referencedDeclaration": 27157,
                                                 "src": "1329:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2133,11 +2133,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27068,
+                                                "id": 27174,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27053,
+                                                "referencedDeclaration": 27159,
                                                 "src": "1344:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2145,11 +2145,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27069,
+                                                "id": 27175,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27055,
+                                                "referencedDeclaration": 27161,
                                                 "src": "1359:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2185,7 +2185,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 27062,
+                                                "id": 27168,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2196,7 +2196,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 27063,
+                                            "id": 27169,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2211,7 +2211,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 27070,
+                                        "id": 27176,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2232,19 +2232,19 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 27072,
+                                        "id": 27178,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 27061,
+                                        "referencedDeclaration": 27167,
                                         "src": "1388:6:142",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 27059,
-                                    "id": 27073,
+                                    "functionReturnParameters": 27165,
+                                    "id": 27179,
                                     "nodeType": "Return",
                                     "src": "1381:13:142"
                                 }
@@ -2257,17 +2257,17 @@ export const MockYieldSpaceMath = {
                         "name": "calculateSharesInGivenBondsOutDown",
                         "nameLocation": "1002:34:142",
                         "parameters": {
-                            "id": 27056,
+                            "id": 27162,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27045,
+                                    "id": 27151,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "1054:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27075,
+                                    "scope": 27181,
                                     "src": "1046:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2276,7 +2276,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27044,
+                                        "id": 27150,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1046:7:142",
@@ -2289,12 +2289,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27047,
+                                    "id": 27153,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "1074:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27075,
+                                    "scope": 27181,
                                     "src": "1066:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2303,7 +2303,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27046,
+                                        "id": 27152,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1066:7:142",
@@ -2316,12 +2316,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27049,
+                                    "id": 27155,
                                     "mutability": "mutable",
                                     "name": "dy",
                                     "nameLocation": "1093:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27075,
+                                    "scope": 27181,
                                     "src": "1085:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2330,7 +2330,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27048,
+                                        "id": 27154,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1085:7:142",
@@ -2343,12 +2343,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27051,
+                                    "id": 27157,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "1113:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27075,
+                                    "scope": 27181,
                                     "src": "1105:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2357,7 +2357,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27050,
+                                        "id": 27156,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1105:7:142",
@@ -2370,12 +2370,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27053,
+                                    "id": 27159,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "1132:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27075,
+                                    "scope": 27181,
                                     "src": "1124:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2384,7 +2384,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27052,
+                                        "id": 27158,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1124:7:142",
@@ -2397,12 +2397,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27055,
+                                    "id": 27161,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "1151:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27075,
+                                    "scope": 27181,
                                     "src": "1143:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2411,7 +2411,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27054,
+                                        "id": 27160,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1143:7:142",
@@ -2426,17 +2426,17 @@ export const MockYieldSpaceMath = {
                             "src": "1036:123:142"
                         },
                         "returnParameters": {
-                            "id": 27059,
+                            "id": 27165,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27058,
+                                    "id": 27164,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27075,
+                                    "scope": 27181,
                                     "src": "1183:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2445,7 +2445,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27057,
+                                        "id": 27163,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1183:7:142",
@@ -2459,35 +2459,35 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "1182:9:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 27107,
+                        "id": 27213,
                         "nodeType": "FunctionDefinition",
                         "src": "1407:408:142",
                         "nodes": [],
                         "body": {
-                            "id": 27106,
+                            "id": 27212,
                             "nodeType": "Block",
                             "src": "1606:209:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        27093
+                                        27199
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 27093,
+                                            "id": 27199,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "1624:6:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27106,
+                                            "scope": 27212,
                                             "src": "1616:14:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2496,7 +2496,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 27092,
+                                                "id": 27198,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1616:7:142",
@@ -2508,15 +2508,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27103,
+                                    "id": 27209,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27096,
+                                                "id": 27202,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27077,
+                                                "referencedDeclaration": 27183,
                                                 "src": "1696:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2524,11 +2524,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27097,
+                                                "id": 27203,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27079,
+                                                "referencedDeclaration": 27185,
                                                 "src": "1712:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2536,11 +2536,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27098,
+                                                "id": 27204,
                                                 "name": "dy",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27081,
+                                                "referencedDeclaration": 27187,
                                                 "src": "1727:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2548,11 +2548,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27099,
+                                                "id": 27205,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27083,
+                                                "referencedDeclaration": 27189,
                                                 "src": "1743:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2560,11 +2560,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27100,
+                                                "id": 27206,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27085,
+                                                "referencedDeclaration": 27191,
                                                 "src": "1758:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2572,11 +2572,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27101,
+                                                "id": 27207,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27087,
+                                                "referencedDeclaration": 27193,
                                                 "src": "1773:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2612,7 +2612,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 27094,
+                                                "id": 27200,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2623,7 +2623,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 27095,
+                                            "id": 27201,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2638,7 +2638,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 27102,
+                                        "id": 27208,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2659,19 +2659,19 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 27104,
+                                        "id": 27210,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 27093,
+                                        "referencedDeclaration": 27199,
                                         "src": "1802:6:142",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 27091,
-                                    "id": 27105,
+                                    "functionReturnParameters": 27197,
+                                    "id": 27211,
                                     "nodeType": "Return",
                                     "src": "1795:13:142"
                                 }
@@ -2684,17 +2684,17 @@ export const MockYieldSpaceMath = {
                         "name": "calculateSharesOutGivenBondsInDown",
                         "nameLocation": "1416:34:142",
                         "parameters": {
-                            "id": 27088,
+                            "id": 27194,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27077,
+                                    "id": 27183,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "1468:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27107,
+                                    "scope": 27213,
                                     "src": "1460:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2703,7 +2703,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27076,
+                                        "id": 27182,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1460:7:142",
@@ -2716,12 +2716,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27079,
+                                    "id": 27185,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "1488:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27107,
+                                    "scope": 27213,
                                     "src": "1480:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2730,7 +2730,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27078,
+                                        "id": 27184,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1480:7:142",
@@ -2743,12 +2743,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27081,
+                                    "id": 27187,
                                     "mutability": "mutable",
                                     "name": "dy",
                                     "nameLocation": "1507:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27107,
+                                    "scope": 27213,
                                     "src": "1499:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2757,7 +2757,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27080,
+                                        "id": 27186,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1499:7:142",
@@ -2770,12 +2770,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27083,
+                                    "id": 27189,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "1527:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27107,
+                                    "scope": 27213,
                                     "src": "1519:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2784,7 +2784,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27082,
+                                        "id": 27188,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1519:7:142",
@@ -2797,12 +2797,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27085,
+                                    "id": 27191,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "1546:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27107,
+                                    "scope": 27213,
                                     "src": "1538:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2811,7 +2811,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27084,
+                                        "id": 27190,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1538:7:142",
@@ -2824,12 +2824,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27087,
+                                    "id": 27193,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "1565:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27107,
+                                    "scope": 27213,
                                     "src": "1557:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2838,7 +2838,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27086,
+                                        "id": 27192,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1557:7:142",
@@ -2853,17 +2853,17 @@ export const MockYieldSpaceMath = {
                             "src": "1450:123:142"
                         },
                         "returnParameters": {
-                            "id": 27091,
+                            "id": 27197,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27090,
+                                    "id": 27196,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27107,
+                                    "scope": 27213,
                                     "src": "1597:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2872,7 +2872,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27089,
+                                        "id": 27195,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1597:7:142",
@@ -2886,36 +2886,36 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "1596:9:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 27145,
+                        "id": 27251,
                         "nodeType": "FunctionDefinition",
                         "src": "1821:382:142",
                         "nodes": [],
                         "body": {
-                            "id": 27144,
+                            "id": 27250,
                             "nodeType": "Block",
                             "src": "2030:173:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        27127,
-                                        27129
+                                        27233,
+                                        27235
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 27127,
+                                            "id": 27233,
                                             "mutability": "mutable",
                                             "name": "result1",
                                             "nameLocation": "2049:7:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27144,
+                                            "scope": 27250,
                                             "src": "2041:15:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2924,7 +2924,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 27126,
+                                                "id": 27232,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2041:7:142",
@@ -2937,12 +2937,12 @@ export const MockYieldSpaceMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 27129,
+                                            "id": 27235,
                                             "mutability": "mutable",
                                             "name": "result2",
                                             "nameLocation": "2063:7:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27144,
+                                            "scope": 27250,
                                             "src": "2058:12:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2951,7 +2951,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 27128,
+                                                "id": 27234,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2058:4:142",
@@ -2963,15 +2963,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27139,
+                                    "id": 27245,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27132,
+                                                "id": 27238,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27109,
+                                                "referencedDeclaration": 27215,
                                                 "src": "2141:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2979,11 +2979,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27133,
+                                                "id": 27239,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27111,
+                                                "referencedDeclaration": 27217,
                                                 "src": "2145:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2991,11 +2991,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27134,
+                                                "id": 27240,
                                                 "name": "dy",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27113,
+                                                "referencedDeclaration": 27219,
                                                 "src": "2148:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3003,11 +3003,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27135,
+                                                "id": 27241,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27115,
+                                                "referencedDeclaration": 27221,
                                                 "src": "2152:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3015,11 +3015,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27136,
+                                                "id": 27242,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27117,
+                                                "referencedDeclaration": 27223,
                                                 "src": "2155:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3027,11 +3027,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27137,
+                                                "id": 27243,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27119,
+                                                "referencedDeclaration": 27225,
                                                 "src": "2158:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3067,7 +3067,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 27130,
+                                                "id": 27236,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3078,7 +3078,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 27131,
+                                            "id": 27237,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3093,7 +3093,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)"
                                             }
                                         },
-                                        "id": 27138,
+                                        "id": 27244,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3116,11 +3116,11 @@ export const MockYieldSpaceMath = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 27140,
+                                                "id": 27246,
                                                 "name": "result1",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27127,
+                                                "referencedDeclaration": 27233,
                                                 "src": "2179:7:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3128,11 +3128,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27141,
+                                                "id": 27247,
                                                 "name": "result2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27129,
+                                                "referencedDeclaration": 27235,
                                                 "src": "2188:7:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -3140,7 +3140,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             }
                                         ],
-                                        "id": 27142,
+                                        "id": 27248,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -3153,8 +3153,8 @@ export const MockYieldSpaceMath = {
                                             "typeString": "tuple(uint256,bool)"
                                         }
                                     },
-                                    "functionReturnParameters": 27125,
-                                    "id": 27143,
+                                    "functionReturnParameters": 27231,
+                                    "id": 27249,
                                     "nodeType": "Return",
                                     "src": "2171:25:142"
                                 }
@@ -3167,17 +3167,17 @@ export const MockYieldSpaceMath = {
                         "name": "calculateSharesOutGivenBondsInDownSafe",
                         "nameLocation": "1830:38:142",
                         "parameters": {
-                            "id": 27120,
+                            "id": 27226,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27109,
+                                    "id": 27215,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "1886:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27145,
+                                    "scope": 27251,
                                     "src": "1878:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3186,7 +3186,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27108,
+                                        "id": 27214,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1878:7:142",
@@ -3199,12 +3199,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27111,
+                                    "id": 27217,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "1906:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27145,
+                                    "scope": 27251,
                                     "src": "1898:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3213,7 +3213,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27110,
+                                        "id": 27216,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1898:7:142",
@@ -3226,12 +3226,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27113,
+                                    "id": 27219,
                                     "mutability": "mutable",
                                     "name": "dy",
                                     "nameLocation": "1925:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27145,
+                                    "scope": 27251,
                                     "src": "1917:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3240,7 +3240,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27112,
+                                        "id": 27218,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1917:7:142",
@@ -3253,12 +3253,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27115,
+                                    "id": 27221,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "1945:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27145,
+                                    "scope": 27251,
                                     "src": "1937:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3267,7 +3267,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27114,
+                                        "id": 27220,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1937:7:142",
@@ -3280,12 +3280,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27117,
+                                    "id": 27223,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "1964:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27145,
+                                    "scope": 27251,
                                     "src": "1956:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3294,7 +3294,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27116,
+                                        "id": 27222,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1956:7:142",
@@ -3307,12 +3307,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27119,
+                                    "id": 27225,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "1983:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27145,
+                                    "scope": 27251,
                                     "src": "1975:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3321,7 +3321,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27118,
+                                        "id": 27224,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1975:7:142",
@@ -3336,17 +3336,17 @@ export const MockYieldSpaceMath = {
                             "src": "1868:123:142"
                         },
                         "returnParameters": {
-                            "id": 27125,
+                            "id": 27231,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27122,
+                                    "id": 27228,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27145,
+                                    "scope": 27251,
                                     "src": "2015:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3355,7 +3355,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27121,
+                                        "id": 27227,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2015:7:142",
@@ -3368,12 +3368,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27124,
+                                    "id": 27230,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27145,
+                                    "scope": 27251,
                                     "src": "2024:4:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3382,7 +3382,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 27123,
+                                        "id": 27229,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2024:4:142",
@@ -3396,36 +3396,36 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "2014:15:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 27180,
+                        "id": 27286,
                         "nodeType": "FunctionDefinition",
                         "src": "2209:336:142",
                         "nodes": [],
                         "body": {
-                            "id": 27179,
+                            "id": 27285,
                             "nodeType": "Block",
                             "src": "2387:158:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        27163,
-                                        27165
+                                        27269,
+                                        27271
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 27163,
+                                            "id": 27269,
                                             "mutability": "mutable",
                                             "name": "result1",
                                             "nameLocation": "2406:7:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27179,
+                                            "scope": 27285,
                                             "src": "2398:15:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3434,7 +3434,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 27162,
+                                                "id": 27268,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2398:7:142",
@@ -3447,12 +3447,12 @@ export const MockYieldSpaceMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 27165,
+                                            "id": 27271,
                                             "mutability": "mutable",
                                             "name": "result2",
                                             "nameLocation": "2420:7:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27179,
+                                            "scope": 27285,
                                             "src": "2415:12:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3461,7 +3461,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 27164,
+                                                "id": 27270,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2415:4:142",
@@ -3473,15 +3473,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27174,
+                                    "id": 27280,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27168,
+                                                "id": 27274,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27147,
+                                                "referencedDeclaration": 27253,
                                                 "src": "2487:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3489,11 +3489,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27169,
+                                                "id": 27275,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27149,
+                                                "referencedDeclaration": 27255,
                                                 "src": "2491:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3501,11 +3501,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27170,
+                                                "id": 27276,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27151,
+                                                "referencedDeclaration": 27257,
                                                 "src": "2494:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3513,11 +3513,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27171,
+                                                "id": 27277,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27153,
+                                                "referencedDeclaration": 27259,
                                                 "src": "2497:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3525,11 +3525,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27172,
+                                                "id": 27278,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27155,
+                                                "referencedDeclaration": 27261,
                                                 "src": "2500:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3561,7 +3561,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 27166,
+                                                "id": 27272,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3572,7 +3572,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 27167,
+                                            "id": 27273,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3587,7 +3587,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)"
                                             }
                                         },
-                                        "id": 27173,
+                                        "id": 27279,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3610,11 +3610,11 @@ export const MockYieldSpaceMath = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 27175,
+                                                "id": 27281,
                                                 "name": "result1",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27163,
+                                                "referencedDeclaration": 27269,
                                                 "src": "2521:7:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3622,11 +3622,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27176,
+                                                "id": 27282,
                                                 "name": "result2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27165,
+                                                "referencedDeclaration": 27271,
                                                 "src": "2530:7:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -3634,7 +3634,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             }
                                         ],
-                                        "id": 27177,
+                                        "id": 27283,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -3647,8 +3647,8 @@ export const MockYieldSpaceMath = {
                                             "typeString": "tuple(uint256,bool)"
                                         }
                                     },
-                                    "functionReturnParameters": 27161,
-                                    "id": 27178,
+                                    "functionReturnParameters": 27267,
+                                    "id": 27284,
                                     "nodeType": "Return",
                                     "src": "2513:25:142"
                                 }
@@ -3661,17 +3661,17 @@ export const MockYieldSpaceMath = {
                         "name": "calculateMaxBuySharesInSafe",
                         "nameLocation": "2218:27:142",
                         "parameters": {
-                            "id": 27156,
+                            "id": 27262,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27147,
+                                    "id": 27253,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "2263:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27180,
+                                    "scope": 27286,
                                     "src": "2255:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3680,7 +3680,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27146,
+                                        "id": 27252,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2255:7:142",
@@ -3693,12 +3693,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27149,
+                                    "id": 27255,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "2283:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27180,
+                                    "scope": 27286,
                                     "src": "2275:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3707,7 +3707,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27148,
+                                        "id": 27254,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2275:7:142",
@@ -3720,12 +3720,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27151,
+                                    "id": 27257,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "2302:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27180,
+                                    "scope": 27286,
                                     "src": "2294:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3734,7 +3734,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27150,
+                                        "id": 27256,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2294:7:142",
@@ -3747,12 +3747,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27153,
+                                    "id": 27259,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "2321:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27180,
+                                    "scope": 27286,
                                     "src": "2313:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3761,7 +3761,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27152,
+                                        "id": 27258,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2313:7:142",
@@ -3774,12 +3774,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27155,
+                                    "id": 27261,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "2340:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27180,
+                                    "scope": 27286,
                                     "src": "2332:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3788,7 +3788,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27154,
+                                        "id": 27260,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2332:7:142",
@@ -3803,17 +3803,17 @@ export const MockYieldSpaceMath = {
                             "src": "2245:103:142"
                         },
                         "returnParameters": {
-                            "id": 27161,
+                            "id": 27267,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27158,
+                                    "id": 27264,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27180,
+                                    "scope": 27286,
                                     "src": "2372:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3822,7 +3822,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27157,
+                                        "id": 27263,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2372:7:142",
@@ -3835,12 +3835,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27160,
+                                    "id": 27266,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27180,
+                                    "scope": 27286,
                                     "src": "2381:4:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3849,7 +3849,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 27159,
+                                        "id": 27265,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2381:4:142",
@@ -3863,36 +3863,36 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "2371:15:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 27215,
+                        "id": 27321,
                         "nodeType": "FunctionDefinition",
                         "src": "2551:336:142",
                         "nodes": [],
                         "body": {
-                            "id": 27214,
+                            "id": 27320,
                             "nodeType": "Block",
                             "src": "2729:158:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        27198,
-                                        27200
+                                        27304,
+                                        27306
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 27198,
+                                            "id": 27304,
                                             "mutability": "mutable",
                                             "name": "result1",
                                             "nameLocation": "2748:7:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27214,
+                                            "scope": 27320,
                                             "src": "2740:15:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3901,7 +3901,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 27197,
+                                                "id": 27303,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2740:7:142",
@@ -3914,12 +3914,12 @@ export const MockYieldSpaceMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 27200,
+                                            "id": 27306,
                                             "mutability": "mutable",
                                             "name": "result2",
                                             "nameLocation": "2762:7:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27214,
+                                            "scope": 27320,
                                             "src": "2757:12:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3928,7 +3928,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 27199,
+                                                "id": 27305,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2757:4:142",
@@ -3940,15 +3940,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27209,
+                                    "id": 27315,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27203,
+                                                "id": 27309,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27182,
+                                                "referencedDeclaration": 27288,
                                                 "src": "2829:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3956,11 +3956,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27204,
+                                                "id": 27310,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27184,
+                                                "referencedDeclaration": 27290,
                                                 "src": "2833:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3968,11 +3968,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27205,
+                                                "id": 27311,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27186,
+                                                "referencedDeclaration": 27292,
                                                 "src": "2836:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3980,11 +3980,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27206,
+                                                "id": 27312,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27188,
+                                                "referencedDeclaration": 27294,
                                                 "src": "2839:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3992,11 +3992,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27207,
+                                                "id": 27313,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27190,
+                                                "referencedDeclaration": 27296,
                                                 "src": "2842:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4028,7 +4028,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 27201,
+                                                "id": 27307,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -4039,7 +4039,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 27202,
+                                            "id": 27308,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4054,7 +4054,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)"
                                             }
                                         },
-                                        "id": 27208,
+                                        "id": 27314,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4077,11 +4077,11 @@ export const MockYieldSpaceMath = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 27210,
+                                                "id": 27316,
                                                 "name": "result1",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27198,
+                                                "referencedDeclaration": 27304,
                                                 "src": "2863:7:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4089,11 +4089,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27211,
+                                                "id": 27317,
                                                 "name": "result2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27200,
+                                                "referencedDeclaration": 27306,
                                                 "src": "2872:7:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -4101,7 +4101,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             }
                                         ],
-                                        "id": 27212,
+                                        "id": 27318,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -4114,8 +4114,8 @@ export const MockYieldSpaceMath = {
                                             "typeString": "tuple(uint256,bool)"
                                         }
                                     },
-                                    "functionReturnParameters": 27196,
-                                    "id": 27213,
+                                    "functionReturnParameters": 27302,
+                                    "id": 27319,
                                     "nodeType": "Return",
                                     "src": "2855:25:142"
                                 }
@@ -4128,17 +4128,17 @@ export const MockYieldSpaceMath = {
                         "name": "calculateMaxBuyBondsOutSafe",
                         "nameLocation": "2560:27:142",
                         "parameters": {
-                            "id": 27191,
+                            "id": 27297,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27182,
+                                    "id": 27288,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "2605:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27215,
+                                    "scope": 27321,
                                     "src": "2597:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4147,7 +4147,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27181,
+                                        "id": 27287,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2597:7:142",
@@ -4160,12 +4160,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27184,
+                                    "id": 27290,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "2625:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27215,
+                                    "scope": 27321,
                                     "src": "2617:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4174,7 +4174,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27183,
+                                        "id": 27289,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2617:7:142",
@@ -4187,12 +4187,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27186,
+                                    "id": 27292,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "2644:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27215,
+                                    "scope": 27321,
                                     "src": "2636:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4201,7 +4201,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27185,
+                                        "id": 27291,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2636:7:142",
@@ -4214,12 +4214,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27188,
+                                    "id": 27294,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "2663:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27215,
+                                    "scope": 27321,
                                     "src": "2655:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4228,7 +4228,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27187,
+                                        "id": 27293,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2655:7:142",
@@ -4241,12 +4241,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27190,
+                                    "id": 27296,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "2682:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27215,
+                                    "scope": 27321,
                                     "src": "2674:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4255,7 +4255,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27189,
+                                        "id": 27295,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2674:7:142",
@@ -4270,17 +4270,17 @@ export const MockYieldSpaceMath = {
                             "src": "2587:103:142"
                         },
                         "returnParameters": {
-                            "id": 27196,
+                            "id": 27302,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27193,
+                                    "id": 27299,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27215,
+                                    "scope": 27321,
                                     "src": "2714:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4289,7 +4289,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27192,
+                                        "id": 27298,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2714:7:142",
@@ -4302,12 +4302,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27195,
+                                    "id": 27301,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27215,
+                                    "scope": 27321,
                                     "src": "2723:4:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4316,7 +4316,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 27194,
+                                        "id": 27300,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2723:4:142",
@@ -4330,36 +4330,36 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "2713:15:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 27256,
+                        "id": 27362,
                         "nodeType": "FunctionDefinition",
                         "src": "2893:389:142",
                         "nodes": [],
                         "body": {
-                            "id": 27255,
+                            "id": 27361,
                             "nodeType": "Block",
                             "src": "3113:169:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        27237,
-                                        27239
+                                        27343,
+                                        27345
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 27237,
+                                            "id": 27343,
                                             "mutability": "mutable",
                                             "name": "result1",
                                             "nameLocation": "3132:7:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27255,
+                                            "scope": 27361,
                                             "src": "3124:15:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4368,7 +4368,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 27236,
+                                                "id": 27342,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3124:7:142",
@@ -4381,12 +4381,12 @@ export const MockYieldSpaceMath = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 27239,
+                                            "id": 27345,
                                             "mutability": "mutable",
                                             "name": "result2",
                                             "nameLocation": "3146:7:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27255,
+                                            "scope": 27361,
                                             "src": "3141:12:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4395,7 +4395,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 27238,
+                                                "id": 27344,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3141:4:142",
@@ -4407,15 +4407,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27250,
+                                    "id": 27356,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27242,
+                                                "id": 27348,
                                                 "name": "z",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27217,
+                                                "referencedDeclaration": 27323,
                                                 "src": "3213:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4423,11 +4423,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27243,
+                                                "id": 27349,
                                                 "name": "zeta",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27219,
+                                                "referencedDeclaration": 27325,
                                                 "src": "3216:4:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -4435,11 +4435,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27244,
+                                                "id": 27350,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27221,
+                                                "referencedDeclaration": 27327,
                                                 "src": "3222:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4447,11 +4447,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27245,
+                                                "id": 27351,
                                                 "name": "zMin",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27223,
+                                                "referencedDeclaration": 27329,
                                                 "src": "3225:4:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4459,11 +4459,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27246,
+                                                "id": 27352,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27225,
+                                                "referencedDeclaration": 27331,
                                                 "src": "3231:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4471,11 +4471,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27247,
+                                                "id": 27353,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27227,
+                                                "referencedDeclaration": 27333,
                                                 "src": "3234:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4483,11 +4483,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27248,
+                                                "id": 27354,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27229,
+                                                "referencedDeclaration": 27335,
                                                 "src": "3237:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4527,7 +4527,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 27240,
+                                                "id": 27346,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -4538,7 +4538,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 27241,
+                                            "id": 27347,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -4553,7 +4553,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,int256,uint256,uint256,uint256,uint256,uint256) pure returns (uint256,bool)"
                                             }
                                         },
-                                        "id": 27249,
+                                        "id": 27355,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4576,11 +4576,11 @@ export const MockYieldSpaceMath = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 27251,
+                                                "id": 27357,
                                                 "name": "result1",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27237,
+                                                "referencedDeclaration": 27343,
                                                 "src": "3258:7:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4588,11 +4588,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27252,
+                                                "id": 27358,
                                                 "name": "result2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27239,
+                                                "referencedDeclaration": 27345,
                                                 "src": "3267:7:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -4600,7 +4600,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             }
                                         ],
-                                        "id": 27253,
+                                        "id": 27359,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -4613,8 +4613,8 @@ export const MockYieldSpaceMath = {
                                             "typeString": "tuple(uint256,bool)"
                                         }
                                     },
-                                    "functionReturnParameters": 27235,
-                                    "id": 27254,
+                                    "functionReturnParameters": 27341,
+                                    "id": 27360,
                                     "nodeType": "Return",
                                     "src": "3250:25:142"
                                 }
@@ -4627,17 +4627,17 @@ export const MockYieldSpaceMath = {
                         "name": "calculateMaxSellBondsInSafe",
                         "nameLocation": "2902:27:142",
                         "parameters": {
-                            "id": 27230,
+                            "id": 27336,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27217,
+                                    "id": 27323,
                                     "mutability": "mutable",
                                     "name": "z",
                                     "nameLocation": "2947:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27256,
+                                    "scope": 27362,
                                     "src": "2939:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4646,7 +4646,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27216,
+                                        "id": 27322,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2939:7:142",
@@ -4659,12 +4659,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27219,
+                                    "id": 27325,
                                     "mutability": "mutable",
                                     "name": "zeta",
                                     "nameLocation": "2965:4:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27256,
+                                    "scope": 27362,
                                     "src": "2958:11:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4673,7 +4673,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 27218,
+                                        "id": 27324,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2958:6:142",
@@ -4686,12 +4686,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27221,
+                                    "id": 27327,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "2987:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27256,
+                                    "scope": 27362,
                                     "src": "2979:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4700,7 +4700,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27220,
+                                        "id": 27326,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2979:7:142",
@@ -4713,12 +4713,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27223,
+                                    "id": 27329,
                                     "mutability": "mutable",
                                     "name": "zMin",
                                     "nameLocation": "3006:4:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27256,
+                                    "scope": 27362,
                                     "src": "2998:12:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4727,7 +4727,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27222,
+                                        "id": 27328,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2998:7:142",
@@ -4740,12 +4740,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27225,
+                                    "id": 27331,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "3028:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27256,
+                                    "scope": 27362,
                                     "src": "3020:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4754,7 +4754,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27224,
+                                        "id": 27330,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3020:7:142",
@@ -4767,12 +4767,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27227,
+                                    "id": 27333,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "3047:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27256,
+                                    "scope": 27362,
                                     "src": "3039:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4781,7 +4781,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27226,
+                                        "id": 27332,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3039:7:142",
@@ -4794,12 +4794,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27229,
+                                    "id": 27335,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "3066:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27256,
+                                    "scope": 27362,
                                     "src": "3058:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4808,7 +4808,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27228,
+                                        "id": 27334,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3058:7:142",
@@ -4823,17 +4823,17 @@ export const MockYieldSpaceMath = {
                             "src": "2929:145:142"
                         },
                         "returnParameters": {
-                            "id": 27235,
+                            "id": 27341,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27232,
+                                    "id": 27338,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27256,
+                                    "scope": 27362,
                                     "src": "3098:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4842,7 +4842,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27231,
+                                        "id": 27337,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3098:7:142",
@@ -4855,12 +4855,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27234,
+                                    "id": 27340,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27256,
+                                    "scope": 27362,
                                     "src": "3107:4:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4869,7 +4869,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 27233,
+                                        "id": 27339,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3107:4:142",
@@ -4883,35 +4883,35 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "3097:15:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 27285,
+                        "id": 27391,
                         "nodeType": "FunctionDefinition",
                         "src": "3288:240:142",
                         "nodes": [],
                         "body": {
-                            "id": 27284,
+                            "id": 27390,
                             "nodeType": "Block",
                             "src": "3436:92:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        27272
+                                        27378
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 27272,
+                                            "id": 27378,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "3454:6:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27284,
+                                            "scope": 27390,
                                             "src": "3446:14:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4920,7 +4920,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 27271,
+                                                "id": 27377,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3446:7:142",
@@ -4932,15 +4932,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27281,
+                                    "id": 27387,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27275,
+                                                "id": 27381,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27258,
+                                                "referencedDeclaration": 27364,
                                                 "src": "3482:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4948,11 +4948,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27276,
+                                                "id": 27382,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27260,
+                                                "referencedDeclaration": 27366,
                                                 "src": "3486:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4960,11 +4960,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27277,
+                                                "id": 27383,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27262,
+                                                "referencedDeclaration": 27368,
                                                 "src": "3489:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4972,11 +4972,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27278,
+                                                "id": 27384,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27264,
+                                                "referencedDeclaration": 27370,
                                                 "src": "3492:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4984,11 +4984,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27279,
+                                                "id": 27385,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27266,
+                                                "referencedDeclaration": 27372,
                                                 "src": "3495:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5020,7 +5020,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 27273,
+                                                "id": 27379,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -5031,7 +5031,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 27274,
+                                            "id": 27380,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5046,7 +5046,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 27280,
+                                        "id": 27386,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5067,19 +5067,19 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 27282,
+                                        "id": 27388,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 27272,
+                                        "referencedDeclaration": 27378,
                                         "src": "3515:6:142",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 27270,
-                                    "id": 27283,
+                                    "functionReturnParameters": 27376,
+                                    "id": 27389,
                                     "nodeType": "Return",
                                     "src": "3508:13:142"
                                 }
@@ -5092,17 +5092,17 @@ export const MockYieldSpaceMath = {
                         "name": "kUp",
                         "nameLocation": "3297:3:142",
                         "parameters": {
-                            "id": 27267,
+                            "id": 27373,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27258,
+                                    "id": 27364,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "3318:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27285,
+                                    "scope": 27391,
                                     "src": "3310:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5111,7 +5111,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27257,
+                                        "id": 27363,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3310:7:142",
@@ -5124,12 +5124,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27260,
+                                    "id": 27366,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "3338:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27285,
+                                    "scope": 27391,
                                     "src": "3330:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5138,7 +5138,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27259,
+                                        "id": 27365,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3330:7:142",
@@ -5151,12 +5151,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27262,
+                                    "id": 27368,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "3357:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27285,
+                                    "scope": 27391,
                                     "src": "3349:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5165,7 +5165,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27261,
+                                        "id": 27367,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3349:7:142",
@@ -5178,12 +5178,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27264,
+                                    "id": 27370,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "3376:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27285,
+                                    "scope": 27391,
                                     "src": "3368:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5192,7 +5192,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27263,
+                                        "id": 27369,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3368:7:142",
@@ -5205,12 +5205,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27266,
+                                    "id": 27372,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "3395:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27285,
+                                    "scope": 27391,
                                     "src": "3387:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5219,7 +5219,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27265,
+                                        "id": 27371,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3387:7:142",
@@ -5234,17 +5234,17 @@ export const MockYieldSpaceMath = {
                             "src": "3300:103:142"
                         },
                         "returnParameters": {
-                            "id": 27270,
+                            "id": 27376,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27269,
+                                    "id": 27375,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27285,
+                                    "scope": 27391,
                                     "src": "3427:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5253,7 +5253,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27268,
+                                        "id": 27374,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3427:7:142",
@@ -5267,35 +5267,35 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "3426:9:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 27314,
+                        "id": 27420,
                         "nodeType": "FunctionDefinition",
                         "src": "3534:244:142",
                         "nodes": [],
                         "body": {
-                            "id": 27313,
+                            "id": 27419,
                             "nodeType": "Block",
                             "src": "3684:94:142",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        27301
+                                        27407
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 27301,
+                                            "id": 27407,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "3702:6:142",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 27313,
+                                            "scope": 27419,
                                             "src": "3694:14:142",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -5304,7 +5304,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 27300,
+                                                "id": 27406,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3694:7:142",
@@ -5316,15 +5316,15 @@ export const MockYieldSpaceMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 27310,
+                                    "id": 27416,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 27304,
+                                                "id": 27410,
                                                 "name": "ze",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27287,
+                                                "referencedDeclaration": 27393,
                                                 "src": "3732:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5332,11 +5332,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27305,
+                                                "id": 27411,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27289,
+                                                "referencedDeclaration": 27395,
                                                 "src": "3736:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5344,11 +5344,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27306,
+                                                "id": 27412,
                                                 "name": "t",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27291,
+                                                "referencedDeclaration": 27397,
                                                 "src": "3739:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5356,11 +5356,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27307,
+                                                "id": 27413,
                                                 "name": "c",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27293,
+                                                "referencedDeclaration": 27399,
                                                 "src": "3742:1:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5368,11 +5368,11 @@ export const MockYieldSpaceMath = {
                                                 }
                                             },
                                             {
-                                                "id": 27308,
+                                                "id": 27414,
                                                 "name": "mu",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 27295,
+                                                "referencedDeclaration": 27401,
                                                 "src": "3745:2:142",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5404,7 +5404,7 @@ export const MockYieldSpaceMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 27302,
+                                                "id": 27408,
                                                 "name": "YieldSpaceMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -5415,7 +5415,7 @@ export const MockYieldSpaceMath = {
                                                     "typeString": "type(library YieldSpaceMath)"
                                                 }
                                             },
-                                            "id": 27303,
+                                            "id": 27409,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5430,7 +5430,7 @@ export const MockYieldSpaceMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 27309,
+                                        "id": 27415,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5451,19 +5451,19 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 27311,
+                                        "id": 27417,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 27301,
+                                        "referencedDeclaration": 27407,
                                         "src": "3765:6:142",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 27299,
-                                    "id": 27312,
+                                    "functionReturnParameters": 27405,
+                                    "id": 27418,
                                     "nodeType": "Return",
                                     "src": "3758:13:142"
                                 }
@@ -5476,17 +5476,17 @@ export const MockYieldSpaceMath = {
                         "name": "kDown",
                         "nameLocation": "3543:5:142",
                         "parameters": {
-                            "id": 27296,
+                            "id": 27402,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27287,
+                                    "id": 27393,
                                     "mutability": "mutable",
                                     "name": "ze",
                                     "nameLocation": "3566:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27314,
+                                    "scope": 27420,
                                     "src": "3558:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5495,7 +5495,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27286,
+                                        "id": 27392,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3558:7:142",
@@ -5508,12 +5508,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27289,
+                                    "id": 27395,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "3586:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27314,
+                                    "scope": 27420,
                                     "src": "3578:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5522,7 +5522,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27288,
+                                        "id": 27394,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3578:7:142",
@@ -5535,12 +5535,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27291,
+                                    "id": 27397,
                                     "mutability": "mutable",
                                     "name": "t",
                                     "nameLocation": "3605:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27314,
+                                    "scope": 27420,
                                     "src": "3597:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5549,7 +5549,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27290,
+                                        "id": 27396,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3597:7:142",
@@ -5562,12 +5562,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27293,
+                                    "id": 27399,
                                     "mutability": "mutable",
                                     "name": "c",
                                     "nameLocation": "3624:1:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27314,
+                                    "scope": 27420,
                                     "src": "3616:9:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5576,7 +5576,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27292,
+                                        "id": 27398,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3616:7:142",
@@ -5589,12 +5589,12 @@ export const MockYieldSpaceMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 27295,
+                                    "id": 27401,
                                     "mutability": "mutable",
                                     "name": "mu",
                                     "nameLocation": "3643:2:142",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27314,
+                                    "scope": 27420,
                                     "src": "3635:10:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5603,7 +5603,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27294,
+                                        "id": 27400,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3635:7:142",
@@ -5618,17 +5618,17 @@ export const MockYieldSpaceMath = {
                             "src": "3548:103:142"
                         },
                         "returnParameters": {
-                            "id": 27299,
+                            "id": 27405,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 27298,
+                                    "id": 27404,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 27314,
+                                    "scope": 27420,
                                     "src": "3675:7:142",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5637,7 +5637,7 @@ export const MockYieldSpaceMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 27297,
+                                        "id": 27403,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3675:7:142",
@@ -5651,7 +5651,7 @@ export const MockYieldSpaceMath = {
                             ],
                             "src": "3674:9:142"
                         },
-                        "scope": 27315,
+                        "scope": 27421,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
@@ -5664,11 +5664,11 @@ export const MockYieldSpaceMath = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    27315
+                    27421
                 ],
                 "name": "MockYieldSpaceMath",
                 "nameLocation": "144:18:142",
-                "scope": 27316,
+                "scope": 27422,
                 "usedErrors": [
                     10219,
                     10228,
