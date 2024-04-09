@@ -48,7 +48,7 @@ if (
 if (VITE_SEPOLIA_RPC_URL) {
   chains.push(sepolia);
   transports[sepolia.id] = http(VITE_SEPOLIA_RPC_URL);
-  customWallets.push(capsuleWallet());
+  customWallets.push(capsuleWallet);
 }
 
 export const wagmiConfig = getDefaultConfig({
