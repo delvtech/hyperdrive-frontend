@@ -20,7 +20,8 @@
     "format:check": "turbo run format:check",
     "postinstall": "husky install",
     "typecheck": "turbo run typecheck",
-    "new-hyperwasm-just-dropped": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && rm -rf packages/{hyperdrive-js-core,hyperdrive-viem}/dist && yarn cache clean && yarn && yarn workspace @delvtech/hyperdrive-js-core run build && yarn workspace @delvtech/hyperdrive-viem run build",
+    "reset-node-modules": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && yarn cache clean && yarn",
+    "new-hyperwasm-just-dropped": "reset-node-modules && rm -rf packages/{hyperdrive-js-core,hyperdrive-viem}/dist && yarn workspace @delvtech/hyperdrive-js-core run build && yarn workspace @delvtech/hyperdrive-viem run build",
     "release": "yarn build:packages && changeset publish"
   },
   "devDependencies": {
