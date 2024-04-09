@@ -2,6 +2,7 @@ import {
   AppConfig,
   cloudChainAppConfig,
   localChainAppConfig,
+  sepoliaAppConfig,
 } from "@hyperdrive/appconfig";
 import assertNever from "assert-never";
 import { SupportedChainId } from "src/chains/supportedChains";
@@ -20,8 +21,7 @@ export function useAppConfig(): AppConfig {
       // Return mainnet config when available
       return {} as AppConfig;
     case sepolia.id:
-      // Return sepolia config when available
-      return {} as AppConfig;
+      return sepoliaAppConfig;
     default:
       assertNever(chainId);
   }
