@@ -1,6 +1,7 @@
 import { ERC20Mintable } from "@delvtech/hyperdrive-artifacts/ERC20Mintable";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
+import * as dnum from "dnum";
 import toast from "react-hot-toast";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
@@ -34,8 +35,10 @@ export function useMintToken({
     args: [],
   });
 
-  const isEnabled =
-    !!destination && !!amount && !!publicClient && !!maxMintAmount;
+  const mintAmount =
+    maxMintAmount !== undefined ? dnum.divide(maxMintAmount, [2n, 0])[0] : 0n;
+
+  const isEnabled = !!destination && !!amount && !!publicClient && !!mintAmount;
   const { writeContract } = useWriteContract();
 
   const mint = isEnabled
@@ -45,7 +48,7 @@ export function useMintToken({
             address: token.address,
             abi: ERC20Mintable.abi,
             functionName: "mint",
-            args: [destination, maxMintAmount],
+            args: [destination, mintAmount],
           },
           {
             onSuccess: async (hash) => {
