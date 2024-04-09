@@ -55,7 +55,7 @@ export async function fetchRegistryAddresses({
       await registryContract.read.getHyperdriveInfo([hyperdriveAddress]);
 
     if (!isHyperdriveInRegistry) {
-      break;
+      continue;
     }
 
     const hyperdrive = new ReadHyperdrive({

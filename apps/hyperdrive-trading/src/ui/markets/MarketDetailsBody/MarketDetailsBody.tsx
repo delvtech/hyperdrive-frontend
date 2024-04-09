@@ -1,7 +1,6 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import CustomBanner from "src/ui/base/components/CustomBanner";
-import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsLpTabs";
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
@@ -19,17 +18,14 @@ export function MarketDetailsBody({
 }: PositionsTableProps): ReactElement {
   const { marketState } = useMarketState(hyperdrive.address);
   const { address: account } = useAccount();
-  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   return (
     <div className="flex flex-col gap-12 xl:w-[1200px]">
-      <div className="flex flex-wrap items-center justify-start sm:justify-between">
+      <div className="flex flex-wrap items-center justify-start gap-8 sm:justify-between">
         <div className="flex flex-col">
           <MarketBreadcrumbs />
           <MarketHeader hyperdrive={hyperdrive} />
         </div>
-        {isTailwindSmallScreen || !account ? undefined : (
-          <YourBalanceWell hyperdrive={hyperdrive} />
-        )}
+        {!account ? undefined : <YourBalanceWell hyperdrive={hyperdrive} />}
       </div>
 
       {/* Stats row */}
