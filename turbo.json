@@ -15,6 +15,8 @@
         "VITE_CUSTOM_CHAIN_ADDRESSES_URL",
         "VITE_WALLET_CONNECT_PROJECT_ID",
         "VITE_SEPOLIA_RPC_URL",
+        "VITE_CAPSULE_API_KEY",
+        "VITE_CAPSULE_ENV",
         "VITE_ADDRESS_SCREEN_URL"
       ],
       "outputs": ["dist/**", ".next/**"]

@@ -8,6 +8,8 @@ import {
 import { http } from "@wagmi/core";
 import { Chain } from "@wagmi/core/chains";
 import { cloudChain } from "src/chains/cloudChain";
+import { capsuleWallet } from "src/wallets/capsule";
+import { Transport } from "viem";
 import { foundry, sepolia } from "wagmi/chains";
 
 const {
@@ -19,7 +21,18 @@ const {
   VITE_SEPOLIA_RPC_URL,
 } = import.meta.env;
 
-export const wagmiChains: Chain[] = [];
+export const chains: Chain[] = [];
+const transports: Record<string, Transport> = {};
+
+// Some wallets don't work in local devnet or cloudchain, so we only want to
+// include them if the correct chain is configured.
+const customWallets = [];
+
+// Local docker anvil node
+if (VITE_LOCALHOST_NODE_RPC_URL && VITE_LOCALHOST_NODE_RPC_URL) {
+  chains.push(foundry);
+  transports[foundry.id] = http(VITE_LOCALHOST_NODE_RPC_URL);
+}
 
 // CloudChain
 if (
@@ -27,27 +40,32 @@ if (
   VITE_CUSTOM_CHAIN_CHAIN_ID &&
   VITE_CUSTOM_CHAIN_ADDRESSES_URL
 ) {
-  wagmiChains.push(cloudChain);
+  chains.push(cloudChain);
+  transports[cloudChain.id] = http(VITE_CUSTOM_CHAIN_NODE_RPC_URL);
 }
 
 // Sepolia
 if (VITE_SEPOLIA_RPC_URL) {
-  wagmiChains.push(sepolia);
+  chains.push(sepolia);
+  transports[sepolia.id] = http(VITE_SEPOLIA_RPC_URL);
+  customWallets.push(capsuleWallet);
 }
 
 export const wagmiConfig = getDefaultConfig({
   appName: "Hyperdrive",
   projectId: VITE_WALLET_CONNECT_PROJECT_ID,
-  transports: {
-    [foundry.id]: http(VITE_LOCALHOST_NODE_RPC_URL),
-    [cloudChain.id]: http(VITE_CUSTOM_CHAIN_NODE_RPC_URL),
-    [sepolia.id]: http(VITE_SEPOLIA_RPC_URL),
-  },
-  chains: [foundry, ...wagmiChains],
+  transports,
+  // Viem's type for `chains` requires at least one item in the array, but since
+  // we build the list up programmatically we must cast.
+  chains: chains as [Chain, ...restChains: Chain[]],
   wallets: [
     {
       groupName: "Recommended",
       wallets: [injectedWallet, safeWallet, rainbowWallet, walletConnectWallet],
+    },
+    {
+      groupName: "Custom",
+      wallets: customWallets,
     },
   ],
 });
