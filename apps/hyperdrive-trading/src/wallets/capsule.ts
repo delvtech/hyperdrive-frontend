@@ -7,6 +7,8 @@ import {
 
 const { VITE_CAPSULE_API_KEY, VITE_CAPSULE_ENV } = import.meta.env;
 
+const hasRequiredEnvVars = !!VITE_CAPSULE_API_KEY && !!VITE_CAPSULE_ENV;
+
 export const getCapsuleWalletOpts: GetCapsuleOpts = {
   capsule: {
     environment: VITE_CAPSULE_ENV, // Environment.PROD for Production
@@ -41,4 +43,6 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
     OAuthMethod.APPLE,
   ],
 };
-export const capsuleWallet = getCapsuleWallet(getCapsuleWalletOpts);
+export const capsuleWallet = hasRequiredEnvVars
+  ? getCapsuleWallet(getCapsuleWalletOpts)
+  : undefined;
