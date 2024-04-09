@@ -95,29 +95,29 @@ export declare const Address: {
     };
     readonly ast: {
         readonly absolutePath: "lib/openzeppelin-contracts/contracts/utils/Address.sol";
-        readonly id: 71541;
+        readonly id: 71647;
         readonly exportedSymbols: {
-            readonly Address: readonly [71540];
+            readonly Address: readonly [71646];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "101:6161:167";
         readonly nodes: readonly [{
-            readonly id: 71289;
+            readonly id: 71395;
             readonly nodeType: "PragmaDirective";
             readonly src: "101:24:167";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "^", "0.8", ".20"];
         }, {
-            readonly id: 71540;
+            readonly id: 71646;
             readonly nodeType: "ContractDefinition";
             readonly src: "195:6066:167";
             readonly nodes: readonly [{
-                readonly id: 71295;
+                readonly id: 71401;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "316:50:167";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 71291;
+                    readonly id: 71397;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "217:94:167";
                     readonly text: " @dev The ETH balance of the account is not enough to perform the operation.";
@@ -126,16 +126,16 @@ export declare const Address: {
                 readonly name: "AddressInsufficientBalance";
                 readonly nameLocation: "322:26:167";
                 readonly parameters: {
-                    readonly id: 71294;
+                    readonly id: 71400;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71293;
+                        readonly id: 71399;
                         readonly mutability: "mutable";
                         readonly name: "account";
                         readonly nameLocation: "357:7:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71295;
+                        readonly scope: 71401;
                         readonly src: "349:15:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -144,7 +144,7 @@ export declare const Address: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 71292;
+                            readonly id: 71398;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "349:7:167";
@@ -159,12 +159,12 @@ export declare const Address: {
                     readonly src: "348:17:167";
                 };
             }, {
-                readonly id: 71300;
+                readonly id: 71406;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "452:39:167";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 71296;
+                    readonly id: 71402;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "372:75:167";
                     readonly text: " @dev There's no code at `target` (it is not a contract).";
@@ -173,16 +173,16 @@ export declare const Address: {
                 readonly name: "AddressEmptyCode";
                 readonly nameLocation: "458:16:167";
                 readonly parameters: {
-                    readonly id: 71299;
+                    readonly id: 71405;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71298;
+                        readonly id: 71404;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "483:6:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71300;
+                        readonly scope: 71406;
                         readonly src: "475:14:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -191,7 +191,7 @@ export declare const Address: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 71297;
+                            readonly id: 71403;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "475:7:167";
@@ -206,12 +206,12 @@ export declare const Address: {
                     readonly src: "474:16:167";
                 };
             }, {
-                readonly id: 71303;
+                readonly id: 71409;
                 readonly nodeType: "ErrorDefinition";
                 readonly src: "591:24:167";
                 readonly nodes: readonly [];
                 readonly documentation: {
-                    readonly id: 71301;
+                    readonly id: 71407;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "497:89:167";
                     readonly text: " @dev A call to an address target failed. The target may have reverted.";
@@ -220,18 +220,18 @@ export declare const Address: {
                 readonly name: "FailedInnerCall";
                 readonly nameLocation: "597:15:167";
                 readonly parameters: {
-                    readonly id: 71302;
+                    readonly id: 71408;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "612:2:167";
                 };
             }, {
-                readonly id: 71344;
+                readonly id: 71450;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1531:331:167";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 71343;
+                    readonly id: 71449;
                     readonly nodeType: "Block";
                     readonly src: "1602:260:167";
                     readonly nodes: readonly [];
@@ -241,7 +241,7 @@ export declare const Address: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 71317;
+                            readonly id: 71423;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -249,23 +249,23 @@ export declare const Address: {
                             readonly leftExpression: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 71313;
+                                        readonly id: 71419;
                                         readonly name: "this";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -28;
                                         readonly src: "1624:4:167";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_Address_$71540";
+                                            readonly typeIdentifier: "t_contract$_Address_$71646";
                                             readonly typeString: "library Address";
                                         };
                                     }];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_contract$_Address_$71540";
+                                            readonly typeIdentifier: "t_contract$_Address_$71646";
                                             readonly typeString: "library Address";
                                         }];
-                                        readonly id: 71312;
+                                        readonly id: 71418;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -277,14 +277,14 @@ export declare const Address: {
                                             readonly typeString: "type(address)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 71311;
+                                            readonly id: 71417;
                                             readonly name: "address";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "1616:7:167";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 71314;
+                                    readonly id: 71420;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -300,7 +300,7 @@ export declare const Address: {
                                         readonly typeString: "address";
                                     };
                                 };
-                                readonly id: 71315;
+                                readonly id: 71421;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -317,11 +317,11 @@ export declare const Address: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "<";
                             readonly rightExpression: {
-                                readonly id: 71316;
+                                readonly id: 71422;
                                 readonly name: "amount";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71308;
+                                readonly referencedDeclaration: 71414;
                                 readonly src: "1640:6:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -334,34 +334,34 @@ export declare const Address: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 71326;
+                        readonly id: 71432;
                         readonly nodeType: "IfStatement";
                         readonly src: "1612:109:167";
                         readonly trueBody: {
-                            readonly id: 71325;
+                            readonly id: 71431;
                             readonly nodeType: "Block";
                             readonly src: "1648:73:167";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 71321;
+                                            readonly id: 71427;
                                             readonly name: "this";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
                                             readonly referencedDeclaration: -28;
                                             readonly src: "1704:4:167";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_Address_$71540";
+                                                readonly typeIdentifier: "t_contract$_Address_$71646";
                                                 readonly typeString: "library Address";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_Address_$71540";
+                                                readonly typeIdentifier: "t_contract$_Address_$71646";
                                                 readonly typeString: "library Address";
                                             }];
-                                            readonly id: 71320;
+                                            readonly id: 71426;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -373,14 +373,14 @@ export declare const Address: {
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 71319;
+                                                readonly id: 71425;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "1696:7:167";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 71322;
+                                        readonly id: 71428;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -401,18 +401,18 @@ export declare const Address: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 71318;
+                                        readonly id: 71424;
                                         readonly name: "AddressInsufficientBalance";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71295;
+                                        readonly referencedDeclaration: 71401;
                                         readonly src: "1669:26:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$_t_address_$returns$__$";
                                             readonly typeString: "function (address) pure";
                                         };
                                     };
-                                    readonly id: 71323;
+                                    readonly id: 71429;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -428,21 +428,21 @@ export declare const Address: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 71324;
+                                readonly id: 71430;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "1662:48:167";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [71328, null];
+                        readonly assignments: readonly [71434, null];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 71328;
+                            readonly id: 71434;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "1737:7:167";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 71343;
+                            readonly scope: 71449;
                             readonly src: "1732:12:167";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -451,7 +451,7 @@ export declare const Address: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 71327;
+                                readonly id: 71433;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1732:4:167";
@@ -462,11 +462,11 @@ export declare const Address: {
                             };
                             readonly visibility: "internal";
                         }, null];
-                        readonly id: 71335;
+                        readonly id: 71441;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "";
-                                readonly id: 71333;
+                                readonly id: 71439;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -491,18 +491,18 @@ export declare const Address: {
                                         readonly typeString: "literal_string \"\"";
                                     }];
                                     readonly expression: {
-                                        readonly id: 71329;
+                                        readonly id: 71435;
                                         readonly name: "recipient";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71306;
+                                        readonly referencedDeclaration: 71412;
                                         readonly src: "1750:9:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address_payable";
                                             readonly typeString: "address payable";
                                         };
                                     };
-                                    readonly id: 71330;
+                                    readonly id: 71436;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -516,7 +516,7 @@ export declare const Address: {
                                         readonly typeString: "function (bytes memory) payable returns (bool,bytes memory)";
                                     };
                                 };
-                                readonly id: 71332;
+                                readonly id: 71438;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -524,11 +524,11 @@ export declare const Address: {
                                 readonly names: readonly ["value"];
                                 readonly nodeType: "FunctionCallOptions";
                                 readonly options: readonly [{
-                                    readonly id: 71331;
+                                    readonly id: 71437;
                                     readonly name: "amount";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 71308;
+                                    readonly referencedDeclaration: 71414;
                                     readonly src: "1772:6:167";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -541,7 +541,7 @@ export declare const Address: {
                                     readonly typeString: "function (bytes memory) payable returns (bool,bytes memory)";
                                 };
                             };
-                            readonly id: 71334;
+                            readonly id: 71440;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -561,7 +561,7 @@ export declare const Address: {
                         readonly src: "1731:52:167";
                     }, {
                         readonly condition: {
-                            readonly id: 71337;
+                            readonly id: 71443;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -571,11 +571,11 @@ export declare const Address: {
                             readonly prefix: true;
                             readonly src: "1797:8:167";
                             readonly subExpression: {
-                                readonly id: 71336;
+                                readonly id: 71442;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71328;
+                                readonly referencedDeclaration: 71434;
                                 readonly src: "1798:7:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -587,11 +587,11 @@ export declare const Address: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 71342;
+                        readonly id: 71448;
                         readonly nodeType: "IfStatement";
                         readonly src: "1793:63:167";
                         readonly trueBody: {
-                            readonly id: 71341;
+                            readonly id: 71447;
                             readonly nodeType: "Block";
                             readonly src: "1807:49:167";
                             readonly statements: readonly [{
@@ -599,18 +599,18 @@ export declare const Address: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
-                                        readonly id: 71338;
+                                        readonly id: 71444;
                                         readonly name: "FailedInnerCall";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71303;
+                                        readonly referencedDeclaration: 71409;
                                         readonly src: "1828:15:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 71339;
+                                    readonly id: 71445;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -626,7 +626,7 @@ export declare const Address: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 71340;
+                                readonly id: 71446;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "1821:24:167";
                             }];
@@ -634,7 +634,7 @@ export declare const Address: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 71304;
+                    readonly id: 71410;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "621:905:167";
                     readonly text: " @dev Replacement for Solidity's `transfer`: sends `amount` wei to\n `recipient`, forwarding all available gas and reverting on errors.\n https://eips.ethereum.org/EIPS/eip-1884[EIP1884] increases the gas cost\n of certain opcodes, possibly making contracts go over the 2300 gas limit\n imposed by `transfer`, making them unable to receive funds via\n `transfer`. {sendValue} removes this limitation.\n https://consensys.net/diligence/blog/2019/09/stop-using-soliditys-transfer-now/[Learn more].\n IMPORTANT: because control is transferred to `recipient`, care must be\n taken to not create reentrancy vulnerabilities. Consider using\n {ReentrancyGuard} or the\n https://solidity.readthedocs.io/en/v0.8.20/security-considerations.html#use-the-checks-effects-interactions-pattern[checks-effects-interactions pattern].";
@@ -645,16 +645,16 @@ export declare const Address: {
                 readonly name: "sendValue";
                 readonly nameLocation: "1540:9:167";
                 readonly parameters: {
-                    readonly id: 71309;
+                    readonly id: 71415;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71306;
+                        readonly id: 71412;
                         readonly mutability: "mutable";
                         readonly name: "recipient";
                         readonly nameLocation: "1566:9:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71344;
+                        readonly scope: 71450;
                         readonly src: "1550:25:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -663,7 +663,7 @@ export declare const Address: {
                             readonly typeString: "address payable";
                         };
                         readonly typeName: {
-                            readonly id: 71305;
+                            readonly id: 71411;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1550:15:167";
@@ -676,12 +676,12 @@ export declare const Address: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 71308;
+                        readonly id: 71414;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "1585:6:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71344;
+                        readonly scope: 71450;
                         readonly src: "1577:14:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -690,7 +690,7 @@ export declare const Address: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 71307;
+                            readonly id: 71413;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1577:7:167";
@@ -704,44 +704,44 @@ export declare const Address: {
                     readonly src: "1549:43:167";
                 };
                 readonly returnParameters: {
-                    readonly id: 71310;
+                    readonly id: 71416;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1602:0:167";
                 };
-                readonly scope: 71540;
+                readonly scope: 71646;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 71361;
+                readonly id: 71467;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "2705:151:167";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 71360;
+                    readonly id: 71466;
                     readonly nodeType: "Block";
                     readonly src: "2794:62:167";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 71355;
+                                readonly id: 71461;
                                 readonly name: "target";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71347;
+                                readonly referencedDeclaration: 71453;
                                 readonly src: "2833:6:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 71356;
+                                readonly id: 71462;
                                 readonly name: "data";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71349;
+                                readonly referencedDeclaration: 71455;
                                 readonly src: "2841:4:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -749,7 +749,7 @@ export declare const Address: {
                                 };
                             }, {
                                 readonly hexValue: "30";
-                                readonly id: 71357;
+                                readonly id: 71463;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -774,18 +774,18 @@ export declare const Address: {
                                     readonly typeIdentifier: "t_rational_0_by_1";
                                     readonly typeString: "int_const 0";
                                 }];
-                                readonly id: 71354;
+                                readonly id: 71460;
                                 readonly name: "functionCallWithValue";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71407;
+                                readonly referencedDeclaration: 71513;
                                 readonly src: "2811:21:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_nonpayable$_t_address_$_t_bytes_memory_ptr_$_t_uint256_$returns$_t_bytes_memory_ptr_$";
                                     readonly typeString: "function (address,bytes memory,uint256) returns (bytes memory)";
                                 };
                             };
-                            readonly id: 71358;
+                            readonly id: 71464;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -801,14 +801,14 @@ export declare const Address: {
                                 readonly typeString: "bytes memory";
                             };
                         };
-                        readonly functionReturnParameters: 71353;
-                        readonly id: 71359;
+                        readonly functionReturnParameters: 71459;
+                        readonly id: 71465;
                         readonly nodeType: "Return";
                         readonly src: "2804:45:167";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 71345;
+                    readonly id: 71451;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "1868:832:167";
                     readonly text: " @dev Performs a Solidity function call using a low level `call`. A\n plain `call` is an unsafe replacement for a function call: use this\n function instead.\n If `target` reverts with a revert reason or custom error, it is bubbled\n up by this function (like regular Solidity function calls). However, if\n the call reverted with no returned reason, this function reverts with a\n {FailedInnerCall} error.\n Returns the raw returned data. To convert to the expected return value,\n use https://solidity.readthedocs.io/en/latest/units-and-global-variables.html?highlight=abi.decode#abi-encoding-and-decoding-functions[`abi.decode`].\n Requirements:\n - `target` must be a contract.\n - calling `target` with `data` must not revert.";
@@ -819,16 +819,16 @@ export declare const Address: {
                 readonly name: "functionCall";
                 readonly nameLocation: "2714:12:167";
                 readonly parameters: {
-                    readonly id: 71350;
+                    readonly id: 71456;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71347;
+                        readonly id: 71453;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "2735:6:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71361;
+                        readonly scope: 71467;
                         readonly src: "2727:14:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -837,7 +837,7 @@ export declare const Address: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 71346;
+                            readonly id: 71452;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2727:7:167";
@@ -850,12 +850,12 @@ export declare const Address: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 71349;
+                        readonly id: 71455;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "2756:4:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71361;
+                        readonly scope: 71467;
                         readonly src: "2743:17:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -864,7 +864,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71348;
+                            readonly id: 71454;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2743:5:167";
@@ -878,16 +878,16 @@ export declare const Address: {
                     readonly src: "2726:35:167";
                 };
                 readonly returnParameters: {
-                    readonly id: 71353;
+                    readonly id: 71459;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71352;
+                        readonly id: 71458;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71361;
+                        readonly scope: 71467;
                         readonly src: "2780:12:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -896,7 +896,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71351;
+                            readonly id: 71457;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "2780:5:167";
@@ -909,17 +909,17 @@ export declare const Address: {
                     }];
                     readonly src: "2779:14:167";
                 };
-                readonly scope: 71540;
+                readonly scope: 71646;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 71407;
+                readonly id: 71513;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3180:392:167";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 71406;
+                    readonly id: 71512;
                     readonly nodeType: "Block";
                     readonly src: "3293:279:167";
                     readonly nodes: readonly [];
@@ -929,7 +929,7 @@ export declare const Address: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 71379;
+                            readonly id: 71485;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -937,23 +937,23 @@ export declare const Address: {
                             readonly leftExpression: {
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 71375;
+                                        readonly id: 71481;
                                         readonly name: "this";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
                                         readonly referencedDeclaration: -28;
                                         readonly src: "3315:4:167";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_Address_$71540";
+                                            readonly typeIdentifier: "t_contract$_Address_$71646";
                                             readonly typeString: "library Address";
                                         };
                                     }];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_contract$_Address_$71540";
+                                            readonly typeIdentifier: "t_contract$_Address_$71646";
                                             readonly typeString: "library Address";
                                         }];
-                                        readonly id: 71374;
+                                        readonly id: 71480;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -965,14 +965,14 @@ export declare const Address: {
                                             readonly typeString: "type(address)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 71373;
+                                            readonly id: 71479;
                                             readonly name: "address";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "3307:7:167";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 71376;
+                                    readonly id: 71482;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -988,7 +988,7 @@ export declare const Address: {
                                         readonly typeString: "address";
                                     };
                                 };
-                                readonly id: 71377;
+                                readonly id: 71483;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1005,11 +1005,11 @@ export declare const Address: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "<";
                             readonly rightExpression: {
-                                readonly id: 71378;
+                                readonly id: 71484;
                                 readonly name: "value";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71368;
+                                readonly referencedDeclaration: 71474;
                                 readonly src: "3331:5:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -1022,34 +1022,34 @@ export declare const Address: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 71388;
+                        readonly id: 71494;
                         readonly nodeType: "IfStatement";
                         readonly src: "3303:108:167";
                         readonly trueBody: {
-                            readonly id: 71387;
+                            readonly id: 71493;
                             readonly nodeType: "Block";
                             readonly src: "3338:73:167";
                             readonly statements: readonly [{
                                 readonly errorCall: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 71383;
+                                            readonly id: 71489;
                                             readonly name: "this";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
                                             readonly referencedDeclaration: -28;
                                             readonly src: "3394:4:167";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_Address_$71540";
+                                                readonly typeIdentifier: "t_contract$_Address_$71646";
                                                 readonly typeString: "library Address";
                                             };
                                         }];
                                         readonly expression: {
                                             readonly argumentTypes: readonly [{
-                                                readonly typeIdentifier: "t_contract$_Address_$71540";
+                                                readonly typeIdentifier: "t_contract$_Address_$71646";
                                                 readonly typeString: "library Address";
                                             }];
-                                            readonly id: 71382;
+                                            readonly id: 71488;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -1061,14 +1061,14 @@ export declare const Address: {
                                                 readonly typeString: "type(address)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 71381;
+                                                readonly id: 71487;
                                                 readonly name: "address";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "3386:7:167";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 71384;
+                                        readonly id: 71490;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1089,18 +1089,18 @@ export declare const Address: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         }];
-                                        readonly id: 71380;
+                                        readonly id: 71486;
                                         readonly name: "AddressInsufficientBalance";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71295;
+                                        readonly referencedDeclaration: 71401;
                                         readonly src: "3359:26:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$_t_address_$returns$__$";
                                             readonly typeString: "function (address) pure";
                                         };
                                     };
-                                    readonly id: 71385;
+                                    readonly id: 71491;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1116,21 +1116,21 @@ export declare const Address: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 71386;
+                                readonly id: 71492;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "3352:48:167";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [71390, 71392];
+                        readonly assignments: readonly [71496, 71498];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 71390;
+                            readonly id: 71496;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "3426:7:167";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 71406;
+                            readonly scope: 71512;
                             readonly src: "3421:12:167";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1139,7 +1139,7 @@ export declare const Address: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 71389;
+                                readonly id: 71495;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3421:4:167";
@@ -1151,12 +1151,12 @@ export declare const Address: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 71392;
+                            readonly id: 71498;
                             readonly mutability: "mutable";
                             readonly name: "returndata";
                             readonly nameLocation: "3448:10:167";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 71406;
+                            readonly scope: 71512;
                             readonly src: "3435:23:167";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -1165,7 +1165,7 @@ export declare const Address: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 71391;
+                                readonly id: 71497;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3435:5:167";
@@ -1176,14 +1176,14 @@ export declare const Address: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 71399;
+                        readonly id: 71505;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 71397;
+                                readonly id: 71503;
                                 readonly name: "data";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71366;
+                                readonly referencedDeclaration: 71472;
                                 readonly src: "3488:4:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -1201,18 +1201,18 @@ export declare const Address: {
                                         readonly typeString: "bytes memory";
                                     }];
                                     readonly expression: {
-                                        readonly id: 71393;
+                                        readonly id: 71499;
                                         readonly name: "target";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71364;
+                                        readonly referencedDeclaration: 71470;
                                         readonly src: "3462:6:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
                                     };
-                                    readonly id: 71394;
+                                    readonly id: 71500;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1226,7 +1226,7 @@ export declare const Address: {
                                         readonly typeString: "function (bytes memory) payable returns (bool,bytes memory)";
                                     };
                                 };
-                                readonly id: 71396;
+                                readonly id: 71502;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1234,11 +1234,11 @@ export declare const Address: {
                                 readonly names: readonly ["value"];
                                 readonly nodeType: "FunctionCallOptions";
                                 readonly options: readonly [{
-                                    readonly id: 71395;
+                                    readonly id: 71501;
                                     readonly name: "value";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 71368;
+                                    readonly referencedDeclaration: 71474;
                                     readonly src: "3481:5:167";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -1251,7 +1251,7 @@ export declare const Address: {
                                     readonly typeString: "function (bytes memory) payable returns (bool,bytes memory)";
                                 };
                             };
-                            readonly id: 71398;
+                            readonly id: 71504;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1272,33 +1272,33 @@ export declare const Address: {
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 71401;
+                                readonly id: 71507;
                                 readonly name: "target";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71364;
+                                readonly referencedDeclaration: 71470;
                                 readonly src: "3537:6:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 71402;
+                                readonly id: 71508;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71390;
+                                readonly referencedDeclaration: 71496;
                                 readonly src: "3545:7:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             }, {
-                                readonly id: 71403;
+                                readonly id: 71509;
                                 readonly name: "returndata";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71392;
+                                readonly referencedDeclaration: 71498;
                                 readonly src: "3554:10:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -1316,18 +1316,18 @@ export declare const Address: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                     readonly typeString: "bytes memory";
                                 }];
-                                readonly id: 71400;
+                                readonly id: 71506;
                                 readonly name: "verifyCallResultFromTarget";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71499;
+                                readonly referencedDeclaration: 71605;
                                 readonly src: "3510:26:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_view$_t_address_$_t_bool_$_t_bytes_memory_ptr_$returns$_t_bytes_memory_ptr_$";
                                     readonly typeString: "function (address,bool,bytes memory) view returns (bytes memory)";
                                 };
                             };
-                            readonly id: 71404;
+                            readonly id: 71510;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1343,14 +1343,14 @@ export declare const Address: {
                                 readonly typeString: "bytes memory";
                             };
                         };
-                        readonly functionReturnParameters: 71372;
-                        readonly id: 71405;
+                        readonly functionReturnParameters: 71478;
+                        readonly id: 71511;
                         readonly nodeType: "Return";
                         readonly src: "3503:62:167";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 71362;
+                    readonly id: 71468;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "2862:313:167";
                     readonly text: " @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\n but also transferring `value` wei to `target`.\n Requirements:\n - the calling contract must have an ETH balance of at least `value`.\n - the called Solidity function must be `payable`.";
@@ -1361,16 +1361,16 @@ export declare const Address: {
                 readonly name: "functionCallWithValue";
                 readonly nameLocation: "3189:21:167";
                 readonly parameters: {
-                    readonly id: 71369;
+                    readonly id: 71475;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71364;
+                        readonly id: 71470;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "3219:6:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71407;
+                        readonly scope: 71513;
                         readonly src: "3211:14:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1379,7 +1379,7 @@ export declare const Address: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 71363;
+                            readonly id: 71469;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3211:7:167";
@@ -1392,12 +1392,12 @@ export declare const Address: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 71366;
+                        readonly id: 71472;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "3240:4:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71407;
+                        readonly scope: 71513;
                         readonly src: "3227:17:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1406,7 +1406,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71365;
+                            readonly id: 71471;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3227:5:167";
@@ -1418,12 +1418,12 @@ export declare const Address: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 71368;
+                        readonly id: 71474;
                         readonly mutability: "mutable";
                         readonly name: "value";
                         readonly nameLocation: "3254:5:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71407;
+                        readonly scope: 71513;
                         readonly src: "3246:13:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1432,7 +1432,7 @@ export declare const Address: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 71367;
+                            readonly id: 71473;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3246:7:167";
@@ -1446,16 +1446,16 @@ export declare const Address: {
                     readonly src: "3210:50:167";
                 };
                 readonly returnParameters: {
-                    readonly id: 71372;
+                    readonly id: 71478;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71371;
+                        readonly id: 71477;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71407;
+                        readonly scope: 71513;
                         readonly src: "3279:12:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1464,7 +1464,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71370;
+                            readonly id: 71476;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3279:5:167";
@@ -1477,30 +1477,30 @@ export declare const Address: {
                     }];
                     readonly src: "3278:14:167";
                 };
-                readonly scope: 71540;
+                readonly scope: 71646;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 71433;
+                readonly id: 71539;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3711:254:167";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 71432;
+                    readonly id: 71538;
                     readonly nodeType: "Block";
                     readonly src: "3811:154:167";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [71418, 71420];
+                        readonly assignments: readonly [71524, 71526];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 71418;
+                            readonly id: 71524;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "3827:7:167";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 71432;
+                            readonly scope: 71538;
                             readonly src: "3822:12:167";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1509,7 +1509,7 @@ export declare const Address: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 71417;
+                                readonly id: 71523;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3822:4:167";
@@ -1521,12 +1521,12 @@ export declare const Address: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 71420;
+                            readonly id: 71526;
                             readonly mutability: "mutable";
                             readonly name: "returndata";
                             readonly nameLocation: "3849:10:167";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 71432;
+                            readonly scope: 71538;
                             readonly src: "3836:23:167";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -1535,7 +1535,7 @@ export declare const Address: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 71419;
+                                readonly id: 71525;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3836:5:167";
@@ -1546,14 +1546,14 @@ export declare const Address: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 71425;
+                        readonly id: 71531;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 71423;
+                                readonly id: 71529;
                                 readonly name: "data";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71412;
+                                readonly referencedDeclaration: 71518;
                                 readonly src: "3881:4:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -1566,18 +1566,18 @@ export declare const Address: {
                                     readonly typeString: "bytes memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 71421;
+                                    readonly id: 71527;
                                     readonly name: "target";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 71410;
+                                    readonly referencedDeclaration: 71516;
                                     readonly src: "3863:6:167";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
                                 };
-                                readonly id: 71422;
+                                readonly id: 71528;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1591,7 +1591,7 @@ export declare const Address: {
                                     readonly typeString: "function (bytes memory) view returns (bool,bytes memory)";
                                 };
                             };
-                            readonly id: 71424;
+                            readonly id: 71530;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1612,33 +1612,33 @@ export declare const Address: {
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 71427;
+                                readonly id: 71533;
                                 readonly name: "target";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71410;
+                                readonly referencedDeclaration: 71516;
                                 readonly src: "3930:6:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 71428;
+                                readonly id: 71534;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71418;
+                                readonly referencedDeclaration: 71524;
                                 readonly src: "3938:7:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             }, {
-                                readonly id: 71429;
+                                readonly id: 71535;
                                 readonly name: "returndata";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71420;
+                                readonly referencedDeclaration: 71526;
                                 readonly src: "3947:10:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -1656,18 +1656,18 @@ export declare const Address: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                     readonly typeString: "bytes memory";
                                 }];
-                                readonly id: 71426;
+                                readonly id: 71532;
                                 readonly name: "verifyCallResultFromTarget";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71499;
+                                readonly referencedDeclaration: 71605;
                                 readonly src: "3903:26:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_view$_t_address_$_t_bool_$_t_bytes_memory_ptr_$returns$_t_bytes_memory_ptr_$";
                                     readonly typeString: "function (address,bool,bytes memory) view returns (bytes memory)";
                                 };
                             };
-                            readonly id: 71430;
+                            readonly id: 71536;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1683,14 +1683,14 @@ export declare const Address: {
                                 readonly typeString: "bytes memory";
                             };
                         };
-                        readonly functionReturnParameters: 71416;
-                        readonly id: 71431;
+                        readonly functionReturnParameters: 71522;
+                        readonly id: 71537;
                         readonly nodeType: "Return";
                         readonly src: "3896:62:167";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 71408;
+                    readonly id: 71514;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3578:128:167";
                     readonly text: " @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\n but performing a static call.";
@@ -1701,16 +1701,16 @@ export declare const Address: {
                 readonly name: "functionStaticCall";
                 readonly nameLocation: "3720:18:167";
                 readonly parameters: {
-                    readonly id: 71413;
+                    readonly id: 71519;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71410;
+                        readonly id: 71516;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "3747:6:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71433;
+                        readonly scope: 71539;
                         readonly src: "3739:14:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1719,7 +1719,7 @@ export declare const Address: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 71409;
+                            readonly id: 71515;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3739:7:167";
@@ -1732,12 +1732,12 @@ export declare const Address: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 71412;
+                        readonly id: 71518;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "3768:4:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71433;
+                        readonly scope: 71539;
                         readonly src: "3755:17:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1746,7 +1746,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71411;
+                            readonly id: 71517;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3755:5:167";
@@ -1760,16 +1760,16 @@ export declare const Address: {
                     readonly src: "3738:35:167";
                 };
                 readonly returnParameters: {
-                    readonly id: 71416;
+                    readonly id: 71522;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71415;
+                        readonly id: 71521;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71433;
+                        readonly scope: 71539;
                         readonly src: "3797:12:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1778,7 +1778,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71414;
+                            readonly id: 71520;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3797:5:167";
@@ -1791,30 +1791,30 @@ export declare const Address: {
                     }];
                     readonly src: "3796:14:167";
                 };
-                readonly scope: 71540;
+                readonly scope: 71646;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 71459;
+                readonly id: 71565;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4106:253:167";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 71458;
+                    readonly id: 71564;
                     readonly nodeType: "Block";
                     readonly src: "4203:156:167";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [71444, 71446];
+                        readonly assignments: readonly [71550, 71552];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 71444;
+                            readonly id: 71550;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "4219:7:167";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 71458;
+                            readonly scope: 71564;
                             readonly src: "4214:12:167";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1823,7 +1823,7 @@ export declare const Address: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 71443;
+                                readonly id: 71549;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4214:4:167";
@@ -1835,12 +1835,12 @@ export declare const Address: {
                             readonly visibility: "internal";
                         }, {
                             readonly constant: false;
-                            readonly id: 71446;
+                            readonly id: 71552;
                             readonly mutability: "mutable";
                             readonly name: "returndata";
                             readonly nameLocation: "4241:10:167";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 71458;
+                            readonly scope: 71564;
                             readonly src: "4228:23:167";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -1849,7 +1849,7 @@ export declare const Address: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 71445;
+                                readonly id: 71551;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4228:5:167";
@@ -1860,14 +1860,14 @@ export declare const Address: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 71451;
+                        readonly id: 71557;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 71449;
+                                readonly id: 71555;
                                 readonly name: "data";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71438;
+                                readonly referencedDeclaration: 71544;
                                 readonly src: "4275:4:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -1880,18 +1880,18 @@ export declare const Address: {
                                     readonly typeString: "bytes memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 71447;
+                                    readonly id: 71553;
                                     readonly name: "target";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 71436;
+                                    readonly referencedDeclaration: 71542;
                                     readonly src: "4255:6:167";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     };
                                 };
-                                readonly id: 71448;
+                                readonly id: 71554;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1905,7 +1905,7 @@ export declare const Address: {
                                     readonly typeString: "function (bytes memory) returns (bool,bytes memory)";
                                 };
                             };
-                            readonly id: 71450;
+                            readonly id: 71556;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1926,33 +1926,33 @@ export declare const Address: {
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 71453;
+                                readonly id: 71559;
                                 readonly name: "target";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71436;
+                                readonly referencedDeclaration: 71542;
                                 readonly src: "4324:6:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 71454;
+                                readonly id: 71560;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71444;
+                                readonly referencedDeclaration: 71550;
                                 readonly src: "4332:7:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
                                     readonly typeString: "bool";
                                 };
                             }, {
-                                readonly id: 71455;
+                                readonly id: 71561;
                                 readonly name: "returndata";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71446;
+                                readonly referencedDeclaration: 71552;
                                 readonly src: "4341:10:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -1970,18 +1970,18 @@ export declare const Address: {
                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                     readonly typeString: "bytes memory";
                                 }];
-                                readonly id: 71452;
+                                readonly id: 71558;
                                 readonly name: "verifyCallResultFromTarget";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71499;
+                                readonly referencedDeclaration: 71605;
                                 readonly src: "4297:26:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_view$_t_address_$_t_bool_$_t_bytes_memory_ptr_$returns$_t_bytes_memory_ptr_$";
                                     readonly typeString: "function (address,bool,bytes memory) view returns (bytes memory)";
                                 };
                             };
-                            readonly id: 71456;
+                            readonly id: 71562;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1997,14 +1997,14 @@ export declare const Address: {
                                 readonly typeString: "bytes memory";
                             };
                         };
-                        readonly functionReturnParameters: 71442;
-                        readonly id: 71457;
+                        readonly functionReturnParameters: 71548;
+                        readonly id: 71563;
                         readonly nodeType: "Return";
                         readonly src: "4290:62:167";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 71434;
+                    readonly id: 71540;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "3971:130:167";
                     readonly text: " @dev Same as {xref-Address-functionCall-address-bytes-}[`functionCall`],\n but performing a delegate call.";
@@ -2015,16 +2015,16 @@ export declare const Address: {
                 readonly name: "functionDelegateCall";
                 readonly nameLocation: "4115:20:167";
                 readonly parameters: {
-                    readonly id: 71439;
+                    readonly id: 71545;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71436;
+                        readonly id: 71542;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "4144:6:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71459;
+                        readonly scope: 71565;
                         readonly src: "4136:14:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2033,7 +2033,7 @@ export declare const Address: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 71435;
+                            readonly id: 71541;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4136:7:167";
@@ -2046,12 +2046,12 @@ export declare const Address: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 71438;
+                        readonly id: 71544;
                         readonly mutability: "mutable";
                         readonly name: "data";
                         readonly nameLocation: "4165:4:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71459;
+                        readonly scope: 71565;
                         readonly src: "4152:17:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2060,7 +2060,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71437;
+                            readonly id: 71543;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4152:5:167";
@@ -2074,16 +2074,16 @@ export declare const Address: {
                     readonly src: "4135:35:167";
                 };
                 readonly returnParameters: {
-                    readonly id: 71442;
+                    readonly id: 71548;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71441;
+                        readonly id: 71547;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71459;
+                        readonly scope: 71565;
                         readonly src: "4189:12:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2092,7 +2092,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71440;
+                            readonly id: 71546;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4189:5:167";
@@ -2105,23 +2105,23 @@ export declare const Address: {
                     }];
                     readonly src: "4188:14:167";
                 };
-                readonly scope: 71540;
+                readonly scope: 71646;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 71499;
+                readonly id: 71605;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4625:582:167";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 71498;
+                    readonly id: 71604;
                     readonly nodeType: "Block";
                     readonly src: "4783:424:167";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 71472;
+                            readonly id: 71578;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2131,11 +2131,11 @@ export declare const Address: {
                             readonly prefix: true;
                             readonly src: "4797:8:167";
                             readonly subExpression: {
-                                readonly id: 71471;
+                                readonly id: 71577;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71464;
+                                readonly referencedDeclaration: 71570;
                                 readonly src: "4798:7:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -2148,7 +2148,7 @@ export declare const Address: {
                             };
                         };
                         readonly falseBody: {
-                            readonly id: 71496;
+                            readonly id: 71602;
                             readonly nodeType: "Block";
                             readonly src: "4857:344:167";
                             readonly statements: readonly [{
@@ -2157,7 +2157,7 @@ export declare const Address: {
                                         readonly typeIdentifier: "t_bool";
                                         readonly typeString: "bool";
                                     };
-                                    readonly id: 71487;
+                                    readonly id: 71593;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2167,25 +2167,25 @@ export declare const Address: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 71481;
+                                        readonly id: 71587;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
                                             readonly expression: {
-                                                readonly id: 71478;
+                                                readonly id: 71584;
                                                 readonly name: "returndata";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 71466;
+                                                readonly referencedDeclaration: 71572;
                                                 readonly src: "5045:10:167";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                                     readonly typeString: "bytes memory";
                                                 };
                                             };
-                                            readonly id: 71479;
+                                            readonly id: 71585;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2203,7 +2203,7 @@ export declare const Address: {
                                         readonly operator: "==";
                                         readonly rightExpression: {
                                             readonly hexValue: "30";
-                                            readonly id: 71480;
+                                            readonly id: 71586;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -2230,7 +2230,7 @@ export declare const Address: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 71486;
+                                        readonly id: 71592;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2238,18 +2238,18 @@ export declare const Address: {
                                         readonly leftExpression: {
                                             readonly expression: {
                                                 readonly expression: {
-                                                    readonly id: 71482;
+                                                    readonly id: 71588;
                                                     readonly name: "target";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 71462;
+                                                    readonly referencedDeclaration: 71568;
                                                     readonly src: "5071:6:167";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_address";
                                                         readonly typeString: "address";
                                                     };
                                                 };
-                                                readonly id: 71483;
+                                                readonly id: 71589;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -2263,7 +2263,7 @@ export declare const Address: {
                                                     readonly typeString: "bytes memory";
                                                 };
                                             };
-                                            readonly id: 71484;
+                                            readonly id: 71590;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2281,7 +2281,7 @@ export declare const Address: {
                                         readonly operator: "==";
                                         readonly rightExpression: {
                                             readonly hexValue: "30";
-                                            readonly id: 71485;
+                                            readonly id: 71591;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -2307,21 +2307,21 @@ export declare const Address: {
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly id: 71493;
+                                readonly id: 71599;
                                 readonly nodeType: "IfStatement";
                                 readonly src: "5041:119:167";
                                 readonly trueBody: {
-                                    readonly id: 71492;
+                                    readonly id: 71598;
                                     readonly nodeType: "Block";
                                     readonly src: "5096:64:167";
                                     readonly statements: readonly [{
                                         readonly errorCall: {
                                             readonly arguments: readonly [{
-                                                readonly id: 71489;
+                                                readonly id: 71595;
                                                 readonly name: "target";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 71462;
+                                                readonly referencedDeclaration: 71568;
                                                 readonly src: "5138:6:167";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_address";
@@ -2333,18 +2333,18 @@ export declare const Address: {
                                                     readonly typeIdentifier: "t_address";
                                                     readonly typeString: "address";
                                                 }];
-                                                readonly id: 71488;
+                                                readonly id: 71594;
                                                 readonly name: "AddressEmptyCode";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 71300;
+                                                readonly referencedDeclaration: 71406;
                                                 readonly src: "5121:16:167";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_error_pure$_t_address_$returns$__$";
                                                     readonly typeString: "function (address) pure";
                                                 };
                                             };
-                                            readonly id: 71490;
+                                            readonly id: 71596;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -2360,45 +2360,45 @@ export declare const Address: {
                                                 readonly typeString: "tuple()";
                                             };
                                         };
-                                        readonly id: 71491;
+                                        readonly id: 71597;
                                         readonly nodeType: "RevertStatement";
                                         readonly src: "5114:31:167";
                                     }];
                                 };
                             }, {
                                 readonly expression: {
-                                    readonly id: 71494;
+                                    readonly id: 71600;
                                     readonly name: "returndata";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 71466;
+                                    readonly referencedDeclaration: 71572;
                                     readonly src: "5180:10:167";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     };
                                 };
-                                readonly functionReturnParameters: 71470;
-                                readonly id: 71495;
+                                readonly functionReturnParameters: 71576;
+                                readonly id: 71601;
                                 readonly nodeType: "Return";
                                 readonly src: "5173:17:167";
                             }];
                         };
-                        readonly id: 71497;
+                        readonly id: 71603;
                         readonly nodeType: "IfStatement";
                         readonly src: "4793:408:167";
                         readonly trueBody: {
-                            readonly id: 71477;
+                            readonly id: 71583;
                             readonly nodeType: "Block";
                             readonly src: "4807:44:167";
                             readonly statements: readonly [{
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 71474;
+                                        readonly id: 71580;
                                         readonly name: "returndata";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71466;
+                                        readonly referencedDeclaration: 71572;
                                         readonly src: "4829:10:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -2410,18 +2410,18 @@ export declare const Address: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                             readonly typeString: "bytes memory";
                                         }];
-                                        readonly id: 71473;
+                                        readonly id: 71579;
                                         readonly name: "_revert";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71539;
+                                        readonly referencedDeclaration: 71645;
                                         readonly src: "4821:7:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$";
                                             readonly typeString: "function (bytes memory) pure";
                                         };
                                     };
-                                    readonly id: 71475;
+                                    readonly id: 71581;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2437,7 +2437,7 @@ export declare const Address: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 71476;
+                                readonly id: 71582;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "4821:19:167";
                             }];
@@ -2445,7 +2445,7 @@ export declare const Address: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 71460;
+                    readonly id: 71566;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "4365:255:167";
                     readonly text: " @dev Tool to verify that a low level call to smart-contract was successful, and reverts if the target\n was not a contract or bubbling up the revert reason (falling back to {FailedInnerCall}) in case of an\n unsuccessful call.";
@@ -2456,16 +2456,16 @@ export declare const Address: {
                 readonly name: "verifyCallResultFromTarget";
                 readonly nameLocation: "4634:26:167";
                 readonly parameters: {
-                    readonly id: 71467;
+                    readonly id: 71573;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71462;
+                        readonly id: 71568;
                         readonly mutability: "mutable";
                         readonly name: "target";
                         readonly nameLocation: "4678:6:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71499;
+                        readonly scope: 71605;
                         readonly src: "4670:14:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2474,7 +2474,7 @@ export declare const Address: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 71461;
+                            readonly id: 71567;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4670:7:167";
@@ -2487,12 +2487,12 @@ export declare const Address: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 71464;
+                        readonly id: 71570;
                         readonly mutability: "mutable";
                         readonly name: "success";
                         readonly nameLocation: "4699:7:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71499;
+                        readonly scope: 71605;
                         readonly src: "4694:12:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2501,7 +2501,7 @@ export declare const Address: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 71463;
+                            readonly id: 71569;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4694:4:167";
@@ -2513,12 +2513,12 @@ export declare const Address: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 71466;
+                        readonly id: 71572;
                         readonly mutability: "mutable";
                         readonly name: "returndata";
                         readonly nameLocation: "4729:10:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71499;
+                        readonly scope: 71605;
                         readonly src: "4716:23:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2527,7 +2527,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71465;
+                            readonly id: 71571;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4716:5:167";
@@ -2541,16 +2541,16 @@ export declare const Address: {
                     readonly src: "4660:85:167";
                 };
                 readonly returnParameters: {
-                    readonly id: 71470;
+                    readonly id: 71576;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71469;
+                        readonly id: 71575;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71499;
+                        readonly scope: 71605;
                         readonly src: "4769:12:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2559,7 +2559,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71468;
+                            readonly id: 71574;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4769:5:167";
@@ -2572,23 +2572,23 @@ export declare const Address: {
                     }];
                     readonly src: "4768:14:167";
                 };
-                readonly scope: 71540;
+                readonly scope: 71646;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 71521;
+                readonly id: 71627;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5407:224:167";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 71520;
+                    readonly id: 71626;
                     readonly nodeType: "Block";
                     readonly src: "5509:122:167";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly condition: {
-                            readonly id: 71510;
+                            readonly id: 71616;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2598,11 +2598,11 @@ export declare const Address: {
                             readonly prefix: true;
                             readonly src: "5523:8:167";
                             readonly subExpression: {
-                                readonly id: 71509;
+                                readonly id: 71615;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 71502;
+                                readonly referencedDeclaration: 71608;
                                 readonly src: "5524:7:167";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -2615,43 +2615,43 @@ export declare const Address: {
                             };
                         };
                         readonly falseBody: {
-                            readonly id: 71518;
+                            readonly id: 71624;
                             readonly nodeType: "Block";
                             readonly src: "5583:42:167";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 71516;
+                                    readonly id: 71622;
                                     readonly name: "returndata";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 71504;
+                                    readonly referencedDeclaration: 71610;
                                     readonly src: "5604:10:167";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     };
                                 };
-                                readonly functionReturnParameters: 71508;
-                                readonly id: 71517;
+                                readonly functionReturnParameters: 71614;
+                                readonly id: 71623;
                                 readonly nodeType: "Return";
                                 readonly src: "5597:17:167";
                             }];
                         };
-                        readonly id: 71519;
+                        readonly id: 71625;
                         readonly nodeType: "IfStatement";
                         readonly src: "5519:106:167";
                         readonly trueBody: {
-                            readonly id: 71515;
+                            readonly id: 71621;
                             readonly nodeType: "Block";
                             readonly src: "5533:44:167";
                             readonly statements: readonly [{
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 71512;
+                                        readonly id: 71618;
                                         readonly name: "returndata";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71504;
+                                        readonly referencedDeclaration: 71610;
                                         readonly src: "5555:10:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -2663,18 +2663,18 @@ export declare const Address: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                             readonly typeString: "bytes memory";
                                         }];
-                                        readonly id: 71511;
+                                        readonly id: 71617;
                                         readonly name: "_revert";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71539;
+                                        readonly referencedDeclaration: 71645;
                                         readonly src: "5547:7:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_pure$_t_bytes_memory_ptr_$returns$__$";
                                             readonly typeString: "function (bytes memory) pure";
                                         };
                                     };
-                                    readonly id: 71513;
+                                    readonly id: 71619;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2690,7 +2690,7 @@ export declare const Address: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 71514;
+                                readonly id: 71620;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "5547:19:167";
                             }];
@@ -2698,7 +2698,7 @@ export declare const Address: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 71500;
+                    readonly id: 71606;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5213:189:167";
                     readonly text: " @dev Tool to verify that a low level call was successful, and reverts if it wasn't, either by bubbling the\n revert reason or with a default {FailedInnerCall} error.";
@@ -2709,16 +2709,16 @@ export declare const Address: {
                 readonly name: "verifyCallResult";
                 readonly nameLocation: "5416:16:167";
                 readonly parameters: {
-                    readonly id: 71505;
+                    readonly id: 71611;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71502;
+                        readonly id: 71608;
                         readonly mutability: "mutable";
                         readonly name: "success";
                         readonly nameLocation: "5438:7:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71521;
+                        readonly scope: 71627;
                         readonly src: "5433:12:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2727,7 +2727,7 @@ export declare const Address: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 71501;
+                            readonly id: 71607;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5433:4:167";
@@ -2739,12 +2739,12 @@ export declare const Address: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 71504;
+                        readonly id: 71610;
                         readonly mutability: "mutable";
                         readonly name: "returndata";
                         readonly nameLocation: "5460:10:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71521;
+                        readonly scope: 71627;
                         readonly src: "5447:23:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2753,7 +2753,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71503;
+                            readonly id: 71609;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5447:5:167";
@@ -2767,16 +2767,16 @@ export declare const Address: {
                     readonly src: "5432:39:167";
                 };
                 readonly returnParameters: {
-                    readonly id: 71508;
+                    readonly id: 71614;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71507;
+                        readonly id: 71613;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71521;
+                        readonly scope: 71627;
                         readonly src: "5495:12:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -2785,7 +2785,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71506;
+                            readonly id: 71612;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5495:5:167";
@@ -2798,17 +2798,17 @@ export declare const Address: {
                     }];
                     readonly src: "5494:14:167";
                 };
-                readonly scope: 71540;
+                readonly scope: 71646;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 71539;
+                readonly id: 71645;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5743:516:167";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 71538;
+                    readonly id: 71644;
                     readonly nodeType: "Block";
                     readonly src: "5798:461:167";
                     readonly nodes: readonly [];
@@ -2818,25 +2818,25 @@ export declare const Address: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 71530;
+                            readonly id: 71636;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 71527;
+                                    readonly id: 71633;
                                     readonly name: "returndata";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 71524;
+                                    readonly referencedDeclaration: 71630;
                                     readonly src: "5874:10:167";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     };
                                 };
-                                readonly id: 71528;
+                                readonly id: 71634;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2854,7 +2854,7 @@ export declare const Address: {
                             readonly operator: ">";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 71529;
+                                readonly id: 71635;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2875,7 +2875,7 @@ export declare const Address: {
                             };
                         };
                         readonly falseBody: {
-                            readonly id: 71536;
+                            readonly id: 71642;
                             readonly nodeType: "Block";
                             readonly src: "6204:49:167";
                             readonly statements: readonly [{
@@ -2883,18 +2883,18 @@ export declare const Address: {
                                     readonly arguments: readonly [];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [];
-                                        readonly id: 71533;
+                                        readonly id: 71639;
                                         readonly name: "FailedInnerCall";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 71303;
+                                        readonly referencedDeclaration: 71409;
                                         readonly src: "6225:15:167";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_error_pure$__$returns$__$";
                                             readonly typeString: "function () pure";
                                         };
                                     };
-                                    readonly id: 71534;
+                                    readonly id: 71640;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2910,16 +2910,16 @@ export declare const Address: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 71535;
+                                readonly id: 71641;
                                 readonly nodeType: "RevertStatement";
                                 readonly src: "6218:24:167";
                             }];
                         };
-                        readonly id: 71537;
+                        readonly id: 71643;
                         readonly nodeType: "IfStatement";
                         readonly src: "5870:383:167";
                         readonly trueBody: {
-                            readonly id: 71532;
+                            readonly id: 71638;
                             readonly nodeType: "Block";
                             readonly src: "5897:301:167";
                             readonly statements: readonly [{
@@ -2990,19 +2990,19 @@ export declare const Address: {
                                 readonly documentation: "@solidity memory-safe-assembly";
                                 readonly evmVersion: "paris";
                                 readonly externalReferences: readonly [{
-                                    readonly declaration: 71524;
+                                    readonly declaration: 71630;
                                     readonly isOffset: false;
                                     readonly isSlot: false;
                                     readonly src: "6102:10:167";
                                     readonly valueSize: 1;
                                 }, {
-                                    readonly declaration: 71524;
+                                    readonly declaration: 71630;
                                     readonly isOffset: false;
                                     readonly isSlot: false;
                                     readonly src: "6145:10:167";
                                     readonly valueSize: 1;
                                 }];
-                                readonly id: 71531;
+                                readonly id: 71637;
                                 readonly nodeType: "InlineAssembly";
                                 readonly src: "6046:142:167";
                             }];
@@ -3010,7 +3010,7 @@ export declare const Address: {
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 71522;
+                    readonly id: 71628;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "5637:101:167";
                     readonly text: " @dev Reverts with returndata if present. Otherwise reverts with {FailedInnerCall}.";
@@ -3021,16 +3021,16 @@ export declare const Address: {
                 readonly name: "_revert";
                 readonly nameLocation: "5752:7:167";
                 readonly parameters: {
-                    readonly id: 71525;
+                    readonly id: 71631;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 71524;
+                        readonly id: 71630;
                         readonly mutability: "mutable";
                         readonly name: "returndata";
                         readonly nameLocation: "5773:10:167";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 71539;
+                        readonly scope: 71645;
                         readonly src: "5760:23:167";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -3039,7 +3039,7 @@ export declare const Address: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 71523;
+                            readonly id: 71629;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5760:5:167";
@@ -3053,12 +3053,12 @@ export declare const Address: {
                     readonly src: "5759:25:167";
                 };
                 readonly returnParameters: {
-                    readonly id: 71526;
+                    readonly id: 71632;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "5798:0:167";
                 };
-                readonly scope: 71540;
+                readonly scope: 71646;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "private";
@@ -3069,17 +3069,17 @@ export declare const Address: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly documentation: {
-                readonly id: 71290;
+                readonly id: 71396;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "127:67:167";
                 readonly text: " @dev Collection of functions related to the address type";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [71540];
+            readonly linearizedBaseContracts: readonly [71646];
             readonly name: "Address";
             readonly nameLocation: "203:7:167";
-            readonly scope: 71541;
-            readonly usedErrors: readonly [71295, 71300, 71303];
+            readonly scope: 71647;
+            readonly usedErrors: readonly [71401, 71406, 71409];
             readonly usedEvents: readonly [];
         }];
         readonly license: "MIT";

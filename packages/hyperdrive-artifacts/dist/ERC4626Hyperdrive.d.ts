@@ -3273,12 +3273,12 @@ export declare const ERC4626Hyperdrive: {
         readonly absolutePath: "contracts/src/instances/erc4626/ERC4626Hyperdrive.sol";
         readonly id: 7801;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [70857];
+            readonly ERC20: readonly [70963];
             readonly ERC4626Base: readonly [7736];
             readonly ERC4626Hyperdrive: readonly [7800];
             readonly Hyperdrive: readonly [4375];
             readonly IHyperdrive: readonly [10351];
-            readonly SafeERC20: readonly [71287];
+            readonly SafeERC20: readonly [71393];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:4648:45";
@@ -3297,14 +3297,14 @@ export declare const ERC4626Hyperdrive: {
             readonly file: "openzeppelin/token/ERC20/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 7801;
-            readonly sourceUnit: 70858;
+            readonly sourceUnit: 70964;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 7739;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 70857;
+                    readonly referencedDeclaration: 70963;
                     readonly src: "73:5:45";
                     readonly typeDescriptions: {};
                 };
@@ -3320,14 +3320,14 @@ export declare const ERC4626Hyperdrive: {
             readonly file: "openzeppelin/token/ERC20/utils/SafeERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 7801;
-            readonly sourceUnit: 71288;
+            readonly sourceUnit: 71394;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 7741;
                     readonly name: "SafeERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71287;
+                    readonly referencedDeclaration: 71393;
                     readonly src: "133:9:45";
                     readonly typeDescriptions: {};
                 };
@@ -3418,7 +3418,7 @@ export declare const ERC4626Hyperdrive: {
                     readonly name: "SafeERC20";
                     readonly nameLocations: readonly ["3738:9:45"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 71287;
+                    readonly referencedDeclaration: 71393;
                     readonly src: "3738:9:45";
                 };
                 readonly typeName: {
@@ -3429,13 +3429,13 @@ export declare const ERC4626Hyperdrive: {
                         readonly name: "ERC20";
                         readonly nameLocations: readonly ["3752:5:45"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 70857;
+                        readonly referencedDeclaration: 70963;
                         readonly src: "3752:5:45";
                     };
-                    readonly referencedDeclaration: 70857;
+                    readonly referencedDeclaration: 70963;
                     readonly src: "3752:5:45";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
+                        readonly typeIdentifier: "t_contract$_ERC20_$70963";
                         readonly typeString: "contract ERC20";
                     };
                 };
@@ -3622,10 +3622,10 @@ export declare const ERC4626Hyperdrive: {
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 70857;
+                                        readonly referencedDeclaration: 70963;
                                         readonly src: "4559:5:45";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70857_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70963_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
@@ -3641,7 +3641,7 @@ export declare const ERC4626Hyperdrive: {
                                     readonly src: "4559:33:45";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$70963";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
@@ -3653,10 +3653,10 @@ export declare const ERC4626Hyperdrive: {
                                 readonly memberLocation: "4593:12:45";
                                 readonly memberName: "forceApprove";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71195;
+                                readonly referencedDeclaration: 71301;
                                 readonly src: "4559:46:45";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$";
                                     readonly typeString: "function (contract IERC20,address,uint256)";
                                 };
                             };
@@ -3994,11 +3994,11 @@ export declare const ERC4626Hyperdrive: {
                 readonly text: "______  __                           _________      _____\n      ___  / / /____  ___________________________  /_________(_)__   ______\n      __  /_/ /__  / / /__  __ \\  _ \\_  ___/  __  /__  ___/_  /__ | / /  _ \\\n      _  __  / _  /_/ /__  /_/ /  __/  /   / /_/ / _  /   _  / __ |/ //  __/\n      /_/ /_/  _\\__, / _   ___/\\___//_/    \\__,_/  /_/    /_/  _____/ \\___/\n               /____/   /_/\n                     XXX          ++          ++          XXX\n     ############   XXXXX        ++0+        +0++        XXXXX   ###########\n   ##////////////########       ++00++      ++00++       ########///////////##\n  ##////////////##########      ++000++    ++000++      ##########///////////##\n  ##%%%%%%/////      ######     ++0000+    +0000++     ######     /////%%%%%%##\n    %%%%%%%%&&             ##   ++0000+    +0000++   ##           &&%%%%%%%%%\n         %&&&                ##  +o000+    +000o+  ##              &&&%\n                              ## ++00+-    -+00++ ##\n                               #% ++0+      +0++ %#\n                               ###-:Oo.++++.oO:-###\n                                ##: 00++++++00 :##\n                    #S###########* 0++00+++00++0 *##########S#\n                  #S               % $ 0+++0 $ %              S#\n                #S   ----------   %+++++:#:+++++%-----------    S#\n              #S   ------------- %++++: ### :++++%------------    S#\n             S    ---------------%++++*\\ | /*++++%-------------     S\n           #S     --------------- %++++ ~W~ ++++%666--o UUUU o-      S#\n         #S?      ---------------  %+++++~+++++%&&&8 o  \\  /  o       ?S#\n        ?*????**+++;::,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,::;+++**????*?\n      #?+////////////////////////////////////////////////////////////////+?#\n    #;;;;;//////////////////////////////////////////////////////////////;;;;;#\n  S;;;;;;;;;//////////////////////////////////////////////////////////;;;;;;;;;S\n /;;;;;;;;;;;///////////////////////////////////////////////////////;;;;;;;;;;;;\\\n |||OOOOOOOO||OOOOOOOO=========== __  ___        ===========OOOOOOOO||OOOOOOOO|||\n |||OOOOOOOO||OOOOOOOO===========|  \\[__ |   \\  /===========OOOOOOOO||OOOOOOOO|||\n |||OOOOOOOO||OOOOOOOO===========|__/[___|___ \\/ ===========OOOOOOOO||OOOOOOOO|||\n ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||\n |||////////000000000000\\\\\\\\\\\\\\\\|:::::::::::::::|////////00000000000\\\\\\\\\\\\\\\\\\\\|||\n SSS\\\\\\\\\\\\\\\\000000000000////////|:::::0x666:::::|\\\\\\\\\\\\\\\\00000000000//////////SSS\n SSS|||||||||||||||||||||||||||||:::::::::::::::||||||||||||||||||||||||||||||SSS\n SSSSSSSS|_______________|______________||_______________|______________|SSSSSSSS\n SSSSSSSS                                                                SSSSSSSS\n SSSSSSSS                                                                SSSSSSSS\n @author DELV\n @title ERC4626Hyperdrive\n @notice A Hyperdrive instance that uses a ERC4626 vault as the yield source.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [7800, 7736, 4375, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71639, 10887, 11459, 10542, 11425];
+            readonly linearizedBaseContracts: readonly [7800, 7736, 4375, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71745, 10887, 11459, 10542, 11425];
             readonly name: "ERC4626Hyperdrive";
             readonly nameLocation: "3681:17:45";
             readonly scope: 7801;
-            readonly usedErrors: readonly [10302, 71014, 71295, 71300, 71303, 71584];
+            readonly usedErrors: readonly [10302, 71120, 71401, 71406, 71409, 71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

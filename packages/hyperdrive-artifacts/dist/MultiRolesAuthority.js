@@ -944,23 +944,23 @@ export const MultiRolesAuthority = {
     },
     "ast": {
         "absolutePath": "lib/solmate/src/auth/authorities/MultiRolesAuthority.sol",
-        "id": 72117,
+        "id": 72223,
         "exportedSymbols": {
             "Auth": [
-                71798
+                71904
             ],
             "Authority": [
-                71811
+                71917
             ],
             "MultiRolesAuthority": [
-                72116
+                72222
             ]
         },
         "nodeType": "SourceUnit",
         "src": "42:4747:171",
         "nodes": [
             {
-                "id": 71813,
+                "id": 71919,
                 "nodeType": "PragmaDirective",
                 "src": "42:24:171",
                 "nodes": [],
@@ -972,23 +972,23 @@ export const MultiRolesAuthority = {
                 ]
             },
             {
-                "id": 71816,
+                "id": 71922,
                 "nodeType": "ImportDirective",
                 "src": "68:44:171",
                 "nodes": [],
                 "absolutePath": "lib/solmate/src/auth/Auth.sol",
                 "file": "../Auth.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 72117,
-                "sourceUnit": 71812,
+                "scope": 72223,
+                "sourceUnit": 71918,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 71814,
+                            "id": 71920,
                             "name": "Auth",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71798,
+                            "referencedDeclaration": 71904,
                             "src": "76:4:171",
                             "typeDescriptions": {}
                         },
@@ -996,11 +996,11 @@ export const MultiRolesAuthority = {
                     },
                     {
                         "foreign": {
-                            "id": 71815,
+                            "id": 71921,
                             "name": "Authority",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71811,
+                            "referencedDeclaration": 71917,
                             "src": "82:9:171",
                             "typeDescriptions": {}
                         },
@@ -1010,12 +1010,12 @@ export const MultiRolesAuthority = {
                 "unitAlias": ""
             },
             {
-                "id": 72116,
+                "id": 72222,
                 "nodeType": "ContractDefinition",
                 "src": "327:4461:171",
                 "nodes": [
                     {
-                        "id": 71829,
+                        "id": 71935,
                         "nodeType": "EventDefinition",
                         "src": "560:78:171",
                         "nodes": [],
@@ -1024,18 +1024,18 @@ export const MultiRolesAuthority = {
                         "name": "UserRoleUpdated",
                         "nameLocation": "566:15:171",
                         "parameters": {
-                            "id": 71828,
+                            "id": 71934,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71823,
+                                    "id": 71929,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "user",
                                     "nameLocation": "598:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71829,
+                                    "scope": 71935,
                                     "src": "582:20:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1044,7 +1044,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71822,
+                                        "id": 71928,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "582:7:171",
@@ -1058,13 +1058,13 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71825,
+                                    "id": 71931,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "role",
                                     "nameLocation": "618:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71829,
+                                    "scope": 71935,
                                     "src": "604:18:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1073,7 +1073,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 71824,
+                                        "id": 71930,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "604:5:171",
@@ -1086,13 +1086,13 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71827,
+                                    "id": 71933,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "enabled",
                                     "nameLocation": "629:7:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71829,
+                                    "scope": 71935,
                                     "src": "624:12:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1101,7 +1101,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 71826,
+                                        "id": 71932,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "624:4:171",
@@ -1117,7 +1117,7 @@ export const MultiRolesAuthority = {
                         }
                     },
                     {
-                        "id": 71835,
+                        "id": 71941,
                         "nodeType": "EventDefinition",
                         "src": "644:72:171",
                         "nodes": [],
@@ -1126,18 +1126,18 @@ export const MultiRolesAuthority = {
                         "name": "PublicCapabilityUpdated",
                         "nameLocation": "650:23:171",
                         "parameters": {
-                            "id": 71834,
+                            "id": 71940,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71831,
+                                    "id": 71937,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "functionSig",
                                     "nameLocation": "689:11:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71835,
+                                    "scope": 71941,
                                     "src": "674:26:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1146,7 +1146,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bytes4"
                                     },
                                     "typeName": {
-                                        "id": 71830,
+                                        "id": 71936,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "674:6:171",
@@ -1159,13 +1159,13 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71833,
+                                    "id": 71939,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "enabled",
                                     "nameLocation": "707:7:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71835,
+                                    "scope": 71941,
                                     "src": "702:12:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1174,7 +1174,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 71832,
+                                        "id": 71938,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "702:4:171",
@@ -1190,7 +1190,7 @@ export const MultiRolesAuthority = {
                         }
                     },
                     {
-                        "id": 71843,
+                        "id": 71949,
                         "nodeType": "EventDefinition",
                         "src": "722:90:171",
                         "nodes": [],
@@ -1199,18 +1199,18 @@ export const MultiRolesAuthority = {
                         "name": "RoleCapabilityUpdated",
                         "nameLocation": "728:21:171",
                         "parameters": {
-                            "id": 71842,
+                            "id": 71948,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71837,
+                                    "id": 71943,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "role",
                                     "nameLocation": "764:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71843,
+                                    "scope": 71949,
                                     "src": "750:18:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1219,7 +1219,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 71836,
+                                        "id": 71942,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "750:5:171",
@@ -1232,13 +1232,13 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71839,
+                                    "id": 71945,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "functionSig",
                                     "nameLocation": "785:11:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71843,
+                                    "scope": 71949,
                                     "src": "770:26:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1247,7 +1247,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bytes4"
                                     },
                                     "typeName": {
-                                        "id": 71838,
+                                        "id": 71944,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "770:6:171",
@@ -1260,13 +1260,13 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71841,
+                                    "id": 71947,
                                     "indexed": false,
                                     "mutability": "mutable",
                                     "name": "enabled",
                                     "nameLocation": "803:7:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71843,
+                                    "scope": 71949,
                                     "src": "798:12:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1275,7 +1275,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 71840,
+                                        "id": 71946,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "798:4:171",
@@ -1291,7 +1291,7 @@ export const MultiRolesAuthority = {
                         }
                     },
                     {
-                        "id": 71850,
+                        "id": 71956,
                         "nodeType": "EventDefinition",
                         "src": "818:88:171",
                         "nodes": [],
@@ -1300,18 +1300,18 @@ export const MultiRolesAuthority = {
                         "name": "TargetCustomAuthorityUpdated",
                         "nameLocation": "824:28:171",
                         "parameters": {
-                            "id": 71849,
+                            "id": 71955,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71845,
+                                    "id": 71951,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "target",
                                     "nameLocation": "869:6:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71850,
+                                    "scope": 71956,
                                     "src": "853:22:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1320,7 +1320,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71844,
+                                        "id": 71950,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "853:7:171",
@@ -1334,37 +1334,37 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71848,
+                                    "id": 71954,
                                     "indexed": true,
                                     "mutability": "mutable",
                                     "name": "authority",
                                     "nameLocation": "895:9:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71850,
+                                    "scope": 71956,
                                     "src": "877:27:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_Authority_$71811",
+                                        "typeIdentifier": "t_contract$_Authority_$71917",
                                         "typeString": "contract Authority"
                                     },
                                     "typeName": {
-                                        "id": 71847,
+                                        "id": 71953,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71846,
+                                            "id": 71952,
                                             "name": "Authority",
                                             "nameLocations": [
                                                 "877:9:171"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 71811,
+                                            "referencedDeclaration": 71917,
                                             "src": "877:9:171"
                                         },
-                                        "referencedDeclaration": 71811,
+                                        "referencedDeclaration": 71917,
                                         "src": "877:9:171",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71811",
+                                            "typeIdentifier": "t_contract$_Authority_$71917",
                                             "typeString": "contract Authority"
                                         }
                                     },
@@ -1375,12 +1375,12 @@ export const MultiRolesAuthority = {
                         }
                     },
                     {
-                        "id": 71863,
+                        "id": 71969,
                         "nodeType": "FunctionDefinition",
                         "src": "1094:77:171",
                         "nodes": [],
                         "body": {
-                            "id": 71862,
+                            "id": 71968,
                             "nodeType": "Block",
                             "src": "1169:2:171",
                             "nodes": [],
@@ -1392,11 +1392,11 @@ export const MultiRolesAuthority = {
                             {
                                 "arguments": [
                                     {
-                                        "id": 71858,
+                                        "id": 71964,
                                         "name": "_owner",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 71852,
+                                        "referencedDeclaration": 71958,
                                         "src": "1149:6:171",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -1404,28 +1404,28 @@ export const MultiRolesAuthority = {
                                         }
                                     },
                                     {
-                                        "id": 71859,
+                                        "id": 71965,
                                         "name": "_authority",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 71855,
+                                        "referencedDeclaration": 71961,
                                         "src": "1157:10:171",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71811",
+                                            "typeIdentifier": "t_contract$_Authority_$71917",
                                             "typeString": "contract Authority"
                                         }
                                     }
                                 ],
-                                "id": 71860,
+                                "id": 71966,
                                 "kind": "baseConstructorSpecifier",
                                 "modifierName": {
-                                    "id": 71857,
+                                    "id": 71963,
                                     "name": "Auth",
                                     "nameLocations": [
                                         "1144:4:171"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71798,
+                                    "referencedDeclaration": 71904,
                                     "src": "1144:4:171"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -1435,17 +1435,17 @@ export const MultiRolesAuthority = {
                         "name": "",
                         "nameLocation": "-1:-1:-1",
                         "parameters": {
-                            "id": 71856,
+                            "id": 71962,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71852,
+                                    "id": 71958,
                                     "mutability": "mutable",
                                     "name": "_owner",
                                     "nameLocation": "1114:6:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71863,
+                                    "scope": 71969,
                                     "src": "1106:14:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1454,7 +1454,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71851,
+                                        "id": 71957,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1106:7:171",
@@ -1468,36 +1468,36 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71855,
+                                    "id": 71961,
                                     "mutability": "mutable",
                                     "name": "_authority",
                                     "nameLocation": "1132:10:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71863,
+                                    "scope": 71969,
                                     "src": "1122:20:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_Authority_$71811",
+                                        "typeIdentifier": "t_contract$_Authority_$71917",
                                         "typeString": "contract Authority"
                                     },
                                     "typeName": {
-                                        "id": 71854,
+                                        "id": 71960,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71853,
+                                            "id": 71959,
                                             "name": "Authority",
                                             "nameLocations": [
                                                 "1122:9:171"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 71811,
+                                            "referencedDeclaration": 71917,
                                             "src": "1122:9:171"
                                         },
-                                        "referencedDeclaration": 71811,
+                                        "referencedDeclaration": 71917,
                                         "src": "1122:9:171",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71811",
+                                            "typeIdentifier": "t_contract$_Authority_$71917",
                                             "typeString": "contract Authority"
                                         }
                                     },
@@ -1507,18 +1507,18 @@ export const MultiRolesAuthority = {
                             "src": "1105:38:171"
                         },
                         "returnParameters": {
-                            "id": 71861,
+                            "id": 71967,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1169:0:171"
                         },
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 71868,
+                        "id": 71974,
                         "nodeType": "VariableDeclaration",
                         "src": "1369:61:171",
                         "nodes": [],
@@ -1527,19 +1527,19 @@ export const MultiRolesAuthority = {
                         "mutability": "mutable",
                         "name": "getTargetCustomAuthority",
                         "nameLocation": "1406:24:171",
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
-                            "typeIdentifier": "t_mapping$_t_address_$_t_contract$_Authority_$71811_$",
+                            "typeIdentifier": "t_mapping$_t_address_$_t_contract$_Authority_$71917_$",
                             "typeString": "mapping(address => contract Authority)"
                         },
                         "typeName": {
-                            "id": 71867,
+                            "id": 71973,
                             "keyName": "",
                             "keyNameLocation": "-1:-1:-1",
                             "keyType": {
-                                "id": 71864,
+                                "id": 71970,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "1377:7:171",
@@ -1551,28 +1551,28 @@ export const MultiRolesAuthority = {
                             "nodeType": "Mapping",
                             "src": "1369:29:171",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_mapping$_t_address_$_t_contract$_Authority_$71811_$",
+                                "typeIdentifier": "t_mapping$_t_address_$_t_contract$_Authority_$71917_$",
                                 "typeString": "mapping(address => contract Authority)"
                             },
                             "valueName": "",
                             "valueNameLocation": "-1:-1:-1",
                             "valueType": {
-                                "id": 71866,
+                                "id": 71972,
                                 "nodeType": "UserDefinedTypeName",
                                 "pathNode": {
-                                    "id": 71865,
+                                    "id": 71971,
                                     "name": "Authority",
                                     "nameLocations": [
                                         "1388:9:171"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71811,
+                                    "referencedDeclaration": 71917,
                                     "src": "1388:9:171"
                                 },
-                                "referencedDeclaration": 71811,
+                                "referencedDeclaration": 71917,
                                 "src": "1388:9:171",
                                 "typeDescriptions": {
-                                    "typeIdentifier": "t_contract$_Authority_$71811",
+                                    "typeIdentifier": "t_contract$_Authority_$71917",
                                     "typeString": "contract Authority"
                                 }
                             }
@@ -1580,7 +1580,7 @@ export const MultiRolesAuthority = {
                         "visibility": "public"
                     },
                     {
-                        "id": 71872,
+                        "id": 71978,
                         "nodeType": "VariableDeclaration",
                         "src": "1622:47:171",
                         "nodes": [],
@@ -1589,7 +1589,7 @@ export const MultiRolesAuthority = {
                         "mutability": "mutable",
                         "name": "getUserRoles",
                         "nameLocation": "1657:12:171",
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1597,11 +1597,11 @@ export const MultiRolesAuthority = {
                             "typeString": "mapping(address => bytes32)"
                         },
                         "typeName": {
-                            "id": 71871,
+                            "id": 71977,
                             "keyName": "",
                             "keyNameLocation": "-1:-1:-1",
                             "keyType": {
-                                "id": 71869,
+                                "id": 71975,
                                 "name": "address",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "1630:7:171",
@@ -1619,7 +1619,7 @@ export const MultiRolesAuthority = {
                             "valueName": "",
                             "valueNameLocation": "-1:-1:-1",
                             "valueType": {
-                                "id": 71870,
+                                "id": 71976,
                                 "name": "bytes32",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "1641:7:171",
@@ -1632,7 +1632,7 @@ export const MultiRolesAuthority = {
                         "visibility": "public"
                     },
                     {
-                        "id": 71876,
+                        "id": 71982,
                         "nodeType": "VariableDeclaration",
                         "src": "1676:49:171",
                         "nodes": [],
@@ -1641,7 +1641,7 @@ export const MultiRolesAuthority = {
                         "mutability": "mutable",
                         "name": "isCapabilityPublic",
                         "nameLocation": "1707:18:171",
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1649,11 +1649,11 @@ export const MultiRolesAuthority = {
                             "typeString": "mapping(bytes4 => bool)"
                         },
                         "typeName": {
-                            "id": 71875,
+                            "id": 71981,
                             "keyName": "",
                             "keyNameLocation": "-1:-1:-1",
                             "keyType": {
-                                "id": 71873,
+                                "id": 71979,
                                 "name": "bytes4",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "1684:6:171",
@@ -1671,7 +1671,7 @@ export const MultiRolesAuthority = {
                             "valueName": "",
                             "valueNameLocation": "-1:-1:-1",
                             "valueType": {
-                                "id": 71874,
+                                "id": 71980,
                                 "name": "bool",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "1694:4:171",
@@ -1684,7 +1684,7 @@ export const MultiRolesAuthority = {
                         "visibility": "public"
                     },
                     {
-                        "id": 71880,
+                        "id": 71986,
                         "nodeType": "VariableDeclaration",
                         "src": "1732:56:171",
                         "nodes": [],
@@ -1693,7 +1693,7 @@ export const MultiRolesAuthority = {
                         "mutability": "mutable",
                         "name": "getRolesWithCapability",
                         "nameLocation": "1766:22:171",
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -1701,11 +1701,11 @@ export const MultiRolesAuthority = {
                             "typeString": "mapping(bytes4 => bytes32)"
                         },
                         "typeName": {
-                            "id": 71879,
+                            "id": 71985,
                             "keyName": "",
                             "keyNameLocation": "-1:-1:-1",
                             "keyType": {
-                                "id": 71877,
+                                "id": 71983,
                                 "name": "bytes4",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "1740:6:171",
@@ -1723,7 +1723,7 @@ export const MultiRolesAuthority = {
                             "valueName": "",
                             "valueNameLocation": "-1:-1:-1",
                             "valueType": {
-                                "id": 71878,
+                                "id": 71984,
                                 "name": "bytes32",
                                 "nodeType": "ElementaryTypeName",
                                 "src": "1750:7:171",
@@ -1736,12 +1736,12 @@ export const MultiRolesAuthority = {
                         "visibility": "public"
                     },
                     {
-                        "id": 71904,
+                        "id": 72010,
                         "nodeType": "FunctionDefinition",
                         "src": "1795:157:171",
                         "nodes": [],
                         "body": {
-                            "id": 71903,
+                            "id": 72009,
                             "nodeType": "Block",
                             "src": "1882:70:171",
                             "nodes": [],
@@ -1752,7 +1752,7 @@ export const MultiRolesAuthority = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 71901,
+                                        "id": 72007,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1762,7 +1762,7 @@ export const MultiRolesAuthority = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 71899,
+                                            "id": 72005,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1774,7 +1774,7 @@ export const MultiRolesAuthority = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 71896,
+                                                        "id": 72002,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -1783,24 +1783,24 @@ export const MultiRolesAuthority = {
                                                             "arguments": [
                                                                 {
                                                                     "baseExpression": {
-                                                                        "id": 71891,
+                                                                        "id": 71997,
                                                                         "name": "getUserRoles",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 71872,
+                                                                        "referencedDeclaration": 71978,
                                                                         "src": "1908:12:171",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
                                                                             "typeString": "mapping(address => bytes32)"
                                                                         }
                                                                     },
-                                                                    "id": 71893,
+                                                                    "id": 71999,
                                                                     "indexExpression": {
-                                                                        "id": 71892,
+                                                                        "id": 71998,
                                                                         "name": "user",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 71882,
+                                                                        "referencedDeclaration": 71988,
                                                                         "src": "1921:4:171",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_address",
@@ -1826,7 +1826,7 @@ export const MultiRolesAuthority = {
                                                                         "typeString": "bytes32"
                                                                     }
                                                                 ],
-                                                                "id": 71890,
+                                                                "id": 71996,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1838,14 +1838,14 @@ export const MultiRolesAuthority = {
                                                                     "typeString": "type(uint256)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 71889,
+                                                                    "id": 71995,
                                                                     "name": "uint256",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "1900:7:171",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 71894,
+                                                            "id": 72000,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1864,11 +1864,11 @@ export const MultiRolesAuthority = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": ">>",
                                                         "rightExpression": {
-                                                            "id": 71895,
+                                                            "id": 72001,
                                                             "name": "role",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71884,
+                                                            "referencedDeclaration": 71990,
                                                             "src": "1931:4:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint8",
@@ -1882,7 +1882,7 @@ export const MultiRolesAuthority = {
                                                         }
                                                     }
                                                 ],
-                                                "id": 71897,
+                                                "id": 72003,
                                                 "isConstant": false,
                                                 "isInlineArray": false,
                                                 "isLValue": false,
@@ -1899,7 +1899,7 @@ export const MultiRolesAuthority = {
                                             "operator": "&",
                                             "rightExpression": {
                                                 "hexValue": "31",
-                                                "id": 71898,
+                                                "id": 72004,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -1923,7 +1923,7 @@ export const MultiRolesAuthority = {
                                         "operator": "!=",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 71900,
+                                            "id": 72006,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -1943,8 +1943,8 @@ export const MultiRolesAuthority = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 71888,
-                                    "id": 71902,
+                                    "functionReturnParameters": 71994,
+                                    "id": 72008,
                                     "nodeType": "Return",
                                     "src": "1892:53:171"
                                 }
@@ -1957,17 +1957,17 @@ export const MultiRolesAuthority = {
                         "name": "doesUserHaveRole",
                         "nameLocation": "1804:16:171",
                         "parameters": {
-                            "id": 71885,
+                            "id": 71991,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71882,
+                                    "id": 71988,
                                     "mutability": "mutable",
                                     "name": "user",
                                     "nameLocation": "1829:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71904,
+                                    "scope": 72010,
                                     "src": "1821:12:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1976,7 +1976,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71881,
+                                        "id": 71987,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1821:7:171",
@@ -1990,12 +1990,12 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71884,
+                                    "id": 71990,
                                     "mutability": "mutable",
                                     "name": "role",
                                     "nameLocation": "1841:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71904,
+                                    "scope": 72010,
                                     "src": "1835:10:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2004,7 +2004,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 71883,
+                                        "id": 71989,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1835:5:171",
@@ -2019,17 +2019,17 @@ export const MultiRolesAuthority = {
                             "src": "1820:26:171"
                         },
                         "returnParameters": {
-                            "id": 71888,
+                            "id": 71994,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71887,
+                                    "id": 71993,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71904,
+                                    "scope": 72010,
                                     "src": "1876:4:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2038,7 +2038,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 71886,
+                                        "id": 71992,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1876:4:171",
@@ -2052,18 +2052,18 @@ export const MultiRolesAuthority = {
                             ],
                             "src": "1875:6:171"
                         },
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "public"
                     },
                     {
-                        "id": 71928,
+                        "id": 72034,
                         "nodeType": "FunctionDefinition",
                         "src": "1958:186:171",
                         "nodes": [],
                         "body": {
-                            "id": 71927,
+                            "id": 72033,
                             "nodeType": "Block",
                             "src": "2057:87:171",
                             "nodes": [],
@@ -2074,7 +2074,7 @@ export const MultiRolesAuthority = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 71925,
+                                        "id": 72031,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2084,7 +2084,7 @@ export const MultiRolesAuthority = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 71923,
+                                            "id": 72029,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2096,7 +2096,7 @@ export const MultiRolesAuthority = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 71920,
+                                                        "id": 72026,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -2105,24 +2105,24 @@ export const MultiRolesAuthority = {
                                                             "arguments": [
                                                                 {
                                                                     "baseExpression": {
-                                                                        "id": 71915,
+                                                                        "id": 72021,
                                                                         "name": "getRolesWithCapability",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 71880,
+                                                                        "referencedDeclaration": 71986,
                                                                         "src": "2083:22:171",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
                                                                             "typeString": "mapping(bytes4 => bytes32)"
                                                                         }
                                                                     },
-                                                                    "id": 71917,
+                                                                    "id": 72023,
                                                                     "indexExpression": {
-                                                                        "id": 71916,
+                                                                        "id": 72022,
                                                                         "name": "functionSig",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 71908,
+                                                                        "referencedDeclaration": 72014,
                                                                         "src": "2106:11:171",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes4",
@@ -2148,7 +2148,7 @@ export const MultiRolesAuthority = {
                                                                         "typeString": "bytes32"
                                                                     }
                                                                 ],
-                                                                "id": 71914,
+                                                                "id": 72020,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -2160,14 +2160,14 @@ export const MultiRolesAuthority = {
                                                                     "typeString": "type(uint256)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 71913,
+                                                                    "id": 72019,
                                                                     "name": "uint256",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "2075:7:171",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 71918,
+                                                            "id": 72024,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -2186,11 +2186,11 @@ export const MultiRolesAuthority = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": ">>",
                                                         "rightExpression": {
-                                                            "id": 71919,
+                                                            "id": 72025,
                                                             "name": "role",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71906,
+                                                            "referencedDeclaration": 72012,
                                                             "src": "2123:4:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint8",
@@ -2204,7 +2204,7 @@ export const MultiRolesAuthority = {
                                                         }
                                                     }
                                                 ],
-                                                "id": 71921,
+                                                "id": 72027,
                                                 "isConstant": false,
                                                 "isInlineArray": false,
                                                 "isLValue": false,
@@ -2221,7 +2221,7 @@ export const MultiRolesAuthority = {
                                             "operator": "&",
                                             "rightExpression": {
                                                 "hexValue": "31",
-                                                "id": 71922,
+                                                "id": 72028,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2245,7 +2245,7 @@ export const MultiRolesAuthority = {
                                         "operator": "!=",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 71924,
+                                            "id": 72030,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -2265,8 +2265,8 @@ export const MultiRolesAuthority = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 71912,
-                                    "id": 71926,
+                                    "functionReturnParameters": 72018,
+                                    "id": 72032,
                                     "nodeType": "Return",
                                     "src": "2067:70:171"
                                 }
@@ -2279,17 +2279,17 @@ export const MultiRolesAuthority = {
                         "name": "doesRoleHaveCapability",
                         "nameLocation": "1967:22:171",
                         "parameters": {
-                            "id": 71909,
+                            "id": 72015,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71906,
+                                    "id": 72012,
                                     "mutability": "mutable",
                                     "name": "role",
                                     "nameLocation": "1996:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71928,
+                                    "scope": 72034,
                                     "src": "1990:10:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2298,7 +2298,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 71905,
+                                        "id": 72011,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1990:5:171",
@@ -2311,12 +2311,12 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71908,
+                                    "id": 72014,
                                     "mutability": "mutable",
                                     "name": "functionSig",
                                     "nameLocation": "2009:11:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71928,
+                                    "scope": 72034,
                                     "src": "2002:18:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2325,7 +2325,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bytes4"
                                     },
                                     "typeName": {
-                                        "id": 71907,
+                                        "id": 72013,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2002:6:171",
@@ -2340,17 +2340,17 @@ export const MultiRolesAuthority = {
                             "src": "1989:32:171"
                         },
                         "returnParameters": {
-                            "id": 71912,
+                            "id": 72018,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71911,
+                                    "id": 72017,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71928,
+                                    "scope": 72034,
                                     "src": "2051:4:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2359,7 +2359,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 71910,
+                                        "id": 72016,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2051:4:171",
@@ -2373,86 +2373,86 @@ export const MultiRolesAuthority = {
                             ],
                             "src": "2050:6:171"
                         },
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "public"
                     },
                     {
-                        "id": 71982,
+                        "id": 72088,
                         "nodeType": "FunctionDefinition",
                         "src": "2336:465:171",
                         "nodes": [],
                         "body": {
-                            "id": 71981,
+                            "id": 72087,
                             "nodeType": "Block",
                             "src": "2477:324:171",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        71942
+                                        72048
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 71942,
+                                            "id": 72048,
                                             "mutability": "mutable",
                                             "name": "customAuthority",
                                             "nameLocation": "2497:15:171",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 71981,
+                                            "scope": 72087,
                                             "src": "2487:25:171",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_Authority_$71811",
+                                                "typeIdentifier": "t_contract$_Authority_$71917",
                                                 "typeString": "contract Authority"
                                             },
                                             "typeName": {
-                                                "id": 71941,
+                                                "id": 72047,
                                                 "nodeType": "UserDefinedTypeName",
                                                 "pathNode": {
-                                                    "id": 71940,
+                                                    "id": 72046,
                                                     "name": "Authority",
                                                     "nameLocations": [
                                                         "2487:9:171"
                                                     ],
                                                     "nodeType": "IdentifierPath",
-                                                    "referencedDeclaration": 71811,
+                                                    "referencedDeclaration": 71917,
                                                     "src": "2487:9:171"
                                                 },
-                                                "referencedDeclaration": 71811,
+                                                "referencedDeclaration": 71917,
                                                 "src": "2487:9:171",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Authority_$71811",
+                                                    "typeIdentifier": "t_contract$_Authority_$71917",
                                                     "typeString": "contract Authority"
                                                 }
                                             },
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 71946,
+                                    "id": 72052,
                                     "initialValue": {
                                         "baseExpression": {
-                                            "id": 71943,
+                                            "id": 72049,
                                             "name": "getTargetCustomAuthority",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71868,
+                                            "referencedDeclaration": 71974,
                                             "src": "2515:24:171",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_mapping$_t_address_$_t_contract$_Authority_$71811_$",
+                                                "typeIdentifier": "t_mapping$_t_address_$_t_contract$_Authority_$71917_$",
                                                 "typeString": "mapping(address => contract Authority)"
                                             }
                                         },
-                                        "id": 71945,
+                                        "id": 72051,
                                         "indexExpression": {
-                                            "id": 71944,
+                                            "id": 72050,
                                             "name": "target",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71932,
+                                            "referencedDeclaration": 72038,
                                             "src": "2540:6:171",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_address",
@@ -2466,7 +2466,7 @@ export const MultiRolesAuthority = {
                                         "nodeType": "IndexAccess",
                                         "src": "2515:32:171",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71811",
+                                            "typeIdentifier": "t_contract$_Authority_$71917",
                                             "typeString": "contract Authority"
                                         }
                                     },
@@ -2479,7 +2479,7 @@ export const MultiRolesAuthority = {
                                             "typeIdentifier": "t_address",
                                             "typeString": "address"
                                         },
-                                        "id": 71955,
+                                        "id": 72061,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2487,14 +2487,14 @@ export const MultiRolesAuthority = {
                                         "leftExpression": {
                                             "arguments": [
                                                 {
-                                                    "id": 71949,
+                                                    "id": 72055,
                                                     "name": "customAuthority",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71942,
+                                                    "referencedDeclaration": 72048,
                                                     "src": "2570:15:171",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_contract$_Authority_$71811",
+                                                        "typeIdentifier": "t_contract$_Authority_$71917",
                                                         "typeString": "contract Authority"
                                                     }
                                                 }
@@ -2502,11 +2502,11 @@ export const MultiRolesAuthority = {
                                             "expression": {
                                                 "argumentTypes": [
                                                     {
-                                                        "typeIdentifier": "t_contract$_Authority_$71811",
+                                                        "typeIdentifier": "t_contract$_Authority_$71917",
                                                         "typeString": "contract Authority"
                                                     }
                                                 ],
-                                                "id": 71948,
+                                                "id": 72054,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2518,14 +2518,14 @@ export const MultiRolesAuthority = {
                                                     "typeString": "type(address)"
                                                 },
                                                 "typeName": {
-                                                    "id": 71947,
+                                                    "id": 72053,
                                                     "name": "address",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "2562:7:171",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 71950,
+                                            "id": 72056,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2547,7 +2547,7 @@ export const MultiRolesAuthority = {
                                             "arguments": [
                                                 {
                                                     "hexValue": "30",
-                                                    "id": 71953,
+                                                    "id": 72059,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2569,7 +2569,7 @@ export const MultiRolesAuthority = {
                                                         "typeString": "int_const 0"
                                                     }
                                                 ],
-                                                "id": 71952,
+                                                "id": 72058,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2581,14 +2581,14 @@ export const MultiRolesAuthority = {
                                                     "typeString": "type(address)"
                                                 },
                                                 "typeName": {
-                                                    "id": 71951,
+                                                    "id": 72057,
                                                     "name": "address",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "2590:7:171",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 71954,
+                                            "id": 72060,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -2610,18 +2610,18 @@ export const MultiRolesAuthority = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 71963,
+                                    "id": 72069,
                                     "nodeType": "IfStatement",
                                     "src": "2558:101:171",
                                     "trueBody": {
                                         "expression": {
                                             "arguments": [
                                                 {
-                                                    "id": 71958,
+                                                    "id": 72064,
                                                     "name": "user",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71930,
+                                                    "referencedDeclaration": 72036,
                                                     "src": "2633:4:171",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_address",
@@ -2629,11 +2629,11 @@ export const MultiRolesAuthority = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 71959,
+                                                    "id": 72065,
                                                     "name": "target",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71932,
+                                                    "referencedDeclaration": 72038,
                                                     "src": "2639:6:171",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_address",
@@ -2641,11 +2641,11 @@ export const MultiRolesAuthority = {
                                                     }
                                                 },
                                                 {
-                                                    "id": 71960,
+                                                    "id": 72066,
                                                     "name": "functionSig",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71934,
+                                                    "referencedDeclaration": 72040,
                                                     "src": "2647:11:171",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_bytes4",
@@ -2669,18 +2669,18 @@ export const MultiRolesAuthority = {
                                                     }
                                                 ],
                                                 "expression": {
-                                                    "id": 71956,
+                                                    "id": 72062,
                                                     "name": "customAuthority",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 71942,
+                                                    "referencedDeclaration": 72048,
                                                     "src": "2609:15:171",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_contract$_Authority_$71811",
+                                                        "typeIdentifier": "t_contract$_Authority_$71917",
                                                         "typeString": "contract Authority"
                                                     }
                                                 },
-                                                "id": 71957,
+                                                "id": 72063,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -2688,14 +2688,14 @@ export const MultiRolesAuthority = {
                                                 "memberLocation": "2625:7:171",
                                                 "memberName": "canCall",
                                                 "nodeType": "MemberAccess",
-                                                "referencedDeclaration": 71810,
+                                                "referencedDeclaration": 71916,
                                                 "src": "2609:23:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_external_view$_t_address_$_t_address_$_t_bytes4_$returns$_t_bool_$",
                                                     "typeString": "function (address,address,bytes4) view external returns (bool)"
                                                 }
                                             },
-                                            "id": 71961,
+                                            "id": 72067,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2711,8 +2711,8 @@ export const MultiRolesAuthority = {
                                                 "typeString": "bool"
                                             }
                                         },
-                                        "functionReturnParameters": 71939,
-                                        "id": 71962,
+                                        "functionReturnParameters": 72045,
+                                        "id": 72068,
                                         "nodeType": "Return",
                                         "src": "2602:57:171"
                                     }
@@ -2723,31 +2723,31 @@ export const MultiRolesAuthority = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 71979,
+                                        "id": 72085,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
                                             "baseExpression": {
-                                                "id": 71964,
+                                                "id": 72070,
                                                 "name": "isCapabilityPublic",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71876,
+                                                "referencedDeclaration": 71982,
                                                 "src": "2689:18:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_bytes4_$_t_bool_$",
                                                     "typeString": "mapping(bytes4 => bool)"
                                                 }
                                             },
-                                            "id": 71966,
+                                            "id": 72072,
                                             "indexExpression": {
-                                                "id": 71965,
+                                                "id": 72071,
                                                 "name": "functionSig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71934,
+                                                "referencedDeclaration": 72040,
                                                 "src": "2708:11:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes4",
@@ -2772,7 +2772,7 @@ export const MultiRolesAuthority = {
                                                 "typeIdentifier": "t_bytes32",
                                                 "typeString": "bytes32"
                                             },
-                                            "id": 71978,
+                                            "id": 72084,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2781,7 +2781,7 @@ export const MultiRolesAuthority = {
                                                 "arguments": [
                                                     {
                                                         "hexValue": "30",
-                                                        "id": 71969,
+                                                        "id": 72075,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -2803,7 +2803,7 @@ export const MultiRolesAuthority = {
                                                             "typeString": "int_const 0"
                                                         }
                                                     ],
-                                                    "id": 71968,
+                                                    "id": 72074,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -2815,14 +2815,14 @@ export const MultiRolesAuthority = {
                                                         "typeString": "type(bytes32)"
                                                     },
                                                     "typeName": {
-                                                        "id": 71967,
+                                                        "id": 72073,
                                                         "name": "bytes32",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "2724:7:171",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 71970,
+                                                "id": 72076,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2845,31 +2845,31 @@ export const MultiRolesAuthority = {
                                                     "typeIdentifier": "t_bytes32",
                                                     "typeString": "bytes32"
                                                 },
-                                                "id": 71977,
+                                                "id": 72083,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
                                                     "baseExpression": {
-                                                        "id": 71971,
+                                                        "id": 72077,
                                                         "name": "getUserRoles",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71872,
+                                                        "referencedDeclaration": 71978,
                                                         "src": "2738:12:171",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
                                                             "typeString": "mapping(address => bytes32)"
                                                         }
                                                     },
-                                                    "id": 71973,
+                                                    "id": 72079,
                                                     "indexExpression": {
-                                                        "id": 71972,
+                                                        "id": 72078,
                                                         "name": "user",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71930,
+                                                        "referencedDeclaration": 72036,
                                                         "src": "2751:4:171",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_address",
@@ -2891,24 +2891,24 @@ export const MultiRolesAuthority = {
                                                 "operator": "&",
                                                 "rightExpression": {
                                                     "baseExpression": {
-                                                        "id": 71974,
+                                                        "id": 72080,
                                                         "name": "getRolesWithCapability",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71880,
+                                                        "referencedDeclaration": 71986,
                                                         "src": "2759:22:171",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
                                                             "typeString": "mapping(bytes4 => bytes32)"
                                                         }
                                                     },
-                                                    "id": 71976,
+                                                    "id": 72082,
                                                     "indexExpression": {
-                                                        "id": 71975,
+                                                        "id": 72081,
                                                         "name": "functionSig",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 71934,
+                                                        "referencedDeclaration": 72040,
                                                         "src": "2782:11:171",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes4",
@@ -2944,15 +2944,15 @@ export const MultiRolesAuthority = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 71939,
-                                    "id": 71980,
+                                    "functionReturnParameters": 72045,
+                                    "id": 72086,
                                     "nodeType": "Return",
                                     "src": "2670:124:171"
                                 }
                             ]
                         },
                         "baseFunctions": [
-                            71810
+                            71916
                         ],
                         "functionSelector": "b7009613",
                         "implemented": true,
@@ -2961,23 +2961,23 @@ export const MultiRolesAuthority = {
                         "name": "canCall",
                         "nameLocation": "2345:7:171",
                         "overrides": {
-                            "id": 71936,
+                            "id": 72042,
                             "nodeType": "OverrideSpecifier",
                             "overrides": [],
                             "src": "2453:8:171"
                         },
                         "parameters": {
-                            "id": 71935,
+                            "id": 72041,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71930,
+                                    "id": 72036,
                                     "mutability": "mutable",
                                     "name": "user",
                                     "nameLocation": "2370:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71982,
+                                    "scope": 72088,
                                     "src": "2362:12:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2986,7 +2986,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71929,
+                                        "id": 72035,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2362:7:171",
@@ -3000,12 +3000,12 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71932,
+                                    "id": 72038,
                                     "mutability": "mutable",
                                     "name": "target",
                                     "nameLocation": "2392:6:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71982,
+                                    "scope": 72088,
                                     "src": "2384:14:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3014,7 +3014,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71931,
+                                        "id": 72037,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2384:7:171",
@@ -3028,12 +3028,12 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71934,
+                                    "id": 72040,
                                     "mutability": "mutable",
                                     "name": "functionSig",
                                     "nameLocation": "2415:11:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71982,
+                                    "scope": 72088,
                                     "src": "2408:18:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3042,7 +3042,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bytes4"
                                     },
                                     "typeName": {
-                                        "id": 71933,
+                                        "id": 72039,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2408:6:171",
@@ -3057,17 +3057,17 @@ export const MultiRolesAuthority = {
                             "src": "2352:80:171"
                         },
                         "returnParameters": {
-                            "id": 71939,
+                            "id": 72045,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71938,
+                                    "id": 72044,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 71982,
+                                    "scope": 72088,
                                     "src": "2471:4:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3076,7 +3076,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 71937,
+                                        "id": 72043,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2471:4:171",
@@ -3090,49 +3090,49 @@ export const MultiRolesAuthority = {
                             ],
                             "src": "2470:6:171"
                         },
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateMutability": "view",
                         "virtual": true,
                         "visibility": "public"
                     },
                     {
-                        "id": 72004,
+                        "id": 72110,
                         "nodeType": "FunctionDefinition",
                         "src": "3006:241:171",
                         "nodes": [],
                         "body": {
-                            "id": 72003,
+                            "id": 72109,
                             "nodeType": "Block",
                             "src": "3111:136:171",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 71996,
+                                        "id": 72102,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "baseExpression": {
-                                                "id": 71992,
+                                                "id": 72098,
                                                 "name": "getTargetCustomAuthority",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71868,
+                                                "referencedDeclaration": 71974,
                                                 "src": "3121:24:171",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_mapping$_t_address_$_t_contract$_Authority_$71811_$",
+                                                    "typeIdentifier": "t_mapping$_t_address_$_t_contract$_Authority_$71917_$",
                                                     "typeString": "mapping(address => contract Authority)"
                                                 }
                                             },
-                                            "id": 71994,
+                                            "id": 72100,
                                             "indexExpression": {
-                                                "id": 71993,
+                                                "id": 72099,
                                                 "name": "target",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71984,
+                                                "referencedDeclaration": 72090,
                                                 "src": "3146:6:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -3146,31 +3146,31 @@ export const MultiRolesAuthority = {
                                             "nodeType": "IndexAccess",
                                             "src": "3121:32:171",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_Authority_$71811",
+                                                "typeIdentifier": "t_contract$_Authority_$71917",
                                                 "typeString": "contract Authority"
                                             }
                                         },
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 71995,
+                                            "id": 72101,
                                             "name": "customAuthority",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71987,
+                                            "referencedDeclaration": 72093,
                                             "src": "3156:15:171",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_contract$_Authority_$71811",
+                                                "typeIdentifier": "t_contract$_Authority_$71917",
                                                 "typeString": "contract Authority"
                                             }
                                         },
                                         "src": "3121:50:171",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71811",
+                                            "typeIdentifier": "t_contract$_Authority_$71917",
                                             "typeString": "contract Authority"
                                         }
                                     },
-                                    "id": 71997,
+                                    "id": 72103,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3121:50:171"
                                 },
@@ -3178,11 +3178,11 @@ export const MultiRolesAuthority = {
                                     "eventCall": {
                                         "arguments": [
                                             {
-                                                "id": 71999,
+                                                "id": 72105,
                                                 "name": "target",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71984,
+                                                "referencedDeclaration": 72090,
                                                 "src": "3216:6:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -3190,14 +3190,14 @@ export const MultiRolesAuthority = {
                                                 }
                                             },
                                             {
-                                                "id": 72000,
+                                                "id": 72106,
                                                 "name": "customAuthority",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71987,
+                                                "referencedDeclaration": 72093,
                                                 "src": "3224:15:171",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_Authority_$71811",
+                                                    "typeIdentifier": "t_contract$_Authority_$71917",
                                                     "typeString": "contract Authority"
                                                 }
                                             }
@@ -3209,22 +3209,22 @@ export const MultiRolesAuthority = {
                                                     "typeString": "address"
                                                 },
                                                 {
-                                                    "typeIdentifier": "t_contract$_Authority_$71811",
+                                                    "typeIdentifier": "t_contract$_Authority_$71917",
                                                     "typeString": "contract Authority"
                                                 }
                                             ],
-                                            "id": 71998,
+                                            "id": 72104,
                                             "name": "TargetCustomAuthorityUpdated",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71850,
+                                            "referencedDeclaration": 71956,
                                             "src": "3187:28:171",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$71811_$returns$__$",
+                                                "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_contract$_Authority_$71917_$returns$__$",
                                                 "typeString": "function (address,contract Authority)"
                                             }
                                         },
-                                        "id": 72001,
+                                        "id": 72107,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3240,7 +3240,7 @@ export const MultiRolesAuthority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 72002,
+                                    "id": 72108,
                                     "nodeType": "EmitStatement",
                                     "src": "3182:58:171"
                                 }
@@ -3251,16 +3251,16 @@ export const MultiRolesAuthority = {
                         "kind": "function",
                         "modifiers": [
                             {
-                                "id": 71990,
+                                "id": 72096,
                                 "kind": "modifierInvocation",
                                 "modifierName": {
-                                    "id": 71989,
+                                    "id": 72095,
                                     "name": "requiresAuth",
                                     "nameLocations": [
                                         "3098:12:171"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71703,
+                                    "referencedDeclaration": 71809,
                                     "src": "3098:12:171"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -3270,17 +3270,17 @@ export const MultiRolesAuthority = {
                         "name": "setTargetCustomAuthority",
                         "nameLocation": "3015:24:171",
                         "parameters": {
-                            "id": 71988,
+                            "id": 72094,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 71984,
+                                    "id": 72090,
                                     "mutability": "mutable",
                                     "name": "target",
                                     "nameLocation": "3048:6:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72004,
+                                    "scope": 72110,
                                     "src": "3040:14:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3289,7 +3289,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 71983,
+                                        "id": 72089,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3040:7:171",
@@ -3303,36 +3303,36 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 71987,
+                                    "id": 72093,
                                     "mutability": "mutable",
                                     "name": "customAuthority",
                                     "nameLocation": "3066:15:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72004,
+                                    "scope": 72110,
                                     "src": "3056:25:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_contract$_Authority_$71811",
+                                        "typeIdentifier": "t_contract$_Authority_$71917",
                                         "typeString": "contract Authority"
                                     },
                                     "typeName": {
-                                        "id": 71986,
+                                        "id": 72092,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 71985,
+                                            "id": 72091,
                                             "name": "Authority",
                                             "nameLocations": [
                                                 "3056:9:171"
                                             ],
                                             "nodeType": "IdentifierPath",
-                                            "referencedDeclaration": 71811,
+                                            "referencedDeclaration": 71917,
                                             "src": "3056:9:171"
                                         },
-                                        "referencedDeclaration": 71811,
+                                        "referencedDeclaration": 71917,
                                         "src": "3056:9:171",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_contract$_Authority_$71811",
+                                            "typeIdentifier": "t_contract$_Authority_$71917",
                                             "typeString": "contract Authority"
                                         }
                                     },
@@ -3342,54 +3342,54 @@ export const MultiRolesAuthority = {
                             "src": "3039:43:171"
                         },
                         "returnParameters": {
-                            "id": 71991,
+                            "id": 72097,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3111:0:171"
                         },
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "public"
                     },
                     {
-                        "id": 72025,
+                        "id": 72131,
                         "nodeType": "FunctionDefinition",
                         "src": "3448:210:171",
                         "nodes": [],
                         "body": {
-                            "id": 72024,
+                            "id": 72130,
                             "nodeType": "Block",
                             "src": "3539:119:171",
                             "nodes": [],
                             "statements": [
                                 {
                                     "expression": {
-                                        "id": 72017,
+                                        "id": 72123,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "baseExpression": {
-                                                "id": 72013,
+                                                "id": 72119,
                                                 "name": "isCapabilityPublic",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 71876,
+                                                "referencedDeclaration": 71982,
                                                 "src": "3549:18:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_mapping$_t_bytes4_$_t_bool_$",
                                                     "typeString": "mapping(bytes4 => bool)"
                                                 }
                                             },
-                                            "id": 72015,
+                                            "id": 72121,
                                             "indexExpression": {
-                                                "id": 72014,
+                                                "id": 72120,
                                                 "name": "functionSig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 72006,
+                                                "referencedDeclaration": 72112,
                                                 "src": "3568:11:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes4",
@@ -3410,11 +3410,11 @@ export const MultiRolesAuthority = {
                                         "nodeType": "Assignment",
                                         "operator": "=",
                                         "rightHandSide": {
-                                            "id": 72016,
+                                            "id": 72122,
                                             "name": "enabled",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 72008,
+                                            "referencedDeclaration": 72114,
                                             "src": "3583:7:171",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_bool",
@@ -3427,7 +3427,7 @@ export const MultiRolesAuthority = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 72018,
+                                    "id": 72124,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3549:41:171"
                                 },
@@ -3435,11 +3435,11 @@ export const MultiRolesAuthority = {
                                     "eventCall": {
                                         "arguments": [
                                             {
-                                                "id": 72020,
+                                                "id": 72126,
                                                 "name": "functionSig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 72006,
+                                                "referencedDeclaration": 72112,
                                                 "src": "3630:11:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes4",
@@ -3447,11 +3447,11 @@ export const MultiRolesAuthority = {
                                                 }
                                             },
                                             {
-                                                "id": 72021,
+                                                "id": 72127,
                                                 "name": "enabled",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 72008,
+                                                "referencedDeclaration": 72114,
                                                 "src": "3643:7:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -3470,18 +3470,18 @@ export const MultiRolesAuthority = {
                                                     "typeString": "bool"
                                                 }
                                             ],
-                                            "id": 72019,
+                                            "id": 72125,
                                             "name": "PublicCapabilityUpdated",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71835,
+                                            "referencedDeclaration": 71941,
                                             "src": "3606:23:171",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_bytes4_$_t_bool_$returns$__$",
                                                 "typeString": "function (bytes4,bool)"
                                             }
                                         },
-                                        "id": 72022,
+                                        "id": 72128,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3497,7 +3497,7 @@ export const MultiRolesAuthority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 72023,
+                                    "id": 72129,
                                     "nodeType": "EmitStatement",
                                     "src": "3601:50:171"
                                 }
@@ -3508,16 +3508,16 @@ export const MultiRolesAuthority = {
                         "kind": "function",
                         "modifiers": [
                             {
-                                "id": 72011,
+                                "id": 72117,
                                 "kind": "modifierInvocation",
                                 "modifierName": {
-                                    "id": 72010,
+                                    "id": 72116,
                                     "name": "requiresAuth",
                                     "nameLocations": [
                                         "3526:12:171"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71703,
+                                    "referencedDeclaration": 71809,
                                     "src": "3526:12:171"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -3527,17 +3527,17 @@ export const MultiRolesAuthority = {
                         "name": "setPublicCapability",
                         "nameLocation": "3457:19:171",
                         "parameters": {
-                            "id": 72009,
+                            "id": 72115,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 72006,
+                                    "id": 72112,
                                     "mutability": "mutable",
                                     "name": "functionSig",
                                     "nameLocation": "3484:11:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72025,
+                                    "scope": 72131,
                                     "src": "3477:18:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3546,7 +3546,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bytes4"
                                     },
                                     "typeName": {
-                                        "id": 72005,
+                                        "id": 72111,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3477:6:171",
@@ -3559,12 +3559,12 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 72008,
+                                    "id": 72114,
                                     "mutability": "mutable",
                                     "name": "enabled",
                                     "nameLocation": "3502:7:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72025,
+                                    "scope": 72131,
                                     "src": "3497:12:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3573,7 +3573,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 72007,
+                                        "id": 72113,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3497:4:171",
@@ -3588,34 +3588,34 @@ export const MultiRolesAuthority = {
                             "src": "3476:34:171"
                         },
                         "returnParameters": {
-                            "id": 72012,
+                            "id": 72118,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3539:0:171"
                         },
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "public"
                     },
                     {
-                        "id": 72070,
+                        "id": 72176,
                         "nodeType": "FunctionDefinition",
                         "src": "3853:337:171",
                         "nodes": [],
                         "body": {
-                            "id": 72069,
+                            "id": 72175,
                             "nodeType": "Block",
                             "src": "3972:218:171",
                             "nodes": [],
                             "statements": [
                                 {
                                     "condition": {
-                                        "id": 72036,
+                                        "id": 72142,
                                         "name": "enabled",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 72031,
+                                        "referencedDeclaration": 72137,
                                         "src": "3986:7:171",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
@@ -3623,37 +3623,37 @@ export const MultiRolesAuthority = {
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 72061,
+                                        "id": 72167,
                                         "nodeType": "Block",
                                         "src": "4066:66:171",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 72059,
+                                                    "id": 72165,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "baseExpression": {
-                                                            "id": 72049,
+                                                            "id": 72155,
                                                             "name": "getUserRoles",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71872,
+                                                            "referencedDeclaration": 71978,
                                                             "src": "4080:12:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
                                                                 "typeString": "mapping(address => bytes32)"
                                                             }
                                                         },
-                                                        "id": 72051,
+                                                        "id": 72157,
                                                         "indexExpression": {
-                                                            "id": 72050,
+                                                            "id": 72156,
                                                             "name": "user",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 72027,
+                                                            "referencedDeclaration": 72133,
                                                             "src": "4093:4:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
@@ -3674,7 +3674,7 @@ export const MultiRolesAuthority = {
                                                     "nodeType": "Assignment",
                                                     "operator": "&=",
                                                     "rightHandSide": {
-                                                        "id": 72058,
+                                                        "id": 72164,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3690,14 +3690,14 @@ export const MultiRolesAuthority = {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     },
-                                                                    "id": 72056,
+                                                                    "id": 72162,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
                                                                     "leftExpression": {
                                                                         "hexValue": "31",
-                                                                        "id": 72054,
+                                                                        "id": 72160,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -3714,11 +3714,11 @@ export const MultiRolesAuthority = {
                                                                     "nodeType": "BinaryOperation",
                                                                     "operator": "<<",
                                                                     "rightExpression": {
-                                                                        "id": 72055,
+                                                                        "id": 72161,
                                                                         "name": "role",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 72029,
+                                                                        "referencedDeclaration": 72135,
                                                                         "src": "4116:4:171",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint8",
@@ -3739,7 +3739,7 @@ export const MultiRolesAuthority = {
                                                                         "typeString": "uint256"
                                                                     }
                                                                 ],
-                                                                "id": 72053,
+                                                                "id": 72159,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3751,14 +3751,14 @@ export const MultiRolesAuthority = {
                                                                     "typeString": "type(bytes32)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 72052,
+                                                                    "id": 72158,
                                                                     "name": "bytes32",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "4103:7:171",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 72057,
+                                                            "id": 72163,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -3785,47 +3785,47 @@ export const MultiRolesAuthority = {
                                                         "typeString": "bytes32"
                                                     }
                                                 },
-                                                "id": 72060,
+                                                "id": 72166,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "4080:41:171"
                                             }
                                         ]
                                     },
-                                    "id": 72062,
+                                    "id": 72168,
                                     "nodeType": "IfStatement",
                                     "src": "3982:150:171",
                                     "trueBody": {
-                                        "id": 72048,
+                                        "id": 72154,
                                         "nodeType": "Block",
                                         "src": "3995:65:171",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 72046,
+                                                    "id": 72152,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "baseExpression": {
-                                                            "id": 72037,
+                                                            "id": 72143,
                                                             "name": "getUserRoles",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71872,
+                                                            "referencedDeclaration": 71978,
                                                             "src": "4009:12:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_address_$_t_bytes32_$",
                                                                 "typeString": "mapping(address => bytes32)"
                                                             }
                                                         },
-                                                        "id": 72039,
+                                                        "id": 72145,
                                                         "indexExpression": {
-                                                            "id": 72038,
+                                                            "id": 72144,
                                                             "name": "user",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 72027,
+                                                            "referencedDeclaration": 72133,
                                                             "src": "4022:4:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_address",
@@ -3852,14 +3852,14 @@ export const MultiRolesAuthority = {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 },
-                                                                "id": 72044,
+                                                                "id": 72150,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftExpression": {
                                                                     "hexValue": "31",
-                                                                    "id": 72042,
+                                                                    "id": 72148,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -3876,11 +3876,11 @@ export const MultiRolesAuthority = {
                                                                 "nodeType": "BinaryOperation",
                                                                 "operator": "<<",
                                                                 "rightExpression": {
-                                                                    "id": 72043,
+                                                                    "id": 72149,
                                                                     "name": "role",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 72029,
+                                                                    "referencedDeclaration": 72135,
                                                                     "src": "4044:4:171",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint8",
@@ -3901,7 +3901,7 @@ export const MultiRolesAuthority = {
                                                                     "typeString": "uint256"
                                                                 }
                                                             ],
-                                                            "id": 72041,
+                                                            "id": 72147,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -3913,14 +3913,14 @@ export const MultiRolesAuthority = {
                                                                 "typeString": "type(bytes32)"
                                                             },
                                                             "typeName": {
-                                                                "id": 72040,
+                                                                "id": 72146,
                                                                 "name": "bytes32",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "4031:7:171",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 72045,
+                                                        "id": 72151,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -3942,7 +3942,7 @@ export const MultiRolesAuthority = {
                                                         "typeString": "bytes32"
                                                     }
                                                 },
-                                                "id": 72047,
+                                                "id": 72153,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "4009:40:171"
                                             }
@@ -3953,11 +3953,11 @@ export const MultiRolesAuthority = {
                                     "eventCall": {
                                         "arguments": [
                                             {
-                                                "id": 72064,
+                                                "id": 72170,
                                                 "name": "user",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 72027,
+                                                "referencedDeclaration": 72133,
                                                 "src": "4163:4:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_address",
@@ -3965,11 +3965,11 @@ export const MultiRolesAuthority = {
                                                 }
                                             },
                                             {
-                                                "id": 72065,
+                                                "id": 72171,
                                                 "name": "role",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 72029,
+                                                "referencedDeclaration": 72135,
                                                 "src": "4169:4:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint8",
@@ -3977,11 +3977,11 @@ export const MultiRolesAuthority = {
                                                 }
                                             },
                                             {
-                                                "id": 72066,
+                                                "id": 72172,
                                                 "name": "enabled",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 72031,
+                                                "referencedDeclaration": 72137,
                                                 "src": "4175:7:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -4004,18 +4004,18 @@ export const MultiRolesAuthority = {
                                                     "typeString": "bool"
                                                 }
                                             ],
-                                            "id": 72063,
+                                            "id": 72169,
                                             "name": "UserRoleUpdated",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71829,
+                                            "referencedDeclaration": 71935,
                                             "src": "4147:15:171",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_address_$_t_uint8_$_t_bool_$returns$__$",
                                                 "typeString": "function (address,uint8,bool)"
                                             }
                                         },
-                                        "id": 72067,
+                                        "id": 72173,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4031,7 +4031,7 @@ export const MultiRolesAuthority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 72068,
+                                    "id": 72174,
                                     "nodeType": "EmitStatement",
                                     "src": "4142:41:171"
                                 }
@@ -4042,16 +4042,16 @@ export const MultiRolesAuthority = {
                         "kind": "function",
                         "modifiers": [
                             {
-                                "id": 72034,
+                                "id": 72140,
                                 "kind": "modifierInvocation",
                                 "modifierName": {
-                                    "id": 72033,
+                                    "id": 72139,
                                     "name": "requiresAuth",
                                     "nameLocations": [
                                         "3959:12:171"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71703,
+                                    "referencedDeclaration": 71809,
                                     "src": "3959:12:171"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -4061,17 +4061,17 @@ export const MultiRolesAuthority = {
                         "name": "setUserRole",
                         "nameLocation": "3862:11:171",
                         "parameters": {
-                            "id": 72032,
+                            "id": 72138,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 72027,
+                                    "id": 72133,
                                     "mutability": "mutable",
                                     "name": "user",
                                     "nameLocation": "3891:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72070,
+                                    "scope": 72176,
                                     "src": "3883:12:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4080,7 +4080,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 72026,
+                                        "id": 72132,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3883:7:171",
@@ -4094,12 +4094,12 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 72029,
+                                    "id": 72135,
                                     "mutability": "mutable",
                                     "name": "role",
                                     "nameLocation": "3911:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72070,
+                                    "scope": 72176,
                                     "src": "3905:10:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4108,7 +4108,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 72028,
+                                        "id": 72134,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3905:5:171",
@@ -4121,12 +4121,12 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 72031,
+                                    "id": 72137,
                                     "mutability": "mutable",
                                     "name": "enabled",
                                     "nameLocation": "3930:7:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72070,
+                                    "scope": 72176,
                                     "src": "3925:12:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4135,7 +4135,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 72030,
+                                        "id": 72136,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "3925:4:171",
@@ -4150,34 +4150,34 @@ export const MultiRolesAuthority = {
                             "src": "3873:70:171"
                         },
                         "returnParameters": {
-                            "id": 72035,
+                            "id": 72141,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "3972:0:171"
                         },
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "public"
                     },
                     {
-                        "id": 72115,
+                        "id": 72221,
                         "nodeType": "FunctionDefinition",
                         "src": "4390:396:171",
                         "nodes": [],
                         "body": {
-                            "id": 72114,
+                            "id": 72220,
                             "nodeType": "Block",
                             "src": "4521:265:171",
                             "nodes": [],
                             "statements": [
                                 {
                                     "condition": {
-                                        "id": 72081,
+                                        "id": 72187,
                                         "name": "enabled",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 72076,
+                                        "referencedDeclaration": 72182,
                                         "src": "4535:7:171",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
@@ -4185,37 +4185,37 @@ export const MultiRolesAuthority = {
                                         }
                                     },
                                     "falseBody": {
-                                        "id": 72106,
+                                        "id": 72212,
                                         "nodeType": "Block",
                                         "src": "4632:83:171",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 72104,
+                                                    "id": 72210,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "baseExpression": {
-                                                            "id": 72094,
+                                                            "id": 72200,
                                                             "name": "getRolesWithCapability",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71880,
+                                                            "referencedDeclaration": 71986,
                                                             "src": "4646:22:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
                                                                 "typeString": "mapping(bytes4 => bytes32)"
                                                             }
                                                         },
-                                                        "id": 72096,
+                                                        "id": 72202,
                                                         "indexExpression": {
-                                                            "id": 72095,
+                                                            "id": 72201,
                                                             "name": "functionSig",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 72074,
+                                                            "referencedDeclaration": 72180,
                                                             "src": "4669:11:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes4",
@@ -4236,7 +4236,7 @@ export const MultiRolesAuthority = {
                                                     "nodeType": "Assignment",
                                                     "operator": "&=",
                                                     "rightHandSide": {
-                                                        "id": 72103,
+                                                        "id": 72209,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -4252,14 +4252,14 @@ export const MultiRolesAuthority = {
                                                                         "typeIdentifier": "t_uint256",
                                                                         "typeString": "uint256"
                                                                     },
-                                                                    "id": 72101,
+                                                                    "id": 72207,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
                                                                     "lValueRequested": false,
                                                                     "leftExpression": {
                                                                         "hexValue": "31",
-                                                                        "id": 72099,
+                                                                        "id": 72205,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -4276,11 +4276,11 @@ export const MultiRolesAuthority = {
                                                                     "nodeType": "BinaryOperation",
                                                                     "operator": "<<",
                                                                     "rightExpression": {
-                                                                        "id": 72100,
+                                                                        "id": 72206,
                                                                         "name": "role",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 72072,
+                                                                        "referencedDeclaration": 72178,
                                                                         "src": "4699:4:171",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint8",
@@ -4301,7 +4301,7 @@ export const MultiRolesAuthority = {
                                                                         "typeString": "uint256"
                                                                     }
                                                                 ],
-                                                                "id": 72098,
+                                                                "id": 72204,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -4313,14 +4313,14 @@ export const MultiRolesAuthority = {
                                                                     "typeString": "type(bytes32)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 72097,
+                                                                    "id": 72203,
                                                                     "name": "bytes32",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "4686:7:171",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 72102,
+                                                            "id": 72208,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -4347,47 +4347,47 @@ export const MultiRolesAuthority = {
                                                         "typeString": "bytes32"
                                                     }
                                                 },
-                                                "id": 72105,
+                                                "id": 72211,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "4646:58:171"
                                             }
                                         ]
                                     },
-                                    "id": 72107,
+                                    "id": 72213,
                                     "nodeType": "IfStatement",
                                     "src": "4531:184:171",
                                     "trueBody": {
-                                        "id": 72093,
+                                        "id": 72199,
                                         "nodeType": "Block",
                                         "src": "4544:82:171",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 72091,
+                                                    "id": 72197,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "baseExpression": {
-                                                            "id": 72082,
+                                                            "id": 72188,
                                                             "name": "getRolesWithCapability",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 71880,
+                                                            "referencedDeclaration": 71986,
                                                             "src": "4558:22:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_mapping$_t_bytes4_$_t_bytes32_$",
                                                                 "typeString": "mapping(bytes4 => bytes32)"
                                                             }
                                                         },
-                                                        "id": 72084,
+                                                        "id": 72190,
                                                         "indexExpression": {
-                                                            "id": 72083,
+                                                            "id": 72189,
                                                             "name": "functionSig",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 72074,
+                                                            "referencedDeclaration": 72180,
                                                             "src": "4581:11:171",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes4",
@@ -4414,14 +4414,14 @@ export const MultiRolesAuthority = {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 },
-                                                                "id": 72089,
+                                                                "id": 72195,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftExpression": {
                                                                     "hexValue": "31",
-                                                                    "id": 72087,
+                                                                    "id": 72193,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -4438,11 +4438,11 @@ export const MultiRolesAuthority = {
                                                                 "nodeType": "BinaryOperation",
                                                                 "operator": "<<",
                                                                 "rightExpression": {
-                                                                    "id": 72088,
+                                                                    "id": 72194,
                                                                     "name": "role",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 72072,
+                                                                    "referencedDeclaration": 72178,
                                                                     "src": "4610:4:171",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint8",
@@ -4463,7 +4463,7 @@ export const MultiRolesAuthority = {
                                                                     "typeString": "uint256"
                                                                 }
                                                             ],
-                                                            "id": 72086,
+                                                            "id": 72192,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -4475,14 +4475,14 @@ export const MultiRolesAuthority = {
                                                                 "typeString": "type(bytes32)"
                                                             },
                                                             "typeName": {
-                                                                "id": 72085,
+                                                                "id": 72191,
                                                                 "name": "bytes32",
                                                                 "nodeType": "ElementaryTypeName",
                                                                 "src": "4597:7:171",
                                                                 "typeDescriptions": {}
                                                             }
                                                         },
-                                                        "id": 72090,
+                                                        "id": 72196,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
@@ -4504,7 +4504,7 @@ export const MultiRolesAuthority = {
                                                         "typeString": "bytes32"
                                                     }
                                                 },
-                                                "id": 72092,
+                                                "id": 72198,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "4558:57:171"
                                             }
@@ -4515,11 +4515,11 @@ export const MultiRolesAuthority = {
                                     "eventCall": {
                                         "arguments": [
                                             {
-                                                "id": 72109,
+                                                "id": 72215,
                                                 "name": "role",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 72072,
+                                                "referencedDeclaration": 72178,
                                                 "src": "4752:4:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint8",
@@ -4527,11 +4527,11 @@ export const MultiRolesAuthority = {
                                                 }
                                             },
                                             {
-                                                "id": 72110,
+                                                "id": 72216,
                                                 "name": "functionSig",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 72074,
+                                                "referencedDeclaration": 72180,
                                                 "src": "4758:11:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes4",
@@ -4539,11 +4539,11 @@ export const MultiRolesAuthority = {
                                                 }
                                             },
                                             {
-                                                "id": 72111,
+                                                "id": 72217,
                                                 "name": "enabled",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 72076,
+                                                "referencedDeclaration": 72182,
                                                 "src": "4771:7:171",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -4566,18 +4566,18 @@ export const MultiRolesAuthority = {
                                                     "typeString": "bool"
                                                 }
                                             ],
-                                            "id": 72108,
+                                            "id": 72214,
                                             "name": "RoleCapabilityUpdated",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 71843,
+                                            "referencedDeclaration": 71949,
                                             "src": "4730:21:171",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_event_nonpayable$_t_uint8_$_t_bytes4_$_t_bool_$returns$__$",
                                                 "typeString": "function (uint8,bytes4,bool)"
                                             }
                                         },
-                                        "id": 72112,
+                                        "id": 72218,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4593,7 +4593,7 @@ export const MultiRolesAuthority = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 72113,
+                                    "id": 72219,
                                     "nodeType": "EmitStatement",
                                     "src": "4725:54:171"
                                 }
@@ -4604,16 +4604,16 @@ export const MultiRolesAuthority = {
                         "kind": "function",
                         "modifiers": [
                             {
-                                "id": 72079,
+                                "id": 72185,
                                 "kind": "modifierInvocation",
                                 "modifierName": {
-                                    "id": 72078,
+                                    "id": 72184,
                                     "name": "requiresAuth",
                                     "nameLocations": [
                                         "4508:12:171"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71703,
+                                    "referencedDeclaration": 71809,
                                     "src": "4508:12:171"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -4623,17 +4623,17 @@ export const MultiRolesAuthority = {
                         "name": "setRoleCapability",
                         "nameLocation": "4399:17:171",
                         "parameters": {
-                            "id": 72077,
+                            "id": 72183,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 72072,
+                                    "id": 72178,
                                     "mutability": "mutable",
                                     "name": "role",
                                     "nameLocation": "4432:4:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72115,
+                                    "scope": 72221,
                                     "src": "4426:10:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4642,7 +4642,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "uint8"
                                     },
                                     "typeName": {
-                                        "id": 72071,
+                                        "id": 72177,
                                         "name": "uint8",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4426:5:171",
@@ -4655,12 +4655,12 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 72074,
+                                    "id": 72180,
                                     "mutability": "mutable",
                                     "name": "functionSig",
                                     "nameLocation": "4453:11:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72115,
+                                    "scope": 72221,
                                     "src": "4446:18:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4669,7 +4669,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bytes4"
                                     },
                                     "typeName": {
-                                        "id": 72073,
+                                        "id": 72179,
                                         "name": "bytes4",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4446:6:171",
@@ -4682,12 +4682,12 @@ export const MultiRolesAuthority = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 72076,
+                                    "id": 72182,
                                     "mutability": "mutable",
                                     "name": "enabled",
                                     "nameLocation": "4479:7:171",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 72115,
+                                    "scope": 72221,
                                     "src": "4474:12:171",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4696,7 +4696,7 @@ export const MultiRolesAuthority = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 72075,
+                                        "id": 72181,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4474:4:171",
@@ -4711,12 +4711,12 @@ export const MultiRolesAuthority = {
                             "src": "4416:76:171"
                         },
                         "returnParameters": {
-                            "id": 72080,
+                            "id": 72186,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "4521:0:171"
                         },
-                        "scope": 72116,
+                        "scope": 72222,
                         "stateMutability": "nonpayable",
                         "virtual": true,
                         "visibility": "public"
@@ -4726,31 +4726,31 @@ export const MultiRolesAuthority = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 71818,
+                            "id": 71924,
                             "name": "Auth",
                             "nameLocations": [
                                 "359:4:171"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 71798,
+                            "referencedDeclaration": 71904,
                             "src": "359:4:171"
                         },
-                        "id": 71819,
+                        "id": 71925,
                         "nodeType": "InheritanceSpecifier",
                         "src": "359:4:171"
                     },
                     {
                         "baseName": {
-                            "id": 71820,
+                            "id": 71926,
                             "name": "Authority",
                             "nameLocations": [
                                 "365:9:171"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 71811,
+                            "referencedDeclaration": 71917,
                             "src": "365:9:171"
                         },
-                        "id": 71821,
+                        "id": 71927,
                         "nodeType": "InheritanceSpecifier",
                         "src": "365:9:171"
                     }
@@ -4759,28 +4759,28 @@ export const MultiRolesAuthority = {
                 "contractDependencies": [],
                 "contractKind": "contract",
                 "documentation": {
-                    "id": 71817,
+                    "id": 71923,
                     "nodeType": "StructuredDocumentation",
                     "src": "114:213:171",
                     "text": "@notice Flexible and target agnostic role based Authority that supports up to 256 roles.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/auth/authorities/MultiRolesAuthority.sol)"
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    72116,
-                    71811,
-                    71798
+                    72222,
+                    71917,
+                    71904
                 ],
                 "name": "MultiRolesAuthority",
                 "nameLocation": "336:19:171",
-                "scope": 72117,
+                "scope": 72223,
                 "usedErrors": [],
                 "usedEvents": [
-                    71648,
-                    71655,
-                    71829,
-                    71835,
-                    71843,
-                    71850
+                    71754,
+                    71761,
+                    71935,
+                    71941,
+                    71949,
+                    71956
                 ]
             }
         ],

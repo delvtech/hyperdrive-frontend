@@ -2120,7 +2120,7 @@ export declare const HyperdriveCheckpoint: {
                         readonly name: "nonReentrant";
                         readonly nameLocations: readonly ["1679:12:113"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71603;
+                        readonly referencedDeclaration: 71709;
                         readonly src: "1679:12:113";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -7093,11 +7093,11 @@ export declare const HyperdriveCheckpoint: {
                 readonly text: "@author DELV\n @notice Implements the checkpoint accounting for Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [14161, 17512, 16054, 15127, 16538, 13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [14161, 17512, 16054, 15127, 16538, 13667, 17734, 71745, 10887, 11459];
             readonly name: "HyperdriveCheckpoint";
             readonly nameLocation: "928:20:113";
             readonly scope: 14162;
-            readonly usedErrors: readonly [71584];
+            readonly usedErrors: readonly [71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

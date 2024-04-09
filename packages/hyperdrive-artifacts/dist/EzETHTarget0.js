@@ -4559,7 +4559,7 @@ export const EzETHTarget0 = {
         "id": 8275,
         "exportedSymbols": {
             "ERC20": [
-                70857
+                70963
             ],
             "EzETHBase": [
                 8136
@@ -4580,7 +4580,7 @@ export const EzETHTarget0 = {
                 11608
             ],
             "SafeERC20": [
-                71287
+                71393
             ]
         },
         "nodeType": "SourceUnit",
@@ -4606,7 +4606,7 @@ export const EzETHTarget0 = {
                 "file": "openzeppelin/token/ERC20/ERC20.sol",
                 "nameLocation": "-1:-1:-1",
                 "scope": 8275,
-                "sourceUnit": 70858,
+                "sourceUnit": 70964,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -4614,7 +4614,7 @@ export const EzETHTarget0 = {
                             "name": "ERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 70857,
+                            "referencedDeclaration": 70963,
                             "src": "73:5:53",
                             "typeDescriptions": {}
                         },
@@ -4632,7 +4632,7 @@ export const EzETHTarget0 = {
                 "file": "openzeppelin/token/ERC20/utils/SafeERC20.sol",
                 "nameLocation": "-1:-1:-1",
                 "scope": 8275,
-                "sourceUnit": 71288,
+                "sourceUnit": 71394,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -4640,7 +4640,7 @@ export const EzETHTarget0 = {
                             "name": "SafeERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71287,
+                            "referencedDeclaration": 71393,
                             "src": "133:9:53",
                             "typeDescriptions": {}
                         },
@@ -4783,7 +4783,7 @@ export const EzETHTarget0 = {
                                 "961:9:53"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 71287,
+                            "referencedDeclaration": 71393,
                             "src": "961:9:53"
                         },
                         "typeName": {
@@ -4796,13 +4796,13 @@ export const EzETHTarget0 = {
                                     "975:5:53"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 70857,
+                                "referencedDeclaration": 70963,
                                 "src": "975:5:53"
                             },
-                            "referencedDeclaration": 70857,
+                            "referencedDeclaration": 70963,
                             "src": "975:5:53",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC20_$70857",
+                                "typeIdentifier": "t_contract$_ERC20_$70963",
                                 "typeString": "contract ERC20"
                             }
                         }
@@ -5646,7 +5646,7 @@ export const EzETHTarget0 = {
                     12497,
                     13667,
                     17734,
-                    71639,
+                    71745,
                     10887,
                     11459,
                     11207,
@@ -5671,11 +5671,11 @@ export const EzETHTarget0 = {
                     10299,
                     10314,
                     10317,
-                    71014,
-                    71295,
-                    71300,
-                    71303,
-                    71584
+                    71120,
+                    71401,
+                    71406,
+                    71409,
+                    71690
                 ],
                 "usedEvents": [
                     10705,

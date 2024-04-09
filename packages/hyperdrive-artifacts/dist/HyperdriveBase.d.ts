@@ -15154,11 +15154,11 @@ export declare const HyperdriveBase: {
                 readonly text: "@author DELV\n @title HyperdriveBase\n @notice The Hyperdrive base contract that provides a set of helper methods\n         and defines the functions that must be overridden by implementations.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [13667, 17734, 71745, 10887, 11459];
             readonly name: "HyperdriveBase";
             readonly nameLocation: "999:14:112";
             readonly scope: 13668;
-            readonly usedErrors: readonly [71584];
+            readonly usedErrors: readonly [71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

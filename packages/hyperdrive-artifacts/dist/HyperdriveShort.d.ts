@@ -3563,7 +3563,7 @@ export declare const HyperdriveShort: {
                         readonly name: "nonReentrant";
                         readonly nameLocations: readonly ["2184:12:117"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71603;
+                        readonly referencedDeclaration: 71709;
                         readonly src: "2184:12:117";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -6545,7 +6545,7 @@ export declare const HyperdriveShort: {
                         readonly name: "nonReentrant";
                         readonly nameLocations: readonly ["7329:12:117"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71603;
+                        readonly referencedDeclaration: 71709;
                         readonly src: "7329:12:117";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -13061,11 +13061,11 @@ export declare const HyperdriveShort: {
                 readonly text: "@author DELV\n @title HyperdriveShort\n @notice Implements the short accounting for Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [17512, 15127, 16538, 13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [17512, 15127, 16538, 13667, 17734, 71745, 10887, 11459];
             readonly name: "HyperdriveShort";
             readonly nameLocation: "939:15:117";
             readonly scope: 17513;
-            readonly usedErrors: readonly [71584];
+            readonly usedErrors: readonly [71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

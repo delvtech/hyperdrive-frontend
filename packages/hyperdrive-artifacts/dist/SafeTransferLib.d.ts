@@ -60,36 +60,36 @@ export declare const SafeTransferLib: {
     };
     readonly ast: {
         readonly absolutePath: "lib/solmate/src/utils/SafeTransferLib.sol";
-        readonly id: 73270;
+        readonly id: 73376;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [72504];
-            readonly SafeTransferLib: readonly [73269];
+            readonly ERC20: readonly [72610];
+            readonly SafeTransferLib: readonly [73375];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "42:6295:175";
         readonly nodes: readonly [{
-            readonly id: 73186;
+            readonly id: 73292;
             readonly nodeType: "PragmaDirective";
             readonly src: "42:24:175";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.8", ".0"];
         }, {
-            readonly id: 73188;
+            readonly id: 73294;
             readonly nodeType: "ImportDirective";
             readonly src: "68:42:175";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/solmate/src/tokens/ERC20.sol";
             readonly file: "../tokens/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 73270;
-            readonly sourceUnit: 72505;
+            readonly scope: 73376;
+            readonly sourceUnit: 72611;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 73187;
+                    readonly id: 73293;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 72504;
+                    readonly referencedDeclaration: 72610;
                     readonly src: "76:5:175";
                     readonly typeDescriptions: {};
                 };
@@ -97,29 +97,29 @@ export declare const SafeTransferLib: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 73269;
+            readonly id: 73375;
             readonly nodeType: "ContractDefinition";
             readonly src: "586:5750:175";
             readonly nodes: readonly [{
-                readonly id: 73206;
+                readonly id: 73312;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "799:339:175";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 73205;
+                    readonly id: 73311;
                     readonly nodeType: "Block";
                     readonly src: "861:277:175";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [73197];
+                        readonly assignments: readonly [73303];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 73197;
+                            readonly id: 73303;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "876:7:175";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 73205;
+                            readonly scope: 73311;
                             readonly src: "871:12:175";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -128,7 +128,7 @@ export declare const SafeTransferLib: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 73196;
+                                readonly id: 73302;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "871:4:175";
@@ -139,7 +139,7 @@ export declare const SafeTransferLib: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 73198;
+                        readonly id: 73304;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "871:12:175";
                     }, {
@@ -210,35 +210,35 @@ export declare const SafeTransferLib: {
                         readonly documentation: "@solidity memory-safe-assembly";
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 73193;
+                            readonly declaration: 73299;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1053:6:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73197;
+                            readonly declaration: 73303;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1026:7:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73191;
+                            readonly declaration: 73297;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1049:2:175";
                             readonly valueSize: 1;
                         }];
-                        readonly id: 73199;
+                        readonly id: 73305;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "937:145:175";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 73201;
+                                readonly id: 73307;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 73197;
+                                readonly referencedDeclaration: 73303;
                                 readonly src: "1100:7:175";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -246,7 +246,7 @@ export declare const SafeTransferLib: {
                                 };
                             }, {
                                 readonly hexValue: "4554485f5452414e534645525f4641494c4544";
-                                readonly id: 73202;
+                                readonly id: 73308;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -268,7 +268,7 @@ export declare const SafeTransferLib: {
                                     readonly typeIdentifier: "t_stringliteral_d383913ea1996930a2623a0d739b8fc033c734c1d71d4759d3ccba1d3a719c29";
                                     readonly typeString: "literal_string \"ETH_TRANSFER_FAILED\"";
                                 }];
-                                readonly id: 73200;
+                                readonly id: 73306;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -279,7 +279,7 @@ export declare const SafeTransferLib: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 73203;
+                            readonly id: 73309;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -295,7 +295,7 @@ export declare const SafeTransferLib: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 73204;
+                        readonly id: 73310;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1092:39:175";
                     }];
@@ -306,16 +306,16 @@ export declare const SafeTransferLib: {
                 readonly name: "safeTransferETH";
                 readonly nameLocation: "808:15:175";
                 readonly parameters: {
-                    readonly id: 73194;
+                    readonly id: 73300;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 73191;
+                        readonly id: 73297;
                         readonly mutability: "mutable";
                         readonly name: "to";
                         readonly nameLocation: "832:2:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73206;
+                        readonly scope: 73312;
                         readonly src: "824:10:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -324,7 +324,7 @@ export declare const SafeTransferLib: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 73190;
+                            readonly id: 73296;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "824:7:175";
@@ -337,12 +337,12 @@ export declare const SafeTransferLib: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 73193;
+                        readonly id: 73299;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "844:6:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73206;
+                        readonly scope: 73312;
                         readonly src: "836:14:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -351,7 +351,7 @@ export declare const SafeTransferLib: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 73192;
+                            readonly id: 73298;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "836:7:175";
@@ -365,35 +365,35 @@ export declare const SafeTransferLib: {
                     readonly src: "823:28:175";
                 };
                 readonly returnParameters: {
-                    readonly id: 73195;
+                    readonly id: 73301;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "861:0:175";
                 };
-                readonly scope: 73269;
+                readonly scope: 73375;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 73228;
+                readonly id: 73334;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1328:1782:175";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 73227;
+                    readonly id: 73333;
                     readonly nodeType: "Block";
                     readonly src: "1456:1654:175";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [73219];
+                        readonly assignments: readonly [73325];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 73219;
+                            readonly id: 73325;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "1471:7:175";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 73227;
+                            readonly scope: 73333;
                             readonly src: "1466:12:175";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -402,7 +402,7 @@ export declare const SafeTransferLib: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 73218;
+                                readonly id: 73324;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1466:4:175";
@@ -413,7 +413,7 @@ export declare const SafeTransferLib: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 73220;
+                        readonly id: 73326;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "1466:12:175";
                     }, {
@@ -769,47 +769,47 @@ export declare const SafeTransferLib: {
                         readonly documentation: "@solidity memory-safe-assembly";
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 73215;
+                            readonly declaration: 73321;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2172:6:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73211;
+                            readonly declaration: 73317;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "1896:4:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73219;
+                            readonly declaration: 73325;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2276:7:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73213;
+                            readonly declaration: 73319;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2038:2:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73209;
+                            readonly declaration: 73315;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "2989:5:175";
                             readonly valueSize: 1;
                         }];
-                        readonly id: 73221;
+                        readonly id: 73327;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "1532:1521:175";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 73223;
+                                readonly id: 73329;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 73219;
+                                readonly referencedDeclaration: 73325;
                                 readonly src: "3071:7:175";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -817,7 +817,7 @@ export declare const SafeTransferLib: {
                                 };
                             }, {
                                 readonly hexValue: "5452414e534645525f46524f4d5f4641494c4544";
-                                readonly id: 73224;
+                                readonly id: 73330;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -839,7 +839,7 @@ export declare const SafeTransferLib: {
                                     readonly typeIdentifier: "t_stringliteral_77631768048ee92f9dcf4b9b9d762877d6b9723214862c733f0596708fc219b7";
                                     readonly typeString: "literal_string \"TRANSFER_FROM_FAILED\"";
                                 }];
-                                readonly id: 73222;
+                                readonly id: 73328;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -850,7 +850,7 @@ export declare const SafeTransferLib: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 73225;
+                            readonly id: 73331;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -866,7 +866,7 @@ export declare const SafeTransferLib: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 73226;
+                        readonly id: 73332;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "3063:40:175";
                     }];
@@ -877,50 +877,50 @@ export declare const SafeTransferLib: {
                 readonly name: "safeTransferFrom";
                 readonly nameLocation: "1337:16:175";
                 readonly parameters: {
-                    readonly id: 73216;
+                    readonly id: 73322;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 73209;
+                        readonly id: 73315;
                         readonly mutability: "mutable";
                         readonly name: "token";
                         readonly nameLocation: "1369:5:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73228;
+                        readonly scope: 73334;
                         readonly src: "1363:11:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_ERC20_$72504";
+                            readonly typeIdentifier: "t_contract$_ERC20_$72610";
                             readonly typeString: "contract ERC20";
                         };
                         readonly typeName: {
-                            readonly id: 73208;
+                            readonly id: 73314;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 73207;
+                                readonly id: 73313;
                                 readonly name: "ERC20";
                                 readonly nameLocations: readonly ["1363:5:175"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 72504;
+                                readonly referencedDeclaration: 72610;
                                 readonly src: "1363:5:175";
                             };
-                            readonly referencedDeclaration: 72504;
+                            readonly referencedDeclaration: 72610;
                             readonly src: "1363:5:175";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_ERC20_$72504";
+                                readonly typeIdentifier: "t_contract$_ERC20_$72610";
                                 readonly typeString: "contract ERC20";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 73211;
+                        readonly id: 73317;
                         readonly mutability: "mutable";
                         readonly name: "from";
                         readonly nameLocation: "1392:4:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73228;
+                        readonly scope: 73334;
                         readonly src: "1384:12:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -929,7 +929,7 @@ export declare const SafeTransferLib: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 73210;
+                            readonly id: 73316;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1384:7:175";
@@ -942,12 +942,12 @@ export declare const SafeTransferLib: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 73213;
+                        readonly id: 73319;
                         readonly mutability: "mutable";
                         readonly name: "to";
                         readonly nameLocation: "1414:2:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73228;
+                        readonly scope: 73334;
                         readonly src: "1406:10:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -956,7 +956,7 @@ export declare const SafeTransferLib: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 73212;
+                            readonly id: 73318;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1406:7:175";
@@ -969,12 +969,12 @@ export declare const SafeTransferLib: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 73215;
+                        readonly id: 73321;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "1434:6:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73228;
+                        readonly scope: 73334;
                         readonly src: "1426:14:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -983,7 +983,7 @@ export declare const SafeTransferLib: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 73214;
+                            readonly id: 73320;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1426:7:175";
@@ -997,35 +997,35 @@ export declare const SafeTransferLib: {
                     readonly src: "1353:93:175";
                 };
                 readonly returnParameters: {
-                    readonly id: 73217;
+                    readonly id: 73323;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "1456:0:175";
                 };
-                readonly scope: 73269;
+                readonly scope: 73375;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 73248;
+                readonly id: 73354;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "3116:1607:175";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 73247;
+                    readonly id: 73353;
                     readonly nodeType: "Block";
                     readonly src: "3218:1505:175";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [73239];
+                        readonly assignments: readonly [73345];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 73239;
+                            readonly id: 73345;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "3233:7:175";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 73247;
+                            readonly scope: 73353;
                             readonly src: "3228:12:175";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1034,7 +1034,7 @@ export declare const SafeTransferLib: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 73238;
+                                readonly id: 73344;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "3228:4:175";
@@ -1045,7 +1045,7 @@ export declare const SafeTransferLib: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 73240;
+                        readonly id: 73346;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "3228:12:175";
                     }, {
@@ -1350,41 +1350,41 @@ export declare const SafeTransferLib: {
                         readonly documentation: "@solidity memory-safe-assembly";
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 73235;
+                            readonly declaration: 73341;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "3792:6:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73239;
+                            readonly declaration: 73345;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "3896:7:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73233;
+                            readonly declaration: 73339;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "3658:2:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73231;
+                            readonly declaration: 73337;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "4608:5:175";
                             readonly valueSize: 1;
                         }];
-                        readonly id: 73241;
+                        readonly id: 73347;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "3294:1377:175";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 73243;
+                                readonly id: 73349;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 73239;
+                                readonly referencedDeclaration: 73345;
                                 readonly src: "4689:7:175";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -1392,7 +1392,7 @@ export declare const SafeTransferLib: {
                                 };
                             }, {
                                 readonly hexValue: "5452414e534645525f4641494c4544";
-                                readonly id: 73244;
+                                readonly id: 73350;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1414,7 +1414,7 @@ export declare const SafeTransferLib: {
                                     readonly typeIdentifier: "t_stringliteral_8bf8f0d780f13740660fe63233b17f96cb1813889e7dce4121e55b817b367b72";
                                     readonly typeString: "literal_string \"TRANSFER_FAILED\"";
                                 }];
-                                readonly id: 73242;
+                                readonly id: 73348;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -1425,7 +1425,7 @@ export declare const SafeTransferLib: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 73245;
+                            readonly id: 73351;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1441,7 +1441,7 @@ export declare const SafeTransferLib: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 73246;
+                        readonly id: 73352;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4681:35:175";
                     }];
@@ -1452,50 +1452,50 @@ export declare const SafeTransferLib: {
                 readonly name: "safeTransfer";
                 readonly nameLocation: "3125:12:175";
                 readonly parameters: {
-                    readonly id: 73236;
+                    readonly id: 73342;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 73231;
+                        readonly id: 73337;
                         readonly mutability: "mutable";
                         readonly name: "token";
                         readonly nameLocation: "3153:5:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73248;
+                        readonly scope: 73354;
                         readonly src: "3147:11:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_ERC20_$72504";
+                            readonly typeIdentifier: "t_contract$_ERC20_$72610";
                             readonly typeString: "contract ERC20";
                         };
                         readonly typeName: {
-                            readonly id: 73230;
+                            readonly id: 73336;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 73229;
+                                readonly id: 73335;
                                 readonly name: "ERC20";
                                 readonly nameLocations: readonly ["3147:5:175"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 72504;
+                                readonly referencedDeclaration: 72610;
                                 readonly src: "3147:5:175";
                             };
-                            readonly referencedDeclaration: 72504;
+                            readonly referencedDeclaration: 72610;
                             readonly src: "3147:5:175";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_ERC20_$72504";
+                                readonly typeIdentifier: "t_contract$_ERC20_$72610";
                                 readonly typeString: "contract ERC20";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 73233;
+                        readonly id: 73339;
                         readonly mutability: "mutable";
                         readonly name: "to";
                         readonly nameLocation: "3176:2:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73248;
+                        readonly scope: 73354;
                         readonly src: "3168:10:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1504,7 +1504,7 @@ export declare const SafeTransferLib: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 73232;
+                            readonly id: 73338;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3168:7:175";
@@ -1517,12 +1517,12 @@ export declare const SafeTransferLib: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 73235;
+                        readonly id: 73341;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "3196:6:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73248;
+                        readonly scope: 73354;
                         readonly src: "3188:14:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1531,7 +1531,7 @@ export declare const SafeTransferLib: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 73234;
+                            readonly id: 73340;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "3188:7:175";
@@ -1545,35 +1545,35 @@ export declare const SafeTransferLib: {
                     readonly src: "3137:71:175";
                 };
                 readonly returnParameters: {
-                    readonly id: 73237;
+                    readonly id: 73343;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "3218:0:175";
                 };
-                readonly scope: 73269;
+                readonly scope: 73375;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 73268;
+                readonly id: 73374;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4729:1605:175";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 73267;
+                    readonly id: 73373;
                     readonly nodeType: "Block";
                     readonly src: "4830:1504:175";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [73259];
+                        readonly assignments: readonly [73365];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 73259;
+                            readonly id: 73365;
                             readonly mutability: "mutable";
                             readonly name: "success";
                             readonly nameLocation: "4845:7:175";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 73267;
+                            readonly scope: 73373;
                             readonly src: "4840:12:175";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1582,7 +1582,7 @@ export declare const SafeTransferLib: {
                                 readonly typeString: "bool";
                             };
                             readonly typeName: {
-                                readonly id: 73258;
+                                readonly id: 73364;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "4840:4:175";
@@ -1593,7 +1593,7 @@ export declare const SafeTransferLib: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 73260;
+                        readonly id: 73366;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "4840:12:175";
                     }, {
@@ -1898,41 +1898,41 @@ export declare const SafeTransferLib: {
                         readonly documentation: "@solidity memory-safe-assembly";
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 73255;
+                            readonly declaration: 73361;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "5404:6:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73259;
+                            readonly declaration: 73365;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "5508:7:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73253;
+                            readonly declaration: 73359;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "5270:2:175";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 73251;
+                            readonly declaration: 73357;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "6220:5:175";
                             readonly valueSize: 1;
                         }];
-                        readonly id: 73261;
+                        readonly id: 73367;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "4906:1377:175";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 73263;
+                                readonly id: 73369;
                                 readonly name: "success";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 73259;
+                                readonly referencedDeclaration: 73365;
                                 readonly src: "6301:7:175";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bool";
@@ -1940,7 +1940,7 @@ export declare const SafeTransferLib: {
                                 };
                             }, {
                                 readonly hexValue: "415050524f56455f4641494c4544";
-                                readonly id: 73264;
+                                readonly id: 73370;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1962,7 +1962,7 @@ export declare const SafeTransferLib: {
                                     readonly typeIdentifier: "t_stringliteral_cd400c5237ae346977ee020ef8d0d26a880c07edf7eba69a8848f0d31e9a88f2";
                                     readonly typeString: "literal_string \"APPROVE_FAILED\"";
                                 }];
-                                readonly id: 73262;
+                                readonly id: 73368;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -1973,7 +1973,7 @@ export declare const SafeTransferLib: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 73265;
+                            readonly id: 73371;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1989,7 +1989,7 @@ export declare const SafeTransferLib: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 73266;
+                        readonly id: 73372;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "6293:34:175";
                     }];
@@ -2000,50 +2000,50 @@ export declare const SafeTransferLib: {
                 readonly name: "safeApprove";
                 readonly nameLocation: "4738:11:175";
                 readonly parameters: {
-                    readonly id: 73256;
+                    readonly id: 73362;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 73251;
+                        readonly id: 73357;
                         readonly mutability: "mutable";
                         readonly name: "token";
                         readonly nameLocation: "4765:5:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73268;
+                        readonly scope: 73374;
                         readonly src: "4759:11:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_contract$_ERC20_$72504";
+                            readonly typeIdentifier: "t_contract$_ERC20_$72610";
                             readonly typeString: "contract ERC20";
                         };
                         readonly typeName: {
-                            readonly id: 73250;
+                            readonly id: 73356;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 73249;
+                                readonly id: 73355;
                                 readonly name: "ERC20";
                                 readonly nameLocations: readonly ["4759:5:175"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 72504;
+                                readonly referencedDeclaration: 72610;
                                 readonly src: "4759:5:175";
                             };
-                            readonly referencedDeclaration: 72504;
+                            readonly referencedDeclaration: 72610;
                             readonly src: "4759:5:175";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_contract$_ERC20_$72504";
+                                readonly typeIdentifier: "t_contract$_ERC20_$72610";
                                 readonly typeString: "contract ERC20";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 73253;
+                        readonly id: 73359;
                         readonly mutability: "mutable";
                         readonly name: "to";
                         readonly nameLocation: "4788:2:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73268;
+                        readonly scope: 73374;
                         readonly src: "4780:10:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2052,7 +2052,7 @@ export declare const SafeTransferLib: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 73252;
+                            readonly id: 73358;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4780:7:175";
@@ -2065,12 +2065,12 @@ export declare const SafeTransferLib: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 73255;
+                        readonly id: 73361;
                         readonly mutability: "mutable";
                         readonly name: "amount";
                         readonly nameLocation: "4808:6:175";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 73268;
+                        readonly scope: 73374;
                         readonly src: "4800:14:175";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -2079,7 +2079,7 @@ export declare const SafeTransferLib: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 73254;
+                            readonly id: 73360;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4800:7:175";
@@ -2093,12 +2093,12 @@ export declare const SafeTransferLib: {
                     readonly src: "4749:71:175";
                 };
                 readonly returnParameters: {
-                    readonly id: 73257;
+                    readonly id: 73363;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "4830:0:175";
                 };
-                readonly scope: 73269;
+                readonly scope: 73375;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
@@ -2109,16 +2109,16 @@ export declare const SafeTransferLib: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly documentation: {
-                readonly id: 73189;
+                readonly id: 73295;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "112:474:175";
                 readonly text: "@notice Safe ETH and ERC20 transfer library that gracefully handles missing return values.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/SafeTransferLib.sol)\n @dev Use with caution! Some functions in this library knowingly create dirty bits at the destination of the free memory pointer.\n @dev Note that none of the functions in this library check that a token has code at all! That responsibility is delegated to the caller.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [73269];
+            readonly linearizedBaseContracts: readonly [73375];
             readonly name: "SafeTransferLib";
             readonly nameLocation: "594:15:175";
-            readonly scope: 73270;
+            readonly scope: 73376;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

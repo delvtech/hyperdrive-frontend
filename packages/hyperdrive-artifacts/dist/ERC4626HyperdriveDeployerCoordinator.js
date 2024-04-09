@@ -1744,7 +1744,7 @@ export const ERC4626HyperdriveDeployerCoordinator = {
         "id": 1348,
         "exportedSymbols": {
             "ERC20": [
-                70857
+                70963
             ],
             "ERC4626HyperdriveDeployerCoordinator": [
                 1347
@@ -1765,7 +1765,7 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                 18039
             ],
             "SafeERC20": [
-                71287
+                71393
             ]
         },
         "nodeType": "SourceUnit",
@@ -1791,7 +1791,7 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                 "file": "openzeppelin/token/ERC20/ERC20.sol",
                 "nameLocation": "-1:-1:-1",
                 "scope": 1348,
-                "sourceUnit": 70858,
+                "sourceUnit": 70964,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1799,7 +1799,7 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                             "name": "ERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 70857,
+                            "referencedDeclaration": 70963,
                             "src": "73:5:2",
                             "typeDescriptions": {}
                         },
@@ -1817,7 +1817,7 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                 "file": "openzeppelin/token/ERC20/utils/SafeERC20.sol",
                 "nameLocation": "-1:-1:-1",
                 "scope": 1348,
-                "sourceUnit": 71288,
+                "sourceUnit": 71394,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1825,7 +1825,7 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                             "name": "SafeERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71287,
+                            "referencedDeclaration": 71393,
                             "src": "133:9:2",
                             "typeDescriptions": {}
                         },
@@ -1982,7 +1982,7 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                                 "1026:9:2"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 71287,
+                            "referencedDeclaration": 71393,
                             "src": "1026:9:2"
                         },
                         "typeName": {
@@ -1995,13 +1995,13 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                                     "1040:5:2"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 70857,
+                                "referencedDeclaration": 70963,
                                 "src": "1040:5:2"
                             },
-                            "referencedDeclaration": 70857,
+                            "referencedDeclaration": 70963,
                             "src": "1040:5:2",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC20_$70857",
+                                "typeIdentifier": "t_contract$_ERC20_$70963",
                                 "typeString": "contract ERC20"
                             }
                         }
@@ -2724,10 +2724,10 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                                                     "name": "ERC20",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 70857,
+                                                    "referencedDeclaration": 70963,
                                                     "src": "3302:5:2",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70857_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70963_$",
                                                         "typeString": "type(contract ERC20)"
                                                     }
                                                 },
@@ -2743,7 +2743,7 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                                                 "src": "3302:12:2",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ERC20_$70857",
+                                                    "typeIdentifier": "t_contract$_ERC20_$70963",
                                                     "typeString": "contract ERC20"
                                                 }
                                             },
@@ -2755,10 +2755,10 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                                             "memberLocation": "3315:16:2",
                                             "memberName": "safeTransferFrom",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 71074,
+                                            "referencedDeclaration": 71180,
                                             "src": "3302:29:2",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$",
                                                 "typeString": "function (contract IERC20,address,address,uint256)"
                                             }
                                         },
@@ -2892,10 +2892,10 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                                                     "name": "ERC20",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 70857,
+                                                    "referencedDeclaration": 70963,
                                                     "src": "3376:5:2",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70857_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70963_$",
                                                         "typeString": "type(contract ERC20)"
                                                     }
                                                 },
@@ -2911,7 +2911,7 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                                                 "src": "3376:12:2",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ERC20_$70857",
+                                                    "typeIdentifier": "t_contract$_ERC20_$70963",
                                                     "typeString": "contract ERC20"
                                                 }
                                             },
@@ -2923,10 +2923,10 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                                             "memberLocation": "3389:12:2",
                                             "memberName": "forceApprove",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 71195,
+                                            "referencedDeclaration": 71301,
                                             "src": "3376:25:2",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$",
                                                 "typeString": "function (contract IERC20,address,uint256)"
                                             }
                                         },
@@ -4905,10 +4905,10 @@ export const ERC4626HyperdriveDeployerCoordinator = {
                     10628,
                     10631,
                     10634,
-                    71014,
-                    71295,
-                    71300,
-                    71303
+                    71120,
+                    71401,
+                    71406,
+                    71409
                 ],
                 "usedEvents": []
             }

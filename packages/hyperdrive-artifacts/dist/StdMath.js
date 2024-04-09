@@ -66,17 +66,17 @@ export const stdMath = {
     },
     "ast": {
         "absolutePath": "lib/forge-std/src/StdMath.sol",
-        "id": 35647,
+        "id": 35753,
         "exportedSymbols": {
             "stdMath": [
-                35646
+                35752
             ]
         },
         "nodeType": "SourceUnit",
         "src": "32:1328:151",
         "nodes": [
             {
-                "id": 35506,
+                "id": 35612,
                 "nodeType": "PragmaDirective",
                 "src": "32:31:151",
                 "nodes": [],
@@ -91,12 +91,12 @@ export const stdMath = {
                 ]
             },
             {
-                "id": 35646,
+                "id": 35752,
                 "nodeType": "ContractDefinition",
                 "src": "65:1294:151",
                 "nodes": [
                     {
-                        "id": 35510,
+                        "id": 35616,
                         "nodeType": "VariableDeclaration",
                         "src": "87:115:151",
                         "nodes": [],
@@ -104,7 +104,7 @@ export const stdMath = {
                         "mutability": "constant",
                         "name": "INT256_MIN",
                         "nameLocation": "111:10:151",
-                        "scope": 35646,
+                        "scope": 35752,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -112,7 +112,7 @@ export const stdMath = {
                             "typeString": "int256"
                         },
                         "typeName": {
-                            "id": 35507,
+                            "id": 35613,
                             "name": "int256",
                             "nodeType": "ElementaryTypeName",
                             "src": "87:6:151",
@@ -122,7 +122,7 @@ export const stdMath = {
                             }
                         },
                         "value": {
-                            "id": 35509,
+                            "id": 35615,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -133,7 +133,7 @@ export const stdMath = {
                             "src": "124:78:151",
                             "subExpression": {
                                 "hexValue": "3537383936303434363138363538303937373131373835343932353034333433393533393236363334393932333332383230323832303139373238373932303033393536353634383139393638",
-                                "id": 35508,
+                                "id": 35614,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -155,12 +155,12 @@ export const stdMath = {
                         "visibility": "private"
                     },
                     {
-                        "id": 35536,
+                        "id": 35642,
                         "nodeType": "FunctionDefinition",
                         "src": "209:306:151",
                         "nodes": [],
                         "body": {
-                            "id": 35535,
+                            "id": 35641,
                             "nodeType": "Block",
                             "src": "264:251:151",
                             "nodes": [],
@@ -171,17 +171,17 @@ export const stdMath = {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         },
-                                        "id": 35519,
+                                        "id": 35625,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 35517,
+                                            "id": 35623,
                                             "name": "a",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 35512,
+                                            "referencedDeclaration": 35618,
                                             "src": "342:1:151",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -191,11 +191,11 @@ export const stdMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "==",
                                         "rightExpression": {
-                                            "id": 35518,
+                                            "id": 35624,
                                             "name": "INT256_MIN",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 35510,
+                                            "referencedDeclaration": 35616,
                                             "src": "347:10:151",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -208,18 +208,18 @@ export const stdMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 35523,
+                                    "id": 35629,
                                     "nodeType": "IfStatement",
                                     "src": "338:130:151",
                                     "trueBody": {
-                                        "id": 35522,
+                                        "id": 35628,
                                         "nodeType": "Block",
                                         "src": "359:109:151",
                                         "statements": [
                                             {
                                                 "expression": {
                                                     "hexValue": "3537383936303434363138363538303937373131373835343932353034333433393533393236363334393932333332383230323832303139373238373932303033393536353634383139393638",
-                                                    "id": 35520,
+                                                    "id": 35626,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -233,8 +233,8 @@ export const stdMath = {
                                                     },
                                                     "value": "57896044618658097711785492504343953926634992332820282019728792003956564819968"
                                                 },
-                                                "functionReturnParameters": 35516,
-                                                "id": 35521,
+                                                "functionReturnParameters": 35622,
+                                                "id": 35627,
                                                 "nodeType": "Return",
                                                 "src": "373:84:151"
                                             }
@@ -250,17 +250,17 @@ export const stdMath = {
                                                         "typeIdentifier": "t_int256",
                                                         "typeString": "int256"
                                                     },
-                                                    "id": 35528,
+                                                    "id": 35634,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 35526,
+                                                        "id": 35632,
                                                         "name": "a",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 35512,
+                                                        "referencedDeclaration": 35618,
                                                         "src": "493:1:151",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -271,7 +271,7 @@ export const stdMath = {
                                                     "operator": ">",
                                                     "rightExpression": {
                                                         "hexValue": "30",
-                                                        "id": 35527,
+                                                        "id": 35633,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -292,7 +292,7 @@ export const stdMath = {
                                                     }
                                                 },
                                                 "falseExpression": {
-                                                    "id": 35531,
+                                                    "id": 35637,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -302,11 +302,11 @@ export const stdMath = {
                                                     "prefix": true,
                                                     "src": "505:2:151",
                                                     "subExpression": {
-                                                        "id": 35530,
+                                                        "id": 35636,
                                                         "name": "a",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 35512,
+                                                        "referencedDeclaration": 35618,
                                                         "src": "506:1:151",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -318,7 +318,7 @@ export const stdMath = {
                                                         "typeString": "int256"
                                                     }
                                                 },
-                                                "id": 35532,
+                                                "id": 35638,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -326,11 +326,11 @@ export const stdMath = {
                                                 "nodeType": "Conditional",
                                                 "src": "493:14:151",
                                                 "trueExpression": {
-                                                    "id": 35529,
+                                                    "id": 35635,
                                                     "name": "a",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 35512,
+                                                    "referencedDeclaration": 35618,
                                                     "src": "501:1:151",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -350,7 +350,7 @@ export const stdMath = {
                                                     "typeString": "int256"
                                                 }
                                             ],
-                                            "id": 35525,
+                                            "id": 35631,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -362,14 +362,14 @@ export const stdMath = {
                                                 "typeString": "type(uint256)"
                                             },
                                             "typeName": {
-                                                "id": 35524,
+                                                "id": 35630,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "485:7:151",
                                                 "typeDescriptions": {}
                                             }
                                         },
-                                        "id": 35533,
+                                        "id": 35639,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -385,8 +385,8 @@ export const stdMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 35516,
-                                    "id": 35534,
+                                    "functionReturnParameters": 35622,
+                                    "id": 35640,
                                     "nodeType": "Return",
                                     "src": "478:30:151"
                                 }
@@ -398,17 +398,17 @@ export const stdMath = {
                         "name": "abs",
                         "nameLocation": "218:3:151",
                         "parameters": {
-                            "id": 35513,
+                            "id": 35619,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35512,
+                                    "id": 35618,
                                     "mutability": "mutable",
                                     "name": "a",
                                     "nameLocation": "229:1:151",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35536,
+                                    "scope": 35642,
                                     "src": "222:8:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -417,7 +417,7 @@ export const stdMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 35511,
+                                        "id": 35617,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "222:6:151",
@@ -432,17 +432,17 @@ export const stdMath = {
                             "src": "221:10:151"
                         },
                         "returnParameters": {
-                            "id": 35516,
+                            "id": 35622,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35515,
+                                    "id": 35621,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35536,
+                                    "scope": 35642,
                                     "src": "255:7:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -451,7 +451,7 @@ export const stdMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35514,
+                                        "id": 35620,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "255:7:151",
@@ -465,18 +465,18 @@ export const stdMath = {
                             ],
                             "src": "254:9:151"
                         },
-                        "scope": 35646,
+                        "scope": 35752,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35557,
+                        "id": 35663,
                         "nodeType": "FunctionDefinition",
                         "src": "521:114:151",
                         "nodes": [],
                         "body": {
-                            "id": 35556,
+                            "id": 35662,
                             "nodeType": "Block",
                             "src": "590:45:151",
                             "nodes": [],
@@ -488,17 +488,17 @@ export const stdMath = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 35547,
+                                            "id": 35653,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 35545,
+                                                "id": 35651,
                                                 "name": "a",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35538,
+                                                "referencedDeclaration": 35644,
                                                 "src": "607:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -508,11 +508,11 @@ export const stdMath = {
                                             "nodeType": "BinaryOperation",
                                             "operator": ">",
                                             "rightExpression": {
-                                                "id": 35546,
+                                                "id": 35652,
                                                 "name": "b",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35540,
+                                                "referencedDeclaration": 35646,
                                                 "src": "611:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -530,17 +530,17 @@ export const stdMath = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 35553,
+                                            "id": 35659,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 35551,
+                                                "id": 35657,
                                                 "name": "b",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35540,
+                                                "referencedDeclaration": 35646,
                                                 "src": "623:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -550,11 +550,11 @@ export const stdMath = {
                                             "nodeType": "BinaryOperation",
                                             "operator": "-",
                                             "rightExpression": {
-                                                "id": 35552,
+                                                "id": 35658,
                                                 "name": "a",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35538,
+                                                "referencedDeclaration": 35644,
                                                 "src": "627:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -567,7 +567,7 @@ export const stdMath = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 35554,
+                                        "id": 35660,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -579,17 +579,17 @@ export const stdMath = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 35550,
+                                            "id": 35656,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 35548,
+                                                "id": 35654,
                                                 "name": "a",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35538,
+                                                "referencedDeclaration": 35644,
                                                 "src": "615:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -599,11 +599,11 @@ export const stdMath = {
                                             "nodeType": "BinaryOperation",
                                             "operator": "-",
                                             "rightExpression": {
-                                                "id": 35549,
+                                                "id": 35655,
                                                 "name": "b",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35540,
+                                                "referencedDeclaration": 35646,
                                                 "src": "619:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -621,8 +621,8 @@ export const stdMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 35544,
-                                    "id": 35555,
+                                    "functionReturnParameters": 35650,
+                                    "id": 35661,
                                     "nodeType": "Return",
                                     "src": "600:28:151"
                                 }
@@ -634,17 +634,17 @@ export const stdMath = {
                         "name": "delta",
                         "nameLocation": "530:5:151",
                         "parameters": {
-                            "id": 35541,
+                            "id": 35647,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35538,
+                                    "id": 35644,
                                     "mutability": "mutable",
                                     "name": "a",
                                     "nameLocation": "544:1:151",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35557,
+                                    "scope": 35663,
                                     "src": "536:9:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -653,7 +653,7 @@ export const stdMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35537,
+                                        "id": 35643,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "536:7:151",
@@ -666,12 +666,12 @@ export const stdMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35540,
+                                    "id": 35646,
                                     "mutability": "mutable",
                                     "name": "b",
                                     "nameLocation": "555:1:151",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35557,
+                                    "scope": 35663,
                                     "src": "547:9:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -680,7 +680,7 @@ export const stdMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35539,
+                                        "id": 35645,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "547:7:151",
@@ -695,17 +695,17 @@ export const stdMath = {
                             "src": "535:22:151"
                         },
                         "returnParameters": {
-                            "id": 35544,
+                            "id": 35650,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35543,
+                                    "id": 35649,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35557,
+                                    "scope": 35663,
                                     "src": "581:7:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -714,7 +714,7 @@ export const stdMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35542,
+                                        "id": 35648,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "581:7:151",
@@ -728,18 +728,18 @@ export const stdMath = {
                             ],
                             "src": "580:9:151"
                         },
-                        "scope": 35646,
+                        "scope": 35752,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35593,
+                        "id": 35699,
                         "nodeType": "FunctionDefinition",
                         "src": "641:352:151",
                         "nodes": [],
                         "body": {
-                            "id": 35592,
+                            "id": 35698,
                             "nodeType": "Block",
                             "src": "708:285:151",
                             "nodes": [],
@@ -750,7 +750,7 @@ export const stdMath = {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         },
-                                        "id": 35572,
+                                        "id": 35678,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -762,17 +762,17 @@ export const stdMath = {
                                                         "typeIdentifier": "t_int256",
                                                         "typeString": "int256"
                                                     },
-                                                    "id": 35568,
+                                                    "id": 35674,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 35566,
+                                                        "id": 35672,
                                                         "name": "a",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 35559,
+                                                        "referencedDeclaration": 35665,
                                                         "src": "847:1:151",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -782,11 +782,11 @@ export const stdMath = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "^",
                                                     "rightExpression": {
-                                                        "id": 35567,
+                                                        "id": 35673,
                                                         "name": "b",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 35561,
+                                                        "referencedDeclaration": 35667,
                                                         "src": "851:1:151",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -800,7 +800,7 @@ export const stdMath = {
                                                     }
                                                 }
                                             ],
-                                            "id": 35569,
+                                            "id": 35675,
                                             "isConstant": false,
                                             "isInlineArray": false,
                                             "isLValue": false,
@@ -816,7 +816,7 @@ export const stdMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": ">",
                                         "rightExpression": {
-                                            "id": 35571,
+                                            "id": 35677,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -827,7 +827,7 @@ export const stdMath = {
                                             "src": "856:2:151",
                                             "subExpression": {
                                                 "hexValue": "31",
-                                                "id": 35570,
+                                                "id": 35676,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -852,11 +852,11 @@ export const stdMath = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 35583,
+                                    "id": 35689,
                                     "nodeType": "IfStatement",
                                     "src": "842:71:151",
                                     "trueBody": {
-                                        "id": 35582,
+                                        "id": 35688,
                                         "nodeType": "Block",
                                         "src": "860:53:151",
                                         "statements": [
@@ -866,11 +866,11 @@ export const stdMath = {
                                                         {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 35575,
+                                                                    "id": 35681,
                                                                     "name": "a",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 35559,
+                                                                    "referencedDeclaration": 35665,
                                                                     "src": "891:1:151",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_int256",
@@ -885,18 +885,18 @@ export const stdMath = {
                                                                         "typeString": "int256"
                                                                     }
                                                                 ],
-                                                                "id": 35574,
+                                                                "id": 35680,
                                                                 "name": "abs",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 35536,
+                                                                "referencedDeclaration": 35642,
                                                                 "src": "887:3:151",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_uint256_$",
                                                                     "typeString": "function (int256) pure returns (uint256)"
                                                                 }
                                                             },
-                                                            "id": 35576,
+                                                            "id": 35682,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -915,11 +915,11 @@ export const stdMath = {
                                                         {
                                                             "arguments": [
                                                                 {
-                                                                    "id": 35578,
+                                                                    "id": 35684,
                                                                     "name": "b",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 35561,
+                                                                    "referencedDeclaration": 35667,
                                                                     "src": "899:1:151",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_int256",
@@ -934,18 +934,18 @@ export const stdMath = {
                                                                         "typeString": "int256"
                                                                     }
                                                                 ],
-                                                                "id": 35577,
+                                                                "id": 35683,
                                                                 "name": "abs",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 35536,
+                                                                "referencedDeclaration": 35642,
                                                                 "src": "895:3:151",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_uint256_$",
                                                                     "typeString": "function (int256) pure returns (uint256)"
                                                                 }
                                                             },
-                                                            "id": 35579,
+                                                            "id": 35685,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -973,21 +973,21 @@ export const stdMath = {
                                                                 "typeString": "uint256"
                                                             }
                                                         ],
-                                                        "id": 35573,
+                                                        "id": 35679,
                                                         "name": "delta",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [
-                                                            35557,
-                                                            35593
+                                                            35663,
+                                                            35699
                                                         ],
-                                                        "referencedDeclaration": 35557,
+                                                        "referencedDeclaration": 35663,
                                                         "src": "881:5:151",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                             "typeString": "function (uint256,uint256) pure returns (uint256)"
                                                         }
                                                     },
-                                                    "id": 35580,
+                                                    "id": 35686,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -1003,8 +1003,8 @@ export const stdMath = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "functionReturnParameters": 35565,
-                                                "id": 35581,
+                                                "functionReturnParameters": 35671,
+                                                "id": 35687,
                                                 "nodeType": "Return",
                                                 "src": "874:28:151"
                                             }
@@ -1017,7 +1017,7 @@ export const stdMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 35590,
+                                        "id": 35696,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1025,11 +1025,11 @@ export const stdMath = {
                                         "leftExpression": {
                                             "arguments": [
                                                 {
-                                                    "id": 35585,
+                                                    "id": 35691,
                                                     "name": "a",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 35559,
+                                                    "referencedDeclaration": 35665,
                                                     "src": "975:1:151",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -1044,18 +1044,18 @@ export const stdMath = {
                                                         "typeString": "int256"
                                                     }
                                                 ],
-                                                "id": 35584,
+                                                "id": 35690,
                                                 "name": "abs",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35536,
+                                                "referencedDeclaration": 35642,
                                                 "src": "971:3:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_uint256_$",
                                                     "typeString": "function (int256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 35586,
+                                            "id": 35692,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1076,11 +1076,11 @@ export const stdMath = {
                                         "rightExpression": {
                                             "arguments": [
                                                 {
-                                                    "id": 35588,
+                                                    "id": 35694,
                                                     "name": "b",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 35561,
+                                                    "referencedDeclaration": 35667,
                                                     "src": "984:1:151",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -1095,18 +1095,18 @@ export const stdMath = {
                                                         "typeString": "int256"
                                                     }
                                                 ],
-                                                "id": 35587,
+                                                "id": 35693,
                                                 "name": "abs",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35536,
+                                                "referencedDeclaration": 35642,
                                                 "src": "980:3:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_uint256_$",
                                                     "typeString": "function (int256) pure returns (uint256)"
                                                 }
                                             },
-                                            "id": 35589,
+                                            "id": 35695,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1128,8 +1128,8 @@ export const stdMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 35565,
-                                    "id": 35591,
+                                    "functionReturnParameters": 35671,
+                                    "id": 35697,
                                     "nodeType": "Return",
                                     "src": "964:22:151"
                                 }
@@ -1141,17 +1141,17 @@ export const stdMath = {
                         "name": "delta",
                         "nameLocation": "650:5:151",
                         "parameters": {
-                            "id": 35562,
+                            "id": 35668,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35559,
+                                    "id": 35665,
                                     "mutability": "mutable",
                                     "name": "a",
                                     "nameLocation": "663:1:151",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35593,
+                                    "scope": 35699,
                                     "src": "656:8:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1160,7 +1160,7 @@ export const stdMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 35558,
+                                        "id": 35664,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "656:6:151",
@@ -1173,12 +1173,12 @@ export const stdMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35561,
+                                    "id": 35667,
                                     "mutability": "mutable",
                                     "name": "b",
                                     "nameLocation": "673:1:151",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35593,
+                                    "scope": 35699,
                                     "src": "666:8:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1187,7 +1187,7 @@ export const stdMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 35560,
+                                        "id": 35666,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "666:6:151",
@@ -1202,17 +1202,17 @@ export const stdMath = {
                             "src": "655:20:151"
                         },
                         "returnParameters": {
-                            "id": 35565,
+                            "id": 35671,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35564,
+                                    "id": 35670,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35593,
+                                    "scope": 35699,
                                     "src": "699:7:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1221,7 +1221,7 @@ export const stdMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35563,
+                                        "id": 35669,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "699:7:151",
@@ -1235,35 +1235,35 @@ export const stdMath = {
                             ],
                             "src": "698:9:151"
                         },
-                        "scope": 35646,
+                        "scope": 35752,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35616,
+                        "id": 35722,
                         "nodeType": "FunctionDefinition",
                         "src": "999:160:151",
                         "nodes": [],
                         "body": {
-                            "id": 35615,
+                            "id": 35721,
                             "nodeType": "Block",
                             "src": "1075:84:151",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        35603
+                                        35709
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 35603,
+                                            "id": 35709,
                                             "mutability": "mutable",
                                             "name": "absDelta",
                                             "nameLocation": "1093:8:151",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 35615,
+                                            "scope": 35721,
                                             "src": "1085:16:151",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1272,7 +1272,7 @@ export const stdMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 35602,
+                                                "id": 35708,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1085:7:151",
@@ -1284,15 +1284,15 @@ export const stdMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 35608,
+                                    "id": 35714,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 35605,
+                                                "id": 35711,
                                                 "name": "a",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35595,
+                                                "referencedDeclaration": 35701,
                                                 "src": "1110:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1300,11 +1300,11 @@ export const stdMath = {
                                                 }
                                             },
                                             {
-                                                "id": 35606,
+                                                "id": 35712,
                                                 "name": "b",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35597,
+                                                "referencedDeclaration": 35703,
                                                 "src": "1113:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1323,21 +1323,21 @@ export const stdMath = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 35604,
+                                            "id": 35710,
                                             "name": "delta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                35557,
-                                                35593
+                                                35663,
+                                                35699
                                             ],
-                                            "referencedDeclaration": 35557,
+                                            "referencedDeclaration": 35663,
                                             "src": "1104:5:151",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 35607,
+                                        "id": 35713,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1362,7 +1362,7 @@ export const stdMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 35613,
+                                        "id": 35719,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1372,17 +1372,17 @@ export const stdMath = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 35611,
+                                            "id": 35717,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 35609,
+                                                "id": 35715,
                                                 "name": "absDelta",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35603,
+                                                "referencedDeclaration": 35709,
                                                 "src": "1133:8:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1393,7 +1393,7 @@ export const stdMath = {
                                             "operator": "*",
                                             "rightExpression": {
                                                 "hexValue": "31653138",
-                                                "id": 35610,
+                                                "id": 35716,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -1416,11 +1416,11 @@ export const stdMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "/",
                                         "rightExpression": {
-                                            "id": 35612,
+                                            "id": 35718,
                                             "name": "b",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 35597,
+                                            "referencedDeclaration": 35703,
                                             "src": "1151:1:151",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -1433,8 +1433,8 @@ export const stdMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 35601,
-                                    "id": 35614,
+                                    "functionReturnParameters": 35707,
+                                    "id": 35720,
                                     "nodeType": "Return",
                                     "src": "1126:26:151"
                                 }
@@ -1446,17 +1446,17 @@ export const stdMath = {
                         "name": "percentDelta",
                         "nameLocation": "1008:12:151",
                         "parameters": {
-                            "id": 35598,
+                            "id": 35704,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35595,
+                                    "id": 35701,
                                     "mutability": "mutable",
                                     "name": "a",
                                     "nameLocation": "1029:1:151",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35616,
+                                    "scope": 35722,
                                     "src": "1021:9:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1465,7 +1465,7 @@ export const stdMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35594,
+                                        "id": 35700,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1021:7:151",
@@ -1478,12 +1478,12 @@ export const stdMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35597,
+                                    "id": 35703,
                                     "mutability": "mutable",
                                     "name": "b",
                                     "nameLocation": "1040:1:151",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35616,
+                                    "scope": 35722,
                                     "src": "1032:9:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1492,7 +1492,7 @@ export const stdMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35596,
+                                        "id": 35702,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1032:7:151",
@@ -1507,17 +1507,17 @@ export const stdMath = {
                             "src": "1020:22:151"
                         },
                         "returnParameters": {
-                            "id": 35601,
+                            "id": 35707,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35600,
+                                    "id": 35706,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35616,
+                                    "scope": 35722,
                                     "src": "1066:7:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1526,7 +1526,7 @@ export const stdMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35599,
+                                        "id": 35705,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1066:7:151",
@@ -1540,35 +1540,35 @@ export const stdMath = {
                             ],
                             "src": "1065:9:151"
                         },
-                        "scope": 35646,
+                        "scope": 35752,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 35645,
+                        "id": 35751,
                         "nodeType": "FunctionDefinition",
                         "src": "1165:192:151",
                         "nodes": [],
                         "body": {
-                            "id": 35644,
+                            "id": 35750,
                             "nodeType": "Block",
                             "src": "1239:118:151",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        35626
+                                        35732
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 35626,
+                                            "id": 35732,
                                             "mutability": "mutable",
                                             "name": "absDelta",
                                             "nameLocation": "1257:8:151",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 35644,
+                                            "scope": 35750,
                                             "src": "1249:16:151",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1577,7 +1577,7 @@ export const stdMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 35625,
+                                                "id": 35731,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1249:7:151",
@@ -1589,15 +1589,15 @@ export const stdMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 35631,
+                                    "id": 35737,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 35628,
+                                                "id": 35734,
                                                 "name": "a",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35618,
+                                                "referencedDeclaration": 35724,
                                                 "src": "1274:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -1605,11 +1605,11 @@ export const stdMath = {
                                                 }
                                             },
                                             {
-                                                "id": 35629,
+                                                "id": 35735,
                                                 "name": "b",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35620,
+                                                "referencedDeclaration": 35726,
                                                 "src": "1277:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -1628,21 +1628,21 @@ export const stdMath = {
                                                     "typeString": "int256"
                                                 }
                                             ],
-                                            "id": 35627,
+                                            "id": 35733,
                                             "name": "delta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
-                                                35557,
-                                                35593
+                                                35663,
+                                                35699
                                             ],
-                                            "referencedDeclaration": 35593,
+                                            "referencedDeclaration": 35699,
                                             "src": "1268:5:151",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_int256_$_t_int256_$returns$_t_uint256_$",
                                                 "typeString": "function (int256,int256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 35630,
+                                        "id": 35736,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1663,17 +1663,17 @@ export const stdMath = {
                                 },
                                 {
                                     "assignments": [
-                                        35633
+                                        35739
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 35633,
+                                            "id": 35739,
                                             "mutability": "mutable",
                                             "name": "absB",
                                             "nameLocation": "1297:4:151",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 35644,
+                                            "scope": 35750,
                                             "src": "1289:12:151",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1682,7 +1682,7 @@ export const stdMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 35632,
+                                                "id": 35738,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1289:7:151",
@@ -1694,15 +1694,15 @@ export const stdMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 35637,
+                                    "id": 35743,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 35635,
+                                                "id": 35741,
                                                 "name": "b",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35620,
+                                                "referencedDeclaration": 35726,
                                                 "src": "1308:1:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -1717,18 +1717,18 @@ export const stdMath = {
                                                     "typeString": "int256"
                                                 }
                                             ],
-                                            "id": 35634,
+                                            "id": 35740,
                                             "name": "abs",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 35536,
+                                            "referencedDeclaration": 35642,
                                             "src": "1304:3:151",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_int256_$returns$_t_uint256_$",
                                                 "typeString": "function (int256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 35636,
+                                        "id": 35742,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1753,7 +1753,7 @@ export const stdMath = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 35642,
+                                        "id": 35748,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1763,17 +1763,17 @@ export const stdMath = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 35640,
+                                            "id": 35746,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 35638,
+                                                "id": 35744,
                                                 "name": "absDelta",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35626,
+                                                "referencedDeclaration": 35732,
                                                 "src": "1328:8:151",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1784,7 +1784,7 @@ export const stdMath = {
                                             "operator": "*",
                                             "rightExpression": {
                                                 "hexValue": "31653138",
-                                                "id": 35639,
+                                                "id": 35745,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -1807,11 +1807,11 @@ export const stdMath = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "/",
                                         "rightExpression": {
-                                            "id": 35641,
+                                            "id": 35747,
                                             "name": "absB",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 35633,
+                                            "referencedDeclaration": 35739,
                                             "src": "1346:4:151",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -1824,8 +1824,8 @@ export const stdMath = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 35624,
-                                    "id": 35643,
+                                    "functionReturnParameters": 35730,
+                                    "id": 35749,
                                     "nodeType": "Return",
                                     "src": "1321:29:151"
                                 }
@@ -1837,17 +1837,17 @@ export const stdMath = {
                         "name": "percentDelta",
                         "nameLocation": "1174:12:151",
                         "parameters": {
-                            "id": 35621,
+                            "id": 35727,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35618,
+                                    "id": 35724,
                                     "mutability": "mutable",
                                     "name": "a",
                                     "nameLocation": "1194:1:151",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35645,
+                                    "scope": 35751,
                                     "src": "1187:8:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1856,7 +1856,7 @@ export const stdMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 35617,
+                                        "id": 35723,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1187:6:151",
@@ -1869,12 +1869,12 @@ export const stdMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 35620,
+                                    "id": 35726,
                                     "mutability": "mutable",
                                     "name": "b",
                                     "nameLocation": "1204:1:151",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35645,
+                                    "scope": 35751,
                                     "src": "1197:8:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1883,7 +1883,7 @@ export const stdMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 35619,
+                                        "id": 35725,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1197:6:151",
@@ -1898,17 +1898,17 @@ export const stdMath = {
                             "src": "1186:20:151"
                         },
                         "returnParameters": {
-                            "id": 35624,
+                            "id": 35730,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 35623,
+                                    "id": 35729,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 35645,
+                                    "scope": 35751,
                                     "src": "1230:7:151",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1917,7 +1917,7 @@ export const stdMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 35622,
+                                        "id": 35728,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1230:7:151",
@@ -1931,7 +1931,7 @@ export const stdMath = {
                             ],
                             "src": "1229:9:151"
                         },
-                        "scope": 35646,
+                        "scope": 35752,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
@@ -1944,11 +1944,11 @@ export const stdMath = {
                 "contractKind": "library",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    35646
+                    35752
                 ],
                 "name": "stdMath",
                 "nameLocation": "73:7:151",
-                "scope": 35647,
+                "scope": 35753,
                 "usedErrors": [],
                 "usedEvents": []
             }

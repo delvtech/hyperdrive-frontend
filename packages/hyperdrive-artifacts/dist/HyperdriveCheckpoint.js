@@ -2557,7 +2557,7 @@ export const HyperdriveCheckpoint = {
                                         "1679:12:113"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71603,
+                                    "referencedDeclaration": 71709,
                                     "src": "1679:12:113"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -7860,7 +7860,7 @@ export const HyperdriveCheckpoint = {
                     16538,
                     13667,
                     17734,
-                    71639,
+                    71745,
                     10887,
                     11459
                 ],
@@ -7868,7 +7868,7 @@ export const HyperdriveCheckpoint = {
                 "nameLocation": "928:20:113",
                 "scope": 14162,
                 "usedErrors": [
-                    71584
+                    71690
                 ],
                 "usedEvents": [
                     10705,

@@ -2251,11 +2251,11 @@ export declare const RETHTarget4: {
                 readonly text: "@author DELV\n @title RETHTarget4\n @notice RETHHyperdrive's target4 logic contract.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [9185, 9002, 5562, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [9185, 9002, 5562, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71745, 10887, 11459];
             readonly name: "RETHTarget4";
             readonly nameLocation: "572:11:71";
             readonly scope: 9186;
-            readonly usedErrors: readonly [10219, 10228, 10231, 10249, 10255, 10258, 10261, 10264, 10267, 10270, 10273, 10279, 10282, 10293, 10296, 10305, 10308, 10311, 10314, 10317, 10320, 71014, 71295, 71300, 71303, 71584];
+            readonly usedErrors: readonly [10219, 10228, 10231, 10249, 10255, 10258, 10261, 10264, 10267, 10270, 10273, 10279, 10282, 10293, 10296, 10305, 10308, 10311, 10314, 10317, 10320, 71120, 71401, 71406, 71409, 71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

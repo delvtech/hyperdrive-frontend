@@ -191,29 +191,29 @@ export const Lib = {
     },
     "ast": {
         "absolutePath": "test/utils/Lib.sol",
-        "id": 160623,
+        "id": 160809,
         "exportedSymbols": {
             "Lib": [
-                160622
+                160808
             ],
             "Vm": [
-                40778
+                40884
             ],
             "VmSafe": [
-                40306
+                40412
             ],
             "console2": [
-                56967
+                57073
             ],
             "stdMath": [
-                35646
+                35752
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:7753:233",
         "nodes": [
             {
-                "id": 160022,
+                "id": 160208,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:233",
                 "nodes": [],
@@ -224,23 +224,23 @@ export const Lib = {
                 ]
             },
             {
-                "id": 160024,
+                "id": 160210,
                 "nodeType": "ImportDirective",
                 "src": "64:50:233",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/console2.sol",
                 "file": "forge-std/console2.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 160623,
-                "sourceUnit": 56968,
+                "scope": 160809,
+                "sourceUnit": 57074,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 160023,
+                            "id": 160209,
                             "name": "console2",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 56967,
+                            "referencedDeclaration": 57073,
                             "src": "73:8:233",
                             "typeDescriptions": {}
                         },
@@ -250,23 +250,23 @@ export const Lib = {
                 "unitAlias": ""
             },
             {
-                "id": 160026,
+                "id": 160212,
                 "nodeType": "ImportDirective",
                 "src": "115:48:233",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/StdMath.sol",
                 "file": "forge-std/StdMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 160623,
-                "sourceUnit": 35647,
+                "scope": 160809,
+                "sourceUnit": 35753,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 160025,
+                            "id": 160211,
                             "name": "stdMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 35646,
+                            "referencedDeclaration": 35752,
                             "src": "124:7:233",
                             "typeDescriptions": {}
                         },
@@ -276,23 +276,23 @@ export const Lib = {
                 "unitAlias": ""
             },
             {
-                "id": 160029,
+                "id": 160215,
                 "nodeType": "ImportDirective",
                 "src": "164:46:233",
                 "nodes": [],
                 "absolutePath": "lib/forge-std/src/Vm.sol",
                 "file": "forge-std/Vm.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 160623,
-                "sourceUnit": 40779,
+                "scope": 160809,
+                "sourceUnit": 40885,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 160027,
+                            "id": 160213,
                             "name": "Vm",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40778,
+                            "referencedDeclaration": 40884,
                             "src": "173:2:233",
                             "typeDescriptions": {}
                         },
@@ -300,11 +300,11 @@ export const Lib = {
                     },
                     {
                         "foreign": {
-                            "id": 160028,
+                            "id": 160214,
                             "name": "VmSafe",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 40306,
+                            "referencedDeclaration": 40412,
                             "src": "177:6:233",
                             "typeDescriptions": {}
                         },
@@ -314,34 +314,34 @@ export const Lib = {
                 "unitAlias": ""
             },
             {
-                "id": 160622,
+                "id": 160808,
                 "nodeType": "ContractDefinition",
                 "src": "212:7579:233",
                 "nodes": [
                     {
-                        "id": 160093,
+                        "id": 160279,
                         "nodeType": "FunctionDefinition",
                         "src": "485:579:233",
                         "nodes": [],
                         "body": {
-                            "id": 160092,
+                            "id": 160278,
                             "nodeType": "Block",
                             "src": "628:436:233",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        160044
+                                        160230
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160044,
+                                            "id": 160230,
                                             "mutability": "mutable",
                                             "name": "current",
                                             "nameLocation": "674:7:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160092,
+                                            "scope": 160278,
                                             "src": "666:15:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -350,7 +350,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 160043,
+                                                "id": 160229,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "666:7:233",
@@ -362,10 +362,10 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160046,
+                                    "id": 160232,
                                     "initialValue": {
                                         "hexValue": "30",
-                                        "id": 160045,
+                                        "id": 160231,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -384,20 +384,20 @@ export const Lib = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 160055,
+                                        "id": 160241,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 160047,
+                                            "id": 160233,
                                             "name": "filteredLogs",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160041,
+                                            "referencedDeclaration": 160227,
                                             "src": "695:12:233",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                                "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                                 "typeString": "struct VmSafe.Log memory[] memory"
                                             }
                                         },
@@ -407,18 +407,18 @@ export const Lib = {
                                             "arguments": [
                                                 {
                                                     "expression": {
-                                                        "id": 160052,
+                                                        "id": 160238,
                                                         "name": "logs",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 160034,
+                                                        "referencedDeclaration": 160220,
                                                         "src": "727:4:233",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                                            "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                                             "typeString": "struct VmSafe.Log memory[] memory"
                                                         }
                                                     },
-                                                    "id": 160053,
+                                                    "id": 160239,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -440,7 +440,7 @@ export const Lib = {
                                                         "typeString": "uint256"
                                                     }
                                                 ],
-                                                "id": 160051,
+                                                "id": 160237,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -448,41 +448,41 @@ export const Lib = {
                                                 "nodeType": "NewExpression",
                                                 "src": "710:16:233",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr_$",
+                                                    "typeIdentifier": "t_function_objectcreation_pure$_t_uint256_$returns$_t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr_$",
                                                     "typeString": "function (uint256) pure returns (struct VmSafe.Log memory[] memory)"
                                                 },
                                                 "typeName": {
                                                     "baseType": {
-                                                        "id": 160049,
+                                                        "id": 160235,
                                                         "nodeType": "UserDefinedTypeName",
                                                         "pathNode": {
-                                                            "id": 160048,
+                                                            "id": 160234,
                                                             "name": "VmSafe.Log",
                                                             "nameLocations": [
                                                                 "714:6:233",
                                                                 "721:3:233"
                                                             ],
                                                             "nodeType": "IdentifierPath",
-                                                            "referencedDeclaration": 39258,
+                                                            "referencedDeclaration": 39364,
                                                             "src": "714:10:233"
                                                         },
-                                                        "referencedDeclaration": 39258,
+                                                        "referencedDeclaration": 39364,
                                                         "src": "714:10:233",
                                                         "typeDescriptions": {
-                                                            "typeIdentifier": "t_struct$_Log_$39258_storage_ptr",
+                                                            "typeIdentifier": "t_struct$_Log_$39364_storage_ptr",
                                                             "typeString": "struct VmSafe.Log"
                                                         }
                                                     },
-                                                    "id": 160050,
+                                                    "id": 160236,
                                                     "nodeType": "ArrayTypeName",
                                                     "src": "714:12:233",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_array$_t_struct$_Log_$39258_storage_$dyn_storage_ptr",
+                                                        "typeIdentifier": "t_array$_t_struct$_Log_$39364_storage_$dyn_storage_ptr",
                                                         "typeString": "struct VmSafe.Log[]"
                                                     }
                                                 }
                                             },
-                                            "id": 160054,
+                                            "id": 160240,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -494,23 +494,23 @@ export const Lib = {
                                             "src": "710:29:233",
                                             "tryCall": false,
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                                "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                                 "typeString": "struct VmSafe.Log memory[] memory"
                                             }
                                         },
                                         "src": "695:44:233",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                             "typeString": "struct VmSafe.Log memory[] memory"
                                         }
                                     },
-                                    "id": 160056,
+                                    "id": 160242,
                                     "nodeType": "ExpressionStatement",
                                     "src": "695:44:233"
                                 },
                                 {
                                     "body": {
-                                        "id": 160087,
+                                        "id": 160273,
                                         "nodeType": "Block",
                                         "src": "791:125:233",
                                         "statements": [
@@ -520,7 +520,7 @@ export const Lib = {
                                                         "typeIdentifier": "t_bytes32",
                                                         "typeString": "bytes32"
                                                     },
-                                                    "id": 160075,
+                                                    "id": 160261,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -529,24 +529,24 @@ export const Lib = {
                                                         "baseExpression": {
                                                             "expression": {
                                                                 "baseExpression": {
-                                                                    "id": 160068,
+                                                                    "id": 160254,
                                                                     "name": "logs",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 160034,
+                                                                    "referencedDeclaration": 160220,
                                                                     "src": "809:4:233",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                                                        "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                                                         "typeString": "struct VmSafe.Log memory[] memory"
                                                                     }
                                                                 },
-                                                                "id": 160070,
+                                                                "id": 160256,
                                                                 "indexExpression": {
-                                                                    "id": 160069,
+                                                                    "id": 160255,
                                                                     "name": "i",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 160058,
+                                                                    "referencedDeclaration": 160244,
                                                                     "src": "814:1:233",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -560,11 +560,11 @@ export const Lib = {
                                                                 "nodeType": "IndexAccess",
                                                                 "src": "809:7:233",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_struct$_Log_$39258_memory_ptr",
+                                                                    "typeIdentifier": "t_struct$_Log_$39364_memory_ptr",
                                                                     "typeString": "struct VmSafe.Log memory"
                                                                 }
                                                             },
-                                                            "id": 160071,
+                                                            "id": 160257,
                                                             "isConstant": false,
                                                             "isLValue": true,
                                                             "isPure": false,
@@ -572,17 +572,17 @@ export const Lib = {
                                                             "memberLocation": "817:6:233",
                                                             "memberName": "topics",
                                                             "nodeType": "MemberAccess",
-                                                            "referencedDeclaration": 39253,
+                                                            "referencedDeclaration": 39359,
                                                             "src": "809:14:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
                                                                 "typeString": "bytes32[] memory"
                                                             }
                                                         },
-                                                        "id": 160073,
+                                                        "id": 160259,
                                                         "indexExpression": {
                                                             "hexValue": "30",
-                                                            "id": 160072,
+                                                            "id": 160258,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -610,11 +610,11 @@ export const Lib = {
                                                     "nodeType": "BinaryOperation",
                                                     "operator": "==",
                                                     "rightExpression": {
-                                                        "id": 160074,
+                                                        "id": 160260,
                                                         "name": "selector",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 160036,
+                                                        "referencedDeclaration": 160222,
                                                         "src": "830:8:233",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_bytes32",
@@ -627,37 +627,37 @@ export const Lib = {
                                                         "typeString": "bool"
                                                     }
                                                 },
-                                                "id": 160086,
+                                                "id": 160272,
                                                 "nodeType": "IfStatement",
                                                 "src": "805:101:233",
                                                 "trueBody": {
-                                                    "id": 160085,
+                                                    "id": 160271,
                                                     "nodeType": "Block",
                                                     "src": "840:66:233",
                                                     "statements": [
                                                         {
                                                             "expression": {
-                                                                "id": 160083,
+                                                                "id": 160269,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
                                                                     "baseExpression": {
-                                                                        "id": 160076,
+                                                                        "id": 160262,
                                                                         "name": "filteredLogs",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 160041,
+                                                                        "referencedDeclaration": 160227,
                                                                         "src": "858:12:233",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                                                            "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                                                             "typeString": "struct VmSafe.Log memory[] memory"
                                                                         }
                                                                     },
-                                                                    "id": 160079,
+                                                                    "id": 160265,
                                                                     "indexExpression": {
-                                                                        "id": 160078,
+                                                                        "id": 160264,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -667,11 +667,11 @@ export const Lib = {
                                                                         "prefix": false,
                                                                         "src": "871:9:233",
                                                                         "subExpression": {
-                                                                            "id": 160077,
+                                                                            "id": 160263,
                                                                             "name": "current",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 160044,
+                                                                            "referencedDeclaration": 160230,
                                                                             "src": "871:7:233",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_uint256",
@@ -690,7 +690,7 @@ export const Lib = {
                                                                     "nodeType": "IndexAccess",
                                                                     "src": "858:23:233",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_struct$_Log_$39258_memory_ptr",
+                                                                        "typeIdentifier": "t_struct$_Log_$39364_memory_ptr",
                                                                         "typeString": "struct VmSafe.Log memory"
                                                                     }
                                                                 },
@@ -698,24 +698,24 @@ export const Lib = {
                                                                 "operator": "=",
                                                                 "rightHandSide": {
                                                                     "baseExpression": {
-                                                                        "id": 160080,
+                                                                        "id": 160266,
                                                                         "name": "logs",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 160034,
+                                                                        "referencedDeclaration": 160220,
                                                                         "src": "884:4:233",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                                                            "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                                                             "typeString": "struct VmSafe.Log memory[] memory"
                                                                         }
                                                                     },
-                                                                    "id": 160082,
+                                                                    "id": 160268,
                                                                     "indexExpression": {
-                                                                        "id": 160081,
+                                                                        "id": 160267,
                                                                         "name": "i",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 160058,
+                                                                        "referencedDeclaration": 160244,
                                                                         "src": "889:1:233",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_uint256",
@@ -729,17 +729,17 @@ export const Lib = {
                                                                     "nodeType": "IndexAccess",
                                                                     "src": "884:7:233",
                                                                     "typeDescriptions": {
-                                                                        "typeIdentifier": "t_struct$_Log_$39258_memory_ptr",
+                                                                        "typeIdentifier": "t_struct$_Log_$39364_memory_ptr",
                                                                         "typeString": "struct VmSafe.Log memory"
                                                                     }
                                                                 },
                                                                 "src": "858:33:233",
                                                                 "typeDescriptions": {
-                                                                    "typeIdentifier": "t_struct$_Log_$39258_memory_ptr",
+                                                                    "typeIdentifier": "t_struct$_Log_$39364_memory_ptr",
                                                                     "typeString": "struct VmSafe.Log memory"
                                                                 }
                                                             },
-                                                            "id": 160084,
+                                                            "id": 160270,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "858:33:233"
                                                         }
@@ -753,17 +753,17 @@ export const Lib = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 160064,
+                                        "id": 160250,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160061,
+                                            "id": 160247,
                                             "name": "i",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160058,
+                                            "referencedDeclaration": 160244,
                                             "src": "769:1:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -774,18 +774,18 @@ export const Lib = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 160062,
+                                                "id": 160248,
                                                 "name": "logs",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160034,
+                                                "referencedDeclaration": 160220,
                                                 "src": "773:4:233",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                                    "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                                     "typeString": "struct VmSafe.Log memory[] memory"
                                                 }
                                             },
-                                            "id": 160063,
+                                            "id": 160249,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -805,20 +805,20 @@ export const Lib = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 160088,
+                                    "id": 160274,
                                     "initializationExpression": {
                                         "assignments": [
-                                            160058
+                                            160244
                                         ],
                                         "declarations": [
                                             {
                                                 "constant": false,
-                                                "id": 160058,
+                                                "id": 160244,
                                                 "mutability": "mutable",
                                                 "name": "i",
                                                 "nameLocation": "762:1:233",
                                                 "nodeType": "VariableDeclaration",
-                                                "scope": 160088,
+                                                "scope": 160274,
                                                 "src": "754:9:233",
                                                 "stateVariable": false,
                                                 "storageLocation": "default",
@@ -827,7 +827,7 @@ export const Lib = {
                                                     "typeString": "uint256"
                                                 },
                                                 "typeName": {
-                                                    "id": 160057,
+                                                    "id": 160243,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "754:7:233",
@@ -839,10 +839,10 @@ export const Lib = {
                                                 "visibility": "internal"
                                             }
                                         ],
-                                        "id": 160060,
+                                        "id": 160246,
                                         "initialValue": {
                                             "hexValue": "30",
-                                            "id": 160059,
+                                            "id": 160245,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -861,7 +861,7 @@ export const Lib = {
                                     },
                                     "loopExpression": {
                                         "expression": {
-                                            "id": 160066,
+                                            "id": 160252,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -871,11 +871,11 @@ export const Lib = {
                                             "prefix": false,
                                             "src": "786:3:233",
                                             "subExpression": {
-                                                "id": 160065,
+                                                "id": 160251,
                                                 "name": "i",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160058,
+                                                "referencedDeclaration": 160244,
                                                 "src": "786:1:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -887,7 +887,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 160067,
+                                        "id": 160253,
                                         "nodeType": "ExpressionStatement",
                                         "src": "786:3:233"
                                     },
@@ -929,46 +929,46 @@ export const Lib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 160044,
+                                            "declaration": 160230,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1011:7:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160041,
+                                            "declaration": 160227,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "997:12:233",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 160089,
+                                    "id": 160275,
                                     "nodeType": "InlineAssembly",
                                     "src": "967:62:233"
                                 },
                                 {
                                     "expression": {
-                                        "id": 160090,
+                                        "id": 160276,
                                         "name": "filteredLogs",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 160041,
+                                        "referencedDeclaration": 160227,
                                         "src": "1045:12:233",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                             "typeString": "struct VmSafe.Log memory[] memory"
                                         }
                                     },
-                                    "functionReturnParameters": 160042,
-                                    "id": 160091,
+                                    "functionReturnParameters": 160228,
+                                    "id": 160277,
                                     "nodeType": "Return",
                                     "src": "1038:19:233"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 160030,
+                            "id": 160216,
                             "nodeType": "StructuredDocumentation",
                             "src": "230:250:233",
                             "text": "@dev Filters an array of longs for events that match the provided\n      selector.\n @param logs The array of logs to filter.\n @param selector The selector to filter for.\n @return filteredLogs The filtered array of logs."
@@ -979,51 +979,51 @@ export const Lib = {
                         "name": "filterLogs",
                         "nameLocation": "494:10:233",
                         "parameters": {
-                            "id": 160037,
+                            "id": 160223,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160034,
+                                    "id": 160220,
                                     "mutability": "mutable",
                                     "name": "logs",
                                     "nameLocation": "534:4:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160093,
+                                    "scope": 160279,
                                     "src": "514:24:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct VmSafe.Log[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 160032,
+                                            "id": 160218,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 160031,
+                                                "id": 160217,
                                                 "name": "VmSafe.Log",
                                                 "nameLocations": [
                                                     "514:6:233",
                                                     "521:3:233"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 39258,
+                                                "referencedDeclaration": 39364,
                                                 "src": "514:10:233"
                                             },
-                                            "referencedDeclaration": 39258,
+                                            "referencedDeclaration": 39364,
                                             "src": "514:10:233",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Log_$39258_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Log_$39364_storage_ptr",
                                                 "typeString": "struct VmSafe.Log"
                                             }
                                         },
-                                        "id": 160033,
+                                        "id": 160219,
                                         "nodeType": "ArrayTypeName",
                                         "src": "514:12:233",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Log_$39258_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Log_$39364_storage_$dyn_storage_ptr",
                                             "typeString": "struct VmSafe.Log[]"
                                         }
                                     },
@@ -1031,12 +1031,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160036,
+                                    "id": 160222,
                                     "mutability": "mutable",
                                     "name": "selector",
                                     "nameLocation": "556:8:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160093,
+                                    "scope": 160279,
                                     "src": "548:16:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1045,7 +1045,7 @@ export const Lib = {
                                         "typeString": "bytes32"
                                     },
                                     "typeName": {
-                                        "id": 160035,
+                                        "id": 160221,
                                         "name": "bytes32",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "548:7:233",
@@ -1060,51 +1060,51 @@ export const Lib = {
                             "src": "504:66:233"
                         },
                         "returnParameters": {
-                            "id": 160042,
+                            "id": 160228,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160041,
+                                    "id": 160227,
                                     "mutability": "mutable",
                                     "name": "filteredLogs",
                                     "nameLocation": "614:12:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160093,
+                                    "scope": 160279,
                                     "src": "594:32:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
                                     "typeDescriptions": {
-                                        "typeIdentifier": "t_array$_t_struct$_Log_$39258_memory_ptr_$dyn_memory_ptr",
+                                        "typeIdentifier": "t_array$_t_struct$_Log_$39364_memory_ptr_$dyn_memory_ptr",
                                         "typeString": "struct VmSafe.Log[]"
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 160039,
+                                            "id": 160225,
                                             "nodeType": "UserDefinedTypeName",
                                             "pathNode": {
-                                                "id": 160038,
+                                                "id": 160224,
                                                 "name": "VmSafe.Log",
                                                 "nameLocations": [
                                                     "594:6:233",
                                                     "601:3:233"
                                                 ],
                                                 "nodeType": "IdentifierPath",
-                                                "referencedDeclaration": 39258,
+                                                "referencedDeclaration": 39364,
                                                 "src": "594:10:233"
                                             },
-                                            "referencedDeclaration": 39258,
+                                            "referencedDeclaration": 39364,
                                             "src": "594:10:233",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_struct$_Log_$39258_storage_ptr",
+                                                "typeIdentifier": "t_struct$_Log_$39364_storage_ptr",
                                                 "typeString": "struct VmSafe.Log"
                                             }
                                         },
-                                        "id": 160040,
+                                        "id": 160226,
                                         "nodeType": "ArrayTypeName",
                                         "src": "594:12:233",
                                         "typeDescriptions": {
-                                            "typeIdentifier": "t_array$_t_struct$_Log_$39258_storage_$dyn_storage_ptr",
+                                            "typeIdentifier": "t_array$_t_struct$_Log_$39364_storage_$dyn_storage_ptr",
                                             "typeString": "struct VmSafe.Log[]"
                                         }
                                     },
@@ -1113,18 +1113,18 @@ export const Lib = {
                             ],
                             "src": "593:34:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 160113,
+                        "id": 160299,
                         "nodeType": "FunctionDefinition",
                         "src": "1283:192:233",
                         "nodes": [],
                         "body": {
-                            "id": 160112,
+                            "id": 160298,
                             "nodeType": "Block",
                             "src": "1373:102:233",
                             "nodes": [],
@@ -1138,7 +1138,7 @@ export const Lib = {
                                                         "arguments": [
                                                             {
                                                                 "hexValue": "4572726f7228737472696e6729",
-                                                                "id": 160106,
+                                                                "id": 160292,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1160,7 +1160,7 @@ export const Lib = {
                                                                     "typeString": "literal_string \"Error(string)\""
                                                                 }
                                                             ],
-                                                            "id": 160105,
+                                                            "id": 160291,
                                                             "name": "keccak256",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -1171,7 +1171,7 @@ export const Lib = {
                                                                 "typeString": "function (bytes memory) pure returns (bytes32)"
                                                             }
                                                         },
-                                                        "id": 160107,
+                                                        "id": 160293,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -1195,7 +1195,7 @@ export const Lib = {
                                                             "typeString": "bytes32"
                                                         }
                                                     ],
-                                                    "id": 160104,
+                                                    "id": 160290,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1207,14 +1207,14 @@ export const Lib = {
                                                         "typeString": "type(bytes4)"
                                                     },
                                                     "typeName": {
-                                                        "id": 160103,
+                                                        "id": 160289,
                                                         "name": "bytes4",
                                                         "nodeType": "ElementaryTypeName",
                                                         "src": "1425:6:233",
                                                         "typeDescriptions": {}
                                                     }
                                                 },
-                                                "id": 160108,
+                                                "id": 160294,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -1231,11 +1231,11 @@ export const Lib = {
                                                 }
                                             },
                                             {
-                                                "id": 160109,
+                                                "id": 160295,
                                                 "name": "reason",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160096,
+                                                "referencedDeclaration": 160282,
                                                 "src": "1461:6:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -1255,7 +1255,7 @@ export const Lib = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 160101,
+                                                "id": 160287,
                                                 "name": "abi",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -1266,7 +1266,7 @@ export const Lib = {
                                                     "typeString": "abi"
                                                 }
                                             },
-                                            "id": 160102,
+                                            "id": 160288,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -1280,7 +1280,7 @@ export const Lib = {
                                                 "typeString": "function (bytes4) pure returns (bytes memory)"
                                             }
                                         },
-                                        "id": 160110,
+                                        "id": 160296,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1296,15 +1296,15 @@ export const Lib = {
                                             "typeString": "bytes memory"
                                         }
                                     },
-                                    "functionReturnParameters": 160100,
-                                    "id": 160111,
+                                    "functionReturnParameters": 160286,
+                                    "id": 160297,
                                     "nodeType": "Return",
                                     "src": "1383:85:233"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 160094,
+                            "id": 160280,
                             "nodeType": "StructuredDocumentation",
                             "src": "1070:208:233",
                             "text": "@dev Encodes a reason into a string error. This is useful for verifying\n      string errors in low-level calls.\n @param reason The reason to encode.\n @return The encoded string error."
@@ -1315,17 +1315,17 @@ export const Lib = {
                         "name": "toError",
                         "nameLocation": "1292:7:233",
                         "parameters": {
-                            "id": 160097,
+                            "id": 160283,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160096,
+                                    "id": 160282,
                                     "mutability": "mutable",
                                     "name": "reason",
                                     "nameLocation": "1323:6:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160113,
+                                    "scope": 160299,
                                     "src": "1309:20:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1334,7 +1334,7 @@ export const Lib = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 160095,
+                                        "id": 160281,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1309:6:233",
@@ -1349,17 +1349,17 @@ export const Lib = {
                             "src": "1299:36:233"
                         },
                         "returnParameters": {
-                            "id": 160100,
+                            "id": 160286,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160099,
+                                    "id": 160285,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160113,
+                                    "scope": 160299,
                                     "src": "1359:12:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1368,7 +1368,7 @@ export const Lib = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 160098,
+                                        "id": 160284,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1359:5:233",
@@ -1382,35 +1382,35 @@ export const Lib = {
                             ],
                             "src": "1358:14:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 160262,
+                        "id": 160448,
                         "nodeType": "FunctionDefinition",
                         "src": "1924:2036:233",
                         "nodes": [],
                         "body": {
-                            "id": 160261,
+                            "id": 160447,
                             "nodeType": "Block",
                             "src": "2039:1921:233",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        160124
+                                        160310
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160124,
+                                            "id": 160310,
                                             "mutability": "mutable",
                                             "name": "maxStringLength",
                                             "nameLocation": "2329:15:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160261,
+                                            "scope": 160447,
                                             "src": "2321:23:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1419,7 +1419,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 160123,
+                                                "id": 160309,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2321:7:233",
@@ -1431,10 +1431,10 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160126,
+                                    "id": 160312,
                                     "initialValue": {
                                         "hexValue": "3739",
-                                        "id": 160125,
+                                        "id": 160311,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -1453,17 +1453,17 @@ export const Lib = {
                                 },
                                 {
                                     "assignments": [
-                                        160128
+                                        160314
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160128,
+                                            "id": 160314,
                                             "mutability": "mutable",
                                             "name": "rawResult",
                                             "nameLocation": "2372:9:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160261,
+                                            "scope": 160447,
                                             "src": "2359:22:233",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -1472,7 +1472,7 @@ export const Lib = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 160127,
+                                                "id": 160313,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2359:5:233",
@@ -1484,15 +1484,15 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160133,
+                                    "id": 160319,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 160131,
+                                                "id": 160317,
                                                 "name": "maxStringLength",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160124,
+                                                "referencedDeclaration": 160310,
                                                 "src": "2394:15:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1507,7 +1507,7 @@ export const Lib = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 160130,
+                                            "id": 160316,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -1519,7 +1519,7 @@ export const Lib = {
                                                 "typeString": "function (uint256) pure returns (bytes memory)"
                                             },
                                             "typeName": {
-                                                "id": 160129,
+                                                "id": 160315,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2388:5:233",
@@ -1529,7 +1529,7 @@ export const Lib = {
                                                 }
                                             }
                                         },
-                                        "id": 160132,
+                                        "id": 160318,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1550,17 +1550,17 @@ export const Lib = {
                                 },
                                 {
                                     "assignments": [
-                                        160135
+                                        160321
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160135,
+                                            "id": 160321,
                                             "mutability": "mutable",
                                             "name": "isNegative",
                                             "nameLocation": "2688:10:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160261,
+                                            "scope": 160447,
                                             "src": "2683:15:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -1569,7 +1569,7 @@ export const Lib = {
                                                 "typeString": "bool"
                                             },
                                             "typeName": {
-                                                "id": 160134,
+                                                "id": 160320,
                                                 "name": "bool",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2683:4:233",
@@ -1581,23 +1581,23 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160139,
+                                    "id": 160325,
                                     "initialValue": {
                                         "commonType": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         },
-                                        "id": 160138,
+                                        "id": 160324,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160136,
+                                            "id": 160322,
                                             "name": "num",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160116,
+                                            "referencedDeclaration": 160302,
                                             "src": "2701:3:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -1608,7 +1608,7 @@ export const Lib = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 160137,
+                                            "id": 160323,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -1633,17 +1633,17 @@ export const Lib = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 160148,
+                                        "id": 160334,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 160140,
+                                            "id": 160326,
                                             "name": "num",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160116,
+                                            "referencedDeclaration": 160302,
                                             "src": "2718:3:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -1658,17 +1658,17 @@ export const Lib = {
                                                     "typeIdentifier": "t_int256",
                                                     "typeString": "int256"
                                                 },
-                                                "id": 160143,
+                                                "id": 160329,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 160141,
+                                                    "id": 160327,
                                                     "name": "num",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160116,
+                                                    "referencedDeclaration": 160302,
                                                     "src": "2724:3:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -1679,7 +1679,7 @@ export const Lib = {
                                                 "operator": "<",
                                                 "rightExpression": {
                                                     "hexValue": "30",
-                                                    "id": 160142,
+                                                    "id": 160328,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1700,18 +1700,18 @@ export const Lib = {
                                                 }
                                             },
                                             "falseExpression": {
-                                                "id": 160146,
+                                                "id": 160332,
                                                 "name": "num",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160116,
+                                                "referencedDeclaration": 160302,
                                                 "src": "2741:3:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
                                                     "typeString": "int256"
                                                 }
                                             },
-                                            "id": 160147,
+                                            "id": 160333,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1719,7 +1719,7 @@ export const Lib = {
                                             "nodeType": "Conditional",
                                             "src": "2724:20:233",
                                             "trueExpression": {
-                                                "id": 160145,
+                                                "id": 160331,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
@@ -1729,11 +1729,11 @@ export const Lib = {
                                                 "prefix": true,
                                                 "src": "2734:4:233",
                                                 "subExpression": {
-                                                    "id": 160144,
+                                                    "id": 160330,
                                                     "name": "num",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160116,
+                                                    "referencedDeclaration": 160302,
                                                     "src": "2735:3:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -1756,47 +1756,47 @@ export const Lib = {
                                             "typeString": "int256"
                                         }
                                     },
-                                    "id": 160149,
+                                    "id": 160335,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2718:26:233"
                                 },
                                 {
                                     "expression": {
-                                        "id": 160170,
+                                        "id": 160356,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "baseExpression": {
-                                                "id": 160150,
+                                                "id": 160336,
                                                 "name": "rawResult",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160128,
+                                                "referencedDeclaration": 160314,
                                                 "src": "2909:9:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
                                                     "typeString": "bytes memory"
                                                 }
                                             },
-                                            "id": 160154,
+                                            "id": 160340,
                                             "indexExpression": {
                                                 "commonType": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 160153,
+                                                "id": 160339,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 160151,
+                                                    "id": 160337,
                                                     "name": "maxStringLength",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160124,
+                                                    "referencedDeclaration": 160310,
                                                     "src": "2919:15:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -1807,7 +1807,7 @@ export const Lib = {
                                                 "operator": "-",
                                                 "rightExpression": {
                                                     "hexValue": "31",
-                                                    "id": 160152,
+                                                    "id": 160338,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -1851,7 +1851,7 @@ export const Lib = {
                                                                         "typeIdentifier": "t_int256",
                                                                         "typeString": "int256"
                                                                     },
-                                                                    "id": 160166,
+                                                                    "id": 160352,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -1863,17 +1863,17 @@ export const Lib = {
                                                                                     "typeIdentifier": "t_int256",
                                                                                     "typeString": "int256"
                                                                                 },
-                                                                                "id": 160163,
+                                                                                "id": 160349,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": false,
                                                                                 "lValueRequested": false,
                                                                                 "leftExpression": {
-                                                                                    "id": 160161,
+                                                                                    "id": 160347,
                                                                                     "name": "num",
                                                                                     "nodeType": "Identifier",
                                                                                     "overloadedDeclarations": [],
-                                                                                    "referencedDeclaration": 160116,
+                                                                                    "referencedDeclaration": 160302,
                                                                                     "src": "2977:3:233",
                                                                                     "typeDescriptions": {
                                                                                         "typeIdentifier": "t_int256",
@@ -1884,7 +1884,7 @@ export const Lib = {
                                                                                 "operator": "%",
                                                                                 "rightExpression": {
                                                                                     "hexValue": "3130",
-                                                                                    "id": 160162,
+                                                                                    "id": 160348,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": true,
@@ -1905,7 +1905,7 @@ export const Lib = {
                                                                                 }
                                                                             }
                                                                         ],
-                                                                        "id": 160164,
+                                                                        "id": 160350,
                                                                         "isConstant": false,
                                                                         "isInlineArray": false,
                                                                         "isLValue": false,
@@ -1922,7 +1922,7 @@ export const Lib = {
                                                                     "operator": "+",
                                                                     "rightExpression": {
                                                                         "hexValue": "3438",
-                                                                        "id": 160165,
+                                                                        "id": 160351,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -1950,7 +1950,7 @@ export const Lib = {
                                                                         "typeString": "int256"
                                                                     }
                                                                 ],
-                                                                "id": 160160,
+                                                                "id": 160346,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -1962,14 +1962,14 @@ export const Lib = {
                                                                     "typeString": "type(uint256)"
                                                                 },
                                                                 "typeName": {
-                                                                    "id": 160159,
+                                                                    "id": 160345,
                                                                     "name": "uint256",
                                                                     "nodeType": "ElementaryTypeName",
                                                                     "src": "2968:7:233",
                                                                     "typeDescriptions": {}
                                                                 }
                                                             },
-                                                            "id": 160167,
+                                                            "id": 160353,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -1993,7 +1993,7 @@ export const Lib = {
                                                                 "typeString": "uint256"
                                                             }
                                                         ],
-                                                        "id": 160158,
+                                                        "id": 160344,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -2005,14 +2005,14 @@ export const Lib = {
                                                             "typeString": "type(uint8)"
                                                         },
                                                         "typeName": {
-                                                            "id": 160157,
+                                                            "id": 160343,
                                                             "name": "uint8",
                                                             "nodeType": "ElementaryTypeName",
                                                             "src": "2962:5:233",
                                                             "typeDescriptions": {}
                                                         }
                                                     },
-                                                    "id": 160168,
+                                                    "id": 160354,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2036,7 +2036,7 @@ export const Lib = {
                                                         "typeString": "uint8"
                                                     }
                                                 ],
-                                                "id": 160156,
+                                                "id": 160342,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2048,14 +2048,14 @@ export const Lib = {
                                                     "typeString": "type(bytes1)"
                                                 },
                                                 "typeName": {
-                                                    "id": 160155,
+                                                    "id": 160341,
                                                     "name": "bytes1",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "2942:6:233",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 160169,
+                                            "id": 160355,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2077,23 +2077,23 @@ export const Lib = {
                                             "typeString": "bytes1"
                                         }
                                     },
-                                    "id": 160171,
+                                    "id": 160357,
                                     "nodeType": "ExpressionStatement",
                                     "src": "2909:94:233"
                                 },
                                 {
                                     "expression": {
-                                        "id": 160174,
+                                        "id": 160360,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 160172,
+                                            "id": 160358,
                                             "name": "num",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160116,
+                                            "referencedDeclaration": 160302,
                                             "src": "3013:3:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -2104,7 +2104,7 @@ export const Lib = {
                                         "operator": "/=",
                                         "rightHandSide": {
                                             "hexValue": "3130",
-                                            "id": 160173,
+                                            "id": 160359,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -2124,23 +2124,23 @@ export const Lib = {
                                             "typeString": "int256"
                                         }
                                     },
-                                    "id": 160175,
+                                    "id": 160361,
                                     "nodeType": "ExpressionStatement",
                                     "src": "3013:9:233"
                                 },
                                 {
                                     "assignments": [
-                                        160177
+                                        160363
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160177,
+                                            "id": 160363,
                                             "mutability": "mutable",
                                             "name": "digits",
                                             "nameLocation": "3040:6:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160261,
+                                            "scope": 160447,
                                             "src": "3032:14:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2149,7 +2149,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 160176,
+                                                "id": 160362,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "3032:7:233",
@@ -2161,10 +2161,10 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160179,
+                                    "id": 160365,
                                     "initialValue": {
                                         "hexValue": "31",
-                                        "id": 160178,
+                                        "id": 160364,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -2183,7 +2183,7 @@ export const Lib = {
                                 },
                                 {
                                     "body": {
-                                        "id": 160240,
+                                        "id": 160426,
                                         "nodeType": "Block",
                                         "src": "3103:349:233",
                                         "statements": [
@@ -2193,7 +2193,7 @@ export const Lib = {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     },
-                                                    "id": 160195,
+                                                    "id": 160381,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2203,17 +2203,17 @@ export const Lib = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 160191,
+                                                        "id": 160377,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 160189,
+                                                            "id": 160375,
                                                             "name": "decimals",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160118,
+                                                            "referencedDeclaration": 160304,
                                                             "src": "3121:8:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -2224,7 +2224,7 @@ export const Lib = {
                                                         "operator": ">",
                                                         "rightExpression": {
                                                             "hexValue": "30",
-                                                            "id": 160190,
+                                                            "id": 160376,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -2251,17 +2251,17 @@ export const Lib = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 160194,
+                                                        "id": 160380,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 160192,
+                                                            "id": 160378,
                                                             "name": "digits",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160177,
+                                                            "referencedDeclaration": 160363,
                                                             "src": "3137:6:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -2271,11 +2271,11 @@ export const Lib = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "==",
                                                         "rightExpression": {
-                                                            "id": 160193,
+                                                            "id": 160379,
                                                             "name": "decimals",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160118,
+                                                            "referencedDeclaration": 160304,
                                                             "src": "3147:8:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -2295,37 +2295,37 @@ export const Lib = {
                                                     }
                                                 },
                                                 "falseBody": {
-                                                    "id": 160235,
+                                                    "id": 160421,
                                                     "nodeType": "Block",
                                                     "src": "3241:179:233",
                                                     "statements": [
                                                         {
                                                             "expression": {
-                                                                "id": 160229,
+                                                                "id": 160415,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
                                                                     "baseExpression": {
-                                                                        "id": 160207,
+                                                                        "id": 160393,
                                                                         "name": "rawResult",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 160128,
+                                                                        "referencedDeclaration": 160314,
                                                                         "src": "3259:9:233",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                                             "typeString": "bytes memory"
                                                                         }
                                                                     },
-                                                                    "id": 160213,
+                                                                    "id": 160399,
                                                                     "indexExpression": {
                                                                         "commonType": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         },
-                                                                        "id": 160212,
+                                                                        "id": 160398,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -2335,17 +2335,17 @@ export const Lib = {
                                                                                 "typeIdentifier": "t_uint256",
                                                                                 "typeString": "uint256"
                                                                             },
-                                                                            "id": 160210,
+                                                                            "id": 160396,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
                                                                             "leftExpression": {
-                                                                                "id": 160208,
+                                                                                "id": 160394,
                                                                                 "name": "maxStringLength",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 160124,
+                                                                                "referencedDeclaration": 160310,
                                                                                 "src": "3269:15:233",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
@@ -2355,11 +2355,11 @@ export const Lib = {
                                                                             "nodeType": "BinaryOperation",
                                                                             "operator": "-",
                                                                             "rightExpression": {
-                                                                                "id": 160209,
+                                                                                "id": 160395,
                                                                                 "name": "digits",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 160177,
+                                                                                "referencedDeclaration": 160363,
                                                                                 "src": "3287:6:233",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
@@ -2376,7 +2376,7 @@ export const Lib = {
                                                                         "operator": "-",
                                                                         "rightExpression": {
                                                                             "hexValue": "31",
-                                                                            "id": 160211,
+                                                                            "id": 160397,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -2420,7 +2420,7 @@ export const Lib = {
                                                                                                 "typeIdentifier": "t_int256",
                                                                                                 "typeString": "int256"
                                                                                             },
-                                                                                            "id": 160225,
+                                                                                            "id": 160411,
                                                                                             "isConstant": false,
                                                                                             "isLValue": false,
                                                                                             "isPure": false,
@@ -2432,17 +2432,17 @@ export const Lib = {
                                                                                                             "typeIdentifier": "t_int256",
                                                                                                             "typeString": "int256"
                                                                                                         },
-                                                                                                        "id": 160222,
+                                                                                                        "id": 160408,
                                                                                                         "isConstant": false,
                                                                                                         "isLValue": false,
                                                                                                         "isPure": false,
                                                                                                         "lValueRequested": false,
                                                                                                         "leftExpression": {
-                                                                                                            "id": 160220,
+                                                                                                            "id": 160406,
                                                                                                             "name": "num",
                                                                                                             "nodeType": "Identifier",
                                                                                                             "overloadedDeclarations": [],
-                                                                                                            "referencedDeclaration": 160116,
+                                                                                                            "referencedDeclaration": 160302,
                                                                                                             "src": "3344:3:233",
                                                                                                             "typeDescriptions": {
                                                                                                                 "typeIdentifier": "t_int256",
@@ -2453,7 +2453,7 @@ export const Lib = {
                                                                                                         "operator": "%",
                                                                                                         "rightExpression": {
                                                                                                             "hexValue": "3130",
-                                                                                                            "id": 160221,
+                                                                                                            "id": 160407,
                                                                                                             "isConstant": false,
                                                                                                             "isLValue": false,
                                                                                                             "isPure": true,
@@ -2474,7 +2474,7 @@ export const Lib = {
                                                                                                         }
                                                                                                     }
                                                                                                 ],
-                                                                                                "id": 160223,
+                                                                                                "id": 160409,
                                                                                                 "isConstant": false,
                                                                                                 "isInlineArray": false,
                                                                                                 "isLValue": false,
@@ -2491,7 +2491,7 @@ export const Lib = {
                                                                                             "operator": "+",
                                                                                             "rightExpression": {
                                                                                                 "hexValue": "3438",
-                                                                                                "id": 160224,
+                                                                                                "id": 160410,
                                                                                                 "isConstant": false,
                                                                                                 "isLValue": false,
                                                                                                 "isPure": true,
@@ -2519,7 +2519,7 @@ export const Lib = {
                                                                                                 "typeString": "int256"
                                                                                             }
                                                                                         ],
-                                                                                        "id": 160219,
+                                                                                        "id": 160405,
                                                                                         "isConstant": false,
                                                                                         "isLValue": false,
                                                                                         "isPure": true,
@@ -2531,14 +2531,14 @@ export const Lib = {
                                                                                             "typeString": "type(uint256)"
                                                                                         },
                                                                                         "typeName": {
-                                                                                            "id": 160218,
+                                                                                            "id": 160404,
                                                                                             "name": "uint256",
                                                                                             "nodeType": "ElementaryTypeName",
                                                                                             "src": "3335:7:233",
                                                                                             "typeDescriptions": {}
                                                                                         }
                                                                                     },
-                                                                                    "id": 160226,
+                                                                                    "id": 160412,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": false,
@@ -2562,7 +2562,7 @@ export const Lib = {
                                                                                         "typeString": "uint256"
                                                                                     }
                                                                                 ],
-                                                                                "id": 160217,
+                                                                                "id": 160403,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
@@ -2574,14 +2574,14 @@ export const Lib = {
                                                                                     "typeString": "type(uint8)"
                                                                                 },
                                                                                 "typeName": {
-                                                                                    "id": 160216,
+                                                                                    "id": 160402,
                                                                                     "name": "uint8",
                                                                                     "nodeType": "ElementaryTypeName",
                                                                                     "src": "3329:5:233",
                                                                                     "typeDescriptions": {}
                                                                                 }
                                                                             },
-                                                                            "id": 160227,
+                                                                            "id": 160413,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -2605,7 +2605,7 @@ export const Lib = {
                                                                                 "typeString": "uint8"
                                                                             }
                                                                         ],
-                                                                        "id": 160215,
+                                                                        "id": 160401,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -2617,14 +2617,14 @@ export const Lib = {
                                                                             "typeString": "type(bytes1)"
                                                                         },
                                                                         "typeName": {
-                                                                            "id": 160214,
+                                                                            "id": 160400,
                                                                             "name": "bytes1",
                                                                             "nodeType": "ElementaryTypeName",
                                                                             "src": "3301:6:233",
                                                                             "typeDescriptions": {}
                                                                         }
                                                                     },
-                                                                    "id": 160228,
+                                                                    "id": 160414,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -2646,23 +2646,23 @@ export const Lib = {
                                                                     "typeString": "bytes1"
                                                                 }
                                                             },
-                                                            "id": 160230,
+                                                            "id": 160416,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "3259:119:233"
                                                         },
                                                         {
                                                             "expression": {
-                                                                "id": 160233,
+                                                                "id": 160419,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
-                                                                    "id": 160231,
+                                                                    "id": 160417,
                                                                     "name": "num",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 160116,
+                                                                    "referencedDeclaration": 160302,
                                                                     "src": "3396:3:233",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_int256",
@@ -2673,7 +2673,7 @@ export const Lib = {
                                                                 "operator": "/=",
                                                                 "rightHandSide": {
                                                                     "hexValue": "3130",
-                                                                    "id": 160232,
+                                                                    "id": 160418,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -2693,47 +2693,47 @@ export const Lib = {
                                                                     "typeString": "int256"
                                                                 }
                                                             },
-                                                            "id": 160234,
+                                                            "id": 160420,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "3396:9:233"
                                                         }
                                                     ]
                                                 },
-                                                "id": 160236,
+                                                "id": 160422,
                                                 "nodeType": "IfStatement",
                                                 "src": "3117:303:233",
                                                 "trueBody": {
-                                                    "id": 160206,
+                                                    "id": 160392,
                                                     "nodeType": "Block",
                                                     "src": "3157:78:233",
                                                     "statements": [
                                                         {
                                                             "expression": {
-                                                                "id": 160204,
+                                                                "id": 160390,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
                                                                     "baseExpression": {
-                                                                        "id": 160196,
+                                                                        "id": 160382,
                                                                         "name": "rawResult",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 160128,
+                                                                        "referencedDeclaration": 160314,
                                                                         "src": "3175:9:233",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                                             "typeString": "bytes memory"
                                                                         }
                                                                     },
-                                                                    "id": 160202,
+                                                                    "id": 160388,
                                                                     "indexExpression": {
                                                                         "commonType": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         },
-                                                                        "id": 160201,
+                                                                        "id": 160387,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -2743,17 +2743,17 @@ export const Lib = {
                                                                                 "typeIdentifier": "t_uint256",
                                                                                 "typeString": "uint256"
                                                                             },
-                                                                            "id": 160199,
+                                                                            "id": 160385,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
                                                                             "leftExpression": {
-                                                                                "id": 160197,
+                                                                                "id": 160383,
                                                                                 "name": "maxStringLength",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 160124,
+                                                                                "referencedDeclaration": 160310,
                                                                                 "src": "3185:15:233",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
@@ -2763,11 +2763,11 @@ export const Lib = {
                                                                             "nodeType": "BinaryOperation",
                                                                             "operator": "-",
                                                                             "rightExpression": {
-                                                                                "id": 160198,
+                                                                                "id": 160384,
                                                                                 "name": "digits",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 160177,
+                                                                                "referencedDeclaration": 160363,
                                                                                 "src": "3203:6:233",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
@@ -2784,7 +2784,7 @@ export const Lib = {
                                                                         "operator": "-",
                                                                         "rightExpression": {
                                                                             "hexValue": "31",
-                                                                            "id": 160200,
+                                                                            "id": 160386,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -2819,7 +2819,7 @@ export const Lib = {
                                                                 "operator": "=",
                                                                 "rightHandSide": {
                                                                     "hexValue": "2e",
-                                                                    "id": 160203,
+                                                                    "id": 160389,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -2839,7 +2839,7 @@ export const Lib = {
                                                                     "typeString": "bytes1"
                                                                 }
                                                             },
-                                                            "id": 160205,
+                                                            "id": 160391,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "3175:45:233"
                                                         }
@@ -2848,7 +2848,7 @@ export const Lib = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 160238,
+                                                    "id": 160424,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -2858,11 +2858,11 @@ export const Lib = {
                                                     "prefix": false,
                                                     "src": "3433:8:233",
                                                     "subExpression": {
-                                                        "id": 160237,
+                                                        "id": 160423,
                                                         "name": "digits",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 160177,
+                                                        "referencedDeclaration": 160363,
                                                         "src": "3433:6:233",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -2874,7 +2874,7 @@ export const Lib = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 160239,
+                                                "id": 160425,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3433:8:233"
                                             }
@@ -2885,7 +2885,7 @@ export const Lib = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 160188,
+                                        "id": 160374,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2895,17 +2895,17 @@ export const Lib = {
                                                 "typeIdentifier": "t_int256",
                                                 "typeString": "int256"
                                             },
-                                            "id": 160182,
+                                            "id": 160368,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 160180,
+                                                "id": 160366,
                                                 "name": "num",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160116,
+                                                "referencedDeclaration": 160302,
                                                 "src": "3067:3:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -2916,7 +2916,7 @@ export const Lib = {
                                             "operator": "!=",
                                             "rightExpression": {
                                                 "hexValue": "30",
-                                                "id": 160181,
+                                                "id": 160367,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -2943,17 +2943,17 @@ export const Lib = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 160187,
+                                            "id": 160373,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 160183,
+                                                "id": 160369,
                                                 "name": "digits",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160177,
+                                                "referencedDeclaration": 160363,
                                                 "src": "3079:6:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -2967,17 +2967,17 @@ export const Lib = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 160186,
+                                                "id": 160372,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 160184,
+                                                    "id": 160370,
                                                     "name": "decimals",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160118,
+                                                    "referencedDeclaration": 160304,
                                                     "src": "3089:8:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -2988,7 +2988,7 @@ export const Lib = {
                                                 "operator": "+",
                                                 "rightExpression": {
                                                     "hexValue": "31",
-                                                    "id": 160185,
+                                                    "id": 160371,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3020,58 +3020,58 @@ export const Lib = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 160241,
+                                    "id": 160427,
                                     "nodeType": "WhileStatement",
                                     "src": "3060:392:233"
                                 },
                                 {
                                     "condition": {
-                                        "id": 160242,
+                                        "id": 160428,
                                         "name": "isNegative",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 160135,
+                                        "referencedDeclaration": 160321,
                                         "src": "3566:10:233",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 160257,
+                                    "id": 160443,
                                     "nodeType": "IfStatement",
                                     "src": "3562:108:233",
                                     "trueBody": {
-                                        "id": 160256,
+                                        "id": 160442,
                                         "nodeType": "Block",
                                         "src": "3578:92:233",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 160251,
+                                                    "id": 160437,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
                                                         "baseExpression": {
-                                                            "id": 160243,
+                                                            "id": 160429,
                                                             "name": "rawResult",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160128,
+                                                            "referencedDeclaration": 160314,
                                                             "src": "3592:9:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes_memory_ptr",
                                                                 "typeString": "bytes memory"
                                                             }
                                                         },
-                                                        "id": 160249,
+                                                        "id": 160435,
                                                         "indexExpression": {
                                                             "commonType": {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             },
-                                                            "id": 160248,
+                                                            "id": 160434,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -3081,17 +3081,17 @@ export const Lib = {
                                                                     "typeIdentifier": "t_uint256",
                                                                     "typeString": "uint256"
                                                                 },
-                                                                "id": 160246,
+                                                                "id": 160432,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftExpression": {
-                                                                    "id": 160244,
+                                                                    "id": 160430,
                                                                     "name": "maxStringLength",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 160124,
+                                                                    "referencedDeclaration": 160310,
                                                                     "src": "3602:15:233",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -3101,11 +3101,11 @@ export const Lib = {
                                                                 "nodeType": "BinaryOperation",
                                                                 "operator": "-",
                                                                 "rightExpression": {
-                                                                    "id": 160245,
+                                                                    "id": 160431,
                                                                     "name": "digits",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 160177,
+                                                                    "referencedDeclaration": 160363,
                                                                     "src": "3620:6:233",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -3122,7 +3122,7 @@ export const Lib = {
                                                             "operator": "-",
                                                             "rightExpression": {
                                                                 "hexValue": "31",
-                                                                "id": 160247,
+                                                                "id": 160433,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3157,7 +3157,7 @@ export const Lib = {
                                                     "operator": "=",
                                                     "rightHandSide": {
                                                         "hexValue": "2d",
-                                                        "id": 160250,
+                                                        "id": 160436,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -3177,13 +3177,13 @@ export const Lib = {
                                                         "typeString": "bytes1"
                                                     }
                                                 },
-                                                "id": 160252,
+                                                "id": 160438,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3592:45:233"
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 160254,
+                                                    "id": 160440,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3193,11 +3193,11 @@ export const Lib = {
                                                     "prefix": false,
                                                     "src": "3651:8:233",
                                                     "subExpression": {
-                                                        "id": 160253,
+                                                        "id": 160439,
                                                         "name": "digits",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 160177,
+                                                        "referencedDeclaration": 160363,
                                                         "src": "3651:6:233",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -3209,7 +3209,7 @@ export const Lib = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 160255,
+                                                "id": 160441,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "3651:8:233"
                                             }
@@ -3335,74 +3335,74 @@ export const Lib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 160177,
+                                            "declaration": 160363,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3866:6:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160177,
+                                            "declaration": 160363,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3910:6:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160124,
+                                            "declaration": 160310,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3849:15:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160128,
+                                            "declaration": 160314,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3830:9:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160121,
+                                            "declaration": 160307,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3816:6:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160121,
+                                            "declaration": 160307,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3898:6:233",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 160258,
+                                    "id": 160444,
                                     "nodeType": "InlineAssembly",
                                     "src": "3793:138:233"
                                 },
                                 {
                                     "expression": {
-                                        "id": 160259,
+                                        "id": 160445,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 160121,
+                                        "referencedDeclaration": 160307,
                                         "src": "3947:6:233",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_memory_ptr",
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 160122,
-                                    "id": 160260,
+                                    "functionReturnParameters": 160308,
+                                    "id": 160446,
                                     "nodeType": "Return",
                                     "src": "3940:13:233"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 160114,
+                            "id": 160300,
                             "nodeType": "StructuredDocumentation",
                             "src": "1481:438:233",
                             "text": "@dev Converts a signed integer to a string with a specified amount of\n      decimals. In the event that the integer doesn't have any digits to\n      the left of the decimal place, zeros will be filled in.\n @param num The integer to be converted.\n @param decimals The number of decimal places to add. If zero, the the\n        decimal point is excluded.\n @return result The stringified integer."
@@ -3413,17 +3413,17 @@ export const Lib = {
                         "name": "toString",
                         "nameLocation": "1933:8:233",
                         "parameters": {
-                            "id": 160119,
+                            "id": 160305,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160116,
+                                    "id": 160302,
                                     "mutability": "mutable",
                                     "name": "num",
                                     "nameLocation": "1958:3:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160262,
+                                    "scope": 160448,
                                     "src": "1951:10:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3432,7 +3432,7 @@ export const Lib = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 160115,
+                                        "id": 160301,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1951:6:233",
@@ -3445,12 +3445,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160118,
+                                    "id": 160304,
                                     "mutability": "mutable",
                                     "name": "decimals",
                                     "nameLocation": "1979:8:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160262,
+                                    "scope": 160448,
                                     "src": "1971:16:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3459,7 +3459,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160117,
+                                        "id": 160303,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1971:7:233",
@@ -3474,17 +3474,17 @@ export const Lib = {
                             "src": "1941:52:233"
                         },
                         "returnParameters": {
-                            "id": 160122,
+                            "id": 160308,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160121,
+                                    "id": 160307,
                                     "mutability": "mutable",
                                     "name": "result",
                                     "nameLocation": "2031:6:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160262,
+                                    "scope": 160448,
                                     "src": "2017:20:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -3493,7 +3493,7 @@ export const Lib = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 160120,
+                                        "id": 160306,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2017:6:233",
@@ -3507,35 +3507,35 @@ export const Lib = {
                             ],
                             "src": "2016:22:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 160373,
+                        "id": 160559,
                         "nodeType": "FunctionDefinition",
                         "src": "4412:1394:233",
                         "nodes": [],
                         "body": {
-                            "id": 160372,
+                            "id": 160558,
                             "nodeType": "Block",
                             "src": "4528:1278:233",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        160273
+                                        160459
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160273,
+                                            "id": 160459,
                                             "mutability": "mutable",
                                             "name": "maxStringLength",
                                             "nameLocation": "4767:15:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160372,
+                                            "scope": 160558,
                                             "src": "4759:23:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3544,7 +3544,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 160272,
+                                                "id": 160458,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4759:7:233",
@@ -3556,10 +3556,10 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160275,
+                                    "id": 160461,
                                     "initialValue": {
                                         "hexValue": "3739",
-                                        "id": 160274,
+                                        "id": 160460,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -3578,17 +3578,17 @@ export const Lib = {
                                 },
                                 {
                                     "assignments": [
-                                        160277
+                                        160463
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160277,
+                                            "id": 160463,
                                             "mutability": "mutable",
                                             "name": "rawResult",
                                             "nameLocation": "4810:9:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160372,
+                                            "scope": 160558,
                                             "src": "4797:22:233",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -3597,7 +3597,7 @@ export const Lib = {
                                                 "typeString": "bytes"
                                             },
                                             "typeName": {
-                                                "id": 160276,
+                                                "id": 160462,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4797:5:233",
@@ -3609,15 +3609,15 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160282,
+                                    "id": 160468,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 160280,
+                                                "id": 160466,
                                                 "name": "maxStringLength",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160273,
+                                                "referencedDeclaration": 160459,
                                                 "src": "4832:15:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3632,7 +3632,7 @@ export const Lib = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 160279,
+                                            "id": 160465,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -3644,7 +3644,7 @@ export const Lib = {
                                                 "typeString": "function (uint256) pure returns (bytes memory)"
                                             },
                                             "typeName": {
-                                                "id": 160278,
+                                                "id": 160464,
                                                 "name": "bytes",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "4826:5:233",
@@ -3654,7 +3654,7 @@ export const Lib = {
                                                 }
                                             }
                                         },
-                                        "id": 160281,
+                                        "id": 160467,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3675,41 +3675,41 @@ export const Lib = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 160300,
+                                        "id": 160486,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
                                             "baseExpression": {
-                                                "id": 160283,
+                                                "id": 160469,
                                                 "name": "rawResult",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160277,
+                                                "referencedDeclaration": 160463,
                                                 "src": "5013:9:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bytes_memory_ptr",
                                                     "typeString": "bytes memory"
                                                 }
                                             },
-                                            "id": 160287,
+                                            "id": 160473,
                                             "indexExpression": {
                                                 "commonType": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 160286,
+                                                "id": 160472,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 160284,
+                                                    "id": 160470,
                                                     "name": "maxStringLength",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160273,
+                                                    "referencedDeclaration": 160459,
                                                     "src": "5023:15:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -3720,7 +3720,7 @@ export const Lib = {
                                                 "operator": "-",
                                                 "rightExpression": {
                                                     "hexValue": "31",
-                                                    "id": 160285,
+                                                    "id": 160471,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -3762,7 +3762,7 @@ export const Lib = {
                                                                 "typeIdentifier": "t_uint256",
                                                                 "typeString": "uint256"
                                                             },
-                                                            "id": 160297,
+                                                            "id": 160483,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -3774,17 +3774,17 @@ export const Lib = {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         },
-                                                                        "id": 160294,
+                                                                        "id": 160480,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
                                                                         "lValueRequested": false,
                                                                         "leftExpression": {
-                                                                            "id": 160292,
+                                                                            "id": 160478,
                                                                             "name": "num",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 160265,
+                                                                            "referencedDeclaration": 160451,
                                                                             "src": "5060:3:233",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_uint256",
@@ -3795,7 +3795,7 @@ export const Lib = {
                                                                         "operator": "%",
                                                                         "rightExpression": {
                                                                             "hexValue": "3130",
-                                                                            "id": 160293,
+                                                                            "id": 160479,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -3816,7 +3816,7 @@ export const Lib = {
                                                                         }
                                                                     }
                                                                 ],
-                                                                "id": 160295,
+                                                                "id": 160481,
                                                                 "isConstant": false,
                                                                 "isInlineArray": false,
                                                                 "isLValue": false,
@@ -3833,7 +3833,7 @@ export const Lib = {
                                                             "operator": "+",
                                                             "rightExpression": {
                                                                 "hexValue": "3438",
-                                                                "id": 160296,
+                                                                "id": 160482,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": true,
@@ -3861,7 +3861,7 @@ export const Lib = {
                                                                 "typeString": "uint256"
                                                             }
                                                         ],
-                                                        "id": 160291,
+                                                        "id": 160477,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -3873,14 +3873,14 @@ export const Lib = {
                                                             "typeString": "type(uint8)"
                                                         },
                                                         "typeName": {
-                                                            "id": 160290,
+                                                            "id": 160476,
                                                             "name": "uint8",
                                                             "nodeType": "ElementaryTypeName",
                                                             "src": "5053:5:233",
                                                             "typeDescriptions": {}
                                                         }
                                                     },
-                                                    "id": 160298,
+                                                    "id": 160484,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -3904,7 +3904,7 @@ export const Lib = {
                                                         "typeString": "uint8"
                                                     }
                                                 ],
-                                                "id": 160289,
+                                                "id": 160475,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -3916,14 +3916,14 @@ export const Lib = {
                                                     "typeString": "type(bytes1)"
                                                 },
                                                 "typeName": {
-                                                    "id": 160288,
+                                                    "id": 160474,
                                                     "name": "bytes1",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "5046:6:233",
                                                     "typeDescriptions": {}
                                                 }
                                             },
-                                            "id": 160299,
+                                            "id": 160485,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3945,23 +3945,23 @@ export const Lib = {
                                             "typeString": "bytes1"
                                         }
                                     },
-                                    "id": 160301,
+                                    "id": 160487,
                                     "nodeType": "ExpressionStatement",
                                     "src": "5013:63:233"
                                 },
                                 {
                                     "expression": {
-                                        "id": 160304,
+                                        "id": 160490,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftHandSide": {
-                                            "id": 160302,
+                                            "id": 160488,
                                             "name": "num",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160265,
+                                            "referencedDeclaration": 160451,
                                             "src": "5086:3:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -3972,7 +3972,7 @@ export const Lib = {
                                         "operator": "/=",
                                         "rightHandSide": {
                                             "hexValue": "3130",
-                                            "id": 160303,
+                                            "id": 160489,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -3992,23 +3992,23 @@ export const Lib = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "id": 160305,
+                                    "id": 160491,
                                     "nodeType": "ExpressionStatement",
                                     "src": "5086:9:233"
                                 },
                                 {
                                     "assignments": [
-                                        160307
+                                        160493
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160307,
+                                            "id": 160493,
                                             "mutability": "mutable",
                                             "name": "digits",
                                             "nameLocation": "5113:6:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160372,
+                                            "scope": 160558,
                                             "src": "5105:14:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -4017,7 +4017,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 160306,
+                                                "id": 160492,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "5105:7:233",
@@ -4029,10 +4029,10 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160309,
+                                    "id": 160495,
                                     "initialValue": {
                                         "hexValue": "31",
-                                        "id": 160308,
+                                        "id": 160494,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": true,
@@ -4051,7 +4051,7 @@ export const Lib = {
                                 },
                                 {
                                     "body": {
-                                        "id": 160367,
+                                        "id": 160553,
                                         "nodeType": "Block",
                                         "src": "5176:340:233",
                                         "statements": [
@@ -4061,7 +4061,7 @@ export const Lib = {
                                                         "typeIdentifier": "t_bool",
                                                         "typeString": "bool"
                                                     },
-                                                    "id": 160325,
+                                                    "id": 160511,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4071,17 +4071,17 @@ export const Lib = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 160321,
+                                                        "id": 160507,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 160319,
+                                                            "id": 160505,
                                                             "name": "decimals",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160267,
+                                                            "referencedDeclaration": 160453,
                                                             "src": "5194:8:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -4092,7 +4092,7 @@ export const Lib = {
                                                         "operator": ">",
                                                         "rightExpression": {
                                                             "hexValue": "30",
-                                                            "id": 160320,
+                                                            "id": 160506,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -4119,17 +4119,17 @@ export const Lib = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 160324,
+                                                        "id": 160510,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
-                                                            "id": 160322,
+                                                            "id": 160508,
                                                             "name": "digits",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160307,
+                                                            "referencedDeclaration": 160493,
                                                             "src": "5210:6:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -4139,11 +4139,11 @@ export const Lib = {
                                                         "nodeType": "BinaryOperation",
                                                         "operator": "==",
                                                         "rightExpression": {
-                                                            "id": 160323,
+                                                            "id": 160509,
                                                             "name": "decimals",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160267,
+                                                            "referencedDeclaration": 160453,
                                                             "src": "5220:8:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_uint256",
@@ -4163,37 +4163,37 @@ export const Lib = {
                                                     }
                                                 },
                                                 "falseBody": {
-                                                    "id": 160362,
+                                                    "id": 160548,
                                                     "nodeType": "Block",
                                                     "src": "5314:170:233",
                                                     "statements": [
                                                         {
                                                             "expression": {
-                                                                "id": 160356,
+                                                                "id": 160542,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
                                                                     "baseExpression": {
-                                                                        "id": 160337,
+                                                                        "id": 160523,
                                                                         "name": "rawResult",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 160277,
+                                                                        "referencedDeclaration": 160463,
                                                                         "src": "5332:9:233",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                                             "typeString": "bytes memory"
                                                                         }
                                                                     },
-                                                                    "id": 160343,
+                                                                    "id": 160529,
                                                                     "indexExpression": {
                                                                         "commonType": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         },
-                                                                        "id": 160342,
+                                                                        "id": 160528,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -4203,17 +4203,17 @@ export const Lib = {
                                                                                 "typeIdentifier": "t_uint256",
                                                                                 "typeString": "uint256"
                                                                             },
-                                                                            "id": 160340,
+                                                                            "id": 160526,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
                                                                             "leftExpression": {
-                                                                                "id": 160338,
+                                                                                "id": 160524,
                                                                                 "name": "maxStringLength",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 160273,
+                                                                                "referencedDeclaration": 160459,
                                                                                 "src": "5342:15:233",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
@@ -4223,11 +4223,11 @@ export const Lib = {
                                                                             "nodeType": "BinaryOperation",
                                                                             "operator": "-",
                                                                             "rightExpression": {
-                                                                                "id": 160339,
+                                                                                "id": 160525,
                                                                                 "name": "digits",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 160307,
+                                                                                "referencedDeclaration": 160493,
                                                                                 "src": "5360:6:233",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
@@ -4244,7 +4244,7 @@ export const Lib = {
                                                                         "operator": "-",
                                                                         "rightExpression": {
                                                                             "hexValue": "31",
-                                                                            "id": 160341,
+                                                                            "id": 160527,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -4286,7 +4286,7 @@ export const Lib = {
                                                                                         "typeIdentifier": "t_uint256",
                                                                                         "typeString": "uint256"
                                                                                     },
-                                                                                    "id": 160353,
+                                                                                    "id": 160539,
                                                                                     "isConstant": false,
                                                                                     "isLValue": false,
                                                                                     "isPure": false,
@@ -4298,17 +4298,17 @@ export const Lib = {
                                                                                                     "typeIdentifier": "t_uint256",
                                                                                                     "typeString": "uint256"
                                                                                                 },
-                                                                                                "id": 160350,
+                                                                                                "id": 160536,
                                                                                                 "isConstant": false,
                                                                                                 "isLValue": false,
                                                                                                 "isPure": false,
                                                                                                 "lValueRequested": false,
                                                                                                 "leftExpression": {
-                                                                                                    "id": 160348,
+                                                                                                    "id": 160534,
                                                                                                     "name": "num",
                                                                                                     "nodeType": "Identifier",
                                                                                                     "overloadedDeclarations": [],
-                                                                                                    "referencedDeclaration": 160265,
+                                                                                                    "referencedDeclaration": 160451,
                                                                                                     "src": "5409:3:233",
                                                                                                     "typeDescriptions": {
                                                                                                         "typeIdentifier": "t_uint256",
@@ -4319,7 +4319,7 @@ export const Lib = {
                                                                                                 "operator": "%",
                                                                                                 "rightExpression": {
                                                                                                     "hexValue": "3130",
-                                                                                                    "id": 160349,
+                                                                                                    "id": 160535,
                                                                                                     "isConstant": false,
                                                                                                     "isLValue": false,
                                                                                                     "isPure": true,
@@ -4340,7 +4340,7 @@ export const Lib = {
                                                                                                 }
                                                                                             }
                                                                                         ],
-                                                                                        "id": 160351,
+                                                                                        "id": 160537,
                                                                                         "isConstant": false,
                                                                                         "isInlineArray": false,
                                                                                         "isLValue": false,
@@ -4357,7 +4357,7 @@ export const Lib = {
                                                                                     "operator": "+",
                                                                                     "rightExpression": {
                                                                                         "hexValue": "3438",
-                                                                                        "id": 160352,
+                                                                                        "id": 160538,
                                                                                         "isConstant": false,
                                                                                         "isLValue": false,
                                                                                         "isPure": true,
@@ -4385,7 +4385,7 @@ export const Lib = {
                                                                                         "typeString": "uint256"
                                                                                     }
                                                                                 ],
-                                                                                "id": 160347,
+                                                                                "id": 160533,
                                                                                 "isConstant": false,
                                                                                 "isLValue": false,
                                                                                 "isPure": true,
@@ -4397,14 +4397,14 @@ export const Lib = {
                                                                                     "typeString": "type(uint8)"
                                                                                 },
                                                                                 "typeName": {
-                                                                                    "id": 160346,
+                                                                                    "id": 160532,
                                                                                     "name": "uint8",
                                                                                     "nodeType": "ElementaryTypeName",
                                                                                     "src": "5402:5:233",
                                                                                     "typeDescriptions": {}
                                                                                 }
                                                                             },
-                                                                            "id": 160354,
+                                                                            "id": 160540,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
@@ -4428,7 +4428,7 @@ export const Lib = {
                                                                                 "typeString": "uint8"
                                                                             }
                                                                         ],
-                                                                        "id": 160345,
+                                                                        "id": 160531,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -4440,14 +4440,14 @@ export const Lib = {
                                                                             "typeString": "type(bytes1)"
                                                                         },
                                                                         "typeName": {
-                                                                            "id": 160344,
+                                                                            "id": 160530,
                                                                             "name": "bytes1",
                                                                             "nodeType": "ElementaryTypeName",
                                                                             "src": "5374:6:233",
                                                                             "typeDescriptions": {}
                                                                         }
                                                                     },
-                                                                    "id": 160355,
+                                                                    "id": 160541,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -4469,23 +4469,23 @@ export const Lib = {
                                                                     "typeString": "bytes1"
                                                                 }
                                                             },
-                                                            "id": 160357,
+                                                            "id": 160543,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "5332:110:233"
                                                         },
                                                         {
                                                             "expression": {
-                                                                "id": 160360,
+                                                                "id": 160546,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
-                                                                    "id": 160358,
+                                                                    "id": 160544,
                                                                     "name": "num",
                                                                     "nodeType": "Identifier",
                                                                     "overloadedDeclarations": [],
-                                                                    "referencedDeclaration": 160265,
+                                                                    "referencedDeclaration": 160451,
                                                                     "src": "5460:3:233",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_uint256",
@@ -4496,7 +4496,7 @@ export const Lib = {
                                                                 "operator": "/=",
                                                                 "rightHandSide": {
                                                                     "hexValue": "3130",
-                                                                    "id": 160359,
+                                                                    "id": 160545,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -4516,47 +4516,47 @@ export const Lib = {
                                                                     "typeString": "uint256"
                                                                 }
                                                             },
-                                                            "id": 160361,
+                                                            "id": 160547,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "5460:9:233"
                                                         }
                                                     ]
                                                 },
-                                                "id": 160363,
+                                                "id": 160549,
                                                 "nodeType": "IfStatement",
                                                 "src": "5190:294:233",
                                                 "trueBody": {
-                                                    "id": 160336,
+                                                    "id": 160522,
                                                     "nodeType": "Block",
                                                     "src": "5230:78:233",
                                                     "statements": [
                                                         {
                                                             "expression": {
-                                                                "id": 160334,
+                                                                "id": 160520,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
                                                                 "lValueRequested": false,
                                                                 "leftHandSide": {
                                                                     "baseExpression": {
-                                                                        "id": 160326,
+                                                                        "id": 160512,
                                                                         "name": "rawResult",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 160277,
+                                                                        "referencedDeclaration": 160463,
                                                                         "src": "5248:9:233",
                                                                         "typeDescriptions": {
                                                                             "typeIdentifier": "t_bytes_memory_ptr",
                                                                             "typeString": "bytes memory"
                                                                         }
                                                                     },
-                                                                    "id": 160332,
+                                                                    "id": 160518,
                                                                     "indexExpression": {
                                                                         "commonType": {
                                                                             "typeIdentifier": "t_uint256",
                                                                             "typeString": "uint256"
                                                                         },
-                                                                        "id": 160331,
+                                                                        "id": 160517,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": false,
@@ -4566,17 +4566,17 @@ export const Lib = {
                                                                                 "typeIdentifier": "t_uint256",
                                                                                 "typeString": "uint256"
                                                                             },
-                                                                            "id": 160329,
+                                                                            "id": 160515,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": false,
                                                                             "lValueRequested": false,
                                                                             "leftExpression": {
-                                                                                "id": 160327,
+                                                                                "id": 160513,
                                                                                 "name": "maxStringLength",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 160273,
+                                                                                "referencedDeclaration": 160459,
                                                                                 "src": "5258:15:233",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
@@ -4586,11 +4586,11 @@ export const Lib = {
                                                                             "nodeType": "BinaryOperation",
                                                                             "operator": "-",
                                                                             "rightExpression": {
-                                                                                "id": 160328,
+                                                                                "id": 160514,
                                                                                 "name": "digits",
                                                                                 "nodeType": "Identifier",
                                                                                 "overloadedDeclarations": [],
-                                                                                "referencedDeclaration": 160307,
+                                                                                "referencedDeclaration": 160493,
                                                                                 "src": "5276:6:233",
                                                                                 "typeDescriptions": {
                                                                                     "typeIdentifier": "t_uint256",
@@ -4607,7 +4607,7 @@ export const Lib = {
                                                                         "operator": "-",
                                                                         "rightExpression": {
                                                                             "hexValue": "31",
-                                                                            "id": 160330,
+                                                                            "id": 160516,
                                                                             "isConstant": false,
                                                                             "isLValue": false,
                                                                             "isPure": true,
@@ -4642,7 +4642,7 @@ export const Lib = {
                                                                 "operator": "=",
                                                                 "rightHandSide": {
                                                                     "hexValue": "2e",
-                                                                    "id": 160333,
+                                                                    "id": 160519,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": true,
@@ -4662,7 +4662,7 @@ export const Lib = {
                                                                     "typeString": "bytes1"
                                                                 }
                                                             },
-                                                            "id": 160335,
+                                                            "id": 160521,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "5248:45:233"
                                                         }
@@ -4671,7 +4671,7 @@ export const Lib = {
                                             },
                                             {
                                                 "expression": {
-                                                    "id": 160365,
+                                                    "id": 160551,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -4681,11 +4681,11 @@ export const Lib = {
                                                     "prefix": false,
                                                     "src": "5497:8:233",
                                                     "subExpression": {
-                                                        "id": 160364,
+                                                        "id": 160550,
                                                         "name": "digits",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 160307,
+                                                        "referencedDeclaration": 160493,
                                                         "src": "5497:6:233",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -4697,7 +4697,7 @@ export const Lib = {
                                                         "typeString": "uint256"
                                                     }
                                                 },
-                                                "id": 160366,
+                                                "id": 160552,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "5497:8:233"
                                             }
@@ -4708,7 +4708,7 @@ export const Lib = {
                                             "typeIdentifier": "t_bool",
                                             "typeString": "bool"
                                         },
-                                        "id": 160318,
+                                        "id": 160504,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4718,17 +4718,17 @@ export const Lib = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 160312,
+                                            "id": 160498,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 160310,
+                                                "id": 160496,
                                                 "name": "num",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160265,
+                                                "referencedDeclaration": 160451,
                                                 "src": "5140:3:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4739,7 +4739,7 @@ export const Lib = {
                                             "operator": "!=",
                                             "rightExpression": {
                                                 "hexValue": "30",
-                                                "id": 160311,
+                                                "id": 160497,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -4766,17 +4766,17 @@ export const Lib = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 160317,
+                                            "id": 160503,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 160313,
+                                                "id": 160499,
                                                 "name": "digits",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160307,
+                                                "referencedDeclaration": 160493,
                                                 "src": "5152:6:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4790,17 +4790,17 @@ export const Lib = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 160316,
+                                                "id": 160502,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 160314,
+                                                    "id": 160500,
                                                     "name": "decimals",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160267,
+                                                    "referencedDeclaration": 160453,
                                                     "src": "5162:8:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -4811,7 +4811,7 @@ export const Lib = {
                                                 "operator": "+",
                                                 "rightExpression": {
                                                     "hexValue": "31",
-                                                    "id": 160315,
+                                                    "id": 160501,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": true,
@@ -4843,7 +4843,7 @@ export const Lib = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 160368,
+                                    "id": 160554,
                                     "nodeType": "WhileStatement",
                                     "src": "5133:383:233"
                                 },
@@ -4966,74 +4966,74 @@ export const Lib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 160307,
+                                            "declaration": 160493,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5712:6:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160307,
+                                            "declaration": 160493,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5756:6:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160273,
+                                            "declaration": 160459,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5695:15:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160277,
+                                            "declaration": 160463,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5676:9:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160270,
+                                            "declaration": 160456,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5662:6:233",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 160270,
+                                            "declaration": 160456,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5744:6:233",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 160369,
+                                    "id": 160555,
                                     "nodeType": "InlineAssembly",
                                     "src": "5639:138:233"
                                 },
                                 {
                                     "expression": {
-                                        "id": 160370,
+                                        "id": 160556,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 160270,
+                                        "referencedDeclaration": 160456,
                                         "src": "5793:6:233",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_memory_ptr",
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 160271,
-                                    "id": 160371,
+                                    "functionReturnParameters": 160457,
+                                    "id": 160557,
                                     "nodeType": "Return",
                                     "src": "5786:13:233"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 160263,
+                            "id": 160449,
                             "nodeType": "StructuredDocumentation",
                             "src": "3966:441:233",
                             "text": "@dev Converts an unsigned integer to a string with a specified amount of\n      decimals. In the event that the integer doesn't have any digits to\n      the left of the decimal place, zeros will be filled in.\n @param num The integer to be converted.\n @param decimals The number of decimal places to add. If zero, the the\n        decimal point is excluded.\n @return result The stringified integer."
@@ -5044,17 +5044,17 @@ export const Lib = {
                         "name": "toString",
                         "nameLocation": "4421:8:233",
                         "parameters": {
-                            "id": 160268,
+                            "id": 160454,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160265,
+                                    "id": 160451,
                                     "mutability": "mutable",
                                     "name": "num",
                                     "nameLocation": "4447:3:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160373,
+                                    "scope": 160559,
                                     "src": "4439:11:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5063,7 +5063,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160264,
+                                        "id": 160450,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4439:7:233",
@@ -5076,12 +5076,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160267,
+                                    "id": 160453,
                                     "mutability": "mutable",
                                     "name": "decimals",
                                     "nameLocation": "4468:8:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160373,
+                                    "scope": 160559,
                                     "src": "4460:16:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5090,7 +5090,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160266,
+                                        "id": 160452,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4460:7:233",
@@ -5105,17 +5105,17 @@ export const Lib = {
                             "src": "4429:53:233"
                         },
                         "returnParameters": {
-                            "id": 160271,
+                            "id": 160457,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160270,
+                                    "id": 160456,
                                     "mutability": "mutable",
                                     "name": "result",
                                     "nameLocation": "4520:6:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160373,
+                                    "scope": 160559,
                                     "src": "4506:20:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5124,7 +5124,7 @@ export const Lib = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 160269,
+                                        "id": 160455,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "4506:6:233",
@@ -5138,18 +5138,18 @@ export const Lib = {
                             ],
                             "src": "4505:22:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 160442,
+                        "id": 160628,
                         "nodeType": "FunctionDefinition",
                         "src": "5812:448:233",
                         "nodes": [],
                         "body": {
-                            "id": 160441,
+                            "id": 160627,
                             "nodeType": "Block",
                             "src": "5913:347:233",
                             "nodes": [],
@@ -5158,11 +5158,11 @@ export const Lib = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 160384,
+                                                "id": 160570,
                                                 "name": "prelude",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160375,
+                                                "referencedDeclaration": 160561,
                                                 "src": "5936:7:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_string_memory_ptr",
@@ -5171,7 +5171,7 @@ export const Lib = {
                                             },
                                             {
                                                 "hexValue": "5b",
-                                                "id": 160385,
+                                                "id": 160571,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -5198,18 +5198,18 @@ export const Lib = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 160381,
+                                                "id": 160567,
                                                 "name": "console2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 56967,
+                                                "referencedDeclaration": 57073,
                                                 "src": "5923:8:233",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_console2_$56967_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_console2_$57073_$",
                                                     "typeString": "type(library console2)"
                                                 }
                                             },
-                                            "id": 160383,
+                                            "id": 160569,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5217,14 +5217,14 @@ export const Lib = {
                                             "memberLocation": "5932:3:233",
                                             "memberName": "log",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 49628,
+                                            "referencedDeclaration": 49734,
                                             "src": "5923:12:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory,string memory) pure"
                                             }
                                         },
-                                        "id": 160386,
+                                        "id": 160572,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5240,13 +5240,13 @@ export const Lib = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 160387,
+                                    "id": 160573,
                                     "nodeType": "ExpressionStatement",
                                     "src": "5923:26:233"
                                 },
                                 {
                                     "body": {
-                                        "id": 160427,
+                                        "id": 160613,
                                         "nodeType": "Block",
                                         "src": "6002:195:233",
                                         "statements": [
@@ -5256,17 +5256,17 @@ export const Lib = {
                                                         "typeIdentifier": "t_uint256",
                                                         "typeString": "uint256"
                                                     },
-                                                    "id": 160404,
+                                                    "id": 160590,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftExpression": {
-                                                        "id": 160399,
+                                                        "id": 160585,
                                                         "name": "i",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 160389,
+                                                        "referencedDeclaration": 160575,
                                                         "src": "6020:1:233",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_uint256",
@@ -5280,25 +5280,25 @@ export const Lib = {
                                                             "typeIdentifier": "t_uint256",
                                                             "typeString": "uint256"
                                                         },
-                                                        "id": 160403,
+                                                        "id": 160589,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": false,
                                                         "lValueRequested": false,
                                                         "leftExpression": {
                                                             "expression": {
-                                                                "id": 160400,
+                                                                "id": 160586,
                                                                 "name": "array",
                                                                 "nodeType": "Identifier",
                                                                 "overloadedDeclarations": [],
-                                                                "referencedDeclaration": 160378,
+                                                                "referencedDeclaration": 160564,
                                                                 "src": "6024:5:233",
                                                                 "typeDescriptions": {
                                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
                                                                     "typeString": "uint256[] memory"
                                                                 }
                                                             },
-                                                            "id": 160401,
+                                                            "id": 160587,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": false,
@@ -5316,7 +5316,7 @@ export const Lib = {
                                                         "operator": "-",
                                                         "rightExpression": {
                                                             "hexValue": "31",
-                                                            "id": 160402,
+                                                            "id": 160588,
                                                             "isConstant": false,
                                                             "isLValue": false,
                                                             "isPure": true,
@@ -5343,7 +5343,7 @@ export const Lib = {
                                                     }
                                                 },
                                                 "falseBody": {
-                                                    "id": 160425,
+                                                    "id": 160611,
                                                     "nodeType": "Block",
                                                     "src": "6120:67:233",
                                                     "statements": [
@@ -5352,7 +5352,7 @@ export const Lib = {
                                                                 "arguments": [
                                                                     {
                                                                         "hexValue": "2020202020202020",
-                                                                        "id": 160419,
+                                                                        "id": 160605,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -5368,24 +5368,24 @@ export const Lib = {
                                                                     },
                                                                     {
                                                                         "baseExpression": {
-                                                                            "id": 160420,
+                                                                            "id": 160606,
                                                                             "name": "array",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 160378,
+                                                                            "referencedDeclaration": 160564,
                                                                             "src": "6163:5:233",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
                                                                                 "typeString": "uint256[] memory"
                                                                             }
                                                                         },
-                                                                        "id": 160422,
+                                                                        "id": 160608,
                                                                         "indexExpression": {
-                                                                            "id": 160421,
+                                                                            "id": 160607,
                                                                             "name": "i",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 160389,
+                                                                            "referencedDeclaration": 160575,
                                                                             "src": "6169:1:233",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_uint256",
@@ -5416,18 +5416,18 @@ export const Lib = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 160416,
+                                                                        "id": 160602,
                                                                         "name": "console2",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 56967,
+                                                                        "referencedDeclaration": 57073,
                                                                         "src": "6138:8:233",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_console2_$56967_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_console2_$57073_$",
                                                                             "typeString": "type(library console2)"
                                                                         }
                                                                     },
-                                                                    "id": 160418,
+                                                                    "id": 160604,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -5435,14 +5435,14 @@ export const Lib = {
                                                                     "memberLocation": "6147:3:233",
                                                                     "memberName": "log",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 49594,
+                                                                    "referencedDeclaration": 49700,
                                                                     "src": "6138:12:233",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_uint256_$returns$__$",
                                                                         "typeString": "function (string memory,uint256) pure"
                                                                     }
                                                                 },
-                                                                "id": 160423,
+                                                                "id": 160609,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5458,17 +5458,17 @@ export const Lib = {
                                                                     "typeString": "tuple()"
                                                                 }
                                                             },
-                                                            "id": 160424,
+                                                            "id": 160610,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "6138:34:233"
                                                         }
                                                     ]
                                                 },
-                                                "id": 160426,
+                                                "id": 160612,
                                                 "nodeType": "IfStatement",
                                                 "src": "6016:171:233",
                                                 "trueBody": {
-                                                    "id": 160415,
+                                                    "id": 160601,
                                                     "nodeType": "Block",
                                                     "src": "6042:72:233",
                                                     "statements": [
@@ -5477,7 +5477,7 @@ export const Lib = {
                                                                 "arguments": [
                                                                     {
                                                                         "hexValue": "2020202020202020",
-                                                                        "id": 160408,
+                                                                        "id": 160594,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -5493,24 +5493,24 @@ export const Lib = {
                                                                     },
                                                                     {
                                                                         "baseExpression": {
-                                                                            "id": 160409,
+                                                                            "id": 160595,
                                                                             "name": "array",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 160378,
+                                                                            "referencedDeclaration": 160564,
                                                                             "src": "6085:5:233",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
                                                                                 "typeString": "uint256[] memory"
                                                                             }
                                                                         },
-                                                                        "id": 160411,
+                                                                        "id": 160597,
                                                                         "indexExpression": {
-                                                                            "id": 160410,
+                                                                            "id": 160596,
                                                                             "name": "i",
                                                                             "nodeType": "Identifier",
                                                                             "overloadedDeclarations": [],
-                                                                            "referencedDeclaration": 160389,
+                                                                            "referencedDeclaration": 160575,
                                                                             "src": "6091:1:233",
                                                                             "typeDescriptions": {
                                                                                 "typeIdentifier": "t_uint256",
@@ -5530,7 +5530,7 @@ export const Lib = {
                                                                     },
                                                                     {
                                                                         "hexValue": "2c",
-                                                                        "id": 160412,
+                                                                        "id": 160598,
                                                                         "isConstant": false,
                                                                         "isLValue": false,
                                                                         "isPure": true,
@@ -5561,18 +5561,18 @@ export const Lib = {
                                                                         }
                                                                     ],
                                                                     "expression": {
-                                                                        "id": 160405,
+                                                                        "id": 160591,
                                                                         "name": "console2",
                                                                         "nodeType": "Identifier",
                                                                         "overloadedDeclarations": [],
-                                                                        "referencedDeclaration": 56967,
+                                                                        "referencedDeclaration": 57073,
                                                                         "src": "6060:8:233",
                                                                         "typeDescriptions": {
-                                                                            "typeIdentifier": "t_type$_t_contract$_console2_$56967_$",
+                                                                            "typeIdentifier": "t_type$_t_contract$_console2_$57073_$",
                                                                             "typeString": "type(library console2)"
                                                                         }
                                                                     },
-                                                                    "id": 160407,
+                                                                    "id": 160593,
                                                                     "isConstant": false,
                                                                     "isLValue": false,
                                                                     "isPure": false,
@@ -5580,14 +5580,14 @@ export const Lib = {
                                                                     "memberLocation": "6069:3:233",
                                                                     "memberName": "log",
                                                                     "nodeType": "MemberAccess",
-                                                                    "referencedDeclaration": 50158,
+                                                                    "referencedDeclaration": 50264,
                                                                     "src": "6060:12:233",
                                                                     "typeDescriptions": {
                                                                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$_t_uint256_$_t_string_memory_ptr_$returns$__$",
                                                                         "typeString": "function (string memory,uint256,string memory) pure"
                                                                     }
                                                                 },
-                                                                "id": 160413,
+                                                                "id": 160599,
                                                                 "isConstant": false,
                                                                 "isLValue": false,
                                                                 "isPure": false,
@@ -5603,7 +5603,7 @@ export const Lib = {
                                                                     "typeString": "tuple()"
                                                                 }
                                                             },
-                                                            "id": 160414,
+                                                            "id": 160600,
                                                             "nodeType": "ExpressionStatement",
                                                             "src": "6060:39:233"
                                                         }
@@ -5617,17 +5617,17 @@ export const Lib = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 160395,
+                                        "id": 160581,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160392,
+                                            "id": 160578,
                                             "name": "i",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160389,
+                                            "referencedDeclaration": 160575,
                                             "src": "5979:1:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -5638,18 +5638,18 @@ export const Lib = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "expression": {
-                                                "id": 160393,
+                                                "id": 160579,
                                                 "name": "array",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160378,
+                                                "referencedDeclaration": 160564,
                                                 "src": "5983:5:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_array$_t_uint256_$dyn_memory_ptr",
                                                     "typeString": "uint256[] memory"
                                                 }
                                             },
-                                            "id": 160394,
+                                            "id": 160580,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5669,20 +5669,20 @@ export const Lib = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 160428,
+                                    "id": 160614,
                                     "initializationExpression": {
                                         "assignments": [
-                                            160389
+                                            160575
                                         ],
                                         "declarations": [
                                             {
                                                 "constant": false,
-                                                "id": 160389,
+                                                "id": 160575,
                                                 "mutability": "mutable",
                                                 "name": "i",
                                                 "nameLocation": "5972:1:233",
                                                 "nodeType": "VariableDeclaration",
-                                                "scope": 160428,
+                                                "scope": 160614,
                                                 "src": "5964:9:233",
                                                 "stateVariable": false,
                                                 "storageLocation": "default",
@@ -5691,7 +5691,7 @@ export const Lib = {
                                                     "typeString": "uint256"
                                                 },
                                                 "typeName": {
-                                                    "id": 160388,
+                                                    "id": 160574,
                                                     "name": "uint256",
                                                     "nodeType": "ElementaryTypeName",
                                                     "src": "5964:7:233",
@@ -5703,10 +5703,10 @@ export const Lib = {
                                                 "visibility": "internal"
                                             }
                                         ],
-                                        "id": 160391,
+                                        "id": 160577,
                                         "initialValue": {
                                             "hexValue": "30",
-                                            "id": 160390,
+                                            "id": 160576,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -5725,7 +5725,7 @@ export const Lib = {
                                     },
                                     "loopExpression": {
                                         "expression": {
-                                            "id": 160397,
+                                            "id": 160583,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5735,11 +5735,11 @@ export const Lib = {
                                             "prefix": false,
                                             "src": "5997:3:233",
                                             "subExpression": {
-                                                "id": 160396,
+                                                "id": 160582,
                                                 "name": "i",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160389,
+                                                "referencedDeclaration": 160575,
                                                 "src": "5997:1:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5751,7 +5751,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 160398,
+                                        "id": 160584,
                                         "nodeType": "ExpressionStatement",
                                         "src": "5997:3:233"
                                     },
@@ -5763,7 +5763,7 @@ export const Lib = {
                                         "arguments": [
                                             {
                                                 "hexValue": "202020205d",
-                                                "id": 160432,
+                                                "id": 160618,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -5786,18 +5786,18 @@ export const Lib = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 160429,
+                                                "id": 160615,
                                                 "name": "console2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 56967,
+                                                "referencedDeclaration": 57073,
                                                 "src": "6206:8:233",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_console2_$56967_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_console2_$57073_$",
                                                     "typeString": "type(library console2)"
                                                 }
                                             },
-                                            "id": 160431,
+                                            "id": 160617,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5805,14 +5805,14 @@ export const Lib = {
                                             "memberLocation": "6215:3:233",
                                             "memberName": "log",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 49481,
+                                            "referencedDeclaration": 49587,
                                             "src": "6206:12:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory) pure"
                                             }
                                         },
-                                        "id": 160433,
+                                        "id": 160619,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5828,7 +5828,7 @@ export const Lib = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 160434,
+                                    "id": 160620,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6206:21:233"
                                 },
@@ -5837,7 +5837,7 @@ export const Lib = {
                                         "arguments": [
                                             {
                                                 "hexValue": "",
-                                                "id": 160438,
+                                                "id": 160624,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -5860,18 +5860,18 @@ export const Lib = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 160435,
+                                                "id": 160621,
                                                 "name": "console2",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 56967,
+                                                "referencedDeclaration": 57073,
                                                 "src": "6237:8:233",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_console2_$56967_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_console2_$57073_$",
                                                     "typeString": "type(library console2)"
                                                 }
                                             },
-                                            "id": 160437,
+                                            "id": 160623,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -5879,14 +5879,14 @@ export const Lib = {
                                             "memberLocation": "6246:3:233",
                                             "memberName": "log",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 49481,
+                                            "referencedDeclaration": 49587,
                                             "src": "6237:12:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$__$",
                                                 "typeString": "function (string memory) pure"
                                             }
                                         },
-                                        "id": 160439,
+                                        "id": 160625,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5902,7 +5902,7 @@ export const Lib = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 160440,
+                                    "id": 160626,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6237:16:233"
                                 }
@@ -5914,17 +5914,17 @@ export const Lib = {
                         "name": "logArray",
                         "nameLocation": "5821:8:233",
                         "parameters": {
-                            "id": 160379,
+                            "id": 160565,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160375,
+                                    "id": 160561,
                                     "mutability": "mutable",
                                     "name": "prelude",
                                     "nameLocation": "5853:7:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160442,
+                                    "scope": 160628,
                                     "src": "5839:21:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5933,7 +5933,7 @@ export const Lib = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 160374,
+                                        "id": 160560,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5839:6:233",
@@ -5946,12 +5946,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160378,
+                                    "id": 160564,
                                     "mutability": "mutable",
                                     "name": "array",
                                     "nameLocation": "5887:5:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160442,
+                                    "scope": 160628,
                                     "src": "5870:22:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -5961,7 +5961,7 @@ export const Lib = {
                                     },
                                     "typeName": {
                                         "baseType": {
-                                            "id": 160376,
+                                            "id": 160562,
                                             "name": "uint256",
                                             "nodeType": "ElementaryTypeName",
                                             "src": "5870:7:233",
@@ -5970,7 +5970,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             }
                                         },
-                                        "id": 160377,
+                                        "id": 160563,
                                         "nodeType": "ArrayTypeName",
                                         "src": "5870:9:233",
                                         "typeDescriptions": {
@@ -5984,23 +5984,23 @@ export const Lib = {
                             "src": "5829:69:233"
                         },
                         "returnParameters": {
-                            "id": 160380,
+                            "id": 160566,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "5913:0:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 160479,
+                        "id": 160665,
                         "nodeType": "FunctionDefinition",
                         "src": "6266:333:233",
                         "nodes": [],
                         "body": {
-                            "id": 160478,
+                            "id": 160664,
                             "nodeType": "Block",
                             "src": "6403:196:233",
                             "nodes": [],
@@ -6013,17 +6013,17 @@ export const Lib = {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
                                                 },
-                                                "id": 160456,
+                                                "id": 160642,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 160454,
+                                                    "id": 160640,
                                                     "name": "minimum",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160446,
+                                                    "referencedDeclaration": 160632,
                                                     "src": "6421:7:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -6033,11 +6033,11 @@ export const Lib = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "<=",
                                                 "rightExpression": {
-                                                    "id": 160455,
+                                                    "id": 160641,
                                                     "name": "maximum",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160448,
+                                                    "referencedDeclaration": 160634,
                                                     "src": "6432:7:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_uint256",
@@ -6052,7 +6052,7 @@ export const Lib = {
                                             },
                                             {
                                                 "hexValue": "4c69623a206d696e203e206d6178",
-                                                "id": 160457,
+                                                "id": 160643,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -6078,7 +6078,7 @@ export const Lib = {
                                                     "typeString": "literal_string \"Lib: min > max\""
                                                 }
                                             ],
-                                            "id": 160453,
+                                            "id": 160639,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -6092,7 +6092,7 @@ export const Lib = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 160458,
+                                        "id": 160644,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6108,23 +6108,23 @@ export const Lib = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 160459,
+                                    "id": 160645,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6413:45:233"
                                 },
                                 {
                                     "assignments": [
-                                        160461
+                                        160647
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160461,
+                                            "id": 160647,
                                             "mutability": "mutable",
                                             "name": "rangeSize",
                                             "nameLocation": "6477:9:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160478,
+                                            "scope": 160664,
                                             "src": "6469:17:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6133,7 +6133,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 160460,
+                                                "id": 160646,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "6469:7:233",
@@ -6145,13 +6145,13 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160467,
+                                    "id": 160653,
                                     "initialValue": {
                                         "commonType": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 160466,
+                                        "id": 160652,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6161,17 +6161,17 @@ export const Lib = {
                                                 "typeIdentifier": "t_uint256",
                                                 "typeString": "uint256"
                                             },
-                                            "id": 160464,
+                                            "id": 160650,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 160462,
+                                                "id": 160648,
                                                 "name": "maximum",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160448,
+                                                "referencedDeclaration": 160634,
                                                 "src": "6489:7:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6181,11 +6181,11 @@ export const Lib = {
                                             "nodeType": "BinaryOperation",
                                             "operator": "-",
                                             "rightExpression": {
-                                                "id": 160463,
+                                                "id": 160649,
                                                 "name": "minimum",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160446,
+                                                "referencedDeclaration": 160632,
                                                 "src": "6499:7:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -6202,7 +6202,7 @@ export const Lib = {
                                         "operator": "+",
                                         "rightExpression": {
                                             "hexValue": "31",
-                                            "id": 160465,
+                                            "id": 160651,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -6227,17 +6227,17 @@ export const Lib = {
                                 },
                                 {
                                     "assignments": [
-                                        160469
+                                        160655
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160469,
+                                            "id": 160655,
                                             "mutability": "mutable",
                                             "name": "modValue",
                                             "nameLocation": "6528:8:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160478,
+                                            "scope": 160664,
                                             "src": "6520:16:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6246,7 +6246,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 160468,
+                                                "id": 160654,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "6520:7:233",
@@ -6258,23 +6258,23 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160473,
+                                    "id": 160659,
                                     "initialValue": {
                                         "commonType": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 160472,
+                                        "id": 160658,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160470,
+                                            "id": 160656,
                                             "name": "value",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160444,
+                                            "referencedDeclaration": 160630,
                                             "src": "6539:5:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -6284,11 +6284,11 @@ export const Lib = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "%",
                                         "rightExpression": {
-                                            "id": 160471,
+                                            "id": 160657,
                                             "name": "rangeSize",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160461,
+                                            "referencedDeclaration": 160647,
                                             "src": "6547:9:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -6310,17 +6310,17 @@ export const Lib = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 160476,
+                                        "id": 160662,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160474,
+                                            "id": 160660,
                                             "name": "modValue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160469,
+                                            "referencedDeclaration": 160655,
                                             "src": "6574:8:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -6330,11 +6330,11 @@ export const Lib = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "+",
                                         "rightExpression": {
-                                            "id": 160475,
+                                            "id": 160661,
                                             "name": "minimum",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160446,
+                                            "referencedDeclaration": 160632,
                                             "src": "6585:7:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -6347,8 +6347,8 @@ export const Lib = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 160452,
-                                    "id": 160477,
+                                    "functionReturnParameters": 160638,
+                                    "id": 160663,
                                     "nodeType": "Return",
                                     "src": "6567:25:233"
                                 }
@@ -6360,17 +6360,17 @@ export const Lib = {
                         "name": "normalizeToRange",
                         "nameLocation": "6275:16:233",
                         "parameters": {
-                            "id": 160449,
+                            "id": 160635,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160444,
+                                    "id": 160630,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "6309:5:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160479,
+                                    "scope": 160665,
                                     "src": "6301:13:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6379,7 +6379,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160443,
+                                        "id": 160629,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6301:7:233",
@@ -6392,12 +6392,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160446,
+                                    "id": 160632,
                                     "mutability": "mutable",
                                     "name": "minimum",
                                     "nameLocation": "6332:7:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160479,
+                                    "scope": 160665,
                                     "src": "6324:15:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6406,7 +6406,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160445,
+                                        "id": 160631,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6324:7:233",
@@ -6419,12 +6419,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160448,
+                                    "id": 160634,
                                     "mutability": "mutable",
                                     "name": "maximum",
                                     "nameLocation": "6357:7:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160479,
+                                    "scope": 160665,
                                     "src": "6349:15:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6433,7 +6433,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160447,
+                                        "id": 160633,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6349:7:233",
@@ -6448,17 +6448,17 @@ export const Lib = {
                             "src": "6291:79:233"
                         },
                         "returnParameters": {
-                            "id": 160452,
+                            "id": 160638,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160451,
+                                    "id": 160637,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160479,
+                                    "scope": 160665,
                                     "src": "6394:7:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6467,7 +6467,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160450,
+                                        "id": 160636,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6394:7:233",
@@ -6481,18 +6481,18 @@ export const Lib = {
                             ],
                             "src": "6393:9:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 160525,
+                        "id": 160711,
                         "nodeType": "FunctionDefinition",
                         "src": "6605:401:233",
                         "nodes": [],
                         "body": {
-                            "id": 160524,
+                            "id": 160710,
                             "nodeType": "Block",
                             "src": "6738:268:233",
                             "nodes": [],
@@ -6505,17 +6505,17 @@ export const Lib = {
                                                     "typeIdentifier": "t_int256",
                                                     "typeString": "int256"
                                                 },
-                                                "id": 160493,
+                                                "id": 160679,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": false,
                                                 "lValueRequested": false,
                                                 "leftExpression": {
-                                                    "id": 160491,
+                                                    "id": 160677,
                                                     "name": "minimum",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160483,
+                                                    "referencedDeclaration": 160669,
                                                     "src": "6756:7:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -6525,11 +6525,11 @@ export const Lib = {
                                                 "nodeType": "BinaryOperation",
                                                 "operator": "<=",
                                                 "rightExpression": {
-                                                    "id": 160492,
+                                                    "id": 160678,
                                                     "name": "maximum",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 160485,
+                                                    "referencedDeclaration": 160671,
                                                     "src": "6767:7:233",
                                                     "typeDescriptions": {
                                                         "typeIdentifier": "t_int256",
@@ -6544,7 +6544,7 @@ export const Lib = {
                                             },
                                             {
                                                 "hexValue": "4c69623a206d696e203e206d6178",
-                                                "id": 160494,
+                                                "id": 160680,
                                                 "isConstant": false,
                                                 "isLValue": false,
                                                 "isPure": true,
@@ -6570,7 +6570,7 @@ export const Lib = {
                                                     "typeString": "literal_string \"Lib: min > max\""
                                                 }
                                             ],
-                                            "id": 160490,
+                                            "id": 160676,
                                             "name": "require",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [
@@ -6584,7 +6584,7 @@ export const Lib = {
                                                 "typeString": "function (bool,string memory) pure"
                                             }
                                         },
-                                        "id": 160495,
+                                        "id": 160681,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6600,23 +6600,23 @@ export const Lib = {
                                             "typeString": "tuple()"
                                         }
                                     },
-                                    "id": 160496,
+                                    "id": 160682,
                                     "nodeType": "ExpressionStatement",
                                     "src": "6748:45:233"
                                 },
                                 {
                                     "assignments": [
-                                        160498
+                                        160684
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160498,
+                                            "id": 160684,
                                             "mutability": "mutable",
                                             "name": "rangeSize",
                                             "nameLocation": "6811:9:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160524,
+                                            "scope": 160710,
                                             "src": "6804:16:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6625,7 +6625,7 @@ export const Lib = {
                                                 "typeString": "int256"
                                             },
                                             "typeName": {
-                                                "id": 160497,
+                                                "id": 160683,
                                                 "name": "int256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "6804:6:233",
@@ -6637,13 +6637,13 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160504,
+                                    "id": 160690,
                                     "initialValue": {
                                         "commonType": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         },
-                                        "id": 160503,
+                                        "id": 160689,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -6653,17 +6653,17 @@ export const Lib = {
                                                 "typeIdentifier": "t_int256",
                                                 "typeString": "int256"
                                             },
-                                            "id": 160501,
+                                            "id": 160687,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
                                             "lValueRequested": false,
                                             "leftExpression": {
-                                                "id": 160499,
+                                                "id": 160685,
                                                 "name": "maximum",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160485,
+                                                "referencedDeclaration": 160671,
                                                 "src": "6823:7:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -6673,11 +6673,11 @@ export const Lib = {
                                             "nodeType": "BinaryOperation",
                                             "operator": "-",
                                             "rightExpression": {
-                                                "id": 160500,
+                                                "id": 160686,
                                                 "name": "minimum",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160483,
+                                                "referencedDeclaration": 160669,
                                                 "src": "6833:7:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -6694,7 +6694,7 @@ export const Lib = {
                                         "operator": "+",
                                         "rightExpression": {
                                             "hexValue": "31",
-                                            "id": 160502,
+                                            "id": 160688,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -6719,17 +6719,17 @@ export const Lib = {
                                 },
                                 {
                                     "assignments": [
-                                        160506
+                                        160692
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160506,
+                                            "id": 160692,
                                             "mutability": "mutable",
                                             "name": "modValue",
                                             "nameLocation": "6861:8:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160524,
+                                            "scope": 160710,
                                             "src": "6854:15:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -6738,7 +6738,7 @@ export const Lib = {
                                                 "typeString": "int256"
                                             },
                                             "typeName": {
-                                                "id": 160505,
+                                                "id": 160691,
                                                 "name": "int256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "6854:6:233",
@@ -6750,23 +6750,23 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160510,
+                                    "id": 160696,
                                     "initialValue": {
                                         "commonType": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         },
-                                        "id": 160509,
+                                        "id": 160695,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160507,
+                                            "id": 160693,
                                             "name": "value",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160481,
+                                            "referencedDeclaration": 160667,
                                             "src": "6872:5:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -6776,11 +6776,11 @@ export const Lib = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "%",
                                         "rightExpression": {
-                                            "id": 160508,
+                                            "id": 160694,
                                             "name": "rangeSize",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160498,
+                                            "referencedDeclaration": 160684,
                                             "src": "6880:9:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -6802,17 +6802,17 @@ export const Lib = {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         },
-                                        "id": 160513,
+                                        "id": 160699,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160511,
+                                            "id": 160697,
                                             "name": "modValue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160506,
+                                            "referencedDeclaration": 160692,
                                             "src": "6904:8:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -6823,7 +6823,7 @@ export const Lib = {
                                         "operator": "<",
                                         "rightExpression": {
                                             "hexValue": "30",
-                                            "id": 160512,
+                                            "id": 160698,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": true,
@@ -6843,27 +6843,27 @@ export const Lib = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "id": 160519,
+                                    "id": 160705,
                                     "nodeType": "IfStatement",
                                     "src": "6900:64:233",
                                     "trueBody": {
-                                        "id": 160518,
+                                        "id": 160704,
                                         "nodeType": "Block",
                                         "src": "6918:46:233",
                                         "statements": [
                                             {
                                                 "expression": {
-                                                    "id": 160516,
+                                                    "id": 160702,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
                                                     "lValueRequested": false,
                                                     "leftHandSide": {
-                                                        "id": 160514,
+                                                        "id": 160700,
                                                         "name": "modValue",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 160506,
+                                                        "referencedDeclaration": 160692,
                                                         "src": "6932:8:233",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -6873,11 +6873,11 @@ export const Lib = {
                                                     "nodeType": "Assignment",
                                                     "operator": "+=",
                                                     "rightHandSide": {
-                                                        "id": 160515,
+                                                        "id": 160701,
                                                         "name": "rangeSize",
                                                         "nodeType": "Identifier",
                                                         "overloadedDeclarations": [],
-                                                        "referencedDeclaration": 160498,
+                                                        "referencedDeclaration": 160684,
                                                         "src": "6944:9:233",
                                                         "typeDescriptions": {
                                                             "typeIdentifier": "t_int256",
@@ -6890,7 +6890,7 @@ export const Lib = {
                                                         "typeString": "int256"
                                                     }
                                                 },
-                                                "id": 160517,
+                                                "id": 160703,
                                                 "nodeType": "ExpressionStatement",
                                                 "src": "6932:21:233"
                                             }
@@ -6903,17 +6903,17 @@ export const Lib = {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         },
-                                        "id": 160522,
+                                        "id": 160708,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160520,
+                                            "id": 160706,
                                             "name": "modValue",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160506,
+                                            "referencedDeclaration": 160692,
                                             "src": "6981:8:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -6923,11 +6923,11 @@ export const Lib = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "+",
                                         "rightExpression": {
-                                            "id": 160521,
+                                            "id": 160707,
                                             "name": "minimum",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160483,
+                                            "referencedDeclaration": 160669,
                                             "src": "6992:7:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_int256",
@@ -6940,8 +6940,8 @@ export const Lib = {
                                             "typeString": "int256"
                                         }
                                     },
-                                    "functionReturnParameters": 160489,
-                                    "id": 160523,
+                                    "functionReturnParameters": 160675,
+                                    "id": 160709,
                                     "nodeType": "Return",
                                     "src": "6974:25:233"
                                 }
@@ -6953,17 +6953,17 @@ export const Lib = {
                         "name": "normalizeToRange",
                         "nameLocation": "6614:16:233",
                         "parameters": {
-                            "id": 160486,
+                            "id": 160672,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160481,
+                                    "id": 160667,
                                     "mutability": "mutable",
                                     "name": "value",
                                     "nameLocation": "6647:5:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160525,
+                                    "scope": 160711,
                                     "src": "6640:12:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6972,7 +6972,7 @@ export const Lib = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 160480,
+                                        "id": 160666,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6640:6:233",
@@ -6985,12 +6985,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160483,
+                                    "id": 160669,
                                     "mutability": "mutable",
                                     "name": "minimum",
                                     "nameLocation": "6669:7:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160525,
+                                    "scope": 160711,
                                     "src": "6662:14:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -6999,7 +6999,7 @@ export const Lib = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 160482,
+                                        "id": 160668,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6662:6:233",
@@ -7012,12 +7012,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160485,
+                                    "id": 160671,
                                     "mutability": "mutable",
                                     "name": "maximum",
                                     "nameLocation": "6693:7:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160525,
+                                    "scope": 160711,
                                     "src": "6686:14:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7026,7 +7026,7 @@ export const Lib = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 160484,
+                                        "id": 160670,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6686:6:233",
@@ -7041,17 +7041,17 @@ export const Lib = {
                             "src": "6630:76:233"
                         },
                         "returnParameters": {
-                            "id": 160489,
+                            "id": 160675,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160488,
+                                    "id": 160674,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160525,
+                                    "scope": 160711,
                                     "src": "6730:6:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7060,7 +7060,7 @@ export const Lib = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 160487,
+                                        "id": 160673,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "6730:6:233",
@@ -7074,35 +7074,35 @@ export const Lib = {
                             ],
                             "src": "6729:8:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 160549,
+                        "id": 160735,
                         "nodeType": "FunctionDefinition",
                         "src": "7012:205:233",
                         "nodes": [],
                         "body": {
-                            "id": 160548,
+                            "id": 160734,
                             "nodeType": "Block",
                             "src": "7130:87:233",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        160537
+                                        160723
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160537,
+                                            "id": 160723,
                                             "mutability": "mutable",
                                             "name": "delta",
                                             "nameLocation": "7148:5:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160548,
+                                            "scope": 160734,
                                             "src": "7140:13:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -7111,7 +7111,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 160536,
+                                                "id": 160722,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "7140:7:233",
@@ -7123,15 +7123,15 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160543,
+                                    "id": 160729,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 160540,
+                                                "id": 160726,
                                                 "name": "a",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160527,
+                                                "referencedDeclaration": 160713,
                                                 "src": "7170:1:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7139,11 +7139,11 @@ export const Lib = {
                                                 }
                                             },
                                             {
-                                                "id": 160541,
+                                                "id": 160727,
                                                 "name": "b",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160529,
+                                                "referencedDeclaration": 160715,
                                                 "src": "7173:1:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -7163,18 +7163,18 @@ export const Lib = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 160538,
+                                                "id": 160724,
                                                 "name": "stdMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35646,
+                                                "referencedDeclaration": 35752,
                                                 "src": "7156:7:233",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_stdMath_$35646_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_stdMath_$35752_$",
                                                     "typeString": "type(library stdMath)"
                                                 }
                                             },
-                                            "id": 160539,
+                                            "id": 160725,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7182,14 +7182,14 @@ export const Lib = {
                                             "memberLocation": "7164:5:233",
                                             "memberName": "delta",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 35557,
+                                            "referencedDeclaration": 35663,
                                             "src": "7156:13:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 160542,
+                                        "id": 160728,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7214,17 +7214,17 @@ export const Lib = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 160546,
+                                        "id": 160732,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160544,
+                                            "id": 160730,
                                             "name": "delta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160537,
+                                            "referencedDeclaration": 160723,
                                             "src": "7192:5:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7234,11 +7234,11 @@ export const Lib = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<=",
                                         "rightExpression": {
-                                            "id": 160545,
+                                            "id": 160731,
                                             "name": "tolerance",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160531,
+                                            "referencedDeclaration": 160717,
                                             "src": "7201:9:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7251,8 +7251,8 @@ export const Lib = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 160535,
-                                    "id": 160547,
+                                    "functionReturnParameters": 160721,
+                                    "id": 160733,
                                     "nodeType": "Return",
                                     "src": "7185:25:233"
                                 }
@@ -7264,17 +7264,17 @@ export const Lib = {
                         "name": "approxEq",
                         "nameLocation": "7021:8:233",
                         "parameters": {
-                            "id": 160532,
+                            "id": 160718,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160527,
+                                    "id": 160713,
                                     "mutability": "mutable",
                                     "name": "a",
                                     "nameLocation": "7047:1:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160549,
+                                    "scope": 160735,
                                     "src": "7039:9:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7283,7 +7283,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160526,
+                                        "id": 160712,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7039:7:233",
@@ -7296,12 +7296,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160529,
+                                    "id": 160715,
                                     "mutability": "mutable",
                                     "name": "b",
                                     "nameLocation": "7066:1:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160549,
+                                    "scope": 160735,
                                     "src": "7058:9:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7310,7 +7310,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160528,
+                                        "id": 160714,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7058:7:233",
@@ -7323,12 +7323,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160531,
+                                    "id": 160717,
                                     "mutability": "mutable",
                                     "name": "tolerance",
                                     "nameLocation": "7085:9:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160549,
+                                    "scope": 160735,
                                     "src": "7077:17:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7337,7 +7337,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160530,
+                                        "id": 160716,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7077:7:233",
@@ -7352,17 +7352,17 @@ export const Lib = {
                             "src": "7029:71:233"
                         },
                         "returnParameters": {
-                            "id": 160535,
+                            "id": 160721,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160534,
+                                    "id": 160720,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160549,
+                                    "scope": 160735,
                                     "src": "7124:4:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7371,7 +7371,7 @@ export const Lib = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 160533,
+                                        "id": 160719,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7124:4:233",
@@ -7385,35 +7385,35 @@ export const Lib = {
                             ],
                             "src": "7123:6:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 160573,
+                        "id": 160759,
                         "nodeType": "FunctionDefinition",
                         "src": "7223:203:233",
                         "nodes": [],
                         "body": {
-                            "id": 160572,
+                            "id": 160758,
                             "nodeType": "Block",
                             "src": "7339:87:233",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        160561
+                                        160747
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 160561,
+                                            "id": 160747,
                                             "mutability": "mutable",
                                             "name": "delta",
                                             "nameLocation": "7357:5:233",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 160572,
+                                            "scope": 160758,
                                             "src": "7349:13:233",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -7422,7 +7422,7 @@ export const Lib = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 160560,
+                                                "id": 160746,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "7349:7:233",
@@ -7434,15 +7434,15 @@ export const Lib = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 160567,
+                                    "id": 160753,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 160564,
+                                                "id": 160750,
                                                 "name": "a",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160551,
+                                                "referencedDeclaration": 160737,
                                                 "src": "7379:1:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -7450,11 +7450,11 @@ export const Lib = {
                                                 }
                                             },
                                             {
-                                                "id": 160565,
+                                                "id": 160751,
                                                 "name": "b",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 160553,
+                                                "referencedDeclaration": 160739,
                                                 "src": "7382:1:233",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -7474,18 +7474,18 @@ export const Lib = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 160562,
+                                                "id": 160748,
                                                 "name": "stdMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 35646,
+                                                "referencedDeclaration": 35752,
                                                 "src": "7365:7:233",
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_stdMath_$35646_$",
+                                                    "typeIdentifier": "t_type$_t_contract$_stdMath_$35752_$",
                                                     "typeString": "type(library stdMath)"
                                                 }
                                             },
-                                            "id": 160563,
+                                            "id": 160749,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7493,14 +7493,14 @@ export const Lib = {
                                             "memberLocation": "7373:5:233",
                                             "memberName": "delta",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 35593,
+                                            "referencedDeclaration": 35699,
                                             "src": "7365:13:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_int256_$_t_int256_$returns$_t_uint256_$",
                                                 "typeString": "function (int256,int256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 160566,
+                                        "id": 160752,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7525,17 +7525,17 @@ export const Lib = {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         },
-                                        "id": 160570,
+                                        "id": 160756,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
                                         "lValueRequested": false,
                                         "leftExpression": {
-                                            "id": 160568,
+                                            "id": 160754,
                                             "name": "delta",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160561,
+                                            "referencedDeclaration": 160747,
                                             "src": "7401:5:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7545,11 +7545,11 @@ export const Lib = {
                                         "nodeType": "BinaryOperation",
                                         "operator": "<=",
                                         "rightExpression": {
-                                            "id": 160569,
+                                            "id": 160755,
                                             "name": "tolerance",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 160555,
+                                            "referencedDeclaration": 160741,
                                             "src": "7410:9:233",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_uint256",
@@ -7562,8 +7562,8 @@ export const Lib = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 160559,
-                                    "id": 160571,
+                                    "functionReturnParameters": 160745,
+                                    "id": 160757,
                                     "nodeType": "Return",
                                     "src": "7394:25:233"
                                 }
@@ -7575,17 +7575,17 @@ export const Lib = {
                         "name": "approxEq",
                         "nameLocation": "7232:8:233",
                         "parameters": {
-                            "id": 160556,
+                            "id": 160742,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160551,
+                                    "id": 160737,
                                     "mutability": "mutable",
                                     "name": "a",
                                     "nameLocation": "7257:1:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160573,
+                                    "scope": 160759,
                                     "src": "7250:8:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7594,7 +7594,7 @@ export const Lib = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 160550,
+                                        "id": 160736,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7250:6:233",
@@ -7607,12 +7607,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160553,
+                                    "id": 160739,
                                     "mutability": "mutable",
                                     "name": "b",
                                     "nameLocation": "7275:1:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160573,
+                                    "scope": 160759,
                                     "src": "7268:8:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7621,7 +7621,7 @@ export const Lib = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 160552,
+                                        "id": 160738,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7268:6:233",
@@ -7634,12 +7634,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160555,
+                                    "id": 160741,
                                     "mutability": "mutable",
                                     "name": "tolerance",
                                     "nameLocation": "7294:9:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160573,
+                                    "scope": 160759,
                                     "src": "7286:17:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7648,7 +7648,7 @@ export const Lib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 160554,
+                                        "id": 160740,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7286:7:233",
@@ -7663,17 +7663,17 @@ export const Lib = {
                             "src": "7240:69:233"
                         },
                         "returnParameters": {
-                            "id": 160559,
+                            "id": 160745,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160558,
+                                    "id": 160744,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160573,
+                                    "scope": 160759,
                                     "src": "7333:4:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -7682,7 +7682,7 @@ export const Lib = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 160557,
+                                        "id": 160743,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7333:4:233",
@@ -7696,18 +7696,18 @@ export const Lib = {
                             ],
                             "src": "7332:6:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 160597,
+                        "id": 160783,
                         "nodeType": "FunctionDefinition",
                         "src": "7432:175:233",
                         "nodes": [],
                         "body": {
-                            "id": 160596,
+                            "id": 160782,
                             "nodeType": "Block",
                             "src": "7505:102:233",
                             "nodes": [],
@@ -7718,7 +7718,7 @@ export const Lib = {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
                                         },
-                                        "id": 160594,
+                                        "id": 160780,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -7728,11 +7728,11 @@ export const Lib = {
                                                 {
                                                     "arguments": [
                                                         {
-                                                            "id": 160585,
+                                                            "id": 160771,
                                                             "name": "b1",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160575,
+                                                            "referencedDeclaration": 160761,
                                                             "src": "7561:2:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes_memory_ptr",
@@ -7748,7 +7748,7 @@ export const Lib = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 160583,
+                                                            "id": 160769,
                                                             "name": "abi",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -7759,7 +7759,7 @@ export const Lib = {
                                                                 "typeString": "abi"
                                                             }
                                                         },
-                                                        "id": 160584,
+                                                        "id": 160770,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7773,7 +7773,7 @@ export const Lib = {
                                                             "typeString": "function () pure returns (bytes memory)"
                                                         }
                                                     },
-                                                    "id": 160586,
+                                                    "id": 160772,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -7797,7 +7797,7 @@ export const Lib = {
                                                         "typeString": "bytes memory"
                                                     }
                                                 ],
-                                                "id": 160582,
+                                                "id": 160768,
                                                 "name": "keccak256",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -7808,7 +7808,7 @@ export const Lib = {
                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                 }
                                             },
-                                            "id": 160587,
+                                            "id": 160773,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7831,11 +7831,11 @@ export const Lib = {
                                                 {
                                                     "arguments": [
                                                         {
-                                                            "id": 160591,
+                                                            "id": 160777,
                                                             "name": "b2",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160577,
+                                                            "referencedDeclaration": 160763,
                                                             "src": "7596:2:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes_memory_ptr",
@@ -7851,7 +7851,7 @@ export const Lib = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 160589,
+                                                            "id": 160775,
                                                             "name": "abi",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -7862,7 +7862,7 @@ export const Lib = {
                                                                 "typeString": "abi"
                                                             }
                                                         },
-                                                        "id": 160590,
+                                                        "id": 160776,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -7876,7 +7876,7 @@ export const Lib = {
                                                             "typeString": "function () pure returns (bytes memory)"
                                                         }
                                                     },
-                                                    "id": 160592,
+                                                    "id": 160778,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -7900,7 +7900,7 @@ export const Lib = {
                                                         "typeString": "bytes memory"
                                                     }
                                                 ],
-                                                "id": 160588,
+                                                "id": 160774,
                                                 "name": "keccak256",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -7911,7 +7911,7 @@ export const Lib = {
                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                 }
                                             },
-                                            "id": 160593,
+                                            "id": 160779,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -7933,8 +7933,8 @@ export const Lib = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 160581,
-                                    "id": 160595,
+                                    "functionReturnParameters": 160767,
+                                    "id": 160781,
                                     "nodeType": "Return",
                                     "src": "7515:85:233"
                                 }
@@ -7947,17 +7947,17 @@ export const Lib = {
                         "name": "eq",
                         "nameLocation": "7441:2:233",
                         "parameters": {
-                            "id": 160578,
+                            "id": 160764,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160575,
+                                    "id": 160761,
                                     "mutability": "mutable",
                                     "name": "b1",
                                     "nameLocation": "7457:2:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160597,
+                                    "scope": 160783,
                                     "src": "7444:15:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7966,7 +7966,7 @@ export const Lib = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 160574,
+                                        "id": 160760,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7444:5:233",
@@ -7979,12 +7979,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160577,
+                                    "id": 160763,
                                     "mutability": "mutable",
                                     "name": "b2",
                                     "nameLocation": "7474:2:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160597,
+                                    "scope": 160783,
                                     "src": "7461:15:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -7993,7 +7993,7 @@ export const Lib = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 160576,
+                                        "id": 160762,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7461:5:233",
@@ -8008,17 +8008,17 @@ export const Lib = {
                             "src": "7443:34:233"
                         },
                         "returnParameters": {
-                            "id": 160581,
+                            "id": 160767,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160580,
+                                    "id": 160766,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160597,
+                                    "scope": 160783,
                                     "src": "7499:4:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8027,7 +8027,7 @@ export const Lib = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 160579,
+                                        "id": 160765,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7499:4:233",
@@ -8041,18 +8041,18 @@ export const Lib = {
                             ],
                             "src": "7498:6:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 160621,
+                        "id": 160807,
                         "nodeType": "FunctionDefinition",
                         "src": "7613:176:233",
                         "nodes": [],
                         "body": {
-                            "id": 160620,
+                            "id": 160806,
                             "nodeType": "Block",
                             "src": "7687:102:233",
                             "nodes": [],
@@ -8063,7 +8063,7 @@ export const Lib = {
                                             "typeIdentifier": "t_bytes32",
                                             "typeString": "bytes32"
                                         },
-                                        "id": 160618,
+                                        "id": 160804,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -8073,11 +8073,11 @@ export const Lib = {
                                                 {
                                                     "arguments": [
                                                         {
-                                                            "id": 160609,
+                                                            "id": 160795,
                                                             "name": "b1",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160599,
+                                                            "referencedDeclaration": 160785,
                                                             "src": "7743:2:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes_memory_ptr",
@@ -8093,7 +8093,7 @@ export const Lib = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 160607,
+                                                            "id": 160793,
                                                             "name": "abi",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -8104,7 +8104,7 @@ export const Lib = {
                                                                 "typeString": "abi"
                                                             }
                                                         },
-                                                        "id": 160608,
+                                                        "id": 160794,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8118,7 +8118,7 @@ export const Lib = {
                                                             "typeString": "function () pure returns (bytes memory)"
                                                         }
                                                     },
-                                                    "id": 160610,
+                                                    "id": 160796,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -8142,7 +8142,7 @@ export const Lib = {
                                                         "typeString": "bytes memory"
                                                     }
                                                 ],
-                                                "id": 160606,
+                                                "id": 160792,
                                                 "name": "keccak256",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -8153,7 +8153,7 @@ export const Lib = {
                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                 }
                                             },
-                                            "id": 160611,
+                                            "id": 160797,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -8176,11 +8176,11 @@ export const Lib = {
                                                 {
                                                     "arguments": [
                                                         {
-                                                            "id": 160615,
+                                                            "id": 160801,
                                                             "name": "b2",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
-                                                            "referencedDeclaration": 160601,
+                                                            "referencedDeclaration": 160787,
                                                             "src": "7778:2:233",
                                                             "typeDescriptions": {
                                                                 "typeIdentifier": "t_bytes_memory_ptr",
@@ -8196,7 +8196,7 @@ export const Lib = {
                                                             }
                                                         ],
                                                         "expression": {
-                                                            "id": 160613,
+                                                            "id": 160799,
                                                             "name": "abi",
                                                             "nodeType": "Identifier",
                                                             "overloadedDeclarations": [],
@@ -8207,7 +8207,7 @@ export const Lib = {
                                                                 "typeString": "abi"
                                                             }
                                                         },
-                                                        "id": 160614,
+                                                        "id": 160800,
                                                         "isConstant": false,
                                                         "isLValue": false,
                                                         "isPure": true,
@@ -8221,7 +8221,7 @@ export const Lib = {
                                                             "typeString": "function () pure returns (bytes memory)"
                                                         }
                                                     },
-                                                    "id": 160616,
+                                                    "id": 160802,
                                                     "isConstant": false,
                                                     "isLValue": false,
                                                     "isPure": false,
@@ -8245,7 +8245,7 @@ export const Lib = {
                                                         "typeString": "bytes memory"
                                                     }
                                                 ],
-                                                "id": 160612,
+                                                "id": 160798,
                                                 "name": "keccak256",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -8256,7 +8256,7 @@ export const Lib = {
                                                     "typeString": "function (bytes memory) pure returns (bytes32)"
                                                 }
                                             },
-                                            "id": 160617,
+                                            "id": 160803,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -8278,8 +8278,8 @@ export const Lib = {
                                             "typeString": "bool"
                                         }
                                     },
-                                    "functionReturnParameters": 160605,
-                                    "id": 160619,
+                                    "functionReturnParameters": 160791,
+                                    "id": 160805,
                                     "nodeType": "Return",
                                     "src": "7697:85:233"
                                 }
@@ -8292,17 +8292,17 @@ export const Lib = {
                         "name": "neq",
                         "nameLocation": "7622:3:233",
                         "parameters": {
-                            "id": 160602,
+                            "id": 160788,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160599,
+                                    "id": 160785,
                                     "mutability": "mutable",
                                     "name": "b1",
                                     "nameLocation": "7639:2:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160621,
+                                    "scope": 160807,
                                     "src": "7626:15:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8311,7 +8311,7 @@ export const Lib = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 160598,
+                                        "id": 160784,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7626:5:233",
@@ -8324,12 +8324,12 @@ export const Lib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 160601,
+                                    "id": 160787,
                                     "mutability": "mutable",
                                     "name": "b2",
                                     "nameLocation": "7656:2:233",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160621,
+                                    "scope": 160807,
                                     "src": "7643:15:233",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -8338,7 +8338,7 @@ export const Lib = {
                                         "typeString": "bytes"
                                     },
                                     "typeName": {
-                                        "id": 160600,
+                                        "id": 160786,
                                         "name": "bytes",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7643:5:233",
@@ -8353,17 +8353,17 @@ export const Lib = {
                             "src": "7625:34:233"
                         },
                         "returnParameters": {
-                            "id": 160605,
+                            "id": 160791,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 160604,
+                                    "id": 160790,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 160621,
+                                    "scope": 160807,
                                     "src": "7681:4:233",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -8372,7 +8372,7 @@ export const Lib = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 160603,
+                                        "id": 160789,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "7681:4:233",
@@ -8386,7 +8386,7 @@ export const Lib = {
                             ],
                             "src": "7680:6:233"
                         },
-                        "scope": 160622,
+                        "scope": 160808,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "public"
@@ -8399,11 +8399,11 @@ export const Lib = {
                 "contractKind": "library",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    160622
+                    160808
                 ],
                 "name": "Lib",
                 "nameLocation": "220:3:233",
-                "scope": 160623,
+                "scope": 160809,
                 "usedErrors": [],
                 "usedEvents": []
             }

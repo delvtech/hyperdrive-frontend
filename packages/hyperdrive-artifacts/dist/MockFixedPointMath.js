@@ -754,20 +754,20 @@ export const MockFixedPointMath = {
     },
     "ast": {
         "absolutePath": "contracts/test/MockFixedPointMath.sol",
-        "id": 24208,
+        "id": 24311,
         "exportedSymbols": {
             "FixedPointMath": [
                 18822
             ],
             "MockFixedPointMath": [
-                24207
+                24310
             ]
         },
         "nodeType": "SourceUnit",
         "src": "40:2232:134",
         "nodes": [
             {
-                "id": 23975,
+                "id": 24078,
                 "nodeType": "PragmaDirective",
                 "src": "40:23:134",
                 "nodes": [],
@@ -778,19 +778,19 @@ export const MockFixedPointMath = {
                 ]
             },
             {
-                "id": 23977,
+                "id": 24080,
                 "nodeType": "ImportDirective",
                 "src": "65:69:134",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/FixedPointMath.sol",
                 "file": "../src/libraries/FixedPointMath.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 24208,
+                "scope": 24311,
                 "sourceUnit": 18823,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 23976,
+                            "id": 24079,
                             "name": "FixedPointMath",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -804,18 +804,18 @@ export const MockFixedPointMath = {
                 "unitAlias": ""
             },
             {
-                "id": 24207,
+                "id": 24310,
                 "nodeType": "ContractDefinition",
                 "src": "136:2135:134",
                 "nodes": [
                     {
-                        "id": 23980,
+                        "id": 24083,
                         "nodeType": "UsingForDirective",
                         "src": "170:33:134",
                         "nodes": [],
                         "global": false,
                         "libraryName": {
-                            "id": 23978,
+                            "id": 24081,
                             "name": "FixedPointMath",
                             "nameLocations": [
                                 "176:14:134"
@@ -825,7 +825,7 @@ export const MockFixedPointMath = {
                             "src": "176:14:134"
                         },
                         "typeName": {
-                            "id": 23979,
+                            "id": 24082,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "195:7:134",
@@ -836,29 +836,29 @@ export const MockFixedPointMath = {
                         }
                     },
                     {
-                        "id": 24003,
+                        "id": 24106,
                         "nodeType": "FunctionDefinition",
                         "src": "209:208:134",
                         "nodes": [],
                         "body": {
-                            "id": 24002,
+                            "id": 24105,
                             "nodeType": "Block",
                             "src": "326:91:134",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        23992
+                                        24095
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 23992,
+                                            "id": 24095,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "344:6:134",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 24002,
+                                            "scope": 24105,
                                             "src": "336:14:134",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -867,7 +867,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 23991,
+                                                "id": 24094,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "336:7:134",
@@ -879,15 +879,15 @@ export const MockFixedPointMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 23999,
+                                    "id": 24102,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 23995,
+                                                "id": 24098,
                                                 "name": "x",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23982,
+                                                "referencedDeclaration": 24085,
                                                 "src": "379:1:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -895,11 +895,11 @@ export const MockFixedPointMath = {
                                                 }
                                             },
                                             {
-                                                "id": 23996,
+                                                "id": 24099,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23984,
+                                                "referencedDeclaration": 24087,
                                                 "src": "382:1:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -907,11 +907,11 @@ export const MockFixedPointMath = {
                                                 }
                                             },
                                             {
-                                                "id": 23997,
+                                                "id": 24100,
                                                 "name": "d",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23986,
+                                                "referencedDeclaration": 24089,
                                                 "src": "385:1:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -935,7 +935,7 @@ export const MockFixedPointMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 23993,
+                                                "id": 24096,
                                                 "name": "FixedPointMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -946,7 +946,7 @@ export const MockFixedPointMath = {
                                                     "typeString": "type(library FixedPointMath)"
                                                 }
                                             },
-                                            "id": 23994,
+                                            "id": 24097,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -961,7 +961,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 23998,
+                                        "id": 24101,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -982,19 +982,19 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 24000,
+                                        "id": 24103,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23992,
+                                        "referencedDeclaration": 24095,
                                         "src": "404:6:134",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 23990,
-                                    "id": 24001,
+                                    "functionReturnParameters": 24093,
+                                    "id": 24104,
                                     "nodeType": "Return",
                                     "src": "397:13:134"
                                 }
@@ -1007,17 +1007,17 @@ export const MockFixedPointMath = {
                         "name": "mulDivDown",
                         "nameLocation": "218:10:134",
                         "parameters": {
-                            "id": 23987,
+                            "id": 24090,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23982,
+                                    "id": 24085,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "246:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24003,
+                                    "scope": 24106,
                                     "src": "238:9:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1026,7 +1026,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23981,
+                                        "id": 24084,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "238:7:134",
@@ -1039,12 +1039,12 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23984,
+                                    "id": 24087,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "265:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24003,
+                                    "scope": 24106,
                                     "src": "257:9:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1053,7 +1053,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23983,
+                                        "id": 24086,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "257:7:134",
@@ -1066,12 +1066,12 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23986,
+                                    "id": 24089,
                                     "mutability": "mutable",
                                     "name": "d",
                                     "nameLocation": "284:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24003,
+                                    "scope": 24106,
                                     "src": "276:9:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1080,7 +1080,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23985,
+                                        "id": 24088,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "276:7:134",
@@ -1095,17 +1095,17 @@ export const MockFixedPointMath = {
                             "src": "228:63:134"
                         },
                         "returnParameters": {
-                            "id": 23990,
+                            "id": 24093,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23989,
+                                    "id": 24092,
                                     "mutability": "mutable",
                                     "name": "z",
                                     "nameLocation": "323:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24003,
+                                    "scope": 24106,
                                     "src": "315:9:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1114,7 +1114,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23988,
+                                        "id": 24091,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "315:7:134",
@@ -1128,1325 +1128,7 @@ export const MockFixedPointMath = {
                             ],
                             "src": "314:11:134"
                         },
-                        "scope": 24207,
-                        "stateMutability": "pure",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 24023,
-                        "nodeType": "FunctionDefinition",
-                        "src": "423:156:134",
-                        "nodes": [],
-                        "body": {
-                            "id": 24022,
-                            "nodeType": "Block",
-                            "src": "494:85:134",
-                            "nodes": [],
-                            "statements": [
-                                {
-                                    "assignments": [
-                                        24013
-                                    ],
-                                    "declarations": [
-                                        {
-                                            "constant": false,
-                                            "id": 24013,
-                                            "mutability": "mutable",
-                                            "name": "result",
-                                            "nameLocation": "512:6:134",
-                                            "nodeType": "VariableDeclaration",
-                                            "scope": 24022,
-                                            "src": "504:14:134",
-                                            "stateVariable": false,
-                                            "storageLocation": "default",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            },
-                                            "typeName": {
-                                                "id": 24012,
-                                                "name": "uint256",
-                                                "nodeType": "ElementaryTypeName",
-                                                "src": "504:7:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            "visibility": "internal"
-                                        }
-                                    ],
-                                    "id": 24019,
-                                    "initialValue": {
-                                        "arguments": [
-                                            {
-                                                "id": 24016,
-                                                "name": "a",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24005,
-                                                "src": "544:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            {
-                                                "id": 24017,
-                                                "name": "b",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24007,
-                                                "src": "547:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            }
-                                        ],
-                                        "expression": {
-                                            "argumentTypes": [
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                },
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            ],
-                                            "expression": {
-                                                "id": 24014,
-                                                "name": "FixedPointMath",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18822,
-                                                "src": "521:14:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
-                                                    "typeString": "type(library FixedPointMath)"
-                                                }
-                                            },
-                                            "id": 24015,
-                                            "isConstant": false,
-                                            "isLValue": false,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "536:7:134",
-                                            "memberName": "mulDown",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 18085,
-                                            "src": "521:22:134",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                                                "typeString": "function (uint256,uint256) pure returns (uint256)"
-                                            }
-                                        },
-                                        "id": 24018,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "kind": "functionCall",
-                                        "lValueRequested": false,
-                                        "nameLocations": [],
-                                        "names": [],
-                                        "nodeType": "FunctionCall",
-                                        "src": "521:28:134",
-                                        "tryCall": false,
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "nodeType": "VariableDeclarationStatement",
-                                    "src": "504:45:134"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 24020,
-                                        "name": "result",
-                                        "nodeType": "Identifier",
-                                        "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24013,
-                                        "src": "566:6:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "functionReturnParameters": 24011,
-                                    "id": 24021,
-                                    "nodeType": "Return",
-                                    "src": "559:13:134"
-                                }
-                            ]
-                        },
-                        "functionSelector": "0c9b9881",
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "mulDown",
-                        "nameLocation": "432:7:134",
-                        "parameters": {
-                            "id": 24008,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24005,
-                                    "mutability": "mutable",
-                                    "name": "a",
-                                    "nameLocation": "448:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24023,
-                                    "src": "440:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24004,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "440:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 24007,
-                                    "mutability": "mutable",
-                                    "name": "b",
-                                    "nameLocation": "459:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24023,
-                                    "src": "451:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24006,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "451:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "439:22:134"
-                        },
-                        "returnParameters": {
-                            "id": 24011,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24010,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24023,
-                                    "src": "485:7:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24009,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "485:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "484:9:134"
-                        },
-                        "scope": 24207,
-                        "stateMutability": "pure",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 24043,
-                        "nodeType": "FunctionDefinition",
-                        "src": "585:156:134",
-                        "nodes": [],
-                        "body": {
-                            "id": 24042,
-                            "nodeType": "Block",
-                            "src": "656:85:134",
-                            "nodes": [],
-                            "statements": [
-                                {
-                                    "assignments": [
-                                        24033
-                                    ],
-                                    "declarations": [
-                                        {
-                                            "constant": false,
-                                            "id": 24033,
-                                            "mutability": "mutable",
-                                            "name": "result",
-                                            "nameLocation": "674:6:134",
-                                            "nodeType": "VariableDeclaration",
-                                            "scope": 24042,
-                                            "src": "666:14:134",
-                                            "stateVariable": false,
-                                            "storageLocation": "default",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            },
-                                            "typeName": {
-                                                "id": 24032,
-                                                "name": "uint256",
-                                                "nodeType": "ElementaryTypeName",
-                                                "src": "666:7:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            "visibility": "internal"
-                                        }
-                                    ],
-                                    "id": 24039,
-                                    "initialValue": {
-                                        "arguments": [
-                                            {
-                                                "id": 24036,
-                                                "name": "a",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24025,
-                                                "src": "706:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            {
-                                                "id": 24037,
-                                                "name": "b",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24027,
-                                                "src": "709:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            }
-                                        ],
-                                        "expression": {
-                                            "argumentTypes": [
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                },
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            ],
-                                            "expression": {
-                                                "id": 24034,
-                                                "name": "FixedPointMath",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18822,
-                                                "src": "683:14:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
-                                                    "typeString": "type(library FixedPointMath)"
-                                                }
-                                            },
-                                            "id": 24035,
-                                            "isConstant": false,
-                                            "isLValue": false,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "698:7:134",
-                                            "memberName": "divDown",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 18103,
-                                            "src": "683:22:134",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                                                "typeString": "function (uint256,uint256) pure returns (uint256)"
-                                            }
-                                        },
-                                        "id": 24038,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "kind": "functionCall",
-                                        "lValueRequested": false,
-                                        "nameLocations": [],
-                                        "names": [],
-                                        "nodeType": "FunctionCall",
-                                        "src": "683:28:134",
-                                        "tryCall": false,
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "nodeType": "VariableDeclarationStatement",
-                                    "src": "666:45:134"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 24040,
-                                        "name": "result",
-                                        "nodeType": "Identifier",
-                                        "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24033,
-                                        "src": "728:6:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "functionReturnParameters": 24031,
-                                    "id": 24041,
-                                    "nodeType": "Return",
-                                    "src": "721:13:134"
-                                }
-                            ]
-                        },
-                        "functionSelector": "9ba5f52e",
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "divDown",
-                        "nameLocation": "594:7:134",
-                        "parameters": {
-                            "id": 24028,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24025,
-                                    "mutability": "mutable",
-                                    "name": "a",
-                                    "nameLocation": "610:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24043,
-                                    "src": "602:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24024,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "602:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 24027,
-                                    "mutability": "mutable",
-                                    "name": "b",
-                                    "nameLocation": "621:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24043,
-                                    "src": "613:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24026,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "613:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "601:22:134"
-                        },
-                        "returnParameters": {
-                            "id": 24031,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24030,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24043,
-                                    "src": "647:7:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24029,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "647:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "646:9:134"
-                        },
-                        "scope": 24207,
-                        "stateMutability": "pure",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 24066,
-                        "nodeType": "FunctionDefinition",
-                        "src": "747:204:134",
-                        "nodes": [],
-                        "body": {
-                            "id": 24065,
-                            "nodeType": "Block",
-                            "src": "862:89:134",
-                            "nodes": [],
-                            "statements": [
-                                {
-                                    "assignments": [
-                                        24055
-                                    ],
-                                    "declarations": [
-                                        {
-                                            "constant": false,
-                                            "id": 24055,
-                                            "mutability": "mutable",
-                                            "name": "result",
-                                            "nameLocation": "880:6:134",
-                                            "nodeType": "VariableDeclaration",
-                                            "scope": 24065,
-                                            "src": "872:14:134",
-                                            "stateVariable": false,
-                                            "storageLocation": "default",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            },
-                                            "typeName": {
-                                                "id": 24054,
-                                                "name": "uint256",
-                                                "nodeType": "ElementaryTypeName",
-                                                "src": "872:7:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            "visibility": "internal"
-                                        }
-                                    ],
-                                    "id": 24062,
-                                    "initialValue": {
-                                        "arguments": [
-                                            {
-                                                "id": 24058,
-                                                "name": "x",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24045,
-                                                "src": "913:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            {
-                                                "id": 24059,
-                                                "name": "y",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24047,
-                                                "src": "916:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            {
-                                                "id": 24060,
-                                                "name": "d",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24049,
-                                                "src": "919:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            }
-                                        ],
-                                        "expression": {
-                                            "argumentTypes": [
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                },
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                },
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            ],
-                                            "expression": {
-                                                "id": 24056,
-                                                "name": "FixedPointMath",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18822,
-                                                "src": "889:14:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
-                                                    "typeString": "type(library FixedPointMath)"
-                                                }
-                                            },
-                                            "id": 24057,
-                                            "isConstant": false,
-                                            "isLValue": false,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "904:8:134",
-                                            "memberName": "mulDivUp",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 18117,
-                                            "src": "889:23:134",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                                                "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
-                                            }
-                                        },
-                                        "id": 24061,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "kind": "functionCall",
-                                        "lValueRequested": false,
-                                        "nameLocations": [],
-                                        "names": [],
-                                        "nodeType": "FunctionCall",
-                                        "src": "889:32:134",
-                                        "tryCall": false,
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "nodeType": "VariableDeclarationStatement",
-                                    "src": "872:49:134"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 24063,
-                                        "name": "result",
-                                        "nodeType": "Identifier",
-                                        "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24055,
-                                        "src": "938:6:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "functionReturnParameters": 24053,
-                                    "id": 24064,
-                                    "nodeType": "Return",
-                                    "src": "931:13:134"
-                                }
-                            ]
-                        },
-                        "functionSelector": "12bd6ac0",
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "mulDivUp",
-                        "nameLocation": "756:8:134",
-                        "parameters": {
-                            "id": 24050,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24045,
-                                    "mutability": "mutable",
-                                    "name": "x",
-                                    "nameLocation": "782:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24066,
-                                    "src": "774:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24044,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "774:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 24047,
-                                    "mutability": "mutable",
-                                    "name": "y",
-                                    "nameLocation": "801:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24066,
-                                    "src": "793:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24046,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "793:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 24049,
-                                    "mutability": "mutable",
-                                    "name": "d",
-                                    "nameLocation": "820:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24066,
-                                    "src": "812:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24048,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "812:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "764:63:134"
-                        },
-                        "returnParameters": {
-                            "id": 24053,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24052,
-                                    "mutability": "mutable",
-                                    "name": "z",
-                                    "nameLocation": "859:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24066,
-                                    "src": "851:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24051,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "851:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "850:11:134"
-                        },
-                        "scope": 24207,
-                        "stateMutability": "pure",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 24086,
-                        "nodeType": "FunctionDefinition",
-                        "src": "957:152:134",
-                        "nodes": [],
-                        "body": {
-                            "id": 24085,
-                            "nodeType": "Block",
-                            "src": "1026:83:134",
-                            "nodes": [],
-                            "statements": [
-                                {
-                                    "assignments": [
-                                        24076
-                                    ],
-                                    "declarations": [
-                                        {
-                                            "constant": false,
-                                            "id": 24076,
-                                            "mutability": "mutable",
-                                            "name": "result",
-                                            "nameLocation": "1044:6:134",
-                                            "nodeType": "VariableDeclaration",
-                                            "scope": 24085,
-                                            "src": "1036:14:134",
-                                            "stateVariable": false,
-                                            "storageLocation": "default",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            },
-                                            "typeName": {
-                                                "id": 24075,
-                                                "name": "uint256",
-                                                "nodeType": "ElementaryTypeName",
-                                                "src": "1036:7:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            "visibility": "internal"
-                                        }
-                                    ],
-                                    "id": 24082,
-                                    "initialValue": {
-                                        "arguments": [
-                                            {
-                                                "id": 24079,
-                                                "name": "a",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24068,
-                                                "src": "1074:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            {
-                                                "id": 24080,
-                                                "name": "b",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24070,
-                                                "src": "1077:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            }
-                                        ],
-                                        "expression": {
-                                            "argumentTypes": [
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                },
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            ],
-                                            "expression": {
-                                                "id": 24077,
-                                                "name": "FixedPointMath",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18822,
-                                                "src": "1053:14:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
-                                                    "typeString": "type(library FixedPointMath)"
-                                                }
-                                            },
-                                            "id": 24078,
-                                            "isConstant": false,
-                                            "isLValue": false,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "1068:5:134",
-                                            "memberName": "mulUp",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 18135,
-                                            "src": "1053:20:134",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                                                "typeString": "function (uint256,uint256) pure returns (uint256)"
-                                            }
-                                        },
-                                        "id": 24081,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "kind": "functionCall",
-                                        "lValueRequested": false,
-                                        "nameLocations": [],
-                                        "names": [],
-                                        "nodeType": "FunctionCall",
-                                        "src": "1053:26:134",
-                                        "tryCall": false,
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "nodeType": "VariableDeclarationStatement",
-                                    "src": "1036:43:134"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 24083,
-                                        "name": "result",
-                                        "nodeType": "Identifier",
-                                        "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24076,
-                                        "src": "1096:6:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "functionReturnParameters": 24074,
-                                    "id": 24084,
-                                    "nodeType": "Return",
-                                    "src": "1089:13:134"
-                                }
-                            ]
-                        },
-                        "functionSelector": "f3e4f87c",
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "mulUp",
-                        "nameLocation": "966:5:134",
-                        "parameters": {
-                            "id": 24071,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24068,
-                                    "mutability": "mutable",
-                                    "name": "a",
-                                    "nameLocation": "980:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24086,
-                                    "src": "972:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24067,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "972:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 24070,
-                                    "mutability": "mutable",
-                                    "name": "b",
-                                    "nameLocation": "991:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24086,
-                                    "src": "983:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24069,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "983:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "971:22:134"
-                        },
-                        "returnParameters": {
-                            "id": 24074,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24073,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24086,
-                                    "src": "1017:7:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24072,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1017:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1016:9:134"
-                        },
-                        "scope": 24207,
-                        "stateMutability": "pure",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 24106,
-                        "nodeType": "FunctionDefinition",
-                        "src": "1115:152:134",
-                        "nodes": [],
-                        "body": {
-                            "id": 24105,
-                            "nodeType": "Block",
-                            "src": "1184:83:134",
-                            "nodes": [],
-                            "statements": [
-                                {
-                                    "assignments": [
-                                        24096
-                                    ],
-                                    "declarations": [
-                                        {
-                                            "constant": false,
-                                            "id": 24096,
-                                            "mutability": "mutable",
-                                            "name": "result",
-                                            "nameLocation": "1202:6:134",
-                                            "nodeType": "VariableDeclaration",
-                                            "scope": 24105,
-                                            "src": "1194:14:134",
-                                            "stateVariable": false,
-                                            "storageLocation": "default",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_uint256",
-                                                "typeString": "uint256"
-                                            },
-                                            "typeName": {
-                                                "id": 24095,
-                                                "name": "uint256",
-                                                "nodeType": "ElementaryTypeName",
-                                                "src": "1194:7:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            "visibility": "internal"
-                                        }
-                                    ],
-                                    "id": 24102,
-                                    "initialValue": {
-                                        "arguments": [
-                                            {
-                                                "id": 24099,
-                                                "name": "a",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24088,
-                                                "src": "1232:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            },
-                                            {
-                                                "id": 24100,
-                                                "name": "b",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24090,
-                                                "src": "1235:1:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            }
-                                        ],
-                                        "expression": {
-                                            "argumentTypes": [
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                },
-                                                {
-                                                    "typeIdentifier": "t_uint256",
-                                                    "typeString": "uint256"
-                                                }
-                                            ],
-                                            "expression": {
-                                                "id": 24097,
-                                                "name": "FixedPointMath",
-                                                "nodeType": "Identifier",
-                                                "overloadedDeclarations": [],
-                                                "referencedDeclaration": 18822,
-                                                "src": "1211:14:134",
-                                                "typeDescriptions": {
-                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
-                                                    "typeString": "type(library FixedPointMath)"
-                                                }
-                                            },
-                                            "id": 24098,
-                                            "isConstant": false,
-                                            "isLValue": false,
-                                            "isPure": false,
-                                            "lValueRequested": false,
-                                            "memberLocation": "1226:5:134",
-                                            "memberName": "divUp",
-                                            "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 18153,
-                                            "src": "1211:20:134",
-                                            "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
-                                                "typeString": "function (uint256,uint256) pure returns (uint256)"
-                                            }
-                                        },
-                                        "id": 24101,
-                                        "isConstant": false,
-                                        "isLValue": false,
-                                        "isPure": false,
-                                        "kind": "functionCall",
-                                        "lValueRequested": false,
-                                        "nameLocations": [],
-                                        "names": [],
-                                        "nodeType": "FunctionCall",
-                                        "src": "1211:26:134",
-                                        "tryCall": false,
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "nodeType": "VariableDeclarationStatement",
-                                    "src": "1194:43:134"
-                                },
-                                {
-                                    "expression": {
-                                        "id": 24103,
-                                        "name": "result",
-                                        "nodeType": "Identifier",
-                                        "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24096,
-                                        "src": "1254:6:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "functionReturnParameters": 24094,
-                                    "id": 24104,
-                                    "nodeType": "Return",
-                                    "src": "1247:13:134"
-                                }
-                            ]
-                        },
-                        "functionSelector": "cbe8623f",
-                        "implemented": true,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "divUp",
-                        "nameLocation": "1124:5:134",
-                        "parameters": {
-                            "id": 24091,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24088,
-                                    "mutability": "mutable",
-                                    "name": "a",
-                                    "nameLocation": "1138:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24106,
-                                    "src": "1130:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24087,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1130:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 24090,
-                                    "mutability": "mutable",
-                                    "name": "b",
-                                    "nameLocation": "1149:1:134",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24106,
-                                    "src": "1141:9:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24089,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1141:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1129:22:134"
-                        },
-                        "returnParameters": {
-                            "id": 24094,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 24093,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 24106,
-                                    "src": "1175:7:134",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 24092,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1175:7:134",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1174:9:134"
-                        },
-                        "scope": 24207,
+                        "scope": 24310,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
@@ -2454,12 +1136,12 @@ export const MockFixedPointMath = {
                     {
                         "id": 24126,
                         "nodeType": "FunctionDefinition",
-                        "src": "1273:148:134",
+                        "src": "423:156:134",
                         "nodes": [],
                         "body": {
                             "id": 24125,
                             "nodeType": "Block",
-                            "src": "1340:81:134",
+                            "src": "494:85:134",
                             "nodes": [],
                             "statements": [
                                 {
@@ -2472,10 +1154,10 @@ export const MockFixedPointMath = {
                                             "id": 24116,
                                             "mutability": "mutable",
                                             "name": "result",
-                                            "nameLocation": "1358:6:134",
+                                            "nameLocation": "512:6:134",
                                             "nodeType": "VariableDeclaration",
                                             "scope": 24125,
-                                            "src": "1350:14:134",
+                                            "src": "504:14:134",
                                             "stateVariable": false,
                                             "storageLocation": "default",
                                             "typeDescriptions": {
@@ -2486,7 +1168,7 @@ export const MockFixedPointMath = {
                                                 "id": 24115,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
-                                                "src": "1350:7:134",
+                                                "src": "504:7:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -2500,11 +1182,11 @@ export const MockFixedPointMath = {
                                         "arguments": [
                                             {
                                                 "id": 24119,
-                                                "name": "x",
+                                                "name": "a",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
                                                 "referencedDeclaration": 24108,
-                                                "src": "1386:1:134",
+                                                "src": "544:1:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -2512,11 +1194,11 @@ export const MockFixedPointMath = {
                                             },
                                             {
                                                 "id": 24120,
-                                                "name": "y",
+                                                "name": "b",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
                                                 "referencedDeclaration": 24110,
-                                                "src": "1389:1:134",
+                                                "src": "547:1:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
                                                     "typeString": "uint256"
@@ -2540,13 +1222,1331 @@ export const MockFixedPointMath = {
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
                                                 "referencedDeclaration": 18822,
-                                                "src": "1367:14:134",
+                                                "src": "521:14:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
                                                     "typeString": "type(library FixedPointMath)"
                                                 }
                                             },
                                             "id": 24118,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "536:7:134",
+                                            "memberName": "mulDown",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 18085,
+                                            "src": "521:22:134",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                                                "typeString": "function (uint256,uint256) pure returns (uint256)"
+                                            }
+                                        },
+                                        "id": 24121,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "521:28:134",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "504:45:134"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 24123,
+                                        "name": "result",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 24116,
+                                        "src": "566:6:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "functionReturnParameters": 24114,
+                                    "id": 24124,
+                                    "nodeType": "Return",
+                                    "src": "559:13:134"
+                                }
+                            ]
+                        },
+                        "functionSelector": "0c9b9881",
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "mulDown",
+                        "nameLocation": "432:7:134",
+                        "parameters": {
+                            "id": 24111,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24108,
+                                    "mutability": "mutable",
+                                    "name": "a",
+                                    "nameLocation": "448:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24126,
+                                    "src": "440:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24107,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "440:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 24110,
+                                    "mutability": "mutable",
+                                    "name": "b",
+                                    "nameLocation": "459:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24126,
+                                    "src": "451:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24109,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "451:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "439:22:134"
+                        },
+                        "returnParameters": {
+                            "id": 24114,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24113,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24126,
+                                    "src": "485:7:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24112,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "485:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "484:9:134"
+                        },
+                        "scope": 24310,
+                        "stateMutability": "pure",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 24146,
+                        "nodeType": "FunctionDefinition",
+                        "src": "585:156:134",
+                        "nodes": [],
+                        "body": {
+                            "id": 24145,
+                            "nodeType": "Block",
+                            "src": "656:85:134",
+                            "nodes": [],
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        24136
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 24136,
+                                            "mutability": "mutable",
+                                            "name": "result",
+                                            "nameLocation": "674:6:134",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 24145,
+                                            "src": "666:14:134",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 24135,
+                                                "name": "uint256",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "666:7:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 24142,
+                                    "initialValue": {
+                                        "arguments": [
+                                            {
+                                                "id": 24139,
+                                                "name": "a",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24128,
+                                                "src": "706:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            {
+                                                "id": 24140,
+                                                "name": "b",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24130,
+                                                "src": "709:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "id": 24137,
+                                                "name": "FixedPointMath",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 18822,
+                                                "src": "683:14:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
+                                                    "typeString": "type(library FixedPointMath)"
+                                                }
+                                            },
+                                            "id": 24138,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "698:7:134",
+                                            "memberName": "divDown",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 18103,
+                                            "src": "683:22:134",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                                                "typeString": "function (uint256,uint256) pure returns (uint256)"
+                                            }
+                                        },
+                                        "id": 24141,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "683:28:134",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "666:45:134"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 24143,
+                                        "name": "result",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 24136,
+                                        "src": "728:6:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "functionReturnParameters": 24134,
+                                    "id": 24144,
+                                    "nodeType": "Return",
+                                    "src": "721:13:134"
+                                }
+                            ]
+                        },
+                        "functionSelector": "9ba5f52e",
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "divDown",
+                        "nameLocation": "594:7:134",
+                        "parameters": {
+                            "id": 24131,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24128,
+                                    "mutability": "mutable",
+                                    "name": "a",
+                                    "nameLocation": "610:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24146,
+                                    "src": "602:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24127,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "602:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 24130,
+                                    "mutability": "mutable",
+                                    "name": "b",
+                                    "nameLocation": "621:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24146,
+                                    "src": "613:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24129,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "613:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "601:22:134"
+                        },
+                        "returnParameters": {
+                            "id": 24134,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24133,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24146,
+                                    "src": "647:7:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24132,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "647:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "646:9:134"
+                        },
+                        "scope": 24310,
+                        "stateMutability": "pure",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 24169,
+                        "nodeType": "FunctionDefinition",
+                        "src": "747:204:134",
+                        "nodes": [],
+                        "body": {
+                            "id": 24168,
+                            "nodeType": "Block",
+                            "src": "862:89:134",
+                            "nodes": [],
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        24158
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 24158,
+                                            "mutability": "mutable",
+                                            "name": "result",
+                                            "nameLocation": "880:6:134",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 24168,
+                                            "src": "872:14:134",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 24157,
+                                                "name": "uint256",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "872:7:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 24165,
+                                    "initialValue": {
+                                        "arguments": [
+                                            {
+                                                "id": 24161,
+                                                "name": "x",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24148,
+                                                "src": "913:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            {
+                                                "id": 24162,
+                                                "name": "y",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24150,
+                                                "src": "916:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            {
+                                                "id": 24163,
+                                                "name": "d",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24152,
+                                                "src": "919:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "id": 24159,
+                                                "name": "FixedPointMath",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 18822,
+                                                "src": "889:14:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
+                                                    "typeString": "type(library FixedPointMath)"
+                                                }
+                                            },
+                                            "id": 24160,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "904:8:134",
+                                            "memberName": "mulDivUp",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 18117,
+                                            "src": "889:23:134",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                                                "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
+                                            }
+                                        },
+                                        "id": 24164,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "889:32:134",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "872:49:134"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 24166,
+                                        "name": "result",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 24158,
+                                        "src": "938:6:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "functionReturnParameters": 24156,
+                                    "id": 24167,
+                                    "nodeType": "Return",
+                                    "src": "931:13:134"
+                                }
+                            ]
+                        },
+                        "functionSelector": "12bd6ac0",
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "mulDivUp",
+                        "nameLocation": "756:8:134",
+                        "parameters": {
+                            "id": 24153,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24148,
+                                    "mutability": "mutable",
+                                    "name": "x",
+                                    "nameLocation": "782:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24169,
+                                    "src": "774:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24147,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "774:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 24150,
+                                    "mutability": "mutable",
+                                    "name": "y",
+                                    "nameLocation": "801:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24169,
+                                    "src": "793:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24149,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "793:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 24152,
+                                    "mutability": "mutable",
+                                    "name": "d",
+                                    "nameLocation": "820:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24169,
+                                    "src": "812:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24151,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "812:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "764:63:134"
+                        },
+                        "returnParameters": {
+                            "id": 24156,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24155,
+                                    "mutability": "mutable",
+                                    "name": "z",
+                                    "nameLocation": "859:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24169,
+                                    "src": "851:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24154,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "851:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "850:11:134"
+                        },
+                        "scope": 24310,
+                        "stateMutability": "pure",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 24189,
+                        "nodeType": "FunctionDefinition",
+                        "src": "957:152:134",
+                        "nodes": [],
+                        "body": {
+                            "id": 24188,
+                            "nodeType": "Block",
+                            "src": "1026:83:134",
+                            "nodes": [],
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        24179
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 24179,
+                                            "mutability": "mutable",
+                                            "name": "result",
+                                            "nameLocation": "1044:6:134",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 24188,
+                                            "src": "1036:14:134",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 24178,
+                                                "name": "uint256",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "1036:7:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 24185,
+                                    "initialValue": {
+                                        "arguments": [
+                                            {
+                                                "id": 24182,
+                                                "name": "a",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24171,
+                                                "src": "1074:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            {
+                                                "id": 24183,
+                                                "name": "b",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24173,
+                                                "src": "1077:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "id": 24180,
+                                                "name": "FixedPointMath",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 18822,
+                                                "src": "1053:14:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
+                                                    "typeString": "type(library FixedPointMath)"
+                                                }
+                                            },
+                                            "id": 24181,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "1068:5:134",
+                                            "memberName": "mulUp",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 18135,
+                                            "src": "1053:20:134",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                                                "typeString": "function (uint256,uint256) pure returns (uint256)"
+                                            }
+                                        },
+                                        "id": 24184,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1053:26:134",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "1036:43:134"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 24186,
+                                        "name": "result",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 24179,
+                                        "src": "1096:6:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "functionReturnParameters": 24177,
+                                    "id": 24187,
+                                    "nodeType": "Return",
+                                    "src": "1089:13:134"
+                                }
+                            ]
+                        },
+                        "functionSelector": "f3e4f87c",
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "mulUp",
+                        "nameLocation": "966:5:134",
+                        "parameters": {
+                            "id": 24174,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24171,
+                                    "mutability": "mutable",
+                                    "name": "a",
+                                    "nameLocation": "980:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24189,
+                                    "src": "972:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24170,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "972:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 24173,
+                                    "mutability": "mutable",
+                                    "name": "b",
+                                    "nameLocation": "991:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24189,
+                                    "src": "983:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24172,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "983:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "971:22:134"
+                        },
+                        "returnParameters": {
+                            "id": 24177,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24176,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24189,
+                                    "src": "1017:7:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24175,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1017:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1016:9:134"
+                        },
+                        "scope": 24310,
+                        "stateMutability": "pure",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 24209,
+                        "nodeType": "FunctionDefinition",
+                        "src": "1115:152:134",
+                        "nodes": [],
+                        "body": {
+                            "id": 24208,
+                            "nodeType": "Block",
+                            "src": "1184:83:134",
+                            "nodes": [],
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        24199
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 24199,
+                                            "mutability": "mutable",
+                                            "name": "result",
+                                            "nameLocation": "1202:6:134",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 24208,
+                                            "src": "1194:14:134",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 24198,
+                                                "name": "uint256",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "1194:7:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 24205,
+                                    "initialValue": {
+                                        "arguments": [
+                                            {
+                                                "id": 24202,
+                                                "name": "a",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24191,
+                                                "src": "1232:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            {
+                                                "id": 24203,
+                                                "name": "b",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24193,
+                                                "src": "1235:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "id": 24200,
+                                                "name": "FixedPointMath",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 18822,
+                                                "src": "1211:14:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
+                                                    "typeString": "type(library FixedPointMath)"
+                                                }
+                                            },
+                                            "id": 24201,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "1226:5:134",
+                                            "memberName": "divUp",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 18153,
+                                            "src": "1211:20:134",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
+                                                "typeString": "function (uint256,uint256) pure returns (uint256)"
+                                            }
+                                        },
+                                        "id": 24204,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "1211:26:134",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "1194:43:134"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 24206,
+                                        "name": "result",
+                                        "nodeType": "Identifier",
+                                        "overloadedDeclarations": [],
+                                        "referencedDeclaration": 24199,
+                                        "src": "1254:6:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "functionReturnParameters": 24197,
+                                    "id": 24207,
+                                    "nodeType": "Return",
+                                    "src": "1247:13:134"
+                                }
+                            ]
+                        },
+                        "functionSelector": "cbe8623f",
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "divUp",
+                        "nameLocation": "1124:5:134",
+                        "parameters": {
+                            "id": 24194,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24191,
+                                    "mutability": "mutable",
+                                    "name": "a",
+                                    "nameLocation": "1138:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24209,
+                                    "src": "1130:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24190,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1130:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                },
+                                {
+                                    "constant": false,
+                                    "id": 24193,
+                                    "mutability": "mutable",
+                                    "name": "b",
+                                    "nameLocation": "1149:1:134",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24209,
+                                    "src": "1141:9:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24192,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1141:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1129:22:134"
+                        },
+                        "returnParameters": {
+                            "id": 24197,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 24196,
+                                    "mutability": "mutable",
+                                    "name": "",
+                                    "nameLocation": "-1:-1:-1",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 24209,
+                                    "src": "1175:7:134",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 24195,
+                                        "name": "uint256",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "1175:7:134",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "1174:9:134"
+                        },
+                        "scope": 24310,
+                        "stateMutability": "pure",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "id": 24229,
+                        "nodeType": "FunctionDefinition",
+                        "src": "1273:148:134",
+                        "nodes": [],
+                        "body": {
+                            "id": 24228,
+                            "nodeType": "Block",
+                            "src": "1340:81:134",
+                            "nodes": [],
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        24219
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 24219,
+                                            "mutability": "mutable",
+                                            "name": "result",
+                                            "nameLocation": "1358:6:134",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 24228,
+                                            "src": "1350:14:134",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 24218,
+                                                "name": "uint256",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "1350:7:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 24225,
+                                    "initialValue": {
+                                        "arguments": [
+                                            {
+                                                "id": 24222,
+                                                "name": "x",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24211,
+                                                "src": "1386:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            {
+                                                "id": 24223,
+                                                "name": "y",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 24213,
+                                                "src": "1389:1:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "id": 24220,
+                                                "name": "FixedPointMath",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 18822,
+                                                "src": "1367:14:134",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_type$_t_contract$_FixedPointMath_$18822_$",
+                                                    "typeString": "type(library FixedPointMath)"
+                                                }
+                                            },
+                                            "id": 24221,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2561,7 +2561,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "function (uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 24121,
+                                        "id": 24224,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2582,19 +2582,19 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 24123,
+                                        "id": 24226,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24116,
+                                        "referencedDeclaration": 24219,
                                         "src": "1408:6:134",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 24114,
-                                    "id": 24124,
+                                    "functionReturnParameters": 24217,
+                                    "id": 24227,
                                     "nodeType": "Return",
                                     "src": "1401:13:134"
                                 }
@@ -2607,17 +2607,17 @@ export const MockFixedPointMath = {
                         "name": "pow",
                         "nameLocation": "1282:3:134",
                         "parameters": {
-                            "id": 24111,
+                            "id": 24214,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24108,
+                                    "id": 24211,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "1294:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24126,
+                                    "scope": 24229,
                                     "src": "1286:9:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2626,7 +2626,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 24107,
+                                        "id": 24210,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1286:7:134",
@@ -2639,12 +2639,12 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 24110,
+                                    "id": 24213,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "1305:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24126,
+                                    "scope": 24229,
                                     "src": "1297:9:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2653,7 +2653,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 24109,
+                                        "id": 24212,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1297:7:134",
@@ -2668,17 +2668,17 @@ export const MockFixedPointMath = {
                             "src": "1285:22:134"
                         },
                         "returnParameters": {
-                            "id": 24114,
+                            "id": 24217,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24113,
+                                    "id": 24216,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24126,
+                                    "scope": 24229,
                                     "src": "1331:7:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2687,7 +2687,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 24112,
+                                        "id": 24215,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1331:7:134",
@@ -2701,35 +2701,35 @@ export const MockFixedPointMath = {
                             ],
                             "src": "1330:9:134"
                         },
-                        "scope": 24207,
+                        "scope": 24310,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 24143,
+                        "id": 24246,
                         "nodeType": "FunctionDefinition",
                         "src": "1427:133:134",
                         "nodes": [],
                         "body": {
-                            "id": 24142,
+                            "id": 24245,
                             "nodeType": "Block",
                             "src": "1483:77:134",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        24134
+                                        24237
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 24134,
+                                            "id": 24237,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "1500:6:134",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 24142,
+                                            "scope": 24245,
                                             "src": "1493:13:134",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2738,7 +2738,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "int256"
                                             },
                                             "typeName": {
-                                                "id": 24133,
+                                                "id": 24236,
                                                 "name": "int256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1493:6:134",
@@ -2750,15 +2750,15 @@ export const MockFixedPointMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 24139,
+                                    "id": 24242,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 24137,
+                                                "id": 24240,
                                                 "name": "x",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24128,
+                                                "referencedDeclaration": 24231,
                                                 "src": "1528:1:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -2774,7 +2774,7 @@ export const MockFixedPointMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 24135,
+                                                "id": 24238,
                                                 "name": "FixedPointMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2785,7 +2785,7 @@ export const MockFixedPointMath = {
                                                     "typeString": "type(library FixedPointMath)"
                                                 }
                                             },
-                                            "id": 24136,
+                                            "id": 24239,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -2800,7 +2800,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "function (int256) pure returns (int256)"
                                             }
                                         },
-                                        "id": 24138,
+                                        "id": 24241,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -2821,19 +2821,19 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 24140,
+                                        "id": 24243,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24134,
+                                        "referencedDeclaration": 24237,
                                         "src": "1547:6:134",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         }
                                     },
-                                    "functionReturnParameters": 24132,
-                                    "id": 24141,
+                                    "functionReturnParameters": 24235,
+                                    "id": 24244,
                                     "nodeType": "Return",
                                     "src": "1540:13:134"
                                 }
@@ -2846,17 +2846,17 @@ export const MockFixedPointMath = {
                         "name": "exp",
                         "nameLocation": "1436:3:134",
                         "parameters": {
-                            "id": 24129,
+                            "id": 24232,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24128,
+                                    "id": 24231,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "1447:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24143,
+                                    "scope": 24246,
                                     "src": "1440:8:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2865,7 +2865,7 @@ export const MockFixedPointMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 24127,
+                                        "id": 24230,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1440:6:134",
@@ -2880,17 +2880,17 @@ export const MockFixedPointMath = {
                             "src": "1439:10:134"
                         },
                         "returnParameters": {
-                            "id": 24132,
+                            "id": 24235,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24131,
+                                    "id": 24234,
                                     "mutability": "mutable",
                                     "name": "r",
                                     "nameLocation": "1480:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24143,
+                                    "scope": 24246,
                                     "src": "1473:8:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -2899,7 +2899,7 @@ export const MockFixedPointMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 24130,
+                                        "id": 24233,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1473:6:134",
@@ -2913,35 +2913,35 @@ export const MockFixedPointMath = {
                             ],
                             "src": "1472:10:134"
                         },
-                        "scope": 24207,
+                        "scope": 24310,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 24160,
+                        "id": 24263,
                         "nodeType": "FunctionDefinition",
                         "src": "1566:129:134",
                         "nodes": [],
                         "body": {
-                            "id": 24159,
+                            "id": 24262,
                             "nodeType": "Block",
                             "src": "1619:76:134",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        24151
+                                        24254
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 24151,
+                                            "id": 24254,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "1636:6:134",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 24159,
+                                            "scope": 24262,
                                             "src": "1629:13:134",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -2950,7 +2950,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "int256"
                                             },
                                             "typeName": {
-                                                "id": 24150,
+                                                "id": 24253,
                                                 "name": "int256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1629:6:134",
@@ -2962,15 +2962,15 @@ export const MockFixedPointMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 24156,
+                                    "id": 24259,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 24154,
+                                                "id": 24257,
                                                 "name": "x",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24145,
+                                                "referencedDeclaration": 24248,
                                                 "src": "1663:1:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -2986,7 +2986,7 @@ export const MockFixedPointMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 24152,
+                                                "id": 24255,
                                                 "name": "FixedPointMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -2997,7 +2997,7 @@ export const MockFixedPointMath = {
                                                     "typeString": "type(library FixedPointMath)"
                                                 }
                                             },
-                                            "id": 24153,
+                                            "id": 24256,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3012,7 +3012,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "function (int256) pure returns (int256)"
                                             }
                                         },
-                                        "id": 24155,
+                                        "id": 24258,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3033,19 +3033,19 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 24157,
+                                        "id": 24260,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24151,
+                                        "referencedDeclaration": 24254,
                                         "src": "1682:6:134",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         }
                                     },
-                                    "functionReturnParameters": 24149,
-                                    "id": 24158,
+                                    "functionReturnParameters": 24252,
+                                    "id": 24261,
                                     "nodeType": "Return",
                                     "src": "1675:13:134"
                                 }
@@ -3058,17 +3058,17 @@ export const MockFixedPointMath = {
                         "name": "ln",
                         "nameLocation": "1575:2:134",
                         "parameters": {
-                            "id": 24146,
+                            "id": 24249,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24145,
+                                    "id": 24248,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "1585:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24160,
+                                    "scope": 24263,
                                     "src": "1578:8:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3077,7 +3077,7 @@ export const MockFixedPointMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 24144,
+                                        "id": 24247,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1578:6:134",
@@ -3092,17 +3092,17 @@ export const MockFixedPointMath = {
                             "src": "1577:10:134"
                         },
                         "returnParameters": {
-                            "id": 24149,
+                            "id": 24252,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24148,
+                                    "id": 24251,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24160,
+                                    "scope": 24263,
                                     "src": "1611:6:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3111,7 +3111,7 @@ export const MockFixedPointMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 24147,
+                                        "id": 24250,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1611:6:134",
@@ -3125,35 +3125,35 @@ export const MockFixedPointMath = {
                             ],
                             "src": "1610:8:134"
                         },
-                        "scope": 24207,
+                        "scope": 24310,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 24189,
+                        "id": 24292,
                         "nodeType": "FunctionDefinition",
                         "src": "1701:431:134",
                         "nodes": [],
                         "body": {
-                            "id": 24188,
+                            "id": 24291,
                             "nodeType": "Block",
                             "src": "1912:220:134",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        24176
+                                        24279
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 24176,
+                                            "id": 24279,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "1930:6:134",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 24188,
+                                            "scope": 24291,
                                             "src": "1922:14:134",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3162,7 +3162,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 24175,
+                                                "id": 24278,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "1922:7:134",
@@ -3174,15 +3174,15 @@ export const MockFixedPointMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 24185,
+                                    "id": 24288,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 24179,
+                                                "id": 24282,
                                                 "name": "_average",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24162,
+                                                "referencedDeclaration": 24265,
                                                 "src": "1989:8:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3190,11 +3190,11 @@ export const MockFixedPointMath = {
                                                 }
                                             },
                                             {
-                                                "id": 24180,
+                                                "id": 24283,
                                                 "name": "_totalWeight",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24164,
+                                                "referencedDeclaration": 24267,
                                                 "src": "2011:12:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3202,11 +3202,11 @@ export const MockFixedPointMath = {
                                                 }
                                             },
                                             {
-                                                "id": 24181,
+                                                "id": 24284,
                                                 "name": "_delta",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24166,
+                                                "referencedDeclaration": 24269,
                                                 "src": "2037:6:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3214,11 +3214,11 @@ export const MockFixedPointMath = {
                                                 }
                                             },
                                             {
-                                                "id": 24182,
+                                                "id": 24285,
                                                 "name": "_deltaWeight",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24168,
+                                                "referencedDeclaration": 24271,
                                                 "src": "2057:12:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -3226,11 +3226,11 @@ export const MockFixedPointMath = {
                                                 }
                                             },
                                             {
-                                                "id": 24183,
+                                                "id": 24286,
                                                 "name": "_isAdding",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24170,
+                                                "referencedDeclaration": 24273,
                                                 "src": "2083:9:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_bool",
@@ -3262,7 +3262,7 @@ export const MockFixedPointMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 24177,
+                                                "id": 24280,
                                                 "name": "FixedPointMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3273,7 +3273,7 @@ export const MockFixedPointMath = {
                                                     "typeString": "type(library FixedPointMath)"
                                                 }
                                             },
-                                            "id": 24178,
+                                            "id": 24281,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3288,7 +3288,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "function (uint256,uint256,uint256,uint256,bool) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 24184,
+                                        "id": 24287,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3309,19 +3309,19 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 24186,
+                                        "id": 24289,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24176,
+                                        "referencedDeclaration": 24279,
                                         "src": "2119:6:134",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 24174,
-                                    "id": 24187,
+                                    "functionReturnParameters": 24277,
+                                    "id": 24290,
                                     "nodeType": "Return",
                                     "src": "2112:13:134"
                                 }
@@ -3334,17 +3334,17 @@ export const MockFixedPointMath = {
                         "name": "updateWeightedAverage",
                         "nameLocation": "1710:21:134",
                         "parameters": {
-                            "id": 24171,
+                            "id": 24274,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24162,
+                                    "id": 24265,
                                     "mutability": "mutable",
                                     "name": "_average",
                                     "nameLocation": "1749:8:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24189,
+                                    "scope": 24292,
                                     "src": "1741:16:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3353,7 +3353,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 24161,
+                                        "id": 24264,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1741:7:134",
@@ -3366,12 +3366,12 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 24164,
+                                    "id": 24267,
                                     "mutability": "mutable",
                                     "name": "_totalWeight",
                                     "nameLocation": "1775:12:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24189,
+                                    "scope": 24292,
                                     "src": "1767:20:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3380,7 +3380,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 24163,
+                                        "id": 24266,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1767:7:134",
@@ -3393,12 +3393,12 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 24166,
+                                    "id": 24269,
                                     "mutability": "mutable",
                                     "name": "_delta",
                                     "nameLocation": "1805:6:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24189,
+                                    "scope": 24292,
                                     "src": "1797:14:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3407,7 +3407,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 24165,
+                                        "id": 24268,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1797:7:134",
@@ -3420,12 +3420,12 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 24168,
+                                    "id": 24271,
                                     "mutability": "mutable",
                                     "name": "_deltaWeight",
                                     "nameLocation": "1829:12:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24189,
+                                    "scope": 24292,
                                     "src": "1821:20:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3434,7 +3434,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 24167,
+                                        "id": 24270,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1821:7:134",
@@ -3447,12 +3447,12 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 24170,
+                                    "id": 24273,
                                     "mutability": "mutable",
                                     "name": "_isAdding",
                                     "nameLocation": "1856:9:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24189,
+                                    "scope": 24292,
                                     "src": "1851:14:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3461,7 +3461,7 @@ export const MockFixedPointMath = {
                                         "typeString": "bool"
                                     },
                                     "typeName": {
-                                        "id": 24169,
+                                        "id": 24272,
                                         "name": "bool",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1851:4:134",
@@ -3476,17 +3476,17 @@ export const MockFixedPointMath = {
                             "src": "1731:140:134"
                         },
                         "returnParameters": {
-                            "id": 24174,
+                            "id": 24277,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24173,
+                                    "id": 24276,
                                     "mutability": "mutable",
                                     "name": "average",
                                     "nameLocation": "1903:7:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24189,
+                                    "scope": 24292,
                                     "src": "1895:15:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3495,7 +3495,7 @@ export const MockFixedPointMath = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 24172,
+                                        "id": 24275,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1895:7:134",
@@ -3509,35 +3509,35 @@ export const MockFixedPointMath = {
                             ],
                             "src": "1894:17:134"
                         },
-                        "scope": 24207,
+                        "scope": 24310,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 24206,
+                        "id": 24309,
                         "nodeType": "FunctionDefinition",
                         "src": "2138:131:134",
                         "nodes": [],
                         "body": {
-                            "id": 24205,
+                            "id": 24308,
                             "nodeType": "Block",
                             "src": "2192:77:134",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        24197
+                                        24300
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 24197,
+                                            "id": 24300,
                                             "mutability": "mutable",
                                             "name": "result",
                                             "nameLocation": "2209:6:134",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 24205,
+                                            "scope": 24308,
                                             "src": "2202:13:134",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -3546,7 +3546,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "int256"
                                             },
                                             "typeName": {
-                                                "id": 24196,
+                                                "id": 24299,
                                                 "name": "int256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "2202:6:134",
@@ -3558,15 +3558,15 @@ export const MockFixedPointMath = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 24202,
+                                    "id": 24305,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 24200,
+                                                "id": 24303,
                                                 "name": "a",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 24191,
+                                                "referencedDeclaration": 24294,
                                                 "src": "2237:1:134",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_int256",
@@ -3582,7 +3582,7 @@ export const MockFixedPointMath = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 24198,
+                                                "id": 24301,
                                                 "name": "FixedPointMath",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -3593,7 +3593,7 @@ export const MockFixedPointMath = {
                                                     "typeString": "type(library FixedPointMath)"
                                                 }
                                             },
-                                            "id": 24199,
+                                            "id": 24302,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -3608,7 +3608,7 @@ export const MockFixedPointMath = {
                                                 "typeString": "function (int256) pure returns (int256)"
                                             }
                                         },
-                                        "id": 24201,
+                                        "id": 24304,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -3629,19 +3629,19 @@ export const MockFixedPointMath = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 24203,
+                                        "id": 24306,
                                         "name": "result",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 24197,
+                                        "referencedDeclaration": 24300,
                                         "src": "2256:6:134",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_int256",
                                             "typeString": "int256"
                                         }
                                     },
-                                    "functionReturnParameters": 24195,
-                                    "id": 24204,
+                                    "functionReturnParameters": 24298,
+                                    "id": 24307,
                                     "nodeType": "Return",
                                     "src": "2249:13:134"
                                 }
@@ -3654,17 +3654,17 @@ export const MockFixedPointMath = {
                         "name": "abs",
                         "nameLocation": "2147:3:134",
                         "parameters": {
-                            "id": 24192,
+                            "id": 24295,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24191,
+                                    "id": 24294,
                                     "mutability": "mutable",
                                     "name": "a",
                                     "nameLocation": "2158:1:134",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24206,
+                                    "scope": 24309,
                                     "src": "2151:8:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3673,7 +3673,7 @@ export const MockFixedPointMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 24190,
+                                        "id": 24293,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2151:6:134",
@@ -3688,17 +3688,17 @@ export const MockFixedPointMath = {
                             "src": "2150:10:134"
                         },
                         "returnParameters": {
-                            "id": 24195,
+                            "id": 24298,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 24194,
+                                    "id": 24297,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 24206,
+                                    "scope": 24309,
                                     "src": "2184:6:134",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3707,7 +3707,7 @@ export const MockFixedPointMath = {
                                         "typeString": "int256"
                                     },
                                     "typeName": {
-                                        "id": 24193,
+                                        "id": 24296,
                                         "name": "int256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2184:6:134",
@@ -3721,7 +3721,7 @@ export const MockFixedPointMath = {
                             ],
                             "src": "2183:8:134"
                         },
-                        "scope": 24207,
+                        "scope": 24310,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
@@ -3734,11 +3734,11 @@ export const MockFixedPointMath = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    24207
+                    24310
                 ],
                 "name": "MockFixedPointMath",
                 "nameLocation": "145:18:134",
-                "scope": 24208,
+                "scope": 24311,
                 "usedErrors": [
                     10219,
                     10258,

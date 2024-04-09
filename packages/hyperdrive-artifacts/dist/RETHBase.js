@@ -1618,7 +1618,7 @@ export const RETHBase = {
         "id": 9003,
         "exportedSymbols": {
             "ERC20": [
-                70857
+                70963
             ],
             "HyperdriveBase": [
                 13667
@@ -1633,7 +1633,7 @@ export const RETHBase = {
                 9002
             ],
             "SafeERC20": [
-                71287
+                71393
             ]
         },
         "nodeType": "SourceUnit",
@@ -1659,7 +1659,7 @@ export const RETHBase = {
                 "file": "openzeppelin/token/ERC20/ERC20.sol",
                 "nameLocation": "-1:-1:-1",
                 "scope": 9003,
-                "sourceUnit": 70858,
+                "sourceUnit": 70964,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1667,7 +1667,7 @@ export const RETHBase = {
                             "name": "ERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 70857,
+                            "referencedDeclaration": 70963,
                             "src": "73:5:65",
                             "typeDescriptions": {}
                         },
@@ -1685,7 +1685,7 @@ export const RETHBase = {
                 "file": "openzeppelin/token/ERC20/utils/SafeERC20.sol",
                 "nameLocation": "-1:-1:-1",
                 "scope": 9003,
-                "sourceUnit": 71288,
+                "sourceUnit": 71394,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1693,7 +1693,7 @@ export const RETHBase = {
                             "name": "SafeERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71287,
+                            "referencedDeclaration": 71393,
                             "src": "133:9:65",
                             "typeDescriptions": {}
                         },
@@ -1798,7 +1798,7 @@ export const RETHBase = {
                                 "1070:9:65"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 71287,
+                            "referencedDeclaration": 71393,
                             "src": "1070:9:65"
                         },
                         "typeName": {
@@ -1811,13 +1811,13 @@ export const RETHBase = {
                                     "1084:5:65"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 70857,
+                                "referencedDeclaration": 70963,
                                 "src": "1084:5:65"
                             },
-                            "referencedDeclaration": 70857,
+                            "referencedDeclaration": 70963,
                             "src": "1084:5:65",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC20_$70857",
+                                "typeIdentifier": "t_contract$_ERC20_$70963",
                                 "typeString": "contract ERC20"
                             }
                         }
@@ -2231,10 +2231,10 @@ export const RETHBase = {
                                                     "name": "ERC20",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 70857,
+                                                    "referencedDeclaration": 70963,
                                                     "src": "1736:5:65",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70857_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70963_$",
                                                         "typeString": "type(contract ERC20)"
                                                     }
                                                 },
@@ -2250,7 +2250,7 @@ export const RETHBase = {
                                                 "src": "1736:33:65",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ERC20_$70857",
+                                                    "typeIdentifier": "t_contract$_ERC20_$70963",
                                                     "typeString": "contract ERC20"
                                                 }
                                             },
@@ -2262,10 +2262,10 @@ export const RETHBase = {
                                             "memberLocation": "1770:16:65",
                                             "memberName": "safeTransferFrom",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 71074,
+                                            "referencedDeclaration": 71180,
                                             "src": "1736:50:65",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$",
                                                 "typeString": "function (contract IERC20,address,address,uint256)"
                                             }
                                         },
@@ -3200,10 +3200,10 @@ export const RETHBase = {
                                                     "name": "ERC20",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 70857,
+                                                    "referencedDeclaration": 70963,
                                                     "src": "3418:5:65",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70857_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70963_$",
                                                         "typeString": "type(contract ERC20)"
                                                     }
                                                 },
@@ -3219,7 +3219,7 @@ export const RETHBase = {
                                                 "src": "3418:33:65",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ERC20_$70857",
+                                                    "typeIdentifier": "t_contract$_ERC20_$70963",
                                                     "typeString": "contract ERC20"
                                                 }
                                             },
@@ -3231,10 +3231,10 @@ export const RETHBase = {
                                             "memberLocation": "3452:12:65",
                                             "memberName": "safeTransfer",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 71047,
+                                            "referencedDeclaration": 71153,
                                             "src": "3418:46:65",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$",
                                                 "typeString": "function (contract IERC20,address,uint256)"
                                             }
                                         },
@@ -4507,7 +4507,7 @@ export const RETHBase = {
                     9002,
                     13667,
                     17734,
-                    71639,
+                    71745,
                     10887,
                     11459
                 ],
@@ -4516,7 +4516,7 @@ export const RETHBase = {
                 "scope": 9003,
                 "usedErrors": [
                     10296,
-                    71584
+                    71690
                 ],
                 "usedEvents": [
                     10705,

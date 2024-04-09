@@ -66,17 +66,17 @@ export const FixedPointMathLib = {
     },
     "ast": {
         "absolutePath": "lib/solmate/src/utils/FixedPointMathLib.sol",
-        "id": 73185,
+        "id": 73291,
         "exportedSymbols": {
             "FixedPointMathLib": [
-                73184
+                73290
             ]
         },
         "nodeType": "SourceUnit",
         "src": "42:10012:174",
         "nodes": [
             {
-                "id": 73027,
+                "id": 73133,
                 "nodeType": "PragmaDirective",
                 "src": "42:24:174",
                 "nodes": [],
@@ -88,12 +88,12 @@ export const FixedPointMathLib = {
                 ]
             },
             {
-                "id": 73184,
+                "id": 73290,
                 "nodeType": "ContractDefinition",
                 "src": "341:9712:174",
                 "nodes": [
                     {
-                        "id": 73035,
+                        "id": 73141,
                         "nodeType": "VariableDeclaration",
                         "src": "566:50:174",
                         "nodes": [],
@@ -101,7 +101,7 @@ export const FixedPointMathLib = {
                         "mutability": "constant",
                         "name": "MAX_UINT256",
                         "nameLocation": "592:11:174",
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -109,7 +109,7 @@ export const FixedPointMathLib = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 73029,
+                            "id": 73135,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "566:7:174",
@@ -123,7 +123,7 @@ export const FixedPointMathLib = {
                                 "typeIdentifier": "t_rational_115792089237316195423570985008687907853269984665640564039457584007913129639935_by_1",
                                 "typeString": "int_const 1157...(70 digits omitted)...9935"
                             },
-                            "id": 73034,
+                            "id": 73140,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -133,14 +133,14 @@ export const FixedPointMathLib = {
                                     "typeIdentifier": "t_rational_115792089237316195423570985008687907853269984665640564039457584007913129639936_by_1",
                                     "typeString": "int_const 1157...(70 digits omitted)...9936"
                                 },
-                                "id": 73032,
+                                "id": 73138,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "lValueRequested": false,
                                 "leftExpression": {
                                     "hexValue": "32",
-                                    "id": 73030,
+                                    "id": 73136,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -158,7 +158,7 @@ export const FixedPointMathLib = {
                                 "operator": "**",
                                 "rightExpression": {
                                     "hexValue": "323536",
-                                    "id": 73031,
+                                    "id": 73137,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -182,7 +182,7 @@ export const FixedPointMathLib = {
                             "operator": "-",
                             "rightExpression": {
                                 "hexValue": "31",
-                                "id": 73033,
+                                "id": 73139,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -205,7 +205,7 @@ export const FixedPointMathLib = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 73038,
+                        "id": 73144,
                         "nodeType": "VariableDeclaration",
                         "src": "623:36:174",
                         "nodes": [],
@@ -213,7 +213,7 @@ export const FixedPointMathLib = {
                         "mutability": "constant",
                         "name": "WAD",
                         "nameLocation": "649:3:174",
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateVariable": true,
                         "storageLocation": "default",
                         "typeDescriptions": {
@@ -221,7 +221,7 @@ export const FixedPointMathLib = {
                             "typeString": "uint256"
                         },
                         "typeName": {
-                            "id": 73036,
+                            "id": 73142,
                             "name": "uint256",
                             "nodeType": "ElementaryTypeName",
                             "src": "623:7:174",
@@ -232,7 +232,7 @@ export const FixedPointMathLib = {
                         },
                         "value": {
                             "hexValue": "31653138",
-                            "id": 73037,
+                            "id": 73143,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -249,12 +249,12 @@ export const FixedPointMathLib = {
                         "visibility": "internal"
                     },
                     {
-                        "id": 73054,
+                        "id": 73160,
                         "nodeType": "FunctionDefinition",
                         "src": "704:164:174",
                         "nodes": [],
                         "body": {
-                            "id": 73053,
+                            "id": 73159,
                             "nodeType": "Block",
                             "src": "778:90:174",
                             "nodes": [],
@@ -263,11 +263,11 @@ export const FixedPointMathLib = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 73048,
+                                                "id": 73154,
                                                 "name": "x",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73040,
+                                                "referencedDeclaration": 73146,
                                                 "src": "806:1:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -275,11 +275,11 @@ export const FixedPointMathLib = {
                                                 }
                                             },
                                             {
-                                                "id": 73049,
+                                                "id": 73155,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73042,
+                                                "referencedDeclaration": 73148,
                                                 "src": "809:1:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -287,11 +287,11 @@ export const FixedPointMathLib = {
                                                 }
                                             },
                                             {
-                                                "id": 73050,
+                                                "id": 73156,
                                                 "name": "WAD",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73038,
+                                                "referencedDeclaration": 73144,
                                                 "src": "812:3:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -314,18 +314,18 @@ export const FixedPointMathLib = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 73047,
+                                            "id": 73153,
                                             "name": "mulDivDown",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 73115,
+                                            "referencedDeclaration": 73221,
                                             "src": "795:10:174",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 73051,
+                                        "id": 73157,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -341,8 +341,8 @@ export const FixedPointMathLib = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 73046,
-                                    "id": 73052,
+                                    "functionReturnParameters": 73152,
+                                    "id": 73158,
                                     "nodeType": "Return",
                                     "src": "788:28:174"
                                 }
@@ -354,17 +354,17 @@ export const FixedPointMathLib = {
                         "name": "mulWadDown",
                         "nameLocation": "713:10:174",
                         "parameters": {
-                            "id": 73043,
+                            "id": 73149,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73040,
+                                    "id": 73146,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "732:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73054,
+                                    "scope": 73160,
                                     "src": "724:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -373,7 +373,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73039,
+                                        "id": 73145,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "724:7:174",
@@ -386,12 +386,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73042,
+                                    "id": 73148,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "743:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73054,
+                                    "scope": 73160,
                                     "src": "735:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -400,7 +400,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73041,
+                                        "id": 73147,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "735:7:174",
@@ -415,17 +415,17 @@ export const FixedPointMathLib = {
                             "src": "723:22:174"
                         },
                         "returnParameters": {
-                            "id": 73046,
+                            "id": 73152,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73045,
+                                    "id": 73151,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73054,
+                                    "scope": 73160,
                                     "src": "769:7:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -434,7 +434,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73044,
+                                        "id": 73150,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "769:7:174",
@@ -448,18 +448,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "768:9:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73070,
+                        "id": 73176,
                         "nodeType": "FunctionDefinition",
                         "src": "874:158:174",
                         "nodes": [],
                         "body": {
-                            "id": 73069,
+                            "id": 73175,
                             "nodeType": "Block",
                             "src": "946:86:174",
                             "nodes": [],
@@ -468,11 +468,11 @@ export const FixedPointMathLib = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 73064,
+                                                "id": 73170,
                                                 "name": "x",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73056,
+                                                "referencedDeclaration": 73162,
                                                 "src": "972:1:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -480,11 +480,11 @@ export const FixedPointMathLib = {
                                                 }
                                             },
                                             {
-                                                "id": 73065,
+                                                "id": 73171,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73058,
+                                                "referencedDeclaration": 73164,
                                                 "src": "975:1:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -492,11 +492,11 @@ export const FixedPointMathLib = {
                                                 }
                                             },
                                             {
-                                                "id": 73066,
+                                                "id": 73172,
                                                 "name": "WAD",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73038,
+                                                "referencedDeclaration": 73144,
                                                 "src": "978:3:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -519,18 +519,18 @@ export const FixedPointMathLib = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 73063,
+                                            "id": 73169,
                                             "name": "mulDivUp",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 73128,
+                                            "referencedDeclaration": 73234,
                                             "src": "963:8:174",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 73067,
+                                        "id": 73173,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -546,8 +546,8 @@ export const FixedPointMathLib = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 73062,
-                                    "id": 73068,
+                                    "functionReturnParameters": 73168,
+                                    "id": 73174,
                                     "nodeType": "Return",
                                     "src": "956:26:174"
                                 }
@@ -559,17 +559,17 @@ export const FixedPointMathLib = {
                         "name": "mulWadUp",
                         "nameLocation": "883:8:174",
                         "parameters": {
-                            "id": 73059,
+                            "id": 73165,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73056,
+                                    "id": 73162,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "900:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73070,
+                                    "scope": 73176,
                                     "src": "892:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -578,7 +578,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73055,
+                                        "id": 73161,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "892:7:174",
@@ -591,12 +591,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73058,
+                                    "id": 73164,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "911:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73070,
+                                    "scope": 73176,
                                     "src": "903:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -605,7 +605,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73057,
+                                        "id": 73163,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "903:7:174",
@@ -620,17 +620,17 @@ export const FixedPointMathLib = {
                             "src": "891:22:174"
                         },
                         "returnParameters": {
-                            "id": 73062,
+                            "id": 73168,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73061,
+                                    "id": 73167,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73070,
+                                    "scope": 73176,
                                     "src": "937:7:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -639,7 +639,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73060,
+                                        "id": 73166,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "937:7:174",
@@ -653,18 +653,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "936:9:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73086,
+                        "id": 73192,
                         "nodeType": "FunctionDefinition",
                         "src": "1038:164:174",
                         "nodes": [],
                         "body": {
-                            "id": 73085,
+                            "id": 73191,
                             "nodeType": "Block",
                             "src": "1112:90:174",
                             "nodes": [],
@@ -673,11 +673,11 @@ export const FixedPointMathLib = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 73080,
+                                                "id": 73186,
                                                 "name": "x",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73072,
+                                                "referencedDeclaration": 73178,
                                                 "src": "1140:1:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -685,11 +685,11 @@ export const FixedPointMathLib = {
                                                 }
                                             },
                                             {
-                                                "id": 73081,
+                                                "id": 73187,
                                                 "name": "WAD",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73038,
+                                                "referencedDeclaration": 73144,
                                                 "src": "1143:3:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -697,11 +697,11 @@ export const FixedPointMathLib = {
                                                 }
                                             },
                                             {
-                                                "id": 73082,
+                                                "id": 73188,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73074,
+                                                "referencedDeclaration": 73180,
                                                 "src": "1148:1:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -724,18 +724,18 @@ export const FixedPointMathLib = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 73079,
+                                            "id": 73185,
                                             "name": "mulDivDown",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 73115,
+                                            "referencedDeclaration": 73221,
                                             "src": "1129:10:174",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 73083,
+                                        "id": 73189,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -751,8 +751,8 @@ export const FixedPointMathLib = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 73078,
-                                    "id": 73084,
+                                    "functionReturnParameters": 73184,
+                                    "id": 73190,
                                     "nodeType": "Return",
                                     "src": "1122:28:174"
                                 }
@@ -764,17 +764,17 @@ export const FixedPointMathLib = {
                         "name": "divWadDown",
                         "nameLocation": "1047:10:174",
                         "parameters": {
-                            "id": 73075,
+                            "id": 73181,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73072,
+                                    "id": 73178,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "1066:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73086,
+                                    "scope": 73192,
                                     "src": "1058:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -783,7 +783,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73071,
+                                        "id": 73177,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1058:7:174",
@@ -796,12 +796,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73074,
+                                    "id": 73180,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "1077:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73086,
+                                    "scope": 73192,
                                     "src": "1069:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -810,7 +810,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73073,
+                                        "id": 73179,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1069:7:174",
@@ -825,17 +825,17 @@ export const FixedPointMathLib = {
                             "src": "1057:22:174"
                         },
                         "returnParameters": {
-                            "id": 73078,
+                            "id": 73184,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73077,
+                                    "id": 73183,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73086,
+                                    "scope": 73192,
                                     "src": "1103:7:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -844,7 +844,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73076,
+                                        "id": 73182,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1103:7:174",
@@ -858,18 +858,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "1102:9:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73102,
+                        "id": 73208,
                         "nodeType": "FunctionDefinition",
                         "src": "1208:158:174",
                         "nodes": [],
                         "body": {
-                            "id": 73101,
+                            "id": 73207,
                             "nodeType": "Block",
                             "src": "1280:86:174",
                             "nodes": [],
@@ -878,11 +878,11 @@ export const FixedPointMathLib = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 73096,
+                                                "id": 73202,
                                                 "name": "x",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73088,
+                                                "referencedDeclaration": 73194,
                                                 "src": "1306:1:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -890,11 +890,11 @@ export const FixedPointMathLib = {
                                                 }
                                             },
                                             {
-                                                "id": 73097,
+                                                "id": 73203,
                                                 "name": "WAD",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73038,
+                                                "referencedDeclaration": 73144,
                                                 "src": "1309:3:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -902,11 +902,11 @@ export const FixedPointMathLib = {
                                                 }
                                             },
                                             {
-                                                "id": 73098,
+                                                "id": 73204,
                                                 "name": "y",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 73090,
+                                                "referencedDeclaration": 73196,
                                                 "src": "1314:1:174",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -929,18 +929,18 @@ export const FixedPointMathLib = {
                                                     "typeString": "uint256"
                                                 }
                                             ],
-                                            "id": 73095,
+                                            "id": 73201,
                                             "name": "mulDivUp",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
-                                            "referencedDeclaration": 73128,
+                                            "referencedDeclaration": 73234,
                                             "src": "1297:8:174",
                                             "typeDescriptions": {
                                                 "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                                 "typeString": "function (uint256,uint256,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 73099,
+                                        "id": 73205,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -956,8 +956,8 @@ export const FixedPointMathLib = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 73094,
-                                    "id": 73100,
+                                    "functionReturnParameters": 73200,
+                                    "id": 73206,
                                     "nodeType": "Return",
                                     "src": "1290:26:174"
                                 }
@@ -969,17 +969,17 @@ export const FixedPointMathLib = {
                         "name": "divWadUp",
                         "nameLocation": "1217:8:174",
                         "parameters": {
-                            "id": 73091,
+                            "id": 73197,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73088,
+                                    "id": 73194,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "1234:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73102,
+                                    "scope": 73208,
                                     "src": "1226:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -988,7 +988,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73087,
+                                        "id": 73193,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1226:7:174",
@@ -1001,12 +1001,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73090,
+                                    "id": 73196,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "1245:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73102,
+                                    "scope": 73208,
                                     "src": "1237:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1015,7 +1015,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73089,
+                                        "id": 73195,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1237:7:174",
@@ -1030,17 +1030,17 @@ export const FixedPointMathLib = {
                             "src": "1225:22:174"
                         },
                         "returnParameters": {
-                            "id": 73094,
+                            "id": 73200,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73093,
+                                    "id": 73199,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73102,
+                                    "scope": 73208,
                                     "src": "1271:7:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1049,7 +1049,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73092,
+                                        "id": 73198,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1271:7:174",
@@ -1063,18 +1063,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "1270:9:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73115,
+                        "id": 73221,
                         "nodeType": "FunctionDefinition",
                         "src": "1564:526:174",
                         "nodes": [],
                         "body": {
-                            "id": 73114,
+                            "id": 73220,
                             "nodeType": "Block",
                             "src": "1691:399:174",
                             "nodes": [],
@@ -1268,70 +1268,70 @@ export const FixedPointMathLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73035,
+                                            "declaration": 73141,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1915:11:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73108,
+                                            "declaration": 73214,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1878:11:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73108,
+                                            "declaration": 73214,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2062:11:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73104,
+                                            "declaration": 73210,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1908:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73104,
+                                            "declaration": 73210,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2055:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73106,
+                                            "declaration": 73212,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1902:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73106,
+                                            "declaration": 73212,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "1928:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73106,
+                                            "declaration": 73212,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2058:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73111,
+                                            "declaration": 73217,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2042:1:174",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73113,
+                                    "id": 73219,
                                     "nodeType": "InlineAssembly",
                                     "src": "1744:340:174"
                                 }
@@ -1343,17 +1343,17 @@ export const FixedPointMathLib = {
                         "name": "mulDivDown",
                         "nameLocation": "1573:10:174",
                         "parameters": {
-                            "id": 73109,
+                            "id": 73215,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73104,
+                                    "id": 73210,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "1601:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73115,
+                                    "scope": 73221,
                                     "src": "1593:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1362,7 +1362,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73103,
+                                        "id": 73209,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1593:7:174",
@@ -1375,12 +1375,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73106,
+                                    "id": 73212,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "1620:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73115,
+                                    "scope": 73221,
                                     "src": "1612:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1389,7 +1389,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73105,
+                                        "id": 73211,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1612:7:174",
@@ -1402,12 +1402,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73108,
+                                    "id": 73214,
                                     "mutability": "mutable",
                                     "name": "denominator",
                                     "nameLocation": "1639:11:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73115,
+                                    "scope": 73221,
                                     "src": "1631:19:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1416,7 +1416,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73107,
+                                        "id": 73213,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1631:7:174",
@@ -1431,17 +1431,17 @@ export const FixedPointMathLib = {
                             "src": "1583:73:174"
                         },
                         "returnParameters": {
-                            "id": 73112,
+                            "id": 73218,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73111,
+                                    "id": 73217,
                                     "mutability": "mutable",
                                     "name": "z",
                                     "nameLocation": "1688:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73115,
+                                    "scope": 73221,
                                     "src": "1680:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1450,7 +1450,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73110,
+                                        "id": 73216,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1680:7:174",
@@ -1464,18 +1464,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "1679:11:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73128,
+                        "id": 73234,
                         "nodeType": "FunctionDefinition",
                         "src": "2096:672:174",
                         "nodes": [],
                         "body": {
-                            "id": 73127,
+                            "id": 73233,
                             "nodeType": "Block",
                             "src": "2221:547:174",
                             "nodes": [],
@@ -1735,91 +1735,91 @@ export const FixedPointMathLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73035,
+                                            "declaration": 73141,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2445:11:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73121,
+                                            "declaration": 73227,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2408:11:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73121,
+                                            "declaration": 73227,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2706:11:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73121,
+                                            "declaration": 73227,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2739:11:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73117,
+                                            "declaration": 73223,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2438:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73117,
+                                            "declaration": 73223,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2699:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73117,
+                                            "declaration": 73223,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2732:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73119,
+                                            "declaration": 73225,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2432:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73119,
+                                            "declaration": 73225,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2458:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73119,
+                                            "declaration": 73225,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2702:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73119,
+                                            "declaration": 73225,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2735:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73124,
+                                            "declaration": 73230,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2679:1:174",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73126,
+                                    "id": 73232,
                                     "nodeType": "InlineAssembly",
                                     "src": "2274:488:174"
                                 }
@@ -1831,17 +1831,17 @@ export const FixedPointMathLib = {
                         "name": "mulDivUp",
                         "nameLocation": "2105:8:174",
                         "parameters": {
-                            "id": 73122,
+                            "id": 73228,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73117,
+                                    "id": 73223,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "2131:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73128,
+                                    "scope": 73234,
                                     "src": "2123:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1850,7 +1850,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73116,
+                                        "id": 73222,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2123:7:174",
@@ -1863,12 +1863,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73119,
+                                    "id": 73225,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "2150:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73128,
+                                    "scope": 73234,
                                     "src": "2142:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1877,7 +1877,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73118,
+                                        "id": 73224,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2142:7:174",
@@ -1890,12 +1890,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73121,
+                                    "id": 73227,
                                     "mutability": "mutable",
                                     "name": "denominator",
                                     "nameLocation": "2169:11:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73128,
+                                    "scope": 73234,
                                     "src": "2161:19:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1904,7 +1904,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73120,
+                                        "id": 73226,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2161:7:174",
@@ -1919,17 +1919,17 @@ export const FixedPointMathLib = {
                             "src": "2113:73:174"
                         },
                         "returnParameters": {
-                            "id": 73125,
+                            "id": 73231,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73124,
+                                    "id": 73230,
                                     "mutability": "mutable",
                                     "name": "z",
                                     "nameLocation": "2218:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73128,
+                                    "scope": 73234,
                                     "src": "2210:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1938,7 +1938,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73123,
+                                        "id": 73229,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2210:7:174",
@@ -1952,18 +1952,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "2209:11:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73141,
+                        "id": 73247,
                         "nodeType": "FunctionDefinition",
                         "src": "2774:2778:174",
                         "nodes": [],
                         "body": {
-                            "id": 73140,
+                            "id": 73246,
                             "nodeType": "Block",
                             "src": "2890:2662:174",
                             "nodes": [],
@@ -2845,210 +2845,210 @@ export const FixedPointMathLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73132,
+                                            "declaration": 73238,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3019:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73132,
+                                            "declaration": 73238,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3298:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73132,
+                                            "declaration": 73238,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3791:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73132,
+                                            "declaration": 73238,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3803:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73132,
+                                            "declaration": 73238,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3824:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73132,
+                                            "declaration": 73238,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3918:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73132,
+                                            "declaration": 73238,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3930:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73132,
+                                            "declaration": 73238,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4685:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73134,
+                                            "declaration": 73240,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3105:6:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73134,
+                                            "declaration": 73240,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3418:6:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73134,
+                                            "declaration": 73240,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3670:6:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73134,
+                                            "declaration": 73240,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4612:6:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73134,
+                                            "declaration": 73240,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5475:6:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73130,
+                                            "declaration": 73236,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "2973:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73130,
+                                            "declaration": 73236,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3552:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73130,
+                                            "declaration": 73236,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4122:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73130,
+                                            "declaration": 73236,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4261:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73130,
+                                            "declaration": 73236,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4264:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73130,
+                                            "declaration": 73236,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4594:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73130,
+                                            "declaration": 73236,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4776:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73130,
+                                            "declaration": 73236,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4873:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73130,
+                                            "declaration": 73236,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4984:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73137,
+                                            "declaration": 73243,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3100:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73137,
+                                            "declaration": 73243,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3210:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73137,
+                                            "declaration": 73243,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3413:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73137,
+                                            "declaration": 73243,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "3547:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73137,
+                                            "declaration": 73243,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4773:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73137,
+                                            "declaration": 73243,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "4877:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73137,
+                                            "declaration": 73243,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5457:1:174",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73139,
+                                    "id": 73245,
                                     "nodeType": "InlineAssembly",
                                     "src": "2943:2603:174"
                                 }
@@ -3060,17 +3060,17 @@ export const FixedPointMathLib = {
                         "name": "rpow",
                         "nameLocation": "2783:4:174",
                         "parameters": {
-                            "id": 73135,
+                            "id": 73241,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73130,
+                                    "id": 73236,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "2805:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73141,
+                                    "scope": 73247,
                                     "src": "2797:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3079,7 +3079,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73129,
+                                        "id": 73235,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2797:7:174",
@@ -3092,12 +3092,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73132,
+                                    "id": 73238,
                                     "mutability": "mutable",
                                     "name": "n",
                                     "nameLocation": "2824:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73141,
+                                    "scope": 73247,
                                     "src": "2816:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3106,7 +3106,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73131,
+                                        "id": 73237,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2816:7:174",
@@ -3119,12 +3119,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73134,
+                                    "id": 73240,
                                     "mutability": "mutable",
                                     "name": "scalar",
                                     "nameLocation": "2843:6:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73141,
+                                    "scope": 73247,
                                     "src": "2835:14:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3133,7 +3133,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73133,
+                                        "id": 73239,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2835:7:174",
@@ -3148,17 +3148,17 @@ export const FixedPointMathLib = {
                             "src": "2787:68:174"
                         },
                         "returnParameters": {
-                            "id": 73138,
+                            "id": 73244,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73137,
+                                    "id": 73243,
                                     "mutability": "mutable",
                                     "name": "z",
                                     "nameLocation": "2887:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73141,
+                                    "scope": 73247,
                                     "src": "2879:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -3167,7 +3167,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73136,
+                                        "id": 73242,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "2879:7:174",
@@ -3181,18 +3181,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "2878:11:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73150,
+                        "id": 73256,
                         "nodeType": "FunctionDefinition",
                         "src": "5746:3396:174",
                         "nodes": [],
                         "body": {
-                            "id": 73149,
+                            "id": 73255,
                             "nodeType": "Block",
                             "src": "5805:3337:174",
                             "nodes": [],
@@ -4285,322 +4285,322 @@ export const FixedPointMathLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73143,
+                                            "declaration": 73249,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5890:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73143,
+                                            "declaration": 73249,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8329:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73143,
+                                            "declaration": 73249,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8372:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73143,
+                                            "declaration": 73249,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8415:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73143,
+                                            "declaration": 73249,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8458:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73143,
+                                            "declaration": 73249,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8501:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73143,
+                                            "declaration": 73249,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8544:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73143,
+                                            "declaration": 73249,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8587:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73143,
+                                            "declaration": 73249,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9116:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "5971:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "6516:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "6529:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "6648:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "6661:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "6772:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "6785:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "6892:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "6904:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8110:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8127:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8306:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8322:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8332:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8349:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8365:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8375:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8392:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8408:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8418:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8435:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8451:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8461:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8478:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8494:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8504:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8521:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8537:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8547:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8564:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8580:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "8590:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9097:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9106:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9119:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73146,
+                                            "declaration": 73252,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9123:1:174",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73148,
+                                    "id": 73254,
                                     "nodeType": "InlineAssembly",
                                     "src": "5858:3278:174"
                                 }
@@ -4612,17 +4612,17 @@ export const FixedPointMathLib = {
                         "name": "sqrt",
                         "nameLocation": "5755:4:174",
                         "parameters": {
-                            "id": 73144,
+                            "id": 73250,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73143,
+                                    "id": 73249,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "5768:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73150,
+                                    "scope": 73256,
                                     "src": "5760:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4631,7 +4631,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73142,
+                                        "id": 73248,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5760:7:174",
@@ -4646,17 +4646,17 @@ export const FixedPointMathLib = {
                             "src": "5759:11:174"
                         },
                         "returnParameters": {
-                            "id": 73147,
+                            "id": 73253,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73146,
+                                    "id": 73252,
                                     "mutability": "mutable",
                                     "name": "z",
                                     "nameLocation": "5802:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73150,
+                                    "scope": 73256,
                                     "src": "5794:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4665,7 +4665,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73145,
+                                        "id": 73251,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "5794:7:174",
@@ -4679,18 +4679,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "5793:11:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73161,
+                        "id": 73267,
                         "nodeType": "FunctionDefinition",
                         "src": "9148:282:174",
                         "nodes": [],
                         "body": {
-                            "id": 73160,
+                            "id": 73266,
                             "nodeType": "Block",
                             "src": "9223:207:174",
                             "nodes": [],
@@ -4738,28 +4738,28 @@ export const FixedPointMathLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73152,
+                                            "declaration": 73258,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9409:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73154,
+                                            "declaration": 73260,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9412:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73157,
+                                            "declaration": 73263,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9400:1:174",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73159,
+                                    "id": 73265,
                                     "nodeType": "InlineAssembly",
                                     "src": "9276:148:174"
                                 }
@@ -4771,17 +4771,17 @@ export const FixedPointMathLib = {
                         "name": "unsafeMod",
                         "nameLocation": "9157:9:174",
                         "parameters": {
-                            "id": 73155,
+                            "id": 73261,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73152,
+                                    "id": 73258,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "9175:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73161,
+                                    "scope": 73267,
                                     "src": "9167:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4790,7 +4790,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73151,
+                                        "id": 73257,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9167:7:174",
@@ -4803,12 +4803,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73154,
+                                    "id": 73260,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "9186:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73161,
+                                    "scope": 73267,
                                     "src": "9178:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4817,7 +4817,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73153,
+                                        "id": 73259,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9178:7:174",
@@ -4832,17 +4832,17 @@ export const FixedPointMathLib = {
                             "src": "9166:22:174"
                         },
                         "returnParameters": {
-                            "id": 73158,
+                            "id": 73264,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73157,
+                                    "id": 73263,
                                     "mutability": "mutable",
                                     "name": "z",
                                     "nameLocation": "9220:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73161,
+                                    "scope": 73267,
                                     "src": "9212:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4851,7 +4851,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73156,
+                                        "id": 73262,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9212:7:174",
@@ -4865,18 +4865,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "9211:11:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73172,
+                        "id": 73278,
                         "nodeType": "FunctionDefinition",
                         "src": "9436:285:174",
                         "nodes": [],
                         "body": {
-                            "id": 73171,
+                            "id": 73277,
                             "nodeType": "Block",
                             "src": "9511:210:174",
                             "nodes": [],
@@ -4924,28 +4924,28 @@ export const FixedPointMathLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73168,
+                                            "declaration": 73274,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9691:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73163,
+                                            "declaration": 73269,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9700:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73165,
+                                            "declaration": 73271,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9703:1:174",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73170,
+                                    "id": 73276,
                                     "nodeType": "InlineAssembly",
                                     "src": "9564:151:174"
                                 }
@@ -4957,17 +4957,17 @@ export const FixedPointMathLib = {
                         "name": "unsafeDiv",
                         "nameLocation": "9445:9:174",
                         "parameters": {
-                            "id": 73166,
+                            "id": 73272,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73163,
+                                    "id": 73269,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "9463:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73172,
+                                    "scope": 73278,
                                     "src": "9455:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4976,7 +4976,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73162,
+                                        "id": 73268,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9455:7:174",
@@ -4989,12 +4989,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73165,
+                                    "id": 73271,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "9474:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73172,
+                                    "scope": 73278,
                                     "src": "9466:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5003,7 +5003,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73164,
+                                        "id": 73270,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9466:7:174",
@@ -5018,17 +5018,17 @@ export const FixedPointMathLib = {
                             "src": "9454:22:174"
                         },
                         "returnParameters": {
-                            "id": 73169,
+                            "id": 73275,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73168,
+                                    "id": 73274,
                                     "mutability": "mutable",
                                     "name": "r",
                                     "nameLocation": "9508:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73172,
+                                    "scope": 73278,
                                     "src": "9500:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5037,7 +5037,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73167,
+                                        "id": 73273,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9500:7:174",
@@ -5051,18 +5051,18 @@ export const FixedPointMathLib = {
                             ],
                             "src": "9499:11:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
                     },
                     {
-                        "id": 73183,
+                        "id": 73289,
                         "nodeType": "FunctionDefinition",
                         "src": "9727:324:174",
                         "nodes": [],
                         "body": {
-                            "id": 73182,
+                            "id": 73288,
                             "nodeType": "Block",
                             "src": "9804:247:174",
                             "nodes": [],
@@ -5160,42 +5160,42 @@ export const FixedPointMathLib = {
                                     "evmVersion": "paris",
                                     "externalReferences": [
                                         {
-                                            "declaration": 73174,
+                                            "declaration": 73280,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "10014:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73174,
+                                            "declaration": 73280,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "10029:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73176,
+                                            "declaration": 73282,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "10017:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73176,
+                                            "declaration": 73282,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "10032:1:174",
                                             "valueSize": 1
                                         },
                                         {
-                                            "declaration": 73179,
+                                            "declaration": 73285,
                                             "isOffset": false,
                                             "isSlot": false,
                                             "src": "9998:1:174",
                                             "valueSize": 1
                                         }
                                     ],
-                                    "id": 73181,
+                                    "id": 73287,
                                     "nodeType": "InlineAssembly",
                                     "src": "9857:188:174"
                                 }
@@ -5207,17 +5207,17 @@ export const FixedPointMathLib = {
                         "name": "unsafeDivUp",
                         "nameLocation": "9736:11:174",
                         "parameters": {
-                            "id": 73177,
+                            "id": 73283,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73174,
+                                    "id": 73280,
                                     "mutability": "mutable",
                                     "name": "x",
                                     "nameLocation": "9756:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73183,
+                                    "scope": 73289,
                                     "src": "9748:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5226,7 +5226,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73173,
+                                        "id": 73279,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9748:7:174",
@@ -5239,12 +5239,12 @@ export const FixedPointMathLib = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 73176,
+                                    "id": 73282,
                                     "mutability": "mutable",
                                     "name": "y",
                                     "nameLocation": "9767:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73183,
+                                    "scope": 73289,
                                     "src": "9759:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5253,7 +5253,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73175,
+                                        "id": 73281,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9759:7:174",
@@ -5268,17 +5268,17 @@ export const FixedPointMathLib = {
                             "src": "9747:22:174"
                         },
                         "returnParameters": {
-                            "id": 73180,
+                            "id": 73286,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 73179,
+                                    "id": 73285,
                                     "mutability": "mutable",
                                     "name": "z",
                                     "nameLocation": "9801:1:174",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 73183,
+                                    "scope": 73289,
                                     "src": "9793:9:174",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5287,7 +5287,7 @@ export const FixedPointMathLib = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 73178,
+                                        "id": 73284,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "9793:7:174",
@@ -5301,7 +5301,7 @@ export const FixedPointMathLib = {
                             ],
                             "src": "9792:11:174"
                         },
-                        "scope": 73184,
+                        "scope": 73290,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "internal"
@@ -5313,18 +5313,18 @@ export const FixedPointMathLib = {
                 "contractDependencies": [],
                 "contractKind": "library",
                 "documentation": {
-                    "id": 73028,
+                    "id": 73134,
                     "nodeType": "StructuredDocumentation",
                     "src": "68:273:174",
                     "text": "@notice Arithmetic library with operations for fixed-point numbers.\n @author Solmate (https://github.com/transmissions11/solmate/blob/main/src/utils/FixedPointMathLib.sol)\n @author Inspired by USM (https://github.com/usmfum/USM/blob/master/contracts/WadMath.sol)"
                 },
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    73184
+                    73290
                 ],
                 "name": "FixedPointMathLib",
                 "nameLocation": "349:17:174",
-                "scope": 73185,
+                "scope": 73291,
                 "usedErrors": [],
                 "usedEvents": []
             }

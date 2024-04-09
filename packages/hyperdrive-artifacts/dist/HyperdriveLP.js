@@ -3557,7 +3557,7 @@ export const HyperdriveLP = {
                                         "1734:12:114"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71603,
+                                    "referencedDeclaration": 71709,
                                     "src": "1734:12:114"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -6887,7 +6887,7 @@ export const HyperdriveLP = {
                                         "6595:12:114"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71603,
+                                    "referencedDeclaration": 71709,
                                     "src": "6595:12:114"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -8548,7 +8548,7 @@ export const HyperdriveLP = {
                                         "13260:12:114"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71603,
+                                    "referencedDeclaration": 71709,
                                     "src": "13260:12:114"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -9549,7 +9549,7 @@ export const HyperdriveLP = {
                                         "16729:12:114"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71603,
+                                    "referencedDeclaration": 71709,
                                     "src": "16729:12:114"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -13893,7 +13893,7 @@ export const HyperdriveLP = {
                     16538,
                     13667,
                     17734,
-                    71639,
+                    71745,
                     10887,
                     11459
                 ],
@@ -13901,7 +13901,7 @@ export const HyperdriveLP = {
                 "nameLocation": "949:12:114",
                 "scope": 15128,
                 "usedErrors": [
-                    71584
+                    71690
                 ],
                 "usedEvents": [
                     10705,

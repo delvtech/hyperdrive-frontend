@@ -1255,12 +1255,12 @@ export declare const LsETHBase: {
         readonly absolutePath: "contracts/src/instances/lseth/LsETHBase.sol";
         readonly id: 8587;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [70857];
+            readonly ERC20: readonly [70963];
             readonly HyperdriveBase: readonly [13667];
             readonly IHyperdrive: readonly [10351];
             readonly IRiverV1: readonly [11682];
             readonly LsETHBase: readonly [8586];
-            readonly SafeERC20: readonly [71287];
+            readonly SafeERC20: readonly [71393];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:4199:58";
@@ -1279,14 +1279,14 @@ export declare const LsETHBase: {
             readonly file: "openzeppelin/token/ERC20/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 8587;
-            readonly sourceUnit: 70858;
+            readonly sourceUnit: 70964;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 8409;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 70857;
+                    readonly referencedDeclaration: 70963;
                     readonly src: "73:5:58";
                     readonly typeDescriptions: {};
                 };
@@ -1302,14 +1302,14 @@ export declare const LsETHBase: {
             readonly file: "openzeppelin/token/ERC20/utils/SafeERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 8587;
-            readonly sourceUnit: 71288;
+            readonly sourceUnit: 71394;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 8411;
                     readonly name: "SafeERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71287;
+                    readonly referencedDeclaration: 71393;
                     readonly src: "133:9:58";
                     readonly typeDescriptions: {};
                 };
@@ -1400,7 +1400,7 @@ export declare const LsETHBase: {
                     readonly name: "SafeERC20";
                     readonly nameLocations: readonly ["1041:9:58"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 71287;
+                    readonly referencedDeclaration: 71393;
                     readonly src: "1041:9:58";
                 };
                 readonly typeName: {
@@ -1411,13 +1411,13 @@ export declare const LsETHBase: {
                         readonly name: "ERC20";
                         readonly nameLocations: readonly ["1055:5:58"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 70857;
+                        readonly referencedDeclaration: 70963;
                         readonly src: "1055:5:58";
                     };
-                    readonly referencedDeclaration: 70857;
+                    readonly referencedDeclaration: 70963;
                     readonly src: "1055:5:58";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
+                        readonly typeIdentifier: "t_contract$_ERC20_$70963";
                         readonly typeString: "contract ERC20";
                     };
                 };
@@ -1798,10 +1798,10 @@ export declare const LsETHBase: {
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 70857;
+                                        readonly referencedDeclaration: 70963;
                                         readonly src: "1658:5:58";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70857_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70963_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
@@ -1817,7 +1817,7 @@ export declare const LsETHBase: {
                                     readonly src: "1658:33:58";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$70963";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
@@ -1829,10 +1829,10 @@ export declare const LsETHBase: {
                                 readonly memberLocation: "1692:16:58";
                                 readonly memberName: "safeTransferFrom";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71074;
+                                readonly referencedDeclaration: 71180;
                                 readonly src: "1658:50:58";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$";
                                     readonly typeString: "function (contract IERC20,address,address,uint256)";
                                 };
                             };
@@ -2251,10 +2251,10 @@ export declare const LsETHBase: {
                                         readonly name: "ERC20";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 70857;
+                                        readonly referencedDeclaration: 70963;
                                         readonly src: "2697:5:58";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70857_$";
+                                            readonly typeIdentifier: "t_type$_t_contract$_ERC20_$70963_$";
                                             readonly typeString: "type(contract ERC20)";
                                         };
                                     };
@@ -2270,7 +2270,7 @@ export declare const LsETHBase: {
                                     readonly src: "2697:33:58";
                                     readonly tryCall: false;
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
+                                        readonly typeIdentifier: "t_contract$_ERC20_$70963";
                                         readonly typeString: "contract ERC20";
                                     };
                                 };
@@ -2282,10 +2282,10 @@ export declare const LsETHBase: {
                                 readonly memberLocation: "2731:12:58";
                                 readonly memberName: "safeTransfer";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 71047;
+                                readonly referencedDeclaration: 71153;
                                 readonly src: "2697:46:58";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$";
                                     readonly typeString: "function (contract IERC20,address,uint256)";
                                 };
                             };
@@ -3271,11 +3271,11 @@ export declare const LsETHBase: {
                 readonly text: "@author DELV\n @title LsETHHyperdrive\n @notice The base contract for the LsETH Hyperdrive implementation.\n @dev River has it's own notion of shares to account for the accrual of\n      interest on the ether pooled in the River protocol. Instead of\n      maintaining a balance of shares, this integration can simply use River's\n      shares directly.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [8586, 13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [8586, 13667, 17734, 71745, 10887, 11459];
             readonly name: "LsETHBase";
             readonly nameLocation: "1001:9:58";
             readonly scope: 8587;
-            readonly usedErrors: readonly [71584];
+            readonly usedErrors: readonly [71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

@@ -3601,14 +3601,14 @@ export declare const EzETHTarget0: {
         readonly absolutePath: "contracts/src/instances/ezeth/EzETHTarget0.sol";
         readonly id: 8275;
         readonly exportedSymbols: {
-            readonly ERC20: readonly [70857];
+            readonly ERC20: readonly [70963];
             readonly EzETHBase: readonly [8136];
             readonly EzETHTarget0: readonly [8274];
             readonly HyperdriveTarget0: readonly [5190];
             readonly IHyperdrive: readonly [10351];
             readonly IRenzoOracle: readonly [11663];
             readonly IRestakeManager: readonly [11608];
-            readonly SafeERC20: readonly [71287];
+            readonly SafeERC20: readonly [71393];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:1906:53";
@@ -3627,14 +3627,14 @@ export declare const EzETHTarget0: {
             readonly file: "openzeppelin/token/ERC20/ERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 8275;
-            readonly sourceUnit: 70858;
+            readonly sourceUnit: 70964;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 8187;
                     readonly name: "ERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 70857;
+                    readonly referencedDeclaration: 70963;
                     readonly src: "73:5:53";
                     readonly typeDescriptions: {};
                 };
@@ -3650,14 +3650,14 @@ export declare const EzETHTarget0: {
             readonly file: "openzeppelin/token/ERC20/utils/SafeERC20.sol";
             readonly nameLocation: "-1:-1:-1";
             readonly scope: 8275;
-            readonly sourceUnit: 71288;
+            readonly sourceUnit: 71394;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
                     readonly id: 8189;
                     readonly name: "SafeERC20";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 71287;
+                    readonly referencedDeclaration: 71393;
                     readonly src: "133:9:53";
                     readonly typeDescriptions: {};
                 };
@@ -3782,7 +3782,7 @@ export declare const EzETHTarget0: {
                     readonly name: "SafeERC20";
                     readonly nameLocations: readonly ["961:9:53"];
                     readonly nodeType: "IdentifierPath";
-                    readonly referencedDeclaration: 71287;
+                    readonly referencedDeclaration: 71393;
                     readonly src: "961:9:53";
                 };
                 readonly typeName: {
@@ -3793,13 +3793,13 @@ export declare const EzETHTarget0: {
                         readonly name: "ERC20";
                         readonly nameLocations: readonly ["975:5:53"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 70857;
+                        readonly referencedDeclaration: 70963;
                         readonly src: "975:5:53";
                     };
-                    readonly referencedDeclaration: 70857;
+                    readonly referencedDeclaration: 70963;
                     readonly src: "975:5:53";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_ERC20_$70857";
+                        readonly typeIdentifier: "t_contract$_ERC20_$70963";
                         readonly typeString: "contract ERC20";
                     };
                 };
@@ -4554,11 +4554,11 @@ export declare const EzETHTarget0: {
                 readonly text: "@author DELV\n @title EzETHTarget0\n @notice EzETHHyperdrive's target0 logic contract. This contract contains\n         all of the getters for Hyperdrive as well as some stateful\n         functions.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [8274, 8136, 5190, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71639, 10887, 11459, 11207, 11547];
+            readonly linearizedBaseContracts: readonly [8274, 8136, 5190, 14161, 17512, 16054, 15127, 16538, 12497, 13667, 17734, 71745, 10887, 11459, 11207, 11547];
             readonly name: "EzETHTarget0";
             readonly nameLocation: "904:12:53";
             readonly scope: 8275;
-            readonly usedErrors: readonly [10213, 10219, 10222, 10237, 10240, 10249, 10252, 10255, 10258, 10282, 10287, 10290, 10299, 10314, 10317, 71014, 71295, 71300, 71303, 71584];
+            readonly usedErrors: readonly [10213, 10219, 10222, 10237, 10240, 10249, 10252, 10255, 10258, 10282, 10287, 10290, 10299, 10314, 10317, 71120, 71401, 71406, 71409, 71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

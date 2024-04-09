@@ -1591,7 +1591,7 @@ export const HyperdriveAdmin = {
         "id": 12498,
         "exportedSymbols": {
             "ERC20": [
-                70857
+                70963
             ],
             "HyperdriveAdmin": [
                 12497
@@ -1609,7 +1609,7 @@ export const HyperdriveAdmin = {
                 10887
             ],
             "SafeERC20": [
-                71287
+                71393
             ]
         },
         "nodeType": "SourceUnit",
@@ -1635,7 +1635,7 @@ export const HyperdriveAdmin = {
                 "file": "openzeppelin/token/ERC20/ERC20.sol",
                 "nameLocation": "-1:-1:-1",
                 "scope": 12498,
-                "sourceUnit": 70858,
+                "sourceUnit": 70964,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1643,7 +1643,7 @@ export const HyperdriveAdmin = {
                             "name": "ERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 70857,
+                            "referencedDeclaration": 70963,
                             "src": "73:5:111",
                             "typeDescriptions": {}
                         },
@@ -1661,7 +1661,7 @@ export const HyperdriveAdmin = {
                 "file": "openzeppelin/token/ERC20/utils/SafeERC20.sol",
                 "nameLocation": "-1:-1:-1",
                 "scope": 12498,
-                "sourceUnit": 71288,
+                "sourceUnit": 71394,
                 "symbolAliases": [
                     {
                         "foreign": {
@@ -1669,7 +1669,7 @@ export const HyperdriveAdmin = {
                             "name": "SafeERC20",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 71287,
+                            "referencedDeclaration": 71393,
                             "src": "133:9:111",
                             "typeDescriptions": {}
                         },
@@ -1800,7 +1800,7 @@ export const HyperdriveAdmin = {
                                 "944:9:111"
                             ],
                             "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 71287,
+                            "referencedDeclaration": 71393,
                             "src": "944:9:111"
                         },
                         "typeName": {
@@ -1813,13 +1813,13 @@ export const HyperdriveAdmin = {
                                     "958:5:111"
                                 ],
                                 "nodeType": "IdentifierPath",
-                                "referencedDeclaration": 70857,
+                                "referencedDeclaration": 70963,
                                 "src": "958:5:111"
                             },
-                            "referencedDeclaration": 70857,
+                            "referencedDeclaration": 70963,
                             "src": "958:5:111",
                             "typeDescriptions": {
-                                "typeIdentifier": "t_contract$_ERC20_$70857",
+                                "typeIdentifier": "t_contract$_ERC20_$70963",
                                 "typeString": "contract ERC20"
                             }
                         }
@@ -2763,7 +2763,7 @@ export const HyperdriveAdmin = {
                                         "1410:12:111"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71603,
+                                    "referencedDeclaration": 71709,
                                     "src": "1410:12:111"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -5056,10 +5056,10 @@ export const HyperdriveAdmin = {
                                                     "name": "ERC20",
                                                     "nodeType": "Identifier",
                                                     "overloadedDeclarations": [],
-                                                    "referencedDeclaration": 70857,
+                                                    "referencedDeclaration": 70963,
                                                     "src": "5940:5:111",
                                                     "typeDescriptions": {
-                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70857_$",
+                                                        "typeIdentifier": "t_type$_t_contract$_ERC20_$70963_$",
                                                         "typeString": "type(contract ERC20)"
                                                     }
                                                 },
@@ -5075,7 +5075,7 @@ export const HyperdriveAdmin = {
                                                 "src": "5940:23:111",
                                                 "tryCall": false,
                                                 "typeDescriptions": {
-                                                    "typeIdentifier": "t_contract$_ERC20_$70857",
+                                                    "typeIdentifier": "t_contract$_ERC20_$70963",
                                                     "typeString": "contract ERC20"
                                                 }
                                             },
@@ -5087,10 +5087,10 @@ export const HyperdriveAdmin = {
                                             "memberLocation": "5964:12:111",
                                             "memberName": "safeTransfer",
                                             "nodeType": "MemberAccess",
-                                            "referencedDeclaration": 71047,
+                                            "referencedDeclaration": 71153,
                                             "src": "5940:36:111",
                                             "typeDescriptions": {
-                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$70935_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$70935_$",
+                                                "typeIdentifier": "t_function_internal_nonpayable$_t_contract$_IERC20_$71041_$_t_address_$_t_uint256_$returns$__$attached_to$_t_contract$_IERC20_$71041_$",
                                                 "typeString": "function (contract IERC20,address,uint256)"
                                             }
                                         },
@@ -5375,7 +5375,7 @@ export const HyperdriveAdmin = {
                                         "5311:12:111"
                                     ],
                                     "nodeType": "IdentifierPath",
-                                    "referencedDeclaration": 71603,
+                                    "referencedDeclaration": 71709,
                                     "src": "5311:12:111"
                                 },
                                 "nodeType": "ModifierInvocation",
@@ -5487,7 +5487,7 @@ export const HyperdriveAdmin = {
                     12497,
                     13667,
                     17734,
-                    71639,
+                    71745,
                     10887,
                     11459
                 ],
@@ -5495,7 +5495,7 @@ export const HyperdriveAdmin = {
                 "nameLocation": "879:15:111",
                 "scope": 12498,
                 "usedErrors": [
-                    71584
+                    71690
                 ],
                 "usedEvents": [
                     10705,

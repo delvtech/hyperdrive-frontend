@@ -3063,7 +3063,7 @@ export declare const HyperdriveLP: {
                         readonly name: "nonReentrant";
                         readonly nameLocations: readonly ["1734:12:114"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71603;
+                        readonly referencedDeclaration: 71709;
                         readonly src: "1734:12:114";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -6179,7 +6179,7 @@ export declare const HyperdriveLP: {
                         readonly name: "nonReentrant";
                         readonly nameLocations: readonly ["6595:12:114"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71603;
+                        readonly referencedDeclaration: 71709;
                         readonly src: "6595:12:114";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -7704,7 +7704,7 @@ export declare const HyperdriveLP: {
                         readonly name: "nonReentrant";
                         readonly nameLocations: readonly ["13260:12:114"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71603;
+                        readonly referencedDeclaration: 71709;
                         readonly src: "13260:12:114";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -8619,7 +8619,7 @@ export declare const HyperdriveLP: {
                         readonly name: "nonReentrant";
                         readonly nameLocations: readonly ["16729:12:114"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 71603;
+                        readonly referencedDeclaration: 71709;
                         readonly src: "16729:12:114";
                     };
                     readonly nodeType: "ModifierInvocation";
@@ -12703,11 +12703,11 @@ export declare const HyperdriveLP: {
                 readonly text: "@author DELV\n @title HyperdriveLP\n @notice Implements the LP accounting for Hyperdrive.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [15127, 16538, 13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [15127, 16538, 13667, 17734, 71745, 10887, 11459];
             readonly name: "HyperdriveLP";
             readonly nameLocation: "949:12:114";
             readonly scope: 15128;
-            readonly usedErrors: readonly [71584];
+            readonly usedErrors: readonly [71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

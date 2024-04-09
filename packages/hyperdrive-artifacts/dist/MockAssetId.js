@@ -343,20 +343,20 @@ export const MockAssetId = {
     },
     "ast": {
         "absolutePath": "contracts/test/MockAssetId.sol",
-        "id": 23598,
+        "id": 23620,
         "exportedSymbols": {
             "AssetId": [
                 18009
             ],
             "MockAssetId": [
-                23597
+                23619
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:949:131",
         "nodes": [
             {
-                "id": 23512,
+                "id": 23534,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:131",
                 "nodes": [],
@@ -367,19 +367,19 @@ export const MockAssetId = {
                 ]
             },
             {
-                "id": 23514,
+                "id": 23536,
                 "nodeType": "ImportDirective",
                 "src": "64:62:131",
                 "nodes": [],
                 "absolutePath": "contracts/src/libraries/AssetId.sol",
                 "file": "contracts/src/libraries/AssetId.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 23598,
+                "scope": 23620,
                 "sourceUnit": 18010,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 23513,
+                            "id": 23535,
                             "name": "AssetId",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -393,34 +393,34 @@ export const MockAssetId = {
                 "unitAlias": ""
             },
             {
-                "id": 23597,
+                "id": 23619,
                 "nodeType": "ContractDefinition",
                 "src": "128:859:131",
                 "nodes": [
                     {
-                        "id": 23535,
+                        "id": 23557,
                         "nodeType": "FunctionDefinition",
                         "src": "155:219:131",
                         "nodes": [],
                         "body": {
-                            "id": 23534,
+                            "id": 23556,
                             "nodeType": "Block",
                             "src": "283:91:131",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        23525
+                                        23547
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 23525,
+                                            "id": 23547,
                                             "mutability": "mutable",
                                             "name": "id",
                                             "nameLocation": "301:2:131",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 23534,
+                                            "scope": 23556,
                                             "src": "293:10:131",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -429,7 +429,7 @@ export const MockAssetId = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 23524,
+                                                "id": 23546,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "293:7:131",
@@ -441,15 +441,15 @@ export const MockAssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 23531,
+                                    "id": 23553,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 23528,
+                                                "id": 23550,
                                                 "name": "_prefix",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23517,
+                                                "referencedDeclaration": 23539,
                                                 "src": "328:7:131",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
@@ -457,11 +457,11 @@ export const MockAssetId = {
                                                 }
                                             },
                                             {
-                                                "id": 23529,
+                                                "id": 23551,
                                                 "name": "_timestamp",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23519,
+                                                "referencedDeclaration": 23541,
                                                 "src": "337:10:131",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -481,7 +481,7 @@ export const MockAssetId = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 23526,
+                                                "id": 23548,
                                                 "name": "AssetId",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -492,7 +492,7 @@ export const MockAssetId = {
                                                     "typeString": "type(library AssetId)"
                                                 }
                                             },
-                                            "id": 23527,
+                                            "id": 23549,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -507,7 +507,7 @@ export const MockAssetId = {
                                                 "typeString": "function (enum AssetId.AssetIdPrefix,uint256) pure returns (uint256)"
                                             }
                                         },
-                                        "id": 23530,
+                                        "id": 23552,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -528,19 +528,19 @@ export const MockAssetId = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 23532,
+                                        "id": 23554,
                                         "name": "id",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23525,
+                                        "referencedDeclaration": 23547,
                                         "src": "365:2:131",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_uint256",
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 23523,
-                                    "id": 23533,
+                                    "functionReturnParameters": 23545,
+                                    "id": 23555,
                                     "nodeType": "Return",
                                     "src": "358:9:131"
                                 }
@@ -553,17 +553,17 @@ export const MockAssetId = {
                         "name": "encodeAssetId",
                         "nameLocation": "164:13:131",
                         "parameters": {
-                            "id": 23520,
+                            "id": 23542,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23517,
+                                    "id": 23539,
                                     "mutability": "mutable",
                                     "name": "_prefix",
                                     "nameLocation": "209:7:131",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23535,
+                                    "scope": 23557,
                                     "src": "187:29:131",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -572,10 +572,10 @@ export const MockAssetId = {
                                         "typeString": "enum AssetId.AssetIdPrefix"
                                     },
                                     "typeName": {
-                                        "id": 23516,
+                                        "id": 23538,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 23515,
+                                            "id": 23537,
                                             "name": "AssetId.AssetIdPrefix",
                                             "nameLocations": [
                                                 "187:7:131",
@@ -596,12 +596,12 @@ export const MockAssetId = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23519,
+                                    "id": 23541,
                                     "mutability": "mutable",
                                     "name": "_timestamp",
                                     "nameLocation": "234:10:131",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23535,
+                                    "scope": 23557,
                                     "src": "226:18:131",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -610,7 +610,7 @@ export const MockAssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23518,
+                                        "id": 23540,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "226:7:131",
@@ -625,17 +625,17 @@ export const MockAssetId = {
                             "src": "177:73:131"
                         },
                         "returnParameters": {
-                            "id": 23523,
+                            "id": 23545,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23522,
+                                    "id": 23544,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23535,
+                                    "scope": 23557,
                                     "src": "274:7:131",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -644,7 +644,7 @@ export const MockAssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23521,
+                                        "id": 23543,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "274:7:131",
@@ -658,36 +658,36 @@ export const MockAssetId = {
                             ],
                             "src": "273:9:131"
                         },
-                        "scope": 23597,
+                        "scope": 23619,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 23562,
+                        "id": 23584,
                         "nodeType": "FunctionDefinition",
                         "src": "380:249:131",
                         "nodes": [],
                         "body": {
-                            "id": 23561,
+                            "id": 23583,
                             "nodeType": "Block",
                             "src": "485:144:131",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        23549,
-                                        23551
+                                        23571,
+                                        23573
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 23549,
+                                            "id": 23571,
                                             "mutability": "mutable",
                                             "name": "prefix",
                                             "nameLocation": "518:6:131",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 23561,
+                                            "scope": 23583,
                                             "src": "496:28:131",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -696,10 +696,10 @@ export const MockAssetId = {
                                                 "typeString": "enum AssetId.AssetIdPrefix"
                                             },
                                             "typeName": {
-                                                "id": 23548,
+                                                "id": 23570,
                                                 "nodeType": "UserDefinedTypeName",
                                                 "pathNode": {
-                                                    "id": 23547,
+                                                    "id": 23569,
                                                     "name": "AssetId.AssetIdPrefix",
                                                     "nameLocations": [
                                                         "496:7:131",
@@ -720,12 +720,12 @@ export const MockAssetId = {
                                         },
                                         {
                                             "constant": false,
-                                            "id": 23551,
+                                            "id": 23573,
                                             "mutability": "mutable",
                                             "name": "timestamp",
                                             "nameLocation": "534:9:131",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 23561,
+                                            "scope": 23583,
                                             "src": "526:17:131",
                                             "stateVariable": false,
                                             "storageLocation": "default",
@@ -734,7 +734,7 @@ export const MockAssetId = {
                                                 "typeString": "uint256"
                                             },
                                             "typeName": {
-                                                "id": 23550,
+                                                "id": 23572,
                                                 "name": "uint256",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "526:7:131",
@@ -746,15 +746,15 @@ export const MockAssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 23556,
+                                    "id": 23578,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 23554,
+                                                "id": 23576,
                                                 "name": "_id",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23537,
+                                                "referencedDeclaration": 23559,
                                                 "src": "582:3:131",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -770,7 +770,7 @@ export const MockAssetId = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 23552,
+                                                "id": 23574,
                                                 "name": "AssetId",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -781,7 +781,7 @@ export const MockAssetId = {
                                                     "typeString": "type(library AssetId)"
                                                 }
                                             },
-                                            "id": 23553,
+                                            "id": 23575,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -796,7 +796,7 @@ export const MockAssetId = {
                                                 "typeString": "function (uint256) pure returns (enum AssetId.AssetIdPrefix,uint256)"
                                             }
                                         },
-                                        "id": 23555,
+                                        "id": 23577,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -819,11 +819,11 @@ export const MockAssetId = {
                                     "expression": {
                                         "components": [
                                             {
-                                                "id": 23557,
+                                                "id": 23579,
                                                 "name": "prefix",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23549,
+                                                "referencedDeclaration": 23571,
                                                 "src": "604:6:131",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_enum$_AssetIdPrefix_$17756",
@@ -831,11 +831,11 @@ export const MockAssetId = {
                                                 }
                                             },
                                             {
-                                                "id": 23558,
+                                                "id": 23580,
                                                 "name": "timestamp",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23551,
+                                                "referencedDeclaration": 23573,
                                                 "src": "612:9:131",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -843,7 +843,7 @@ export const MockAssetId = {
                                                 }
                                             }
                                         ],
-                                        "id": 23559,
+                                        "id": 23581,
                                         "isConstant": false,
                                         "isInlineArray": false,
                                         "isLValue": false,
@@ -856,8 +856,8 @@ export const MockAssetId = {
                                             "typeString": "tuple(enum AssetId.AssetIdPrefix,uint256)"
                                         }
                                     },
-                                    "functionReturnParameters": 23544,
-                                    "id": 23560,
+                                    "functionReturnParameters": 23566,
+                                    "id": 23582,
                                     "nodeType": "Return",
                                     "src": "596:26:131"
                                 }
@@ -870,17 +870,17 @@ export const MockAssetId = {
                         "name": "decodeAssetId",
                         "nameLocation": "389:13:131",
                         "parameters": {
-                            "id": 23538,
+                            "id": 23560,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23537,
+                                    "id": 23559,
                                     "mutability": "mutable",
                                     "name": "_id",
                                     "nameLocation": "420:3:131",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23562,
+                                    "scope": 23584,
                                     "src": "412:11:131",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -889,7 +889,7 @@ export const MockAssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23536,
+                                        "id": 23558,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "412:7:131",
@@ -904,17 +904,17 @@ export const MockAssetId = {
                             "src": "402:27:131"
                         },
                         "returnParameters": {
-                            "id": 23544,
+                            "id": 23566,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23541,
+                                    "id": 23563,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23562,
+                                    "scope": 23584,
                                     "src": "453:21:131",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -923,10 +923,10 @@ export const MockAssetId = {
                                         "typeString": "enum AssetId.AssetIdPrefix"
                                     },
                                     "typeName": {
-                                        "id": 23540,
+                                        "id": 23562,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 23539,
+                                            "id": 23561,
                                             "name": "AssetId.AssetIdPrefix",
                                             "nameLocations": [
                                                 "453:7:131",
@@ -947,12 +947,12 @@ export const MockAssetId = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23543,
+                                    "id": 23565,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23562,
+                                    "scope": 23584,
                                     "src": "476:7:131",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -961,7 +961,7 @@ export const MockAssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23542,
+                                        "id": 23564,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "476:7:131",
@@ -975,35 +975,35 @@ export const MockAssetId = {
                             ],
                             "src": "452:32:131"
                         },
-                        "scope": 23597,
+                        "scope": 23619,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 23579,
+                        "id": 23601,
                         "nodeType": "FunctionDefinition",
                         "src": "635:161:131",
                         "nodes": [],
                         "body": {
-                            "id": 23578,
+                            "id": 23600,
                             "nodeType": "Block",
                             "src": "709:87:131",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        23570
+                                        23592
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 23570,
+                                            "id": 23592,
                                             "mutability": "mutable",
                                             "name": "_name",
                                             "nameLocation": "733:5:131",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 23578,
+                                            "scope": 23600,
                                             "src": "719:19:131",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -1012,7 +1012,7 @@ export const MockAssetId = {
                                                 "typeString": "string"
                                             },
                                             "typeName": {
-                                                "id": 23569,
+                                                "id": 23591,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "719:6:131",
@@ -1024,15 +1024,15 @@ export const MockAssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 23575,
+                                    "id": 23597,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 23573,
+                                                "id": 23595,
                                                 "name": "_id",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23564,
+                                                "referencedDeclaration": 23586,
                                                 "src": "763:3:131",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1048,7 +1048,7 @@ export const MockAssetId = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 23571,
+                                                "id": 23593,
                                                 "name": "AssetId",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -1059,7 +1059,7 @@ export const MockAssetId = {
                                                     "typeString": "type(library AssetId)"
                                                 }
                                             },
-                                            "id": 23572,
+                                            "id": 23594,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1074,7 +1074,7 @@ export const MockAssetId = {
                                                 "typeString": "function (uint256) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 23574,
+                                        "id": 23596,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1095,19 +1095,19 @@ export const MockAssetId = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 23576,
+                                        "id": 23598,
                                         "name": "_name",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23570,
+                                        "referencedDeclaration": 23592,
                                         "src": "784:5:131",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_memory_ptr",
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 23568,
-                                    "id": 23577,
+                                    "functionReturnParameters": 23590,
+                                    "id": 23599,
                                     "nodeType": "Return",
                                     "src": "777:12:131"
                                 }
@@ -1120,17 +1120,17 @@ export const MockAssetId = {
                         "name": "assetIdToName",
                         "nameLocation": "644:13:131",
                         "parameters": {
-                            "id": 23565,
+                            "id": 23587,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23564,
+                                    "id": 23586,
                                     "mutability": "mutable",
                                     "name": "_id",
                                     "nameLocation": "666:3:131",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23579,
+                                    "scope": 23601,
                                     "src": "658:11:131",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1139,7 +1139,7 @@ export const MockAssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23563,
+                                        "id": 23585,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "658:7:131",
@@ -1154,17 +1154,17 @@ export const MockAssetId = {
                             "src": "657:13:131"
                         },
                         "returnParameters": {
-                            "id": 23568,
+                            "id": 23590,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23567,
+                                    "id": 23589,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23579,
+                                    "scope": 23601,
                                     "src": "694:13:131",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1173,7 +1173,7 @@ export const MockAssetId = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 23566,
+                                        "id": 23588,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "694:6:131",
@@ -1187,35 +1187,35 @@ export const MockAssetId = {
                             ],
                             "src": "693:15:131"
                         },
-                        "scope": 23597,
+                        "scope": 23619,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
                     },
                     {
-                        "id": 23596,
+                        "id": 23618,
                         "nodeType": "FunctionDefinition",
                         "src": "802:183:131",
                         "nodes": [],
                         "body": {
-                            "id": 23595,
+                            "id": 23617,
                             "nodeType": "Block",
                             "src": "892:93:131",
                             "nodes": [],
                             "statements": [
                                 {
                                     "assignments": [
-                                        23587
+                                        23609
                                     ],
                                     "declarations": [
                                         {
                                             "constant": false,
-                                            "id": 23587,
+                                            "id": 23609,
                                             "mutability": "mutable",
                                             "name": "_symbol",
                                             "nameLocation": "916:7:131",
                                             "nodeType": "VariableDeclaration",
-                                            "scope": 23595,
+                                            "scope": 23617,
                                             "src": "902:21:131",
                                             "stateVariable": false,
                                             "storageLocation": "memory",
@@ -1224,7 +1224,7 @@ export const MockAssetId = {
                                                 "typeString": "string"
                                             },
                                             "typeName": {
-                                                "id": 23586,
+                                                "id": 23608,
                                                 "name": "string",
                                                 "nodeType": "ElementaryTypeName",
                                                 "src": "902:6:131",
@@ -1236,15 +1236,15 @@ export const MockAssetId = {
                                             "visibility": "internal"
                                         }
                                     ],
-                                    "id": 23592,
+                                    "id": 23614,
                                     "initialValue": {
                                         "arguments": [
                                             {
-                                                "id": 23590,
+                                                "id": 23612,
                                                 "name": "_id",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23581,
+                                                "referencedDeclaration": 23603,
                                                 "src": "950:3:131",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -1260,7 +1260,7 @@ export const MockAssetId = {
                                                 }
                                             ],
                                             "expression": {
-                                                "id": 23588,
+                                                "id": 23610,
                                                 "name": "AssetId",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
@@ -1271,7 +1271,7 @@ export const MockAssetId = {
                                                     "typeString": "type(library AssetId)"
                                                 }
                                             },
-                                            "id": 23589,
+                                            "id": 23611,
                                             "isConstant": false,
                                             "isLValue": false,
                                             "isPure": false,
@@ -1286,7 +1286,7 @@ export const MockAssetId = {
                                                 "typeString": "function (uint256) pure returns (string memory)"
                                             }
                                         },
-                                        "id": 23591,
+                                        "id": 23613,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -1307,19 +1307,19 @@ export const MockAssetId = {
                                 },
                                 {
                                     "expression": {
-                                        "id": 23593,
+                                        "id": 23615,
                                         "name": "_symbol",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23587,
+                                        "referencedDeclaration": 23609,
                                         "src": "971:7:131",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_string_memory_ptr",
                                             "typeString": "string memory"
                                         }
                                     },
-                                    "functionReturnParameters": 23585,
-                                    "id": 23594,
+                                    "functionReturnParameters": 23607,
+                                    "id": 23616,
                                     "nodeType": "Return",
                                     "src": "964:14:131"
                                 }
@@ -1332,17 +1332,17 @@ export const MockAssetId = {
                         "name": "assetIdToSymbol",
                         "nameLocation": "811:15:131",
                         "parameters": {
-                            "id": 23582,
+                            "id": 23604,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23581,
+                                    "id": 23603,
                                     "mutability": "mutable",
                                     "name": "_id",
                                     "nameLocation": "844:3:131",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23596,
+                                    "scope": 23618,
                                     "src": "836:11:131",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -1351,7 +1351,7 @@ export const MockAssetId = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23580,
+                                        "id": 23602,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "836:7:131",
@@ -1366,17 +1366,17 @@ export const MockAssetId = {
                             "src": "826:27:131"
                         },
                         "returnParameters": {
-                            "id": 23585,
+                            "id": 23607,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23584,
+                                    "id": 23606,
                                     "mutability": "mutable",
                                     "name": "",
                                     "nameLocation": "-1:-1:-1",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23596,
+                                    "scope": 23618,
                                     "src": "877:13:131",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -1385,7 +1385,7 @@ export const MockAssetId = {
                                         "typeString": "string"
                                     },
                                     "typeName": {
-                                        "id": 23583,
+                                        "id": 23605,
                                         "name": "string",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "877:6:131",
@@ -1399,7 +1399,7 @@ export const MockAssetId = {
                             ],
                             "src": "876:15:131"
                         },
-                        "scope": 23597,
+                        "scope": 23619,
                         "stateMutability": "pure",
                         "virtual": false,
                         "visibility": "external"
@@ -1412,11 +1412,11 @@ export const MockAssetId = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    23597
+                    23619
                 ],
                 "name": "MockAssetId",
                 "nameLocation": "137:11:131",
-                "scope": 23598,
+                "scope": 23620,
                 "usedErrors": [
                     10255
                 ],

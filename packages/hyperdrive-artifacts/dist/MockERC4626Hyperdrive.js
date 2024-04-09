@@ -4408,7 +4408,7 @@ export const MockERC4626Hyperdrive = {
     },
     "ast": {
         "absolutePath": "contracts/test/MockERC4626Hyperdrive.sol",
-        "id": 23974,
+        "id": 24077,
         "exportedSymbols": {
             "ERC4626Hyperdrive": [
                 7800
@@ -4417,14 +4417,14 @@ export const MockERC4626Hyperdrive = {
                 10351
             ],
             "MockERC4626Hyperdrive": [
-                23973
+                24076
             ]
         },
         "nodeType": "SourceUnit",
         "src": "39:1495:133",
         "nodes": [
             {
-                "id": 23894,
+                "id": 23997,
                 "nodeType": "PragmaDirective",
                 "src": "39:23:133",
                 "nodes": [],
@@ -4435,19 +4435,19 @@ export const MockERC4626Hyperdrive = {
                 ]
             },
             {
-                "id": 23896,
+                "id": 23999,
                 "nodeType": "ImportDirective",
                 "src": "64:90:133",
                 "nodes": [],
                 "absolutePath": "contracts/src/instances/erc4626/ERC4626Hyperdrive.sol",
                 "file": "contracts/src/instances/erc4626/ERC4626Hyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 23974,
+                "scope": 24077,
                 "sourceUnit": 7801,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 23895,
+                            "id": 23998,
                             "name": "ERC4626Hyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -4461,19 +4461,19 @@ export const MockERC4626Hyperdrive = {
                 "unitAlias": ""
             },
             {
-                "id": 23898,
+                "id": 24001,
                 "nodeType": "ImportDirective",
                 "src": "155:71:133",
                 "nodes": [],
                 "absolutePath": "contracts/src/interfaces/IHyperdrive.sol",
                 "file": "contracts/src/interfaces/IHyperdrive.sol",
                 "nameLocation": "-1:-1:-1",
-                "scope": 23974,
+                "scope": 24077,
                 "sourceUnit": 10352,
                 "symbolAliases": [
                     {
                         "foreign": {
-                            "id": 23897,
+                            "id": 24000,
                             "name": "IHyperdrive",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
@@ -4487,17 +4487,17 @@ export const MockERC4626Hyperdrive = {
                 "unitAlias": ""
             },
             {
-                "id": 23973,
+                "id": 24076,
                 "nodeType": "ContractDefinition",
                 "src": "381:1152:133",
                 "nodes": [
                     {
-                        "id": 23925,
+                        "id": 24028,
                         "nodeType": "FunctionDefinition",
                         "src": "439:368:133",
                         "nodes": [],
                         "body": {
-                            "id": 23924,
+                            "id": 24027,
                             "nodeType": "Block",
                             "src": "805:2:133",
                             "nodes": [],
@@ -4509,11 +4509,11 @@ export const MockERC4626Hyperdrive = {
                             {
                                 "arguments": [
                                     {
-                                        "id": 23916,
+                                        "id": 24019,
                                         "name": "_config",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23903,
+                                        "referencedDeclaration": 24006,
                                         "src": "673:7:133",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_struct$_PoolConfig_$10154_memory_ptr",
@@ -4521,11 +4521,11 @@ export const MockERC4626Hyperdrive = {
                                         }
                                     },
                                     {
-                                        "id": 23917,
+                                        "id": 24020,
                                         "name": "_target0",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23905,
+                                        "referencedDeclaration": 24008,
                                         "src": "694:8:133",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -4533,11 +4533,11 @@ export const MockERC4626Hyperdrive = {
                                         }
                                     },
                                     {
-                                        "id": 23918,
+                                        "id": 24021,
                                         "name": "_target1",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23907,
+                                        "referencedDeclaration": 24010,
                                         "src": "716:8:133",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -4545,11 +4545,11 @@ export const MockERC4626Hyperdrive = {
                                         }
                                     },
                                     {
-                                        "id": 23919,
+                                        "id": 24022,
                                         "name": "_target2",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23909,
+                                        "referencedDeclaration": 24012,
                                         "src": "738:8:133",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -4557,11 +4557,11 @@ export const MockERC4626Hyperdrive = {
                                         }
                                     },
                                     {
-                                        "id": 23920,
+                                        "id": 24023,
                                         "name": "_target3",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23911,
+                                        "referencedDeclaration": 24014,
                                         "src": "760:8:133",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -4569,11 +4569,11 @@ export const MockERC4626Hyperdrive = {
                                         }
                                     },
                                     {
-                                        "id": 23921,
+                                        "id": 24024,
                                         "name": "_target4",
                                         "nodeType": "Identifier",
                                         "overloadedDeclarations": [],
-                                        "referencedDeclaration": 23913,
+                                        "referencedDeclaration": 24016,
                                         "src": "782:8:133",
                                         "typeDescriptions": {
                                             "typeIdentifier": "t_address",
@@ -4581,10 +4581,10 @@ export const MockERC4626Hyperdrive = {
                                         }
                                     }
                                 ],
-                                "id": 23922,
+                                "id": 24025,
                                 "kind": "baseConstructorSpecifier",
                                 "modifierName": {
-                                    "id": 23915,
+                                    "id": 24018,
                                     "name": "ERC4626Hyperdrive",
                                     "nameLocations": [
                                         "642:17:133"
@@ -4600,17 +4600,17 @@ export const MockERC4626Hyperdrive = {
                         "name": "",
                         "nameLocation": "-1:-1:-1",
                         "parameters": {
-                            "id": 23914,
+                            "id": 24017,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23903,
+                                    "id": 24006,
                                     "mutability": "mutable",
                                     "name": "_config",
                                     "nameLocation": "490:7:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23925,
+                                    "scope": 24028,
                                     "src": "460:37:133",
                                     "stateVariable": false,
                                     "storageLocation": "memory",
@@ -4619,10 +4619,10 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "struct IHyperdrive.PoolConfig"
                                     },
                                     "typeName": {
-                                        "id": 23902,
+                                        "id": 24005,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 23901,
+                                            "id": 24004,
                                             "name": "IHyperdrive.PoolConfig",
                                             "nameLocations": [
                                                 "460:11:133",
@@ -4643,12 +4643,12 @@ export const MockERC4626Hyperdrive = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23905,
+                                    "id": 24008,
                                     "mutability": "mutable",
                                     "name": "_target0",
                                     "nameLocation": "515:8:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23925,
+                                    "scope": 24028,
                                     "src": "507:16:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4657,7 +4657,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 23904,
+                                        "id": 24007,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "507:7:133",
@@ -4671,12 +4671,12 @@ export const MockERC4626Hyperdrive = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23907,
+                                    "id": 24010,
                                     "mutability": "mutable",
                                     "name": "_target1",
                                     "nameLocation": "541:8:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23925,
+                                    "scope": 24028,
                                     "src": "533:16:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4685,7 +4685,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 23906,
+                                        "id": 24009,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "533:7:133",
@@ -4699,12 +4699,12 @@ export const MockERC4626Hyperdrive = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23909,
+                                    "id": 24012,
                                     "mutability": "mutable",
                                     "name": "_target2",
                                     "nameLocation": "567:8:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23925,
+                                    "scope": 24028,
                                     "src": "559:16:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4713,7 +4713,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 23908,
+                                        "id": 24011,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "559:7:133",
@@ -4727,12 +4727,12 @@ export const MockERC4626Hyperdrive = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23911,
+                                    "id": 24014,
                                     "mutability": "mutable",
                                     "name": "_target3",
                                     "nameLocation": "593:8:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23925,
+                                    "scope": 24028,
                                     "src": "585:16:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4741,7 +4741,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 23910,
+                                        "id": 24013,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "585:7:133",
@@ -4755,12 +4755,12 @@ export const MockERC4626Hyperdrive = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23913,
+                                    "id": 24016,
                                     "mutability": "mutable",
                                     "name": "_target4",
                                     "nameLocation": "619:8:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23925,
+                                    "scope": 24028,
                                     "src": "611:16:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4769,7 +4769,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "address"
                                     },
                                     "typeName": {
-                                        "id": 23912,
+                                        "id": 24015,
                                         "name": "address",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "611:7:133",
@@ -4785,23 +4785,23 @@ export const MockERC4626Hyperdrive = {
                             "src": "450:183:133"
                         },
                         "returnParameters": {
-                            "id": 23923,
+                            "id": 24026,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "805:0:133"
                         },
-                        "scope": 23973,
+                        "scope": 24076,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 23943,
+                        "id": 24046,
                         "nodeType": "FunctionDefinition",
                         "src": "813:209:133",
                         "nodes": [],
                         "body": {
-                            "id": 23942,
+                            "id": 24045,
                             "nodeType": "Block",
                             "src": "971:51:133",
                             "nodes": [],
@@ -4810,11 +4810,11 @@ export const MockERC4626Hyperdrive = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 23938,
+                                                "id": 24041,
                                                 "name": "_amount",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23927,
+                                                "referencedDeclaration": 24030,
                                                 "src": "997:7:133",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -4822,11 +4822,11 @@ export const MockERC4626Hyperdrive = {
                                                 }
                                             },
                                             {
-                                                "id": 23939,
+                                                "id": 24042,
                                                 "name": "_options",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23930,
+                                                "referencedDeclaration": 24033,
                                                 "src": "1006:8:133",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_struct$_Options_$10210_calldata_ptr",
@@ -4845,7 +4845,7 @@ export const MockERC4626Hyperdrive = {
                                                     "typeString": "struct IHyperdrive.Options calldata"
                                                 }
                                             ],
-                                            "id": 23937,
+                                            "id": 24040,
                                             "name": "_deposit",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
@@ -4856,7 +4856,7 @@ export const MockERC4626Hyperdrive = {
                                                 "typeString": "function (uint256,struct IHyperdrive.Options calldata) returns (uint256,uint256)"
                                             }
                                         },
-                                        "id": 23940,
+                                        "id": 24043,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -4872,8 +4872,8 @@ export const MockERC4626Hyperdrive = {
                                             "typeString": "tuple(uint256,uint256)"
                                         }
                                     },
-                                    "functionReturnParameters": 23936,
-                                    "id": 23941,
+                                    "functionReturnParameters": 24039,
+                                    "id": 24044,
                                     "nodeType": "Return",
                                     "src": "981:34:133"
                                 }
@@ -4886,17 +4886,17 @@ export const MockERC4626Hyperdrive = {
                         "name": "deposit",
                         "nameLocation": "822:7:133",
                         "parameters": {
-                            "id": 23931,
+                            "id": 24034,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23927,
+                                    "id": 24030,
                                     "mutability": "mutable",
                                     "name": "_amount",
                                     "nameLocation": "847:7:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23943,
+                                    "scope": 24046,
                                     "src": "839:15:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4905,7 +4905,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23926,
+                                        "id": 24029,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "839:7:133",
@@ -4918,12 +4918,12 @@ export const MockERC4626Hyperdrive = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23930,
+                                    "id": 24033,
                                     "mutability": "mutable",
                                     "name": "_options",
                                     "nameLocation": "893:8:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23943,
+                                    "scope": 24046,
                                     "src": "864:37:133",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -4932,10 +4932,10 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "struct IHyperdrive.Options"
                                     },
                                     "typeName": {
-                                        "id": 23929,
+                                        "id": 24032,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 23928,
+                                            "id": 24031,
                                             "name": "IHyperdrive.Options",
                                             "nameLocations": [
                                                 "864:11:133",
@@ -4958,17 +4958,17 @@ export const MockERC4626Hyperdrive = {
                             "src": "829:78:133"
                         },
                         "returnParameters": {
-                            "id": 23936,
+                            "id": 24039,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23933,
+                                    "id": 24036,
                                     "mutability": "mutable",
                                     "name": "sharesMinted",
                                     "nameLocation": "932:12:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23943,
+                                    "scope": 24046,
                                     "src": "924:20:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -4977,7 +4977,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23932,
+                                        "id": 24035,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "924:7:133",
@@ -4990,12 +4990,12 @@ export const MockERC4626Hyperdrive = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23935,
+                                    "id": 24038,
                                     "mutability": "mutable",
                                     "name": "vaultSharePrice",
                                     "nameLocation": "954:15:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23943,
+                                    "scope": 24046,
                                     "src": "946:23:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5004,7 +5004,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23934,
+                                        "id": 24037,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "946:7:133",
@@ -5018,18 +5018,18 @@ export const MockERC4626Hyperdrive = {
                             ],
                             "src": "923:47:133"
                         },
-                        "scope": 23973,
+                        "scope": 24076,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 23962,
+                        "id": 24065,
                         "nodeType": "FunctionDefinition",
                         "src": "1028:231:133",
                         "nodes": [],
                         "body": {
-                            "id": 23961,
+                            "id": 24064,
                             "nodeType": "Block",
                             "src": "1194:65:133",
                             "nodes": [],
@@ -5038,11 +5038,11 @@ export const MockERC4626Hyperdrive = {
                                     "expression": {
                                         "arguments": [
                                             {
-                                                "id": 23956,
+                                                "id": 24059,
                                                 "name": "_shares",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23945,
+                                                "referencedDeclaration": 24048,
                                                 "src": "1221:7:133",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5050,11 +5050,11 @@ export const MockERC4626Hyperdrive = {
                                                 }
                                             },
                                             {
-                                                "id": 23957,
+                                                "id": 24060,
                                                 "name": "_sharePrice",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23947,
+                                                "referencedDeclaration": 24050,
                                                 "src": "1230:11:133",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_uint256",
@@ -5062,11 +5062,11 @@ export const MockERC4626Hyperdrive = {
                                                 }
                                             },
                                             {
-                                                "id": 23958,
+                                                "id": 24061,
                                                 "name": "_options",
                                                 "nodeType": "Identifier",
                                                 "overloadedDeclarations": [],
-                                                "referencedDeclaration": 23950,
+                                                "referencedDeclaration": 24053,
                                                 "src": "1243:8:133",
                                                 "typeDescriptions": {
                                                     "typeIdentifier": "t_struct$_Options_$10210_calldata_ptr",
@@ -5089,7 +5089,7 @@ export const MockERC4626Hyperdrive = {
                                                     "typeString": "struct IHyperdrive.Options calldata"
                                                 }
                                             ],
-                                            "id": 23955,
+                                            "id": 24058,
                                             "name": "_withdraw",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
@@ -5100,7 +5100,7 @@ export const MockERC4626Hyperdrive = {
                                                 "typeString": "function (uint256,uint256,struct IHyperdrive.Options calldata) returns (uint256)"
                                             }
                                         },
-                                        "id": 23959,
+                                        "id": 24062,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5116,8 +5116,8 @@ export const MockERC4626Hyperdrive = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 23954,
-                                    "id": 23960,
+                                    "functionReturnParameters": 24057,
+                                    "id": 24063,
                                     "nodeType": "Return",
                                     "src": "1204:48:133"
                                 }
@@ -5130,17 +5130,17 @@ export const MockERC4626Hyperdrive = {
                         "name": "withdraw",
                         "nameLocation": "1037:8:133",
                         "parameters": {
-                            "id": 23951,
+                            "id": 24054,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23945,
+                                    "id": 24048,
                                     "mutability": "mutable",
                                     "name": "_shares",
                                     "nameLocation": "1063:7:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23962,
+                                    "scope": 24065,
                                     "src": "1055:15:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5149,7 +5149,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23944,
+                                        "id": 24047,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1055:7:133",
@@ -5162,12 +5162,12 @@ export const MockERC4626Hyperdrive = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23947,
+                                    "id": 24050,
                                     "mutability": "mutable",
                                     "name": "_sharePrice",
                                     "nameLocation": "1088:11:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23962,
+                                    "scope": 24065,
                                     "src": "1080:19:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5176,7 +5176,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23946,
+                                        "id": 24049,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1080:7:133",
@@ -5189,12 +5189,12 @@ export const MockERC4626Hyperdrive = {
                                 },
                                 {
                                     "constant": false,
-                                    "id": 23950,
+                                    "id": 24053,
                                     "mutability": "mutable",
                                     "name": "_options",
                                     "nameLocation": "1138:8:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23962,
+                                    "scope": 24065,
                                     "src": "1109:37:133",
                                     "stateVariable": false,
                                     "storageLocation": "calldata",
@@ -5203,10 +5203,10 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "struct IHyperdrive.Options"
                                     },
                                     "typeName": {
-                                        "id": 23949,
+                                        "id": 24052,
                                         "nodeType": "UserDefinedTypeName",
                                         "pathNode": {
-                                            "id": 23948,
+                                            "id": 24051,
                                             "name": "IHyperdrive.Options",
                                             "nameLocations": [
                                                 "1109:11:133",
@@ -5229,17 +5229,17 @@ export const MockERC4626Hyperdrive = {
                             "src": "1045:107:133"
                         },
                         "returnParameters": {
-                            "id": 23954,
+                            "id": 24057,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23953,
+                                    "id": 24056,
                                     "mutability": "mutable",
                                     "name": "amountWithdrawn",
                                     "nameLocation": "1177:15:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23962,
+                                    "scope": 24065,
                                     "src": "1169:23:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5248,7 +5248,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23952,
+                                        "id": 24055,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1169:7:133",
@@ -5262,18 +5262,18 @@ export const MockERC4626Hyperdrive = {
                             ],
                             "src": "1168:25:133"
                         },
-                        "scope": 23973,
+                        "scope": 24076,
                         "stateMutability": "nonpayable",
                         "virtual": false,
                         "visibility": "public"
                     },
                     {
-                        "id": 23972,
+                        "id": 24075,
                         "nodeType": "FunctionDefinition",
                         "src": "1382:149:133",
                         "nodes": [],
                         "body": {
-                            "id": 23971,
+                            "id": 24074,
                             "nodeType": "Block",
                             "src": "1486:45:133",
                             "nodes": [],
@@ -5283,7 +5283,7 @@ export const MockERC4626Hyperdrive = {
                                         "arguments": [],
                                         "expression": {
                                             "argumentTypes": [],
-                                            "id": 23968,
+                                            "id": 24071,
                                             "name": "_pricePerVaultShare",
                                             "nodeType": "Identifier",
                                             "overloadedDeclarations": [],
@@ -5294,7 +5294,7 @@ export const MockERC4626Hyperdrive = {
                                                 "typeString": "function () view returns (uint256)"
                                             }
                                         },
-                                        "id": 23969,
+                                        "id": 24072,
                                         "isConstant": false,
                                         "isLValue": false,
                                         "isPure": false,
@@ -5310,15 +5310,15 @@ export const MockERC4626Hyperdrive = {
                                             "typeString": "uint256"
                                         }
                                     },
-                                    "functionReturnParameters": 23967,
-                                    "id": 23970,
+                                    "functionReturnParameters": 24070,
+                                    "id": 24073,
                                     "nodeType": "Return",
                                     "src": "1496:28:133"
                                 }
                             ]
                         },
                         "documentation": {
-                            "id": 23963,
+                            "id": 24066,
                             "nodeType": "StructuredDocumentation",
                             "src": "1265:112:133",
                             "text": "@notice Loads the share price from the yield source\n @return vaultSharePrice The current share price."
@@ -5330,23 +5330,23 @@ export const MockERC4626Hyperdrive = {
                         "name": "pricePerVaultShare",
                         "nameLocation": "1391:18:133",
                         "parameters": {
-                            "id": 23964,
+                            "id": 24067,
                             "nodeType": "ParameterList",
                             "parameters": [],
                             "src": "1409:2:133"
                         },
                         "returnParameters": {
-                            "id": 23967,
+                            "id": 24070,
                             "nodeType": "ParameterList",
                             "parameters": [
                                 {
                                     "constant": false,
-                                    "id": 23966,
+                                    "id": 24069,
                                     "mutability": "mutable",
                                     "name": "vaultSharePrice",
                                     "nameLocation": "1465:15:133",
                                     "nodeType": "VariableDeclaration",
-                                    "scope": 23972,
+                                    "scope": 24075,
                                     "src": "1457:23:133",
                                     "stateVariable": false,
                                     "storageLocation": "default",
@@ -5355,7 +5355,7 @@ export const MockERC4626Hyperdrive = {
                                         "typeString": "uint256"
                                     },
                                     "typeName": {
-                                        "id": 23965,
+                                        "id": 24068,
                                         "name": "uint256",
                                         "nodeType": "ElementaryTypeName",
                                         "src": "1457:7:133",
@@ -5369,7 +5369,7 @@ export const MockERC4626Hyperdrive = {
                             ],
                             "src": "1456:25:133"
                         },
-                        "scope": 23973,
+                        "scope": 24076,
                         "stateMutability": "view",
                         "virtual": false,
                         "visibility": "public"
@@ -5379,7 +5379,7 @@ export const MockERC4626Hyperdrive = {
                 "baseContracts": [
                     {
                         "baseName": {
-                            "id": 23899,
+                            "id": 24002,
                             "name": "ERC4626Hyperdrive",
                             "nameLocations": [
                                 "415:17:133"
@@ -5388,7 +5388,7 @@ export const MockERC4626Hyperdrive = {
                             "referencedDeclaration": 7800,
                             "src": "415:17:133"
                         },
-                        "id": 23900,
+                        "id": 24003,
                         "nodeType": "InheritanceSpecifier",
                         "src": "415:17:133"
                     }
@@ -5398,7 +5398,7 @@ export const MockERC4626Hyperdrive = {
                 "contractKind": "contract",
                 "fullyImplemented": true,
                 "linearizedBaseContracts": [
-                    23973,
+                    24076,
                     7800,
                     7736,
                     4375,
@@ -5410,7 +5410,7 @@ export const MockERC4626Hyperdrive = {
                     12497,
                     13667,
                     17734,
-                    71639,
+                    71745,
                     10887,
                     11459,
                     10542,
@@ -5418,15 +5418,15 @@ export const MockERC4626Hyperdrive = {
                 ],
                 "name": "MockERC4626Hyperdrive",
                 "nameLocation": "390:21:133",
-                "scope": 23974,
+                "scope": 24077,
                 "usedErrors": [
                     10296,
                     10302,
-                    71014,
-                    71295,
-                    71300,
-                    71303,
-                    71584
+                    71120,
+                    71401,
+                    71406,
+                    71409,
+                    71690
                 ],
                 "usedEvents": [
                     10705,

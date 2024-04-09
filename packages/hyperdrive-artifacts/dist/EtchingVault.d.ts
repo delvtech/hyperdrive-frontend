@@ -46,11 +46,11 @@ export declare const EtchingVault: {
         readonly sourceMap: "511:471:130:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;874:106;;;;;;:::i;:::-;-1:-1:-1;957:16:130;;874:106;;;;345:25:234;;;333:2;318:18;874:106:130;;;;;;;;785:83;;;-1:-1:-1;;;;;851:10:130;545:32:234;527:51;;515:2;500:18;785:83:130;381:203:234;14:180;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:234;;14:180;-1:-1:-1;14:180:234:o";
         readonly linkReferences: {};
         readonly immutableReferences: {
-            readonly "23473": readonly [{
+            readonly "23495": readonly [{
                 readonly start: 135;
                 readonly length: 32;
             }];
-            readonly "23475": readonly [{
+            readonly "23497": readonly [{
                 readonly start: 69;
                 readonly length: 32;
             }];
@@ -140,24 +140,24 @@ export declare const EtchingVault: {
     };
     readonly ast: {
         readonly absolutePath: "contracts/test/EtchingVault.sol";
-        readonly id: 23511;
+        readonly id: 23533;
         readonly exportedSymbols: {
-            readonly EtchingVault: readonly [23510];
+            readonly EtchingVault: readonly [23532];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "39:944:130";
         readonly nodes: readonly [{
-            readonly id: 23470;
+            readonly id: 23492;
             readonly nodeType: "PragmaDirective";
             readonly src: "39:23:130";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", "0.8", ".20"];
         }, {
-            readonly id: 23510;
+            readonly id: 23532;
             readonly nodeType: "ContractDefinition";
             readonly src: "511:471:130";
             readonly nodes: readonly [{
-                readonly id: 23473;
+                readonly id: 23495;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "539:37:130";
                 readonly nodes: readonly [];
@@ -165,7 +165,7 @@ export declare const EtchingVault: {
                 readonly mutability: "immutable";
                 readonly name: "_baseToken";
                 readonly nameLocation: "566:10:130";
-                readonly scope: 23510;
+                readonly scope: 23532;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -173,7 +173,7 @@ export declare const EtchingVault: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 23472;
+                    readonly id: 23494;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "539:7:130";
@@ -185,7 +185,7 @@ export declare const EtchingVault: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 23475;
+                readonly id: 23497;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "582:43:130";
                 readonly nodes: readonly [];
@@ -193,7 +193,7 @@ export declare const EtchingVault: {
                 readonly mutability: "immutable";
                 readonly name: "_vaultSharePrice";
                 readonly nameLocation: "609:16:130";
-                readonly scope: 23510;
+                readonly scope: 23532;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
@@ -201,7 +201,7 @@ export declare const EtchingVault: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 23474;
+                    readonly id: 23496;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "582:7:130";
@@ -212,28 +212,28 @@ export declare const EtchingVault: {
                 };
                 readonly visibility: "internal";
             }, {
-                readonly id: 23491;
+                readonly id: 23513;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "632:147:130";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23490;
+                    readonly id: 23512;
                     readonly nodeType: "Block";
                     readonly src: "692:87:130";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 23484;
+                            readonly id: 23506;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 23482;
+                                readonly id: 23504;
                                 readonly name: "_baseToken";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23473;
+                                readonly referencedDeclaration: 23495;
                                 readonly src: "702:10:130";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -243,11 +243,11 @@ export declare const EtchingVault: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 23483;
+                                readonly id: 23505;
                                 readonly name: "_baseToken_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23477;
+                                readonly referencedDeclaration: 23499;
                                 readonly src: "715:11:130";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -260,22 +260,22 @@ export declare const EtchingVault: {
                                 readonly typeString: "address";
                             };
                         };
-                        readonly id: 23485;
+                        readonly id: 23507;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "702:24:130";
                     }, {
                         readonly expression: {
-                            readonly id: 23488;
+                            readonly id: 23510;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
-                                readonly id: 23486;
+                                readonly id: 23508;
                                 readonly name: "_vaultSharePrice";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23475;
+                                readonly referencedDeclaration: 23497;
                                 readonly src: "736:16:130";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -285,11 +285,11 @@ export declare const EtchingVault: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 23487;
+                                readonly id: 23509;
                                 readonly name: "_vaultSharePrice_";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 23479;
+                                readonly referencedDeclaration: 23501;
                                 readonly src: "755:17:130";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -302,7 +302,7 @@ export declare const EtchingVault: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 23489;
+                        readonly id: 23511;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "736:36:130";
                     }];
@@ -313,16 +313,16 @@ export declare const EtchingVault: {
                 readonly name: "";
                 readonly nameLocation: "-1:-1:-1";
                 readonly parameters: {
-                    readonly id: 23480;
+                    readonly id: 23502;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23477;
+                        readonly id: 23499;
                         readonly mutability: "mutable";
                         readonly name: "_baseToken_";
                         readonly nameLocation: "652:11:130";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23491;
+                        readonly scope: 23513;
                         readonly src: "644:19:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -331,7 +331,7 @@ export declare const EtchingVault: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 23476;
+                            readonly id: 23498;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "644:7:130";
@@ -344,12 +344,12 @@ export declare const EtchingVault: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 23479;
+                        readonly id: 23501;
                         readonly mutability: "mutable";
                         readonly name: "_vaultSharePrice_";
                         readonly nameLocation: "673:17:130";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23491;
+                        readonly scope: 23513;
                         readonly src: "665:25:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -358,7 +358,7 @@ export declare const EtchingVault: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23478;
+                            readonly id: 23500;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "665:7:130";
@@ -372,40 +372,40 @@ export declare const EtchingVault: {
                     readonly src: "643:48:130";
                 };
                 readonly returnParameters: {
-                    readonly id: 23481;
+                    readonly id: 23503;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "692:0:130";
                 };
-                readonly scope: 23510;
+                readonly scope: 23532;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "public";
             }, {
-                readonly id: 23499;
+                readonly id: 23521;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "785:83:130";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23498;
+                    readonly id: 23520;
                     readonly nodeType: "Block";
                     readonly src: "834:34:130";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 23496;
+                            readonly id: 23518;
                             readonly name: "_baseToken";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 23473;
+                            readonly referencedDeclaration: 23495;
                             readonly src: "851:10:130";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
                                 readonly typeString: "address";
                             };
                         };
-                        readonly functionReturnParameters: 23495;
-                        readonly id: 23497;
+                        readonly functionReturnParameters: 23517;
+                        readonly id: 23519;
                         readonly nodeType: "Return";
                         readonly src: "844:17:130";
                     }];
@@ -417,22 +417,22 @@ export declare const EtchingVault: {
                 readonly name: "asset";
                 readonly nameLocation: "794:5:130";
                 readonly parameters: {
-                    readonly id: 23492;
+                    readonly id: 23514;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "799:2:130";
                 };
                 readonly returnParameters: {
-                    readonly id: 23495;
+                    readonly id: 23517;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23494;
+                        readonly id: 23516;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23499;
+                        readonly scope: 23521;
                         readonly src: "825:7:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -441,7 +441,7 @@ export declare const EtchingVault: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 23493;
+                            readonly id: 23515;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "825:7:130";
@@ -455,35 +455,35 @@ export declare const EtchingVault: {
                     }];
                     readonly src: "824:9:130";
                 };
-                readonly scope: 23510;
+                readonly scope: 23532;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
             }, {
-                readonly id: 23509;
+                readonly id: 23531;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "874:106:130";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 23508;
+                    readonly id: 23530;
                     readonly nodeType: "Block";
                     readonly src: "940:40:130";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 23506;
+                            readonly id: 23528;
                             readonly name: "_vaultSharePrice";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 23475;
+                            readonly referencedDeclaration: 23497;
                             readonly src: "957:16:130";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 23505;
-                        readonly id: 23507;
+                        readonly functionReturnParameters: 23527;
+                        readonly id: 23529;
                         readonly nodeType: "Return";
                         readonly src: "950:23:130";
                     }];
@@ -495,16 +495,16 @@ export declare const EtchingVault: {
                 readonly name: "convertToAssets";
                 readonly nameLocation: "883:15:130";
                 readonly parameters: {
-                    readonly id: 23502;
+                    readonly id: 23524;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23501;
+                        readonly id: 23523;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23509;
+                        readonly scope: 23531;
                         readonly src: "899:7:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -513,7 +513,7 @@ export declare const EtchingVault: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23500;
+                            readonly id: 23522;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "899:7:130";
@@ -527,16 +527,16 @@ export declare const EtchingVault: {
                     readonly src: "898:9:130";
                 };
                 readonly returnParameters: {
-                    readonly id: 23505;
+                    readonly id: 23527;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 23504;
+                        readonly id: 23526;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 23509;
+                        readonly scope: 23531;
                         readonly src: "931:7:130";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -545,7 +545,7 @@ export declare const EtchingVault: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 23503;
+                            readonly id: 23525;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "931:7:130";
@@ -558,7 +558,7 @@ export declare const EtchingVault: {
                     }];
                     readonly src: "930:9:130";
                 };
-                readonly scope: 23510;
+                readonly scope: 23532;
                 readonly stateMutability: "view";
                 readonly virtual: false;
                 readonly visibility: "external";
@@ -569,16 +569,16 @@ export declare const EtchingVault: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "contract";
             readonly documentation: {
-                readonly id: 23471;
+                readonly id: 23493;
                 readonly nodeType: "StructuredDocumentation";
                 readonly src: "64:447:130";
                 readonly text: "@author DELV\n @title EtchingVault\n @dev This is a helper contract that is etched onto a `MockERC4626` vault\n      as one of the intermediate steps in the \"etching\" process in the Rust\n      debugging tools.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [23510];
+            readonly linearizedBaseContracts: readonly [23532];
             readonly name: "EtchingVault";
             readonly nameLocation: "520:12:130";
-            readonly scope: 23511;
+            readonly scope: 23533;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

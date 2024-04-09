@@ -3542,11 +3542,11 @@ export declare const StETHBase: {
                 readonly text: "@author DELV\n @title StethHyperdrive\n @notice The base contract for the stETH Hyperdrive implementation.\n @dev Lido has it's own notion of shares to account for the accrual of\n      interest on the ether pooled in the Lido protocol. Instead of\n      maintaining a balance of shares, this integration can simply use Lido\n      shares directly.\n @custom:disclaimer The language used in this code is for coding convenience\n                    only, and is not intended to, and does not, have any\n                    particular legal or regulatory significance.";
             };
             readonly fullyImplemented: false;
-            readonly linearizedBaseContracts: readonly [9388, 13667, 17734, 71639, 10887, 11459];
+            readonly linearizedBaseContracts: readonly [9388, 13667, 17734, 71745, 10887, 11459];
             readonly name: "StETHBase";
             readonly nameLocation: "925:9:72";
             readonly scope: 9389;
-            readonly usedErrors: readonly [71584];
+            readonly usedErrors: readonly [71690];
             readonly usedEvents: readonly [10705, 10720, 10739, 10754, 10771, 10790, 10809, 10830, 10845, 10852, 10857, 10862, 10867, 10874, 10879, 10886, 11440, 11449, 11458];
         }];
         readonly license: "Apache-2.0";

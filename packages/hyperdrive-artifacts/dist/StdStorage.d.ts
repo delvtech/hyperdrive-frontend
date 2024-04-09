@@ -60,38 +60,38 @@ export declare const stdStorage: {
     };
     readonly ast: {
         readonly absolutePath: "lib/forge-std/src/StdStorage.sol";
-        readonly id: 37132;
+        readonly id: 37238;
         readonly exportedSymbols: {
-            readonly StdStorage: readonly [35678];
-            readonly Vm: readonly [40778];
-            readonly stdStorage: readonly [37131];
-            readonly stdStorageSafe: readonly [36570];
+            readonly StdStorage: readonly [35784];
+            readonly Vm: readonly [40884];
+            readonly stdStorage: readonly [37237];
+            readonly stdStorageSafe: readonly [36676];
         };
         readonly nodeType: "SourceUnit";
         readonly src: "32:11973:152";
         readonly nodes: readonly [{
-            readonly id: 35648;
+            readonly id: 35754;
             readonly nodeType: "PragmaDirective";
             readonly src: "32:31:152";
             readonly nodes: readonly [];
             readonly literals: readonly ["solidity", ">=", "0.6", ".2", "<", "0.9", ".0"];
         }, {
-            readonly id: 35650;
+            readonly id: 35756;
             readonly nodeType: "ImportDirective";
             readonly src: "65:28:152";
             readonly nodes: readonly [];
             readonly absolutePath: "lib/forge-std/src/Vm.sol";
             readonly file: "./Vm.sol";
             readonly nameLocation: "-1:-1:-1";
-            readonly scope: 37132;
-            readonly sourceUnit: 40779;
+            readonly scope: 37238;
+            readonly sourceUnit: 40885;
             readonly symbolAliases: readonly [{
                 readonly foreign: {
-                    readonly id: 35649;
+                    readonly id: 35755;
                     readonly name: "Vm";
                     readonly nodeType: "Identifier";
                     readonly overloadedDeclarations: readonly [];
-                    readonly referencedDeclaration: 40778;
+                    readonly referencedDeclaration: 40884;
                     readonly src: "73:2:152";
                     readonly typeDescriptions: {};
                 };
@@ -99,19 +99,19 @@ export declare const stdStorage: {
             }];
             readonly unitAlias: "";
         }, {
-            readonly id: 35678;
+            readonly id: 35784;
             readonly nodeType: "StructDefinition";
             readonly src: "95:271:152";
             readonly nodes: readonly [];
             readonly canonicalName: "StdStorage";
             readonly members: readonly [{
                 readonly constant: false;
-                readonly id: 35658;
+                readonly id: 35764;
                 readonly mutability: "mutable";
                 readonly name: "slots";
                 readonly nameLocation: "186:5:152";
                 readonly nodeType: "VariableDeclaration";
-                readonly scope: 35678;
+                readonly scope: 35784;
                 readonly src: "119:72:152";
                 readonly stateVariable: false;
                 readonly storageLocation: "default";
@@ -120,11 +120,11 @@ export declare const stdStorage: {
                     readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => uint256)))";
                 };
                 readonly typeName: {
-                    readonly id: 35657;
+                    readonly id: 35763;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 35651;
+                        readonly id: 35757;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "127:7:152";
@@ -142,11 +142,11 @@ export declare const stdStorage: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 35656;
+                        readonly id: 35762;
                         readonly keyName: "";
                         readonly keyNameLocation: "-1:-1:-1";
                         readonly keyType: {
-                            readonly id: 35652;
+                            readonly id: 35758;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "146:6:152";
@@ -164,11 +164,11 @@ export declare const stdStorage: {
                         readonly valueName: "";
                         readonly valueNameLocation: "-1:-1:-1";
                         readonly valueType: {
-                            readonly id: 35655;
+                            readonly id: 35761;
                             readonly keyName: "";
                             readonly keyNameLocation: "-1:-1:-1";
                             readonly keyType: {
-                                readonly id: 35653;
+                                readonly id: 35759;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "164:7:152";
@@ -186,7 +186,7 @@ export declare const stdStorage: {
                             readonly valueName: "";
                             readonly valueNameLocation: "-1:-1:-1";
                             readonly valueType: {
-                                readonly id: 35654;
+                                readonly id: 35760;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "175:7:152";
@@ -201,12 +201,12 @@ export declare const stdStorage: {
                 readonly visibility: "internal";
             }, {
                 readonly constant: false;
-                readonly id: 35666;
+                readonly id: 35772;
                 readonly mutability: "mutable";
                 readonly name: "finds";
                 readonly nameLocation: "261:5:152";
                 readonly nodeType: "VariableDeclaration";
-                readonly scope: 35678;
+                readonly scope: 35784;
                 readonly src: "197:69:152";
                 readonly stateVariable: false;
                 readonly storageLocation: "default";
@@ -215,11 +215,11 @@ export declare const stdStorage: {
                     readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => bool)))";
                 };
                 readonly typeName: {
-                    readonly id: 35665;
+                    readonly id: 35771;
                     readonly keyName: "";
                     readonly keyNameLocation: "-1:-1:-1";
                     readonly keyType: {
-                        readonly id: 35659;
+                        readonly id: 35765;
                         readonly name: "address";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "205:7:152";
@@ -237,11 +237,11 @@ export declare const stdStorage: {
                     readonly valueName: "";
                     readonly valueNameLocation: "-1:-1:-1";
                     readonly valueType: {
-                        readonly id: 35664;
+                        readonly id: 35770;
                         readonly keyName: "";
                         readonly keyNameLocation: "-1:-1:-1";
                         readonly keyType: {
-                            readonly id: 35660;
+                            readonly id: 35766;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "224:6:152";
@@ -259,11 +259,11 @@ export declare const stdStorage: {
                         readonly valueName: "";
                         readonly valueNameLocation: "-1:-1:-1";
                         readonly valueType: {
-                            readonly id: 35663;
+                            readonly id: 35769;
                             readonly keyName: "";
                             readonly keyNameLocation: "-1:-1:-1";
                             readonly keyType: {
-                                readonly id: 35661;
+                                readonly id: 35767;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "242:7:152";
@@ -281,7 +281,7 @@ export declare const stdStorage: {
                             readonly valueName: "";
                             readonly valueNameLocation: "-1:-1:-1";
                             readonly valueType: {
-                                readonly id: 35662;
+                                readonly id: 35768;
                                 readonly name: "bool";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "253:4:152";
@@ -296,12 +296,12 @@ export declare const stdStorage: {
                 readonly visibility: "internal";
             }, {
                 readonly constant: false;
-                readonly id: 35669;
+                readonly id: 35775;
                 readonly mutability: "mutable";
                 readonly name: "_keys";
                 readonly nameLocation: "282:5:152";
                 readonly nodeType: "VariableDeclaration";
-                readonly scope: 35678;
+                readonly scope: 35784;
                 readonly src: "272:15:152";
                 readonly stateVariable: false;
                 readonly storageLocation: "default";
@@ -311,7 +311,7 @@ export declare const stdStorage: {
                 };
                 readonly typeName: {
                     readonly baseType: {
-                        readonly id: 35667;
+                        readonly id: 35773;
                         readonly name: "bytes32";
                         readonly nodeType: "ElementaryTypeName";
                         readonly src: "272:7:152";
@@ -320,7 +320,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes32";
                         };
                     };
-                    readonly id: 35668;
+                    readonly id: 35774;
                     readonly nodeType: "ArrayTypeName";
                     readonly src: "272:9:152";
                     readonly typeDescriptions: {
@@ -331,12 +331,12 @@ export declare const stdStorage: {
                 readonly visibility: "internal";
             }, {
                 readonly constant: false;
-                readonly id: 35671;
+                readonly id: 35777;
                 readonly mutability: "mutable";
                 readonly name: "_sig";
                 readonly nameLocation: "300:4:152";
                 readonly nodeType: "VariableDeclaration";
-                readonly scope: 35678;
+                readonly scope: 35784;
                 readonly src: "293:11:152";
                 readonly stateVariable: false;
                 readonly storageLocation: "default";
@@ -345,7 +345,7 @@ export declare const stdStorage: {
                     readonly typeString: "bytes4";
                 };
                 readonly typeName: {
-                    readonly id: 35670;
+                    readonly id: 35776;
                     readonly name: "bytes4";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "293:6:152";
@@ -357,12 +357,12 @@ export declare const stdStorage: {
                 readonly visibility: "internal";
             }, {
                 readonly constant: false;
-                readonly id: 35673;
+                readonly id: 35779;
                 readonly mutability: "mutable";
                 readonly name: "_depth";
                 readonly nameLocation: "318:6:152";
                 readonly nodeType: "VariableDeclaration";
-                readonly scope: 35678;
+                readonly scope: 35784;
                 readonly src: "310:14:152";
                 readonly stateVariable: false;
                 readonly storageLocation: "default";
@@ -371,7 +371,7 @@ export declare const stdStorage: {
                     readonly typeString: "uint256";
                 };
                 readonly typeName: {
-                    readonly id: 35672;
+                    readonly id: 35778;
                     readonly name: "uint256";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "310:7:152";
@@ -383,12 +383,12 @@ export declare const stdStorage: {
                 readonly visibility: "internal";
             }, {
                 readonly constant: false;
-                readonly id: 35675;
+                readonly id: 35781;
                 readonly mutability: "mutable";
                 readonly name: "_target";
                 readonly nameLocation: "338:7:152";
                 readonly nodeType: "VariableDeclaration";
-                readonly scope: 35678;
+                readonly scope: 35784;
                 readonly src: "330:15:152";
                 readonly stateVariable: false;
                 readonly storageLocation: "default";
@@ -397,7 +397,7 @@ export declare const stdStorage: {
                     readonly typeString: "address";
                 };
                 readonly typeName: {
-                    readonly id: 35674;
+                    readonly id: 35780;
                     readonly name: "address";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "330:7:152";
@@ -410,12 +410,12 @@ export declare const stdStorage: {
                 readonly visibility: "internal";
             }, {
                 readonly constant: false;
-                readonly id: 35677;
+                readonly id: 35783;
                 readonly mutability: "mutable";
                 readonly name: "_set";
                 readonly nameLocation: "359:4:152";
                 readonly nodeType: "VariableDeclaration";
-                readonly scope: 35678;
+                readonly scope: 35784;
                 readonly src: "351:12:152";
                 readonly stateVariable: false;
                 readonly storageLocation: "default";
@@ -424,7 +424,7 @@ export declare const stdStorage: {
                     readonly typeString: "bytes32";
                 };
                 readonly typeName: {
-                    readonly id: 35676;
+                    readonly id: 35782;
                     readonly name: "bytes32";
                     readonly nodeType: "ElementaryTypeName";
                     readonly src: "351:7:152";
@@ -437,14 +437,14 @@ export declare const stdStorage: {
             }];
             readonly name: "StdStorage";
             readonly nameLocation: "102:10:152";
-            readonly scope: 37132;
+            readonly scope: 37238;
             readonly visibility: "public";
         }, {
-            readonly id: 36570;
+            readonly id: 36676;
             readonly nodeType: "ContractDefinition";
             readonly src: "368:6969:152";
             readonly nodes: readonly [{
-                readonly id: 35688;
+                readonly id: 35794;
                 readonly nodeType: "EventDefinition";
                 readonly src: "397:74:152";
                 readonly nodes: readonly [];
@@ -453,17 +453,17 @@ export declare const stdStorage: {
                 readonly name: "SlotFound";
                 readonly nameLocation: "403:9:152";
                 readonly parameters: {
-                    readonly id: 35687;
+                    readonly id: 35793;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35680;
+                        readonly id: 35786;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "who";
                         readonly nameLocation: "421:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35688;
+                        readonly scope: 35794;
                         readonly src: "413:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -472,7 +472,7 @@ export declare const stdStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 35679;
+                            readonly id: 35785;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "413:7:152";
@@ -485,13 +485,13 @@ export declare const stdStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 35682;
+                        readonly id: 35788;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "fsig";
                         readonly nameLocation: "433:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35688;
+                        readonly scope: 35794;
                         readonly src: "426:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -500,7 +500,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 35681;
+                            readonly id: 35787;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "426:6:152";
@@ -512,13 +512,13 @@ export declare const stdStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 35684;
+                        readonly id: 35790;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "keysHash";
                         readonly nameLocation: "447:8:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35688;
+                        readonly scope: 35794;
                         readonly src: "439:16:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -527,7 +527,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 35683;
+                            readonly id: 35789;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "439:7:152";
@@ -539,13 +539,13 @@ export declare const stdStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 35686;
+                        readonly id: 35792;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "slot";
                         readonly nameLocation: "465:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35688;
+                        readonly scope: 35794;
                         readonly src: "457:12:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -554,7 +554,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35685;
+                            readonly id: 35791;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "457:7:152";
@@ -568,7 +568,7 @@ export declare const stdStorage: {
                     readonly src: "412:58:152";
                 };
             }, {
-                readonly id: 35694;
+                readonly id: 35800;
                 readonly nodeType: "EventDefinition";
                 readonly src: "476:54:152";
                 readonly nodes: readonly [];
@@ -577,17 +577,17 @@ export declare const stdStorage: {
                 readonly name: "WARNING_UninitedSlot";
                 readonly nameLocation: "482:20:152";
                 readonly parameters: {
-                    readonly id: 35693;
+                    readonly id: 35799;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35690;
+                        readonly id: 35796;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "who";
                         readonly nameLocation: "511:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35694;
+                        readonly scope: 35800;
                         readonly src: "503:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -596,7 +596,7 @@ export declare const stdStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 35689;
+                            readonly id: 35795;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "503:7:152";
@@ -609,13 +609,13 @@ export declare const stdStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 35692;
+                        readonly id: 35798;
                         readonly indexed: false;
                         readonly mutability: "mutable";
                         readonly name: "slot";
                         readonly nameLocation: "524:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35694;
+                        readonly scope: 35800;
                         readonly src: "516:12:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -624,7 +624,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35691;
+                            readonly id: 35797;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "516:7:152";
@@ -638,7 +638,7 @@ export declare const stdStorage: {
                     readonly src: "502:27:152";
                 };
             }, {
-                readonly id: 35711;
+                readonly id: 35817;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "536:84:152";
                 readonly nodes: readonly [];
@@ -646,28 +646,28 @@ export declare const stdStorage: {
                 readonly mutability: "constant";
                 readonly name: "vm";
                 readonly nameLocation: "556:2:152";
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_Vm_$40778";
+                    readonly typeIdentifier: "t_contract$_Vm_$40884";
                     readonly typeString: "contract Vm";
                 };
                 readonly typeName: {
-                    readonly id: 35696;
+                    readonly id: 35802;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 35695;
+                        readonly id: 35801;
                         readonly name: "Vm";
                         readonly nameLocations: readonly ["536:2:152"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 40778;
+                        readonly referencedDeclaration: 40884;
                         readonly src: "536:2:152";
                     };
-                    readonly referencedDeclaration: 40778;
+                    readonly referencedDeclaration: 40884;
                     readonly src: "536:2:152";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                         readonly typeString: "contract Vm";
                     };
                 };
@@ -678,7 +678,7 @@ export declare const stdStorage: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "6865766d20636865617420636f6465";
-                                        readonly id: 35705;
+                                        readonly id: 35811;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -697,7 +697,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_stringliteral_885cb69240a935d632d79c317109709ecfa91a80626ff3989d68f67f5b1dd12d";
                                             readonly typeString: "literal_string \"hevm cheat code\"";
                                         }];
-                                        readonly id: 35704;
+                                        readonly id: 35810;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -708,7 +708,7 @@ export declare const stdStorage: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 35706;
+                                    readonly id: 35812;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -729,7 +729,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     }];
-                                    readonly id: 35703;
+                                    readonly id: 35809;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -741,14 +741,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(uint256)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 35702;
+                                        readonly id: 35808;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "580:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 35707;
+                                readonly id: 35813;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -769,7 +769,7 @@ export declare const stdStorage: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 35701;
+                                readonly id: 35807;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -781,14 +781,14 @@ export declare const stdStorage: {
                                     readonly typeString: "type(uint160)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 35700;
+                                    readonly id: 35806;
                                     readonly name: "uint160";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "572:7:152";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 35708;
+                            readonly id: 35814;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -809,7 +809,7 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_uint160";
                                 readonly typeString: "uint160";
                             }];
-                            readonly id: 35699;
+                            readonly id: 35805;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -821,14 +821,14 @@ export declare const stdStorage: {
                                 readonly typeString: "type(address)";
                             };
                             readonly typeName: {
-                                readonly id: 35698;
+                                readonly id: 35804;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "564:7:152";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 35709;
+                        readonly id: 35815;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -849,18 +849,18 @@ export declare const stdStorage: {
                             readonly typeIdentifier: "t_address";
                             readonly typeString: "address";
                         }];
-                        readonly id: 35697;
+                        readonly id: 35803;
                         readonly name: "Vm";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 40778;
+                        readonly referencedDeclaration: 40884;
                         readonly src: "561:2:152";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_type$_t_contract$_Vm_$40778_$";
+                            readonly typeIdentifier: "t_type$_t_contract$_Vm_$40884_$";
                             readonly typeString: "type(contract Vm)";
                         };
                     };
-                    readonly id: 35710;
+                    readonly id: 35816;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -872,18 +872,18 @@ export declare const stdStorage: {
                     readonly src: "561:59:152";
                     readonly tryCall: false;
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                         readonly typeString: "contract Vm";
                     };
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 35729;
+                readonly id: 35835;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "627:123:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 35728;
+                    readonly id: 35834;
                     readonly nodeType: "Block";
                     readonly src: "694:56:152";
                     readonly nodes: readonly [];
@@ -892,11 +892,11 @@ export declare const stdStorage: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
-                                        readonly id: 35723;
+                                        readonly id: 35829;
                                         readonly name: "sigStr";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35713;
+                                        readonly referencedDeclaration: 35819;
                                         readonly src: "734:6:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_string_memory_ptr";
@@ -908,7 +908,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_string_memory_ptr";
                                             readonly typeString: "string memory";
                                         }];
-                                        readonly id: 35722;
+                                        readonly id: 35828;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -920,14 +920,14 @@ export declare const stdStorage: {
                                             readonly typeString: "type(bytes storage pointer)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 35721;
+                                            readonly id: 35827;
                                             readonly name: "bytes";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "728:5:152";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 35724;
+                                    readonly id: 35830;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -948,7 +948,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     }];
-                                    readonly id: 35720;
+                                    readonly id: 35826;
                                     readonly name: "keccak256";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -959,7 +959,7 @@ export declare const stdStorage: {
                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                     };
                                 };
-                                readonly id: 35725;
+                                readonly id: 35831;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -980,7 +980,7 @@ export declare const stdStorage: {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
-                                readonly id: 35719;
+                                readonly id: 35825;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -992,14 +992,14 @@ export declare const stdStorage: {
                                     readonly typeString: "type(bytes4)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 35718;
+                                    readonly id: 35824;
                                     readonly name: "bytes4";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "711:6:152";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 35726;
+                            readonly id: 35832;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1015,8 +1015,8 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes4";
                             };
                         };
-                        readonly functionReturnParameters: 35717;
-                        readonly id: 35727;
+                        readonly functionReturnParameters: 35823;
+                        readonly id: 35833;
                         readonly nodeType: "Return";
                         readonly src: "704:39:152";
                     }];
@@ -1027,16 +1027,16 @@ export declare const stdStorage: {
                 readonly name: "sigs";
                 readonly nameLocation: "636:4:152";
                 readonly parameters: {
-                    readonly id: 35714;
+                    readonly id: 35820;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35713;
+                        readonly id: 35819;
                         readonly mutability: "mutable";
                         readonly name: "sigStr";
                         readonly nameLocation: "655:6:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35729;
+                        readonly scope: 35835;
                         readonly src: "641:20:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -1045,7 +1045,7 @@ export declare const stdStorage: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 35712;
+                            readonly id: 35818;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "641:6:152";
@@ -1059,16 +1059,16 @@ export declare const stdStorage: {
                     readonly src: "640:22:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 35717;
+                    readonly id: 35823;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35716;
+                        readonly id: 35822;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 35729;
+                        readonly scope: 35835;
                         readonly src: "686:6:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -1077,7 +1077,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 35715;
+                            readonly id: 35821;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "686:6:152";
@@ -1090,30 +1090,30 @@ export declare const stdStorage: {
                     }];
                     readonly src: "685:8:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36173;
+                readonly id: 36279;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "1264:3197:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36172;
+                    readonly id: 36278;
                     readonly nodeType: "Block";
                     readonly src: "1330:3131:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [35739];
+                        readonly assignments: readonly [35845];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35739;
+                            readonly id: 35845;
                             readonly mutability: "mutable";
                             readonly name: "who";
                             readonly nameLocation: "1348:3:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36172;
+                            readonly scope: 36278;
                             readonly src: "1340:11:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1122,7 +1122,7 @@ export declare const stdStorage: {
                                 readonly typeString: "address";
                             };
                             readonly typeName: {
-                                readonly id: 35738;
+                                readonly id: 35844;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1340:7:152";
@@ -1134,21 +1134,21 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 35742;
+                        readonly id: 35848;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 35740;
+                                readonly id: 35846;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35733;
+                                readonly referencedDeclaration: 35839;
                                 readonly src: "1354:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             };
-                            readonly id: 35741;
+                            readonly id: 35847;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -1156,7 +1156,7 @@ export declare const stdStorage: {
                             readonly memberLocation: "1359:7:152";
                             readonly memberName: "_target";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 35675;
+                            readonly referencedDeclaration: 35781;
                             readonly src: "1354:12:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -1166,15 +1166,15 @@ export declare const stdStorage: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "1340:26:152";
                     }, {
-                        readonly assignments: readonly [35744];
+                        readonly assignments: readonly [35850];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35744;
+                            readonly id: 35850;
                             readonly mutability: "mutable";
                             readonly name: "fsig";
                             readonly nameLocation: "1383:4:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36172;
+                            readonly scope: 36278;
                             readonly src: "1376:11:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1183,7 +1183,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes4";
                             };
                             readonly typeName: {
-                                readonly id: 35743;
+                                readonly id: 35849;
                                 readonly name: "bytes4";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1376:6:152";
@@ -1194,21 +1194,21 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 35747;
+                        readonly id: 35853;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 35745;
+                                readonly id: 35851;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35733;
+                                readonly referencedDeclaration: 35839;
                                 readonly src: "1390:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             };
-                            readonly id: 35746;
+                            readonly id: 35852;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -1216,7 +1216,7 @@ export declare const stdStorage: {
                             readonly memberLocation: "1395:4:152";
                             readonly memberName: "_sig";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 35671;
+                            readonly referencedDeclaration: 35777;
                             readonly src: "1390:9:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes4";
@@ -1226,15 +1226,15 @@ export declare const stdStorage: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "1376:23:152";
                     }, {
-                        readonly assignments: readonly [35749];
+                        readonly assignments: readonly [35855];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35749;
+                            readonly id: 35855;
                             readonly mutability: "mutable";
                             readonly name: "field_depth";
                             readonly nameLocation: "1417:11:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36172;
+                            readonly scope: 36278;
                             readonly src: "1409:19:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1243,7 +1243,7 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 35748;
+                                readonly id: 35854;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1409:7:152";
@@ -1254,21 +1254,21 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 35752;
+                        readonly id: 35858;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 35750;
+                                readonly id: 35856;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35733;
+                                readonly referencedDeclaration: 35839;
                                 readonly src: "1431:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             };
-                            readonly id: 35751;
+                            readonly id: 35857;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -1276,7 +1276,7 @@ export declare const stdStorage: {
                             readonly memberLocation: "1436:6:152";
                             readonly memberName: "_depth";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 35673;
+                            readonly referencedDeclaration: 35779;
                             readonly src: "1431:11:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -1286,15 +1286,15 @@ export declare const stdStorage: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "1409:33:152";
                     }, {
-                        readonly assignments: readonly [35757];
+                        readonly assignments: readonly [35863];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35757;
+                            readonly id: 35863;
                             readonly mutability: "mutable";
                             readonly name: "ins";
                             readonly nameLocation: "1469:3:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36172;
+                            readonly scope: 36278;
                             readonly src: "1452:20:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -1304,7 +1304,7 @@ export declare const stdStorage: {
                             };
                             readonly typeName: {
                                 readonly baseType: {
-                                    readonly id: 35755;
+                                    readonly id: 35861;
                                     readonly name: "bytes32";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "1452:7:152";
@@ -1313,7 +1313,7 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes32";
                                     };
                                 };
-                                readonly id: 35756;
+                                readonly id: 35862;
                                 readonly nodeType: "ArrayTypeName";
                                 readonly src: "1452:9:152";
                                 readonly typeDescriptions: {
@@ -1323,21 +1323,21 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 35760;
+                        readonly id: 35866;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 35758;
+                                readonly id: 35864;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35733;
+                                readonly referencedDeclaration: 35839;
                                 readonly src: "1475:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             };
-                            readonly id: 35759;
+                            readonly id: 35865;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -1345,7 +1345,7 @@ export declare const stdStorage: {
                             readonly memberLocation: "1480:5:152";
                             readonly memberName: "_keys";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 35669;
+                            readonly referencedDeclaration: 35775;
                             readonly src: "1475:10:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_array$_t_bytes32_$dyn_storage";
@@ -1360,18 +1360,18 @@ export declare const stdStorage: {
                                 readonly baseExpression: {
                                     readonly baseExpression: {
                                         readonly expression: {
-                                            readonly id: 35761;
+                                            readonly id: 35867;
                                             readonly name: "self";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35733;
+                                            readonly referencedDeclaration: 35839;
                                             readonly src: "1536:4:152";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                 readonly typeString: "struct StdStorage storage pointer";
                                             };
                                         };
-                                        readonly id: 35762;
+                                        readonly id: 35868;
                                         readonly isConstant: false;
                                         readonly isLValue: true;
                                         readonly isPure: false;
@@ -1379,20 +1379,20 @@ export declare const stdStorage: {
                                         readonly memberLocation: "1541:5:152";
                                         readonly memberName: "finds";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 35666;
+                                        readonly referencedDeclaration: 35772;
                                         readonly src: "1536:10:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_bool_$_$_$";
                                             readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => bool)))";
                                         };
                                     };
-                                    readonly id: 35764;
+                                    readonly id: 35870;
                                     readonly indexExpression: {
-                                        readonly id: 35763;
+                                        readonly id: 35869;
                                         readonly name: "who";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35739;
+                                        readonly referencedDeclaration: 35845;
                                         readonly src: "1547:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -1410,13 +1410,13 @@ export declare const stdStorage: {
                                         readonly typeString: "mapping(bytes4 => mapping(bytes32 => bool))";
                                     };
                                 };
-                                readonly id: 35766;
+                                readonly id: 35872;
                                 readonly indexExpression: {
-                                    readonly id: 35765;
+                                    readonly id: 35871;
                                     readonly name: "fsig";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35744;
+                                    readonly referencedDeclaration: 35850;
                                     readonly src: "1552:4:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes4";
@@ -1434,26 +1434,26 @@ export declare const stdStorage: {
                                     readonly typeString: "mapping(bytes32 => bool)";
                                 };
                             };
-                            readonly id: 35774;
+                            readonly id: 35880;
                             readonly indexExpression: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
-                                        readonly id: 35770;
+                                        readonly id: 35876;
                                         readonly name: "ins";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35757;
+                                        readonly referencedDeclaration: 35863;
                                         readonly src: "1585:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                             readonly typeString: "bytes32[] memory";
                                         };
                                     }, {
-                                        readonly id: 35771;
+                                        readonly id: 35877;
                                         readonly name: "field_depth";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35749;
+                                        readonly referencedDeclaration: 35855;
                                         readonly src: "1590:11:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -1469,7 +1469,7 @@ export declare const stdStorage: {
                                             readonly typeString: "uint256";
                                         }];
                                         readonly expression: {
-                                            readonly id: 35768;
+                                            readonly id: 35874;
                                             readonly name: "abi";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -1480,7 +1480,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "abi";
                                             };
                                         };
-                                        readonly id: 35769;
+                                        readonly id: 35875;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -1494,7 +1494,7 @@ export declare const stdStorage: {
                                             readonly typeString: "function () pure returns (bytes memory)";
                                         };
                                     };
-                                    readonly id: 35772;
+                                    readonly id: 35878;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -1515,7 +1515,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     }];
-                                    readonly id: 35767;
+                                    readonly id: 35873;
                                     readonly name: "keccak256";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -1526,7 +1526,7 @@ export declare const stdStorage: {
                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                     };
                                 };
-                                readonly id: 35773;
+                                readonly id: 35879;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1553,11 +1553,11 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 35791;
+                        readonly id: 35897;
                         readonly nodeType: "IfStatement";
                         readonly src: "1532:174:152";
                         readonly trueBody: {
-                            readonly id: 35790;
+                            readonly id: 35896;
                             readonly nodeType: "Block";
                             readonly src: "1606:100:152";
                             readonly statements: readonly [{
@@ -1566,18 +1566,18 @@ export declare const stdStorage: {
                                         readonly baseExpression: {
                                             readonly baseExpression: {
                                                 readonly expression: {
-                                                    readonly id: 35775;
+                                                    readonly id: 35881;
                                                     readonly name: "self";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35733;
+                                                    readonly referencedDeclaration: 35839;
                                                     readonly src: "1627:4:152";
                                                     readonly typeDescriptions: {
-                                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                         readonly typeString: "struct StdStorage storage pointer";
                                                     };
                                                 };
-                                                readonly id: 35776;
+                                                readonly id: 35882;
                                                 readonly isConstant: false;
                                                 readonly isLValue: true;
                                                 readonly isPure: false;
@@ -1585,20 +1585,20 @@ export declare const stdStorage: {
                                                 readonly memberLocation: "1632:5:152";
                                                 readonly memberName: "slots";
                                                 readonly nodeType: "MemberAccess";
-                                                readonly referencedDeclaration: 35658;
+                                                readonly referencedDeclaration: 35764;
                                                 readonly src: "1627:10:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_uint256_$_$_$";
                                                     readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => uint256)))";
                                                 };
                                             };
-                                            readonly id: 35778;
+                                            readonly id: 35884;
                                             readonly indexExpression: {
-                                                readonly id: 35777;
+                                                readonly id: 35883;
                                                 readonly name: "who";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35739;
+                                                readonly referencedDeclaration: 35845;
                                                 readonly src: "1638:3:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_address";
@@ -1616,13 +1616,13 @@ export declare const stdStorage: {
                                                 readonly typeString: "mapping(bytes4 => mapping(bytes32 => uint256))";
                                             };
                                         };
-                                        readonly id: 35780;
+                                        readonly id: 35886;
                                         readonly indexExpression: {
-                                            readonly id: 35779;
+                                            readonly id: 35885;
                                             readonly name: "fsig";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35744;
+                                            readonly referencedDeclaration: 35850;
                                             readonly src: "1643:4:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_bytes4";
@@ -1640,26 +1640,26 @@ export declare const stdStorage: {
                                             readonly typeString: "mapping(bytes32 => uint256)";
                                         };
                                     };
-                                    readonly id: 35788;
+                                    readonly id: 35894;
                                     readonly indexExpression: {
                                         readonly arguments: readonly [{
                                             readonly arguments: readonly [{
-                                                readonly id: 35784;
+                                                readonly id: 35890;
                                                 readonly name: "ins";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35757;
+                                                readonly referencedDeclaration: 35863;
                                                 readonly src: "1676:3:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                     readonly typeString: "bytes32[] memory";
                                                 };
                                             }, {
-                                                readonly id: 35785;
+                                                readonly id: 35891;
                                                 readonly name: "field_depth";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35749;
+                                                readonly referencedDeclaration: 35855;
                                                 readonly src: "1681:11:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -1675,7 +1675,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "uint256";
                                                 }];
                                                 readonly expression: {
-                                                    readonly id: 35782;
+                                                    readonly id: 35888;
                                                     readonly name: "abi";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
@@ -1686,7 +1686,7 @@ export declare const stdStorage: {
                                                         readonly typeString: "abi";
                                                     };
                                                 };
-                                                readonly id: 35783;
+                                                readonly id: 35889;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -1700,7 +1700,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "function () pure returns (bytes memory)";
                                                 };
                                             };
-                                            readonly id: 35786;
+                                            readonly id: 35892;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -1721,7 +1721,7 @@ export declare const stdStorage: {
                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                                 readonly typeString: "bytes memory";
                                             }];
-                                            readonly id: 35781;
+                                            readonly id: 35887;
                                             readonly name: "keccak256";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -1732,7 +1732,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                             };
                                         };
-                                        readonly id: 35787;
+                                        readonly id: 35893;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -1759,22 +1759,22 @@ export declare const stdStorage: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly functionReturnParameters: 35737;
-                                readonly id: 35789;
+                                readonly functionReturnParameters: 35843;
+                                readonly id: 35895;
                                 readonly nodeType: "Return";
                                 readonly src: "1620:75:152";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [35793];
+                        readonly assignments: readonly [35899];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35793;
+                            readonly id: 35899;
                             readonly mutability: "mutable";
                             readonly name: "cald";
                             readonly nameLocation: "1728:4:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36172;
+                            readonly scope: 36278;
                             readonly src: "1715:17:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -1783,7 +1783,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 35792;
+                                readonly id: 35898;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1715:5:152";
@@ -1794,14 +1794,14 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 35801;
+                        readonly id: 35907;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 35796;
+                                readonly id: 35902;
                                 readonly name: "fsig";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 35744;
+                                readonly referencedDeclaration: 35850;
                                 readonly src: "1752:4:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
@@ -1809,11 +1809,11 @@ export declare const stdStorage: {
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 35798;
+                                    readonly id: 35904;
                                     readonly name: "ins";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35757;
+                                    readonly referencedDeclaration: 35863;
                                     readonly src: "1766:3:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
@@ -1825,18 +1825,18 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                         readonly typeString: "bytes32[] memory";
                                     }];
-                                    readonly id: 35797;
+                                    readonly id: 35903;
                                     readonly name: "flatten";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36569;
+                                    readonly referencedDeclaration: 36675;
                                     readonly src: "1758:7:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_array$_t_bytes32_$dyn_memory_ptr_$returns$_t_bytes_memory_ptr_$";
                                         readonly typeString: "function (bytes32[] memory) pure returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 35799;
+                                readonly id: 35905;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1861,7 +1861,7 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35794;
+                                    readonly id: 35900;
                                     readonly name: "abi";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -1872,7 +1872,7 @@ export declare const stdStorage: {
                                         readonly typeString: "abi";
                                     };
                                 };
-                                readonly id: 35795;
+                                readonly id: 35901;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -1886,7 +1886,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function () pure returns (bytes memory)";
                                 };
                             };
-                            readonly id: 35800;
+                            readonly id: 35906;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1910,18 +1910,18 @@ export declare const stdStorage: {
                             readonly expression: {
                                 readonly argumentTypes: readonly [];
                                 readonly expression: {
-                                    readonly id: 35802;
+                                    readonly id: 35908;
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35711;
+                                    readonly referencedDeclaration: 35817;
                                     readonly src: "1781:2:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
-                                readonly id: 35804;
+                                readonly id: 35910;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -1929,14 +1929,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "1784:6:152";
                                 readonly memberName: "record";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 39616;
+                                readonly referencedDeclaration: 39722;
                                 readonly src: "1781:9:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$__$returns$__$";
                                     readonly typeString: "function () external";
                                 };
                             };
-                            readonly id: 35805;
+                            readonly id: 35911;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -1952,19 +1952,19 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 35806;
+                        readonly id: 35912;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "1781:11:152";
                     }, {
-                        readonly assignments: readonly [35808];
+                        readonly assignments: readonly [35914];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35808;
+                            readonly id: 35914;
                             readonly mutability: "mutable";
                             readonly name: "fdat";
                             readonly nameLocation: "1810:4:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36172;
+                            readonly scope: 36278;
                             readonly src: "1802:12:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -1973,7 +1973,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 35807;
+                                readonly id: 35913;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "1802:7:152";
@@ -1984,23 +1984,23 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 35809;
+                        readonly id: 35915;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "1802:12:152";
                     }, {
-                        readonly id: 35826;
+                        readonly id: 35932;
                         readonly nodeType: "Block";
                         readonly src: "1824:128:152";
                         readonly statements: readonly [{
-                            readonly assignments: readonly [null, 35811];
+                            readonly assignments: readonly [null, 35917];
                             readonly declarations: readonly [null, {
                                 readonly constant: false;
-                                readonly id: 35811;
+                                readonly id: 35917;
                                 readonly mutability: "mutable";
                                 readonly name: "rdat";
                                 readonly nameLocation: "1854:4:152";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 35826;
+                                readonly scope: 35932;
                                 readonly src: "1841:17:152";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "memory";
@@ -2009,7 +2009,7 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes";
                                 };
                                 readonly typeName: {
-                                    readonly id: 35810;
+                                    readonly id: 35916;
                                     readonly name: "bytes";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "1841:5:152";
@@ -2020,14 +2020,14 @@ export declare const stdStorage: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 35816;
+                            readonly id: 35922;
                             readonly initialValue: {
                                 readonly arguments: readonly [{
-                                    readonly id: 35814;
+                                    readonly id: 35920;
                                     readonly name: "cald";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35793;
+                                    readonly referencedDeclaration: 35899;
                                     readonly src: "1877:4:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -2040,18 +2040,18 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes memory";
                                     }];
                                     readonly expression: {
-                                        readonly id: 35812;
+                                        readonly id: 35918;
                                         readonly name: "who";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35739;
+                                        readonly referencedDeclaration: 35845;
                                         readonly src: "1862:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
                                     };
-                                    readonly id: 35813;
+                                    readonly id: 35919;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2065,7 +2065,7 @@ export declare const stdStorage: {
                                         readonly typeString: "function (bytes memory) view returns (bool,bytes memory)";
                                     };
                                 };
-                                readonly id: 35815;
+                                readonly id: 35921;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2085,17 +2085,17 @@ export declare const stdStorage: {
                             readonly src: "1838:44:152";
                         }, {
                             readonly expression: {
-                                readonly id: 35824;
+                                readonly id: 35930;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 35817;
+                                    readonly id: 35923;
                                     readonly name: "fdat";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35808;
+                                    readonly referencedDeclaration: 35914;
                                     readonly src: "1896:4:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes32";
@@ -2106,11 +2106,11 @@ export declare const stdStorage: {
                                 readonly operator: "=";
                                 readonly rightHandSide: {
                                     readonly arguments: readonly [{
-                                        readonly id: 35819;
+                                        readonly id: 35925;
                                         readonly name: "rdat";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35811;
+                                        readonly referencedDeclaration: 35917;
                                         readonly src: "1918:4:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -2121,14 +2121,14 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 35822;
+                                        readonly id: 35928;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
                                             readonly hexValue: "3332";
-                                            readonly id: 35820;
+                                            readonly id: 35926;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -2145,11 +2145,11 @@ export declare const stdStorage: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: "*";
                                         readonly rightExpression: {
-                                            readonly id: 35821;
+                                            readonly id: 35927;
                                             readonly name: "field_depth";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35749;
+                                            readonly referencedDeclaration: 35855;
                                             readonly src: "1929:11:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -2170,18 +2170,18 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 35818;
+                                        readonly id: 35924;
                                         readonly name: "bytesToBytes32";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36528;
+                                        readonly referencedDeclaration: 36634;
                                         readonly src: "1903:14:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_pure$_t_bytes_memory_ptr_$_t_uint256_$returns$_t_bytes32_$";
                                             readonly typeString: "function (bytes memory,uint256) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 35823;
+                                    readonly id: 35929;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2203,20 +2203,20 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 35825;
+                            readonly id: 35931;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "1896:45:152";
                         }];
                     }, {
-                        readonly assignments: readonly [35831, null];
+                        readonly assignments: readonly [35937, null];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 35831;
+                            readonly id: 35937;
                             readonly mutability: "mutable";
                             readonly name: "reads";
                             readonly nameLocation: "1980:5:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36172;
+                            readonly scope: 36278;
                             readonly src: "1963:22:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -2226,7 +2226,7 @@ export declare const stdStorage: {
                             };
                             readonly typeName: {
                                 readonly baseType: {
-                                    readonly id: 35829;
+                                    readonly id: 35935;
                                     readonly name: "bytes32";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "1963:7:152";
@@ -2235,7 +2235,7 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes32";
                                     };
                                 };
-                                readonly id: 35830;
+                                readonly id: 35936;
                                 readonly nodeType: "ArrayTypeName";
                                 readonly src: "1963:9:152";
                                 readonly typeDescriptions: {
@@ -2245,15 +2245,15 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }, null];
-                        readonly id: 35839;
+                        readonly id: 35945;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 35836;
+                                    readonly id: 35942;
                                     readonly name: "who";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35739;
+                                    readonly referencedDeclaration: 35845;
                                     readonly src: "2010:3:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -2265,7 +2265,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_address";
                                         readonly typeString: "address";
                                     }];
-                                    readonly id: 35835;
+                                    readonly id: 35941;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2277,14 +2277,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 35834;
+                                        readonly id: 35940;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "2002:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 35837;
+                                readonly id: 35943;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2306,18 +2306,18 @@ export declare const stdStorage: {
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 35832;
+                                    readonly id: 35938;
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35711;
+                                    readonly referencedDeclaration: 35817;
                                     readonly src: "1990:2:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
-                                readonly id: 35833;
+                                readonly id: 35939;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2325,14 +2325,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "1993:8:152";
                                 readonly memberName: "accesses";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 39627;
+                                readonly referencedDeclaration: 39733;
                                 readonly src: "1990:11:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$returns$_t_array$_t_bytes32_$dyn_memory_ptr_$_t_array$_t_bytes32_$dyn_memory_ptr_$";
                                     readonly typeString: "function (address) external returns (bytes32[] memory,bytes32[] memory)";
                                 };
                             };
-                            readonly id: 35838;
+                            readonly id: 35944;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -2356,25 +2356,25 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 35843;
+                            readonly id: 35949;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
                                 readonly expression: {
-                                    readonly id: 35840;
+                                    readonly id: 35946;
                                     readonly name: "reads";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35831;
+                                    readonly referencedDeclaration: 35937;
                                     readonly src: "2029:5:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                         readonly typeString: "bytes32[] memory";
                                     };
                                 };
-                                readonly id: 35841;
+                                readonly id: 35947;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -2392,7 +2392,7 @@ export declare const stdStorage: {
                             readonly operator: "==";
                             readonly rightExpression: {
                                 readonly hexValue: "31";
-                                readonly id: 35842;
+                                readonly id: 35948;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -2418,25 +2418,25 @@ export declare const stdStorage: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 35945;
+                                readonly id: 36051;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 35942;
+                                        readonly id: 36048;
                                         readonly name: "reads";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35831;
+                                        readonly referencedDeclaration: 35937;
                                         readonly src: "2786:5:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                             readonly typeString: "bytes32[] memory";
                                         };
                                     };
-                                    readonly id: 35943;
+                                    readonly id: 36049;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -2454,7 +2454,7 @@ export declare const stdStorage: {
                                 readonly operator: ">";
                                 readonly rightExpression: {
                                     readonly hexValue: "31";
-                                    readonly id: 35944;
+                                    readonly id: 36050;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -2475,14 +2475,14 @@ export declare const stdStorage: {
                                 };
                             };
                             readonly falseBody: {
-                                readonly id: 36120;
+                                readonly id: 36226;
                                 readonly nodeType: "Block";
                                 readonly src: "3986:99:152";
                                 readonly statements: readonly [{
                                     readonly expression: {
                                         readonly arguments: readonly [{
                                             readonly hexValue: "73746453746f726167652066696e642853746453746f72616765293a204e6f2073746f726167652075736520646574656374656420666f72207461726765742e";
-                                            readonly id: 36117;
+                                            readonly id: 36223;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -2501,7 +2501,7 @@ export declare const stdStorage: {
                                                 readonly typeIdentifier: "t_stringliteral_328ff448bebe6b9a52a670e66989b0a23c94fd0cbd86c30e5432c6ddc5340283";
                                                 readonly typeString: "literal_string \"stdStorage find(StdStorage): No storage use detected for target.\"";
                                             }];
-                                            readonly id: 36116;
+                                            readonly id: 36222;
                                             readonly name: "revert";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [-19, -19];
@@ -2512,7 +2512,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "function (string memory) pure";
                                             };
                                         };
-                                        readonly id: 36118;
+                                        readonly id: 36224;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -2528,33 +2528,33 @@ export declare const stdStorage: {
                                             readonly typeString: "tuple()";
                                         };
                                     };
-                                    readonly id: 36119;
+                                    readonly id: 36225;
                                     readonly nodeType: "ExpressionStatement";
                                     readonly src: "4000:74:152";
                                 }];
                             };
-                            readonly id: 36121;
+                            readonly id: 36227;
                             readonly nodeType: "IfStatement";
                             readonly src: "2782:1303:152";
                             readonly trueBody: {
-                                readonly id: 36115;
+                                readonly id: 36221;
                                 readonly nodeType: "Block";
                                 readonly src: "2804:1176:152";
                                 readonly statements: readonly [{
                                     readonly body: {
-                                        readonly id: 36113;
+                                        readonly id: 36219;
                                         readonly nodeType: "Block";
                                         readonly src: "2861:1109:152";
                                         readonly statements: readonly [{
-                                            readonly assignments: readonly [35958];
+                                            readonly assignments: readonly [36064];
                                             readonly declarations: readonly [{
                                                 readonly constant: false;
-                                                readonly id: 35958;
+                                                readonly id: 36064;
                                                 readonly mutability: "mutable";
                                                 readonly name: "prev";
                                                 readonly nameLocation: "2887:4:152";
                                                 readonly nodeType: "VariableDeclaration";
-                                                readonly scope: 36113;
+                                                readonly scope: 36219;
                                                 readonly src: "2879:12:152";
                                                 readonly stateVariable: false;
                                                 readonly storageLocation: "default";
@@ -2563,7 +2563,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "bytes32";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 35957;
+                                                    readonly id: 36063;
                                                     readonly name: "bytes32";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "2879:7:152";
@@ -2574,14 +2574,14 @@ export declare const stdStorage: {
                                                 };
                                                 readonly visibility: "internal";
                                             }];
-                                            readonly id: 35966;
+                                            readonly id: 36072;
                                             readonly initialValue: {
                                                 readonly arguments: readonly [{
-                                                    readonly id: 35961;
+                                                    readonly id: 36067;
                                                     readonly name: "who";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35739;
+                                                    readonly referencedDeclaration: 35845;
                                                     readonly src: "2902:3:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_address";
@@ -2589,24 +2589,24 @@ export declare const stdStorage: {
                                                     };
                                                 }, {
                                                     readonly baseExpression: {
-                                                        readonly id: 35962;
+                                                        readonly id: 36068;
                                                         readonly name: "reads";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35831;
+                                                        readonly referencedDeclaration: 35937;
                                                         readonly src: "2907:5:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                             readonly typeString: "bytes32[] memory";
                                                         };
                                                     };
-                                                    readonly id: 35964;
+                                                    readonly id: 36070;
                                                     readonly indexExpression: {
-                                                        readonly id: 35963;
+                                                        readonly id: 36069;
                                                         readonly name: "i";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35947;
+                                                        readonly referencedDeclaration: 36053;
                                                         readonly src: "2913:1:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_uint256";
@@ -2633,18 +2633,18 @@ export declare const stdStorage: {
                                                         readonly typeString: "bytes32";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 35959;
+                                                        readonly id: 36065;
                                                         readonly name: "vm";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35711;
+                                                        readonly referencedDeclaration: 35817;
                                                         readonly src: "2894:2:152";
                                                         readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                                            readonly typeIdentifier: "t_contract$_Vm_$40884";
                                                             readonly typeString: "contract Vm";
                                                         };
                                                     };
-                                                    readonly id: 35960;
+                                                    readonly id: 36066;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -2652,14 +2652,14 @@ export declare const stdStorage: {
                                                     readonly memberLocation: "2897:4:152";
                                                     readonly memberName: "load";
                                                     readonly nodeType: "MemberAccess";
-                                                    readonly referencedDeclaration: 39298;
+                                                    readonly referencedDeclaration: 39404;
                                                     readonly src: "2894:7:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_function_external_view$_t_address_$_t_bytes32_$returns$_t_bytes32_$";
                                                         readonly typeString: "function (address,bytes32) view external returns (bytes32)";
                                                     };
                                                 };
-                                                readonly id: 35965;
+                                                readonly id: 36071;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -2683,17 +2683,17 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_bytes32";
                                                     readonly typeString: "bytes32";
                                                 };
-                                                readonly id: 35972;
+                                                readonly id: 36078;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
-                                                    readonly id: 35967;
+                                                    readonly id: 36073;
                                                     readonly name: "prev";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35958;
+                                                    readonly referencedDeclaration: 36064;
                                                     readonly src: "2938:4:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_bytes32";
@@ -2705,7 +2705,7 @@ export declare const stdStorage: {
                                                 readonly rightExpression: {
                                                     readonly arguments: readonly [{
                                                         readonly hexValue: "30";
-                                                        readonly id: 35970;
+                                                        readonly id: 36076;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -2724,7 +2724,7 @@ export declare const stdStorage: {
                                                             readonly typeIdentifier: "t_rational_0_by_1";
                                                             readonly typeString: "int_const 0";
                                                         }];
-                                                        readonly id: 35969;
+                                                        readonly id: 36075;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -2736,14 +2736,14 @@ export declare const stdStorage: {
                                                             readonly typeString: "type(bytes32)";
                                                         };
                                                         readonly typeName: {
-                                                            readonly id: 35968;
+                                                            readonly id: 36074;
                                                             readonly name: "bytes32";
                                                             readonly nodeType: "ElementaryTypeName";
                                                             readonly src: "2946:7:152";
                                                             readonly typeDescriptions: {};
                                                         };
                                                     };
-                                                    readonly id: 35971;
+                                                    readonly id: 36077;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -2765,21 +2765,21 @@ export declare const stdStorage: {
                                                     readonly typeString: "bool";
                                                 };
                                             };
-                                            readonly id: 35984;
+                                            readonly id: 36090;
                                             readonly nodeType: "IfStatement";
                                             readonly src: "2934:114:152";
                                             readonly trueBody: {
-                                                readonly id: 35983;
+                                                readonly id: 36089;
                                                 readonly nodeType: "Block";
                                                 readonly src: "2958:90:152";
                                                 readonly statements: readonly [{
                                                     readonly eventCall: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 35974;
+                                                            readonly id: 36080;
                                                             readonly name: "who";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 35739;
+                                                            readonly referencedDeclaration: 35845;
                                                             readonly src: "3006:3:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_address";
@@ -2788,24 +2788,24 @@ export declare const stdStorage: {
                                                         }, {
                                                             readonly arguments: readonly [{
                                                                 readonly baseExpression: {
-                                                                    readonly id: 35977;
+                                                                    readonly id: 36083;
                                                                     readonly name: "reads";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35831;
+                                                                    readonly referencedDeclaration: 35937;
                                                                     readonly src: "3019:5:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                                         readonly typeString: "bytes32[] memory";
                                                                     };
                                                                 };
-                                                                readonly id: 35979;
+                                                                readonly id: 36085;
                                                                 readonly indexExpression: {
-                                                                    readonly id: 35978;
+                                                                    readonly id: 36084;
                                                                     readonly name: "i";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35947;
+                                                                    readonly referencedDeclaration: 36053;
                                                                     readonly src: "3025:1:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_uint256";
@@ -2828,7 +2828,7 @@ export declare const stdStorage: {
                                                                     readonly typeIdentifier: "t_bytes32";
                                                                     readonly typeString: "bytes32";
                                                                 }];
-                                                                readonly id: 35976;
+                                                                readonly id: 36082;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: true;
@@ -2840,14 +2840,14 @@ export declare const stdStorage: {
                                                                     readonly typeString: "type(uint256)";
                                                                 };
                                                                 readonly typeName: {
-                                                                    readonly id: 35975;
+                                                                    readonly id: 36081;
                                                                     readonly name: "uint256";
                                                                     readonly nodeType: "ElementaryTypeName";
                                                                     readonly src: "3011:7:152";
                                                                     readonly typeDescriptions: {};
                                                                 };
                                                             };
-                                                            readonly id: 35980;
+                                                            readonly id: 36086;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -2871,18 +2871,18 @@ export declare const stdStorage: {
                                                                 readonly typeIdentifier: "t_uint256";
                                                                 readonly typeString: "uint256";
                                                             }];
-                                                            readonly id: 35973;
+                                                            readonly id: 36079;
                                                             readonly name: "WARNING_UninitedSlot";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 35694;
+                                                            readonly referencedDeclaration: 35800;
                                                             readonly src: "2985:20:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_uint256_$returns$__$";
                                                                 readonly typeString: "function (address,uint256)";
                                                             };
                                                         };
-                                                        readonly id: 35981;
+                                                        readonly id: 36087;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -2898,7 +2898,7 @@ export declare const stdStorage: {
                                                             readonly typeString: "tuple()";
                                                         };
                                                     };
-                                                    readonly id: 35982;
+                                                    readonly id: 36088;
                                                     readonly nodeType: "EmitStatement";
                                                     readonly src: "2980:49:152";
                                                 }];
@@ -2906,11 +2906,11 @@ export declare const stdStorage: {
                                         }, {
                                             readonly expression: {
                                                 readonly arguments: readonly [{
-                                                    readonly id: 35988;
+                                                    readonly id: 36094;
                                                     readonly name: "who";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35739;
+                                                    readonly referencedDeclaration: 35845;
                                                     readonly src: "3099:3:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_address";
@@ -2918,24 +2918,24 @@ export declare const stdStorage: {
                                                     };
                                                 }, {
                                                     readonly baseExpression: {
-                                                        readonly id: 35989;
+                                                        readonly id: 36095;
                                                         readonly name: "reads";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35831;
+                                                        readonly referencedDeclaration: 35937;
                                                         readonly src: "3104:5:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                             readonly typeString: "bytes32[] memory";
                                                         };
                                                     };
-                                                    readonly id: 35991;
+                                                    readonly id: 36097;
                                                     readonly indexExpression: {
-                                                        readonly id: 35990;
+                                                        readonly id: 36096;
                                                         readonly name: "i";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35947;
+                                                        readonly referencedDeclaration: 36053;
                                                         readonly src: "3110:1:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_uint256";
@@ -2955,7 +2955,7 @@ export declare const stdStorage: {
                                                 }, {
                                                     readonly arguments: readonly [{
                                                         readonly hexValue: "1337";
-                                                        readonly id: 35994;
+                                                        readonly id: 36100;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -2974,7 +2974,7 @@ export declare const stdStorage: {
                                                             readonly typeIdentifier: "t_stringliteral_2636a8beb2c41b8ccafa9a55a5a5e333892a83b491df3a67d2768946a9f9c6dc";
                                                             readonly typeString: "literal_string hex\"1337\"";
                                                         }];
-                                                        readonly id: 35993;
+                                                        readonly id: 36099;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -2986,14 +2986,14 @@ export declare const stdStorage: {
                                                             readonly typeString: "type(bytes32)";
                                                         };
                                                         readonly typeName: {
-                                                            readonly id: 35992;
+                                                            readonly id: 36098;
                                                             readonly name: "bytes32";
                                                             readonly nodeType: "ElementaryTypeName";
                                                             readonly src: "3114:7:152";
                                                             readonly typeDescriptions: {};
                                                         };
                                                     };
-                                                    readonly id: 35995;
+                                                    readonly id: 36101;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -3021,18 +3021,18 @@ export declare const stdStorage: {
                                                         readonly typeString: "bytes32";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 35985;
+                                                        readonly id: 36091;
                                                         readonly name: "vm";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35711;
+                                                        readonly referencedDeclaration: 35817;
                                                         readonly src: "3090:2:152";
                                                         readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                                            readonly typeIdentifier: "t_contract$_Vm_$40884";
                                                             readonly typeString: "contract Vm";
                                                         };
                                                     };
-                                                    readonly id: 35987;
+                                                    readonly id: 36093;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -3040,14 +3040,14 @@ export declare const stdStorage: {
                                                     readonly memberLocation: "3093:5:152";
                                                     readonly memberName: "store";
                                                     readonly nodeType: "MemberAccess";
-                                                    readonly referencedDeclaration: 40352;
+                                                    readonly referencedDeclaration: 40458;
                                                     readonly src: "3090:8:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_bytes32_$_t_bytes32_$returns$__$";
                                                         readonly typeString: "function (address,bytes32,bytes32) external";
                                                     };
                                                 };
-                                                readonly id: 35996;
+                                                readonly id: 36102;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -3063,19 +3063,19 @@ export declare const stdStorage: {
                                                     readonly typeString: "tuple()";
                                                 };
                                             };
-                                            readonly id: 35997;
+                                            readonly id: 36103;
                                             readonly nodeType: "ExpressionStatement";
                                             readonly src: "3090:43:152";
                                         }, {
-                                            readonly assignments: readonly [35999];
+                                            readonly assignments: readonly [36105];
                                             readonly declarations: readonly [{
                                                 readonly constant: false;
-                                                readonly id: 35999;
+                                                readonly id: 36105;
                                                 readonly mutability: "mutable";
                                                 readonly name: "success";
                                                 readonly nameLocation: "3156:7:152";
                                                 readonly nodeType: "VariableDeclaration";
-                                                readonly scope: 36113;
+                                                readonly scope: 36219;
                                                 readonly src: "3151:12:152";
                                                 readonly stateVariable: false;
                                                 readonly storageLocation: "default";
@@ -3084,7 +3084,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "bool";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 35998;
+                                                    readonly id: 36104;
                                                     readonly name: "bool";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "3151:4:152";
@@ -3095,19 +3095,19 @@ export declare const stdStorage: {
                                                 };
                                                 readonly visibility: "internal";
                                             }];
-                                            readonly id: 36000;
+                                            readonly id: 36106;
                                             readonly nodeType: "VariableDeclarationStatement";
                                             readonly src: "3151:12:152";
                                         }, {
-                                            readonly assignments: readonly [36002];
+                                            readonly assignments: readonly [36108];
                                             readonly declarations: readonly [{
                                                 readonly constant: false;
-                                                readonly id: 36002;
+                                                readonly id: 36108;
                                                 readonly mutability: "mutable";
                                                 readonly name: "rdat";
                                                 readonly nameLocation: "3194:4:152";
                                                 readonly nodeType: "VariableDeclaration";
-                                                readonly scope: 36113;
+                                                readonly scope: 36219;
                                                 readonly src: "3181:17:152";
                                                 readonly stateVariable: false;
                                                 readonly storageLocation: "memory";
@@ -3116,7 +3116,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "bytes";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 36001;
+                                                    readonly id: 36107;
                                                     readonly name: "bytes";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "3181:5:152";
@@ -3127,45 +3127,45 @@ export declare const stdStorage: {
                                                 };
                                                 readonly visibility: "internal";
                                             }];
-                                            readonly id: 36003;
+                                            readonly id: 36109;
                                             readonly nodeType: "VariableDeclarationStatement";
                                             readonly src: "3181:17:152";
                                         }, {
-                                            readonly id: 36022;
+                                            readonly id: 36128;
                                             readonly nodeType: "Block";
                                             readonly src: "3216:146:152";
                                             readonly statements: readonly [{
                                                 readonly expression: {
-                                                    readonly id: 36011;
+                                                    readonly id: 36117;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftHandSide: {
                                                         readonly components: readonly [{
-                                                            readonly id: 36004;
+                                                            readonly id: 36110;
                                                             readonly name: "success";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 35999;
+                                                            readonly referencedDeclaration: 36105;
                                                             readonly src: "3239:7:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_bool";
                                                                 readonly typeString: "bool";
                                                             };
                                                         }, {
-                                                            readonly id: 36005;
+                                                            readonly id: 36111;
                                                             readonly name: "rdat";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 36002;
+                                                            readonly referencedDeclaration: 36108;
                                                             readonly src: "3248:4:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                                                 readonly typeString: "bytes memory";
                                                             };
                                                         }];
-                                                        readonly id: 36006;
+                                                        readonly id: 36112;
                                                         readonly isConstant: false;
                                                         readonly isInlineArray: false;
                                                         readonly isLValue: true;
@@ -3182,11 +3182,11 @@ export declare const stdStorage: {
                                                     readonly operator: "=";
                                                     readonly rightHandSide: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 36009;
+                                                            readonly id: 36115;
                                                             readonly name: "cald";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 35793;
+                                                            readonly referencedDeclaration: 35899;
                                                             readonly src: "3271:4:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -3199,18 +3199,18 @@ export declare const stdStorage: {
                                                                 readonly typeString: "bytes memory";
                                                             }];
                                                             readonly expression: {
-                                                                readonly id: 36007;
+                                                                readonly id: 36113;
                                                                 readonly name: "who";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 35739;
+                                                                readonly referencedDeclaration: 35845;
                                                                 readonly src: "3256:3:152";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_address";
                                                                     readonly typeString: "address";
                                                                 };
                                                             };
-                                                            readonly id: 36008;
+                                                            readonly id: 36114;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -3224,7 +3224,7 @@ export declare const stdStorage: {
                                                                 readonly typeString: "function (bytes memory) view returns (bool,bytes memory)";
                                                             };
                                                         };
-                                                        readonly id: 36010;
+                                                        readonly id: 36116;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -3246,22 +3246,22 @@ export declare const stdStorage: {
                                                         readonly typeString: "tuple()";
                                                     };
                                                 };
-                                                readonly id: 36012;
+                                                readonly id: 36118;
                                                 readonly nodeType: "ExpressionStatement";
                                                 readonly src: "3238:38:152";
                                             }, {
                                                 readonly expression: {
-                                                    readonly id: 36020;
+                                                    readonly id: 36126;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftHandSide: {
-                                                        readonly id: 36013;
+                                                        readonly id: 36119;
                                                         readonly name: "fdat";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35808;
+                                                        readonly referencedDeclaration: 35914;
                                                         readonly src: "3298:4:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_bytes32";
@@ -3272,11 +3272,11 @@ export declare const stdStorage: {
                                                     readonly operator: "=";
                                                     readonly rightHandSide: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 36015;
+                                                            readonly id: 36121;
                                                             readonly name: "rdat";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 36002;
+                                                            readonly referencedDeclaration: 36108;
                                                             readonly src: "3320:4:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -3287,14 +3287,14 @@ export declare const stdStorage: {
                                                                 readonly typeIdentifier: "t_uint256";
                                                                 readonly typeString: "uint256";
                                                             };
-                                                            readonly id: 36018;
+                                                            readonly id: 36124;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
                                                             readonly lValueRequested: false;
                                                             readonly leftExpression: {
                                                                 readonly hexValue: "3332";
-                                                                readonly id: 36016;
+                                                                readonly id: 36122;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: true;
@@ -3311,11 +3311,11 @@ export declare const stdStorage: {
                                                             readonly nodeType: "BinaryOperation";
                                                             readonly operator: "*";
                                                             readonly rightExpression: {
-                                                                readonly id: 36017;
+                                                                readonly id: 36123;
                                                                 readonly name: "field_depth";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 35749;
+                                                                readonly referencedDeclaration: 35855;
                                                                 readonly src: "3331:11:152";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_uint256";
@@ -3336,18 +3336,18 @@ export declare const stdStorage: {
                                                                 readonly typeIdentifier: "t_uint256";
                                                                 readonly typeString: "uint256";
                                                             }];
-                                                            readonly id: 36014;
+                                                            readonly id: 36120;
                                                             readonly name: "bytesToBytes32";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 36528;
+                                                            readonly referencedDeclaration: 36634;
                                                             readonly src: "3305:14:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_internal_pure$_t_bytes_memory_ptr_$_t_uint256_$returns$_t_bytes32_$";
                                                                 readonly typeString: "function (bytes memory,uint256) pure returns (bytes32)";
                                                             };
                                                         };
-                                                        readonly id: 36019;
+                                                        readonly id: 36125;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -3369,7 +3369,7 @@ export declare const stdStorage: {
                                                         readonly typeString: "bytes32";
                                                     };
                                                 };
-                                                readonly id: 36021;
+                                                readonly id: 36127;
                                                 readonly nodeType: "ExpressionStatement";
                                                 readonly src: "3298:45:152";
                                             }];
@@ -3379,17 +3379,17 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_bool";
                                                     readonly typeString: "bool";
                                                 };
-                                                readonly id: 36030;
+                                                readonly id: 36136;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
-                                                    readonly id: 36023;
+                                                    readonly id: 36129;
                                                     readonly name: "success";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35999;
+                                                    readonly referencedDeclaration: 36105;
                                                     readonly src: "3384:7:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_bool";
@@ -3403,17 +3403,17 @@ export declare const stdStorage: {
                                                         readonly typeIdentifier: "t_bytes32";
                                                         readonly typeString: "bytes32";
                                                     };
-                                                    readonly id: 36029;
+                                                    readonly id: 36135;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
                                                     readonly lValueRequested: false;
                                                     readonly leftExpression: {
-                                                        readonly id: 36024;
+                                                        readonly id: 36130;
                                                         readonly name: "fdat";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35808;
+                                                        readonly referencedDeclaration: 35914;
                                                         readonly src: "3395:4:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_bytes32";
@@ -3425,7 +3425,7 @@ export declare const stdStorage: {
                                                     readonly rightExpression: {
                                                         readonly arguments: readonly [{
                                                             readonly hexValue: "1337";
-                                                            readonly id: 36027;
+                                                            readonly id: 36133;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: true;
@@ -3444,7 +3444,7 @@ export declare const stdStorage: {
                                                                 readonly typeIdentifier: "t_stringliteral_2636a8beb2c41b8ccafa9a55a5a5e333892a83b491df3a67d2768946a9f9c6dc";
                                                                 readonly typeString: "literal_string hex\"1337\"";
                                                             }];
-                                                            readonly id: 36026;
+                                                            readonly id: 36132;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: true;
@@ -3456,14 +3456,14 @@ export declare const stdStorage: {
                                                                 readonly typeString: "type(bytes32)";
                                                             };
                                                             readonly typeName: {
-                                                                readonly id: 36025;
+                                                                readonly id: 36131;
                                                                 readonly name: "bytes32";
                                                                 readonly nodeType: "ElementaryTypeName";
                                                                 readonly src: "3403:7:152";
                                                                 readonly typeDescriptions: {};
                                                             };
                                                         };
-                                                        readonly id: 36028;
+                                                        readonly id: 36134;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -3491,32 +3491,32 @@ export declare const stdStorage: {
                                                     readonly typeString: "bool";
                                                 };
                                             };
-                                            readonly id: 36102;
+                                            readonly id: 36208;
                                             readonly nodeType: "IfStatement";
                                             readonly src: "3380:529:152";
                                             readonly trueBody: {
-                                                readonly id: 36101;
+                                                readonly id: 36207;
                                                 readonly nodeType: "Block";
                                                 readonly src: "3423:486:152";
                                                 readonly statements: readonly [{
                                                     readonly eventCall: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 36032;
+                                                            readonly id: 36138;
                                                             readonly name: "who";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 35739;
+                                                            readonly referencedDeclaration: 35845;
                                                             readonly src: "3529:3:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_address";
                                                                 readonly typeString: "address";
                                                             };
                                                         }, {
-                                                            readonly id: 36033;
+                                                            readonly id: 36139;
                                                             readonly name: "fsig";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 35744;
+                                                            readonly referencedDeclaration: 35850;
                                                             readonly src: "3534:4:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_bytes4";
@@ -3525,22 +3525,22 @@ export declare const stdStorage: {
                                                         }, {
                                                             readonly arguments: readonly [{
                                                                 readonly arguments: readonly [{
-                                                                    readonly id: 36037;
+                                                                    readonly id: 36143;
                                                                     readonly name: "ins";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35757;
+                                                                    readonly referencedDeclaration: 35863;
                                                                     readonly src: "3567:3:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                                         readonly typeString: "bytes32[] memory";
                                                                     };
                                                                 }, {
-                                                                    readonly id: 36038;
+                                                                    readonly id: 36144;
                                                                     readonly name: "field_depth";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35749;
+                                                                    readonly referencedDeclaration: 35855;
                                                                     readonly src: "3572:11:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_uint256";
@@ -3556,7 +3556,7 @@ export declare const stdStorage: {
                                                                         readonly typeString: "uint256";
                                                                     }];
                                                                     readonly expression: {
-                                                                        readonly id: 36035;
+                                                                        readonly id: 36141;
                                                                         readonly name: "abi";
                                                                         readonly nodeType: "Identifier";
                                                                         readonly overloadedDeclarations: readonly [];
@@ -3567,7 +3567,7 @@ export declare const stdStorage: {
                                                                             readonly typeString: "abi";
                                                                         };
                                                                     };
-                                                                    readonly id: 36036;
+                                                                    readonly id: 36142;
                                                                     readonly isConstant: false;
                                                                     readonly isLValue: false;
                                                                     readonly isPure: true;
@@ -3581,7 +3581,7 @@ export declare const stdStorage: {
                                                                         readonly typeString: "function () pure returns (bytes memory)";
                                                                     };
                                                                 };
-                                                                readonly id: 36039;
+                                                                readonly id: 36145;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: false;
@@ -3602,7 +3602,7 @@ export declare const stdStorage: {
                                                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                                                     readonly typeString: "bytes memory";
                                                                 }];
-                                                                readonly id: 36034;
+                                                                readonly id: 36140;
                                                                 readonly name: "keccak256";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
@@ -3613,7 +3613,7 @@ export declare const stdStorage: {
                                                                     readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                                                 };
                                                             };
-                                                            readonly id: 36040;
+                                                            readonly id: 36146;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -3631,24 +3631,24 @@ export declare const stdStorage: {
                                                         }, {
                                                             readonly arguments: readonly [{
                                                                 readonly baseExpression: {
-                                                                    readonly id: 36043;
+                                                                    readonly id: 36149;
                                                                     readonly name: "reads";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35831;
+                                                                    readonly referencedDeclaration: 35937;
                                                                     readonly src: "3595:5:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                                         readonly typeString: "bytes32[] memory";
                                                                     };
                                                                 };
-                                                                readonly id: 36045;
+                                                                readonly id: 36151;
                                                                 readonly indexExpression: {
-                                                                    readonly id: 36044;
+                                                                    readonly id: 36150;
                                                                     readonly name: "i";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35947;
+                                                                    readonly referencedDeclaration: 36053;
                                                                     readonly src: "3601:1:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_uint256";
@@ -3671,7 +3671,7 @@ export declare const stdStorage: {
                                                                     readonly typeIdentifier: "t_bytes32";
                                                                     readonly typeString: "bytes32";
                                                                 }];
-                                                                readonly id: 36042;
+                                                                readonly id: 36148;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: true;
@@ -3683,14 +3683,14 @@ export declare const stdStorage: {
                                                                     readonly typeString: "type(uint256)";
                                                                 };
                                                                 readonly typeName: {
-                                                                    readonly id: 36041;
+                                                                    readonly id: 36147;
                                                                     readonly name: "uint256";
                                                                     readonly nodeType: "ElementaryTypeName";
                                                                     readonly src: "3587:7:152";
                                                                     readonly typeDescriptions: {};
                                                                 };
                                                             };
-                                                            readonly id: 36046;
+                                                            readonly id: 36152;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -3720,18 +3720,18 @@ export declare const stdStorage: {
                                                                 readonly typeIdentifier: "t_uint256";
                                                                 readonly typeString: "uint256";
                                                             }];
-                                                            readonly id: 36031;
+                                                            readonly id: 36137;
                                                             readonly name: "SlotFound";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 35688;
+                                                            readonly referencedDeclaration: 35794;
                                                             readonly src: "3519:9:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_bytes4_$_t_bytes32_$_t_uint256_$returns$__$";
                                                                 readonly typeString: "function (address,bytes4,bytes32,uint256)";
                                                             };
                                                         };
-                                                        readonly id: 36047;
+                                                        readonly id: 36153;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -3747,12 +3747,12 @@ export declare const stdStorage: {
                                                             readonly typeString: "tuple()";
                                                         };
                                                     };
-                                                    readonly id: 36048;
+                                                    readonly id: 36154;
                                                     readonly nodeType: "EmitStatement";
                                                     readonly src: "3514:91:152";
                                                 }, {
                                                     readonly expression: {
-                                                        readonly id: 36070;
+                                                        readonly id: 36176;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -3762,18 +3762,18 @@ export declare const stdStorage: {
                                                                 readonly baseExpression: {
                                                                     readonly baseExpression: {
                                                                         readonly expression: {
-                                                                            readonly id: 36049;
+                                                                            readonly id: 36155;
                                                                             readonly name: "self";
                                                                             readonly nodeType: "Identifier";
                                                                             readonly overloadedDeclarations: readonly [];
-                                                                            readonly referencedDeclaration: 35733;
+                                                                            readonly referencedDeclaration: 35839;
                                                                             readonly src: "3627:4:152";
                                                                             readonly typeDescriptions: {
-                                                                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                                                 readonly typeString: "struct StdStorage storage pointer";
                                                                             };
                                                                         };
-                                                                        readonly id: 36060;
+                                                                        readonly id: 36166;
                                                                         readonly isConstant: false;
                                                                         readonly isLValue: true;
                                                                         readonly isPure: false;
@@ -3781,20 +3781,20 @@ export declare const stdStorage: {
                                                                         readonly memberLocation: "3632:5:152";
                                                                         readonly memberName: "slots";
                                                                         readonly nodeType: "MemberAccess";
-                                                                        readonly referencedDeclaration: 35658;
+                                                                        readonly referencedDeclaration: 35764;
                                                                         readonly src: "3627:10:152";
                                                                         readonly typeDescriptions: {
                                                                             readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_uint256_$_$_$";
                                                                             readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => uint256)))";
                                                                         };
                                                                     };
-                                                                    readonly id: 36061;
+                                                                    readonly id: 36167;
                                                                     readonly indexExpression: {
-                                                                        readonly id: 36051;
+                                                                        readonly id: 36157;
                                                                         readonly name: "who";
                                                                         readonly nodeType: "Identifier";
                                                                         readonly overloadedDeclarations: readonly [];
-                                                                        readonly referencedDeclaration: 35739;
+                                                                        readonly referencedDeclaration: 35845;
                                                                         readonly src: "3638:3:152";
                                                                         readonly typeDescriptions: {
                                                                             readonly typeIdentifier: "t_address";
@@ -3812,13 +3812,13 @@ export declare const stdStorage: {
                                                                         readonly typeString: "mapping(bytes4 => mapping(bytes32 => uint256))";
                                                                     };
                                                                 };
-                                                                readonly id: 36062;
+                                                                readonly id: 36168;
                                                                 readonly indexExpression: {
-                                                                    readonly id: 36052;
+                                                                    readonly id: 36158;
                                                                     readonly name: "fsig";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35744;
+                                                                    readonly referencedDeclaration: 35850;
                                                                     readonly src: "3643:4:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_bytes4";
@@ -3836,26 +3836,26 @@ export declare const stdStorage: {
                                                                     readonly typeString: "mapping(bytes32 => uint256)";
                                                                 };
                                                             };
-                                                            readonly id: 36063;
+                                                            readonly id: 36169;
                                                             readonly indexExpression: {
                                                                 readonly arguments: readonly [{
                                                                     readonly arguments: readonly [{
-                                                                        readonly id: 36056;
+                                                                        readonly id: 36162;
                                                                         readonly name: "ins";
                                                                         readonly nodeType: "Identifier";
                                                                         readonly overloadedDeclarations: readonly [];
-                                                                        readonly referencedDeclaration: 35757;
+                                                                        readonly referencedDeclaration: 35863;
                                                                         readonly src: "3676:3:152";
                                                                         readonly typeDescriptions: {
                                                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                                             readonly typeString: "bytes32[] memory";
                                                                         };
                                                                     }, {
-                                                                        readonly id: 36057;
+                                                                        readonly id: 36163;
                                                                         readonly name: "field_depth";
                                                                         readonly nodeType: "Identifier";
                                                                         readonly overloadedDeclarations: readonly [];
-                                                                        readonly referencedDeclaration: 35749;
+                                                                        readonly referencedDeclaration: 35855;
                                                                         readonly src: "3681:11:152";
                                                                         readonly typeDescriptions: {
                                                                             readonly typeIdentifier: "t_uint256";
@@ -3871,7 +3871,7 @@ export declare const stdStorage: {
                                                                             readonly typeString: "uint256";
                                                                         }];
                                                                         readonly expression: {
-                                                                            readonly id: 36054;
+                                                                            readonly id: 36160;
                                                                             readonly name: "abi";
                                                                             readonly nodeType: "Identifier";
                                                                             readonly overloadedDeclarations: readonly [];
@@ -3882,7 +3882,7 @@ export declare const stdStorage: {
                                                                                 readonly typeString: "abi";
                                                                             };
                                                                         };
-                                                                        readonly id: 36055;
+                                                                        readonly id: 36161;
                                                                         readonly isConstant: false;
                                                                         readonly isLValue: false;
                                                                         readonly isPure: true;
@@ -3896,7 +3896,7 @@ export declare const stdStorage: {
                                                                             readonly typeString: "function () pure returns (bytes memory)";
                                                                         };
                                                                     };
-                                                                    readonly id: 36058;
+                                                                    readonly id: 36164;
                                                                     readonly isConstant: false;
                                                                     readonly isLValue: false;
                                                                     readonly isPure: false;
@@ -3917,7 +3917,7 @@ export declare const stdStorage: {
                                                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                                                         readonly typeString: "bytes memory";
                                                                     }];
-                                                                    readonly id: 36053;
+                                                                    readonly id: 36159;
                                                                     readonly name: "keccak256";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
@@ -3928,7 +3928,7 @@ export declare const stdStorage: {
                                                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                                                     };
                                                                 };
-                                                                readonly id: 36059;
+                                                                readonly id: 36165;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: false;
@@ -3960,24 +3960,24 @@ export declare const stdStorage: {
                                                         readonly rightHandSide: {
                                                             readonly arguments: readonly [{
                                                                 readonly baseExpression: {
-                                                                    readonly id: 36066;
+                                                                    readonly id: 36172;
                                                                     readonly name: "reads";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35831;
+                                                                    readonly referencedDeclaration: 35937;
                                                                     readonly src: "3706:5:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                                         readonly typeString: "bytes32[] memory";
                                                                     };
                                                                 };
-                                                                readonly id: 36068;
+                                                                readonly id: 36174;
                                                                 readonly indexExpression: {
-                                                                    readonly id: 36067;
+                                                                    readonly id: 36173;
                                                                     readonly name: "i";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35947;
+                                                                    readonly referencedDeclaration: 36053;
                                                                     readonly src: "3712:1:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_uint256";
@@ -4000,7 +4000,7 @@ export declare const stdStorage: {
                                                                     readonly typeIdentifier: "t_bytes32";
                                                                     readonly typeString: "bytes32";
                                                                 }];
-                                                                readonly id: 36065;
+                                                                readonly id: 36171;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: true;
@@ -4012,14 +4012,14 @@ export declare const stdStorage: {
                                                                     readonly typeString: "type(uint256)";
                                                                 };
                                                                 readonly typeName: {
-                                                                    readonly id: 36064;
+                                                                    readonly id: 36170;
                                                                     readonly name: "uint256";
                                                                     readonly nodeType: "ElementaryTypeName";
                                                                     readonly src: "3698:7:152";
                                                                     readonly typeDescriptions: {};
                                                                 };
                                                             };
-                                                            readonly id: 36069;
+                                                            readonly id: 36175;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -4041,12 +4041,12 @@ export declare const stdStorage: {
                                                             readonly typeString: "uint256";
                                                         };
                                                     };
-                                                    readonly id: 36071;
+                                                    readonly id: 36177;
                                                     readonly nodeType: "ExpressionStatement";
                                                     readonly src: "3627:88:152";
                                                 }, {
                                                     readonly expression: {
-                                                        readonly id: 36088;
+                                                        readonly id: 36194;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -4056,18 +4056,18 @@ export declare const stdStorage: {
                                                                 readonly baseExpression: {
                                                                     readonly baseExpression: {
                                                                         readonly expression: {
-                                                                            readonly id: 36072;
+                                                                            readonly id: 36178;
                                                                             readonly name: "self";
                                                                             readonly nodeType: "Identifier";
                                                                             readonly overloadedDeclarations: readonly [];
-                                                                            readonly referencedDeclaration: 35733;
+                                                                            readonly referencedDeclaration: 35839;
                                                                             readonly src: "3737:4:152";
                                                                             readonly typeDescriptions: {
-                                                                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                                                 readonly typeString: "struct StdStorage storage pointer";
                                                                             };
                                                                         };
-                                                                        readonly id: 36083;
+                                                                        readonly id: 36189;
                                                                         readonly isConstant: false;
                                                                         readonly isLValue: true;
                                                                         readonly isPure: false;
@@ -4075,20 +4075,20 @@ export declare const stdStorage: {
                                                                         readonly memberLocation: "3742:5:152";
                                                                         readonly memberName: "finds";
                                                                         readonly nodeType: "MemberAccess";
-                                                                        readonly referencedDeclaration: 35666;
+                                                                        readonly referencedDeclaration: 35772;
                                                                         readonly src: "3737:10:152";
                                                                         readonly typeDescriptions: {
                                                                             readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_bool_$_$_$";
                                                                             readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => bool)))";
                                                                         };
                                                                     };
-                                                                    readonly id: 36084;
+                                                                    readonly id: 36190;
                                                                     readonly indexExpression: {
-                                                                        readonly id: 36074;
+                                                                        readonly id: 36180;
                                                                         readonly name: "who";
                                                                         readonly nodeType: "Identifier";
                                                                         readonly overloadedDeclarations: readonly [];
-                                                                        readonly referencedDeclaration: 35739;
+                                                                        readonly referencedDeclaration: 35845;
                                                                         readonly src: "3748:3:152";
                                                                         readonly typeDescriptions: {
                                                                             readonly typeIdentifier: "t_address";
@@ -4106,13 +4106,13 @@ export declare const stdStorage: {
                                                                         readonly typeString: "mapping(bytes4 => mapping(bytes32 => bool))";
                                                                     };
                                                                 };
-                                                                readonly id: 36085;
+                                                                readonly id: 36191;
                                                                 readonly indexExpression: {
-                                                                    readonly id: 36075;
+                                                                    readonly id: 36181;
                                                                     readonly name: "fsig";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
-                                                                    readonly referencedDeclaration: 35744;
+                                                                    readonly referencedDeclaration: 35850;
                                                                     readonly src: "3753:4:152";
                                                                     readonly typeDescriptions: {
                                                                         readonly typeIdentifier: "t_bytes4";
@@ -4130,26 +4130,26 @@ export declare const stdStorage: {
                                                                     readonly typeString: "mapping(bytes32 => bool)";
                                                                 };
                                                             };
-                                                            readonly id: 36086;
+                                                            readonly id: 36192;
                                                             readonly indexExpression: {
                                                                 readonly arguments: readonly [{
                                                                     readonly arguments: readonly [{
-                                                                        readonly id: 36079;
+                                                                        readonly id: 36185;
                                                                         readonly name: "ins";
                                                                         readonly nodeType: "Identifier";
                                                                         readonly overloadedDeclarations: readonly [];
-                                                                        readonly referencedDeclaration: 35757;
+                                                                        readonly referencedDeclaration: 35863;
                                                                         readonly src: "3786:3:152";
                                                                         readonly typeDescriptions: {
                                                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                                             readonly typeString: "bytes32[] memory";
                                                                         };
                                                                     }, {
-                                                                        readonly id: 36080;
+                                                                        readonly id: 36186;
                                                                         readonly name: "field_depth";
                                                                         readonly nodeType: "Identifier";
                                                                         readonly overloadedDeclarations: readonly [];
-                                                                        readonly referencedDeclaration: 35749;
+                                                                        readonly referencedDeclaration: 35855;
                                                                         readonly src: "3791:11:152";
                                                                         readonly typeDescriptions: {
                                                                             readonly typeIdentifier: "t_uint256";
@@ -4165,7 +4165,7 @@ export declare const stdStorage: {
                                                                             readonly typeString: "uint256";
                                                                         }];
                                                                         readonly expression: {
-                                                                            readonly id: 36077;
+                                                                            readonly id: 36183;
                                                                             readonly name: "abi";
                                                                             readonly nodeType: "Identifier";
                                                                             readonly overloadedDeclarations: readonly [];
@@ -4176,7 +4176,7 @@ export declare const stdStorage: {
                                                                                 readonly typeString: "abi";
                                                                             };
                                                                         };
-                                                                        readonly id: 36078;
+                                                                        readonly id: 36184;
                                                                         readonly isConstant: false;
                                                                         readonly isLValue: false;
                                                                         readonly isPure: true;
@@ -4190,7 +4190,7 @@ export declare const stdStorage: {
                                                                             readonly typeString: "function () pure returns (bytes memory)";
                                                                         };
                                                                     };
-                                                                    readonly id: 36081;
+                                                                    readonly id: 36187;
                                                                     readonly isConstant: false;
                                                                     readonly isLValue: false;
                                                                     readonly isPure: false;
@@ -4211,7 +4211,7 @@ export declare const stdStorage: {
                                                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                                                         readonly typeString: "bytes memory";
                                                                     }];
-                                                                    readonly id: 36076;
+                                                                    readonly id: 36182;
                                                                     readonly name: "keccak256";
                                                                     readonly nodeType: "Identifier";
                                                                     readonly overloadedDeclarations: readonly [];
@@ -4222,7 +4222,7 @@ export declare const stdStorage: {
                                                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                                                     };
                                                                 };
-                                                                readonly id: 36082;
+                                                                readonly id: 36188;
                                                                 readonly isConstant: false;
                                                                 readonly isLValue: false;
                                                                 readonly isPure: false;
@@ -4253,7 +4253,7 @@ export declare const stdStorage: {
                                                         readonly operator: "=";
                                                         readonly rightHandSide: {
                                                             readonly hexValue: "74727565";
-                                                            readonly id: 36087;
+                                                            readonly id: 36193;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: true;
@@ -4273,17 +4273,17 @@ export declare const stdStorage: {
                                                             readonly typeString: "bool";
                                                         };
                                                     };
-                                                    readonly id: 36089;
+                                                    readonly id: 36195;
                                                     readonly nodeType: "ExpressionStatement";
                                                     readonly src: "3737:75:152";
                                                 }, {
                                                     readonly expression: {
                                                         readonly arguments: readonly [{
-                                                            readonly id: 36093;
+                                                            readonly id: 36199;
                                                             readonly name: "who";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 35739;
+                                                            readonly referencedDeclaration: 35845;
                                                             readonly src: "3843:3:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_address";
@@ -4291,24 +4291,24 @@ export declare const stdStorage: {
                                                             };
                                                         }, {
                                                             readonly baseExpression: {
-                                                                readonly id: 36094;
+                                                                readonly id: 36200;
                                                                 readonly name: "reads";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 35831;
+                                                                readonly referencedDeclaration: 35937;
                                                                 readonly src: "3848:5:152";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                                     readonly typeString: "bytes32[] memory";
                                                                 };
                                                             };
-                                                            readonly id: 36096;
+                                                            readonly id: 36202;
                                                             readonly indexExpression: {
-                                                                readonly id: 36095;
+                                                                readonly id: 36201;
                                                                 readonly name: "i";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 35947;
+                                                                readonly referencedDeclaration: 36053;
                                                                 readonly src: "3854:1:152";
                                                                 readonly typeDescriptions: {
                                                                     readonly typeIdentifier: "t_uint256";
@@ -4326,11 +4326,11 @@ export declare const stdStorage: {
                                                                 readonly typeString: "bytes32";
                                                             };
                                                         }, {
-                                                            readonly id: 36097;
+                                                            readonly id: 36203;
                                                             readonly name: "prev";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 35958;
+                                                            readonly referencedDeclaration: 36064;
                                                             readonly src: "3858:4:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_bytes32";
@@ -4349,18 +4349,18 @@ export declare const stdStorage: {
                                                                 readonly typeString: "bytes32";
                                                             }];
                                                             readonly expression: {
-                                                                readonly id: 36090;
+                                                                readonly id: 36196;
                                                                 readonly name: "vm";
                                                                 readonly nodeType: "Identifier";
                                                                 readonly overloadedDeclarations: readonly [];
-                                                                readonly referencedDeclaration: 35711;
+                                                                readonly referencedDeclaration: 35817;
                                                                 readonly src: "3834:2:152";
                                                                 readonly typeDescriptions: {
-                                                                    readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                                                    readonly typeIdentifier: "t_contract$_Vm_$40884";
                                                                     readonly typeString: "contract Vm";
                                                                 };
                                                             };
-                                                            readonly id: 36092;
+                                                            readonly id: 36198;
                                                             readonly isConstant: false;
                                                             readonly isLValue: false;
                                                             readonly isPure: false;
@@ -4368,14 +4368,14 @@ export declare const stdStorage: {
                                                             readonly memberLocation: "3837:5:152";
                                                             readonly memberName: "store";
                                                             readonly nodeType: "MemberAccess";
-                                                            readonly referencedDeclaration: 40352;
+                                                            readonly referencedDeclaration: 40458;
                                                             readonly src: "3834:8:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_bytes32_$_t_bytes32_$returns$__$";
                                                                 readonly typeString: "function (address,bytes32,bytes32) external";
                                                             };
                                                         };
-                                                        readonly id: 36098;
+                                                        readonly id: 36204;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
@@ -4391,11 +4391,11 @@ export declare const stdStorage: {
                                                             readonly typeString: "tuple()";
                                                         };
                                                     };
-                                                    readonly id: 36099;
+                                                    readonly id: 36205;
                                                     readonly nodeType: "ExpressionStatement";
                                                     readonly src: "3834:29:152";
                                                 }, {
-                                                    readonly id: 36100;
+                                                    readonly id: 36206;
                                                     readonly nodeType: "Break";
                                                     readonly src: "3885:5:152";
                                                 }];
@@ -4403,11 +4403,11 @@ export declare const stdStorage: {
                                         }, {
                                             readonly expression: {
                                                 readonly arguments: readonly [{
-                                                    readonly id: 36106;
+                                                    readonly id: 36212;
                                                     readonly name: "who";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35739;
+                                                    readonly referencedDeclaration: 35845;
                                                     readonly src: "3935:3:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_address";
@@ -4415,24 +4415,24 @@ export declare const stdStorage: {
                                                     };
                                                 }, {
                                                     readonly baseExpression: {
-                                                        readonly id: 36107;
+                                                        readonly id: 36213;
                                                         readonly name: "reads";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35831;
+                                                        readonly referencedDeclaration: 35937;
                                                         readonly src: "3940:5:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                             readonly typeString: "bytes32[] memory";
                                                         };
                                                     };
-                                                    readonly id: 36109;
+                                                    readonly id: 36215;
                                                     readonly indexExpression: {
-                                                        readonly id: 36108;
+                                                        readonly id: 36214;
                                                         readonly name: "i";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35947;
+                                                        readonly referencedDeclaration: 36053;
                                                         readonly src: "3946:1:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_uint256";
@@ -4450,11 +4450,11 @@ export declare const stdStorage: {
                                                         readonly typeString: "bytes32";
                                                     };
                                                 }, {
-                                                    readonly id: 36110;
+                                                    readonly id: 36216;
                                                     readonly name: "prev";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35958;
+                                                    readonly referencedDeclaration: 36064;
                                                     readonly src: "3950:4:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_bytes32";
@@ -4473,18 +4473,18 @@ export declare const stdStorage: {
                                                         readonly typeString: "bytes32";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 36103;
+                                                        readonly id: 36209;
                                                         readonly name: "vm";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35711;
+                                                        readonly referencedDeclaration: 35817;
                                                         readonly src: "3926:2:152";
                                                         readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                                            readonly typeIdentifier: "t_contract$_Vm_$40884";
                                                             readonly typeString: "contract Vm";
                                                         };
                                                     };
-                                                    readonly id: 36105;
+                                                    readonly id: 36211;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: false;
@@ -4492,14 +4492,14 @@ export declare const stdStorage: {
                                                     readonly memberLocation: "3929:5:152";
                                                     readonly memberName: "store";
                                                     readonly nodeType: "MemberAccess";
-                                                    readonly referencedDeclaration: 40352;
+                                                    readonly referencedDeclaration: 40458;
                                                     readonly src: "3926:8:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_bytes32_$_t_bytes32_$returns$__$";
                                                         readonly typeString: "function (address,bytes32,bytes32) external";
                                                     };
                                                 };
-                                                readonly id: 36111;
+                                                readonly id: 36217;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -4515,7 +4515,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "tuple()";
                                                 };
                                             };
-                                            readonly id: 36112;
+                                            readonly id: 36218;
                                             readonly nodeType: "ExpressionStatement";
                                             readonly src: "3926:29:152";
                                         }];
@@ -4525,17 +4525,17 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 35953;
+                                        readonly id: 36059;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
-                                            readonly id: 35950;
+                                            readonly id: 36056;
                                             readonly name: "i";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35947;
+                                            readonly referencedDeclaration: 36053;
                                             readonly src: "2838:1:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -4546,18 +4546,18 @@ export declare const stdStorage: {
                                         readonly operator: "<";
                                         readonly rightExpression: {
                                             readonly expression: {
-                                                readonly id: 35951;
+                                                readonly id: 36057;
                                                 readonly name: "reads";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35831;
+                                                readonly referencedDeclaration: 35937;
                                                 readonly src: "2842:5:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                     readonly typeString: "bytes32[] memory";
                                                 };
                                             };
-                                            readonly id: 35952;
+                                            readonly id: 36058;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -4577,17 +4577,17 @@ export declare const stdStorage: {
                                             readonly typeString: "bool";
                                         };
                                     };
-                                    readonly id: 36114;
+                                    readonly id: 36220;
                                     readonly initializationExpression: {
-                                        readonly assignments: readonly [35947];
+                                        readonly assignments: readonly [36053];
                                         readonly declarations: readonly [{
                                             readonly constant: false;
-                                            readonly id: 35947;
+                                            readonly id: 36053;
                                             readonly mutability: "mutable";
                                             readonly name: "i";
                                             readonly nameLocation: "2831:1:152";
                                             readonly nodeType: "VariableDeclaration";
-                                            readonly scope: 36114;
+                                            readonly scope: 36220;
                                             readonly src: "2823:9:152";
                                             readonly stateVariable: false;
                                             readonly storageLocation: "default";
@@ -4596,7 +4596,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "uint256";
                                             };
                                             readonly typeName: {
-                                                readonly id: 35946;
+                                                readonly id: 36052;
                                                 readonly name: "uint256";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "2823:7:152";
@@ -4607,10 +4607,10 @@ export declare const stdStorage: {
                                             };
                                             readonly visibility: "internal";
                                         }];
-                                        readonly id: 35949;
+                                        readonly id: 36055;
                                         readonly initialValue: {
                                             readonly hexValue: "30";
-                                            readonly id: 35948;
+                                            readonly id: 36054;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -4629,7 +4629,7 @@ export declare const stdStorage: {
                                     };
                                     readonly loopExpression: {
                                         readonly expression: {
-                                            readonly id: 35955;
+                                            readonly id: 36061;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -4639,11 +4639,11 @@ export declare const stdStorage: {
                                             readonly prefix: false;
                                             readonly src: "2856:3:152";
                                             readonly subExpression: {
-                                                readonly id: 35954;
+                                                readonly id: 36060;
                                                 readonly name: "i";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35947;
+                                                readonly referencedDeclaration: 36053;
                                                 readonly src: "2856:1:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -4655,7 +4655,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "uint256";
                                             };
                                         };
-                                        readonly id: 35956;
+                                        readonly id: 36062;
                                         readonly nodeType: "ExpressionStatement";
                                         readonly src: "2856:3:152";
                                     };
@@ -4664,23 +4664,23 @@ export declare const stdStorage: {
                                 }];
                             };
                         };
-                        readonly id: 36122;
+                        readonly id: 36228;
                         readonly nodeType: "IfStatement";
                         readonly src: "2025:2060:152";
                         readonly trueBody: {
-                            readonly id: 35941;
+                            readonly id: 36047;
                             readonly nodeType: "Block";
                             readonly src: "2048:728:152";
                             readonly statements: readonly [{
-                                readonly assignments: readonly [35845];
+                                readonly assignments: readonly [35951];
                                 readonly declarations: readonly [{
                                     readonly constant: false;
-                                    readonly id: 35845;
+                                    readonly id: 35951;
                                     readonly mutability: "mutable";
                                     readonly name: "curr";
                                     readonly nameLocation: "2070:4:152";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 35941;
+                                    readonly scope: 36047;
                                     readonly src: "2062:12:152";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -4689,7 +4689,7 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes32";
                                     };
                                     readonly typeName: {
-                                        readonly id: 35844;
+                                        readonly id: 35950;
                                         readonly name: "bytes32";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "2062:7:152";
@@ -4700,14 +4700,14 @@ export declare const stdStorage: {
                                     };
                                     readonly visibility: "internal";
                                 }];
-                                readonly id: 35853;
+                                readonly id: 35959;
                                 readonly initialValue: {
                                     readonly arguments: readonly [{
-                                        readonly id: 35848;
+                                        readonly id: 35954;
                                         readonly name: "who";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35739;
+                                        readonly referencedDeclaration: 35845;
                                         readonly src: "2085:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -4715,21 +4715,21 @@ export declare const stdStorage: {
                                         };
                                     }, {
                                         readonly baseExpression: {
-                                            readonly id: 35849;
+                                            readonly id: 35955;
                                             readonly name: "reads";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35831;
+                                            readonly referencedDeclaration: 35937;
                                             readonly src: "2090:5:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                 readonly typeString: "bytes32[] memory";
                                             };
                                         };
-                                        readonly id: 35851;
+                                        readonly id: 35957;
                                         readonly indexExpression: {
                                             readonly hexValue: "30";
-                                            readonly id: 35850;
+                                            readonly id: 35956;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -4763,18 +4763,18 @@ export declare const stdStorage: {
                                             readonly typeString: "bytes32";
                                         }];
                                         readonly expression: {
-                                            readonly id: 35846;
+                                            readonly id: 35952;
                                             readonly name: "vm";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35711;
+                                            readonly referencedDeclaration: 35817;
                                             readonly src: "2077:2:152";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                                readonly typeIdentifier: "t_contract$_Vm_$40884";
                                                 readonly typeString: "contract Vm";
                                             };
                                         };
-                                        readonly id: 35847;
+                                        readonly id: 35953;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -4782,14 +4782,14 @@ export declare const stdStorage: {
                                         readonly memberLocation: "2080:4:152";
                                         readonly memberName: "load";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 39298;
+                                        readonly referencedDeclaration: 39404;
                                         readonly src: "2077:7:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_external_view$_t_address_$_t_bytes32_$returns$_t_bytes32_$";
                                             readonly typeString: "function (address,bytes32) view external returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 35852;
+                                    readonly id: 35958;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -4813,17 +4813,17 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     };
-                                    readonly id: 35859;
+                                    readonly id: 35965;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 35854;
+                                        readonly id: 35960;
                                         readonly name: "curr";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35845;
+                                        readonly referencedDeclaration: 35951;
                                         readonly src: "2117:4:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes32";
@@ -4835,7 +4835,7 @@ export declare const stdStorage: {
                                     readonly rightExpression: {
                                         readonly arguments: readonly [{
                                             readonly hexValue: "30";
-                                            readonly id: 35857;
+                                            readonly id: 35963;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -4854,7 +4854,7 @@ export declare const stdStorage: {
                                                 readonly typeIdentifier: "t_rational_0_by_1";
                                                 readonly typeString: "int_const 0";
                                             }];
-                                            readonly id: 35856;
+                                            readonly id: 35962;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -4866,14 +4866,14 @@ export declare const stdStorage: {
                                                 readonly typeString: "type(bytes32)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 35855;
+                                                readonly id: 35961;
                                                 readonly name: "bytes32";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "2125:7:152";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 35858;
+                                        readonly id: 35964;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -4895,21 +4895,21 @@ export declare const stdStorage: {
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly id: 35871;
+                                readonly id: 35977;
                                 readonly nodeType: "IfStatement";
                                 readonly src: "2113:106:152";
                                 readonly trueBody: {
-                                    readonly id: 35870;
+                                    readonly id: 35976;
                                     readonly nodeType: "Block";
                                     readonly src: "2137:82:152";
                                     readonly statements: readonly [{
                                         readonly eventCall: {
                                             readonly arguments: readonly [{
-                                                readonly id: 35861;
+                                                readonly id: 35967;
                                                 readonly name: "who";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35739;
+                                                readonly referencedDeclaration: 35845;
                                                 readonly src: "2181:3:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_address";
@@ -4918,21 +4918,21 @@ export declare const stdStorage: {
                                             }, {
                                                 readonly arguments: readonly [{
                                                     readonly baseExpression: {
-                                                        readonly id: 35864;
+                                                        readonly id: 35970;
                                                         readonly name: "reads";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35831;
+                                                        readonly referencedDeclaration: 35937;
                                                         readonly src: "2194:5:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                             readonly typeString: "bytes32[] memory";
                                                         };
                                                     };
-                                                    readonly id: 35866;
+                                                    readonly id: 35972;
                                                     readonly indexExpression: {
                                                         readonly hexValue: "30";
-                                                        readonly id: 35865;
+                                                        readonly id: 35971;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: true;
@@ -4962,7 +4962,7 @@ export declare const stdStorage: {
                                                         readonly typeIdentifier: "t_bytes32";
                                                         readonly typeString: "bytes32";
                                                     }];
-                                                    readonly id: 35863;
+                                                    readonly id: 35969;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -4974,14 +4974,14 @@ export declare const stdStorage: {
                                                         readonly typeString: "type(uint256)";
                                                     };
                                                     readonly typeName: {
-                                                        readonly id: 35862;
+                                                        readonly id: 35968;
                                                         readonly name: "uint256";
                                                         readonly nodeType: "ElementaryTypeName";
                                                         readonly src: "2186:7:152";
                                                         readonly typeDescriptions: {};
                                                     };
                                                 };
-                                                readonly id: 35867;
+                                                readonly id: 35973;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5005,18 +5005,18 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 }];
-                                                readonly id: 35860;
+                                                readonly id: 35966;
                                                 readonly name: "WARNING_UninitedSlot";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35694;
+                                                readonly referencedDeclaration: 35800;
                                                 readonly src: "2160:20:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_uint256_$returns$__$";
                                                     readonly typeString: "function (address,uint256)";
                                                 };
                                             };
-                                            readonly id: 35868;
+                                            readonly id: 35974;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5032,7 +5032,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "tuple()";
                                             };
                                         };
-                                        readonly id: 35869;
+                                        readonly id: 35975;
                                         readonly nodeType: "EmitStatement";
                                         readonly src: "2155:49:152";
                                     }];
@@ -5043,17 +5043,17 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     };
-                                    readonly id: 35874;
+                                    readonly id: 35980;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftExpression: {
-                                        readonly id: 35872;
+                                        readonly id: 35978;
                                         readonly name: "fdat";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35808;
+                                        readonly referencedDeclaration: 35914;
                                         readonly src: "2236:4:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes32";
@@ -5063,11 +5063,11 @@ export declare const stdStorage: {
                                     readonly nodeType: "BinaryOperation";
                                     readonly operator: "!=";
                                     readonly rightExpression: {
-                                        readonly id: 35873;
+                                        readonly id: 35979;
                                         readonly name: "curr";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35845;
+                                        readonly referencedDeclaration: 35951;
                                         readonly src: "2244:4:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes32";
@@ -5080,18 +5080,18 @@ export declare const stdStorage: {
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly id: 35881;
+                                readonly id: 35987;
                                 readonly nodeType: "IfStatement";
                                 readonly src: "2232:238:152";
                                 readonly trueBody: {
-                                    readonly id: 35880;
+                                    readonly id: 35986;
                                     readonly nodeType: "Block";
                                     readonly src: "2250:220:152";
                                     readonly statements: readonly [{
                                         readonly expression: {
                                             readonly arguments: readonly [{
                                                 readonly hexValue: "66616c7365";
-                                                readonly id: 35876;
+                                                readonly id: 35982;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -5106,7 +5106,7 @@ export declare const stdStorage: {
                                                 readonly value: "false";
                                             }, {
                                                 readonly hexValue: "73746453746f726167652066696e642853746453746f72616765293a205061636b656420736c6f742e205468697320776f756c642063617573652064616e6765726f7573206f76657277726974696e6720616e642063757272656e746c792069736e277420737570706f727465642e";
-                                                readonly id: 35877;
+                                                readonly id: 35983;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -5128,7 +5128,7 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_stringliteral_4bfa78e02b745efea2b29d358f6dc28382f5209b1d2b2dbeb8ef0862e74440b3";
                                                     readonly typeString: "literal_string \"stdStorage find(StdStorage): Packed slot. This would cause dangerous overwriting and currently isn't supported.\"";
                                                 }];
-                                                readonly id: 35875;
+                                                readonly id: 35981;
                                                 readonly name: "require";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -5139,7 +5139,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "function (bool,string memory) pure";
                                                 };
                                             };
-                                            readonly id: 35878;
+                                            readonly id: 35984;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5155,7 +5155,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "tuple()";
                                             };
                                         };
-                                        readonly id: 35879;
+                                        readonly id: 35985;
                                         readonly nodeType: "ExpressionStatement";
                                         readonly src: "2268:187:152";
                                     }];
@@ -5163,22 +5163,22 @@ export declare const stdStorage: {
                             }, {
                                 readonly eventCall: {
                                     readonly arguments: readonly [{
-                                        readonly id: 35883;
+                                        readonly id: 35989;
                                         readonly name: "who";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35739;
+                                        readonly referencedDeclaration: 35845;
                                         readonly src: "2498:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
                                     }, {
-                                        readonly id: 35884;
+                                        readonly id: 35990;
                                         readonly name: "fsig";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35744;
+                                        readonly referencedDeclaration: 35850;
                                         readonly src: "2503:4:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes4";
@@ -5187,22 +5187,22 @@ export declare const stdStorage: {
                                     }, {
                                         readonly arguments: readonly [{
                                             readonly arguments: readonly [{
-                                                readonly id: 35888;
+                                                readonly id: 35994;
                                                 readonly name: "ins";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35757;
+                                                readonly referencedDeclaration: 35863;
                                                 readonly src: "2536:3:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                     readonly typeString: "bytes32[] memory";
                                                 };
                                             }, {
-                                                readonly id: 35889;
+                                                readonly id: 35995;
                                                 readonly name: "field_depth";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35749;
+                                                readonly referencedDeclaration: 35855;
                                                 readonly src: "2541:11:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_uint256";
@@ -5218,7 +5218,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "uint256";
                                                 }];
                                                 readonly expression: {
-                                                    readonly id: 35886;
+                                                    readonly id: 35992;
                                                     readonly name: "abi";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
@@ -5229,7 +5229,7 @@ export declare const stdStorage: {
                                                         readonly typeString: "abi";
                                                     };
                                                 };
-                                                readonly id: 35887;
+                                                readonly id: 35993;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -5243,7 +5243,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "function () pure returns (bytes memory)";
                                                 };
                                             };
-                                            readonly id: 35890;
+                                            readonly id: 35996;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5264,7 +5264,7 @@ export declare const stdStorage: {
                                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                                 readonly typeString: "bytes memory";
                                             }];
-                                            readonly id: 35885;
+                                            readonly id: 35991;
                                             readonly name: "keccak256";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -5275,7 +5275,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                             };
                                         };
-                                        readonly id: 35891;
+                                        readonly id: 35997;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -5293,21 +5293,21 @@ export declare const stdStorage: {
                                     }, {
                                         readonly arguments: readonly [{
                                             readonly baseExpression: {
-                                                readonly id: 35894;
+                                                readonly id: 36000;
                                                 readonly name: "reads";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35831;
+                                                readonly referencedDeclaration: 35937;
                                                 readonly src: "2564:5:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                     readonly typeString: "bytes32[] memory";
                                                 };
                                             };
-                                            readonly id: 35896;
+                                            readonly id: 36002;
                                             readonly indexExpression: {
                                                 readonly hexValue: "30";
-                                                readonly id: 35895;
+                                                readonly id: 36001;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -5337,7 +5337,7 @@ export declare const stdStorage: {
                                                 readonly typeIdentifier: "t_bytes32";
                                                 readonly typeString: "bytes32";
                                             }];
-                                            readonly id: 35893;
+                                            readonly id: 35999;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -5349,14 +5349,14 @@ export declare const stdStorage: {
                                                 readonly typeString: "type(uint256)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 35892;
+                                                readonly id: 35998;
                                                 readonly name: "uint256";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "2556:7:152";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 35897;
+                                        readonly id: 36003;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -5386,18 +5386,18 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 35882;
+                                        readonly id: 35988;
                                         readonly name: "SlotFound";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35688;
+                                        readonly referencedDeclaration: 35794;
                                         readonly src: "2488:9:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_event_nonpayable$_t_address_$_t_bytes4_$_t_bytes32_$_t_uint256_$returns$__$";
                                             readonly typeString: "function (address,bytes4,bytes32,uint256)";
                                         };
                                     };
-                                    readonly id: 35898;
+                                    readonly id: 36004;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -5413,12 +5413,12 @@ export declare const stdStorage: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 35899;
+                                readonly id: 36005;
                                 readonly nodeType: "EmitStatement";
                                 readonly src: "2483:91:152";
                             }, {
                                 readonly expression: {
-                                    readonly id: 35921;
+                                    readonly id: 36027;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -5428,18 +5428,18 @@ export declare const stdStorage: {
                                             readonly baseExpression: {
                                                 readonly baseExpression: {
                                                     readonly expression: {
-                                                        readonly id: 35900;
+                                                        readonly id: 36006;
                                                         readonly name: "self";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35733;
+                                                        readonly referencedDeclaration: 35839;
                                                         readonly src: "2588:4:152";
                                                         readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                             readonly typeString: "struct StdStorage storage pointer";
                                                         };
                                                     };
-                                                    readonly id: 35911;
+                                                    readonly id: 36017;
                                                     readonly isConstant: false;
                                                     readonly isLValue: true;
                                                     readonly isPure: false;
@@ -5447,20 +5447,20 @@ export declare const stdStorage: {
                                                     readonly memberLocation: "2593:5:152";
                                                     readonly memberName: "slots";
                                                     readonly nodeType: "MemberAccess";
-                                                    readonly referencedDeclaration: 35658;
+                                                    readonly referencedDeclaration: 35764;
                                                     readonly src: "2588:10:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_uint256_$_$_$";
                                                         readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => uint256)))";
                                                     };
                                                 };
-                                                readonly id: 35912;
+                                                readonly id: 36018;
                                                 readonly indexExpression: {
-                                                    readonly id: 35902;
+                                                    readonly id: 36008;
                                                     readonly name: "who";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35739;
+                                                    readonly referencedDeclaration: 35845;
                                                     readonly src: "2599:3:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_address";
@@ -5478,13 +5478,13 @@ export declare const stdStorage: {
                                                     readonly typeString: "mapping(bytes4 => mapping(bytes32 => uint256))";
                                                 };
                                             };
-                                            readonly id: 35913;
+                                            readonly id: 36019;
                                             readonly indexExpression: {
-                                                readonly id: 35903;
+                                                readonly id: 36009;
                                                 readonly name: "fsig";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35744;
+                                                readonly referencedDeclaration: 35850;
                                                 readonly src: "2604:4:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_bytes4";
@@ -5502,26 +5502,26 @@ export declare const stdStorage: {
                                                 readonly typeString: "mapping(bytes32 => uint256)";
                                             };
                                         };
-                                        readonly id: 35914;
+                                        readonly id: 36020;
                                         readonly indexExpression: {
                                             readonly arguments: readonly [{
                                                 readonly arguments: readonly [{
-                                                    readonly id: 35907;
+                                                    readonly id: 36013;
                                                     readonly name: "ins";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35757;
+                                                    readonly referencedDeclaration: 35863;
                                                     readonly src: "2637:3:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                         readonly typeString: "bytes32[] memory";
                                                     };
                                                 }, {
-                                                    readonly id: 35908;
+                                                    readonly id: 36014;
                                                     readonly name: "field_depth";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35749;
+                                                    readonly referencedDeclaration: 35855;
                                                     readonly src: "2642:11:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -5537,7 +5537,7 @@ export declare const stdStorage: {
                                                         readonly typeString: "uint256";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 35905;
+                                                        readonly id: 36011;
                                                         readonly name: "abi";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
@@ -5548,7 +5548,7 @@ export declare const stdStorage: {
                                                             readonly typeString: "abi";
                                                         };
                                                     };
-                                                    readonly id: 35906;
+                                                    readonly id: 36012;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -5562,7 +5562,7 @@ export declare const stdStorage: {
                                                         readonly typeString: "function () pure returns (bytes memory)";
                                                     };
                                                 };
-                                                readonly id: 35909;
+                                                readonly id: 36015;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5583,7 +5583,7 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                                     readonly typeString: "bytes memory";
                                                 }];
-                                                readonly id: 35904;
+                                                readonly id: 36010;
                                                 readonly name: "keccak256";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
@@ -5594,7 +5594,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                                 };
                                             };
-                                            readonly id: 35910;
+                                            readonly id: 36016;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5626,21 +5626,21 @@ export declare const stdStorage: {
                                     readonly rightHandSide: {
                                         readonly arguments: readonly [{
                                             readonly baseExpression: {
-                                                readonly id: 35917;
+                                                readonly id: 36023;
                                                 readonly name: "reads";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35831;
+                                                readonly referencedDeclaration: 35937;
                                                 readonly src: "2667:5:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                     readonly typeString: "bytes32[] memory";
                                                 };
                                             };
-                                            readonly id: 35919;
+                                            readonly id: 36025;
                                             readonly indexExpression: {
                                                 readonly hexValue: "30";
-                                                readonly id: 35918;
+                                                readonly id: 36024;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -5670,7 +5670,7 @@ export declare const stdStorage: {
                                                 readonly typeIdentifier: "t_bytes32";
                                                 readonly typeString: "bytes32";
                                             }];
-                                            readonly id: 35916;
+                                            readonly id: 36022;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -5682,14 +5682,14 @@ export declare const stdStorage: {
                                                 readonly typeString: "type(uint256)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 35915;
+                                                readonly id: 36021;
                                                 readonly name: "uint256";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "2659:7:152";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 35920;
+                                        readonly id: 36026;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -5711,12 +5711,12 @@ export declare const stdStorage: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 35922;
+                                readonly id: 36028;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "2588:88:152";
                             }, {
                                 readonly expression: {
-                                    readonly id: 35939;
+                                    readonly id: 36045;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -5726,18 +5726,18 @@ export declare const stdStorage: {
                                             readonly baseExpression: {
                                                 readonly baseExpression: {
                                                     readonly expression: {
-                                                        readonly id: 35923;
+                                                        readonly id: 36029;
                                                         readonly name: "self";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 35733;
+                                                        readonly referencedDeclaration: 35839;
                                                         readonly src: "2690:4:152";
                                                         readonly typeDescriptions: {
-                                                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                             readonly typeString: "struct StdStorage storage pointer";
                                                         };
                                                     };
-                                                    readonly id: 35934;
+                                                    readonly id: 36040;
                                                     readonly isConstant: false;
                                                     readonly isLValue: true;
                                                     readonly isPure: false;
@@ -5745,20 +5745,20 @@ export declare const stdStorage: {
                                                     readonly memberLocation: "2695:5:152";
                                                     readonly memberName: "finds";
                                                     readonly nodeType: "MemberAccess";
-                                                    readonly referencedDeclaration: 35666;
+                                                    readonly referencedDeclaration: 35772;
                                                     readonly src: "2690:10:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_bool_$_$_$";
                                                         readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => bool)))";
                                                     };
                                                 };
-                                                readonly id: 35935;
+                                                readonly id: 36041;
                                                 readonly indexExpression: {
-                                                    readonly id: 35925;
+                                                    readonly id: 36031;
                                                     readonly name: "who";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35739;
+                                                    readonly referencedDeclaration: 35845;
                                                     readonly src: "2701:3:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_address";
@@ -5776,13 +5776,13 @@ export declare const stdStorage: {
                                                     readonly typeString: "mapping(bytes4 => mapping(bytes32 => bool))";
                                                 };
                                             };
-                                            readonly id: 35936;
+                                            readonly id: 36042;
                                             readonly indexExpression: {
-                                                readonly id: 35926;
+                                                readonly id: 36032;
                                                 readonly name: "fsig";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35744;
+                                                readonly referencedDeclaration: 35850;
                                                 readonly src: "2706:4:152";
                                                 readonly typeDescriptions: {
                                                     readonly typeIdentifier: "t_bytes4";
@@ -5800,26 +5800,26 @@ export declare const stdStorage: {
                                                 readonly typeString: "mapping(bytes32 => bool)";
                                             };
                                         };
-                                        readonly id: 35937;
+                                        readonly id: 36043;
                                         readonly indexExpression: {
                                             readonly arguments: readonly [{
                                                 readonly arguments: readonly [{
-                                                    readonly id: 35930;
+                                                    readonly id: 36036;
                                                     readonly name: "ins";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35757;
+                                                    readonly referencedDeclaration: 35863;
                                                     readonly src: "2739:3:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                         readonly typeString: "bytes32[] memory";
                                                     };
                                                 }, {
-                                                    readonly id: 35931;
+                                                    readonly id: 36037;
                                                     readonly name: "field_depth";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 35749;
+                                                    readonly referencedDeclaration: 35855;
                                                     readonly src: "2744:11:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -5835,7 +5835,7 @@ export declare const stdStorage: {
                                                         readonly typeString: "uint256";
                                                     }];
                                                     readonly expression: {
-                                                        readonly id: 35928;
+                                                        readonly id: 36034;
                                                         readonly name: "abi";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
@@ -5846,7 +5846,7 @@ export declare const stdStorage: {
                                                             readonly typeString: "abi";
                                                         };
                                                     };
-                                                    readonly id: 35929;
+                                                    readonly id: 36035;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -5860,7 +5860,7 @@ export declare const stdStorage: {
                                                         readonly typeString: "function () pure returns (bytes memory)";
                                                     };
                                                 };
-                                                readonly id: 35932;
+                                                readonly id: 36038;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
@@ -5881,7 +5881,7 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_bytes_memory_ptr";
                                                     readonly typeString: "bytes memory";
                                                 }];
-                                                readonly id: 35927;
+                                                readonly id: 36033;
                                                 readonly name: "keccak256";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
@@ -5892,7 +5892,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                                 };
                                             };
-                                            readonly id: 35933;
+                                            readonly id: 36039;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -5923,7 +5923,7 @@ export declare const stdStorage: {
                                     readonly operator: "=";
                                     readonly rightHandSide: {
                                         readonly hexValue: "74727565";
-                                        readonly id: 35938;
+                                        readonly id: 36044;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -5943,7 +5943,7 @@ export declare const stdStorage: {
                                         readonly typeString: "bool";
                                     };
                                 };
-                                readonly id: 35940;
+                                readonly id: 36046;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "2690:75:152";
                             }];
@@ -5955,18 +5955,18 @@ export declare const stdStorage: {
                                     readonly baseExpression: {
                                         readonly baseExpression: {
                                             readonly expression: {
-                                                readonly id: 36124;
+                                                readonly id: 36230;
                                                 readonly name: "self";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 35733;
+                                                readonly referencedDeclaration: 35839;
                                                 readonly src: "4116:4:152";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                     readonly typeString: "struct StdStorage storage pointer";
                                                 };
                                             };
-                                            readonly id: 36125;
+                                            readonly id: 36231;
                                             readonly isConstant: false;
                                             readonly isLValue: true;
                                             readonly isPure: false;
@@ -5974,20 +5974,20 @@ export declare const stdStorage: {
                                             readonly memberLocation: "4121:5:152";
                                             readonly memberName: "finds";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 35666;
+                                            readonly referencedDeclaration: 35772;
                                             readonly src: "4116:10:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_bool_$_$_$";
                                                 readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => bool)))";
                                             };
                                         };
-                                        readonly id: 36127;
+                                        readonly id: 36233;
                                         readonly indexExpression: {
-                                            readonly id: 36126;
+                                            readonly id: 36232;
                                             readonly name: "who";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35739;
+                                            readonly referencedDeclaration: 35845;
                                             readonly src: "4127:3:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -6005,13 +6005,13 @@ export declare const stdStorage: {
                                             readonly typeString: "mapping(bytes4 => mapping(bytes32 => bool))";
                                         };
                                     };
-                                    readonly id: 36129;
+                                    readonly id: 36235;
                                     readonly indexExpression: {
-                                        readonly id: 36128;
+                                        readonly id: 36234;
                                         readonly name: "fsig";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35744;
+                                        readonly referencedDeclaration: 35850;
                                         readonly src: "4132:4:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes4";
@@ -6029,26 +6029,26 @@ export declare const stdStorage: {
                                         readonly typeString: "mapping(bytes32 => bool)";
                                     };
                                 };
-                                readonly id: 36137;
+                                readonly id: 36243;
                                 readonly indexExpression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 36133;
+                                            readonly id: 36239;
                                             readonly name: "ins";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35757;
+                                            readonly referencedDeclaration: 35863;
                                             readonly src: "4165:3:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                 readonly typeString: "bytes32[] memory";
                                             };
                                         }, {
-                                            readonly id: 36134;
+                                            readonly id: 36240;
                                             readonly name: "field_depth";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35749;
+                                            readonly referencedDeclaration: 35855;
                                             readonly src: "4170:11:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -6064,7 +6064,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "uint256";
                                             }];
                                             readonly expression: {
-                                                readonly id: 36131;
+                                                readonly id: 36237;
                                                 readonly name: "abi";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
@@ -6075,7 +6075,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "abi";
                                                 };
                                             };
-                                            readonly id: 36132;
+                                            readonly id: 36238;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -6089,7 +6089,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "function () pure returns (bytes memory)";
                                             };
                                         };
-                                        readonly id: 36135;
+                                        readonly id: 36241;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -6110,7 +6110,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                             readonly typeString: "bytes memory";
                                         }];
-                                        readonly id: 36130;
+                                        readonly id: 36236;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -6121,7 +6121,7 @@ export declare const stdStorage: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 36136;
+                                    readonly id: 36242;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -6149,7 +6149,7 @@ export declare const stdStorage: {
                                 };
                             }, {
                                 readonly hexValue: "73746453746f726167652066696e642853746453746f72616765293a20536c6f74287329206e6f7420666f756e642e";
-                                readonly id: 36138;
+                                readonly id: 36244;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -6171,7 +6171,7 @@ export declare const stdStorage: {
                                     readonly typeIdentifier: "t_stringliteral_47c274d4780c7bff83310cd576005a97888a2b2935c22f84e1e5282c1bfb39a8";
                                     readonly typeString: "literal_string \"stdStorage find(StdStorage): Slot(s) not found.\"";
                                 }];
-                                readonly id: 36123;
+                                readonly id: 36229;
                                 readonly name: "require";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-18, -18];
@@ -6182,7 +6182,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function (bool,string memory) pure";
                                 };
                             };
-                            readonly id: 36139;
+                            readonly id: 36245;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6198,12 +6198,12 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36140;
+                        readonly id: 36246;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4095:162:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36143;
+                            readonly id: 36249;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6214,18 +6214,18 @@ export declare const stdStorage: {
                             readonly src: "4268:19:152";
                             readonly subExpression: {
                                 readonly expression: {
-                                    readonly id: 36141;
+                                    readonly id: 36247;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35733;
+                                    readonly referencedDeclaration: 35839;
                                     readonly src: "4275:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36142;
+                                readonly id: 36248;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -6233,7 +6233,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "4280:7:152";
                                 readonly memberName: "_target";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35675;
+                                readonly referencedDeclaration: 35781;
                                 readonly src: "4275:12:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -6245,12 +6245,12 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36144;
+                        readonly id: 36250;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4268:19:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36147;
+                            readonly id: 36253;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6261,18 +6261,18 @@ export declare const stdStorage: {
                             readonly src: "4297:16:152";
                             readonly subExpression: {
                                 readonly expression: {
-                                    readonly id: 36145;
+                                    readonly id: 36251;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35733;
+                                    readonly referencedDeclaration: 35839;
                                     readonly src: "4304:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36146;
+                                readonly id: 36252;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -6280,7 +6280,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "4309:4:152";
                                 readonly memberName: "_sig";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35671;
+                                readonly referencedDeclaration: 35777;
                                 readonly src: "4304:9:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
@@ -6292,12 +6292,12 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36148;
+                        readonly id: 36254;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4297:16:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36151;
+                            readonly id: 36257;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6308,18 +6308,18 @@ export declare const stdStorage: {
                             readonly src: "4323:17:152";
                             readonly subExpression: {
                                 readonly expression: {
-                                    readonly id: 36149;
+                                    readonly id: 36255;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35733;
+                                    readonly referencedDeclaration: 35839;
                                     readonly src: "4330:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36150;
+                                readonly id: 36256;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -6327,7 +6327,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "4335:5:152";
                                 readonly memberName: "_keys";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35669;
+                                readonly referencedDeclaration: 35775;
                                 readonly src: "4330:10:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_bytes32_$dyn_storage";
@@ -6339,12 +6339,12 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36152;
+                        readonly id: 36258;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4323:17:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36155;
+                            readonly id: 36261;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -6355,18 +6355,18 @@ export declare const stdStorage: {
                             readonly src: "4350:18:152";
                             readonly subExpression: {
                                 readonly expression: {
-                                    readonly id: 36153;
+                                    readonly id: 36259;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35733;
+                                    readonly referencedDeclaration: 35839;
                                     readonly src: "4357:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36154;
+                                readonly id: 36260;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -6374,7 +6374,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "4362:6:152";
                                 readonly memberName: "_depth";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35673;
+                                readonly referencedDeclaration: 35779;
                                 readonly src: "4357:11:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -6386,7 +6386,7 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36156;
+                        readonly id: 36262;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4350:18:152";
                     }, {
@@ -6395,18 +6395,18 @@ export declare const stdStorage: {
                                 readonly baseExpression: {
                                     readonly baseExpression: {
                                         readonly expression: {
-                                            readonly id: 36157;
+                                            readonly id: 36263;
                                             readonly name: "self";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 35733;
+                                            readonly referencedDeclaration: 35839;
                                             readonly src: "4386:4:152";
                                             readonly typeDescriptions: {
-                                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                 readonly typeString: "struct StdStorage storage pointer";
                                             };
                                         };
-                                        readonly id: 36158;
+                                        readonly id: 36264;
                                         readonly isConstant: false;
                                         readonly isLValue: true;
                                         readonly isPure: false;
@@ -6414,20 +6414,20 @@ export declare const stdStorage: {
                                         readonly memberLocation: "4391:5:152";
                                         readonly memberName: "slots";
                                         readonly nodeType: "MemberAccess";
-                                        readonly referencedDeclaration: 35658;
+                                        readonly referencedDeclaration: 35764;
                                         readonly src: "4386:10:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_uint256_$_$_$";
                                             readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => uint256)))";
                                         };
                                     };
-                                    readonly id: 36160;
+                                    readonly id: 36266;
                                     readonly indexExpression: {
-                                        readonly id: 36159;
+                                        readonly id: 36265;
                                         readonly name: "who";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35739;
+                                        readonly referencedDeclaration: 35845;
                                         readonly src: "4397:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
@@ -6445,13 +6445,13 @@ export declare const stdStorage: {
                                         readonly typeString: "mapping(bytes4 => mapping(bytes32 => uint256))";
                                     };
                                 };
-                                readonly id: 36162;
+                                readonly id: 36268;
                                 readonly indexExpression: {
-                                    readonly id: 36161;
+                                    readonly id: 36267;
                                     readonly name: "fsig";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35744;
+                                    readonly referencedDeclaration: 35850;
                                     readonly src: "4402:4:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes4";
@@ -6469,26 +6469,26 @@ export declare const stdStorage: {
                                     readonly typeString: "mapping(bytes32 => uint256)";
                                 };
                             };
-                            readonly id: 36170;
+                            readonly id: 36276;
                             readonly indexExpression: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
-                                        readonly id: 36166;
+                                        readonly id: 36272;
                                         readonly name: "ins";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35757;
+                                        readonly referencedDeclaration: 35863;
                                         readonly src: "4435:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                             readonly typeString: "bytes32[] memory";
                                         };
                                     }, {
-                                        readonly id: 36167;
+                                        readonly id: 36273;
                                         readonly name: "field_depth";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35749;
+                                        readonly referencedDeclaration: 35855;
                                         readonly src: "4440:11:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -6504,7 +6504,7 @@ export declare const stdStorage: {
                                             readonly typeString: "uint256";
                                         }];
                                         readonly expression: {
-                                            readonly id: 36164;
+                                            readonly id: 36270;
                                             readonly name: "abi";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
@@ -6515,7 +6515,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "abi";
                                             };
                                         };
-                                        readonly id: 36165;
+                                        readonly id: 36271;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -6529,7 +6529,7 @@ export declare const stdStorage: {
                                             readonly typeString: "function () pure returns (bytes memory)";
                                         };
                                     };
-                                    readonly id: 36168;
+                                    readonly id: 36274;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -6550,7 +6550,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     }];
-                                    readonly id: 36163;
+                                    readonly id: 36269;
                                     readonly name: "keccak256";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -6561,7 +6561,7 @@ export declare const stdStorage: {
                                         readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                     };
                                 };
-                                readonly id: 36169;
+                                readonly id: 36275;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -6588,14 +6588,14 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 35737;
-                        readonly id: 36171;
+                        readonly functionReturnParameters: 35843;
+                        readonly id: 36277;
                         readonly nodeType: "Return";
                         readonly src: "4379:75:152";
                     }];
                 };
                 readonly documentation: {
-                    readonly id: 35730;
+                    readonly id: 35836;
                     readonly nodeType: "StructuredDocumentation";
                     readonly src: "756:129:152";
                     readonly text: "@notice find an arbitrary storage slot given a function sig, input data, address of the contract and a value to check against";
@@ -6606,38 +6606,38 @@ export declare const stdStorage: {
                 readonly name: "find";
                 readonly nameLocation: "1273:4:152";
                 readonly parameters: {
-                    readonly id: 35734;
+                    readonly id: 35840;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35733;
+                        readonly id: 35839;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "1297:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36173;
+                        readonly scope: 36279;
                         readonly src: "1278:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 35732;
+                            readonly id: 35838;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 35731;
+                                readonly id: 35837;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["1278:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "1278:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "1278:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -6646,16 +6646,16 @@ export declare const stdStorage: {
                     readonly src: "1277:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 35737;
+                    readonly id: 35843;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 35736;
+                        readonly id: 35842;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36173;
+                        readonly scope: 36279;
                         readonly src: "1321:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6664,7 +6664,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 35735;
+                            readonly id: 35841;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "1321:7:152";
@@ -6677,41 +6677,41 @@ export declare const stdStorage: {
                     }];
                     readonly src: "1320:9:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36193;
+                readonly id: 36299;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4467:156:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36192;
+                    readonly id: 36298;
                     readonly nodeType: "Block";
                     readonly src: "4563:60:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 36188;
+                            readonly id: 36294;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly expression: {
-                                    readonly id: 36184;
+                                    readonly id: 36290;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36176;
+                                    readonly referencedDeclaration: 36282;
                                     readonly src: "4573:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36186;
+                                readonly id: 36292;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -6719,7 +6719,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "4578:7:152";
                                 readonly memberName: "_target";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35675;
+                                readonly referencedDeclaration: 35781;
                                 readonly src: "4573:12:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -6729,11 +6729,11 @@ export declare const stdStorage: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 36187;
+                                readonly id: 36293;
                                 readonly name: "_target";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36178;
+                                readonly referencedDeclaration: 36284;
                                 readonly src: "4588:7:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -6746,24 +6746,24 @@ export declare const stdStorage: {
                                 readonly typeString: "address";
                             };
                         };
-                        readonly id: 36189;
+                        readonly id: 36295;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4573:22:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36190;
+                            readonly id: 36296;
                             readonly name: "self";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 36176;
+                            readonly referencedDeclaration: 36282;
                             readonly src: "4612:4:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36183;
-                        readonly id: 36191;
+                        readonly functionReturnParameters: 36289;
+                        readonly id: 36297;
                         readonly nodeType: "Return";
                         readonly src: "4605:11:152";
                     }];
@@ -6774,50 +6774,50 @@ export declare const stdStorage: {
                 readonly name: "target";
                 readonly nameLocation: "4476:6:152";
                 readonly parameters: {
-                    readonly id: 36179;
+                    readonly id: 36285;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36176;
+                        readonly id: 36282;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "4502:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36193;
+                        readonly scope: 36299;
                         readonly src: "4483:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36175;
+                            readonly id: 36281;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36174;
+                                readonly id: 36280;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["4483:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "4483:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "4483:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36178;
+                        readonly id: 36284;
                         readonly mutability: "mutable";
                         readonly name: "_target";
                         readonly nameLocation: "4516:7:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36193;
+                        readonly scope: 36299;
                         readonly src: "4508:15:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -6826,7 +6826,7 @@ export declare const stdStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 36177;
+                            readonly id: 36283;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4508:7:152";
@@ -6841,38 +6841,38 @@ export declare const stdStorage: {
                     readonly src: "4482:42:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36183;
+                    readonly id: 36289;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36182;
+                        readonly id: 36288;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36193;
+                        readonly scope: 36299;
                         readonly src: "4543:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36181;
+                            readonly id: 36287;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36180;
+                                readonly id: 36286;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["4543:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "4543:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "4543:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -6880,41 +6880,41 @@ export declare const stdStorage: {
                     }];
                     readonly src: "4542:20:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36213;
+                readonly id: 36319;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4629:143:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36212;
+                    readonly id: 36318;
                     readonly nodeType: "Block";
                     readonly src: "4718:54:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 36208;
+                            readonly id: 36314;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly expression: {
-                                    readonly id: 36204;
+                                    readonly id: 36310;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36196;
+                                    readonly referencedDeclaration: 36302;
                                     readonly src: "4728:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36206;
+                                readonly id: 36312;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -6922,7 +6922,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "4733:4:152";
                                 readonly memberName: "_sig";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35671;
+                                readonly referencedDeclaration: 35777;
                                 readonly src: "4728:9:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
@@ -6932,11 +6932,11 @@ export declare const stdStorage: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 36207;
+                                readonly id: 36313;
                                 readonly name: "_sig";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36198;
+                                readonly referencedDeclaration: 36304;
                                 readonly src: "4740:4:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
@@ -6949,24 +6949,24 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes4";
                             };
                         };
-                        readonly id: 36209;
+                        readonly id: 36315;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4728:16:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36210;
+                            readonly id: 36316;
                             readonly name: "self";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 36196;
+                            readonly referencedDeclaration: 36302;
                             readonly src: "4761:4:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36203;
-                        readonly id: 36211;
+                        readonly functionReturnParameters: 36309;
+                        readonly id: 36317;
                         readonly nodeType: "Return";
                         readonly src: "4754:11:152";
                     }];
@@ -6977,50 +6977,50 @@ export declare const stdStorage: {
                 readonly name: "sig";
                 readonly nameLocation: "4638:3:152";
                 readonly parameters: {
-                    readonly id: 36199;
+                    readonly id: 36305;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36196;
+                        readonly id: 36302;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "4661:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36213;
+                        readonly scope: 36319;
                         readonly src: "4642:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36195;
+                            readonly id: 36301;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36194;
+                                readonly id: 36300;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["4642:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "4642:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "4642:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36198;
+                        readonly id: 36304;
                         readonly mutability: "mutable";
                         readonly name: "_sig";
                         readonly nameLocation: "4674:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36213;
+                        readonly scope: 36319;
                         readonly src: "4667:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7029,7 +7029,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 36197;
+                            readonly id: 36303;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4667:6:152";
@@ -7043,38 +7043,38 @@ export declare const stdStorage: {
                     readonly src: "4641:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36203;
+                    readonly id: 36309;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36202;
+                        readonly id: 36308;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36213;
+                        readonly scope: 36319;
                         readonly src: "4698:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36201;
+                            readonly id: 36307;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36200;
+                                readonly id: 36306;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["4698:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "4698:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "4698:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -7082,41 +7082,41 @@ export declare const stdStorage: {
                     }];
                     readonly src: "4697:20:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36235;
+                readonly id: 36341;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4778:156:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36234;
+                    readonly id: 36340;
                     readonly nodeType: "Block";
                     readonly src: "4874:60:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 36230;
+                            readonly id: 36336;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly expression: {
-                                    readonly id: 36224;
+                                    readonly id: 36330;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36216;
+                                    readonly referencedDeclaration: 36322;
                                     readonly src: "4884:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36226;
+                                readonly id: 36332;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -7124,7 +7124,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "4889:4:152";
                                 readonly memberName: "_sig";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35671;
+                                readonly referencedDeclaration: 35777;
                                 readonly src: "4884:9:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
@@ -7135,11 +7135,11 @@ export declare const stdStorage: {
                             readonly operator: "=";
                             readonly rightHandSide: {
                                 readonly arguments: readonly [{
-                                    readonly id: 36228;
+                                    readonly id: 36334;
                                     readonly name: "_sig";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36218;
+                                    readonly referencedDeclaration: 36324;
                                     readonly src: "4901:4:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
@@ -7151,18 +7151,18 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_string_memory_ptr";
                                         readonly typeString: "string memory";
                                     }];
-                                    readonly id: 36227;
+                                    readonly id: 36333;
                                     readonly name: "sigs";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 35729;
+                                    readonly referencedDeclaration: 35835;
                                     readonly src: "4896:4:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bytes4_$";
                                         readonly typeString: "function (string memory) pure returns (bytes4)";
                                     };
                                 };
-                                readonly id: 36229;
+                                readonly id: 36335;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -7184,24 +7184,24 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes4";
                             };
                         };
-                        readonly id: 36231;
+                        readonly id: 36337;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "4884:22:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36232;
+                            readonly id: 36338;
                             readonly name: "self";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 36216;
+                            readonly referencedDeclaration: 36322;
                             readonly src: "4923:4:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36223;
-                        readonly id: 36233;
+                        readonly functionReturnParameters: 36329;
+                        readonly id: 36339;
                         readonly nodeType: "Return";
                         readonly src: "4916:11:152";
                     }];
@@ -7212,50 +7212,50 @@ export declare const stdStorage: {
                 readonly name: "sig";
                 readonly nameLocation: "4787:3:152";
                 readonly parameters: {
-                    readonly id: 36219;
+                    readonly id: 36325;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36216;
+                        readonly id: 36322;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "4810:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36235;
+                        readonly scope: 36341;
                         readonly src: "4791:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36215;
+                            readonly id: 36321;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36214;
+                                readonly id: 36320;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["4791:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "4791:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "4791:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36218;
+                        readonly id: 36324;
                         readonly mutability: "mutable";
                         readonly name: "_sig";
                         readonly nameLocation: "4830:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36235;
+                        readonly scope: 36341;
                         readonly src: "4816:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -7264,7 +7264,7 @@ export declare const stdStorage: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 36217;
+                            readonly id: 36323;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4816:6:152";
@@ -7278,38 +7278,38 @@ export declare const stdStorage: {
                     readonly src: "4790:45:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36223;
+                    readonly id: 36329;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36222;
+                        readonly id: 36328;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36235;
+                        readonly scope: 36341;
                         readonly src: "4854:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36221;
+                            readonly id: 36327;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36220;
+                                readonly id: 36326;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["4854:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "4854:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "4854:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -7317,17 +7317,17 @@ export declare const stdStorage: {
                     }];
                     readonly src: "4853:20:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36266;
+                readonly id: 36372;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "4940:179:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36265;
+                    readonly id: 36371;
                     readonly nodeType: "Block";
                     readonly src: "5034:85:152";
                     readonly nodes: readonly [];
@@ -7337,11 +7337,11 @@ export declare const stdStorage: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 36257;
+                                            readonly id: 36363;
                                             readonly name: "who";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 36240;
+                                            readonly referencedDeclaration: 36346;
                                             readonly src: "5084:3:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -7353,7 +7353,7 @@ export declare const stdStorage: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
                                             }];
-                                            readonly id: 36256;
+                                            readonly id: 36362;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -7365,14 +7365,14 @@ export declare const stdStorage: {
                                                 readonly typeString: "type(uint160)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 36255;
+                                                readonly id: 36361;
                                                 readonly name: "uint160";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "5076:7:152";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 36258;
+                                        readonly id: 36364;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -7393,7 +7393,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_uint160";
                                             readonly typeString: "uint160";
                                         }];
-                                        readonly id: 36254;
+                                        readonly id: 36360;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -7405,14 +7405,14 @@ export declare const stdStorage: {
                                             readonly typeString: "type(uint256)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 36253;
+                                            readonly id: 36359;
                                             readonly name: "uint256";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "5068:7:152";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 36259;
+                                    readonly id: 36365;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -7433,7 +7433,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 36252;
+                                    readonly id: 36358;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7445,14 +7445,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(bytes32)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36251;
+                                        readonly id: 36357;
                                         readonly name: "bytes32";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5060:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 36260;
+                                readonly id: 36366;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -7475,18 +7475,18 @@ export declare const stdStorage: {
                                 }];
                                 readonly expression: {
                                     readonly expression: {
-                                        readonly id: 36246;
+                                        readonly id: 36352;
                                         readonly name: "self";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36238;
+                                        readonly referencedDeclaration: 36344;
                                         readonly src: "5044:4:152";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                             readonly typeString: "struct StdStorage storage pointer";
                                         };
                                     };
-                                    readonly id: 36249;
+                                    readonly id: 36355;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -7494,14 +7494,14 @@ export declare const stdStorage: {
                                     readonly memberLocation: "5049:5:152";
                                     readonly memberName: "_keys";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 35669;
+                                    readonly referencedDeclaration: 35775;
                                     readonly src: "5044:10:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_storage";
                                         readonly typeString: "bytes32[] storage ref";
                                     };
                                 };
-                                readonly id: 36250;
+                                readonly id: 36356;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -7515,7 +7515,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function (bytes32[] storage pointer,bytes32)";
                                 };
                             };
-                            readonly id: 36261;
+                            readonly id: 36367;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7531,24 +7531,24 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36262;
+                        readonly id: 36368;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "5044:47:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36263;
+                            readonly id: 36369;
                             readonly name: "self";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 36238;
+                            readonly referencedDeclaration: 36344;
                             readonly src: "5108:4:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36245;
-                        readonly id: 36264;
+                        readonly functionReturnParameters: 36351;
+                        readonly id: 36370;
                         readonly nodeType: "Return";
                         readonly src: "5101:11:152";
                     }];
@@ -7559,50 +7559,50 @@ export declare const stdStorage: {
                 readonly name: "with_key";
                 readonly nameLocation: "4949:8:152";
                 readonly parameters: {
-                    readonly id: 36241;
+                    readonly id: 36347;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36238;
+                        readonly id: 36344;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "4977:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36266;
+                        readonly scope: 36372;
                         readonly src: "4958:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36237;
+                            readonly id: 36343;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36236;
+                                readonly id: 36342;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["4958:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "4958:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "4958:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36240;
+                        readonly id: 36346;
                         readonly mutability: "mutable";
                         readonly name: "who";
                         readonly nameLocation: "4991:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36266;
+                        readonly scope: 36372;
                         readonly src: "4983:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7611,7 +7611,7 @@ export declare const stdStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 36239;
+                            readonly id: 36345;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "4983:7:152";
@@ -7626,38 +7626,38 @@ export declare const stdStorage: {
                     readonly src: "4957:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36245;
+                    readonly id: 36351;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36244;
+                        readonly id: 36350;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36266;
+                        readonly scope: 36372;
                         readonly src: "5014:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36243;
+                            readonly id: 36349;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36242;
+                                readonly id: 36348;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5014:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5014:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5014:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -7665,17 +7665,17 @@ export declare const stdStorage: {
                     }];
                     readonly src: "5013:20:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36291;
+                readonly id: 36397;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5125:161:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36290;
+                    readonly id: 36396;
                     readonly nodeType: "Block";
                     readonly src: "5219:67:152";
                     readonly nodes: readonly [];
@@ -7683,11 +7683,11 @@ export declare const stdStorage: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 36284;
+                                    readonly id: 36390;
                                     readonly name: "amt";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36271;
+                                    readonly referencedDeclaration: 36377;
                                     readonly src: "5253:3:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -7699,7 +7699,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 36283;
+                                    readonly id: 36389;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -7711,14 +7711,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(bytes32)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36282;
+                                        readonly id: 36388;
                                         readonly name: "bytes32";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5245:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 36285;
+                                readonly id: 36391;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -7741,18 +7741,18 @@ export declare const stdStorage: {
                                 }];
                                 readonly expression: {
                                     readonly expression: {
-                                        readonly id: 36277;
+                                        readonly id: 36383;
                                         readonly name: "self";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36269;
+                                        readonly referencedDeclaration: 36375;
                                         readonly src: "5229:4:152";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                             readonly typeString: "struct StdStorage storage pointer";
                                         };
                                     };
-                                    readonly id: 36280;
+                                    readonly id: 36386;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -7760,14 +7760,14 @@ export declare const stdStorage: {
                                     readonly memberLocation: "5234:5:152";
                                     readonly memberName: "_keys";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 35669;
+                                    readonly referencedDeclaration: 35775;
                                     readonly src: "5229:10:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_storage";
                                         readonly typeString: "bytes32[] storage ref";
                                     };
                                 };
-                                readonly id: 36281;
+                                readonly id: 36387;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -7781,7 +7781,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function (bytes32[] storage pointer,bytes32)";
                                 };
                             };
-                            readonly id: 36286;
+                            readonly id: 36392;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -7797,24 +7797,24 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36287;
+                        readonly id: 36393;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "5229:29:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36288;
+                            readonly id: 36394;
                             readonly name: "self";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 36269;
+                            readonly referencedDeclaration: 36375;
                             readonly src: "5275:4:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36276;
-                        readonly id: 36289;
+                        readonly functionReturnParameters: 36382;
+                        readonly id: 36395;
                         readonly nodeType: "Return";
                         readonly src: "5268:11:152";
                     }];
@@ -7825,50 +7825,50 @@ export declare const stdStorage: {
                 readonly name: "with_key";
                 readonly nameLocation: "5134:8:152";
                 readonly parameters: {
-                    readonly id: 36272;
+                    readonly id: 36378;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36269;
+                        readonly id: 36375;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "5162:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36291;
+                        readonly scope: 36397;
                         readonly src: "5143:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36268;
+                            readonly id: 36374;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36267;
+                                readonly id: 36373;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5143:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5143:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5143:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36271;
+                        readonly id: 36377;
                         readonly mutability: "mutable";
                         readonly name: "amt";
                         readonly nameLocation: "5176:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36291;
+                        readonly scope: 36397;
                         readonly src: "5168:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -7877,7 +7877,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 36270;
+                            readonly id: 36376;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5168:7:152";
@@ -7891,38 +7891,38 @@ export declare const stdStorage: {
                     readonly src: "5142:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36276;
+                    readonly id: 36382;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36275;
+                        readonly id: 36381;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36291;
+                        readonly scope: 36397;
                         readonly src: "5199:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36274;
+                            readonly id: 36380;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36273;
+                                readonly id: 36379;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5199:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5199:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5199:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -7930,28 +7930,28 @@ export declare const stdStorage: {
                     }];
                     readonly src: "5198:20:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36313;
+                readonly id: 36419;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5292:152:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36312;
+                    readonly id: 36418;
                     readonly nodeType: "Block";
                     readonly src: "5386:58:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36307;
+                                readonly id: 36413;
                                 readonly name: "key";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36296;
+                                readonly referencedDeclaration: 36402;
                                 readonly src: "5412:3:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
@@ -7965,18 +7965,18 @@ export declare const stdStorage: {
                                 }];
                                 readonly expression: {
                                     readonly expression: {
-                                        readonly id: 36302;
+                                        readonly id: 36408;
                                         readonly name: "self";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36294;
+                                        readonly referencedDeclaration: 36400;
                                         readonly src: "5396:4:152";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                             readonly typeString: "struct StdStorage storage pointer";
                                         };
                                     };
-                                    readonly id: 36305;
+                                    readonly id: 36411;
                                     readonly isConstant: false;
                                     readonly isLValue: true;
                                     readonly isPure: false;
@@ -7984,14 +7984,14 @@ export declare const stdStorage: {
                                     readonly memberLocation: "5401:5:152";
                                     readonly memberName: "_keys";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 35669;
+                                    readonly referencedDeclaration: 35775;
                                     readonly src: "5396:10:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_storage";
                                         readonly typeString: "bytes32[] storage ref";
                                     };
                                 };
-                                readonly id: 36306;
+                                readonly id: 36412;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -8005,7 +8005,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function (bytes32[] storage pointer,bytes32)";
                                 };
                             };
-                            readonly id: 36308;
+                            readonly id: 36414;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8021,24 +8021,24 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36309;
+                        readonly id: 36415;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "5396:20:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36310;
+                            readonly id: 36416;
                             readonly name: "self";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 36294;
+                            readonly referencedDeclaration: 36400;
                             readonly src: "5433:4:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36301;
-                        readonly id: 36311;
+                        readonly functionReturnParameters: 36407;
+                        readonly id: 36417;
                         readonly nodeType: "Return";
                         readonly src: "5426:11:152";
                     }];
@@ -8049,50 +8049,50 @@ export declare const stdStorage: {
                 readonly name: "with_key";
                 readonly nameLocation: "5301:8:152";
                 readonly parameters: {
-                    readonly id: 36297;
+                    readonly id: 36403;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36294;
+                        readonly id: 36400;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "5329:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36313;
+                        readonly scope: 36419;
                         readonly src: "5310:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36293;
+                            readonly id: 36399;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36292;
+                                readonly id: 36398;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5310:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5310:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5310:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36296;
+                        readonly id: 36402;
                         readonly mutability: "mutable";
                         readonly name: "key";
                         readonly nameLocation: "5343:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36313;
+                        readonly scope: 36419;
                         readonly src: "5335:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -8101,7 +8101,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 36295;
+                            readonly id: 36401;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5335:7:152";
@@ -8115,38 +8115,38 @@ export declare const stdStorage: {
                     readonly src: "5309:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36301;
+                    readonly id: 36407;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36300;
+                        readonly id: 36406;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36313;
+                        readonly scope: 36419;
                         readonly src: "5366:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36299;
+                            readonly id: 36405;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36298;
+                                readonly id: 36404;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5366:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5366:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5366:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -8154,41 +8154,41 @@ export declare const stdStorage: {
                     }];
                     readonly src: "5365:20:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36333;
+                readonly id: 36439;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5450:152:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36332;
+                    readonly id: 36438;
                     readonly nodeType: "Block";
                     readonly src: "5544:58:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
-                            readonly id: 36328;
+                            readonly id: 36434;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftHandSide: {
                                 readonly expression: {
-                                    readonly id: 36324;
+                                    readonly id: 36430;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36316;
+                                    readonly referencedDeclaration: 36422;
                                     readonly src: "5554:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36326;
+                                readonly id: 36432;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -8196,7 +8196,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "5559:6:152";
                                 readonly memberName: "_depth";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35673;
+                                readonly referencedDeclaration: 35779;
                                 readonly src: "5554:11:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -8206,11 +8206,11 @@ export declare const stdStorage: {
                             readonly nodeType: "Assignment";
                             readonly operator: "=";
                             readonly rightHandSide: {
-                                readonly id: 36327;
+                                readonly id: 36433;
                                 readonly name: "_depth";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36318;
+                                readonly referencedDeclaration: 36424;
                                 readonly src: "5568:6:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -8223,24 +8223,24 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly id: 36329;
+                        readonly id: 36435;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "5554:20:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36330;
+                            readonly id: 36436;
                             readonly name: "self";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 36316;
+                            readonly referencedDeclaration: 36422;
                             readonly src: "5591:4:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36323;
-                        readonly id: 36331;
+                        readonly functionReturnParameters: 36429;
+                        readonly id: 36437;
                         readonly nodeType: "Return";
                         readonly src: "5584:11:152";
                     }];
@@ -8251,50 +8251,50 @@ export declare const stdStorage: {
                 readonly name: "depth";
                 readonly nameLocation: "5459:5:152";
                 readonly parameters: {
-                    readonly id: 36319;
+                    readonly id: 36425;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36316;
+                        readonly id: 36422;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "5484:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36333;
+                        readonly scope: 36439;
                         readonly src: "5465:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36315;
+                            readonly id: 36421;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36314;
+                                readonly id: 36420;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5465:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5465:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5465:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36318;
+                        readonly id: 36424;
                         readonly mutability: "mutable";
                         readonly name: "_depth";
                         readonly nameLocation: "5498:6:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36333;
+                        readonly scope: 36439;
                         readonly src: "5490:14:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -8303,7 +8303,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 36317;
+                            readonly id: 36423;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5490:7:152";
@@ -8317,38 +8317,38 @@ export declare const stdStorage: {
                     readonly src: "5464:41:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36323;
+                    readonly id: 36429;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36322;
+                        readonly id: 36428;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36333;
+                        readonly scope: 36439;
                         readonly src: "5524:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36321;
+                            readonly id: 36427;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36320;
+                                readonly id: 36426;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5524:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5524:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5524:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -8356,30 +8356,30 @@ export declare const stdStorage: {
                     }];
                     readonly src: "5523:20:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36365;
+                readonly id: 36471;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5608:194:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36364;
+                    readonly id: 36470;
                     readonly nodeType: "Block";
                     readonly src: "5678:124:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [36342];
+                        readonly assignments: readonly [36448];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36342;
+                            readonly id: 36448;
                             readonly mutability: "mutable";
                             readonly name: "t";
                             readonly nameLocation: "5696:1:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36364;
+                            readonly scope: 36470;
                             readonly src: "5688:9:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -8388,7 +8388,7 @@ export declare const stdStorage: {
                                 readonly typeString: "address";
                             };
                             readonly typeName: {
-                                readonly id: 36341;
+                                readonly id: 36447;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5688:7:152";
@@ -8400,21 +8400,21 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36345;
+                        readonly id: 36451;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 36343;
+                                readonly id: 36449;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36336;
+                                readonly referencedDeclaration: 36442;
                                 readonly src: "5700:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             };
-                            readonly id: 36344;
+                            readonly id: 36450;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -8422,7 +8422,7 @@ export declare const stdStorage: {
                             readonly memberLocation: "5705:7:152";
                             readonly memberName: "_target";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 35675;
+                            readonly referencedDeclaration: 35781;
                             readonly src: "5700:12:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -8432,15 +8432,15 @@ export declare const stdStorage: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "5688:24:152";
                     }, {
-                        readonly assignments: readonly [36347];
+                        readonly assignments: readonly [36453];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36347;
+                            readonly id: 36453;
                             readonly mutability: "mutable";
                             readonly name: "s";
                             readonly nameLocation: "5730:1:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36364;
+                            readonly scope: 36470;
                             readonly src: "5722:9:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -8449,7 +8449,7 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 36346;
+                                readonly id: 36452;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "5722:7:152";
@@ -8460,37 +8460,37 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36351;
+                        readonly id: 36457;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 36349;
+                                readonly id: 36455;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36336;
+                                readonly referencedDeclaration: 36442;
                                 readonly src: "5739:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }];
-                                readonly id: 36348;
+                                readonly id: 36454;
                                 readonly name: "find";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36173;
+                                readonly referencedDeclaration: 36279;
                                 readonly src: "5734:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_uint256_$";
                                     readonly typeString: "function (struct StdStorage storage pointer) returns (uint256)";
                                 };
                             };
-                            readonly id: 36350;
+                            readonly id: 36456;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8512,11 +8512,11 @@ export declare const stdStorage: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 36356;
+                                    readonly id: 36462;
                                     readonly name: "t";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36342;
+                                    readonly referencedDeclaration: 36448;
                                     readonly src: "5780:1:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_address";
@@ -8524,11 +8524,11 @@ export declare const stdStorage: {
                                     };
                                 }, {
                                     readonly arguments: readonly [{
-                                        readonly id: 36359;
+                                        readonly id: 36465;
                                         readonly name: "s";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36347;
+                                        readonly referencedDeclaration: 36453;
                                         readonly src: "5791:1:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -8540,7 +8540,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 36358;
+                                        readonly id: 36464;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -8552,14 +8552,14 @@ export declare const stdStorage: {
                                             readonly typeString: "type(bytes32)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 36357;
+                                            readonly id: 36463;
                                             readonly name: "bytes32";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "5783:7:152";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 36360;
+                                    readonly id: 36466;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -8584,18 +8584,18 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes32";
                                     }];
                                     readonly expression: {
-                                        readonly id: 36354;
+                                        readonly id: 36460;
                                         readonly name: "vm";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 35711;
+                                        readonly referencedDeclaration: 35817;
                                         readonly src: "5772:2:152";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                            readonly typeIdentifier: "t_contract$_Vm_$40884";
                                             readonly typeString: "contract Vm";
                                         };
                                     };
-                                    readonly id: 36355;
+                                    readonly id: 36461;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -8603,14 +8603,14 @@ export declare const stdStorage: {
                                     readonly memberLocation: "5775:4:152";
                                     readonly memberName: "load";
                                     readonly nodeType: "MemberAccess";
-                                    readonly referencedDeclaration: 39298;
+                                    readonly referencedDeclaration: 39404;
                                     readonly src: "5772:7:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_external_view$_t_address_$_t_bytes32_$returns$_t_bytes32_$";
                                         readonly typeString: "function (address,bytes32) view external returns (bytes32)";
                                     };
                                 };
-                                readonly id: 36361;
+                                readonly id: 36467;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -8632,7 +8632,7 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes32";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36352;
+                                    readonly id: 36458;
                                     readonly name: "abi";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -8643,7 +8643,7 @@ export declare const stdStorage: {
                                         readonly typeString: "abi";
                                     };
                                 };
-                                readonly id: 36353;
+                                readonly id: 36459;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8657,7 +8657,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function () pure returns (bytes memory)";
                                 };
                             };
-                            readonly id: 36362;
+                            readonly id: 36468;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8673,8 +8673,8 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes memory";
                             };
                         };
-                        readonly functionReturnParameters: 36340;
-                        readonly id: 36363;
+                        readonly functionReturnParameters: 36446;
+                        readonly id: 36469;
                         readonly nodeType: "Return";
                         readonly src: "5754:41:152";
                     }];
@@ -8685,38 +8685,38 @@ export declare const stdStorage: {
                 readonly name: "read";
                 readonly nameLocation: "5617:4:152";
                 readonly parameters: {
-                    readonly id: 36337;
+                    readonly id: 36443;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36336;
+                        readonly id: 36442;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "5641:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36365;
+                        readonly scope: 36471;
                         readonly src: "5622:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36335;
+                            readonly id: 36441;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36334;
+                                readonly id: 36440;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5622:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5622:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5622:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -8725,16 +8725,16 @@ export declare const stdStorage: {
                     readonly src: "5621:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36340;
+                    readonly id: 36446;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36339;
+                        readonly id: 36445;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36365;
+                        readonly scope: 36471;
                         readonly src: "5664:12:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -8743,7 +8743,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 36338;
+                            readonly id: 36444;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5664:5:152";
@@ -8756,17 +8756,17 @@ export declare const stdStorage: {
                     }];
                     readonly src: "5663:14:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "private";
             }, {
-                readonly id: 36384;
+                readonly id: 36490;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5808:131:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36383;
+                    readonly id: 36489;
                     readonly nodeType: "Block";
                     readonly src: "5882:57:152";
                     readonly nodes: readonly [];
@@ -8774,34 +8774,34 @@ export declare const stdStorage: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 36376;
+                                    readonly id: 36482;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36368;
+                                    readonly referencedDeclaration: 36474;
                                     readonly src: "5915:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     }];
-                                    readonly id: 36375;
+                                    readonly id: 36481;
                                     readonly name: "read";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36365;
+                                    readonly referencedDeclaration: 36471;
                                     readonly src: "5910:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_bytes_memory_ptr_$";
+                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_bytes_memory_ptr_$";
                                         readonly typeString: "function (struct StdStorage storage pointer) returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 36377;
+                                readonly id: 36483;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -8818,7 +8818,7 @@ export declare const stdStorage: {
                                 };
                             }, {
                                 readonly components: readonly [{
-                                    readonly id: 36379;
+                                    readonly id: 36485;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -8830,14 +8830,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(bytes32)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36378;
+                                        readonly id: 36484;
                                         readonly name: "bytes32";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "5923:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 }];
-                                readonly id: 36380;
+                                readonly id: 36486;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
@@ -8859,7 +8859,7 @@ export declare const stdStorage: {
                                     readonly typeString: "type(bytes32)";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36373;
+                                    readonly id: 36479;
                                     readonly name: "abi";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -8870,7 +8870,7 @@ export declare const stdStorage: {
                                         readonly typeString: "abi";
                                     };
                                 };
-                                readonly id: 36374;
+                                readonly id: 36480;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -8884,7 +8884,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 36381;
+                            readonly id: 36487;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -8900,8 +8900,8 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes32";
                             };
                         };
-                        readonly functionReturnParameters: 36372;
-                        readonly id: 36382;
+                        readonly functionReturnParameters: 36478;
+                        readonly id: 36488;
                         readonly nodeType: "Return";
                         readonly src: "5892:40:152";
                     }];
@@ -8912,38 +8912,38 @@ export declare const stdStorage: {
                 readonly name: "read_bytes32";
                 readonly nameLocation: "5817:12:152";
                 readonly parameters: {
-                    readonly id: 36369;
+                    readonly id: 36475;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36368;
+                        readonly id: 36474;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "5849:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36384;
+                        readonly scope: 36490;
                         readonly src: "5830:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36367;
+                            readonly id: 36473;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36366;
+                                readonly id: 36472;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5830:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5830:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5830:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -8952,16 +8952,16 @@ export declare const stdStorage: {
                     readonly src: "5829:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36372;
+                    readonly id: 36478;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36371;
+                        readonly id: 36477;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36384;
+                        readonly scope: 36490;
                         readonly src: "5873:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -8970,7 +8970,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 36370;
+                            readonly id: 36476;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "5873:7:152";
@@ -8983,30 +8983,30 @@ export declare const stdStorage: {
                     }];
                     readonly src: "5872:9:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36415;
+                readonly id: 36521;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "5945:279:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36414;
+                    readonly id: 36520;
                     readonly nodeType: "Block";
                     readonly src: "6013:211:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [36393];
+                        readonly assignments: readonly [36499];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36393;
+                            readonly id: 36499;
                             readonly mutability: "mutable";
                             readonly name: "v";
                             readonly nameLocation: "6030:1:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36414;
+                            readonly scope: 36520;
                             readonly src: "6023:8:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -9015,7 +9015,7 @@ export declare const stdStorage: {
                                 readonly typeString: "int256";
                             };
                             readonly typeName: {
-                                readonly id: 36392;
+                                readonly id: 36498;
                                 readonly name: "int256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "6023:6:152";
@@ -9026,37 +9026,37 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36397;
+                        readonly id: 36503;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 36395;
+                                readonly id: 36501;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36387;
+                                readonly referencedDeclaration: 36493;
                                 readonly src: "6043:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }];
-                                readonly id: 36394;
+                                readonly id: 36500;
                                 readonly name: "read_int";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36472;
+                                readonly referencedDeclaration: 36578;
                                 readonly src: "6034:8:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_int256_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_int256_$";
                                     readonly typeString: "function (struct StdStorage storage pointer) returns (int256)";
                                 };
                             };
-                            readonly id: 36396;
+                            readonly id: 36502;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -9080,17 +9080,17 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
                             };
-                            readonly id: 36400;
+                            readonly id: 36506;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 36398;
+                                readonly id: 36504;
                                 readonly name: "v";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36393;
+                                readonly referencedDeclaration: 36499;
                                 readonly src: "6062:1:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -9101,7 +9101,7 @@ export declare const stdStorage: {
                             readonly operator: "==";
                             readonly rightExpression: {
                                 readonly hexValue: "30";
-                                readonly id: 36399;
+                                readonly id: 36505;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9121,13 +9121,13 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 36403;
+                        readonly id: 36509;
                         readonly nodeType: "IfStatement";
                         readonly src: "6058:24:152";
                         readonly trueBody: {
                             readonly expression: {
                                 readonly hexValue: "66616c7365";
-                                readonly id: 36401;
+                                readonly id: 36507;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9141,8 +9141,8 @@ export declare const stdStorage: {
                                 };
                                 readonly value: "false";
                             };
-                            readonly functionReturnParameters: 36391;
-                            readonly id: 36402;
+                            readonly functionReturnParameters: 36497;
+                            readonly id: 36508;
                             readonly nodeType: "Return";
                             readonly src: "6070:12:152";
                         };
@@ -9152,17 +9152,17 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_int256";
                                 readonly typeString: "int256";
                             };
-                            readonly id: 36406;
+                            readonly id: 36512;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 36404;
+                                readonly id: 36510;
                                 readonly name: "v";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36393;
+                                readonly referencedDeclaration: 36499;
                                 readonly src: "6096:1:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_int256";
@@ -9173,7 +9173,7 @@ export declare const stdStorage: {
                             readonly operator: "==";
                             readonly rightExpression: {
                                 readonly hexValue: "31";
-                                readonly id: 36405;
+                                readonly id: 36511;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9193,13 +9193,13 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 36409;
+                        readonly id: 36515;
                         readonly nodeType: "IfStatement";
                         readonly src: "6092:23:152";
                         readonly trueBody: {
                             readonly expression: {
                                 readonly hexValue: "74727565";
-                                readonly id: 36407;
+                                readonly id: 36513;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9213,8 +9213,8 @@ export declare const stdStorage: {
                                 };
                                 readonly value: "true";
                             };
-                            readonly functionReturnParameters: 36391;
-                            readonly id: 36408;
+                            readonly functionReturnParameters: 36497;
+                            readonly id: 36514;
                             readonly nodeType: "Return";
                             readonly src: "6104:11:152";
                         };
@@ -9222,7 +9222,7 @@ export declare const stdStorage: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly hexValue: "73746453746f7261676520726561645f626f6f6c2853746453746f72616765293a2043616e6e6f74206465636f64652e204d616b65207375726520796f75206172652072656164696e67206120626f6f6c2e";
-                                readonly id: 36411;
+                                readonly id: 36517;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9241,7 +9241,7 @@ export declare const stdStorage: {
                                     readonly typeIdentifier: "t_stringliteral_91e3b02d190bb3e407570bfe894974b331ad10ba40f732248485a8a79ed8e4f5";
                                     readonly typeString: "literal_string \"stdStorage read_bool(StdStorage): Cannot decode. Make sure you are reading a bool.\"";
                                 }];
-                                readonly id: 36410;
+                                readonly id: 36516;
                                 readonly name: "revert";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [-19, -19];
@@ -9252,7 +9252,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function (string memory) pure";
                                 };
                             };
-                            readonly id: 36412;
+                            readonly id: 36518;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -9268,7 +9268,7 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36413;
+                        readonly id: 36519;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "6125:92:152";
                     }];
@@ -9279,38 +9279,38 @@ export declare const stdStorage: {
                 readonly name: "read_bool";
                 readonly nameLocation: "5954:9:152";
                 readonly parameters: {
-                    readonly id: 36388;
+                    readonly id: 36494;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36387;
+                        readonly id: 36493;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "5983:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36415;
+                        readonly scope: 36521;
                         readonly src: "5964:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36386;
+                            readonly id: 36492;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36385;
+                                readonly id: 36491;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["5964:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "5964:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "5964:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -9319,16 +9319,16 @@ export declare const stdStorage: {
                     readonly src: "5963:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36391;
+                    readonly id: 36497;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36390;
+                        readonly id: 36496;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36415;
+                        readonly scope: 36521;
                         readonly src: "6007:4:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9337,7 +9337,7 @@ export declare const stdStorage: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 36389;
+                            readonly id: 36495;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6007:4:152";
@@ -9350,17 +9350,17 @@ export declare const stdStorage: {
                     }];
                     readonly src: "6006:6:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36434;
+                readonly id: 36540;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6230:131:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36433;
+                    readonly id: 36539;
                     readonly nodeType: "Block";
                     readonly src: "6304:57:152";
                     readonly nodes: readonly [];
@@ -9368,34 +9368,34 @@ export declare const stdStorage: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 36426;
+                                    readonly id: 36532;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36418;
+                                    readonly referencedDeclaration: 36524;
                                     readonly src: "6337:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     }];
-                                    readonly id: 36425;
+                                    readonly id: 36531;
                                     readonly name: "read";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36365;
+                                    readonly referencedDeclaration: 36471;
                                     readonly src: "6332:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_bytes_memory_ptr_$";
+                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_bytes_memory_ptr_$";
                                         readonly typeString: "function (struct StdStorage storage pointer) returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 36427;
+                                readonly id: 36533;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -9412,7 +9412,7 @@ export declare const stdStorage: {
                                 };
                             }, {
                                 readonly components: readonly [{
-                                    readonly id: 36429;
+                                    readonly id: 36535;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -9424,14 +9424,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(address)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36428;
+                                        readonly id: 36534;
                                         readonly name: "address";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "6345:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 }];
-                                readonly id: 36430;
+                                readonly id: 36536;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
@@ -9453,7 +9453,7 @@ export declare const stdStorage: {
                                     readonly typeString: "type(address)";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36423;
+                                    readonly id: 36529;
                                     readonly name: "abi";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -9464,7 +9464,7 @@ export declare const stdStorage: {
                                         readonly typeString: "abi";
                                     };
                                 };
-                                readonly id: 36424;
+                                readonly id: 36530;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9478,7 +9478,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 36431;
+                            readonly id: 36537;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -9494,8 +9494,8 @@ export declare const stdStorage: {
                                 readonly typeString: "address payable";
                             };
                         };
-                        readonly functionReturnParameters: 36422;
-                        readonly id: 36432;
+                        readonly functionReturnParameters: 36528;
+                        readonly id: 36538;
                         readonly nodeType: "Return";
                         readonly src: "6314:40:152";
                     }];
@@ -9506,38 +9506,38 @@ export declare const stdStorage: {
                 readonly name: "read_address";
                 readonly nameLocation: "6239:12:152";
                 readonly parameters: {
-                    readonly id: 36419;
+                    readonly id: 36525;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36418;
+                        readonly id: 36524;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "6271:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36434;
+                        readonly scope: 36540;
                         readonly src: "6252:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36417;
+                            readonly id: 36523;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36416;
+                                readonly id: 36522;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["6252:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "6252:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "6252:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -9546,16 +9546,16 @@ export declare const stdStorage: {
                     readonly src: "6251:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36422;
+                    readonly id: 36528;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36421;
+                        readonly id: 36527;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36434;
+                        readonly scope: 36540;
                         readonly src: "6295:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9564,7 +9564,7 @@ export declare const stdStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 36420;
+                            readonly id: 36526;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6295:7:152";
@@ -9578,17 +9578,17 @@ export declare const stdStorage: {
                     }];
                     readonly src: "6294:9:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36453;
+                readonly id: 36559;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6367:128:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36452;
+                    readonly id: 36558;
                     readonly nodeType: "Block";
                     readonly src: "6438:57:152";
                     readonly nodes: readonly [];
@@ -9596,34 +9596,34 @@ export declare const stdStorage: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 36445;
+                                    readonly id: 36551;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36437;
+                                    readonly referencedDeclaration: 36543;
                                     readonly src: "6471:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     }];
-                                    readonly id: 36444;
+                                    readonly id: 36550;
                                     readonly name: "read";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36365;
+                                    readonly referencedDeclaration: 36471;
                                     readonly src: "6466:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_bytes_memory_ptr_$";
+                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_bytes_memory_ptr_$";
                                         readonly typeString: "function (struct StdStorage storage pointer) returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 36446;
+                                readonly id: 36552;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -9640,7 +9640,7 @@ export declare const stdStorage: {
                                 };
                             }, {
                                 readonly components: readonly [{
-                                    readonly id: 36448;
+                                    readonly id: 36554;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -9652,14 +9652,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(uint256)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36447;
+                                        readonly id: 36553;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "6479:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 }];
-                                readonly id: 36449;
+                                readonly id: 36555;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
@@ -9681,7 +9681,7 @@ export declare const stdStorage: {
                                     readonly typeString: "type(uint256)";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36442;
+                                    readonly id: 36548;
                                     readonly name: "abi";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -9692,7 +9692,7 @@ export declare const stdStorage: {
                                         readonly typeString: "abi";
                                     };
                                 };
-                                readonly id: 36443;
+                                readonly id: 36549;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9706,7 +9706,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 36450;
+                            readonly id: 36556;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -9722,8 +9722,8 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 36441;
-                        readonly id: 36451;
+                        readonly functionReturnParameters: 36547;
+                        readonly id: 36557;
                         readonly nodeType: "Return";
                         readonly src: "6448:40:152";
                     }];
@@ -9734,38 +9734,38 @@ export declare const stdStorage: {
                 readonly name: "read_uint";
                 readonly nameLocation: "6376:9:152";
                 readonly parameters: {
-                    readonly id: 36438;
+                    readonly id: 36544;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36437;
+                        readonly id: 36543;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "6405:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36453;
+                        readonly scope: 36559;
                         readonly src: "6386:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36436;
+                            readonly id: 36542;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36435;
+                                readonly id: 36541;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["6386:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "6386:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "6386:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -9774,16 +9774,16 @@ export declare const stdStorage: {
                     readonly src: "6385:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36441;
+                    readonly id: 36547;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36440;
+                        readonly id: 36546;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36453;
+                        readonly scope: 36559;
                         readonly src: "6429:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -9792,7 +9792,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 36439;
+                            readonly id: 36545;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6429:7:152";
@@ -9805,17 +9805,17 @@ export declare const stdStorage: {
                     }];
                     readonly src: "6428:9:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36472;
+                readonly id: 36578;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6501:125:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36471;
+                    readonly id: 36577;
                     readonly nodeType: "Block";
                     readonly src: "6570:56:152";
                     readonly nodes: readonly [];
@@ -9823,34 +9823,34 @@ export declare const stdStorage: {
                         readonly expression: {
                             readonly arguments: readonly [{
                                 readonly arguments: readonly [{
-                                    readonly id: 36464;
+                                    readonly id: 36570;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36456;
+                                    readonly referencedDeclaration: 36562;
                                     readonly src: "6603:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 }];
                                 readonly expression: {
                                     readonly argumentTypes: readonly [{
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     }];
-                                    readonly id: 36463;
+                                    readonly id: 36569;
                                     readonly name: "read";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36365;
+                                    readonly referencedDeclaration: 36471;
                                     readonly src: "6598:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_bytes_memory_ptr_$";
+                                        readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_bytes_memory_ptr_$";
                                         readonly typeString: "function (struct StdStorage storage pointer) returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 36465;
+                                readonly id: 36571;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -9867,7 +9867,7 @@ export declare const stdStorage: {
                                 };
                             }, {
                                 readonly components: readonly [{
-                                    readonly id: 36467;
+                                    readonly id: 36573;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -9879,14 +9879,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(int256)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36466;
+                                        readonly id: 36572;
                                         readonly name: "int256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "6611:6:152";
                                         readonly typeDescriptions: {};
                                     };
                                 }];
-                                readonly id: 36468;
+                                readonly id: 36574;
                                 readonly isConstant: false;
                                 readonly isInlineArray: false;
                                 readonly isLValue: false;
@@ -9908,7 +9908,7 @@ export declare const stdStorage: {
                                     readonly typeString: "type(int256)";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36461;
+                                    readonly id: 36567;
                                     readonly name: "abi";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -9919,7 +9919,7 @@ export declare const stdStorage: {
                                         readonly typeString: "abi";
                                     };
                                 };
-                                readonly id: 36462;
+                                readonly id: 36568;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -9933,7 +9933,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function () pure";
                                 };
                             };
-                            readonly id: 36469;
+                            readonly id: 36575;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -9949,8 +9949,8 @@ export declare const stdStorage: {
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly functionReturnParameters: 36460;
-                        readonly id: 36470;
+                        readonly functionReturnParameters: 36566;
+                        readonly id: 36576;
                         readonly nodeType: "Return";
                         readonly src: "6580:39:152";
                     }];
@@ -9961,38 +9961,38 @@ export declare const stdStorage: {
                 readonly name: "read_int";
                 readonly nameLocation: "6510:8:152";
                 readonly parameters: {
-                    readonly id: 36457;
+                    readonly id: 36563;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36456;
+                        readonly id: 36562;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "6538:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36472;
+                        readonly scope: 36578;
                         readonly src: "6519:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36455;
+                            readonly id: 36561;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36454;
+                                readonly id: 36560;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["6519:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "6519:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "6519:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -10001,16 +10001,16 @@ export declare const stdStorage: {
                     readonly src: "6518:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36460;
+                    readonly id: 36566;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36459;
+                        readonly id: 36565;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36472;
+                        readonly scope: 36578;
                         readonly src: "6562:6:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10019,7 +10019,7 @@ export declare const stdStorage: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 36458;
+                            readonly id: 36564;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6562:6:152";
@@ -10032,30 +10032,30 @@ export declare const stdStorage: {
                     }];
                     readonly src: "6561:8:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36528;
+                readonly id: 36634;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6632:304:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36527;
+                    readonly id: 36633;
                     readonly nodeType: "Block";
                     readonly src: "6719:217:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [36482];
+                        readonly assignments: readonly [36588];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36482;
+                            readonly id: 36588;
                             readonly mutability: "mutable";
                             readonly name: "out";
                             readonly nameLocation: "6737:3:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36527;
+                            readonly scope: 36633;
                             readonly src: "6729:11:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -10064,7 +10064,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 36481;
+                                readonly id: 36587;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "6729:7:152";
@@ -10075,19 +10075,19 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36483;
+                        readonly id: 36589;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "6729:11:152";
                     }, {
-                        readonly assignments: readonly [36485];
+                        readonly assignments: readonly [36591];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36485;
+                            readonly id: 36591;
                             readonly mutability: "mutable";
                             readonly name: "max";
                             readonly nameLocation: "6759:3:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36527;
+                            readonly scope: 36633;
                             readonly src: "6751:11:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -10096,7 +10096,7 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 36484;
+                                readonly id: 36590;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "6751:7:152";
@@ -10107,32 +10107,32 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36494;
+                        readonly id: 36600;
                         readonly initialValue: {
                             readonly condition: {
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 36489;
+                                readonly id: 36595;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 36486;
+                                        readonly id: 36592;
                                         readonly name: "b";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36474;
+                                        readonly referencedDeclaration: 36580;
                                         readonly src: "6765:1:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                             readonly typeString: "bytes memory";
                                         };
                                     };
-                                    readonly id: 36487;
+                                    readonly id: 36593;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -10150,7 +10150,7 @@ export declare const stdStorage: {
                                 readonly operator: ">";
                                 readonly rightExpression: {
                                     readonly hexValue: "3332";
-                                    readonly id: 36488;
+                                    readonly id: 36594;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -10172,18 +10172,18 @@ export declare const stdStorage: {
                             };
                             readonly falseExpression: {
                                 readonly expression: {
-                                    readonly id: 36491;
+                                    readonly id: 36597;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36474;
+                                    readonly referencedDeclaration: 36580;
                                     readonly src: "6786:1:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     };
                                 };
-                                readonly id: 36492;
+                                readonly id: 36598;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -10197,7 +10197,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 36493;
+                            readonly id: 36599;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -10206,7 +10206,7 @@ export declare const stdStorage: {
                             readonly src: "6765:29:152";
                             readonly trueExpression: {
                                 readonly hexValue: "3332";
-                                readonly id: 36490;
+                                readonly id: 36596;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -10229,22 +10229,22 @@ export declare const stdStorage: {
                         readonly src: "6751:43:152";
                     }, {
                         readonly body: {
-                            readonly id: 36523;
+                            readonly id: 36629;
                             readonly nodeType: "Block";
                             readonly src: "6838:72:152";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 36521;
+                                    readonly id: 36627;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 36505;
+                                        readonly id: 36611;
                                         readonly name: "out";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36482;
+                                        readonly referencedDeclaration: 36588;
                                         readonly src: "6852:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes32";
@@ -10258,7 +10258,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_bytes32";
                                             readonly typeString: "bytes32";
                                         };
-                                        readonly id: 36520;
+                                        readonly id: 36626;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -10269,41 +10269,41 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_bytes1";
                                                     readonly typeString: "bytes1";
                                                 };
-                                                readonly id: 36514;
+                                                readonly id: 36620;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
                                                     readonly baseExpression: {
-                                                        readonly id: 36508;
+                                                        readonly id: 36614;
                                                         readonly name: "b";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 36474;
+                                                        readonly referencedDeclaration: 36580;
                                                         readonly src: "6867:1:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                                             readonly typeString: "bytes memory";
                                                         };
                                                     };
-                                                    readonly id: 36512;
+                                                    readonly id: 36618;
                                                     readonly indexExpression: {
                                                         readonly commonType: {
                                                             readonly typeIdentifier: "t_uint256";
                                                             readonly typeString: "uint256";
                                                         };
-                                                        readonly id: 36511;
+                                                        readonly id: 36617;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
                                                         readonly lValueRequested: false;
                                                         readonly leftExpression: {
-                                                            readonly id: 36509;
+                                                            readonly id: 36615;
                                                             readonly name: "offset";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 36476;
+                                                            readonly referencedDeclaration: 36582;
                                                             readonly src: "6869:6:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_uint256";
@@ -10313,11 +10313,11 @@ export declare const stdStorage: {
                                                         readonly nodeType: "BinaryOperation";
                                                         readonly operator: "+";
                                                         readonly rightExpression: {
-                                                            readonly id: 36510;
+                                                            readonly id: 36616;
                                                             readonly name: "i";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 36496;
+                                                            readonly referencedDeclaration: 36602;
                                                             readonly src: "6878:1:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_uint256";
@@ -10345,7 +10345,7 @@ export declare const stdStorage: {
                                                 readonly operator: "&";
                                                 readonly rightExpression: {
                                                     readonly hexValue: "30784646";
-                                                    readonly id: 36513;
+                                                    readonly id: 36619;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -10370,7 +10370,7 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_bytes1";
                                                     readonly typeString: "bytes1";
                                                 }];
-                                                readonly id: 36507;
+                                                readonly id: 36613;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -10382,14 +10382,14 @@ export declare const stdStorage: {
                                                     readonly typeString: "type(bytes32)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 36506;
+                                                    readonly id: 36612;
                                                     readonly name: "bytes32";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "6859:7:152";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 36515;
+                                            readonly id: 36621;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -10413,17 +10413,17 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 36518;
+                                                readonly id: 36624;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
-                                                    readonly id: 36516;
+                                                    readonly id: 36622;
                                                     readonly name: "i";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 36496;
+                                                    readonly referencedDeclaration: 36602;
                                                     readonly src: "6893:1:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -10434,7 +10434,7 @@ export declare const stdStorage: {
                                                 readonly operator: "*";
                                                 readonly rightExpression: {
                                                     readonly hexValue: "38";
-                                                    readonly id: 36517;
+                                                    readonly id: 36623;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -10454,7 +10454,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "uint256";
                                                 };
                                             }];
-                                            readonly id: 36519;
+                                            readonly id: 36625;
                                             readonly isConstant: false;
                                             readonly isInlineArray: false;
                                             readonly isLValue: false;
@@ -10479,7 +10479,7 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes32";
                                     };
                                 };
-                                readonly id: 36522;
+                                readonly id: 36628;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "6852:47:152";
                             }];
@@ -10489,17 +10489,17 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 36501;
+                            readonly id: 36607;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 36499;
+                                readonly id: 36605;
                                 readonly name: "i";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36496;
+                                readonly referencedDeclaration: 36602;
                                 readonly src: "6824:1:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -10509,11 +10509,11 @@ export declare const stdStorage: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "<";
                             readonly rightExpression: {
-                                readonly id: 36500;
+                                readonly id: 36606;
                                 readonly name: "max";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36485;
+                                readonly referencedDeclaration: 36591;
                                 readonly src: "6828:3:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -10526,17 +10526,17 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 36524;
+                        readonly id: 36630;
                         readonly initializationExpression: {
-                            readonly assignments: readonly [36496];
+                            readonly assignments: readonly [36602];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 36496;
+                                readonly id: 36602;
                                 readonly mutability: "mutable";
                                 readonly name: "i";
                                 readonly nameLocation: "6817:1:152";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 36524;
+                                readonly scope: 36630;
                                 readonly src: "6809:9:152";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -10545,7 +10545,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 36495;
+                                    readonly id: 36601;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "6809:7:152";
@@ -10556,10 +10556,10 @@ export declare const stdStorage: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 36498;
+                            readonly id: 36604;
                             readonly initialValue: {
                                 readonly hexValue: "30";
-                                readonly id: 36497;
+                                readonly id: 36603;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -10578,7 +10578,7 @@ export declare const stdStorage: {
                         };
                         readonly loopExpression: {
                             readonly expression: {
-                                readonly id: 36503;
+                                readonly id: 36609;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -10588,11 +10588,11 @@ export declare const stdStorage: {
                                 readonly prefix: false;
                                 readonly src: "6833:3:152";
                                 readonly subExpression: {
-                                    readonly id: 36502;
+                                    readonly id: 36608;
                                     readonly name: "i";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36496;
+                                    readonly referencedDeclaration: 36602;
                                     readonly src: "6833:1:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -10604,7 +10604,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 36504;
+                            readonly id: 36610;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "6833:3:152";
                         };
@@ -10612,19 +10612,19 @@ export declare const stdStorage: {
                         readonly src: "6804:106:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36525;
+                            readonly id: 36631;
                             readonly name: "out";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 36482;
+                            readonly referencedDeclaration: 36588;
                             readonly src: "6926:3:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
                             };
                         };
-                        readonly functionReturnParameters: 36480;
-                        readonly id: 36526;
+                        readonly functionReturnParameters: 36586;
+                        readonly id: 36632;
                         readonly nodeType: "Return";
                         readonly src: "6919:10:152";
                     }];
@@ -10635,16 +10635,16 @@ export declare const stdStorage: {
                 readonly name: "bytesToBytes32";
                 readonly nameLocation: "6641:14:152";
                 readonly parameters: {
-                    readonly id: 36477;
+                    readonly id: 36583;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36474;
+                        readonly id: 36580;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "6669:1:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36528;
+                        readonly scope: 36634;
                         readonly src: "6656:14:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -10653,7 +10653,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 36473;
+                            readonly id: 36579;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6656:5:152";
@@ -10665,12 +10665,12 @@ export declare const stdStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36476;
+                        readonly id: 36582;
                         readonly mutability: "mutable";
                         readonly name: "offset";
                         readonly nameLocation: "6680:6:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36528;
+                        readonly scope: 36634;
                         readonly src: "6672:14:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10679,7 +10679,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 36475;
+                            readonly id: 36581;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6672:7:152";
@@ -10693,16 +10693,16 @@ export declare const stdStorage: {
                     readonly src: "6655:32:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36480;
+                    readonly id: 36586;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36479;
+                        readonly id: 36585;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36528;
+                        readonly scope: 36634;
                         readonly src: "6710:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -10711,7 +10711,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 36478;
+                            readonly id: 36584;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "6710:7:152";
@@ -10724,30 +10724,30 @@ export declare const stdStorage: {
                     }];
                     readonly src: "6709:9:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "private";
             }, {
-                readonly id: 36569;
+                readonly id: 36675;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "6942:393:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36568;
+                    readonly id: 36674;
                     readonly nodeType: "Block";
                     readonly src: "7015:320:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [36537];
+                        readonly assignments: readonly [36643];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36537;
+                            readonly id: 36643;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "7038:6:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36568;
+                            readonly scope: 36674;
                             readonly src: "7025:19:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -10756,7 +10756,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 36536;
+                                readonly id: 36642;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "7025:5:152";
@@ -10767,32 +10767,32 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36545;
+                        readonly id: 36651;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 36543;
+                                readonly id: 36649;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 36540;
+                                        readonly id: 36646;
                                         readonly name: "b";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36531;
+                                        readonly referencedDeclaration: 36637;
                                         readonly src: "7057:1:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                             readonly typeString: "bytes32[] memory";
                                         };
                                     };
-                                    readonly id: 36541;
+                                    readonly id: 36647;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -10810,7 +10810,7 @@ export declare const stdStorage: {
                                 readonly operator: "*";
                                 readonly rightExpression: {
                                     readonly hexValue: "3332";
-                                    readonly id: 36542;
+                                    readonly id: 36648;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -10835,7 +10835,7 @@ export declare const stdStorage: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 36539;
+                                readonly id: 36645;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -10847,7 +10847,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function (uint256) pure returns (bytes memory)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 36538;
+                                    readonly id: 36644;
                                     readonly name: "bytes";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "7051:5:152";
@@ -10857,7 +10857,7 @@ export declare const stdStorage: {
                                     };
                                 };
                             };
-                            readonly id: 36544;
+                            readonly id: 36650;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -10877,19 +10877,19 @@ export declare const stdStorage: {
                         readonly src: "7025:46:152";
                     }, {
                         readonly body: {
-                            readonly id: 36564;
+                            readonly id: 36670;
                             readonly nodeType: "Block";
                             readonly src: "7120:185:152";
                             readonly statements: readonly [{
-                                readonly assignments: readonly [36558];
+                                readonly assignments: readonly [36664];
                                 readonly declarations: readonly [{
                                     readonly constant: false;
-                                    readonly id: 36558;
+                                    readonly id: 36664;
                                     readonly mutability: "mutable";
                                     readonly name: "k";
                                     readonly nameLocation: "7142:1:152";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 36564;
+                                    readonly scope: 36670;
                                     readonly src: "7134:9:152";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -10898,7 +10898,7 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes32";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36557;
+                                        readonly id: 36663;
                                         readonly name: "bytes32";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "7134:7:152";
@@ -10909,27 +10909,27 @@ export declare const stdStorage: {
                                     };
                                     readonly visibility: "internal";
                                 }];
-                                readonly id: 36562;
+                                readonly id: 36668;
                                 readonly initialValue: {
                                     readonly baseExpression: {
-                                        readonly id: 36559;
+                                        readonly id: 36665;
                                         readonly name: "b";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36531;
+                                        readonly referencedDeclaration: 36637;
                                         readonly src: "7146:1:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                             readonly typeString: "bytes32[] memory";
                                         };
                                     };
-                                    readonly id: 36561;
+                                    readonly id: 36667;
                                     readonly indexExpression: {
-                                        readonly id: 36560;
+                                        readonly id: 36666;
                                         readonly name: "i";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36547;
+                                        readonly referencedDeclaration: 36653;
                                         readonly src: "7148:1:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -11022,25 +11022,25 @@ export declare const stdStorage: {
                                 readonly documentation: "@solidity memory-safe-assembly";
                                 readonly evmVersion: "paris";
                                 readonly externalReferences: readonly [{
-                                    readonly declaration: 36547;
+                                    readonly declaration: 36653;
                                     readonly isOffset: false;
                                     readonly isSlot: false;
                                     readonly src: "7273:1:152";
                                     readonly valueSize: 1;
                                 }, {
-                                    readonly declaration: 36558;
+                                    readonly declaration: 36664;
                                     readonly isOffset: false;
                                     readonly isSlot: false;
                                     readonly src: "7279:1:152";
                                     readonly valueSize: 1;
                                 }, {
-                                    readonly declaration: 36537;
+                                    readonly declaration: 36643;
                                     readonly isOffset: false;
                                     readonly isSlot: false;
                                     readonly src: "7249:6:152";
                                     readonly valueSize: 1;
                                 }];
-                                readonly id: 36563;
+                                readonly id: 36669;
                                 readonly nodeType: "InlineAssembly";
                                 readonly src: "7211:84:152";
                             }];
@@ -11050,17 +11050,17 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 36553;
+                            readonly id: 36659;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 36550;
+                                readonly id: 36656;
                                 readonly name: "i";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36547;
+                                readonly referencedDeclaration: 36653;
                                 readonly src: "7101:1:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -11071,18 +11071,18 @@ export declare const stdStorage: {
                             readonly operator: "<";
                             readonly rightExpression: {
                                 readonly expression: {
-                                    readonly id: 36551;
+                                    readonly id: 36657;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36531;
+                                    readonly referencedDeclaration: 36637;
                                     readonly src: "7105:1:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                         readonly typeString: "bytes32[] memory";
                                     };
                                 };
-                                readonly id: 36552;
+                                readonly id: 36658;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -11102,17 +11102,17 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 36565;
+                        readonly id: 36671;
                         readonly initializationExpression: {
-                            readonly assignments: readonly [36547];
+                            readonly assignments: readonly [36653];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 36547;
+                                readonly id: 36653;
                                 readonly mutability: "mutable";
                                 readonly name: "i";
                                 readonly nameLocation: "7094:1:152";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 36565;
+                                readonly scope: 36671;
                                 readonly src: "7086:9:152";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -11121,7 +11121,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 36546;
+                                    readonly id: 36652;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "7086:7:152";
@@ -11132,10 +11132,10 @@ export declare const stdStorage: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 36549;
+                            readonly id: 36655;
                             readonly initialValue: {
                                 readonly hexValue: "30";
-                                readonly id: 36548;
+                                readonly id: 36654;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -11154,7 +11154,7 @@ export declare const stdStorage: {
                         };
                         readonly loopExpression: {
                             readonly expression: {
-                                readonly id: 36555;
+                                readonly id: 36661;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -11164,11 +11164,11 @@ export declare const stdStorage: {
                                 readonly prefix: false;
                                 readonly src: "7115:3:152";
                                 readonly subExpression: {
-                                    readonly id: 36554;
+                                    readonly id: 36660;
                                     readonly name: "i";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36547;
+                                    readonly referencedDeclaration: 36653;
                                     readonly src: "7115:1:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -11180,7 +11180,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 36556;
+                            readonly id: 36662;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "7115:3:152";
                         };
@@ -11188,19 +11188,19 @@ export declare const stdStorage: {
                         readonly src: "7081:224:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36566;
+                            readonly id: 36672;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 36537;
+                            readonly referencedDeclaration: 36643;
                             readonly src: "7322:6:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                 readonly typeString: "bytes memory";
                             };
                         };
-                        readonly functionReturnParameters: 36535;
-                        readonly id: 36567;
+                        readonly functionReturnParameters: 36641;
+                        readonly id: 36673;
                         readonly nodeType: "Return";
                         readonly src: "7315:13:152";
                     }];
@@ -11211,16 +11211,16 @@ export declare const stdStorage: {
                 readonly name: "flatten";
                 readonly nameLocation: "6951:7:152";
                 readonly parameters: {
-                    readonly id: 36532;
+                    readonly id: 36638;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36531;
+                        readonly id: 36637;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "6976:1:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36569;
+                        readonly scope: 36675;
                         readonly src: "6959:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -11230,7 +11230,7 @@ export declare const stdStorage: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 36529;
+                                readonly id: 36635;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "6959:7:152";
@@ -11239,7 +11239,7 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 36530;
+                            readonly id: 36636;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "6959:9:152";
                             readonly typeDescriptions: {
@@ -11252,16 +11252,16 @@ export declare const stdStorage: {
                     readonly src: "6958:20:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36535;
+                    readonly id: 36641;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36534;
+                        readonly id: 36640;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36569;
+                        readonly scope: 36675;
                         readonly src: "7001:12:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -11270,7 +11270,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 36533;
+                            readonly id: 36639;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7001:5:152";
@@ -11283,7 +11283,7 @@ export declare const stdStorage: {
                     }];
                     readonly src: "7000:14:152";
                 };
-                readonly scope: 36570;
+                readonly scope: 36676;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "private";
@@ -11294,18 +11294,18 @@ export declare const stdStorage: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [36570];
+            readonly linearizedBaseContracts: readonly [36676];
             readonly name: "stdStorageSafe";
             readonly nameLocation: "376:14:152";
-            readonly scope: 37132;
+            readonly scope: 37238;
             readonly usedErrors: readonly [];
-            readonly usedEvents: readonly [35688, 35694];
+            readonly usedEvents: readonly [35794, 35800];
         }, {
-            readonly id: 37131;
+            readonly id: 37237;
             readonly nodeType: "ContractDefinition";
             readonly src: "7339:4665:152";
             readonly nodes: readonly [{
-                readonly id: 36587;
+                readonly id: 36693;
                 readonly nodeType: "VariableDeclaration";
                 readonly src: "7364:84:152";
                 readonly nodes: readonly [];
@@ -11313,28 +11313,28 @@ export declare const stdStorage: {
                 readonly mutability: "constant";
                 readonly name: "vm";
                 readonly nameLocation: "7384:2:152";
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateVariable: true;
                 readonly storageLocation: "default";
                 readonly typeDescriptions: {
-                    readonly typeIdentifier: "t_contract$_Vm_$40778";
+                    readonly typeIdentifier: "t_contract$_Vm_$40884";
                     readonly typeString: "contract Vm";
                 };
                 readonly typeName: {
-                    readonly id: 36572;
+                    readonly id: 36678;
                     readonly nodeType: "UserDefinedTypeName";
                     readonly pathNode: {
-                        readonly id: 36571;
+                        readonly id: 36677;
                         readonly name: "Vm";
                         readonly nameLocations: readonly ["7364:2:152"];
                         readonly nodeType: "IdentifierPath";
-                        readonly referencedDeclaration: 40778;
+                        readonly referencedDeclaration: 40884;
                         readonly src: "7364:2:152";
                     };
-                    readonly referencedDeclaration: 40778;
+                    readonly referencedDeclaration: 40884;
                     readonly src: "7364:2:152";
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                         readonly typeString: "contract Vm";
                     };
                 };
@@ -11345,7 +11345,7 @@ export declare const stdStorage: {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly hexValue: "6865766d20636865617420636f6465";
-                                        readonly id: 36581;
+                                        readonly id: 36687;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -11364,7 +11364,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_stringliteral_885cb69240a935d632d79c317109709ecfa91a80626ff3989d68f67f5b1dd12d";
                                             readonly typeString: "literal_string \"hevm cheat code\"";
                                         }];
-                                        readonly id: 36580;
+                                        readonly id: 36686;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -11375,7 +11375,7 @@ export declare const stdStorage: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 36582;
+                                    readonly id: 36688;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -11396,7 +11396,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_bytes32";
                                         readonly typeString: "bytes32";
                                     }];
-                                    readonly id: 36579;
+                                    readonly id: 36685;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -11408,14 +11408,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(uint256)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36578;
+                                        readonly id: 36684;
                                         readonly name: "uint256";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "7408:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 36583;
+                                readonly id: 36689;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -11436,7 +11436,7 @@ export declare const stdStorage: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 36577;
+                                readonly id: 36683;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -11448,14 +11448,14 @@ export declare const stdStorage: {
                                     readonly typeString: "type(uint160)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 36576;
+                                    readonly id: 36682;
                                     readonly name: "uint160";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "7400:7:152";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 36584;
+                            readonly id: 36690;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -11476,7 +11476,7 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_uint160";
                                 readonly typeString: "uint160";
                             }];
-                            readonly id: 36575;
+                            readonly id: 36681;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: true;
@@ -11488,14 +11488,14 @@ export declare const stdStorage: {
                                 readonly typeString: "type(address)";
                             };
                             readonly typeName: {
-                                readonly id: 36574;
+                                readonly id: 36680;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "7392:7:152";
                                 readonly typeDescriptions: {};
                             };
                         };
-                        readonly id: 36585;
+                        readonly id: 36691;
                         readonly isConstant: false;
                         readonly isLValue: false;
                         readonly isPure: true;
@@ -11516,18 +11516,18 @@ export declare const stdStorage: {
                             readonly typeIdentifier: "t_address";
                             readonly typeString: "address";
                         }];
-                        readonly id: 36573;
+                        readonly id: 36679;
                         readonly name: "Vm";
                         readonly nodeType: "Identifier";
                         readonly overloadedDeclarations: readonly [];
-                        readonly referencedDeclaration: 40778;
+                        readonly referencedDeclaration: 40884;
                         readonly src: "7389:2:152";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_type$_t_contract$_Vm_$40778_$";
+                            readonly typeIdentifier: "t_type$_t_contract$_Vm_$40884_$";
                             readonly typeString: "type(contract Vm)";
                         };
                     };
-                    readonly id: 36586;
+                    readonly id: 36692;
                     readonly isConstant: false;
                     readonly isLValue: false;
                     readonly isPure: true;
@@ -11539,29 +11539,29 @@ export declare const stdStorage: {
                     readonly src: "7389:59:152";
                     readonly tryCall: false;
                     readonly typeDescriptions: {
-                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                         readonly typeString: "contract Vm";
                     };
                 };
                 readonly visibility: "private";
             }, {
-                readonly id: 36600;
+                readonly id: 36706;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7455:118:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36599;
+                    readonly id: 36705;
                     readonly nodeType: "Block";
                     readonly src: "7522:51:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36596;
+                                readonly id: 36702;
                                 readonly name: "sigStr";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36589;
+                                readonly referencedDeclaration: 36695;
                                 readonly src: "7559:6:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -11574,18 +11574,18 @@ export declare const stdStorage: {
                                     readonly typeString: "string memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36594;
+                                    readonly id: 36700;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "7539:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36595;
+                                readonly id: 36701;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -11593,14 +11593,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "7554:4:152";
                                 readonly memberName: "sigs";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35729;
+                                readonly referencedDeclaration: 35835;
                                 readonly src: "7539:19:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bytes4_$";
                                     readonly typeString: "function (string memory) pure returns (bytes4)";
                                 };
                             };
-                            readonly id: 36597;
+                            readonly id: 36703;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -11616,8 +11616,8 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes4";
                             };
                         };
-                        readonly functionReturnParameters: 36593;
-                        readonly id: 36598;
+                        readonly functionReturnParameters: 36699;
+                        readonly id: 36704;
                         readonly nodeType: "Return";
                         readonly src: "7532:34:152";
                     }];
@@ -11628,16 +11628,16 @@ export declare const stdStorage: {
                 readonly name: "sigs";
                 readonly nameLocation: "7464:4:152";
                 readonly parameters: {
-                    readonly id: 36590;
+                    readonly id: 36696;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36589;
+                        readonly id: 36695;
                         readonly mutability: "mutable";
                         readonly name: "sigStr";
                         readonly nameLocation: "7483:6:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36600;
+                        readonly scope: 36706;
                         readonly src: "7469:20:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -11646,7 +11646,7 @@ export declare const stdStorage: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 36588;
+                            readonly id: 36694;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7469:6:152";
@@ -11660,16 +11660,16 @@ export declare const stdStorage: {
                     readonly src: "7468:22:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36593;
+                    readonly id: 36699;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36592;
+                        readonly id: 36698;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36600;
+                        readonly scope: 36706;
                         readonly src: "7514:6:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11678,7 +11678,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 36591;
+                            readonly id: 36697;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7514:6:152";
@@ -11691,52 +11691,52 @@ export declare const stdStorage: {
                     }];
                     readonly src: "7513:8:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36614;
+                readonly id: 36720;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7579:115:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36613;
+                    readonly id: 36719;
                     readonly nodeType: "Block";
                     readonly src: "7645:49:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36610;
+                                readonly id: 36716;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36603;
+                                readonly referencedDeclaration: 36709;
                                 readonly src: "7682:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36608;
+                                    readonly id: 36714;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "7662:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36609;
+                                readonly id: 36715;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -11744,14 +11744,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "7677:4:152";
                                 readonly memberName: "find";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36173;
+                                readonly referencedDeclaration: 36279;
                                 readonly src: "7662:19:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_uint256_$";
                                     readonly typeString: "function (struct StdStorage storage pointer) returns (uint256)";
                                 };
                             };
-                            readonly id: 36611;
+                            readonly id: 36717;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -11767,8 +11767,8 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 36607;
-                        readonly id: 36612;
+                        readonly functionReturnParameters: 36713;
+                        readonly id: 36718;
                         readonly nodeType: "Return";
                         readonly src: "7655:32:152";
                     }];
@@ -11779,38 +11779,38 @@ export declare const stdStorage: {
                 readonly name: "find";
                 readonly nameLocation: "7588:4:152";
                 readonly parameters: {
-                    readonly id: 36604;
+                    readonly id: 36710;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36603;
+                        readonly id: 36709;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "7612:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36614;
+                        readonly scope: 36720;
                         readonly src: "7593:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36602;
+                            readonly id: 36708;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36601;
+                                readonly id: 36707;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["7593:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "7593:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "7593:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -11819,16 +11819,16 @@ export declare const stdStorage: {
                     readonly src: "7592:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36607;
+                    readonly id: 36713;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36606;
+                        readonly id: 36712;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36614;
+                        readonly scope: 36720;
                         readonly src: "7636:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -11837,7 +11837,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 36605;
+                            readonly id: 36711;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7636:7:152";
@@ -11850,39 +11850,39 @@ export declare const stdStorage: {
                     }];
                     readonly src: "7635:9:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36632;
+                readonly id: 36738;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7700:156:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36631;
+                    readonly id: 36737;
                     readonly nodeType: "Block";
                     readonly src: "7796:60:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36627;
+                                readonly id: 36733;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36617;
+                                readonly referencedDeclaration: 36723;
                                 readonly src: "7835:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
-                                readonly id: 36628;
+                                readonly id: 36734;
                                 readonly name: "_target";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36619;
+                                readonly referencedDeclaration: 36725;
                                 readonly src: "7841:7:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -11891,25 +11891,25 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36625;
+                                    readonly id: 36731;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "7813:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36626;
+                                readonly id: 36732;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -11917,14 +11917,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "7828:6:152";
                                 readonly memberName: "target";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36193;
+                                readonly referencedDeclaration: 36299;
                                 readonly src: "7813:21:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_address_$returns$_t_struct$_StdStorage_$35678_storage_ptr_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_address_$returns$_t_struct$_StdStorage_$35784_storage_ptr_$";
                                     readonly typeString: "function (struct StdStorage storage pointer,address) returns (struct StdStorage storage pointer)";
                                 };
                             };
-                            readonly id: 36629;
+                            readonly id: 36735;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -11936,12 +11936,12 @@ export declare const stdStorage: {
                             readonly src: "7813:36:152";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36624;
-                        readonly id: 36630;
+                        readonly functionReturnParameters: 36730;
+                        readonly id: 36736;
                         readonly nodeType: "Return";
                         readonly src: "7806:43:152";
                     }];
@@ -11952,50 +11952,50 @@ export declare const stdStorage: {
                 readonly name: "target";
                 readonly nameLocation: "7709:6:152";
                 readonly parameters: {
-                    readonly id: 36620;
+                    readonly id: 36726;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36617;
+                        readonly id: 36723;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "7735:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36632;
+                        readonly scope: 36738;
                         readonly src: "7716:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36616;
+                            readonly id: 36722;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36615;
+                                readonly id: 36721;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["7716:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "7716:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "7716:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36619;
+                        readonly id: 36725;
                         readonly mutability: "mutable";
                         readonly name: "_target";
                         readonly nameLocation: "7749:7:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36632;
+                        readonly scope: 36738;
                         readonly src: "7741:15:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -12004,7 +12004,7 @@ export declare const stdStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 36618;
+                            readonly id: 36724;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7741:7:152";
@@ -12019,38 +12019,38 @@ export declare const stdStorage: {
                     readonly src: "7715:42:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36624;
+                    readonly id: 36730;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36623;
+                        readonly id: 36729;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36632;
+                        readonly scope: 36738;
                         readonly src: "7776:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36622;
+                            readonly id: 36728;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36621;
+                                readonly id: 36727;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["7776:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "7776:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "7776:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -12058,39 +12058,39 @@ export declare const stdStorage: {
                     }];
                     readonly src: "7775:20:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36650;
+                readonly id: 36756;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "7862:143:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36649;
+                    readonly id: 36755;
                     readonly nodeType: "Block";
                     readonly src: "7951:54:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36645;
+                                readonly id: 36751;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36635;
+                                readonly referencedDeclaration: 36741;
                                 readonly src: "7987:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
-                                readonly id: 36646;
+                                readonly id: 36752;
                                 readonly name: "_sig";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36637;
+                                readonly referencedDeclaration: 36743;
                                 readonly src: "7993:4:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
@@ -12099,25 +12099,25 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_bytes4";
                                     readonly typeString: "bytes4";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36643;
+                                    readonly id: 36749;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "7968:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36644;
+                                readonly id: 36750;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -12125,14 +12125,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "7983:3:152";
                                 readonly memberName: "sig";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36213;
+                                readonly referencedDeclaration: 36319;
                                 readonly src: "7968:18:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_bytes4_$returns$_t_struct$_StdStorage_$35678_storage_ptr_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_bytes4_$returns$_t_struct$_StdStorage_$35784_storage_ptr_$";
                                     readonly typeString: "function (struct StdStorage storage pointer,bytes4) returns (struct StdStorage storage pointer)";
                                 };
                             };
-                            readonly id: 36647;
+                            readonly id: 36753;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -12144,12 +12144,12 @@ export declare const stdStorage: {
                             readonly src: "7968:30:152";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36642;
-                        readonly id: 36648;
+                        readonly functionReturnParameters: 36748;
+                        readonly id: 36754;
                         readonly nodeType: "Return";
                         readonly src: "7961:37:152";
                     }];
@@ -12160,50 +12160,50 @@ export declare const stdStorage: {
                 readonly name: "sig";
                 readonly nameLocation: "7871:3:152";
                 readonly parameters: {
-                    readonly id: 36638;
+                    readonly id: 36744;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36635;
+                        readonly id: 36741;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "7894:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36650;
+                        readonly scope: 36756;
                         readonly src: "7875:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36634;
+                            readonly id: 36740;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36633;
+                                readonly id: 36739;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["7875:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "7875:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "7875:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36637;
+                        readonly id: 36743;
                         readonly mutability: "mutable";
                         readonly name: "_sig";
                         readonly nameLocation: "7907:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36650;
+                        readonly scope: 36756;
                         readonly src: "7900:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -12212,7 +12212,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes4";
                         };
                         readonly typeName: {
-                            readonly id: 36636;
+                            readonly id: 36742;
                             readonly name: "bytes4";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "7900:6:152";
@@ -12226,38 +12226,38 @@ export declare const stdStorage: {
                     readonly src: "7874:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36642;
+                    readonly id: 36748;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36641;
+                        readonly id: 36747;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36650;
+                        readonly scope: 36756;
                         readonly src: "7931:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36640;
+                            readonly id: 36746;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36639;
+                                readonly id: 36745;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["7931:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "7931:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "7931:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -12265,39 +12265,39 @@ export declare const stdStorage: {
                     }];
                     readonly src: "7930:20:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36668;
+                readonly id: 36774;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8011:150:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36667;
+                    readonly id: 36773;
                     readonly nodeType: "Block";
                     readonly src: "8107:54:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36663;
+                                readonly id: 36769;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36653;
+                                readonly referencedDeclaration: 36759;
                                 readonly src: "8143:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
-                                readonly id: 36664;
+                                readonly id: 36770;
                                 readonly name: "_sig";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36655;
+                                readonly referencedDeclaration: 36761;
                                 readonly src: "8149:4:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_string_memory_ptr";
@@ -12306,25 +12306,25 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_string_memory_ptr";
                                     readonly typeString: "string memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36661;
+                                    readonly id: 36767;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "8124:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36662;
+                                readonly id: 36768;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -12332,14 +12332,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "8139:3:152";
                                 readonly memberName: "sig";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36235;
+                                readonly referencedDeclaration: 36341;
                                 readonly src: "8124:18:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_string_memory_ptr_$returns$_t_struct$_StdStorage_$35678_storage_ptr_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_string_memory_ptr_$returns$_t_struct$_StdStorage_$35784_storage_ptr_$";
                                     readonly typeString: "function (struct StdStorage storage pointer,string memory) returns (struct StdStorage storage pointer)";
                                 };
                             };
-                            readonly id: 36665;
+                            readonly id: 36771;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -12351,12 +12351,12 @@ export declare const stdStorage: {
                             readonly src: "8124:30:152";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36660;
-                        readonly id: 36666;
+                        readonly functionReturnParameters: 36766;
+                        readonly id: 36772;
                         readonly nodeType: "Return";
                         readonly src: "8117:37:152";
                     }];
@@ -12367,50 +12367,50 @@ export declare const stdStorage: {
                 readonly name: "sig";
                 readonly nameLocation: "8020:3:152";
                 readonly parameters: {
-                    readonly id: 36656;
+                    readonly id: 36762;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36653;
+                        readonly id: 36759;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "8043:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36668;
+                        readonly scope: 36774;
                         readonly src: "8024:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36652;
+                            readonly id: 36758;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36651;
+                                readonly id: 36757;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8024:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8024:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8024:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36655;
+                        readonly id: 36761;
                         readonly mutability: "mutable";
                         readonly name: "_sig";
                         readonly nameLocation: "8063:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36668;
+                        readonly scope: 36774;
                         readonly src: "8049:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -12419,7 +12419,7 @@ export declare const stdStorage: {
                             readonly typeString: "string";
                         };
                         readonly typeName: {
-                            readonly id: 36654;
+                            readonly id: 36760;
                             readonly name: "string";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8049:6:152";
@@ -12433,38 +12433,38 @@ export declare const stdStorage: {
                     readonly src: "8023:45:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36660;
+                    readonly id: 36766;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36659;
+                        readonly id: 36765;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36668;
+                        readonly scope: 36774;
                         readonly src: "8087:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36658;
+                            readonly id: 36764;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36657;
+                                readonly id: 36763;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8087:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8087:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8087:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -12472,39 +12472,39 @@ export declare const stdStorage: {
                     }];
                     readonly src: "8086:20:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36686;
+                readonly id: 36792;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8167:152:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36685;
+                    readonly id: 36791;
                     readonly nodeType: "Block";
                     readonly src: "8261:58:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36681;
+                                readonly id: 36787;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36671;
+                                readonly referencedDeclaration: 36777;
                                 readonly src: "8302:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
-                                readonly id: 36682;
+                                readonly id: 36788;
                                 readonly name: "who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36673;
+                                readonly referencedDeclaration: 36779;
                                 readonly src: "8308:3:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -12513,25 +12513,25 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36679;
+                                    readonly id: 36785;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "8278:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36680;
+                                readonly id: 36786;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -12539,14 +12539,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "8293:8:152";
                                 readonly memberName: "with_key";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36266;
+                                readonly referencedDeclaration: 36372;
                                 readonly src: "8278:23:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_address_$returns$_t_struct$_StdStorage_$35678_storage_ptr_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_address_$returns$_t_struct$_StdStorage_$35784_storage_ptr_$";
                                     readonly typeString: "function (struct StdStorage storage pointer,address) returns (struct StdStorage storage pointer)";
                                 };
                             };
-                            readonly id: 36683;
+                            readonly id: 36789;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -12558,12 +12558,12 @@ export declare const stdStorage: {
                             readonly src: "8278:34:152";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36678;
-                        readonly id: 36684;
+                        readonly functionReturnParameters: 36784;
+                        readonly id: 36790;
                         readonly nodeType: "Return";
                         readonly src: "8271:41:152";
                     }];
@@ -12574,50 +12574,50 @@ export declare const stdStorage: {
                 readonly name: "with_key";
                 readonly nameLocation: "8176:8:152";
                 readonly parameters: {
-                    readonly id: 36674;
+                    readonly id: 36780;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36671;
+                        readonly id: 36777;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "8204:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36686;
+                        readonly scope: 36792;
                         readonly src: "8185:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36670;
+                            readonly id: 36776;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36669;
+                                readonly id: 36775;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8185:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8185:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8185:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36673;
+                        readonly id: 36779;
                         readonly mutability: "mutable";
                         readonly name: "who";
                         readonly nameLocation: "8218:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36686;
+                        readonly scope: 36792;
                         readonly src: "8210:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -12626,7 +12626,7 @@ export declare const stdStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 36672;
+                            readonly id: 36778;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8210:7:152";
@@ -12641,38 +12641,38 @@ export declare const stdStorage: {
                     readonly src: "8184:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36678;
+                    readonly id: 36784;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36677;
+                        readonly id: 36783;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36686;
+                        readonly scope: 36792;
                         readonly src: "8241:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36676;
+                            readonly id: 36782;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36675;
+                                readonly id: 36781;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8241:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8241:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8241:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -12680,39 +12680,39 @@ export declare const stdStorage: {
                     }];
                     readonly src: "8240:20:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36704;
+                readonly id: 36810;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8325:152:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36703;
+                    readonly id: 36809;
                     readonly nodeType: "Block";
                     readonly src: "8419:58:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36699;
+                                readonly id: 36805;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36689;
+                                readonly referencedDeclaration: 36795;
                                 readonly src: "8460:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
-                                readonly id: 36700;
+                                readonly id: 36806;
                                 readonly name: "amt";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36691;
+                                readonly referencedDeclaration: 36797;
                                 readonly src: "8466:3:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -12721,25 +12721,25 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36697;
+                                    readonly id: 36803;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "8436:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36698;
+                                readonly id: 36804;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -12747,14 +12747,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "8451:8:152";
                                 readonly memberName: "with_key";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36291;
+                                readonly referencedDeclaration: 36397;
                                 readonly src: "8436:23:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_uint256_$returns$_t_struct$_StdStorage_$35678_storage_ptr_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_uint256_$returns$_t_struct$_StdStorage_$35784_storage_ptr_$";
                                     readonly typeString: "function (struct StdStorage storage pointer,uint256) returns (struct StdStorage storage pointer)";
                                 };
                             };
-                            readonly id: 36701;
+                            readonly id: 36807;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -12766,12 +12766,12 @@ export declare const stdStorage: {
                             readonly src: "8436:34:152";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36696;
-                        readonly id: 36702;
+                        readonly functionReturnParameters: 36802;
+                        readonly id: 36808;
                         readonly nodeType: "Return";
                         readonly src: "8429:41:152";
                     }];
@@ -12782,50 +12782,50 @@ export declare const stdStorage: {
                 readonly name: "with_key";
                 readonly nameLocation: "8334:8:152";
                 readonly parameters: {
-                    readonly id: 36692;
+                    readonly id: 36798;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36689;
+                        readonly id: 36795;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "8362:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36704;
+                        readonly scope: 36810;
                         readonly src: "8343:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36688;
+                            readonly id: 36794;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36687;
+                                readonly id: 36793;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8343:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8343:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8343:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36691;
+                        readonly id: 36797;
                         readonly mutability: "mutable";
                         readonly name: "amt";
                         readonly nameLocation: "8376:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36704;
+                        readonly scope: 36810;
                         readonly src: "8368:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -12834,7 +12834,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 36690;
+                            readonly id: 36796;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8368:7:152";
@@ -12848,38 +12848,38 @@ export declare const stdStorage: {
                     readonly src: "8342:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36696;
+                    readonly id: 36802;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36695;
+                        readonly id: 36801;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36704;
+                        readonly scope: 36810;
                         readonly src: "8399:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36694;
+                            readonly id: 36800;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36693;
+                                readonly id: 36799;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8399:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8399:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8399:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -12887,39 +12887,39 @@ export declare const stdStorage: {
                     }];
                     readonly src: "8398:20:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36722;
+                readonly id: 36828;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8483:152:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36721;
+                    readonly id: 36827;
                     readonly nodeType: "Block";
                     readonly src: "8577:58:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36717;
+                                readonly id: 36823;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36707;
+                                readonly referencedDeclaration: 36813;
                                 readonly src: "8618:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
-                                readonly id: 36718;
+                                readonly id: 36824;
                                 readonly name: "key";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36709;
+                                readonly referencedDeclaration: 36815;
                                 readonly src: "8624:3:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
@@ -12928,25 +12928,25 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36715;
+                                    readonly id: 36821;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "8594:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36716;
+                                readonly id: 36822;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -12954,14 +12954,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "8609:8:152";
                                 readonly memberName: "with_key";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36313;
+                                readonly referencedDeclaration: 36419;
                                 readonly src: "8594:23:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_bytes32_$returns$_t_struct$_StdStorage_$35678_storage_ptr_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_bytes32_$returns$_t_struct$_StdStorage_$35784_storage_ptr_$";
                                     readonly typeString: "function (struct StdStorage storage pointer,bytes32) returns (struct StdStorage storage pointer)";
                                 };
                             };
-                            readonly id: 36719;
+                            readonly id: 36825;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -12973,12 +12973,12 @@ export declare const stdStorage: {
                             readonly src: "8594:34:152";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36714;
-                        readonly id: 36720;
+                        readonly functionReturnParameters: 36820;
+                        readonly id: 36826;
                         readonly nodeType: "Return";
                         readonly src: "8587:41:152";
                     }];
@@ -12989,50 +12989,50 @@ export declare const stdStorage: {
                 readonly name: "with_key";
                 readonly nameLocation: "8492:8:152";
                 readonly parameters: {
-                    readonly id: 36710;
+                    readonly id: 36816;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36707;
+                        readonly id: 36813;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "8520:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36722;
+                        readonly scope: 36828;
                         readonly src: "8501:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36706;
+                            readonly id: 36812;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36705;
+                                readonly id: 36811;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8501:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8501:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8501:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36709;
+                        readonly id: 36815;
                         readonly mutability: "mutable";
                         readonly name: "key";
                         readonly nameLocation: "8534:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36722;
+                        readonly scope: 36828;
                         readonly src: "8526:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -13041,7 +13041,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 36708;
+                            readonly id: 36814;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8526:7:152";
@@ -13055,38 +13055,38 @@ export declare const stdStorage: {
                     readonly src: "8500:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36714;
+                    readonly id: 36820;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36713;
+                        readonly id: 36819;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36722;
+                        readonly scope: 36828;
                         readonly src: "8557:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36712;
+                            readonly id: 36818;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36711;
+                                readonly id: 36817;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8557:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8557:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8557:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -13094,39 +13094,39 @@ export declare const stdStorage: {
                     }];
                     readonly src: "8556:20:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36740;
+                readonly id: 36846;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8641:152:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36739;
+                    readonly id: 36845;
                     readonly nodeType: "Block";
                     readonly src: "8735:58:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36735;
+                                readonly id: 36841;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36725;
+                                readonly referencedDeclaration: 36831;
                                 readonly src: "8773:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
-                                readonly id: 36736;
+                                readonly id: 36842;
                                 readonly name: "_depth";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36727;
+                                readonly referencedDeclaration: 36833;
                                 readonly src: "8779:6:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -13135,25 +13135,25 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36733;
+                                    readonly id: 36839;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "8752:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36734;
+                                readonly id: 36840;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -13161,14 +13161,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "8767:5:152";
                                 readonly memberName: "depth";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36333;
+                                readonly referencedDeclaration: 36439;
                                 readonly src: "8752:20:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_uint256_$returns$_t_struct$_StdStorage_$35678_storage_ptr_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_uint256_$returns$_t_struct$_StdStorage_$35784_storage_ptr_$";
                                     readonly typeString: "function (struct StdStorage storage pointer,uint256) returns (struct StdStorage storage pointer)";
                                 };
                             };
-                            readonly id: 36737;
+                            readonly id: 36843;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -13180,12 +13180,12 @@ export declare const stdStorage: {
                             readonly src: "8752:34:152";
                             readonly tryCall: false;
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage storage pointer";
                             };
                         };
-                        readonly functionReturnParameters: 36732;
-                        readonly id: 36738;
+                        readonly functionReturnParameters: 36838;
+                        readonly id: 36844;
                         readonly nodeType: "Return";
                         readonly src: "8745:41:152";
                     }];
@@ -13196,50 +13196,50 @@ export declare const stdStorage: {
                 readonly name: "depth";
                 readonly nameLocation: "8650:5:152";
                 readonly parameters: {
-                    readonly id: 36728;
+                    readonly id: 36834;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36725;
+                        readonly id: 36831;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "8675:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36740;
+                        readonly scope: 36846;
                         readonly src: "8656:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36724;
+                            readonly id: 36830;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36723;
+                                readonly id: 36829;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8656:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8656:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8656:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36727;
+                        readonly id: 36833;
                         readonly mutability: "mutable";
                         readonly name: "_depth";
                         readonly nameLocation: "8689:6:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36740;
+                        readonly scope: 36846;
                         readonly src: "8681:14:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -13248,7 +13248,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 36726;
+                            readonly id: 36832;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8681:7:152";
@@ -13262,38 +13262,38 @@ export declare const stdStorage: {
                     readonly src: "8655:41:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36732;
+                    readonly id: 36838;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36731;
+                        readonly id: 36837;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36740;
+                        readonly scope: 36846;
                         readonly src: "8715:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36730;
+                            readonly id: 36836;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36729;
+                                readonly id: 36835;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8715:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8715:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8715:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -13301,42 +13301,42 @@ export declare const stdStorage: {
                     }];
                     readonly src: "8714:20:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36763;
+                readonly id: 36869;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8799:138:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36762;
+                    readonly id: 36868;
                     readonly nodeType: "Block";
                     readonly src: "8869:68:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36749;
+                                readonly id: 36855;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36743;
+                                readonly referencedDeclaration: 36849;
                                 readonly src: "8893:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 36756;
+                                            readonly id: 36862;
                                             readonly name: "who";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 36745;
+                                            readonly referencedDeclaration: 36851;
                                             readonly src: "8923:3:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -13348,7 +13348,7 @@ export declare const stdStorage: {
                                                 readonly typeIdentifier: "t_address";
                                                 readonly typeString: "address";
                                             }];
-                                            readonly id: 36755;
+                                            readonly id: 36861;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -13360,14 +13360,14 @@ export declare const stdStorage: {
                                                 readonly typeString: "type(uint160)";
                                             };
                                             readonly typeName: {
-                                                readonly id: 36754;
+                                                readonly id: 36860;
                                                 readonly name: "uint160";
                                                 readonly nodeType: "ElementaryTypeName";
                                                 readonly src: "8915:7:152";
                                                 readonly typeDescriptions: {};
                                             };
                                         };
-                                        readonly id: 36757;
+                                        readonly id: 36863;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -13388,7 +13388,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_uint160";
                                             readonly typeString: "uint160";
                                         }];
-                                        readonly id: 36753;
+                                        readonly id: 36859;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -13400,14 +13400,14 @@ export declare const stdStorage: {
                                             readonly typeString: "type(uint256)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 36752;
+                                            readonly id: 36858;
                                             readonly name: "uint256";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "8907:7:152";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 36758;
+                                    readonly id: 36864;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -13428,7 +13428,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 36751;
+                                    readonly id: 36857;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -13440,14 +13440,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(bytes32)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36750;
+                                        readonly id: 36856;
                                         readonly name: "bytes32";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "8899:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 36759;
+                                readonly id: 36865;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -13465,24 +13465,24 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
-                                readonly id: 36748;
+                                readonly id: 36854;
                                 readonly name: "checked_write";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [36763, 36780, 36818, 36963];
-                                readonly referencedDeclaration: 36963;
+                                readonly overloadedDeclarations: readonly [36869, 36886, 36924, 37069];
+                                readonly referencedDeclaration: 37069;
                                 readonly src: "8879:13:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_bytes32_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_bytes32_$returns$__$";
                                     readonly typeString: "function (struct StdStorage storage pointer,bytes32)";
                                 };
                             };
-                            readonly id: 36760;
+                            readonly id: 36866;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -13498,7 +13498,7 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36761;
+                        readonly id: 36867;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "8879:51:152";
                     }];
@@ -13509,50 +13509,50 @@ export declare const stdStorage: {
                 readonly name: "checked_write";
                 readonly nameLocation: "8808:13:152";
                 readonly parameters: {
-                    readonly id: 36746;
+                    readonly id: 36852;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36743;
+                        readonly id: 36849;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "8841:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36763;
+                        readonly scope: 36869;
                         readonly src: "8822:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36742;
+                            readonly id: 36848;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36741;
+                                readonly id: 36847;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8822:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8822:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8822:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36745;
+                        readonly id: 36851;
                         readonly mutability: "mutable";
                         readonly name: "who";
                         readonly nameLocation: "8855:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36763;
+                        readonly scope: 36869;
                         readonly src: "8847:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -13561,7 +13561,7 @@ export declare const stdStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 36744;
+                            readonly id: 36850;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8847:7:152";
@@ -13576,45 +13576,45 @@ export declare const stdStorage: {
                     readonly src: "8821:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36747;
+                    readonly id: 36853;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "8869:0:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36780;
+                readonly id: 36886;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "8943:120:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36779;
+                    readonly id: 36885;
                     readonly nodeType: "Block";
                     readonly src: "9013:50:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36772;
+                                readonly id: 36878;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36766;
+                                readonly referencedDeclaration: 36872;
                                 readonly src: "9037:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 36775;
+                                    readonly id: 36881;
                                     readonly name: "amt";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36768;
+                                    readonly referencedDeclaration: 36874;
                                     readonly src: "9051:3:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -13626,7 +13626,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 36774;
+                                    readonly id: 36880;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -13638,14 +13638,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(bytes32)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36773;
+                                        readonly id: 36879;
                                         readonly name: "bytes32";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "9043:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 36776;
+                                readonly id: 36882;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -13663,24 +13663,24 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
-                                readonly id: 36771;
+                                readonly id: 36877;
                                 readonly name: "checked_write";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [36763, 36780, 36818, 36963];
-                                readonly referencedDeclaration: 36963;
+                                readonly overloadedDeclarations: readonly [36869, 36886, 36924, 37069];
+                                readonly referencedDeclaration: 37069;
                                 readonly src: "9023:13:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_bytes32_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_bytes32_$returns$__$";
                                     readonly typeString: "function (struct StdStorage storage pointer,bytes32)";
                                 };
                             };
-                            readonly id: 36777;
+                            readonly id: 36883;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -13696,7 +13696,7 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36778;
+                        readonly id: 36884;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9023:33:152";
                     }];
@@ -13707,50 +13707,50 @@ export declare const stdStorage: {
                 readonly name: "checked_write";
                 readonly nameLocation: "8952:13:152";
                 readonly parameters: {
-                    readonly id: 36769;
+                    readonly id: 36875;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36766;
+                        readonly id: 36872;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "8985:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36780;
+                        readonly scope: 36886;
                         readonly src: "8966:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36765;
+                            readonly id: 36871;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36764;
+                                readonly id: 36870;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["8966:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "8966:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "8966:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36768;
+                        readonly id: 36874;
                         readonly mutability: "mutable";
                         readonly name: "amt";
                         readonly nameLocation: "8999:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36780;
+                        readonly scope: 36886;
                         readonly src: "8991:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -13759,7 +13759,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 36767;
+                            readonly id: 36873;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "8991:7:152";
@@ -13773,46 +13773,46 @@ export declare const stdStorage: {
                     readonly src: "8965:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36770;
+                    readonly id: 36876;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "9013:0:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36800;
+                readonly id: 36906;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "9069:132:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36799;
+                    readonly id: 36905;
                     readonly nodeType: "Block";
                     readonly src: "9142:59:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36789;
+                                readonly id: 36895;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36783;
+                                readonly referencedDeclaration: 36889;
                                 readonly src: "9166:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
                                 readonly arguments: readonly [{
                                     readonly arguments: readonly [{
-                                        readonly id: 36794;
+                                        readonly id: 36900;
                                         readonly name: "val";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36785;
+                                        readonly referencedDeclaration: 36891;
                                         readonly src: "9188:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_int256";
@@ -13824,7 +13824,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_int256";
                                             readonly typeString: "int256";
                                         }];
-                                        readonly id: 36793;
+                                        readonly id: 36899;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -13836,14 +13836,14 @@ export declare const stdStorage: {
                                             readonly typeString: "type(uint256)";
                                         };
                                         readonly typeName: {
-                                            readonly id: 36792;
+                                            readonly id: 36898;
                                             readonly name: "uint256";
                                             readonly nodeType: "ElementaryTypeName";
                                             readonly src: "9180:7:152";
                                             readonly typeDescriptions: {};
                                         };
                                     };
-                                    readonly id: 36795;
+                                    readonly id: 36901;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -13864,7 +13864,7 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_uint256";
                                         readonly typeString: "uint256";
                                     }];
-                                    readonly id: 36791;
+                                    readonly id: 36897;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -13876,14 +13876,14 @@ export declare const stdStorage: {
                                         readonly typeString: "type(bytes32)";
                                     };
                                     readonly typeName: {
-                                        readonly id: 36790;
+                                        readonly id: 36896;
                                         readonly name: "bytes32";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "9172:7:152";
                                         readonly typeDescriptions: {};
                                     };
                                 };
-                                readonly id: 36796;
+                                readonly id: 36902;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -13901,24 +13901,24 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
-                                readonly id: 36788;
+                                readonly id: 36894;
                                 readonly name: "checked_write";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [36763, 36780, 36818, 36963];
-                                readonly referencedDeclaration: 36963;
+                                readonly overloadedDeclarations: readonly [36869, 36886, 36924, 37069];
+                                readonly referencedDeclaration: 37069;
                                 readonly src: "9152:13:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_bytes32_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_bytes32_$returns$__$";
                                     readonly typeString: "function (struct StdStorage storage pointer,bytes32)";
                                 };
                             };
-                            readonly id: 36797;
+                            readonly id: 36903;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -13934,7 +13934,7 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36798;
+                        readonly id: 36904;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9152:42:152";
                     }];
@@ -13945,50 +13945,50 @@ export declare const stdStorage: {
                 readonly name: "checked_write_int";
                 readonly nameLocation: "9078:17:152";
                 readonly parameters: {
-                    readonly id: 36786;
+                    readonly id: 36892;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36783;
+                        readonly id: 36889;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "9115:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36800;
+                        readonly scope: 36906;
                         readonly src: "9096:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36782;
+                            readonly id: 36888;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36781;
+                                readonly id: 36887;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["9096:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "9096:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "9096:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36785;
+                        readonly id: 36891;
                         readonly mutability: "mutable";
                         readonly name: "val";
                         readonly nameLocation: "9128:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36800;
+                        readonly scope: 36906;
                         readonly src: "9121:10:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -13997,7 +13997,7 @@ export declare const stdStorage: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 36784;
+                            readonly id: 36890;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "9121:6:152";
@@ -14011,35 +14011,35 @@ export declare const stdStorage: {
                     readonly src: "9095:37:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36787;
+                    readonly id: 36893;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "9142:0:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36818;
+                readonly id: 36924;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "9207:222:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36817;
+                    readonly id: 36923;
                     readonly nodeType: "Block";
                     readonly src: "9276:153:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [36809];
+                        readonly assignments: readonly [36915];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36809;
+                            readonly id: 36915;
                             readonly mutability: "mutable";
                             readonly name: "t";
                             readonly nameLocation: "9294:1:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36817;
+                            readonly scope: 36923;
                             readonly src: "9286:9:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -14048,7 +14048,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 36808;
+                                readonly id: 36914;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "9286:7:152";
@@ -14059,7 +14059,7 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36810;
+                        readonly id: 36916;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "9286:9:152";
                     }, {
@@ -14084,40 +14084,40 @@ export declare const stdStorage: {
                         readonly documentation: "@solidity memory-safe-assembly";
                         readonly evmVersion: "paris";
                         readonly externalReferences: readonly [{
-                            readonly declaration: 36809;
+                            readonly declaration: 36915;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "9371:1:152";
                             readonly valueSize: 1;
                         }, {
-                            readonly declaration: 36805;
+                            readonly declaration: 36911;
                             readonly isOffset: false;
                             readonly isSlot: false;
                             readonly src: "9376:5:152";
                             readonly valueSize: 1;
                         }];
-                        readonly id: 36811;
+                        readonly id: 36917;
                         readonly nodeType: "InlineAssembly";
                         readonly src: "9348:43:152";
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36813;
+                                readonly id: 36919;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36803;
+                                readonly referencedDeclaration: 36909;
                                 readonly src: "9414:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }, {
-                                readonly id: 36814;
+                                readonly id: 36920;
                                 readonly name: "t";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36809;
+                                readonly referencedDeclaration: 36915;
                                 readonly src: "9420:1:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
@@ -14126,24 +14126,24 @@ export declare const stdStorage: {
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }, {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 }];
-                                readonly id: 36812;
+                                readonly id: 36918;
                                 readonly name: "checked_write";
                                 readonly nodeType: "Identifier";
-                                readonly overloadedDeclarations: readonly [36763, 36780, 36818, 36963];
-                                readonly referencedDeclaration: 36963;
+                                readonly overloadedDeclarations: readonly [36869, 36886, 36924, 37069];
+                                readonly referencedDeclaration: 37069;
                                 readonly src: "9400:13:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$_t_bytes32_$returns$__$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$_t_bytes32_$returns$__$";
                                     readonly typeString: "function (struct StdStorage storage pointer,bytes32)";
                                 };
                             };
-                            readonly id: 36815;
+                            readonly id: 36921;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -14159,7 +14159,7 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36816;
+                        readonly id: 36922;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "9400:22:152";
                     }];
@@ -14170,50 +14170,50 @@ export declare const stdStorage: {
                 readonly name: "checked_write";
                 readonly nameLocation: "9216:13:152";
                 readonly parameters: {
-                    readonly id: 36806;
+                    readonly id: 36912;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36803;
+                        readonly id: 36909;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "9249:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36818;
+                        readonly scope: 36924;
                         readonly src: "9230:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36802;
+                            readonly id: 36908;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36801;
+                                readonly id: 36907;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["9230:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "9230:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "9230:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36805;
+                        readonly id: 36911;
                         readonly mutability: "mutable";
                         readonly name: "write";
                         readonly nameLocation: "9260:5:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36818;
+                        readonly scope: 36924;
                         readonly src: "9255:10:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -14222,7 +14222,7 @@ export declare const stdStorage: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 36804;
+                            readonly id: 36910;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "9255:4:152";
@@ -14236,35 +14236,35 @@ export declare const stdStorage: {
                     readonly src: "9229:37:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36807;
+                    readonly id: 36913;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "9276:0:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36963;
+                readonly id: 37069;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "9435:1095:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36962;
+                    readonly id: 37068;
                     readonly nodeType: "Block";
                     readonly src: "9505:1025:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [36827];
+                        readonly assignments: readonly [36933];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36827;
+                            readonly id: 36933;
                             readonly mutability: "mutable";
                             readonly name: "who";
                             readonly nameLocation: "9523:3:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36962;
+                            readonly scope: 37068;
                             readonly src: "9515:11:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -14273,7 +14273,7 @@ export declare const stdStorage: {
                                 readonly typeString: "address";
                             };
                             readonly typeName: {
-                                readonly id: 36826;
+                                readonly id: 36932;
                                 readonly name: "address";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "9515:7:152";
@@ -14285,21 +14285,21 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36830;
+                        readonly id: 36936;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 36828;
+                                readonly id: 36934;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36821;
+                                readonly referencedDeclaration: 36927;
                                 readonly src: "9529:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             };
-                            readonly id: 36829;
+                            readonly id: 36935;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -14307,7 +14307,7 @@ export declare const stdStorage: {
                             readonly memberLocation: "9534:7:152";
                             readonly memberName: "_target";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 35675;
+                            readonly referencedDeclaration: 35781;
                             readonly src: "9529:12:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_address";
@@ -14317,15 +14317,15 @@ export declare const stdStorage: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "9515:26:152";
                     }, {
-                        readonly assignments: readonly [36832];
+                        readonly assignments: readonly [36938];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36832;
+                            readonly id: 36938;
                             readonly mutability: "mutable";
                             readonly name: "fsig";
                             readonly nameLocation: "9558:4:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36962;
+                            readonly scope: 37068;
                             readonly src: "9551:11:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -14334,7 +14334,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes4";
                             };
                             readonly typeName: {
-                                readonly id: 36831;
+                                readonly id: 36937;
                                 readonly name: "bytes4";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "9551:6:152";
@@ -14345,21 +14345,21 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36835;
+                        readonly id: 36941;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 36833;
+                                readonly id: 36939;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36821;
+                                readonly referencedDeclaration: 36927;
                                 readonly src: "9565:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             };
-                            readonly id: 36834;
+                            readonly id: 36940;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -14367,7 +14367,7 @@ export declare const stdStorage: {
                             readonly memberLocation: "9570:4:152";
                             readonly memberName: "_sig";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 35671;
+                            readonly referencedDeclaration: 35777;
                             readonly src: "9565:9:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes4";
@@ -14377,15 +14377,15 @@ export declare const stdStorage: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "9551:23:152";
                     }, {
-                        readonly assignments: readonly [36837];
+                        readonly assignments: readonly [36943];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36837;
+                            readonly id: 36943;
                             readonly mutability: "mutable";
                             readonly name: "field_depth";
                             readonly nameLocation: "9592:11:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36962;
+                            readonly scope: 37068;
                             readonly src: "9584:19:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -14394,7 +14394,7 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 36836;
+                                readonly id: 36942;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "9584:7:152";
@@ -14405,21 +14405,21 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36840;
+                        readonly id: 36946;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 36838;
+                                readonly id: 36944;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36821;
+                                readonly referencedDeclaration: 36927;
                                 readonly src: "9606:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             };
-                            readonly id: 36839;
+                            readonly id: 36945;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -14427,7 +14427,7 @@ export declare const stdStorage: {
                             readonly memberLocation: "9611:6:152";
                             readonly memberName: "_depth";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 35673;
+                            readonly referencedDeclaration: 35779;
                             readonly src: "9606:11:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_uint256";
@@ -14437,15 +14437,15 @@ export declare const stdStorage: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "9584:33:152";
                     }, {
-                        readonly assignments: readonly [36845];
+                        readonly assignments: readonly [36951];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36845;
+                            readonly id: 36951;
                             readonly mutability: "mutable";
                             readonly name: "ins";
                             readonly nameLocation: "9644:3:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36962;
+                            readonly scope: 37068;
                             readonly src: "9627:20:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -14455,7 +14455,7 @@ export declare const stdStorage: {
                             };
                             readonly typeName: {
                                 readonly baseType: {
-                                    readonly id: 36843;
+                                    readonly id: 36949;
                                     readonly name: "bytes32";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "9627:7:152";
@@ -14464,7 +14464,7 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes32";
                                     };
                                 };
-                                readonly id: 36844;
+                                readonly id: 36950;
                                 readonly nodeType: "ArrayTypeName";
                                 readonly src: "9627:9:152";
                                 readonly typeDescriptions: {
@@ -14474,21 +14474,21 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36848;
+                        readonly id: 36954;
                         readonly initialValue: {
                             readonly expression: {
-                                readonly id: 36846;
+                                readonly id: 36952;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36821;
+                                readonly referencedDeclaration: 36927;
                                 readonly src: "9650:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             };
-                            readonly id: 36847;
+                            readonly id: 36953;
                             readonly isConstant: false;
                             readonly isLValue: true;
                             readonly isPure: false;
@@ -14496,7 +14496,7 @@ export declare const stdStorage: {
                             readonly memberLocation: "9655:5:152";
                             readonly memberName: "_keys";
                             readonly nodeType: "MemberAccess";
-                            readonly referencedDeclaration: 35669;
+                            readonly referencedDeclaration: 35775;
                             readonly src: "9650:10:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_array$_t_bytes32_$dyn_storage";
@@ -14506,15 +14506,15 @@ export declare const stdStorage: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "9627:33:152";
                     }, {
-                        readonly assignments: readonly [36850];
+                        readonly assignments: readonly [36956];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36850;
+                            readonly id: 36956;
                             readonly mutability: "mutable";
                             readonly name: "cald";
                             readonly nameLocation: "9684:4:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36962;
+                            readonly scope: 37068;
                             readonly src: "9671:17:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -14523,7 +14523,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 36849;
+                                readonly id: 36955;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "9671:5:152";
@@ -14534,14 +14534,14 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36858;
+                        readonly id: 36964;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 36853;
+                                readonly id: 36959;
                                 readonly name: "fsig";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36832;
+                                readonly referencedDeclaration: 36938;
                                 readonly src: "9708:4:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
@@ -14549,11 +14549,11 @@ export declare const stdStorage: {
                                 };
                             }, {
                                 readonly arguments: readonly [{
-                                    readonly id: 36855;
+                                    readonly id: 36961;
                                     readonly name: "ins";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36845;
+                                    readonly referencedDeclaration: 36951;
                                     readonly src: "9722:3:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
@@ -14565,18 +14565,18 @@ export declare const stdStorage: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                         readonly typeString: "bytes32[] memory";
                                     }];
-                                    readonly id: 36854;
+                                    readonly id: 36960;
                                     readonly name: "flatten";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 37130;
+                                    readonly referencedDeclaration: 37236;
                                     readonly src: "9714:7:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_function_internal_pure$_t_array$_t_bytes32_$dyn_memory_ptr_$returns$_t_bytes_memory_ptr_$";
                                         readonly typeString: "function (bytes32[] memory) pure returns (bytes memory)";
                                     };
                                 };
-                                readonly id: 36856;
+                                readonly id: 36962;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -14601,7 +14601,7 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes memory";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36851;
+                                    readonly id: 36957;
                                     readonly name: "abi";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
@@ -14612,7 +14612,7 @@ export declare const stdStorage: {
                                         readonly typeString: "abi";
                                     };
                                 };
-                                readonly id: 36852;
+                                readonly id: 36958;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -14626,7 +14626,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function () pure returns (bytes memory)";
                                 };
                             };
-                            readonly id: 36857;
+                            readonly id: 36963;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -14646,7 +14646,7 @@ export declare const stdStorage: {
                         readonly src: "9671:56:152";
                     }, {
                         readonly condition: {
-                            readonly id: 36873;
+                            readonly id: 36979;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -14660,18 +14660,18 @@ export declare const stdStorage: {
                                     readonly baseExpression: {
                                         readonly baseExpression: {
                                             readonly expression: {
-                                                readonly id: 36859;
+                                                readonly id: 36965;
                                                 readonly name: "self";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 36821;
+                                                readonly referencedDeclaration: 36927;
                                                 readonly src: "9742:4:152";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                     readonly typeString: "struct StdStorage storage pointer";
                                                 };
                                             };
-                                            readonly id: 36860;
+                                            readonly id: 36966;
                                             readonly isConstant: false;
                                             readonly isLValue: true;
                                             readonly isPure: false;
@@ -14679,20 +14679,20 @@ export declare const stdStorage: {
                                             readonly memberLocation: "9747:5:152";
                                             readonly memberName: "finds";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 35666;
+                                            readonly referencedDeclaration: 35772;
                                             readonly src: "9742:10:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_bool_$_$_$";
                                                 readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => bool)))";
                                             };
                                         };
-                                        readonly id: 36862;
+                                        readonly id: 36968;
                                         readonly indexExpression: {
-                                            readonly id: 36861;
+                                            readonly id: 36967;
                                             readonly name: "who";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 36827;
+                                            readonly referencedDeclaration: 36933;
                                             readonly src: "9753:3:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -14710,13 +14710,13 @@ export declare const stdStorage: {
                                             readonly typeString: "mapping(bytes4 => mapping(bytes32 => bool))";
                                         };
                                     };
-                                    readonly id: 36864;
+                                    readonly id: 36970;
                                     readonly indexExpression: {
-                                        readonly id: 36863;
+                                        readonly id: 36969;
                                         readonly name: "fsig";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36832;
+                                        readonly referencedDeclaration: 36938;
                                         readonly src: "9758:4:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes4";
@@ -14734,26 +14734,26 @@ export declare const stdStorage: {
                                         readonly typeString: "mapping(bytes32 => bool)";
                                     };
                                 };
-                                readonly id: 36872;
+                                readonly id: 36978;
                                 readonly indexExpression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 36868;
+                                            readonly id: 36974;
                                             readonly name: "ins";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 36845;
+                                            readonly referencedDeclaration: 36951;
                                             readonly src: "9791:3:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                 readonly typeString: "bytes32[] memory";
                                             };
                                         }, {
-                                            readonly id: 36869;
+                                            readonly id: 36975;
                                             readonly name: "field_depth";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 36837;
+                                            readonly referencedDeclaration: 36943;
                                             readonly src: "9796:11:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -14769,7 +14769,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "uint256";
                                             }];
                                             readonly expression: {
-                                                readonly id: 36866;
+                                                readonly id: 36972;
                                                 readonly name: "abi";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
@@ -14780,7 +14780,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "abi";
                                                 };
                                             };
-                                            readonly id: 36867;
+                                            readonly id: 36973;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -14794,7 +14794,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "function () pure returns (bytes memory)";
                                             };
                                         };
-                                        readonly id: 36870;
+                                        readonly id: 36976;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -14815,7 +14815,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                             readonly typeString: "bytes memory";
                                         }];
-                                        readonly id: 36865;
+                                        readonly id: 36971;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -14826,7 +14826,7 @@ export declare const stdStorage: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 36871;
+                                    readonly id: 36977;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -14858,44 +14858,44 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 36879;
+                        readonly id: 36985;
                         readonly nodeType: "IfStatement";
                         readonly src: "9737:110:152";
                         readonly trueBody: {
-                            readonly id: 36878;
+                            readonly id: 36984;
                             readonly nodeType: "Block";
                             readonly src: "9812:35:152";
                             readonly statements: readonly [{
                                 readonly expression: {
                                     readonly arguments: readonly [{
-                                        readonly id: 36875;
+                                        readonly id: 36981;
                                         readonly name: "self";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36821;
+                                        readonly referencedDeclaration: 36927;
                                         readonly src: "9831:4:152";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                             readonly typeString: "struct StdStorage storage pointer";
                                         };
                                     }];
                                     readonly expression: {
                                         readonly argumentTypes: readonly [{
-                                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                             readonly typeString: "struct StdStorage storage pointer";
                                         }];
-                                        readonly id: 36874;
+                                        readonly id: 36980;
                                         readonly name: "find";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36614;
+                                        readonly referencedDeclaration: 36720;
                                         readonly src: "9826:4:152";
                                         readonly typeDescriptions: {
-                                            readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_uint256_$";
+                                            readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_uint256_$";
                                             readonly typeString: "function (struct StdStorage storage pointer) returns (uint256)";
                                         };
                                     };
-                                    readonly id: 36876;
+                                    readonly id: 36982;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -14911,21 +14911,21 @@ export declare const stdStorage: {
                                         readonly typeString: "uint256";
                                     };
                                 };
-                                readonly id: 36877;
+                                readonly id: 36983;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "9826:10:152";
                             }];
                         };
                     }, {
-                        readonly assignments: readonly [36881];
+                        readonly assignments: readonly [36987];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36881;
+                            readonly id: 36987;
                             readonly mutability: "mutable";
                             readonly name: "slot";
                             readonly nameLocation: "9864:4:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36962;
+                            readonly scope: 37068;
                             readonly src: "9856:12:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -14934,7 +14934,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 36880;
+                                readonly id: 36986;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "9856:7:152";
@@ -14945,25 +14945,25 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36899;
+                        readonly id: 37005;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly baseExpression: {
                                     readonly baseExpression: {
                                         readonly baseExpression: {
                                             readonly expression: {
-                                                readonly id: 36884;
+                                                readonly id: 36990;
                                                 readonly name: "self";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
-                                                readonly referencedDeclaration: 36821;
+                                                readonly referencedDeclaration: 36927;
                                                 readonly src: "9879:4:152";
                                                 readonly typeDescriptions: {
-                                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                                     readonly typeString: "struct StdStorage storage pointer";
                                                 };
                                             };
-                                            readonly id: 36885;
+                                            readonly id: 36991;
                                             readonly isConstant: false;
                                             readonly isLValue: true;
                                             readonly isPure: false;
@@ -14971,20 +14971,20 @@ export declare const stdStorage: {
                                             readonly memberLocation: "9884:5:152";
                                             readonly memberName: "slots";
                                             readonly nodeType: "MemberAccess";
-                                            readonly referencedDeclaration: 35658;
+                                            readonly referencedDeclaration: 35764;
                                             readonly src: "9879:10:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_mapping$_t_address_$_t_mapping$_t_bytes4_$_t_mapping$_t_bytes32_$_t_uint256_$_$_$";
                                                 readonly typeString: "mapping(address => mapping(bytes4 => mapping(bytes32 => uint256)))";
                                             };
                                         };
-                                        readonly id: 36887;
+                                        readonly id: 36993;
                                         readonly indexExpression: {
-                                            readonly id: 36886;
+                                            readonly id: 36992;
                                             readonly name: "who";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 36827;
+                                            readonly referencedDeclaration: 36933;
                                             readonly src: "9890:3:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_address";
@@ -15002,13 +15002,13 @@ export declare const stdStorage: {
                                             readonly typeString: "mapping(bytes4 => mapping(bytes32 => uint256))";
                                         };
                                     };
-                                    readonly id: 36889;
+                                    readonly id: 36995;
                                     readonly indexExpression: {
-                                        readonly id: 36888;
+                                        readonly id: 36994;
                                         readonly name: "fsig";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36832;
+                                        readonly referencedDeclaration: 36938;
                                         readonly src: "9895:4:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes4";
@@ -15026,26 +15026,26 @@ export declare const stdStorage: {
                                         readonly typeString: "mapping(bytes32 => uint256)";
                                     };
                                 };
-                                readonly id: 36897;
+                                readonly id: 37003;
                                 readonly indexExpression: {
                                     readonly arguments: readonly [{
                                         readonly arguments: readonly [{
-                                            readonly id: 36893;
+                                            readonly id: 36999;
                                             readonly name: "ins";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 36845;
+                                            readonly referencedDeclaration: 36951;
                                             readonly src: "9928:3:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                                 readonly typeString: "bytes32[] memory";
                                             };
                                         }, {
-                                            readonly id: 36894;
+                                            readonly id: 37000;
                                             readonly name: "field_depth";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 36837;
+                                            readonly referencedDeclaration: 36943;
                                             readonly src: "9933:11:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -15061,7 +15061,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "uint256";
                                             }];
                                             readonly expression: {
-                                                readonly id: 36891;
+                                                readonly id: 36997;
                                                 readonly name: "abi";
                                                 readonly nodeType: "Identifier";
                                                 readonly overloadedDeclarations: readonly [];
@@ -15072,7 +15072,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "abi";
                                                 };
                                             };
-                                            readonly id: 36892;
+                                            readonly id: 36998;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -15086,7 +15086,7 @@ export declare const stdStorage: {
                                                 readonly typeString: "function () pure returns (bytes memory)";
                                             };
                                         };
-                                        readonly id: 36895;
+                                        readonly id: 37001;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -15107,7 +15107,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                             readonly typeString: "bytes memory";
                                         }];
-                                        readonly id: 36890;
+                                        readonly id: 36996;
                                         readonly name: "keccak256";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
@@ -15118,7 +15118,7 @@ export declare const stdStorage: {
                                             readonly typeString: "function (bytes memory) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 36896;
+                                    readonly id: 37002;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -15150,7 +15150,7 @@ export declare const stdStorage: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 36883;
+                                readonly id: 36989;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -15162,14 +15162,14 @@ export declare const stdStorage: {
                                     readonly typeString: "type(bytes32)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 36882;
+                                    readonly id: 36988;
                                     readonly name: "bytes32";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "9871:7:152";
                                     readonly typeDescriptions: {};
                                 };
                             };
-                            readonly id: 36898;
+                            readonly id: 37004;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -15188,15 +15188,15 @@ export declare const stdStorage: {
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "9856:92:152";
                     }, {
-                        readonly assignments: readonly [36901];
+                        readonly assignments: readonly [37007];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36901;
+                            readonly id: 37007;
                             readonly mutability: "mutable";
                             readonly name: "fdat";
                             readonly nameLocation: "9967:4:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36962;
+                            readonly scope: 37068;
                             readonly src: "9959:12:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -15205,7 +15205,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 36900;
+                                readonly id: 37006;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "9959:7:152";
@@ -15216,23 +15216,23 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36902;
+                        readonly id: 37008;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "9959:12:152";
                     }, {
-                        readonly id: 36919;
+                        readonly id: 37025;
                         readonly nodeType: "Block";
                         readonly src: "9981:128:152";
                         readonly statements: readonly [{
-                            readonly assignments: readonly [null, 36904];
+                            readonly assignments: readonly [null, 37010];
                             readonly declarations: readonly [null, {
                                 readonly constant: false;
-                                readonly id: 36904;
+                                readonly id: 37010;
                                 readonly mutability: "mutable";
                                 readonly name: "rdat";
                                 readonly nameLocation: "10011:4:152";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 36919;
+                                readonly scope: 37025;
                                 readonly src: "9998:17:152";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "memory";
@@ -15241,7 +15241,7 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes";
                                 };
                                 readonly typeName: {
-                                    readonly id: 36903;
+                                    readonly id: 37009;
                                     readonly name: "bytes";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "9998:5:152";
@@ -15252,14 +15252,14 @@ export declare const stdStorage: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 36909;
+                            readonly id: 37015;
                             readonly initialValue: {
                                 readonly arguments: readonly [{
-                                    readonly id: 36907;
+                                    readonly id: 37013;
                                     readonly name: "cald";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36850;
+                                    readonly referencedDeclaration: 36956;
                                     readonly src: "10034:4:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -15272,18 +15272,18 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes memory";
                                     }];
                                     readonly expression: {
-                                        readonly id: 36905;
+                                        readonly id: 37011;
                                         readonly name: "who";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36827;
+                                        readonly referencedDeclaration: 36933;
                                         readonly src: "10019:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_address";
                                             readonly typeString: "address";
                                         };
                                     };
-                                    readonly id: 36906;
+                                    readonly id: 37012;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -15297,7 +15297,7 @@ export declare const stdStorage: {
                                         readonly typeString: "function (bytes memory) view returns (bool,bytes memory)";
                                     };
                                 };
-                                readonly id: 36908;
+                                readonly id: 37014;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -15317,17 +15317,17 @@ export declare const stdStorage: {
                             readonly src: "9995:44:152";
                         }, {
                             readonly expression: {
-                                readonly id: 36917;
+                                readonly id: 37023;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftHandSide: {
-                                    readonly id: 36910;
+                                    readonly id: 37016;
                                     readonly name: "fdat";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36901;
+                                    readonly referencedDeclaration: 37007;
                                     readonly src: "10053:4:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes32";
@@ -15338,11 +15338,11 @@ export declare const stdStorage: {
                                 readonly operator: "=";
                                 readonly rightHandSide: {
                                     readonly arguments: readonly [{
-                                        readonly id: 36912;
+                                        readonly id: 37018;
                                         readonly name: "rdat";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 36904;
+                                        readonly referencedDeclaration: 37010;
                                         readonly src: "10075:4:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
@@ -15353,14 +15353,14 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         };
-                                        readonly id: 36915;
+                                        readonly id: 37021;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
                                         readonly lValueRequested: false;
                                         readonly leftExpression: {
                                             readonly hexValue: "3332";
-                                            readonly id: 36913;
+                                            readonly id: 37019;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: true;
@@ -15377,11 +15377,11 @@ export declare const stdStorage: {
                                         readonly nodeType: "BinaryOperation";
                                         readonly operator: "*";
                                         readonly rightExpression: {
-                                            readonly id: 36914;
+                                            readonly id: 37020;
                                             readonly name: "field_depth";
                                             readonly nodeType: "Identifier";
                                             readonly overloadedDeclarations: readonly [];
-                                            readonly referencedDeclaration: 36837;
+                                            readonly referencedDeclaration: 36943;
                                             readonly src: "10086:11:152";
                                             readonly typeDescriptions: {
                                                 readonly typeIdentifier: "t_uint256";
@@ -15402,18 +15402,18 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_uint256";
                                             readonly typeString: "uint256";
                                         }];
-                                        readonly id: 36911;
+                                        readonly id: 37017;
                                         readonly name: "bytesToBytes32";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 37089;
+                                        readonly referencedDeclaration: 37195;
                                         readonly src: "10060:14:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_function_internal_pure$_t_bytes_memory_ptr_$_t_uint256_$returns$_t_bytes32_$";
                                             readonly typeString: "function (bytes memory,uint256) pure returns (bytes32)";
                                         };
                                     };
-                                    readonly id: 36916;
+                                    readonly id: 37022;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -15435,20 +15435,20 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 36918;
+                            readonly id: 37024;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "10053:45:152";
                         }];
                     }, {
-                        readonly assignments: readonly [36921];
+                        readonly assignments: readonly [37027];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 36921;
+                            readonly id: 37027;
                             readonly mutability: "mutable";
                             readonly name: "curr";
                             readonly nameLocation: "10126:4:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 36962;
+                            readonly scope: 37068;
                             readonly src: "10118:12:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -15457,7 +15457,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 36920;
+                                readonly id: 37026;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "10118:7:152";
@@ -15468,25 +15468,25 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 36927;
+                        readonly id: 37033;
                         readonly initialValue: {
                             readonly arguments: readonly [{
-                                readonly id: 36924;
+                                readonly id: 37030;
                                 readonly name: "who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36827;
+                                readonly referencedDeclaration: 36933;
                                 readonly src: "10141:3:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 36925;
+                                readonly id: 37031;
                                 readonly name: "slot";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36881;
+                                readonly referencedDeclaration: 36987;
                                 readonly src: "10146:4:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
@@ -15502,18 +15502,18 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes32";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36922;
+                                    readonly id: 37028;
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36587;
+                                    readonly referencedDeclaration: 36693;
                                     readonly src: "10133:2:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
-                                readonly id: 36923;
+                                readonly id: 37029;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -15521,14 +15521,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "10136:4:152";
                                 readonly memberName: "load";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 39298;
+                                readonly referencedDeclaration: 39404;
                                 readonly src: "10133:7:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_view$_t_address_$_t_bytes32_$returns$_t_bytes32_$";
                                     readonly typeString: "function (address,bytes32) view external returns (bytes32)";
                                 };
                             };
-                            readonly id: 36926;
+                            readonly id: 37032;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -15552,17 +15552,17 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
                             };
-                            readonly id: 36930;
+                            readonly id: 37036;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 36928;
+                                readonly id: 37034;
                                 readonly name: "fdat";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36901;
+                                readonly referencedDeclaration: 37007;
                                 readonly src: "10166:4:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
@@ -15572,11 +15572,11 @@ export declare const stdStorage: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "!=";
                             readonly rightExpression: {
-                                readonly id: 36929;
+                                readonly id: 37035;
                                 readonly name: "curr";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36921;
+                                readonly referencedDeclaration: 37027;
                                 readonly src: "10174:4:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
@@ -15589,18 +15589,18 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 36937;
+                        readonly id: 37043;
                         readonly nodeType: "IfStatement";
                         readonly src: "10162:218:152";
                         readonly trueBody: {
-                            readonly id: 36936;
+                            readonly id: 37042;
                             readonly nodeType: "Block";
                             readonly src: "10180:200:152";
                             readonly statements: readonly [{
                                 readonly expression: {
                                     readonly arguments: readonly [{
                                         readonly hexValue: "66616c7365";
-                                        readonly id: 36932;
+                                        readonly id: 37038;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -15615,7 +15615,7 @@ export declare const stdStorage: {
                                         readonly value: "false";
                                     }, {
                                         readonly hexValue: "73746453746f726167652066696e642853746453746f72616765293a205061636b656420736c6f742e205468697320776f756c642063617573652064616e6765726f7573206f76657277726974696e6720616e642063757272656e746c792069736e277420737570706f727465642e";
-                                        readonly id: 36933;
+                                        readonly id: 37039;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: true;
@@ -15637,7 +15637,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_stringliteral_4bfa78e02b745efea2b29d358f6dc28382f5209b1d2b2dbeb8ef0862e74440b3";
                                             readonly typeString: "literal_string \"stdStorage find(StdStorage): Packed slot. This would cause dangerous overwriting and currently isn't supported.\"";
                                         }];
-                                        readonly id: 36931;
+                                        readonly id: 37037;
                                         readonly name: "require";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [-18, -18];
@@ -15648,7 +15648,7 @@ export declare const stdStorage: {
                                             readonly typeString: "function (bool,string memory) pure";
                                         };
                                     };
-                                    readonly id: 36934;
+                                    readonly id: 37040;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -15664,7 +15664,7 @@ export declare const stdStorage: {
                                         readonly typeString: "tuple()";
                                     };
                                 };
-                                readonly id: 36935;
+                                readonly id: 37041;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "10194:175:152";
                             }];
@@ -15672,33 +15672,33 @@ export declare const stdStorage: {
                     }, {
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36941;
+                                readonly id: 37047;
                                 readonly name: "who";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36827;
+                                readonly referencedDeclaration: 36933;
                                 readonly src: "10398:3:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
                                     readonly typeString: "address";
                                 };
                             }, {
-                                readonly id: 36942;
+                                readonly id: 37048;
                                 readonly name: "slot";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36881;
+                                readonly referencedDeclaration: 36987;
                                 readonly src: "10403:4:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
                                     readonly typeString: "bytes32";
                                 };
                             }, {
-                                readonly id: 36943;
+                                readonly id: 37049;
                                 readonly name: "set";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36823;
+                                readonly referencedDeclaration: 36929;
                                 readonly src: "10409:3:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes32";
@@ -15717,18 +15717,18 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes32";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36938;
+                                    readonly id: 37044;
                                     readonly name: "vm";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36587;
+                                    readonly referencedDeclaration: 36693;
                                     readonly src: "10389:2:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_contract$_Vm_$40778";
+                                        readonly typeIdentifier: "t_contract$_Vm_$40884";
                                         readonly typeString: "contract Vm";
                                     };
                                 };
-                                readonly id: 36940;
+                                readonly id: 37046;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -15736,14 +15736,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "10392:5:152";
                                 readonly memberName: "store";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 40352;
+                                readonly referencedDeclaration: 40458;
                                 readonly src: "10389:8:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_function_external_nonpayable$_t_address_$_t_bytes32_$_t_bytes32_$returns$__$";
                                     readonly typeString: "function (address,bytes32,bytes32) external";
                                 };
                             };
-                            readonly id: 36944;
+                            readonly id: 37050;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -15759,12 +15759,12 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36945;
+                        readonly id: 37051;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10389:24:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36948;
+                            readonly id: 37054;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -15775,18 +15775,18 @@ export declare const stdStorage: {
                             readonly src: "10423:19:152";
                             readonly subExpression: {
                                 readonly expression: {
-                                    readonly id: 36946;
+                                    readonly id: 37052;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36821;
+                                    readonly referencedDeclaration: 36927;
                                     readonly src: "10430:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36947;
+                                readonly id: 37053;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -15794,7 +15794,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "10435:7:152";
                                 readonly memberName: "_target";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35675;
+                                readonly referencedDeclaration: 35781;
                                 readonly src: "10430:12:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_address";
@@ -15806,12 +15806,12 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36949;
+                        readonly id: 37055;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10423:19:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36952;
+                            readonly id: 37058;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -15822,18 +15822,18 @@ export declare const stdStorage: {
                             readonly src: "10452:16:152";
                             readonly subExpression: {
                                 readonly expression: {
-                                    readonly id: 36950;
+                                    readonly id: 37056;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36821;
+                                    readonly referencedDeclaration: 36927;
                                     readonly src: "10459:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36951;
+                                readonly id: 37057;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -15841,7 +15841,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "10464:4:152";
                                 readonly memberName: "_sig";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35671;
+                                readonly referencedDeclaration: 35777;
                                 readonly src: "10459:9:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_bytes4";
@@ -15853,12 +15853,12 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36953;
+                        readonly id: 37059;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10452:16:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36956;
+                            readonly id: 37062;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -15869,18 +15869,18 @@ export declare const stdStorage: {
                             readonly src: "10478:17:152";
                             readonly subExpression: {
                                 readonly expression: {
-                                    readonly id: 36954;
+                                    readonly id: 37060;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36821;
+                                    readonly referencedDeclaration: 36927;
                                     readonly src: "10485:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36955;
+                                readonly id: 37061;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -15888,7 +15888,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "10490:5:152";
                                 readonly memberName: "_keys";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35669;
+                                readonly referencedDeclaration: 35775;
                                 readonly src: "10485:10:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_array$_t_bytes32_$dyn_storage";
@@ -15900,12 +15900,12 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36957;
+                        readonly id: 37063;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10478:17:152";
                     }, {
                         readonly expression: {
-                            readonly id: 36960;
+                            readonly id: 37066;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -15916,18 +15916,18 @@ export declare const stdStorage: {
                             readonly src: "10505:18:152";
                             readonly subExpression: {
                                 readonly expression: {
-                                    readonly id: 36958;
+                                    readonly id: 37064;
                                     readonly name: "self";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36821;
+                                    readonly referencedDeclaration: 36927;
                                     readonly src: "10512:4:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                        readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                         readonly typeString: "struct StdStorage storage pointer";
                                     };
                                 };
-                                readonly id: 36959;
+                                readonly id: 37065;
                                 readonly isConstant: false;
                                 readonly isLValue: true;
                                 readonly isPure: false;
@@ -15935,7 +15935,7 @@ export declare const stdStorage: {
                                 readonly memberLocation: "10517:6:152";
                                 readonly memberName: "_depth";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 35673;
+                                readonly referencedDeclaration: 35779;
                                 readonly src: "10512:11:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -15947,7 +15947,7 @@ export declare const stdStorage: {
                                 readonly typeString: "tuple()";
                             };
                         };
-                        readonly id: 36961;
+                        readonly id: 37067;
                         readonly nodeType: "ExpressionStatement";
                         readonly src: "10505:18:152";
                     }];
@@ -15958,50 +15958,50 @@ export declare const stdStorage: {
                 readonly name: "checked_write";
                 readonly nameLocation: "9444:13:152";
                 readonly parameters: {
-                    readonly id: 36824;
+                    readonly id: 36930;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36821;
+                        readonly id: 36927;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "9477:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36963;
+                        readonly scope: 37069;
                         readonly src: "9458:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36820;
+                            readonly id: 36926;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36819;
+                                readonly id: 36925;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["9458:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "9458:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "9458:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 36823;
+                        readonly id: 36929;
                         readonly mutability: "mutable";
                         readonly name: "set";
                         readonly nameLocation: "9491:3:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36963;
+                        readonly scope: 37069;
                         readonly src: "9483:11:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16010,7 +16010,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 36822;
+                            readonly id: 36928;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "9483:7:152";
@@ -16024,57 +16024,57 @@ export declare const stdStorage: {
                     readonly src: "9457:38:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36825;
+                    readonly id: 36931;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [];
                     readonly src: "9505:0:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36977;
+                readonly id: 37083;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "10536:131:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36976;
+                    readonly id: 37082;
                     readonly nodeType: "Block";
                     readonly src: "10610:57:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36973;
+                                readonly id: 37079;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36966;
+                                readonly referencedDeclaration: 37072;
                                 readonly src: "10655:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36971;
+                                    readonly id: 37077;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "10627:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36972;
+                                readonly id: 37078;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -16082,14 +16082,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "10642:12:152";
                                 readonly memberName: "read_bytes32";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36384;
+                                readonly referencedDeclaration: 36490;
                                 readonly src: "10627:27:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_bytes32_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_bytes32_$";
                                     readonly typeString: "function (struct StdStorage storage pointer) returns (bytes32)";
                                 };
                             };
-                            readonly id: 36974;
+                            readonly id: 37080;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -16105,8 +16105,8 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes32";
                             };
                         };
-                        readonly functionReturnParameters: 36970;
-                        readonly id: 36975;
+                        readonly functionReturnParameters: 37076;
+                        readonly id: 37081;
                         readonly nodeType: "Return";
                         readonly src: "10620:40:152";
                     }];
@@ -16117,38 +16117,38 @@ export declare const stdStorage: {
                 readonly name: "read_bytes32";
                 readonly nameLocation: "10545:12:152";
                 readonly parameters: {
-                    readonly id: 36967;
+                    readonly id: 37073;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36966;
+                        readonly id: 37072;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "10577:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36977;
+                        readonly scope: 37083;
                         readonly src: "10558:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36965;
+                            readonly id: 37071;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36964;
+                                readonly id: 37070;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["10558:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "10558:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "10558:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -16157,16 +16157,16 @@ export declare const stdStorage: {
                     readonly src: "10557:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36970;
+                    readonly id: 37076;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36969;
+                        readonly id: 37075;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36977;
+                        readonly scope: 37083;
                         readonly src: "10601:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16175,7 +16175,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 36968;
+                            readonly id: 37074;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10601:7:152";
@@ -16188,52 +16188,52 @@ export declare const stdStorage: {
                     }];
                     readonly src: "10600:9:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 36991;
+                readonly id: 37097;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "10673:122:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 36990;
+                    readonly id: 37096;
                     readonly nodeType: "Block";
                     readonly src: "10741:54:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 36987;
+                                readonly id: 37093;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36980;
+                                readonly referencedDeclaration: 37086;
                                 readonly src: "10783:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36985;
+                                    readonly id: 37091;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "10758:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 36986;
+                                readonly id: 37092;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -16241,14 +16241,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "10773:9:152";
                                 readonly memberName: "read_bool";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36415;
+                                readonly referencedDeclaration: 36521;
                                 readonly src: "10758:24:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_bool_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_bool_$";
                                     readonly typeString: "function (struct StdStorage storage pointer) returns (bool)";
                                 };
                             };
-                            readonly id: 36988;
+                            readonly id: 37094;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -16264,8 +16264,8 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly functionReturnParameters: 36984;
-                        readonly id: 36989;
+                        readonly functionReturnParameters: 37090;
+                        readonly id: 37095;
                         readonly nodeType: "Return";
                         readonly src: "10751:37:152";
                     }];
@@ -16276,38 +16276,38 @@ export declare const stdStorage: {
                 readonly name: "read_bool";
                 readonly nameLocation: "10682:9:152";
                 readonly parameters: {
-                    readonly id: 36981;
+                    readonly id: 37087;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36980;
+                        readonly id: 37086;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "10711:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36991;
+                        readonly scope: 37097;
                         readonly src: "10692:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36979;
+                            readonly id: 37085;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36978;
+                                readonly id: 37084;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["10692:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "10692:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "10692:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -16316,16 +16316,16 @@ export declare const stdStorage: {
                     readonly src: "10691:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36984;
+                    readonly id: 37090;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36983;
+                        readonly id: 37089;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 36991;
+                        readonly scope: 37097;
                         readonly src: "10735:4:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16334,7 +16334,7 @@ export declare const stdStorage: {
                             readonly typeString: "bool";
                         };
                         readonly typeName: {
-                            readonly id: 36982;
+                            readonly id: 37088;
                             readonly name: "bool";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10735:4:152";
@@ -16347,52 +16347,52 @@ export declare const stdStorage: {
                     }];
                     readonly src: "10734:6:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 37005;
+                readonly id: 37111;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "10801:131:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 37004;
+                    readonly id: 37110;
                     readonly nodeType: "Block";
                     readonly src: "10875:57:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 37001;
+                                readonly id: 37107;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 36994;
+                                readonly referencedDeclaration: 37100;
                                 readonly src: "10920:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }];
                                 readonly expression: {
-                                    readonly id: 36999;
+                                    readonly id: 37105;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "10892:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 37000;
+                                readonly id: 37106;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -16400,14 +16400,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "10907:12:152";
                                 readonly memberName: "read_address";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36434;
+                                readonly referencedDeclaration: 36540;
                                 readonly src: "10892:27:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_address_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_address_$";
                                     readonly typeString: "function (struct StdStorage storage pointer) returns (address)";
                                 };
                             };
-                            readonly id: 37002;
+                            readonly id: 37108;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -16423,8 +16423,8 @@ export declare const stdStorage: {
                                 readonly typeString: "address";
                             };
                         };
-                        readonly functionReturnParameters: 36998;
-                        readonly id: 37003;
+                        readonly functionReturnParameters: 37104;
+                        readonly id: 37109;
                         readonly nodeType: "Return";
                         readonly src: "10885:40:152";
                     }];
@@ -16435,38 +16435,38 @@ export declare const stdStorage: {
                 readonly name: "read_address";
                 readonly nameLocation: "10810:12:152";
                 readonly parameters: {
-                    readonly id: 36995;
+                    readonly id: 37101;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36994;
+                        readonly id: 37100;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "10842:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37005;
+                        readonly scope: 37111;
                         readonly src: "10823:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 36993;
+                            readonly id: 37099;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 36992;
+                                readonly id: 37098;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["10823:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "10823:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "10823:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -16475,16 +16475,16 @@ export declare const stdStorage: {
                     readonly src: "10822:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 36998;
+                    readonly id: 37104;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 36997;
+                        readonly id: 37103;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37005;
+                        readonly scope: 37111;
                         readonly src: "10866:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16493,7 +16493,7 @@ export declare const stdStorage: {
                             readonly typeString: "address";
                         };
                         readonly typeName: {
-                            readonly id: 36996;
+                            readonly id: 37102;
                             readonly name: "address";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "10866:7:152";
@@ -16507,52 +16507,52 @@ export declare const stdStorage: {
                     }];
                     readonly src: "10865:9:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 37019;
+                readonly id: 37125;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "10938:125:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 37018;
+                    readonly id: 37124;
                     readonly nodeType: "Block";
                     readonly src: "11009:54:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 37015;
+                                readonly id: 37121;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 37008;
+                                readonly referencedDeclaration: 37114;
                                 readonly src: "11051:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }];
                                 readonly expression: {
-                                    readonly id: 37013;
+                                    readonly id: 37119;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "11026:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 37014;
+                                readonly id: 37120;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -16560,14 +16560,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "11041:9:152";
                                 readonly memberName: "read_uint";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36453;
+                                readonly referencedDeclaration: 36559;
                                 readonly src: "11026:24:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_uint256_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_uint256_$";
                                     readonly typeString: "function (struct StdStorage storage pointer) returns (uint256)";
                                 };
                             };
-                            readonly id: 37016;
+                            readonly id: 37122;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -16583,8 +16583,8 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                         };
-                        readonly functionReturnParameters: 37012;
-                        readonly id: 37017;
+                        readonly functionReturnParameters: 37118;
+                        readonly id: 37123;
                         readonly nodeType: "Return";
                         readonly src: "11019:37:152";
                     }];
@@ -16595,38 +16595,38 @@ export declare const stdStorage: {
                 readonly name: "read_uint";
                 readonly nameLocation: "10947:9:152";
                 readonly parameters: {
-                    readonly id: 37009;
+                    readonly id: 37115;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 37008;
+                        readonly id: 37114;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "10976:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37019;
+                        readonly scope: 37125;
                         readonly src: "10957:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 37007;
+                            readonly id: 37113;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 37006;
+                                readonly id: 37112;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["10957:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "10957:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "10957:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -16635,16 +16635,16 @@ export declare const stdStorage: {
                     readonly src: "10956:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 37012;
+                    readonly id: 37118;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 37011;
+                        readonly id: 37117;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37019;
+                        readonly scope: 37125;
                         readonly src: "11000:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16653,7 +16653,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 37010;
+                            readonly id: 37116;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11000:7:152";
@@ -16666,52 +16666,52 @@ export declare const stdStorage: {
                     }];
                     readonly src: "10999:9:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 37033;
+                readonly id: 37139;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11069:122:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 37032;
+                    readonly id: 37138;
                     readonly nodeType: "Block";
                     readonly src: "11138:53:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
                         readonly expression: {
                             readonly arguments: readonly [{
-                                readonly id: 37029;
+                                readonly id: 37135;
                                 readonly name: "self";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 37022;
+                                readonly referencedDeclaration: 37128;
                                 readonly src: "11179:4:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 };
                             }];
                             readonly expression: {
                                 readonly argumentTypes: readonly [{
-                                    readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                    readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                     readonly typeString: "struct StdStorage storage pointer";
                                 }];
                                 readonly expression: {
-                                    readonly id: 37027;
+                                    readonly id: 37133;
                                     readonly name: "stdStorageSafe";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 36570;
+                                    readonly referencedDeclaration: 36676;
                                     readonly src: "11155:14:152";
                                     readonly typeDescriptions: {
-                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36570_$";
+                                        readonly typeIdentifier: "t_type$_t_contract$_stdStorageSafe_$36676_$";
                                         readonly typeString: "type(library stdStorageSafe)";
                                     };
                                 };
-                                readonly id: 37028;
+                                readonly id: 37134;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -16719,14 +16719,14 @@ export declare const stdStorage: {
                                 readonly memberLocation: "11170:8:152";
                                 readonly memberName: "read_int";
                                 readonly nodeType: "MemberAccess";
-                                readonly referencedDeclaration: 36472;
+                                readonly referencedDeclaration: 36578;
                                 readonly src: "11155:23:152";
                                 readonly typeDescriptions: {
-                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35678_storage_ptr_$returns$_t_int256_$";
+                                    readonly typeIdentifier: "t_function_internal_nonpayable$_t_struct$_StdStorage_$35784_storage_ptr_$returns$_t_int256_$";
                                     readonly typeString: "function (struct StdStorage storage pointer) returns (int256)";
                                 };
                             };
-                            readonly id: 37030;
+                            readonly id: 37136;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -16742,8 +16742,8 @@ export declare const stdStorage: {
                                 readonly typeString: "int256";
                             };
                         };
-                        readonly functionReturnParameters: 37026;
-                        readonly id: 37031;
+                        readonly functionReturnParameters: 37132;
+                        readonly id: 37137;
                         readonly nodeType: "Return";
                         readonly src: "11148:36:152";
                     }];
@@ -16754,38 +16754,38 @@ export declare const stdStorage: {
                 readonly name: "read_int";
                 readonly nameLocation: "11078:8:152";
                 readonly parameters: {
-                    readonly id: 37023;
+                    readonly id: 37129;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 37022;
+                        readonly id: 37128;
                         readonly mutability: "mutable";
                         readonly name: "self";
                         readonly nameLocation: "11106:4:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37033;
+                        readonly scope: 37139;
                         readonly src: "11087:23:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "storage";
                         readonly typeDescriptions: {
-                            readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                            readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                             readonly typeString: "struct StdStorage";
                         };
                         readonly typeName: {
-                            readonly id: 37021;
+                            readonly id: 37127;
                             readonly nodeType: "UserDefinedTypeName";
                             readonly pathNode: {
-                                readonly id: 37020;
+                                readonly id: 37126;
                                 readonly name: "StdStorage";
                                 readonly nameLocations: readonly ["11087:10:152"];
                                 readonly nodeType: "IdentifierPath";
-                                readonly referencedDeclaration: 35678;
+                                readonly referencedDeclaration: 35784;
                                 readonly src: "11087:10:152";
                             };
-                            readonly referencedDeclaration: 35678;
+                            readonly referencedDeclaration: 35784;
                             readonly src: "11087:10:152";
                             readonly typeDescriptions: {
-                                readonly typeIdentifier: "t_struct$_StdStorage_$35678_storage_ptr";
+                                readonly typeIdentifier: "t_struct$_StdStorage_$35784_storage_ptr";
                                 readonly typeString: "struct StdStorage";
                             };
                         };
@@ -16794,16 +16794,16 @@ export declare const stdStorage: {
                     readonly src: "11086:25:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 37026;
+                    readonly id: 37132;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 37025;
+                        readonly id: 37131;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37033;
+                        readonly scope: 37139;
                         readonly src: "11130:6:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -16812,7 +16812,7 @@ export declare const stdStorage: {
                             readonly typeString: "int256";
                         };
                         readonly typeName: {
-                            readonly id: 37024;
+                            readonly id: 37130;
                             readonly name: "int256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11130:6:152";
@@ -16825,30 +16825,30 @@ export declare const stdStorage: {
                     }];
                     readonly src: "11129:8:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "nonpayable";
                 readonly virtual: false;
                 readonly visibility: "internal";
             }, {
-                readonly id: 37089;
+                readonly id: 37195;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11248:304:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 37088;
+                    readonly id: 37194;
                     readonly nodeType: "Block";
                     readonly src: "11335:217:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [37043];
+                        readonly assignments: readonly [37149];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 37043;
+                            readonly id: 37149;
                             readonly mutability: "mutable";
                             readonly name: "out";
                             readonly nameLocation: "11353:3:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 37088;
+                            readonly scope: 37194;
                             readonly src: "11345:11:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -16857,7 +16857,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes32";
                             };
                             readonly typeName: {
-                                readonly id: 37042;
+                                readonly id: 37148;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "11345:7:152";
@@ -16868,19 +16868,19 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 37044;
+                        readonly id: 37150;
                         readonly nodeType: "VariableDeclarationStatement";
                         readonly src: "11345:11:152";
                     }, {
-                        readonly assignments: readonly [37046];
+                        readonly assignments: readonly [37152];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 37046;
+                            readonly id: 37152;
                             readonly mutability: "mutable";
                             readonly name: "max";
                             readonly nameLocation: "11375:3:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 37088;
+                            readonly scope: 37194;
                             readonly src: "11367:11:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "default";
@@ -16889,7 +16889,7 @@ export declare const stdStorage: {
                                 readonly typeString: "uint256";
                             };
                             readonly typeName: {
-                                readonly id: 37045;
+                                readonly id: 37151;
                                 readonly name: "uint256";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "11367:7:152";
@@ -16900,32 +16900,32 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 37055;
+                        readonly id: 37161;
                         readonly initialValue: {
                             readonly condition: {
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 37050;
+                                readonly id: 37156;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 37047;
+                                        readonly id: 37153;
                                         readonly name: "b";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 37035;
+                                        readonly referencedDeclaration: 37141;
                                         readonly src: "11381:1:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                             readonly typeString: "bytes memory";
                                         };
                                     };
-                                    readonly id: 37048;
+                                    readonly id: 37154;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -16943,7 +16943,7 @@ export declare const stdStorage: {
                                 readonly operator: ">";
                                 readonly rightExpression: {
                                     readonly hexValue: "3332";
-                                    readonly id: 37049;
+                                    readonly id: 37155;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -16965,18 +16965,18 @@ export declare const stdStorage: {
                             };
                             readonly falseExpression: {
                                 readonly expression: {
-                                    readonly id: 37052;
+                                    readonly id: 37158;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 37035;
+                                    readonly referencedDeclaration: 37141;
                                     readonly src: "11402:1:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_bytes_memory_ptr";
                                         readonly typeString: "bytes memory";
                                     };
                                 };
-                                readonly id: 37053;
+                                readonly id: 37159;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -16990,7 +16990,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 37054;
+                            readonly id: 37160;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -16999,7 +16999,7 @@ export declare const stdStorage: {
                             readonly src: "11381:29:152";
                             readonly trueExpression: {
                                 readonly hexValue: "3332";
-                                readonly id: 37051;
+                                readonly id: 37157;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -17022,22 +17022,22 @@ export declare const stdStorage: {
                         readonly src: "11367:43:152";
                     }, {
                         readonly body: {
-                            readonly id: 37084;
+                            readonly id: 37190;
                             readonly nodeType: "Block";
                             readonly src: "11454:72:152";
                             readonly statements: readonly [{
                                 readonly expression: {
-                                    readonly id: 37082;
+                                    readonly id: 37188;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
                                     readonly lValueRequested: false;
                                     readonly leftHandSide: {
-                                        readonly id: 37066;
+                                        readonly id: 37172;
                                         readonly name: "out";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 37043;
+                                        readonly referencedDeclaration: 37149;
                                         readonly src: "11468:3:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_bytes32";
@@ -17051,7 +17051,7 @@ export declare const stdStorage: {
                                             readonly typeIdentifier: "t_bytes32";
                                             readonly typeString: "bytes32";
                                         };
-                                        readonly id: 37081;
+                                        readonly id: 37187;
                                         readonly isConstant: false;
                                         readonly isLValue: false;
                                         readonly isPure: false;
@@ -17062,41 +17062,41 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_bytes1";
                                                     readonly typeString: "bytes1";
                                                 };
-                                                readonly id: 37075;
+                                                readonly id: 37181;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
                                                     readonly baseExpression: {
-                                                        readonly id: 37069;
+                                                        readonly id: 37175;
                                                         readonly name: "b";
                                                         readonly nodeType: "Identifier";
                                                         readonly overloadedDeclarations: readonly [];
-                                                        readonly referencedDeclaration: 37035;
+                                                        readonly referencedDeclaration: 37141;
                                                         readonly src: "11483:1:152";
                                                         readonly typeDescriptions: {
                                                             readonly typeIdentifier: "t_bytes_memory_ptr";
                                                             readonly typeString: "bytes memory";
                                                         };
                                                     };
-                                                    readonly id: 37073;
+                                                    readonly id: 37179;
                                                     readonly indexExpression: {
                                                         readonly commonType: {
                                                             readonly typeIdentifier: "t_uint256";
                                                             readonly typeString: "uint256";
                                                         };
-                                                        readonly id: 37072;
+                                                        readonly id: 37178;
                                                         readonly isConstant: false;
                                                         readonly isLValue: false;
                                                         readonly isPure: false;
                                                         readonly lValueRequested: false;
                                                         readonly leftExpression: {
-                                                            readonly id: 37070;
+                                                            readonly id: 37176;
                                                             readonly name: "offset";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 37037;
+                                                            readonly referencedDeclaration: 37143;
                                                             readonly src: "11485:6:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_uint256";
@@ -17106,11 +17106,11 @@ export declare const stdStorage: {
                                                         readonly nodeType: "BinaryOperation";
                                                         readonly operator: "+";
                                                         readonly rightExpression: {
-                                                            readonly id: 37071;
+                                                            readonly id: 37177;
                                                             readonly name: "i";
                                                             readonly nodeType: "Identifier";
                                                             readonly overloadedDeclarations: readonly [];
-                                                            readonly referencedDeclaration: 37057;
+                                                            readonly referencedDeclaration: 37163;
                                                             readonly src: "11494:1:152";
                                                             readonly typeDescriptions: {
                                                                 readonly typeIdentifier: "t_uint256";
@@ -17138,7 +17138,7 @@ export declare const stdStorage: {
                                                 readonly operator: "&";
                                                 readonly rightExpression: {
                                                     readonly hexValue: "30784646";
-                                                    readonly id: 37074;
+                                                    readonly id: 37180;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -17163,7 +17163,7 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_bytes1";
                                                     readonly typeString: "bytes1";
                                                 }];
-                                                readonly id: 37068;
+                                                readonly id: 37174;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: true;
@@ -17175,14 +17175,14 @@ export declare const stdStorage: {
                                                     readonly typeString: "type(bytes32)";
                                                 };
                                                 readonly typeName: {
-                                                    readonly id: 37067;
+                                                    readonly id: 37173;
                                                     readonly name: "bytes32";
                                                     readonly nodeType: "ElementaryTypeName";
                                                     readonly src: "11475:7:152";
                                                     readonly typeDescriptions: {};
                                                 };
                                             };
-                                            readonly id: 37076;
+                                            readonly id: 37182;
                                             readonly isConstant: false;
                                             readonly isLValue: false;
                                             readonly isPure: false;
@@ -17206,17 +17206,17 @@ export declare const stdStorage: {
                                                     readonly typeIdentifier: "t_uint256";
                                                     readonly typeString: "uint256";
                                                 };
-                                                readonly id: 37079;
+                                                readonly id: 37185;
                                                 readonly isConstant: false;
                                                 readonly isLValue: false;
                                                 readonly isPure: false;
                                                 readonly lValueRequested: false;
                                                 readonly leftExpression: {
-                                                    readonly id: 37077;
+                                                    readonly id: 37183;
                                                     readonly name: "i";
                                                     readonly nodeType: "Identifier";
                                                     readonly overloadedDeclarations: readonly [];
-                                                    readonly referencedDeclaration: 37057;
+                                                    readonly referencedDeclaration: 37163;
                                                     readonly src: "11509:1:152";
                                                     readonly typeDescriptions: {
                                                         readonly typeIdentifier: "t_uint256";
@@ -17227,7 +17227,7 @@ export declare const stdStorage: {
                                                 readonly operator: "*";
                                                 readonly rightExpression: {
                                                     readonly hexValue: "38";
-                                                    readonly id: 37078;
+                                                    readonly id: 37184;
                                                     readonly isConstant: false;
                                                     readonly isLValue: false;
                                                     readonly isPure: true;
@@ -17247,7 +17247,7 @@ export declare const stdStorage: {
                                                     readonly typeString: "uint256";
                                                 };
                                             }];
-                                            readonly id: 37080;
+                                            readonly id: 37186;
                                             readonly isConstant: false;
                                             readonly isInlineArray: false;
                                             readonly isLValue: false;
@@ -17272,7 +17272,7 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes32";
                                     };
                                 };
-                                readonly id: 37083;
+                                readonly id: 37189;
                                 readonly nodeType: "ExpressionStatement";
                                 readonly src: "11468:47:152";
                             }];
@@ -17282,17 +17282,17 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 37062;
+                            readonly id: 37168;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 37060;
+                                readonly id: 37166;
                                 readonly name: "i";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 37057;
+                                readonly referencedDeclaration: 37163;
                                 readonly src: "11440:1:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -17302,11 +17302,11 @@ export declare const stdStorage: {
                             readonly nodeType: "BinaryOperation";
                             readonly operator: "<";
                             readonly rightExpression: {
-                                readonly id: 37061;
+                                readonly id: 37167;
                                 readonly name: "max";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 37046;
+                                readonly referencedDeclaration: 37152;
                                 readonly src: "11444:3:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -17319,17 +17319,17 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 37085;
+                        readonly id: 37191;
                         readonly initializationExpression: {
-                            readonly assignments: readonly [37057];
+                            readonly assignments: readonly [37163];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 37057;
+                                readonly id: 37163;
                                 readonly mutability: "mutable";
                                 readonly name: "i";
                                 readonly nameLocation: "11433:1:152";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 37085;
+                                readonly scope: 37191;
                                 readonly src: "11425:9:152";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -17338,7 +17338,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 37056;
+                                    readonly id: 37162;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "11425:7:152";
@@ -17349,10 +17349,10 @@ export declare const stdStorage: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 37059;
+                            readonly id: 37165;
                             readonly initialValue: {
                                 readonly hexValue: "30";
-                                readonly id: 37058;
+                                readonly id: 37164;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -17371,7 +17371,7 @@ export declare const stdStorage: {
                         };
                         readonly loopExpression: {
                             readonly expression: {
-                                readonly id: 37064;
+                                readonly id: 37170;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -17381,11 +17381,11 @@ export declare const stdStorage: {
                                 readonly prefix: false;
                                 readonly src: "11449:3:152";
                                 readonly subExpression: {
-                                    readonly id: 37063;
+                                    readonly id: 37169;
                                     readonly name: "i";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 37057;
+                                    readonly referencedDeclaration: 37163;
                                     readonly src: "11449:1:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -17397,7 +17397,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 37065;
+                            readonly id: 37171;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "11449:3:152";
                         };
@@ -17405,19 +17405,19 @@ export declare const stdStorage: {
                         readonly src: "11420:106:152";
                     }, {
                         readonly expression: {
-                            readonly id: 37086;
+                            readonly id: 37192;
                             readonly name: "out";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 37043;
+                            readonly referencedDeclaration: 37149;
                             readonly src: "11542:3:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes32";
                                 readonly typeString: "bytes32";
                             };
                         };
-                        readonly functionReturnParameters: 37041;
-                        readonly id: 37087;
+                        readonly functionReturnParameters: 37147;
+                        readonly id: 37193;
                         readonly nodeType: "Return";
                         readonly src: "11535:10:152";
                     }];
@@ -17428,16 +17428,16 @@ export declare const stdStorage: {
                 readonly name: "bytesToBytes32";
                 readonly nameLocation: "11257:14:152";
                 readonly parameters: {
-                    readonly id: 37038;
+                    readonly id: 37144;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 37035;
+                        readonly id: 37141;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "11285:1:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37089;
+                        readonly scope: 37195;
                         readonly src: "11272:14:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -17446,7 +17446,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 37034;
+                            readonly id: 37140;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11272:5:152";
@@ -17458,12 +17458,12 @@ export declare const stdStorage: {
                         readonly visibility: "internal";
                     }, {
                         readonly constant: false;
-                        readonly id: 37037;
+                        readonly id: 37143;
                         readonly mutability: "mutable";
                         readonly name: "offset";
                         readonly nameLocation: "11296:6:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37089;
+                        readonly scope: 37195;
                         readonly src: "11288:14:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17472,7 +17472,7 @@ export declare const stdStorage: {
                             readonly typeString: "uint256";
                         };
                         readonly typeName: {
-                            readonly id: 37036;
+                            readonly id: 37142;
                             readonly name: "uint256";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11288:7:152";
@@ -17486,16 +17486,16 @@ export declare const stdStorage: {
                     readonly src: "11271:32:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 37041;
+                    readonly id: 37147;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 37040;
+                        readonly id: 37146;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37089;
+                        readonly scope: 37195;
                         readonly src: "11326:7:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "default";
@@ -17504,7 +17504,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes32";
                         };
                         readonly typeName: {
-                            readonly id: 37039;
+                            readonly id: 37145;
                             readonly name: "bytes32";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11326:7:152";
@@ -17517,30 +17517,30 @@ export declare const stdStorage: {
                     }];
                     readonly src: "11325:9:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "private";
             }, {
-                readonly id: 37130;
+                readonly id: 37236;
                 readonly nodeType: "FunctionDefinition";
                 readonly src: "11609:393:152";
                 readonly nodes: readonly [];
                 readonly body: {
-                    readonly id: 37129;
+                    readonly id: 37235;
                     readonly nodeType: "Block";
                     readonly src: "11682:320:152";
                     readonly nodes: readonly [];
                     readonly statements: readonly [{
-                        readonly assignments: readonly [37098];
+                        readonly assignments: readonly [37204];
                         readonly declarations: readonly [{
                             readonly constant: false;
-                            readonly id: 37098;
+                            readonly id: 37204;
                             readonly mutability: "mutable";
                             readonly name: "result";
                             readonly nameLocation: "11705:6:152";
                             readonly nodeType: "VariableDeclaration";
-                            readonly scope: 37129;
+                            readonly scope: 37235;
                             readonly src: "11692:19:152";
                             readonly stateVariable: false;
                             readonly storageLocation: "memory";
@@ -17549,7 +17549,7 @@ export declare const stdStorage: {
                                 readonly typeString: "bytes";
                             };
                             readonly typeName: {
-                                readonly id: 37097;
+                                readonly id: 37203;
                                 readonly name: "bytes";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "11692:5:152";
@@ -17560,32 +17560,32 @@ export declare const stdStorage: {
                             };
                             readonly visibility: "internal";
                         }];
-                        readonly id: 37106;
+                        readonly id: 37212;
                         readonly initialValue: {
                             readonly arguments: readonly [{
                                 readonly commonType: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 };
-                                readonly id: 37104;
+                                readonly id: 37210;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
                                 readonly lValueRequested: false;
                                 readonly leftExpression: {
                                     readonly expression: {
-                                        readonly id: 37101;
+                                        readonly id: 37207;
                                         readonly name: "b";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 37092;
+                                        readonly referencedDeclaration: 37198;
                                         readonly src: "11724:1:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                             readonly typeString: "bytes32[] memory";
                                         };
                                     };
-                                    readonly id: 37102;
+                                    readonly id: 37208;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: false;
@@ -17603,7 +17603,7 @@ export declare const stdStorage: {
                                 readonly operator: "*";
                                 readonly rightExpression: {
                                     readonly hexValue: "3332";
-                                    readonly id: 37103;
+                                    readonly id: 37209;
                                     readonly isConstant: false;
                                     readonly isLValue: false;
                                     readonly isPure: true;
@@ -17628,7 +17628,7 @@ export declare const stdStorage: {
                                     readonly typeIdentifier: "t_uint256";
                                     readonly typeString: "uint256";
                                 }];
-                                readonly id: 37100;
+                                readonly id: 37206;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -17640,7 +17640,7 @@ export declare const stdStorage: {
                                     readonly typeString: "function (uint256) pure returns (bytes memory)";
                                 };
                                 readonly typeName: {
-                                    readonly id: 37099;
+                                    readonly id: 37205;
                                     readonly name: "bytes";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "11718:5:152";
@@ -17650,7 +17650,7 @@ export declare const stdStorage: {
                                     };
                                 };
                             };
-                            readonly id: 37105;
+                            readonly id: 37211;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
@@ -17670,19 +17670,19 @@ export declare const stdStorage: {
                         readonly src: "11692:46:152";
                     }, {
                         readonly body: {
-                            readonly id: 37125;
+                            readonly id: 37231;
                             readonly nodeType: "Block";
                             readonly src: "11787:185:152";
                             readonly statements: readonly [{
-                                readonly assignments: readonly [37119];
+                                readonly assignments: readonly [37225];
                                 readonly declarations: readonly [{
                                     readonly constant: false;
-                                    readonly id: 37119;
+                                    readonly id: 37225;
                                     readonly mutability: "mutable";
                                     readonly name: "k";
                                     readonly nameLocation: "11809:1:152";
                                     readonly nodeType: "VariableDeclaration";
-                                    readonly scope: 37125;
+                                    readonly scope: 37231;
                                     readonly src: "11801:9:152";
                                     readonly stateVariable: false;
                                     readonly storageLocation: "default";
@@ -17691,7 +17691,7 @@ export declare const stdStorage: {
                                         readonly typeString: "bytes32";
                                     };
                                     readonly typeName: {
-                                        readonly id: 37118;
+                                        readonly id: 37224;
                                         readonly name: "bytes32";
                                         readonly nodeType: "ElementaryTypeName";
                                         readonly src: "11801:7:152";
@@ -17702,27 +17702,27 @@ export declare const stdStorage: {
                                     };
                                     readonly visibility: "internal";
                                 }];
-                                readonly id: 37123;
+                                readonly id: 37229;
                                 readonly initialValue: {
                                     readonly baseExpression: {
-                                        readonly id: 37120;
+                                        readonly id: 37226;
                                         readonly name: "b";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 37092;
+                                        readonly referencedDeclaration: 37198;
                                         readonly src: "11813:1:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                             readonly typeString: "bytes32[] memory";
                                         };
                                     };
-                                    readonly id: 37122;
+                                    readonly id: 37228;
                                     readonly indexExpression: {
-                                        readonly id: 37121;
+                                        readonly id: 37227;
                                         readonly name: "i";
                                         readonly nodeType: "Identifier";
                                         readonly overloadedDeclarations: readonly [];
-                                        readonly referencedDeclaration: 37108;
+                                        readonly referencedDeclaration: 37214;
                                         readonly src: "11815:1:152";
                                         readonly typeDescriptions: {
                                             readonly typeIdentifier: "t_uint256";
@@ -17815,25 +17815,25 @@ export declare const stdStorage: {
                                 readonly documentation: "@solidity memory-safe-assembly";
                                 readonly evmVersion: "paris";
                                 readonly externalReferences: readonly [{
-                                    readonly declaration: 37108;
+                                    readonly declaration: 37214;
                                     readonly isOffset: false;
                                     readonly isSlot: false;
                                     readonly src: "11940:1:152";
                                     readonly valueSize: 1;
                                 }, {
-                                    readonly declaration: 37119;
+                                    readonly declaration: 37225;
                                     readonly isOffset: false;
                                     readonly isSlot: false;
                                     readonly src: "11946:1:152";
                                     readonly valueSize: 1;
                                 }, {
-                                    readonly declaration: 37098;
+                                    readonly declaration: 37204;
                                     readonly isOffset: false;
                                     readonly isSlot: false;
                                     readonly src: "11916:6:152";
                                     readonly valueSize: 1;
                                 }];
-                                readonly id: 37124;
+                                readonly id: 37230;
                                 readonly nodeType: "InlineAssembly";
                                 readonly src: "11878:84:152";
                             }];
@@ -17843,17 +17843,17 @@ export declare const stdStorage: {
                                 readonly typeIdentifier: "t_uint256";
                                 readonly typeString: "uint256";
                             };
-                            readonly id: 37114;
+                            readonly id: 37220;
                             readonly isConstant: false;
                             readonly isLValue: false;
                             readonly isPure: false;
                             readonly lValueRequested: false;
                             readonly leftExpression: {
-                                readonly id: 37111;
+                                readonly id: 37217;
                                 readonly name: "i";
                                 readonly nodeType: "Identifier";
                                 readonly overloadedDeclarations: readonly [];
-                                readonly referencedDeclaration: 37108;
+                                readonly referencedDeclaration: 37214;
                                 readonly src: "11768:1:152";
                                 readonly typeDescriptions: {
                                     readonly typeIdentifier: "t_uint256";
@@ -17864,18 +17864,18 @@ export declare const stdStorage: {
                             readonly operator: "<";
                             readonly rightExpression: {
                                 readonly expression: {
-                                    readonly id: 37112;
+                                    readonly id: 37218;
                                     readonly name: "b";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 37092;
+                                    readonly referencedDeclaration: 37198;
                                     readonly src: "11772:1:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_array$_t_bytes32_$dyn_memory_ptr";
                                         readonly typeString: "bytes32[] memory";
                                     };
                                 };
-                                readonly id: 37113;
+                                readonly id: 37219;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -17895,17 +17895,17 @@ export declare const stdStorage: {
                                 readonly typeString: "bool";
                             };
                         };
-                        readonly id: 37126;
+                        readonly id: 37232;
                         readonly initializationExpression: {
-                            readonly assignments: readonly [37108];
+                            readonly assignments: readonly [37214];
                             readonly declarations: readonly [{
                                 readonly constant: false;
-                                readonly id: 37108;
+                                readonly id: 37214;
                                 readonly mutability: "mutable";
                                 readonly name: "i";
                                 readonly nameLocation: "11761:1:152";
                                 readonly nodeType: "VariableDeclaration";
-                                readonly scope: 37126;
+                                readonly scope: 37232;
                                 readonly src: "11753:9:152";
                                 readonly stateVariable: false;
                                 readonly storageLocation: "default";
@@ -17914,7 +17914,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                                 readonly typeName: {
-                                    readonly id: 37107;
+                                    readonly id: 37213;
                                     readonly name: "uint256";
                                     readonly nodeType: "ElementaryTypeName";
                                     readonly src: "11753:7:152";
@@ -17925,10 +17925,10 @@ export declare const stdStorage: {
                                 };
                                 readonly visibility: "internal";
                             }];
-                            readonly id: 37110;
+                            readonly id: 37216;
                             readonly initialValue: {
                                 readonly hexValue: "30";
-                                readonly id: 37109;
+                                readonly id: 37215;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: true;
@@ -17947,7 +17947,7 @@ export declare const stdStorage: {
                         };
                         readonly loopExpression: {
                             readonly expression: {
-                                readonly id: 37116;
+                                readonly id: 37222;
                                 readonly isConstant: false;
                                 readonly isLValue: false;
                                 readonly isPure: false;
@@ -17957,11 +17957,11 @@ export declare const stdStorage: {
                                 readonly prefix: false;
                                 readonly src: "11782:3:152";
                                 readonly subExpression: {
-                                    readonly id: 37115;
+                                    readonly id: 37221;
                                     readonly name: "i";
                                     readonly nodeType: "Identifier";
                                     readonly overloadedDeclarations: readonly [];
-                                    readonly referencedDeclaration: 37108;
+                                    readonly referencedDeclaration: 37214;
                                     readonly src: "11782:1:152";
                                     readonly typeDescriptions: {
                                         readonly typeIdentifier: "t_uint256";
@@ -17973,7 +17973,7 @@ export declare const stdStorage: {
                                     readonly typeString: "uint256";
                                 };
                             };
-                            readonly id: 37117;
+                            readonly id: 37223;
                             readonly nodeType: "ExpressionStatement";
                             readonly src: "11782:3:152";
                         };
@@ -17981,19 +17981,19 @@ export declare const stdStorage: {
                         readonly src: "11748:224:152";
                     }, {
                         readonly expression: {
-                            readonly id: 37127;
+                            readonly id: 37233;
                             readonly name: "result";
                             readonly nodeType: "Identifier";
                             readonly overloadedDeclarations: readonly [];
-                            readonly referencedDeclaration: 37098;
+                            readonly referencedDeclaration: 37204;
                             readonly src: "11989:6:152";
                             readonly typeDescriptions: {
                                 readonly typeIdentifier: "t_bytes_memory_ptr";
                                 readonly typeString: "bytes memory";
                             };
                         };
-                        readonly functionReturnParameters: 37096;
-                        readonly id: 37128;
+                        readonly functionReturnParameters: 37202;
+                        readonly id: 37234;
                         readonly nodeType: "Return";
                         readonly src: "11982:13:152";
                     }];
@@ -18004,16 +18004,16 @@ export declare const stdStorage: {
                 readonly name: "flatten";
                 readonly nameLocation: "11618:7:152";
                 readonly parameters: {
-                    readonly id: 37093;
+                    readonly id: 37199;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 37092;
+                        readonly id: 37198;
                         readonly mutability: "mutable";
                         readonly name: "b";
                         readonly nameLocation: "11643:1:152";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37130;
+                        readonly scope: 37236;
                         readonly src: "11626:18:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -18023,7 +18023,7 @@ export declare const stdStorage: {
                         };
                         readonly typeName: {
                             readonly baseType: {
-                                readonly id: 37090;
+                                readonly id: 37196;
                                 readonly name: "bytes32";
                                 readonly nodeType: "ElementaryTypeName";
                                 readonly src: "11626:7:152";
@@ -18032,7 +18032,7 @@ export declare const stdStorage: {
                                     readonly typeString: "bytes32";
                                 };
                             };
-                            readonly id: 37091;
+                            readonly id: 37197;
                             readonly nodeType: "ArrayTypeName";
                             readonly src: "11626:9:152";
                             readonly typeDescriptions: {
@@ -18045,16 +18045,16 @@ export declare const stdStorage: {
                     readonly src: "11625:20:152";
                 };
                 readonly returnParameters: {
-                    readonly id: 37096;
+                    readonly id: 37202;
                     readonly nodeType: "ParameterList";
                     readonly parameters: readonly [{
                         readonly constant: false;
-                        readonly id: 37095;
+                        readonly id: 37201;
                         readonly mutability: "mutable";
                         readonly name: "";
                         readonly nameLocation: "-1:-1:-1";
                         readonly nodeType: "VariableDeclaration";
-                        readonly scope: 37130;
+                        readonly scope: 37236;
                         readonly src: "11668:12:152";
                         readonly stateVariable: false;
                         readonly storageLocation: "memory";
@@ -18063,7 +18063,7 @@ export declare const stdStorage: {
                             readonly typeString: "bytes";
                         };
                         readonly typeName: {
-                            readonly id: 37094;
+                            readonly id: 37200;
                             readonly name: "bytes";
                             readonly nodeType: "ElementaryTypeName";
                             readonly src: "11668:5:152";
@@ -18076,7 +18076,7 @@ export declare const stdStorage: {
                     }];
                     readonly src: "11667:14:152";
                 };
-                readonly scope: 37131;
+                readonly scope: 37237;
                 readonly stateMutability: "pure";
                 readonly virtual: false;
                 readonly visibility: "private";
@@ -18087,10 +18087,10 @@ export declare const stdStorage: {
             readonly contractDependencies: readonly [];
             readonly contractKind: "library";
             readonly fullyImplemented: true;
-            readonly linearizedBaseContracts: readonly [37131];
+            readonly linearizedBaseContracts: readonly [37237];
             readonly name: "stdStorage";
             readonly nameLocation: "7347:10:152";
-            readonly scope: 37132;
+            readonly scope: 37238;
             readonly usedErrors: readonly [];
             readonly usedEvents: readonly [];
         }];

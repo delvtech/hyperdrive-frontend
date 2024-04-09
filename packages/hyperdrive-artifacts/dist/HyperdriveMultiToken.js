@@ -7619,7 +7619,7 @@ export const HyperdriveMultiToken = {
                     16538,
                     13667,
                     17734,
-                    71639,
+                    71745,
                     10887,
                     11459
                 ],
@@ -7627,7 +7627,7 @@ export const HyperdriveMultiToken = {
                 "nameLocation": "1382:20:116",
                 "scope": 16539,
                 "usedErrors": [
-                    71584
+                    71690
                 ],
                 "usedEvents": [
                     10705,
