@@ -16,7 +16,7 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
   },
   appName: "Hyperdrive",
   theme: Theme.dark,
-  logo: "/logo.svg",
+  logo: "/hyperdrive-logo-white.svg",
 
   oAuthMethods: [
     OAuthMethod.GOOGLE,
