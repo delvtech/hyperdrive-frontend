@@ -10,7 +10,7 @@ export function FAQ(): ReactElement {
       <h3 className="gradient-text mb-8 text-center">
         Frequently Asked Questions
       </h3>
-      <div className="flex flex-row gap-6 rounded-box bg-base-200 p-12">
+      <div className="mx-8 flex flex-row gap-6 rounded-box bg-base-200 p-12">
         <FAQEntries />
       </div>
     </div>
