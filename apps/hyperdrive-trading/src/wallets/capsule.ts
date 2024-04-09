@@ -12,7 +12,23 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
     environment: VITE_CAPSULE_ENV, // Environment.PROD for Production
 
     apiKey: VITE_CAPSULE_API_KEY, // get one at usecapsule.com/beta
-    constructorOpts: {}, // TODO
+    constructorOpts: {
+      // passkey configs
+      portalBackgroundColor: "#202F36",
+      portalPrimaryButtonColor: "#15FFAB",
+      portalTextColor: "#EFF4F6",
+      portalPrimaryButtonTextColor: "#202F36",
+
+      // email configs
+      // @ts-expect-error The enum for this type is not exported
+      emailTheme: "dark",
+      emailPrimaryColor: "#15FFAB",
+      githubUrl: "https://github.com/delvtech",
+      linkedinUrl: "https://www.linkedin.com/company/delv-tech/",
+      xUrl: "https://twitter.com/delv_tech",
+      homepageUrl: "https://hyperdrive.trade/",
+      supportUrl: "mailto:support@delv.tech",
+    },
   },
   appName: "Hyperdrive",
   theme: Theme.dark,
