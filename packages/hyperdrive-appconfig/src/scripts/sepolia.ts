@@ -15,9 +15,8 @@ const publicClient = createPublicClient({
 });
 
 fetchRegistryAddresses({
-  // TODO: Fill these in with the correct sepolia addresses
-  factoryAddress: "0x",
-  registryAddress: "0x",
+  factoryAddress: "0xCe170D68d5D5eDbe64Db7F4bB2cddc8148A4CfF4",
+  registryAddress: "0xBD209b0d25E2017039761ad500e972EAd74B42c8",
   publicClient,
 }).then(async (addresses) => {
   const appConfig = await getAppConfigFromRegistryAddresses({
