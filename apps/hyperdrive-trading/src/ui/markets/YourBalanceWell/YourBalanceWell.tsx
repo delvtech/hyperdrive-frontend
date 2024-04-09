@@ -77,13 +77,15 @@ function AvailableAsset({
   targetToken: TokenConfig<any>;
 }) {
   const { address: account } = useAccount();
-  const isEth = targetToken.address === ETH_MAGIC_NUMBER;
+  const isTargetingEth = targetToken.address === ETH_MAGIC_NUMBER;
+
   const { balance: targetTokenBalance, status: targetTokenBalanceStatus } =
     useTokenBalance({
       account: account,
       tokenAddress: targetToken.address,
       decimals: targetToken.decimals,
     });
+
   const { balance: baseTokenBalance } = useTokenBalance({
     account: account,
     tokenAddress: baseToken.address,
@@ -97,13 +99,13 @@ function AvailableAsset({
     account,
     spender,
     tokenAddress: targetToken.address,
-    enabled: !isEth,
+    enabled: !isTargetingEth,
   });
   const { data: totalSupply } = useReadContract({
     abi: ERC20.abi,
     functionName: "totalSupply",
     address: targetToken.address,
-    query: { enabled: !isEth },
+    query: { enabled: !isTargetingEth },
   });
   const isUnlimited = !!totalSupply && !!allowance && allowance > totalSupply;
 
@@ -117,41 +119,46 @@ function AvailableAsset({
         : baseTokenBalance?.value;
   }
 
-  const isSharesTokenTargetToken =
-    targetToken.address !== baseToken.address && !isEth;
+  // Some shares tokens need base tokens to be deposited in order to mint
+  const needsDeposit =
+    targetToken.address !== baseToken.address &&
+    !targetToken.tags.includes("steth");
 
-  const { approve: approveSharesTokenToSpendBaseToken } = useApproveToken({
-    tokenAddress: baseToken.address,
-    spender: targetToken.address,
-    amount: MAX_UINT256,
-    enabled: isSharesTokenTargetToken,
-  });
   const { tokenAllowance: sharesTokenToSpendBaseTokenAllowance } =
     useTokenAllowance({
       account,
       spender: targetToken.address,
       tokenAddress: baseToken.address,
-      enabled: !isEth,
+      enabled: !isTargetingEth && needsDeposit,
     });
 
-  const hasEnoughAllowanceForDepositingBaseForSharesTokens =
+  const hasEnoughAllowance =
+    !!sharesTokenToSpendBaseTokenAllowance &&
+    !!baseTokenBalance &&
+    sharesTokenToSpendBaseTokenAllowance <= baseTokenBalance.value;
+
+  const { approve: approveSharesTokenToSpendBaseToken } = useApproveToken({
+    tokenAddress: baseToken.address,
+    spender: targetToken.address,
+    amount: MAX_UINT256,
+    enabled: needsDeposit && hasEnoughAllowance,
+  });
+
+  const hasEnoughAllowanceForDeposit =
     !!baseAmountToDepositForShares &&
     !!sharesTokenToSpendBaseTokenAllowance &&
-    sharesTokenToSpendBaseTokenAllowance >= baseAmountToDepositForShares;
+    sharesTokenToSpendBaseTokenAllowance > baseAmountToDepositForShares;
 
   const { depositBaseForShares } = useDepositBaseForShares({
     sharesToken: targetToken,
     baseTokenSymbol: baseToken.symbol,
     baseAmount: baseAmountToDepositForShares,
     destination: account,
-    enabled:
-      isSharesTokenTargetToken &&
-      !!maxMintAmount &&
-      hasEnoughAllowanceForDepositingBaseForSharesTokens,
+    enabled: needsDeposit && hasEnoughAllowanceForDeposit,
   });
 
   const { mint } = useMintToken({
-    token: baseToken,
+    token: targetToken,
     destination: account,
   });
 
@@ -180,7 +187,7 @@ function AvailableAsset({
         )}
       </div>
 
-      {(isEth && hasFaucet) || !isEth ? (
+      {(isTargetingEth && hasFaucet) || !isTargetingEth ? (
         <div className="daisy-dropdown daisy-dropdown-end">
           <div tabIndex={0} role="button" className="daisy-btn daisy-btn-sm">
             <EllipsisVerticalIcon className="h-5" />
@@ -189,7 +196,7 @@ function AvailableAsset({
             tabIndex={0}
             className="daisy-menu daisy-dropdown-content z-[1] w-52 rounded-lg bg-base-100 p-4 shadow"
           >
-            {isEth && chainId === sepolia.id ? (
+            {isTargetingEth && chainId === sepolia.id ? (
               <li>
                 <a
                   href="https://faucetlink.to/sepolia"
@@ -200,7 +207,7 @@ function AvailableAsset({
                 </a>
               </li>
             ) : undefined}
-            {!isEth && targetTokenBalance ? (
+            {!isTargetingEth && targetTokenBalance ? (
               <>
                 <li className="daisy-menu-title flex-row justify-between text-xs text-neutral-content">
                   <span>Allowance</span>
@@ -219,12 +226,12 @@ function AvailableAsset({
                   token={targetToken}
                   spender={spender}
                 />
-                {isTestnetChain && isSharesTokenTargetToken ? (
+                {isTestnetChain && needsDeposit ? (
                   <>
                     <li
                       className={classNames(
                         !approveSharesTokenToSpendBaseToken ||
-                          hasEnoughAllowanceForDepositingBaseForSharesTokens
+                          hasEnoughAllowance
                           ? "daisy-disabled"
                           : undefined,
                       )}
@@ -232,7 +239,7 @@ function AvailableAsset({
                       <button
                         disabled={
                           !approveSharesTokenToSpendBaseToken ||
-                          hasEnoughAllowanceForDepositingBaseForSharesTokens
+                          hasEnoughAllowance
                         }
                         onClick={() => approveSharesTokenToSpendBaseToken?.()}
                       >
@@ -254,7 +261,7 @@ function AvailableAsset({
                   </>
                 ) : undefined}
 
-                {isTestnetChain && !isSharesTokenTargetToken ? (
+                {isTestnetChain && !needsDeposit ? (
                   <li>
                     <button disabled={!mint} onClick={() => mint?.()}>
                       Mint
