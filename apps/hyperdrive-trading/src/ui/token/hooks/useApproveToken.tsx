@@ -5,6 +5,7 @@ import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransac
 import { usePublicClient, useWriteContract } from "wagmi";
 
 import { useState } from "react";
+import { MAX_UINT256 } from "src/base/constants";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { Address, erc20Abi } from "viem";
 interface UseTokenApprovalOptions {
@@ -30,6 +31,12 @@ export function useApproveToken({
   const [isTransactionMined, setIsTransactionMined] = useState(false);
   const queryEnabled = !!spender && !!enabled && !!publicClient;
 
+  // Pad the approval amount
+  let finalAmount = amount;
+  if (amount > 0 && amount !== MAX_UINT256) {
+    finalAmount += 1_000_000_000n;
+  }
+
   const approve = queryEnabled
     ? () =>
         writeContract(
@@ -37,7 +44,7 @@ export function useApproveToken({
             abi: erc20Abi,
             address: tokenAddress,
             functionName: "approve",
-            args: [spender, amount],
+            args: [spender, finalAmount],
           },
           {
             onSuccess: async (hash) => {
@@ -47,7 +54,7 @@ export function useApproveToken({
               });
               setIsTransactionMined(false);
               const loadingDescription =
-                amount === 0n ? "Revoking approval..." : "Approving...";
+                finalAmount === 0n ? "Revoking approval..." : "Approving...";
               toast.loading(
                 <TransactionToast message={loadingDescription} txHash={hash} />,
                 { id: hash },
@@ -61,7 +68,7 @@ export function useApproveToken({
               setIsTransactionMined(true);
 
               const loadedDescription =
-                amount === 0n ? "Approval revoked" : "Token approved";
+                finalAmount === 0n ? "Approval revoked" : "Token approved";
               toast.success(
                 <TransactionToast message={loadedDescription} txHash={hash} />,
                 { id: hash },
