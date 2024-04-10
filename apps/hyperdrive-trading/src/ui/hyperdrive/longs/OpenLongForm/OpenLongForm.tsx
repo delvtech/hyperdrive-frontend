@@ -6,6 +6,7 @@ import {
 } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement } from "react";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
+import { isSepoliaChain } from "src/network/constants";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -50,8 +51,12 @@ export function OpenLongForm({
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      defaultActiveToken: baseToken.address,
-      tokens: [baseToken, sharesToken],
+      // TODO: Remove check for Sepolia chain after testnet period.
+      defaultActiveToken: isSepoliaChain
+        ? sharesToken.address
+        : baseToken.address,
+      // TODO: Remove check for Sepolia chain after testnet period.
+      tokens: isSepoliaChain ? [sharesToken] : [baseToken, sharesToken],
     });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
@@ -148,7 +153,8 @@ export function OpenLongForm({
           name={activeToken.symbol}
           token={
             <TokenPicker
-              tokens={[baseToken, sharesToken]}
+              // TODO: Remove check for Sepolia chain after testnet period.
+              tokens={isSepoliaChain ? [sharesToken] : [baseToken, sharesToken]}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);
