@@ -12,6 +12,7 @@ export interface TokenConfig<
   decimals: number;
   iconUrl: string;
   tags: string[];
+  places: number;
   extensions: Extensions;
 }
 

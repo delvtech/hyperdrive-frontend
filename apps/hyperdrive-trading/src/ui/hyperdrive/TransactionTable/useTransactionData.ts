@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address } from "viem";
+import { Address, Hash } from "viem";
 export type TransactionData = {
   assetId?: bigint;
   baseAmount: bigint;
@@ -12,6 +12,7 @@ export type TransactionData = {
   trader: Address;
   lpSharePrice?: bigint;
   blockNumber: bigint | undefined;
+  transactionHash: Hash | undefined;
 };
 
 export function useTransactionData({
@@ -53,34 +54,37 @@ export function useTransactionData({
       data.push(
         ...lpEvents.addLiquidity
           .slice(0, 100)
-          .map(({ args, blockNumber, eventName }) => ({
+          .map(({ args, blockNumber, eventName, transactionHash }) => ({
             trader: args.provider,
             baseAmount: args.baseAmount,
             lpSharePrice: args.lpSharePrice,
             eventName,
             blockNumber,
+            transactionHash,
           })),
       );
       data.push(
         ...lpEvents.removeLiquidity
           .slice(0, 100)
-          .map(({ args, blockNumber, eventName }) => ({
+          .map(({ args, blockNumber, eventName, transactionHash }) => ({
             trader: args.provider,
             baseAmount: args.baseAmount,
             withdrawalShares: args.withdrawalShareAmount,
             lpSharePrice: args.lpSharePrice,
             eventName,
             blockNumber,
+            transactionHash,
           })),
       );
       data.push(
         ...lpEvents.redeemWithdrawalShares
           .slice(0, 100)
-          .map(({ args, blockNumber, eventName }) => ({
+          .map(({ args, blockNumber, eventName, transactionHash }) => ({
             trader: args.provider,
             baseAmount: args.baseAmount,
             eventName,
             blockNumber,
+            transactionHash,
           })),
       );
     }

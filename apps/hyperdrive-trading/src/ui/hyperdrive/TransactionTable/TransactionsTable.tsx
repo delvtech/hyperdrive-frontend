@@ -33,7 +33,7 @@ import {
   TransactionData,
   useTransactionData,
 } from "src/ui/hyperdrive/TransactionTable/useTransactionData";
-import { Address, parseUnits } from "viem";
+import { Address, Hash, parseUnits } from "viem";
 import { useBlock, useChainId } from "wagmi";
 
 export interface Transaction {
@@ -191,7 +191,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
         return (
           <EventNameCell
             name={eventMap[getValue() as EventName] || getValue()}
-            blockNumber={row.original.blockNumber || 0n}
+            txHash={row.original.transactionHash}
           />
         );
       },
@@ -325,7 +325,7 @@ function formatTransactionTableMobileData(
       value: (
         <EventNameCell
           name={eventMap[row.eventName as EventName] || row.eventName}
-          blockNumber={row.blockNumber || 0n}
+          txHash={row.transactionHash}
         />
       ),
     },
@@ -477,16 +477,15 @@ function FilterSelect({
 
 function EventNameCell({
   name,
-  blockNumber,
+  txHash,
 }: {
   name: EventName | string;
-  blockNumber: bigint;
+  txHash: Hash | undefined;
 }) {
-  const { data: transaction } = useBlock({ blockNumber });
   const chainId = useChainId() as SupportedChainId;
   return (
     <a
-      href={makeTransactionURL(transaction?.hash || "", chainId)}
+      href={makeTransactionURL(txHash || "", chainId)}
       target="_blank"
       rel="noreferrer"
       className="daisy-link-hover daisy-link"
