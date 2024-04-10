@@ -28,7 +28,8 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits, parseUnits } from "viem";
-import { useAccount } from "wagmi";
+import { sepolia } from "viem/chains";
+import { useAccount, useChainId } from "wagmi";
 
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
@@ -41,6 +42,7 @@ export function OpenShortForm({
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
+  const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -51,8 +53,7 @@ export function OpenShortForm({
     tokens: appConfig.tokens,
   });
   // TODO: Remove check for Sepolia chain after testnet period.
-  const isLidoSepolia =
-    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
+  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({

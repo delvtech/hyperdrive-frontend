@@ -21,7 +21,8 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { formatUnits } from "viem";
-import { useAccount } from "wagmi";
+import { sepolia } from "viem/chains";
+import { useAccount, useChainId } from "wagmi";
 interface RemoveLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
   lpShares: bigint;
@@ -33,6 +34,7 @@ export function RemoveLiquidityForm({
   lpShares,
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
+  const chainId = useChainId();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -43,8 +45,7 @@ export function RemoveLiquidityForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  const isLidoSepolia =
-    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
+  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
 
   const tokens: TokenConfig<any>[] = [sharesToken];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {

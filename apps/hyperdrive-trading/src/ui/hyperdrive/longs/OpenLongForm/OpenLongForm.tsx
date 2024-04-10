@@ -25,7 +25,8 @@ import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
-import { useAccount } from "wagmi";
+import { sepolia } from "viem/chains";
+import { useAccount, useChainId } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -36,6 +37,7 @@ export function OpenLongForm({
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
+  const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const baseToken = findBaseToken({
@@ -46,8 +48,7 @@ export function OpenLongForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  const isLidoSepolia =
-    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
+  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
