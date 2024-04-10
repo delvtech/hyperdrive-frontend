@@ -315,7 +315,12 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       options?: ContractReadOptions,
     ): Promise<bigint> {
       const stEth = await this.getSharesToken();
-      return stEth.getSharesByPooledEth({ ethAmount: stEthAmount, options });
+      const sharesAmount = await stEth.getSharesByPooledEth({
+        ethAmount: stEthAmount,
+        options,
+      });
+      // TODO: Validate this is still needed in prod
+      return sharesAmount - (sharesAmount % BigInt(1e14));
     }
 
     /**
