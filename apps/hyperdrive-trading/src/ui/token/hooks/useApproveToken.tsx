@@ -7,7 +7,7 @@ import { usePublicClient, useWriteContract } from "wagmi";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
-import { Address, erc20Abi } from "viem";
+import { Address, erc20Abi, parseUnits } from "viem";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
   spender: Address | undefined;
@@ -34,7 +34,7 @@ export function useApproveToken({
   // Pad the approval amount
   let finalAmount = amount;
   if (amount > 0 && amount !== MAX_UINT256) {
-    finalAmount += 1_000_000_000n;
+    finalAmount += parseUnits("1", 18);
   }
 
   const approve = queryEnabled
