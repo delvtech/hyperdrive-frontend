@@ -7,6 +7,7 @@ import { usePublicClient, useWriteContract } from "wagmi";
 import { useState } from "react";
 import { MAX_UINT256 } from "src/base/constants";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
+import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { Address, erc20Abi, parseUnits } from "viem";
 interface UseTokenApprovalOptions {
   tokenAddress: Address;
@@ -71,7 +72,7 @@ export function useApproveToken({
                 finalAmount === 0n ? "Approval revoked" : "Token approved";
               toast.success(
                 <TransactionToast message={loadedDescription} txHash={hash} />,
-                { id: hash },
+                { id: hash, duration: SUCCESS_TOAST_DURATION },
               );
             },
           },

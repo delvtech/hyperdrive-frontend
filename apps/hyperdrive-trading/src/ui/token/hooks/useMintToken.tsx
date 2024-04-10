@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
+import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { Address, formatUnits } from "viem";
 import { usePublicClient, useReadContract, useWriteContract } from "wagmi";
 
@@ -73,7 +74,7 @@ export function useMintToken({
                   message={`Minted ${token.symbol}`}
                   txHash={hash}
                 />,
-                { id: hash },
+                { id: hash, duration: SUCCESS_TOAST_DURATION },
               );
             },
           },
