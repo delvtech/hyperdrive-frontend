@@ -330,12 +330,13 @@ export class ReadHyperdrive extends ReadModel {
       baseAmount: bigint;
       eventName: "OpenLong" | "CloseLong";
       blockNumber: bigint | undefined;
+      transactionHash: `0x${string}` | undefined;
     }[]
   > {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
     return [...openLongEvents, ...closeLongEvents].map(
-      ({ args, eventName, blockNumber }) => {
+      ({ args, eventName, blockNumber, transactionHash }) => {
         return {
           trader: args.trader,
           assetId: args.assetId,
@@ -343,6 +344,7 @@ export class ReadHyperdrive extends ReadModel {
           baseAmount: args.baseAmount,
           eventName,
           blockNumber,
+          transactionHash,
         };
       },
     );
@@ -359,6 +361,7 @@ export class ReadHyperdrive extends ReadModel {
       baseAmount: bigint;
       eventName: "OpenShort" | "CloseShort";
       blockNumber: bigint | undefined;
+      transactionHash: `0x${string}` | undefined;
     }[]
   > {
     const openShortEvents = await this.contract.getEvents("OpenShort", options);
@@ -367,13 +370,14 @@ export class ReadHyperdrive extends ReadModel {
       options,
     );
     return [...openShortEvents, ...closeShortEvents].map(
-      ({ args, eventName, blockNumber }) => ({
+      ({ args, eventName, blockNumber, transactionHash }) => ({
         trader: args.trader,
         assetId: args.assetId,
         bondAmount: args.bondAmount,
         baseAmount: args.baseAmount,
         eventName,
         blockNumber,
+        transactionHash,
       }),
     );
   }
