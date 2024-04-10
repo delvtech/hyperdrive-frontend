@@ -51,8 +51,7 @@ export function OpenShortForm({
     tokens: appConfig.tokens,
   });
   // TODO: Remove check for Sepolia chain after testnet period.
-  const isLidoSepolia =
-    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
+  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({

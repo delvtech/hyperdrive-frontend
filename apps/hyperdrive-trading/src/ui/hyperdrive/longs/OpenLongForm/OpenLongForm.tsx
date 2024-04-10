@@ -46,8 +46,7 @@ export function OpenLongForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  const isLidoSepolia =
-    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
+  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
