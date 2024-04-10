@@ -17,9 +17,6 @@ export interface HyperdriveConfig {
    */
   sharesToken: Address;
 
-  depositOptions: {
-    isBaseTokenDepositEnabled: boolean;
-  };
   withdrawOptions: {
     /**
      * If true, users will be able to withdraw from hyperdrive in denominations
