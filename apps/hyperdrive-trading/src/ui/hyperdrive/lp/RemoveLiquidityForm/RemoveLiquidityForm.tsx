@@ -43,6 +43,8 @@ export function RemoveLiquidityForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
+  const isLidoSepolia =
+    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
 
   const tokens: TokenConfig<any>[] = [sharesToken];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
@@ -127,16 +129,28 @@ export function RemoveLiquidityForm({
     <TransactionView
       setting={
         <TokenChoices
-          label="Choose asset for withdrawal"
+          label={
+            isLidoSepolia
+              ? "Asset for withdrawal"
+              : "Choose asset for withdrawal"
+          }
           vertical
-          tokens={[
-            {
-              tokenConfig: baseToken,
-            },
-            {
-              tokenConfig: sharesToken,
-            },
-          ]}
+          tokens={
+            isLidoSepolia
+              ? [
+                  {
+                    tokenConfig: sharesToken,
+                  },
+                ]
+              : [
+                  {
+                    tokenConfig: baseToken,
+                  },
+                  {
+                    tokenConfig: sharesToken,
+                  },
+                ]
+          }
           selectedTokenAddress={activeWithdrawToken.address}
           onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
         />

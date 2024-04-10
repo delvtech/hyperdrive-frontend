@@ -46,12 +46,18 @@ export function OpenLongForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
+  const isLidoSepolia =
+    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      defaultActiveToken: baseToken.address,
-      tokens: [baseToken, sharesToken],
+      // TODO: Remove check for Sepolia chain after testnet period.
+      defaultActiveToken: isLidoSepolia
+        ? sharesToken.address
+        : baseToken.address,
+      // TODO: Remove check for Sepolia chain after testnet period.
+      tokens: isLidoSepolia ? [sharesToken] : [baseToken, sharesToken],
     });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
@@ -148,7 +154,8 @@ export function OpenLongForm({
           name={activeToken.symbol}
           token={
             <TokenPicker
-              tokens={[baseToken, sharesToken]}
+              // TODO: Remove check for Sepolia chain after testnet period.
+              tokens={isLidoSepolia ? [sharesToken] : [baseToken, sharesToken]}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);

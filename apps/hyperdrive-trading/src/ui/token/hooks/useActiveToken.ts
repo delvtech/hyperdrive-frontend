@@ -10,7 +10,7 @@ export function useActiveToken<T1, T2>({
   defaultActiveToken,
 }: {
   account: Address | undefined;
-  tokens: [TokenConfig<T1>, TokenConfig<T2>];
+  tokens: [TokenConfig<T1>, TokenConfig<T2>] | [TokenConfig<any>]; // Remove TokenConfig<any> to after Sepolia. Temporary fix to avoid users losing their testnet ETH to Lido.
   defaultActiveToken: Address;
 }): {
   activeToken: TokenConfig<T1 | T2>;
