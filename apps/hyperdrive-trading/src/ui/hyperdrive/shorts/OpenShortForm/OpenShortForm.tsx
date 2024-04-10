@@ -4,8 +4,8 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
-import { MAX_UINT256 } from "src/base/constants";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -27,8 +27,9 @@ import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { formatUnits } from "viem";
+import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
+
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenShort?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -134,7 +135,9 @@ export function OpenShortForm({
     amountBondShorts: amountOfBondsToShortAsBigInt,
     minVaultSharePrice: poolInfo?.vaultSharePrice,
     // TODO: handle slippage
-    maxDeposit: MAX_UINT256,
+    maxDeposit: traderDeposit
+      ? dnum.multiply(traderDeposit, parseUnits("1.1", 18))[0]
+      : 0n,
     destination: account,
     enabled: openShortPreviewStatus === "success" && hasEnoughAllowance,
     asBase: activeToken.address === baseToken.address,
