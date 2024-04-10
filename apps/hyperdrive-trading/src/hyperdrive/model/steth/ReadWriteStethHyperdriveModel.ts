@@ -295,13 +295,14 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
    * Convert steth tokens into steth shares so that hyperdrive methods can be
    * called with correct amounts.
    */
-  private convertStethTokensToShares(stethTokenAmount: bigint) {
-    return this.publicClient.readContract({
+  private async convertStethTokensToShares(stethTokenAmount: bigint) {
+    const sharesAmount = await this.publicClient.readContract({
       abi: MockLido.abi,
       address: this.lidoAddress,
       functionName: "getSharesByPooledEth",
       args: [stethTokenAmount],
     });
+    return sharesAmount - (sharesAmount % BigInt(1e14));
   }
 
   /**
