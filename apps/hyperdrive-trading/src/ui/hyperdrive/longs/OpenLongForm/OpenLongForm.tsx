@@ -6,7 +6,6 @@ import {
 } from "@hyperdrive/appconfig";
 import { MouseEvent, ReactElement } from "react";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
-import { isSepoliaChain } from "src/network/constants";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
 import { getHasEnoughBalance } from "src/token/getHasEnoughBalance";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
@@ -47,16 +46,18 @@ export function OpenLongForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
+  const isLidoSepolia =
+    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
       // TODO: Remove check for Sepolia chain after testnet period.
-      defaultActiveToken: isSepoliaChain
+      defaultActiveToken: isLidoSepolia
         ? sharesToken.address
         : baseToken.address,
       // TODO: Remove check for Sepolia chain after testnet period.
-      tokens: isSepoliaChain ? [sharesToken] : [baseToken, sharesToken],
+      tokens: isLidoSepolia ? [sharesToken] : [baseToken, sharesToken],
     });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
@@ -154,7 +155,7 @@ export function OpenLongForm({
           token={
             <TokenPicker
               // TODO: Remove check for Sepolia chain after testnet period.
-              tokens={isSepoliaChain ? [sharesToken] : [baseToken, sharesToken]}
+              tokens={isLidoSepolia ? [sharesToken] : [baseToken, sharesToken]}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);

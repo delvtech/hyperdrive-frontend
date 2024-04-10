@@ -48,6 +48,8 @@ export function AddLiquidityForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
+  const isLidoSepolia =
+    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
 
   const { lpShares: lpSharesBalanceOf } = useLpShares({
     account,
@@ -57,8 +59,12 @@ export function AddLiquidityForm({
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      defaultActiveToken: baseToken.address,
-      tokens: [baseToken, sharesToken],
+      // TODO: Remove check for Sepolia chain after testnet period.
+      defaultActiveToken: isLidoSepolia
+        ? sharesToken.address
+        : baseToken.address,
+      // TODO: Remove check for Sepolia chain after testnet period.
+      tokens: isLidoSepolia ? [sharesToken] : [baseToken, sharesToken],
     });
 
   const {
@@ -138,7 +144,8 @@ export function AddLiquidityForm({
           name={activeToken.symbol}
           token={
             <TokenPicker
-              tokens={[baseToken, sharesToken]}
+              // TODO: Remove check for Sepolia chain after testnet period.
+              tokens={isLidoSepolia ? [sharesToken] : [baseToken, sharesToken]}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);

@@ -50,12 +50,19 @@ export function OpenShortForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
+  // TODO: Remove check for Sepolia chain after testnet period.
+  const isLidoSepolia =
+    process.env.VITE_SEPOLIA_RPC_URL && baseToken.symbol === "ETH";
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      defaultActiveToken: baseToken.address,
-      tokens: [baseToken, sharesToken],
+      // TODO: Remove check for Sepolia chain after testnet period.
+      defaultActiveToken: isLidoSepolia
+        ? sharesToken.address
+        : baseToken.address,
+      // TODO: Remove check for Sepolia chain after testnet period.
+      tokens: isLidoSepolia ? [sharesToken] : [baseToken, sharesToken],
     });
 
   const { balance: baseTokenBalance } = useTokenBalance({
@@ -165,18 +172,30 @@ export function OpenShortForm({
       }
       setting={
         <TokenChoices
-          label="Choose asset for short deposit"
+          label={
+            isLidoSepolia ? "Asset for deposit" : "Choose asset for depost"
+          }
           vertical
-          tokens={[
-            {
-              tokenConfig: baseToken,
-              tokenBalance: baseTokenBalance?.value,
-            },
-            {
-              tokenConfig: sharesToken,
-              tokenBalance: sharesTokenBalance?.value,
-            },
-          ]}
+          tokens={
+            // TODO: Remove check for Sepolia chain after testnet period.
+            isLidoSepolia
+              ? [
+                  {
+                    tokenConfig: sharesToken,
+                    tokenBalance: sharesTokenBalance?.value,
+                  },
+                ]
+              : [
+                  {
+                    tokenConfig: baseToken,
+                    tokenBalance: baseTokenBalance?.value,
+                  },
+                  {
+                    tokenConfig: sharesToken,
+                    tokenBalance: sharesTokenBalance?.value,
+                  },
+                ]
+          }
           selectedTokenAddress={activeToken.address}
           onTokenChange={(tokenAddress) => setActiveToken(tokenAddress)}
         />
