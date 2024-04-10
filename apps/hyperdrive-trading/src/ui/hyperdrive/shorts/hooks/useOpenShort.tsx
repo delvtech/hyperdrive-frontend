@@ -90,7 +90,7 @@ export function useOpenShort({
                 maxDeposit: maxDeposit,
               },
               options: openShortOptions,
-              onTransactionMined: onTransactionMined,
+              onTransactionMined,
             })
           : await hyperdriveModel.openShortWithShares({
               args: {
@@ -100,10 +100,7 @@ export function useOpenShort({
                 maxDeposit: maxDeposit,
               },
               options: openShortOptions,
-              onTransactionMined: (txHash) => {
-                queryClient.invalidateQueries();
-                onExecuted?.(txHash);
-              },
+              onTransactionMined,
             });
 
         toast.loading(
