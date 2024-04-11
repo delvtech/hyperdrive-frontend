@@ -62,9 +62,7 @@ export function useCloseShort({
             <TransactionToast message="Short closed" txHash={txHash} />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
-          setTimeout(() => {
-            toastWarpcast();
-          }, SUCCESS_TOAST_DURATION);
+          toastWarpcast();
           onExecuted?.(txHash);
         }
 

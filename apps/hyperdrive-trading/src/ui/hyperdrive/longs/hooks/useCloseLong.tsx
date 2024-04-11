@@ -63,9 +63,7 @@ export function useCloseLong({
             <TransactionToast message="Long closed" txHash={hash} />,
             { id: hash, duration: SUCCESS_TOAST_DURATION },
           );
-          setTimeout(() => {
-            toastWarpcast();
-          }, SUCCESS_TOAST_DURATION);
+          toastWarpcast();
           onExecuted?.(txHash);
         }
         const hash = asBase

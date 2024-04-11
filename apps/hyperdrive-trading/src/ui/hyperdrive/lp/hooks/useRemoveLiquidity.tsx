@@ -59,9 +59,7 @@ export function useRemoveLiquidity({
             <TransactionToast message="Liquidity removed" txHash={txHash} />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
-          setTimeout(() => {
-            toastWarpcast();
-          }, SUCCESS_TOAST_DURATION);
+          toastWarpcast();
           onExecuted?.(txHash);
         }
 

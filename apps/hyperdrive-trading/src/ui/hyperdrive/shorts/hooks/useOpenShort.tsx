@@ -79,9 +79,7 @@ export function useOpenShort({
             <TransactionToast message="Short opened" txHash={txHash} />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
-          setTimeout(() => {
-            toastWarpcast();
-          }, SUCCESS_TOAST_DURATION);
+          toastWarpcast();
           onExecuted?.(txHash);
         }
         const hash = asBase

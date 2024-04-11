@@ -70,9 +70,7 @@ export function useAddLiquidity({
             <TransactionToast message="Liquidity added" txHash={txHash} />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
-          setTimeout(() => {
-            toastWarpcast();
-          }, SUCCESS_TOAST_DURATION);
+          toastWarpcast();
           onExecuted?.(txHash);
         }
         const hash = asBase
