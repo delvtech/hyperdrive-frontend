@@ -140,6 +140,7 @@ function getColumns() {
             {formatCompact({
               value: liquidity,
               decimals: row.original.baseToken.decimals,
+              commas: true,
             })}{" "}
             {row.original.baseToken.symbol}
           </span>
