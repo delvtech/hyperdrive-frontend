@@ -64,7 +64,12 @@ export function TokenPicker({
           {activeToken?.tokenConfig?.symbol}
           <ChevronDownIcon className="ml-2 h-3" />
         </button>
-        <ul className="daisy-menu daisy-dropdown-content z-[1] w-72 gap-0.5 rounded-lg bg-base-100 p-2 shadow">
+        <ul
+          className={classNames(
+            "daisy-menu daisy-dropdown-content z-[1] w-32 justify-evenly gap-0.5 rounded-lg bg-base-100 p-2 shadow",
+            { "w-64": activeToken?.tokenBalance },
+          )}
+        >
           {[
             tokens.map(({ tokenConfig, tokenBalance }) => (
               <li key={tokenConfig?.address}>
@@ -77,18 +82,19 @@ export function TokenPicker({
                 >
                   <img src={tokenConfig?.iconUrl} className="h-5" />{" "}
                   {tokenConfig?.symbol}
-                  <label className="flex cursor-pointer justify-end text-neutral-content">
-                    <span>
-                      Balance: {` `}
-                      {formatBalance({
-                        balance: tokenBalance || 0n,
-                        decimals: tokenConfig?.decimals,
-                        places: 4,
-                      })}
-                      {` `}
-                      {tokenConfig?.symbol}
-                    </span>
-                  </label>
+                  {tokenBalance ? (
+                    <label className="flex w-32 flex-1 cursor-pointer text-neutral-content">
+                      <span>
+                        Balance: {` `}
+                        {formatBalance({
+                          balance: tokenBalance || 0n,
+                          decimals: tokenConfig?.decimals,
+                          places: 4,
+                        })}
+                        {` `}
+                      </span>
+                    </label>
+                  ) : null}
                 </button>
               </li>
             )),

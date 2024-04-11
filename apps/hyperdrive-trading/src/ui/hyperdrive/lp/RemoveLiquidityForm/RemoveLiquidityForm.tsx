@@ -151,17 +151,14 @@ export function RemoveLiquidityForm({
               ? [
                   {
                     tokenConfig: sharesToken,
-                    tokenBalance: sharesTokenBalance?.value,
                   },
                 ]
               : [
                   {
                     tokenConfig: baseToken,
-                    tokenBalance: baseTokenBalance?.value,
                   },
                   {
                     tokenConfig: sharesToken,
-                    tokenBalance: sharesTokenBalance?.value,
                   },
                 ]
           }
