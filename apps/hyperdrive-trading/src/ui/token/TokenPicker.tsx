@@ -1,19 +1,22 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { TokenChoice } from "src/ui/token/TokenChoices";
 import { Address } from "viem";
 
 export function TokenPicker({
-  label,
   tokens,
   activeTokenAddress,
   onChange,
+  label,
+  joined,
 }: {
-  label: string;
   tokens: TokenChoice[];
   activeTokenAddress: Address;
   onChange: (tokenAddress: Address) => void;
+  label?: string;
+  joined?: boolean;
 }): ReactElement {
   // A single element doesn't need a dropdown
   if (tokens.length === 1) {
@@ -31,14 +34,22 @@ export function TokenPicker({
   );
 
   return (
-    <div className="flex w-full flex-col">
-      <label className="daisy-label ">
-        <span className="daisy-label-text">{label}</span>
-      </label>
-
-      <div className={"daisy-dropdown daisy-dropdown-bottom shrink-0"}>
+    <>
+      {label ? (
+        <label className="daisy-label ">
+          <span className="daisy-label-text">{label}</span>
+        </label>
+      ) : undefined}
+      <div
+        className={
+          "daisy-dropdown daisy-dropdown-bottom daisy-join-item shrink-0"
+        }
+      >
         <button
-          className="daisy-btn flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4 hover:border-neutral-content/30"
+          className={classNames(
+            "daisy-btn flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4 hover:border-neutral-content/30",
+            { "border-r-none rounded-r-none": joined },
+          )}
           onClick={(e) => {
             e.preventDefault();
           }}
@@ -77,6 +88,6 @@ export function TokenPicker({
           ]}
         </ul>
       </div>
-    </div>
+    </>
   );
 }
