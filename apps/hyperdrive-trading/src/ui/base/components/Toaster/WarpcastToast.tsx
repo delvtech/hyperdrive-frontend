@@ -30,7 +30,7 @@ export function callWarpcastToast(): void {
       </a>
     </span>,
     {
-      id: "asdfsf",
+      id: "warpcast-toast",
       duration: 5000,
       icon: (
         <img
