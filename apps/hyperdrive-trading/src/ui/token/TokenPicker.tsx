@@ -36,7 +36,7 @@ export function TokenPicker({
   return (
     <>
       {label ? (
-        <label className="daisy-label ">
+        <label className="daisy-label">
           <span className="daisy-label-text">{label}</span>
         </label>
       ) : undefined}
