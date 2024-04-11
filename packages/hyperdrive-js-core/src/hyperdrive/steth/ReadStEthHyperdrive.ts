@@ -319,8 +319,11 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         ethAmount: stEthAmount,
         options,
       });
-      // TODO: Validate this is still needed in prod
-      return sharesAmount - (sharesAmount % BigInt(1e14));
+      // FIXME: Remove and find solution for mainnet
+      // This is needed because the conversion done before submitting the
+      // transaction to open a position and by the time the position TX is
+      // submitted, the share price could have changed.
+      return sharesAmount - (sharesAmount % BigInt(1e16));
     }
 
     /**

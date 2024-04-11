@@ -302,7 +302,11 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
       functionName: "getSharesByPooledEth",
       args: [stethTokenAmount],
     });
-    return sharesAmount - (sharesAmount % BigInt(1e14));
+    // FIXME: Remove and find solution for mainnet
+    // This is needed because the conversion done before submitting the
+    // transaction to open a position and by the time the position TX is
+    // submitted, the share price could have changed.
+    return sharesAmount - (sharesAmount % BigInt(1e16));
   }
 
   /**
