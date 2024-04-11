@@ -33,7 +33,7 @@ export function toastWarpcast(waitMs = SUCCESS_TOAST_DURATION): void {
       </span>,
       {
         id: "warpcast-toast",
-        duration: 10000,
+        duration: 7500,
         icon: (
           <img
             className="h-10"
