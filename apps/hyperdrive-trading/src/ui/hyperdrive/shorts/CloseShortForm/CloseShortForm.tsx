@@ -15,8 +15,10 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { TokenChoice, TokenChoices } from "src/ui/token/TokenChoices";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { TokenChoice } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -32,6 +34,8 @@ export function CloseShortForm({
   short,
 }: CloseShortFormProps): ReactElement {
   const appConfig = useAppConfig();
+
+  const { address: account } = useAccount();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -39,6 +43,17 @@ export function CloseShortForm({
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
+  });
+  const { balance: baseTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: baseToken.address,
+    decimals: baseToken.decimals,
+  });
+
+  const { balance: sharesTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: sharesToken.address,
+    decimals: sharesToken.decimals,
   });
   const {
     activeItem: activeWithdrawToken,
@@ -51,7 +66,6 @@ export function CloseShortForm({
       : sharesToken.address,
   });
 
-  const { address: account } = useAccount();
   const { amount, amountAsBigInt, setAmount } = useNumericInput({
     decimals: baseToken.decimals,
   });
@@ -97,7 +111,9 @@ export function CloseShortForm({
       setAmount("");
     },
   });
-  const withdrawTokenChoices: TokenChoice[] = [{ tokenConfig: sharesToken }];
+  const withdrawTokenChoices: TokenChoice[] = [
+    { tokenConfig: sharesToken, tokenBalance: sharesTokenBalance?.value },
+  ];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     // base token should be listed first if it's enabled
     withdrawTokenChoices.unshift({ tokenConfig: baseToken });
@@ -128,15 +144,21 @@ export function CloseShortForm({
       }
       setting={
         withdrawTokenChoices.length > 1 ? (
-          <TokenChoices
-            label="Choose withdrawal asset"
+          <TokenPicker
             tokens={withdrawTokenChoices}
-            selectedTokenAddress={activeWithdrawToken.address}
-            onTokenChange={(tokenAddress) =>
-              setActiveWithdrawToken(tokenAddress)
-            }
+            activeTokenAddress={activeWithdrawToken.address}
+            onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
+            label="Choose withdrawal asset"
           />
-        ) : undefined
+        ) : // <TokenChoices
+        //   label="Choose withdrawal asset"
+        //   tokens={withdrawTokenChoices}
+        //   selectedTokenAddress={activeWithdrawToken.address}
+        //   onTokenChange={(tokenAddress) =>
+        //     setActiveWithdrawToken(tokenAddress)
+        //   }
+        // />
+        undefined
       }
       transactionPreview={
         <LabelValue
