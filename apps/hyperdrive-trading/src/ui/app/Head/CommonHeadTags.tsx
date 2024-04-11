@@ -20,12 +20,9 @@ export function CommonHeadTags({
       />
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta property="og:site_name" content={defaultTitle} />
-      <meta property="og:title" content={title ?? defaultTitle} />
-      <meta
-        property="og:description"
-        content={description ?? defaultDescription}
-      />
+      <meta property="og:site_name" content={title} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://testnet.hyperdrive.trade/" />
       <meta property="og:image" content="/sepolia-banner.jpg" />
