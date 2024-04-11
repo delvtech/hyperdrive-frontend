@@ -21,7 +21,7 @@ export function callWarpcastToast(): void {
     <span className="flex flex-col">
       <span className="gradient-text">Share your trade!</span>
       <a
-        href="https://warpcast.com/~/compose?text=Let%27s%20see%20if%20you%20can%20beat%20me%20on%20Hyperdrive%20Testnet%20%F0%9F%98%89%20&embeds[]=https://frames.hyperdrive.trade"
+        href="https://warpcast.com/~/compose?text=See%20if%20you%20can%20outtrade%20me%20on%20Hyperdrive%20-%20warp%20me%20your%20best%20trade%20screenshot%21%20%2Fdelv&embeds[]=https://frames.hyperdrive.trade"
         target="_blank"
         rel="noopener noreferrer"
         className="daisy-link-hover daisy-link mt-1 cursor-pointer text-sm font-semibold"
