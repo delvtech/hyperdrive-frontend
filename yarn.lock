@@ -4477,13 +4477,13 @@
     ethereumjs-util "7.1.5"
     node-forge "^1.3.1"
 
-"@usecapsule/rainbowkit-wallet@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/rainbowkit-wallet/-/rainbowkit-wallet-0.7.0.tgz#3650a51095a4e945d66de87c5606b8204b694007"
-  integrity sha512-64oYLRfR896sh78fj8bTXL1x3xKe+vYxgj5d+7JyjsKfPCCa6WHifCUFTczmFDAirEstpQjtYD5QnXmE/oRP7Q==
+"@usecapsule/rainbowkit-wallet@^0.8.1":
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/@usecapsule/rainbowkit-wallet/-/rainbowkit-wallet-0.8.1.tgz#4d311c02caeb7142903c6ca081eda22cda636128"
+  integrity sha512-ZjlGrypiBq9RkXB6PiQizqrWK40uSpVIADE/GUGWnfsBoJMaTysr2R4ckk0GMF2C7J7HJCkC13W7S/dvOgx+iA==
   dependencies:
-    "@usecapsule/react-sdk" "^2.2.1"
-    "@usecapsule/wagmi-v2-integration" "^1.6.1"
+    "@usecapsule/react-sdk" "^2.2.3"
+    "@usecapsule/wagmi-v2-integration" "^1.6.3"
 
 "@usecapsule/react-components@1.0.13":
   version "1.0.13"
@@ -4492,10 +4492,10 @@
   dependencies:
     "@usecapsule/core-components" "^1.0.13"
 
-"@usecapsule/react-sdk@2.2.1", "@usecapsule/react-sdk@^2.2.1":
-  version "2.2.1"
-  resolved "https://registry.yarnpkg.com/@usecapsule/react-sdk/-/react-sdk-2.2.1.tgz#f1c4c32fc5c16414658b2b52faa094f5f536c4cf"
-  integrity sha512-SNldthymLCfXuTFgDBMQ6Qp4kSRf6gdExcVU6fc2Xw4Q8EOQ5nMdOIdBU/jLXRz5fjfG79EtavpqhCIfwAOXvg==
+"@usecapsule/react-sdk@2.2.3", "@usecapsule/react-sdk@^2.2.3":
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/@usecapsule/react-sdk/-/react-sdk-2.2.3.tgz#5c2c3338066e642930959b1ee446fc068e4277a7"
+  integrity sha512-3ZBCAH9tKw1/BS5ZR+Nfo9ydEZKHd1ggY12eD1LD/KVeO/pR7bmiM9mxQL3aaZmYEv7MA5N1Kov9V6m5/f0RSg==
   dependencies:
     "@gsap/react" "^2.1.0"
     "@ramp-network/ramp-instant-sdk" "^4.0.2"
@@ -4520,12 +4520,12 @@
   dependencies:
     "@usecapsule/core-sdk" "1.6.0"
 
-"@usecapsule/wagmi-v2-integration@^1.6.1":
-  version "1.6.1"
-  resolved "https://registry.yarnpkg.com/@usecapsule/wagmi-v2-integration/-/wagmi-v2-integration-1.6.1.tgz#24740c8affb02a058958c8b5bbddd19d2f9dc2a3"
-  integrity sha512-y1vWpdiJIx4CzJrNmlBehugWz5a/kVHj+OIgfN9+i/rDG0LTaM1yMYyHvZt5D3b3EMffXteNk2TbSikFaTh8Ww==
+"@usecapsule/wagmi-v2-integration@^1.6.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@usecapsule/wagmi-v2-integration/-/wagmi-v2-integration-1.6.3.tgz#719eb27f1c40977c1ca9eac108e19cebe4e0f561"
+  integrity sha512-yqez2jxsU86fRv/4zwI7Z3vYdCA2UXe/Qv/05rinoOmElZyWEE55mmbavIdkgn0KQEBdwTiMo/lwO/HiU4YoWw==
   dependencies:
-    "@usecapsule/react-sdk" "2.2.1"
+    "@usecapsule/react-sdk" "2.2.3"
     "@usecapsule/viem-v2-integration" "1.5.0"
 
 "@usecapsule/web-sdk@1.7.0":

@@ -24,17 +24,15 @@ const {
 export const chains: Chain[] = [];
 const transports: Record<string, Transport> = {};
 
-// Some wallets don't work in local devnet or cloudchain, so we only want to
-// include them if the correct chain is configured.
 const customWallets = [];
+if (capsuleWallet) {
+  customWallets.push(capsuleWallet);
+}
 
 // Local docker anvil node
 if (VITE_LOCALHOST_NODE_RPC_URL && VITE_LOCALHOST_NODE_RPC_URL) {
   chains.push(foundry);
   transports[foundry.id] = http(VITE_LOCALHOST_NODE_RPC_URL);
-  if (capsuleWallet) {
-    customWallets.push(capsuleWallet);
-  }
 }
 
 // CloudChain
@@ -51,9 +49,6 @@ if (
 if (VITE_SEPOLIA_RPC_URL) {
   chains.push(sepolia);
   transports[sepolia.id] = http(VITE_SEPOLIA_RPC_URL);
-  if (capsuleWallet) {
-    customWallets.push(capsuleWallet);
-  }
 }
 
 export const wagmiConfig = getDefaultConfig({
