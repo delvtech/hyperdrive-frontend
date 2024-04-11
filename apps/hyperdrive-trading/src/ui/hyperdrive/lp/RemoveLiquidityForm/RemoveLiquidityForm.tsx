@@ -142,7 +142,11 @@ export function RemoveLiquidityForm({
     <TransactionView
       setting={
         <TokenPicker
-          label="Choose withdrawal asset"
+          label={
+            isLidoSepolia
+              ? "Asset for withdrawal"
+              : "Choose asset for withdrawal"
+          }
           activeTokenAddress={activeWithdrawToken?.address}
           onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
           tokens={

@@ -27,12 +27,19 @@ export function TokenPicker({
   // A single element doesn't need a dropdown
   if (tokens.length === 1) {
     return (
-      <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-        <img src={tokens[0].tokenConfig.iconUrl} className="h-5 " />{" "}
-        <span className="text-sm font-semibold">
-          {tokens[0].tokenConfig.symbol}
-        </span>
-      </div>
+      <>
+        {label ? (
+          <label className="daisy-label">
+            <span className="daisy-label-text">{label}</span>
+          </label>
+        ) : undefined}
+        <div className="daisy-join-item flex h-12 w-32 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
+          <img src={tokens[0].tokenConfig.iconUrl} className="h-5 " />{" "}
+          <span className="text-sm font-semibold">
+            {tokens[0].tokenConfig.symbol}
+          </span>
+        </div>
+      </>
     );
   }
   const activeToken = tokens.find(
