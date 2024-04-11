@@ -33,6 +33,8 @@ module.exports = {
         800: "#49E9E4",
         900: "#16B6B1",
       },
+      "warpcast-purple": "#472b92",
+      "farcaster-purple": "#8A63D2",
 
       gray: {
         50: "#EFF4F6",

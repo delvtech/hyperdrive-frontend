@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useReadWriteHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadWriteHyperdriveModel";
+import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -69,6 +70,9 @@ export function useOpenLong({
           <TransactionToast message="Long opened" txHash={hash} />,
           { id: hash, duration: SUCCESS_TOAST_DURATION },
         );
+        setTimeout(() => {
+          toastWarpcast();
+        }, SUCCESS_TOAST_DURATION);
         onExecuted?.(hash);
       }
 

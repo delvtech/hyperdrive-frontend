@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useReadWriteHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadWriteHyperdriveModel";
+import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
 interface UseAddLiquidityOptions {
@@ -69,6 +70,7 @@ export function useAddLiquidity({
             <TransactionToast message="Liquidity added" txHash={txHash} />,
             { id: txHash, duration: SUCCESS_TOAST_DURATION },
           );
+          toastWarpcast();
           onExecuted?.(txHash);
         }
         const hash = asBase
