@@ -17,7 +17,7 @@ export default function Footer(): ReactElement {
           <HyperdriveLogo />
         </Link>
         <a
-          href="https://discord.gg/bdn9fxcs"
+          href="https://delv.tech/discord"
           className="daisy-link-hover daisy-link"
           target="_blank"
           rel="noreferrer"
