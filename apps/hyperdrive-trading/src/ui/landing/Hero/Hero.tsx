@@ -14,16 +14,14 @@ export function Hero(): ReactElement {
             multiplied exposure to the variable rate, or LP to profit from rates
             volatility.
           </h5>
-          <div className="flex w-full justify-center gap-x-2">
-            <a
-              target="_blank"
-              rel="noreferrer"
-              href="https://hyperdrive.delv.tech/docs"
-              className="daisy-btn daisy-btn-ghost text-primary"
-            >
-              Read the Hyperdrive docs <ArrowRightIcon className="inline h-4" />
-            </a>
-          </div>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://hyperdrive.delv.tech/docs"
+            className="daisy-btn daisy-btn-ghost text-primary"
+          >
+            Read the Hyperdrive docs <ArrowRightIcon className="inline h-4" />
+          </a>
         </div>
       </div>
     </div>
