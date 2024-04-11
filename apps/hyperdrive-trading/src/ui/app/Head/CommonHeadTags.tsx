@@ -5,8 +5,9 @@ interface CommonHeadTagsProps {
   description?: string;
 }
 
-const defaultTitle = "Hyperdrive";
-const defaultDescription = "Now Trading on Sepolia Testnet";
+const defaultTitle = "Hyperdrive | Fixed and Variable Rates, Reimagined.";
+const defaultDescription =
+  "Hyperdrive is a novel Automated Market Maker (AMM) protocol for fixed and variable rates. Hyperdrive is now LIVE on Sepolia testnet.";
 
 export function CommonHeadTags({
   title = defaultTitle,
