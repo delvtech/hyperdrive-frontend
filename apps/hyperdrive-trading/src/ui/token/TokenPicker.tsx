@@ -1,14 +1,17 @@
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { TokenConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { TokenChoice } from "src/ui/token/TokenChoices";
 import { Address } from "viem";
 
 export function TokenPicker({
+  label,
   tokens,
   activeTokenAddress,
   onChange,
 }: {
-  tokens: TokenConfig<any>[];
+  label: string;
+  tokens: TokenChoice[];
   activeTokenAddress: Address;
   onChange: (tokenAddress: Address) => void;
 }): ReactElement {
@@ -16,45 +19,64 @@ export function TokenPicker({
   if (tokens.length === 1) {
     return (
       <div className="daisy-join-item flex h-12 shrink-0 items-center gap-1.5 border border-neutral-content/30 bg-base-100 px-4">
-        <img src={tokens[0].iconUrl} className="h-5 " />{" "}
-        <span className="text-sm font-semibold">{tokens[0].symbol}</span>
+        <img src={tokens[0].tokenConfig.iconUrl} className="h-5 " />{" "}
+        <span className="text-sm font-semibold">
+          {tokens[0].tokenConfig.symbol}
+        </span>
       </div>
     );
   }
   const activeToken = tokens.find(
-    ({ address }) => address === activeTokenAddress,
-  ) as TokenConfig<any>;
+    ({ tokenConfig }) => tokenConfig?.address === activeTokenAddress,
+  );
+
   return (
-    <div
-      className={
-        "daisy-dropdown daisy-dropdown-bottom daisy-join-item shrink-0"
-      }
-    >
-      <button
-        className="daisy-btn flex h-12 items-center rounded-r-none border border-neutral-content/30 bg-base-100 px-4 hover:border-neutral-content/30"
-        onClick={(e) => {
-          e.preventDefault();
-        }}
-      >
-        <img src={activeToken.iconUrl} className="h-5 " /> {activeToken.symbol}
-        <ChevronDownIcon className="ml-2 h-3" />
-      </button>
-      <ul className="daisy-menu daisy-dropdown-content z-[1] w-40 gap-0.5 rounded-lg bg-base-100 p-2 shadow">
-        {[
-          tokens.map((token) => (
-            <li key={token.address}>
-              <button
-                onClick={(e) => {
-                  onChange(token.address);
-                  e.preventDefault();
-                }}
-              >
-                <img src={token.iconUrl} className="h-5 " /> {token.symbol}
-              </button>
-            </li>
-          )),
-        ]}
-      </ul>
+    <div className="flex w-full flex-col">
+      <label className="daisy-label ">
+        <span className="daisy-label-text">{label}</span>
+      </label>
+
+      <div className={"daisy-dropdown daisy-dropdown-bottom shrink-0"}>
+        <button
+          className="daisy-btn flex h-12 items-center border border-neutral-content/30 bg-base-100 px-4 hover:border-neutral-content/30"
+          onClick={(e) => {
+            e.preventDefault();
+          }}
+        >
+          <img src={activeToken?.tokenConfig?.iconUrl} className="h-5 " />{" "}
+          {activeToken?.tokenConfig?.symbol}
+          <ChevronDownIcon className="ml-2 h-3" />
+        </button>
+        <ul className="daisy-menu daisy-dropdown-content z-[1] w-56 gap-0.5 rounded-lg bg-base-100 p-2 shadow">
+          {[
+            tokens.map((token) => (
+              <li key={token?.tokenConfig?.address}>
+                <button
+                  onClick={(e) => {
+                    onChange(token?.tokenConfig?.address);
+                    e.preventDefault();
+                  }}
+                  className="gap-2"
+                >
+                  <img src={token?.tokenConfig?.iconUrl} className="h-5 " />{" "}
+                  {token?.tokenConfig?.symbol}
+                  <label className="daisy-label flex justify-end text-xs">
+                    <span className="text-gray-400">
+                      {formatBalance({
+                        balance: token?.tokenBalance || 0n,
+                        decimals: token?.tokenConfig?.decimals,
+                        places: 4,
+                      })}
+                      {` `}
+                      {token?.tokenConfig?.symbol}
+                    </span>
+                  </label>
+                </button>
+              </li>
+            )),
+          ]}
+        </ul>
+      </div>
     </div>
   );
 }
