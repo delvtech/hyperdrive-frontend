@@ -16,9 +16,8 @@ import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { TokenChoice } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
+import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -163,15 +162,7 @@ export function CloseLongForm({
             onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
             label="Choose withdrawal asset"
           />
-        ) : // <TokenChoices
-        //   label="Choose withdrawal asset"
-        //   tokens={withdrawTokenChoices}
-        //   selectedTokenAddress={activeWithdrawToken.address}
-        //   onTokenChange={(tokenAddress) =>
-        //     setActiveWithdrawToken(tokenAddress)
-        //   }
-        // />
-        undefined
+        ) : undefined
       }
       transactionPreview={
         <LabelValue

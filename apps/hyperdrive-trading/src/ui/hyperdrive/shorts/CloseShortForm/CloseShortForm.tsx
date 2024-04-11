@@ -16,9 +16,8 @@ import { useCloseShort } from "src/ui/hyperdrive/shorts/hooks/useCloseShort";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { TokenChoice } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
+import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -153,15 +152,7 @@ export function CloseShortForm({
             onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
             label="Choose withdrawal asset"
           />
-        ) : // <TokenChoices
-        //   label="Choose withdrawal asset"
-        //   tokens={withdrawTokenChoices}
-        //   selectedTokenAddress={activeWithdrawToken.address}
-        //   onTokenChange={(tokenAddress) =>
-        //     setActiveWithdrawToken(tokenAddress)
-        //   }
-        // />
-        undefined
+        ) : undefined
       }
       transactionPreview={
         <LabelValue
