@@ -15,8 +15,10 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { TokenChoice, TokenChoices } from "src/ui/token/TokenChoices";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { TokenChoice } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
@@ -32,6 +34,7 @@ export function CloseLongForm({
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const appConfig = useAppConfig();
+  const { address: account } = useAccount();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
@@ -39,6 +42,18 @@ export function CloseLongForm({
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
+  });
+
+  const { balance: baseTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: baseToken.address,
+    decimals: baseToken.decimals,
+  });
+
+  const { balance: sharesTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: sharesToken.address,
+    decimals: sharesToken.decimals,
   });
 
   const {
@@ -51,8 +66,6 @@ export function CloseLongForm({
       ? baseToken.address
       : sharesToken.address,
   });
-
-  const { address: account } = useAccount();
 
   const {
     amount: bondAmount,
@@ -98,10 +111,15 @@ export function CloseLongForm({
     },
   });
 
-  const withdrawTokenChoices: TokenChoice[] = [{ tokenConfig: sharesToken }];
+  const withdrawTokenChoices: TokenChoice[] = [
+    { tokenConfig: sharesToken, tokenBalance: sharesTokenBalance?.value },
+  ];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     // base token should be listed first if it's enabled
-    withdrawTokenChoices.unshift({ tokenConfig: baseToken });
+    withdrawTokenChoices.unshift({
+      tokenConfig: baseToken,
+      tokenBalance: baseTokenBalance?.value,
+    });
   }
   return (
     <TransactionView
@@ -139,15 +157,21 @@ export function CloseLongForm({
       }
       setting={
         withdrawTokenChoices.length > 1 ? (
-          <TokenChoices
-            label="Choose withdrawal asset"
+          <TokenPicker
             tokens={withdrawTokenChoices}
-            selectedTokenAddress={activeWithdrawToken.address}
-            onTokenChange={(tokenAddress) =>
-              setActiveWithdrawToken(tokenAddress)
-            }
+            activeTokenAddress={activeWithdrawToken.address}
+            onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
+            label="Choose withdrawal asset"
           />
-        ) : undefined
+        ) : // <TokenChoices
+        //   label="Choose withdrawal asset"
+        //   tokens={withdrawTokenChoices}
+        //   selectedTokenAddress={activeWithdrawToken.address}
+        //   onTokenChange={(tokenAddress) =>
+        //     setActiveWithdrawToken(tokenAddress)
+        //   }
+        // />
+        undefined
       }
       transactionPreview={
         <LabelValue

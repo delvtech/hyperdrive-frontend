@@ -58,7 +58,7 @@ export function TokenPicker({
           {activeToken?.tokenConfig?.symbol}
           <ChevronDownIcon className="ml-2 h-3" />
         </button>
-        <ul className="daisy-menu daisy-dropdown-content z-[1] w-56 gap-0.5 rounded-lg bg-base-100 p-2 shadow">
+        <ul className="daisy-menu daisy-dropdown-content z-[1] w-60 gap-0.5 rounded-lg bg-base-100 p-2 shadow">
           {[
             tokens.map((token) => (
               <li key={token?.tokenConfig?.address}>
@@ -73,6 +73,7 @@ export function TokenPicker({
                   {token?.tokenConfig?.symbol}
                   <label className="daisy-label flex justify-end text-xs">
                     <span className="text-gray-400">
+                      Balance: {` `}
                       {formatBalance({
                         balance: token?.tokenBalance || 0n,
                         decimals: token?.tokenConfig?.decimals,

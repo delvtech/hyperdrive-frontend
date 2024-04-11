@@ -116,7 +116,10 @@ export function CloseShortForm({
   ];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     // base token should be listed first if it's enabled
-    withdrawTokenChoices.unshift({ tokenConfig: baseToken });
+    withdrawTokenChoices.unshift({
+      tokenConfig: baseToken,
+      tokenBalance: baseTokenBalance?.value,
+    });
   }
 
   return (

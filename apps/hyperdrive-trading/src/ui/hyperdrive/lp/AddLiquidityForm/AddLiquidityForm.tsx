@@ -25,6 +25,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { sepolia } from "viem/chains";
@@ -50,6 +51,19 @@ export function AddLiquidityForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
+
+  const { balance: baseTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: baseToken.address,
+    decimals: baseToken.decimals,
+  });
+
+  const { balance: sharesTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: sharesToken.address,
+    decimals: sharesToken.decimals,
+  });
+
   const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
 
   const { lpShares: lpSharesBalanceOf } = useLpShares({
@@ -145,8 +159,28 @@ export function AddLiquidityForm({
           name={activeToken.symbol}
           token={
             <TokenPicker
+              joined={true}
               // TODO: Remove check for Sepolia chain after testnet period.
-              tokens={isLidoSepolia ? [sharesToken] : [baseToken, sharesToken]}
+              tokens={
+                // TODO: Remove check for Sepolia chain after testnet period.
+                isLidoSepolia
+                  ? [
+                      {
+                        tokenConfig: sharesToken,
+                        tokenBalance: sharesTokenBalance?.value,
+                      },
+                    ]
+                  : [
+                      {
+                        tokenConfig: baseToken,
+                        tokenBalance: baseTokenBalance?.value,
+                      },
+                      {
+                        tokenConfig: sharesToken,
+                        tokenBalance: sharesTokenBalance?.value,
+                      },
+                    ]
+              }
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);
