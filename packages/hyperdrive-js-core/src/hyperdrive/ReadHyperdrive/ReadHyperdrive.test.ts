@@ -649,6 +649,85 @@ test("getOpenLongs should account for longs fully closed to base", async () => {
   expect(value).toEqual([]);
 });
 
+test("getOpenLongs should handle when user fully closes then re-opens a position in the same checkpoint", async () => {
+  // Description:
+  // Bob opens a Long, then fully closes it at a loss. Then he re-opens a long
+  // in the same checkpoint, resulting in a single position with new accounting
+  // (ie: the previous loss is not factored in).
+
+  const { contract, readHyperdrive } = setupReadHyperdrive();
+
+  contract.stubEvents("OpenLong", { filter: { trader: BOB } }, [
+    {
+      args: {
+        trader: BOB,
+        assetId:
+          452312848583266388373324160190187140051835877600158453279131187532625961856n,
+        maturityTime: 1715299200n,
+        baseAmount: dnum.from("2000", 18)[0],
+        vaultShareAmount: dnum.from("1999.425872923441404543", 18)[0],
+        asBase: true,
+        bondAmount: dnum.from("2020.518819362004558105", 18)[0],
+      },
+      blockNumber: 1n,
+      data: "0x00000000000000000000000000000000000000000000000000000000663d638000000000000000000000000000000000000000000000006c6b935b8bbd40000000000000000000000000000000000000000000000000006c639ba602f70a9a7f000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000006d8854d90acff06119",
+      eventName: "OpenLong",
+      transactionHash:
+        "0x8b938ee12cc519b7a76debcad41aab61ef3de2cecc8a858adea7575671b1d9b4",
+    },
+    {
+      args: {
+        trader: BOB,
+        assetId:
+          452312848583266388373324160190187140051835877600158453279131187532625961856n,
+        maturityTime: 1715299200n,
+        baseAmount: dnum.from("9.0931", 18)[0],
+        vaultShareAmount: dnum.from("9.089900546115262569", 18)[0],
+        asBase: true,
+        bondAmount: dnum.from("9.196435772384927298", 18)[0],
+      },
+      blockNumber: 3n,
+      data: "0x00000000000000000000000000000000000000000000000000000000663d63800000000000000000000000000000000000000000000000007e312e45cf1ac0000000000000000000000000000000000000000000000000007e25d062e6d4586900000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000007fa04d9c34b2de42",
+      eventName: "OpenLong",
+      transactionHash:
+        "0x5130c7a919f7303343e102020705cfe3db2ab5ca200410d119cef296c4693621",
+    } as const,
+  ]);
+
+  contract.stubEvents("CloseLong", { filter: { trader: BOB } }, [
+    {
+      args: {
+        trader: BOB,
+        destination: BOB,
+        assetId:
+          452312848583266388373324160190187140051835877600158453279131187532625961856n,
+        maturityTime: 1715299200n,
+        baseAmount: dnum.from("1998.524066158245200112", 18)[0],
+        vaultShareAmount: dnum.from("1997.930052654830083335", 18)[0],
+        asBase: true,
+        bondAmount: dnum.from("2020.518819362004558105", 18)[0],
+      },
+      blockNumber: 2n,
+      data: "0x00000000000000000000000000000000000000000000000000000000663d638000000000000000000000000000000000000000000000006c5717c9895f7a40f000000000000000000000000000000000000000000000006c4ed96d6708a25d07000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000006d8854d90acff06119",
+      eventName: "CloseLong",
+      transactionHash:
+        "0x8fff6dfc2498356b665542c5517e895dd6c0364e2fa9bf011d373781dad22655",
+    },
+  ]);
+
+  const value = await readHyperdrive.getOpenLongs({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      assetId:
+        452312848583266388373324160190187140051835877600158453279131187532625961856n,
+      baseAmountPaid: dnum.from("9.0931", 18)[0],
+      bondAmount: dnum.from("9.196435772384927298", 18)[0],
+      maturity: 1715299200n,
+    },
+  ]);
+});
+
 test("getOpenLongs should account for longs partially closed to shares", async () => {
   // Description:
   // Bob opens up a long position, for a total cost 2 base, and receiving 2.2
