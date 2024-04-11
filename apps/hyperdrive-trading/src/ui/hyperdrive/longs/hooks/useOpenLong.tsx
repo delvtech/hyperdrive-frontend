@@ -4,6 +4,7 @@ import { MutationStatus } from "@tanstack/query-core";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
+import { callWarpcastToast } from "src/ui/base/components/Toaster/WarpcastToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useReadWriteHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadWriteHyperdriveModel";
 import { Address, Hash } from "viem";
@@ -69,6 +70,9 @@ export function useOpenLong({
           <TransactionToast message="Long opened" txHash={hash} />,
           { id: hash, duration: SUCCESS_TOAST_DURATION },
         );
+        setTimeout(() => {
+          callWarpcastToast();
+        }, SUCCESS_TOAST_DURATION);
         onExecuted?.(hash);
       }
 
