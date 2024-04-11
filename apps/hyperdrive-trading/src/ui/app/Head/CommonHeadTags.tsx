@@ -6,8 +6,7 @@ interface CommonHeadTagsProps {
 }
 
 const defaultTitle = "Hyperdrive";
-const defaultDescription =
-  "Hyperdrive is the next research leap from the DELV team on variable and fixed rate primitives. No preset expiration dates, no fragmented liquidity, and no LP rollovers, aka everlasting liquidity.";
+const defaultDescription = "Now Trading on Sepolia Testnet";
 
 export function CommonHeadTags({
   title = defaultTitle,
@@ -21,8 +20,12 @@ export function CommonHeadTags({
       />
       <title>{title}</title>
       <meta name="description" content={description} />
-      <meta property="og:site_name" content={defaultTitle} />
-      {/* TODO: Add og:image, og:url, og:title, og:description twitter:image twitter:card twitter:site icon */}
+      <meta property="og:site_name" content={title} />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://testnet.hyperdrive.trade/" />
+      <meta property="og:image" content="/sepolia-banner.jpg" />
     </Helmet>
   );
 }
