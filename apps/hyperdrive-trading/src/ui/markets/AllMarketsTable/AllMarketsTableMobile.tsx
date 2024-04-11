@@ -66,7 +66,6 @@ function formatMobileColumnData(row: MarketTableRowData) {
           {formatCompact({
             value: row.liquidity,
             decimals: row.baseToken.decimals,
-            commas: true,
           })}{" "}
           {row.baseToken.symbol}
         </span>

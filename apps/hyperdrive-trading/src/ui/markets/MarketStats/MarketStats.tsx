@@ -125,7 +125,6 @@ export function MarketStats({
               value={formatCompact({
                 value: liquidity?.liquidity || 0n,
                 decimals: baseToken.decimals,
-                commas: true,
               })}
             />
           )
