@@ -165,6 +165,7 @@ export function OpenLongForm({
     <TransactionView
       tokenInput={
         <TokenInput
+          settings
           name={activeToken.symbol}
           token={
             <TokenPicker
