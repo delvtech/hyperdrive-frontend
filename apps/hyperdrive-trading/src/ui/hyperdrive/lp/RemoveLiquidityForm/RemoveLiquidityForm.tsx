@@ -18,7 +18,6 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
@@ -48,17 +47,6 @@ export function RemoveLiquidityForm({
     tokens: appConfig.tokens,
   });
 
-  const { balance: baseTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: baseToken.address,
-    decimals: baseToken.decimals,
-  });
-
-  const { balance: sharesTokenBalance } = useTokenBalance({
-    account,
-    tokenAddress: sharesToken.address,
-    decimals: sharesToken.decimals,
-  });
   const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
 
   const tokens: TokenConfig<any>[] = [sharesToken];
