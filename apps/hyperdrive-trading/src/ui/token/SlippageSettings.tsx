@@ -1,6 +1,7 @@
 import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
+import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
 export function SlippageSettings({
   slippage,
   setSlippage,
@@ -47,13 +48,17 @@ export function SlippageSettings({
           <input
             min={0}
             placeholder="0.5"
+            step="any"
             type="number"
             value={dnum.format([slippage, activeToken.decimals])}
             onChange={(e) => {
               setActiveTab("custom");
               setSlippage(dnum.from(e.target.value, activeToken.decimals)[0]);
             }}
-            className="daisy-input daisy-input-bordered h-8 max-w-24 text-sm"
+            className={classNames(
+              "daisy-input daisy-input-bordered h-8 max-w-24 text-sm",
+              HIDE_NUMERIC_INPUT_ARROWS_CLASS,
+            )}
           />
           <span className="absolute right-2 top-2 text-neutral-content">%</span>
         </div>
