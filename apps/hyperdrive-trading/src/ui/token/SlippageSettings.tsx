@@ -1,3 +1,4 @@
+import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
@@ -17,7 +18,17 @@ export function SlippageSettings({
 }): JSX.Element {
   return (
     <>
-      <span className="ml-1">Max. Slippage</span>
+      <div className="flex items-center">
+        <span className="ml-1">Max. Slippage</span>
+        <div
+          className="daisy-tooltip ml-1 before:w-48 before:border before:text-xs"
+          data-tip={
+            "Your transaction will revert if the price changes unfavorably by more than this percentage."
+          }
+        >
+          <InformationCircleIcon className="size-4 text-neutral-content" />
+        </div>
+      </div>
       <div className="flex flex-row items-center justify-between">
         <div className="daisy-tabs daisy-tabs-xs my-4">
           <button
