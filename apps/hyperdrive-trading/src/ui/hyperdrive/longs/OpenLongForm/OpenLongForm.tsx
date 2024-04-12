@@ -1,4 +1,4 @@
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
   findBaseToken,
   findYieldSourceToken,
