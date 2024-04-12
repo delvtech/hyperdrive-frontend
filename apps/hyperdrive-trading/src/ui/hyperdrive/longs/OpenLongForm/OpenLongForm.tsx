@@ -21,6 +21,7 @@ import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLon
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
@@ -124,11 +125,20 @@ export function OpenLongForm({
     asBase: activeToken.address === baseToken.address,
   });
 
+  const {
+    setSlippage,
+    slippage,
+    activeTab: activeSlippageTab,
+    setActiveTab: setActiveSlippageTab,
+  } = useSlippageSettings({
+    decimals: activeToken.decimals,
+  });
+
   const bondsReceivedAfterSlippage =
     bondsReceived &&
     adjustAmountByPercentage({
       amount: bondsReceived,
-      percentage: 1n,
+      percentage: slippage,
       decimals: activeToken.decimals,
       direction: "down",
     });
@@ -166,7 +176,15 @@ export function OpenLongForm({
     <TransactionView
       tokenInput={
         <TokenInput
-          settings={<SlippageSettings />}
+          settings={
+            <SlippageSettings
+              setSlippage={setSlippage}
+              slippage={slippage}
+              activeToken={activeToken}
+              activeTab={activeSlippageTab}
+              setActiveTab={setActiveSlippageTab}
+            />
+          }
           name={activeToken.symbol}
           token={
             <TokenPicker
