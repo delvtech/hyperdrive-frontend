@@ -4,6 +4,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -220,13 +221,20 @@ export function OpenLongForm({
           maxValue={maxButtonValue}
           inputLabel="Amount to spend"
           stat={
-            activeTokenBalance
-              ? `Balance: ${formatBalance({
-                  balance: activeTokenBalance?.value,
-                  decimals: activeToken.decimals,
-                  places: 4,
-                })} ${activeToken.symbol}`
-              : undefined
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {activeTokenBalance
+                  ? `Balance: ${formatBalance({
+                      balance: activeTokenBalance?.value,
+                      decimals: activeToken.decimals,
+                      places: 4,
+                    })} ${activeToken.symbol}`
+                  : undefined}
+              </span>
+              <span>
+                {`Slippage: ${dnum.format([slippage, activeToken.decimals])}%`}
+              </span>
+            </div>
           }
           onChange={(newAmount) => setAmount(newAmount)}
         />

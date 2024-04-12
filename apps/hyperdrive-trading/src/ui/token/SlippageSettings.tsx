@@ -23,6 +23,7 @@ export function SlippageSettings({
             onClick={(e) => {
               e.preventDefault();
               setActiveTab("auto");
+              setSlippage(dnum.from("0.5", activeToken.decimals)[0]);
             }}
             className={classNames("daisy-tab text-sm", {
               "font-bold": activeTab === "auto",
@@ -46,9 +47,12 @@ export function SlippageSettings({
           <input
             min={0}
             placeholder="0.5"
-            onChange={(e) =>
-              setSlippage(dnum.from(e.target.value, activeToken.decimals)[0])
-            }
+            type="number"
+            value={dnum.format([slippage, activeToken.decimals])}
+            onChange={(e) => {
+              setActiveTab("custom");
+              setSlippage(dnum.from(e.target.value, activeToken.decimals)[0]);
+            }}
             className="daisy-input daisy-input-bordered h-8 max-w-24 text-sm"
           />
           <span className="absolute right-2 top-2 text-neutral-content">%</span>
