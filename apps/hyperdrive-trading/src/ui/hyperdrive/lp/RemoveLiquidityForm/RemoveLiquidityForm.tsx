@@ -18,8 +18,8 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
-import { TokenChoices } from "src/ui/token/TokenChoices";
 import { TokenInput } from "src/ui/token/TokenInput";
+import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { sepolia } from "viem/chains";
 import { useAccount, useChainId } from "wagmi";
@@ -35,6 +35,7 @@ export function RemoveLiquidityForm({
   onRemoveLiquidity,
 }: RemoveLiquidityFormProps): ReactElement {
   const chainId = useChainId();
+  const { address: account } = useAccount();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -45,6 +46,7 @@ export function RemoveLiquidityForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
+
   const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
 
   const tokens: TokenConfig<any>[] = [sharesToken];
@@ -63,8 +65,6 @@ export function RemoveLiquidityForm({
       : sharesToken.address,
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-
-  const { address: account } = useAccount();
 
   // Let users type in an amount of lp shares they want to remove
   const {
@@ -129,14 +129,16 @@ export function RemoveLiquidityForm({
   return (
     <TransactionView
       setting={
-        <TokenChoices
+        <TokenPicker
           label={
             isLidoSepolia
               ? "Asset for withdrawal"
               : "Choose asset for withdrawal"
           }
-          vertical
+          activeTokenAddress={activeWithdrawToken?.address}
+          onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
           tokens={
+            // TODO: Remove check for Sepolia chain after testnet period.
             isLidoSepolia
               ? [
                   {
@@ -152,8 +154,6 @@ export function RemoveLiquidityForm({
                   },
                 ]
           }
-          selectedTokenAddress={activeWithdrawToken.address}
-          onTokenChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
         />
       }
       tokenInput={

@@ -5,7 +5,7 @@ import {
   YieldSourceExtensions,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
-import { TokenPicker } from "src/ui/token/TokenPicker";
+import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 
 export function WithdrawTokenPicker({
   sharesToken,
@@ -20,10 +20,10 @@ export function WithdrawTokenPicker({
   activeWithdrawToken: TokenConfig<any>;
   onChange: (tokenAddress: string) => void;
 }): ReactElement {
-  const tokens: TokenConfig<any>[] = [sharesToken];
+  const tokens: TokenChoice[] = [{ tokenConfig: sharesToken }];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     // base token should be listed first if it's enabled
-    tokens.unshift(baseToken);
+    tokens.unshift({ tokenConfig: baseToken });
   }
 
   return (

@@ -22,6 +22,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
@@ -47,6 +48,18 @@ export function OpenLongForm({
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
+  });
+
+  const { balance: baseTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: baseToken.address,
+    decimals: baseToken.decimals,
+  });
+
+  const { balance: sharesTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: sharesToken.address,
+    decimals: sharesToken.decimals,
   });
   const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
 
@@ -156,12 +169,31 @@ export function OpenLongForm({
           token={
             <TokenPicker
               // TODO: Remove check for Sepolia chain after testnet period.
-              tokens={isLidoSepolia ? [sharesToken] : [baseToken, sharesToken]}
+              tokens={
+                isLidoSepolia
+                  ? [
+                      {
+                        tokenConfig: sharesToken,
+                        tokenBalance: sharesTokenBalance?.value,
+                      },
+                    ]
+                  : [
+                      {
+                        tokenConfig: baseToken,
+                        tokenBalance: baseTokenBalance?.value,
+                      },
+                      {
+                        tokenConfig: sharesToken,
+                        tokenBalance: sharesTokenBalance?.value,
+                      },
+                    ]
+              }
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);
                 setAmount("0");
               }}
+              joined={true}
             />
           }
           value={depositAmount ?? ""}

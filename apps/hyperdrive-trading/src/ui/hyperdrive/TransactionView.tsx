@@ -23,8 +23,10 @@ export function TransactionView({
   return (
     <div className="flex w-full flex-col gap-5">
       {heading !== undefined && <h5>{heading}</h5>}
-      {tokenInput}
-      {setting}
+      <div>
+        {tokenInput}
+        {setting}
+      </div>
       <div className="mt-4 flex flex-col gap-4">
         <Well transparent elevation="flat">
           <div className="space-y-4">
