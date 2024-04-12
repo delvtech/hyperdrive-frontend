@@ -11,16 +11,15 @@ import * as dnum from "dnum";
 export function formatCompact({
   value,
   decimals,
-  commas,
 }: {
   value: bigint;
   decimals: number;
-  commas?: boolean;
 }): string {
   const convertedToNumber = dnum.toNumber([value, decimals], decimals);
-  let formatter = format(".4f");
-  if (commas) {
-    formatter = format(",");
+  let formatter = format(".3s");
+
+  if (convertedToNumber < 1) {
+    formatter = format(".3f");
   }
   return formatter(convertedToNumber).toUpperCase().replace(/G$/, "B"); // ensure billion-scale numbers use 'B' instead of 'G', which is the default suffix used by d3-format for giga (billion).
 }
