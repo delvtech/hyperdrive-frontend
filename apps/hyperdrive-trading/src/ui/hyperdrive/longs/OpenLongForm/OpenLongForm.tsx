@@ -23,6 +23,7 @@ import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
@@ -165,7 +166,7 @@ export function OpenLongForm({
     <TransactionView
       tokenInput={
         <TokenInput
-          settings
+          settings={<SlippageSettings />}
           name={activeToken.symbol}
           token={
             <TokenPicker
