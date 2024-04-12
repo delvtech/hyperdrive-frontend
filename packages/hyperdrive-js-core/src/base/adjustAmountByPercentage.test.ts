@@ -8,7 +8,7 @@ test("should return adjusted amount down when given a basic input", () => {
   expect(
     adjustAmountByPercentage({
       amount,
-      percentage: 1n,
+      percentage: dnum.from("1", 18)[0],
       decimals: 18,
       direction: "down",
     }),
@@ -20,7 +20,7 @@ test("should return adjusted amount up when given a basic input", () => {
   expect(
     adjustAmountByPercentage({
       amount,
-      percentage: 1n,
+      percentage: dnum.from("1", 18)[0],
       decimals: 18,
       direction: "up",
     }),
@@ -33,7 +33,7 @@ test("should handle precision accurately when given precise input amounts", () =
   expect(
     adjustAmountByPercentage({
       amount: preciseAmount,
-      percentage: 1n,
+      percentage: dnum.from("1", 18)[0],
       decimals: 18,
       direction: "down",
     }),
@@ -45,7 +45,7 @@ test("should round down to zero when given the smallest possible positive value"
   expect(
     adjustAmountByPercentage({
       amount: roundingAmount,
-      percentage: 1n,
+      percentage: dnum.from("1", 18)[0],
       decimals: 18,
       direction: "down",
     }),
@@ -56,7 +56,7 @@ test("should return zero when input amount is zero", () => {
   expect(
     adjustAmountByPercentage({
       amount: 0n,
-      percentage: 1n,
+      percentage: dnum.from("1", 18)[0],
       decimals: 18,
       direction: "down",
     }),
@@ -68,7 +68,7 @@ test("should throw an error when given a negative input amount", () => {
   expect(() => {
     adjustAmountByPercentage({
       amount: negativeAmount,
-      percentage: 1n,
+      percentage: dnum.from("1", 18)[0],
       decimals: 18,
       direction: "down",
     });

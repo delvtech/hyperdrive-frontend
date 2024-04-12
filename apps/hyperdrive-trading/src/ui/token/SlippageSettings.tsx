@@ -26,7 +26,7 @@ export function SlippageSettings({
             "Your transaction will revert if the price changes unfavorably by more than this percentage."
           }
         >
-          <InformationCircleIcon className="size-4 text-neutral-content" />
+          <InformationCircleIcon className="size-4" />
         </div>
       </div>
       <div className="flex flex-row items-center justify-between">
