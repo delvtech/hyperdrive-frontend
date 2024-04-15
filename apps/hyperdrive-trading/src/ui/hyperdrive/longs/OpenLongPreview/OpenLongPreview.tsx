@@ -51,7 +51,7 @@ export function OpenLongPreview({
             <span>{`${formatBalance({
               balance: long.baseAmountPaid,
               decimals: baseToken.decimals,
-              places: 4,
+              places: baseToken.places,
             })} ${activeToken.symbol}`}</span>
           }
         />
@@ -61,7 +61,7 @@ export function OpenLongPreview({
             <span className="font-bold">{`${formatBalance({
               balance: long.bondAmount,
               decimals: baseToken.decimals,
-              places: 4,
+              places: baseToken.places,
             })} hy${baseToken.symbol}`}</span>
           }
         />
@@ -76,7 +76,7 @@ export function OpenLongPreview({
                 ? `${formatBalance({
                     balance: curveFee,
                     decimals: baseToken.decimals,
-                    places: 6,
+                    places: baseToken.places,
                   })} hy${baseToken.symbol}`
                 : `0 hy${baseToken.symbol}`}
             </span>
@@ -161,7 +161,7 @@ export function OpenLongPreview({
                     ? `${formatBalance({
                         balance: long.bondAmount - long.baseAmountPaid,
                         decimals: baseToken.decimals,
-                        places: 4,
+                        places: baseToken.places,
                       })} ${baseToken.symbol}`
                     : undefined}
                 </span>

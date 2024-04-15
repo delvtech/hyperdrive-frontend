@@ -196,7 +196,7 @@ export function AddLiquidityForm({
               ? `Balance: ${formatBalance({
                   balance: activeTokenBalance?.value,
                   decimals: activeToken.decimals,
-                  places: 4,
+                  places: activeToken.places,
                 })} ${activeToken.symbol}`
               : undefined
           }
@@ -209,6 +209,7 @@ export function AddLiquidityForm({
           lpSharesOut={lpSharesOut}
           depositAmount={depositAmountAsBigInt}
           depositTokenDecimals={activeToken.decimals}
+          depositTokenPlaces={activeToken.places}
           depositTokenSymbol={activeToken.symbol}
           poolShareAfterDeposit={poolShareAfterDeposit}
         />

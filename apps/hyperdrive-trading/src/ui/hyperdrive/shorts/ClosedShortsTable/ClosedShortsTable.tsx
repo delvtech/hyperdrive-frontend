@@ -46,7 +46,7 @@ function formatClosedShortMobileColumnData(
       value: formatBalance({
         balance: closedShort.bondAmount,
         decimals: baseToken.decimals,
-        places: 2,
+        places: baseToken.places,
       }),
     },
     {
@@ -54,7 +54,7 @@ function formatClosedShortMobileColumnData(
       value: formatBalance({
         balance: closedShort.baseAmountReceived,
         decimals: baseToken.decimals,
-        places: 4,
+        places: baseToken.places,
       }),
     },
     {
@@ -128,6 +128,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
         return formatBalance({
           balance: bondAmountValue,
           decimals: baseToken.decimals,
+          places: baseToken.places,
         });
       },
     }),
@@ -140,7 +141,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
             {formatBalance({
               balance: amountReceived,
               decimals: baseToken.decimals,
-              places: 4,
+              places: baseToken.places,
             })}
           </span>
         );

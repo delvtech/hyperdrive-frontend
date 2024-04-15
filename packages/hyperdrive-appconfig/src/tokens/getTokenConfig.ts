@@ -10,6 +10,7 @@ export interface TokenConfig<
   name: string;
   symbol: string;
   decimals: number;
+  places: number;
   iconUrl: string;
   tags: string[];
   extensions: Extensions;
@@ -20,17 +21,20 @@ export async function getTokenConfig<
 >({
   token,
   iconUrl,
+  places,
   tags,
   extensions,
 }: {
   token: ReadErc20 | ReadEth;
   tags: string[];
   iconUrl: string;
+  places: number;
   extensions: Extensions;
 }): Promise<TokenConfig<Extensions>> {
   return {
     address: token.address,
     decimals: await token.getDecimals(),
+    places,
     name: await token.getName(),
     symbol: await token.getSymbol(),
     iconUrl,

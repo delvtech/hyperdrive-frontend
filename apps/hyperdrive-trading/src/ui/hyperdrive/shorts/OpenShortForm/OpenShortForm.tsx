@@ -226,7 +226,7 @@ export function OpenShortForm({
                     balance: traderDeposit || 0n,
                     decimals: activeToken.decimals,
                     includeCommas: true,
-                    places: 6,
+                    places: activeToken.places,
                   })}{" "}
                   {activeToken.symbol}
                 </strong>{" "}
@@ -236,7 +236,7 @@ export function OpenShortForm({
                     balance: amountOfBondsToShortAsBigInt,
                     decimals: activeToken.decimals,
                     includeCommas: true,
-                    places: 6,
+                    places: activeToken.places,
                   })}{" "}
                   {baseToken.symbol}
                 </strong>{" "}

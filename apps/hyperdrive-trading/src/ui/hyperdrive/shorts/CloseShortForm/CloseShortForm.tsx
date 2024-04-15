@@ -122,7 +122,7 @@ export function CloseShortForm({
               ? `Balance: ${formatBalance({
                   balance: short.bondAmount,
                   decimals: hyperdrive.decimals,
-                  places: 4,
+                  places: baseToken.places,
                 })}`
               : undefined
           }
@@ -148,7 +148,7 @@ export function CloseShortForm({
                 ? `${formatBalance({
                     balance: amountOut,
                     decimals: baseToken.decimals,
-                    places: 8,
+                    places: baseToken.places,
                   })}`
                 : "0"}{" "}
               {activeWithdrawToken.symbol}

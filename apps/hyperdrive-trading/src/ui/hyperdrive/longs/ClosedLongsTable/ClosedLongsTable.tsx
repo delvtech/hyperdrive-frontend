@@ -47,7 +47,7 @@ function formatClosedLongMobileColumnData(
           {formatBalance({
             balance: closedLong.bondAmount,
             decimals: baseToken.decimals,
-            places: 2,
+            places: baseToken.places,
           })}
         </span>
       ),
@@ -137,7 +137,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
             {formatBalance({
               balance: row.original.bondAmount,
               decimals: baseToken.decimals,
-              places: 2,
+              places: baseToken.places,
             })}
           </span>
         );
@@ -274,7 +274,7 @@ function BaseAmountReceivedCell({
   const currentValueLabel = formatBalance({
     balance: closedLong.baseAmount,
     decimals: baseToken.decimals,
-    places: 4,
+    places: baseToken.places,
   });
 
   return (

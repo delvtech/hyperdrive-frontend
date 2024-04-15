@@ -195,7 +195,7 @@ function getColumns({
             {formatBalance({
               balance: row.original.bondAmount,
               decimals: baseToken.decimals,
-              places: 2,
+              places: baseToken.places,
             })}
           </span>
         );
@@ -209,7 +209,7 @@ function getColumns({
         return formatBalance({
           balance: amountPaid,
           decimals: baseToken.decimals,
-          places: 2,
+          places: baseToken.places,
         });
       },
     }),

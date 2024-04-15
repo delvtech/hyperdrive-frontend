@@ -133,7 +133,7 @@ export function CloseLongForm({
           stat={`Balance: ${formatBalance({
             balance: long.bondAmount,
             decimals: hyperdrive.decimals,
-            places: 4,
+            places: baseToken.places,
           })}`}
           onChange={(newAmount) => setAmount(newAmount)}
         />
@@ -157,7 +157,7 @@ export function CloseLongForm({
                 ? `${formatBalance({
                     balance: withdrawAmount,
                     decimals: baseToken.decimals,
-                    places: 8,
+                    places: baseToken.places,
                   })}`
                 : "0"}{" "}
               {activeWithdrawToken.symbol}

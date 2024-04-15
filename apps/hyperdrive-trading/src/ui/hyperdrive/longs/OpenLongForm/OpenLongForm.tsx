@@ -204,7 +204,7 @@ export function OpenLongForm({
               ? `Balance: ${formatBalance({
                   balance: activeTokenBalance?.value,
                   decimals: activeToken.decimals,
-                  places: 4,
+                  places: activeToken.places,
                 })} ${activeToken.symbol}`
               : undefined
           }

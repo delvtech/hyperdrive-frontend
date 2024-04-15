@@ -12,6 +12,7 @@ interface AddLiquidityPreviewProps {
   depositAmount: bigint | undefined;
   lpSharesOut: bigint | undefined;
   depositTokenDecimals: number;
+  depositTokenPlaces: number;
   depositTokenSymbol: string;
 }
 
@@ -21,6 +22,7 @@ export function AddLiquidityPreview({
   depositAmount,
   depositTokenSymbol,
   depositTokenDecimals,
+  depositTokenPlaces,
   lpSharesOut,
 }: AddLiquidityPreviewProps): ReactElement {
   const appConfig = useAppConfig();
@@ -59,7 +61,7 @@ export function AddLiquidityPreview({
               ? `${formatBalance({
                   balance: depositAmount,
                   decimals: depositTokenDecimals,
-                  places: 4,
+                  places: depositTokenPlaces,
                 })} ${depositTokenSymbol}`
               : "-"}
           </p>
@@ -73,7 +75,7 @@ export function AddLiquidityPreview({
               ? `${formatBalance({
                   balance: lpSharesOut,
                   decimals: hyperdrive.decimals,
-                  places: 4,
+                  places: baseToken.places,
                 })} ${baseToken.symbol}-LP`
               : "-"}
           </p>

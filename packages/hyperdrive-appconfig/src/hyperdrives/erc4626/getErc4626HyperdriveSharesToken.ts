@@ -16,5 +16,6 @@ export async function getErc4626HyperdriveSharesToken({
     tags: ["yieldSource", "erc4626"],
     extensions,
     iconUrl,
+    places: 2,
   });
 }
