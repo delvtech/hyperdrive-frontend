@@ -48,7 +48,7 @@ export function CurrentValueCell({
   const currentValueLabel = formatBalance({
     balance: amountOutInBase || 0n,
     decimals: baseToken.decimals,
-    places: 4,
+    places: baseToken.places,
   });
 
   const isPositiveChangeInValue =
@@ -74,7 +74,7 @@ export function CurrentValueCell({
           ? `${formatBalance({
               balance: amountOutInBase - row.baseAmountPaid,
               decimals: baseToken.decimals,
-              places: 4,
+              places: baseToken.places,
             })} ${baseToken.symbol}`
           : undefined}
       </div>

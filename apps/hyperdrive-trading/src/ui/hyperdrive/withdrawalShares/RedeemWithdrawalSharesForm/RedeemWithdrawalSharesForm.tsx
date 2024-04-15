@@ -129,7 +129,7 @@ export function RedeemWithdrawalSharesForm({
               ? maxRedeemableBaseProceeds || 0n
               : maxRedeemableSharesProceeds || 0n,
             decimals: activeWithdrawToken.decimals,
-            places: 4,
+            places: activeWithdrawToken.places,
           })} ${activeWithdrawToken.symbol}`}
           maxValue={formatUnits(
             isBaseTokenWithdrawal
@@ -151,7 +151,7 @@ export function RedeemWithdrawalSharesForm({
                       ? baseProceeds
                       : sharesProceeds,
                     decimals: activeWithdrawToken.decimals,
-                    places: 4,
+                    places: activeWithdrawToken.places,
                   })} ${activeWithdrawToken.symbol}`
                 : ""}
             </p>

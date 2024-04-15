@@ -68,7 +68,7 @@ export function OpenWithdrawalSharesCard({
                       `${formatBalance({
                         balance: withdrawalSharesCurrentValue,
                         decimals: baseToken.decimals,
-                        places: 4,
+                        places: baseToken.places,
                       })} ${baseToken.symbol}`
                     ) : (
                       <Skeleton />
@@ -84,7 +84,7 @@ export function OpenWithdrawalSharesCard({
                       `${formatBalance({
                         balance: baseProceedsFromPreview,
                         decimals: baseToken.decimals,
-                        places: 4,
+                        places: baseToken.places,
                       })} ${baseToken.symbol}`
                     ) : (
                       <Skeleton />

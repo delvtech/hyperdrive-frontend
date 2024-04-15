@@ -15,5 +15,6 @@ export async function getStethHyperdriveSharesToken({
     tags: ["yieldSource", "steth"],
     extensions,
     iconUrl: STETH_ICON_URL,
+    places: 4,
   });
 }

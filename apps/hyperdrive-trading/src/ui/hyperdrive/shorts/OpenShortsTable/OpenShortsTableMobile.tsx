@@ -184,7 +184,7 @@ function formatOpenShortMobileColumnData(
       value: formatBalance({
         balance: openShort.bondAmount,
         decimals: baseToken.decimals,
-        places: 6,
+        places: baseToken.places,
       }),
     },
     {
@@ -192,7 +192,7 @@ function formatOpenShortMobileColumnData(
       value: formatBalance({
         balance: openShort.baseAmountPaid,
         decimals: baseToken.decimals,
-        places: 6,
+        places: baseToken.places,
       }),
     },
     {

@@ -317,6 +317,7 @@ function formatTransactionTableMobileData(
       baseQueuedForWithdrawal,
       hyperdrive.decimals,
       baseToken.symbol,
+      baseToken.places,
     );
   }
   return [
@@ -413,10 +414,11 @@ function formatBaseQueuedForWithdrawalLabel(
   baseQueuedForWithdrawal: bigint,
   decimals: number,
   baseSymbol: string,
+  places: number = 2,
 ) {
   const baseQueuedForWithdrawalLabel = formatBalance({
     balance: baseQueuedForWithdrawal,
-    places: 2,
+    places: places,
     decimals,
   });
   const floorOrAmount =

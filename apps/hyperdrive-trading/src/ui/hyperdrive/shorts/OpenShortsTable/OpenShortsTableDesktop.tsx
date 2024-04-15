@@ -148,7 +148,7 @@ function getColumns(
         return formatBalance({
           balance: bondAmountValue,
           decimals: baseToken.decimals,
-          places: 6,
+          places: baseToken.places,
         });
       },
     }),
@@ -159,7 +159,7 @@ function getColumns(
         return formatBalance({
           balance: amountPaid,
           decimals: baseToken.decimals,
-          places: 3,
+          places: baseToken.places,
         });
       },
     }),

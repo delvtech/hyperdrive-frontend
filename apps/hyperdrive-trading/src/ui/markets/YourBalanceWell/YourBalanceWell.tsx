@@ -110,7 +110,7 @@ function AvailableAsset({
             {formatBalance({
               balance: tokenBalance.value || 0n,
               decimals: token.decimals,
-              places: 4,
+              places: token.places,
             })}{" "}
             {token.symbol}
           </>
@@ -147,7 +147,7 @@ function AvailableAsset({
                       : formatBalance({
                           balance: allowance || 0n,
                           decimals: token.decimals,
-                          places: 4,
+                          places: token.places,
                         })}
                   </span>
                 </li>

@@ -119,11 +119,11 @@ export function RevokeAllowanceModalButton({
                         ? `Balance: ${formatBalance({
                             balance: tokenBalance?.value,
                             decimals: token.decimals,
-                            places: 4,
+                            places: token.places,
                           })} ${token.symbol}\nAllowance: ${formatBalance({
                             balance: allowance ?? 0n,
                             decimals: token.decimals,
-                            places: 4,
+                            places: token.places,
                           })} ${token.symbol}`
                         : undefined
                     }

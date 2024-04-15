@@ -51,7 +51,7 @@ export function OpenShortPreview({
               ? `${formatBalance({
                   balance: shortSize,
                   decimals: baseToken.decimals,
-                  places: 6,
+                  places: baseToken.places,
                 })} hy${baseToken.symbol}`
               : `0 hy${baseToken.symbol}`}
           </span>
@@ -68,7 +68,7 @@ export function OpenShortPreview({
               ? `${formatBalance({
                   balance: curveFee,
                   decimals: tokenIn.decimals,
-                  places: 6,
+                  places: tokenIn.places,
                 })} ${tokenIn.symbol}`
               : `0 ${tokenIn.symbol}`}
           </span>
@@ -85,7 +85,7 @@ export function OpenShortPreview({
               ? `${formatBalance({
                   balance: costBasis,
                   decimals: tokenIn.decimals,
-                  places: 6,
+                  places: tokenIn.places,
                 })} ${tokenIn.symbol}`
               : `0 ${tokenIn.symbol}`}
           </span>
