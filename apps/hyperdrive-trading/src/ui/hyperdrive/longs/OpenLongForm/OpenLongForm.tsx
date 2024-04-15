@@ -61,7 +61,9 @@ export function OpenLongForm({
     tokenAddress: sharesToken.address,
     decimals: sharesToken.decimals,
   });
-  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
+  const isLidoSepolia =
+    chainId === sepolia.id &&
+    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({

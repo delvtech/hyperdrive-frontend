@@ -111,6 +111,9 @@ export const sepoliaAppConfig: AppConfig = {
       decimals: 18,
       baseToken: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
       sharesToken: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
+      depositOptions: {
+        isBaseTokenDepositEnabled: true,
+      },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: true,
       },
@@ -143,6 +146,9 @@ export const sepoliaAppConfig: AppConfig = {
       decimals: 18,
       baseToken: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
       sharesToken: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
+      depositOptions: {
+        isBaseTokenDepositEnabled: true,
+      },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: true,
       },
@@ -170,43 +176,14 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x4E38fd41c03ff11b3426efaE53138b86116797b8",
-      name: "30d ETH-Lido stETH",
-      decimals: 18,
-      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0x6977eC5fae3862D3471f0f5B6Dcc64cDF5Cfd959",
-      withdrawOptions: {
-        isBaseTokenWithdrawalEnabled: false,
-      },
-      poolConfig: {
-        baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0x6977eC5fae3862D3471f0f5B6Dcc64cDF5Cfd959",
-        linkerFactory: "0x13b0AcFA6B77C0464Ce26Ff80da7758b8e1f526E",
-        linkerCodeHash:
-          "0xbce832c0ea372ef949945c6a4846b1439b728e08890b93c2aa99e2e3c50ece34",
-        initialVaultSharePrice: 1000001797945915675n,
-        minimumShareReserves: 1000000000000000n,
-        minimumTransactionAmount: 1000000000000000n,
-        positionDuration: 2592000n,
-        checkpointDuration: 86400n,
-        timeStretch: 3737448720271234n,
-        governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
-        feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
-        sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
-        fees: {
-          curve: 10000000000000000n,
-          flat: 41095890410958n,
-          governanceLP: 150000000000000000n,
-          governanceZombie: 30000000000000000n,
-        },
-      },
-    },
-    {
       address: "0xff33bd6d7ED4119c99C310F3e5f0Fa467796Ee23",
       name: "14d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       sharesToken: "0x6977eC5fae3862D3471f0f5B6Dcc64cDF5Cfd959",
+      depositOptions: {
+        isBaseTokenDepositEnabled: false,
+      },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: false,
       },
@@ -228,6 +205,41 @@ export const sepoliaAppConfig: AppConfig = {
         fees: {
           curve: 10000000000000000n,
           flat: 19178082191780n,
+          governanceLP: 150000000000000000n,
+          governanceZombie: 30000000000000000n,
+        },
+      },
+    },
+    {
+      address: "0x4E38fd41c03ff11b3426efaE53138b86116797b8",
+      name: "30d ETH-Lido stETH",
+      decimals: 18,
+      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      sharesToken: "0x6977eC5fae3862D3471f0f5B6Dcc64cDF5Cfd959",
+      depositOptions: {
+        isBaseTokenDepositEnabled: false,
+      },
+      withdrawOptions: {
+        isBaseTokenWithdrawalEnabled: false,
+      },
+      poolConfig: {
+        baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+        vaultSharesToken: "0x6977eC5fae3862D3471f0f5B6Dcc64cDF5Cfd959",
+        linkerFactory: "0x13b0AcFA6B77C0464Ce26Ff80da7758b8e1f526E",
+        linkerCodeHash:
+          "0xbce832c0ea372ef949945c6a4846b1439b728e08890b93c2aa99e2e3c50ece34",
+        initialVaultSharePrice: 1000001797945915675n,
+        minimumShareReserves: 1000000000000000n,
+        minimumTransactionAmount: 1000000000000000n,
+        positionDuration: 2592000n,
+        checkpointDuration: 86400n,
+        timeStretch: 3737448720271234n,
+        governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        fees: {
+          curve: 10000000000000000n,
+          flat: 41095890410958n,
           governanceLP: 150000000000000000n,
           governanceZombie: 30000000000000000n,
         },

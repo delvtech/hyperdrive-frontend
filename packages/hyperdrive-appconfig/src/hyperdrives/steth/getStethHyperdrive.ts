@@ -54,6 +54,9 @@ export async function getStethHyperdrive({
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
     baseToken: baseTokenConfig.address,
     sharesToken: sharesToken.address,
+    depositOptions: {
+      isBaseTokenDepositEnabled: false,
+    },
     withdrawOptions: {
       // steth hyperdrive does not allow you to withdraw back to native ETH, due
       // to how lido's withraw process works
