@@ -131,9 +131,7 @@ export function OpenLongForm({
     slippage,
     activeTab: activeSlippageTab,
     setActiveTab: setActiveSlippageTab,
-  } = useSlippageSettings({
-    decimals: activeToken.decimals,
-  });
+  } = useSlippageSettings();
 
   const bondsReceivedAfterSlippage =
     bondsReceived &&
@@ -179,7 +177,7 @@ export function OpenLongForm({
         <TokenInput
           settings={
             <SlippageSettings
-              setSlippage={setSlippage}
+              onSlippageChange={setSlippage}
               slippage={slippage}
               decimals={activeToken.decimals}
               activeOption={activeSlippageTab}

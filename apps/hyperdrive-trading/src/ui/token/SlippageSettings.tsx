@@ -2,15 +2,18 @@ import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { PercentInput } from "src/ui/base/components/PercentInput";
+
+export const AUTO_SLIPPAGE_AMOUNT = dnum.from("0.5", 18)[0];
+
 export function SlippageSettings({
   slippage,
-  setSlippage,
+  onSlippageChange,
   decimals,
-  activeOption: activeTab,
-  onActiveOptionChange: setActiveOption,
+  activeOption,
+  onActiveOptionChange,
 }: {
   slippage: bigint;
-  setSlippage: (slippage: bigint) => void;
+  onSlippageChange: (slippage: bigint) => void;
   decimals: number;
   activeOption: "auto" | "custom";
   onActiveOptionChange: (activeTab: "auto" | "custom") => void;
@@ -33,11 +36,11 @@ export function SlippageSettings({
           <button
             onClick={(e) => {
               e.preventDefault();
-              setActiveOption("auto");
-              setSlippage(dnum.from("0.5", decimals)[0]);
+              onActiveOptionChange("auto");
+              onSlippageChange(AUTO_SLIPPAGE_AMOUNT);
             }}
             className={classNames("daisy-tab text-sm", {
-              "font-bold": activeTab === "auto",
+              "font-bold": activeOption === "auto",
             })}
           >
             Auto
@@ -45,10 +48,10 @@ export function SlippageSettings({
           <button
             onClick={(e) => {
               e.preventDefault();
-              setActiveOption("custom");
+              onActiveOptionChange("custom");
             }}
             className={classNames("daisy-tab text-sm", {
-              "font-bold": activeTab === "custom",
+              "font-bold": activeOption === "custom",
             })}
           >
             Custom
@@ -57,8 +60,8 @@ export function SlippageSettings({
         <PercentInput
           value={dnum.format([slippage, decimals])}
           onChange={(e) => {
-            setActiveOption("custom");
-            setSlippage(dnum.from(e.target.value, decimals)[0]);
+            onActiveOptionChange("custom");
+            onSlippageChange(dnum.from(e.target.value, decimals)[0]);
           }}
         />
       </div>

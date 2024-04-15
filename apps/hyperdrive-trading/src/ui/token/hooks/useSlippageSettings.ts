@@ -1,14 +1,12 @@
-import * as dnum from "dnum";
 import { useState } from "react";
-export function useSlippageSettings({ decimals }: { decimals: number }): {
+import { AUTO_SLIPPAGE_AMOUNT } from "src/ui/token/SlippageSettings";
+export function useSlippageSettings(): {
   slippage: bigint;
   setSlippage: (slippage: bigint) => void;
   activeTab: "auto" | "custom";
   setActiveTab: (activeTab: "auto" | "custom") => void;
 } {
-  const [slippage, setSlippage] = useState<bigint>(
-    dnum.from("0.5", decimals)[0],
-  );
+  const [slippage, setSlippage] = useState<bigint>(AUTO_SLIPPAGE_AMOUNT);
   const [activeTab, setActiveTab] = useState<"auto" | "custom">("auto");
 
   return {
