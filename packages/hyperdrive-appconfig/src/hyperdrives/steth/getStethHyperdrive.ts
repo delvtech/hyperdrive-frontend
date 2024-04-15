@@ -6,15 +6,17 @@ import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
 import { ETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";
-
+import { sepolia } from "viem/chains";
 export async function getStethHyperdrive({
   publicClient,
   hyperdriveAddress,
   sharesTokenExtensions,
+  chainId,
 }: {
   publicClient: PublicClient;
   hyperdriveAddress: Address;
   sharesTokenExtensions: YieldSourceExtensions;
+  chainId: number;
 }): Promise<{
   sharesToken: TokenConfig<YieldSourceExtensions>;
   baseToken: TokenConfig<EmptyExtensions>;
@@ -55,7 +57,8 @@ export async function getStethHyperdrive({
     baseToken: baseTokenConfig.address,
     sharesToken: sharesToken.address,
     depositOptions: {
-      isBaseTokenDepositEnabled: false,
+      // TODO: Remove this check after testnet period
+      isBaseTokenDepositEnabled: chainId !== sepolia.id,
     },
     withdrawOptions: {
       // steth hyperdrive does not allow you to withdraw back to native ETH, due

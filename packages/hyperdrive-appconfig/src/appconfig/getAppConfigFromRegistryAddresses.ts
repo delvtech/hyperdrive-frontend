@@ -56,6 +56,7 @@ export async function getAppConfigFromRegistryAddresses({
             publicClient,
             hyperdriveAddress: address,
             sharesTokenExtensions: stethExtensions,
+            chainId,
           });
 
         tokens.add(sharesToken);

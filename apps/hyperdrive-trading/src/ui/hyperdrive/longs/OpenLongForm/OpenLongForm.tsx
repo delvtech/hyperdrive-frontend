@@ -26,7 +26,6 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
-import { sepolia } from "viem/chains";
 import { useAccount, useChainId } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
@@ -61,19 +60,18 @@ export function OpenLongForm({
     tokenAddress: sharesToken.address,
     decimals: sharesToken.decimals,
   });
-  const isLidoSepolia =
-    chainId === sepolia.id &&
-    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
       // TODO: Remove check for Sepolia chain after testnet period.
-      defaultActiveToken: isLidoSepolia
+      defaultActiveToken: hyperdrive.depositOptions.isBaseTokenDepositEnabled
         ? sharesToken.address
         : baseToken.address,
       // TODO: Remove check for Sepolia chain after testnet period.
-      tokens: isLidoSepolia ? [sharesToken] : [baseToken, sharesToken],
+      tokens: hyperdrive.depositOptions.isBaseTokenDepositEnabled
+        ? [sharesToken]
+        : [baseToken, sharesToken],
     });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
@@ -172,7 +170,7 @@ export function OpenLongForm({
             <TokenPicker
               // TODO: Remove check for Sepolia chain after testnet period.
               tokens={
-                isLidoSepolia
+                hyperdrive.depositOptions.isBaseTokenDepositEnabled
                   ? [
                       {
                         tokenConfig: sharesToken,
