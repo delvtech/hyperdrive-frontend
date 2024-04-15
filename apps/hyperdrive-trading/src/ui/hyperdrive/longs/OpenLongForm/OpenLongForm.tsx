@@ -181,9 +181,9 @@ export function OpenLongForm({
             <SlippageSettings
               setSlippage={setSlippage}
               slippage={slippage}
-              activeToken={activeToken}
-              activeTab={activeSlippageTab}
-              setActiveTab={setActiveSlippageTab}
+              decimals={activeToken.decimals}
+              activeOption={activeSlippageTab}
+              onActiveOptionChange={setActiveSlippageTab}
             />
           }
           name={activeToken.symbol}

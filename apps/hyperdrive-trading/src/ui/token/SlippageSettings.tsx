@@ -1,20 +1,19 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import { TokenConfig } from "@hyperdrive/appconfig";
 import classNames from "classnames";
 import * as dnum from "dnum";
-import { HIDE_NUMERIC_INPUT_ARROWS_CLASS } from "src/ui/base/numericInput";
+import { PercentInput } from "src/ui/base/components/PercentInput";
 export function SlippageSettings({
   slippage,
   setSlippage,
-  activeToken,
-  activeTab,
-  setActiveTab,
+  decimals,
+  activeOption: activeTab,
+  onActiveOptionChange: setActiveOption,
 }: {
   slippage: bigint;
   setSlippage: (slippage: bigint) => void;
-  activeToken: TokenConfig<any>;
-  activeTab: "auto" | "custom";
-  setActiveTab: (activeTab: "auto" | "custom") => void;
+  decimals: number;
+  activeOption: "auto" | "custom";
+  onActiveOptionChange: (activeTab: "auto" | "custom") => void;
 }): JSX.Element {
   return (
     <>
@@ -34,8 +33,8 @@ export function SlippageSettings({
           <button
             onClick={(e) => {
               e.preventDefault();
-              setActiveTab("auto");
-              setSlippage(dnum.from("0.5", activeToken.decimals)[0]);
+              setActiveOption("auto");
+              setSlippage(dnum.from("0.5", decimals)[0]);
             }}
             className={classNames("daisy-tab text-sm", {
               "font-bold": activeTab === "auto",
@@ -46,7 +45,7 @@ export function SlippageSettings({
           <button
             onClick={(e) => {
               e.preventDefault();
-              setActiveTab("custom");
+              setActiveOption("custom");
             }}
             className={classNames("daisy-tab text-sm", {
               "font-bold": activeTab === "custom",
@@ -55,24 +54,13 @@ export function SlippageSettings({
             Custom
           </button>
         </div>
-        <div className="relative">
-          <input
-            min={0}
-            placeholder="0.5"
-            step="any"
-            type="number"
-            value={dnum.format([slippage, activeToken.decimals])}
-            onChange={(e) => {
-              setActiveTab("custom");
-              setSlippage(dnum.from(e.target.value, activeToken.decimals)[0]);
-            }}
-            className={classNames(
-              "daisy-input daisy-input-bordered h-8 max-w-24 text-sm",
-              HIDE_NUMERIC_INPUT_ARROWS_CLASS,
-            )}
-          />
-          <span className="absolute right-2 top-2 text-neutral-content">%</span>
-        </div>
+        <PercentInput
+          value={dnum.format([slippage, decimals])}
+          onChange={(e) => {
+            setActiveOption("custom");
+            setSlippage(dnum.from(e.target.value, decimals)[0]);
+          }}
+        />
       </div>
     </>
   );
