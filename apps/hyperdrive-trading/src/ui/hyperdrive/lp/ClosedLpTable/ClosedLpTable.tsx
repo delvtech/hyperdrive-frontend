@@ -57,7 +57,7 @@ function formatClosedLpMobileColumnData(
       value: formatBalance({
         balance: shares,
         decimals: baseToken.decimals,
-        places: 4,
+        places: baseToken.places,
       }),
     },
     {
@@ -65,7 +65,7 @@ function formatClosedLpMobileColumnData(
       value: formatBalance({
         balance: closedLpShares.baseAmount,
         decimals: baseToken.decimals,
-        places: 4,
+        places: baseToken.places,
       }),
     },
     {
@@ -75,7 +75,7 @@ function formatClosedLpMobileColumnData(
         : formatBalance({
             balance: closedLpShares.withdrawalShareAmount,
             decimals: baseToken.decimals,
-            places: 4,
+            places: baseToken.places,
           }),
     },
   ];
@@ -151,7 +151,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
             {formatBalance({
               balance: shares,
               decimals: baseToken.decimals,
-              places: 4,
+              places: baseToken.places,
             })}
           </span>
         );
@@ -166,7 +166,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
             {formatBalance({
               balance: baseAmount,
               decimals: baseToken.decimals,
-              places: 4,
+              places: baseToken.places,
             })}
           </span>
         );
@@ -185,7 +185,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
             {formatBalance({
               balance: withdrawalShareAmount,
               decimals: baseToken.decimals,
-              places: 4,
+              places: baseToken.places,
             })}
           </span>
         );

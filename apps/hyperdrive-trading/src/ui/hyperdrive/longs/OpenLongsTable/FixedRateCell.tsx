@@ -58,7 +58,7 @@ export function FixedRateCell({
         {formatBalance({
           balance: yieldAfterFlatFee,
           decimals: baseToken.decimals,
-          places: 4,
+          places: baseToken.places,
         })}{" "}
         {baseToken.symbol}
       </div>

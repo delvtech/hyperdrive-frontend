@@ -184,7 +184,7 @@ function formatOpenLongMobileColumnData(
           {formatBalance({
             balance: row.bondAmount,
             decimals: baseToken.decimals,
-            places: 2,
+            places: baseToken.places,
           })}
         </span>
       ),
@@ -194,7 +194,7 @@ function formatOpenLongMobileColumnData(
       value: formatBalance({
         balance: row.baseAmountPaid,
         decimals: baseToken.decimals,
-        places: 2,
+        places: baseToken.places,
       }),
     },
     {
