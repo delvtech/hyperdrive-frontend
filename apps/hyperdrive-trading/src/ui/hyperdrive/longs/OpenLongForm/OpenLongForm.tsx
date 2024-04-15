@@ -1,9 +1,11 @@
-import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-js-core";
 import {
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -21,8 +23,10 @@ import { OpenLongPreview } from "src/ui/hyperdrive/longs/OpenLongPreview/OpenLon
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
@@ -32,6 +36,7 @@ interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
+
 export function OpenLongForm({
   hyperdrive: hyperdrive,
   onOpenLong,
@@ -123,11 +128,18 @@ export function OpenLongForm({
     asBase: activeToken.address === baseToken.address,
   });
 
+  const {
+    setSlippage,
+    slippage,
+    activeTab: activeSlippageTab,
+    setActiveTab: setActiveSlippageTab,
+  } = useSlippageSettings({ decimals: activeToken.decimals });
+
   const bondsReceivedAfterSlippage =
     bondsReceived &&
     adjustAmountByPercentage({
       amount: bondsReceived,
-      percentage: 1n,
+      percentage: slippage,
       decimals: activeToken.decimals,
       direction: "down",
     });
@@ -165,6 +177,15 @@ export function OpenLongForm({
     <TransactionView
       tokenInput={
         <TokenInput
+          settings={
+            <SlippageSettings
+              onSlippageChange={setSlippage}
+              slippage={slippage}
+              decimals={activeToken.decimals}
+              activeOption={activeSlippageTab}
+              onActiveOptionChange={setActiveSlippageTab}
+            />
+          }
           name={activeToken.symbol}
           token={
             <TokenPicker
@@ -200,13 +221,20 @@ export function OpenLongForm({
           maxValue={maxButtonValue}
           inputLabel="Amount to spend"
           stat={
-            activeTokenBalance
-              ? `Balance: ${formatBalance({
-                  balance: activeTokenBalance?.value,
-                  decimals: activeToken.decimals,
-                  places: activeToken.places,
-                })} ${activeToken.symbol}`
-              : undefined
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {activeTokenBalance
+                  ? `Balance: ${formatBalance({
+                      balance: activeTokenBalance?.value,
+                      decimals: activeToken.decimals,
+                      places: activeToken.places,
+                    })} ${activeToken.symbol}`
+                  : undefined}
+              </span>
+              <span>
+                {`Slippage: ${dnum.format([slippage, activeToken.decimals])}%`}
+              </span>
+            </div>
           }
           onChange={(newAmount) => setAmount(newAmount)}
         />
