@@ -4,6 +4,8 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -34,6 +36,7 @@ interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
 }
+
 export function OpenLongForm({
   hyperdrive: hyperdrive,
   onOpenLong,
@@ -130,7 +133,7 @@ export function OpenLongForm({
     slippage,
     activeTab: activeSlippageTab,
     setActiveTab: setActiveSlippageTab,
-  } = useSlippageSettings();
+  } = useSlippageSettings({ decimals: activeToken.decimals });
 
   const bondsReceivedAfterSlippage =
     bondsReceived &&
@@ -218,13 +221,20 @@ export function OpenLongForm({
           maxValue={maxButtonValue}
           inputLabel="Amount to spend"
           stat={
-            activeTokenBalance
-              ? `Balance: ${formatBalance({
-                  balance: activeTokenBalance?.value,
-                  decimals: activeToken.decimals,
-                  places: activeToken.places,
-                })} ${activeToken.symbol}`
-              : undefined
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {activeTokenBalance
+                  ? `Balance: ${formatBalance({
+                      balance: activeTokenBalance?.value,
+                      decimals: activeToken.decimals,
+                      places: activeToken.places,
+                    })} ${activeToken.symbol}`
+                  : undefined}
+              </span>
+              <span>
+                {`Slippage: ${dnum.format([slippage, activeToken.decimals])}%`}
+              </span>
+            </div>
           }
           onChange={(newAmount) => setAmount(newAmount)}
         />

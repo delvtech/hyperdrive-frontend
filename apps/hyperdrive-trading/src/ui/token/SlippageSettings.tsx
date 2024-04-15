@@ -3,7 +3,8 @@ import classNames from "classnames";
 import * as dnum from "dnum";
 import { PercentInput } from "src/ui/base/components/PercentInput";
 
-export const AUTO_SLIPPAGE_AMOUNT = dnum.from("0.5", 18)[0];
+export const AUTO_SLIPPAGE_AMOUNT = (decimals: number): bigint =>
+  dnum.from("0.5", decimals)[0];
 
 export function SlippageSettings({
   slippage,
@@ -37,7 +38,7 @@ export function SlippageSettings({
             onClick={(e) => {
               e.preventDefault();
               onActiveOptionChange("auto");
-              onSlippageChange(AUTO_SLIPPAGE_AMOUNT);
+              onSlippageChange(AUTO_SLIPPAGE_AMOUNT(decimals));
             }}
             className={classNames("daisy-tab text-sm", {
               "font-bold": activeOption === "auto",
