@@ -28,7 +28,7 @@ export function toastWarpcast(waitMs = SUCCESS_TOAST_DURATION): void {
           rel="noopener noreferrer"
           className="daisy-link-hover daisy-link mt-1 cursor-pointer text-sm"
         >
-          Warp on Warpcast
+          Cast on Warpcast
         </a>
       </span>,
       {
