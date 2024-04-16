@@ -17,6 +17,16 @@ export interface HyperdriveConfig {
    */
   sharesToken: Address;
 
+  depositOptions: {
+    /**
+     * If true, users will be able to deposit baseTokens into hyperdrive.
+     * This is useful on a testnet such as Sepolia where users can't withdraw
+     * their funds to the base asset, so disabling deposits on this asset
+     * is a good idea.
+     */
+    isBaseTokenDepositEnabled: boolean;
+  };
+
   withdrawOptions: {
     /**
      * If true, users will be able to withdraw from hyperdrive in denominations
