@@ -94,7 +94,6 @@ export function AddLiquidityForm({
   const requiresAllowance = !isActiveTokenEth;
   const { tokenAllowance: activeTokenAllowance } = useTokenAllowance({
     account,
-
     spender: hyperdrive.address,
     tokenAddress: activeToken.address,
     enabled: requiresAllowance,

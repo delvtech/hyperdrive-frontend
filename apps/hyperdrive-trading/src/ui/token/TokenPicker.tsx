@@ -73,8 +73,7 @@ export function TokenPicker({
         </button>
         <ul
           className={classNames(
-            "daisy-menu daisy-dropdown-content z-[1] w-32 justify-evenly gap-0.5 rounded-lg bg-base-100 p-2 shadow",
-            { "w-64": activeToken?.tokenBalance },
+            "daisy-menu daisy-dropdown-content z-[1] w-64 justify-evenly gap-0.5 rounded-lg bg-base-100 p-2 shadow",
           )}
         >
           {[
@@ -89,19 +88,17 @@ export function TokenPicker({
                 >
                   <img src={tokenConfig?.iconUrl} className="h-5" />{" "}
                   {tokenConfig?.symbol}
-                  {tokenBalance ? (
-                    <label className="flex w-32 flex-1 cursor-pointer text-neutral-content">
-                      <span>
-                        Balance: {` `}
-                        {formatBalance({
-                          balance: tokenBalance || 0n,
-                          decimals: tokenConfig?.decimals,
-                          places: tokenConfig?.places,
-                        })}
-                        {` `}
-                      </span>
-                    </label>
-                  ) : null}
+                  <label className="flex w-32 flex-1 cursor-pointer text-neutral-content">
+                    <span>
+                      Balance: {` `}
+                      {formatBalance({
+                        balance: tokenBalance || 0n,
+                        decimals: tokenConfig?.decimals,
+                        places: tokenConfig?.places,
+                      })}
+                      {` `}
+                    </span>
+                  </label>
                 </button>
               </li>
             )),
