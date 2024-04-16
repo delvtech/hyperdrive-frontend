@@ -4,6 +4,7 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -151,7 +152,7 @@ export function OpenShortForm({
     adjustAmountByPercentage({
       amount: amountOfBondsToShortAsBigInt,
       decimals: activeToken.decimals,
-      direction: "down",
+      direction: "up",
       percentage: slippage,
     });
 
@@ -183,6 +184,22 @@ export function OpenShortForm({
           inputLabel="Amount to short"
           value={amountOfBondsToShort ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
+          stat={
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {activeTokenBalance
+                  ? `Balance: ${formatBalance({
+                      balance: activeTokenBalance?.value,
+                      decimals: activeToken.decimals,
+                      places: activeToken.places,
+                    })} ${activeToken.symbol}`
+                  : undefined}
+              </span>
+              <span>
+                {`Slippage: ${dnum.format([slippage, activeToken.decimals])}%`}
+              </span>
+            </div>
+          }
           settings={
             <SlippageSettings
               onSlippageChange={setSlippage}
