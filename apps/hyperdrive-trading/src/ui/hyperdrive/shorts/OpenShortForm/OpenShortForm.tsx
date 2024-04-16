@@ -30,7 +30,6 @@ import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
-import { sepolia } from "viem/chains";
 import { useAccount, useChainId } from "wagmi";
 
 interface OpenShortPositionFormProps {
@@ -55,17 +54,18 @@ export function OpenShortForm({
     tokens: appConfig.tokens,
   });
   // TODO: Remove check for Sepolia chain after testnet period.
-  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
+  const baseTokenDepositEnabled =
+    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      defaultActiveToken: isLidoSepolia
-        ? sharesToken.address
-        : baseToken.address,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      tokens: isLidoSepolia ? [sharesToken] : [baseToken, sharesToken],
+      defaultActiveToken: baseTokenDepositEnabled
+        ? baseToken.address
+        : sharesToken.address,
+      tokens: baseTokenDepositEnabled
+        ? [baseToken, sharesToken]
+        : [sharesToken],
     });
 
   const { balance: baseTokenBalance } = useTokenBalance({
@@ -205,13 +205,14 @@ export function OpenShortForm({
       setting={
         <TokenPicker
           label={
-            isLidoSepolia ? "Asset for deposit" : "Choose asset for deposit"
+            baseTokenDepositEnabled
+              ? "Asset for deposit"
+              : "Choose asset for deposit"
           }
           onChange={(tokenAddress) => setActiveToken(tokenAddress)}
           activeTokenAddress={activeToken.address}
           tokens={
-            // TODO: Remove check for Sepolia chain after testnet period.
-            isLidoSepolia
+            baseTokenDepositEnabled
               ? [
                   {
                     tokenConfig: sharesToken,
