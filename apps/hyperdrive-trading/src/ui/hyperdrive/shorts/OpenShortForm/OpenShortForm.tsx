@@ -23,11 +23,13 @@ import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/Open
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
-import { formatUnits, parseUnits } from "viem";
+import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface OpenShortPositionFormProps {
@@ -57,8 +59,8 @@ export function OpenShortForm({
     useActiveToken({
       account,
       defaultActiveToken: baseTokenDepositEnabled
-        ? sharesToken.address
-        : baseToken.address,
+        ? baseToken.address
+        : sharesToken.address,
       tokens: baseTokenDepositEnabled
         ? [baseToken, sharesToken]
         : [sharesToken],
@@ -136,14 +138,27 @@ export function OpenShortForm({
     maxTradeSize: maxBondsOut,
   });
 
+  const {
+    setSlippage,
+    slippage,
+    activeOption: activeSlippageOption,
+    setActiveOption: setActiveSlippageOption,
+  } = useSlippageSettings({ decimals: activeToken.decimals });
+
+  const maxDepositAfterSlippage =
+    traderDeposit &&
+    adjustAmountByPercentage({
+      amount: traderDeposit,
+      decimals: activeToken.decimals,
+      direction: "up",
+      percentage: slippage,
+    });
+
   const { openShort, openShortStatus } = useOpenShort({
     hyperdriveAddress: hyperdrive.address,
     amountBondShorts: amountOfBondsToShortAsBigInt,
     minVaultSharePrice: poolInfo?.vaultSharePrice,
-    // TODO: handle slippage
-    maxDeposit: traderDeposit
-      ? dnum.multiply(traderDeposit, parseUnits("1.1", 18))[0]
-      : 0n,
+    maxDeposit: maxDepositAfterSlippage,
     destination: account,
     enabled: openShortPreviewStatus === "success" && hasEnoughAllowance,
     asBase: activeToken.address === baseToken.address,
@@ -167,6 +182,22 @@ export function OpenShortForm({
           inputLabel="Amount to short"
           value={amountOfBondsToShort ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
+          stat={
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {`Slippage: ${dnum.format([slippage, activeToken.decimals])}%`}
+              </span>
+            </div>
+          }
+          settings={
+            <SlippageSettings
+              onSlippageChange={setSlippage}
+              slippage={slippage}
+              decimals={activeToken.decimals}
+              activeOption={activeSlippageOption}
+              onActiveOptionChange={setActiveSlippageOption}
+            />
+          }
         />
       }
       setting={
