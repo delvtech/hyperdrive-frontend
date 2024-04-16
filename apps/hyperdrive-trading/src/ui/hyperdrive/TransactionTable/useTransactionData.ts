@@ -91,6 +91,7 @@ export function useTransactionData({
           })),
       );
     }
+
     return data;
   }, [longs, lpEvents, shorts]);
 
