@@ -28,8 +28,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits, parseUnits } from "viem";
-import { sepolia } from "viem/chains";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
@@ -42,7 +41,6 @@ export function OpenShortForm({
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -52,18 +50,18 @@ export function OpenShortForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  // TODO: Remove check for Sepolia chain after testnet period.
-  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
+  const baseTokenDepositEnabled =
+    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      defaultActiveToken: isLidoSepolia
+      defaultActiveToken: baseTokenDepositEnabled
         ? sharesToken.address
         : baseToken.address,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      tokens: isLidoSepolia ? [sharesToken] : [baseToken, sharesToken],
+      tokens: baseTokenDepositEnabled
+        ? [baseToken, sharesToken]
+        : [sharesToken],
     });
 
   const { balance: baseTokenBalance } = useTokenBalance({
@@ -174,24 +172,25 @@ export function OpenShortForm({
       setting={
         <TokenPicker
           label={
-            isLidoSepolia ? "Asset for deposit" : "Choose asset for deposit"
+            baseTokenDepositEnabled
+              ? "Choose asset for deposit"
+              : "Asset for deposit"
           }
           onChange={(tokenAddress) => setActiveToken(tokenAddress)}
           activeTokenAddress={activeToken.address}
           tokens={
-            // TODO: Remove check for Sepolia chain after testnet period.
-            isLidoSepolia
+            baseTokenDepositEnabled
               ? [
+                  {
+                    tokenConfig: baseToken,
+                    tokenBalance: baseTokenBalance?.value,
+                  },
                   {
                     tokenConfig: sharesToken,
                     tokenBalance: sharesTokenBalance?.value,
                   },
                 ]
               : [
-                  {
-                    tokenConfig: baseToken,
-                    tokenBalance: baseTokenBalance?.value,
-                  },
                   {
                     tokenConfig: sharesToken,
                     tokenBalance: sharesTokenBalance?.value,

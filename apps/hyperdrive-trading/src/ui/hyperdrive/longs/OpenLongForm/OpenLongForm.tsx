@@ -30,7 +30,7 @@ import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 interface OpenLongFormProps {
   hyperdrive: HyperdriveConfig;
   onOpenLong?: (e: MouseEvent<HTMLButtonElement>) => void;
@@ -42,7 +42,6 @@ export function OpenLongForm({
 }: OpenLongFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
   const baseToken = findBaseToken({
@@ -66,17 +65,18 @@ export function OpenLongForm({
     decimals: sharesToken.decimals,
   });
 
+  const baseTokenDepositEnabled =
+    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
+
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      defaultActiveToken: hyperdrive.depositOptions.isBaseTokenDepositEnabled
-        ? sharesToken.address
-        : baseToken.address,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      tokens: hyperdrive.depositOptions.isBaseTokenDepositEnabled
-        ? [sharesToken]
-        : [baseToken, sharesToken],
+      defaultActiveToken: baseTokenDepositEnabled
+        ? baseToken.address
+        : sharesToken.address,
+      tokens: baseTokenDepositEnabled
+        ? [baseToken, sharesToken]
+        : [sharesToken],
     });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
@@ -191,18 +191,18 @@ export function OpenLongForm({
             <TokenPicker
               // TODO: Remove check for Sepolia chain after testnet period.
               tokens={
-                hyperdrive.depositOptions.isBaseTokenDepositEnabled
+                baseTokenDepositEnabled
                   ? [
+                      {
+                        tokenConfig: baseToken,
+                        tokenBalance: baseTokenBalance?.value,
+                      },
                       {
                         tokenConfig: sharesToken,
                         tokenBalance: sharesTokenBalance?.value,
                       },
                     ]
                   : [
-                      {
-                        tokenConfig: baseToken,
-                        tokenBalance: baseTokenBalance?.value,
-                      },
                       {
                         tokenConfig: sharesToken,
                         tokenBalance: sharesTokenBalance?.value,

@@ -21,7 +21,6 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
-import { sepolia } from "viem/chains";
 import { useAccount, useChainId } from "wagmi";
 interface RemoveLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
@@ -47,7 +46,8 @@ export function RemoveLiquidityForm({
     tokens: appConfig.tokens,
   });
 
-  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
+  const baseTokenDepositEnabled =
+    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
   const tokens: TokenConfig<any>[] = [sharesToken];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
@@ -131,24 +131,23 @@ export function RemoveLiquidityForm({
       setting={
         <TokenPicker
           label={
-            isLidoSepolia
+            baseTokenDepositEnabled
               ? "Asset for withdrawal"
               : "Choose asset for withdrawal"
           }
           activeTokenAddress={activeWithdrawToken?.address}
           onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
           tokens={
-            // TODO: Remove check for Sepolia chain after testnet period.
-            isLidoSepolia
+            baseTokenDepositEnabled
               ? [
+                  {
+                    tokenConfig: baseToken,
+                  },
                   {
                     tokenConfig: sharesToken,
                   },
                 ]
               : [
-                  {
-                    tokenConfig: baseToken,
-                  },
                   {
                     tokenConfig: sharesToken,
                   },
