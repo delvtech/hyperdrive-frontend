@@ -58,7 +58,8 @@ export async function getStethHyperdrive({
     baseToken: baseTokenConfig.address,
     sharesToken: sharesToken.address,
     depositOptions: {
-      // TODO: Remove this check after testnet period
+      // Turn off sepolia eth deposits so users aren't risking their eth.
+      // They can still mint steth and deposit that.
       isBaseTokenDepositEnabled: chainId !== sepolia.id,
     },
     withdrawOptions: {
