@@ -148,9 +148,9 @@ export function OpenShortForm({
   } = useSlippageSettings({ decimals: activeToken.decimals });
 
   const maxDepositAfterSlippage =
-    amountOfBondsToShortAsBigInt &&
+    traderDeposit &&
     adjustAmountByPercentage({
-      amount: amountOfBondsToShortAsBigInt,
+      amount: traderDeposit,
       decimals: activeToken.decimals,
       direction: "up",
       percentage: slippage,
@@ -186,15 +186,6 @@ export function OpenShortForm({
           onChange={(newAmount) => setAmount(newAmount)}
           stat={
             <div className="flex flex-col gap-1 text-xs text-neutral-content">
-              <span>
-                {activeTokenBalance
-                  ? `Balance: ${formatBalance({
-                      balance: activeTokenBalance?.value,
-                      decimals: activeToken.decimals,
-                      places: activeToken.places,
-                    })} ${activeToken.symbol}`
-                  : undefined}
-              </span>
               <span>
                 {`Slippage: ${dnum.format([slippage, activeToken.decimals])}%`}
               </span>
