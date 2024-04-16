@@ -4465,25 +4465,25 @@
     gsap "^3.12.5"
     qr-code-styling "^1.6.0-rc.1"
 
-"@usecapsule/core-sdk@1.6.0":
-  version "1.6.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/core-sdk/-/core-sdk-1.6.0.tgz#0572194625eceb4c33275c507b8fe99d6a9fb6b9"
-  integrity sha512-QqLFFmCtS8Ndl4T+CwRSl+ul4BWe8GJB4ve03cOisi7J8rduCIjNrzdSOU2nLf6tjAQtWLBERSLgNzp4XVcO/w==
+"@usecapsule/core-sdk@1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@usecapsule/core-sdk/-/core-sdk-1.6.1.tgz#356c6a274f9697fe7c5c395b5840e4f6b5226e1c"
+  integrity sha512-8T3M7dsxpmz3uRzcv9MGqvnSn2m5esXCC1nb7zj0hl0pgnmvIMvPRg2RgXhIWUG+5xBi1p2bx4n8YcA5a2TJ9A==
   dependencies:
     "@celo/utils" "^3.2.0"
-    "@usecapsule/user-management-client" "1.4.0"
+    "@usecapsule/user-management-client" "1.4.1"
     base64url "^3.0.1"
     buffer "6.0.3"
     ethereumjs-util "7.1.5"
     node-forge "^1.3.1"
 
-"@usecapsule/rainbowkit-wallet@^0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@usecapsule/rainbowkit-wallet/-/rainbowkit-wallet-0.8.1.tgz#4d311c02caeb7142903c6ca081eda22cda636128"
-  integrity sha512-ZjlGrypiBq9RkXB6PiQizqrWK40uSpVIADE/GUGWnfsBoJMaTysr2R4ckk0GMF2C7J7HJCkC13W7S/dvOgx+iA==
+"@usecapsule/rainbowkit-wallet@^0.8.3":
+  version "0.8.3"
+  resolved "https://registry.yarnpkg.com/@usecapsule/rainbowkit-wallet/-/rainbowkit-wallet-0.8.3.tgz#42f865149f13b68d8672bf8088e4f6134b9d0b80"
+  integrity sha512-U0zoqBUyplFDYieo+1O9LiSmd+SF3rGoTBhFaeCvWrJ73SRXw1SvWALvr4qm/GMd1UbO7U1vS/EAdZrXsznSFA==
   dependencies:
-    "@usecapsule/react-sdk" "^2.2.3"
-    "@usecapsule/wagmi-v2-integration" "^1.6.3"
+    "@usecapsule/react-sdk" "^2.3.2"
+    "@usecapsule/wagmi-v2-integration" "^1.7.2"
 
 "@usecapsule/react-components@1.0.13":
   version "1.0.13"
@@ -4492,49 +4492,49 @@
   dependencies:
     "@usecapsule/core-components" "^1.0.13"
 
-"@usecapsule/react-sdk@2.2.3", "@usecapsule/react-sdk@^2.2.3":
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/@usecapsule/react-sdk/-/react-sdk-2.2.3.tgz#5c2c3338066e642930959b1ee446fc068e4277a7"
-  integrity sha512-3ZBCAH9tKw1/BS5ZR+Nfo9ydEZKHd1ggY12eD1LD/KVeO/pR7bmiM9mxQL3aaZmYEv7MA5N1Kov9V6m5/f0RSg==
+"@usecapsule/react-sdk@2.3.2", "@usecapsule/react-sdk@^2.3.2":
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/@usecapsule/react-sdk/-/react-sdk-2.3.2.tgz#b9b8d9eeb542d1e8442d730d107d1b1195ef2a11"
+  integrity sha512-7oKvcXEWN7ENY4tVFXKjDVy0tQrxnOmqpu9MaWfhazFSmC9O6kzftRW6ZRkxPQE5ajOfrzF6n7kyyQ2vBdWLlw==
   dependencies:
     "@gsap/react" "^2.1.0"
     "@ramp-network/ramp-instant-sdk" "^4.0.2"
     "@usecapsule/react-components" "1.0.13"
-    "@usecapsule/web-sdk" "1.7.0"
+    "@usecapsule/web-sdk" "1.7.1"
     gsap "^3.12.5"
     styled-components "^6.1.8"
     zustand "^4.5.2"
 
-"@usecapsule/user-management-client@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/user-management-client/-/user-management-client-1.4.0.tgz#0742ea5b17485ba9037bebe1dccaa40887a15c61"
-  integrity sha512-i2rAUpZxspPB55ykNPr2MLhoRhzCZjynvt0cnySxYF4MKY7MNUpMNgYFW+D7ZE753EBstjiqgKLlnuYCFt6txQ==
+"@usecapsule/user-management-client@1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@usecapsule/user-management-client/-/user-management-client-1.4.1.tgz#bc639576170915f7adaa0ced7e0612bd4373b5f7"
+  integrity sha512-SX3kEudGx+LBKz4wjkv/uVo4YBo5aRS/b4jhSQc9JxD0rKrGSnIJn+GURPkm9lHrbi0gKbLQyStS+zAbzUy9zQ==
   dependencies:
     axios "^1.6.3"
     qs "^6.12.0"
 
-"@usecapsule/viem-v2-integration@1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/viem-v2-integration/-/viem-v2-integration-1.5.0.tgz#78fab915ef7ef65828f6314b852bdbae5226e65f"
-  integrity sha512-fNngFn8E1CGK2e9XUQFYctz4lZ5BV5ELF5W8QwuOfXmKPhL18wgyQ26bZynk0HrURI6t55+lhaeaHc30fl826A==
+"@usecapsule/viem-v2-integration@1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@usecapsule/viem-v2-integration/-/viem-v2-integration-1.5.1.tgz#64af57bcfdc6032952dc8d395405bdb922360ddd"
+  integrity sha512-9UWGD8DqtPKR2e/r42bKUHofYArp8txMt9xlosIkwx78FYAugcMc64TxeC+Mk2KX9lGhW/oK8vw6GYsJmn1nXw==
   dependencies:
-    "@usecapsule/core-sdk" "1.6.0"
+    "@usecapsule/core-sdk" "1.6.1"
 
-"@usecapsule/wagmi-v2-integration@^1.6.3":
-  version "1.6.3"
-  resolved "https://registry.yarnpkg.com/@usecapsule/wagmi-v2-integration/-/wagmi-v2-integration-1.6.3.tgz#719eb27f1c40977c1ca9eac108e19cebe4e0f561"
-  integrity sha512-yqez2jxsU86fRv/4zwI7Z3vYdCA2UXe/Qv/05rinoOmElZyWEE55mmbavIdkgn0KQEBdwTiMo/lwO/HiU4YoWw==
+"@usecapsule/wagmi-v2-integration@^1.7.2":
+  version "1.7.2"
+  resolved "https://registry.yarnpkg.com/@usecapsule/wagmi-v2-integration/-/wagmi-v2-integration-1.7.2.tgz#08f13c9afe90ca41cce641d7eac7a50f7fe444cc"
+  integrity sha512-Fbpf4Px+g/bg7FwFmaY6QCJvpd/eOTZwJUbRpsyYc0X8gptxl/wGhPtHXixF+S0cOgS1NSfz4+PCar1id9o9iA==
   dependencies:
-    "@usecapsule/react-sdk" "2.2.3"
-    "@usecapsule/viem-v2-integration" "1.5.0"
+    "@usecapsule/react-sdk" "2.3.2"
+    "@usecapsule/viem-v2-integration" "1.5.1"
 
-"@usecapsule/web-sdk@1.7.0":
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/@usecapsule/web-sdk/-/web-sdk-1.7.0.tgz#01b145d64e84fa2b265873000a31a119e9b40a86"
-  integrity sha512-o27C5WFbq5c5+VI5ZsRy1lLGJp9Jwk9TXWUH3sSc6ZFSu+WXHFZiv3i//GblwiV7a1483Pdb4esPZk576f+AhA==
+"@usecapsule/web-sdk@1.7.1":
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/@usecapsule/web-sdk/-/web-sdk-1.7.1.tgz#3efed277ac4555e8648911128bed3551cfd4f259"
+  integrity sha512-yQA8vZhIhOcH6M8+DHlC6kre7m0Ir7YeiKpNZXsnOcza1mYDSDGmjc0ydDk94AAAy3HnInXA6OzU4htXm2ATIQ==
   dependencies:
-    "@usecapsule/core-sdk" "1.6.0"
-    "@usecapsule/user-management-client" "1.4.0"
+    "@usecapsule/core-sdk" "1.6.1"
+    "@usecapsule/user-management-client" "1.4.1"
     assert "^2.1.0"
     base64url "3.0.1"
     buffer "6.0.3"
