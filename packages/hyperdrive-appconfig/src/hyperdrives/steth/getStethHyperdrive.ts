@@ -6,15 +6,17 @@ import { EmptyExtensions, TokenConfig } from "src/tokens/getTokenConfig";
 import { ETH_ICON_URL } from "src/tokens/tokenIconsUrls";
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";
-
+import { sepolia } from "viem/chains";
 export async function getStethHyperdrive({
   publicClient,
   hyperdriveAddress,
   sharesTokenExtensions,
+  chainId,
 }: {
   publicClient: PublicClient;
   hyperdriveAddress: Address;
   sharesTokenExtensions: YieldSourceExtensions;
+  chainId: number;
 }): Promise<{
   sharesToken: TokenConfig<YieldSourceExtensions>;
   baseToken: TokenConfig<EmptyExtensions>;
@@ -55,6 +57,11 @@ export async function getStethHyperdrive({
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
     baseToken: baseTokenConfig.address,
     sharesToken: sharesToken.address,
+    depositOptions: {
+      // Turn off sepolia eth deposits so users aren't risking their eth.
+      // They can still mint steth and deposit that.
+      isBaseTokenDepositEnabled: chainId !== sepolia.id,
+    },
     withdrawOptions: {
       // steth hyperdrive does not allow you to withdraw back to native ETH, due
       // to how lido's withraw process works

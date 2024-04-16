@@ -62,6 +62,9 @@ export async function getErc4626Hyperdrive({
     decimals: await readHyperdrive.getDecimals(),
     baseToken: baseTokenConfig.address,
     sharesToken: sharesTokenConfig.address,
+    depositOptions: {
+      isBaseTokenDepositEnabled: true,
+    },
     withdrawOptions: {
       isBaseTokenWithdrawalEnabled: true,
     },

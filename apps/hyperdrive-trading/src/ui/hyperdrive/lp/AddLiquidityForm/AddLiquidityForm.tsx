@@ -28,7 +28,6 @@ import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
-import { sepolia } from "viem/chains";
 import { useAccount, useChainId } from "wagmi";
 
 interface AddLiquidityFormProps {
@@ -64,7 +63,8 @@ export function AddLiquidityForm({
     decimals: sharesToken.decimals,
   });
 
-  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
+  const baseTokenDepositEnabled =
+    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
   const { lpShares: lpSharesBalanceOf } = useLpShares({
     account,
@@ -74,12 +74,12 @@ export function AddLiquidityForm({
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      defaultActiveToken: isLidoSepolia
-        ? sharesToken.address
-        : baseToken.address,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      tokens: isLidoSepolia ? [sharesToken] : [baseToken, sharesToken],
+      defaultActiveToken: baseTokenDepositEnabled
+        ? baseToken.address
+        : sharesToken.address,
+      tokens: baseTokenDepositEnabled
+        ? [baseToken, sharesToken]
+        : [sharesToken],
     });
 
   const {
@@ -159,21 +159,19 @@ export function AddLiquidityForm({
           token={
             <TokenPicker
               joined={true}
-              // TODO: Remove check for Sepolia chain after testnet period.
               tokens={
-                // TODO: Remove check for Sepolia chain after testnet period.
-                isLidoSepolia
+                baseTokenDepositEnabled
                   ? [
+                      {
+                        tokenConfig: baseToken,
+                        tokenBalance: baseTokenBalance?.value,
+                      },
                       {
                         tokenConfig: sharesToken,
                         tokenBalance: sharesTokenBalance?.value,
                       },
                     ]
                   : [
-                      {
-                        tokenConfig: baseToken,
-                        tokenBalance: baseTokenBalance?.value,
-                      },
                       {
                         tokenConfig: sharesToken,
                         tokenBalance: sharesTokenBalance?.value,

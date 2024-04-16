@@ -30,7 +30,7 @@ import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
@@ -43,7 +43,6 @@ export function OpenShortForm({
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -53,7 +52,6 @@ export function OpenShortForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  // TODO: Remove check for Sepolia chain after testnet period.
   const baseTokenDepositEnabled =
     hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
@@ -206,8 +204,8 @@ export function OpenShortForm({
         <TokenPicker
           label={
             baseTokenDepositEnabled
-              ? "Asset for deposit"
-              : "Choose asset for deposit"
+              ? "Choose asset for deposit"
+              : "Asset for deposit"
           }
           onChange={(tokenAddress) => setActiveToken(tokenAddress)}
           activeTokenAddress={activeToken.address}
@@ -215,15 +213,15 @@ export function OpenShortForm({
             baseTokenDepositEnabled
               ? [
                   {
+                    tokenConfig: baseToken,
+                    tokenBalance: baseTokenBalance?.value,
+                  },
+                  {
                     tokenConfig: sharesToken,
                     tokenBalance: sharesTokenBalance?.value,
                   },
                 ]
               : [
-                  {
-                    tokenConfig: baseToken,
-                    tokenBalance: baseTokenBalance?.value,
-                  },
                   {
                     tokenConfig: sharesToken,
                     tokenBalance: sharesTokenBalance?.value,
