@@ -25,9 +25,6 @@ export const chains: Chain[] = [];
 const transports: Record<string, Transport> = {};
 
 const customWallets = [];
-if (capsuleWallet) {
-  customWallets.push(capsuleWallet);
-}
 
 // Local docker anvil node
 if (VITE_LOCALHOST_NODE_RPC_URL && VITE_LOCALHOST_NODE_RPC_URL) {
@@ -49,6 +46,9 @@ if (
 if (VITE_SEPOLIA_RPC_URL) {
   chains.push(sepolia);
   transports[sepolia.id] = http(VITE_SEPOLIA_RPC_URL);
+  if (capsuleWallet) {
+    customWallets.push(capsuleWallet);
+  }
 }
 
 export const wagmiConfig = getDefaultConfig({
