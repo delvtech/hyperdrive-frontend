@@ -132,8 +132,8 @@ export function RemoveLiquidityForm({
         <TokenPicker
           label={
             baseTokenDepositEnabled
-              ? "Asset for withdrawal"
-              : "Choose asset for withdrawal"
+              ? "Choose asset for withdrawal"
+              : "Asset for withdrawal"
           }
           activeTokenAddress={activeWithdrawToken?.address}
           onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
