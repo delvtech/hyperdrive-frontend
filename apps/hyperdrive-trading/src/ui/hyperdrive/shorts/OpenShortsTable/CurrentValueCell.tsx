@@ -45,7 +45,7 @@ export function CurrentValueCell({
   const currentValueLabel = formatBalance({
     balance: currentValueInBase || 0n,
     decimals: baseToken.decimals,
-    places: 4,
+    places: baseToken.places,
   });
 
   const isPositiveChangeInValue =
@@ -70,6 +70,7 @@ export function CurrentValueCell({
             endAmount: openShort.baseAmountPaid,
             decimals: baseToken.decimals,
             symbol: baseToken.symbol,
+            places: baseToken.places,
           })}
         </div>
       ) : (
@@ -84,11 +85,13 @@ function getProfitLossText({
   endAmount,
   symbol,
   decimals,
+  places,
 }: {
   startAmount: bigint;
   endAmount: bigint;
   symbol: string;
   decimals: number;
+  places: number;
 }): string {
   const profitOrLoss = startAmount - endAmount;
 
@@ -96,7 +99,7 @@ function getProfitLossText({
     balance: profitOrLoss,
     decimals: decimals,
     includeCommas: true,
-    places: 4,
+    places,
   })} ${symbol}`;
 
   return result;

@@ -89,12 +89,12 @@ export function MarketStats({
           {
             balance: longVolume || 0n,
             decimals: baseToken.decimals,
-            places: 0,
+            places: baseToken.places,
           },
         )} hy${baseToken.symbol} \nShort volume: ${formatBalance({
           balance: shortVolume || 0n,
           decimals: baseToken.decimals,
-          places: 0,
+          places: baseToken.places,
         })} hy${baseToken.symbol}`}
         tooltipPosition={isTailwindSmallScreen ? "left" : "bottom"}
         label="Volume (24h)"

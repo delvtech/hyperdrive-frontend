@@ -117,7 +117,7 @@ export function RemoveLiquidityForm({
           decimals: baseToken.decimals,
         }),
         decimals: baseToken.decimals,
-        places: 4,
+        places: baseToken.places,
       })
     : null;
 
@@ -174,7 +174,7 @@ export function RemoveLiquidityForm({
               ? `Withdrawable: ${formatBalance({
                   balance: lpShares,
                   decimals: hyperdrive.decimals,
-                  places: 2,
+                  places: baseToken.places,
                 })} ${baseToken.symbol}-LP`
               : undefined
           }
@@ -190,7 +190,7 @@ export function RemoveLiquidityForm({
                 ? `${formatBalance({
                     balance: lpShares || 0n,
                     decimals: hyperdrive.decimals,
-                    places: 4,
+                    places: baseToken.places,
                   })}`
                 : "0"
             } ${baseToken.symbol}-LP`}
@@ -203,7 +203,7 @@ export function RemoveLiquidityForm({
                   ? `${formatBalance({
                       balance: actualValueOut,
                       decimals: activeWithdrawToken.decimals,
-                      places: 4,
+                      places: activeWithdrawToken.places,
                     })}`
                   : "0"}{" "}
                 {activeWithdrawToken.symbol}

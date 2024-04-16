@@ -20,6 +20,7 @@ export const cloudChainAppConfig: AppConfig = {
     {
       address: "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
       decimals: 18,
+      places: 2,
       name: "sDai",
       symbol: "SDAI",
       iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
@@ -32,6 +33,7 @@ export const cloudChainAppConfig: AppConfig = {
     {
       address: "0x5FbDB2315678afecb367f032d93F642f64180aa3",
       decimals: 18,
+      places: 2,
       name: "Multi Collateral DAI",
       symbol: "DAI",
       iconUrl:
@@ -42,6 +44,7 @@ export const cloudChainAppConfig: AppConfig = {
     {
       address: "0x0165878A594ca255338adfa4d48449f69242Eb8F",
       decimals: 18,
+      places: 4,
       name: "Liquid staked Ether 2.0",
       symbol: "stETH",
       iconUrl: "https://cryptologos.cc/logos/steth-steth-logo.png?v=029",
@@ -56,6 +59,7 @@ export const cloudChainAppConfig: AppConfig = {
       name: "Ether",
       symbol: "ETH",
       decimals: 18,
+      places: 4,
       tags: [],
       extensions: {},
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",

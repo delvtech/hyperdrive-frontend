@@ -52,7 +52,7 @@ export function OpenLpSharesCard({
   const formattedProfit = formatBalance({
     balance: profit,
     decimals: baseToken.decimals,
-    places: 4,
+    places: baseToken.places,
   });
 
   const utilizationRatio = useUtilizationRatio({
@@ -98,7 +98,7 @@ export function OpenLpSharesCard({
                     `${formatBalance({
                       balance: lpShares || 0n,
                       decimals: hyperdrive.decimals,
-                      places: 4,
+                      places: baseToken.places,
                     })} ${baseToken.symbol}-LP`
                   ) : (
                     <Skeleton />
@@ -114,7 +114,7 @@ export function OpenLpSharesCard({
                     `${formatBalance({
                       balance: baseValue,
                       decimals: baseToken.decimals,
-                      places: 4,
+                      places: baseToken.places,
                     })} ${baseToken.symbol}`
                   ) : (
                     <Skeleton />

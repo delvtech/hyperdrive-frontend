@@ -39,6 +39,7 @@ export async function getStethHyperdrive({
     name: "Ether",
     symbol: "ETH",
     decimals: 18,
+    places: 4,
     tags: [],
     extensions: {},
     iconUrl: ETH_ICON_URL,

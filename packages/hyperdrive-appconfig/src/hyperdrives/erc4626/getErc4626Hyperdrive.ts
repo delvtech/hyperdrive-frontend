@@ -47,6 +47,7 @@ export async function getErc4626Hyperdrive({
     extensions: {},
     tags: [],
     iconUrl: baseTokenIconUrl,
+    places: 2,
   });
 
   const hyperdriveName = formatHyperdriveName({

@@ -35,7 +35,7 @@ export function PriceBadges({
         {formatBalance({
           balance: longPrice ?? 0n,
           decimals: baseToken.decimals,
-          places: 6,
+          places: baseToken.places,
         })}{" "}
         {baseToken.symbol}
       </div>
@@ -49,7 +49,7 @@ export function PriceBadges({
           ),
 
           decimals: baseToken.decimals,
-          places: 6,
+          places: baseToken.places,
         })}{" "}
         hy{baseToken.symbol}
       </div>

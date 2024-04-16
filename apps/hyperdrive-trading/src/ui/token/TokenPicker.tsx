@@ -96,7 +96,7 @@ export function TokenPicker({
                         {formatBalance({
                           balance: tokenBalance || 0n,
                           decimals: tokenConfig?.decimals,
-                          places: 4,
+                          places: tokenConfig?.places,
                         })}
                         {` `}
                       </span>

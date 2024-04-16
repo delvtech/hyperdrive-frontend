@@ -30,7 +30,7 @@ export function AccruedYieldCell({
         {formatBalance({
           balance: accruedYield || 0n,
           decimals: baseToken.decimals,
-          places: 3,
+          places: baseToken.places,
         })}
       </span>
     </div>
