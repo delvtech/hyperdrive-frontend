@@ -238,7 +238,6 @@ export function OpenShortForm({
                   },
                 ]
           }
-          joined={true}
         />
       }
       transactionPreview={
