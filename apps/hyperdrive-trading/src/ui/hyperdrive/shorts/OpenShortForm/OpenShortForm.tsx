@@ -147,11 +147,11 @@ export function OpenShortForm({
   } = useSlippageSettings({ decimals: activeToken.decimals });
 
   const maxDepositAfterSlippage =
-    traderDeposit &&
+    amountOfBondsToShortAsBigInt &&
     adjustAmountByPercentage({
-      amount: traderDeposit,
+      amount: amountOfBondsToShortAsBigInt,
       decimals: activeToken.decimals,
-      direction: "up",
+      direction: "down",
       percentage: slippage,
     });
 
@@ -159,7 +159,6 @@ export function OpenShortForm({
     hyperdriveAddress: hyperdrive.address,
     amountBondShorts: amountOfBondsToShortAsBigInt,
     minVaultSharePrice: poolInfo?.vaultSharePrice,
-    // TODO: handle slippage
     maxDeposit: maxDepositAfterSlippage,
     destination: account,
     enabled: openShortPreviewStatus === "success" && hasEnoughAllowance,
