@@ -45,14 +45,15 @@ export function useTransactionData({
   const data = useMemo(() => {
     const data = [];
     if (longs) {
-      data.push(...longs.slice(0, 100));
+      data.push(...[...longs].reverse().slice(0, 100));
     }
     if (shorts) {
-      data.push(...shorts.slice(0, 100));
+      data.push(...[...shorts].reverse().slice(0, 100));
     }
     if (lpEvents) {
       data.push(
-        ...lpEvents.addLiquidity
+        ...[...lpEvents.addLiquidity]
+          .reverse()
           .slice(0, 100)
           .map(({ args, blockNumber, eventName, transactionHash }) => ({
             trader: args.provider,
@@ -64,7 +65,8 @@ export function useTransactionData({
           })),
       );
       data.push(
-        ...lpEvents.removeLiquidity
+        ...[...lpEvents.removeLiquidity]
+          .reverse()
           .slice(0, 100)
           .map(({ args, blockNumber, eventName, transactionHash }) => ({
             trader: args.provider,
@@ -77,7 +79,8 @@ export function useTransactionData({
           })),
       );
       data.push(
-        ...lpEvents.redeemWithdrawalShares
+        ...[...lpEvents.redeemWithdrawalShares]
+          .reverse()
           .slice(0, 100)
           .map(({ args, blockNumber, eventName, transactionHash }) => ({
             trader: args.provider,
@@ -88,6 +91,7 @@ export function useTransactionData({
           })),
       );
     }
+
     return data;
   }, [longs, lpEvents, shorts]);
 

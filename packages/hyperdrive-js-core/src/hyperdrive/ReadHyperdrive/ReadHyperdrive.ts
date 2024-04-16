@@ -335,8 +335,8 @@ export class ReadHyperdrive extends ReadModel {
   > {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
-    return [...openLongEvents, ...closeLongEvents].map(
-      ({ args, eventName, blockNumber, transactionHash }) => {
+    return [...openLongEvents, ...closeLongEvents]
+      .map(({ args, eventName, blockNumber, transactionHash }) => {
         return {
           trader: args.trader,
           assetId: args.assetId,
@@ -346,8 +346,8 @@ export class ReadHyperdrive extends ReadModel {
           blockNumber,
           transactionHash,
         };
-      },
-    );
+      })
+      .sort((a, b) => Number(a.blockNumber) - Number(b.blockNumber));
   }
 
   async getShortEvents(
@@ -369,8 +369,8 @@ export class ReadHyperdrive extends ReadModel {
       "CloseShort",
       options,
     );
-    return [...openShortEvents, ...closeShortEvents].map(
-      ({ args, eventName, blockNumber, transactionHash }) => ({
+    return [...openShortEvents, ...closeShortEvents]
+      .map(({ args, eventName, blockNumber, transactionHash }) => ({
         trader: args.trader,
         assetId: args.assetId,
         bondAmount: args.bondAmount,
@@ -378,8 +378,8 @@ export class ReadHyperdrive extends ReadModel {
         eventName,
         blockNumber,
         transactionHash,
-      }),
-    );
+      }))
+      .sort((a, b) => Number(a.blockNumber) - Number(b.blockNumber));
   }
 
   async getLpEvents(
@@ -489,87 +489,57 @@ export class ReadHyperdrive extends ReadModel {
   private _calcOpenLongs({
     openLongEvents,
     closeLongEvents,
-    longsInTransferSingleEvents,
-    longsOutTransferSingleEvents,
   }: {
     openLongEvents: Event<HyperdriveAbi, "OpenLong">[];
     closeLongEvents: Event<HyperdriveAbi, "CloseLong">[];
-    longsInTransferSingleEvents: Event<HyperdriveAbi, "TransferSingle">[];
-    longsOutTransferSingleEvents: Event<HyperdriveAbi, "TransferSingle">[];
-  }) {
-    const totalBasePaidByAssetId = mapValues(
-      groupBy(openLongEvents, (event) => event.args.assetId.toString()),
-      (events) => {
-        const baseAmounts = events.map((event) => {
-          const { baseAmount } = event.args;
-          return baseAmount;
-        });
-
-        return sumBigInt(baseAmounts);
-      },
+  }): Record<string, Long> {
+    // Put open and long events in block order. We spread openLongEvents first
+    // since you have to open a long before you can close one.
+    const orderedLongEvents = [...openLongEvents, ...closeLongEvents].sort(
+      (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
     );
 
-    const totalBaseReceivedByAssetId = mapValues(
-      groupBy(closeLongEvents, (event) => event.args.assetId.toString()),
-      (events) => {
-        const baseAmounts = events.map((event) => {
-          const { baseAmount } = event.args;
-          return baseAmount;
-        });
-        return sumBigInt(baseAmounts);
-      },
-    );
+    const openLongs: Record<string, Long> = {};
 
-    const longsMintedOrReceivedById = mapValues(
-      groupBy(longsInTransferSingleEvents, (event) => event.args.id),
-      (events): Long => {
-        const assetId = events[0].args.id;
-        const decoded = decodeAssetFromTransferSingleEventData(
-          events[0].data as `0x${string}`,
-        );
-        return {
-          assetId,
-          bondAmount: sumBigInt(events.map((event) => event.args.value)),
-          baseAmountPaid: totalBasePaidByAssetId[assetId.toString()],
-          maturity: decoded.timestamp,
+    orderedLongEvents.forEach((event) => {
+      const assetId = event.args.assetId.toString();
+
+      const long: Long = openLongs[assetId] || {
+        assetId: event.args.assetId,
+        maturity: event.args.maturityTime,
+        baseAmountPaid: 0n,
+        bondAmount: 0n,
+      };
+
+      if (event.eventName === "OpenLong") {
+        const updatedLong: Long = {
+          ...long,
+          baseAmountPaid: long.baseAmountPaid + event.args.baseAmount,
+          bondAmount: long.bondAmount + event.args.bondAmount,
         };
-      },
-    );
+        openLongs[assetId] = updatedLong;
+        return;
+      }
 
-    const longsRedeemedOrSentById = mapValues(
-      groupBy(longsOutTransferSingleEvents, (event) => event.args.id),
-      (events): Long => {
-        const assetId = events[0].args.id;
-        const decoded = decodeAssetFromTransferSingleEventData(
-          events[0].data as `0x${string}`,
-        );
-        return {
-          assetId,
-          bondAmount: sumBigInt(events.map((event) => event.args.value)),
-          baseAmountPaid: totalBaseReceivedByAssetId[assetId.toString()],
-          maturity: decoded.timestamp,
-        };
-      },
-    );
-
-    const openLongsById = mapValues(
-      longsMintedOrReceivedById,
-      (long, key): Long => {
-        const matchingExit = longsRedeemedOrSentById[key];
-        if (matchingExit) {
-          const newBondAmount = long.bondAmount - matchingExit.bondAmount;
-          const newBaseAmountPaid =
-            long.baseAmountPaid - matchingExit.baseAmountPaid;
-          return {
-            ...long,
-            bondAmount: newBondAmount,
-            baseAmountPaid: newBaseAmountPaid,
-          };
+      if (event.eventName === "CloseLong") {
+        // If a user closes their whole position, we should remove the whole
+        // position since it's basically starting over
+        if (event.args.bondAmount === long.bondAmount) {
+          delete openLongs[assetId];
+          return;
         }
-        return long;
-      },
-    );
-    return openLongsById;
+        // otherwise just subtract the amount of bonds they closed and baseAmount
+        // they received back from the running total
+        const updatedLong: Long = {
+          ...long,
+          baseAmountPaid: long.baseAmountPaid - event.args.baseAmount,
+          bondAmount: long.bondAmount - event.args.bondAmount,
+        };
+        openLongs[assetId] = updatedLong;
+      }
+    });
+
+    return openLongs;
   }
 
   /**
@@ -596,36 +566,9 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
-    const longsInTransferSingleEvents = (
-      await this.getTransferSingleEvents({
-        filter: { to: account },
-        toBlock,
-      })
-    ).filter(
-      (transferSingleEvent) =>
-        decodeAssetFromTransferSingleEventData(
-          transferSingleEvent.data as `0x${string}`,
-        ).assetType === "LONG",
-    );
-
-    const longsOutTransferSingleEvents = (
-      await this.getTransferSingleEvents({
-        filter: { from: account },
-        toBlock,
-      })
-    ).filter((transferSingleEvent) => {
-      return (
-        decodeAssetFromTransferSingleEventData(
-          transferSingleEvent.data as `0x${string}`,
-        ).assetType === "LONG"
-      );
-    });
-
     const openLongsById = this._calcOpenLongs({
       openLongEvents,
       closeLongEvents,
-      longsInTransferSingleEvents,
-      longsOutTransferSingleEvents,
     });
 
     return Object.values(openLongsById).filter((long) => long.bondAmount);
