@@ -335,8 +335,8 @@ export class ReadHyperdrive extends ReadModel {
   > {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
-    return [...openLongEvents, ...closeLongEvents].map(
-      ({ args, eventName, blockNumber, transactionHash }) => {
+    return [...openLongEvents, ...closeLongEvents]
+      .map(({ args, eventName, blockNumber, transactionHash }) => {
         return {
           trader: args.trader,
           assetId: args.assetId,
@@ -346,8 +346,8 @@ export class ReadHyperdrive extends ReadModel {
           blockNumber,
           transactionHash,
         };
-      },
-    );
+      })
+      .sort((a, b) => Number(a.blockNumber) - Number(b.blockNumber));
   }
 
   async getShortEvents(
@@ -369,8 +369,8 @@ export class ReadHyperdrive extends ReadModel {
       "CloseShort",
       options,
     );
-    return [...openShortEvents, ...closeShortEvents].map(
-      ({ args, eventName, blockNumber, transactionHash }) => ({
+    return [...openShortEvents, ...closeShortEvents]
+      .map(({ args, eventName, blockNumber, transactionHash }) => ({
         trader: args.trader,
         assetId: args.assetId,
         bondAmount: args.bondAmount,
@@ -378,8 +378,8 @@ export class ReadHyperdrive extends ReadModel {
         eventName,
         blockNumber,
         transactionHash,
-      }),
-    );
+      }))
+      .sort((a, b) => Number(a.blockNumber) - Number(b.blockNumber));
   }
 
   async getLpEvents(
