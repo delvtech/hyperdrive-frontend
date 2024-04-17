@@ -35,7 +35,7 @@ export function OpenLpSharesCard({
   });
 
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
-  const { lpShares } = useLpShares({
+  const { lpShares, lpSharesStatus } = useLpShares({
     hyperdriveAddress: hyperdrive.address,
     account,
   });
@@ -43,10 +43,15 @@ export function OpenLpSharesCard({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  const { baseAmountPaid, baseValue } = useOpenLpPosition({
-    hyperdriveAddress: hyperdrive.address,
-    account,
-  });
+  const { baseAmountPaid, baseValue, openLpPositionStatus } = useOpenLpPosition(
+    {
+      hyperdriveAddress: hyperdrive.address,
+      account,
+    },
+  );
+
+  const isFetchingLpShares =
+    lpSharesStatus === "loading" || openLpPositionStatus === "loading";
   const profit = dnum.subtract([baseValue, 18], [baseAmountPaid, 18])[0];
   const isPositiveChangeInValue = profit > 0n;
   const formattedProfit = formatBalance({
@@ -134,7 +139,9 @@ export function OpenLpSharesCard({
                     { "text-success": isPositiveChangeInValue },
                     {
                       "text-error":
-                        !isPositiveChangeInValue && formattedProfit !== "-0",
+                        !isPositiveChangeInValue &&
+                        formattedProfit !== "-0" &&
+                        !isFetchingLpShares,
                     },
                   )}
                 >
