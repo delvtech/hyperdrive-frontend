@@ -4,5 +4,6 @@
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "react-jsx"
-  }
+  },
+  "include": ["src", "docs"]
 }
