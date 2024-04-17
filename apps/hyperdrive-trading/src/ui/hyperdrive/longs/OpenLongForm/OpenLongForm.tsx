@@ -184,6 +184,7 @@ export function OpenLongForm({
               decimals={activeToken.decimals}
               activeOption={activeSlippageOption}
               onActiveOptionChange={setActiveSlippageOption}
+              tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
             />
           }
           name={activeToken.symbol}

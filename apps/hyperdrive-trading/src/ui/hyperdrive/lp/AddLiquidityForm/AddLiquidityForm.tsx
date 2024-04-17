@@ -1,3 +1,4 @@
+import { adjustAmountByPercentage } from "@delvtech/hyperdrive-viem";
 import {
   EmptyExtensions,
   findBaseToken,
@@ -16,6 +17,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { AddLiquidityPreview } from "src/ui/hyperdrive/lp/AddLiquidityPreview/AddLiquidityPreview";
 import { useAddLiquidity } from "src/ui/hyperdrive/lp/hooks/useAddLiquidity";
 import { useLpShares } from "src/ui/hyperdrive/lp/hooks/useLpShares";
@@ -24,11 +26,13 @@ import { usePreviewAddLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewAdd
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
-import { useAccount, useChainId } from "wagmi";
+import { useAccount } from "wagmi";
 
 interface AddLiquidityFormProps {
   hyperdrive: HyperdriveConfig;
@@ -40,7 +44,7 @@ export function AddLiquidityForm({
   onAddLiquidity,
 }: AddLiquidityFormProps): ReactElement {
   const { address: account } = useAccount();
-  const chainId = useChainId();
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -110,15 +114,24 @@ export function AddLiquidityForm({
     amount: depositAmountAsBigInt,
   });
 
+  const { activeOption, setActiveOption, setSlippage, slippage } =
+    useSlippageSettings({ decimals: activeToken.decimals });
+
+  const minLpSharePriceAfterSlippage = adjustAmountByPercentage({
+    amount: poolInfo?.lpSharePrice || 0n,
+    percentage: slippage,
+    decimals: activeToken.decimals,
+    direction: "down",
+  });
+
   const isBaseActiveToken = activeToken.address === baseToken.address;
   // Shared params with the preview and the write method
   const addLiquidityParams = {
     hyperdriveAddress: hyperdrive.address,
     contribution: depositAmountAsBigInt,
-    // TODO: Add slippage control
     minAPR: parseUnits("0", baseToken.decimals),
     maxAPR: parseUnits("999", baseToken.decimals),
-    minLpSharePrice: parseUnits("0", baseToken.decimals),
+    minLpSharePrice: minLpSharePriceAfterSlippage,
     asBase: isBaseActiveToken,
     destination: account,
     ethValue: isActiveTokenEth ? depositAmountAsBigInt : undefined,
@@ -155,6 +168,16 @@ export function AddLiquidityForm({
     <TransactionView
       tokenInput={
         <TokenInput
+          settings={
+            <SlippageSettings
+              onSlippageChange={setSlippage}
+              slippage={slippage}
+              decimals={activeToken.decimals}
+              activeOption={activeOption}
+              onActiveOptionChange={setActiveOption}
+              tooltip="Your transaction will revert if the liquidity provider share price changes unfavorably by more than this percentage."
+            />
+          }
           name={activeToken.symbol}
           token={
             <TokenPicker

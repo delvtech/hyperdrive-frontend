@@ -12,12 +12,14 @@ export function SlippageSettings({
   decimals,
   activeOption,
   onActiveOptionChange,
+  tooltip,
 }: {
   slippage: bigint;
   onSlippageChange: (slippage: bigint) => void;
   decimals: number;
   activeOption: "auto" | "custom";
   onActiveOptionChange: (activeTab: "auto" | "custom") => void;
+  tooltip?: string;
 }): JSX.Element {
   return (
     <>
@@ -25,9 +27,7 @@ export function SlippageSettings({
         <span className="ml-1">Max. Slippage</span>
         <div
           className="daisy-tooltip ml-1 before:w-48 before:border before:text-xs"
-          data-tip={
-            "Your transaction will revert if the price changes unfavorably by more than this percentage."
-          }
+          data-tip={tooltip}
         >
           <InformationCircleIcon className="size-4" />
         </div>
