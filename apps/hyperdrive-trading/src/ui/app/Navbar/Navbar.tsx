@@ -1,3 +1,7 @@
+import {
+  ArrowTopRightOnSquareIcon,
+  ChartBarIcon,
+} from "@heroicons/react/16/solid";
 import { Link } from "@tanstack/react-router";
 import { ReactElement } from "react";
 import { FeatureFlagPicker } from "src/ui/app/Navbar/FeatureFlagPicker";
@@ -20,8 +24,20 @@ export function Navbar(): ReactElement {
         <a
           target="_blank"
           rel="noreferrer"
+          href="https://hyperdrive.blockanalitica.com"
+          className="daisy-btn rounded-full text-accent"
+        >
+          <span className="hidden sm:inline">Analytics</span>
+          <span className="inline sm:hidden">
+            <ChartBarIcon className="inline h-6" />
+          </span>
+          <ArrowTopRightOnSquareIcon className="-mt-0.5 inline h-4" />
+        </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
           href="https://warpcast.com/~/compose?text=Can%20you%20outtrade%20me%20on%20Hyperdrive%3F%20Warp%20your%20best%20Hyperdrive%20trade%20screenshot%20below%20%F0%9F%93%88%20%2Fdelv&embeds[]=https://frames.hyperdrive.trade"
-          className="text-white daisy-btn rounded-full bg-warpcast-purple hover:bg-farcaster-purple"
+          className="text-white daisy-btn rounded-full"
         >
           <span className="hidden sm:inline">Cast on Warpcast</span>
           <span className="inline sm:hidden">Cast</span>
