@@ -1,14 +1,21 @@
 import { ERC20Mintable } from "@delvtech/hyperdrive-artifacts/ERC20Mintable";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
-import * as dnum from "dnum";
 import toast from "react-hot-toast";
+import { SupportedChainId } from "src/chains/supportedChains";
 import { queryClient } from "src/network/queryClient";
 import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransactionAndInvalidateCache";
+import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { Address, formatUnits } from "viem";
-import { usePublicClient, useReadContract, useWriteContract } from "wagmi";
+import { sepolia } from "viem/chains";
+import {
+  useChainId,
+  usePublicClient,
+  useReadContract,
+  useWriteContract,
+} from "wagmi";
 
 export function useMintToken({
   token,
@@ -21,6 +28,7 @@ export function useMintToken({
 }): { mint: (() => void) | undefined } {
   const addRecentTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
+  const chainId = useChainId() as SupportedChainId;
   const { data: maxMintAmount } = useReadContract({
     abi: [
       {
@@ -34,10 +42,21 @@ export function useMintToken({
     functionName: "maxMintAmount",
     address: token.address,
     args: [],
+    query: {
+      enabled: token.address !== ETH_MAGIC_NUMBER && chainId === sepolia.id,
+    },
   });
 
-  const mintAmount =
-    maxMintAmount !== undefined ? dnum.divide(maxMintAmount, [2n, 0])[0] : 0n;
+  let mintAmount = amount;
+
+  // On sepolia, only let users mint half the max amount
+  if (chainId === sepolia.id) {
+    if (maxMintAmount) {
+      mintAmount = maxMintAmount / 2n;
+    } else {
+      mintAmount = 0n;
+    }
+  }
 
   const isEnabled = !!destination && !!amount && !!publicClient && !!mintAmount;
   const { writeContract } = useWriteContract();

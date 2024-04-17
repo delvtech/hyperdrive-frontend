@@ -23,13 +23,14 @@ import { OpenShortPreview } from "src/ui/hyperdrive/shorts/OpenShortPreview/Open
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { ApproveTokenChoices } from "src/ui/token/ApproveTokenChoices";
 import { useActiveToken } from "src/ui/token/hooks/useActiveToken";
+import { useSlippageSettings } from "src/ui/token/hooks/useSlippageSettings";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
+import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
-import { formatUnits, parseUnits } from "viem";
-import { sepolia } from "viem/chains";
-import { useAccount, useChainId } from "wagmi";
+import { formatUnits } from "viem";
+import { useAccount } from "wagmi";
 
 interface OpenShortPositionFormProps {
   hyperdrive: HyperdriveConfig;
@@ -42,7 +43,6 @@ export function OpenShortForm({
 }: OpenShortPositionFormProps): ReactElement {
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
-  const chainId = useChainId();
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -52,18 +52,18 @@ export function OpenShortForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  // TODO: Remove check for Sepolia chain after testnet period.
-  const isLidoSepolia = chainId === sepolia.id && baseToken.symbol === "ETH";
+  const baseTokenDepositEnabled =
+    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
       account,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      defaultActiveToken: isLidoSepolia
-        ? sharesToken.address
-        : baseToken.address,
-      // TODO: Remove check for Sepolia chain after testnet period.
-      tokens: isLidoSepolia ? [sharesToken] : [baseToken, sharesToken],
+      defaultActiveToken: baseTokenDepositEnabled
+        ? baseToken.address
+        : sharesToken.address,
+      tokens: baseTokenDepositEnabled
+        ? [baseToken, sharesToken]
+        : [sharesToken],
     });
 
   const { balance: baseTokenBalance } = useTokenBalance({
@@ -138,14 +138,27 @@ export function OpenShortForm({
     maxTradeSize: maxBondsOut,
   });
 
+  const {
+    setSlippage,
+    slippage,
+    activeOption: activeSlippageOption,
+    setActiveOption: setActiveSlippageOption,
+  } = useSlippageSettings({ decimals: activeToken.decimals });
+
+  const maxDepositAfterSlippage =
+    traderDeposit &&
+    adjustAmountByPercentage({
+      amount: traderDeposit,
+      decimals: activeToken.decimals,
+      direction: "up",
+      percentage: slippage,
+    });
+
   const { openShort, openShortStatus } = useOpenShort({
     hyperdriveAddress: hyperdrive.address,
     amountBondShorts: amountOfBondsToShortAsBigInt,
     minVaultSharePrice: poolInfo?.vaultSharePrice,
-    // TODO: handle slippage
-    maxDeposit: traderDeposit
-      ? dnum.multiply(traderDeposit, parseUnits("1.1", 18))[0]
-      : 0n,
+    maxDeposit: maxDepositAfterSlippage,
     destination: account,
     enabled: openShortPreviewStatus === "success" && hasEnoughAllowance,
     asBase: activeToken.address === baseToken.address,
@@ -169,29 +182,46 @@ export function OpenShortForm({
           inputLabel="Amount to short"
           value={amountOfBondsToShort ?? ""}
           onChange={(newAmount) => setAmount(newAmount)}
+          stat={
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {`Slippage: ${dnum.format([slippage, activeToken.decimals])}%`}
+              </span>
+            </div>
+          }
+          settings={
+            <SlippageSettings
+              onSlippageChange={setSlippage}
+              slippage={slippage}
+              decimals={activeToken.decimals}
+              activeOption={activeSlippageOption}
+              onActiveOptionChange={setActiveSlippageOption}
+            />
+          }
         />
       }
       setting={
         <TokenPicker
           label={
-            isLidoSepolia ? "Asset for deposit" : "Choose asset for deposit"
+            baseTokenDepositEnabled
+              ? "Choose asset for deposit"
+              : "Asset for deposit"
           }
           onChange={(tokenAddress) => setActiveToken(tokenAddress)}
           activeTokenAddress={activeToken.address}
           tokens={
-            // TODO: Remove check for Sepolia chain after testnet period.
-            isLidoSepolia
+            baseTokenDepositEnabled
               ? [
+                  {
+                    tokenConfig: baseToken,
+                    tokenBalance: baseTokenBalance?.value,
+                  },
                   {
                     tokenConfig: sharesToken,
                     tokenBalance: sharesTokenBalance?.value,
                   },
                 ]
               : [
-                  {
-                    tokenConfig: baseToken,
-                    tokenBalance: baseTokenBalance?.value,
-                  },
                   {
                     tokenConfig: sharesToken,
                     tokenBalance: sharesTokenBalance?.value,

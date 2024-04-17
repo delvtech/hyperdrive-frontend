@@ -112,21 +112,23 @@ export function TokenInput({
             >
               Max
             </button>
-            {settings ? (
-              <div className="daisy-dropdown daisy-dropdown-bottom relative">
-                <button
-                  onClick={(e) => {
-                    e.preventDefault();
-                  }}
-                  className="daisy-btn daisy-join-item border-b-neutral-content/30 border-l-base-100 border-r-neutral-content/30 border-t-neutral-content/30 bg-base-100 hover:border-b-neutral-content/30 hover:border-l-base-100 hover:border-r-neutral-content/30 hover:border-t-neutral-content/30 hover:bg-base-100 hover:underline active:hover:border-l-base-100"
-                >
-                  <Cog6ToothIcon className="h-4" />
-                </button>
-                <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] w-64 justify-evenly rounded-lg bg-base-100 p-4 shadow">
-                  {settings}
-                </div>
-              </div>
-            ) : null}
+          </div>
+        ) : null}
+        {settings ? (
+          <div className="daisy-dropdown daisy-dropdown-bottom relative">
+            <button
+              onClick={(e) => {
+                e.preventDefault();
+              }}
+              className="daisy-btn daisy-join-item border-b-neutral-content/30  border-l-neutral-content/30 border-r-neutral-content/30 border-t-neutral-content/30 bg-base-100 hover:border-b-neutral-content/30 hover:border-l-neutral-content/30 hover:border-r-neutral-content/30
+              hover:border-t-neutral-content/30
+              hover:bg-base-100 hover:underline"
+            >
+              <Cog6ToothIcon className="h-4" />
+            </button>
+            <div className="daisy-menu daisy-dropdown-content absolute right-0 z-[1] w-64 justify-evenly rounded-lg bg-base-100 p-4 shadow">
+              {settings}
+            </div>
           </div>
         ) : null}
       </label>

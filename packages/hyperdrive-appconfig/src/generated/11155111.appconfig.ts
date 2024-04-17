@@ -119,6 +119,9 @@ export const sepoliaAppConfig: AppConfig = {
       decimals: 18,
       baseToken: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
       sharesToken: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
+      depositOptions: {
+        isBaseTokenDepositEnabled: true,
+      },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: true,
       },
@@ -151,6 +154,9 @@ export const sepoliaAppConfig: AppConfig = {
       decimals: 18,
       baseToken: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
       sharesToken: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
+      depositOptions: {
+        isBaseTokenDepositEnabled: true,
+      },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: true,
       },
@@ -183,6 +189,9 @@ export const sepoliaAppConfig: AppConfig = {
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       sharesToken: "0x6977eC5fae3862D3471f0f5B6Dcc64cDF5Cfd959",
+      depositOptions: {
+        isBaseTokenDepositEnabled: false,
+      },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: false,
       },
@@ -215,6 +224,9 @@ export const sepoliaAppConfig: AppConfig = {
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
       sharesToken: "0x6977eC5fae3862D3471f0f5B6Dcc64cDF5Cfd959",
+      depositOptions: {
+        isBaseTokenDepositEnabled: false,
+      },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: false,
       },
