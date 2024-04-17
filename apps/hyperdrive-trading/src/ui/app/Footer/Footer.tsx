@@ -35,6 +35,14 @@ export default function Footer(): ReactElement {
         >
           Documentation
         </a>
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://hyperdrive.blockanalitica.com"
+          className="daisy-link-hover daisy-link"
+        >
+          Analytics
+        </a>
       </nav>
       <nav>
         {/* TODO: Determine if company information is needed here */}
