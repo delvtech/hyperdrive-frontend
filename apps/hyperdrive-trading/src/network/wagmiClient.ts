@@ -24,7 +24,13 @@ const {
 export const chains: Chain[] = [];
 const transports: Record<string, Transport> = {};
 
+const recommendedWallets = [injectedWallet, safeWallet, rainbowWallet];
 const customWallets = [];
+
+// WalletConnect
+if (VITE_WALLET_CONNECT_PROJECT_ID) {
+  recommendedWallets.push(walletConnectWallet);
+}
 
 // Local docker anvil node
 if (VITE_LOCALHOST_NODE_RPC_URL && VITE_LOCALHOST_NODE_RPC_URL) {
@@ -55,7 +61,7 @@ if (VITE_SEPOLIA_RPC_URL) {
 
 export const wagmiConfig = getDefaultConfig({
   appName: "Hyperdrive",
-  projectId: VITE_WALLET_CONNECT_PROJECT_ID,
+  projectId: VITE_WALLET_CONNECT_PROJECT_ID || "0",
   transports,
   // Viem's type for `chains` requires at least one item in the array, but since
   // we build the list up programmatically we must cast.
@@ -63,7 +69,7 @@ export const wagmiConfig = getDefaultConfig({
   wallets: [
     {
       groupName: "Recommended",
-      wallets: [injectedWallet, safeWallet, rainbowWallet, walletConnectWallet],
+      wallets: recommendedWallets,
     },
     {
       groupName: "Custom",
