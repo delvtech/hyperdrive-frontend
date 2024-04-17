@@ -51,6 +51,12 @@ export function CurrentValueCell({
     places: baseToken.places,
   });
 
+  const profitLoss = formatBalance({
+    balance: amountOutInBase - row.baseAmountPaid,
+    decimals: baseToken.decimals,
+    places: baseToken.places,
+  });
+
   const isPositiveChangeInValue =
     amountOutInBase && amountOutInBase > row.baseAmountPaid;
   if (previewCloseLongStatus === "error") {
@@ -66,16 +72,17 @@ export function CurrentValueCell({
         className={classNames(
           "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
           { "text-success": isPositiveChangeInValue },
-          { "text-error": !isPositiveChangeInValue },
+          {
+            "text-error":
+              !isPositiveChangeInValue &&
+              profitLoss !== "-0" &&
+              previewCloseLongStatus !== "loading",
+          },
         )}
       >
         <span>{isPositiveChangeInValue ? "+" : ""}</span>
         {amountOutInBase
-          ? `${formatBalance({
-              balance: amountOutInBase - row.baseAmountPaid,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
-            })} ${baseToken.symbol}`
+          ? `${profitLoss === "-0" ? "0" : profitLoss} ${baseToken.symbol}`
           : undefined}
       </div>
     </div>

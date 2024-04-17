@@ -132,7 +132,10 @@ export function OpenLpSharesCard({
                   className={classNames(
                     "daisy-tooltip flex cursor-help items-center border-b border-dashed border-current before:border",
                     { "text-success": isPositiveChangeInValue },
-                    { "text-error": !isPositiveChangeInValue },
+                    {
+                      "text-error":
+                        !isPositiveChangeInValue && formattedProfit !== "-0",
+                    },
                   )}
                 >
                   {isPositiveChangeInValue ? "+" : ""}
