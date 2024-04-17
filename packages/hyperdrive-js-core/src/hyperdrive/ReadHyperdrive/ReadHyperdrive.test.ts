@@ -1035,6 +1035,7 @@ test("getOpenShorts should account for shorts opened with base", async () => {
   contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [
     {
       eventName: "OpenShort",
+      blockNumber: 1n,
       args: {
         assetId: 1n,
         // paid for in base
@@ -1052,6 +1053,7 @@ test("getOpenShorts should account for shorts opened with base", async () => {
     },
     {
       eventName: "OpenShort",
+      blockNumber: 2n,
       args: {
         assetId: 1n,
         // paid for in base
@@ -1068,36 +1070,10 @@ test("getOpenShorts should account for shorts opened with base", async () => {
       },
     },
   ]);
-  // matching TransferSingle events for OpenShort
-  contract.stubEvents("TransferSingle", { filter: { to: BOB } }, [
-    {
-      data: eventData,
-      args: {
-        from: ZERO_ADDRESS,
-        to: BOB,
-        id: 1n,
-        value: dnum.from("50", 18)[0],
-        operator: BOB,
-      },
-      eventName: "TransferSingle",
-    },
-    {
-      args: {
-        from: ZERO_ADDRESS,
-        to: BOB,
-        id: 1n,
-        value: dnum.from("50", 18)[0],
-        operator: BOB,
-      },
-      data: eventData,
-      eventName: "TransferSingle",
-    },
-  ]);
 
   contract.stubEvents("CloseShort", { filter: { trader: BOB } }, []);
-  contract.stubEvents("TransferSingle", { filter: { from: BOB } }, []);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 1n } });
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 

@@ -6,9 +6,8 @@ import {
   ContractWriteOptions,
   Event,
 } from "@delvtech/evm-client";
+import { Address } from "abitype";
 import * as dnum from "dnum";
-import groupBy from "lodash.groupby";
-import mapValues from "lodash.mapvalues";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
@@ -28,7 +27,6 @@ import { Checkpoint, CheckpointEvent } from "src/pool/Checkpoint";
 import { MarketState } from "src/pool/MarketState";
 import { PoolConfig } from "src/pool/PoolConfig";
 import { PoolInfo } from "src/pool/PoolInfo";
-import { decodeAssetFromTransferSingleEventData } from "src/pool/decodeAssetFromTransferSingleEventData";
 import { getCheckpointId } from "src/pool/getCheckpointId";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
@@ -591,132 +589,92 @@ export class ReadHyperdrive extends ReadModel {
 
     const { checkpointDuration } = await this.getPoolConfig(options);
 
+    const openShortEvents = await this.contract.getEvents("OpenShort", {
+      filter: { trader: account },
+      toBlock,
+    });
     const closeShortEvents = await this.contract.getEvents("CloseShort", {
       filter: { trader: account },
       toBlock,
     });
 
-    // convert this to a promise object that converts shares to baseAmount
-    const totalBaseReceivedByAssetId = mapValues(
-      groupBy(closeShortEvents, (event) => event.args.assetId.toString()),
-      (events) => {
-        const baseAmounts = events.map((event) => {
-          const { asBase, baseAmount, vaultShareAmount } = event.args;
-          return calculateBaseAmount({
-            asBase,
-            baseAmount,
-            vaultShareAmount,
-          });
-        });
-        return sumBigInt(baseAmounts);
-      },
-    );
-
-    const transferOutEvents = (
-      await this.getTransferSingleEvents({
-        filter: { from: account },
-        toBlock,
-      })
-    ).filter(
-      ({ data }) =>
-        decodeAssetFromTransferSingleEventData(data as `0x${string}`)
-          .assetType === "SHORT",
-    );
-
-    const closedShortsById: Record<string, ClosedShort> = {};
-
-    for (const {
-      args: eventData,
-      data: eventLog,
-      blockNumber,
-    } of transferOutEvents) {
-      const assetId = eventData.id.toString();
-
-      if (closedShortsById[assetId]) {
-        closedShortsById[assetId].bondAmount += eventData.value;
-        continue;
-      }
-
-      const { timestamp } = await getBlockOrThrow(this.network, {
-        blockNumber,
-      });
-      closedShortsById[assetId] = {
-        hyperdriveAddress: this.contract.address,
-        assetId: eventData.id,
-        bondAmount: eventData.value ?? 0n,
-        checkpointId: getCheckpointId(timestamp, checkpointDuration),
-        baseAmountReceived: totalBaseReceivedByAssetId[assetId] ?? 0n,
-        maturity: decodeAssetFromTransferSingleEventData(
-          eventLog as `0x${string}`,
-        ).timestamp,
-        closedTimestamp: timestamp,
-      };
-    }
-
-    const openShortEvents = await this.contract.getEvents("OpenShort", {
-      filter: { trader: account },
-      toBlock,
+    const openShortsById = await this._calcOpenShorts({
+      hyperdriveAddress: this.contract.address,
+      checkpointDuration,
+      openShortEvents,
+      closeShortEvents,
     });
-
-    // Opening a short total cost
-    const totalBasePaidByAssetId = mapValues(
-      groupBy(openShortEvents, (event) => event.args.assetId.toString()),
-      (events) => {
-        const baseAmounts = events.map((event) => {
-          const { asBase, baseAmount, vaultShareAmount } = event.args;
-          return calculateBaseAmount({ asBase, baseAmount, vaultShareAmount });
-        });
-        return sumBigInt(baseAmounts);
-      },
-    );
-
-    const transferInEvents = (
-      await this.getTransferSingleEvents({
-        filter: { to: account },
-        toBlock,
-      })
-    ).filter(
-      ({ data: eventLog }) =>
-        decodeAssetFromTransferSingleEventData(eventLog as `0x{$string}`)
-          .assetType === "SHORT",
-    );
-
-    const openShortsById: Record<string, OpenShort> = {};
-
-    for (const {
-      data: eventLog,
-      args: eventData,
-      blockNumber,
-    } of transferInEvents) {
-      const assetId = eventData.id.toString();
-      const { timestamp } = await getBlockOrThrow(this.network, {
-        blockNumber,
-      });
-
-      if (openShortsById[assetId]) {
-        openShortsById[assetId].bondAmount += eventData.value;
-        continue;
-      }
-
-      const netAmountPaid =
-        (totalBasePaidByAssetId[assetId] ?? 0n) -
-        (totalBaseReceivedByAssetId[assetId] ?? 0n);
-
-      openShortsById[assetId] = {
-        hyperdriveAddress: this.contract.address,
-        assetId: eventData.id,
-        checkpointId: getCheckpointId(timestamp, checkpointDuration),
-        bondAmount:
-          eventData.value - (closedShortsById[assetId]?.bondAmount ?? 0n),
-        baseAmountPaid: netAmountPaid > 0n ? netAmountPaid : 0n,
-        openedTimestamp: timestamp,
-        maturity: decodeAssetFromTransferSingleEventData(
-          eventLog as `0x${string}`,
-        ).timestamp,
-      };
-    }
-
     return Object.values(openShortsById).filter((short) => short.bondAmount);
+  }
+
+  private async _calcOpenShorts({
+    hyperdriveAddress,
+    checkpointDuration,
+    closeShortEvents,
+    openShortEvents,
+  }: {
+    hyperdriveAddress: Address;
+    checkpointDuration: bigint;
+    openShortEvents: Event<typeof hyperdriveAbi, "OpenShort">[];
+    closeShortEvents: Event<typeof hyperdriveAbi, "CloseShort">[];
+  }): Promise<Record<string, OpenShort>> {
+    // Put open and short events in block order. We spread openShortEvents first
+    // since you have to open a short before you can close one.
+    const orderedShortEvents = [...openShortEvents, ...closeShortEvents].sort(
+      (a, b) => Number(a.blockNumber) - Number(b.blockNumber),
+    );
+
+    const openShorts: Record<string, OpenShort> = {};
+
+    await Promise.all(
+      orderedShortEvents.map(async (event) => {
+        const assetId = event.args.assetId.toString();
+        const { timestamp } = await getBlockOrThrow(this.network, {
+          blockNumber: event.blockNumber,
+        });
+
+        const short: OpenShort = openShorts[assetId] || {
+          assetId: event.args.assetId,
+          maturity: event.args.maturityTime,
+          baseAmountPaid: 0n,
+          bondAmount: 0n,
+          hyperdriveAddress,
+          checkpointId: getCheckpointId(timestamp, checkpointDuration),
+          // The openedTimestamp will always reflect the latest short, if you open
+          // twice in the same checkpoint
+          openedTimestamp: timestamp,
+        };
+
+        if (event.eventName === "OpenShort") {
+          const updatedShort: OpenShort = {
+            ...short,
+            baseAmountPaid: short.baseAmountPaid + event.args.baseAmount,
+            bondAmount: short.bondAmount + event.args.bondAmount,
+          };
+          openShorts[assetId] = updatedShort;
+          return;
+        }
+
+        if (event.eventName === "CloseShort") {
+          // If a user closes their whole position, we should remove the whole
+          // position since it's basically starting over
+          if (event.args.bondAmount === short.bondAmount) {
+            delete openShorts[assetId];
+            return;
+          }
+          // otherwise just subtract the amount of bonds they closed and baseAmount
+          // they received back from the running total
+          const updatedShort: OpenShort = {
+            ...short,
+            baseAmountPaid: short.baseAmountPaid - event.args.baseAmount,
+            bondAmount: short.bondAmount - event.args.bondAmount,
+          };
+          openShorts[assetId] = updatedShort;
+        }
+      }),
+    );
+
+    return openShorts;
   }
 
   /**
