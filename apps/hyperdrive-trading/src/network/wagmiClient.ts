@@ -46,6 +46,8 @@ if (
 if (VITE_SEPOLIA_RPC_URL) {
   chains.push(sepolia);
   transports[sepolia.id] = http(VITE_SEPOLIA_RPC_URL);
+  // TODO: push this into the custom wallets for local and cloudchain once
+  // capsule support is verified
   if (capsuleWallet) {
     customWallets.push(capsuleWallet);
   }
