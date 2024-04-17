@@ -175,6 +175,7 @@ export function AddLiquidityForm({
               decimals={activeToken.decimals}
               activeOption={activeOption}
               onActiveOptionChange={setActiveOption}
+              tooltip="Your transaction will revert if the liquidity provider share price changes unfavorably by more than this percentage."
             />
           }
           name={activeToken.symbol}
