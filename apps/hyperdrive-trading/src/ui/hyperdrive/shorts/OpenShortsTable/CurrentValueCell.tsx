@@ -51,6 +51,14 @@ export function CurrentValueCell({
   const isPositiveChangeInValue =
     currentValueInBase && currentValueInBase > openShort.baseAmountPaid;
 
+  const profitLoss = getProfitLossText({
+    startAmount: currentValueInBase,
+    endAmount: openShort.baseAmountPaid,
+    decimals: baseToken.decimals,
+    symbol: baseToken.symbol,
+    places: baseToken.places,
+  });
+
   return (
     <div className="daisy-stat p-0">
       <span className="daisy-stat-value text-md font-bold">
@@ -62,16 +70,13 @@ export function CurrentValueCell({
           className={classNames(
             "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
             { "text-success": isPositiveChangeInValue },
-            { "text-error": !isPositiveChangeInValue },
+            {
+              "text-error":
+                !isPositiveChangeInValue && profitLoss.includes("-0"),
+            },
           )}
         >
-          {getProfitLossText({
-            startAmount: currentValueInBase,
-            endAmount: openShort.baseAmountPaid,
-            decimals: baseToken.decimals,
-            symbol: baseToken.symbol,
-            places: baseToken.places,
-          })}
+          {profitLoss === "-0" ? "0" : profitLoss}
         </div>
       ) : (
         ""
@@ -94,13 +99,13 @@ function getProfitLossText({
   places: number;
 }): string {
   const profitOrLoss = startAmount - endAmount;
-
-  const result = `${formatBalance({
+  const formattedProfitLoss = formatBalance({
     balance: profitOrLoss,
     decimals: decimals,
     includeCommas: true,
     places,
-  })} ${symbol}`;
+  });
+  const result = `${formattedProfitLoss === "-0" ? "0" : formattedProfitLoss} ${symbol}`;
 
   return result;
 }
