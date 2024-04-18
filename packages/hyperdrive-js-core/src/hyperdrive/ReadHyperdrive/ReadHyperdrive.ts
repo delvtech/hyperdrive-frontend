@@ -148,7 +148,7 @@ export class ReadHyperdrive extends ReadModel {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
-    const aprString = hyperwasm.getSpotRate(
+    const aprString = hyperwasm.spotRate(
       convertBigIntsToStrings(info),
       convertBigIntsToStrings(config),
     );
@@ -286,7 +286,7 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const spotPrice = hyperwasm.getSpotPrice(
+    const spotPrice = hyperwasm.spotPrice(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
     );
