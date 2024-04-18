@@ -64,16 +64,16 @@ export function useOpenLong({
         value: ethValue,
       };
 
-      function onTransactionMined(hash: Hash) {
+      function onTransactionMined(txHash: Hash) {
         queryClient.invalidateQueries();
         toast.success(
-          <TransactionToast message="Long opened" txHash={hash} />,
-          { id: hash, duration: SUCCESS_TOAST_DURATION },
+          <TransactionToast message="Long opened" txHash={txHash} />,
+          { id: txHash, duration: SUCCESS_TOAST_DURATION },
         );
         setTimeout(() => {
           toastWarpcast();
         }, SUCCESS_TOAST_DURATION);
-        onExecuted?.(hash);
+        onExecuted?.(txHash);
       }
 
       const hash = asBase
