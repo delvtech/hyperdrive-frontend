@@ -163,7 +163,7 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const liquidityString = hyperwasm.getIdleShareReservesInBase(
+    const liquidityString = hyperwasm.idleShareReservesInBase(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
     );
