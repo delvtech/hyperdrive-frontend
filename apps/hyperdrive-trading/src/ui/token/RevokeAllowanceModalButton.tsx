@@ -1,3 +1,4 @@
+import { ERC20 } from "@delvtech/hyperdrive-artifacts/ERC20";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { useState } from "react";
@@ -7,7 +8,7 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { useApproveToken } from "src/ui/token/hooks/useApproveToken";
-import { useAccount, useBalance } from "wagmi";
+import { useAccount, useBalance, useReadContract } from "wagmi";
 
 export function RevokeAllowanceModalButton({
   token,
@@ -42,6 +43,17 @@ export function RevokeAllowanceModalButton({
       revokedAmount = customAmountAsBigInt ?? 0n;
       break;
   }
+
+  // If you can spend more than the total supply of the token, then it's
+  // effectively an infinite approval. See revoke.cash:
+  // https://github.com/RevokeCash/revoke.cash/blob/823a1d2541bf1177f43511bf8983f49c8fc7811d/lib/utils/allowances.ts#L244
+  const { data: totalSupply } = useReadContract({
+    abi: ERC20.abi,
+    functionName: "totalSupply",
+    address: token.address,
+    query: { enabled: !isEth },
+  });
+  const isUnlimited = !!totalSupply && !!allowance && allowance > totalSupply;
 
   // approving a 0 allowance is how to "revoke" allowances
   const { approve: revokeAllowance } = useApproveToken({
@@ -120,11 +132,15 @@ export function RevokeAllowanceModalButton({
                             balance: tokenBalance?.value,
                             decimals: token.decimals,
                             places: token.places,
-                          })} ${token.symbol}\nAllowance: ${formatBalance({
-                            balance: allowance ?? 0n,
-                            decimals: token.decimals,
-                            places: token.places,
-                          })} ${token.symbol}`
+                          })} ${token.symbol}\nAllowance: ${
+                            isUnlimited
+                              ? "Unlimited"
+                              : `${formatBalance({
+                                  balance: allowance || 0n,
+                                  decimals: token.decimals,
+                                  places: token.places,
+                                })} ${token.symbol}`
+                          }`
                         : undefined
                     }
                   />
