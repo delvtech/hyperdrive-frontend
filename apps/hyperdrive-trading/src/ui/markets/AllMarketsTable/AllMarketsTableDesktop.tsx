@@ -173,7 +173,7 @@ export function AllMarketsTableDesktop(): ReactElement {
     return <LoadingState />;
   }
   return (
-    <table className="daisy-table daisy-table-zebra daisy-table-lg ">
+    <table className="daisy-table daisy-table-zebra daisy-table-lg w-[1200px]">
       <thead>
         {tableInstance.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
