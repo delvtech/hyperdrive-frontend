@@ -4477,13 +4477,13 @@
     ethereumjs-util "7.1.5"
     node-forge "^1.3.1"
 
-"@usecapsule/rainbowkit-wallet@^0.8.3":
-  version "0.8.3"
-  resolved "https://registry.yarnpkg.com/@usecapsule/rainbowkit-wallet/-/rainbowkit-wallet-0.8.3.tgz#42f865149f13b68d8672bf8088e4f6134b9d0b80"
-  integrity sha512-U0zoqBUyplFDYieo+1O9LiSmd+SF3rGoTBhFaeCvWrJ73SRXw1SvWALvr4qm/GMd1UbO7U1vS/EAdZrXsznSFA==
+"@usecapsule/rainbowkit-wallet@^0.8.4":
+  version "0.8.4"
+  resolved "https://registry.yarnpkg.com/@usecapsule/rainbowkit-wallet/-/rainbowkit-wallet-0.8.4.tgz#70eca38e7f762c02aa4a4ca8dd3c522aeff29ec2"
+  integrity sha512-WN7CqYZigGUq5L9W6mIXv4azdnluUAl2Nx/B7yL2AA4LY3KESFdA/p0tTW0Ts26mdQvFE8aUjqh9n43eL/oDsA==
   dependencies:
     "@usecapsule/react-sdk" "^2.3.2"
-    "@usecapsule/wagmi-v2-integration" "^1.7.2"
+    "@usecapsule/wagmi-v2-integration" "^1.7.3"
 
 "@usecapsule/react-components@1.0.13":
   version "1.0.13"
@@ -4520,10 +4520,10 @@
   dependencies:
     "@usecapsule/core-sdk" "1.6.1"
 
-"@usecapsule/wagmi-v2-integration@^1.7.2":
-  version "1.7.2"
-  resolved "https://registry.yarnpkg.com/@usecapsule/wagmi-v2-integration/-/wagmi-v2-integration-1.7.2.tgz#08f13c9afe90ca41cce641d7eac7a50f7fe444cc"
-  integrity sha512-Fbpf4Px+g/bg7FwFmaY6QCJvpd/eOTZwJUbRpsyYc0X8gptxl/wGhPtHXixF+S0cOgS1NSfz4+PCar1id9o9iA==
+"@usecapsule/wagmi-v2-integration@^1.7.3":
+  version "1.7.3"
+  resolved "https://registry.yarnpkg.com/@usecapsule/wagmi-v2-integration/-/wagmi-v2-integration-1.7.3.tgz#aeb746d037aecd76fb06c1d65090fb7764a19eb0"
+  integrity sha512-a5P8RzByIDtE76kbmX7JEtIceMr0S4xKJG5vQZs8y0emr61WYUQ8QGitoaJUbHsAwRdqwNhUR5of+UVvhNQMoQ==
   dependencies:
     "@usecapsule/react-sdk" "2.3.2"
     "@usecapsule/viem-v2-integration" "1.5.1"
