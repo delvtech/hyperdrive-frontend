@@ -1035,6 +1035,7 @@ test("getOpenShorts should account for shorts opened with base", async () => {
   contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [
     {
       eventName: "OpenShort",
+      blockNumber: 1n,
       args: {
         assetId: 1n,
         // paid for in base
@@ -1052,6 +1053,7 @@ test("getOpenShorts should account for shorts opened with base", async () => {
     },
     {
       eventName: "OpenShort",
+      blockNumber: 2n,
       args: {
         assetId: 1n,
         // paid for in base
@@ -1068,36 +1070,10 @@ test("getOpenShorts should account for shorts opened with base", async () => {
       },
     },
   ]);
-  // matching TransferSingle events for OpenShort
-  contract.stubEvents("TransferSingle", { filter: { to: BOB } }, [
-    {
-      data: eventData,
-      args: {
-        from: ZERO_ADDRESS,
-        to: BOB,
-        id: 1n,
-        value: dnum.from("50", 18)[0],
-        operator: BOB,
-      },
-      eventName: "TransferSingle",
-    },
-    {
-      args: {
-        from: ZERO_ADDRESS,
-        to: BOB,
-        id: 1n,
-        value: dnum.from("50", 18)[0],
-        operator: BOB,
-      },
-      data: eventData,
-      eventName: "TransferSingle",
-    },
-  ]);
 
   contract.stubEvents("CloseShort", { filter: { trader: BOB } }, []);
-  contract.stubEvents("TransferSingle", { filter: { from: BOB } }, []);
 
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 1n } });
 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
@@ -1576,6 +1552,97 @@ test("getOpenShorts should account for shorts fully closed to shares", async () 
   const value = await readHyperdrive.getOpenShorts({ account: BOB });
 
   expect(value).toEqual([]);
+});
+test("getOpenShorts should handle when user fully closes then re-opens a position in the same checkpoint", async () => {
+  // Description:
+  // Bob opens a Short, then fully closes it at a loss. Then he re-opens a short
+  // in the same checkpoint, resulting in a single position with new accounting
+  // (ie: the previous loss is not factored in).
+
+  const { contract, network, readHyperdrive } = setupReadHyperdrive();
+
+  contract.stubRead({ functionName: "getPoolConfig", value: simplePoolConfig });
+  // pool info to get the price of shares at the time he closes the short
+  contract.stubRead({
+    functionName: "getPoolInfo",
+    value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
+    options: { blockNumber: 5n },
+  });
+
+  // Stub the timestamp so getOpenShorts can construct the checkpoint id
+  network.stubGetBlock({
+    value: {
+      timestamp: 123456789n,
+      // this blockNumber is unused, but setting this to 3n, as there should be
+      // 3 blocks in this test flow
+      blockNumber: 3n,
+    },
+  });
+
+  contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [
+    {
+      eventName: "OpenShort",
+      blockNumber: 1n,
+      args: {
+        assetId: 1n,
+        // paid for in base
+        asBase: true,
+        baseAmount: dnum.from("2", 18)[0],
+        baseProceeds: 0n, // TODO: what's a good value for this?
+        vaultShareAmount: dnum.from("1.8", 18)[0],
+        // The short size is represented in bonds
+        bondAmount: dnum.from("100", 18)[0],
+        maturityTime: 1715299200n,
+        trader: BOB,
+      },
+    },
+    {
+      args: {
+        trader: BOB,
+        assetId: 1n,
+        maturityTime: 1715299200n,
+        baseAmount: dnum.from("9.0931", 18)[0],
+        vaultShareAmount: dnum.from("9.089900546115262569", 18)[0],
+        asBase: true,
+        bondAmount: dnum.from("9.196435772384927298", 18)[0],
+        baseProceeds: 0n, // TODO: what's a good value for this?
+      },
+      blockNumber: 3n,
+      eventName: "OpenShort",
+    } as const,
+  ]);
+
+  contract.stubEvents("CloseShort", { filter: { trader: BOB } }, [
+    {
+      args: {
+        trader: BOB,
+        destination: BOB,
+        assetId: 1n,
+        maturityTime: 1715299200n,
+        baseAmount: dnum.from("1.8", 18)[0],
+        vaultShareAmount: dnum.from("1.8", 18)[0],
+        asBase: true,
+        bondAmount: dnum.from("100", 18)[0],
+        basePayment: dnum.from("1", 18)[0],
+      },
+      blockNumber: 2n,
+      eventName: "CloseShort",
+    },
+  ]);
+
+  const value = await readHyperdrive.getOpenShorts({ account: BOB });
+
+  expect(value).toEqual([
+    {
+      assetId: 1n,
+      baseAmountPaid: dnum.from("9.0931", 18)[0],
+      bondAmount: dnum.from("9.196435772384927298", 18)[0],
+      maturity: 1715299200n,
+      checkpointId: 123454800n,
+      openedTimestamp: 123456789n,
+      hyperdriveAddress: readHyperdrive.contract.address,
+    },
+  ]);
 });
 
 test("getClosedShorts should account for shorts closed to base", async () => {
