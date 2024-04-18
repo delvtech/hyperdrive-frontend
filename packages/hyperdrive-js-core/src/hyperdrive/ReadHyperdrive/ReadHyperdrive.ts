@@ -414,7 +414,7 @@ export class ReadHyperdrive extends ReadModel {
    * r = rate of return
    * p_0 = from lpSharePrice
    * p_1 = to lpSharePrice
-   * t = term length in fractions of a year
+   * t = time frame between p_0 and p_1
    * r = ln(p_1 / p_0) / t
    */
   async getLpApy({
@@ -424,7 +424,7 @@ export class ReadHyperdrive extends ReadModel {
     fromBlock: bigint;
     toBlock: bigint;
   }): Promise<{ lpApy: number }> {
-    const { positionDuration, checkpointDuration } = await this.getPoolConfig();
+    const { checkpointDuration } = await this.getPoolConfig();
 
     const checkpointEvents = await this.getCheckpointEvents({
       fromBlock,
@@ -437,7 +437,10 @@ export class ReadHyperdrive extends ReadModel {
 
     // The starting lp share price comes from the first checkpoint in our events
     const {
-      args: { lpSharePrice: startingCheckpointLpSharePrice },
+      args: {
+        checkpointTime: startingCheckpointTime,
+        lpSharePrice: startingCheckpointLpSharePrice,
+      },
     } = checkpointEvents[0];
 
     // The ending lp share price is either the current checkpoint's lp share
@@ -459,10 +462,13 @@ export class ReadHyperdrive extends ReadModel {
         ? currentLpSharePrice
         : endingCheckpoint.args.lpSharePrice;
 
+    const timeFrame =
+      endingCheckpoint.args.checkpointTime - startingCheckpointTime;
+
     const lpApy = calculateLpApy({
       startingCheckpointLpSharePrice,
       endingCheckpointLpSharePrice,
-      positionDuration,
+      timeFrame,
     });
 
     return { lpApy };
@@ -1582,11 +1588,11 @@ function calculateBaseAmount({
 function calculateLpApy({
   startingCheckpointLpSharePrice,
   endingCheckpointLpSharePrice,
-  positionDuration,
+  timeFrame,
 }: {
   startingCheckpointLpSharePrice: bigint;
   endingCheckpointLpSharePrice: bigint;
-  positionDuration: bigint;
+  timeFrame: bigint;
 }): number {
   const priceRatio = dnum.toNumber(
     dnum.div(
@@ -1597,8 +1603,8 @@ function calculateLpApy({
   );
   const logOfPriceRatio = dnum.from(Math.log(priceRatio), 18);
 
-  const positionDurationInDays = positionDuration / (24n * 60n * 60n);
-  const yearFraction = dnum.div([positionDurationInDays, 18], [365n, 18]);
+  const timeFrameInDays = timeFrame / (24n * 60n * 60n);
+  const yearFraction = dnum.div([timeFrameInDays, 18], [365n, 18]);
   const lpApy = Number(
     dnum.format(dnum.div(logOfPriceRatio, yearFraction, 18)),
   );
