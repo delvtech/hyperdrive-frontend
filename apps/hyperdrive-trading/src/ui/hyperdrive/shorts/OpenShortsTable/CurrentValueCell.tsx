@@ -24,17 +24,18 @@ export function CurrentValueCell({
     tokens: appConfig.tokens,
   });
 
-  const { amountOut: currentValueInShares } = usePreviewCloseShort({
-    hyperdriveAddress: hyperdrive.address,
-    maturityTime: openShort.maturity,
-    shortAmountIn: openShort.bondAmount,
-    minAmountOut: parseUnits("0", baseToken.decimals),
-    destination: account,
-    // Withdraw as shares and convert to base separately to show the current
-    // value, as not all hyperdrives allow withdrawing to base, (see
-    // HyperdriveConfig).
-    asBase: false,
-  });
+  const { amountOut: currentValueInShares, previewCloseShortStatus } =
+    usePreviewCloseShort({
+      hyperdriveAddress: hyperdrive.address,
+      maturityTime: openShort.maturity,
+      shortAmountIn: openShort.bondAmount,
+      minAmountOut: parseUnits("0", baseToken.decimals),
+      destination: account,
+      // Withdraw as shares and convert to base separately to show the current
+      // value, as not all hyperdrives allow withdrawing to base, (see
+      // HyperdriveConfig).
+      asBase: false,
+    });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const currentValueInBase = convertSharesToBase({
     sharesAmount: currentValueInShares,
@@ -48,16 +49,14 @@ export function CurrentValueCell({
     places: baseToken.places,
   });
 
-  const isPositiveChangeInValue =
-    currentValueInBase && currentValueInBase > openShort.baseAmountPaid;
-
-  const profitLoss = getProfitLossText({
-    startAmount: currentValueInBase,
-    endAmount: openShort.baseAmountPaid,
+  const profitLoss = formatBalance({
+    balance: currentValueInBase - openShort.baseAmountPaid,
     decimals: baseToken.decimals,
-    symbol: baseToken.symbol,
     places: baseToken.places,
   });
+
+  const isPositiveChangeInValue =
+    currentValueInBase && currentValueInBase > openShort.baseAmountPaid;
 
   return (
     <div className="daisy-stat p-0">
@@ -72,40 +71,20 @@ export function CurrentValueCell({
             { "text-success": isPositiveChangeInValue },
             {
               "text-error":
-                !isPositiveChangeInValue && profitLoss.includes("-0"),
+                !isPositiveChangeInValue &&
+                profitLoss !== "-0" &&
+                previewCloseShortStatus !== "loading",
             },
           )}
         >
-          {profitLoss === "-0" ? "0" : profitLoss}
+          <span>{isPositiveChangeInValue ? "+" : ""}</span>
+          {profitLoss
+            ? `${profitLoss === "-0" ? "0" : profitLoss} ${baseToken.symbol}`
+            : undefined}
         </div>
       ) : (
         ""
       )}
     </div>
   );
-}
-
-function getProfitLossText({
-  startAmount,
-  endAmount,
-  symbol,
-  decimals,
-  places,
-}: {
-  startAmount: bigint;
-  endAmount: bigint;
-  symbol: string;
-  decimals: number;
-  places: number;
-}): string {
-  const profitOrLoss = startAmount - endAmount;
-  const formattedProfitLoss = formatBalance({
-    balance: profitOrLoss,
-    decimals: decimals,
-    includeCommas: true,
-    places,
-  });
-  const result = `${formattedProfitLoss === "-0" ? "0" : formattedProfitLoss} ${symbol}`;
-
-  return result;
 }
