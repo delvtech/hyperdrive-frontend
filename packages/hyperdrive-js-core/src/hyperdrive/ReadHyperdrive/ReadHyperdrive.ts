@@ -157,7 +157,8 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * This function retrieves the available market liquidity
+   * This function retrieves the market liquidity available for trading and LP
+   * removal
    */
   async getIdleLiquidity(options?: ContractReadOptions): Promise<bigint> {
     const poolConfig = await this.getPoolConfig(options);
@@ -166,6 +167,24 @@ export class ReadHyperdrive extends ReadModel {
     const liquidityString = hyperwasm.idleShareReservesInBase(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
+    );
+
+    return BigInt(liquidityString);
+  }
+
+  /**
+   * Gets the total present value of the pool.
+   * @param options
+   * @returns
+   */
+  async getPresentValue(options?: ContractReadOptions): Promise<bigint> {
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
+
+    const liquidityString = hyperwasm.getPresentValue(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      Math.floor(Date.now() / 1000).toString(),
     );
 
     return BigInt(liquidityString);
