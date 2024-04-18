@@ -181,7 +181,7 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
-    const liquidityString = hyperwasm.getPresentValue(
+    const liquidityString = hyperwasm.presentValue(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
       Math.floor(Date.now() / 1000).toString(),
@@ -823,7 +823,7 @@ export class ReadHyperdrive extends ReadModel {
     const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
     const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
 
-    const maxBondsOut = hyperwasm.getMaxShort(
+    const maxBondsOut = hyperwasm.maxShort(
       stringifiedPoolInfo,
       stringifiedPoolConfig,
       MAX_UINT256.toString(),
@@ -875,7 +875,7 @@ export class ReadHyperdrive extends ReadModel {
     const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
     const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
 
-    const maxBaseIn = hyperwasm.getMaxLong(
+    const maxBaseIn = hyperwasm.maxLong(
       stringifiedPoolInfo,
       stringifiedPoolConfig,
       MAX_UINT256.toString(),
@@ -1204,7 +1204,7 @@ export class ReadHyperdrive extends ReadModel {
     }
 
     const spotPriceAfterOpen = BigInt(
-      hyperwasm.calcSpotPriceAfterLong(
+      hyperwasm.spotPriceAfterLong(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         depositAmountConvertedToBase.toString(),
@@ -1231,7 +1231,7 @@ export class ReadHyperdrive extends ReadModel {
     );
 
     const curveFeeInBonds = BigInt(
-      hyperwasm.getOpenLongCurveFees(
+      hyperwasm.openLongCurveFee(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         depositAmountConvertedToBase.toString(),
@@ -1304,7 +1304,7 @@ export class ReadHyperdrive extends ReadModel {
     }
 
     const spotPriceAfterOpen = BigInt(
-      hyperwasm.calcSpotPriceAfterShort(
+      hyperwasm.spotPriceAfterShort(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
@@ -1325,11 +1325,11 @@ export class ReadHyperdrive extends ReadModel {
     )[0];
 
     const curveFeeInBase = BigInt(
-      hyperwasm.getOpenShortCurveFees(
+      hyperwasm.openShortCurveFee(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
-        hyperwasm.getSpotPrice(
+        hyperwasm.spotPrice(
           convertBigIntsToStrings(poolInfo),
           convertBigIntsToStrings(poolConfig),
         ),
