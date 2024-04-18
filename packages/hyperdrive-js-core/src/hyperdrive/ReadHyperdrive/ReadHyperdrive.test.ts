@@ -1568,7 +1568,16 @@ test("getOpenShorts should handle when user fully closes then re-opens a positio
     value: { ...simplePoolInfo, vaultSharePrice: dnum.from("1.1", 18)[0] },
     options: { blockNumber: 5n },
   });
-  network.stubGetBlock({ value: { timestamp: 123456789n, blockNumber: 5n } });
+
+  // Stub the timestamp so getOpenShorts can construct the checkpoint id
+  network.stubGetBlock({
+    value: {
+      timestamp: 123456789n,
+      // this blockNumber is unused, but setting this to 3n, as there should be
+      // 3 blocks in this test flow
+      blockNumber: 3n,
+    },
+  });
 
   contract.stubEvents("OpenShort", { filter: { trader: BOB } }, [
     {
