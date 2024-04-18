@@ -59,6 +59,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
   async openLongWithShares({
     args: { destination, minBondsOut, minVaultSharePrice, sharesAmount },
     options,
+    onTransactionMined,
   }: Parameters<
     IReadWriteHyperdriveModel["openLongWithShares"]
   >[0]): Promise<Hash> {
@@ -72,6 +73,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
         sharesAmount: convertedSharesAmount,
       },
       options,
+      onTransactionMined,
     });
   }
 
