@@ -1485,9 +1485,9 @@
     lru-cache "^10.0.1"
 
 "@delvtech/hyperdrive-wasm@^0.11.0":
-  version "0.10.0"
-  resolved "https://registry.yarnpkg.com/@delvtech/hyperdrive-wasm/-/hyperdrive-wasm-0.10.0.tgz#805eed7d405faccc9cffdc87abd7d0c2c4fa52ff"
-  integrity sha512-0gGn8Wbu5D70DFXeTgPYUd/ejPVVFLnDCC3zFgzOMbsh88wrxLfp/LM3SXHKfI6pETcMZOaw0E4rhyn4FpZWEQ==
+  version "0.11.0"
+  resolved "https://registry.yarnpkg.com/@delvtech/hyperdrive-wasm/-/hyperdrive-wasm-0.11.0.tgz#9aaff670283a1eb93cf50bf5eca5050db5309e28"
+  integrity sha512-tYDs2sLpeVFN7Dxg7Dd27xjLsnW8vsj+tlDoYUiOvnizicC8kvjYnZjcE90M+yPcMBjqqu5dtiXxltULj6s/BQ==
 
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
