@@ -159,7 +159,7 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * This function retrieves the available market liquidity
    */
-  async getLiquidity(options?: ContractReadOptions): Promise<bigint> {
+  async getIdleLiquidity(options?: ContractReadOptions): Promise<bigint> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
