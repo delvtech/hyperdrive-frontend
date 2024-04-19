@@ -6,8 +6,9 @@ import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
-import { useLiquidity } from "src/ui/hyperdrive/hooks/useLiquidity";
+import { useIdleLiquidity } from "src/ui/hyperdrive/hooks/useIdleLiquidity";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
+import { parseUnits } from "viem";
 import { useBlockNumber } from "wagmi";
 export function LiquidityStats({
   hyperdrive,
@@ -25,15 +26,13 @@ export function LiquidityStats({
   const { totalVolume, longVolume, shortVolume, tradingVolumeStatus } =
     useTradingVolume(hyperdrive.address, currentBlockNumber);
 
-  const { liquidity, liquidityStatus } = useLiquidity({
+  const { idleLiquidity, idleLiquidityStatus } = useIdleLiquidity({
     hyperdriveAddress: hyperdrive.address,
-    decimals: baseToken.decimals,
   });
 
   return (
     <div className="flex gap-16">
-      {/* TODO: Add this stat in next PR */}
-      {/* <Stat
+      <Stat
         label="Total (DAI)"
         value={
           <AmountLabel
@@ -50,19 +49,19 @@ export function LiquidityStats({
         }
         description={`The present value in the pool`}
         tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
-      /> */}
+      />
       <Stat
         label={`Available (${baseToken.symbol})`}
         description={`The amount of liquidity available for trading`}
         value={
-          liquidityStatus === "loading" && liquidity === undefined ? (
+          idleLiquidityStatus === "loading" && idleLiquidity === undefined ? (
             <Skeleton className="w-20" />
           ) : (
             <AmountLabel
               icon={baseToken.iconUrl || ""}
               symbol={baseToken.symbol}
               value={formatCompact({
-                value: liquidity?.liquidity || 0n,
+                value: idleLiquidity || 0n,
                 decimals: baseToken.decimals,
               })}
             />
