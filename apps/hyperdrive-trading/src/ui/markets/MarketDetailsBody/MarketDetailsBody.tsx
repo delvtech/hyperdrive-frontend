@@ -1,11 +1,13 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import CustomBanner from "src/ui/base/components/CustomBanner";
+import { Well } from "src/ui/base/components/Well/Well";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsLpTabs";
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
 import { MarketHeader } from "src/ui/markets/MarketDetailsBody/MarketHeader";
-import { MarketStats } from "src/ui/markets/MarketStats/MarketStats";
+import { LiquidityStats } from "src/ui/markets/MarketStats/LiquidityStats";
+import { YieldStats } from "src/ui/markets/MarketStats/YieldStats";
 import { TransactionAndFaqTabs } from "src/ui/markets/TransactionsAndFaqTabs/TransactionsAndFaqTabs";
 import { YourBalanceWell } from "src/ui/markets/YourBalanceWell/YourBalanceWell";
 import { useAccount } from "wagmi";
@@ -28,8 +30,22 @@ export function MarketDetailsBody({
         {!account ? undefined : <YourBalanceWell hyperdrive={hyperdrive} />}
       </div>
 
-      {/* Stats row */}
-      <MarketStats hyperdrive={hyperdrive} />
+      {/* Stats section */}
+      <div className="flex flex-wrap gap-16 ">
+        <Well transparent>
+          <div className="space-y-6">
+            <h5 className="flex items-center gap-2 text-gray-400">Yield</h5>
+            <YieldStats hyperdrive={hyperdrive} />
+          </div>
+        </Well>
+        <Well transparent>
+          <div className="space-y-6">
+            <h5 className="flex items-center gap-2 text-gray-400">Liquidity</h5>
+            <LiquidityStats hyperdrive={hyperdrive} />
+          </div>
+        </Well>
+      </div>
+
       {marketState?.isPaused && (
         <CustomBanner description="This market has been paused. You may close your positions, but no new positions may be opened." />
       )}

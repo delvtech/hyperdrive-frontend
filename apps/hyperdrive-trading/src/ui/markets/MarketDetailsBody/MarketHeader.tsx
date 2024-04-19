@@ -46,7 +46,7 @@ export function MarketHeader({
           </div>
           {hyperdrive.name}
         </h1>{" "}
-        <div className="flex w-full items-center gap-8">
+        <div className="flex w-full flex-wrap items-center gap-8">
           <PriceBadges hyperdrive={hyperdrive} />
           {analyticsUrl ? (
             <a
