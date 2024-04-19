@@ -157,8 +157,7 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * This function retrieves the market liquidity available for trading and LP
-   * removal
+   * Gets the market liquidity available for trading and removing LP.
    */
   async getIdleLiquidity(options?: ContractReadOptions): Promise<bigint> {
     const poolConfig = await this.getPoolConfig(options);
