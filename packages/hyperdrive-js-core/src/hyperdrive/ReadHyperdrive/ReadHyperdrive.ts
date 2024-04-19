@@ -514,7 +514,7 @@ export class ReadHyperdrive extends ReadModel {
   }: {
     openLongEvents: Event<HyperdriveAbi, "OpenLong">[];
     closeLongEvents: Event<HyperdriveAbi, "CloseLong">[];
-  }): Record<string, Long> {
+  }): Long[] {
     // Put open and long events in block order. We spread openLongEvents first
     // since you have to open a long before you can close one.
     const orderedLongEvents = [...openLongEvents, ...closeLongEvents].sort(
@@ -561,7 +561,7 @@ export class ReadHyperdrive extends ReadModel {
       }
     });
 
-    return openLongs;
+    return Object.values(openLongs).filter((long) => long.bondAmount);
   }
 
   /**
@@ -588,12 +588,10 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
-    const openLongsById = this._calcOpenLongs({
+    return this._calcOpenLongs({
       openLongEvents,
       closeLongEvents,
     });
-
-    return Object.values(openLongsById).filter((long) => long.bondAmount);
   }
 
   /**
@@ -622,13 +620,12 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
-    const openShortsById = await this._calcOpenShorts({
+    return this._calcOpenShorts({
       hyperdriveAddress: this.contract.address,
       checkpointDuration,
       openShortEvents,
       closeShortEvents,
     });
-    return Object.values(openShortsById).filter((short) => short.bondAmount);
   }
 
   private async _calcOpenShorts({
@@ -641,7 +638,7 @@ export class ReadHyperdrive extends ReadModel {
     checkpointDuration: bigint;
     openShortEvents: Event<typeof hyperdriveAbi, "OpenShort">[];
     closeShortEvents: Event<typeof hyperdriveAbi, "CloseShort">[];
-  }): Promise<Record<string, OpenShort>> {
+  }): Promise<OpenShort[]> {
     // Put open and short events in block order. We spread openShortEvents first
     // since you have to open a short before you can close one.
     const orderedShortEvents = [...openShortEvents, ...closeShortEvents].sort(
@@ -657,6 +654,7 @@ export class ReadHyperdrive extends ReadModel {
           blockNumber: event.blockNumber,
         });
 
+        // Create an default empty short that we will update based on the events
         const short: OpenShort = openShorts[assetId] || {
           assetId: event.args.assetId,
           maturity: event.args.maturityTime,
@@ -669,6 +667,8 @@ export class ReadHyperdrive extends ReadModel {
           openedTimestamp: timestamp,
         };
 
+        // When you open a short, we add up how much you've paid and your new
+        // total bond amount
         if (event.eventName === "OpenShort") {
           const updatedShort: OpenShort = {
             ...short,
@@ -698,7 +698,7 @@ export class ReadHyperdrive extends ReadModel {
       }),
     );
 
-    return openShorts;
+    return Object.values(openShorts).filter((short) => short.bondAmount);
   }
 
   /**
