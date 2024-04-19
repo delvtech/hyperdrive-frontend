@@ -13,9 +13,13 @@ AMM](https://www.github.com/delvtech/hyperdrive).
 The SDK has been designed to seamlessly integrate with multiple web3 libraries.
 Choose one below to get started:
 
-- [Viem Quickstart](#viem-quickstart)
-- [Ethers Quickstart](#ethers-quickstart)
-- [Web3.js Quickstart](#web3js-quickstart)
+- [Getting Started](#getting-started)
+  - [Viem Quickstart](#viem-quickstart)
+    - [Install](#install)
+    - [Using the `ReadHyperdrive`](#using-the-readhyperdrive)
+    - [Using the `ReadWriteHyperdrive`](#using-the-readwritehyperdrive)
+  - [Ethers Quickstart](#ethers-quickstart)
+  - [Web3.js Quickstart](#web3js-quickstart)
 
 ## Viem Quickstart
 
@@ -50,7 +54,7 @@ const hyperdrive = createReadHyperdrive({
 });
 
 // 3. Get data from the contracts
-const liquidity = await hyperdrive.getLiquidity();
+const liquidity = await hyperdrive.getIdleLiquidity();
 ```
 
 ### Using the `ReadWriteHyperdrive`
