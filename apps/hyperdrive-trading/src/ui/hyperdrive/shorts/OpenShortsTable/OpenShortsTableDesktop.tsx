@@ -17,6 +17,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -155,12 +156,22 @@ function getColumns(
     columnHelper.accessor("baseAmountPaid", {
       header: `Value Paid (${baseToken.symbol})`,
       cell: (baseAmountPaid) => {
+        const fixedRate = baseAmountPaid.row.original.fixedRatePaid;
         const amountPaid = baseAmountPaid.getValue();
-        return formatBalance({
-          balance: amountPaid,
-          decimals: baseToken.decimals,
-          places: baseToken.places,
-        });
+        return (
+          <div className="daisy-stat flex flex-row p-0 xl:flex-col">
+            <span className="daisy-stat-value text-xs font-normal lg:text-md">
+              {formatBalance({
+                balance: amountPaid,
+                decimals: baseToken.decimals,
+                places: baseToken.places,
+              })}
+            </span>
+            <div className={"daisy-stat-desc inline-flex text-xs lg:mt-1"}>
+              <span>{formatRate(fixedRate)}% APR</span>
+            </div>
+          </div>
+        );
       },
     }),
     columnHelper.display({

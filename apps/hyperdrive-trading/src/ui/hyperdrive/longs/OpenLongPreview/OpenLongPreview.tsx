@@ -1,7 +1,4 @@
-import {
-  calculateFixedRateFromOpenLong,
-  Long,
-} from "@delvtech/hyperdrive-viem";
+import { calculateAprFromPrice, Long } from "@delvtech/hyperdrive-viem";
 import {
   findBaseToken,
   HyperdriveConfig,
@@ -94,7 +91,7 @@ export function OpenLongPreview({
             >
               {long.bondAmount > 0
                 ? `${formatRate(
-                    calculateFixedRateFromOpenLong({
+                    calculateAprFromPrice({
                       positionDuration:
                         hyperdrive.poolConfig.positionDuration || 0n,
                       baseAmount: long.baseAmountPaid,

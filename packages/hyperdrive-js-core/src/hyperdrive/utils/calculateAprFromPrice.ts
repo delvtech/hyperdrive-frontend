@@ -9,7 +9,7 @@ import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFract
  * p1 = bond amount
  * r = ((p1 / p0) - 1) / t
  */
-export function calculateFixedRateFromOpenLong({
+export function calculateAprFromPrice({
   positionDuration,
   baseAmount,
   bondAmount,

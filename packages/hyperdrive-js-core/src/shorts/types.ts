@@ -16,5 +16,8 @@ export interface ClosedShort extends Short {
 
 export interface OpenShort extends Short {
   baseAmountPaid: bigint;
+  baseProceeds: bigint;
+  fixedRatePaid: bigint;
+
   openedTimestamp: bigint;
 }
