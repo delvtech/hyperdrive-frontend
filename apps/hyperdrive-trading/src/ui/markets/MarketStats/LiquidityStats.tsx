@@ -5,17 +5,15 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
-import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useIdleLiquidity } from "src/ui/hyperdrive/hooks/useIdleLiquidity";
+import { usePresentValue } from "src/ui/hyperdrive/hooks/usePresentValue";
 import { useTradingVolume } from "src/ui/hyperdrive/hooks/useTradingVolume";
-import { parseUnits } from "viem";
 import { useBlockNumber } from "wagmi";
 export function LiquidityStats({
   hyperdrive,
 }: {
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { data: currentBlockNumber } = useBlockNumber();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -26,6 +24,10 @@ export function LiquidityStats({
   const { totalVolume, longVolume, shortVolume, tradingVolumeStatus } =
     useTradingVolume(hyperdrive.address, currentBlockNumber);
 
+  const { presentValue, presentValueStatus } = usePresentValue({
+    hyperdriveAddress: hyperdrive.address,
+  });
+
   const { idleLiquidity, idleLiquidityStatus } = useIdleLiquidity({
     hyperdriveAddress: hyperdrive.address,
   });
@@ -33,26 +35,26 @@ export function LiquidityStats({
   return (
     <div className="flex gap-16">
       <Stat
-        label="Total (DAI)"
+        label={`Total (${baseToken.symbol})`}
         value={
-          <AmountLabel
-            icon={baseToken.iconUrl || ""}
-            symbol={baseToken.symbol}
-            value={
-              // TODO: Wire this up
-              formatCompact({
-                value: parseUnits("517826", 18) || 0n,
+          presentValueStatus === "loading" && presentValue === undefined ? (
+            <Skeleton className="w-20" />
+          ) : (
+            <AmountLabel
+              icon={baseToken.iconUrl || ""}
+              symbol={baseToken.symbol}
+              value={formatCompact({
+                value: presentValue || 0n,
                 decimals: baseToken.decimals,
-              })
-            }
-          />
+              })}
+            />
+          )
         }
         description={`The present value in the pool`}
-        tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
       />
       <Stat
         label={`Available (${baseToken.symbol})`}
-        description={`The amount of liquidity available for trading`}
+        description={`The idle liquidity available for trading and exiting LP positions`}
         value={
           idleLiquidityStatus === "loading" && idleLiquidity === undefined ? (
             <Skeleton className="w-20" />
@@ -67,7 +69,6 @@ export function LiquidityStats({
             />
           )
         }
-        tooltipPosition={isTailwindSmallScreen ? "right" : "left"}
       />
       <Stat
         description={`The amount of hy${
@@ -83,8 +84,7 @@ export function LiquidityStats({
           decimals: baseToken.decimals,
           places: baseToken.places,
         })} hy${baseToken.symbol}`}
-        tooltipPosition={isTailwindSmallScreen ? "left" : "bottom"}
-        label={`hy${baseToken.symbol} Volume (24h)`}
+        label={`24h Volume (hy${baseToken.symbol})`}
         value={
           tradingVolumeStatus === "loading" && totalVolume === undefined ? (
             <Skeleton className="w-20" />

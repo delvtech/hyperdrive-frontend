@@ -3,24 +3,24 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
-export function useIdleLiquidity({
+export function usePresentValue({
   hyperdriveAddress,
 }: {
   hyperdriveAddress: Address;
 }): {
-  idleLiquidity: bigint | undefined;
-  idleLiquidityStatus: QueryStatus;
+  presentValue: bigint | undefined;
+  presentValueStatus: QueryStatus;
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled = !!readHyperdrive;
   const { data, status } = useQuery({
-    queryKey: makeQueryKey("liquidity", { hyperdriveAddress }),
-    queryFn: queryEnabled ? () => readHyperdrive.getIdleLiquidity() : undefined,
+    queryKey: makeQueryKey("present-value", { hyperdriveAddress }),
+    queryFn: queryEnabled ? () => readHyperdrive.getPresentValue() : undefined,
     enabled: queryEnabled,
   });
 
   return {
-    idleLiquidity: data,
-    idleLiquidityStatus: status,
+    presentValue: data,
+    presentValueStatus: status,
   };
 }
