@@ -18,6 +18,7 @@ import {
 import classNames from "classnames";
 import * as dnum from "dnum";
 import { useState } from "react";
+import Skeleton from "react-loading-skeleton";
 import { formatTimeDifference } from "src/base/formatTimeDifference";
 import { makeAddressUrl } from "src/blockexplorer/makeAddressUrl";
 import { makeTransactionURL } from "src/blockexplorer/makeTransactionUrl";
@@ -512,11 +513,19 @@ function AccountCell({ account }: { account: Address }) {
 }
 
 function BlockInfo({ blockNumber }: { blockNumber: bigint | undefined }) {
-  const { data: transactionBlock } = useBlock({ blockNumber });
-  const { data: currentBlock } = useBlock();
+  const { data: transactionBlock, status: transactionBlockStatus } = useBlock({
+    blockNumber,
+  });
+
+  const { data: currentBlock, status: currentBlockStatus } = useBlock();
+  const isFetchingBlock =
+    transactionBlockStatus === "loading" || currentBlockStatus === "loading";
   const timeDifference = formatTimeDifference({
     currentTimeStamp: currentBlock?.timestamp || 0n,
     previousTimeStamp: transactionBlock?.timestamp || 0n,
   });
+  if (isFetchingBlock) {
+    return <Skeleton width={100} />;
+  }
   return <p>{timeDifference}</p>;
 }
