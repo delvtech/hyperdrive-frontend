@@ -333,14 +333,12 @@ export class ReadHyperdriveModel implements IReadHyperdriveModel {
     maxAPR,
     minAPR,
     minLpSharePrice,
-    ethValue,
   }: {
     destination: Address;
     contribution: bigint;
     minAPR: bigint;
     minLpSharePrice: bigint;
     maxAPR: bigint;
-    ethValue?: bigint;
   }): ReturnType<IReadHyperdriveModel, "previewAddLiquidityWithShares"> {
     return this.readHyperdrive.previewAddLiquidity({
       destination,
@@ -349,7 +347,6 @@ export class ReadHyperdriveModel implements IReadHyperdriveModel {
       minAPR,
       minLpSharePrice,
       maxAPR,
-      options: { value: ethValue, from: destination },
     });
   }
   async previewAddLiquidityWithShares({
@@ -358,14 +355,12 @@ export class ReadHyperdriveModel implements IReadHyperdriveModel {
     maxAPR,
     minAPR,
     minLpSharePrice,
-    ethValue,
   }: {
     destination: Address;
     contribution: bigint;
     minAPR: bigint;
     minLpSharePrice: bigint;
     maxAPR: bigint;
-    ethValue?: bigint;
   }): ReturnType<IReadHyperdriveModel, "previewAddLiquidityWithShares"> {
     return this.readHyperdrive.previewAddLiquidity({
       destination,
@@ -374,7 +369,6 @@ export class ReadHyperdriveModel implements IReadHyperdriveModel {
       minAPR,
       minLpSharePrice,
       maxAPR,
-      options: { value: ethValue, from: destination },
     });
   }
   async previewOpenLongWithBase({

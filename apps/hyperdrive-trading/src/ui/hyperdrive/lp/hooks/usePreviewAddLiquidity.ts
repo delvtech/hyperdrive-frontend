@@ -66,7 +66,6 @@ export function usePreviewAddLiquidity({
               minAPR,
               minLpSharePrice,
               maxAPR,
-              ethValue,
             });
           }
 
