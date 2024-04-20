@@ -1416,32 +1416,18 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
-    // const lpSharesOut = await this.contract.simulateWrite(
-    //   "addLiquidity",
-    //   {
-    //     _contribution: contribution,
-    //     _minLpSharePrice: minLpSharePrice,
-    //     _minApr: minAPR,
-    //     _maxApr: maxAPR,
-    //     _options: { destination, asBase, extraData },
-    //   },
-    //   options,
-    // );
-
     const currentTime = dnum.from(Math.floor(Date.now() / 1000), 18)[0];
 
-    const lpSharesOut = hyperwasm.calcAddLiquidity(
-      convertBigIntsToStrings(poolInfo),
-      convertBigIntsToStrings(poolConfig),
-      currentTime.toString(),
-      contribution.toString(),
-      asBase,
-      minLpSharePrice.toString(),
-      minAPR.toString(),
-      maxAPR.toString(),
+    const lpSharesOut = BigInt(
+      hyperwasm.calcAddLiquidity(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        currentTime.toString(),
+        contribution.toString(),
+        asBase,
+      ),
     );
 
-    console.log("new lp shares out", lpSharesOut);
     const { vaultSharePrice, lpSharePrice } = await this.getPoolInfo();
     const decimals = await this.getDecimals();
     const lpSharesOutInBase = dnum.multiply(
@@ -1461,7 +1447,7 @@ export class ReadHyperdrive extends ReadModel {
       [valueOfLpShares, decimals],
     )[0];
     return {
-      lpSharesOut: lpSharesOut,
+      lpSharesOut,
       slippagePaid,
     };
   }
