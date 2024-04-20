@@ -255,14 +255,12 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
     maxAPR,
     minAPR,
     minLpSharePrice,
-    ethValue,
   }: {
     destination: `0x${string}`;
     contribution: bigint;
     minAPR: bigint;
     minLpSharePrice: bigint;
     maxAPR: bigint;
-    ethValue?: bigint | undefined;
   }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }> {
     return this.readStethHyperdriveModel.previewAddLiquidityWithShares({
       destination,
@@ -270,7 +268,6 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
       maxAPR,
       minAPR,
       minLpSharePrice,
-      ethValue,
     });
   }
   async removeLiquidityWithShares({

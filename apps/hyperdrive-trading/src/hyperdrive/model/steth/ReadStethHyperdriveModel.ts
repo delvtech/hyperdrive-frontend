@@ -151,14 +151,12 @@ export class ReadStethHyperdriveModel extends ReadHyperdriveModel {
     maxAPR,
     minAPR,
     minLpSharePrice,
-    ethValue,
   }: {
     destination: `0x${string}`;
     contribution: bigint;
     minAPR: bigint;
     minLpSharePrice: bigint;
     maxAPR: bigint;
-    ethValue?: bigint | undefined;
   }): Promise<{ lpSharesOut: bigint; slippagePaid: bigint }> {
     const convertedContribution =
       await this.convertStethTokensToShares(contribution);
@@ -169,7 +167,6 @@ export class ReadStethHyperdriveModel extends ReadHyperdriveModel {
       maxAPR,
       minAPR,
       minLpSharePrice,
-      ethValue,
     });
   }
 
