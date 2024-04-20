@@ -91,44 +91,52 @@ export function OpenShortPreview({
           </span>
         }
       />
-      <LabelValue
-        label="Fixed APR after open"
-        value={
-          <span
-            className={classNames(
-              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
-              { "border-b border-dashed border-current": spotRateAfterOpen },
-            )}
-            data-tip="The market fixed rate after opening the short."
-          >
-            {spotRateAfterOpen ? `${formatRate(spotRateAfterOpen)}% APR` : "-"}
-          </span>
-        }
-      />
-      <LabelValue
-        label="Fixed APR impact"
-        value={
-          <span
-            className={classNames(
-              "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
-              {
-                "border-b border-dashed border-success text-success":
-                  spotRateAfterOpen,
-              },
-            )}
-            data-tip={`The net market impact on the fixed rate after opening the short.`}
-          >
-            {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
-          </span>
-        }
-      />
+      <div className="flex flex-col gap-3">
+        <h6 className="font-medium">Market Impact</h6>
+        <LabelValue
+          label="Fixed APR after open"
+          value={
+            <span
+              className={classNames(
+                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help before:border",
+                { "border-b border-dashed border-current": spotRateAfterOpen },
+              )}
+              data-tip="The market fixed rate after opening the short."
+            >
+              {spotRateAfterOpen
+                ? `${formatRate(spotRateAfterOpen)}% APR`
+                : "-"}
+            </span>
+          }
+        />
+        <LabelValue
+          label="Fixed APR impact"
+          value={
+            <span
+              className={classNames(
+                "daisy-tooltip daisy-tooltip-top daisy-tooltip-left cursor-help  before:border",
+                {
+                  "border-b border-dashed border-success text-success":
+                    spotRateAfterOpen,
+                },
+              )}
+              data-tip={`The net market impact on the fixed rate after opening the short.`}
+            >
+              {getMarketImpactLabel(fixedAPR?.apr, spotRateAfterOpen)}
+            </span>
+          }
+        />
+      </div>
 
-      <LabelValue
-        label="Matures in"
-        value={`${convertMillisecondsToDays(termLengthMS)} days, ${formatDate(
-          Date.now() + termLengthMS,
-        )}`}
-      />
+      <div className="flex flex-col gap-3">
+        <h6 className="font-medium">Term</h6>
+        <LabelValue
+          label="Matures in"
+          value={`${convertMillisecondsToDays(termLengthMS)} days, ${formatDate(
+            Date.now() + termLengthMS,
+          )}`}
+        />
+      </div>
     </div>
   );
 }
