@@ -24,7 +24,7 @@ export function Well({
   const isInteractive = !disabled && (interactive || onClick);
   const className = classNames(
     "daisy-card p-7 border",
-    outlined ? "border-1 border-lime" : "border-1 border-gray-700",
+    outlined ? "border-1 border-lime" : "border-1 border-neutral-content/20",
     {
       "shadow-md": elevation === "elevated",
       "bg-base-200": !transparent,

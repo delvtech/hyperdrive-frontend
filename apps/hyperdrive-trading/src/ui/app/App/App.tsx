@@ -21,7 +21,7 @@ export function App(): ReactElement | null {
   useClearLocalStorageOnNewVersion();
 
   return (
-    <div className="flex h-full flex-col overflow-auto">
+    <div className="flex h-full flex-col">
       <StrictMode>
         <RouterProvider router={router} />
         <TermsOfUseAndPrivacyPolicyModal />

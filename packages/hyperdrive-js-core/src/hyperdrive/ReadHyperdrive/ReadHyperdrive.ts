@@ -157,15 +157,34 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * This function retrieves the available market liquidity
+   * This function retrieves the market liquidity available for trading and LP
+   * removal
    */
-  async getLiquidity(options?: ContractReadOptions): Promise<bigint> {
+  async getIdleLiquidity(options?: ContractReadOptions): Promise<bigint> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
     const liquidityString = hyperwasm.idleShareReservesInBase(
       convertBigIntsToStrings(poolInfo),
       convertBigIntsToStrings(poolConfig),
+    );
+
+    return BigInt(liquidityString);
+  }
+
+  /**
+   * Gets the total present value of the pool.
+   * @param options
+   * @returns
+   */
+  async getPresentValue(options?: ContractReadOptions): Promise<bigint> {
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
+
+    const liquidityString = hyperwasm.presentValue(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      Math.floor(Date.now() / 1000).toString(),
     );
 
     return BigInt(liquidityString);
@@ -414,7 +433,7 @@ export class ReadHyperdrive extends ReadModel {
    * r = rate of return
    * p_0 = from lpSharePrice
    * p_1 = to lpSharePrice
-   * t = term length in fractions of a year
+   * t = time frame between p_0 and p_1
    * r = ln(p_1 / p_0) / t
    */
   async getLpApy({
@@ -424,7 +443,7 @@ export class ReadHyperdrive extends ReadModel {
     fromBlock: bigint;
     toBlock: bigint;
   }): Promise<{ lpApy: number }> {
-    const { positionDuration, checkpointDuration } = await this.getPoolConfig();
+    const { checkpointDuration } = await this.getPoolConfig();
 
     const checkpointEvents = await this.getCheckpointEvents({
       fromBlock,
@@ -437,7 +456,10 @@ export class ReadHyperdrive extends ReadModel {
 
     // The starting lp share price comes from the first checkpoint in our events
     const {
-      args: { lpSharePrice: startingCheckpointLpSharePrice },
+      args: {
+        checkpointTime: startingCheckpointTime,
+        lpSharePrice: startingCheckpointLpSharePrice,
+      },
     } = checkpointEvents[0];
 
     // The ending lp share price is either the current checkpoint's lp share
@@ -459,10 +481,13 @@ export class ReadHyperdrive extends ReadModel {
         ? currentLpSharePrice
         : endingCheckpoint.args.lpSharePrice;
 
+    const timeFrame =
+      endingCheckpoint.args.checkpointTime - startingCheckpointTime;
+
     const lpApy = calculateLpApy({
       startingCheckpointLpSharePrice,
       endingCheckpointLpSharePrice,
-      positionDuration,
+      timeFrame,
     });
 
     return { lpApy };
@@ -798,7 +823,7 @@ export class ReadHyperdrive extends ReadModel {
     const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
     const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
 
-    const maxBondsOut = hyperwasm.getMaxShort(
+    const maxBondsOut = hyperwasm.maxShort(
       stringifiedPoolInfo,
       stringifiedPoolConfig,
       MAX_UINT256.toString(),
@@ -850,7 +875,7 @@ export class ReadHyperdrive extends ReadModel {
     const stringifiedPoolInfo = convertBigIntsToStrings(poolInfo);
     const stringifiedPoolConfig = convertBigIntsToStrings(poolConfig);
 
-    const maxBaseIn = hyperwasm.getMaxLong(
+    const maxBaseIn = hyperwasm.maxLong(
       stringifiedPoolInfo,
       stringifiedPoolConfig,
       MAX_UINT256.toString(),
@@ -1179,7 +1204,7 @@ export class ReadHyperdrive extends ReadModel {
     }
 
     const spotPriceAfterOpen = BigInt(
-      hyperwasm.calcSpotPriceAfterLong(
+      hyperwasm.spotPriceAfterLong(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         depositAmountConvertedToBase.toString(),
@@ -1206,7 +1231,7 @@ export class ReadHyperdrive extends ReadModel {
     );
 
     const curveFeeInBonds = BigInt(
-      hyperwasm.getOpenLongCurveFees(
+      hyperwasm.openLongCurveFee(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         depositAmountConvertedToBase.toString(),
@@ -1279,7 +1304,7 @@ export class ReadHyperdrive extends ReadModel {
     }
 
     const spotPriceAfterOpen = BigInt(
-      hyperwasm.calcSpotPriceAfterShort(
+      hyperwasm.spotPriceAfterShort(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
@@ -1300,11 +1325,11 @@ export class ReadHyperdrive extends ReadModel {
     )[0];
 
     const curveFeeInBase = BigInt(
-      hyperwasm.getOpenShortCurveFees(
+      hyperwasm.openShortCurveFee(
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
-        hyperwasm.getSpotPrice(
+        hyperwasm.spotPrice(
           convertBigIntsToStrings(poolInfo),
           convertBigIntsToStrings(poolConfig),
         ),
@@ -1585,11 +1610,11 @@ function calculateBaseAmount({
 function calculateLpApy({
   startingCheckpointLpSharePrice,
   endingCheckpointLpSharePrice,
-  positionDuration,
+  timeFrame,
 }: {
   startingCheckpointLpSharePrice: bigint;
   endingCheckpointLpSharePrice: bigint;
-  positionDuration: bigint;
+  timeFrame: bigint;
 }): number {
   const priceRatio = dnum.toNumber(
     dnum.div(
@@ -1600,8 +1625,8 @@ function calculateLpApy({
   );
   const logOfPriceRatio = dnum.from(Math.log(priceRatio), 18);
 
-  const positionDurationInDays = positionDuration / (24n * 60n * 60n);
-  const yearFraction = dnum.div([positionDurationInDays, 18], [365n, 18]);
+  const timeFrameInDays = timeFrame / (24n * 60n * 60n);
+  const yearFraction = dnum.div([timeFrameInDays, 18], [365n, 18]);
   const lpApy = Number(
     dnum.format(dnum.div(logOfPriceRatio, yearFraction, 18)),
   );
