@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@hyperdrive/tsconfig/base.json",
+  "include": ["src"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": ".",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "allowSyntheticDefaultImports": true,
+    "target": "esnext",
+    "resolveJsonModule": true,
+
+    // we don't need declaration files for a CLI
+    "declaration": false,
+    "declarationMap": false
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "@delvtech/hyperdrive-cli",
+  "version": "0.0.0",
+  "license": "AGPL-3.0",
+  "main": "dist/hyper.js",
+  "types": "dist/hyper.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "bin": {
+    "hyper": "dist/hyper.js"
+  },
+  "scripts": {
+    "hyper": "node dist/council.js",
+    "dev": "NODE_ENV=development tesm-node src/council.ts",
+    "prod": "tesm-node src/council.ts",
+    "build": "rimraf dist && tsc",
+    "watch": "tsc --watch"
+  },
+  "peerDependencies": {
+    "viem": ">=2",
+    "hardhat": ">=2"
+  },
+  "peerDependenciesMeta": {
+    "hardhat": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "clide-js": "^0.1.3",
+    "clide-plugin-command-menu": "^0.0.7",
+    "dotenv": "^16.4.5",
+    "json-schema-typed": "^8.0.1",
+    "signale": "^1.4.0"
+  },
+  "devDependencies": {
+    "@hyperdrive/eslint-config": "*",
+    "@hyperdrive/prettier-config": "*",
+    "@hyperdrive/tsconfig": "*",
+    "@types/node": "^20.12.7",
+    "@types/signale": "^1.4.7",
+    "hardhat": "^2.22.3",
+    "rimraf": "^5.0.5",
+    "tesm-node": "^1.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "viem": "^2.9.23"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
