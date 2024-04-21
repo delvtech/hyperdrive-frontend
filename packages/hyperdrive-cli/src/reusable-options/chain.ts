@@ -1,6 +1,34 @@
 import { Client, OptionConfig, OptionGetter } from "clide-js";
 import { Chain, defineChain } from "viem";
-import { ViemChain, viemChains } from "../lib/viem.js";
+import {
+  arbitrum,
+  localhost,
+  mainnet,
+  optimism,
+  polygon,
+  sepolia,
+} from "viem/chains";
+import { HyphenCase } from "../utils/types.js";
+
+const { CHAIN, LOCALHOST_CHAIN_ID } = process.env;
+
+const localhostChainId = LOCALHOST_CHAIN_ID
+  ? Number(LOCALHOST_CHAIN_ID)
+  : localhost.id;
+
+const viemChains = {
+  [formatChainName(localhost.name)]: {
+    ...localhost,
+    id: localhostChainId,
+  },
+  [formatChainName(mainnet.name)]: mainnet,
+  [formatChainName(sepolia.name)]: sepolia,
+  [formatChainName(optimism.name)]: optimism,
+  [formatChainName(arbitrum.name)]: arbitrum,
+  [formatChainName(polygon.name)]: polygon,
+};
+
+type ViemChain = keyof typeof viemChains;
 
 const promptChoices = [
   ...Object.keys(viemChains).map((chainName) => {
@@ -22,18 +50,13 @@ export const chainOption = {
     .join(", ")}, "other", or "other:<chain-id>".`,
   type: "string",
   required: true,
-  default: process.env.CHAIN || "localhost",
+  default: CHAIN || "localhost",
 } as const satisfies OptionConfig;
 
 export async function getChain(
   chainOptionGetter: OptionGetter<string>,
   client: Client,
 ): Promise<Chain> {
-  promptChoices.push({
-    title: "other",
-    value: "other",
-  });
-
   const chosenChain = (await chainOptionGetter({
     prompt: {
       message: "Select chain",
@@ -67,4 +90,8 @@ export async function getChain(
       public: { http: [] },
     },
   });
+}
+
+function formatChainName<K extends string>(name: K): HyphenCase<K> {
+  return name.replace(" ", "-").toLowerCase() as HyphenCase<K>;
 }

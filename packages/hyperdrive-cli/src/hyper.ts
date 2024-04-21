@@ -14,6 +14,10 @@ run({
       skip: (options) => !!options.help,
     }),
   ],
-}).catch((error) => {
-  signale.error(error);
-});
+})
+  .then(() => {
+    process.exit(0);
+  })
+  .catch((error) => {
+    signale.error(error);
+  });
