@@ -151,6 +151,36 @@ export function readMetaMorphoHyperdriveMixin<
   };
 }
 
+// function expectedMarketBalances(IMorpho morpho, MarketParams memory marketParams)
+// internal
+// view
+// returns (uint256, uint256, uint256, uint256)
+// {
+// Id id = marketParams.id();
+// Market memory market = morpho.market(id);
+
+// uint256 elapsed = block.timestamp - market.lastUpdate;
+
+// // Skipped if elapsed == 0 or totalBorrowAssets == 0 because interest would be null, or if irm == address(0).
+// if (elapsed != 0 && market.totalBorrowAssets != 0 && marketParams.irm != address(0)) {
+//     uint256 borrowRate = IIrm(marketParams.irm).borrowRateView(marketParams, market);
+//     uint256 interest = market.totalBorrowAssets.wMulDown(borrowRate.wTaylorCompounded(elapsed));
+//     market.totalBorrowAssets += interest.toUint128();
+//     market.totalSupplyAssets += interest.toUint128();
+
+//     if (market.fee != 0) {
+//         uint256 feeAmount = interest.wMulDown(market.fee);
+//         // The fee amount is subtracted from the total supply in this calculation to compensate for the fact
+//         // that total supply is already updated.
+//         uint256 feeShares =
+//             feeAmount.toSharesDown(market.totalSupplyAssets - feeAmount, market.totalSupplyShares);
+//         market.totalSupplyShares += feeShares.toUint128();
+//     }
+// }
+
+// return (market.totalSupplyAssets, market.totalSupplyShares, market.totalBorrowAssets, market.totalBorrowShares);
+// }
+
 function supplyAPYVault(vaultAddress: Address) {
   // get SupplyCaps of market
 }
