@@ -13,21 +13,16 @@ export function calculateAprFromPrice({
   positionDuration,
   baseAmount,
   bondAmount,
-  decimals,
 }: {
   positionDuration: bigint;
   baseAmount: bigint;
   bondAmount: bigint;
-  decimals: number;
 }): bigint {
-  const bondsOverBase = dnum.divide(
-    [bondAmount, decimals],
-    [baseAmount, decimals],
-  );
+  const bondsOverBase = dnum.divide([bondAmount, 18], [baseAmount, 18]);
 
   const bondsOverBaseMinusOne = dnum.subtract(
     bondsOverBase,
-    dnum.from("1", decimals),
+    dnum.from("1", 18),
   );
 
   const termLengthInYearFractions =
