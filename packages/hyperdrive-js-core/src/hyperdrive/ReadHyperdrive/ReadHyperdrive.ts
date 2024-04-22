@@ -8,6 +8,7 @@ import {
 } from "@delvtech/evm-client";
 import { Address } from "abitype";
 import * as dnum from "dnum";
+import { assertNever } from "src/base/assertNever";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
@@ -16,10 +17,10 @@ import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOp
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
+import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
 import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { hyperwasm } from "src/hyperwasm";
-import { calculateAprFromPrice } from "src/index";
 import { ClosedLong, Long } from "src/longs/types";
 import { ClosedLpShares } from "src/lp/ClosedLpShares";
 import { LP_ASSET_ID } from "src/lp/assetId";
@@ -638,7 +639,6 @@ export class ReadHyperdrive extends ReadModel {
     openShortEvents: Event<typeof hyperdriveAbi, "OpenShort">[];
     closeShortEvents: Event<typeof hyperdriveAbi, "CloseShort">[];
   }): Promise<OpenShort[]> {
-    const decimals = await this.getDecimals();
     // Put open and short events in block order. We spread openShortEvents first
     // since you have to open a short before you can close one.
     const orderedShortEvents = [...openShortEvents, ...closeShortEvents].sort(
@@ -654,7 +654,7 @@ export class ReadHyperdrive extends ReadModel {
           blockNumber: event.blockNumber,
         });
 
-        // Create an default empty short that we will update based on the events
+        // Create a default empty short that we will update based on the events
         const short: OpenShort = openShorts[assetId] || {
           hyperdriveAddress,
           assetId: event.args.assetId,
@@ -669,42 +669,47 @@ export class ReadHyperdrive extends ReadModel {
           fixedRatePaid: 0n,
         };
 
-        // When you open a short, we add up how much you've paid and your new
-        // total bond amount, then update the average price and fixed rate paid
-        if (event.eventName === "OpenShort") {
-          short.baseAmountPaid += event.args.baseAmount;
-          short.bondAmount += event.args.bondAmount;
-          short.baseProceeds += event.args.baseProceeds;
-          short.fixedRatePaid = calculateAprFromPrice({
-            positionDuration,
-            baseAmount: short.baseProceeds,
-            bondAmount: short.bondAmount,
-            decimals,
-          });
+        const { eventName } = event;
+        switch (eventName) {
+          // When you open a short, we add up how much you've paid and your new
+          // total bond amount, then update the average price and fixed rate
+          // paid
+          case "OpenShort":
+            short.baseAmountPaid += event.args.baseAmount;
+            short.bondAmount += event.args.bondAmount;
+            short.baseProceeds += event.args.baseProceeds;
+            short.fixedRatePaid = calculateAprFromPrice({
+              positionDuration,
+              baseAmount: short.baseProceeds,
+              bondAmount: short.bondAmount,
+            });
 
-          openShorts[assetId] = short;
-          return;
-        }
+            openShorts[assetId] = short;
+            return;
 
-        if (event.eventName === "CloseShort") {
-          // If a user closes their whole position, we should remove the whole
-          // position since it's basically starting over
-          if (event.args.bondAmount === short.bondAmount) {
-            delete openShorts[assetId];
+          case "CloseShort": {
+            // If a user closes their whole position, we should remove the whole
+            // position since it's basically starting over
+            if (event.args.bondAmount === short.bondAmount) {
+              delete openShorts[assetId];
+              return;
+            }
+            // otherwise just subtract the amount of bonds they closed and baseAmount
+            // they received back from the running total
+            short.baseAmountPaid -= event.args.baseAmount;
+            short.bondAmount -= event.args.bondAmount;
+            short.baseProceeds -= event.args.basePayment;
+            short.fixedRatePaid = calculateAprFromPrice({
+              positionDuration,
+              baseAmount: short.baseProceeds,
+              bondAmount: short.bondAmount,
+            });
+            openShorts[assetId] = short;
             return;
           }
-          // otherwise just subtract the amount of bonds they closed and baseAmount
-          // they received back from the running total
-          short.baseAmountPaid -= event.args.baseAmount;
-          short.bondAmount -= event.args.bondAmount;
-          short.baseProceeds -= event.args.basePayment;
-          short.fixedRatePaid = calculateAprFromPrice({
-            positionDuration,
-            baseAmount: short.baseProceeds,
-            bondAmount: short.bondAmount,
-            decimals,
-          });
-          openShorts[assetId] = short;
+
+          default:
+            assertNever(eventName);
         }
       }),
     );
