@@ -154,7 +154,14 @@ function getColumns(
       },
     }),
     columnHelper.accessor("baseAmountPaid", {
-      header: `Value Paid (${baseToken.symbol})`,
+      header: () => (
+        <div
+          className="daisy-tooltip daisy-tooltip-bottom before:text-wrap"
+          data-tip="The amount paid to open the short, and the Fixed APR that was shorted"
+        >
+          Cost ({baseToken.symbol})
+        </div>
+      ),
       cell: (baseAmountPaid) => {
         const fixedRate = baseAmountPaid.row.original.fixedRatePaid;
         const amountPaid = baseAmountPaid.getValue();
