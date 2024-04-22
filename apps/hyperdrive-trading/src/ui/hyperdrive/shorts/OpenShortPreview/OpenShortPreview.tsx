@@ -132,9 +132,12 @@ export function OpenShortPreview({
         <h6 className="font-medium">Term</h6>
         <LabelValue
           label="Matures in"
-          value={`${convertMillisecondsToDays(termLengthMS)} days, ${formatDate(
-            Date.now() + termLengthMS,
-          )}`}
+          value={`${convertMillisecondsToDays(termLengthMS)} days
+          `}
+        />
+        <LabelValue
+          label="Matures on"
+          value={`${formatDate(Date.now() + termLengthMS)}`}
         />
       </div>
     </div>
