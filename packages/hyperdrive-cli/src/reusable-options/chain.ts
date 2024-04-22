@@ -12,14 +12,10 @@ import { HyphenCase } from "../utils/types.js";
 
 const { CHAIN, LOCALHOST_CHAIN_ID } = process.env;
 
-const localhostChainId = LOCALHOST_CHAIN_ID
-  ? Number(LOCALHOST_CHAIN_ID)
-  : localhost.id;
-
 const viemChains = {
   [formatChainName(localhost.name)]: {
     ...localhost,
-    id: localhostChainId,
+    id: LOCALHOST_CHAIN_ID ? Number(LOCALHOST_CHAIN_ID) : localhost.id,
   },
   [formatChainName(mainnet.name)]: mainnet,
   [formatChainName(sepolia.name)]: sepolia,
@@ -50,7 +46,7 @@ export const chainOption = {
     .join(", ")}, "other", or "other:<chain-id>".`,
   type: "string",
   required: true,
-  default: CHAIN || "localhost",
+  default: CHAIN || promptChoices[0].value,
 } as const satisfies OptionConfig;
 
 export async function getChain(
