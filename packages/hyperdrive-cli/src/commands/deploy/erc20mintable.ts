@@ -7,20 +7,20 @@ import { DeployOptions } from "../deploy.js";
 
 export default command({
   description:
-    "Deploy an ERC20Mintable contract. An ERC20 token with added mint and burn functions.",
+    "Deploy an ERC20Mintable contract, an ERC20 token with added mint and burn functions.",
 
   options: {
     name: {
       description: "The name of the token",
       type: "string",
       required: true,
-      default: "Base Token",
+      default: "Mintable Token",
     },
     symbol: {
       description: "The symbol of the token",
       type: "string",
       required: true,
-      default: "BASE",
+      default: "MINT",
     },
     decimals: {
       description: "The number of decimals the token uses",
@@ -48,8 +48,9 @@ export default command({
       default: "1000000",
     },
   },
-  handler: async ({ data, options }) => {
-    const { account, chain, rpcUrl, walletKey } = data as DeployOptions;
+
+  handler: async ({ data, options, next }) => {
+    const { account, chain, rpcUrl } = data as DeployOptions;
 
     const name = await options.name({
       prompt: "Enter token name",
@@ -78,9 +79,9 @@ export default command({
 
     const max = await options.max();
 
-    signale.pending("Deploying ERC20Mintable contract...");
+    signale.pending("Deploying ERC20Mintable...");
 
-    const deployedContract = await deployContract({
+    const mintable = await deployContract({
       abi: ERC20Mintable.abi,
       bytecode: ERC20Mintable.bytecode.object,
       account,
@@ -99,8 +100,8 @@ export default command({
       },
     });
 
-    signale.success(
-      `ERC20Mintable contract deployed at ${deployedContract.address}`,
-    );
+    signale.success(`ERC20Mintable deployed: ${mintable.address}`);
+
+    next(mintable);
   },
 });

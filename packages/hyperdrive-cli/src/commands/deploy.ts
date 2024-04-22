@@ -6,7 +6,7 @@ import { rpcUrlOption } from "../reusable-options/rpc-url.js";
 import { walletKeyOption } from "../reusable-options/wallet-key.js";
 
 export default command({
-  description: "Deploy a contract or combination of contracts",
+  description: "Deploy a contract or combination of contracts.",
   requiresSubcommand: true,
   options: {
     chain: chainOption,
