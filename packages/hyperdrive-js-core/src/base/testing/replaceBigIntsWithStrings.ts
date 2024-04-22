@@ -16,7 +16,7 @@ export function replaceBigIntWithString(key: string, value: any): string {
     if (
       key.includes("Time") ||
       key.includes("blockNumber") ||
-      key.includes("id") ||
+      (key.includes("id") && !key.includes("Paid")) ||
       key.includes("assetId")
     ) {
       // Convert bigint to a string
