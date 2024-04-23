@@ -76,41 +76,12 @@ export function OpenLpSharesCard({
 
   return (
     <Well elevation="flat">
-      <div className="flex h-full w-80 flex-col items-center justify-center gap-4">
+      <div className="flex h-full w-80 flex-col justify-center gap-4">
         {lpShares !== 0n ? (
           <>
-            <span className="daisy-card-title font-bold">Your Liquidity</span>
-            <LabelValue
-              label="Pool Share"
-              value={
-                <p
-                  className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current before:border"
-                  data-tip="Your share of the total liquidity in the pool"
-                >
-                  {!!lpShares && !!lpSharesTotalSupply ? (
-                    `${dnum.format([poolShare, baseToken.decimals], 6)}%`
-                  ) : (
-                    <Skeleton />
-                  )}
-                </p>
-              }
-            />
-            <LabelValue
-              label="LP Shares"
-              value={
-                <p>
-                  {lpShares !== undefined ? (
-                    `${formatBalance({
-                      balance: lpShares || 0n,
-                      decimals: hyperdrive.decimals,
-                      places: baseToken.places,
-                    })} ${baseToken.symbol}-LP`
-                  ) : (
-                    <Skeleton />
-                  )}
-                </p>
-              }
-            />
+            <span className="daisy-card-title mt-2 font-bold">
+              Your Liquidity
+            </span>
             <LabelValue
               label="Current Value"
               value={
@@ -152,6 +123,39 @@ export function OpenLpSharesCard({
                 </div>
               }
             />
+            <h6 className="mt-4 font-medium text-gray-50">Your Position</h6>
+
+            <LabelValue
+              label="Pool Share"
+              value={
+                <p
+                  className="daisy-tooltip inline-flex cursor-help items-center gap-1 border-b border-dashed border-current before:border"
+                  data-tip="Your share of the total liquidity in the pool"
+                >
+                  {!!lpShares && !!lpSharesTotalSupply ? (
+                    `${dnum.format([poolShare, baseToken.decimals], 6)}%`
+                  ) : (
+                    <Skeleton />
+                  )}
+                </p>
+              }
+            />
+            <LabelValue
+              label={`${baseToken.symbol}-LP Shares`}
+              value={
+                <p>
+                  {lpShares !== undefined ? (
+                    formatBalance({
+                      balance: lpShares || 0n,
+                      decimals: hyperdrive.decimals,
+                      places: baseToken.places,
+                    })
+                  ) : (
+                    <Skeleton />
+                  )}
+                </p>
+              }
+            />
             <div className="flex w-full flex-col gap-2">
               <div className="flex flex-col">
                 <div className="flex justify-between">
@@ -187,7 +191,6 @@ export function OpenLpSharesCard({
                 max="100"
               ></progress>
             </div>
-
             <div className="daisy-card-actions mt-4 w-full">
               <Modal
                 modalId="withdrawalLpModal"
