@@ -6,7 +6,7 @@ export function CalendarLinkMenu({
   positionType,
 }: {
   date: Date;
-  positionType: "Short" | "Long" | "LP";
+  positionType: "Short" | "Long";
 }): JSX.Element {
   const calendarDetails = {
     title: `Hyperdrive - ${positionType} position has matured`,
@@ -15,7 +15,7 @@ export function CalendarLinkMenu({
     end: date,
   };
   return (
-    <div className="daisy-dropdown daisy-dropdown-end">
+    <div className="daisy-dropdown daisy-dropdown-end daisy-dropdown-top">
       <div
         tabIndex={0}
         role="button"
