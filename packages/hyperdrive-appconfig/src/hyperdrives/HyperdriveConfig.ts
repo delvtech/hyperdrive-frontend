@@ -25,6 +25,7 @@ export interface HyperdriveConfig {
      * is a good idea.
      */
     isBaseTokenDepositEnabled: boolean;
+    isShareTokenDepositsEnabled?: boolean;
   };
 
   withdrawOptions: {
@@ -36,6 +37,7 @@ export interface HyperdriveConfig {
      * it.
      */
     isBaseTokenWithdrawalEnabled: boolean;
+    isShareTokenWithdrawalEnabled?: boolean;
   };
 
   poolConfig: PoolConfig;

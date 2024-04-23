@@ -10,18 +10,25 @@ import {
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";
 
+type DepositOptions = HyperdriveConfig["depositOptions"];
+type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];
+
 export async function getErc4626Hyperdrive({
   publicClient,
   hyperdriveAddress,
   sharesTokenExtensions,
   baseTokenIconUrl,
   sharesTokenIconUrl,
+  depositOptions,
+  withdrawalOptions,
 }: {
   publicClient: PublicClient;
   hyperdriveAddress: Address;
   sharesTokenExtensions: YieldSourceExtensions;
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
+  depositOptions?: DepositOptions;
+  withdrawalOptions?: WithdrawalOptions;
 }): Promise<{
   sharesToken: TokenConfig<YieldSourceExtensions>;
   baseToken: TokenConfig<EmptyExtensions>;
@@ -62,10 +69,10 @@ export async function getErc4626Hyperdrive({
     decimals: await readHyperdrive.getDecimals(),
     baseToken: baseTokenConfig.address,
     sharesToken: sharesTokenConfig.address,
-    depositOptions: {
+    depositOptions: depositOptions ?? {
       isBaseTokenDepositEnabled: true,
     },
-    withdrawOptions: {
+    withdrawOptions: withdrawalOptions ?? {
       isBaseTokenWithdrawalEnabled: true,
     },
     poolConfig,

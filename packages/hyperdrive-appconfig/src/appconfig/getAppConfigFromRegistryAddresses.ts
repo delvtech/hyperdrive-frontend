@@ -33,8 +33,8 @@ const stethHyperdriveSharesTokenSymbols: Uppercase<string>[] = ["STETH"];
 const erc4626HyperdriveSharesTokenSymbols: Uppercase<string>[] = [
   "DELV",
   "SDAI",
-  "MMHYDAI",
 ];
+const metaMorphoHyperdriveSharesTokenSymbols: Uppercase<string>[] = ["MMHYDAI"];
 
 type KnownYieldSourceMetadata = {
   baseTokenIconUrl: string;
@@ -122,6 +122,26 @@ export async function getAppConfigFromRegistryAddresses({
             publicClient,
             hyperdriveAddress: address,
             chainId,
+            ...yieldSourceMetadata,
+          });
+
+        tokens.add(sharesToken);
+        tokens.add(baseToken);
+
+        return hyperdriveConfig;
+      } else if (metaMorphoHyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
+        const { sharesToken, baseToken, hyperdriveConfig } =
+          await getErc4626Hyperdrive({
+            publicClient,
+            hyperdriveAddress: address,
+            depositOptions: {
+              isBaseTokenDepositEnabled: true,
+              isShareTokenDepositsEnabled: false,
+            },
+            withdrawalOptions: {
+              isBaseTokenWithdrawalEnabled: true,
+              isShareTokenWithdrawalEnabled: false,
+            },
             ...yieldSourceMetadata,
           });
 
