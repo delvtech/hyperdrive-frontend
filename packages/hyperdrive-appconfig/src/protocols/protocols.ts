@@ -13,7 +13,13 @@ const maker: Protocol = {
   iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
 };
 
+const morpho: Protocol = {
+  name: "Morpho",
+  iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
+};
+
 export const protocols = {
   maker,
   lido,
+  morpho,
 } as const;
