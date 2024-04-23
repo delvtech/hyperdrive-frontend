@@ -19,6 +19,7 @@ import classNames from "classnames";
 import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { CalendarLinkMenu } from "src/ui/base/components/CalendarLinkMenu";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
@@ -48,7 +49,7 @@ export function OpenShortsTableDesktop({
   });
 
   return (
-    <div className="overflow-y-auto">
+    <>
       {/* Modal needs to be rendered outside of the table so that dialog can be used. Otherwise react throws a dom nesting error */}
       {tableInstance.getRowModel().rows.map((row) => {
         const modalId = `${row.original.assetId}`;
@@ -125,7 +126,7 @@ export function OpenShortsTableDesktop({
       {tableInstance.getFilteredRowModel().rows.length > 10 ? (
         <Pagination tableInstance={tableInstance} />
       ) : null}
-    </div>
+    </>
   );
 }
 
@@ -200,11 +201,18 @@ function getColumns(
     columnHelper.display({
       header: "",
       id: "go-to-market",
-      cell: () => (
-        <button className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700">
-          Close Short
-        </button>
-      ),
+      cell: ({ row }) => {
+        const maturityDateMS = row.original.maturity * 1000n;
+        const maturityDate = new Date(Number(maturityDateMS));
+        return (
+          <div className="flex items-center">
+            <button className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700">
+              Close Short
+            </button>
+            <CalendarLinkMenu date={maturityDate} positionType={"Short"} />
+          </div>
+        );
+      },
     }),
   ];
 }
