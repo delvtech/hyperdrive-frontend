@@ -29,7 +29,7 @@ export function CalendarLinkMenu({
       </div>
       <ul
         tabIndex={0}
-        className="daisy-menu daisy-dropdown-content w-52 rounded-lg bg-base-100 p-4 shadow"
+        className="daisy-menu daisy-dropdown-content z-10 w-52 rounded-lg bg-base-100 p-4 shadow"
       >
         <span className="daisy-menu-title text-neutral-content">
           Add to calendar
