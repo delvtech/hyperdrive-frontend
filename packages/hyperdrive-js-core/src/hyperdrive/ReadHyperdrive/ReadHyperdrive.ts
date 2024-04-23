@@ -1344,10 +1344,6 @@ export class ReadHyperdrive extends ReadModel {
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
-        hyperwasm.spotPrice(
-          convertBigIntsToStrings(poolInfo),
-          convertBigIntsToStrings(poolConfig),
-        ),
       ),
     );
     let curveFee = curveFeeInBase;
@@ -1371,7 +1367,7 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Predicts the amount of base asset a user will receive when closing a long.
    */
-  previewCloseLong({
+  async previewCloseLong({
     maturityTime,
     bondAmountIn,
     minAmountOut,
@@ -1386,18 +1382,48 @@ export class ReadHyperdrive extends ReadModel {
     destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
+    // options?: ContractWriteOptions;
+    options?: ContractReadOptions;
   }): Promise<bigint> {
-    return this.contract.simulateWrite(
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
+
+    // console.log(poolConfig, "pool config");
+    // console.log(poolInfo, "pool info");
+    // console.log(maturityTime, "maturity time");
+    const currentTime = BigInt(Math.floor(Date.now() / 1000));
+    // console.log(currentTime, "current time");
+    const hyperWasmCalcCloseLong = hyperwasm.calcCloseLong(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      bondAmountIn.toString(),
+      maturityTime.toString(),
+      currentTime.toString(),
+    );
+    // console.log(BigInt(hyperWasmCalcCloseLong), "hyperwasm calcCloseLong");
+    // return BigInt(hyperWasmCalcCloseLong); // Returns 99501168491859163054n
+
+    const simulateWriteCloseLong = await this.contract.simulateWrite(
       "closeLong",
       {
         _maturityTime: maturityTime,
         _bondAmount: bondAmountIn,
-        _minOutput: minAmountOut,
+        _minOutput: 0n,
         _options: { destination, asBase, extraData },
       },
-      options,
+      {
+        from: destination,
+      },
+      // options,
     );
+    console.log(
+      simulateWriteCloseLong,
+      "/",
+      hyperWasmCalcCloseLong,
+      "simulate/hyperwasm",
+    );
+
+    return simulateWriteCloseLong; // Returns 9857886948355170293n
   }
 
   /**

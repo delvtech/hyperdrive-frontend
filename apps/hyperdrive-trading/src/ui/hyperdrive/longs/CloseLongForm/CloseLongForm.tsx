@@ -5,6 +5,7 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
@@ -20,7 +21,6 @@ import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
-
 interface CloseLongFormProps {
   hyperdrive: HyperdriveConfig;
   long: Long;
@@ -33,6 +33,7 @@ export function CloseLongForm({
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const appConfig = useAppConfig();
+
   const { address: account } = useAccount();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -89,10 +90,18 @@ export function CloseLongForm({
     withdrawAmount &&
     adjustAmountByPercentage({
       amount: withdrawAmount,
-      percentage: 1n,
+      percentage: dnum.from("0.0", 18)[0],
       decimals: activeWithdrawToken.decimals,
       direction: "down",
     });
+
+  // console.log(
+  //   "proceeds",
+  //   dnum.format(dnum.from([withdrawAmount || 0n, 18]) || 0n, 18),
+  // );
+
+  // const dnumAmount = dnum.from([minAmountOutAfterSlippage || 0n, 18]);
+  // console.log("minOutput", dnum.format(dnumAmount || 0n, 18));
 
   const { closeLong, closeLongStatus } = useCloseLong({
     hyperdriveAddress: hyperdrive.address,
