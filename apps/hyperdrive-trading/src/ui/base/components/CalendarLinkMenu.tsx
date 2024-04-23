@@ -20,7 +20,6 @@ export function CalendarLinkMenu({
         tabIndex={0}
         role="button"
         onClick={(e) => {
-          e.preventDefault();
           e.stopPropagation();
         }}
         className="daisy-btn daisy-btn-ghost daisy-btn-sm rotate-90 hover:bg-transparent"
