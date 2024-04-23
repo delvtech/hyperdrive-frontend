@@ -52,19 +52,6 @@ export function OpenShortForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  const baseTokenDepositEnabled =
-    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
-
-  const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
-    useActiveToken({
-      account,
-      defaultActiveToken: baseTokenDepositEnabled
-        ? baseToken.address
-        : sharesToken.address,
-      tokens: baseTokenDepositEnabled
-        ? [baseToken, sharesToken]
-        : [sharesToken],
-    });
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
@@ -77,6 +64,37 @@ export function OpenShortForm({
     tokenAddress: sharesToken.address,
     decimals: sharesToken.decimals,
   });
+
+  const baseTokenDepositEnabled =
+    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
+  const shareTokenDepositsEnabled =
+    hyperdrive.depositOptions.isShareTokenDepositsEnabled;
+  const tokenOptions = [];
+
+  if (baseTokenDepositEnabled) {
+    tokenOptions.push({
+      tokenConfig: baseToken,
+      tokenBalance: baseTokenBalance?.value,
+    });
+  }
+
+  if (shareTokenDepositsEnabled) {
+    tokenOptions.push({
+      tokenConfig: sharesToken,
+      tokenBalance: sharesTokenBalance?.value,
+    });
+  }
+
+  const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
+    useActiveToken({
+      account,
+      defaultActiveToken: baseTokenDepositEnabled
+        ? baseToken.address
+        : sharesToken.address,
+      tokens: baseTokenDepositEnabled
+        ? [baseToken, sharesToken]
+        : [sharesToken],
+    });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
@@ -210,25 +228,7 @@ export function OpenShortForm({
           }
           onChange={(tokenAddress) => setActiveToken(tokenAddress)}
           activeTokenAddress={activeToken.address}
-          tokens={
-            baseTokenDepositEnabled
-              ? [
-                  {
-                    tokenConfig: baseToken,
-                    tokenBalance: baseTokenBalance?.value,
-                  },
-                  {
-                    tokenConfig: sharesToken,
-                    tokenBalance: sharesTokenBalance?.value,
-                  },
-                ]
-              : [
-                  {
-                    tokenConfig: sharesToken,
-                    tokenBalance: sharesTokenBalance?.value,
-                  },
-                ]
-          }
+          tokens={tokenOptions}
         />
       }
       transactionPreview={

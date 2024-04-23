@@ -47,7 +47,9 @@ export function YourBalanceWell({
         <p className="mb-2 text-sm text-neutral-content">Available Assets</p>
         <div className="flex flex-col gap-2">
           <AvailableAsset token={baseToken} spender={hyperdrive.address} />
-          <AvailableAsset token={sharesToken} spender={hyperdrive.address} />
+          {hyperdrive.depositOptions.isShareTokenDepositsEnabled && (
+            <AvailableAsset token={sharesToken} spender={hyperdrive.address} />
+          )}
         </div>
       </div>
     </Well>
