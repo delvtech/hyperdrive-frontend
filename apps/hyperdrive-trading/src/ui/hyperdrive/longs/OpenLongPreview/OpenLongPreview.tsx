@@ -96,7 +96,6 @@ export function OpenLongPreview({
                         hyperdrive.poolConfig.positionDuration || 0n,
                       baseAmount: long.baseAmountPaid,
                       bondAmount: long.bondAmount,
-                      decimals: baseToken.decimals,
                     }),
                     baseToken.decimals,
                   )}% APR`

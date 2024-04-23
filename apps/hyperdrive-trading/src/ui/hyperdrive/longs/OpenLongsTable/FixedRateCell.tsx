@@ -31,7 +31,6 @@ export function FixedRateCell({
     baseAmount: baseAmountPaid,
     bondAmount,
     positionDuration: poolConfig?.positionDuration || 0n,
-    decimals: baseToken.decimals,
   });
 
   const yieldAfterFlatFee = calculateMatureLongYieldAfterFees({
