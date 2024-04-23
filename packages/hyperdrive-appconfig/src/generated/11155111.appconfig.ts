@@ -55,17 +55,16 @@ export const sepoliaAppConfig: AppConfig = {
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
     },
     {
-      address: "0x3A2031f3FAb5AA2b5c47c02fcD9f26072977834c",
+      address: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
       decimals: 18,
       places: 2,
-      name: "Hyperdrive DAI",
-      symbol: "mmHyDAI",
-      iconUrl:
-        "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764",
+      name: "sDAI",
+      symbol: "SDAI",
+      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
       tags: ["yieldSource", "erc4626"],
       extensions: {
-        shortName: "MetaMorpho DAI",
-        protocol: "morpho",
+        shortName: "Maker DSR",
+        protocol: "maker",
       },
     },
     {
@@ -80,16 +79,17 @@ export const sepoliaAppConfig: AppConfig = {
       extensions: {},
     },
     {
-      address: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
+      address: "0x3A2031f3FAb5AA2b5c47c02fcD9f26072977834c",
       decimals: 18,
       places: 2,
-      name: "sDAI",
-      symbol: "SDAI",
-      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
+      name: "Hyperdrive DAI",
+      symbol: "mmHyDAI",
+      iconUrl:
+        "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764",
       tags: ["yieldSource", "erc4626"],
       extensions: {
-        shortName: "Maker DSR",
-        protocol: "maker",
+        shortName: "MetaMorpho DAI",
+        protocol: "morpho",
       },
     },
     {
@@ -277,9 +277,11 @@ export const sepoliaAppConfig: AppConfig = {
       sharesToken: "0x3A2031f3FAb5AA2b5c47c02fcD9f26072977834c",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
+        isShareTokenDepositsEnabled: false,
       },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: true,
+        isShareTokenWithdrawalEnabled: false,
       },
       poolConfig: {
         baseToken: "0x552ceaDf3B47609897279F42D3B3309B604896f3",

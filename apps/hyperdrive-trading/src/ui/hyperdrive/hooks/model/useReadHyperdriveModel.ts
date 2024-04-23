@@ -3,12 +3,14 @@ import {
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { useMemo } from "react";
+import { ReadMetaMorphoHyperdriveModel } from "src/hyperdrive/model/MetaMorpho/ReadMetaMorphoHyperdriveModel";
 import {
   IReadHyperdriveModel,
   ReadHyperdriveModel,
 } from "src/hyperdrive/model/ReadHyperdriveModel";
 import { ReadStethHyperdriveModel } from "src/hyperdrive/model/steth/ReadStethHyperdriveModel";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { getIsMetaMorpho } from "src/vaults/isMetaMorpho";
 import { getIsSteth } from "src/vaults/isSteth";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
@@ -34,6 +36,17 @@ export function useReadHyperdriveModel(
     const isSteth = getIsSteth(sharesToken);
     if (isSteth) {
       return new ReadStethHyperdriveModel({
+        hyperdriveAddress,
+        appConfig,
+        publicClient,
+      });
+    }
+
+    console.log(sharesToken);
+
+    const isMetaMorpho = getIsMetaMorpho(sharesToken);
+    if (isMetaMorpho) {
+      return new ReadMetaMorphoHyperdriveModel({
         hyperdriveAddress,
         appConfig,
         publicClient,
