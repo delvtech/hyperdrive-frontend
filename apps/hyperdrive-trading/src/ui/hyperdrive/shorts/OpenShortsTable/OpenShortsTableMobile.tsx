@@ -16,6 +16,7 @@ import {
 } from "@tanstack/react-table";
 import classNames from "classnames";
 import { ReactElement } from "react";
+import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -188,12 +189,16 @@ function formatOpenShortMobileColumnData(
       }),
     },
     {
-      name: `Value Paid (${baseToken.symbol})`,
+      name: `Cost (${baseToken.symbol})`,
       value: formatBalance({
         balance: openShort.baseAmountPaid,
         decimals: baseToken.decimals,
         places: baseToken.places,
       }),
+    },
+    {
+      name: `Rate shorted`,
+      value: `${formatRate(openShort.fixedRatePaid)}% APR`,
     },
     {
       name: `Yield (${baseToken.symbol})`,
