@@ -15,7 +15,8 @@ const maker: Protocol = {
 
 const morpho: Protocol = {
   name: "Morpho",
-  iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
+  iconUrl:
+    "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764",
 };
 
 export const protocols = {

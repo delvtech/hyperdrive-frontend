@@ -9,6 +9,7 @@ import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
   DAI_ICON_URL,
   ETH_ICON_URL,
+  MORPHO_ICON_URL,
   SDAI_ICON_URL,
   STETH_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
@@ -58,7 +59,7 @@ const knownYieldSourceMetadata: Record<
   MMHYDAI: {
     sharesTokenExtensions: metaMorphoExtensions,
     baseTokenIconUrl: DAI_ICON_URL,
-    sharesTokenIconUrl: SDAI_ICON_URL,
+    sharesTokenIconUrl: MORPHO_ICON_URL,
   },
   STETH: {
     sharesTokenExtensions: stethExtensions,

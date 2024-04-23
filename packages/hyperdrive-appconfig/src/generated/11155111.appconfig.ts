@@ -60,7 +60,8 @@ export const sepoliaAppConfig: AppConfig = {
       places: 2,
       name: "Hyperdrive DAI",
       symbol: "mmHyDAI",
-      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
+      iconUrl:
+        "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764",
       tags: ["yieldSource", "erc4626"],
       extensions: {
         shortName: "MetaMorpho DAI",
@@ -315,7 +316,8 @@ export const sepoliaAppConfig: AppConfig = {
     },
     morpho: {
       name: "Morpho",
-      iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
+      iconUrl:
+        "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764",
     },
   },
 };
