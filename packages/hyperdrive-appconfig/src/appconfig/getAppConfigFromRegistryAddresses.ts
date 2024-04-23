@@ -22,11 +22,6 @@ import { yieldSourceTag } from "src/yieldSources/tags";
 import { Address, PublicClient, erc20Abi } from "viem";
 import { YieldSourceExtensions } from "..";
 
-// Summary
-// Move bucketing logic to this function
-// Create known tokens mapping for share and base token metadatas
-// Throw if cannot find mapping
-
 // These hardcoded lists of shares token symbols help us to identify what kind
 // of hyperdrive a pool is, eg: steth, sDai, etc.
 const stethHyperdriveSharesTokenSymbols: Uppercase<string>[] = ["STETH"];
@@ -150,7 +145,9 @@ export async function getAppConfigFromRegistryAddresses({
 
         return hyperdriveConfig;
       } else {
-        throw new Error("Missing impl");
+        throw new Error(
+          `Missing Hyperdrive config implementation for address: ${address}`,
+        );
       }
     }),
   );

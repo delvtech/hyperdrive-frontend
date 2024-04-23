@@ -42,8 +42,6 @@ export function useReadHyperdriveModel(
       });
     }
 
-    console.log(sharesToken);
-
     const isMetaMorpho = getIsMetaMorpho(sharesToken);
     if (isMetaMorpho) {
       return new ReadMetaMorphoHyperdriveModel({

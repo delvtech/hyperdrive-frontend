@@ -11,6 +11,6 @@ export const stethExtensions: YieldSourceExtensions = {
 };
 
 export const metaMorphoExtensions: YieldSourceExtensions = {
-  shortName: "MetaMorpho DAI",
+  shortName: "MetaMorpho",
   protocol: "morpho",
 };
