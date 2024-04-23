@@ -111,7 +111,9 @@ export async function getAppConfigFromRegistryAddresses({
         tokens.add(baseToken);
 
         return hyperdriveConfig;
-      } else if (stethHyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
+      }
+
+      if (stethHyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getStethHyperdrive({
             publicClient,
@@ -124,7 +126,9 @@ export async function getAppConfigFromRegistryAddresses({
         tokens.add(baseToken);
 
         return hyperdriveConfig;
-      } else if (metaMorphoHyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
+      }
+
+      if (metaMorphoHyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getErc4626Hyperdrive({
             publicClient,
@@ -144,11 +148,11 @@ export async function getAppConfigFromRegistryAddresses({
         tokens.add(baseToken);
 
         return hyperdriveConfig;
-      } else {
-        throw new Error(
-          `Missing Hyperdrive config implementation for address: ${address}`,
-        );
       }
+
+      throw new Error(
+        `Missing Hyperdrive config implementation for address: ${address}`,
+      );
     }),
   );
 
