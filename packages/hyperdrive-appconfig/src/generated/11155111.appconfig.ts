@@ -80,6 +80,30 @@ export const sepoliaAppConfig: AppConfig = {
       extensions: {},
     },
     {
+      address: "0x8F66811B35D1E249bD731b5eDF8d5A8703afAB27",
+      decimals: 18,
+      places: 2,
+      name: "RocketPool ETH",
+      symbol: "RETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["yieldSource", "reth"],
+      extensions: {
+        shortName: "Rocket Pool ETH",
+        protocol: "rocketPool",
+      },
+    },
+    {
+      address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      decimals: 18,
+      places: 2,
+      name: "Ethereum",
+      symbol: "ETH",
+      iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
+      tags: [],
+      extensions: {},
+    },
+    {
       address: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
       decimals: 18,
       places: 2,
@@ -137,9 +161,11 @@ export const sepoliaAppConfig: AppConfig = {
       sharesToken: "0x6977eC5fae3862D3471f0f5B6Dcc64cDF5Cfd959",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
+        isShareTokenDepositsEnabled: true,
       },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: false,
+        isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -172,9 +198,11 @@ export const sepoliaAppConfig: AppConfig = {
       sharesToken: "0x6977eC5fae3862D3471f0f5B6Dcc64cDF5Cfd959",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
+        isShareTokenDepositsEnabled: true,
       },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: false,
+        isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
@@ -207,9 +235,11 @@ export const sepoliaAppConfig: AppConfig = {
       sharesToken: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
+        isShareTokenDepositsEnabled: true,
       },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: true,
+        isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
         baseToken: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
@@ -242,9 +272,11 @@ export const sepoliaAppConfig: AppConfig = {
       sharesToken: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
+        isShareTokenDepositsEnabled: true,
       },
       withdrawOptions: {
         isBaseTokenWithdrawalEnabled: true,
+        isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
         baseToken: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
@@ -306,6 +338,43 @@ export const sepoliaAppConfig: AppConfig = {
         },
       },
     },
+    {
+      address: "0x72E19347512C194a6812C72934Bf0439FFb31a26",
+      name: "30d ETH-Rocket Pool ETH",
+      decimals: 18,
+      baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+      sharesToken: "0x8F66811B35D1E249bD731b5eDF8d5A8703afAB27",
+      depositOptions: {
+        isBaseTokenDepositEnabled: false,
+        isShareTokenDepositsEnabled: true,
+      },
+      withdrawOptions: {
+        isBaseTokenWithdrawalEnabled: false,
+        isShareTokenWithdrawalEnabled: true,
+      },
+      poolConfig: {
+        baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
+        vaultSharesToken: "0x8F66811B35D1E249bD731b5eDF8d5A8703afAB27",
+        linkerFactory: "0x13b0AcFA6B77C0464Ce26Ff80da7758b8e1f526E",
+        linkerCodeHash:
+          "0xbce832c0ea372ef949945c6a4846b1439b728e08890b93c2aa99e2e3c50ece34",
+        initialVaultSharePrice: 1000092720702621228n,
+        minimumShareReserves: 1000000000000000n,
+        minimumTransactionAmount: 1000000000000000n,
+        positionDuration: 2592000n,
+        checkpointDuration: 86400n,
+        timeStretch: 2222691405638672n,
+        governance: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        feeCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        sweepCollector: "0xc187a246Ee5A4Fe4395a8f6C0f9F2AA3A5a06e9b",
+        fees: {
+          curve: 10000000000000000n,
+          flat: 41095890410958n,
+          governanceLP: 150000000000000000n,
+          governanceZombie: 30000000000000000n,
+        },
+      },
+    },
   ],
   protocols: {
     maker: {
@@ -320,6 +389,11 @@ export const sepoliaAppConfig: AppConfig = {
       name: "Morpho",
       iconUrl:
         "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764",
+    },
+    rocketPool: {
+      name: "Rocket Pool",
+      iconUrl:
+        "https://assets.coingecko.com/coins/images/2090/large/rocket_pool_%28RPL%29.png?1696503058",
     },
   },
 };

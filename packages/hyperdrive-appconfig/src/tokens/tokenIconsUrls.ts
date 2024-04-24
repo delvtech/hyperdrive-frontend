@@ -12,3 +12,6 @@ export const DEFAULT_TOKEN_ICON_URL =
 
 export const MORPHO_ICON_URL =
   "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764";
+
+export const RETH_ICON_URL =
+  "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031";

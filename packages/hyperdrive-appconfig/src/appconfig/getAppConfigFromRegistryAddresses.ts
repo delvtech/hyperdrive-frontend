@@ -1,6 +1,7 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
+import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
 import { getErc4626Hyperdrive } from "src/hyperdrives/erc4626/getErc4626Hyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols/protocols";
@@ -10,11 +11,13 @@ import {
   DAI_ICON_URL,
   ETH_ICON_URL,
   MORPHO_ICON_URL,
+  RETH_ICON_URL,
   SDAI_ICON_URL,
   STETH_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 import {
   metaMorphoExtensions,
+  rethExtensions,
   sdaiExtensions,
   stethExtensions,
 } from "src/yieldSources/extensions";
@@ -24,17 +27,16 @@ import { YieldSourceExtensions } from "..";
 
 // These hardcoded lists of shares token symbols help us to identify what kind
 // of hyperdrive a pool is, eg: steth, sDai, etc.
-const stethHyperdriveSharesTokenSymbols: Uppercase<string>[] = ["STETH"];
 const erc4626HyperdriveSharesTokenSymbols: Uppercase<string>[] = [
   "DELV",
   "SDAI",
 ];
-const metaMorphoHyperdriveSharesTokenSymbols: Uppercase<string>[] = ["MMHYDAI"];
 
 type KnownYieldSourceMetadata = {
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
   sharesTokenExtensions: YieldSourceExtensions;
+  optionalTags?: string[];
 };
 
 const knownYieldSourceMetadata: Record<
@@ -60,6 +62,12 @@ const knownYieldSourceMetadata: Record<
     sharesTokenExtensions: stethExtensions,
     baseTokenIconUrl: ETH_ICON_URL,
     sharesTokenIconUrl: STETH_ICON_URL,
+  },
+  RETH: {
+    sharesTokenExtensions: rethExtensions,
+    baseTokenIconUrl: ETH_ICON_URL,
+    sharesTokenIconUrl: RETH_ICON_URL,
+    optionalTags: ["reth"],
   },
 };
 
@@ -113,7 +121,7 @@ export async function getAppConfigFromRegistryAddresses({
         return hyperdriveConfig;
       }
 
-      if (stethHyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
+      if (tokenSymbol === "STETH") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getStethHyperdrive({
             publicClient,
@@ -128,7 +136,29 @@ export async function getAppConfigFromRegistryAddresses({
         return hyperdriveConfig;
       }
 
-      if (metaMorphoHyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
+      if (tokenSymbol === "RETH") {
+        const { sharesToken, baseToken, hyperdriveConfig } =
+          await getCustomHyperdrive({
+            publicClient,
+            hyperdriveAddress: address,
+            depositOptions: {
+              isBaseTokenDepositEnabled: false,
+              isShareTokenDepositsEnabled: true,
+            },
+            withdrawalOptions: {
+              isBaseTokenWithdrawalEnabled: false,
+              isShareTokenWithdrawalEnabled: true,
+            },
+            ...yieldSourceMetadata,
+          });
+
+        tokens.add(sharesToken);
+        tokens.add(baseToken);
+
+        return hyperdriveConfig;
+      }
+
+      if (tokenSymbol === "MMHYDAI") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getErc4626Hyperdrive({
             publicClient,

@@ -14,3 +14,8 @@ export const metaMorphoExtensions: YieldSourceExtensions = {
   shortName: "MetaMorpho",
   protocol: "morpho",
 };
+
+export const rethExtensions: YieldSourceExtensions = {
+  shortName: "Rocket Pool ETH",
+  protocol: "rocketPool",
+};

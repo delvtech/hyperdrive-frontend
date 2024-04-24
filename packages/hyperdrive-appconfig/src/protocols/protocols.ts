@@ -19,8 +19,15 @@ const morpho: Protocol = {
     "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764",
 };
 
+const rocketPool: Protocol = {
+  name: "Rocket Pool",
+  iconUrl:
+    "https://assets.coingecko.com/coins/images/2090/large/rocket_pool_%28RPL%29.png?1696503058",
+};
+
 export const protocols = {
   maker,
   lido,
   morpho,
+  rocketPool,
 } as const;
