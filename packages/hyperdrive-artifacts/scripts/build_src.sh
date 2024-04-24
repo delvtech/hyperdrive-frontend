@@ -58,7 +58,7 @@ echo "Creating typescript files..."
 rm -rf "$src_dir_name"
 mkdir "$src_dir_name"
 
-processOutDir() {
+function processOutDir() {
   local dir=$1
   for entry in "$dir"/*; do
 
@@ -67,8 +67,11 @@ processOutDir() {
       continue
     fi
 
+    # Recursively process directories
     if [[ -d "$entry" ]]; then
       processOutDir "$entry"
+
+    # Process files
     elif [[ -f "$entry" ]]; then
 
       # Get the name of the contract
@@ -84,13 +87,19 @@ processOutDir() {
         continue
       fi
 
-      # Write the contract to a typescript file as a named export with `as
-      # const` to prevent typescript from widening the type of the contract.
+      # Get the fields we care about
+      local abi=$(jq -r .abi <"$entry")
+      local bytecode=$(jq -r .bytecode.object <"$entry")
+      local methodIdentifiers=$(jq -r '.methodIdentifiers // "{}"' <"$entry")
+
+      # Write the contract to a typescript file as a named export.
       local out_file="$src_dir_name/$contract_name.ts"
       {
-        echo "export const $contract_name = "
-        cat "$entry"
-        echo " as const;"
+        echo "export const $contract_name = {"
+        echo "  abi: $abi as const,"
+        echo "  bytecode: '$bytecode' as \`0x\${string}\`,"
+        echo "  methodIdentifiers: $methodIdentifiers as const"
+        echo "};"
       } >"$out_file"
     fi
   done
