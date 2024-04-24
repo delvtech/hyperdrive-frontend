@@ -39,6 +39,16 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
         });
   }
 
+  async getSharesToken(): Promise<ReadWriteErc20> {
+    const address = await this.contract.read("vaultSharesToken");
+    return new ReadWriteErc20({
+      address,
+      contractFactory: this.contractFactory,
+      namespace: this.contract.namespace,
+      network: this.network,
+    });
+  }
+
   /**
    * Allows anyone to mint a new checkpoint.
    * @param time - The time (in seconds) of the checkpoint to create.
