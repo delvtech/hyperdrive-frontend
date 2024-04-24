@@ -2,7 +2,6 @@ import {
   findBaseToken,
   findYieldSourceToken,
   HyperdriveConfig,
-  TokenConfig,
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
@@ -18,8 +17,9 @@ import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/usePreviewRemoveLiquidity";
 import { useRemoveLiquidity } from "src/ui/hyperdrive/lp/hooks/useRemoveLiquidity";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
-import { TokenPicker } from "src/ui/token/TokenPicker";
+import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits } from "viem";
 import { useAccount, useChainId } from "wagmi";
 interface RemoveLiquidityFormProps {
@@ -46,19 +46,36 @@ export function RemoveLiquidityForm({
     tokens: appConfig.tokens,
   });
 
+  const { balance: baseTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: baseToken.address,
+    decimals: baseToken.decimals,
+  });
+
+  const { balance: sharesTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: sharesToken.address,
+    decimals: sharesToken.decimals,
+  });
+
   const baseTokenDepositEnabled =
     hyperdrive.depositOptions.isBaseTokenDepositEnabled;
 
-  const tokens: TokenConfig<any>[] = [sharesToken];
+  const tokens: TokenChoice[] = [
+    { tokenConfig: sharesToken, tokenBalance: sharesTokenBalance?.value },
+  ];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     // base token should be listed first if it's enabled
-    tokens.unshift(baseToken);
+    tokens.unshift({
+      tokenConfig: baseToken,
+      tokenBalance: baseTokenBalance?.value,
+    });
   }
   const {
     activeItem: activeWithdrawToken,
     setActiveItemId: setActiveWithdrawToken,
   } = useActiveItem({
-    items: tokens,
+    items: [baseToken, sharesToken],
     idField: "address",
     defaultActiveItemId: hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled
       ? baseToken.address
@@ -137,22 +154,7 @@ export function RemoveLiquidityForm({
           }
           activeTokenAddress={activeWithdrawToken?.address}
           onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
-          tokens={
-            baseTokenDepositEnabled
-              ? [
-                  {
-                    tokenConfig: baseToken,
-                  },
-                  {
-                    tokenConfig: sharesToken,
-                  },
-                ]
-              : [
-                  {
-                    tokenConfig: sharesToken,
-                  },
-                ]
-          }
+          tokens={tokens}
         />
       }
       tokenInput={

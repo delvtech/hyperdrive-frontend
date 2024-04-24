@@ -1,5 +1,5 @@
 import {
-  calculateFixedRateFromOpenLong,
+  calculateAprFromPrice,
   calculateMatureLongYieldAfterFees,
 } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
@@ -27,11 +27,10 @@ export function FixedRateCell({
     tokens: appConfig.tokens,
   });
 
-  const fixedRate = calculateFixedRateFromOpenLong({
+  const fixedRate = calculateAprFromPrice({
     baseAmount: baseAmountPaid,
     bondAmount,
     positionDuration: poolConfig?.positionDuration || 0n,
-    decimals: baseToken.decimals,
   });
 
   const yieldAfterFlatFee = calculateMatureLongYieldAfterFees({

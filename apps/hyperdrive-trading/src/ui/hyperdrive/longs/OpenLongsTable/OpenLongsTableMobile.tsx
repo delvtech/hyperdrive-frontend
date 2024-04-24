@@ -190,7 +190,7 @@ function formatOpenLongMobileColumnData(
       ),
     },
     {
-      name: `Paid (${baseToken.symbol})`,
+      name: `Cost (${baseToken.symbol})`,
       value: formatBalance({
         balance: row.baseAmountPaid,
         decimals: baseToken.decimals,

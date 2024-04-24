@@ -15,6 +15,7 @@ import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
+import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
 import { formatUnits, parseUnits } from "viem";
@@ -40,6 +41,18 @@ export function CloseLongForm({
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
+  });
+
+  const { balance: baseTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: baseToken.address,
+    decimals: baseToken.decimals,
+  });
+
+  const { balance: sharesTokenBalance } = useTokenBalance({
+    account,
+    tokenAddress: sharesToken.address,
+    decimals: sharesToken.decimals,
   });
 
   const {
@@ -97,11 +110,14 @@ export function CloseLongForm({
     },
   });
 
-  const withdrawTokenChoices: TokenChoice[] = [{ tokenConfig: sharesToken }];
+  const withdrawTokenChoices: TokenChoice[] = [
+    { tokenConfig: sharesToken, tokenBalance: sharesTokenBalance?.value },
+  ];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
     // base token should be listed first if it's enabled
     withdrawTokenChoices.unshift({
       tokenConfig: baseToken,
+      tokenBalance: baseTokenBalance?.value,
     });
   }
   return (

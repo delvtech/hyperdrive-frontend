@@ -67,7 +67,7 @@ export { getCheckpointId } from "src/pool/getCheckpointId";
 export type { ClosedShort, OpenShort, Short } from "src/shorts/types";
 
 // Longs
-export { calculateFixedRateFromOpenLong } from "src/longs/calculateFixedRateFromOpenLong";
+export { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
 export { calculateMatureLongYieldAfterFees } from "src/longs/calculateMatureLongYieldAfterFees";
 export type { ClosedLong, Long } from "src/longs/types";
 
