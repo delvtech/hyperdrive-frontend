@@ -2,7 +2,6 @@ import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
-import { getErc4626Hyperdrive } from "src/hyperdrives/erc4626/getErc4626Hyperdrive";
 import { getStethHyperdrive } from "src/hyperdrives/steth/getStethHyperdrive";
 import { protocols } from "src/protocols/protocols";
 import { Tag } from "src/tags";
@@ -25,18 +24,21 @@ import { yieldSourceTag } from "src/yieldSources/tags";
 import { Address, PublicClient, erc20Abi } from "viem";
 import { YieldSourceExtensions } from "..";
 
-// These hardcoded lists of shares token symbols help us to identify what kind
-// of hyperdrive a pool is, eg: steth, sDai, etc.
+// Token Symbols
 const erc4626HyperdriveSharesTokenSymbols: Uppercase<string>[] = [
   "DELV",
   "SDAI",
 ];
+const metaMorphoSharesTokenSymbols: Uppercase<string>[] = ["MMHYDAI"];
+
+// Tags
+const ERC4626_SHARE_TOKEN_TAGS = ["erc4626"];
 
 type KnownYieldSourceMetadata = {
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
   sharesTokenExtensions: YieldSourceExtensions;
-  optionalTags?: string[];
+  tags?: string[];
 };
 
 const knownYieldSourceMetadata: Record<
@@ -52,11 +54,13 @@ const knownYieldSourceMetadata: Record<
     sharesTokenExtensions: sdaiExtensions,
     baseTokenIconUrl: DAI_ICON_URL,
     sharesTokenIconUrl: SDAI_ICON_URL,
+    tags: ERC4626_SHARE_TOKEN_TAGS,
   },
   MMHYDAI: {
     sharesTokenExtensions: metaMorphoExtensions,
     baseTokenIconUrl: DAI_ICON_URL,
     sharesTokenIconUrl: MORPHO_ICON_URL,
+    tags: ERC4626_SHARE_TOKEN_TAGS,
   },
   STETH: {
     sharesTokenExtensions: stethExtensions,
@@ -67,7 +71,7 @@ const knownYieldSourceMetadata: Record<
     sharesTokenExtensions: rethExtensions,
     baseTokenIconUrl: ETH_ICON_URL,
     sharesTokenIconUrl: RETH_ICON_URL,
-    optionalTags: ["reth"],
+    tags: ["reth"],
   },
 };
 
@@ -90,7 +94,6 @@ export async function getAppConfigFromRegistryAddresses({
         publicClient,
       });
       const { vaultSharesToken } = await hyperdrive.getPoolConfig();
-
       const tokenSymbol = (
         await publicClient.readContract({
           address: vaultSharesToken,
@@ -100,18 +103,26 @@ export async function getAppConfigFromRegistryAddresses({
       ).toUpperCase() as Uppercase<string>;
 
       const yieldSourceMetadata = knownYieldSourceMetadata[tokenSymbol];
-
       if (!yieldSourceMetadata) {
         throw new Error(
           `Yield source metadata not configured: Missing entry for ${tokenSymbol}`,
         );
       }
 
+      // Generic ERC-4626
       if (erc4626HyperdriveSharesTokenSymbols.includes(tokenSymbol)) {
         const { sharesToken, baseToken, hyperdriveConfig } =
-          await getErc4626Hyperdrive({
+          await getCustomHyperdrive({
             publicClient,
             hyperdriveAddress: address,
+            depositOptions: {
+              isBaseTokenDepositEnabled: true,
+              isShareTokenDepositsEnabled: true,
+            },
+            withdrawalOptions: {
+              isBaseTokenWithdrawalEnabled: true,
+              isShareTokenWithdrawalEnabled: true,
+            },
             ...yieldSourceMetadata,
           });
 
@@ -121,6 +132,7 @@ export async function getAppConfigFromRegistryAddresses({
         return hyperdriveConfig;
       }
 
+      // Lido stETH
       if (tokenSymbol === "STETH") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getStethHyperdrive({
@@ -136,6 +148,7 @@ export async function getAppConfigFromRegistryAddresses({
         return hyperdriveConfig;
       }
 
+      // Rocket Pool
       if (tokenSymbol === "RETH") {
         const { sharesToken, baseToken, hyperdriveConfig } =
           await getCustomHyperdrive({
@@ -158,9 +171,10 @@ export async function getAppConfigFromRegistryAddresses({
         return hyperdriveConfig;
       }
 
-      if (tokenSymbol === "MMHYDAI") {
+      // MetaMorpho
+      if (metaMorphoSharesTokenSymbols.includes(tokenSymbol)) {
         const { sharesToken, baseToken, hyperdriveConfig } =
-          await getErc4626Hyperdrive({
+          await getCustomHyperdrive({
             publicClient,
             hyperdriveAddress: address,
             depositOptions: {

@@ -1,4 +1,4 @@
-import { ReadREthHyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import {
@@ -18,12 +18,13 @@ interface GetHyperdriveConfigParams {
   sharesTokenExtensions: YieldSourceExtensions;
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
-  depositOptions?: DepositOptions;
-  withdrawalOptions?: WithdrawalOptions;
-  optionalTags?: string[];
+  depositOptions: DepositOptions;
+  withdrawalOptions: WithdrawalOptions;
+  tokenPlaces?: number;
+  tags?: string[];
 }
 
-interface HyperdriveInstanceConfigs {
+interface GetCustomHyperdriveResult {
   sharesToken: TokenConfig<YieldSourceExtensions>;
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
@@ -37,11 +38,12 @@ export async function getCustomHyperdrive({
   sharesTokenIconUrl,
   depositOptions,
   withdrawalOptions,
-  optionalTags = [],
-}: GetHyperdriveConfigParams): Promise<HyperdriveInstanceConfigs> {
+  tokenPlaces = 2,
+  tags = [],
+}: GetHyperdriveConfigParams): Promise<GetCustomHyperdriveResult> {
   // All Hyperdrive instances have a shareToken function, but the SDK needs to
   // be updated, using RethHyperdrive for now.
-  const readHyperdrive = new ReadREthHyperdrive({
+  const readHyperdrive = new ReadHyperdrive({
     address: hyperdriveAddress,
     publicClient,
   });
@@ -50,10 +52,10 @@ export async function getCustomHyperdrive({
   const sharesToken = await readHyperdrive.getSharesToken();
   const sharesTokenConfig = await getTokenConfig({
     token: sharesToken,
-    tags: ["yieldSource", ...optionalTags],
+    tags: ["yieldSource", ...tags],
     extensions: sharesTokenExtensions,
     iconUrl: sharesTokenIconUrl,
-    places: 2,
+    places: tokenPlaces,
   });
 
   const baseToken = await readHyperdrive.getBaseToken();
@@ -62,7 +64,7 @@ export async function getCustomHyperdrive({
     extensions: {},
     tags: [],
     iconUrl: baseTokenIconUrl,
-    places: 2,
+    places: tokenPlaces,
   });
 
   const hyperdriveName = formatHyperdriveName({
@@ -77,12 +79,8 @@ export async function getCustomHyperdrive({
     decimals: await readHyperdrive.getDecimals(),
     baseToken: baseTokenConfig.address,
     sharesToken: sharesTokenConfig.address,
-    depositOptions: depositOptions ?? {
-      isBaseTokenDepositEnabled: true,
-    },
-    withdrawOptions: withdrawalOptions ?? {
-      isBaseTokenWithdrawalEnabled: true,
-    },
+    depositOptions: depositOptions,
+    withdrawOptions: withdrawalOptions,
     poolConfig,
   };
 
