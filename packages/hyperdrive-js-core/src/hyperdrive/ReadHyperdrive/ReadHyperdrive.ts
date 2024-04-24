@@ -85,6 +85,23 @@ export class ReadHyperdrive extends ReadModel {
         });
   }
 
+  /**
+   * Returns the share token of the pool.
+   *
+   * @privateRemarks
+   * The share token is assumed to be an ERC20 token. This can be overwritten
+   * in instances of Hyperdrive to return custom tokens.
+   */
+  async getSharesToken(): Promise<ReadErc20> {
+    const address = await this.contract.read("vaultSharesToken");
+    return new ReadErc20({
+      address,
+      contractFactory: this.contractFactory,
+      namespace: this.contract.namespace,
+      network: this.network,
+    });
+  }
+
   getDecimals(): Promise<number> {
     return this.contract.read("decimals");
   }

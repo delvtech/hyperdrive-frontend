@@ -67,6 +67,23 @@ export function OpenLongForm({
 
   const baseTokenDepositEnabled =
     hyperdrive.depositOptions.isBaseTokenDepositEnabled;
+  const shareTokenDepositsEnabled =
+    hyperdrive.depositOptions.isShareTokenDepositsEnabled;
+  const tokenOptions = [];
+
+  if (baseTokenDepositEnabled) {
+    tokenOptions.push({
+      tokenConfig: baseToken,
+      tokenBalance: baseTokenBalance?.value,
+    });
+  }
+
+  if (shareTokenDepositsEnabled) {
+    tokenOptions.push({
+      tokenConfig: sharesToken,
+      tokenBalance: sharesTokenBalance?.value,
+    });
+  }
 
   const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
     useActiveToken({
@@ -191,25 +208,7 @@ export function OpenLongForm({
           token={
             <TokenPicker
               // TODO: Remove check for Sepolia chain after testnet period.
-              tokens={
-                baseTokenDepositEnabled
-                  ? [
-                      {
-                        tokenConfig: baseToken,
-                        tokenBalance: baseTokenBalance?.value,
-                      },
-                      {
-                        tokenConfig: sharesToken,
-                        tokenBalance: sharesTokenBalance?.value,
-                      },
-                    ]
-                  : [
-                      {
-                        tokenConfig: sharesToken,
-                        tokenBalance: sharesTokenBalance?.value,
-                      },
-                    ]
-              }
+              tokens={tokenOptions}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);

@@ -69,6 +69,23 @@ export function AddLiquidityForm({
 
   const baseTokenDepositEnabled =
     hyperdrive.depositOptions.isBaseTokenDepositEnabled;
+  const shareTokenDepositsEnabled =
+    hyperdrive.depositOptions.isShareTokenDepositsEnabled;
+  const tokenOptions = [];
+
+  if (baseTokenDepositEnabled) {
+    tokenOptions.push({
+      tokenConfig: baseToken,
+      tokenBalance: baseTokenBalance?.value,
+    });
+  }
+
+  if (shareTokenDepositsEnabled) {
+    tokenOptions.push({
+      tokenConfig: sharesToken,
+      tokenBalance: sharesTokenBalance?.value,
+    });
+  }
 
   const { lpShares: lpSharesBalanceOf } = useLpShares({
     account,
@@ -182,25 +199,7 @@ export function AddLiquidityForm({
           token={
             <TokenPicker
               joined={true}
-              tokens={
-                baseTokenDepositEnabled
-                  ? [
-                      {
-                        tokenConfig: baseToken,
-                        tokenBalance: baseTokenBalance?.value,
-                      },
-                      {
-                        tokenConfig: sharesToken,
-                        tokenBalance: sharesTokenBalance?.value,
-                      },
-                    ]
-                  : [
-                      {
-                        tokenConfig: sharesToken,
-                        tokenBalance: sharesTokenBalance?.value,
-                      },
-                    ]
-              }
+              tokens={tokenOptions}
               activeTokenAddress={activeToken.address}
               onChange={(tokenAddress) => {
                 setActiveToken(tokenAddress);

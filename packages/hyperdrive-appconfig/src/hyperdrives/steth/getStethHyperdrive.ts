@@ -61,11 +61,13 @@ export async function getStethHyperdrive({
       // Turn off sepolia eth deposits so users aren't risking their eth.
       // They can still mint steth and deposit that.
       isBaseTokenDepositEnabled: chainId !== sepolia.id,
+      isShareTokenDepositsEnabled: true,
     },
     withdrawOptions: {
       // steth hyperdrive does not allow you to withdraw back to native ETH, due
       // to how lido's withraw process works
       isBaseTokenWithdrawalEnabled: false,
+      isShareTokenWithdrawalEnabled: true,
     },
     poolConfig,
   };
