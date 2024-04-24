@@ -1,6 +1,6 @@
 # @delvtech/hyperdrive-js-core
 
-## 1.0.0
+## 0.0.4
 
 ### Patch Changes
 
