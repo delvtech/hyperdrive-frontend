@@ -96,6 +96,50 @@ export declare const MockHyperdrive: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "__external_transferFrom";
+        readonly inputs: readonly [{
+            readonly name: "tokenID";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "from";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "to";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "amount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "caller";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "__setBalanceOf";
+        readonly inputs: readonly [{
+            readonly name: "_tokenId";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_who";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "_amount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
         readonly name: "accrue";
         readonly inputs: readonly [{
             readonly name: "time";
@@ -170,6 +214,24 @@ export declare const MockHyperdrive: {
             readonly name: "";
             readonly type: "uint256[]";
             readonly internalType: "uint256[]";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "burn";
+        readonly inputs: readonly [{
+            readonly name: "tokenID";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "from";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "amount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
         }];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
@@ -489,6 +551,24 @@ export declare const MockHyperdrive: {
             readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "mint";
+        readonly inputs: readonly [{
+            readonly name: "tokenID";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "to";
+            readonly type: "address";
+            readonly internalType: "address";
+        }, {
+            readonly name: "amount";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
         readonly name: "openLong";
@@ -1532,6 +1612,10 @@ export declare const MockHyperdrive: {
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
+        readonly name: "InsufficientBalance";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
         readonly name: "InsufficientLiquidity";
         readonly inputs: readonly [];
     }, {
@@ -1541,6 +1625,10 @@ export declare const MockHyperdrive: {
     }, {
         readonly type: "error";
         readonly name: "ReentrancyGuardReentrantCall";
+        readonly inputs: readonly [];
+    }, {
+        readonly type: "error";
+        readonly name: "RestrictedZeroAddress";
         readonly inputs: readonly [];
     }, {
         readonly type: "error";
@@ -1566,9 +1654,12 @@ export declare const MockHyperdrive: {
     bytecode: `0x${string}`;
     methodIdentifiers: {
         readonly "PERMIT_TYPEHASH()": "30adf81f";
+        readonly "__external_transferFrom(uint256,address,address,uint256,address)": "58af4a0a";
+        readonly "__setBalanceOf(uint256,address,uint256)": "94a97cdb";
         readonly "accrue(uint256,int256)": "68096239";
         readonly "addLiquidity(uint256,uint256,uint256,uint256,(address,bool,bytes))": "4c2ac1d9";
         readonly "batchTransferFrom(address,address,uint256[],uint256[])": "17fad7fc";
+        readonly "burn(uint256,address,uint256)": "9eea5f66";
         readonly "calculateFeesGivenBonds(uint256,uint256,uint256,uint256)": "22d5506b";
         readonly "calculateFeesGivenShares(uint256,uint256,uint256)": "71f88b7c";
         readonly "calculateIdleShareReserves(uint256)": "b1b4b170";
@@ -1583,6 +1674,7 @@ export declare const MockHyperdrive: {
         readonly "getTotalShares()": "d5002f2e";
         readonly "initialize(uint256,uint256,(address,bool,bytes))": "77d05ff4";
         readonly "latestCheckpoint()": "907c0f92";
+        readonly "mint(uint256,address,uint256)": "836a1040";
         readonly "openLong(uint256,uint256,uint256,(address,bool,bytes))": "cba2e58d";
         readonly "openShort(uint256,uint256,uint256,(address,bool,bytes))": "dbbe8070";
         readonly "pause(bool)": "02329a29";

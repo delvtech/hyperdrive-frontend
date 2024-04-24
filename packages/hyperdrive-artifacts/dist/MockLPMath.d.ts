@@ -109,6 +109,110 @@ export declare const MockLPMath: {
         readonly stateMutability: "pure";
     }, {
         readonly type: "function";
+        readonly name: "calculateDistributeExcessIdleShareProceedsNetLongEdgeCaseSafe";
+        readonly inputs: readonly [{
+            readonly name: "_params";
+            readonly type: "tuple";
+            readonly internalType: "struct LPMath.DistributeExcessIdleParams";
+            readonly components: readonly [{
+                readonly name: "presentValueParams";
+                readonly type: "tuple";
+                readonly internalType: "struct LPMath.PresentValueParams";
+                readonly components: readonly [{
+                    readonly name: "shareReserves";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "shareAdjustment";
+                    readonly type: "int256";
+                    readonly internalType: "int256";
+                }, {
+                    readonly name: "bondReserves";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "vaultSharePrice";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "initialVaultSharePrice";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "minimumShareReserves";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "minimumTransactionAmount";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "timeStretch";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "longsOutstanding";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "longAverageTimeRemaining";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "shortsOutstanding";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }, {
+                    readonly name: "shortAverageTimeRemaining";
+                    readonly type: "uint256";
+                    readonly internalType: "uint256";
+                }];
+            }, {
+                readonly name: "startingPresentValue";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "activeLpTotalSupply";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "withdrawalSharesTotalSupply";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "idle";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "netCurveTrade";
+                readonly type: "int256";
+                readonly internalType: "int256";
+            }, {
+                readonly name: "originalShareReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }, {
+                readonly name: "originalShareAdjustment";
+                readonly type: "int256";
+                readonly internalType: "int256";
+            }, {
+                readonly name: "originalBondReserves";
+                readonly type: "uint256";
+                readonly internalType: "uint256";
+            }];
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "";
+            readonly type: "bool";
+            readonly internalType: "bool";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
         readonly name: "calculateDistributeExcessIdleWithdrawalSharesRedeemed";
         readonly inputs: readonly [{
             readonly name: "_params";
@@ -678,6 +782,7 @@ export declare const MockLPMath: {
     bytecode: `0x${string}`;
     methodIdentifiers: {
         readonly "calculateDistributeExcessIdleShareProceeds(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256),uint256,uint256)": "3f9ccc01";
+        readonly "calculateDistributeExcessIdleShareProceedsNetLongEdgeCaseSafe(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256))": "cefef8b7";
         readonly "calculateDistributeExcessIdleWithdrawalSharesRedeemed(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256),uint256)": "a0d1643c";
         readonly "calculateMaxShareReservesDeltaSafe(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256),uint256)": "9e5fc16b";
         readonly "calculateNetCurveTrade((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))": "a4fc6f81";
