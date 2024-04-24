@@ -8,6 +8,7 @@ import {
 } from "@delvtech/evm-client";
 import { Address } from "abitype";
 import * as dnum from "dnum";
+import { assertNever } from "src/base/assertNever";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
 import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
@@ -16,6 +17,7 @@ import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOp
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
 import { HyperdriveAbi, hyperdriveAbi } from "src/hyperdrive/abi";
 import { DEFAULT_EXTRA_DATA } from "src/hyperdrive/constants";
+import { calculateAprFromPrice } from "src/hyperdrive/utils/calculateAprFromPrice";
 import { convertBaseToShares } from "src/hyperdrive/utils/convertBaseToShares";
 import { convertSharesToBase } from "src/hyperdrive/utils/convertSharesToBase";
 import { hyperwasm } from "src/hyperwasm";
@@ -157,8 +159,7 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * This function retrieves the market liquidity available for trading and LP
-   * removal
+   * Gets the market liquidity available for trading and removing LP.
    */
   async getIdleLiquidity(options?: ContractReadOptions): Promise<bigint> {
     const poolConfig = await this.getPoolConfig(options);
@@ -493,12 +494,6 @@ export class ReadHyperdrive extends ReadModel {
     return { lpApy };
   }
 
-  private async getTransferSingleEvents(
-    options: ContractGetEventsOptions<HyperdriveAbi, "TransferSingle">,
-  ) {
-    return this.contract.getEvents("TransferSingle", options);
-  }
-
   async getCheckpointEvents(
     options?: ContractGetEventsOptions<HyperdriveAbi, "CreateCheckpoint">,
   ): Promise<CheckpointEvent[]> {
@@ -515,7 +510,7 @@ export class ReadHyperdrive extends ReadModel {
   }: {
     openLongEvents: Event<HyperdriveAbi, "OpenLong">[];
     closeLongEvents: Event<HyperdriveAbi, "CloseLong">[];
-  }): Record<string, Long> {
+  }): Long[] {
     // Put open and long events in block order. We spread openLongEvents first
     // since you have to open a long before you can close one.
     const orderedLongEvents = [...openLongEvents, ...closeLongEvents].sort(
@@ -562,7 +557,7 @@ export class ReadHyperdrive extends ReadModel {
       }
     });
 
-    return openLongs;
+    return Object.values(openLongs).filter((long) => long.bondAmount);
   }
 
   /**
@@ -589,12 +584,10 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
-    const openLongsById = this._calcOpenLongs({
+    return this._calcOpenLongs({
       openLongEvents,
       closeLongEvents,
     });
-
-    return Object.values(openLongsById).filter((long) => long.bondAmount);
   }
 
   /**
@@ -612,7 +605,8 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<OpenShort[]> {
     const toBlock = getBlockFromReadOptions(options);
 
-    const { checkpointDuration } = await this.getPoolConfig(options);
+    const { checkpointDuration, positionDuration } =
+      await this.getPoolConfig(options);
 
     const openShortEvents = await this.contract.getEvents("OpenShort", {
       filter: { trader: account },
@@ -623,26 +617,28 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
-    const openShortsById = await this._calcOpenShorts({
+    return this._calcOpenShorts({
       hyperdriveAddress: this.contract.address,
       checkpointDuration,
+      positionDuration,
       openShortEvents,
       closeShortEvents,
     });
-    return Object.values(openShortsById).filter((short) => short.bondAmount);
   }
 
   private async _calcOpenShorts({
     hyperdriveAddress,
     checkpointDuration,
+    positionDuration,
     closeShortEvents,
     openShortEvents,
   }: {
     hyperdriveAddress: Address;
     checkpointDuration: bigint;
+    positionDuration: bigint;
     openShortEvents: Event<typeof hyperdriveAbi, "OpenShort">[];
     closeShortEvents: Event<typeof hyperdriveAbi, "CloseShort">[];
-  }): Promise<Record<string, OpenShort>> {
+  }): Promise<OpenShort[]> {
     // Put open and short events in block order. We spread openShortEvents first
     // since you have to open a short before you can close one.
     const orderedShortEvents = [...openShortEvents, ...closeShortEvents].sort(
@@ -658,48 +654,67 @@ export class ReadHyperdrive extends ReadModel {
           blockNumber: event.blockNumber,
         });
 
+        // Create a default empty short that we will update based on the events
         const short: OpenShort = openShorts[assetId] || {
+          hyperdriveAddress,
           assetId: event.args.assetId,
           maturity: event.args.maturityTime,
-          baseAmountPaid: 0n,
-          bondAmount: 0n,
-          hyperdriveAddress,
           checkpointId: getCheckpointId(timestamp, checkpointDuration),
           // The openedTimestamp will always reflect the latest short, if you open
           // twice in the same checkpoint
           openedTimestamp: timestamp,
+          baseAmountPaid: 0n,
+          bondAmount: 0n,
+          baseProceeds: 0n,
+          fixedRatePaid: 0n,
         };
 
-        if (event.eventName === "OpenShort") {
-          const updatedShort: OpenShort = {
-            ...short,
-            baseAmountPaid: short.baseAmountPaid + event.args.baseAmount,
-            bondAmount: short.bondAmount + event.args.bondAmount,
-          };
-          openShorts[assetId] = updatedShort;
-          return;
-        }
+        const { eventName } = event;
+        switch (eventName) {
+          // When you open a short, we add up how much you've paid and your new
+          // total bond amount, then update the average price and fixed rate
+          // paid
+          case "OpenShort":
+            short.baseAmountPaid += event.args.baseAmount;
+            short.bondAmount += event.args.bondAmount;
+            short.baseProceeds += event.args.baseProceeds;
+            short.fixedRatePaid = calculateAprFromPrice({
+              positionDuration,
+              baseAmount: short.baseProceeds,
+              bondAmount: short.bondAmount,
+            });
 
-        if (event.eventName === "CloseShort") {
-          // If a user closes their whole position, we should remove the whole
-          // position since it's basically starting over
-          if (event.args.bondAmount === short.bondAmount) {
-            delete openShorts[assetId];
+            openShorts[assetId] = short;
+            return;
+
+          case "CloseShort": {
+            // If a user closes their whole position, we should remove the whole
+            // position since it's basically starting over
+            if (event.args.bondAmount === short.bondAmount) {
+              delete openShorts[assetId];
+              return;
+            }
+            // otherwise just subtract the amount of bonds they closed and baseAmount
+            // they received back from the running total
+            short.baseAmountPaid -= event.args.baseAmount;
+            short.bondAmount -= event.args.bondAmount;
+            short.baseProceeds -= event.args.basePayment;
+            short.fixedRatePaid = calculateAprFromPrice({
+              positionDuration,
+              baseAmount: short.baseProceeds,
+              bondAmount: short.bondAmount,
+            });
+            openShorts[assetId] = short;
             return;
           }
-          // otherwise just subtract the amount of bonds they closed and baseAmount
-          // they received back from the running total
-          const updatedShort: OpenShort = {
-            ...short,
-            baseAmountPaid: short.baseAmountPaid - event.args.baseAmount,
-            bondAmount: short.bondAmount - event.args.bondAmount,
-          };
-          openShorts[assetId] = updatedShort;
+
+          default:
+            assertNever(eventName);
         }
       }),
     );
 
-    return openShorts;
+    return Object.values(openShorts).filter((short) => short.bondAmount);
   }
 
   /**
