@@ -1,5 +1,13 @@
 # hyperdrive-trading
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [0696ad7]
+  - @delvtech/hyperdrive-artifacts@0.1.0
+  - @delvtech/hyperdrive-viem@0.0.4
+
 ## 0.0.3
 
 ### Patch Changes

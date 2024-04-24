@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 0.1.0
+
+### Minor Changes
+
+- 0696ad7: Optimized types and reduced fields to `abi`, bytecode`, and `methodIdentifiers`
+
 ## 0.0.3
 
 ### Patch Changes
