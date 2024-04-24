@@ -37,6 +37,7 @@
     "@types/d3-format": "^3.0.4",
     "assert-never": "^1.2.1",
     "buffer": "^6.0.3",
+    "calendar-link": "^2.6.0",
     "classnames": "^2.3.2",
     "d3-format": "^3.1.0",
     "daisyui": "^4.10.2",

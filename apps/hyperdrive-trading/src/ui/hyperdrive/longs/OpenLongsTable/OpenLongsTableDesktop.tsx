@@ -18,6 +18,7 @@ import { ReactElement } from "react";
 import { calculateAnnualizedPercentageChange } from "src/base/calculateAnnualizedPercentageChange";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { CalendarLinkMenu } from "src/ui/base/components/CalendarLinkMenu";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
@@ -254,17 +255,28 @@ function getColumns({
     columnHelper.display({
       header: "",
       id: "go-to-market",
-      cell: ({ row }) => (
-        <button
-          className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
-          onClick={() => {
-            const modalId = `${row.original.assetId}`;
-            (window as any)[modalId].showModal();
-          }}
-        >
-          Close Long
-        </button>
-      ),
+      cell: ({ row }) => {
+        const maturityDateMS = row.original.maturity * 1000n;
+        const maturityDate = new Date(Number(maturityDateMS));
+        return (
+          <div className="flex items-center">
+            <button
+              className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700"
+              onClick={() => {
+                const modalId = `${row.original.assetId}`;
+                (window as any)[modalId].showModal();
+              }}
+            >
+              Close Long
+            </button>
+            <CalendarLinkMenu
+              date={maturityDate}
+              title={`Hyperdrive - Long position has matured`}
+              description={`Your Long position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
+            />
+          </div>
+        );
+      },
     }),
   ];
 }
