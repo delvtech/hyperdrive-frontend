@@ -17,8 +17,8 @@
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
-    "@delvtech/hyperdrive-artifacts": "^0.0.3",
-    "@delvtech/hyperdrive-viem": "^0.0.3",
+    "@delvtech/hyperdrive-artifacts": "^0.1.0",
+    "@delvtech/hyperdrive-viem": "^0.0.4",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",

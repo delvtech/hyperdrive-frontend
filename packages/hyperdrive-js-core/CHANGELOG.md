@@ -1,5 +1,13 @@
 # @delvtech/hyperdrive-js-core
 
+## 1.0.0
+
+### Patch Changes
+
+- ac4c4ee: Added a getSharesToken getter to ReadWriteHyperdrive.
+- Updated dependencies [0696ad7]
+  - @delvtech/hyperdrive-artifacts@0.1.0
+
 ## 0.0.3
 
 ### Patch Changes
