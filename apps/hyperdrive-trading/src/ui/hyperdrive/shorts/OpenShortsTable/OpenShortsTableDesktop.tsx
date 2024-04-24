@@ -209,7 +209,11 @@ function getColumns(
             <button className="daisy-btn daisy-btn-ghost rounded-full bg-gray-600 hover:bg-gray-700">
               Close Short
             </button>
-            <CalendarLinkMenu date={maturityDate} positionType={"Short"} />
+            <CalendarLinkMenu
+              date={maturityDate}
+              title={`Hyperdrive - Short position has matured`}
+              description={`Your Short position has matured on Hyperdrive and you may choose to close it. Visit https://hyperdrive.trade/market/${hyperdrive.address} to review your position`}
+            />
           </div>
         );
       },

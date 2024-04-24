@@ -3,14 +3,16 @@ import { google, ics, outlook } from "calendar-link";
 
 export function CalendarLinkMenu({
   date,
-  positionType,
+  title,
+  description,
 }: {
   date: Date;
-  positionType: "Short" | "Long";
+  title: string;
+  description: string;
 }): JSX.Element {
   const calendarDetails = {
-    title: `Hyperdrive - ${positionType} position has matured`,
-    description: `Your ${positionType} position has matured on Hyperdrive and you may choose to close it. Visit hyperdrive.trade to review your outstanding positions.`,
+    title,
+    description,
     start: date,
     end: date,
   };
