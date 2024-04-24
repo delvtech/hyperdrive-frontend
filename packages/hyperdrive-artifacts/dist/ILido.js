@@ -1,407 +1,398 @@
 export const ILido = {
-    "abi": [
+    abi: [
         {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "owner",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                }
-            ],
-            "name": "Approval",
-            "type": "event"
-        },
-        {
-            "anonymous": false,
-            "inputs": [
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                },
-                {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                }
-            ],
-            "name": "Transfer",
-            "type": "event"
-        },
-        {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "owner",
-                    "type": "address"
-                },
-                {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                }
-            ],
+            "type": "function",
             "name": "allowance",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
                     "name": "spender",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
+                    "type": "address",
+                    "internalType": "address"
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "approve",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                }
-            ],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "address",
-                    "name": "account",
-                    "type": "address"
+                    "name": "spender",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
             "name": "balanceOf",
-            "outputs": [
+            "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
+                    "name": "account",
+                    "type": "address",
+                    "internalType": "address"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "decimals",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "uint8",
                     "name": "",
-                    "type": "uint8"
+                    "type": "uint8",
+                    "internalType": "uint8"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "getBufferedEther",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
-            "inputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "_sharesAmount",
-                    "type": "uint256"
-                }
-            ],
+            "type": "function",
             "name": "getPooledEthByShares",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "_ethAmount",
-                    "type": "uint256"
+                    "name": "_sharesAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "getSharesByPooledEth",
-            "outputs": [
+            "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
+                    "name": "_ethAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "getTotalPooledEther",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "getTotalShares",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "name",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "string",
                     "name": "",
-                    "type": "string"
+                    "type": "string",
+                    "internalType": "string"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "_account",
-                    "type": "address"
-                }
-            ],
+            "type": "function",
             "name": "sharesOf",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "address",
-                    "name": "_referral",
-                    "type": "address"
+                    "name": "_account",
+                    "type": "address",
+                    "internalType": "address"
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "submit",
-            "outputs": [
+            "inputs": [
                 {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
+                    "name": "_referral",
+                    "type": "address",
+                    "internalType": "address"
                 }
             ],
-            "stateMutability": "payable",
-            "type": "function"
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "payable"
         },
         {
-            "inputs": [],
+            "type": "function",
             "name": "symbol",
-            "outputs": [
-                {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                }
-            ],
-            "stateMutability": "view",
-            "type": "function"
-        },
-        {
             "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "totalSupply",
+            "inputs": [],
             "outputs": [
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "view",
-            "type": "function"
+            "stateMutability": "view"
         },
         {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                }
-            ],
+            "type": "function",
             "name": "transfer",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                }
-            ],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                },
-                {
-                    "internalType": "address",
                     "name": "to",
-                    "type": "address"
+                    "type": "address",
+                    "internalType": "address"
                 },
                 {
-                    "internalType": "uint256",
                     "name": "amount",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
             "name": "transferFrom",
-            "outputs": [
-                {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                }
-            ],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "address",
-                    "name": "_recipient",
-                    "type": "address"
+                    "name": "from",
+                    "type": "address",
+                    "internalType": "address"
                 },
                 {
-                    "internalType": "uint256",
-                    "name": "_sharesAmount",
-                    "type": "uint256"
+                    "name": "to",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "amount",
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "bool",
+                    "internalType": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
             "name": "transferShares",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable",
-            "type": "function"
-        },
-        {
             "inputs": [
                 {
-                    "internalType": "address",
-                    "name": "_sender",
-                    "type": "address"
-                },
-                {
-                    "internalType": "address",
                     "name": "_recipient",
-                    "type": "address"
+                    "type": "address",
+                    "internalType": "address"
                 },
                 {
-                    "internalType": "uint256",
                     "name": "_sharesAmount",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "name": "transferSharesFrom",
             "outputs": [
                 {
-                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256"
+                    "type": "uint256",
+                    "internalType": "uint256"
                 }
             ],
-            "stateMutability": "nonpayable",
-            "type": "function"
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "transferSharesFrom",
+            "inputs": [
+                {
+                    "name": "_sender",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "_recipient",
+                    "type": "address",
+                    "internalType": "address"
+                },
+                {
+                    "name": "_sharesAmount",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "event",
+            "name": "Approval",
+            "inputs": [
+                {
+                    "name": "owner",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "spender",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "value",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
+        },
+        {
+            "type": "event",
+            "name": "Transfer",
+            "inputs": [
+                {
+                    "name": "from",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "to",
+                    "type": "address",
+                    "indexed": true,
+                    "internalType": "address"
+                },
+                {
+                    "name": "value",
+                    "type": "uint256",
+                    "indexed": false,
+                    "internalType": "uint256"
+                }
+            ],
+            "anonymous": false
         }
     ],
-    "bytecode": {
-        "object": "0x",
-        "sourceMap": "",
-        "linkReferences": {}
-    },
-    "deployedBytecode": {
-        "object": "0x",
-        "sourceMap": "",
-        "linkReferences": {}
-    },
-    "methodIdentifiers": {
+    bytecode: '0x',
+    methodIdentifiers: {
         "allowance(address,address)": "dd62ed3e",
         "approve(address,uint256)": "095ea7b3",
         "balanceOf(address)": "70a08231",
@@ -420,1549 +411,5 @@ export const ILido = {
         "transferFrom(address,address,uint256)": "23b872dd",
         "transferShares(address,uint256)": "8fcb4e5b",
         "transferSharesFrom(address,address,uint256)": "6d780459"
-    },
-    "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getBufferedEther\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_sharesAmount\",\"type\":\"uint256\"}],\"name\":\"getPooledEthByShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_ethAmount\",\"type\":\"uint256\"}],\"name\":\"getSharesByPooledEth\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTotalPooledEther\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getTotalShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_account\",\"type\":\"address\"}],\"name\":\"sharesOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_referral\",\"type\":\"address\"}],\"name\":\"submit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"symbol\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_sharesAmount\",\"type\":\"uint256\"}],\"name\":\"transferShares\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_sender\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_recipient\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_sharesAmount\",\"type\":\"uint256\"}],\"name\":\"transferSharesFrom\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"allowance(address,address)\":{\"params\":{\"owner\":\"The owner of the tokens.\",\"spender\":\"The spender of the tokens.\"},\"returns\":{\"_0\":\"The allowance of the spender for the owner.\"}},\"approve(address,uint256)\":{\"params\":{\"amount\":\"The new allowance of the spender.\",\"spender\":\"The account with the allowance.\"},\"returns\":{\"_0\":\"A flag indicating whether or not the approval succeeded.\"}},\"balanceOf(address)\":{\"params\":{\"account\":\"The owner of the tokens.\"},\"returns\":{\"_0\":\"The account's balance.\"}},\"decimals()\":{\"returns\":{\"_0\":\"The token's decimals.\"}},\"getBufferedEther()\":{\"returns\":{\"_0\":\"The total amount of buffered ether.\"}},\"getPooledEthByShares(uint256)\":{\"params\":{\"_sharesAmount\":\"The amount of stETH shares to convert.\"},\"returns\":{\"_0\":\"The amount of stETH tokens that the stETH shares are worth.\"}},\"getSharesByPooledEth(uint256)\":{\"params\":{\"_ethAmount\":\"The amount of stETH tokens to convert.\"},\"returns\":{\"_0\":\"The amount of stETH shares that the stETH tokens are worth.\"}},\"getTotalPooledEther()\":{\"returns\":{\"_0\":\"The total amount of pooled ether.\"}},\"getTotalShares()\":{\"returns\":{\"_0\":\"The total amount of stETH shares.\"}},\"name()\":{\"returns\":{\"_0\":\"The token's name.\"}},\"sharesOf(address)\":{\"params\":{\"_account\":\"The owner of the shares.\"}},\"submit(address)\":{\"params\":{\"_referral\":\"The referral address that should get credit in Lido's        referral program.\"},\"returns\":{\"_0\":\"The amount of stETH shares that were minted.\"}},\"symbol()\":{\"returns\":{\"_0\":\"The token's symbol.\"}},\"totalSupply()\":{\"returns\":{\"_0\":\"The token's total supply.\"}},\"transfer(address,uint256)\":{\"params\":{\"amount\":\"The amount of tokens that will be transferred.\",\"to\":\"The recipient of the tokens.\"},\"returns\":{\"_0\":\"A flag indicating whether or not the transfer succeeded.\"}},\"transferFrom(address,address,uint256)\":{\"params\":{\"amount\":\"The amount of tokens that will be transferred.\",\"from\":\"The owner of the tokens.\",\"to\":\"The recipient of the tokens.\"},\"returns\":{\"_0\":\"A flag indicating whether or not the transfer succeeded.\"}},\"transferShares(address,uint256)\":{\"params\":{\"_recipient\":\"The recipient of the tokens.\",\"_sharesAmount\":\"The amount of stETH shares that will be transferred.\"},\"returns\":{\"_0\":\"The amount of stETH tokens that were transferred.\"}},\"transferSharesFrom(address,address,uint256)\":{\"params\":{\"_recipient\":\"The recipient of the tokens.\",\"_sender\":\"The owner of the tokens.\",\"_sharesAmount\":\"The amount of tokens that will be transferred.\"},\"returns\":{\"_0\":\"The amount of stETH tokens transferred.\"}}},\"version\":1},\"userdoc\":{\"events\":{\"Approval(address,address,uint256)\":{\"notice\":\"Emitted when an owner changes the approval for a spender.\"},\"Transfer(address,address,uint256)\":{\"notice\":\"Emitted when tokens are transferred from one account to another.\"}},\"kind\":\"user\",\"methods\":{\"allowance(address,address)\":{\"notice\":\"Gets the allowance of a spender for an owner.\"},\"approve(address,uint256)\":{\"notice\":\"Updates the allowance of a spender on behalf of the sender.\"},\"balanceOf(address)\":{\"notice\":\"Gets the balance of an account.\"},\"decimals()\":{\"notice\":\"Gets the token's decimals.\"},\"getBufferedEther()\":{\"notice\":\"Gets the total amount of ether that is buffered and waiting         to be staked underlying stETH.\"},\"getPooledEthByShares(uint256)\":{\"notice\":\"Calculates the amount of stETH tokens an amount of stETH shares         are currently worth.\"},\"getSharesByPooledEth(uint256)\":{\"notice\":\"Calculates the amount of stETH shares an amount of stETH tokens         are currently worth.\"},\"getTotalPooledEther()\":{\"notice\":\"Gets the total amount of pooled ether underlying stETH.\"},\"getTotalShares()\":{\"notice\":\"Gets the total amount of stETH shares.\"},\"name()\":{\"notice\":\"Gets the token's name.\"},\"sharesOf(address)\":{\"notice\":\"Gets the amount of shares owned by an account.\"},\"submit(address)\":{\"notice\":\"Submits ether to stETH to be staked.\"},\"symbol()\":{\"notice\":\"Gets the token's symbol.\"},\"totalSupply()\":{\"notice\":\"Gets the token's total supply.\"},\"transfer(address,uint256)\":{\"notice\":\"Transfers tokens from the sender's account to another account.\"},\"transferFrom(address,address,uint256)\":{\"notice\":\"Transfers tokens from an owner to a recipient. This draws from         the sender's allowance.\"},\"transferShares(address,uint256)\":{\"notice\":\"Transfers stETH shares from the caller to a recipient.\"},\"transferSharesFrom(address,address,uint256)\":{\"notice\":\"Transfers stETH shares from an owner to a recipient. This draws         from the spender's allowance.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/src/interfaces/ILido.sol\":\"ILido\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":openzeppelin/=lib/openzeppelin-contracts/contracts/\",\":solmate/=lib/solmate/src/\"]},\"sources\":{\"contracts/src/interfaces/IERC20.sol\":{\"keccak256\":\"0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac\",\"dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p\"]},\"contracts/src/interfaces/ILido.sol\":{\"keccak256\":\"0x4e281fcc11a2512234c3ca7fb3dd00708bfb78cea39a7cbd911f2a70812925e6\",\"license\":\"Apache-2.0\",\"urls\":[\"bzz-raw://8db577a2a335ebc7011a7e413abd0a78010e85b1573a26218999e335280f3ba3\",\"dweb:/ipfs/QmQrjdiCvNUjDvEHyHH2Wmo8zRN7H3LLRuvrdftP7pc5kE\"]}},\"version\":1}",
-    "metadata": {
-        "compiler": {
-            "version": "0.8.20+commit.a1b79de6"
-        },
-        "language": "Solidity",
-        "output": {
-            "abi": [
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "owner",
-                            "type": "address",
-                            "indexed": true
-                        },
-                        {
-                            "internalType": "address",
-                            "name": "spender",
-                            "type": "address",
-                            "indexed": true
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "value",
-                            "type": "uint256",
-                            "indexed": false
-                        }
-                    ],
-                    "type": "event",
-                    "name": "Approval",
-                    "anonymous": false
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "from",
-                            "type": "address",
-                            "indexed": true
-                        },
-                        {
-                            "internalType": "address",
-                            "name": "to",
-                            "type": "address",
-                            "indexed": true
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "value",
-                            "type": "uint256",
-                            "indexed": false
-                        }
-                    ],
-                    "type": "event",
-                    "name": "Transfer",
-                    "anonymous": false
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "owner",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "address",
-                            "name": "spender",
-                            "type": "address"
-                        }
-                    ],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "allowance",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "spender",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "amount",
-                            "type": "uint256"
-                        }
-                    ],
-                    "stateMutability": "nonpayable",
-                    "type": "function",
-                    "name": "approve",
-                    "outputs": [
-                        {
-                            "internalType": "bool",
-                            "name": "",
-                            "type": "bool"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "account",
-                            "type": "address"
-                        }
-                    ],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "balanceOf",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "decimals",
-                    "outputs": [
-                        {
-                            "internalType": "uint8",
-                            "name": "",
-                            "type": "uint8"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "getBufferedEther",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "_sharesAmount",
-                            "type": "uint256"
-                        }
-                    ],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "getPooledEthByShares",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "_ethAmount",
-                            "type": "uint256"
-                        }
-                    ],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "getSharesByPooledEth",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "getTotalPooledEther",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "getTotalShares",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "name",
-                    "outputs": [
-                        {
-                            "internalType": "string",
-                            "name": "",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "_account",
-                            "type": "address"
-                        }
-                    ],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "sharesOf",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "_referral",
-                            "type": "address"
-                        }
-                    ],
-                    "stateMutability": "payable",
-                    "type": "function",
-                    "name": "submit",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "symbol",
-                    "outputs": [
-                        {
-                            "internalType": "string",
-                            "name": "",
-                            "type": "string"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [],
-                    "stateMutability": "view",
-                    "type": "function",
-                    "name": "totalSupply",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "to",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "amount",
-                            "type": "uint256"
-                        }
-                    ],
-                    "stateMutability": "nonpayable",
-                    "type": "function",
-                    "name": "transfer",
-                    "outputs": [
-                        {
-                            "internalType": "bool",
-                            "name": "",
-                            "type": "bool"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "from",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "address",
-                            "name": "to",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "amount",
-                            "type": "uint256"
-                        }
-                    ],
-                    "stateMutability": "nonpayable",
-                    "type": "function",
-                    "name": "transferFrom",
-                    "outputs": [
-                        {
-                            "internalType": "bool",
-                            "name": "",
-                            "type": "bool"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "_recipient",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "_sharesAmount",
-                            "type": "uint256"
-                        }
-                    ],
-                    "stateMutability": "nonpayable",
-                    "type": "function",
-                    "name": "transferShares",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "inputs": [
-                        {
-                            "internalType": "address",
-                            "name": "_sender",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "address",
-                            "name": "_recipient",
-                            "type": "address"
-                        },
-                        {
-                            "internalType": "uint256",
-                            "name": "_sharesAmount",
-                            "type": "uint256"
-                        }
-                    ],
-                    "stateMutability": "nonpayable",
-                    "type": "function",
-                    "name": "transferSharesFrom",
-                    "outputs": [
-                        {
-                            "internalType": "uint256",
-                            "name": "",
-                            "type": "uint256"
-                        }
-                    ]
-                }
-            ],
-            "devdoc": {
-                "kind": "dev",
-                "methods": {
-                    "allowance(address,address)": {
-                        "params": {
-                            "owner": "The owner of the tokens.",
-                            "spender": "The spender of the tokens."
-                        },
-                        "returns": {
-                            "_0": "The allowance of the spender for the owner."
-                        }
-                    },
-                    "approve(address,uint256)": {
-                        "params": {
-                            "amount": "The new allowance of the spender.",
-                            "spender": "The account with the allowance."
-                        },
-                        "returns": {
-                            "_0": "A flag indicating whether or not the approval succeeded."
-                        }
-                    },
-                    "balanceOf(address)": {
-                        "params": {
-                            "account": "The owner of the tokens."
-                        },
-                        "returns": {
-                            "_0": "The account's balance."
-                        }
-                    },
-                    "decimals()": {
-                        "returns": {
-                            "_0": "The token's decimals."
-                        }
-                    },
-                    "getBufferedEther()": {
-                        "returns": {
-                            "_0": "The total amount of buffered ether."
-                        }
-                    },
-                    "getPooledEthByShares(uint256)": {
-                        "params": {
-                            "_sharesAmount": "The amount of stETH shares to convert."
-                        },
-                        "returns": {
-                            "_0": "The amount of stETH tokens that the stETH shares are worth."
-                        }
-                    },
-                    "getSharesByPooledEth(uint256)": {
-                        "params": {
-                            "_ethAmount": "The amount of stETH tokens to convert."
-                        },
-                        "returns": {
-                            "_0": "The amount of stETH shares that the stETH tokens are worth."
-                        }
-                    },
-                    "getTotalPooledEther()": {
-                        "returns": {
-                            "_0": "The total amount of pooled ether."
-                        }
-                    },
-                    "getTotalShares()": {
-                        "returns": {
-                            "_0": "The total amount of stETH shares."
-                        }
-                    },
-                    "name()": {
-                        "returns": {
-                            "_0": "The token's name."
-                        }
-                    },
-                    "sharesOf(address)": {
-                        "params": {
-                            "_account": "The owner of the shares."
-                        }
-                    },
-                    "submit(address)": {
-                        "params": {
-                            "_referral": "The referral address that should get credit in Lido's        referral program."
-                        },
-                        "returns": {
-                            "_0": "The amount of stETH shares that were minted."
-                        }
-                    },
-                    "symbol()": {
-                        "returns": {
-                            "_0": "The token's symbol."
-                        }
-                    },
-                    "totalSupply()": {
-                        "returns": {
-                            "_0": "The token's total supply."
-                        }
-                    },
-                    "transfer(address,uint256)": {
-                        "params": {
-                            "amount": "The amount of tokens that will be transferred.",
-                            "to": "The recipient of the tokens."
-                        },
-                        "returns": {
-                            "_0": "A flag indicating whether or not the transfer succeeded."
-                        }
-                    },
-                    "transferFrom(address,address,uint256)": {
-                        "params": {
-                            "amount": "The amount of tokens that will be transferred.",
-                            "from": "The owner of the tokens.",
-                            "to": "The recipient of the tokens."
-                        },
-                        "returns": {
-                            "_0": "A flag indicating whether or not the transfer succeeded."
-                        }
-                    },
-                    "transferShares(address,uint256)": {
-                        "params": {
-                            "_recipient": "The recipient of the tokens.",
-                            "_sharesAmount": "The amount of stETH shares that will be transferred."
-                        },
-                        "returns": {
-                            "_0": "The amount of stETH tokens that were transferred."
-                        }
-                    },
-                    "transferSharesFrom(address,address,uint256)": {
-                        "params": {
-                            "_recipient": "The recipient of the tokens.",
-                            "_sender": "The owner of the tokens.",
-                            "_sharesAmount": "The amount of tokens that will be transferred."
-                        },
-                        "returns": {
-                            "_0": "The amount of stETH tokens transferred."
-                        }
-                    }
-                },
-                "version": 1
-            },
-            "userdoc": {
-                "kind": "user",
-                "methods": {
-                    "allowance(address,address)": {
-                        "notice": "Gets the allowance of a spender for an owner."
-                    },
-                    "approve(address,uint256)": {
-                        "notice": "Updates the allowance of a spender on behalf of the sender."
-                    },
-                    "balanceOf(address)": {
-                        "notice": "Gets the balance of an account."
-                    },
-                    "decimals()": {
-                        "notice": "Gets the token's decimals."
-                    },
-                    "getBufferedEther()": {
-                        "notice": "Gets the total amount of ether that is buffered and waiting         to be staked underlying stETH."
-                    },
-                    "getPooledEthByShares(uint256)": {
-                        "notice": "Calculates the amount of stETH tokens an amount of stETH shares         are currently worth."
-                    },
-                    "getSharesByPooledEth(uint256)": {
-                        "notice": "Calculates the amount of stETH shares an amount of stETH tokens         are currently worth."
-                    },
-                    "getTotalPooledEther()": {
-                        "notice": "Gets the total amount of pooled ether underlying stETH."
-                    },
-                    "getTotalShares()": {
-                        "notice": "Gets the total amount of stETH shares."
-                    },
-                    "name()": {
-                        "notice": "Gets the token's name."
-                    },
-                    "sharesOf(address)": {
-                        "notice": "Gets the amount of shares owned by an account."
-                    },
-                    "submit(address)": {
-                        "notice": "Submits ether to stETH to be staked."
-                    },
-                    "symbol()": {
-                        "notice": "Gets the token's symbol."
-                    },
-                    "totalSupply()": {
-                        "notice": "Gets the token's total supply."
-                    },
-                    "transfer(address,uint256)": {
-                        "notice": "Transfers tokens from the sender's account to another account."
-                    },
-                    "transferFrom(address,address,uint256)": {
-                        "notice": "Transfers tokens from an owner to a recipient. This draws from         the sender's allowance."
-                    },
-                    "transferShares(address,uint256)": {
-                        "notice": "Transfers stETH shares from the caller to a recipient."
-                    },
-                    "transferSharesFrom(address,address,uint256)": {
-                        "notice": "Transfers stETH shares from an owner to a recipient. This draws         from the spender's allowance."
-                    }
-                },
-                "version": 1
-            }
-        },
-        "settings": {
-            "remappings": [
-                "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
-                "ds-test/=lib/forge-std/lib/ds-test/src/",
-                "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
-                "forge-std/=lib/forge-std/src/",
-                "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-                "openzeppelin/=lib/openzeppelin-contracts/contracts/",
-                "solmate/=lib/solmate/src/"
-            ],
-            "optimizer": {
-                "enabled": true,
-                "runs": 200
-            },
-            "metadata": {
-                "bytecodeHash": "ipfs"
-            },
-            "compilationTarget": {
-                "contracts/src/interfaces/ILido.sol": "ILido"
-            },
-            "libraries": {}
-        },
-        "sources": {
-            "contracts/src/interfaces/IERC20.sol": {
-                "keccak256": "0x5f446a4987d57c64380d44c234ee079172e98bed9595ec067eb519898c3117d9",
-                "urls": [
-                    "bzz-raw://a3245994c58110716f5099c07e5cb270137356d288044f03c713d29c36e207ac",
-                    "dweb:/ipfs/QmYdn52sGRQKXfSyL8ieSz8HysG6R5kLJWsNwEnyX1e22p"
-                ],
-                "license": "Apache-2.0"
-            },
-            "contracts/src/interfaces/ILido.sol": {
-                "keccak256": "0x4e281fcc11a2512234c3ca7fb3dd00708bfb78cea39a7cbd911f2a70812925e6",
-                "urls": [
-                    "bzz-raw://8db577a2a335ebc7011a7e413abd0a78010e85b1573a26218999e335280f3ba3",
-                    "dweb:/ipfs/QmQrjdiCvNUjDvEHyHH2Wmo8zRN7H3LLRuvrdftP7pc5kE"
-                ],
-                "license": "Apache-2.0"
-            }
-        },
-        "version": 1
-    },
-    "ast": {
-        "absolutePath": "contracts/src/interfaces/ILido.sol",
-        "id": 11316,
-        "exportedSymbols": {
-            "IERC20": [
-                9666
-            ],
-            "ILido": [
-                11315
-            ]
-        },
-        "nodeType": "SourceUnit",
-        "src": "39:2877:95",
-        "nodes": [
-            {
-                "id": 11238,
-                "nodeType": "PragmaDirective",
-                "src": "39:23:95",
-                "nodes": [],
-                "literals": [
-                    "solidity",
-                    "0.8",
-                    ".20"
-                ]
-            },
-            {
-                "id": 11240,
-                "nodeType": "ImportDirective",
-                "src": "64:38:95",
-                "nodes": [],
-                "absolutePath": "contracts/src/interfaces/IERC20.sol",
-                "file": "./IERC20.sol",
-                "nameLocation": "-1:-1:-1",
-                "scope": 11316,
-                "sourceUnit": 9667,
-                "symbolAliases": [
-                    {
-                        "foreign": {
-                            "id": 11239,
-                            "name": "IERC20",
-                            "nodeType": "Identifier",
-                            "overloadedDeclarations": [],
-                            "referencedDeclaration": 9666,
-                            "src": "73:6:95",
-                            "typeDescriptions": {}
-                        },
-                        "nameLocation": "-1:-1:-1"
-                    }
-                ],
-                "unitAlias": ""
-            },
-            {
-                "id": 11315,
-                "nodeType": "ContractDefinition",
-                "src": "104:2811:95",
-                "nodes": [
-                    {
-                        "id": 11250,
-                        "nodeType": "FunctionDefinition",
-                        "src": "362:70:95",
-                        "nodes": [],
-                        "documentation": {
-                            "id": 11243,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "136:221:95",
-                            "text": "@notice Submits ether to stETH to be staked.\n @param _referral The referral address that should get credit in Lido's\n        referral program.\n @return The amount of stETH shares that were minted."
-                        },
-                        "functionSelector": "a1903eab",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "submit",
-                        "nameLocation": "371:6:95",
-                        "parameters": {
-                            "id": 11246,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11245,
-                                    "mutability": "mutable",
-                                    "name": "_referral",
-                                    "nameLocation": "386:9:95",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11250,
-                                    "src": "378:17:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_address",
-                                        "typeString": "address"
-                                    },
-                                    "typeName": {
-                                        "id": 11244,
-                                        "name": "address",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "378:7:95",
-                                        "stateMutability": "nonpayable",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "377:19:95"
-                        },
-                        "returnParameters": {
-                            "id": 11249,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11248,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11250,
-                                    "src": "423:7:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11247,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "423:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "422:9:95"
-                        },
-                        "scope": 11315,
-                        "stateMutability": "payable",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 11260,
-                        "nodeType": "FunctionDefinition",
-                        "src": "712:116:95",
-                        "nodes": [],
-                        "documentation": {
-                            "id": 11251,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "438:269:95",
-                            "text": "@notice Transfers stETH shares from the caller to a recipient.\n @param _recipient The recipient of the tokens.\n @param _sharesAmount The amount of stETH shares that will be transferred.\n @return The amount of stETH tokens that were transferred."
-                        },
-                        "functionSelector": "8fcb4e5b",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "transferShares",
-                        "nameLocation": "721:14:95",
-                        "parameters": {
-                            "id": 11256,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11253,
-                                    "mutability": "mutable",
-                                    "name": "_recipient",
-                                    "nameLocation": "753:10:95",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11260,
-                                    "src": "745:18:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_address",
-                                        "typeString": "address"
-                                    },
-                                    "typeName": {
-                                        "id": 11252,
-                                        "name": "address",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "745:7:95",
-                                        "stateMutability": "nonpayable",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 11255,
-                                    "mutability": "mutable",
-                                    "name": "_sharesAmount",
-                                    "nameLocation": "781:13:95",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11260,
-                                    "src": "773:21:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11254,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "773:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "735:65:95"
-                        },
-                        "returnParameters": {
-                            "id": 11259,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11258,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11260,
-                                    "src": "819:7:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11257,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "819:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "818:9:95"
-                        },
-                        "scope": 11315,
-                        "stateMutability": "nonpayable",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 11272,
-                        "nodeType": "FunctionDefinition",
-                        "src": "1195:145:95",
-                        "nodes": [],
-                        "documentation": {
-                            "id": 11261,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "834:356:95",
-                            "text": "@notice Transfers stETH shares from an owner to a recipient. This draws\n         from the spender's allowance.\n @param _sender The owner of the tokens.\n @param _recipient The recipient of the tokens.\n @param _sharesAmount The amount of tokens that will be transferred.\n @return The amount of stETH tokens transferred."
-                        },
-                        "functionSelector": "6d780459",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "transferSharesFrom",
-                        "nameLocation": "1204:18:95",
-                        "parameters": {
-                            "id": 11268,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11263,
-                                    "mutability": "mutable",
-                                    "name": "_sender",
-                                    "nameLocation": "1240:7:95",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11272,
-                                    "src": "1232:15:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_address",
-                                        "typeString": "address"
-                                    },
-                                    "typeName": {
-                                        "id": 11262,
-                                        "name": "address",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1232:7:95",
-                                        "stateMutability": "nonpayable",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 11265,
-                                    "mutability": "mutable",
-                                    "name": "_recipient",
-                                    "nameLocation": "1265:10:95",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11272,
-                                    "src": "1257:18:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_address",
-                                        "typeString": "address"
-                                    },
-                                    "typeName": {
-                                        "id": 11264,
-                                        "name": "address",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1257:7:95",
-                                        "stateMutability": "nonpayable",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                },
-                                {
-                                    "constant": false,
-                                    "id": 11267,
-                                    "mutability": "mutable",
-                                    "name": "_sharesAmount",
-                                    "nameLocation": "1293:13:95",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11272,
-                                    "src": "1285:21:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11266,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1285:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1222:90:95"
-                        },
-                        "returnParameters": {
-                            "id": 11271,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11270,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11272,
-                                    "src": "1331:7:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11269,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1331:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1330:9:95"
-                        },
-                        "scope": 11315,
-                        "stateMutability": "nonpayable",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 11280,
-                        "nodeType": "FunctionDefinition",
-                        "src": "1604:96:95",
-                        "nodes": [],
-                        "documentation": {
-                            "id": 11273,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "1346:253:95",
-                            "text": "@notice Calculates the amount of stETH shares an amount of stETH tokens\n         are currently worth.\n @param _ethAmount The amount of stETH tokens to convert.\n @return The amount of stETH shares that the stETH tokens are worth."
-                        },
-                        "functionSelector": "19208451",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "getSharesByPooledEth",
-                        "nameLocation": "1613:20:95",
-                        "parameters": {
-                            "id": 11276,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11275,
-                                    "mutability": "mutable",
-                                    "name": "_ethAmount",
-                                    "nameLocation": "1651:10:95",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11280,
-                                    "src": "1643:18:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11274,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1643:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1633:34:95"
-                        },
-                        "returnParameters": {
-                            "id": 11279,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11278,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11280,
-                                    "src": "1691:7:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11277,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "1691:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1690:9:95"
-                        },
-                        "scope": 11315,
-                        "stateMutability": "view",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 11288,
-                        "nodeType": "FunctionDefinition",
-                        "src": "1967:99:95",
-                        "nodes": [],
-                        "documentation": {
-                            "id": 11281,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "1706:256:95",
-                            "text": "@notice Calculates the amount of stETH tokens an amount of stETH shares\n         are currently worth.\n @param _sharesAmount The amount of stETH shares to convert.\n @return The amount of stETH tokens that the stETH shares are worth."
-                        },
-                        "functionSelector": "7a28fb88",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "getPooledEthByShares",
-                        "nameLocation": "1976:20:95",
-                        "parameters": {
-                            "id": 11284,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11283,
-                                    "mutability": "mutable",
-                                    "name": "_sharesAmount",
-                                    "nameLocation": "2014:13:95",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11288,
-                                    "src": "2006:21:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11282,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "2006:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "1996:37:95"
-                        },
-                        "returnParameters": {
-                            "id": 11287,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11286,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11288,
-                                    "src": "2057:7:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11285,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "2057:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "2056:9:95"
-                        },
-                        "scope": 11315,
-                        "stateMutability": "view",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 11294,
-                        "nodeType": "FunctionDefinition",
-                        "src": "2247:60:95",
-                        "nodes": [],
-                        "documentation": {
-                            "id": 11289,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "2072:170:95",
-                            "text": "@notice Gets the total amount of ether that is buffered and waiting\n         to be staked underlying stETH.\n @return The total amount of buffered ether."
-                        },
-                        "functionSelector": "47b714e0",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "getBufferedEther",
-                        "nameLocation": "2256:16:95",
-                        "parameters": {
-                            "id": 11290,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "2272:2:95"
-                        },
-                        "returnParameters": {
-                            "id": 11293,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11292,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11294,
-                                    "src": "2298:7:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11291,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "2298:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "2297:9:95"
-                        },
-                        "scope": 11315,
-                        "stateMutability": "view",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 11300,
-                        "nodeType": "FunctionDefinition",
-                        "src": "2435:63:95",
-                        "nodes": [],
-                        "documentation": {
-                            "id": 11295,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "2313:117:95",
-                            "text": "@notice Gets the total amount of pooled ether underlying stETH.\n @return The total amount of pooled ether."
-                        },
-                        "functionSelector": "37cfdaca",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "getTotalPooledEther",
-                        "nameLocation": "2444:19:95",
-                        "parameters": {
-                            "id": 11296,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "2463:2:95"
-                        },
-                        "returnParameters": {
-                            "id": 11299,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11298,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11300,
-                                    "src": "2489:7:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11297,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "2489:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "2488:9:95"
-                        },
-                        "scope": 11315,
-                        "stateMutability": "view",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 11306,
-                        "nodeType": "FunctionDefinition",
-                        "src": "2609:58:95",
-                        "nodes": [],
-                        "documentation": {
-                            "id": 11301,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "2504:100:95",
-                            "text": "@notice Gets the total amount of stETH shares.\n @return The total amount of stETH shares."
-                        },
-                        "functionSelector": "d5002f2e",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "getTotalShares",
-                        "nameLocation": "2618:14:95",
-                        "parameters": {
-                            "id": 11302,
-                            "nodeType": "ParameterList",
-                            "parameters": [],
-                            "src": "2632:2:95"
-                        },
-                        "returnParameters": {
-                            "id": 11305,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11304,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11306,
-                                    "src": "2658:7:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11303,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "2658:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "2657:9:95"
-                        },
-                        "scope": 11315,
-                        "stateMutability": "view",
-                        "virtual": false,
-                        "visibility": "external"
-                    },
-                    {
-                        "id": 11314,
-                        "nodeType": "FunctionDefinition",
-                        "src": "2845:68:95",
-                        "nodes": [],
-                        "documentation": {
-                            "id": 11307,
-                            "nodeType": "StructuredDocumentation",
-                            "src": "2673:107:95",
-                            "text": "@notice Gets the amount of shares owned by an account.\n @param _account The owner of the shares."
-                        },
-                        "functionSelector": "f5eb42dc",
-                        "implemented": false,
-                        "kind": "function",
-                        "modifiers": [],
-                        "name": "sharesOf",
-                        "nameLocation": "2854:8:95",
-                        "parameters": {
-                            "id": 11310,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11309,
-                                    "mutability": "mutable",
-                                    "name": "_account",
-                                    "nameLocation": "2871:8:95",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11314,
-                                    "src": "2863:16:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_address",
-                                        "typeString": "address"
-                                    },
-                                    "typeName": {
-                                        "id": 11308,
-                                        "name": "address",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "2863:7:95",
-                                        "stateMutability": "nonpayable",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_address",
-                                            "typeString": "address"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "2862:18:95"
-                        },
-                        "returnParameters": {
-                            "id": 11313,
-                            "nodeType": "ParameterList",
-                            "parameters": [
-                                {
-                                    "constant": false,
-                                    "id": 11312,
-                                    "mutability": "mutable",
-                                    "name": "",
-                                    "nameLocation": "-1:-1:-1",
-                                    "nodeType": "VariableDeclaration",
-                                    "scope": 11314,
-                                    "src": "2904:7:95",
-                                    "stateVariable": false,
-                                    "storageLocation": "default",
-                                    "typeDescriptions": {
-                                        "typeIdentifier": "t_uint256",
-                                        "typeString": "uint256"
-                                    },
-                                    "typeName": {
-                                        "id": 11311,
-                                        "name": "uint256",
-                                        "nodeType": "ElementaryTypeName",
-                                        "src": "2904:7:95",
-                                        "typeDescriptions": {
-                                            "typeIdentifier": "t_uint256",
-                                            "typeString": "uint256"
-                                        }
-                                    },
-                                    "visibility": "internal"
-                                }
-                            ],
-                            "src": "2903:9:95"
-                        },
-                        "scope": 11315,
-                        "stateMutability": "view",
-                        "virtual": false,
-                        "visibility": "external"
-                    }
-                ],
-                "abstract": false,
-                "baseContracts": [
-                    {
-                        "baseName": {
-                            "id": 11241,
-                            "name": "IERC20",
-                            "nameLocations": [
-                                "123:6:95"
-                            ],
-                            "nodeType": "IdentifierPath",
-                            "referencedDeclaration": 9666,
-                            "src": "123:6:95"
-                        },
-                        "id": 11242,
-                        "nodeType": "InheritanceSpecifier",
-                        "src": "123:6:95"
-                    }
-                ],
-                "canonicalName": "ILido",
-                "contractDependencies": [],
-                "contractKind": "interface",
-                "fullyImplemented": false,
-                "linearizedBaseContracts": [
-                    11315,
-                    9666
-                ],
-                "name": "ILido",
-                "nameLocation": "114:5:95",
-                "scope": 11316,
-                "usedErrors": [],
-                "usedEvents": [
-                    9582,
-                    9591
-                ]
-            }
-        ],
-        "license": "Apache-2.0"
-    },
-    "id": 95
+    }
 };
