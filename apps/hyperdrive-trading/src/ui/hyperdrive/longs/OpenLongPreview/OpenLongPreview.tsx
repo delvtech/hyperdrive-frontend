@@ -23,7 +23,7 @@ interface OpenLongPreviewProps {
   activeToken: TokenConfig<any>;
   curveFee: bigint | undefined;
   asBase: boolean;
-  vaultSharePrice: bigint;
+  vaultSharePrice: bigint | undefined;
 }
 
 export function OpenLongPreview({
