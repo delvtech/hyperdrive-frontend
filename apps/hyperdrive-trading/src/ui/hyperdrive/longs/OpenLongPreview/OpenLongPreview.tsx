@@ -101,7 +101,9 @@ export function OpenLongPreview({
                         hyperdrive.poolConfig.positionDuration || 0n,
                       baseAmount: asBase
                         ? long.baseAmountPaid
-                        : convertSharesToBase({
+                        : // TODO: move sharesAmountPaid into the sdk's Long interface
+                          // instead of converting here
+                          convertSharesToBase({
                             sharesAmount: long.baseAmountPaid,
                             vaultSharePrice: vaultSharePrice,
                             decimals: activeToken.decimals,
