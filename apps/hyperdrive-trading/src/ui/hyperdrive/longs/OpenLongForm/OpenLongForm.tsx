@@ -257,6 +257,8 @@ export function OpenLongForm({
               ),
             ),
           }}
+          asBase={activeToken.address === baseToken.address}
+          vaultSharePrice={poolInfo?.vaultSharePrice}
         />
       }
       disclaimer={(() => {

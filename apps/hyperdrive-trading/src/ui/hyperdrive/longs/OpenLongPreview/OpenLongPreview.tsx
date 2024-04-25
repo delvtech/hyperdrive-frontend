@@ -9,6 +9,7 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
+import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -21,6 +22,8 @@ interface OpenLongPreviewProps {
   spotRateAfterOpen: bigint | undefined;
   activeToken: TokenConfig<any>;
   curveFee: bigint | undefined;
+  asBase: boolean;
+  vaultSharePrice: bigint | undefined;
 }
 
 export function OpenLongPreview({
@@ -29,6 +32,8 @@ export function OpenLongPreview({
   spotRateAfterOpen,
   activeToken,
   curveFee,
+  asBase,
+  vaultSharePrice,
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -94,7 +99,15 @@ export function OpenLongPreview({
                     calculateAprFromPrice({
                       positionDuration:
                         hyperdrive.poolConfig.positionDuration || 0n,
-                      baseAmount: long.baseAmountPaid,
+                      baseAmount: asBase
+                        ? long.baseAmountPaid
+                        : // TODO: move sharesAmountPaid into the sdk's Long interface
+                          // instead of converting here
+                          convertSharesToBase({
+                            sharesAmount: long.baseAmountPaid,
+                            vaultSharePrice: vaultSharePrice,
+                            decimals: activeToken.decimals,
+                          }),
                       bondAmount: long.bondAmount,
                     }),
                     baseToken.decimals,
@@ -155,7 +168,15 @@ export function OpenLongPreview({
                   {long.bondAmount > long.baseAmountPaid ? "+" : ""}
                   {long.baseAmountPaid
                     ? `${formatBalance({
-                        balance: long.bondAmount - long.baseAmountPaid,
+                        balance:
+                          long.bondAmount -
+                          (asBase
+                            ? long.baseAmountPaid
+                            : convertSharesToBase({
+                                sharesAmount: long.baseAmountPaid,
+                                vaultSharePrice: vaultSharePrice,
+                                decimals: baseToken.decimals,
+                              })),
                         decimals: baseToken.decimals,
                         places: baseToken.places,
                       })} ${baseToken.symbol}`
