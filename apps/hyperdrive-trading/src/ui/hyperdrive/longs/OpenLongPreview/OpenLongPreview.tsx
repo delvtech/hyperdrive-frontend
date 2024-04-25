@@ -9,6 +9,7 @@ import * as dnum from "dnum";
 import { ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
+import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
@@ -46,7 +47,7 @@ export function OpenLongPreview({
           label="You spend"
           value={
             <span>{`${formatBalance({
-              balance: long.baseAmountPaid,
+              balance: long.amountPaid,
               decimals: baseToken.decimals,
               places: baseToken.places,
             })} ${activeToken.symbol}`}</span>
@@ -94,7 +95,13 @@ export function OpenLongPreview({
                     calculateAprFromPrice({
                       positionDuration:
                         hyperdrive.poolConfig.positionDuration || 0n,
-                      baseAmount: long.baseAmountPaid,
+                      baseAmount: long.asBase
+                        ? long.amountPaid
+                        : convertSharesToBase({
+                            sharesAmount: long.amountPaid,
+                            vaultSharePrice: long.vaultSharePrice,
+                            decimals: activeToken.decimals,
+                          }),
                       bondAmount: long.bondAmount,
                     }),
                     baseToken.decimals,
@@ -152,10 +159,10 @@ export function OpenLongPreview({
             >
               {long.bondAmount > 0 ? (
                 <span className="cursor-help border-b border-dashed border-success text-success">
-                  {long.bondAmount > long.baseAmountPaid ? "+" : ""}
-                  {long.baseAmountPaid
+                  {long.bondAmount > long.amountPaid ? "+" : ""}
+                  {long.amountPaid
                     ? `${formatBalance({
-                        balance: long.bondAmount - long.baseAmountPaid,
+                        balance: long.bondAmount - long.amountPaid,
                         decimals: baseToken.decimals,
                         places: baseToken.places,
                       })} ${baseToken.symbol}`

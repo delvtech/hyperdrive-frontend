@@ -411,7 +411,7 @@ export class ReadHyperdriveModel implements IReadHyperdriveModel {
   }> {
     return this.readHyperdrive.previewOpenLong({
       amountIn: sharesAmount,
-      asBase: true,
+      asBase: false,
       options,
     });
   }

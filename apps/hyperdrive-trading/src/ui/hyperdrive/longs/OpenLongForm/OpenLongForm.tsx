@@ -29,6 +29,7 @@ import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { SlippageSettings } from "src/ui/token/SlippageSettings";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenPicker } from "src/ui/token/TokenPicker";
+import { getIsSteth } from "src/vaults/isSteth";
 import { formatUnits } from "viem";
 import { useAccount } from "wagmi";
 interface OpenLongFormProps {
@@ -52,6 +53,8 @@ export function OpenLongForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
+
+  const isSteth = !!sharesToken && getIsSteth(sharesToken);
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
@@ -142,7 +145,7 @@ export function OpenLongForm({
   } = usePreviewOpenLong({
     hyperdriveAddress: hyperdrive.address,
     amountIn: depositAmountAsBigInt,
-    asBase: activeToken.address === baseToken.address,
+    asBase: isSteth || activeToken.address === baseToken.address,
   });
 
   const {
@@ -248,7 +251,7 @@ export function OpenLongForm({
           long={{
             bondAmount: bondsReceived || 0n,
             assetId: 0n,
-            baseAmountPaid: depositAmountAsBigInt || 0n,
+            amountPaid: depositAmountAsBigInt || 0n,
             maturity: BigInt(
               Math.round(
                 (Date.now() +
@@ -256,6 +259,8 @@ export function OpenLongForm({
                   1000,
               ),
             ),
+            asBase: isSteth || activeToken.address === baseToken.address,
+            vaultSharePrice: poolInfo?.vaultSharePrice,
           }}
         />
       }
