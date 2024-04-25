@@ -1,11 +1,15 @@
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
+import { formatRate } from "src/base/formatRate";
+import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
+import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 export function YieldStats({
   hyperdrive,
@@ -26,6 +30,18 @@ export function YieldStats({
     hyperdriveAddress: hyperdrive.address,
   });
 
+  // TODO: Remove feature flag once calculation is fixed in rust sdk
+  const { isFlagEnabled: isImpliedYieldFeatureFlagEnabled } =
+    useFeatureFlag("implied-yield");
+  const { impliedRate, impliedRateStatus } = useImpliedRate({
+    bondAmount: parseUnits("1", 18),
+    hyperdriveAddress: hyperdrive.address,
+    variableApy: vaultRate ? vaultRate.vaultRate : undefined,
+    timestamp: BigInt(Math.floor(Date.now() / 1000)),
+  });
+
+  const formattedRate = impliedRate ? formatRate(impliedRate) : "-";
+
   return (
     <div className="flex flex-wrap gap-16">
       <Stat
@@ -41,6 +57,20 @@ export function YieldStats({
         }
         description="Fixed rate earned from opening longs, before fees and slippage are applied."
       />
+      {isImpliedYieldFeatureFlagEnabled ? (
+        <Stat
+          label="Implied Variable Rate"
+          value={
+            impliedRateStatus === "loading" && impliedRate === undefined ? (
+              <Skeleton className="w-20" />
+            ) : (
+              <div className="flex flex-row">{formattedRate}%</div>
+            )
+          }
+          description={`The yield source backing the hy${baseToken.symbol} in this pool.`}
+          tooltipPosition={"right"}
+        />
+      ) : undefined}
       <Stat
         label="Yield Source APY"
         value={

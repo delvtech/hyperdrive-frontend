@@ -3,10 +3,9 @@ import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 interface UseImpliedRateOptions {
-  account: Address | undefined;
   hyperdriveAddress: Address | undefined;
   bondAmount: bigint | undefined;
-  openVaultSharePrice: bigint | undefined;
+  timestamp: bigint | undefined;
   variableApy: bigint | undefined;
 }
 
@@ -15,37 +14,39 @@ interface UseImpliedRateOptions {
  */
 export function useImpliedRate({
   bondAmount,
-  openVaultSharePrice,
+  timestamp,
   variableApy,
   hyperdriveAddress,
 }: UseImpliedRateOptions): {
   impliedRate: bigint | undefined;
-  impledRateStatus: "error" | "success" | "loading";
+  impliedRateStatus: "error" | "success" | "loading";
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
     !!readHyperdrive &&
     bondAmount !== undefined &&
-    openVaultSharePrice !== undefined &&
+    timestamp !== undefined &&
     variableApy !== undefined;
 
   const { data: impliedRate, status: impliedRateStatus } = useQuery({
     queryKey: makeQueryKey("impliedRate", {
       hyperdriveAddress,
       bondAmount: bondAmount?.toString(),
-      openVaultSharePrice: openVaultSharePrice?.toString(),
+      timestamp: timestamp?.toString(),
       variableApy: variableApy?.toString(),
     }),
     queryFn: queryEnabled
-      ? async () =>
-          await readHyperdrive.getImpliedRate({
+      ? async () => {
+          const result = await readHyperdrive.getImpliedRate({
             bondAmount,
-            openVaultSharePrice,
+            timestamp,
             variableApy,
-          })
+          });
+          return result;
+        }
       : undefined,
     enabled: queryEnabled,
   });
 
-  return { impliedRate, impledRateStatus: impliedRateStatus };
+  return { impliedRate, impliedRateStatus };
 }
