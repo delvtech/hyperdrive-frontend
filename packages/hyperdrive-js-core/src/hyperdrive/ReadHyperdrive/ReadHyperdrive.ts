@@ -180,18 +180,26 @@ export class ReadHyperdrive extends ReadModel {
    */
   async getImpliedRate({
     bondAmount,
-    openVaultSharePrice,
+    timestamp,
     variableApy,
     options,
   }: {
     bondAmount: bigint;
-    openVaultSharePrice: bigint;
+    timestamp: bigint;
     // TODO: Get this from sdk instead
     variableApy: bigint;
     options?: ContractReadOptions;
   }): Promise<bigint> {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
+
+    const checkpointId = getCheckpointId(
+      timestamp,
+      poolConfig.checkpointDuration,
+    );
+    const { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
+      checkpointId,
+    });
 
     const impliedRateString = hyperwasm.calcImpliedRate(
       convertBigIntsToStrings(poolInfo),
