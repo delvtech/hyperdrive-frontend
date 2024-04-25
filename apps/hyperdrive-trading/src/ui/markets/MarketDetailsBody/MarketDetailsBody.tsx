@@ -1,7 +1,6 @@
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import CustomBanner from "src/ui/base/components/CustomBanner";
-import { Well } from "src/ui/base/components/Well/Well";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { LongsShortsLpTabs } from "src/ui/markets/LongsShortsLpTabs/LongsShortsLpTabs";
 import { MarketBreadcrumbs } from "src/ui/markets/MarketDetailsBody/MarketBreadcrumbs";
@@ -32,18 +31,8 @@ export function MarketDetailsBody({
 
       {/* Stats section */}
       <div className="flex flex-wrap gap-16 ">
-        <Well transparent>
-          <div className="space-y-6">
-            <h5 className="flex items-center gap-2 text-gray-400">Yield</h5>
-            <YieldStats hyperdrive={hyperdrive} />
-          </div>
-        </Well>
-        <Well transparent>
-          <div className="space-y-6">
-            <h5 className="flex items-center gap-2 text-gray-400">Liquidity</h5>
-            <LiquidityStats hyperdrive={hyperdrive} />
-          </div>
-        </Well>
+        <YieldStats hyperdrive={hyperdrive} />
+        <LiquidityStats hyperdrive={hyperdrive} />
       </div>
 
       {marketState?.isPaused && (
