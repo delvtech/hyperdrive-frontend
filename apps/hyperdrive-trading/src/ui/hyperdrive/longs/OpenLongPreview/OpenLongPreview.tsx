@@ -22,6 +22,8 @@ interface OpenLongPreviewProps {
   spotRateAfterOpen: bigint | undefined;
   activeToken: TokenConfig<any>;
   curveFee: bigint | undefined;
+  asBase: boolean;
+  vaultSharePrice: bigint;
 }
 
 export function OpenLongPreview({
@@ -30,6 +32,8 @@ export function OpenLongPreview({
   spotRateAfterOpen,
   activeToken,
   curveFee,
+  asBase,
+  vaultSharePrice,
 }: OpenLongPreviewProps): ReactElement {
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -47,7 +51,7 @@ export function OpenLongPreview({
           label="You spend"
           value={
             <span>{`${formatBalance({
-              balance: long.amountPaid,
+              balance: long.baseAmountPaid,
               decimals: baseToken.decimals,
               places: baseToken.places,
             })} ${activeToken.symbol}`}</span>
@@ -95,11 +99,11 @@ export function OpenLongPreview({
                     calculateAprFromPrice({
                       positionDuration:
                         hyperdrive.poolConfig.positionDuration || 0n,
-                      baseAmount: long.asBase
-                        ? long.amountPaid
+                      baseAmount: asBase
+                        ? long.baseAmountPaid
                         : convertSharesToBase({
-                            sharesAmount: long.amountPaid,
-                            vaultSharePrice: long.vaultSharePrice,
+                            sharesAmount: long.baseAmountPaid,
+                            vaultSharePrice: vaultSharePrice,
                             decimals: activeToken.decimals,
                           }),
                       bondAmount: long.bondAmount,
@@ -159,10 +163,10 @@ export function OpenLongPreview({
             >
               {long.bondAmount > 0 ? (
                 <span className="cursor-help border-b border-dashed border-success text-success">
-                  {long.bondAmount > long.amountPaid ? "+" : ""}
-                  {long.amountPaid
+                  {long.bondAmount > long.baseAmountPaid ? "+" : ""}
+                  {long.baseAmountPaid
                     ? `${formatBalance({
-                        balance: long.bondAmount - long.amountPaid,
+                        balance: long.bondAmount - long.baseAmountPaid,
                         decimals: baseToken.decimals,
                         places: baseToken.places,
                       })} ${baseToken.symbol}`
