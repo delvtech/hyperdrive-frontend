@@ -166,7 +166,15 @@ export function OpenLongPreview({
                   {long.bondAmount > long.baseAmountPaid ? "+" : ""}
                   {long.baseAmountPaid
                     ? `${formatBalance({
-                        balance: long.bondAmount - long.baseAmountPaid,
+                        balance:
+                          long.bondAmount -
+                          (asBase
+                            ? long.baseAmountPaid
+                            : convertSharesToBase({
+                                sharesAmount: long.baseAmountPaid,
+                                vaultSharePrice: vaultSharePrice,
+                                decimals: baseToken.decimals,
+                              })),
                         decimals: baseToken.decimals,
                         places: baseToken.places,
                       })} ${baseToken.symbol}`
