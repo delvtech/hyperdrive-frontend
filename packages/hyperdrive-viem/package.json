@@ -14,7 +14,7 @@
   "dependencies": {
     "@delvtech/hyperdrive-artifacts": "^0.1.0",
     "@delvtech/hyperdrive-js-core": "^0.0.4",
-    "@delvtech/evm-client-viem": "^0.3.1"
+    "@delvtech/evm-client-viem": "^0.4.2"
   },
   "devDependencies": {
     "@hyperdrive/eslint-config": "*",
