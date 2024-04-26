@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { formatRate } from "src/base/formatRate";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadHyperdriveModel";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
@@ -17,7 +18,7 @@ export function useYieldSourceRate({
 } {
   const publicClient = usePublicClient();
   const hyperdriveModel = useReadHyperdriveModel(hyperdriveAddress);
-
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
     !!hyperdriveAddress && !!hyperdriveModel && !!publicClient;
   const { data: vaultRate, status: vaultRateStatus } = useQuery({
@@ -27,10 +28,10 @@ export function useYieldSourceRate({
     }),
     queryFn: queryEnabled
       ? async () => {
-          const rate = await hyperdriveModel.getYieldSourceRate();
+          const rate = await readHyperdrive?.getYieldSourceRate({});
           return {
-            vaultRate: rate,
-            formatted: formatRate(rate),
+            vaultRate: rate || 0n,
+            formatted: formatRate(rate || 0n),
           };
         }
       : undefined,

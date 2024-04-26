@@ -33,6 +33,7 @@ import { getCheckpointId } from "src/pool/getCheckpointId";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
+import { ReadMockErc4626 } from "src/token/erc4626/ReadMockErc4626";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
@@ -104,6 +105,21 @@ export class ReadHyperdrive extends ReadModel {
 
   getDecimals(): Promise<number> {
     return this.contract.read("decimals");
+  }
+
+  async getYieldSourceRate({
+    options,
+  }: {
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const { vaultSharesToken } = await this.getPoolConfig(options);
+    const vault = new ReadMockErc4626({
+      address: vaultSharesToken,
+      contractFactory: this.contractFactory,
+      namespace: this.contract.namespace,
+      network: this.network,
+    });
+    return vault.getRate(options);
   }
 
   getCheckpoint({
