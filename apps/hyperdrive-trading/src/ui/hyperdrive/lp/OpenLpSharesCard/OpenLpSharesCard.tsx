@@ -83,6 +83,22 @@ export function OpenLpSharesCard({
               Your Liquidity
             </span>
             <LabelValue
+              label={`${baseToken.symbol}-LP Shares`}
+              value={
+                <p>
+                  {lpShares !== undefined ? (
+                    formatBalance({
+                      balance: lpShares || 0n,
+                      decimals: hyperdrive.decimals,
+                      places: baseToken.places,
+                    })
+                  ) : (
+                    <Skeleton />
+                  )}
+                </p>
+              }
+            />
+            <LabelValue
               label="Current Value"
               value={
                 <p>
@@ -123,7 +139,7 @@ export function OpenLpSharesCard({
                 </div>
               }
             />
-            <h6 className="mt-4 font-medium text-gray-50">Your Position</h6>
+            <h6 className="mt-4 font-medium text-gray-50">Pool Metrics</h6>
 
             <LabelValue
               label="Pool Share"
@@ -134,22 +150,6 @@ export function OpenLpSharesCard({
                 >
                   {!!lpShares && !!lpSharesTotalSupply ? (
                     `${dnum.format([poolShare, baseToken.decimals], 6)}%`
-                  ) : (
-                    <Skeleton />
-                  )}
-                </p>
-              }
-            />
-            <LabelValue
-              label={`${baseToken.symbol}-LP Shares`}
-              value={
-                <p>
-                  {lpShares !== undefined ? (
-                    formatBalance({
-                      balance: lpShares || 0n,
-                      decimals: hyperdrive.decimals,
-                      places: baseToken.places,
-                    })
                   ) : (
                     <Skeleton />
                   )}
