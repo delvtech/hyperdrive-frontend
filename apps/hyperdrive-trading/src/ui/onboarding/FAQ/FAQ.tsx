@@ -28,7 +28,7 @@ export function FAQEntries(): JSX.Element {
         {faqData.map((faq) => (
           <Disclosure
             key={faq.question}
-            title={<h5>{faq.question}</h5>}
+            title={<h4>{faq.question}</h4>}
             description={faq.answer}
           />
         ))}
@@ -45,10 +45,10 @@ export function FAQEntries(): JSX.Element {
               key={key}
               onClick={() => setSelectedFAQKey(key)}
               className={classNames(
-                "daisy-btn-md justify-start text-left text-md font-normal hover:opacity-100",
+                "daisy-btn-md justify-start text-left text-md hover:opacity-100",
                 {
-                  "opacity-80": selectedFAQKey !== key,
-                  "text-primary": selectedFAQKey === key,
+                  "font-normal opacity-80 ": selectedFAQKey !== key,
+                  "font-medium text-neutral-content": selectedFAQKey === key,
                 },
               )}
             >
@@ -59,9 +59,9 @@ export function FAQEntries(): JSX.Element {
 
         {/* answers */}
         <div className="col-span-2 flex flex-col">
-          <h5 className="mb-4 font-medium text-primary">
+          <h4 className="mb-4 font-medium text-neutral-content">
             {selectedFAQ?.question}
-          </h5>
+          </h4>
           <div className="text-base-content">{selectedFAQ?.answer}</div>
         </div>
       </div>

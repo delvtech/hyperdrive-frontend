@@ -11,8 +11,8 @@ export function MobileFaq(): ReactElement {
         return (
           <Disclosure
             key={faq.key}
-            title={<span className="text-h6">{faq.question}</span>}
-            description={<p className="">{faq.answer}</p>}
+            title={<h5 className="ml-2">{faq.question}</h5>}
+            description={<div className="mx-2 mb-2">{faq.answer}</div>}
           />
         );
       })}
