@@ -56,7 +56,7 @@ export function useCloseShort({
   const { mutate: closeShort, status } = useMutation({
     mutationFn: async () => {
       if (isMutationEnabled) {
-        function onTransactionMined(txHash: Hash) {
+        function onTransactionCompleted(txHash: Hash) {
           queryClient.invalidateQueries();
           toast.success(
             <TransactionToast message="Short closed" txHash={txHash} />,
@@ -74,7 +74,7 @@ export function useCloseShort({
                 destination,
                 maturityTime,
               },
-              onTransactionMined,
+              onTransactionCompleted,
             })
           : await hyperdriveModel.closeShortWithShares({
               args: {
@@ -83,7 +83,7 @@ export function useCloseShort({
                 maturityTime,
                 minAmountOut,
               },
-              onTransactionMined,
+              onTransactionCompleted,
             });
 
         toast.loading(

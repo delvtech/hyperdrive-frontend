@@ -59,7 +59,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
   async openLongWithShares({
     args: { destination, minBondsOut, minVaultSharePrice, sharesAmount },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: Parameters<
     IReadWriteHyperdriveModel["openLongWithShares"]
   >[0]): Promise<Hash> {
@@ -73,7 +73,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
         sharesAmount: convertedSharesAmount,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
 
@@ -102,7 +102,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
   async closeLongWithShares({
     args: { bondAmountIn, destination, maturityTime, minAmountOut },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "closeLongWithShares"
@@ -117,7 +117,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
         minAmountOut: convertedMinAmountOut,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   async previewOpenShortWithShares({
@@ -138,7 +138,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
   async openShortWithShares({
     args: { bondAmount, destination, maxDeposit, minVaultSharePrice },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "openShortWithShares"
@@ -153,7 +153,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
         minVaultSharePrice,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
 
@@ -182,7 +182,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
   async closeShortWithShares({
     args: { bondAmountIn, destination, maturityTime, minAmountOut },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "closeShortWithShares"
@@ -197,7 +197,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
         minAmountOut: convertedMinAmountOut,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
 
@@ -208,7 +208,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
   async addLiquidityWithShares({
     args: { destination, contribution, maxAPR, minAPR, minLpSharePrice },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "addLiquidityWithShares"
@@ -225,7 +225,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
         minLpSharePrice,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
 
@@ -276,7 +276,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
   async removeLiquidityWithShares({
     args: { destination, lpSharesIn, minOutputPerShare },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "removeLiquidityWithShares"
@@ -290,7 +290,7 @@ export class ReadWriteStethHyperdriveModel extends ReadWriteHyperdriveModel {
         minOutputPerShare: convertedMinOutputPerShare,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   /**

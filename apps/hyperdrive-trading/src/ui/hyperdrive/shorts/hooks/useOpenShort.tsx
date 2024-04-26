@@ -73,7 +73,7 @@ export function useOpenShort({
             : undefined,
         };
 
-        function onTransactionMined(txHash: `0x${string}`) {
+        function onTransactionCompleted(txHash: `0x${string}`) {
           queryClient.invalidateQueries();
           toast.success(
             <TransactionToast message="Short opened" txHash={txHash} />,
@@ -91,7 +91,7 @@ export function useOpenShort({
                 maxDeposit: maxDeposit,
               },
               options: openShortOptions,
-              onTransactionMined,
+              onTransactionCompleted,
             })
           : await hyperdriveModel.openShortWithShares({
               args: {
@@ -101,7 +101,7 @@ export function useOpenShort({
                 maxDeposit: maxDeposit,
               },
               options: openShortOptions,
-              onTransactionMined,
+              onTransactionCompleted,
             });
 
         toast.loading(

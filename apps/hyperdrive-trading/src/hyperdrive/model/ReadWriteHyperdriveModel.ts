@@ -27,7 +27,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       baseAmount: bigint;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
   openLongWithShares(params: {
     args: {
@@ -37,7 +37,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       minBondsOut: bigint;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   // Close Longs
@@ -49,7 +49,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       destination: Address;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
   closeLongWithShares(params: {
     args: {
@@ -59,7 +59,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       destination: Address;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   // Open Shorts
@@ -72,7 +72,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       maxDeposit: bigint;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   openShortWithShares(params: {
@@ -83,7 +83,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       maxDeposit: bigint;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   // Close Shorts
@@ -96,7 +96,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       destination: Address;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
   closeShortWithShares(params: {
     args: {
@@ -106,7 +106,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       destination: Address;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   // Add LP
@@ -120,7 +120,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       maxAPR: bigint;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
   addLiquidityWithShares(params: {
     args: {
@@ -131,7 +131,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       maxAPR: bigint;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
 
   // Remove LP
@@ -142,7 +142,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       destination: Address;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
   removeLiquidityWithShares(params: {
     args: {
@@ -151,7 +151,7 @@ export interface IReadWriteHyperdriveModel extends IReadHyperdriveModel {
       destination: Address;
     };
     options?: ContractWriteOptions;
-    onTransactionMined?: (hash: Hash) => void;
+    onTransactionCompleted?: (hash: Hash) => void;
   }): Promise<Hash>;
 }
 
@@ -187,7 +187,7 @@ export class ReadWriteHyperdriveModel
   openShortWithBase({
     args: { bondAmount, destination, minVaultSharePrice, maxDeposit },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "openShortWithBase"
@@ -201,13 +201,13 @@ export class ReadWriteHyperdriveModel
         asBase: true,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   openShortWithShares({
     args: { bondAmount, destination, minVaultSharePrice, maxDeposit },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "openShortWithShares"
@@ -221,12 +221,12 @@ export class ReadWriteHyperdriveModel
         asBase: false,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   removeLiquidityWithBase({
     args: { destination, lpSharesIn, minOutputPerShare },
-    onTransactionMined,
+    onTransactionCompleted,
     options,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
@@ -240,13 +240,13 @@ export class ReadWriteHyperdriveModel
         asBase: true,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   removeLiquidityWithShares({
     args: { destination, lpSharesIn, minOutputPerShare },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "removeLiquidityWithShares"
@@ -258,14 +258,14 @@ export class ReadWriteHyperdriveModel
         minOutputPerShare,
         asBase: false,
       },
-      onTransactionMined,
+      onTransactionCompleted,
       options,
     });
   }
   closeShortWithBase({
     args: { bondAmountIn, destination, maturityTime, minAmountOut },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "closeShortWithBase"
@@ -279,13 +279,13 @@ export class ReadWriteHyperdriveModel
         asBase: true,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   closeShortWithShares({
     args: { bondAmountIn, destination, maturityTime, minAmountOut },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "closeShortWithShares"
@@ -298,14 +298,14 @@ export class ReadWriteHyperdriveModel
         minAmountOut,
         asBase: false,
       },
-      onTransactionMined,
+      onTransactionCompleted,
       options,
     });
   }
   closeLongWithBase({
     args: { bondAmountIn, destination, maturityTime, minAmountOut },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "closeLongWithBase"
@@ -319,13 +319,13 @@ export class ReadWriteHyperdriveModel
         asBase: true,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   closeLongWithShares({
     args: { bondAmountIn, destination, maturityTime, minAmountOut },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "closeLongWithShares"
@@ -338,7 +338,7 @@ export class ReadWriteHyperdriveModel
         minAmountOut,
         asBase: false,
       },
-      onTransactionMined,
+      onTransactionCompleted,
       options,
     });
   }
@@ -346,7 +346,7 @@ export class ReadWriteHyperdriveModel
   addLiquidityWithBase({
     args: { destination, contribution, maxAPR, minAPR, minLpSharePrice },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "addLiquidityWithBase"
@@ -361,13 +361,13 @@ export class ReadWriteHyperdriveModel
         asBase: true,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   addLiquidityWithShares({
     args: { destination, contribution, maxAPR, minAPR, minLpSharePrice },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "addLiquidityWithShares"
@@ -382,13 +382,13 @@ export class ReadWriteHyperdriveModel
         asBase: false,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   openLongWithBase({
     args: { destination, minBondsOut, minVaultSharePrice, baseAmount },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "openLongWithBase"
@@ -402,13 +402,13 @@ export class ReadWriteHyperdriveModel
         asBase: true,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
   openLongWithShares({
     args: { destination, minBondsOut, minVaultSharePrice, sharesAmount },
     options,
-    onTransactionMined,
+    onTransactionCompleted,
   }: ExtractMethodParams<
     IReadWriteHyperdriveModel,
     "openLongWithShares"
@@ -422,7 +422,7 @@ export class ReadWriteHyperdriveModel
         asBase: false,
       },
       options,
-      onTransactionMined,
+      onTransactionCompleted,
     });
   }
 }
