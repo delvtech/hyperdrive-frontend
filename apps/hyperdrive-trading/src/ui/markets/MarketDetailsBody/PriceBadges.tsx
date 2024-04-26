@@ -4,6 +4,7 @@ import Skeleton from "react-loading-skeleton";
 import { divideBigInt } from "src/base/divideBigInt";
 import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { Badge } from "src/ui/base/components/Badge";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useCurrentLongPrice } from "src/ui/hyperdrive/longs/hooks/useCurrentLongPrice";
 
@@ -30,7 +31,7 @@ export function PriceBadges({
   }
   return (
     <div className="flex flex-col gap-2 font-dmMono md:flex-row md:gap-4">
-      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg py-4 text-md text-neutral-content">
+      <Badge>
         1 hy{baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: longPrice ?? 0n,
@@ -38,8 +39,8 @@ export function PriceBadges({
           places: baseToken.places,
         })}{" "}
         {baseToken.symbol}
-      </div>
-      <div className="daisy-badge daisy-badge-neutral daisy-badge-lg py-4 text-md text-neutral-content">
+      </Badge>
+      <Badge>
         1 {baseToken.symbol} ≈{" "}
         {formatBalance({
           balance: divideBigInt(
@@ -52,7 +53,7 @@ export function PriceBadges({
           places: baseToken.places,
         })}{" "}
         hy{baseToken.symbol}
-      </div>
+      </Badge>
     </div>
   );
 }

@@ -176,6 +176,43 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
+   * Gets the implied variable rate of opening a short
+   */
+  async getImpliedRate({
+    bondAmount,
+    timestamp,
+    variableApy,
+    options,
+  }: {
+    bondAmount: bigint;
+    timestamp: bigint;
+    // TODO: Get this from sdk instead
+    variableApy: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
+
+    const checkpointId = getCheckpointId(
+      timestamp,
+      poolConfig.checkpointDuration,
+    );
+    const { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
+      checkpointId,
+    });
+
+    const impliedRateString = hyperwasm.calcImpliedRate(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      bondAmount.toString(),
+      openVaultSharePrice.toString(),
+      variableApy.toString(),
+    );
+
+    return BigInt(impliedRateString);
+  }
+
+  /**
    * Gets the market liquidity available for trading and removing LP.
    */
   async getIdleLiquidity(options?: ContractReadOptions): Promise<bigint> {
