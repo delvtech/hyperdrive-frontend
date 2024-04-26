@@ -28,7 +28,7 @@ export function useYieldSourceRate({
     }),
     queryFn: queryEnabled
       ? async () => {
-          const rate = await readHyperdrive?.getYieldSourceRate({});
+          const rate = await readHyperdrive?.getYieldSourceRate();
           return {
             vaultRate: rate || 0n,
             formatted: formatRate(rate || 0n),

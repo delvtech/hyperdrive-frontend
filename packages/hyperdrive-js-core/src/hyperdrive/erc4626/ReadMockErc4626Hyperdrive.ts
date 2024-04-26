@@ -41,11 +41,7 @@ export function readMockErc4626HyperdriveMixin<
       });
     }
 
-    async getYieldSourceRate({
-      options,
-    }: {
-      options?: ContractReadOptions;
-    }): Promise<bigint> {
+    async getYieldSourceRate(options?: ContractReadOptions): Promise<bigint> {
       const vault = await this.getSharesToken();
       return vault.getRate(options);
     }

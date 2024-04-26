@@ -107,11 +107,7 @@ export class ReadHyperdrive extends ReadModel {
     return this.contract.read("decimals");
   }
 
-  async getYieldSourceRate({
-    options,
-  }: {
-    options?: ContractReadOptions;
-  }): Promise<bigint> {
+  async getYieldSourceRate(options?: ContractReadOptions): Promise<bigint> {
     const { vaultSharesToken } = await this.getPoolConfig(options);
     const vault = new ReadMockErc4626({
       address: vaultSharesToken,
