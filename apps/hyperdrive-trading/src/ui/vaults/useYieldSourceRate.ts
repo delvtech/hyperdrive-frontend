@@ -20,7 +20,10 @@ export function useYieldSourceRate({
   const hyperdriveModel = useReadHyperdriveModel(hyperdriveAddress);
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
-    !!hyperdriveAddress && !!hyperdriveModel && !!publicClient;
+    !!hyperdriveAddress &&
+    !!hyperdriveModel &&
+    !!publicClient &&
+    !!readHyperdrive;
   const { data: vaultRate, status: vaultRateStatus } = useQuery({
     enabled: queryEnabled,
     queryKey: makeQueryKey("vaultRate", {
@@ -28,10 +31,10 @@ export function useYieldSourceRate({
     }),
     queryFn: queryEnabled
       ? async () => {
-          const rate = await readHyperdrive?.getYieldSourceRate();
+          const rate = await readHyperdrive.getYieldSourceRate({});
           return {
-            vaultRate: rate || 0n,
-            formatted: formatRate(rate || 0n),
+            vaultRate: rate,
+            formatted: formatRate(rate),
           };
         }
       : undefined,
