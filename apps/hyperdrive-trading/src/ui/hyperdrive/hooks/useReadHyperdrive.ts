@@ -1,4 +1,8 @@
-import { ReadHyperdrive, ReadStEthHyperdrive } from "@delvtech/hyperdrive-viem";
+import {
+  ReadHyperdrive,
+  ReadMetaMorphoHyperdrive,
+  ReadStEthHyperdrive,
+} from "@delvtech/hyperdrive-viem";
 import {
   findHyperdriveConfig,
   findYieldSourceToken,
@@ -6,6 +10,7 @@ import {
 import { useMemo } from "react";
 import { sdkCache } from "src/sdk/sdkCache";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { getIsMetaMorpho } from "src/vaults/isMetaMorpho";
 import { getIsSteth } from "src/vaults/isSteth";
 import { Address } from "viem";
 import { useChainId, usePublicClient } from "wagmi";
@@ -31,6 +36,7 @@ export function useReadHyperdrive(
       })
     : undefined;
   const isSteth = !!sharesToken && getIsSteth(sharesToken);
+  const isMetaMorpho = !!sharesToken && getIsMetaMorpho(sharesToken);
 
   return useMemo(() => {
     if (!address || !publicClient) {
@@ -45,6 +51,14 @@ export function useReadHyperdrive(
         namespace: chainId.toString(),
       });
     }
+    if (isMetaMorpho) {
+      return new ReadMetaMorphoHyperdrive({
+        address,
+        publicClient,
+        cache: sdkCache,
+        namespace: chainId.toString(),
+      });
+    }
 
     return new ReadHyperdrive({
       address,
@@ -52,5 +66,5 @@ export function useReadHyperdrive(
       cache: sdkCache,
       namespace: chainId.toString(),
     });
-  }, [address, chainId, publicClient, isSteth]);
+  }, [address, publicClient, isSteth, isMetaMorpho, chainId]);
 }
