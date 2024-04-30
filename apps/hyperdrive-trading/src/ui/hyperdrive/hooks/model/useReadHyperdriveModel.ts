@@ -15,6 +15,10 @@ import { getIsSteth } from "src/vaults/isSteth";
 import { Address } from "viem";
 import { usePublicClient } from "wagmi";
 
+/**
+ * @deprecated use useReadHyperdrive instead to get back an sdk instance instead
+ * of a model
+ */
 export function useReadHyperdriveModel(
   hyperdriveAddress: Address | undefined,
 ): IReadHyperdriveModel | undefined {
