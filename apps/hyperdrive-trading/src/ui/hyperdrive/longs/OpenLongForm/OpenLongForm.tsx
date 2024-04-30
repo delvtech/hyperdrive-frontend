@@ -5,7 +5,6 @@ import {
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
 
-import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
 import { getHasEnoughAllowance } from "src/token/getHasEnoughAllowance";
@@ -148,6 +147,7 @@ export function OpenLongForm({
   const {
     setSlippage,
     slippage,
+    slippageAsBigInt,
     activeOption: activeSlippageOption,
     setActiveOption: setActiveSlippageOption,
   } = useSlippageSettings({ decimals: activeToken.decimals });
@@ -156,7 +156,7 @@ export function OpenLongForm({
     bondsReceived &&
     adjustAmountByPercentage({
       amount: bondsReceived,
-      percentage: slippage,
+      percentage: slippageAsBigInt,
       decimals: activeToken.decimals,
       direction: "down",
     });
@@ -198,7 +198,6 @@ export function OpenLongForm({
             <SlippageSettings
               onSlippageChange={setSlippage}
               slippage={slippage}
-              decimals={activeToken.decimals}
               activeOption={activeSlippageOption}
               onActiveOptionChange={setActiveSlippageOption}
               tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
@@ -231,9 +230,7 @@ export function OpenLongForm({
                     })} ${activeToken.symbol}`
                   : undefined}
               </span>
-              <span>
-                {`Slippage: ${dnum.format([slippage, activeToken.decimals])}%`}
-              </span>
+              <span>{`Slippage: ${slippage || "0.5"}%`}</span>
             </div>
           }
           onChange={(newAmount) => setAmount(newAmount)}

@@ -1,22 +1,18 @@
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
-import * as dnum from "dnum";
 import { PercentInput } from "src/ui/base/components/PercentInput";
 
-export const AUTO_SLIPPAGE_AMOUNT = (decimals: number): bigint =>
-  dnum.from("0.5", decimals)[0];
+export const DEFAULT_SLIPPAGE_AMOUNT = "0.5";
 
 export function SlippageSettings({
   slippage,
   onSlippageChange,
-  decimals,
   activeOption,
   onActiveOptionChange,
   tooltip,
 }: {
-  slippage: bigint;
-  onSlippageChange: (slippage: bigint) => void;
-  decimals: number;
+  slippage: string;
+  onSlippageChange: (slippage: string) => void;
   activeOption: "auto" | "custom";
   onActiveOptionChange: (activeTab: "auto" | "custom") => void;
   tooltip?: string;
@@ -38,7 +34,7 @@ export function SlippageSettings({
             onClick={(e) => {
               e.preventDefault();
               onActiveOptionChange("auto");
-              onSlippageChange(AUTO_SLIPPAGE_AMOUNT(decimals));
+              onSlippageChange(DEFAULT_SLIPPAGE_AMOUNT);
             }}
             className={classNames("daisy-tab text-sm", {
               "font-bold": activeOption === "auto",
@@ -59,10 +55,10 @@ export function SlippageSettings({
           </button>
         </div>
         <PercentInput
-          value={dnum.format([slippage, decimals])}
+          value={slippage}
           onChange={(e) => {
             onActiveOptionChange("custom");
-            onSlippageChange(dnum.from(e.target.value, decimals)[0]);
+            onSlippageChange(e);
           }}
         />
       </div>

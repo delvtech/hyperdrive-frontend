@@ -131,12 +131,17 @@ export function AddLiquidityForm({
     amount: depositAmountAsBigInt,
   });
 
-  const { activeOption, setActiveOption, setSlippage, slippage } =
-    useSlippageSettings({ decimals: activeToken.decimals });
+  const {
+    activeOption,
+    setActiveOption,
+    setSlippage,
+    slippage,
+    slippageAsBigInt,
+  } = useSlippageSettings({ decimals: activeToken.decimals });
 
   const minLpSharePriceAfterSlippage = adjustAmountByPercentage({
     amount: poolInfo?.lpSharePrice || 0n,
-    percentage: slippage,
+    percentage: slippageAsBigInt,
     decimals: activeToken.decimals,
     direction: "down",
   });
@@ -189,7 +194,6 @@ export function AddLiquidityForm({
             <SlippageSettings
               onSlippageChange={setSlippage}
               slippage={slippage}
-              decimals={activeToken.decimals}
               activeOption={activeOption}
               onActiveOptionChange={setActiveOption}
               tooltip="Your transaction will revert if the liquidity provider share price changes unfavorably by more than this percentage."
@@ -211,13 +215,18 @@ export function AddLiquidityForm({
           maxValue={activeTokenBalance?.formatted}
           inputLabel="Amount to deposit"
           stat={
-            activeTokenBalance
-              ? `Balance: ${formatBalance({
-                  balance: activeTokenBalance?.value,
-                  decimals: activeToken.decimals,
-                  places: activeToken.places,
-                })} ${activeToken.symbol}`
-              : undefined
+            <div className="flex flex-col gap-1 text-xs text-neutral-content">
+              <span>
+                {activeTokenBalance
+                  ? `Balance: ${formatBalance({
+                      balance: activeTokenBalance?.value,
+                      decimals: activeToken.decimals,
+                      places: activeToken.places,
+                    })} ${activeToken.symbol}`
+                  : undefined}
+              </span>
+              <span>{`Slippage: ${slippage || "0.5"}%`}</span>
+            </div>
           }
           onChange={(newAmount) => setAmount(newAmount)}
         />
