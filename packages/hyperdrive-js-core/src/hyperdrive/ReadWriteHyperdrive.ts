@@ -77,7 +77,9 @@ export class ReadWriteHyperdrive extends ReadHyperdrive {
    * Allows an authorized address to pause this contract
    * @param paused - True to pause all deposits and false to unpause them
    */
-  @syncCacheWithTransaction<HyperdriveAbi>({ cacheKeys: ["getMarketState"] })
+  @syncCacheWithTransaction<HyperdriveAbi>({
+    cacheEntries: [{ functionName: "getMarketState" }],
+  })
   async pause({
     args: { paused },
     options,
