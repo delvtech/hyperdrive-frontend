@@ -2,7 +2,7 @@ import { InformationCircleIcon } from "@heroicons/react/24/outline";
 import classNames from "classnames";
 import { PercentInput } from "src/ui/base/components/PercentInput";
 
-export const AUTO_SLIPPAGE_AMOUNT = "0.5";
+export const DEFAULT_SLIPPAGE_AMOUNT = "0.5";
 
 export function SlippageSettings({
   slippage,
@@ -34,7 +34,7 @@ export function SlippageSettings({
             onClick={(e) => {
               e.preventDefault();
               onActiveOptionChange("auto");
-              onSlippageChange(AUTO_SLIPPAGE_AMOUNT);
+              onSlippageChange(DEFAULT_SLIPPAGE_AMOUNT);
             }}
             className={classNames("daisy-tab text-sm", {
               "font-bold": activeOption === "auto",
