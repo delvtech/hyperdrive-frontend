@@ -3,7 +3,9 @@ import {
   findBaseToken,
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
-import { ReactElement } from "react";
+import { useSearch } from "@tanstack/react-router";
+import classNames from "classnames";
+import { PropsWithChildren, ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { parseUnits } from "src/base/parseUnits";
@@ -16,6 +18,7 @@ import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
+import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 export function YieldStats({
   hyperdrive,
@@ -23,6 +26,7 @@ export function YieldStats({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
+  const { position } = useSearch({ from: MARKET_DETAILS_ROUTE });
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -69,45 +73,66 @@ export function YieldStats({
           </div>
         </div>
         <div className="flex flex-wrap gap-16">
-          <Stat
-            label="Fixed APR"
-            value={
-              fixedAPRStatus === "loading" && fixedAPR === undefined ? (
-                <Skeleton className="w-20" />
-              ) : (
-                <span className="flex items-center gap-1.5">
-                  {fixedAPR?.formatted || "0"}%
-                </span>
-              )
-            }
-            description="Fixed rate earned from opening longs, before fees and slippage are applied."
-          />
-          {isImpliedYieldFeatureFlagEnabled ? (
+          <Animated isActive={position === "Longs"}>
             <Stat
-              label="Implied Variable Rate"
-              value={`${formattedRate}%`}
-              description={`The yield source backing the hy${baseToken.symbol} in this pool.`}
-              tooltipPosition={"right"}
+              label="Fixed APR"
+              value={
+                fixedAPRStatus === "loading" && fixedAPR === undefined ? (
+                  <Skeleton className="w-20" />
+                ) : (
+                  <span className={classNames("flex items-center gap-1.5")}>
+                    {fixedAPR?.formatted || "0"}%
+                  </span>
+                )
+              }
+              description="Fixed rate earned from opening longs, before fees and slippage are applied."
             />
+          </Animated>
+          {isImpliedYieldFeatureFlagEnabled ? (
+            <Animated isActive={position === "Shorts"}>
+              <Stat
+                label="Implied Variable Rate"
+                value={`${formattedRate}%`}
+                description={`The yield source backing the hy${baseToken.symbol} in this pool.`}
+                tooltipPosition={"right"}
+              />
+            </Animated>
           ) : undefined}
-          <Stat
-            label="LP APY (7d)"
-            value={
-              lpApyStatus !== "loading" ? (
-                <span className="flex items-center gap-1.5">
-                  {lpApy === undefined
-                    ? "no data"
-                    : `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`}{" "}
-                </span>
-              ) : (
-                <Skeleton className="w-20" />
-              )
-            }
-            description={`The LP's annual return projection assuming the past 7-day performance rate continues for a year.`}
-            tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
-          />
+          <Animated isActive={position === "LP"}>
+            <Stat
+              label="LP APY (7d)"
+              value={
+                lpApyStatus !== "loading" ? (
+                  <span className="flex items-center gap-1.5">
+                    {lpApy === undefined
+                      ? "no data"
+                      : `${(lpApy * 100).toFixed(2) === "-0.00" ? "0.00" : (lpApy * 100).toFixed(2)}%`}{" "}
+                  </span>
+                ) : (
+                  <Skeleton className="w-20" />
+                )
+              }
+              description={`The LP's annual return projection assuming the past 7-day performance rate continues for a year.`}
+              tooltipPosition={isTailwindSmallScreen ? "right" : "bottom"}
+            />
+          </Animated>
         </div>
       </div>
     </Well>
+  );
+}
+
+function Animated({
+  isActive,
+  children,
+}: PropsWithChildren<{ isActive: boolean }>) {
+  return (
+    <div
+      className={classNames("transition-all duration-200 ease-in-out", {
+        "gradient-text -translate-y-1 scale-105": isActive,
+      })}
+    >
+      {children}
+    </div>
   );
 }

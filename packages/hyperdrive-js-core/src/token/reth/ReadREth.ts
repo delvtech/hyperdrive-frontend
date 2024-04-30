@@ -12,7 +12,7 @@ export interface ReadREthMixin {
   rEthContract: CachedReadContract<REthAbi>;
 
   /**
-   * Get the total supply of underlying eth in the lsEth contract.
+   * Get the total supply of underlying eth in the rETH contract.
    */
   getTotalEthSupply(options?: ContractReadOptions): Promise<bigint>;
 
