@@ -1469,19 +1469,21 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/evm-client-viem@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.3.1.tgz#e1591b9c66e75143a011636a6c383a8e90aeb0e0"
-  integrity sha512-MuGNeca7klznTT0FLx0Y6DxSHBqRMmBrkfTzaj65ykofClt297R86lLGbyk/xw8AR8UIeHSYivAzM3iPk8ZW5A==
+"@delvtech/evm-client-viem@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.4.2.tgz#feddd8a4793cf342e8d03f34b4146858cd0f27bc"
+  integrity sha512-WvC7V+Sg+i0T44aZ58zqNyDRksZpGwLRhguaEQEqwkKMJffSs2u1foUEE92oTEnNfKMrsx33i6/by05tlKkYTw==
   dependencies:
-    "@delvtech/evm-client" "0.3.1"
+    "@delvtech/evm-client" "0.4.2"
 
-"@delvtech/evm-client@0.3.1", "@delvtech/evm-client@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.3.1.tgz#96382a6a99d3297d61662d7619a48c5e12347601"
-  integrity sha512-eqWkSCppWiQ9fq9m+iToVxyHlvwQ3amCNLqfFby3v0+9EgJeHD5ZqtnZZym4pEp7oufNdV2hbEgdJWjiM7Z1FQ==
+"@delvtech/evm-client@0.4.2", "@delvtech/evm-client@^0.4.2":
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.4.2.tgz#11a26ec4e9ddf6093771edb09343d9d5d1b3dc3f"
+  integrity sha512-9aJvszoCg3sfWwo4uHDS/S5nlJ8rIgsqD2nwbKjO/hn/lYFKYViOLMJVIY+vcmyhZpvjgU+ihdpbPnDZe4LHkw==
   dependencies:
+    "@types/lodash.ismatch" "^4.4.9"
     fast-safe-stringify "^2.1.1"
+    lodash.ismatch "^4.4.0"
     lru-cache "^10.0.1"
 
 "@delvtech/hyperdrive-wasm@^0.13.0":
@@ -3996,6 +3998,13 @@
   version "4.6.9"
   resolved "https://registry.yarnpkg.com/@types/lodash.groupby/-/lodash.groupby-4.6.9.tgz#ea1aa9da1038ca50894d1fe1a3b5dabdf865d99c"
   integrity sha512-z2xtCX2ko7GrqORnnYea4+ksT7jZNAvaOcLd6mP9M7J09RHvJs06W8BGdQQAX8ARef09VQLdeRilSOcfHlDQJQ==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash.ismatch@^4.4.9":
+  version "4.4.9"
+  resolved "https://registry.yarnpkg.com/@types/lodash.ismatch/-/lodash.ismatch-4.4.9.tgz#97b4317f7dc3975bb51660a0f9a055ac7b67b134"
+  integrity sha512-qWihnStOPKH8urljLGm6ZOEdN/5Bt4vxKR81tL3L4ArUNLvcf9RW3QSnPs21eix5BiqioSWq4aAXD4Iep+d0fw==
   dependencies:
     "@types/lodash" "*"
 
@@ -10416,6 +10425,11 @@ lodash.isequal@4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
   integrity sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ==
+
+lodash.ismatch@^4.4.0:
+  version "4.4.0"
+  resolved "https://registry.yarnpkg.com/lodash.ismatch/-/lodash.ismatch-4.4.0.tgz#756cb5150ca3ba6f11085a78849645f188f85f37"
+  integrity sha512-fPMfXjGQEV9Xsq/8MTSgUf255gawYRbjwMyDbcvDhXgV7enSZA0hynz6vMPnpAb5iONEzBHBPsT+0zes5Z301g==
 
 lodash.mapvalues@^4.6.0:
   version "4.6.0"

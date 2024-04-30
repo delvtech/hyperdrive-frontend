@@ -3,6 +3,7 @@ import {
   ContractWriteOptions,
 } from "@delvtech/evm-client";
 import { ReadWriteContractFactory } from "src/evm-client/contractFactory";
+import { syncCacheWithTransaction } from "src/evm-client/syncCacheWithTransaction";
 import { ReadWriteContractModelOptions } from "src/model/ReadWriteModel";
 import { ReadWriteToken } from "src/token/ReadWriteToken";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
@@ -18,6 +19,9 @@ export class ReadWriteErc20 extends ReadErc20 implements ReadWriteToken {
     super(options);
   }
 
+  @syncCacheWithTransaction<Erc20Abi>({
+    cacheEntries: [{ functionName: "allowance" }],
+  })
   async approve({
     spender,
     amount,
@@ -33,10 +37,6 @@ export class ReadWriteErc20 extends ReadErc20 implements ReadWriteToken {
       { spender, amount },
       options,
     );
-    this.contract.deleteRead("allowance", {
-      owner: await this.contract.getSignerAddress(),
-      spender,
-    });
     return hash;
   }
 }

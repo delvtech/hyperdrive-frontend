@@ -64,7 +64,7 @@ export function useAddLiquidity({
   const { mutate: addLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        function onTransactionMined(txHash: Hash) {
+        function onTransactionCompleted(txHash: Hash) {
           queryClient.invalidateQueries();
           toast.success(
             <TransactionToast message="Liquidity added" txHash={txHash} />,
@@ -83,7 +83,7 @@ export function useAddLiquidity({
                 destination,
               },
               options: { value: ethValue },
-              onTransactionMined,
+              onTransactionCompleted,
             })
           : await hyperdriveModel.addLiquidityWithShares({
               args: {
@@ -94,7 +94,7 @@ export function useAddLiquidity({
                 destination,
               },
               options: { value: ethValue },
-              onTransactionMined,
+              onTransactionCompleted,
             });
 
         toast.loading(

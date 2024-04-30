@@ -53,7 +53,7 @@ export function useRemoveLiquidity({
   const { mutate: removeLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        function onTransactionMined(txHash: Hash) {
+        function onTransactionCompleted(txHash: Hash) {
           queryClient.invalidateQueries();
           toast.success(
             <TransactionToast message="Liquidity removed" txHash={txHash} />,
@@ -70,7 +70,7 @@ export function useRemoveLiquidity({
                 minOutputPerShare,
                 destination,
               },
-              onTransactionMined,
+              onTransactionCompleted,
             })
           : await hyperdriveModel.removeLiquidityWithShares({
               args: {
@@ -78,7 +78,7 @@ export function useRemoveLiquidity({
                 lpSharesIn,
                 minOutputPerShare,
               },
-              onTransactionMined,
+              onTransactionCompleted,
             });
 
         toast.loading(
