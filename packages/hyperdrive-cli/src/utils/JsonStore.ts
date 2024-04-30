@@ -71,7 +71,9 @@ export class JsonStore<T extends object = Record<string, unknown>> {
   private readonly _validator?: ValidateFunction;
 
   /**
-   * Use a JSON file to persist key-value data
+   * Use a JSON file to persist key-value data, with optional schema validation.
+   *
+   *
    */
   constructor(options: JsonStoreOptions<T>) {
     const filename = `${removeJsonExtension(options.name)}.json`;
@@ -135,7 +137,6 @@ export class JsonStore<T extends object = Record<string, unknown>> {
 
     if (typeof keyOrValues !== "object" && value) {
       validateSerializable(keyOrValues.toString(), value);
-      data[keyOrValues] = value;
     } else {
       for (const [key, value] of Object.entries(keyOrValues)) {
         validateSerializable(key as string, value);
@@ -163,16 +164,7 @@ export class JsonStore<T extends object = Record<string, unknown>> {
   // TODO: consider deleting because of the smart types
   has(...keys: (keyof T)[]): boolean {
     const data = this.data;
-
-    let hasAllKeys = true;
-
-    for (const key of keys) {
-      if (!(key in data)) {
-        hasAllKeys = false;
-      }
-    }
-
-    return hasAllKeys;
+    return keys.every((key) => key in data);
   }
 
   /**

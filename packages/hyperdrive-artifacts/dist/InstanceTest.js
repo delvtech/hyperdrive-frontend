@@ -196,6 +196,20 @@ export const InstanceTest = {
         },
         {
             "type": "function",
+            "name": "test__name",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "test__version",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "test_open_long_with_base",
             "inputs": [
                 {
@@ -243,6 +257,20 @@ export const InstanceTest = {
                     "internalType": "uint256"
                 }
             ],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "test_sweep_failure_directSweep",
+            "inputs": [],
+            "outputs": [],
+            "stateMutability": "nonpayable"
+        },
+        {
+            "type": "function",
+            "name": "test_sweep_success",
+            "inputs": [],
             "outputs": [],
             "stateMutability": "nonpayable"
         },
@@ -1488,10 +1516,14 @@ export const InstanceTest = {
         "targetSenders()": "3e5e3c23",
         "test__deployAndInitialize__asBase()": "1966d537",
         "test__deployAndInitialize__asShares()": "938f9cda",
+        "test__name()": "7b09763e",
+        "test__version()": "a10c7034",
         "test_open_long_with_base(uint256)": "49ccc4ad",
         "test_open_long_with_shares(uint256)": "6f3a66c7",
         "test_open_short_with_base(uint256)": "85b26001",
         "test_open_short_with_shares(uint256)": "a89a9ae2",
+        "test_sweep_failure_directSweep()": "41631a79",
+        "test_sweep_success()": "9428be5e",
         "whaleTransfer(address,address,address)": "10716760",
         "whaleTransfer(address,address,uint256,address)": "3e5e0d26"
     }

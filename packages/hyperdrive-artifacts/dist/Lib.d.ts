@@ -4,6 +4,24 @@ export declare const Lib: {
         readonly name: "eq";
         readonly inputs: readonly [{
             readonly name: "b1";
+            readonly type: "string";
+            readonly internalType: "string";
+        }, {
+            readonly name: "b2";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "bool";
+            readonly internalType: "bool";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
+        readonly name: "eq";
+        readonly inputs: readonly [{
+            readonly name: "b1";
             readonly type: "bytes";
             readonly internalType: "bytes";
         }, {
@@ -39,6 +57,7 @@ export declare const Lib: {
     bytecode: `0x${string}`;
     methodIdentifiers: {
         readonly "eq(bytes,bytes)": "cdb16840";
+        readonly "eq(string,string)": "21a49642";
         readonly "neq(bytes,bytes)": "d37a20ba";
     };
 };

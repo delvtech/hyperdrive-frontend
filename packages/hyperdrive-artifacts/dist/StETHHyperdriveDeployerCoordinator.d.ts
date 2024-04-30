@@ -357,6 +357,16 @@ export declare const StETHHyperdriveDeployerCoordinator: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "target0Deployer";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -405,6 +415,16 @@ export declare const StETHHyperdriveDeployerCoordinator: {
             readonly internalType: "address";
         }];
         readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
     }, {
         readonly type: "error";
         readonly name: "DeploymentAlreadyExists";
@@ -495,11 +515,13 @@ export declare const StETHHyperdriveDeployerCoordinator: {
         readonly "factory()": "c45a0155";
         readonly "initialize(bytes32,address,uint256,uint256,(address,bool,bytes))": "16abfc70";
         readonly "lido()": "23509a2d";
+        readonly "name()": "06fdde03";
         readonly "target0Deployer()": "ab71905f";
         readonly "target1Deployer()": "a085fa30";
         readonly "target2Deployer()": "b6cb1118";
         readonly "target3Deployer()": "aa8cd6c4";
         readonly "target4Deployer()": "966ecd1c";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=StETHHyperdriveDeployerCoordinator.d.ts.map

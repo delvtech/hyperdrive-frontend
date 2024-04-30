@@ -510,6 +510,16 @@ export declare const EzETHTarget0: {
         readonly stateMutability: "pure";
     }, {
         readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
         readonly name: "nonces";
         readonly inputs: readonly [{
             readonly name: "account";
@@ -810,6 +820,16 @@ export declare const EzETHTarget0: {
             readonly internalType: "address";
         }];
         readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
     }, {
         readonly type: "event";
         readonly name: "AddLiquidity";
@@ -1444,6 +1464,7 @@ export declare const EzETHTarget0: {
         readonly "isApprovedForAll(address,address)": "e985e9c5";
         readonly "isPauser(address)": "46fbf68e";
         readonly "load(uint256[])": "becee9c3";
+        readonly "name()": "06fdde03";
         readonly "name(uint256)": "00ad800c";
         readonly "nonces(address)": "7ecebe00";
         readonly "pause(bool)": "02329a29";
@@ -1464,6 +1485,7 @@ export declare const EzETHTarget0: {
         readonly "transferFrom(uint256,address,address,uint256)": "1c0f12b6";
         readonly "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc";
         readonly "vaultSharesToken()": "0a4e1493";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=EzETHTarget0.d.ts.map

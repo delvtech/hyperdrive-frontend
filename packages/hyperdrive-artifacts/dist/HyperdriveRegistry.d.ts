@@ -1,7 +1,11 @@
 export declare const HyperdriveRegistry: {
     abi: readonly [{
         readonly type: "constructor";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly name: "_name";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
@@ -29,6 +33,16 @@ export declare const HyperdriveRegistry: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "setHyperdriveInfo";
         readonly inputs: readonly [{
             readonly name: "_hyperdriveInstance";
@@ -51,6 +65,16 @@ export declare const HyperdriveRegistry: {
         }];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
     }, {
         readonly type: "event";
         readonly name: "GovernanceUpdated";
@@ -85,8 +109,10 @@ export declare const HyperdriveRegistry: {
     methodIdentifiers: {
         readonly "getHyperdriveInfo(address)": "32ddcb88";
         readonly "governance()": "5aa6e675";
+        readonly "name()": "06fdde03";
         readonly "setHyperdriveInfo(address,uint256)": "be44e71a";
         readonly "updateGovernance(address)": "b2561263";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=HyperdriveRegistry.d.ts.map

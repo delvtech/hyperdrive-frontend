@@ -2,6 +2,25 @@ export const IHyperdriveGovernedRegistry = {
     abi: [
         {
             "type": "function",
+            "name": "getHyperdriveInfo",
+            "inputs": [
+                {
+                    "name": "_hyperdriveInstance",
+                    "type": "address",
+                    "internalType": "address"
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "uint256",
+                    "internalType": "uint256"
+                }
+            ],
+            "stateMutability": "view"
+        },
+        {
+            "type": "function",
             "name": "setHyperdriveInfo",
             "inputs": [
                 {
@@ -71,6 +90,7 @@ export const IHyperdriveGovernedRegistry = {
     ],
     bytecode: '0x',
     methodIdentifiers: {
+        "getHyperdriveInfo(address)": "32ddcb88",
         "setHyperdriveInfo(address,uint256)": "be44e71a",
         "updateGovernance(address)": "b2561263"
     }

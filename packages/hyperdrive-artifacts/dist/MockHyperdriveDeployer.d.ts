@@ -239,6 +239,26 @@ export declare const MockHyperdriveDeployer: {
         }];
         readonly stateMutability: "payable";
     }, {
+        readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
         readonly type: "error";
         readonly name: "DeploymentAlreadyExists";
         readonly inputs: readonly [];
@@ -324,6 +344,8 @@ export declare const MockHyperdriveDeployer: {
         readonly "deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)": "1ae6f515";
         readonly "deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)": "0b3c4f86";
         readonly "initialize(bytes32,address,uint256,uint256,(address,bool,bytes))": "16abfc70";
+        readonly "name()": "06fdde03";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=MockHyperdriveDeployer.d.ts.map

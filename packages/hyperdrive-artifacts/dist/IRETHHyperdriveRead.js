@@ -488,6 +488,19 @@ export const IRETHHyperdriveRead = {
         },
         {
             "type": "function",
+            "name": "name",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "pure"
+        },
+        {
+            "type": "function",
             "name": "nonces",
             "inputs": [
                 {
@@ -597,6 +610,19 @@ export const IRETHHyperdriveRead = {
                 }
             ],
             "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "version",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "pure"
         }
     ],
     bytecode: '0x',
@@ -614,12 +640,14 @@ export const IRETHHyperdriveRead = {
         "isApprovedForAll(address,address)": "e985e9c5",
         "isPauser(address)": "46fbf68e",
         "load(uint256[])": "becee9c3",
+        "name()": "06fdde03",
         "name(uint256)": "00ad800c",
         "nonces(address)": "7ecebe00",
         "perTokenApprovals(uint256,address,address)": "21ff32a9",
         "rocketStorage()": "67601a8e",
         "symbol(uint256)": "4e41a1fb",
         "totalSupply(uint256)": "bd85b039",
-        "vaultSharesToken()": "0a4e1493"
+        "vaultSharesToken()": "0a4e1493",
+        "version()": "54fd4d50"
     }
 };

@@ -800,6 +800,19 @@ export const IRETHHyperdrive = {
         },
         {
             "type": "function",
+            "name": "name",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "pure"
+        },
+        {
+            "type": "function",
             "name": "nonces",
             "inputs": [
                 {
@@ -1444,6 +1457,19 @@ export const IRETHHyperdrive = {
                 }
             ],
             "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "version",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "pure"
         },
         {
             "type": "event",
@@ -2299,6 +2325,7 @@ export const IRETHHyperdrive = {
         "isApprovedForAll(address,address)": "e985e9c5",
         "isPauser(address)": "46fbf68e",
         "load(uint256[])": "becee9c3",
+        "name()": "06fdde03",
         "name(uint256)": "00ad800c",
         "nonces(address)": "7ecebe00",
         "openLong(uint256,uint256,uint256,(address,bool,bytes))": "cba2e58d",
@@ -2326,6 +2353,7 @@ export const IRETHHyperdrive = {
         "totalSupply(uint256)": "bd85b039",
         "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
         "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc",
-        "vaultSharesToken()": "0a4e1493"
+        "vaultSharesToken()": "0a4e1493",
+        "version()": "54fd4d50"
     }
 };

@@ -24,8 +24,6 @@ const viemChains = {
   [formatChainName(polygon.name)]: polygon,
 };
 
-type ViemChain = keyof typeof viemChains;
-
 const promptChoices = [
   ...Object.keys(viemChains).map((chainName) => {
     return {
@@ -39,6 +37,8 @@ const promptChoices = [
   },
 ];
 
+const defaultClient = new Client();
+
 export const chainOption = {
   alias: ["chain"],
   description: `The chain to target. Can be one of ${promptChoices
@@ -51,7 +51,7 @@ export const chainOption = {
 
 export async function getChain(
   chainOptionGetter: OptionGetter<string>,
-  client: Client,
+  client = defaultClient,
 ): Promise<Chain> {
   const chosenChain = (await chainOptionGetter({
     prompt: {
@@ -91,3 +91,5 @@ export async function getChain(
 function formatChainName<K extends string>(name: K): HyphenCase<K> {
   return name.replace(" ", "-").toLowerCase() as HyphenCase<K>;
 }
+
+type ViemChain = keyof typeof viemChains;

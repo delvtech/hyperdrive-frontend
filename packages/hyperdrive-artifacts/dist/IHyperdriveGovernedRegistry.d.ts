@@ -1,6 +1,20 @@
 export declare const IHyperdriveGovernedRegistry: {
     abi: readonly [{
         readonly type: "function";
+        readonly name: "getHyperdriveInfo";
+        readonly inputs: readonly [{
+            readonly name: "_hyperdriveInstance";
+            readonly type: "address";
+            readonly internalType: "address";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "setHyperdriveInfo";
         readonly inputs: readonly [{
             readonly name: "_hyperdriveInstance";
@@ -55,6 +69,7 @@ export declare const IHyperdriveGovernedRegistry: {
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
+        readonly "getHyperdriveInfo(address)": "32ddcb88";
         readonly "setHyperdriveInfo(address,uint256)": "be44e71a";
         readonly "updateGovernance(address)": "b2561263";
     };

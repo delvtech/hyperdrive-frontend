@@ -357,6 +357,16 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
         readonly stateMutability: "payable";
     }, {
         readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "renzoOracle";
         readonly inputs: readonly [];
         readonly outputs: readonly [{
@@ -425,6 +435,16 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
             readonly internalType: "address";
         }];
         readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
     }, {
         readonly type: "error";
         readonly name: "AddressEmptyCode";
@@ -551,6 +571,7 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
         readonly "ezETH()": "13a73c78";
         readonly "factory()": "c45a0155";
         readonly "initialize(bytes32,address,uint256,uint256,(address,bool,bytes))": "16abfc70";
+        readonly "name()": "06fdde03";
         readonly "renzoOracle()": "892866a4";
         readonly "restakeManager()": "ff0996b5";
         readonly "target0Deployer()": "ab71905f";
@@ -558,6 +579,7 @@ export declare const EzETHHyperdriveDeployerCoordinator: {
         readonly "target2Deployer()": "b6cb1118";
         readonly "target3Deployer()": "aa8cd6c4";
         readonly "target4Deployer()": "966ecd1c";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=EzETHHyperdriveDeployerCoordinator.d.ts.map

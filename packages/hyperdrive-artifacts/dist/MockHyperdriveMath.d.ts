@@ -168,6 +168,24 @@ export declare const MockHyperdriveMath: {
         readonly stateMutability: "pure";
     }, {
         readonly type: "function";
+        readonly name: "calculateEffectiveShareReserves";
+        readonly inputs: readonly [{
+            readonly name: "_shareReserves";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }, {
+            readonly name: "_shareAdjustment";
+            readonly type: "int256";
+            readonly internalType: "int256";
+        }];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "uint256";
+            readonly internalType: "uint256";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
         readonly name: "calculateInitialBondReserves";
         readonly inputs: readonly [{
             readonly name: "_effectiveShareReserves";
@@ -628,6 +646,7 @@ export declare const MockHyperdriveMath: {
         readonly "calculateAbsoluteMaxLong((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256)": "a280a282";
         readonly "calculateCloseLong(uint256,uint256,uint256,uint256,uint256,uint256,uint256)": "94169d49";
         readonly "calculateCloseShort(uint256,uint256,uint256,uint256,uint256,uint256,uint256)": "f87845f2";
+        readonly "calculateEffectiveShareReserves(uint256,int256)": "bc1e1065";
         readonly "calculateInitialBondReserves(uint256,uint256,uint256,uint256,uint256)": "82a4d306";
         readonly "calculateMaxLong((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),int256,uint256)": "3f77b617";
         readonly "calculateMaxShort((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),int256,uint256)": "9e489b99";

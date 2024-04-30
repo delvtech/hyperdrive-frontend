@@ -401,6 +401,19 @@ export const HyperdriveDeployerCoordinator = {
         },
         {
             "type": "function",
+            "name": "name",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "pure"
+        },
+        {
+            "type": "function",
             "name": "target0Deployer",
             "inputs": [],
             "outputs": [
@@ -463,6 +476,19 @@ export const HyperdriveDeployerCoordinator = {
                 }
             ],
             "stateMutability": "view"
+        },
+        {
+            "type": "function",
+            "name": "version",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "pure"
         },
         {
             "type": "error",
@@ -573,10 +599,12 @@ export const HyperdriveDeployerCoordinator = {
         "deployments(bytes32)": "37404017",
         "factory()": "c45a0155",
         "initialize(bytes32,address,uint256,uint256,(address,bool,bytes))": "16abfc70",
+        "name()": "06fdde03",
         "target0Deployer()": "ab71905f",
         "target1Deployer()": "a085fa30",
         "target2Deployer()": "b6cb1118",
         "target3Deployer()": "aa8cd6c4",
-        "target4Deployer()": "966ecd1c"
+        "target4Deployer()": "966ecd1c",
+        "version()": "54fd4d50"
     }
 };

@@ -375,6 +375,16 @@ export declare const IRETHHyperdriveRead: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
+    }, {
+        readonly type: "function";
         readonly name: "nonces";
         readonly inputs: readonly [{
             readonly name: "owner";
@@ -457,6 +467,16 @@ export declare const IRETHHyperdriveRead: {
             readonly internalType: "address";
         }];
         readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "pure";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
@@ -473,6 +493,7 @@ export declare const IRETHHyperdriveRead: {
         readonly "isApprovedForAll(address,address)": "e985e9c5";
         readonly "isPauser(address)": "46fbf68e";
         readonly "load(uint256[])": "becee9c3";
+        readonly "name()": "06fdde03";
         readonly "name(uint256)": "00ad800c";
         readonly "nonces(address)": "7ecebe00";
         readonly "perTokenApprovals(uint256,address,address)": "21ff32a9";
@@ -480,6 +501,7 @@ export declare const IRETHHyperdriveRead: {
         readonly "symbol(uint256)": "4e41a1fb";
         readonly "totalSupply(uint256)": "bd85b039";
         readonly "vaultSharesToken()": "0a4e1493";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=IRETHHyperdriveRead.d.ts.map

@@ -1,7 +1,7 @@
 import { OptionConfig } from "clide-js";
 
 export const rpcUrlOption = {
-  alias: ["rpc", "rpc-url"],
+  alias: ["rpc-url"],
   description: "An RPC URL to send the transaction request to.",
   type: "string",
   required: true,

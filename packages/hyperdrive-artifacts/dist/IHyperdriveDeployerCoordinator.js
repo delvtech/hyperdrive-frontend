@@ -308,6 +308,32 @@ export const IHyperdriveDeployerCoordinator = {
             "stateMutability": "payable"
         },
         {
+            "type": "function",
+            "name": "name",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "pure"
+        },
+        {
+            "type": "function",
+            "name": "version",
+            "inputs": [],
+            "outputs": [
+                {
+                    "name": "",
+                    "type": "string",
+                    "internalType": "string"
+                }
+            ],
+            "stateMutability": "pure"
+        },
+        {
             "type": "error",
             "name": "DeploymentAlreadyExists",
             "inputs": []
@@ -412,6 +438,8 @@ export const IHyperdriveDeployerCoordinator = {
     methodIdentifiers: {
         "deploy(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,bytes32)": "1ae6f515",
         "deployTarget(bytes32,(address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,uint256,bytes32)": "0b3c4f86",
-        "initialize(bytes32,address,uint256,uint256,(address,bool,bytes))": "16abfc70"
+        "initialize(bytes32,address,uint256,uint256,(address,bool,bytes))": "16abfc70",
+        "name()": "06fdde03",
+        "version()": "54fd4d50"
     }
 };
