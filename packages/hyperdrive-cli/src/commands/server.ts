@@ -69,7 +69,6 @@ export default command({
 
       return end();
     }
-
     const hre = hardhat.default;
 
     const host = await options.host();

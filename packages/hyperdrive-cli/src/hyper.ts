@@ -6,7 +6,7 @@ import signale from "signale";
 run({
   plugins: [
     help({
-      maxWidth: 80,
+      maxWidth: 100,
     }),
     commandMenu({
       title: "Hyperdrive CLI",
@@ -15,9 +15,9 @@ run({
     }),
   ],
 })
-  .then(() => {
-    process.exit(0);
-  })
   .catch((error) => {
     signale.error(error);
+  })
+  .then(() => {
+    process.exit(0);
   });

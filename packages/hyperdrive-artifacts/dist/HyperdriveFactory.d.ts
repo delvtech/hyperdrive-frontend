@@ -112,6 +112,10 @@ export declare const HyperdriveFactory: {
                 readonly type: "bytes32";
                 readonly internalType: "bytes32";
             }];
+        }, {
+            readonly name: "_name";
+            readonly type: "string";
+            readonly internalType: "string";
         }];
         readonly stateMutability: "nonpayable";
     }, {
@@ -700,6 +704,16 @@ export declare const HyperdriveFactory: {
         readonly stateMutability: "view";
     }, {
         readonly type: "function";
+        readonly name: "name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "removeDeployerCoordinator";
         readonly inputs: readonly [{
             readonly name: "_deployerCoordinator";
@@ -936,6 +950,16 @@ export declare const HyperdriveFactory: {
         }];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [{
+            readonly name: "";
+            readonly type: "string";
+            readonly internalType: "string";
+        }];
+        readonly stateMutability: "view";
     }, {
         readonly type: "event";
         readonly name: "CheckpointDurationResolutionUpdated";
@@ -1409,6 +1433,7 @@ export declare const HyperdriveFactory: {
         readonly "minFixedAPR()": "d23d7ea3";
         readonly "minPositionDuration()": "daf012e6";
         readonly "minTimeStretchAPR()": "d6f50169";
+        readonly "name()": "06fdde03";
         readonly "removeDeployerCoordinator(address,uint256)": "411c3035";
         readonly "sweepCollector()": "10780f73";
         readonly "updateCheckpointDurationResolution(uint256)": "11e77bfe";
@@ -1429,6 +1454,7 @@ export declare const HyperdriveFactory: {
         readonly "updateMinPositionDuration(uint256)": "e71f34b3";
         readonly "updateMinTimeStretchAPR(uint256)": "83b361e8";
         readonly "updateSweepCollector(address)": "8627a4f0";
+        readonly "version()": "54fd4d50";
     };
 };
 //# sourceMappingURL=HyperdriveFactory.d.ts.map

@@ -1,9 +1,10 @@
 import { MockERC4626 } from "@delvtech/hyperdrive-artifacts/MockERC4626";
 import { command } from "clide-js";
-import signale from "signale";
 import { Address, parseUnits } from "viem";
-import { deployContract } from "../../utils/deployContract.js";
-import { DeployOptions } from "../deploy.js";
+import { adminOption } from "../../common-options/admin.js";
+import { competitionModeOption } from "../../common-options/competition-mode.js";
+import { maxMintAmountOption } from "../../common-options/max-mint-amount.js";
+import { DeployData } from "../deploy.js";
 
 export default command({
   description:
@@ -19,48 +20,29 @@ export default command({
     name: {
       description: "The name of the shares token.",
       type: "string",
-      required: true,
       default: "Shares Token",
     },
     symbol: {
       description: "The symbol of the shares token.",
       type: "string",
-      required: true,
       default: "sBASE",
     },
     rate: {
       alias: ["initial-rate"],
-      description: "The initial interest rate. (In token units, not wei)",
+      description: "The initial interest rate.",
       type: "string",
-      required: true,
       default: "0.05",
     },
-    admin: {
-      description:
-        "The address of the contract owner. When in competition mode, only the owner can call the mint, burn, and setRate functions.",
-      type: "string",
-    },
-    competition: {
-      alias: ["competition-mode"],
-      description:
-        "Enable competition mode. This will restrict mint, burn, and setRate functions to the contract owner.",
-      type: "boolean",
-      default: false,
-    },
-    max: {
-      alias: ["max-mint-amount"],
-      description:
-        "The maximum amount that can be minted at once. (In token units, not wei)",
-      type: "string",
-      default: "1000000",
-    },
+    competition: competitionModeOption,
+    admin: adminOption,
+    max: maxMintAmountOption,
   },
 
-  handler: async ({ data, options }) => {
-    const { account, chain, rpcUrl } = data as DeployOptions;
+  handler: async ({ data, options, next }) => {
+    const { account, deployer } = data as DeployData;
 
     const token = await options.token({
-      prompt: "Enter ERC20Mintable address.",
+      prompt: "Enter ERC20Mintable address",
     });
 
     const name = await options.name({
@@ -83,35 +65,28 @@ export default command({
             message: "Enter admin address",
             initial: account.address,
           }
-        : undefined,
+        : // If competition mode is disabled, the admin address has no effect,
+          // so we don't need to prompt for it.
+          undefined,
     });
 
     const max = await options.max();
 
-    signale.pending("Deploying MockERC4626...");
-
-    const deployedContract = await deployContract({
+    const deployedContract = await deployer.deploy({
+      name: "MockERC4626",
       abi: MockERC4626.abi,
-      bytecode: MockERC4626.bytecode.object,
-      account,
-      rpcUrl,
-      chain,
+      bytecode: MockERC4626.bytecode,
       args: [
         token as Address,
         name,
         symbol,
-        BigInt(parseUnits(rate, 18)),
+        BigInt(parseUnits(rate.toString(), 18)),
         (admin || account.address) as Address,
         isCompetitionMode,
         BigInt(parseUnits(max, 18)),
       ],
-      onSubmitted: (txHash) => {
-        signale.pending(`MockERC4626 deployment tx submitted: ${txHash}`);
-      },
     });
 
-    signale.success(
-      `MockERC4626 contract deployed: ${deployedContract.address}`,
-    );
+    next(deployedContract);
   },
 });

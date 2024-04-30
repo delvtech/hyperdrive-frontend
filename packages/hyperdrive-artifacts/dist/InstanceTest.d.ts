@@ -151,6 +151,18 @@ export declare const InstanceTest: {
         readonly stateMutability: "nonpayable";
     }, {
         readonly type: "function";
+        readonly name: "test__name";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
+        readonly name: "test__version";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [];
+        readonly stateMutability: "view";
+    }, {
+        readonly type: "function";
         readonly name: "test_open_long_with_base";
         readonly inputs: readonly [{
             readonly name: "basePaid";
@@ -187,6 +199,18 @@ export declare const InstanceTest: {
             readonly type: "uint256";
             readonly internalType: "uint256";
         }];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "test_sweep_failure_directSweep";
+        readonly inputs: readonly [];
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+    }, {
+        readonly type: "function";
+        readonly name: "test_sweep_success";
+        readonly inputs: readonly [];
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
     }, {
@@ -1182,10 +1206,14 @@ export declare const InstanceTest: {
         readonly "targetSenders()": "3e5e3c23";
         readonly "test__deployAndInitialize__asBase()": "1966d537";
         readonly "test__deployAndInitialize__asShares()": "938f9cda";
+        readonly "test__name()": "7b09763e";
+        readonly "test__version()": "a10c7034";
         readonly "test_open_long_with_base(uint256)": "49ccc4ad";
         readonly "test_open_long_with_shares(uint256)": "6f3a66c7";
         readonly "test_open_short_with_base(uint256)": "85b26001";
         readonly "test_open_short_with_shares(uint256)": "a89a9ae2";
+        readonly "test_sweep_failure_directSweep()": "41631a79";
+        readonly "test_sweep_success()": "9428be5e";
         readonly "whaleTransfer(address,address,address)": "10716760";
         readonly "whaleTransfer(address,address,uint256,address)": "3e5e0d26";
     };

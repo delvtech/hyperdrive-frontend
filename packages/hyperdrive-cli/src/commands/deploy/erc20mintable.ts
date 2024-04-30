@@ -1,9 +1,10 @@
 import { ERC20Mintable } from "@delvtech/hyperdrive-artifacts/ERC20Mintable";
 import { command } from "clide-js";
-import signale from "signale";
 import { Address, parseUnits } from "viem";
-import { deployContract } from "../../utils/deployContract.js";
-import { DeployOptions } from "../deploy.js";
+import { adminOption } from "../../common-options/admin.js";
+import { competitionModeOption } from "../../common-options/competition-mode.js";
+import { maxMintAmountOption } from "../../common-options/max-mint-amount.js";
+import { DeployData } from "../deploy.js";
 
 export default command({
   description:
@@ -11,46 +12,28 @@ export default command({
 
   options: {
     name: {
+      alias: ["n"],
       description: "The name of the token",
       type: "string",
-      required: true,
       default: "Mintable Token",
     },
     symbol: {
       description: "The symbol of the token",
       type: "string",
-      required: true,
       default: "MINT",
     },
     decimals: {
       description: "The number of decimals the token uses",
       type: "number",
-      required: true,
       default: 18,
     },
-    admin: {
-      description:
-        "The address of the contract owner. When in competition mode, only the owner can call the mint and burn functions.",
-      type: "string",
-    },
-    competition: {
-      alias: ["competition-mode"],
-      description:
-        "Enable competition mode. This will restrict mint and burn functions to the contract owner.",
-      type: "boolean",
-      default: false,
-    },
-    max: {
-      alias: ["max-mint-amount"],
-      description:
-        "The maximum amount that can be minted at once. (In token units, not wei)",
-      type: "string",
-      default: "1000000",
-    },
+    competition: competitionModeOption,
+    admin: adminOption,
+    max: maxMintAmountOption,
   },
 
   handler: async ({ data, options, next }) => {
-    const { account, chain, rpcUrl } = data as DeployOptions;
+    const { account, deployer } = data as DeployData;
 
     const name = await options.name({
       prompt: "Enter token name",
@@ -74,19 +57,17 @@ export default command({
             message: "Enter admin address",
             initial: account.address,
           }
-        : undefined,
+        : // If competition mode is disabled, the admin address has no effect,
+          // so we don't need to prompt for it.
+          undefined,
     });
 
     const max = await options.max();
 
-    signale.pending("Deploying ERC20Mintable...");
-
-    const mintable = await deployContract({
+    const deployedContract = await deployer.deploy({
+      name: "ERC20Mintable",
       abi: ERC20Mintable.abi,
-      bytecode: ERC20Mintable.bytecode.object,
-      account,
-      rpcUrl,
-      chain,
+      bytecode: ERC20Mintable.bytecode,
       args: [
         name,
         symbol,
@@ -95,13 +76,8 @@ export default command({
         isCompetitionMode,
         BigInt(parseUnits(max, decimals)),
       ],
-      onSubmitted: (txHash) => {
-        signale.pending(`ERC20Mintable deployment tx submitted: ${txHash}`);
-      },
     });
 
-    signale.success(`ERC20Mintable deployed: ${mintable.address}`);
-
-    next(mintable);
+    next(deployedContract);
   },
 });

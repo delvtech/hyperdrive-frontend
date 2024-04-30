@@ -1,9 +1,10 @@
 import { MockLido } from "@delvtech/hyperdrive-artifacts/MockLido";
 import { command } from "clide-js";
-import signale from "signale";
 import { Address, parseUnits } from "viem";
-import { deployContract } from "../../utils/deployContract.js";
-import { DeployOptions } from "../deploy.js";
+import { adminOption } from "../../common-options/admin.js";
+import { competitionModeOption } from "../../common-options/competition-mode.js";
+import { maxMintAmountOption } from "../../common-options/max-mint-amount.js";
+import { DeployData } from "../deploy.js";
 
 export default command({
   description:
@@ -12,34 +13,17 @@ export default command({
   options: {
     rate: {
       alias: ["initial-rate"],
-      description: "The initial interest rate. (In token units, not wei)",
+      description: "The initial interest rate.",
       type: "string",
-      required: true,
-      default: "0.05",
+      default: "0.035",
     },
-    admin: {
-      description:
-        "The address of the contract owner. When in competition mode, only the owner can call the mint, burn, and setRate functions.",
-      type: "string",
-    },
-    competition: {
-      alias: ["competition-mode"],
-      description:
-        "Enable competition mode. This will restrict mint, burn, and setRate functions to the contract owner.",
-      type: "boolean",
-      default: false,
-    },
-    max: {
-      alias: ["max-mint-amount"],
-      description:
-        "The maximum amount that can be minted at once. (In token units, not wei)",
-      type: "string",
-      default: "1000000",
-    },
+    competition: competitionModeOption,
+    admin: adminOption,
+    max: maxMintAmountOption,
   },
 
-  handler: async ({ data, options }) => {
-    const { account, chain, rpcUrl } = data as DeployOptions;
+  handler: async ({ data, options, next }) => {
+    const { deployer, account } = data as DeployData;
 
     const rate = await options.rate();
 
@@ -53,30 +37,25 @@ export default command({
             message: "Enter admin address",
             initial: account.address,
           }
-        : undefined,
+        : // If competition mode is disabled, the admin address has no effect,
+          // so we don't need to prompt for it.
+          undefined,
     });
 
     const max = await options.max();
 
-    signale.pending("Deploying MockLido...");
-
-    const deployedContract = await deployContract({
+    const deployedContract = await deployer.deploy({
+      name: "MockLido",
       abi: MockLido.abi,
-      bytecode: MockLido.bytecode.object,
-      account,
-      rpcUrl,
-      chain,
+      bytecode: MockLido.bytecode,
       args: [
         BigInt(parseUnits(rate, 18)),
         (admin || account.address) as Address,
         isCompetitionMode,
         BigInt(parseUnits(max, 18)),
       ],
-      onSubmitted: (txHash) => {
-        signale.pending(`MockLido deployment tx submitted: ${txHash}`);
-      },
     });
 
-    signale.success(`MockLido contract deployed: ${deployedContract.address}`);
+    next(deployedContract);
   },
 });
