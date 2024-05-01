@@ -31,11 +31,6 @@ jobs:
         with:
           token: ${{github.token}}
 
-      - name: setup rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
@@ -46,13 +41,6 @@ jobs:
         uses: foundry-rs/foundry-toolchain@v1
         with:
           version: nightly
-
-      - name: check out hyperdrive
-        uses: actions/checkout@master
-        with:
-          repository: delvtech/hyperdrive
-          ref: "v1.0.1"
-          path: "./hyperdrive"
 
       - name: build hyperdrive-wasm
         working-directory: crates/hyperdrive-wasm
