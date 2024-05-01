@@ -9,7 +9,7 @@
     "crates/*"
   ],
   "scripts": {
-    "preinstall": "yarn run build:crates",
+    "preinstall": "sh scripts/preinstall.sh",
     "build": "turbo run build",
     "build:crates": "turbo run build --filter=./crates/*",
     "build:packages": "turbo run build --filter=./packages/*",
