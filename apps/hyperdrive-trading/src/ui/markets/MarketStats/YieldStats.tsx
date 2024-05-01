@@ -129,7 +129,7 @@ function Animated({
   return (
     <div
       className={classNames("transition-all duration-200 ease-in-out", {
-        "gradient-text -translate-y-1 scale-105": isActive,
+        "gradient-text z-20 -translate-y-1 scale-105": isActive,
       })}
     >
       {children}
