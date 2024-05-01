@@ -5,7 +5,9 @@ import {
   ReadHyperdriveOptions,
 } from "src/hyperdrive/ReadHyperdrive/ReadHyperdrive";
 
-const SEPOLIA_METAMORPHO_ADDRESS = "0xf5461A30b3723085F8E702fCc7461db85481c173";
+// See: https://www.notion.so/delv-tech/Testnet-Addresses-911a0f422f374059afa5c40d76373de6
+const SEPOLIA_METAMORPHO_SNIPPETS_ADDRESS =
+  "0xf5461A30b3723085F8E702fCc7461db85481c173";
 
 export class ReadMetaMorphoHyperdrive extends readMetaMorphoHyperdriveMixin(
   ReadHyperdrive,
@@ -43,7 +45,7 @@ export function readMetaMorphoHyperdriveMixin<
         abi: MetaMorphoSnippetsABI,
         // TODO: Refactor to a switch/case on chainId once evm-client has chainId
         // support on the Network interface
-        address: SEPOLIA_METAMORPHO_ADDRESS,
+        address: SEPOLIA_METAMORPHO_SNIPPETS_ADDRESS,
         cache,
         namespace,
       });
