@@ -1,21 +1,11 @@
 import { HyperdriveRegistry } from "@delvtech/hyperdrive-artifacts/HyperdriveRegistry";
-import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { Address, parseAbi } from "abitype";
-import { RegistryAddresses } from "src/registry/RegistryAddresses";
-import { PublicClient, erc20Abi, getContract } from "viem";
+import { PublicClient, getContract } from "viem";
 
 const minimalFactoryAbi = parseAbi([
   "function getNumberOfInstances() external view returns (uint256)",
   "function getInstanceAtIndex(uint256 index) external view returns (address)",
 ] as const);
-
-// These hardcoded lists of shares token symbols help us to identify what kind
-// of hyperdrive a pool is, eg: steth, sDai, etc.
-const stethHyperdriveSharesTokenSymbols: Uppercase<string>[] = ["STETH"];
-const erc4626HyperdriveSharesTokenSymbols: Uppercase<string>[] = [
-  "DELV",
-  "SDAI",
-];
 
 export async function fetchRegistryAddresses({
   factoryAddress,
@@ -25,7 +15,7 @@ export async function fetchRegistryAddresses({
   factoryAddress: Address;
   registryAddress: Address;
   publicClient: PublicClient;
-}): Promise<RegistryAddresses> {
+}): Promise<Address[]> {
   // The factory contains a list of all deployed hyperdrives
   const factory = getContract({
     address: factoryAddress,
@@ -41,10 +31,7 @@ export async function fetchRegistryAddresses({
   });
 
   const numInstances = await factory.read.getNumberOfInstances();
-  const hyperdrives: RegistryAddresses = {
-    stethHyperdrive: [],
-    erc4626Hyperdrive: [],
-  };
+  const hyperdrives: Address[] = [];
 
   // Check each deployed hyperdrive to see if it's in the registry, and if so,
   // put it in the correct registry addresses list based on its underlying yield
@@ -58,28 +45,7 @@ export async function fetchRegistryAddresses({
       continue;
     }
 
-    const hyperdrive = new ReadHyperdrive({
-      address: hyperdriveAddress,
-      publicClient,
-    });
-
-    // TODO: use hyperdrive.getSharesToken() once it exists
-    const { vaultSharesToken } = await hyperdrive.getPoolConfig();
-    const sharesTokenSymbol = (
-      await publicClient.readContract({
-        address: vaultSharesToken,
-        abi: erc20Abi,
-        functionName: "symbol",
-      })
-    ).toUpperCase() as Uppercase<string>;
-
-    if (stethHyperdriveSharesTokenSymbols.includes(sharesTokenSymbol)) {
-      hyperdrives.stethHyperdrive.push(hyperdriveAddress);
-    }
-
-    if (erc4626HyperdriveSharesTokenSymbols.includes(sharesTokenSymbol)) {
-      hyperdrives.erc4626Hyperdrive.push(hyperdriveAddress);
-    }
+    hyperdrives.push(hyperdriveAddress);
   }
   return hyperdrives;
 }

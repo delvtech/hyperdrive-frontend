@@ -33,6 +33,7 @@ import { getCheckpointId } from "src/pool/getCheckpointId";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
+import { ReadMockErc4626 } from "src/token/erc4626/ReadMockErc4626";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
@@ -85,8 +86,40 @@ export class ReadHyperdrive extends ReadModel {
         });
   }
 
+  /**
+   * Returns the share token of the pool.
+   *
+   * @privateRemarks
+   * The share token is assumed to be an ERC20 token. This can be overwritten
+   * in instances of Hyperdrive to return custom tokens.
+   */
+  async getSharesToken(): Promise<ReadErc20> {
+    const address = await this.contract.read("vaultSharesToken");
+    return new ReadErc20({
+      address,
+      contractFactory: this.contractFactory,
+      namespace: this.contract.namespace,
+      network: this.network,
+    });
+  }
+
   getDecimals(): Promise<number> {
     return this.contract.read("decimals");
+  }
+
+  async getYieldSourceRate({
+    options,
+  }: {
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const { vaultSharesToken } = await this.getPoolConfig(options);
+    const vault = new ReadMockErc4626({
+      address: vaultSharesToken,
+      contractFactory: this.contractFactory,
+      namespace: this.contract.namespace,
+      network: this.network,
+    });
+    return vault.getRate(options);
   }
 
   getCheckpoint({
@@ -156,6 +189,43 @@ export class ReadHyperdrive extends ReadModel {
     );
 
     return BigInt(aprString);
+  }
+
+  /**
+   * Gets the implied variable rate of opening a short
+   */
+  async getImpliedRate({
+    bondAmount,
+    timestamp,
+    variableApy,
+    options,
+  }: {
+    bondAmount: bigint;
+    timestamp: bigint;
+    // TODO: Get this from sdk instead
+    variableApy: bigint;
+    options?: ContractReadOptions;
+  }): Promise<bigint> {
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
+
+    const checkpointId = getCheckpointId(
+      timestamp,
+      poolConfig.checkpointDuration,
+    );
+    const { vaultSharePrice: openVaultSharePrice } = await this.getCheckpoint({
+      checkpointId,
+    });
+
+    const impliedRateString = hyperwasm.calcImpliedRate(
+      convertBigIntsToStrings(poolInfo),
+      convertBigIntsToStrings(poolConfig),
+      bondAmount.toString(),
+      openVaultSharePrice.toString(),
+      variableApy.toString(),
+    );
+
+    return BigInt(impliedRateString);
   }
 
   /**

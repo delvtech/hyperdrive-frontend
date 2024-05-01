@@ -110,16 +110,20 @@ export function CloseLongForm({
     },
   });
 
-  const withdrawTokenChoices: TokenChoice[] = [
-    { tokenConfig: sharesToken, tokenBalance: sharesTokenBalance?.value },
-  ];
+  const withdrawTokenChoices: TokenChoice[] = [];
   if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
-    // base token should be listed first if it's enabled
-    withdrawTokenChoices.unshift({
+    withdrawTokenChoices.push({
       tokenConfig: baseToken,
       tokenBalance: baseTokenBalance?.value,
     });
   }
+
+  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+    withdrawTokenChoices.push({
+      tokenConfig: sharesToken,
+    });
+  }
+
   return (
     <TransactionView
       disclaimer={

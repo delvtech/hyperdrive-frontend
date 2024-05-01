@@ -57,7 +57,7 @@ export function useCloseLong({
   const { mutate: closeLong, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        function onTransactionMined(txHash: Hash) {
+        function onTransactionCompleted(txHash: Hash) {
           queryClient.invalidateQueries();
           toast.success(
             <TransactionToast message="Long closed" txHash={hash} />,
@@ -74,7 +74,7 @@ export function useCloseLong({
                 destination,
                 maturityTime,
               },
-              onTransactionMined,
+              onTransactionCompleted,
             })
           : await hyperdriveModel.closeLongWithShares({
               args: {
@@ -83,7 +83,7 @@ export function useCloseLong({
                 destination,
                 maturityTime,
               },
-              onTransactionMined,
+              onTransactionCompleted,
             });
 
         toast.loading(

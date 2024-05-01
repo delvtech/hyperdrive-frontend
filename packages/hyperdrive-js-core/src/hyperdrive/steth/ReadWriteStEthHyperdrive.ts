@@ -13,7 +13,7 @@ import { ReadWriteEth } from "src/token/eth/ReadWriteEth";
 import { ReadWriteStEth } from "src/token/steth/ReadWriteStEth";
 
 export interface ReadWriteStEthHyperdriveOptions
-  extends Overwrite<ReadStEthHyperdriveOptions, ReadWriteHyperdriveOptions> {}
+  extends Overwrite<ReadWriteHyperdriveOptions, ReadStEthHyperdriveOptions> {}
 
 export class ReadWriteStEthHyperdrive extends readStEthHyperdriveMixin(
   ReadWriteHyperdrive,

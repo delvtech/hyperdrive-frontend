@@ -1,5 +1,4 @@
 // Main Hyperdrive sdk entrypoint for consumers
-export type { Network } from "@delvtech/evm-client";
 export {
   ReadHyperdrive,
   type ReadHyperdriveOptions,

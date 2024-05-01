@@ -6,6 +6,7 @@
     "rootDir": ".",
     "baseUrl": ".",
     "moduleResolution": "Bundler",
+    "experimentalDecorators": true,
     "target": "esnext",
     "module": "ESNext",
     "paths": {

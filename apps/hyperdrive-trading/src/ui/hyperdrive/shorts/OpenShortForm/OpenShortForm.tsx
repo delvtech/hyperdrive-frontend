@@ -4,7 +4,6 @@ import {
   findYieldSourceToken,
   HyperdriveConfig,
 } from "@hyperdrive/appconfig";
-import * as dnum from "dnum";
 import { MouseEvent, ReactElement } from "react";
 import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { getIsValidTradeSize } from "src/hyperdrive/getIsValidTradeSize";
@@ -52,19 +51,6 @@ export function OpenShortForm({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
   });
-  const baseTokenDepositEnabled =
-    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
-
-  const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
-    useActiveToken({
-      account,
-      defaultActiveToken: baseTokenDepositEnabled
-        ? baseToken.address
-        : sharesToken.address,
-      tokens: baseTokenDepositEnabled
-        ? [baseToken, sharesToken]
-        : [sharesToken],
-    });
 
   const { balance: baseTokenBalance } = useTokenBalance({
     account,
@@ -77,6 +63,37 @@ export function OpenShortForm({
     tokenAddress: sharesToken.address,
     decimals: sharesToken.decimals,
   });
+
+  const baseTokenDepositEnabled =
+    hyperdrive.depositOptions.isBaseTokenDepositEnabled;
+  const shareTokenDepositsEnabled =
+    hyperdrive.depositOptions.isShareTokenDepositsEnabled;
+  const tokenOptions = [];
+
+  if (baseTokenDepositEnabled) {
+    tokenOptions.push({
+      tokenConfig: baseToken,
+      tokenBalance: baseTokenBalance?.value,
+    });
+  }
+
+  if (shareTokenDepositsEnabled) {
+    tokenOptions.push({
+      tokenConfig: sharesToken,
+      tokenBalance: sharesTokenBalance?.value,
+    });
+  }
+
+  const { activeToken, activeTokenBalance, setActiveToken, isActiveTokenEth } =
+    useActiveToken({
+      account,
+      defaultActiveToken: baseTokenDepositEnabled
+        ? baseToken.address
+        : sharesToken.address,
+      tokens: baseTokenDepositEnabled
+        ? [baseToken, sharesToken]
+        : [sharesToken],
+    });
 
   // All tokens besides ETH require an allowance to spend it on hyperdrive
   const requiresAllowance = !isActiveTokenEth;
@@ -141,6 +158,7 @@ export function OpenShortForm({
   const {
     setSlippage,
     slippage,
+    slippageAsBigInt,
     activeOption: activeSlippageOption,
     setActiveOption: setActiveSlippageOption,
   } = useSlippageSettings({ decimals: activeToken.decimals });
@@ -151,7 +169,7 @@ export function OpenShortForm({
       amount: traderDeposit,
       decimals: activeToken.decimals,
       direction: "up",
-      percentage: slippage,
+      percentage: slippageAsBigInt,
     });
 
   const { openShort, openShortStatus } = useOpenShort({
@@ -184,16 +202,13 @@ export function OpenShortForm({
           onChange={(newAmount) => setAmount(newAmount)}
           stat={
             <div className="flex flex-col gap-1 text-xs text-neutral-content">
-              <span>
-                {`Slippage: ${dnum.format([slippage, activeToken.decimals])}%`}
-              </span>
+              <span>{`Slippage: ${slippage || "0.5"}%`}</span>
             </div>
           }
           settings={
             <SlippageSettings
               onSlippageChange={setSlippage}
               slippage={slippage}
-              decimals={activeToken.decimals}
               activeOption={activeSlippageOption}
               onActiveOptionChange={setActiveSlippageOption}
               tooltip="Your transaction will revert if the price changes unfavorably by more than this percentage."
@@ -210,25 +225,7 @@ export function OpenShortForm({
           }
           onChange={(tokenAddress) => setActiveToken(tokenAddress)}
           activeTokenAddress={activeToken.address}
-          tokens={
-            baseTokenDepositEnabled
-              ? [
-                  {
-                    tokenConfig: baseToken,
-                    tokenBalance: baseTokenBalance?.value,
-                  },
-                  {
-                    tokenConfig: sharesToken,
-                    tokenBalance: sharesTokenBalance?.value,
-                  },
-                ]
-              : [
-                  {
-                    tokenConfig: sharesToken,
-                    tokenBalance: sharesTokenBalance?.value,
-                  },
-                ]
-          }
+          tokens={tokenOptions}
         />
       }
       transactionPreview={

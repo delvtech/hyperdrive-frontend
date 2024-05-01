@@ -53,7 +53,7 @@ export function useRedeemWithdrawalShares({
             destination,
             asBase,
           },
-          onTransactionMined: () => {
+          onTransactionCompleted: () => {
             queryClient.invalidateQueries();
           },
         });

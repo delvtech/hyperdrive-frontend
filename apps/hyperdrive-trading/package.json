@@ -1,7 +1,7 @@
 {
   "name": "hyperdrive-trading",
   "description": "Trading interface for the hyperdrive protocol.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "license": "AGPL-3.0",
   "author": {
@@ -28,8 +28,8 @@
   "dependencies": {
     "@heroicons/react": "^2.0.16",
     "@hyperdrive/appconfig": "*",
-    "@delvtech/hyperdrive-artifacts": "^0.0.3",
-    "@delvtech/hyperdrive-viem": "^0.0.3",
+    "@delvtech/hyperdrive-artifacts": "^0.1.0",
+    "@delvtech/hyperdrive-viem": "^0.0.4",
     "@rainbow-me/rainbowkit": "^2.0.0",
     "@tanstack/react-query": "^4.29.12",
     "@tanstack/react-router": "^1.9.0",
@@ -74,7 +74,7 @@
     "prettier-plugin-organize-imports": "3.2.4",
     "prettier-plugin-tailwindcss": "^0.5.13",
     "vite-plugin-node-polyfills": "^0.21.0",
-    "@usecapsule/rainbowkit-wallet": "^0.8.4",
+    "@usecapsule/rainbowkit-wallet": "^0.8.5",
     "tailwindcss": "^3.4.3",
     "tailwindcss-debug-screens": "2.2.1",
     "typescript": "^5.0.2",

@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Stat } from "src/ui/base/components/Stat";
+import { Well } from "src/ui/base/components/Well/Well";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { useIdleLiquidity } from "src/ui/hyperdrive/hooks/useIdleLiquidity";
@@ -33,73 +34,79 @@ export function LiquidityStats({
   });
 
   return (
-    <div className="flex gap-16">
-      <Stat
-        label={`Total (${baseToken.symbol})`}
-        value={
-          presentValueStatus === "loading" && presentValue === undefined ? (
-            <Skeleton className="w-20" />
-          ) : (
-            <AmountLabel
-              icon={baseToken.iconUrl || ""}
-              symbol={baseToken.symbol}
-              value={formatCompact({
-                value: presentValue || 0n,
+    <Well transparent>
+      <div className="space-y-8">
+        <h5 className="flex items-center gap-2 text-gray-400">Liquidity</h5>
+        <div className="flex gap-16">
+          <Stat
+            label={`Total (${baseToken.symbol})`}
+            value={
+              presentValueStatus === "loading" && presentValue === undefined ? (
+                <Skeleton className="w-20" />
+              ) : (
+                <AmountLabel
+                  icon={baseToken.iconUrl || ""}
+                  symbol={baseToken.symbol}
+                  value={formatCompact({
+                    value: presentValue || 0n,
+                    decimals: baseToken.decimals,
+                  })}
+                />
+              )
+            }
+            description={`The present value in the pool`}
+          />
+          <Stat
+            label={`Available (${baseToken.symbol})`}
+            description={`The idle liquidity available for trading and exiting LP positions`}
+            value={
+              idleLiquidityStatus === "loading" &&
+              idleLiquidity === undefined ? (
+                <Skeleton className="w-20" />
+              ) : (
+                <AmountLabel
+                  icon={baseToken.iconUrl || ""}
+                  symbol={baseToken.symbol}
+                  value={formatCompact({
+                    value: idleLiquidity || 0n,
+                    decimals: baseToken.decimals,
+                  })}
+                />
+              )
+            }
+          />
+          <Stat
+            description={`The amount of hy${
+              baseToken.symbol
+            } (either longs or shorts) that have been traded in the last 24 hours.\n\nLong volume: ${formatBalance(
+              {
+                balance: longVolume || 0n,
                 decimals: baseToken.decimals,
-              })}
-            />
-          )
-        }
-        description={`The present value in the pool`}
-      />
-      <Stat
-        label={`Available (${baseToken.symbol})`}
-        description={`The idle liquidity available for trading and exiting LP positions`}
-        value={
-          idleLiquidityStatus === "loading" && idleLiquidity === undefined ? (
-            <Skeleton className="w-20" />
-          ) : (
-            <AmountLabel
-              icon={baseToken.iconUrl || ""}
-              symbol={baseToken.symbol}
-              value={formatCompact({
-                value: idleLiquidity || 0n,
-                decimals: baseToken.decimals,
-              })}
-            />
-          )
-        }
-      />
-      <Stat
-        description={`The amount of hy${
-          baseToken.symbol
-        } (either longs or shorts) that have been traded in the last 24 hours.\n\nLong volume: ${formatBalance(
-          {
-            balance: longVolume || 0n,
-            decimals: baseToken.decimals,
-            places: baseToken.places,
-          },
-        )} hy${baseToken.symbol} \nShort volume: ${formatBalance({
-          balance: shortVolume || 0n,
-          decimals: baseToken.decimals,
-          places: baseToken.places,
-        })} hy${baseToken.symbol}`}
-        label={`24h Volume (hy${baseToken.symbol})`}
-        value={
-          tradingVolumeStatus === "loading" && totalVolume === undefined ? (
-            <Skeleton className="w-20" />
-          ) : (
-            <AmountLabel
-              symbol={`hy${baseToken.symbol}`}
-              value={formatCompact({
-                value: totalVolume || 0n,
-                decimals: baseToken.decimals,
-              })}
-            />
-          )
-        }
-      />
-    </div>
+                places: baseToken.places,
+              },
+            )} hy${baseToken.symbol} \nShort volume: ${formatBalance({
+              balance: shortVolume || 0n,
+              decimals: baseToken.decimals,
+              places: baseToken.places,
+            })} hy${baseToken.symbol}`}
+            label={`24h Volume (hy${baseToken.symbol})`}
+            value={
+              tradingVolumeStatus === "loading" && totalVolume === undefined ? (
+                <Skeleton className="w-20" />
+              ) : (
+                <AmountLabel
+                  symbol={`hy${baseToken.symbol}`}
+                  value={formatCompact({
+                    value: totalVolume || 0n,
+                    decimals: baseToken.decimals,
+                  })}
+                />
+              )
+            }
+          />
+        </div>
+      </div>
+    </Well>
   );
 }
 

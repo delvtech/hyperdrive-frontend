@@ -8,6 +8,7 @@ import {
 import { http } from "@wagmi/core";
 import { Chain } from "@wagmi/core/chains";
 import { cloudChain } from "src/chains/cloudChain";
+import { CreateWalletFn } from "src/wallets/CreateWalletFn";
 import { capsuleWallet } from "src/wallets/capsule";
 import { Transport } from "viem";
 import { foundry, sepolia } from "wagmi/chains";
@@ -25,7 +26,7 @@ export const chains: Chain[] = [];
 const transports: Record<string, Transport> = {};
 
 const recommendedWallets = [injectedWallet, safeWallet, rainbowWallet];
-const customWallets = [];
+const customWallets: CreateWalletFn[] = [];
 
 // WalletConnect
 if (VITE_WALLET_CONNECT_PROJECT_ID) {
@@ -72,7 +73,7 @@ export const wagmiConfig = getDefaultConfig({
       wallets: recommendedWallets,
     },
     {
-      groupName: "Custom",
+      groupName: "Continue with Email",
       wallets: customWallets,
     },
   ],

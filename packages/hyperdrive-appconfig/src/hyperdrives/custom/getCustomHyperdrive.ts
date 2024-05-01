@@ -1,6 +1,5 @@
-import { ReadErc4626Hyperdrive } from "@delvtech/hyperdrive-viem";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
-import { getErc4626HyperdriveSharesToken } from "src/hyperdrives/erc4626/getErc4626HyperdriveSharesToken";
 import { formatHyperdriveName } from "src/hyperdrives/formatHyperdriveName";
 import {
   EmptyExtensions,
@@ -10,35 +9,53 @@ import {
 import { YieldSourceExtensions } from "src/yieldSources/YieldSourceTokenConfig";
 import { Address, PublicClient } from "viem";
 
-export async function getErc4626Hyperdrive({
-  publicClient,
-  hyperdriveAddress,
-  sharesTokenExtensions,
-  baseTokenIconUrl,
-  sharesTokenIconUrl,
-}: {
+type DepositOptions = HyperdriveConfig["depositOptions"];
+type WithdrawalOptions = HyperdriveConfig["withdrawOptions"];
+
+interface GetHyperdriveConfigParams {
   publicClient: PublicClient;
   hyperdriveAddress: Address;
   sharesTokenExtensions: YieldSourceExtensions;
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
-}): Promise<{
+  depositOptions: DepositOptions;
+  withdrawalOptions: WithdrawalOptions;
+  tokenPlaces?: number;
+  tags?: string[];
+}
+
+interface GetCustomHyperdriveResult {
   sharesToken: TokenConfig<YieldSourceExtensions>;
   baseToken: TokenConfig<EmptyExtensions>;
   hyperdriveConfig: HyperdriveConfig;
-}> {
-  const readHyperdrive = new ReadErc4626Hyperdrive({
+}
+
+export async function getCustomHyperdrive({
+  publicClient,
+  hyperdriveAddress,
+  sharesTokenExtensions,
+  baseTokenIconUrl,
+  sharesTokenIconUrl,
+  depositOptions,
+  withdrawalOptions,
+  tokenPlaces = 2,
+  tags = [],
+}: GetHyperdriveConfigParams): Promise<GetCustomHyperdriveResult> {
+  // All Hyperdrive instances have a shareToken function, but the SDK needs to
+  // be updated, using RethHyperdrive for now.
+  const readHyperdrive = new ReadHyperdrive({
     address: hyperdriveAddress,
     publicClient,
   });
 
   const poolConfig = await readHyperdrive.getPoolConfig();
-
   const sharesToken = await readHyperdrive.getSharesToken();
-  const sharesTokenConfig = await getErc4626HyperdriveSharesToken({
-    sharesToken: sharesToken,
+  const sharesTokenConfig = await getTokenConfig({
+    token: sharesToken,
+    tags: ["yieldSource", ...tags],
     extensions: sharesTokenExtensions,
     iconUrl: sharesTokenIconUrl,
+    places: tokenPlaces,
   });
 
   const baseToken = await readHyperdrive.getBaseToken();
@@ -47,7 +64,7 @@ export async function getErc4626Hyperdrive({
     extensions: {},
     tags: [],
     iconUrl: baseTokenIconUrl,
-    places: 2,
+    places: tokenPlaces,
   });
 
   const hyperdriveName = formatHyperdriveName({
@@ -62,12 +79,8 @@ export async function getErc4626Hyperdrive({
     decimals: await readHyperdrive.getDecimals(),
     baseToken: baseTokenConfig.address,
     sharesToken: sharesTokenConfig.address,
-    depositOptions: {
-      isBaseTokenDepositEnabled: true,
-    },
-    withdrawOptions: {
-      isBaseTokenWithdrawalEnabled: true,
-    },
+    depositOptions: depositOptions,
+    withdrawOptions: withdrawalOptions,
     poolConfig,
   };
 

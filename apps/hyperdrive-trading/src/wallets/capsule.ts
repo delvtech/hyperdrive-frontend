@@ -4,6 +4,7 @@ import {
   Theme,
   getCapsuleWallet,
 } from "@usecapsule/rainbowkit-wallet";
+import { CreateWalletFn } from "src/wallets/CreateWalletFn";
 
 const { VITE_CAPSULE_API_KEY, VITE_CAPSULE_ENV } = import.meta.env;
 
@@ -43,6 +44,17 @@ export const getCapsuleWalletOpts: GetCapsuleOpts = {
     OAuthMethod.APPLE,
   ],
 };
-export const capsuleWallet = hasRequiredEnvVars
-  ? getCapsuleWallet(getCapsuleWalletOpts)
+
+export const capsuleWallet: CreateWalletFn | undefined = hasRequiredEnvVars
+  ? ({ projectId }) => {
+      const capsuleWallet = getCapsuleWallet(getCapsuleWalletOpts);
+      const wallet = capsuleWallet({ projectId });
+      return {
+        ...wallet,
+
+        // override the rainbowkit name and icon options
+        name: "Log in or Sign up",
+        iconUrl: "/hyperdrive-solo-logo-white.svg",
+      };
+    }
   : undefined;

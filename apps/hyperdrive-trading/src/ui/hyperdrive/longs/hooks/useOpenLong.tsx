@@ -64,7 +64,7 @@ export function useOpenLong({
         value: ethValue,
       };
 
-      function onTransactionMined(txHash: Hash) {
+      function onTransactionCompleted(txHash: Hash) {
         queryClient.invalidateQueries();
         toast.success(
           <TransactionToast message="Long opened" txHash={txHash} />,
@@ -85,7 +85,7 @@ export function useOpenLong({
               minVaultSharePrice: minSharePrice,
             },
             options,
-            onTransactionMined,
+            onTransactionCompleted,
           })
         : await hyperdriveModel.openLongWithShares({
             args: {
@@ -95,7 +95,7 @@ export function useOpenLong({
               minVaultSharePrice: minSharePrice,
             },
             options,
-            onTransactionMined,
+            onTransactionCompleted,
           });
 
       toast.loading(

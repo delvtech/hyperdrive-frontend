@@ -143,6 +143,19 @@ export function RemoveLiquidityForm({
     balance: lpShares,
   });
 
+  const withdrawTokenChoices: TokenChoice[] = [];
+  if (hyperdrive.withdrawOptions.isBaseTokenWithdrawalEnabled) {
+    withdrawTokenChoices.push({
+      tokenConfig: baseToken,
+    });
+  }
+
+  if (hyperdrive.withdrawOptions.isShareTokenWithdrawalEnabled) {
+    withdrawTokenChoices.push({
+      tokenConfig: sharesToken,
+    });
+  }
+
   return (
     <TransactionView
       setting={
@@ -154,7 +167,7 @@ export function RemoveLiquidityForm({
           }
           activeTokenAddress={activeWithdrawToken?.address}
           onChange={(tokenAddress) => setActiveWithdrawToken(tokenAddress)}
-          tokens={tokens}
+          tokens={withdrawTokenChoices}
         />
       }
       tokenInput={
