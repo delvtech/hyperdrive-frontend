@@ -1,4 +1,5 @@
 // client
+
 // Re-export all of evm-client-viem
 export * from "@delvtech/evm-client-viem";
 // Re-export all of hyperdrive-js-core
@@ -19,6 +20,7 @@ export { ReadEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadEzEthHyperdrive";
 export { ReadWriteEzEthHyperdrive } from "src/hyperdrive/ezeth/ReadWriteEzEthHyperdrive";
 export { ReadLsEthHyperdrive } from "src/hyperdrive/lseth/ReadLsEthHyperdrive";
 export { ReadWriteLsEthHyperdrive } from "src/hyperdrive/lseth/ReadWriteLsEthHyperdrive";
+export { ReadMetaMorphoHyperdrive } from "src/hyperdrive/metamorpho/ReadMetaMorphoHyperdrive";
 export { ReadREthHyperdrive } from "src/hyperdrive/reth/ReadREthHyperdrive";
 export { ReadWriteREthHyperdrive } from "src/hyperdrive/reth/ReadWriteREthHyperdrive";
 export {
