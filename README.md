@@ -75,7 +75,7 @@ packages must be updated manually.
 
 To create a new release of `@delvtech/hyperdrive-wasm`:
 
-1. Update the version in the `Cargo.toml` file of the `hyperdrive-wasm` crate.
+1. Update the version in the `Cargo.toml` file of the `hyperdrive-wasm` crate and commit the change.
    
 2. Add a new tag for the version with the format `@delvtech/hyperdrive-wasm@vX.Y.Z` (eg: `@delvtech/hyperdrive-wasm@v0.1.0`).
    ```sh
