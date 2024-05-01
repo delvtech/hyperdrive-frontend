@@ -51,7 +51,7 @@ Check out the list of [apps and packages](#what-is-inside) above.
 
 This repo uses [changesets](https://github.com/changesets/changesets) to manage
 versioning and changelogs. This means you shouldn't need to manually change of
-the internal package versions.
+the internal package versions. (excluding the `@delvtech/hyperdrive-wasm` package. See below)
 
 Before opening a PR, run `yarn changeset` and follow the prompts to describe the
 changes you've made. This will create a changeset file that should be committed.
@@ -64,6 +64,34 @@ updates in an open PR titled `chore: version packages`.
 Once this PR is merged, the release workflow will be triggered, creating new
 tags and github releases, and publishing the updated packages to NPM. **These
 PRs should be carefully reviewed!**
+
+#### Updating `@delvtech/hyperdrive-wasm`
+
+The `@delvtech/hyperdrive-wasm` package is a bit special because it contains a
+pre-built wasm binary. This binary is built using the `wasm-pack` tool, and the
+resulting package is published to NPM. This means that the version of the
+`@delvtech/hyperdrive-wasm` package in the `package.json` files of the other
+packages must be updated manually.
+
+To create a new release of `@delvtech/hyperdrive-wasm`:
+
+1. Update the version in the `Cargo.toml` file of the `hyperdrive-wasm` crate.
+   
+2. Add a new tag for the version with the format `@delvtech/hyperdrive-wasm@vX.Y.Z` (eg: `@delvtech/hyperdrive-wasm@v0.1.0`).
+   ```sh
+    git tag @delvtech/hyperdrive-wasm@vX.Y.Z
+    ```
+
+3. Push the tag to the repository.
+   ```sh
+    git push --tags
+    ```
+
+4. Create a new release on the GitHub repository from the tag. This will trigger the GitHub action to publish the new version to NPM.
+   
+5. Update the version of `@delvtech/hyperdrive-wasm` in the `package.json` files of the other packages to the new version.
+   
+6. Follow the steps above to create a new releases for the other packages with changesets.
 
 # Disclaimer
 
