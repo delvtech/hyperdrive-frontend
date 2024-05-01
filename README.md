@@ -89,10 +89,6 @@ To create a new release of `@delvtech/hyperdrive-wasm`:
     ```
 
 4. Create a new release on the GitHub repository from the tag. This will trigger the GitHub action to publish the new version to NPM.
-   
-5. Update the version of `@delvtech/hyperdrive-wasm` in the `package.json` files of the other packages to the new version.
-   
-6. Follow the steps above to create a new releases for the other packages with changesets.
 
 # Disclaimer
 
