@@ -20,6 +20,7 @@ Packages
 - [@delvtech/hyperdrive-js-core](packages/hyperdrive-js-core/) - Hyperdrive SDK core logic
 - [@delvtech/hyperdrive-viem](packages/hyperdrive-viem/) - Viem bindings for `@delvtech/hyperdrive-js-core`
 - [@delvtech/hyperdrive-artifacts](packages/hyperdrive-artifacts/) - ABIs and bytecode for Hyperdrive contracts
+- [@delvtech/hyperdrive-wasm](packages/hyperdrive-artifacts/) - Wasm bindings for the [Hyperdrive Rust SDK](https://github.com/delvtech/hyperdrive-rs)
 - [@hyperdrive/appconfig](packages/hyperdrive-appconfig/) - Hyperdrive static metadata by chain (eg: poolConfig, name, symbol, decimal, etc.)
 
 ### Installation
@@ -33,6 +34,8 @@ monorepo before interacting with any apps or packages.
 yarn
 yarn run build:packages
 ```
+
+> To use the local version of `@delvtech/hyperdrive-wasm` in the other packages instead of installing it from NPM, it must be built before dependencies are installed. To ensure this happens, a `preinstall` script is included in the root `package.json` that runs `yarn build:crates`.
 
 ### Environment variables
 

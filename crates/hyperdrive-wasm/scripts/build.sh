@@ -1,18 +1,40 @@
 #!/bin/bash
-  set -e
+set -e
+
+# SETTINGS
+default_out_dir="../../packages/hyperdrive-wasm"
+
+# Echo usage
+echo ""
+echo "+"
+echo "|  $0"
+echo "|  Generates a wasm package from the hyperdrive-wasm crate."
+echo "|"
+echo "|  Usage: $0 [out_dir]"
+echo "|"
+echo "|    out_dir:  The directory to output the wasm package to. (default: $default_out_dir)"
+echo "+"
+echo ""
+
+out_dir=${1:-$default_out_dir}
+absolute_out_dir=$(cd "$(dirname "$out_dir")" && pwd)/$(basename "$out_dir")
+
+# Echo settings
+echo "Output directory: $absolute_out_dir"
+echo ""
+
+# Reset the output dir and example directory and build the package with the "@delvtech/" scope
+echo "Building package..."
+rm -rf "$out_dir"
+rm -f example/*.tgz
+npx wasm-pack build --target web --scope delvtech --out-dir "$out_dir"
 
 # Wrapping in a subshell to avoid changing the current directory
 (
-  cd $(dirname $0)/..
-
-
-  rm -rf pkg
-
-  # Build the package with wasm-pack and add the "@delvtech/" scope to the package
-  wasm-pack build --target web --scope delvtech
+  echo "Modifying package for increased compatibility..."
 
   # Move into the built package directory
-  cd pkg
+  cd "$out_dir"
 
   # Convert the wasm file to a base64 string
   wasm_b64=$(base64 <hyperdrive_wasm_bg.wasm)
@@ -32,7 +54,4 @@
   # Add a main field to the package.json file for improved commonjs compatibility
   jq '.main = "hyperdrive_wasm.js"' package.json >package.temp.json
   mv package.temp.json package.json
-
-  # Create a tarball of the package
-  npm pack
 )

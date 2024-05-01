@@ -3,6 +3,7 @@ name = "hyperdrive-wasm"
 version = "0.13.0"
 edition = "2021"
 authors = ["Ryan Goree <ryan@delv.tech>", "Danny Delott <dannyd@delv.tech>"]
+license = "AGPL-3.0"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -22,10 +23,10 @@ wasm-bindgen-futures = "0.4.36"
 wasm-bindgen = { version = "0.2.86", features = ["serde-serialize"] }
 hex = { package = "const-hex", version = "1.6", features = ["hex"] }
 
-fixed-point = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.1.0" }
-fixed-point-macros = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.1.0" }
-hyperdrive-math = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.1.0" }
-hyperdrive-wrappers = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.1.0" }
+fixed-point = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.14.4" }
+fixed-point-macros = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.14.4" }
+hyperdrive-math = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.14.4" }
+hyperdrive-wrappers = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.14.4" }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
