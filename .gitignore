@@ -34,3 +34,7 @@ yarn-error.log*
 
 # parcel
 .parcel-cache
+
+# rust
+target
+packages/hyperdrive-wasm

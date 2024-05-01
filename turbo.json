@@ -1,8 +1,12 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
-    "build": {
+    "build:crates": {
       "dependsOn": ["^build"],
+      "outputs": ["packages/hyperdrive-wasm/**"]
+    },
+    "build": {
+      "dependsOn": ["build:crates", "^build"],
       "outputs": ["dist/**", ".next/**"]
     },
     "hyperdrive-trading#build": {

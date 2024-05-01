@@ -5,10 +5,13 @@
   "type": "module",
   "workspaces": [
     "apps/*",
-    "packages/*"
+    "packages/*",
+    "crates/*"
   ],
   "scripts": {
+    "preinstall": "sh scripts/preinstall.sh",
     "build": "turbo run build",
+    "build:crates": "turbo run build --filter=./crates/*",
     "build:packages": "turbo run build --filter=./packages/*",
     "build:docs": "yarn build:packages && turbo run build --filter={./apps/hyperdrive-sdk-docs}",
     "dev": "turbo run dev --parallel --filter=./apps/*",
