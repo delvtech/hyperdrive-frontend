@@ -6,7 +6,7 @@ mod short;
 mod types;
 mod utils;
 
-use ethers::{core::k256::elliptic_curve::rand_core::block, types::U256};
+use ethers::types::U256;
 use hyperdrive_math::State;
 use types::{JsPoolConfig, JsPoolInfo};
 use utils::set_panic_hook;
