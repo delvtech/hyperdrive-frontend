@@ -82,8 +82,9 @@ To create a new release of `@delvtech/hyperdrive-wasm`:
     git tag @delvtech/hyperdrive-wasm@vX.Y.Z
     ```
 
-3. Push the tag to the repository.
+3. Push the new version and tag to the repository.
    ```sh
+    git push
     git push --tags
     ```
 
