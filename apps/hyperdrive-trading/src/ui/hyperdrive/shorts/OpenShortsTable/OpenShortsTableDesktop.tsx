@@ -172,7 +172,7 @@ function getColumns(
         const amountPaid = baseAmountPaid.getValue();
         return (
           <div className="daisy-stat flex flex-row p-0 xl:flex-col">
-            <span className="daisy-stat-value text-xs font-normal lg:flex lg:w-16 lg:justify-end lg:text-md">
+            <span className="daisy-stat-value flex w-16 justify-end text-md font-normal">
               {formatBalance({
                 balance: amountPaid,
                 decimals: baseToken.decimals,
@@ -181,7 +181,7 @@ function getColumns(
             </span>
             <div
               className={classNames(
-                "daisy-stat-desc inline-flex text-xs lg:mt-1 lg:flex lg:w-16 lg:justify-end",
+                "daisy-stat-desc mt-1 flex w-16 justify-end text-xs",
               )}
             >
               <span>{formatRate(fixedRate)}% APR</span>

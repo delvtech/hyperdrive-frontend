@@ -75,7 +75,6 @@ export function CurrentValueCell({
           className={classNames(
             "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
             { "text-success": isPositiveChangeInValue },
-
             {
               "text-error":
                 !isPositiveChangeInValue &&
