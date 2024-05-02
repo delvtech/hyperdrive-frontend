@@ -36,7 +36,7 @@ export function LiquidityStats({
   return (
     <Well transparent>
       <div className="space-y-8">
-        <h5 className="flex items-center gap-2 text-gray-400">Liquidity</h5>
+        <h5 className="flex text-neutral-content">Liquidity</h5>
         <div className="flex gap-16">
           <Stat
             label={`Total (${baseToken.symbol})`}

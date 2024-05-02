@@ -60,7 +60,7 @@ export function YieldStats({
     <Well transparent>
       <div className="space-y-8">
         <div className="flex justify-between gap-20">
-          <h5 className="flex items-center gap-2 text-gray-400">Yield</h5>
+          <h5 className="flex text-neutral-content">Yield</h5>
           <div className="font-dmMono text-neutral-content">
             {vaultRateStatus === "loading" && vaultRate === undefined ? (
               <Skeleton className="w-20" />
