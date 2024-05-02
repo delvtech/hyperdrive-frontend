@@ -92,8 +92,17 @@ export function YieldStats({
             <Animated isActive={position === "Shorts"}>
               <Stat
                 label="Implied Variable Rate"
-                value={`${formattedRate}%`}
-                description={`The yield source backing the hy${baseToken.symbol} in this pool.`}
+                value={
+                  impliedRateStatus === "loading" &&
+                  impliedRate === undefined ? (
+                    <Skeleton className="w-20" />
+                  ) : (
+                    <span className={classNames("flex items-center gap-1.5")}>
+                      {formattedRate}%
+                    </span>
+                  )
+                }
+                description={`The effective rate earned on shorts`}
                 tooltipPosition={"right"}
               />
             </Animated>
