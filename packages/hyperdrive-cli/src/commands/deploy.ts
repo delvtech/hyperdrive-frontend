@@ -18,8 +18,8 @@ import { walletKeyOption } from "../common-options/wallet-key.js";
 import { Deployer } from "../deploy/Deployer.js";
 import { createCommandFactory } from "../utils/createCommandFactory.js";
 
-const line = colors.dim(`${"-".repeat(80)}`);
-const thickLine = colors.dim(`${"=".repeat(80)}`);
+const line = colors.dim("-".repeat(80));
+const thickLine = colors.dim("=".repeat(80));
 
 export default command({
   description: "Deploy a contract or combination of contracts.",
