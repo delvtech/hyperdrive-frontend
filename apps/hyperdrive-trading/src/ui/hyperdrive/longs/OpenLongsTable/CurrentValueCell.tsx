@@ -65,21 +65,18 @@ export function CurrentValueCell({
     return <div>Insufficient Liquidity</div>;
   }
   return (
-    <div className="daisy-stat flex flex-row p-0 xl:flex-col">
-      <span
-        className={classNames("daisy-stat-value text-xs font-bold md:text-md", {
-          "flex w-32 justify-end": !isTailwindSmallScreen,
-        })}
-      >
+    <div
+      className={classNames("daisy-stat flex flex-row p-0 xl:flex-col", {
+        "flex w-32 flex-col items-end": !isTailwindSmallScreen,
+      })}
+    >
+      <span className="daisy-stat-value text-xs font-bold md:text-md">
         {currentValueLabel}
       </span>
       <div
         data-tip={"Profit/Loss since open, after closing fees."}
         className={classNames(
           "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
-          {
-            "flex w-32 justify-end": !isTailwindSmallScreen,
-          },
           { "text-success": isPositiveChangeInValue },
           {
             "text-error":

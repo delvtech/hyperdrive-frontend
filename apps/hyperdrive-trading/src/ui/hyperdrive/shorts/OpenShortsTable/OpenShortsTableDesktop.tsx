@@ -147,11 +147,15 @@ function getColumns(
       header: `Size (hy${baseToken.symbol})`,
       cell: (bondAmount) => {
         const bondAmountValue = bondAmount.getValue();
-        return formatBalance({
-          balance: bondAmountValue,
-          decimals: baseToken.decimals,
-          places: baseToken.places,
-        });
+        return (
+          <span className="flex w-20 justify-end">
+            {formatBalance({
+              balance: bondAmountValue,
+              decimals: baseToken.decimals,
+              places: baseToken.places,
+            })}
+          </span>
+        );
       },
     }),
     columnHelper.accessor("baseAmountPaid", {
@@ -168,14 +172,18 @@ function getColumns(
         const amountPaid = baseAmountPaid.getValue();
         return (
           <div className="daisy-stat flex flex-row p-0 xl:flex-col">
-            <span className="daisy-stat-value text-xs font-normal lg:text-md">
+            <span className="daisy-stat-value text-xs font-normal lg:flex lg:w-16 lg:justify-end lg:text-md">
               {formatBalance({
                 balance: amountPaid,
                 decimals: baseToken.decimals,
                 places: baseToken.places,
               })}
             </span>
-            <div className={"daisy-stat-desc inline-flex text-xs lg:mt-1"}>
+            <div
+              className={classNames(
+                "daisy-stat-desc inline-flex text-xs lg:mt-1 lg:flex lg:w-16 lg:justify-end",
+              )}
+            >
               <span>{formatRate(fixedRate)}% APR</span>
             </div>
           </div>
