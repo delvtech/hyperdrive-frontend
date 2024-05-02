@@ -44,22 +44,21 @@ export function FixedRateCell({
 
   return (
     <div
-      className={classNames("daisy-stat flex p-0", { "flex-col": vertical })}
+      className={classNames(
+        "daisy-stat flex p-0",
+        { "flex-col": vertical },
+        {
+          "w-16 items-end": !isTailwindSmallScreen,
+        },
+      )}
     >
-      <span
-        className={classNames("daisy-stat-value text-md font-bold", {
-          "flex w-16 justify-end": !isTailwindSmallScreen,
-        })}
-      >
+      <span className={classNames("daisy-stat-value text-md font-bold")}>
         {formatRate(fixedRate)}%
       </span>
       <div
         data-tip={"Yield after fees if held to maturity"}
         className={classNames(
           "daisy-stat-desc daisy-tooltip mt-1 inline-flex text-xs text-success",
-          {
-            "flex w-16 justify-end": !isTailwindSmallScreen,
-          },
         )}
       >
         <span>{"+"}</span>
