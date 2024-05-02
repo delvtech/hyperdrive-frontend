@@ -192,7 +192,7 @@ function getColumns({
       header: `Size (hy${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
-          <span>
+          <span className="flex w-20 justify-end">
             {formatBalance({
               balance: row.original.bondAmount,
               decimals: baseToken.decimals,
@@ -207,11 +207,15 @@ function getColumns({
       header: `Cost (${baseToken.symbol})`,
       cell: (baseAmountPaid) => {
         const amountPaid = baseAmountPaid.getValue();
-        return formatBalance({
-          balance: amountPaid,
-          decimals: baseToken.decimals,
-          places: baseToken.places,
-        });
+        return (
+          <span className="flex w-16 justify-end">
+            {formatBalance({
+              balance: amountPaid,
+              decimals: baseToken.decimals,
+              places: baseToken.places,
+            })}
+          </span>
+        );
       },
     }),
     columnHelper.accessor("assetId", {

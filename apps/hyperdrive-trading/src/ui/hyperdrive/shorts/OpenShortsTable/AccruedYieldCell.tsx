@@ -1,8 +1,10 @@
 import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
+import classNames from "classnames";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useAccruedYield } from "src/ui/hyperdrive/hooks/useAccruedYield";
 
 export function AccruedYieldCell({
@@ -13,6 +15,7 @@ export function AccruedYieldCell({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { bondAmount, checkpointId } = openShort;
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -25,14 +28,16 @@ export function AccruedYieldCell({
   });
 
   return (
-    <div className="flex flex-col gap-1">
-      <span>
-        {formatBalance({
-          balance: accruedYield || 0n,
-          decimals: baseToken.decimals,
-          places: baseToken.places,
-        })}
-      </span>
-    </div>
+    <span
+      className={classNames({
+        "flex w-28 justify-end": !isTailwindSmallScreen,
+      })}
+    >
+      {formatBalance({
+        balance: accruedYield || 0n,
+        decimals: baseToken.decimals,
+        places: baseToken.places,
+      })}
+    </span>
   );
 }

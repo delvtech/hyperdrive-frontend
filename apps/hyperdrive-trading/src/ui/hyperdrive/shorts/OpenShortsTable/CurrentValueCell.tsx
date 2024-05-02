@@ -6,6 +6,7 @@ import { parseUnits } from "src/base/parseUnits";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseShort } from "src/ui/hyperdrive/shorts/hooks/usePreviewCloseShort";
 import { useAccount } from "wagmi";
@@ -18,6 +19,7 @@ export function CurrentValueCell({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -59,7 +61,11 @@ export function CurrentValueCell({
     currentValueInBase && currentValueInBase > openShort.baseAmountPaid;
 
   return (
-    <div className="daisy-stat p-0">
+    <div
+      className={classNames("daisy-stat p-0", {
+        "flex w-32 flex-col items-end": !isTailwindSmallScreen,
+      })}
+    >
       <span className="daisy-stat-value text-md font-bold">
         {currentValueLabel?.toString()}
       </span>

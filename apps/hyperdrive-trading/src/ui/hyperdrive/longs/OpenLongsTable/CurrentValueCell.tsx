@@ -5,6 +5,7 @@ import { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { parseUnits } from "viem";
@@ -18,6 +19,7 @@ export function CurrentValueCell({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -63,7 +65,11 @@ export function CurrentValueCell({
     return <div>Insufficient Liquidity</div>;
   }
   return (
-    <div className="daisy-stat flex flex-row p-0 xl:flex-col">
+    <div
+      className={classNames("daisy-stat flex flex-row p-0 xl:flex-col", {
+        "flex w-32 flex-col items-end": !isTailwindSmallScreen,
+      })}
+    >
       <span className="daisy-stat-value text-xs font-bold md:text-md">
         {currentValueLabel}
       </span>
