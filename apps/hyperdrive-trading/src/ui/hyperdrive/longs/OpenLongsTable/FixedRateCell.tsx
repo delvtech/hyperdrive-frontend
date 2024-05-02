@@ -8,6 +8,7 @@ import { ReactElement } from "react";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 
 export function FixedRateCell({
   baseAmountPaid,
@@ -21,6 +22,7 @@ export function FixedRateCell({
   vertical?: boolean;
 }): ReactElement {
   const appConfig = useAppConfig();
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { poolConfig, baseToken: baseTokenAddress } = hyperdrive;
   const baseToken = findBaseToken({
     baseTokenAddress,
@@ -44,14 +46,21 @@ export function FixedRateCell({
     <div
       className={classNames("daisy-stat flex p-0", { "flex-col": vertical })}
     >
-      <span className="daisy-stat-value text-md font-bold">
+      <span
+        className={classNames("daisy-stat-value text-md font-bold", {
+          "flex w-16 justify-end": !isTailwindSmallScreen,
+        })}
+      >
         {formatRate(fixedRate)}%
       </span>
       <div
         data-tip={"Yield after fees if held to maturity"}
-        className={
-          "daisy-stat-desc daisy-tooltip mt-1 inline-flex text-xs text-success"
-        }
+        className={classNames(
+          "daisy-stat-desc daisy-tooltip mt-1 inline-flex text-xs text-success",
+          {
+            "flex w-16 justify-end": !isTailwindSmallScreen,
+          },
+        )}
       >
         <span>{"+"}</span>
         {formatBalance({

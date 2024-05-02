@@ -5,6 +5,7 @@ import { ReactElement } from "react";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { parseUnits } from "viem";
@@ -18,6 +19,7 @@ export function CurrentValueCell({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -64,13 +66,20 @@ export function CurrentValueCell({
   }
   return (
     <div className="daisy-stat flex flex-row p-0 xl:flex-col">
-      <span className="daisy-stat-value text-xs font-bold md:text-md">
+      <span
+        className={classNames("daisy-stat-value text-xs font-bold md:text-md", {
+          "flex w-32 justify-end": !isTailwindSmallScreen,
+        })}
+      >
         {currentValueLabel}
       </span>
       <div
         data-tip={"Profit/Loss since open, after closing fees."}
         className={classNames(
           "daisy-tooltip daisy-tooltip-left mt-1 flex text-xs before:border",
+          {
+            "flex w-32 justify-end": !isTailwindSmallScreen,
+          },
           { "text-success": isPositiveChangeInValue },
           {
             "text-error":
