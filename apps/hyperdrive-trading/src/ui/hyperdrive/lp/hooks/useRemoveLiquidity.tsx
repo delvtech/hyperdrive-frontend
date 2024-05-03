@@ -7,7 +7,7 @@ import {
 import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
-import { useReadWriteHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadWriteHyperdriveModel";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -38,7 +38,7 @@ export function useRemoveLiquidity({
   onSubmitted,
   onExecuted,
 }: UseRemoveLiquidityOptions): UseRemoveLiquidityResult {
-  const hyperdriveModel = useReadWriteHyperdriveModel(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
@@ -47,39 +47,29 @@ export function useRemoveLiquidity({
     !!lpSharesIn &&
     minOutputPerShare !== undefined &&
     !!destination &&
-    !!hyperdriveModel &&
+    !!readWriteHyperdrive &&
     !!publicClient;
 
   const { mutate: removeLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        function onTransactionCompleted(txHash: Hash) {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast message="Liquidity removed" txHash={txHash} />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION },
-          );
-          toastWarpcast();
-          onExecuted?.(txHash);
-        }
-
-        const hash = asBase
-          ? await hyperdriveModel.removeLiquidityWithBase({
-              args: {
-                lpSharesIn,
-                minOutputPerShare,
-                destination,
-              },
-              onTransactionCompleted,
-            })
-          : await hyperdriveModel.removeLiquidityWithShares({
-              args: {
-                destination,
-                lpSharesIn,
-                minOutputPerShare,
-              },
-              onTransactionCompleted,
-            });
+        const hash = await readWriteHyperdrive.removeLiquidity({
+          args: {
+            asBase,
+            lpSharesIn,
+            minOutputPerShare,
+            destination,
+          },
+          onTransactionCompleted: (txHash: Hash) => {
+            queryClient.invalidateQueries();
+            toast.success(
+              <TransactionToast message="Liquidity removed" txHash={txHash} />,
+              { id: txHash, duration: SUCCESS_TOAST_DURATION },
+            );
+            toastWarpcast();
+            onExecuted?.(txHash);
+          },
+        });
 
         toast.loading(
           <TransactionToast message="Removing liquidity..." txHash={hash} />,

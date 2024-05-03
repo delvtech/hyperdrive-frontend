@@ -7,7 +7,7 @@ import {
 import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
-import { useReadWriteHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadWriteHyperdriveModel";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -40,7 +40,7 @@ export function useCloseLong({
   onSubmitted,
   onExecuted,
 }: UseCloseLongOptions): UseCloseLongResult {
-  const hyperdriveModel = useReadWriteHyperdriveModel(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
@@ -51,40 +51,30 @@ export function useCloseLong({
     minAmountOut !== undefined && // check undefined since 0 is valid
     !!destination &&
     enabled &&
-    !!hyperdriveModel &&
+    !!readWriteHyperdrive &&
     !!publicClient;
 
   const { mutate: closeLong, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        function onTransactionCompleted(txHash: Hash) {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast message="Long closed" txHash={hash} />,
-            { id: hash, duration: SUCCESS_TOAST_DURATION },
-          );
-          toastWarpcast();
-          onExecuted?.(txHash);
-        }
-        const hash = asBase
-          ? await hyperdriveModel.closeLongWithBase({
-              args: {
-                bondAmountIn,
-                minAmountOut,
-                destination,
-                maturityTime,
-              },
-              onTransactionCompleted,
-            })
-          : await hyperdriveModel.closeLongWithShares({
-              args: {
-                bondAmountIn,
-                minAmountOut,
-                destination,
-                maturityTime,
-              },
-              onTransactionCompleted,
-            });
+        const hash = await readWriteHyperdrive.closeLong({
+          args: {
+            bondAmountIn,
+            minAmountOut,
+            destination,
+            maturityTime,
+            asBase,
+          },
+          onTransactionCompleted: (txHash: Hash) => {
+            queryClient.invalidateQueries();
+            toast.success(
+              <TransactionToast message="Long closed" txHash={hash} />,
+              { id: hash, duration: SUCCESS_TOAST_DURATION },
+            );
+            toastWarpcast();
+            onExecuted?.(txHash);
+          },
+        });
 
         toast.loading(
           <TransactionToast message="Closing Long..." txHash={hash} />,

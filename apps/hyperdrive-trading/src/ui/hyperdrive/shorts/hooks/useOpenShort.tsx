@@ -8,7 +8,7 @@ import {
 import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
-import { useReadWriteHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadWriteHyperdriveModel";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -44,7 +44,7 @@ export function useOpenShort({
   onSubmitted,
   onExecuted,
 }: UseOpenShortOptions): UseOpenShortResult {
-  const hyperdriveModel = useReadWriteHyperdriveModel(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
   const addTransaction = useAddRecentTransaction();
@@ -54,7 +54,7 @@ export function useOpenShort({
     !!destination &&
     minVaultSharePrice !== undefined &&
     enabled &&
-    !!hyperdriveModel &&
+    !!readWriteHyperdrive &&
     !!publicClient;
 
   const { mutate: openShort, status } = useMutation({
@@ -73,36 +73,25 @@ export function useOpenShort({
             : undefined,
         };
 
-        function onTransactionCompleted(txHash: `0x${string}`) {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast message="Short opened" txHash={txHash} />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION },
-          );
-          toastWarpcast();
-          onExecuted?.(txHash);
-        }
-        const hash = asBase
-          ? await hyperdriveModel.openShortWithBase({
-              args: {
-                bondAmount: amountBondShorts,
-                destination,
-                minVaultSharePrice,
-                maxDeposit: maxDeposit,
-              },
-              options: openShortOptions,
-              onTransactionCompleted,
-            })
-          : await hyperdriveModel.openShortWithShares({
-              args: {
-                bondAmount: amountBondShorts,
-                destination,
-                minVaultSharePrice,
-                maxDeposit: maxDeposit,
-              },
-              options: openShortOptions,
-              onTransactionCompleted,
-            });
+        const hash = await readWriteHyperdrive.openShort({
+          args: {
+            bondAmount: amountBondShorts,
+            asBase,
+            destination,
+            minVaultSharePrice,
+            maxDeposit: maxDeposit,
+          },
+          options: openShortOptions,
+          onTransactionCompleted: (txHash: `0x${string}`) => {
+            queryClient.invalidateQueries();
+            toast.success(
+              <TransactionToast message="Short opened" txHash={txHash} />,
+              { id: txHash, duration: SUCCESS_TOAST_DURATION },
+            );
+            toastWarpcast();
+            onExecuted?.(txHash);
+          },
+        });
 
         toast.loading(
           <TransactionToast message="Opening Short" txHash={hash} />,
