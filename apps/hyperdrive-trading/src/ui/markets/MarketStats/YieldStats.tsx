@@ -91,7 +91,7 @@ export function YieldStats({
           {isImpliedYieldFeatureFlagEnabled ? (
             <Animated isActive={position === "Shorts"}>
               <Stat
-                label="Implied Variable Rate"
+                label="Variable APY"
                 value={
                   impliedRateStatus === "loading" &&
                   impliedRate === undefined ? (
@@ -102,7 +102,7 @@ export function YieldStats({
                     </span>
                   )
                 }
-                description={`The effective rate earned on shorts`}
+                description="Resulting rate of return that a Short position accrues, taking into consideration the fixed rate paid to open the Short, the variable rate being earned (on full face value), and the maximum loss on capital."
                 tooltipPosition={"right"}
               />
             </Animated>
