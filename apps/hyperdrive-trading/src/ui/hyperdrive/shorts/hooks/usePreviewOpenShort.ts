@@ -1,6 +1,6 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadHyperdriveModel";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
 interface UsePreviewOpenShortOptions {
@@ -22,8 +22,8 @@ export function usePreviewOpenShort({
   amountOfBondsToShort,
   asBase,
 }: UsePreviewOpenShortOptions): UsePreviewOpenShortResult {
-  const hyperdriveModel = useReadHyperdriveModel(hyperdriveAddress);
-  const queryEnabled = !!hyperdriveModel && !!amountOfBondsToShort;
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const queryEnabled = !!readHyperdrive && !!amountOfBondsToShort;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenShort", {
@@ -33,15 +33,11 @@ export function usePreviewOpenShort({
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
-      ? async () => {
-          return asBase
-            ? hyperdriveModel.previewOpenShortWithBase({
-                bondAmount: amountOfBondsToShort,
-              })
-            : hyperdriveModel.previewOpenShortWithShares({
-                bondAmount: amountOfBondsToShort,
-              });
-        }
+      ? async () =>
+          readHyperdrive.previewOpenShort({
+            amountOfBondsToShort,
+            asBase,
+          })
       : undefined,
   });
   return {
