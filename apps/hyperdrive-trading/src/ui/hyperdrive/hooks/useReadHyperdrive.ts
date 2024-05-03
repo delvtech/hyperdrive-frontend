@@ -35,14 +35,13 @@ export function useReadHyperdrive(
         tokens: appConfig.tokens,
       })
     : undefined;
-  const isSteth = !!sharesToken && getIsSteth(sharesToken);
-  const isMetaMorpho = !!sharesToken && getIsMetaMorpho(sharesToken);
 
   return useMemo(() => {
-    if (!address || !publicClient) {
+    if (!address || !publicClient || !sharesToken) {
       return undefined;
     }
 
+    const isSteth = getIsSteth(sharesToken);
     if (isSteth) {
       return new ReadStEthHyperdrive({
         address,
@@ -51,6 +50,8 @@ export function useReadHyperdrive(
         namespace: chainId.toString(),
       });
     }
+
+    const isMetaMorpho = getIsMetaMorpho(sharesToken);
     if (isMetaMorpho) {
       return new ReadMetaMorphoHyperdrive({
         address,
@@ -66,5 +67,5 @@ export function useReadHyperdrive(
       cache: sdkCache,
       namespace: chainId.toString(),
     });
-  }, [address, publicClient, isSteth, isMetaMorpho, chainId]);
+  }, [address, publicClient, sharesToken, chainId]);
 }

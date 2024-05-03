@@ -5,7 +5,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
-import { useReadWriteHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadWriteHyperdriveModel";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -43,7 +43,7 @@ export function useOpenLong({
   const addTransaction = useAddRecentTransaction();
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
-  const hyperdriveModel = useReadWriteHyperdriveModel(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
 
   const mutationEnabled =
     !!amount &&
@@ -52,7 +52,7 @@ export function useOpenLong({
     minSharePrice !== undefined &&
     enabled &&
     !!publicClient &&
-    !!hyperdriveModel;
+    !!readWriteHyperdrive;
 
   const { mutate: openLong, status } = useMutation({
     mutationFn: async () => {
@@ -76,27 +76,17 @@ export function useOpenLong({
         onExecuted?.(txHash);
       }
 
-      const hash = asBase
-        ? await hyperdriveModel.openLongWithBase({
-            args: {
-              baseAmount: amount,
-              minBondsOut: minBondsOut,
-              destination,
-              minVaultSharePrice: minSharePrice,
-            },
-            options,
-            onTransactionCompleted,
-          })
-        : await hyperdriveModel.openLongWithShares({
-            args: {
-              sharesAmount: amount,
-              minBondsOut: minBondsOut,
-              destination,
-              minVaultSharePrice: minSharePrice,
-            },
-            options,
-            onTransactionCompleted,
-          });
+      const hash = await readWriteHyperdrive.openLong({
+        args: {
+          amount,
+          minBondsOut: minBondsOut,
+          destination,
+          minVaultSharePrice: minSharePrice,
+          asBase,
+        },
+        options,
+        onTransactionCompleted,
+      });
 
       toast.loading(
         <TransactionToast txHash={hash} message="Opening a Long..." />,

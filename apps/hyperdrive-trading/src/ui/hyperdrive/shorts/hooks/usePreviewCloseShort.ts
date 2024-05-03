@@ -1,6 +1,6 @@
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadHyperdriveModel";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 import { useAccount } from "wagmi";
 
@@ -28,18 +28,18 @@ export function usePreviewCloseShort({
   asBase = true,
   enabled = true,
 }: UsePreviewCloseShortOptions): UsePreviewCloseShortResult {
-  const hyperdriveModel = useReadHyperdriveModel(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const { address: account } = useAccount();
   const queryEnabled =
     !!account &&
-    !!hyperdriveModel &&
+    !!readHyperdrive &&
     !!maturityTime &&
     !!shortAmountIn &&
     minAmountOut !== undefined && // check against undefined explicitly, because base amount of 0 is valid
     !!destination &&
     enabled;
 
-  const { data, status } = useQuery({
+  const { data: amountOut, status } = useQuery({
     queryKey: makeQueryKey("previewCloseShort", {
       hyperdriveAddress,
       maturityTime: maturityTime?.toString(),
@@ -51,23 +51,16 @@ export function usePreviewCloseShort({
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () =>
-          asBase
-            ? hyperdriveModel.previewCloseShortWithBase({
-                account,
-                destination,
-                maturityTime,
-                minAmountOut,
-                shortAmountIn,
-              })
-            : hyperdriveModel.previewCloseShortWithShares({
-                account,
-                destination,
-                maturityTime,
-                minAmountOut,
-                shortAmountIn,
-              })
+          readHyperdrive.previewCloseShort({
+            destination,
+            maturityTime,
+            minAmountOut,
+            shortAmountIn,
+            asBase,
+            options: { from: account },
+          })
       : undefined,
   });
 
-  return { amountOut: data?.amountOut, previewCloseShortStatus: status };
+  return { amountOut, previewCloseShortStatus: status };
 }

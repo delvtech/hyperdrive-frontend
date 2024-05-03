@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadHyperdriveModel";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 import { useAccount, usePublicClient } from "wagmi";
 
@@ -34,7 +34,7 @@ export function usePreviewAddLiquidity({
 }: UsePreviewAddLiquidityOptions): UsePreviewAddLiquidityResult {
   const publicClient = usePublicClient();
   const { address: account } = useAccount();
-  const hyperdriveModel = useReadHyperdriveModel(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
     minAPR !== undefined &&
     minLpSharePrice !== undefined &&
@@ -44,7 +44,7 @@ export function usePreviewAddLiquidity({
     !!publicClient &&
     !!account &&
     enabled &&
-    !!hyperdriveModel;
+    !!readHyperdrive;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewAddLiquidity", {
@@ -59,24 +59,14 @@ export function usePreviewAddLiquidity({
     }),
     queryFn: queryEnabled
       ? () => {
-          if (asBase) {
-            return hyperdriveModel.previewAddLiquidityWithBase({
-              destination,
-              contribution,
-              minAPR,
-              minLpSharePrice,
-              maxAPR,
-              ethValue,
-            });
-          }
-
-          return hyperdriveModel.previewAddLiquidityWithShares({
+          return readHyperdrive.previewAddLiquidity({
             destination,
             contribution,
             minAPR,
             minLpSharePrice,
             maxAPR,
-            ethValue,
+            asBase,
+            options: { value: ethValue, from: destination },
           });
         }
       : undefined,

@@ -7,7 +7,7 @@ import {
 import toast from "react-hot-toast";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
-import { useReadWriteHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadWriteHyperdriveModel";
+import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
 import { Address, Hash } from "viem";
 import { usePublicClient } from "wagmi";
@@ -45,7 +45,7 @@ export function useAddLiquidity({
   onExecuted,
   ethValue,
 }: UseAddLiquidityOptions): UseAddLiquidityResult {
-  const hyperdriveModel = useReadWriteHyperdriveModel(hyperdriveAddress);
+  const readWriteHyperdrive = useReadWriteHyperdrive(hyperdriveAddress);
 
   const publicClient = usePublicClient();
   const queryClient = useQueryClient();
@@ -59,43 +59,31 @@ export function useAddLiquidity({
     !!destination &&
     enabled &&
     !!publicClient &&
-    !!hyperdriveModel;
+    !!readWriteHyperdrive;
 
   const { mutate: addLiquidity, status } = useMutation({
     mutationFn: async () => {
       if (mutationEnabled) {
-        function onTransactionCompleted(txHash: Hash) {
-          queryClient.invalidateQueries();
-          toast.success(
-            <TransactionToast message="Liquidity added" txHash={txHash} />,
-            { id: txHash, duration: SUCCESS_TOAST_DURATION },
-          );
-          toastWarpcast();
-          onExecuted?.(txHash);
-        }
-        const hash = asBase
-          ? await hyperdriveModel.addLiquidityWithBase({
-              args: {
-                contribution,
-                minAPR,
-                minLpSharePrice,
-                maxAPR,
-                destination,
-              },
-              options: { value: ethValue },
-              onTransactionCompleted,
-            })
-          : await hyperdriveModel.addLiquidityWithShares({
-              args: {
-                contribution,
-                minAPR,
-                minLpSharePrice,
-                maxAPR,
-                destination,
-              },
-              options: { value: ethValue },
-              onTransactionCompleted,
-            });
+        const hash = await readWriteHyperdrive.addLiquidity({
+          args: {
+            contribution,
+            asBase,
+            minAPR,
+            minLpSharePrice,
+            maxAPR,
+            destination,
+          },
+          options: { value: ethValue },
+          onTransactionCompleted: (txHash: Hash) => {
+            queryClient.invalidateQueries();
+            toast.success(
+              <TransactionToast message="Liquidity added" txHash={txHash} />,
+              { id: txHash, duration: SUCCESS_TOAST_DURATION },
+            );
+            toastWarpcast();
+            onExecuted?.(txHash);
+          },
+        });
 
         toast.loading(
           <TransactionToast message="Adding liquidity..." txHash={hash} />,

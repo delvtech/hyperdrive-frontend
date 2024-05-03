@@ -1,6 +1,6 @@
 import { MutationStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
-import { useReadHyperdriveModel } from "src/ui/hyperdrive/hooks/model/useReadHyperdriveModel";
+import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address } from "viem";
 
 interface UsePreviewRemoveLiquidityOptions {
@@ -26,13 +26,13 @@ export function usePreviewRemoveLiquidity({
   asBase = true,
   enabled = true,
 }: UsePreviewRemoveLiquidityOptions): UsePreviewRemoveLiquidityResult {
-  const hyperdriveModel = useReadHyperdriveModel(hyperdriveAddress);
+  const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
   const queryEnabled =
     !!lpSharesIn &&
     minOutputPerShare !== undefined &&
     !!destination &&
     enabled &&
-    !!hyperdriveModel;
+    !!readHyperdrive;
 
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewRemoveLiquidity", {
@@ -44,17 +44,12 @@ export function usePreviewRemoveLiquidity({
     }),
     queryFn: queryEnabled
       ? () =>
-          asBase
-            ? hyperdriveModel.previewRemoveLiquidityWithBase({
-                lpSharesIn,
-                minOutputPerShare,
-                destination,
-              })
-            : hyperdriveModel.previewRemoveLiquidityWithShares({
-                lpSharesIn,
-                minOutputPerShare,
-                destination,
-              })
+          readHyperdrive.previewRemoveLiquidity({
+            lpSharesIn,
+            minOutputPerShare,
+            destination,
+            asBase,
+          })
       : undefined,
     enabled: queryEnabled,
   });
