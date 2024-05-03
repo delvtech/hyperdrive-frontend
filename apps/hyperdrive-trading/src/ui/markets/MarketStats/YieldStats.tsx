@@ -60,7 +60,7 @@ export function YieldStats({
     <Well transparent>
       <div className="space-y-8">
         <div className="flex justify-between gap-20">
-          <h5 className="flex items-center gap-2 text-gray-400">Yield</h5>
+          <h5 className="flex text-neutral-content">Yield</h5>
           <div className="font-dmMono text-neutral-content">
             {vaultRateStatus === "loading" && vaultRate === undefined ? (
               <Skeleton className="w-20" />
@@ -91,9 +91,18 @@ export function YieldStats({
           {isImpliedYieldFeatureFlagEnabled ? (
             <Animated isActive={position === "Shorts"}>
               <Stat
-                label="Implied Variable Rate"
-                value={`${formattedRate}%`}
-                description={`The yield source backing the hy${baseToken.symbol} in this pool.`}
+                label="Variable APY"
+                value={
+                  impliedRateStatus === "loading" &&
+                  impliedRate === undefined ? (
+                    <Skeleton className="w-20" />
+                  ) : (
+                    <span className={classNames("flex items-center gap-1.5")}>
+                      {formattedRate}%
+                    </span>
+                  )
+                }
+                description="Resulting rate of return that a Short position accrues, taking into consideration the fixed rate paid to open the Short, the variable rate being earned (on full face value), and the maximum loss on capital."
                 tooltipPosition={"right"}
               />
             </Animated>
