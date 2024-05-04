@@ -22,13 +22,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'yarn'
-
-      # Required for hyperdrive-wasm
-      - name: setup foundry
-        uses: foundry-rs/foundry-toolchain@v1
-        with:
-          version: nightly
+          cache: "yarn"
 
       - name: Install dependencies
         run: yarn --frozen-lockfile
