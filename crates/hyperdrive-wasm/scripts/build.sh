@@ -36,6 +36,9 @@ npx wasm-pack build --target web --scope delvtech --out-dir "$out_dir"
   # Move into the built package directory
   cd "$out_dir"
 
+  # Remove the .gitignore, we want the compiled wasm to be checked in
+  rm .gitignore
+
   # Convert the wasm file to a base64 string
   wasm_b64=$(base64 <hyperdrive_wasm_bg.wasm)
 
