@@ -25,7 +25,7 @@ console.log(`
 |  ${script}
 |  Generates a wasm package from the hyperdrive-wasm crate.
 |
-|  Usage: ${script} [out_dir]"
+|  Usage: ${script} [out_dir]
 |
 |    out_dir: The output directory for the generated package. (default: ${DEFAULT_OUT_DIR})
 +
