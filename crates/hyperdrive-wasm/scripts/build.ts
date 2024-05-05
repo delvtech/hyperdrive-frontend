@@ -70,7 +70,6 @@ async function main() {
   );
 
   if (buildProcessResult.error) {
-    console.error(buildProcessResult.error);
     process.exit(1);
   }
 
