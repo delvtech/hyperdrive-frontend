@@ -54,7 +54,16 @@ async function main() {
   rmSync(outDir, { recursive: true, force: true });
   const buildProcessResult = spawnSync(
     "npx",
-    ["wasm-pack", "build", "--scope", "delvtech", "--out-dir", outDir],
+    [
+      "wasm-pack",
+      "build",
+      "--target",
+      "web",
+      "--scope",
+      "delvtech",
+      "--out-dir",
+      outDir,
+    ],
     {
       stdio: "inherit",
     },
@@ -104,6 +113,7 @@ export const wasmBuffer = Uint8Array.from(atob(wasmBase64), (c) =>
 
   // Remove the wasm binary
   rmSync(wasmPath);
+  rmSync(resolve(outDir, "hyperdrive_wasm_bg.wasm.d.ts"));
 
   // Add type definitions for the added exports
   appendFileSync(
@@ -117,7 +127,7 @@ export const wasmBuffer: ArrayBuffer;`,
   const packageJsonPath = resolve(outDir, "package.json");
   const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf8"));
   packageJson.files = packageJson.files.filter(
-    (filename: string) => filename !== "hyperdrive_wasm_bg.wasm",
+    (filename: string) => !filename.startsWith("hyperdrive_wasm_bg.wasm"),
   );
   packageJson.main = "hyperdrive_wasm.js";
   writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
