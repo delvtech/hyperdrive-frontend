@@ -1,16 +1,8 @@
 #!/usr/bin/env node
 import { spawnSync } from "child_process";
-import {
-  appendFileSync,
-  createReadStream,
-  createWriteStream,
-  readFileSync,
-  rmSync,
-  writeFileSync,
-} from "fs";
+import { appendFileSync, readFileSync, rmSync, writeFileSync } from "fs";
+import { readFile } from "fs/promises";
 import { basename, resolve } from "path";
-import { Transform } from "stream";
-import { pipeline } from "stream/promises";
 import { version } from "../package.json";
 
 const [_, bin, ...args] = process.argv;
@@ -77,42 +69,20 @@ async function main() {
 
   // Transform the wasm binary into a base64 string and embed it directly into
   // the module to simplify usage and avoid the need for loader configuration in
-  // app bundlers. A transform stream is used to avoid loading the entire wasm
-  // binary into memory.
-  const base64EncodeTransform = new Transform({
-    transform(chunk, _, callback) {
-      this.push(chunk.toString("base64"));
-      callback();
-    },
-  });
-
+  // app bundlers.
   const wasmPath = resolve(outDir, "hyperdrive_wasm_bg.wasm");
-  const modulePath = resolve(outDir, "hyperdrive_wasm.js");
-
-  appendFileSync(modulePath, 'export const wasmBase64 = "');
-  await pipeline(
-    createReadStream(wasmPath),
-    base64EncodeTransform,
-    createWriteStream(modulePath, { flags: "a" }),
-  ).catch((err) => {
-    if (err) {
-      console.error(err);
-      process.exit(1);
-    }
-  });
-  // Append the closing quote and an export for the wasm buffer which can be
-  // used to instantiate the package.
-  appendFileSync(
-    modulePath,
-    `";
-export const wasmBuffer = Uint8Array.from(atob(wasmBase64), (c) =>
-  c.charCodeAt(0),
-).buffer;`,
+  const wasmBase64 = await readFile(wasmPath).then((data) =>
+    data.toString("base64"),
   );
 
-  // Remove the wasm binary
-  rmSync(wasmPath);
-  rmSync(resolve(outDir, "hyperdrive_wasm_bg.wasm.d.ts"));
+  const modulePath = resolve(outDir, "hyperdrive_wasm.js");
+  appendFileSync(
+    modulePath,
+    `export const wasmBase64 = "${wasmBase64}"
+  export const wasmBuffer = Uint8Array.from(atob(wasmBase64), (c) =>
+    c.charCodeAt(0),
+  ).buffer;`,
+  );
 
   // Add type definitions for the added exports
   appendFileSync(
@@ -120,6 +90,10 @@ export const wasmBuffer = Uint8Array.from(atob(wasmBase64), (c) =>
     `export const wasmBase64: string;
 export const wasmBuffer: ArrayBuffer;`,
   );
+
+  // Remove the wasm binary
+  rmSync(wasmPath);
+  rmSync(resolve(outDir, "hyperdrive_wasm_bg.wasm.d.ts"));
 
   // Remove the wasm binary from the package.json files list and add a main
   // field for improved commonjs compatibility.
