@@ -1,5 +1,7 @@
 [package]
 name = "hyperdrive-wasm"
+# This version will be overwritten by the build script to match the version in
+# the crate's package.json which is managed by changesets.
 version = "0.13.0"
 edition = "2021"
 authors = ["Ryan Goree <ryan@delv.tech>", "Danny Delott <dannyd@delv.tech>"]
