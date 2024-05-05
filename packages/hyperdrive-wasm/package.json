@@ -7,13 +7,14 @@
   "version": "0.13.0",
   "license": "AGPL-3.0",
   "files": [
-    "hyperdrive_wasm_bg.wasm",
     "hyperdrive_wasm.js",
+    "hyperdrive_wasm_bg.js",
     "hyperdrive_wasm.d.ts"
   ],
   "module": "hyperdrive_wasm.js",
   "types": "hyperdrive_wasm.d.ts",
   "sideEffects": [
+    "./hyperdrive_wasm.js",
     "./snippets/*"
   ],
   "main": "hyperdrive_wasm.js"

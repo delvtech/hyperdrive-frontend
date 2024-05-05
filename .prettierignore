@@ -6,3 +6,6 @@ build
 
 # contains no src files
 packages/hyperdrive-artifacts
+
+# generated files
+packages/hyperdrive-wasm
