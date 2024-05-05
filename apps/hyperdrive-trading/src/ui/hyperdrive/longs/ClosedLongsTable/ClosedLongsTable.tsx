@@ -133,7 +133,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       header: `Size (hy${baseToken.symbol})`,
       cell: ({ row }) => {
         return (
-          <span>
+          <span className="flex w-20 justify-end">
             {formatBalance({
               balance: row.original.bondAmount,
               decimals: baseToken.decimals,
@@ -278,7 +278,7 @@ function BaseAmountReceivedCell({
   });
 
   return (
-    <div className="flex flex-col items-center gap-1 lg:flex-row">
+    <div className="flex flex-col items-center gap-1 lg:w-36 lg:flex-row lg:justify-end">
       <span className="font-bold">{currentValueLabel?.toString()}</span>
     </div>
   );

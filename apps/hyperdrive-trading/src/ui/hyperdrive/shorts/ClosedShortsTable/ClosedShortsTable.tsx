@@ -125,11 +125,15 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       header: `Size (hy${baseToken.symbol})`,
       cell: (bondAmount) => {
         const bondAmountValue = bondAmount.getValue();
-        return formatBalance({
-          balance: bondAmountValue,
-          decimals: baseToken.decimals,
-          places: baseToken.places,
-        });
+        return (
+          <span className="flex w-20 justify-end">
+            {formatBalance({
+              balance: bondAmountValue,
+              decimals: baseToken.decimals,
+              places: baseToken.places,
+            })}
+          </span>
+        );
       },
     }),
     columnHelper.accessor("baseAmountReceived", {
@@ -137,7 +141,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       cell: (baseAmountReceived) => {
         const amountReceived = baseAmountReceived.getValue();
         return (
-          <span className="font-bold">
+          <span className="flex w-36 justify-end font-bold">
             {formatBalance({
               balance: amountReceived,
               decimals: baseToken.decimals,
