@@ -23,6 +23,10 @@ Packages
 - [@delvtech/hyperdrive-wasm](packages/hyperdrive-artifacts/) - Wasm bindings for the [Hyperdrive Rust SDK](https://github.com/delvtech/hyperdrive-rs)
 - [@hyperdrive/appconfig](packages/hyperdrive-appconfig/) - Hyperdrive static metadata by chain (eg: poolConfig, name, symbol, decimal, etc.)
 
+Crates
+
+- [hyperdrive-wasm](crates/hyperdrive-wasm/) - The Rust crate that compiles to the `@delvtech/hyperdrive-wasm` package
+
 ### Installation
 
 Install dependencies and build packages.
@@ -35,7 +39,19 @@ yarn
 yarn run build:packages
 ```
 
-> To use the local version of `@delvtech/hyperdrive-wasm` in the other packages instead of installing it from NPM, it must be built before dependencies are installed. To ensure this happens, a `preinstall` script is included in the root `package.json` that runs `yarn build:crates`.
+If you're working on the `@delvtech/hyperdrive-wasm` package, you will need to
+have the [Rust](https://www.rust-lang.org/) toolchain and
+[Forge](https://github.com/foundry-rs/foundry#installatio://github.com/foundry-rs/foundry#installation)
+installed to compile it. You can install it by running:
+
+- [Install Rust](https://www.rust-lang.org/tools/install)
+- [Install Forge](https://book.getfoundry.sh/getting-started/installation)
+
+Then, run the following command from the root directory of the monorepo:
+
+```bash
+yarn run build:crates
+```
 
 ### Environment variables
 
@@ -51,7 +67,7 @@ Check out the list of [apps and packages](#what-is-inside) above.
 
 This repo uses [changesets](https://github.com/changesets/changesets) to manage
 versioning and changelogs. This means you shouldn't need to manually change of
-the internal package versions. (excluding the `@delvtech/hyperdrive-wasm` package. See below)
+the internal package versions.
 
 Before opening a PR, run `yarn changeset` and follow the prompts to describe the
 changes you've made. This will create a changeset file that should be committed.
@@ -65,38 +81,13 @@ Once this PR is merged, the release workflow will be triggered, creating new
 tags and github releases, and publishing the updated packages to NPM. **These
 PRs should be carefully reviewed!**
 
-#### Updating `@delvtech/hyperdrive-wasm`
-
-The `@delvtech/hyperdrive-wasm` package is a bit special because it contains a
-pre-built wasm binary. This binary is built using the `wasm-pack` tool, and the
-resulting package is published to NPM. This means that the version of the
-`@delvtech/hyperdrive-wasm` package in the `package.json` files of the other
-packages must be updated manually.
-
-To create a new release of `@delvtech/hyperdrive-wasm`:
-
-1. Update the version in the `Cargo.toml` file of the `hyperdrive-wasm` crate and commit the change.
-   
-2. Add a new tag for the version with the format `@delvtech/hyperdrive-wasm@vX.Y.Z` (eg: `@delvtech/hyperdrive-wasm@v0.1.0`).
-   ```sh
-    git tag @delvtech/hyperdrive-wasm@vX.Y.Z
-    ```
-
-3. Push the new version and tag to the repository.
-   ```sh
-    git push
-    git push --tags
-    ```
-
-4. Create a new release on the GitHub repository from the tag. This will trigger the GitHub action to publish the new version to NPM.
-
 # Disclaimer
 
 The language used in this code and documentation is not intended to, and does not, have any particular financial, legal, or regulatory significance.
 
 ---
 
-Copyright © 2024  DELV
+Copyright © 2024 DELV
 
 Licensed under the GNU Affero General Public License Version 3.0 (the "OSS License").
 
