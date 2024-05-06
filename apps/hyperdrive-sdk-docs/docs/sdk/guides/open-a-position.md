@@ -50,7 +50,7 @@ const { bondProceeds } = await hyperdrive.previewOpenLong({
 // 2. Adjust by your slippage tolerance
 const minBondsOut = adjustAmountByPercentage({
   amount: bondProceeds,
-  percentage: parseUnits("1", 18), // <- Adjust for your tolerance
+  percentage: 1n, // <- Adjust for your tolerance
   decimals: 18,
   direction: "down",
 });
