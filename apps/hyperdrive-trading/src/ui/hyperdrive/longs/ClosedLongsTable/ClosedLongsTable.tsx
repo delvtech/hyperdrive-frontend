@@ -267,7 +267,6 @@ function BaseAmountReceivedCell({
   closedLong: ClosedLong;
   hyperdrive: HyperdriveConfig;
 }) {
-  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -283,7 +282,6 @@ function BaseAmountReceivedCell({
     <div
       className={classNames(
         "flex flex-col items-center gap-1 lg:w-36 lg:flex-row lg:justify-end",
-        { "flex w-36 flex-row justify-end": !isTailwindSmallScreen },
       )}
     >
       <span className="font-bold">{currentValueLabel?.toString()}</span>
