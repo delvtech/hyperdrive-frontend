@@ -89,7 +89,7 @@ export function CloseLongForm({
     withdrawAmount &&
     adjustAmountByPercentage({
       amount: withdrawAmount,
-      percentage: 1n,
+      percentage: parseUnits("1", activeWithdrawToken.decimals),
       decimals: activeWithdrawToken.decimals,
       direction: "down",
     });
