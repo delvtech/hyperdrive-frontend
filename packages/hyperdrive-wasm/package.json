@@ -1,0 +1,19 @@
+{
+  "name": "@delvtech/hyperdrive-wasm",
+  "collaborators": [
+    "Ryan Goree <ryan@delv.tech>",
+    "Danny Delott <dannyd@delv.tech>"
+  ],
+  "version": "0.13.0",
+  "license": "AGPL-3.0",
+  "files": [
+    "hyperdrive_wasm.js",
+    "hyperdrive_wasm.d.ts"
+  ],
+  "module": "hyperdrive_wasm.js",
+  "types": "hyperdrive_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ],
+  "main": "hyperdrive_wasm.js"
+}
