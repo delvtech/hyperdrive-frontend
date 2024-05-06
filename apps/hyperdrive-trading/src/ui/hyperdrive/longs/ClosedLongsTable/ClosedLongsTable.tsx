@@ -13,6 +13,7 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import classNames from "classnames";
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -266,6 +267,7 @@ function BaseAmountReceivedCell({
   closedLong: ClosedLong;
   hyperdrive: HyperdriveConfig;
 }) {
+  const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -278,7 +280,12 @@ function BaseAmountReceivedCell({
   });
 
   return (
-    <div className="flex flex-col items-center gap-1 lg:w-36 lg:flex-row lg:justify-end">
+    <div
+      className={classNames(
+        "flex flex-col items-center gap-1 lg:w-36 lg:flex-row lg:justify-end",
+        { "flex w-36 flex-row justify-end": !isTailwindSmallScreen },
+      )}
+    >
       <span className="font-bold">{currentValueLabel?.toString()}</span>
     </div>
   );
