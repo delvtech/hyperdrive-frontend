@@ -147,7 +147,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           ? row.original.withdrawalShareAmount
           : row.original.lpAmount;
         return (
-          <span>
+          <span className="flex w-24 justify-end">
             {formatBalance({
               balance: shares,
               decimals: baseToken.decimals,
@@ -162,7 +162,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
       cell: ({ getValue }) => {
         const baseAmount = getValue();
         return (
-          <span>
+          <span className="flex w-36 justify-end">
             {formatBalance({
               balance: baseAmount,
               decimals: baseToken.decimals,
@@ -181,7 +181,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
           return <span>N/A</span>;
         }
         return (
-          <span>
+          <span className="flex w-48 justify-end">
             {formatBalance({
               balance: withdrawalShareAmount,
               decimals: baseToken.decimals,

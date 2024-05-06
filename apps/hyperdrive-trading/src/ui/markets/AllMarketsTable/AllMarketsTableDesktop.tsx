@@ -98,7 +98,10 @@ function getColumns() {
       cell: ({ getValue }) => {
         const fixedRate = getValue();
         return (
-          <span key="fixed-rate" className="font-bold">
+          <span
+            key="fixed-rate"
+            className="font-bold lg:flex lg:w-20 lg:justify-end"
+          >
             {fixedRate}%
           </span>
         );

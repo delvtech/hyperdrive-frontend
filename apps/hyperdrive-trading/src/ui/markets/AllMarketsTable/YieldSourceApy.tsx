@@ -11,7 +11,7 @@ export function YieldSourceApy({
     hyperdriveAddress,
   });
   return (
-    <span className="flex items-center gap-1.5">
+    <span className="flex items-center gap-1.5 xl:w-24 xl:justify-end">
       {vaultRate?.formatted || 0}%
     </span>
   );
