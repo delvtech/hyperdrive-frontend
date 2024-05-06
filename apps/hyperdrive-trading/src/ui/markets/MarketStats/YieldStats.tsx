@@ -1,8 +1,4 @@
-import {
-  HyperdriveConfig,
-  findBaseToken,
-  findYieldSourceToken,
-} from "@hyperdrive/appconfig";
+import { HyperdriveConfig, findYieldSourceToken } from "@hyperdrive/appconfig";
 import { useSearch } from "@tanstack/react-router";
 import classNames from "classnames";
 import { PropsWithChildren, ReactElement } from "react";
@@ -13,7 +9,6 @@ import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Badge } from "src/ui/base/components/Badge";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
-import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
@@ -28,10 +23,6 @@ export function YieldStats({
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { position } = useSearch({ from: MARKET_DETAILS_ROUTE });
   const appConfig = useAppConfig();
-  const baseToken = findBaseToken({
-    baseTokenAddress: hyperdrive.baseToken,
-    tokens: appConfig.tokens,
-  });
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: hyperdrive.sharesToken,
     tokens: appConfig.tokens,
@@ -44,9 +35,6 @@ export function YieldStats({
     hyperdriveAddress: hyperdrive.address,
   });
 
-  // TODO: Remove feature flag once calculation is fixed in rust sdk
-  const { isFlagEnabled: isImpliedYieldFeatureFlagEnabled } =
-    useFeatureFlag("implied-yield");
   const { impliedRate, impliedRateStatus } = useImpliedRate({
     bondAmount: parseUnits("1", 18),
     hyperdriveAddress: hyperdrive.address,
@@ -88,25 +76,22 @@ export function YieldStats({
               description="Fixed rate earned from opening longs, before fees and slippage are applied."
             />
           </Animated>
-          {isImpliedYieldFeatureFlagEnabled ? (
-            <Animated isActive={position === "Shorts"}>
-              <Stat
-                label="Variable APY"
-                value={
-                  impliedRateStatus === "loading" &&
-                  impliedRate === undefined ? (
-                    <Skeleton className="w-20" />
-                  ) : (
-                    <span className={classNames("flex items-center gap-1.5")}>
-                      {formattedRate}%
-                    </span>
-                  )
-                }
-                description="Resulting rate of return that a Short position accrues, taking into consideration the fixed rate paid to open the Short, the variable rate being earned (on full face value), and the maximum loss on capital."
-                tooltipPosition={"right"}
-              />
-            </Animated>
-          ) : undefined}
+          <Animated isActive={position === "Shorts"}>
+            <Stat
+              label="Short APY"
+              value={
+                impliedRateStatus === "loading" && impliedRate === undefined ? (
+                  <Skeleton className="w-20" />
+                ) : (
+                  <span className={classNames("flex items-center gap-1.5")}>
+                    {formattedRate}%
+                  </span>
+                )
+              }
+              description="Effective rate of return that a Short position accrues, taking into consideration the fixed rate paid to open the Short, the variable rate being earned (on full face value), and the maximum loss on capital."
+              tooltipPosition={"right"}
+            />
+          </Animated>
           <Animated isActive={position === "LP"}>
             <Stat
               label="LP APY (7d)"
