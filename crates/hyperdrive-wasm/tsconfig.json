@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "@hyperdrive/tsconfig/base.json",
+  "include": ["scripts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "rootDir": ".",
+    "baseUrl": ".",
+    "moduleResolution": "NodeNext",
+    "experimentalDecorators": true,
+    "target": "ESNext",
+    "module": "NodeNext",
+    "resolveJsonModule": true
+  }
+}

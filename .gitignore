@@ -37,4 +37,3 @@ yarn-error.log*
 
 # rust
 target
-packages/hyperdrive-wasm

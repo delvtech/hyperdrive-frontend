@@ -1,6 +1,7 @@
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
 import {
   injectedWallet,
+  metaMaskWallet,
   rainbowWallet,
   safeWallet,
   walletConnectWallet,
@@ -25,7 +26,12 @@ const {
 export const chains: Chain[] = [];
 const transports: Record<string, Transport> = {};
 
-const recommendedWallets = [injectedWallet, safeWallet, rainbowWallet];
+const recommendedWallets = [
+  injectedWallet,
+  safeWallet,
+  rainbowWallet,
+  metaMaskWallet,
+];
 const customWallets: CreateWalletFn[] = [];
 
 // WalletConnect
