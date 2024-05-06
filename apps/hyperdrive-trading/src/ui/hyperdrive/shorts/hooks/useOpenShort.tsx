@@ -10,7 +10,7 @@ import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
 import { toastWarpcast } from "src/ui/social/WarpcastToast";
-import { Address, Hash } from "viem";
+import { Address, Hash, parseUnits } from "viem";
 import { usePublicClient } from "wagmi";
 
 interface UseOpenShortOptions {
@@ -68,7 +68,7 @@ export function useOpenShort({
                 amount: ethValue,
                 decimals: 18,
                 direction: "up",
-                percentage: 1n,
+                percentage: parseUnits("1", 18),
               })
             : undefined,
         };

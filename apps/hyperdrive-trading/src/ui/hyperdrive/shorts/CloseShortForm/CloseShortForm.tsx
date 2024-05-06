@@ -18,7 +18,7 @@ import { TransactionView } from "src/ui/hyperdrive/TransactionView";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
 import { TokenInput } from "src/ui/token/TokenInput";
 import { TokenChoice, TokenPicker } from "src/ui/token/TokenPicker";
-import { formatUnits } from "viem";
+import { formatUnits, parseUnits } from "viem";
 import { useAccount } from "wagmi";
 
 interface CloseShortFormProps {
@@ -88,7 +88,7 @@ export function CloseShortForm({
     amountOut &&
     adjustAmountByPercentage({
       amount: amountOut,
-      percentage: 1n,
+      percentage: parseUnits("1", activeWithdrawToken.decimals),
       decimals: activeWithdrawToken.decimals,
       direction: "down",
     });
