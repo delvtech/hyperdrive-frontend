@@ -14,7 +14,7 @@ export function useTotalLongsValue({
   poolInfo,
 }: {
   hyperdrive: HyperdriveConfig;
-  account: Address;
+  account: Address | undefined;
   openLongs: Long[] | undefined;
   readHyperdrive: ReadHyperdrive | undefined;
   poolInfo: PoolInfo | undefined;
@@ -34,11 +34,11 @@ export function useTotalLongsValue({
           asBase: false,
         }),
         enabled: queryEnabled,
-        queryFn: async () =>
+        queryFn: () =>
           readHyperdrive?.previewCloseLong({
             maturityTime: long.maturity,
             bondAmountIn: long.bondAmount,
-            destination: account,
+            destination: account as Address,
             asBase: false,
             minAmountOut: parseUnits("0", 18),
             options: {

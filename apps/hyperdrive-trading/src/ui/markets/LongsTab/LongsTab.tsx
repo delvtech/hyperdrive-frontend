@@ -34,7 +34,7 @@ export function LongsTab({
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { totalLongsValue, isLoading } = useTotalLongsValue({
     hyperdrive,
-    account: account as Address,
+    account,
     openLongs,
     readHyperdrive,
     poolInfo,
@@ -43,7 +43,6 @@ export function LongsTab({
     baseTokenAddress: hyperdrive.baseToken,
     tokens: appConfig.tokens,
   });
-
   return (
     <MarketDetailsTab
       positions={
@@ -54,7 +53,9 @@ export function LongsTab({
               {!isLoading ? (
                 <p className="text-xs text-neutral-content">
                   Total Value:{" "}
-                  {Number(dnFormat([totalLongsValue || 0n, 18])).toFixed(4)}{" "}
+                  {dnFormat([totalLongsValue || 0n, baseToken.decimals], {
+                    digits: 2,
+                  })}{" "}
                   {baseToken.symbol}
                 </p>
               ) : (
