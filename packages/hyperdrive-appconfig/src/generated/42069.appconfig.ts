@@ -140,10 +140,12 @@ export const cloudChainAppConfig: AppConfig = {
   protocols: {
     maker: {
       name: "Maker",
+      id: "maker",
       iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
     },
     lido: {
       name: "Lido",
+      id: "lido",
       iconUrl: "https://cryptologos.cc/logos/lido-dao-ldo-logo.png?v=029",
     },
   },

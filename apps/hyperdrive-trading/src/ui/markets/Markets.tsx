@@ -1,9 +1,12 @@
 import { ReactElement } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { useFeatureFlag } from "src/ui/base/featureFlags/featureFlags";
 import { AllMarketsTable } from "src/ui/markets/AllMarketsTable/AllMarketsTable";
 
 export function Markets(): ReactElement {
   const appConfig = useAppConfig();
+
+  const { isFlagEnabled: showCardView } = useFeatureFlag("card-view");
 
   if (!appConfig?.hyperdrives.length) {
     return <div>No markets found</div>;
@@ -24,7 +27,7 @@ export function Markets(): ReactElement {
           </div>
         </div>
       </div>
-      <AllMarketsTable />
+      {!showCardView ? <AllMarketsTable /> : null}
     </div>
   );
 }
