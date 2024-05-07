@@ -50,7 +50,7 @@ export function LongsTab({
                     <p className="text-xs text-neutral-content">
                       Total Value:{" "}
                       {dnFormat([totalLongsValue || 0n, baseToken.decimals], {
-                        digits: 2,
+                        digits: 4,
                       })}{" "}
                       {baseToken.symbol}
                     </p>
