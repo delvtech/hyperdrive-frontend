@@ -7,7 +7,6 @@ interface Props {
   subtitle: string;
   icon: ReactNode;
   checklist: string[];
-  emphasized?: boolean;
 }
 
 export function PositionCard({
@@ -15,10 +14,9 @@ export function PositionCard({
   subtitle,
   icon,
   checklist,
-  emphasized,
 }: Props): ReactElement {
   return (
-    <Well outlined={emphasized}>
+    <Well>
       <div className="flex w-[290px] flex-col p-3 md:w-[325px]">
         <div className="mb-8 flex w-12 justify-center rounded-lg bg-gray-600 p-4">
           {icon}
