@@ -54,14 +54,12 @@ export function useTotalLongsValue({
 
   if (allQueriesSucceeded) {
     previewCloseLongQueries.forEach((query) => {
-      if (query.data) {
-        const amountOutInBase = convertSharesToBase({
-          decimals: hyperdrive.decimals,
-          sharesAmount: query.data,
-          vaultSharePrice: poolInfo?.vaultSharePrice,
-        });
-        totalLongsValue += amountOutInBase || 0n;
-      }
+      const amountOutInBase = convertSharesToBase({
+        decimals: hyperdrive.decimals,
+        sharesAmount: query.data,
+        vaultSharePrice: poolInfo?.vaultSharePrice,
+      });
+      totalLongsValue += amountOutInBase || 0n;
     });
   }
 
