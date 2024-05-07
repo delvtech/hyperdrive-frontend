@@ -20,7 +20,7 @@ export function useTotalLongsValue({
   const readHyperdrive = useReadHyperdrive(hyperdrive.address);
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   let isLoading = true;
-  let totalLongsValue = 0n;
+
   const queryEnabled =
     !!account && !!openLongs && !!readHyperdrive && !!poolInfo;
   const previewCloseLongQueries = useQueries({
@@ -34,24 +34,26 @@ export function useTotalLongsValue({
           asBase: false,
         }),
         enabled: queryEnabled,
-        queryFn: () =>
-          readHyperdrive?.previewCloseLong({
-            maturityTime: long.maturity,
-            bondAmountIn: long.bondAmount,
-            destination: account as Address,
-            asBase: false,
-            minAmountOut: parseUnits("0", 18),
-            options: {
-              from: account,
-            },
-          }),
+        queryFn: queryEnabled
+          ? () =>
+              readHyperdrive?.previewCloseLong({
+                maturityTime: long.maturity,
+                bondAmountIn: long.bondAmount,
+                destination: account,
+                asBase: false,
+                minAmountOut: parseUnits("0", 18),
+                options: {
+                  from: account,
+                },
+              })
+          : undefined,
       })) ?? [],
   });
 
   const allQueriesSucceeded = previewCloseLongQueries.every(
     (query) => query.status === "success",
   );
-
+  let totalLongsValue = 0n;
   if (allQueriesSucceeded) {
     previewCloseLongQueries.forEach((query) => {
       const amountOutInBase = convertSharesToBase({
