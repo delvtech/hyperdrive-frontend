@@ -6,7 +6,6 @@ import Skeleton from "react-loading-skeleton";
 import { parseUnits } from "src/base/parseUnits";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { ClosedLongsTable } from "src/ui/hyperdrive/longs/ClosedLongsTable/ClosedLongsTable";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { OpenLongsTable } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTable";
@@ -25,17 +24,14 @@ export function LongsTab({
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
   const appConfig = useAppConfig();
   const { address: account } = useAccount();
-
   const { openLongs } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { totalLongsValue, isLoading } = useTotalLongsValue({
     hyperdrive,
     account,
     openLongs,
-    poolInfo,
   });
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
