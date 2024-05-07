@@ -1,5 +1,5 @@
 export interface Protocol {
-  id: string;
+  id: keyof typeof protocols;
   name: string;
   iconUrl: string;
 }
