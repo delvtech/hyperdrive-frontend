@@ -79,6 +79,54 @@ export const sepoliaAppConfig: AppConfig = {
       extensions: {},
     },
     {
+      address: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
+      decimals: 18,
+      places: 2,
+      name: "sDAI",
+      symbol: "SDAI",
+      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
+      tags: ["yieldSource", "erc4626"],
+      extensions: {
+        shortName: "Maker DSR",
+        protocol: "maker",
+      },
+    },
+    {
+      address: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
+      decimals: 18,
+      places: 2,
+      name: "DAI",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: [],
+      extensions: {},
+    },
+    {
+      address: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
+      decimals: 18,
+      places: 2,
+      name: "sDAI",
+      symbol: "SDAI",
+      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
+      tags: ["yieldSource", "erc4626"],
+      extensions: {
+        shortName: "Maker DSR",
+        protocol: "maker",
+      },
+    },
+    {
+      address: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
+      decimals: 18,
+      places: 2,
+      name: "DAI",
+      symbol: "DAI",
+      iconUrl:
+        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
+      tags: [],
+      extensions: {},
+    },
+    {
       address: "0x3A2031f3FAb5AA2b5c47c02fcD9f26072977834c",
       decimals: 18,
       places: 2,
@@ -90,54 +138,6 @@ export const sepoliaAppConfig: AppConfig = {
       extensions: {
         shortName: "MetaMorpho",
         protocol: "morpho",
-      },
-    },
-    {
-      address: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
-      decimals: 18,
-      places: 2,
-      name: "DAI",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: [],
-      extensions: {},
-    },
-    {
-      address: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
-      decimals: 18,
-      places: 2,
-      name: "sDAI",
-      symbol: "SDAI",
-      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
-      tags: ["yieldSource", "erc4626"],
-      extensions: {
-        shortName: "Maker DSR",
-        protocol: "maker",
-      },
-    },
-    {
-      address: "0x552ceaDf3B47609897279F42D3B3309B604896f3",
-      decimals: 18,
-      places: 2,
-      name: "DAI",
-      symbol: "DAI",
-      iconUrl:
-        "https://cryptologos.cc/logos/multi-collateral-dai-dai-logo.png?v=029",
-      tags: [],
-      extensions: {},
-    },
-    {
-      address: "0xECa45b0391E81c311F1b390808a3BA3214d35eAA",
-      decimals: 18,
-      places: 2,
-      name: "sDAI",
-      symbol: "SDAI",
-      iconUrl: "https://etherscan.io/token/images/Badgedai_32.svg",
-      tags: ["yieldSource", "erc4626"],
-      extensions: {
-        shortName: "Maker DSR",
-        protocol: "maker",
       },
     },
     {
@@ -378,19 +378,23 @@ export const sepoliaAppConfig: AppConfig = {
   ],
   protocols: {
     maker: {
+      id: "maker",
       name: "Maker",
       iconUrl: "https://cryptologos.cc/logos/maker-mkr-logo.png?v=024",
     },
     lido: {
+      id: "lido",
       name: "Lido",
       iconUrl: "https://cryptologos.cc/logos/lido-dao-ldo-logo.png?v=029",
     },
     morpho: {
+      id: "morpho",
       name: "Morpho",
       iconUrl:
         "https://assets.coingecko.com/coins/images/29837/large/2022-official-morpho-token.png?1696528764",
     },
     rocketPool: {
+      id: "rocketPool",
       name: "Rocket Pool",
       iconUrl:
         "https://assets.coingecko.com/coins/images/2090/large/rocket_pool_%28RPL%29.png?1696503058",
