@@ -5,35 +5,46 @@ import {
   findYieldSourceToken,
 } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
+import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Badge } from "src/ui/base/components/Badge";
 import { Well } from "src/ui/base/components/Well/Well";
+import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function YieldSourceCard({
-  protocol,
+  yieldSourceProtocol,
 }: {
-  protocol: Protocol;
+  yieldSourceProtocol: Protocol;
 }): ReactElement {
   const appConfig = useAppConfig();
 
+  // Extract the list of pools that have this yield source
   const pools = appConfig.hyperdrives.filter((hyperdrive) => {
     const sharesToken = findYieldSourceToken({
       tokens: appConfig.tokens,
       yieldSourceTokenAddress: hyperdrive.sharesToken,
     });
-    return sharesToken.extensions.protocol === protocol.id;
+    return sharesToken.extensions.protocol === yieldSourceProtocol.id;
   });
+
+  // The first pool is used to get the canonical base and shares tokens, etc..
+  const [firstPool] = pools;
 
   const {
     depositOptions: { isBaseTokenDepositEnabled, isShareTokenDepositsEnabled },
-  } = pools[0];
+  } = firstPool;
+
   const baseToken = findBaseToken({
-    baseTokenAddress: pools[0].baseToken,
+    baseTokenAddress: firstPool.baseToken,
     tokens: appConfig.tokens,
   });
   const sharesToken = findYieldSourceToken({
-    yieldSourceTokenAddress: pools[0].sharesToken,
+    yieldSourceTokenAddress: firstPool.sharesToken,
     tokens: appConfig.tokens,
+  });
+
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+    hyperdriveAddress: firstPool.address,
   });
 
   // TODO: Implement the values and markets table, most of the data is stubbed
@@ -45,14 +56,21 @@ export function YieldSourceCard({
         {/* Card header */}
         <div className="flex justify-between gap-4 p-4">
           <div className="flex gap-5">
-            <img src={protocol.iconUrl} className="h-20" />
+            <img src={yieldSourceProtocol.iconUrl} className="h-20" />
             <div>
               <h3 className="mb-1">{sharesToken.extensions.shortName}</h3>
-              <Badge>
-                <span className="font-dmMono text-neutral-content">
-                  Current APY @ <span className="text-primary">23.17%</span>
-                </span>
-              </Badge>
+              {vaultRateStatus === "loading" && !vaultRate ? (
+                <Skeleton className="w-42 h-8" />
+              ) : (
+                <Badge>
+                  <span className="font-dmMono text-neutral-content">
+                    Current APY @{" "}
+                    <span className="text-primary">
+                      {vaultRate?.formatted}%
+                    </span>
+                  </span>
+                </Badge>
+              )}
             </div>
           </div>
 
