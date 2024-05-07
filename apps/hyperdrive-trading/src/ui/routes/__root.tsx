@@ -1,4 +1,8 @@
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import {
+  createRootRoute,
+  Outlet,
+  ScrollRestoration,
+} from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/router-devtools";
 import Footer from "src/ui/app/Footer/Footer";
 import { Navbar } from "src/ui/app/Navbar/Navbar";
@@ -13,6 +17,13 @@ function RootComponent() {
       <div className="flex w-full grow flex-col gap-9">
         <Navbar />
         <IneligibleAccountMessage className="grow" />
+        {/* This let's us to reset the scroll position to the top of the page
+        when linking to other pages. This is useful, for example,  when going
+        from the the bottom of the All Markets page to a specific market details
+        page. See:
+        https://tanstack.com/router/latest/docs/framework/react/guide/scroll-restoration#preventing-scroll-restoration
+        */}
+        <ScrollRestoration />
         <Outlet />
       </div>
       <Footer />
