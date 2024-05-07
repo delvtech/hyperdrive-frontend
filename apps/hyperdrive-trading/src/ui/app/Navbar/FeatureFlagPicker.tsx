@@ -13,9 +13,8 @@ export function FeatureFlagPicker(): ReactElement {
       >
         <li className="daisy-menu-title">Feature flags</li>
         {/* Place your feature flag menu items here */}
-        {/* TODO: Remove implied-yield once calculation is fixed in rust sdk */}
-        <FeatureFlagMenuItem flagName={"implied-yield"}>
-          Show Implied Yield
+        <FeatureFlagMenuItem flagName={"card-view"}>
+          Card layout
         </FeatureFlagMenuItem>
       </ul>
     </div>
