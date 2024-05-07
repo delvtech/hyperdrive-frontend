@@ -59,9 +59,7 @@ export function FAQEntries(): JSX.Element {
 
         {/* answers */}
         <div className="col-span-2 flex flex-col">
-          <h4 className="mb-4 font-medium text-neutral-content">
-            {selectedFAQ?.question}
-          </h4>
+          <h4 className="mb-4 text-neutral-content">{selectedFAQ?.question}</h4>
           <div className="text-base-content">{selectedFAQ?.answer}</div>
         </div>
       </div>
