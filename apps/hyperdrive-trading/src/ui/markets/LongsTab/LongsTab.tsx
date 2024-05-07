@@ -7,7 +7,6 @@ import { parseUnits } from "src/base/parseUnits";
 import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
-import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { ClosedLongsTable } from "src/ui/hyperdrive/longs/ClosedLongsTable/ClosedLongsTable";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { OpenLongsTable } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTable";
@@ -24,9 +23,9 @@ export function LongsTab({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
-  const readHyperdrive = useReadHyperdrive(hyperdrive.address);
-  const { address: account } = useAccount();
   const appConfig = useAppConfig();
+  const { address: account } = useAccount();
+
   const { openLongs } = useOpenLongs({
     account,
     hyperdriveAddress: hyperdrive.address,
@@ -36,7 +35,6 @@ export function LongsTab({
     hyperdrive,
     account,
     openLongs,
-    readHyperdrive,
     poolInfo,
   });
   const baseToken = findBaseToken({
@@ -51,13 +49,17 @@ export function LongsTab({
             <div className="flex flex-col items-start gap-2">
               <h5 className="font-medium">Long Positions</h5>
               {!isLoading ? (
-                <p className="text-xs text-neutral-content">
-                  Total Value:{" "}
-                  {dnFormat([totalLongsValue || 0n, baseToken.decimals], {
-                    digits: 2,
-                  })}{" "}
-                  {baseToken.symbol}
-                </p>
+                <>
+                  {openLongs?.length ? (
+                    <p className="text-xs text-neutral-content">
+                      Total Value:{" "}
+                      {dnFormat([totalLongsValue || 0n, baseToken.decimals], {
+                        digits: 2,
+                      })}{" "}
+                      {baseToken.symbol}
+                    </p>
+                  ) : undefined}
+                </>
               ) : (
                 <Skeleton width={100} />
               )}
