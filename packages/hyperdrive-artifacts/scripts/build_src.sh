@@ -49,7 +49,7 @@ echo "Compiling contracts..."
 (
   cd "$temp_dir"
   forge install
-  forge build
+  forge build --skip test --skip script
 )
 
 echo "Creating typescript files..."
@@ -76,6 +76,11 @@ function processOutDir() {
 
       # Get the name of the contract
       local contract_name=$(basename "$entry" .json)
+
+      # Omit contracts with "test"/"Test" in the name
+      if [[ "$contract_name" == *"test"* ]] || [[ "$contract_name" == *"Test"* ]]; then
+        continue
+      fi
 
       # Ignore the contract if the file is too large. This prevents TSC from
       # throwing errors while trying to parse large files and prevents the
