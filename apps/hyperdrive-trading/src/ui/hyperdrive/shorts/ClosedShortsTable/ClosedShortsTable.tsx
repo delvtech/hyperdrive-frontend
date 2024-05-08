@@ -180,7 +180,7 @@ export function ClosedShortsTable({
     columns: isTailwindSmallScreen
       ? getMobileColumns(hyperdrive, appConfig)
       : getColumns(hyperdrive, appConfig),
-    data: reversedClosedShorts || [],
+    data: reversedClosedShorts,
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
