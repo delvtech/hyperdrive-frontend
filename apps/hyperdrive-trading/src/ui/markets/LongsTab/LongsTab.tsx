@@ -1,8 +1,8 @@
 import { HyperdriveConfig, findBaseToken } from "@hyperdrive/appconfig";
-import { format as dnFormat } from "dnum";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { ClosedLongsTable } from "src/ui/hyperdrive/longs/ClosedLongsTable/ClosedLongsTable";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { OpenLongsTable } from "src/ui/hyperdrive/longs/OpenLongsTable/OpenLongsTable";
@@ -45,8 +45,10 @@ export function LongsTab({
                   {openLongs?.length ? (
                     <p className="text-xs text-neutral-content">
                       Total Value:{" "}
-                      {dnFormat([totalLongsValue || 0n, baseToken.decimals], {
-                        digits: 4,
+                      {formatBalance({
+                        balance: totalLongsValue || 0n,
+                        decimals: baseToken.decimals,
+                        places: baseToken.places,
                       })}{" "}
                       {baseToken.symbol}
                     </p>
