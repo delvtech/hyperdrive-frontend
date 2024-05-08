@@ -26,12 +26,13 @@ export function useTotalShortsValue({
   const { data: totalShortsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalShortsValue", {
       hyperdriveAddress: hyperdrive.address,
+      account,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
           const promises = openShorts.map((short) =>
-            readHyperdrive?.previewCloseShort({
+            readHyperdrive.previewCloseShort({
               maturityTime: short.maturity,
               shortAmountIn: short.bondAmount,
               destination: account,

@@ -26,12 +26,13 @@ export function useTotalLongsValue({
   const { data: totalLongsValue, isLoading } = useQuery({
     queryKey: makeQueryKey("totalLongsValue", {
       hyperdriveAddress: hyperdrive.address,
+      account,
     }),
     enabled: queryEnabled,
     queryFn: queryEnabled
       ? async () => {
           const promises = openLongs.map((long) =>
-            readHyperdrive?.previewCloseLong({
+            readHyperdrive.previewCloseLong({
               maturityTime: long.maturity,
               bondAmountIn: long.bondAmount,
               destination: account,
