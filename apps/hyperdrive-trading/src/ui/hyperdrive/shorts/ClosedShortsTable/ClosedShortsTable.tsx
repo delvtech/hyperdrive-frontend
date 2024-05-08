@@ -11,7 +11,7 @@ import {
   getPaginationRowModel,
   useReactTable,
 } from "@tanstack/react-table";
-import { ReactElement } from "react";
+import { ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
@@ -172,11 +172,15 @@ export function ClosedShortsTable({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
+  const reversedClosedShorts = useMemo(
+    () => (closedShorts ? [...closedShorts].reverse() : []),
+    [closedShorts],
+  );
   const tableInstance = useReactTable({
     columns: isTailwindSmallScreen
       ? getMobileColumns(hyperdrive, appConfig)
       : getColumns(hyperdrive, appConfig),
-    data: [...(closedShorts || [])].reverse(),
+    data: reversedClosedShorts || [],
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });

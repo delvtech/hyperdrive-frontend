@@ -14,7 +14,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
-import { ReactElement } from "react";
+import { ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
@@ -175,11 +175,15 @@ export function ClosedLongsTable({
     account,
     hyperdriveAddress: hyperdrive.address,
   });
+  const reversedClosedLongs = useMemo(
+    () => (closedLongs ? [...closedLongs].reverse() : []),
+    [closedLongs],
+  );
   const tableInstance = useReactTable({
     columns: isTailwindSmallScreen
       ? getMobileColumns(hyperdrive, appConfig)
       : getColumns(hyperdrive, appConfig),
-    data: [...(closedLongs || [])].reverse(), // show most recently closed first, TODO: refactor to interactive column sorting
+    data: reversedClosedLongs || [], // show most recently closed first, TODO: refactor to interactive column sorting
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
