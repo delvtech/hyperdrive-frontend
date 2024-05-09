@@ -1,615 +1,656 @@
 export const IEzETHHyperdriveRead = {
     abi: [
         {
-            "type": "function",
-            "name": "balanceOf",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "tokenId",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "address",
                     "name": "owner",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
+            "name": "balanceOf",
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "baseToken",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "address",
                     "name": "",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "decimals",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint8",
                     "name": "",
-                    "type": "uint8",
-                    "internalType": "uint8"
+                    "type": "uint8"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_checkpointTime",
+                    "type": "uint256"
+                }
+            ],
             "name": "getCheckpoint",
-            "inputs": [
-                {
-                    "name": "_checkpointTime",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
             "outputs": [
                 {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Checkpoint",
                     "components": [
                         {
+                            "internalType": "uint128",
+                            "name": "weightedSpotPrice",
+                            "type": "uint128"
+                        },
+                        {
+                            "internalType": "uint128",
+                            "name": "lastWeightedSpotPriceUpdateTime",
+                            "type": "uint128"
+                        },
+                        {
+                            "internalType": "uint128",
                             "name": "vaultSharePrice",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         }
-                    ]
+                    ],
+                    "internalType": "struct IHyperdrive.Checkpoint",
+                    "name": "",
+                    "type": "tuple"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "getCheckpointExposure",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "_checkpointTime",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "getCheckpointExposure",
             "outputs": [
                 {
+                    "internalType": "int256",
                     "name": "",
-                    "type": "int256",
-                    "internalType": "int256"
+                    "type": "int256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getMarketState",
-            "inputs": [],
             "outputs": [
                 {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.MarketState",
                     "components": [
                         {
+                            "internalType": "uint128",
                             "name": "shareReserves",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         },
                         {
+                            "internalType": "uint128",
                             "name": "bondReserves",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         },
                         {
+                            "internalType": "uint128",
                             "name": "longExposure",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         },
                         {
+                            "internalType": "uint128",
                             "name": "longsOutstanding",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         },
                         {
+                            "internalType": "int128",
                             "name": "shareAdjustment",
-                            "type": "int128",
-                            "internalType": "int128"
+                            "type": "int128"
                         },
                         {
+                            "internalType": "uint128",
                             "name": "shortsOutstanding",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         },
                         {
+                            "internalType": "uint128",
                             "name": "longAverageMaturityTime",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         },
                         {
+                            "internalType": "uint128",
                             "name": "shortAverageMaturityTime",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         },
                         {
+                            "internalType": "bool",
                             "name": "isInitialized",
-                            "type": "bool",
-                            "internalType": "bool"
+                            "type": "bool"
                         },
                         {
+                            "internalType": "bool",
                             "name": "isPaused",
-                            "type": "bool",
-                            "internalType": "bool"
+                            "type": "bool"
                         },
                         {
+                            "internalType": "uint112",
                             "name": "zombieBaseProceeds",
-                            "type": "uint112",
-                            "internalType": "uint112"
+                            "type": "uint112"
                         },
                         {
+                            "internalType": "uint128",
                             "name": "zombieShareReserves",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         }
-                    ]
+                    ],
+                    "internalType": "struct IHyperdrive.MarketState",
+                    "name": "",
+                    "type": "tuple"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "getPoolConfig",
             "inputs": [],
+            "name": "getPoolConfig",
             "outputs": [
                 {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.PoolConfig",
                     "components": [
                         {
+                            "internalType": "contract IERC20",
                             "name": "baseToken",
-                            "type": "address",
-                            "internalType": "contract IERC20"
+                            "type": "address"
                         },
                         {
+                            "internalType": "contract IERC20",
                             "name": "vaultSharesToken",
-                            "type": "address",
-                            "internalType": "contract IERC20"
+                            "type": "address"
                         },
                         {
+                            "internalType": "address",
                             "name": "linkerFactory",
-                            "type": "address",
-                            "internalType": "address"
+                            "type": "address"
                         },
                         {
+                            "internalType": "bytes32",
                             "name": "linkerCodeHash",
-                            "type": "bytes32",
-                            "internalType": "bytes32"
+                            "type": "bytes32"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "initialVaultSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "minimumShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "minimumTransactionAmount",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
+                            "name": "circuitBreakerDelta",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
                             "name": "positionDuration",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "checkpointDuration",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "timeStretch",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "address",
                             "name": "governance",
-                            "type": "address",
-                            "internalType": "address"
+                            "type": "address"
                         },
                         {
+                            "internalType": "address",
                             "name": "feeCollector",
-                            "type": "address",
-                            "internalType": "address"
+                            "type": "address"
                         },
                         {
+                            "internalType": "address",
                             "name": "sweepCollector",
-                            "type": "address",
-                            "internalType": "address"
+                            "type": "address"
                         },
                         {
-                            "name": "fees",
-                            "type": "tuple",
-                            "internalType": "struct IHyperdrive.Fees",
                             "components": [
                                 {
+                                    "internalType": "uint256",
                                     "name": "curve",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
+                                    "type": "uint256"
                                 },
                                 {
+                                    "internalType": "uint256",
                                     "name": "flat",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
+                                    "type": "uint256"
                                 },
                                 {
+                                    "internalType": "uint256",
                                     "name": "governanceLP",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
+                                    "type": "uint256"
                                 },
                                 {
+                                    "internalType": "uint256",
                                     "name": "governanceZombie",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
+                                    "type": "uint256"
                                 }
-                            ]
+                            ],
+                            "internalType": "struct IHyperdrive.Fees",
+                            "name": "fees",
+                            "type": "tuple"
                         }
-                    ]
+                    ],
+                    "internalType": "struct IHyperdrive.PoolConfig",
+                    "name": "",
+                    "type": "tuple"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getPoolInfo",
-            "inputs": [],
             "outputs": [
                 {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.PoolInfo",
                     "components": [
                         {
+                            "internalType": "uint256",
                             "name": "shareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "int256",
                             "name": "shareAdjustment",
-                            "type": "int256",
-                            "internalType": "int256"
+                            "type": "int256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "zombieBaseProceeds",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "zombieShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "bondReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "lpTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "vaultSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "longsOutstanding",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "longAverageMaturityTime",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "shortsOutstanding",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "shortAverageMaturityTime",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "withdrawalSharesReadyToWithdraw",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "withdrawalSharesProceeds",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "lpSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "longExposure",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         }
-                    ]
+                    ],
+                    "internalType": "struct IHyperdrive.PoolInfo",
+                    "name": "",
+                    "type": "tuple"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getUncollectedGovernanceFees",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "getWithdrawPool",
             "inputs": [],
+            "name": "getWithdrawPool",
             "outputs": [
                 {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.WithdrawPool",
                     "components": [
                         {
+                            "internalType": "uint128",
                             "name": "readyToWithdraw",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         },
                         {
+                            "internalType": "uint128",
                             "name": "proceeds",
-                            "type": "uint128",
-                            "internalType": "uint128"
+                            "type": "uint128"
                         }
-                    ]
+                    ],
+                    "internalType": "struct IHyperdrive.WithdrawPool",
+                    "name": "",
+                    "type": "tuple"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "spender",
+                    "type": "address"
+                }
+            ],
             "name": "isApprovedForAll",
-            "inputs": [
-                {
-                    "name": "owner",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "spender",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
             "outputs": [
                 {
+                    "internalType": "bool",
                     "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
+                    "type": "bool"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "isPauser",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "_account",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
+            "name": "isPauser",
             "outputs": [
                 {
+                    "internalType": "bool",
                     "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
+                    "type": "bool"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "load",
             "inputs": [
                 {
+                    "internalType": "uint256[]",
                     "name": "_slots",
-                    "type": "uint256[]",
-                    "internalType": "uint256[]"
+                    "type": "uint256[]"
                 }
             ],
+            "name": "load",
             "outputs": [
                 {
+                    "internalType": "bytes32[]",
                     "name": "",
-                    "type": "bytes32[]",
-                    "internalType": "bytes32[]"
+                    "type": "bytes32[]"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
             "name": "name",
-            "inputs": [
-                {
-                    "name": "tokenId",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
             "outputs": [
                 {
+                    "internalType": "string",
                     "name": "",
-                    "type": "string",
-                    "internalType": "string"
+                    "type": "string"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
+            "name": "name",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
             "name": "nonces",
-            "inputs": [
-                {
-                    "name": "owner",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "perTokenApprovals",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "tokenId",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "address",
                     "name": "owner",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "address",
                     "name": "spender",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
+            "name": "perTokenApprovals",
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "renzo",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "contract IRestakeManager",
                     "name": "",
-                    "type": "address",
-                    "internalType": "contract IRestakeManager"
+                    "type": "address"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "renzoOracle",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "contract IRenzoOracle",
                     "name": "",
-                    "type": "address",
-                    "internalType": "contract IRenzoOracle"
+                    "type": "address"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
             "name": "symbol",
-            "inputs": [
-                {
-                    "name": "tokenId",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
             "outputs": [
                 {
+                    "internalType": "string",
                     "name": "",
-                    "type": "string",
-                    "internalType": "string"
+                    "type": "string"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "tokenId",
+                    "type": "uint256"
+                }
+            ],
             "name": "totalSupply",
-            "inputs": [
-                {
-                    "name": "tokenId",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "vaultSharesToken",
             "inputs": [],
+            "name": "vaultSharesToken",
             "outputs": [
                 {
+                    "internalType": "address",
                     "name": "",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "version",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "",
+                    "type": "string"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
         }
     ],
     bytecode: '0x',
@@ -627,6 +668,7 @@ export const IEzETHHyperdriveRead = {
         "isApprovedForAll(address,address)": "e985e9c5",
         "isPauser(address)": "46fbf68e",
         "load(uint256[])": "becee9c3",
+        "name()": "06fdde03",
         "name(uint256)": "00ad800c",
         "nonces(address)": "7ecebe00",
         "perTokenApprovals(uint256,address,address)": "21ff32a9",
@@ -634,6 +676,7 @@ export const IEzETHHyperdriveRead = {
         "renzoOracle()": "892866a4",
         "symbol(uint256)": "4e41a1fb",
         "totalSupply(uint256)": "bd85b039",
-        "vaultSharesToken()": "0a4e1493"
+        "vaultSharesToken()": "0a4e1493",
+        "version()": "54fd4d50"
     }
 };

@@ -1,1508 +1,1495 @@
 export const Hyperdrive = {
     abi: [
         {
-            "type": "fallback",
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "PERMIT_TYPEHASH",
             "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "bytes32",
-                    "internalType": "bytes32"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "addLiquidity",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "payable"
-        },
-        {
-            "type": "function",
-            "name": "batchTransferFrom",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "uint256[]",
-                    "internalType": "uint256[]"
-                },
-                {
-                    "name": "",
-                    "type": "uint256[]",
-                    "internalType": "uint256[]"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "checkpoint",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "closeLong",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "closeShort",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "collectGovernanceFee",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "domainSeparator",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "bytes32",
-                    "internalType": "bytes32"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "initialize",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "payable"
-        },
-        {
-            "type": "function",
-            "name": "openLong",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "payable"
-        },
-        {
-            "type": "function",
-            "name": "openShort",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "payable"
-        },
-        {
-            "type": "function",
-            "name": "pause",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "permitForAll",
-            "inputs": [
-                {
-                    "name": "owner",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "spender",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "_approved",
-                    "type": "bool",
-                    "internalType": "bool"
-                },
-                {
-                    "name": "deadline",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "v",
-                    "type": "uint8",
-                    "internalType": "uint8"
-                },
-                {
-                    "name": "r",
-                    "type": "bytes32",
-                    "internalType": "bytes32"
-                },
-                {
-                    "name": "s",
-                    "type": "bytes32",
-                    "internalType": "bytes32"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "redeemWithdrawalShares",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "removeLiquidity",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.Options",
-                    "components": [
-                        {
-                            "name": "destination",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "asBase",
-                            "type": "bool",
-                            "internalType": "bool"
-                        },
-                        {
-                            "name": "extraData",
-                            "type": "bytes",
-                            "internalType": "bytes"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setApproval",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setApprovalBridge",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setApprovalForAll",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setFeeCollector",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setGovernance",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setPauser",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "setSweepCollector",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "sweep",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "contract IERC20"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "target0",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "target1",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "target2",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "target3",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "target4",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "transferFrom",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "transferFromBridge",
-            "inputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "event",
-            "name": "AddLiquidity",
-            "inputs": [
-                {
-                    "name": "provider",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "lpAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "baseAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "vaultShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "asBase",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                },
-                {
-                    "name": "lpSharePrice",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "Approval",
-            "inputs": [
-                {
-                    "name": "owner",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "spender",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "value",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "ApprovalForAll",
-            "inputs": [
-                {
-                    "name": "account",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "operator",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "approved",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "CloseLong",
-            "inputs": [
-                {
-                    "name": "trader",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "destination",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "assetId",
-                    "type": "uint256",
-                    "indexed": true,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "maturityTime",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "baseAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "vaultShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "asBase",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                },
-                {
-                    "name": "bondAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "CloseShort",
-            "inputs": [
-                {
-                    "name": "trader",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "destination",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "assetId",
-                    "type": "uint256",
-                    "indexed": true,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "maturityTime",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "baseAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "vaultShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "asBase",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                },
-                {
-                    "name": "basePayment",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "bondAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "CollectGovernanceFee",
-            "inputs": [
-                {
-                    "name": "collector",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "fees",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "CreateCheckpoint",
-            "inputs": [
-                {
-                    "name": "checkpointTime",
-                    "type": "uint256",
-                    "indexed": true,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "checkpointVaultSharePrice",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "vaultSharePrice",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "maturedShorts",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "maturedLongs",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "lpSharePrice",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "FeeCollectorUpdated",
-            "inputs": [
-                {
-                    "name": "newFeeCollector",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "GovernanceUpdated",
-            "inputs": [
-                {
-                    "name": "newGovernance",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "Initialize",
-            "inputs": [
-                {
-                    "name": "provider",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "lpAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "baseAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "vaultShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "asBase",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                },
-                {
-                    "name": "apr",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "OpenLong",
-            "inputs": [
-                {
-                    "name": "trader",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "assetId",
-                    "type": "uint256",
-                    "indexed": true,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "maturityTime",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "baseAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "vaultShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "asBase",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                },
-                {
-                    "name": "bondAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "OpenShort",
-            "inputs": [
-                {
-                    "name": "trader",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "assetId",
-                    "type": "uint256",
-                    "indexed": true,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "maturityTime",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "baseAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "vaultShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "asBase",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                },
-                {
-                    "name": "baseProceeds",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "bondAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "PauseStatusUpdated",
-            "inputs": [
-                {
-                    "name": "isPaused",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "PauserUpdated",
-            "inputs": [
-                {
-                    "name": "newPauser",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "status",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "RedeemWithdrawalShares",
-            "inputs": [
-                {
-                    "name": "provider",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "destination",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "withdrawalShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "baseAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "vaultShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "asBase",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "RemoveLiquidity",
-            "inputs": [
-                {
-                    "name": "provider",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "destination",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "lpAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "baseAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "vaultShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "asBase",
-                    "type": "bool",
-                    "indexed": false,
-                    "internalType": "bool"
-                },
-                {
-                    "name": "withdrawalShareAmount",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "lpSharePrice",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "Sweep",
-            "inputs": [
-                {
-                    "name": "collector",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "target",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "SweepCollectorUpdated",
-            "inputs": [
-                {
-                    "name": "newSweepCollector",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "TransferSingle",
-            "inputs": [
-                {
-                    "name": "operator",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "from",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "to",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "id",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "value",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "error",
             "name": "ReentrancyGuardReentrantCall",
-            "inputs": []
+            "type": "error"
         },
         {
-            "type": "error",
+            "inputs": [],
             "name": "UnexpectedSuccess",
-            "inputs": []
+            "type": "error"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "baseAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "asBase",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpSharePrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "AddLiquidity",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Approval",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "account",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "approved",
+                    "type": "bool"
+                }
+            ],
+            "name": "ApprovalForAll",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "assetId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maturityTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "baseAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "asBase",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bondAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CloseLong",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "assetId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maturityTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "baseAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "asBase",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "basePayment",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bondAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CloseShort",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "collector",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "fees",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CollectGovernanceFee",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "checkpointTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "checkpointVaultSharePrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultSharePrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maturedShorts",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maturedLongs",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpSharePrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "CreateCheckpoint",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newFeeCollector",
+                    "type": "address"
+                }
+            ],
+            "name": "FeeCollectorUpdated",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newGovernance",
+                    "type": "address"
+                }
+            ],
+            "name": "GovernanceUpdated",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "baseAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "asBase",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "apr",
+                    "type": "uint256"
+                }
+            ],
+            "name": "Initialize",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "assetId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maturityTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "baseAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "asBase",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bondAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "OpenLong",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "trader",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "uint256",
+                    "name": "assetId",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "maturityTime",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "baseAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "asBase",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "baseProceeds",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "bondAmount",
+                    "type": "uint256"
+                }
+            ],
+            "name": "OpenShort",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "isPaused",
+                    "type": "bool"
+                }
+            ],
+            "name": "PauseStatusUpdated",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newPauser",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "status",
+                    "type": "bool"
+                }
+            ],
+            "name": "PauserUpdated",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "withdrawalShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "baseAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "asBase",
+                    "type": "bool"
+                }
+            ],
+            "name": "RedeemWithdrawalShares",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "provider",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "destination",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "baseAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "asBase",
+                    "type": "bool"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "withdrawalShareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "lpSharePrice",
+                    "type": "uint256"
+                }
+            ],
+            "name": "RemoveLiquidity",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "collector",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "target",
+                    "type": "address"
+                }
+            ],
+            "name": "Sweep",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "newSweepCollector",
+                    "type": "address"
+                }
+            ],
+            "name": "SweepCollectorUpdated",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "operator",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "from",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "to",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "id",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "TransferSingle",
+            "type": "event"
+        },
+        {
+            "stateMutability": "nonpayable",
+            "type": "fallback"
+        },
+        {
+            "inputs": [],
+            "name": "PERMIT_TYPEHASH",
+            "outputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "",
+                    "type": "bytes32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "asBase",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IHyperdrive.Options",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "name": "addLiquidity",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "",
+                    "type": "uint256[]"
+                },
+                {
+                    "internalType": "uint256[]",
+                    "name": "",
+                    "type": "uint256[]"
+                }
+            ],
+            "name": "batchTransferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "checkpoint",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "asBase",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IHyperdrive.Options",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "name": "closeLong",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "asBase",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IHyperdrive.Options",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "name": "closeShort",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "asBase",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IHyperdrive.Options",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "name": "collectGovernanceFee",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "domainSeparator",
+            "outputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "",
+                    "type": "bytes32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "asBase",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IHyperdrive.Options",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "name": "initialize",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "asBase",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IHyperdrive.Options",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "name": "openLong",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "asBase",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IHyperdrive.Options",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "name": "openShort",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "name": "pause",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "spender",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "_approved",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "deadline",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint8",
+                    "name": "v",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "r",
+                    "type": "bytes32"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "s",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "permitForAll",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "asBase",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IHyperdrive.Options",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "name": "redeemWithdrawalShares",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "destination",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "asBase",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bytes",
+                            "name": "extraData",
+                            "type": "bytes"
+                        }
+                    ],
+                    "internalType": "struct IHyperdrive.Options",
+                    "name": "",
+                    "type": "tuple"
+                }
+            ],
+            "name": "removeLiquidity",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setApproval",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "setApprovalBridge",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "name": "setApprovalForAll",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "setFeeCollector",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "setGovernance",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "name": "setPauser",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "setSweepCollector",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "contract IERC20",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "sweep",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "target0",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "target1",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "target2",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "target3",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "transferFrom",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "transferFromBridge",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
     bytecode: '0x',
@@ -1534,7 +1521,6 @@ export const Hyperdrive = {
         "target1()": "eac3e799",
         "target2()": "a6e8a859",
         "target3()": "d899e112",
-        "target4()": "f3f70707",
         "transferFrom(uint256,address,address,uint256)": "1c0f12b6",
         "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc"
     }

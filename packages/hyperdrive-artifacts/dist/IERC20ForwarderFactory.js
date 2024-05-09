@@ -1,88 +1,88 @@
 export const IERC20ForwarderFactory = {
     abi: [
         {
-            "type": "function",
-            "name": "ERC20LINK_HASH",
             "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "bytes32",
-                    "internalType": "bytes32"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "function",
-            "name": "create",
-            "inputs": [
-                {
-                    "name": "_token",
-                    "type": "address",
-                    "internalType": "contract IMultiToken"
-                },
-                {
-                    "name": "_tokenId",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "contract IERC20Forwarder"
-                }
-            ],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "getDeployDetails",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "contract IMultiToken"
-                },
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "getForwarder",
-            "inputs": [
-                {
-                    "name": "_token",
-                    "type": "address",
-                    "internalType": "contract IMultiToken"
-                },
-                {
-                    "name": "_tokenId",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "error",
             "name": "InvalidForwarderAddress",
-            "inputs": []
+            "type": "error"
+        },
+        {
+            "inputs": [],
+            "name": "ERC20LINK_HASH",
+            "outputs": [
+                {
+                    "internalType": "bytes32",
+                    "name": "",
+                    "type": "bytes32"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "contract IMultiToken",
+                    "name": "_token",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "create",
+            "outputs": [
+                {
+                    "internalType": "contract IERC20Forwarder",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getDeployDetails",
+            "outputs": [
+                {
+                    "internalType": "contract IMultiToken",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "contract IMultiToken",
+                    "name": "_token",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_tokenId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getForwarder",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
         }
     ],
     bytecode: '0x',

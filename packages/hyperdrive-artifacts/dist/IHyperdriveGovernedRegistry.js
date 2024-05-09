@@ -1,76 +1,96 @@
 export const IHyperdriveGovernedRegistry = {
     abi: [
         {
-            "type": "function",
-            "name": "setHyperdriveInfo",
-            "inputs": [
-                {
-                    "name": "_hyperdriveInstance",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
-                    "name": "_data",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "updateGovernance",
-            "inputs": [
-                {
-                    "name": "_governance",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "event",
-            "name": "GovernanceUpdated",
-            "inputs": [
-                {
-                    "name": "governance",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "event",
-            "name": "HyperdriveInfoUpdated",
-            "inputs": [
-                {
-                    "name": "hyperdrive",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "data",
-                    "type": "uint256",
-                    "indexed": false,
-                    "internalType": "uint256"
-                }
-            ],
-            "anonymous": false
-        },
-        {
-            "type": "error",
+            "inputs": [],
             "name": "Unauthorized",
-            "inputs": []
+            "type": "error"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "governance",
+                    "type": "address"
+                }
+            ],
+            "name": "GovernanceUpdated",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "hyperdrive",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "data",
+                    "type": "uint256"
+                }
+            ],
+            "name": "HyperdriveInfoUpdated",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_hyperdriveInstance",
+                    "type": "address"
+                }
+            ],
+            "name": "getHyperdriveInfo",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_hyperdriveInstance",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_data",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setHyperdriveInfo",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "_governance",
+                    "type": "address"
+                }
+            ],
+            "name": "updateGovernance",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
     bytecode: '0x',
     methodIdentifiers: {
+        "getHyperdriveInfo(address)": "32ddcb88",
         "setHyperdriveInfo(address,uint256)": "be44e71a",
         "updateGovernance(address)": "b2561263"
     }

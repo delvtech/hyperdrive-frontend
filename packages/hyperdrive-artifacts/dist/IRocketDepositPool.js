@@ -1,156 +1,156 @@
 export const IRocketDepositPool = {
     abi: [
         {
-            "type": "function",
+            "inputs": [],
             "name": "assignDeposits",
-            "inputs": [],
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "deposit",
-            "inputs": [],
             "outputs": [],
-            "stateMutability": "payable"
+            "stateMutability": "payable",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getBalance",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getExcessBalance",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getMaximumDepositAmount",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getNodeBalance",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getUserBalance",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "int256",
                     "name": "",
-                    "type": "int256",
-                    "internalType": "int256"
+                    "type": "int256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "maybeAssignDeposits",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "bool",
                     "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
+                    "type": "bool"
                 }
             ],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_amount",
+                    "type": "uint256"
+                }
+            ],
             "name": "nodeCreditWithdrawal",
-            "inputs": [
-                {
-                    "name": "_amount",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "nodeDeposit",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "_totalAmount",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "nodeDeposit",
             "outputs": [],
-            "stateMutability": "payable"
+            "stateMutability": "payable",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "recycleDissolvedDeposit",
-            "inputs": [],
             "outputs": [],
-            "stateMutability": "payable"
+            "stateMutability": "payable",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "recycleExcessCollateral",
-            "inputs": [],
             "outputs": [],
-            "stateMutability": "payable"
+            "stateMutability": "payable",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "recycleLiquidatedStake",
-            "inputs": [],
             "outputs": [],
-            "stateMutability": "payable"
+            "stateMutability": "payable",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "withdrawExcessBalance",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "_amount",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "withdrawExcessBalance",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
     bytecode: '0x',

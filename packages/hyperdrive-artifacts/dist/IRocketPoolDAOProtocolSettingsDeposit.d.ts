@@ -1,74 +1,74 @@
 export declare const IRocketPoolDAOProtocolSettingsDeposit: {
     abi: readonly [{
-        readonly type: "function";
+        readonly inputs: readonly [];
         readonly name: "getAssignDepositsEnabled";
-        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
-            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
         readonly name: "getDepositEnabled";
-        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly internalType: "bool";
             readonly name: "";
             readonly type: "bool";
-            readonly internalType: "bool";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
         readonly name: "getDepositFee";
-        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
         readonly name: "getMaximumDepositAssignments";
-        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
         readonly name: "getMaximumDepositPoolSize";
-        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
         readonly name: "getMaximumDepositSocialisedAssignments";
-        readonly inputs: readonly [];
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
-    }, {
         readonly type: "function";
-        readonly name: "getMinimumDeposit";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "getMinimumDeposit";
         readonly outputs: readonly [{
+            readonly internalType: "uint256";
             readonly name: "";
             readonly type: "uint256";
-            readonly internalType: "uint256";
         }];
         readonly stateMutability: "view";
+        readonly type: "function";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

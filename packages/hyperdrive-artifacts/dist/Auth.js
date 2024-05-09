@@ -1,94 +1,94 @@
 export const Auth = {
     abi: [
         {
-            "type": "function",
-            "name": "authority",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "contract Authority"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "owner",
-            "inputs": [],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "stateMutability": "view"
-        },
-        {
-            "type": "function",
-            "name": "setAuthority",
+            "anonymous": false,
             "inputs": [
                 {
+                    "indexed": true,
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
+                },
+                {
+                    "indexed": true,
+                    "internalType": "contract Authority",
                     "name": "newAuthority",
-                    "type": "address",
-                    "internalType": "contract Authority"
+                    "type": "address"
                 }
             ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "function",
-            "name": "transferOwnership",
-            "inputs": [
-                {
-                    "name": "newOwner",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
-            "outputs": [],
-            "stateMutability": "nonpayable"
-        },
-        {
-            "type": "event",
             "name": "AuthorityUpdated",
-            "inputs": [
-                {
-                    "name": "user",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "address"
-                },
-                {
-                    "name": "newAuthority",
-                    "type": "address",
-                    "indexed": true,
-                    "internalType": "contract Authority"
-                }
-            ],
-            "anonymous": false
+            "type": "event"
         },
         {
-            "type": "event",
-            "name": "OwnershipTransferred",
+            "anonymous": false,
             "inputs": [
                 {
-                    "name": "user",
-                    "type": "address",
                     "indexed": true,
-                    "internalType": "address"
+                    "internalType": "address",
+                    "name": "user",
+                    "type": "address"
                 },
                 {
-                    "name": "newOwner",
-                    "type": "address",
                     "indexed": true,
-                    "internalType": "address"
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
                 }
             ],
-            "anonymous": false
+            "name": "OwnershipTransferred",
+            "type": "event"
+        },
+        {
+            "inputs": [],
+            "name": "authority",
+            "outputs": [
+                {
+                    "internalType": "contract Authority",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "contract Authority",
+                    "name": "newAuthority",
+                    "type": "address"
+                }
+            ],
+            "name": "setAuthority",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "newOwner",
+                    "type": "address"
+                }
+            ],
+            "name": "transferOwnership",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
     bytecode: '0x',

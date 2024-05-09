@@ -1,8 +1,8 @@
 export declare const ReentrancyGuard: {
     abi: readonly [{
-        readonly type: "error";
-        readonly name: "ReentrancyGuardReentrantCall";
         readonly inputs: readonly [];
+        readonly name: "ReentrancyGuardReentrantCall";
+        readonly type: "error";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {};
