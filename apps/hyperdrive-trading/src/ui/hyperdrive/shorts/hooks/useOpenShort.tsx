@@ -6,6 +6,7 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import { parseError } from "src/network/parseError";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
 import { useReadWriteHyperdrive } from "src/ui/hyperdrive/hooks/useReadWriteHyperdrive";
@@ -104,6 +105,12 @@ export function useOpenShort({
           description: "Open Short",
         });
       }
+    },
+    onError(error) {
+      const message = parseError({
+        error,
+      });
+      toast.error(message);
     },
   });
 
