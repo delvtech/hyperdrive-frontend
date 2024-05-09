@@ -12,7 +12,7 @@
   },
   "peerDependencies": {
     "@delvtech/evm-client": "^0.4.2",
-    "@delvtech/hyperdrive-artifacts": "^0.1.0"
+    "@delvtech/hyperdrive-artifacts": "npm:@delvtech/hyperdrive-artifacts@0.1.0"
   },
   "dependencies": {
     "@delvtech/hyperdrive-wasm": "^0.13.0",
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@delvtech/evm-client": "^0.4.2",
-    "@delvtech/hyperdrive-artifacts": "^0.1.0",
+    "@delvtech/hyperdrive-artifacts": "npm:@delvtech/hyperdrive-artifacts@0.1.0",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",

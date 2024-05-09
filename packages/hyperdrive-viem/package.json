@@ -12,7 +12,7 @@
     "viem": "^2.7.8"
   },
   "dependencies": {
-    "@delvtech/hyperdrive-artifacts": "^0.1.0",
+    "@delvtech/hyperdrive-artifacts": "npm:@delvtech/hyperdrive-artifacts@0.1.0",
     "@delvtech/hyperdrive-js-core": "^0.0.4",
     "@delvtech/evm-client-viem": "^0.4.2"
   },
