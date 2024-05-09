@@ -1,134 +1,134 @@
 export const IRenzoOracle = {
     abi: [
         {
-            "type": "function",
-            "name": "calculateMintAmount",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "_currentValueInProtocol",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_newValueAdded",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_existingEzETHSupply",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "calculateMintAmount",
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "pure"
+            "stateMutability": "pure",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "calculateRedeemAmount",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "_ezETHBeingBurned",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_existingEzETHSupply",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_currentValueInProtocol",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "calculateRedeemAmount",
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "pure"
+            "stateMutability": "pure",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "lookupTokenAmountFromValue",
             "inputs": [
                 {
+                    "internalType": "contract IERC20",
                     "name": "_token",
-                    "type": "address",
-                    "internalType": "contract IERC20"
+                    "type": "address"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_value",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "lookupTokenAmountFromValue",
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "lookupTokenValue",
             "inputs": [
                 {
+                    "internalType": "contract IERC20",
                     "name": "_token",
-                    "type": "address",
-                    "internalType": "contract IERC20"
+                    "type": "address"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_balance",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "lookupTokenValue",
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "lookupTokenValues",
             "inputs": [
                 {
+                    "internalType": "contract IERC20[]",
                     "name": "_tokens",
-                    "type": "address[]",
-                    "internalType": "contract IERC20[]"
+                    "type": "address[]"
                 },
                 {
+                    "internalType": "uint256[]",
                     "name": "_balances",
-                    "type": "uint256[]",
-                    "internalType": "uint256[]"
+                    "type": "uint256[]"
                 }
             ],
+            "name": "lookupTokenValues",
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         }
     ],
     bytecode: '0x',

@@ -1,219 +1,219 @@
 export const IMockHyperdrive = {
     abi: [
         {
-            "type": "function",
-            "name": "__external_transferFrom",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "tokenID",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "address",
                     "name": "from",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "address",
                     "name": "to",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "amount",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "address",
                     "name": "caller",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
+            "name": "__external_transferFrom",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "__setBalanceOf",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "_tokenId",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "address",
                     "name": "_who",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_amount",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "__setBalanceOf",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "accrue",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "time",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "int256",
                     "name": "apr",
-                    "type": "int256",
-                    "internalType": "int256"
+                    "type": "int256"
                 }
             ],
+            "name": "accrue",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "burn",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "tokenID",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "address",
                     "name": "from",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "amount",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "burn",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_maturityTime",
+                    "type": "uint256"
+                }
+            ],
             "name": "calculateTimeRemaining",
-            "inputs": [
-                {
-                    "name": "_maturityTime",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_maturityTime",
+                    "type": "uint256"
+                }
+            ],
             "name": "calculateTimeRemainingScaled",
-            "inputs": [
-                {
-                    "name": "_maturityTime",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getGovernanceFeesAccrued",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "latestCheckpoint",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "mint",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "tokenID",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "address",
                     "name": "to",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "amount",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "mint",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "setReserves",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "shareReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "bondReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "setReserves",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "updateLiquidity",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "shareReservesDelta",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "updateLiquidity",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
     bytecode: '0x',

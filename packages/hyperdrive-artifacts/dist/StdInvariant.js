@@ -1,132 +1,132 @@
 export const StdInvariant = {
     abi: [
         {
-            "type": "function",
+            "inputs": [],
             "name": "excludeArtifacts",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "string[]",
                     "name": "excludedArtifacts_",
-                    "type": "string[]",
-                    "internalType": "string[]"
+                    "type": "string[]"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "excludeContracts",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "address[]",
                     "name": "excludedContracts_",
-                    "type": "address[]",
-                    "internalType": "address[]"
+                    "type": "address[]"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "excludeSenders",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "address[]",
                     "name": "excludedSenders_",
-                    "type": "address[]",
-                    "internalType": "address[]"
+                    "type": "address[]"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "targetArtifactSelectors",
-            "inputs": [],
             "outputs": [
                 {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "addr",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "bytes4[]",
+                            "name": "selectors",
+                            "type": "bytes4[]"
+                        }
+                    ],
+                    "internalType": "struct StdInvariant.FuzzSelector[]",
                     "name": "targetedArtifactSelectors_",
-                    "type": "tuple[]",
-                    "internalType": "struct StdInvariant.FuzzSelector[]",
-                    "components": [
-                        {
-                            "name": "addr",
-                            "type": "address",
-                            "internalType": "address"
-                        },
-                        {
-                            "name": "selectors",
-                            "type": "bytes4[]",
-                            "internalType": "bytes4[]"
-                        }
-                    ]
+                    "type": "tuple[]"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "targetArtifacts",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "string[]",
                     "name": "targetedArtifacts_",
-                    "type": "string[]",
-                    "internalType": "string[]"
+                    "type": "string[]"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "targetContracts",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "address[]",
                     "name": "targetedContracts_",
-                    "type": "address[]",
-                    "internalType": "address[]"
+                    "type": "address[]"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "targetSelectors",
             "inputs": [],
+            "name": "targetSelectors",
             "outputs": [
                 {
-                    "name": "targetedSelectors_",
-                    "type": "tuple[]",
-                    "internalType": "struct StdInvariant.FuzzSelector[]",
                     "components": [
                         {
+                            "internalType": "address",
                             "name": "addr",
-                            "type": "address",
-                            "internalType": "address"
+                            "type": "address"
                         },
                         {
+                            "internalType": "bytes4[]",
                             "name": "selectors",
-                            "type": "bytes4[]",
-                            "internalType": "bytes4[]"
+                            "type": "bytes4[]"
                         }
-                    ]
+                    ],
+                    "internalType": "struct StdInvariant.FuzzSelector[]",
+                    "name": "targetedSelectors_",
+                    "type": "tuple[]"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "targetSenders",
             "inputs": [],
+            "name": "targetSenders",
             "outputs": [
                 {
+                    "internalType": "address[]",
                     "name": "targetedSenders_",
-                    "type": "address[]",
-                    "internalType": "address[]"
+                    "type": "address[]"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         }
     ],
     bytecode: '0x',

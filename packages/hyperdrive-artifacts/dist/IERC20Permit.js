@@ -1,79 +1,79 @@
 export const IERC20Permit = {
     abi: [
         {
-            "type": "function",
-            "name": "DOMAIN_SEPARATOR",
             "inputs": [],
+            "name": "DOMAIN_SEPARATOR",
             "outputs": [
                 {
+                    "internalType": "bytes32",
                     "name": "",
-                    "type": "bytes32",
-                    "internalType": "bytes32"
+                    "type": "bytes32"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "owner",
+                    "type": "address"
+                }
+            ],
             "name": "nonces",
-            "inputs": [
-                {
-                    "name": "owner",
-                    "type": "address",
-                    "internalType": "address"
-                }
-            ],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "permit",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "owner",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "address",
                     "name": "spender",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "value",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "deadline",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint8",
                     "name": "v",
-                    "type": "uint8",
-                    "internalType": "uint8"
+                    "type": "uint8"
                 },
                 {
+                    "internalType": "bytes32",
                     "name": "r",
-                    "type": "bytes32",
-                    "internalType": "bytes32"
+                    "type": "bytes32"
                 },
                 {
+                    "internalType": "bytes32",
                     "name": "s",
-                    "type": "bytes32",
-                    "internalType": "bytes32"
+                    "type": "bytes32"
                 }
             ],
+            "name": "permit",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
     bytecode: '0x',

@@ -1,23 +1,23 @@
 export const IHyperdriveRegistry = {
     abi: [
         {
-            "type": "function",
-            "name": "getHyperdriveInfo",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "_hyperdriveInstance",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
+            "name": "getHyperdriveInfo",
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         }
     ],
     bytecode: '0x',

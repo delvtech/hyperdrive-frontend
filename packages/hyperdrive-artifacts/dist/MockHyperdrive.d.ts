@@ -1,1655 +1,1653 @@
 export declare const MockHyperdrive: {
     abi: readonly [{
-        readonly type: "constructor";
         readonly inputs: readonly [{
-            readonly name: "_config";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.PoolConfig";
             readonly components: readonly [{
+                readonly internalType: "contract IERC20";
                 readonly name: "baseToken";
                 readonly type: "address";
-                readonly internalType: "contract IERC20";
             }, {
+                readonly internalType: "contract IERC20";
                 readonly name: "vaultSharesToken";
                 readonly type: "address";
-                readonly internalType: "contract IERC20";
             }, {
+                readonly internalType: "address";
                 readonly name: "linkerFactory";
                 readonly type: "address";
-                readonly internalType: "address";
             }, {
+                readonly internalType: "bytes32";
                 readonly name: "linkerCodeHash";
                 readonly type: "bytes32";
-                readonly internalType: "bytes32";
             }, {
+                readonly internalType: "uint256";
                 readonly name: "initialVaultSharePrice";
                 readonly type: "uint256";
-                readonly internalType: "uint256";
             }, {
+                readonly internalType: "uint256";
                 readonly name: "minimumShareReserves";
                 readonly type: "uint256";
-                readonly internalType: "uint256";
             }, {
+                readonly internalType: "uint256";
                 readonly name: "minimumTransactionAmount";
                 readonly type: "uint256";
-                readonly internalType: "uint256";
             }, {
+                readonly internalType: "uint256";
+                readonly name: "circuitBreakerDelta";
+                readonly type: "uint256";
+            }, {
+                readonly internalType: "uint256";
                 readonly name: "positionDuration";
                 readonly type: "uint256";
-                readonly internalType: "uint256";
             }, {
+                readonly internalType: "uint256";
                 readonly name: "checkpointDuration";
                 readonly type: "uint256";
-                readonly internalType: "uint256";
             }, {
+                readonly internalType: "uint256";
                 readonly name: "timeStretch";
                 readonly type: "uint256";
-                readonly internalType: "uint256";
             }, {
+                readonly internalType: "address";
                 readonly name: "governance";
                 readonly type: "address";
-                readonly internalType: "address";
             }, {
+                readonly internalType: "address";
                 readonly name: "feeCollector";
                 readonly type: "address";
-                readonly internalType: "address";
             }, {
+                readonly internalType: "address";
                 readonly name: "sweepCollector";
                 readonly type: "address";
-                readonly internalType: "address";
             }, {
-                readonly name: "fees";
-                readonly type: "tuple";
-                readonly internalType: "struct IHyperdrive.Fees";
                 readonly components: readonly [{
+                    readonly internalType: "uint256";
                     readonly name: "curve";
                     readonly type: "uint256";
-                    readonly internalType: "uint256";
                 }, {
+                    readonly internalType: "uint256";
                     readonly name: "flat";
                     readonly type: "uint256";
-                    readonly internalType: "uint256";
                 }, {
+                    readonly internalType: "uint256";
                     readonly name: "governanceLP";
                     readonly type: "uint256";
-                    readonly internalType: "uint256";
                 }, {
+                    readonly internalType: "uint256";
                     readonly name: "governanceZombie";
                     readonly type: "uint256";
-                    readonly internalType: "uint256";
                 }];
+                readonly internalType: "struct IHyperdrive.Fees";
+                readonly name: "fees";
+                readonly type: "tuple";
             }];
+            readonly internalType: "struct IHyperdrive.PoolConfig";
+            readonly name: "_config";
+            readonly type: "tuple";
         }];
         readonly stateMutability: "nonpayable";
+        readonly type: "constructor";
     }, {
-        readonly type: "fallback";
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "PERMIT_TYPEHASH";
         readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }];
-        readonly stateMutability: "view";
+        readonly name: "ExpInvalidExponent";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "__external_transferFrom";
-        readonly inputs: readonly [{
-            readonly name: "tokenID";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "from";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "to";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "amount";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "caller";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "__setBalanceOf";
-        readonly inputs: readonly [{
-            readonly name: "_tokenId";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_who";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "_amount";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "accrue";
-        readonly inputs: readonly [{
-            readonly name: "time";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "apr";
-            readonly type: "int256";
-            readonly internalType: "int256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "addLiquidity";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "payable";
-    }, {
-        readonly type: "function";
-        readonly name: "batchTransferFrom";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "uint256[]";
-            readonly internalType: "uint256[]";
-        }, {
-            readonly name: "";
-            readonly type: "uint256[]";
-            readonly internalType: "uint256[]";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "burn";
-        readonly inputs: readonly [{
-            readonly name: "tokenID";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "from";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "amount";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateFeesGivenBonds";
-        readonly inputs: readonly [{
-            readonly name: "_bondAmount";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_normalizedTimeRemaining";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_spotPrice";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "vaultSharePrice";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "totalCurveFee";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "totalFlatFee";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "governanceCurveFee";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "totalGovernanceFee";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateFeesGivenShares";
-        readonly inputs: readonly [{
-            readonly name: "_shareAmount";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_spotPrice";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "vaultSharePrice";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "curveFee";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "governanceCurveFee";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateIdleShareReserves";
-        readonly inputs: readonly [{
-            readonly name: "_vaultSharePrice";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateOpenLong";
-        readonly inputs: readonly [{
-            readonly name: "_shareAmount";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "_vaultSharePrice";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "shareReservesDelta";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "bondReservesDelta";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "totalGovernanceFee";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateTimeRemaining";
-        readonly inputs: readonly [{
-            readonly name: "_maturityTime";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "timeRemaining";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "calculateTimeRemainingScaled";
-        readonly inputs: readonly [{
-            readonly name: "_maturityTime";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "timeRemaining";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "checkpoint";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "closeLong";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "closeShort";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "collectGovernanceFee";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "domainSeparator";
         readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }];
-        readonly stateMutability: "view";
+        readonly name: "InsufficientBalance";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "getTotalShares";
         readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "view";
+        readonly name: "InsufficientLiquidity";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "initialize";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "payable";
-    }, {
-        readonly type: "function";
-        readonly name: "latestCheckpoint";
         readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "checkpointTime";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "view";
+        readonly name: "LnInvalidInput";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "mint";
-        readonly inputs: readonly [{
-            readonly name: "tokenID";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "to";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "amount";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "openLong";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "payable";
-    }, {
-        readonly type: "function";
-        readonly name: "openShort";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "payable";
-    }, {
-        readonly type: "function";
-        readonly name: "pause";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "permitForAll";
-        readonly inputs: readonly [{
-            readonly name: "owner";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "spender";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "_approved";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }, {
-            readonly name: "deadline";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "v";
-            readonly type: "uint8";
-            readonly internalType: "uint8";
-        }, {
-            readonly name: "r";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }, {
-            readonly name: "s";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "redeemWithdrawalShares";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "removeLiquidity";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.Options";
-            readonly components: readonly [{
-                readonly name: "destination";
-                readonly type: "address";
-                readonly internalType: "address";
-            }, {
-                readonly name: "asBase";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "extraData";
-                readonly type: "bytes";
-                readonly internalType: "bytes";
-            }];
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setApproval";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setApprovalBridge";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setApprovalForAll";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setFeeCollector";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setGovernance";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setLongExposure";
-        readonly inputs: readonly [{
-            readonly name: "longExposure";
-            readonly type: "uint128";
-            readonly internalType: "uint128";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setMarketState";
-        readonly inputs: readonly [{
-            readonly name: "_marketState_";
-            readonly type: "tuple";
-            readonly internalType: "struct IHyperdrive.MarketState";
-            readonly components: readonly [{
-                readonly name: "shareReserves";
-                readonly type: "uint128";
-                readonly internalType: "uint128";
-            }, {
-                readonly name: "bondReserves";
-                readonly type: "uint128";
-                readonly internalType: "uint128";
-            }, {
-                readonly name: "longExposure";
-                readonly type: "uint128";
-                readonly internalType: "uint128";
-            }, {
-                readonly name: "longsOutstanding";
-                readonly type: "uint128";
-                readonly internalType: "uint128";
-            }, {
-                readonly name: "shareAdjustment";
-                readonly type: "int128";
-                readonly internalType: "int128";
-            }, {
-                readonly name: "shortsOutstanding";
-                readonly type: "uint128";
-                readonly internalType: "uint128";
-            }, {
-                readonly name: "longAverageMaturityTime";
-                readonly type: "uint128";
-                readonly internalType: "uint128";
-            }, {
-                readonly name: "shortAverageMaturityTime";
-                readonly type: "uint128";
-                readonly internalType: "uint128";
-            }, {
-                readonly name: "isInitialized";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "isPaused";
-                readonly type: "bool";
-                readonly internalType: "bool";
-            }, {
-                readonly name: "zombieBaseProceeds";
-                readonly type: "uint112";
-                readonly internalType: "uint112";
-            }, {
-                readonly name: "zombieShareReserves";
-                readonly type: "uint128";
-                readonly internalType: "uint128";
-            }];
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setPauser";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setReserves";
-        readonly inputs: readonly [{
-            readonly name: "shareReserves";
-            readonly type: "uint128";
-            readonly internalType: "uint128";
-        }, {
-            readonly name: "bondReserves";
-            readonly type: "uint128";
-            readonly internalType: "uint128";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setSweepCollector";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setTotalShares";
-        readonly inputs: readonly [{
-            readonly name: "_totalShares";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "sweep";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "contract IERC20";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "target0";
         readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly stateMutability: "view";
+        readonly name: "ReentrancyGuardReentrantCall";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "target1";
         readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly stateMutability: "view";
+        readonly name: "RestrictedZeroAddress";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "target2";
         readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly stateMutability: "view";
+        readonly name: "UnexpectedSuccess";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "target3";
         readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly stateMutability: "view";
+        readonly name: "UnsafeCastToInt128";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "target4";
         readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly stateMutability: "view";
+        readonly name: "UnsafeCastToInt256";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "transferFrom";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
+        readonly inputs: readonly [];
+        readonly name: "UnsafeCastToUint128";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "transferFromBridge";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "";
-            readonly type: "uint256";
-            readonly internalType: "uint256";
-        }, {
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
+        readonly inputs: readonly [];
+        readonly name: "UpdateLiquidityFailed";
+        readonly type: "error";
     }, {
-        readonly type: "function";
-        readonly name: "updateLiquidity";
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "_shareReservesDelta";
-            readonly type: "int256";
-            readonly internalType: "int256";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "event";
-        readonly name: "AddLiquidity";
-        readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "provider";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "lpAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }, {
-            readonly name: "asBase";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "asBase";
+            readonly type: "bool";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "lpSharePrice";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "AddLiquidity";
         readonly type: "event";
-        readonly name: "Approval";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "owner";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "spender";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
-            readonly name: "value";
-            readonly type: "uint256";
             readonly indexed: false;
             readonly internalType: "uint256";
+            readonly name: "value";
+            readonly type: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "Approval";
         readonly type: "event";
-        readonly name: "ApprovalForAll";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "account";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "operator";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: false;
+            readonly internalType: "bool";
             readonly name: "approved";
             readonly type: "bool";
-            readonly indexed: false;
-            readonly internalType: "bool";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "ApprovalForAll";
         readonly type: "event";
-        readonly name: "CloseLong";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "destination";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: true;
+            readonly internalType: "uint256";
             readonly name: "assetId";
             readonly type: "uint256";
-            readonly indexed: true;
-            readonly internalType: "uint256";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "maturityTime";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }, {
-            readonly name: "asBase";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "asBase";
+            readonly type: "bool";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "bondAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "CloseLong";
         readonly type: "event";
-        readonly name: "CloseShort";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "trader";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "destination";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: true;
+            readonly internalType: "uint256";
             readonly name: "assetId";
             readonly type: "uint256";
-            readonly indexed: true;
-            readonly internalType: "uint256";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "maturityTime";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }, {
-            readonly name: "asBase";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "asBase";
+            readonly type: "bool";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "basePayment";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "CloseShort";
         readonly type: "event";
-        readonly name: "CollectGovernanceFee";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "collector";
-            readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
+            readonly name: "collector";
+            readonly type: "address";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "fees";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "CollectGovernanceFee";
         readonly type: "event";
-        readonly name: "CreateCheckpoint";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "uint256";
             readonly name: "checkpointTime";
             readonly type: "uint256";
-            readonly indexed: true;
-            readonly internalType: "uint256";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "checkpointVaultSharePrice";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "vaultSharePrice";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "maturedShorts";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "maturedLongs";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "lpSharePrice";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "CreateCheckpoint";
         readonly type: "event";
-        readonly name: "FeeCollectorUpdated";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "newFeeCollector";
             readonly type: "address";
+        }];
+        readonly name: "FeeCollectorUpdated";
+        readonly type: "event";
+    }, {
+        readonly anonymous: false;
+        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "GovernanceUpdated";
-        readonly inputs: readonly [{
             readonly name: "newGovernance";
             readonly type: "address";
+        }];
+        readonly name: "GovernanceUpdated";
+        readonly type: "event";
+    }, {
+        readonly anonymous: false;
+        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "Initialize";
-        readonly inputs: readonly [{
             readonly name: "provider";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "lpAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }, {
-            readonly name: "asBase";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "asBase";
+            readonly type: "bool";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "apr";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "Initialize";
         readonly type: "event";
-        readonly name: "OpenLong";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "trader";
-            readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
+            readonly name: "trader";
+            readonly type: "address";
         }, {
-            readonly name: "assetId";
-            readonly type: "uint256";
             readonly indexed: true;
             readonly internalType: "uint256";
+            readonly name: "assetId";
+            readonly type: "uint256";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "maturityTime";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }, {
-            readonly name: "asBase";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "asBase";
+            readonly type: "bool";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "bondAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "OpenLong";
         readonly type: "event";
-        readonly name: "OpenShort";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "trader";
-            readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
+            readonly name: "trader";
+            readonly type: "address";
         }, {
-            readonly name: "assetId";
-            readonly type: "uint256";
             readonly indexed: true;
             readonly internalType: "uint256";
+            readonly name: "assetId";
+            readonly type: "uint256";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "maturityTime";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }, {
-            readonly name: "asBase";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "asBase";
+            readonly type: "bool";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "baseProceeds";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "bondAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "OpenShort";
         readonly type: "event";
-        readonly name: "PauseStatusUpdated";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: false;
+            readonly internalType: "bool";
             readonly name: "isPaused";
             readonly type: "bool";
-            readonly indexed: false;
-            readonly internalType: "bool";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "PauseStatusUpdated";
         readonly type: "event";
-        readonly name: "PauserUpdated";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "newPauser";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: false;
+            readonly internalType: "bool";
             readonly name: "status";
             readonly type: "bool";
-            readonly indexed: false;
-            readonly internalType: "bool";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "PauserUpdated";
         readonly type: "event";
-        readonly name: "RedeemWithdrawalShares";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "provider";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "destination";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "withdrawalShareAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }, {
-            readonly name: "asBase";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "asBase";
+            readonly type: "bool";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "RedeemWithdrawalShares";
         readonly type: "event";
-        readonly name: "RemoveLiquidity";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "provider";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "destination";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "lpAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "baseAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "vaultShareAmount";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }, {
-            readonly name: "asBase";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "asBase";
+            readonly type: "bool";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "withdrawalShareAmount";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "lpSharePrice";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "RemoveLiquidity";
         readonly type: "event";
-        readonly name: "Sweep";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "collector";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "target";
             readonly type: "address";
+        }];
+        readonly name: "Sweep";
+        readonly type: "event";
+    }, {
+        readonly anonymous: false;
+        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "SweepCollectorUpdated";
-        readonly inputs: readonly [{
             readonly name: "newSweepCollector";
             readonly type: "address";
+        }];
+        readonly name: "SweepCollectorUpdated";
+        readonly type: "event";
+    }, {
+        readonly anonymous: false;
+        readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
-        }];
-        readonly anonymous: false;
-    }, {
-        readonly type: "event";
-        readonly name: "TransferSingle";
-        readonly inputs: readonly [{
             readonly name: "operator";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "from";
             readonly type: "address";
+        }, {
             readonly indexed: true;
             readonly internalType: "address";
-        }, {
             readonly name: "to";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
             readonly name: "id";
             readonly type: "uint256";
+        }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-        }, {
             readonly name: "value";
             readonly type: "uint256";
-            readonly indexed: false;
-            readonly internalType: "uint256";
         }];
-        readonly anonymous: false;
+        readonly name: "TransferSingle";
+        readonly type: "event";
     }, {
-        readonly type: "error";
-        readonly name: "ExpInvalidExponent";
-        readonly inputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "fallback";
     }, {
-        readonly type: "error";
-        readonly name: "InsufficientBalance";
         readonly inputs: readonly [];
+        readonly name: "PERMIT_TYPEHASH";
+        readonly outputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "";
+            readonly type: "bytes32";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
     }, {
-        readonly type: "error";
-        readonly name: "InsufficientLiquidity";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "tokenID";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "from";
+            readonly type: "address";
+        }, {
+            readonly internalType: "address";
+            readonly name: "to";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "amount";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "caller";
+            readonly type: "address";
+        }];
+        readonly name: "__external_transferFrom";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }, {
-        readonly type: "error";
-        readonly name: "LnInvalidInput";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_tokenId";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "_who";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "_amount";
+            readonly type: "uint256";
+        }];
+        readonly name: "__setBalanceOf";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }, {
-        readonly type: "error";
-        readonly name: "ReentrancyGuardReentrantCall";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "time";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "int256";
+            readonly name: "apr";
+            readonly type: "int256";
+        }];
+        readonly name: "accrue";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }, {
-        readonly type: "error";
-        readonly name: "RestrictedZeroAddress";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "destination";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "asBase";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "extraData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly name: "";
+            readonly type: "tuple";
+        }];
+        readonly name: "addLiquidity";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "payable";
+        readonly type: "function";
     }, {
-        readonly type: "error";
-        readonly name: "UnexpectedSuccess";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256[]";
+            readonly name: "";
+            readonly type: "uint256[]";
+        }, {
+            readonly internalType: "uint256[]";
+            readonly name: "";
+            readonly type: "uint256[]";
+        }];
+        readonly name: "batchTransferFrom";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }, {
-        readonly type: "error";
-        readonly name: "UnsafeCastToInt128";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "tokenID";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "from";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "amount";
+            readonly type: "uint256";
+        }];
+        readonly name: "burn";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }, {
-        readonly type: "error";
-        readonly name: "UnsafeCastToInt256";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_bondAmount";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "_normalizedTimeRemaining";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "_spotPrice";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "vaultSharePrice";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateFeesGivenBonds";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "totalCurveFee";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "totalFlatFee";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "governanceCurveFee";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "totalGovernanceFee";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
     }, {
-        readonly type: "error";
-        readonly name: "UnsafeCastToUint128";
-        readonly inputs: readonly [];
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "_spotPrice";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "vaultSharePrice";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateFeesGivenShares";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "curveFee";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "governanceCurveFee";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
     }, {
-        readonly type: "error";
-        readonly name: "UpdateLiquidityFailed";
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_vaultSharePrice";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateIdleShareReserves";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_shareAmount";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "_vaultSharePrice";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateOpenLong";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "shareReservesDelta";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "bondReservesDelta";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "totalGovernanceFee";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "spotPrice";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_maturityTime";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateTimeRemaining";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "timeRemaining";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_maturityTime";
+            readonly type: "uint256";
+        }];
+        readonly name: "calculateTimeRemainingScaled";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "timeRemaining";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly name: "checkpoint";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "destination";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "asBase";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "extraData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly name: "";
+            readonly type: "tuple";
+        }];
+        readonly name: "closeLong";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "destination";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "asBase";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "extraData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly name: "";
+            readonly type: "tuple";
+        }];
+        readonly name: "closeShort";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "destination";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "asBase";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "extraData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly name: "";
+            readonly type: "tuple";
+        }];
+        readonly name: "collectGovernanceFee";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
         readonly inputs: readonly [];
+        readonly name: "domainSeparator";
+        readonly outputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "";
+            readonly type: "bytes32";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "getTotalShares";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "destination";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "asBase";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "extraData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly name: "";
+            readonly type: "tuple";
+        }];
+        readonly name: "initialize";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "payable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "latestCheckpoint";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "checkpointTime";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "tokenID";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "to";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "amount";
+            readonly type: "uint256";
+        }];
+        readonly name: "mint";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "destination";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "asBase";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "extraData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly name: "";
+            readonly type: "tuple";
+        }];
+        readonly name: "openLong";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "payable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "destination";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "asBase";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "extraData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly name: "";
+            readonly type: "tuple";
+        }];
+        readonly name: "openShort";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "payable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly name: "pause";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "owner";
+            readonly type: "address";
+        }, {
+            readonly internalType: "address";
+            readonly name: "spender";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "_approved";
+            readonly type: "bool";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "deadline";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint8";
+            readonly name: "v";
+            readonly type: "uint8";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "r";
+            readonly type: "bytes32";
+        }, {
+            readonly internalType: "bytes32";
+            readonly name: "s";
+            readonly type: "bytes32";
+        }];
+        readonly name: "permitForAll";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "destination";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "asBase";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "extraData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly name: "";
+            readonly type: "tuple";
+        }];
+        readonly name: "redeemWithdrawalShares";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "destination";
+                readonly type: "address";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "asBase";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bytes";
+                readonly name: "extraData";
+                readonly type: "bytes";
+            }];
+            readonly internalType: "struct IHyperdrive.Options";
+            readonly name: "";
+            readonly type: "tuple";
+        }];
+        readonly name: "removeLiquidity";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly name: "setApproval";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "setApprovalBridge";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly name: "setApprovalForAll";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "setFeeCollector";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "setGovernance";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint128";
+            readonly name: "longExposure";
+            readonly type: "uint128";
+        }];
+        readonly name: "setLongExposure";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly components: readonly [{
+                readonly internalType: "uint128";
+                readonly name: "shareReserves";
+                readonly type: "uint128";
+            }, {
+                readonly internalType: "uint128";
+                readonly name: "bondReserves";
+                readonly type: "uint128";
+            }, {
+                readonly internalType: "uint128";
+                readonly name: "longExposure";
+                readonly type: "uint128";
+            }, {
+                readonly internalType: "uint128";
+                readonly name: "longsOutstanding";
+                readonly type: "uint128";
+            }, {
+                readonly internalType: "int128";
+                readonly name: "shareAdjustment";
+                readonly type: "int128";
+            }, {
+                readonly internalType: "uint128";
+                readonly name: "shortsOutstanding";
+                readonly type: "uint128";
+            }, {
+                readonly internalType: "uint128";
+                readonly name: "longAverageMaturityTime";
+                readonly type: "uint128";
+            }, {
+                readonly internalType: "uint128";
+                readonly name: "shortAverageMaturityTime";
+                readonly type: "uint128";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "isInitialized";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "bool";
+                readonly name: "isPaused";
+                readonly type: "bool";
+            }, {
+                readonly internalType: "uint112";
+                readonly name: "zombieBaseProceeds";
+                readonly type: "uint112";
+            }, {
+                readonly internalType: "uint128";
+                readonly name: "zombieShareReserves";
+                readonly type: "uint128";
+            }];
+            readonly internalType: "struct IHyperdrive.MarketState";
+            readonly name: "_marketState_";
+            readonly type: "tuple";
+        }];
+        readonly name: "setMarketState";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly name: "setPauser";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint128";
+            readonly name: "shareReserves";
+            readonly type: "uint128";
+        }, {
+            readonly internalType: "uint128";
+            readonly name: "bondReserves";
+            readonly type: "uint128";
+        }];
+        readonly name: "setReserves";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "setSweepCollector";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_totalShares";
+            readonly type: "uint256";
+        }];
+        readonly name: "setTotalShares";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "contract IERC20";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "sweep";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "target0";
+        readonly outputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "target1";
+        readonly outputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "target2";
+        readonly outputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "target3";
+        readonly outputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly name: "transferFrom";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }, {
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "transferFromBridge";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "int256";
+            readonly name: "_shareReservesDelta";
+            readonly type: "int256";
+        }];
+        readonly name: "updateLiquidity";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {
@@ -1697,7 +1695,6 @@ export declare const MockHyperdrive: {
         readonly "target1()": "eac3e799";
         readonly "target2()": "a6e8a859";
         readonly "target3()": "d899e112";
-        readonly "target4()": "f3f70707";
         readonly "transferFrom(uint256,address,address,uint256)": "1c0f12b6";
         readonly "transferFromBridge(uint256,address,address,uint256,address)": "e44808bc";
         readonly "updateLiquidity(int256)": "8120a3e2";

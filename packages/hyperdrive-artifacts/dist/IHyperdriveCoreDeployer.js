@@ -1,156 +1,156 @@
 export const IHyperdriveCoreDeployer = {
     abi: [
         {
-            "type": "function",
-            "name": "deploy",
             "inputs": [
                 {
-                    "name": "_config",
-                    "type": "tuple",
-                    "internalType": "struct IHyperdrive.PoolConfig",
                     "components": [
                         {
+                            "internalType": "contract IERC20",
                             "name": "baseToken",
-                            "type": "address",
-                            "internalType": "contract IERC20"
+                            "type": "address"
                         },
                         {
+                            "internalType": "contract IERC20",
                             "name": "vaultSharesToken",
-                            "type": "address",
-                            "internalType": "contract IERC20"
+                            "type": "address"
                         },
                         {
+                            "internalType": "address",
                             "name": "linkerFactory",
-                            "type": "address",
-                            "internalType": "address"
+                            "type": "address"
                         },
                         {
+                            "internalType": "bytes32",
                             "name": "linkerCodeHash",
-                            "type": "bytes32",
-                            "internalType": "bytes32"
+                            "type": "bytes32"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "initialVaultSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "minimumShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "minimumTransactionAmount",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
+                            "name": "circuitBreakerDelta",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
                             "name": "positionDuration",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "checkpointDuration",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "uint256",
                             "name": "timeStretch",
-                            "type": "uint256",
-                            "internalType": "uint256"
+                            "type": "uint256"
                         },
                         {
+                            "internalType": "address",
                             "name": "governance",
-                            "type": "address",
-                            "internalType": "address"
+                            "type": "address"
                         },
                         {
+                            "internalType": "address",
                             "name": "feeCollector",
-                            "type": "address",
-                            "internalType": "address"
+                            "type": "address"
                         },
                         {
+                            "internalType": "address",
                             "name": "sweepCollector",
-                            "type": "address",
-                            "internalType": "address"
+                            "type": "address"
                         },
                         {
-                            "name": "fees",
-                            "type": "tuple",
-                            "internalType": "struct IHyperdrive.Fees",
                             "components": [
                                 {
+                                    "internalType": "uint256",
                                     "name": "curve",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
+                                    "type": "uint256"
                                 },
                                 {
+                                    "internalType": "uint256",
                                     "name": "flat",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
+                                    "type": "uint256"
                                 },
                                 {
+                                    "internalType": "uint256",
                                     "name": "governanceLP",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
+                                    "type": "uint256"
                                 },
                                 {
+                                    "internalType": "uint256",
                                     "name": "governanceZombie",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
+                                    "type": "uint256"
                                 }
-                            ]
+                            ],
+                            "internalType": "struct IHyperdrive.Fees",
+                            "name": "fees",
+                            "type": "tuple"
                         }
-                    ]
+                    ],
+                    "internalType": "struct IHyperdrive.PoolConfig",
+                    "name": "_config",
+                    "type": "tuple"
                 },
                 {
+                    "internalType": "bytes",
                     "name": "_extraData",
-                    "type": "bytes",
-                    "internalType": "bytes"
+                    "type": "bytes"
                 },
                 {
+                    "internalType": "address",
                     "name": "_target0",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "address",
                     "name": "_target1",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "address",
                     "name": "_target2",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "address",
                     "name": "_target3",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
-                    "name": "_target4",
-                    "type": "address",
-                    "internalType": "address"
-                },
-                {
+                    "internalType": "bytes32",
                     "name": "_salt",
-                    "type": "bytes32",
-                    "internalType": "bytes32"
+                    "type": "bytes32"
                 }
             ],
+            "name": "deployHyperdrive",
             "outputs": [
                 {
+                    "internalType": "address",
                     "name": "",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
     bytecode: '0x',
     methodIdentifiers: {
-        "deploy((address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,address,bytes32)": "ed871fd7"
+        "deployHyperdrive((address,address,address,bytes32,uint256,uint256,uint256,uint256,uint256,uint256,uint256,address,address,address,(uint256,uint256,uint256,uint256)),bytes,address,address,address,address,bytes32)": "907d12e9"
     }
 };

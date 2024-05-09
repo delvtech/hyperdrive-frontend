@@ -1,74 +1,74 @@
 export declare const Auth: {
     abi: readonly [{
-        readonly type: "function";
-        readonly name: "authority";
-        readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "contract Authority";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "owner";
-        readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "setAuthority";
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
+            readonly name: "user";
+            readonly type: "address";
+        }, {
+            readonly indexed: true;
+            readonly internalType: "contract Authority";
             readonly name: "newAuthority";
             readonly type: "address";
-            readonly internalType: "contract Authority";
         }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "transferOwnership";
-        readonly inputs: readonly [{
-            readonly name: "newOwner";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "event";
         readonly name: "AuthorityUpdated";
-        readonly inputs: readonly [{
-            readonly name: "user";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }, {
-            readonly name: "newAuthority";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "contract Authority";
-        }];
-        readonly anonymous: false;
-    }, {
         readonly type: "event";
-        readonly name: "OwnershipTransferred";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "user";
-            readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
+            readonly name: "user";
+            readonly type: "address";
         }, {
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "newOwner";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }];
-        readonly anonymous: false;
+        readonly name: "OwnershipTransferred";
+        readonly type: "event";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "authority";
+        readonly outputs: readonly [{
+            readonly internalType: "contract Authority";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "owner";
+        readonly outputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "contract Authority";
+            readonly name: "newAuthority";
+            readonly type: "address";
+        }];
+        readonly name: "setAuthority";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "newOwner";
+            readonly type: "address";
+        }];
+        readonly name: "transferOwnership";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

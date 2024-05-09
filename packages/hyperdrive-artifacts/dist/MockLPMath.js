@@ -1,1013 +1,1346 @@
 export const MockLPMath = {
     abi: [
         {
-            "type": "function",
-            "name": "calculateDistributeExcessIdleShareProceeds",
-            "inputs": [
-                {
-                    "name": "_params",
-                    "type": "tuple",
-                    "internalType": "struct LPMath.DistributeExcessIdleParams",
-                    "components": [
-                        {
-                            "name": "presentValueParams",
-                            "type": "tuple",
-                            "internalType": "struct LPMath.PresentValueParams",
-                            "components": [
-                                {
-                                    "name": "shareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shareAdjustment",
-                                    "type": "int256",
-                                    "internalType": "int256"
-                                },
-                                {
-                                    "name": "bondReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "vaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "initialVaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumShareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumTransactionAmount",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "timeStretch",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "startingPresentValue",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "activeLpTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "withdrawalSharesTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "idle",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "netCurveTrade",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "originalShareAdjustment",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalBondReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "name": "_originalEffectiveShareReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_maxShareReservesDelta",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "function",
-            "name": "calculateDistributeExcessIdleShareProceedsNetLongEdgeCaseSafe",
-            "inputs": [
-                {
-                    "name": "_params",
-                    "type": "tuple",
-                    "internalType": "struct LPMath.DistributeExcessIdleParams",
-                    "components": [
-                        {
-                            "name": "presentValueParams",
-                            "type": "tuple",
-                            "internalType": "struct LPMath.PresentValueParams",
-                            "components": [
-                                {
-                                    "name": "shareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shareAdjustment",
-                                    "type": "int256",
-                                    "internalType": "int256"
-                                },
-                                {
-                                    "name": "bondReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "vaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "initialVaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumShareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumTransactionAmount",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "timeStretch",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "startingPresentValue",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "activeLpTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "withdrawalSharesTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "idle",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "netCurveTrade",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "originalShareAdjustment",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalBondReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "function",
-            "name": "calculateDistributeExcessIdleWithdrawalSharesRedeemed",
-            "inputs": [
-                {
-                    "name": "_params",
-                    "type": "tuple",
-                    "internalType": "struct LPMath.DistributeExcessIdleParams",
-                    "components": [
-                        {
-                            "name": "presentValueParams",
-                            "type": "tuple",
-                            "internalType": "struct LPMath.PresentValueParams",
-                            "components": [
-                                {
-                                    "name": "shareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shareAdjustment",
-                                    "type": "int256",
-                                    "internalType": "int256"
-                                },
-                                {
-                                    "name": "bondReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "vaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "initialVaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumShareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumTransactionAmount",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "timeStretch",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "startingPresentValue",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "activeLpTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "withdrawalSharesTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "idle",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "netCurveTrade",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "originalShareAdjustment",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalBondReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "name": "_shareReservesDelta",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "function",
-            "name": "calculateMaxShareReservesDeltaSafe",
-            "inputs": [
-                {
-                    "name": "_params",
-                    "type": "tuple",
-                    "internalType": "struct LPMath.DistributeExcessIdleParams",
-                    "components": [
-                        {
-                            "name": "presentValueParams",
-                            "type": "tuple",
-                            "internalType": "struct LPMath.PresentValueParams",
-                            "components": [
-                                {
-                                    "name": "shareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shareAdjustment",
-                                    "type": "int256",
-                                    "internalType": "int256"
-                                },
-                                {
-                                    "name": "bondReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "vaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "initialVaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumShareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumTransactionAmount",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "timeStretch",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "startingPresentValue",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "activeLpTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "withdrawalSharesTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "idle",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "netCurveTrade",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "originalShareAdjustment",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalBondReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "name": "_originalEffectiveShareReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "function",
-            "name": "calculateNetCurveTrade",
-            "inputs": [
-                {
-                    "name": "_params",
-                    "type": "tuple",
-                    "internalType": "struct LPMath.PresentValueParams",
-                    "components": [
-                        {
-                            "name": "shareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "shareAdjustment",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "bondReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "vaultSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "initialVaultSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "minimumShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "minimumTransactionAmount",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "timeStretch",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "longsOutstanding",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "longAverageTimeRemaining",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "shortsOutstanding",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "shortAverageTimeRemaining",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "int256",
-                    "internalType": "int256"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "function",
-            "name": "calculateNetFlatTrade",
-            "inputs": [
-                {
-                    "name": "_params",
-                    "type": "tuple",
-                    "internalType": "struct LPMath.PresentValueParams",
-                    "components": [
-                        {
-                            "name": "shareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "shareAdjustment",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "bondReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "vaultSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "initialVaultSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "minimumShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "minimumTransactionAmount",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "timeStretch",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "longsOutstanding",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "longAverageTimeRemaining",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "shortsOutstanding",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "shortAverageTimeRemaining",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "int256",
-                    "internalType": "int256"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "function",
-            "name": "calculatePresentValue",
-            "inputs": [
-                {
-                    "name": "_params",
-                    "type": "tuple",
-                    "internalType": "struct LPMath.PresentValueParams",
-                    "components": [
-                        {
-                            "name": "shareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "shareAdjustment",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "bondReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "vaultSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "initialVaultSharePrice",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "minimumShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "minimumTransactionAmount",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "timeStretch",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "longsOutstanding",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "longAverageTimeRemaining",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "shortsOutstanding",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "shortAverageTimeRemaining",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        }
-                    ]
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "function",
-            "name": "calculateSharesDeltaGivenBondsDeltaDerivativeSafe",
-            "inputs": [
-                {
-                    "name": "_params",
-                    "type": "tuple",
-                    "internalType": "struct LPMath.DistributeExcessIdleParams",
-                    "components": [
-                        {
-                            "name": "presentValueParams",
-                            "type": "tuple",
-                            "internalType": "struct LPMath.PresentValueParams",
-                            "components": [
-                                {
-                                    "name": "shareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shareAdjustment",
-                                    "type": "int256",
-                                    "internalType": "int256"
-                                },
-                                {
-                                    "name": "bondReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "vaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "initialVaultSharePrice",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumShareReserves",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "minimumTransactionAmount",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "timeStretch",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "longAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortsOutstanding",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                },
-                                {
-                                    "name": "shortAverageTimeRemaining",
-                                    "type": "uint256",
-                                    "internalType": "uint256"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "startingPresentValue",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "activeLpTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "withdrawalSharesTotalSupply",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "idle",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "netCurveTrade",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalShareReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        },
-                        {
-                            "name": "originalShareAdjustment",
-                            "type": "int256",
-                            "internalType": "int256"
-                        },
-                        {
-                            "name": "originalBondReserves",
-                            "type": "uint256",
-                            "internalType": "uint256"
-                        }
-                    ]
-                },
-                {
-                    "name": "_originalEffectiveShareReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_bondAmount",
-                    "type": "int256",
-                    "internalType": "int256"
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "function",
-            "name": "calculateUpdateLiquidity",
-            "inputs": [
-                {
-                    "name": "_shareReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_shareAdjustment",
-                    "type": "int256",
-                    "internalType": "int256"
-                },
-                {
-                    "name": "_bondReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_minimumShareReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "_shareReservesDelta",
-                    "type": "int256",
-                    "internalType": "int256"
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "shareReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                },
-                {
-                    "name": "shareAdjustment",
-                    "type": "int256",
-                    "internalType": "int256"
-                },
-                {
-                    "name": "bondReserves",
-                    "type": "uint256",
-                    "internalType": "uint256"
-                }
-            ],
-            "stateMutability": "pure"
-        },
-        {
-            "type": "error",
+            "inputs": [],
             "name": "ExpInvalidExponent",
-            "inputs": []
+            "type": "error"
         },
         {
-            "type": "error",
+            "inputs": [],
             "name": "InvalidPresentValue",
-            "inputs": []
+            "type": "error"
         },
         {
-            "type": "error",
+            "inputs": [],
             "name": "LnInvalidInput",
-            "inputs": []
+            "type": "error"
         },
         {
-            "type": "error",
+            "inputs": [],
             "name": "UnsafeCastToInt256",
-            "inputs": []
+            "type": "error"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "int256",
+                                    "name": "shareAdjustment",
+                                    "type": "int256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "bondReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "vaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "initialVaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumShareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumTransactionAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "timeStretch",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longAverageTimeRemaining",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortAverageTimeRemaining",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct LPMath.PresentValueParams",
+                            "name": "presentValueParams",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startingPresentValue",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "activeLpTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "withdrawalSharesTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "idle",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "netCurveTrade",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "originalShareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalBondReserves",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.DistributeExcessIdleParams",
+                    "name": "_params",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_maxIterations",
+                    "type": "uint256"
+                }
+            ],
+            "name": "calculateDistributeExcessIdle",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "int256",
+                                    "name": "shareAdjustment",
+                                    "type": "int256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "bondReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "vaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "initialVaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumShareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumTransactionAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "timeStretch",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longAverageTimeRemaining",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortAverageTimeRemaining",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct LPMath.PresentValueParams",
+                            "name": "presentValueParams",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startingPresentValue",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "activeLpTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "withdrawalSharesTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "idle",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "netCurveTrade",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "originalShareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalBondReserves",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.DistributeExcessIdleParams",
+                    "name": "_params",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_originalEffectiveShareReserves",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_maxShareReservesDelta",
+                    "type": "uint256"
+                }
+            ],
+            "name": "calculateDistributeExcessIdleShareProceeds",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "int256",
+                                    "name": "shareAdjustment",
+                                    "type": "int256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "bondReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "vaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "initialVaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumShareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumTransactionAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "timeStretch",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longAverageTimeRemaining",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortAverageTimeRemaining",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct LPMath.PresentValueParams",
+                            "name": "presentValueParams",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startingPresentValue",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "activeLpTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "withdrawalSharesTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "idle",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "netCurveTrade",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "originalShareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalBondReserves",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.DistributeExcessIdleParams",
+                    "name": "_params",
+                    "type": "tuple"
+                }
+            ],
+            "name": "calculateDistributeExcessIdleShareProceedsNetLongEdgeCaseSafe",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "int256",
+                                    "name": "shareAdjustment",
+                                    "type": "int256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "bondReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "vaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "initialVaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumShareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumTransactionAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "timeStretch",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longAverageTimeRemaining",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortAverageTimeRemaining",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct LPMath.PresentValueParams",
+                            "name": "presentValueParams",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startingPresentValue",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "activeLpTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "withdrawalSharesTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "idle",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "netCurveTrade",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "originalShareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalBondReserves",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.DistributeExcessIdleParams",
+                    "name": "_params",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_shareReservesDelta",
+                    "type": "uint256"
+                }
+            ],
+            "name": "calculateDistributeExcessIdleWithdrawalSharesRedeemed",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_shareAmount",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_vaultSharePrice",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_initialVaultSharePrice",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_targetApr",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_positionDuration",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_timeStretch",
+                    "type": "uint256"
+                }
+            ],
+            "name": "calculateInitialReserves",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "shareReserves",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "shareAdjustment",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "bondReserves",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "int256",
+                                    "name": "shareAdjustment",
+                                    "type": "int256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "bondReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "vaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "initialVaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumShareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumTransactionAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "timeStretch",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longAverageTimeRemaining",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortAverageTimeRemaining",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct LPMath.PresentValueParams",
+                            "name": "presentValueParams",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startingPresentValue",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "activeLpTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "withdrawalSharesTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "idle",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "netCurveTrade",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "originalShareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalBondReserves",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.DistributeExcessIdleParams",
+                    "name": "_params",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_originalEffectiveShareReserves",
+                    "type": "uint256"
+                }
+            ],
+            "name": "calculateMaxShareReservesDeltaSafe",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "shareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "shareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "bondReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "vaultSharePrice",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "initialVaultSharePrice",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minimumShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minimumTransactionAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timeStretch",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "longsOutstanding",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "longAverageTimeRemaining",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "shortsOutstanding",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "shortAverageTimeRemaining",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.PresentValueParams",
+                    "name": "_params",
+                    "type": "tuple"
+                }
+            ],
+            "name": "calculateNetCurveTrade",
+            "outputs": [
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "shareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "shareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "bondReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "vaultSharePrice",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "initialVaultSharePrice",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minimumShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minimumTransactionAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timeStretch",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "longsOutstanding",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "longAverageTimeRemaining",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "shortsOutstanding",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "shortAverageTimeRemaining",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.PresentValueParams",
+                    "name": "_params",
+                    "type": "tuple"
+                }
+            ],
+            "name": "calculateNetFlatTrade",
+            "outputs": [
+                {
+                    "internalType": "int256",
+                    "name": "",
+                    "type": "int256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint256",
+                            "name": "shareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "shareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "bondReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "vaultSharePrice",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "initialVaultSharePrice",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minimumShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "minimumTransactionAmount",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "timeStretch",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "longsOutstanding",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "longAverageTimeRemaining",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "shortsOutstanding",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "shortAverageTimeRemaining",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.PresentValueParams",
+                    "name": "_params",
+                    "type": "tuple"
+                }
+            ],
+            "name": "calculatePresentValue",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "int256",
+                                    "name": "shareAdjustment",
+                                    "type": "int256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "bondReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "vaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "initialVaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumShareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumTransactionAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "timeStretch",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longAverageTimeRemaining",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortAverageTimeRemaining",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct LPMath.PresentValueParams",
+                            "name": "presentValueParams",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startingPresentValue",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "activeLpTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "withdrawalSharesTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "idle",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "netCurveTrade",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "originalShareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalBondReserves",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.DistributeExcessIdleParams",
+                    "name": "_params",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_originalEffectiveShareReserves",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "_bondAmount",
+                    "type": "int256"
+                }
+            ],
+            "name": "calculateSharesDeltaGivenBondsDeltaDerivativeSafe",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_shareReserves",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "_shareAdjustment",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_bondReserves",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_minimumShareReserves",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "_shareReservesDelta",
+                    "type": "int256"
+                }
+            ],
+            "name": "calculateUpdateLiquidity",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "shareReserves",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "int256",
+                    "name": "shareAdjustment",
+                    "type": "int256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "bondReserves",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "components": [
+                        {
+                            "components": [
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "int256",
+                                    "name": "shareAdjustment",
+                                    "type": "int256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "bondReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "vaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "initialVaultSharePrice",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumShareReserves",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "minimumTransactionAmount",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "timeStretch",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "longAverageTimeRemaining",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortsOutstanding",
+                                    "type": "uint256"
+                                },
+                                {
+                                    "internalType": "uint256",
+                                    "name": "shortAverageTimeRemaining",
+                                    "type": "uint256"
+                                }
+                            ],
+                            "internalType": "struct LPMath.PresentValueParams",
+                            "name": "presentValueParams",
+                            "type": "tuple"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "startingPresentValue",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "activeLpTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "withdrawalSharesTotalSupply",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "idle",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "netCurveTrade",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalShareReserves",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "int256",
+                            "name": "originalShareAdjustment",
+                            "type": "int256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "originalBondReserves",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct LPMath.DistributeExcessIdleParams",
+                    "name": "_params",
+                    "type": "tuple"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_lpTotalSupply",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_presentValue",
+                    "type": "uint256"
+                }
+            ],
+            "name": "shouldShortCircuitDistributeExcessIdleShareProceeds",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "pure",
+            "type": "function"
         }
     ],
-    bytecode: '0x608060405234801561001057600080fd5b50612177806100206000396000f3fe608060405234801561001057600080fd5b50600436106100935760003560e01c8063a4fc6f8111610066578063a4fc6f811461010c578063b500f3cb1461011f578063c00b11d31461014d578063c615b2d914610160578063cefef8b71461017357600080fd5b806332c5dec4146100985780633f9ccc01146100be5780639e5fc16b146100d1578063a0d1643c146100f9575b600080fd5b6100ab6100a6366004611f04565b610186565b6040519081526020015b60405180910390f35b6100ab6100cc366004611fa9565b610197565b6100e46100df366004611fe0565b6101ae565b604080519283529015156020830152016100b5565b6100ab610107366004611fe0565b6101c7565b6100ab61011a366004611f04565b6101da565b61013261012d36600461200d565b61025b565b604080519384526020840192909252908201526060016100b5565b6100ab61015b366004611f04565b6102e9565b6100e461016e366004611fa9565b6102f4565b6100e4610181366004612048565b61030f565b600061019182610324565b92915050565b60006101a68484846004610397565b949350505050565b6000806101bb84846108c0565b915091505b9250929050565b60006101d383836109cf565b9392505050565b60008060006101e884610a9c565b91509150806102545760405162461bcd60e51b815260206004820152602d60248201527f4d6f636b4c504d6174683a2063616c63756c6174654e6574437572766554726160448201526c191954d859994819985a5b1959609a1b60648201526084015b60405180910390fd5b5092915050565b60008060008061026e8989898989610dcb565b92965090945092509050806102dd5760405162461bcd60e51b815260206004820152602f60248201527f4d6f636b4c504d6174683a2063616c63756c6174655570646174654c6971756960448201526e191a5d1e54d859994819985a5b1959608a1b606482015260840161024b565b50955095509592505050565b600061019182610ee3565b600080610302858585610f13565b915091505b935093915050565b60008061031b8361127b565b91509150915091565b600061035c610357836101200151670de0b6b3a7640000610345919061207b565b60608501516101008601519190611351565b611377565b61038d610357846101600151670de0b6b3a764000061037b919061207b565b606086015161014087015191906113a5565b610191919061208e565b600080856060015186604001516103ae91906120ae565b602087015160608801519192506000916103c891846113a5565b90508660a001516000036103df5791506101a69050565b600080808960048810156103f257600497505b60005b8881101561076257610407868b6113c3565b9550600061043e8360c001518460e00151856101000151866000015160a001516104308c611377565b610439906120c1565b610dcb565b8651604081019290925260208201929092529190915290508061046c576000985050505050505050506101a6565b600061047b8e600001516113d8565b925090508161049657600099505050505050505050506101a6565b6104a184828b611465565b156104b7578799505050505050505050506101a6565b60008460a00151131561062057835180516020820151604083015160a084015160e09094015160009461050b949392916104f990670de0b6b3a764000061207b565b8a5160608101516080909101516114d1565b93509050826105275760009a50505050505050505050506101a6565b808560a001511061061e5761053b8561127b565b9099509250826105585760009a50505050505050505050506101a6565b61057d8560c001518660e00151876101000151886000015160a001516104308e611377565b885160408101929092526020820192909252919091529250826105ad5760009a50505050505050505050506101a6565b845180516020820151604083015160a084015160e0909401516105dd94906104f990670de0b6b3a764000061207b565b93509050826105f95760009a50505050505050505050506101a6565b8e60a00151811161061657889a50505050505050505050506101a6565b5050506103f5565b505b6000610631858f8760a00151610f13565b9350905082158061064a5750670de0b6b3a76400008110155b156106625760009a50505050505050505050506101a6565b80670de0b6b3a7640000039050600061068f610357876040015188602001516115d690919063ffffffff16565b61069c610357858e6115eb565b6106a6919061208e565b90508815806106c457506106b989611600565b6106c282611600565b125b156106d3578098508997508296505b6000811315610701576106f08b6106ea8385611618565b90611618565b6106fa908b6120ae565b9950610753565b600081121561074a57600061071b8c6106ea8581866120c1565b90508a81101561072f57808b039a50610744565b60009c505050505050505050505050506101a6565b50610753565b50505050610762565b846001019450505050506103f5565b50600061078a8260c001518360e00151846101000151856000015160a001516104308b611377565b855160408101929092526020820192909252919091529050806107b75760009750505050505050506101a6565b60006107c68360000151610ee3565b905060006107e8610357856040015186602001516115d690919063ffffffff16565b6107f5610357848c6115eb565b6107ff919061208e565b905061080a87611600565b61081382611600565b1215610820578795508194505b61084761083b655af3107a4000670de0b6b3a764000061207b565b6020860151908b611351565b6040850151610857908790611618565b10806108975750610885610879655af3107a4000670de0b6b3a76400006120ae565b6020860151908b6113a5565b604085015161089590879061162d565b115b156108ae57600099505050505050505050506101a6565b50939c9b505050505050505050505050565b60008060008460a00151126108dd575050608082015160016101c0565b60008460a001516108ed906120c1565b9050600061092985876101000151886000015160e00151670de0b6b3a7640000610917919061207b565b89516060810151608090910151611642565b93509050821580610938575080155b1561094b576000809350935050506101c0565b6000610957838361162d565b9050670de0b6b3a764000081116109935780670de0b6b3a764000003945061098c8760c00151866115eb90919063ffffffff16565b94506109a2565b600080945094505050506101c0565b86608001518511156109c15786608001516001945094505050506101c0565b506001925050509250929050565b6000806109f78460c001518560e00151866101000151876000015160a0015161043088611377565b87516040810192909252602082019290925291909152905080610a1e576000915050610191565b6000610a2d85600001516113d8565b9250905081610a4157600092505050610191565b84602001518110610a5757600092505050610191565b600085606001518660400151610a6d91906120ae565b9050610a88828760200151836113a59092919063ffffffff16565b610a92908261207b565b9695505050505050565b6000806000610ac16103578561016001518661014001516115eb90919063ffffffff16565b610ae16103578661012001518761010001516115d690919063ffffffff16565b610aeb919061208e565b9050600080610b02866000015187602001516116ee565b9150915080610b1957506000958695509350505050565b6000831315610c695760008390506000610b67886000015189602001518a604001518b60a001518c60e00151670de0b6b3a7640000610b58919061207b565b8d606001518e608001516114d1565b9350905082610b80575060009788975095505050505050565b818110610c1e576000610bba858a60400151858c60e00151670de0b6b3a7640000610bab919061207b565b8d606001518e6080015161172a565b9450905083158015610bcf57508860c0015183105b15610be65750600098600198509650505050505050565b83610bfc57506000988998509650505050505050565b610c0581611377565b610c0e906120c1565b9960019950975050505050505050565b6000886020015112610c5557610c3d8860a0015185610357919061207b565b610c46906120c1565b98600198509650505050505050565b60a08801518851610c3d916103579161207b565b6000831215610dbc576000610c7d846120c1565b90506000610cb18489604001518a60e00151670de0b6b3a7640000610ca2919061207b565b8b606001518c60800151611642565b9350905082610cca575060009788975095505050505050565b818110610d4f576000610d04858a60400151858c60e00151670de0b6b3a7640000610cf5919061207b565b8d606001518e608001516117ed565b9450905083158015610d1957508860c0015183105b15610d305750600098600198509650505050505050565b83610d4657506000988998509650505050505050565b610c0e81611377565b6000610d81858a604001518b60e00151670de0b6b3a7640000610d72919061207b565b8c606001518d608001516118c4565b9450905083610d9b57506000988998509650505050505050565b610c0e610db28a6060015184866106ea919061207b565b61035790836120ae565b50600095600195509350505050565b60008060008084600003610dea57508792508691508590506001610ed7565b600085610df68b611377565b610e0091906120dd565b9050610e0b87611377565b811215610e2657600080600080945094509450945050610ed7565b80945060008912610e4657610e3f610357868b8d6113a5565b9350610e69565b610e5d610357610e558b6120c1565b87908d611351565b610e66906120c1565b93505b600080610e768c8c6116ee565b9150915080610e95576000806000809650965096509650505050610ed7565b6000610ea188886116ee565b9250905081610ec157600080600080975097509750975050505050610ed7565b610ecc8b82856113a5565b955060019450505050505b95509550955095915050565b6000806000610ef1846113d8565b915091508061025457604051635516328b60e11b815260040160405180910390fd5b6000806000808412610f3757855160400151610f309085906120ae565b9050610f72565b6000610f42856120c1565b875160400151909150811015610f62578651604001518190039150610f70565b600080935093505050610307565b505b855180516020909101516000918291610f8b91906116ee565b9150915080610fa35760008094509450505050610307565b875160e0810151604090910151600091610fd891610fcc91610fc5919061197a565b8a906115eb565b6101008b01519061162d565b895160e081015160809091015161100991610ffd91610ff790886115eb565b9061197a565b8b51606001519061162d565b61101391906120ae565b9050600061104b61103f6110388c6000015160e001518861197a90919063ffffffff16565b8b906115d6565b6101008c015190611618565b90508082101561106657600080965096505050505050610307565b808203915060006110a8858c60000151604001518d6000015160e00151670de0b6b3a7640000611096919061207b565b8e5160608101516080909101516119e5565b905060006110d28c6000015160e00151670de0b6b3a76400006110cb919061207b565b889061197a565b9050808210156110ef576000809850985050505050505050610307565b8b5160808101516060909101519183039161110b918391611351565b9050670de0b6b3a76400008110611156578b5160e0015161114f906111489061113c90670de0b6b3a764000061207b565b8e5160e001519061162d565b829061197a565b9050611185565b8b5160e00151611182906111489061117690670de0b6b3a764000061207b565b8e5160e0015190611618565b90505b8b51606001516111989085908390611351565b935083670de0b6b3a764000011156111bc5783670de0b6b3a76400000393506111d0565b600060019850985050505050505050610307565b60008c60e00151126112335760c08c015160e08d01516111ef9161162d565b9250670de0b6b3a7640000831115611214576000809850985050505050505050610307565b670de0b6b3a7640000929092039161122c84846115eb565b9350611268565b61126561124c8d60c001518e60e001516106ea906120c1565b61125e90670de0b6b3a76400006120ae565b85906115eb565b93505b50919a60019a5098505050505050505050565b60008060008360e001511361129557506000928392509050565b60006112a48460000151610324565b905060006112d08560400151866060015187604001516112c491906120ae565b60208801519190611351565b9050600082126112f757808210156112ea5781900361130d565b5060009485945092505050565b611300826120c1565b61130a90826120ae565b90505b60e085015160c0860151611322918390611351565b9050808560c00151101561133d575060009485945092505050565b808560c00151036001935093505050915091565b600082600019048411830215820261136857600080fd5b50910281810615159190040190565b60006001600160ff1b038211156113a15760405163396ea70160e11b815260040160405180910390fd5b5090565b60008260001904841183021582026113bc57600080fd5b5091020490565b60008183116113d257826101d3565b50919050565b60008060008060006113e986610a9c565b915091508061140057506000958695509350505050565b61140d8660a00151611377565b61141687610324565b836114248960000151611377565b61142e91906120dd565b61143891906120dd565b611442919061208e565b92505050600081121561145b5750600093849350915050565b9360019350915050565b6020830151600090611477908461162d565b6040850151611487908490611618565b101580156101a6575060208401516114b790846114b0633b9aca00670de0b6b3a76400006120ae565b91906113a5565b60408501516114c790849061162d565b1115949350505050565b60008060008812156114f3576114e6886120c1565b6114f090876120ae565b95505b6000806115008b8b6116ee565b9150915080611517576000809350935050506115ca565b6000611526838b8a8a8a611a14565b9050600061154361153b8a610ff78a8e6115d6565b899089611351565b90508082101561155d5760008095509550505050506115ca565b808203670de0b6b3a7640000811061158b57611584611148670de0b6b3a76400008c611618565b90506115a3565b6115a0611148670de0b6b3a76400008c61162d565b90505b8b8110156115bc576000809650965050505050506115ca565b8b9003955060019450505050505b97509795505050505050565b60006101d38383670de0b6b3a7640000611351565b60006101d38383670de0b6b3a76400006113a5565b600080821261160f5781610191565b610191826120c1565b60006101d383670de0b6b3a7640000846113a5565b60006101d383670de0b6b3a764000084611351565b600080600061165488888888886119e5565b9050600061167f670de0b6b3a764000061166e8888611618565b61167891906120ae565b839061162d565b9050670de0b6b3a764000081106116ac576116a5611148670de0b6b3a76400008961162d565b90506116c4565b6116c1611148670de0b6b3a764000089611618565b90505b808810156116da576000809350935050506116e4565b8703925060019150505b9550959350505050565b6000806000836116fd86611377565b611707919061208e565b9050600081121561171f5760008092509250506101c0565b946001945092505050565b600080600061173c89898888886119e5565b905061174c86610ff7898b6120ae565b9750878110156117635760008092509250506117e2565b878103611771818688611351565b9050670de0b6b3a7640000811061179e57611797611148670de0b6b3a76400008961162d565b90506117b6565b6117b3611148670de0b6b3a764000089611618565b90505b6117c0818661162d565b9050808a10156117d8576000809350935050506117e2565b8903925060019150505b965096945050505050565b60008060006117ff89898888886119e5565b9050868810156118165760008092509250506117e2565b9686900396611825888761197a565b97508781101561183c5760008092509250506117e2565b87810361184a818688611351565b9050670de0b6b3a7640000811061187757611870611148670de0b6b3a76400008961162d565b905061188f565b61188c611148670de0b6b3a764000089611618565b90505b611899818661162d565b9050898110156118b1576000809350935050506117e2565b9890980398600198509650505050505050565b60008060006118d68888888888611a14565b90506000611901670de0b6b3a76400006118f0888861162d565b6118fa91906120ae565b8390611618565b9050670de0b6b3a7640000811061192e57611927611148670de0b6b3a764000089611618565b9050611946565b611943611148670de0b6b3a76400008961162d565b90505b6119508186611618565b905088811015611968576000809350935050506116e4565b97909703976001975095505050505050565b6000816000036119935750670de0b6b3a7640000610191565b826000036119a357506000610191565b60006119ae83611377565b905060006119c36119be86611377565b611a39565b90508181026119da670de0b6b3a764000082612105565b9050610a9281611c68565b60006119f1858561197a565b611a0a611a0286610ff7868b6115d6565b859085611351565b610a9291906120ae565b6000611a20858561197a565b611a0a611a3186610ff7868b6115eb565b8590856113a5565b6000808213611a5b5760405163e61b497560e01b815260040160405180910390fd5b506fffffffffffffffffffffffffffffffff811160071b81811c67ffffffffffffffff1060061b1781811c63ffffffff1060051b1781811c61ffff1060041b1781811c60ff10600390811b90911782811c600f1060021b1782811c909110600190811b90911782811c90911017609f8181036060019290921b91605f19820190611ae79084901c611377565b6c465772b2bbbb5f824b15207a3081018102606090811d6d0388eaa27412d5aca026815d636e018202811d6d0df99ac502031bf953eff472fdcc018202811d6d13cdffb29d51d99322bdff5f2211018202811d6d0a0f742023def783a307a986912e018202811d6d01920d8043ca89b5239253284e42018202811d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7883018302821d6d0139601a2efabe717e604cbb4894018302821d6d02247f7a7b6594320649aa03aba1018302821d6c8c3f38e95a6b1ff2ab1c3b343619018302821d6d02384773bdf1ac5676facced60901901830290911d6cb9a025d814b29c212b8b1a07cd1901909102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a5506027d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b391909102017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d92915050565b6000680248ce36a70cb26b3e198213611c8357506000919050565b680755bf798b4a1bf1e58212611cac576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b3988102909303926c240c330e9fb2d9cbaf0fd5aafb1984018402606090811d6d0277594991cfc85f6e2461837cd9018502811d6d1a521255e34f6a5061b25ef1c9c319018502811d6db1bbb201f443cf962f1a1d3db4a5018502811d6e02c72388d9f74f51a9331fed693f1419018502811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765087018702831d9081019087016d01d3967ed30fc4f89c02bab570811901810290921d6e0587f503bb6ea29d25fcb7401964500186026d360d7aeea093263ecc6e0ecb291760621b018181059550929350909190610a9274029d9dc38563c32e5c2f6dc192ee70ef65f9978af3860260c38690031c611377565b604051610180810167ffffffffffffffff81118282101715611e2f57634e487b7160e01b600052604160045260246000fd5b60405290565b604051610120810167ffffffffffffffff81118282101715611e2f57634e487b7160e01b600052604160045260246000fd5b60006101808284031215611e7a57600080fd5b611e82611dfd565b9050813581526020820135602082015260408201356040820152606082013560608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e082015261010080830135818301525061012080830135818301525061014080830135818301525061016080830135818301525092915050565b60006101808284031215611f1757600080fd5b6101d38383611e67565b60006102808284031215611f3457600080fd5b611f3c611e35565b9050611f488383611e67565b815261018082013560208201526101a082013560408201526101c082013560608201526101e0820135608082015261020082013560a082015261022082013560c082015261024082013560e082015261026082013561010082015292915050565b60008060006102c08486031215611fbf57600080fd5b611fc98585611f21565b9561028085013595506102a0909401359392505050565b6000806102a08385031215611ff457600080fd5b611ffe8484611f21565b94610280939093013593505050565b600080600080600060a0868803121561202557600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b6000610280828403121561205b57600080fd5b6101d38383611f21565b634e487b7160e01b600052601160045260246000fd5b8181038181111561019157610191612065565b818103600083128015838313168383128216171561025457610254612065565b8082018082111561019157610191612065565b6000600160ff1b82016120d6576120d6612065565b5060000390565b80820182811260008312801582168215821617156120fd576120fd612065565b505092915050565b60008261212257634e487b7160e01b600052601260045260246000fd5b600160ff1b82146000198414161561213c5761213c612065565b50059056fea2646970667358221220208a180bef793b2674ca4edcaaf6a694cbf96641765b5481154382747d0a68df64736f6c63430008140033',
+    bytecode: '0x608060405234801561001057600080fd5b5061261c806100206000396000f3fe608060405234801561001057600080fd5b50600436106100b45760003560e01c8063a4fc6f8111610071578063a4fc6f8114610178578063b29e1d1e1461018b578063b500f3cb146101b9578063c00b11d3146101cc578063c615b2d9146101df578063cefef8b7146101f257600080fd5b806332c5dec4146100b95780633f9ccc01146100df578063865d65a2146100f25780638f1505fa1461011a5780639e5fc16b1461013d578063a0d1643c14610165575b600080fd5b6100cc6100c73660046121b2565b610205565b6040519081526020015b60405180910390f35b6100cc6100ed366004612257565b610216565b61010561010036600461228e565b61022d565b604080519283526020830191909152016100d6565b61012d610128366004612257565b6102b5565b60405190151581526020016100d6565b61015061014b36600461228e565b6102c2565b604080519283529015156020830152016100d6565b6100cc61017336600461228e565b6102cf565b6100cc6101863660046121b2565b6102e2565b61019e6101993660046122bb565b610363565b604080519384526020840192909252908201526060016100d6565b61019e6101c73660046122fe565b610413565b6100cc6101da3660046121b2565b610527565b6101506101ed366004612257565b6105a2565b610150610200366004612339565b6105bd565b6000610210826105d2565b92915050565b60006102258484846004610645565b949350505050565b60008073__$2b4fa6f02a36eedfe41c65e8dd342257d3$__632c03ef6885856040518363ffffffff1660e01b81526004016102699291906123d4565b6040805180830381865af4158015610285573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102a9919061244a565b915091505b9250929050565b6000610225848484610b6e565b6000806102a98484610bda565b60006102db8383610ce9565b9392505050565b60008060006102f084610db6565b915091508061035c5760405162461bcd60e51b815260206004820152602d60248201527f4d6f636b4c504d6174683a2063616c63756c6174654e6574437572766554726160448201526c191954d859994819985a5b1959609a1b60648201526084015b60405180910390fd5b5092915050565b60405163594f0e8f60e11b8152600481018790526024810186905260448101859052606481018490526084810183905260a481018290526000908190819073__$2b4fa6f02a36eedfe41c65e8dd342257d3$__9063b29e1d1e9060c401606060405180830381865af41580156103dd573d6000803e3d6000fd5b505050506040513d601f19601f82011682018060405250810190610401919061246e565b919b909a509098509650505050505050565b60405163685a2be760e11b8152600481018690526024810185905260448101849052606481018390526084810182905260009081908190819073__$2b4fa6f02a36eedfe41c65e8dd342257d3$__9063d0b457ce9060a401608060405180830381865af4158015610488573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104ac919061249c565b929650909450925090508061051b5760405162461bcd60e51b815260206004820152602f60248201527f4d6f636b4c504d6174683a2063616c63756c6174655570646174654c6971756960448201526e191a5d1e54d859994819985a5b1959608a1b6064820152608401610353565b50955095509592505050565b604051635f9d50ab60e11b815260009073__$2b4fa6f02a36eedfe41c65e8dd342257d3$__9063bf3aa156906105619085906004016124e2565b602060405180830381865af415801561057e573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061021091906124f1565b6000806105b08585856110e5565b915091505b935093915050565b6000806105c98361144d565b91509150915091565b600061060a610605836101200151670de0b6b3a76400006105f39190612520565b60608501516101008601519190611523565b611549565b61063b610605846101600151670de0b6b3a76400006106299190612520565b60608601516101408701519190611577565b6102109190612533565b6000808560600151866040015161065c9190612553565b602087015160608801519192506000916106769184611577565b90508660a0015160000361068d5791506102259050565b600080808960048810156106a057600497505b60005b88811015610a10576106b5868b611595565b955060006106ec8360c001518460e00151856101000151866000015160a001516106de8c611549565b6106e790612566565b6115aa565b8651604081019290925260208201929092529190915290508061071a57600098505050505050505050610225565b60006107298e600001516116c2565b92509050816107445760009950505050505050505050610225565b61074f84828b610b6e565b1561076557879950505050505050505050610225565b60008460a0015113156108ce57835180516020820151604083015160a084015160e0909401516000946107b9949392916107a790670de0b6b3a7640000612520565b8a51606081015160809091015161174f565b93509050826107d55760009a5050505050505050505050610225565b808560a00151106108cc576107e98561144d565b9099509250826108065760009a5050505050505050505050610225565b61082b8560c001518660e00151876101000151886000015160a001516106de8e611549565b8851604081019290925260208201929092529190915292508261085b5760009a5050505050505050505050610225565b845180516020820151604083015160a084015160e09094015161088b94906107a790670de0b6b3a7640000612520565b93509050826108a75760009a5050505050505050505050610225565b8e60a0015181116108c457889a5050505050505050505050610225565b5050506106a3565b505b60006108df858f8760a001516110e5565b935090508215806108f85750670de0b6b3a76400008110155b156109105760009a5050505050505050505050610225565b80670de0b6b3a7640000039050600061093d6106058760400151886020015161185490919063ffffffff16565b61094a610605858e611869565b6109549190612533565b905088158061097257506109678961187e565b6109708261187e565b125b15610981578098508997508296505b60008113156109af5761099e8b6109988385611896565b90611896565b6109a8908b612553565b9950610a01565b60008112156109f85760006109c98c610998858186612566565b90508a8110156109dd57808b039a506109f2565b60009c50505050505050505050505050610225565b50610a01565b50505050610a10565b846001019450505050506106a3565b506000610a388260c001518360e00151846101000151856000015160a001516106de8b611549565b85516040810192909252602082019290925291909152905080610a65576000975050505050505050610225565b6000610a7483600001516118ab565b90506000610a966106058560400151866020015161185490919063ffffffff16565b610aa3610605848c611869565b610aad9190612533565b9050610ab88761187e565b610ac18261187e565b1215610ace578795508194505b610af5610ae9655af3107a4000670de0b6b3a7640000612520565b6020860151908b611523565b6040850151610b05908790611896565b1080610b455750610b33610b27655af3107a4000670de0b6b3a7640000612553565b6020860151908b611577565b6040850151610b439087906118db565b115b15610b5c5760009950505050505050505050610225565b50939c9b505050505050505050505050565b6020830151600090610b8090846118db565b6040850151610b90908490611896565b1015801561022557506020840151610bc09084610bb9633b9aca00670de0b6b3a7640000612553565b9190611577565b6040850151610bd09084906118db565b1115949350505050565b60008060008460a0015112610bf7575050608082015160016102ae565b60008460a00151610c0790612566565b90506000610c4385876101000151886000015160e00151670de0b6b3a7640000610c319190612520565b895160608101516080909101516118f0565b93509050821580610c52575080155b15610c65576000809350935050506102ae565b6000610c7183836118db565b9050670de0b6b3a76400008111610cad5780670de0b6b3a7640000039450610ca68760c001518661186990919063ffffffff16565b9450610cbc565b600080945094505050506102ae565b8660800151851115610cdb5786608001516001945094505050506102ae565b506001925050509250929050565b600080610d118460c001518560e00151866101000151876000015160a001516106de88611549565b87516040810192909252602082019290925291909152905080610d38576000915050610210565b6000610d4785600001516116c2565b9250905081610d5b57600092505050610210565b84602001518110610d7157600092505050610210565b600085606001518660400151610d879190612553565b9050610da2828760200151836115779092919063ffffffff16565b610dac9082612520565b9695505050505050565b6000806000610ddb61060585610160015186610140015161186990919063ffffffff16565b610dfb61060586610120015187610100015161185490919063ffffffff16565b610e059190612533565b9050600080610e1c8660000151876020015161199c565b9150915080610e3357506000958695509350505050565b6000831315610f835760008390506000610e81886000015189602001518a604001518b60a001518c60e00151670de0b6b3a7640000610e729190612520565b8d606001518e6080015161174f565b9350905082610e9a575060009788975095505050505050565b818110610f38576000610ed4858a60400151858c60e00151670de0b6b3a7640000610ec59190612520565b8d606001518e608001516119d8565b9450905083158015610ee957508860c0015183105b15610f005750600098600198509650505050505050565b83610f1657506000988998509650505050505050565b610f1f81611549565b610f2890612566565b9960019950975050505050505050565b6000886020015112610f6f57610f578860a00151856106059190612520565b610f6090612566565b98600198509650505050505050565b60a08801518851610f579161060591612520565b60008312156110d6576000610f9784612566565b90506000610fcb8489604001518a60e00151670de0b6b3a7640000610fbc9190612520565b8b606001518c608001516118f0565b9350905082610fe4575060009788975095505050505050565b81811061106957600061101e858a60400151858c60e00151670de0b6b3a764000061100f9190612520565b8d606001518e60800151611a9b565b945090508315801561103357508860c0015183105b1561104a5750600098600198509650505050505050565b8361106057506000988998509650505050505050565b610f2881611549565b600061109b858a604001518b60e00151670de0b6b3a764000061108c9190612520565b8c606001518d60800151611b72565b94509050836110b557506000988998509650505050505050565b610f286110cc8a6060015184866109989190612520565b6106059083612553565b50600095600195509350505050565b600080600080841261110957855160400151611102908590612553565b9050611144565b600061111485612566565b875160400151909150811015611134578651604001518190039150611142565b6000809350935050506105b5565b505b85518051602090910151600091829161115d919061199c565b915091508061117557600080945094505050506105b5565b875160e08101516040909101516000916111aa9161119e916111979190611c28565b8a90611869565b6101008b0151906118db565b895160e08101516080909101516111db916111cf916111c99088611869565b90611c28565b8b5160600151906118db565b6111e59190612553565b9050600061121d61121161120a8c6000015160e0015188611c2890919063ffffffff16565b8b90611854565b6101008c015190611896565b905080821015611238576000809650965050505050506105b5565b8082039150600061127a858c60000151604001518d6000015160e00151670de0b6b3a76400006112689190612520565b8e516060810151608090910151611c93565b905060006112a48c6000015160e00151670de0b6b3a764000061129d9190612520565b8890611c28565b9050808210156112c15760008098509850505050505050506105b5565b8b516080810151606090910151918303916112dd918391611523565b9050670de0b6b3a76400008110611328578b5160e001516113219061131a9061130e90670de0b6b3a7640000612520565b8e5160e00151906118db565b8290611c28565b9050611357565b8b5160e001516113549061131a9061134890670de0b6b3a7640000612520565b8e5160e0015190611896565b90505b8b516060015161136a9085908390611523565b935083670de0b6b3a7640000111561138e5783670de0b6b3a76400000393506113a2565b6000600198509850505050505050506105b5565b60008c60e00151126114055760c08c015160e08d01516113c1916118db565b9250670de0b6b3a76400008311156113e65760008098509850505050505050506105b5565b670de0b6b3a764000092909203916113fe8484611869565b935061143a565b61143761141e8d60c001518e60e0015161099890612566565b61143090670de0b6b3a7640000612553565b8590611869565b93505b50919a60019a5098505050505050505050565b60008060008360e001511361146757506000928392509050565b600061147684600001516105d2565b905060006114a28560400151866060015187604001516114969190612553565b60208801519190611523565b9050600082126114c957808210156114bc578190036114df565b5060009485945092505050565b6114d282612566565b6114dc9082612553565b90505b60e085015160c08601516114f4918390611523565b9050808560c00151101561150f575060009485945092505050565b808560c00151036001935093505050915091565b600082600019048411830215820261153a57600080fd5b50910281810615159190040190565b60006001600160ff1b038211156115735760405163396ea70160e11b815260040160405180910390fd5b5090565b600082600019048411830215820261158e57600080fd5b5091020490565b60008183116115a457826102db565b50919050565b600080600080846000036115c9575087925086915085905060016116b6565b6000856115d58b611549565b6115df9190612582565b90506115ea87611549565b811215611605576000806000809450945094509450506116b6565b809450600089126116255761161e610605868b8d611577565b9350611648565b61163c6106056116348b612566565b87908d611523565b61164590612566565b93505b6000806116558c8c61199c565b91509150806116745760008060008096509650965096505050506116b6565b6000611680888861199c565b92509050816116a0576000806000809750975097509750505050506116b6565b6116ab8b8285611577565b955060019450505050505b95509550955095915050565b60008060008060006116d386610db6565b91509150806116ea57506000958695509350505050565b6116f78660a00151611549565b611700876105d2565b8361170e8960000151611549565b6117189190612582565b6117229190612582565b61172c9190612533565b9250505060008112156117455750600093849350915050565b9360019350915050565b60008060008812156117715761176488612566565b61176e9087612553565b95505b60008061177e8b8b61199c565b915091508061179557600080935093505050611848565b60006117a4838b8a8a8a611cc2565b905060006117c16117b98a6111c98a8e611854565b899089611523565b9050808210156117db576000809550955050505050611848565b808203670de0b6b3a764000081106118095761180261131a670de0b6b3a76400008c611896565b9050611821565b61181e61131a670de0b6b3a76400008c6118db565b90505b8b81101561183a57600080965096505050505050611848565b8b9003955060019450505050505b97509795505050505050565b60006102db8383670de0b6b3a7640000611523565b60006102db8383670de0b6b3a7640000611577565b600080821261188d5781610210565b61021082612566565b60006102db83670de0b6b3a764000084611577565b60008060006118b9846116c2565b915091508061035c57604051635516328b60e11b815260040160405180910390fd5b60006102db83670de0b6b3a764000084611523565b60008060006119028888888888611c93565b9050600061192d670de0b6b3a764000061191c8888611896565b6119269190612553565b83906118db565b9050670de0b6b3a7640000811061195a5761195361131a670de0b6b3a7640000896118db565b9050611972565b61196f61131a670de0b6b3a764000089611896565b90505b8088101561198857600080935093505050611992565b8703925060019150505b9550959350505050565b6000806000836119ab86611549565b6119b59190612533565b905060008112156119cd5760008092509250506102ae565b946001945092505050565b60008060006119ea8989888888611c93565b90506119fa866111c9898b612553565b975087811015611a11576000809250925050611a90565b878103611a1f818688611523565b9050670de0b6b3a76400008110611a4c57611a4561131a670de0b6b3a7640000896118db565b9050611a64565b611a6161131a670de0b6b3a764000089611896565b90505b611a6e81866118db565b9050808a1015611a8657600080935093505050611a90565b8903925060019150505b965096945050505050565b6000806000611aad8989888888611c93565b905086881015611ac4576000809250925050611a90565b9686900396611ad38887611c28565b975087811015611aea576000809250925050611a90565b878103611af8818688611523565b9050670de0b6b3a76400008110611b2557611b1e61131a670de0b6b3a7640000896118db565b9050611b3d565b611b3a61131a670de0b6b3a764000089611896565b90505b611b4781866118db565b905089811015611b5f57600080935093505050611a90565b9890980398600198509650505050505050565b6000806000611b848888888888611cc2565b90506000611baf670de0b6b3a7640000611b9e88886118db565b611ba89190612553565b8390611896565b9050670de0b6b3a76400008110611bdc57611bd561131a670de0b6b3a764000089611896565b9050611bf4565b611bf161131a670de0b6b3a7640000896118db565b90505b611bfe8186611896565b905088811015611c1657600080935093505050611992565b97909703976001975095505050505050565b600081600003611c415750670de0b6b3a7640000610210565b82600003611c5157506000610210565b6000611c5c83611549565b90506000611c71611c6c86611549565b611ce7565b9050818102611c88670de0b6b3a7640000826125aa565b9050610dac81611f16565b6000611c9f8585611c28565b611cb8611cb0866111c9868b611854565b859085611523565b610dac9190612553565b6000611cce8585611c28565b611cb8611cdf866111c9868b611869565b859085611577565b6000808213611d095760405163e61b497560e01b815260040160405180910390fd5b506fffffffffffffffffffffffffffffffff811160071b81811c67ffffffffffffffff1060061b1781811c63ffffffff1060051b1781811c61ffff1060041b1781811c60ff10600390811b90911782811c600f1060021b1782811c909110600190811b90911782811c90911017609f8181036060019290921b91605f19820190611d959084901c611549565b6c465772b2bbbb5f824b15207a3081018102606090811d6d0388eaa27412d5aca026815d636e018202811d6d0df99ac502031bf953eff472fdcc018202811d6d13cdffb29d51d99322bdff5f2211018202811d6d0a0f742023def783a307a986912e018202811d6d01920d8043ca89b5239253284e42018202811d6c0b7a86d7375468fac667a0a527016c29508e458543d8aa4df2abee7883018302821d6d0139601a2efabe717e604cbb4894018302821d6d02247f7a7b6594320649aa03aba1018302821d6c8c3f38e95a6b1ff2ab1c3b343619018302821d6d02384773bdf1ac5676facced60901901830290911d6cb9a025d814b29c212b8b1a07cd1901909102780a09507084cc699bb0e71ea869ffffffffffffffffffffffff190105711340daa0d5f769dba1915cef59f0815a5506027d0267a36c0c95b3975ab3ee5b203a7614a3f75373f047d803ae7b6687f2b391909102017d57115e47018c7177eebf7cd370a3356a1b7863008a5ae8028c72b88642840160ae1d92915050565b6000680248ce36a70cb26b3e198213611f3157506000919050565b680755bf798b4a1bf1e58212611f5a576040516373a2d6b160e01b815260040160405180910390fd5b6503782dace9d9604e83901b059150600060606bb17217f7d1cf79abc9e3b39884821b056001605f1b01901d6bb17217f7d1cf79abc9e3b3988102909303926c240c330e9fb2d9cbaf0fd5aafb1984018402606090811d6d0277594991cfc85f6e2461837cd9018502811d6d1a521255e34f6a5061b25ef1c9c319018502811d6db1bbb201f443cf962f1a1d3db4a5018502811d6e02c72388d9f74f51a9331fed693f1419018502811d6e05180bb14799ab47a8a8cb2a527d57016d02d16720577bd19bf614176fe9ea6c10fe68e7fd37d0007b713f765087018702831d9081019087016d01d3967ed30fc4f89c02bab570811901810290921d6e0587f503bb6ea29d25fcb7401964500186026d360d7aeea093263ecc6e0ecb291760621b018181059550929350909190610dac74029d9dc38563c32e5c2f6dc192ee70ef65f9978af3860260c38690031c611549565b604051610180810167ffffffffffffffff811182821017156120dd57634e487b7160e01b600052604160045260246000fd5b60405290565b604051610120810167ffffffffffffffff811182821017156120dd57634e487b7160e01b600052604160045260246000fd5b6000610180828403121561212857600080fd5b6121306120ab565b9050813581526020820135602082015260408201356040820152606082013560608201526080820135608082015260a082013560a082015260c082013560c082015260e082013560e082015261010080830135818301525061012080830135818301525061014080830135818301525061016080830135818301525092915050565b600061018082840312156121c557600080fd5b6102db8383612115565b600061028082840312156121e257600080fd5b6121ea6120e3565b90506121f68383612115565b815261018082013560208201526101a082013560408201526101c082013560608201526101e0820135608082015261020082013560a082015261022082013560c082015261024082013560e082015261026082013561010082015292915050565b60008060006102c0848603121561226d57600080fd5b61227785856121cf565b9561028085013595506102a0909401359392505050565b6000806102a083850312156122a257600080fd5b6122ac84846121cf565b94610280939093013593505050565b60008060008060008060c087890312156122d457600080fd5b505084359660208601359650604086013595606081013595506080810135945060a0013592509050565b600080600080600060a0868803121561231657600080fd5b505083359560208501359550604085013594606081013594506080013592509050565b6000610280828403121561234c57600080fd5b6102db83836121cf565b805182526020810151602083015260408101516040830152606081015160608301526080810151608083015260a081015160a083015260c081015160c083015260e081015160e08301526101008082015181840152506101208082015181840152506101408082015181840152506101608082015181840152505050565b60006102a0820190506123e8828551612356565b602084015161018083015260408401516101a083015260608401516101c083015260808401516101e083015260a084015161020083015260c084015161022083015260e084015161024083015261010090930151610260820152610280015290565b6000806040838503121561245d57600080fd5b505080516020909101519092909150565b60008060006060848603121561248357600080fd5b8351925060208401519150604084015190509250925092565b600080600080608085870312156124b257600080fd5b845193506020850151925060408501519150606085015180151581146124d757600080fd5b939692955090935050565b61018081016102108284612356565b60006020828403121561250357600080fd5b5051919050565b634e487b7160e01b600052601160045260246000fd5b818103818111156102105761021061250a565b818103600083128015838313168383128216171561035c5761035c61250a565b808201808211156102105761021061250a565b6000600160ff1b820161257b5761257b61250a565b5060000390565b80820182811260008312801582168215821617156125a2576125a261250a565b505092915050565b6000826125c757634e487b7160e01b600052601260045260246000fd5b600160ff1b8214600019841416156125e1576125e161250a565b50059056fea26469706673582212205a9bffd67e32d18aabbcea321ceda36596d89fe84416715a0b7c8e1291780c4e64736f6c63430008140033',
     methodIdentifiers: {
+        "calculateDistributeExcessIdle(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256),uint256)": "865d65a2",
         "calculateDistributeExcessIdleShareProceeds(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256),uint256,uint256)": "3f9ccc01",
         "calculateDistributeExcessIdleShareProceedsNetLongEdgeCaseSafe(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256))": "cefef8b7",
         "calculateDistributeExcessIdleWithdrawalSharesRedeemed(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256),uint256)": "a0d1643c",
+        "calculateInitialReserves(uint256,uint256,uint256,uint256,uint256,uint256)": "b29e1d1e",
         "calculateMaxShareReservesDeltaSafe(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256),uint256)": "9e5fc16b",
         "calculateNetCurveTrade((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))": "a4fc6f81",
         "calculateNetFlatTrade((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))": "32c5dec4",
         "calculatePresentValue((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256))": "c00b11d3",
         "calculateSharesDeltaGivenBondsDeltaDerivativeSafe(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256),uint256,int256)": "c615b2d9",
-        "calculateUpdateLiquidity(uint256,int256,uint256,uint256,int256)": "b500f3cb"
+        "calculateUpdateLiquidity(uint256,int256,uint256,uint256,int256)": "b500f3cb",
+        "shouldShortCircuitDistributeExcessIdleShareProceeds(((uint256,int256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256,uint256),uint256,uint256,uint256,uint256,int256,uint256,int256,uint256),uint256,uint256)": "8f1505fa"
     }
 };

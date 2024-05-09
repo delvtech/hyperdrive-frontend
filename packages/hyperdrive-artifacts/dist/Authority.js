@@ -1,33 +1,33 @@
 export const Authority = {
     abi: [
         {
-            "type": "function",
-            "name": "canCall",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "user",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "address",
                     "name": "target",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "bytes4",
                     "name": "functionSig",
-                    "type": "bytes4",
-                    "internalType": "bytes4"
+                    "type": "bytes4"
                 }
             ],
+            "name": "canCall",
             "outputs": [
                 {
+                    "internalType": "bool",
                     "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
+                    "type": "bool"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         }
     ],
     bytecode: '0x',

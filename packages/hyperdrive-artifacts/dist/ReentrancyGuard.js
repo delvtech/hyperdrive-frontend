@@ -1,9 +1,9 @@
 export const ReentrancyGuard = {
     abi: [
         {
-            "type": "error",
+            "inputs": [],
             "name": "ReentrancyGuardReentrantCall",
-            "inputs": []
+            "type": "error"
         }
     ],
     bytecode: '0x',
