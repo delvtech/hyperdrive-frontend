@@ -1,4 +1,5 @@
 import { ReadHyperdrive } from "@delvtech/hyperdrive-viem";
+import uniqBy from "lodash.uniqby";
 import { AppConfig, KnownTokenExtensions } from "src/appconfig/AppConfig";
 import { HyperdriveConfig } from "src/hyperdrives/HyperdriveConfig";
 import { getCustomHyperdrive } from "src/hyperdrives/custom/getCustomHyperdrive";
@@ -92,8 +93,8 @@ export async function getAppConfigFromRegistryAddresses({
   addresses: Address[];
   publicClient: PublicClient;
 }): Promise<AppConfig> {
-  const tags: Set<Tag> = new Set([yieldSourceTag]);
-  const tokens: Set<TokenConfig<KnownTokenExtensions>> = new Set();
+  const tags: Tag[] = [yieldSourceTag];
+  const tokens: TokenConfig<KnownTokenExtensions>[] = [];
 
   const hyperdrives: HyperdriveConfig[] = await Promise.all(
     addresses.map(async (address) => {
@@ -134,8 +135,8 @@ export async function getAppConfigFromRegistryAddresses({
             ...hyperdriveMetadata,
           });
 
-        tokens.add(sharesToken);
-        tokens.add(baseToken);
+        tokens.push(sharesToken);
+        tokens.push(baseToken);
 
         return hyperdriveConfig;
       }
@@ -150,8 +151,8 @@ export async function getAppConfigFromRegistryAddresses({
             ...hyperdriveMetadata,
           });
 
-        tokens.add(sharesToken);
-        tokens.add(baseToken);
+        tokens.push(sharesToken);
+        tokens.push(baseToken);
 
         return hyperdriveConfig;
       }
@@ -175,8 +176,8 @@ export async function getAppConfigFromRegistryAddresses({
             ...hyperdriveMetadata,
           });
 
-        tokens.add(sharesToken);
-        tokens.add(baseToken);
+        tokens.push(sharesToken);
+        tokens.push(baseToken);
 
         return hyperdriveConfig;
       }
@@ -200,8 +201,8 @@ export async function getAppConfigFromRegistryAddresses({
             ...hyperdriveMetadata,
           });
 
-        tokens.add(sharesToken);
-        tokens.add(baseToken);
+        tokens.push(sharesToken);
+        tokens.push(baseToken);
 
         return hyperdriveConfig;
       }
@@ -223,8 +224,8 @@ export async function getAppConfigFromRegistryAddresses({
             ...hyperdriveMetadata,
           });
 
-        tokens.add(sharesToken);
-        tokens.add(baseToken);
+        tokens.push(sharesToken);
+        tokens.push(baseToken);
 
         return hyperdriveConfig;
       }
@@ -237,8 +238,8 @@ export async function getAppConfigFromRegistryAddresses({
 
   const config: AppConfig = {
     chainId,
-    tags: [...tags],
-    tokens: [...tokens],
+    tags: uniqBy(tags, "id"),
+    tokens: uniqBy(tokens, "address"),
     hyperdrives,
     protocols,
   };
