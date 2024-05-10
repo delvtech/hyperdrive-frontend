@@ -1,334 +1,334 @@
 export declare const MultiRolesAuthority: {
     abi: readonly [{
-        readonly type: "constructor";
         readonly inputs: readonly [{
+            readonly internalType: "address";
             readonly name: "_owner";
             readonly type: "address";
-            readonly internalType: "address";
         }, {
+            readonly internalType: "contract Authority";
             readonly name: "_authority";
             readonly type: "address";
-            readonly internalType: "contract Authority";
         }];
         readonly stateMutability: "nonpayable";
+        readonly type: "constructor";
     }, {
-        readonly type: "function";
-        readonly name: "authority";
-        readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "contract Authority";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "canCall";
+        readonly anonymous: false;
         readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "user";
             readonly type: "address";
-            readonly internalType: "address";
         }, {
-            readonly name: "target";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "functionSig";
-            readonly type: "bytes4";
-            readonly internalType: "bytes4";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "doesRoleHaveCapability";
-        readonly inputs: readonly [{
-            readonly name: "role";
-            readonly type: "uint8";
-            readonly internalType: "uint8";
-        }, {
-            readonly name: "functionSig";
-            readonly type: "bytes4";
-            readonly internalType: "bytes4";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "doesUserHaveRole";
-        readonly inputs: readonly [{
-            readonly name: "user";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "role";
-            readonly type: "uint8";
-            readonly internalType: "uint8";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "getRolesWithCapability";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "bytes4";
-            readonly internalType: "bytes4";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "getTargetCustomAuthority";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
+            readonly indexed: true;
             readonly internalType: "contract Authority";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "getUserRoles";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "bytes32";
-            readonly internalType: "bytes32";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "isCapabilityPublic";
-        readonly inputs: readonly [{
-            readonly name: "";
-            readonly type: "bytes4";
-            readonly internalType: "bytes4";
-        }];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "owner";
-        readonly inputs: readonly [];
-        readonly outputs: readonly [{
-            readonly name: "";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly stateMutability: "view";
-    }, {
-        readonly type: "function";
-        readonly name: "setAuthority";
-        readonly inputs: readonly [{
             readonly name: "newAuthority";
             readonly type: "address";
-            readonly internalType: "contract Authority";
         }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setPublicCapability";
-        readonly inputs: readonly [{
-            readonly name: "functionSig";
-            readonly type: "bytes4";
-            readonly internalType: "bytes4";
-        }, {
-            readonly name: "enabled";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setRoleCapability";
-        readonly inputs: readonly [{
-            readonly name: "role";
-            readonly type: "uint8";
-            readonly internalType: "uint8";
-        }, {
-            readonly name: "functionSig";
-            readonly type: "bytes4";
-            readonly internalType: "bytes4";
-        }, {
-            readonly name: "enabled";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setTargetCustomAuthority";
-        readonly inputs: readonly [{
-            readonly name: "target";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "customAuthority";
-            readonly type: "address";
-            readonly internalType: "contract Authority";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "setUserRole";
-        readonly inputs: readonly [{
-            readonly name: "user";
-            readonly type: "address";
-            readonly internalType: "address";
-        }, {
-            readonly name: "role";
-            readonly type: "uint8";
-            readonly internalType: "uint8";
-        }, {
-            readonly name: "enabled";
-            readonly type: "bool";
-            readonly internalType: "bool";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "function";
-        readonly name: "transferOwnership";
-        readonly inputs: readonly [{
-            readonly name: "newOwner";
-            readonly type: "address";
-            readonly internalType: "address";
-        }];
-        readonly outputs: readonly [];
-        readonly stateMutability: "nonpayable";
-    }, {
-        readonly type: "event";
         readonly name: "AuthorityUpdated";
-        readonly inputs: readonly [{
-            readonly name: "user";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
-        }, {
-            readonly name: "newAuthority";
-            readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "contract Authority";
-        }];
-        readonly anonymous: false;
-    }, {
         readonly type: "event";
-        readonly name: "OwnershipTransferred";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "user";
-            readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
+            readonly name: "user";
+            readonly type: "address";
         }, {
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "newOwner";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "address";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "OwnershipTransferred";
         readonly type: "event";
-        readonly name: "PublicCapabilityUpdated";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "functionSig";
-            readonly type: "bytes4";
             readonly indexed: true;
             readonly internalType: "bytes4";
+            readonly name: "functionSig";
+            readonly type: "bytes4";
         }, {
-            readonly name: "enabled";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "enabled";
+            readonly type: "bool";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "PublicCapabilityUpdated";
         readonly type: "event";
-        readonly name: "RoleCapabilityUpdated";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "role";
-            readonly type: "uint8";
             readonly indexed: true;
             readonly internalType: "uint8";
+            readonly name: "role";
+            readonly type: "uint8";
         }, {
-            readonly name: "functionSig";
-            readonly type: "bytes4";
             readonly indexed: true;
             readonly internalType: "bytes4";
+            readonly name: "functionSig";
+            readonly type: "bytes4";
         }, {
-            readonly name: "enabled";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "enabled";
+            readonly type: "bool";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "RoleCapabilityUpdated";
         readonly type: "event";
-        readonly name: "TargetCustomAuthorityUpdated";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "target";
-            readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
+            readonly name: "target";
+            readonly type: "address";
         }, {
+            readonly indexed: true;
+            readonly internalType: "contract Authority";
             readonly name: "authority";
             readonly type: "address";
-            readonly indexed: true;
-            readonly internalType: "contract Authority";
         }];
-        readonly anonymous: false;
-    }, {
+        readonly name: "TargetCustomAuthorityUpdated";
         readonly type: "event";
-        readonly name: "UserRoleUpdated";
+    }, {
+        readonly anonymous: false;
         readonly inputs: readonly [{
-            readonly name: "user";
-            readonly type: "address";
             readonly indexed: true;
             readonly internalType: "address";
+            readonly name: "user";
+            readonly type: "address";
         }, {
-            readonly name: "role";
-            readonly type: "uint8";
             readonly indexed: true;
             readonly internalType: "uint8";
+            readonly name: "role";
+            readonly type: "uint8";
         }, {
-            readonly name: "enabled";
-            readonly type: "bool";
             readonly indexed: false;
             readonly internalType: "bool";
+            readonly name: "enabled";
+            readonly type: "bool";
         }];
-        readonly anonymous: false;
+        readonly name: "UserRoleUpdated";
+        readonly type: "event";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "authority";
+        readonly outputs: readonly [{
+            readonly internalType: "contract Authority";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "user";
+            readonly type: "address";
+        }, {
+            readonly internalType: "address";
+            readonly name: "target";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bytes4";
+            readonly name: "functionSig";
+            readonly type: "bytes4";
+        }];
+        readonly name: "canCall";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint8";
+            readonly name: "role";
+            readonly type: "uint8";
+        }, {
+            readonly internalType: "bytes4";
+            readonly name: "functionSig";
+            readonly type: "bytes4";
+        }];
+        readonly name: "doesRoleHaveCapability";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "user";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint8";
+            readonly name: "role";
+            readonly type: "uint8";
+        }];
+        readonly name: "doesUserHaveRole";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes4";
+            readonly name: "";
+            readonly type: "bytes4";
+        }];
+        readonly name: "getRolesWithCapability";
+        readonly outputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "";
+            readonly type: "bytes32";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "getTargetCustomAuthority";
+        readonly outputs: readonly [{
+            readonly internalType: "contract Authority";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "getUserRoles";
+        readonly outputs: readonly [{
+            readonly internalType: "bytes32";
+            readonly name: "";
+            readonly type: "bytes32";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes4";
+            readonly name: "";
+            readonly type: "bytes4";
+        }];
+        readonly name: "isCapabilityPublic";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "owner";
+        readonly outputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "contract Authority";
+            readonly name: "newAuthority";
+            readonly type: "address";
+        }];
+        readonly name: "setAuthority";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "bytes4";
+            readonly name: "functionSig";
+            readonly type: "bytes4";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "enabled";
+            readonly type: "bool";
+        }];
+        readonly name: "setPublicCapability";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "uint8";
+            readonly name: "role";
+            readonly type: "uint8";
+        }, {
+            readonly internalType: "bytes4";
+            readonly name: "functionSig";
+            readonly type: "bytes4";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "enabled";
+            readonly type: "bool";
+        }];
+        readonly name: "setRoleCapability";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "target";
+            readonly type: "address";
+        }, {
+            readonly internalType: "contract Authority";
+            readonly name: "customAuthority";
+            readonly type: "address";
+        }];
+        readonly name: "setTargetCustomAuthority";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "user";
+            readonly type: "address";
+        }, {
+            readonly internalType: "uint8";
+            readonly name: "role";
+            readonly type: "uint8";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "enabled";
+            readonly type: "bool";
+        }];
+        readonly name: "setUserRole";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "newOwner";
+            readonly type: "address";
+        }];
+        readonly name: "transferOwnership";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
     }];
     bytecode: `0x${string}`;
     methodIdentifiers: {

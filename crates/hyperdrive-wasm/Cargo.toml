@@ -34,10 +34,10 @@ console_error_panic_hook = { version = "0.1.7", optional = true }
 # see https://docs.rs/getrandom/#webassembly-support
 getrandom = { version = "0.2", features = ["js"] }
 
-fixed-point = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.14.4" }
-fixed-point-macros = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.14.4" }
-hyperdrive-math = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.14.4" }
-hyperdrive-wrappers = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.14.4" }
+fixed-point = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.15.1" }
+fixed-point-macros = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.15.1" }
+hyperdrive-math = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.15.1" }
+hyperdrive-wrappers = { git = "https://github.com/delvtech/hyperdrive-rs.git", rev = "v0.15.1" }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.36"

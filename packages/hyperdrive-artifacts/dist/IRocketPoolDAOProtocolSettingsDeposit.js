@@ -1,95 +1,95 @@
 export const IRocketPoolDAOProtocolSettingsDeposit = {
     abi: [
         {
-            "type": "function",
+            "inputs": [],
             "name": "getAssignDepositsEnabled",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "bool",
                     "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
+                    "type": "bool"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getDepositEnabled",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "bool",
                     "name": "",
-                    "type": "bool",
-                    "internalType": "bool"
+                    "type": "bool"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getDepositFee",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getMaximumDepositAssignments",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getMaximumDepositPoolSize",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getMaximumDepositSocialisedAssignments",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "getMinimumDeposit",
             "inputs": [],
+            "name": "getMinimumDeposit",
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         }
     ],
     bytecode: '0x',

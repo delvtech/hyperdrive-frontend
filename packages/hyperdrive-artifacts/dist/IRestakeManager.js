@@ -1,60 +1,60 @@
 export const IRestakeManager = {
     abi: [
         {
-            "type": "function",
+            "inputs": [],
             "name": "calculateTVLs",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256[][]",
                     "name": "",
-                    "type": "uint256[][]",
-                    "internalType": "uint256[][]"
+                    "type": "uint256[][]"
                 },
                 {
+                    "internalType": "uint256[]",
                     "name": "",
-                    "type": "uint256[]",
-                    "internalType": "uint256[]"
+                    "type": "uint256[]"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "depositETH",
-            "inputs": [],
             "outputs": [],
-            "stateMutability": "payable"
+            "stateMutability": "payable",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "ezETH",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "address",
                     "name": "",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "renzoOracle",
             "inputs": [],
+            "name": "renzoOracle",
             "outputs": [
                 {
+                    "internalType": "address",
                     "name": "",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         }
     ],
     bytecode: '0x',

@@ -92,6 +92,7 @@ pub struct StringPoolConfig {
     pub linkerFactory: String,
     pub linkerCodeHash: String,
     pub vaultSharesToken: String,
+    pub circuitBreakerDelta: String,
 }
 
 #[derive(Serialize, Deserialize)]
@@ -176,6 +177,7 @@ impl From<&JsPoolConfig> for PoolConfig {
                 .try_into()
                 .unwrap(),
             vault_shares_token: Address::from_str(&js_pool_config.vaultSharesToken).unwrap(),
+            circuit_breaker_delta: U256::from_str(&js_pool_config.circuitBreakerDelta).unwrap(),
         }
     }
 }

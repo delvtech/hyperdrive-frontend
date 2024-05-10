@@ -23,30 +23,6 @@
 */
 export function maxShort(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, budget: string, openVaultSharePrice: string, checkpointExposure: string, maybeConservativePrice?: string, maybeMaxIterations?: number): string;
 /**
-* Calculates the amount of lp shares the trader will receive after adding
-* liquidity.
-*
-* @param poolInfo - The current state of the pool
-*
-* @param poolConfig - The pool's configuration
-*
-* @param currentTime - The current timestamp (in seconds)
-*
-* @param contribution - The amount of base or shares to contribute
-*
-* @param asBase - True if the contribution is in base, false if it's in
-* shares. Defaults to true
-*
-* @param minLpSharePrice - The minimum share price the trader will accept.
-* Defaults to 0.
-*
-* @param minApr - The minimum APR the trader will accept. Defaults to 0.
-*
-* @param maxApr - The maximum APR the trader will accept. Defaults to the max
-* uint256.
-*/
-export function calcAddLiquidity(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, currentTime: string, contribution: string, asBase?: boolean, minLpSharePrice?: string, minApr?: string, maxApr?: string): string;
-/**
 * Calculates the max amount of base that can be used to open a long given a
 * budget.
 *
@@ -138,6 +114,30 @@ export function presentValue(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, cur
 * @param poolConfig - The pool's configuration
 */
 export function spotRate(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig): string;
+/**
+* Calculates the amount of lp shares the trader will receive after adding
+* liquidity.
+*
+* @param poolInfo - The current state of the pool
+*
+* @param poolConfig - The pool's configuration
+*
+* @param currentTime - The current timestamp (in seconds)
+*
+* @param contribution - The amount of base or shares to contribute
+*
+* @param asBase - True if the contribution is in base, false if it's in
+* shares. Defaults to true
+*
+* @param minLpSharePrice - The minimum share price the trader will accept.
+* Defaults to 0.
+*
+* @param minApr - The minimum APR the trader will accept. Defaults to 0.
+*
+* @param maxApr - The maximum APR the trader will accept. Defaults to the max
+* uint256.
+*/
+export function calcAddLiquidity(poolInfo: JsPoolInfo, poolConfig: JsPoolConfig, currentTime: string, contribution: string, asBase?: boolean, minLpSharePrice?: string, minApr?: string, maxApr?: string): string;
 /**
 * Calculates the curve fee paid in bonds by traders when they open a long.
 *
@@ -344,7 +344,6 @@ export type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembl
 export interface InitOutput {
   readonly memory: WebAssembly.Memory;
   readonly maxShort: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number) => void;
-  readonly calcAddLiquidity: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number) => void;
   readonly maxLong: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number) => void;
   readonly calcOpenLong: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly spotPriceAfterLong: (a: number, b: number, c: number, d: number, e: number) => void;
@@ -353,6 +352,7 @@ export interface InitOutput {
   readonly idleShareReservesInBase: (a: number, b: number, c: number) => void;
   readonly presentValue: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly spotRate: (a: number, b: number, c: number) => void;
+  readonly calcAddLiquidity: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number, j: number, k: number, l: number, m: number, n: number) => void;
   readonly openLongCurveFee: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly openLongGovernanceFee: (a: number, b: number, c: number, d: number, e: number) => void;
   readonly closeLongCurveFee: (a: number, b: number, c: number, d: number, e: number, f: number, g: number, h: number, i: number) => void;

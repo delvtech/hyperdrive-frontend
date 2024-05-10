@@ -59,7 +59,7 @@ pub fn presentValue(poolInfo: &JsPoolInfo, poolConfig: &JsPoolConfig, currentTim
         info: poolInfo.into(),
     };
     let current_time = U256::from_dec_str(currentTime).unwrap();
-    let result_fp = state.calculate_present_value(current_time);
+    let result_fp = state.calculate_present_value(current_time).unwrap();
     U256::from(result_fp).to_string()
 }
 

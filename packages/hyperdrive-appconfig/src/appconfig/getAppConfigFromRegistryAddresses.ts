@@ -9,12 +9,14 @@ import { TokenConfig } from "src/tokens/getTokenConfig";
 import {
   DAI_ICON_URL,
   ETH_ICON_URL,
+  EZETH_ICON_URL,
   MORPHO_ICON_URL,
   RETH_ICON_URL,
   SDAI_ICON_URL,
   STETH_ICON_URL,
 } from "src/tokens/tokenIconsUrls";
 import {
+  ezethExtensions,
   metaMorphoExtensions,
   rethExtensions,
   sdaiExtensions,
@@ -34,16 +36,16 @@ const metaMorphoSharesTokenSymbols: Uppercase<string>[] = ["MMHYDAI"];
 // Tags
 const ERC4626_SHARE_TOKEN_TAGS = ["erc4626"];
 
-type KnownYieldSourceMetadata = {
+type KnownHyperdriveMetadata = {
   baseTokenIconUrl: string;
   sharesTokenIconUrl: string;
   sharesTokenExtensions: YieldSourceExtensions;
   tags?: string[];
 };
 
-const knownYieldSourceMetadata: Record<
+const knownHyperdriveMetadata: Record<
   Uppercase<string>,
-  KnownYieldSourceMetadata
+  KnownHyperdriveMetadata
 > = {
   DELV: {
     sharesTokenExtensions: sdaiExtensions,
@@ -72,6 +74,12 @@ const knownYieldSourceMetadata: Record<
     baseTokenIconUrl: ETH_ICON_URL,
     sharesTokenIconUrl: RETH_ICON_URL,
     tags: ["reth"],
+  },
+  EZETH: {
+    sharesTokenExtensions: ezethExtensions,
+    baseTokenIconUrl: ETH_ICON_URL,
+    sharesTokenIconUrl: EZETH_ICON_URL,
+    tags: ["ezeth"],
   },
 };
 
@@ -102,8 +110,8 @@ export async function getAppConfigFromRegistryAddresses({
         })
       ).toUpperCase() as Uppercase<string>;
 
-      const yieldSourceMetadata = knownYieldSourceMetadata[tokenSymbol];
-      if (!yieldSourceMetadata) {
+      const hyperdriveMetadata = knownHyperdriveMetadata[tokenSymbol];
+      if (!hyperdriveMetadata) {
         throw new Error(
           `Yield source metadata not configured: Missing entry for ${tokenSymbol}`,
         );
@@ -123,7 +131,7 @@ export async function getAppConfigFromRegistryAddresses({
               isBaseTokenWithdrawalEnabled: true,
               isShareTokenWithdrawalEnabled: true,
             },
-            ...yieldSourceMetadata,
+            ...hyperdriveMetadata,
           });
 
         tokens.add(sharesToken);
@@ -139,7 +147,7 @@ export async function getAppConfigFromRegistryAddresses({
             publicClient,
             hyperdriveAddress: address,
             chainId,
-            ...yieldSourceMetadata,
+            ...hyperdriveMetadata,
           });
 
         tokens.add(sharesToken);
@@ -155,14 +163,41 @@ export async function getAppConfigFromRegistryAddresses({
             publicClient,
             hyperdriveAddress: address,
             depositOptions: {
+              // don't let users deposit sepolia eth into the testnet
               isBaseTokenDepositEnabled: false,
               isShareTokenDepositsEnabled: true,
             },
             withdrawalOptions: {
+              // you can't withdraw eth from staking protocols
               isBaseTokenWithdrawalEnabled: false,
               isShareTokenWithdrawalEnabled: true,
             },
-            ...yieldSourceMetadata,
+            ...hyperdriveMetadata,
+          });
+
+        tokens.add(sharesToken);
+        tokens.add(baseToken);
+
+        return hyperdriveConfig;
+      }
+
+      // Renzo ezETH
+      if (tokenSymbol === "EZETH") {
+        const { sharesToken, baseToken, hyperdriveConfig } =
+          await getCustomHyperdrive({
+            publicClient,
+            hyperdriveAddress: address,
+            depositOptions: {
+              // don't let users deposit sepolia eth into the testnet
+              isBaseTokenDepositEnabled: false,
+              isShareTokenDepositsEnabled: true,
+            },
+            withdrawalOptions: {
+              // you can't withdraw eth from staking protocols
+              isBaseTokenWithdrawalEnabled: false,
+              isShareTokenWithdrawalEnabled: true,
+            },
+            ...hyperdriveMetadata,
           });
 
         tokens.add(sharesToken);
@@ -185,7 +220,7 @@ export async function getAppConfigFromRegistryAddresses({
               isBaseTokenWithdrawalEnabled: true,
               isShareTokenWithdrawalEnabled: false,
             },
-            ...yieldSourceMetadata,
+            ...hyperdriveMetadata,
           });
 
         tokens.add(sharesToken);

@@ -22,6 +22,7 @@ export const simplePoolConfig7Days: PoolConfig = {
   checkpointDuration: 3600n,
   linkerCodeHash: "0x".padEnd(66, "0") as `0x${string}`,
   linkerFactory: ZERO_ADDRESS,
+  circuitBreakerDelta: 0n,
 };
 
 const THIRTY_DAYS = 2_592_000n;

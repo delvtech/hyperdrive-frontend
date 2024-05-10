@@ -1,9 +1,4 @@
-import {
-  AppConfig,
-  cloudChainAppConfig,
-  localChainAppConfig,
-  sepoliaAppConfig,
-} from "@hyperdrive/appconfig";
+import { AppConfig, sepoliaAppConfig } from "@hyperdrive/appconfig";
 import assertNever from "assert-never";
 import { SupportedChainId } from "src/chains/supportedChains";
 import { foundry, mainnet, sepolia } from "viem/chains";
@@ -14,14 +9,20 @@ export function useAppConfig(): AppConfig {
 
   switch (chainId) {
     case foundry.id:
-      return localChainAppConfig;
+      // Return local config when available
+      return {} as AppConfig;
+
     case 42069: // cloudchain
-      return cloudChainAppConfig;
+      // Return cloudchain config when available
+      return {} as AppConfig;
+
     case mainnet.id:
       // Return mainnet config when available
       return {} as AppConfig;
+
     case sepolia.id:
       return sepoliaAppConfig;
+
     default:
       assertNever(chainId);
   }

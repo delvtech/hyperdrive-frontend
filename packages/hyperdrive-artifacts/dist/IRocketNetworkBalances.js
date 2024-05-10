@@ -1,138 +1,138 @@
 export const IRocketNetworkBalances = {
     abi: [
         {
-            "type": "function",
-            "name": "executeUpdateBalances",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "_block",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_totalEth",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_stakingEth",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_rethSupply",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "executeUpdateBalances",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getBalancesBlock",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getETHUtilizationRate",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getLatestReportableBlock",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getStakingETHBalance",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getTotalETHBalance",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
+            "inputs": [],
             "name": "getTotalRETHSupply",
-            "inputs": [],
             "outputs": [
                 {
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
-            "stateMutability": "view"
+            "stateMutability": "view",
+            "type": "function"
         },
         {
-            "type": "function",
-            "name": "submitBalances",
             "inputs": [
                 {
+                    "internalType": "uint256",
                     "name": "_block",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_total",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_staking",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "_rethSupply",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
             ],
+            "name": "submitBalances",
             "outputs": [],
-            "stateMutability": "nonpayable"
+            "stateMutability": "nonpayable",
+            "type": "function"
         }
     ],
     bytecode: '0x',

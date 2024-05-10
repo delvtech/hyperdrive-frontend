@@ -1,90 +1,90 @@
 export const IERC20Errors = {
     abi: [
         {
-            "type": "error",
-            "name": "ERC20InsufficientAllowance",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "spender",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "allowance",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "needed",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
-            ]
+            ],
+            "name": "ERC20InsufficientAllowance",
+            "type": "error"
         },
         {
-            "type": "error",
-            "name": "ERC20InsufficientBalance",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "sender",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "balance",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 },
                 {
+                    "internalType": "uint256",
                     "name": "needed",
-                    "type": "uint256",
-                    "internalType": "uint256"
+                    "type": "uint256"
                 }
-            ]
+            ],
+            "name": "ERC20InsufficientBalance",
+            "type": "error"
         },
         {
-            "type": "error",
-            "name": "ERC20InvalidApprover",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "approver",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
-            ]
+            ],
+            "name": "ERC20InvalidApprover",
+            "type": "error"
         },
         {
-            "type": "error",
-            "name": "ERC20InvalidReceiver",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "receiver",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
-            ]
+            ],
+            "name": "ERC20InvalidReceiver",
+            "type": "error"
         },
         {
-            "type": "error",
-            "name": "ERC20InvalidSender",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "sender",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
-            ]
+            ],
+            "name": "ERC20InvalidSender",
+            "type": "error"
         },
         {
-            "type": "error",
-            "name": "ERC20InvalidSpender",
             "inputs": [
                 {
+                    "internalType": "address",
                     "name": "spender",
-                    "type": "address",
-                    "internalType": "address"
+                    "type": "address"
                 }
-            ]
+            ],
+            "name": "ERC20InvalidSpender",
+            "type": "error"
         }
     ],
     bytecode: '0x',

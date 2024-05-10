@@ -16,7 +16,7 @@ export function YieldSourceCard({
   yieldSourceProtocol,
 }: {
   yieldSourceProtocol: Protocol;
-}): ReactElement {
+}): ReactElement | null {
   const appConfig = useAppConfig();
 
   // Extract the list of pools that have this yield source
@@ -25,6 +25,14 @@ export function YieldSourceCard({
     hyperdrives: appConfig.hyperdrives,
     tokens: appConfig.tokens,
   });
+
+  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+    hyperdriveAddress: pools[0]?.address,
+  });
+
+  if (!pools.length) {
+    return null;
+  }
 
   // The first pool is used to get the canonical base and shares tokens, etc..
   const [firstPool] = pools;
@@ -40,10 +48,6 @@ export function YieldSourceCard({
   const sharesToken = findYieldSourceToken({
     yieldSourceTokenAddress: firstPool.sharesToken,
     tokens: appConfig.tokens,
-  });
-
-  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
-    hyperdriveAddress: firstPool.address,
   });
 
   return (
