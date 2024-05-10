@@ -19,3 +19,8 @@ export const rethExtensions: YieldSourceExtensions = {
   shortName: "Rocket Pool ETH",
   protocol: "rocketPool",
 };
+
+export const ezethExtensions: YieldSourceExtensions = {
+  shortName: "Renzo ezETH",
+  protocol: "renzo",
+};

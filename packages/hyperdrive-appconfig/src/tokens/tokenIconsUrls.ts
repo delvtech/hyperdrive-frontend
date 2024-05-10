@@ -15,3 +15,6 @@ export const MORPHO_ICON_URL =
 
 export const RETH_ICON_URL =
   "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031";
+
+export const EZETH_ICON_URL =
+  "https://file.notion.so/f/f/8918534a-08b2-4581-8604-0c70c8725edf/00c378ba-134a-4438-8064-a7541364b9af/ezeth_token_icon_light_background.svg?id=0ab06ed9-9568-42e1-bd75-936b076e5289&table=block&spaceId=8918534a-08b2-4581-8604-0c70c8725edf&expirationTimestamp=1715385600000&signature=ZW87EbyS8prbj3gd4vzqcBQ36PlTfRM6dKUYfsan3zM&downloadName=ezeth+token+icon+light+background.svg";
