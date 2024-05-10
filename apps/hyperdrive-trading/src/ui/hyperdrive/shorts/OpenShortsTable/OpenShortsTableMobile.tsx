@@ -37,6 +37,14 @@ export function OpenShortsTableMobile({
   const tableInstance = useReactTable({
     columns: getMobileColumns(hyperdrive, appConfig),
     data: openShorts || [],
+    initialState: {
+      sorting: [
+        {
+          id: "maturationDate",
+          desc: true,
+        },
+      ],
+    },
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
