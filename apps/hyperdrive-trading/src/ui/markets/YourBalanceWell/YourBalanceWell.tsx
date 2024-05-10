@@ -1,4 +1,3 @@
-import { ERC20 } from "@delvtech/hyperdrive-artifacts/ERC20";
 import { EllipsisVerticalIcon } from "@heroicons/react/24/outline";
 import {
   HyperdriveConfig,
@@ -18,7 +17,7 @@ import { RevokeAllowanceModalButton } from "src/ui/token/RevokeAllowanceModalBut
 import { useMintToken } from "src/ui/token/hooks/useMintToken";
 import { useTokenAllowance } from "src/ui/token/hooks/useTokenAllowance";
 import { useTokenBalance } from "src/ui/token/hooks/useTokenBalance";
-import { Address, parseUnits } from "viem";
+import { Address, erc20Abi, parseUnits } from "viem";
 import { foundry, sepolia } from "viem/chains";
 import { useAccount, useChainId, useReadContract } from "wagmi";
 
@@ -82,7 +81,7 @@ function AvailableAsset({
     enabled: !isEth,
   });
   const { data: totalSupply } = useReadContract({
-    abi: ERC20.abi,
+    abi: erc20Abi,
     functionName: "totalSupply",
     address: token.address,
     query: { enabled: !isEth },
