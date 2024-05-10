@@ -1486,11 +1486,6 @@
     lodash.ismatch "^4.4.0"
     lru-cache "^10.0.1"
 
-"@delvtech/hyperdrive-wasm@^0.13.0":
-  version "0.13.0"
-  resolved "https://registry.yarnpkg.com/@delvtech/hyperdrive-wasm/-/hyperdrive-wasm-0.13.0.tgz#1698644fc170abe99688c54c4daab641748551fe"
-  integrity sha512-2zBD21ajcA76EJ89Jslq38mKEoIlMVyqWxBiEuM8Ivi2t6WlbTK61l2C9ZE+Lf7uNia42GJB1s17ZXL1/27UfA==
-
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
