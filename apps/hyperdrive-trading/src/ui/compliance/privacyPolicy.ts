@@ -1,2 +1,2 @@
 export const privacyPolicyUrl =
-  "https://elementfi.s3.us-east-2.amazonaws.com/element-finance-privacy-policy.pdf";
+  "https://delv-public.s3.us-east-2.amazonaws.com/delv-privacy-policy.pdf";
