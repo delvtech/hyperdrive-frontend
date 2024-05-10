@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 0.2.0
+
+### Minor Changes
+
+- 7921848: Upgrade to version v1.0.5 of the hyperdrive contracts
+
 ## 0.1.0
 
 ### Minor Changes

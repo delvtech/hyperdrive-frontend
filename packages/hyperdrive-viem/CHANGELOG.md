@@ -1,5 +1,13 @@
 # @delvtech/hyperdrive-viem
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [7921848]
+  - @delvtech/hyperdrive-artifacts@0.2.0
+  - @delvtech/hyperdrive-js-core@1.0.0
+
 ## 0.0.4
 
 ### Patch Changes
