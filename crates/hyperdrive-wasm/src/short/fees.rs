@@ -27,9 +27,8 @@ pub fn openShortCurveFee(
         config: poolConfig.into(),
     };
     let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
-    let spot_price = state.calculate_spot_price();
 
-    let result_fp = state.open_short_curve_fee(bond_amount, spot_price);
+    let result_fp = state.open_short_curve_fee(bond_amount);
 
     U256::from(result_fp).to_string()
 }
@@ -53,9 +52,8 @@ pub fn openShortGovernanceFee(
         config: poolConfig.into(),
     };
     let bond_amount = FixedPoint::from(U256::from_dec_str(bondAmount).unwrap());
-    let spot_price = state.calculate_spot_price();
 
-    let result_fp = state.open_short_governance_fee(bond_amount, spot_price);
+    let result_fp = state.open_short_governance_fee(bond_amount);
 
     U256::from(result_fp).to_string()
 }
