@@ -22,6 +22,8 @@
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",
+    "lodash.uniqby": "^4.7.0",
+    "@types/lodash.uniqby": "^4.7.9",
     "abitype": "^0.9.8",
     "dotenv": "^16.0.3",
     "tsx": "^4.7.0",
