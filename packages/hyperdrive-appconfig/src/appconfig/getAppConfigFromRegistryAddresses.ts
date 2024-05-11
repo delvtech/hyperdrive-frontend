@@ -42,6 +42,7 @@ type KnownHyperdriveMetadata = {
   sharesTokenIconUrl: string;
   sharesTokenExtensions: YieldSourceExtensions;
   tags?: string[];
+  tokenPlaces: number;
 };
 
 const knownHyperdriveMetadata: Record<
@@ -52,35 +53,41 @@ const knownHyperdriveMetadata: Record<
     sharesTokenExtensions: sdaiExtensions,
     baseTokenIconUrl: DAI_ICON_URL,
     sharesTokenIconUrl: SDAI_ICON_URL,
+    tokenPlaces: 4,
   },
   SDAI: {
     sharesTokenExtensions: sdaiExtensions,
     baseTokenIconUrl: DAI_ICON_URL,
     sharesTokenIconUrl: SDAI_ICON_URL,
     tags: ERC4626_SHARE_TOKEN_TAGS,
+    tokenPlaces: 2,
   },
   MMHYDAI: {
     sharesTokenExtensions: metaMorphoExtensions,
     baseTokenIconUrl: DAI_ICON_URL,
     sharesTokenIconUrl: MORPHO_ICON_URL,
     tags: ERC4626_SHARE_TOKEN_TAGS,
+    tokenPlaces: 2,
   },
   STETH: {
     sharesTokenExtensions: stethExtensions,
     baseTokenIconUrl: ETH_ICON_URL,
     sharesTokenIconUrl: STETH_ICON_URL,
+    tokenPlaces: 4,
   },
   RETH: {
     sharesTokenExtensions: rethExtensions,
     baseTokenIconUrl: ETH_ICON_URL,
     sharesTokenIconUrl: RETH_ICON_URL,
     tags: ["reth"],
+    tokenPlaces: 4,
   },
   EZETH: {
     sharesTokenExtensions: ezethExtensions,
     baseTokenIconUrl: ETH_ICON_URL,
     sharesTokenIconUrl: EZETH_ICON_URL,
     tags: ["ezeth"],
+    tokenPlaces: 4,
   },
 };
 

@@ -32,23 +32,9 @@ export const sepoliaAppConfig: AppConfig = {
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
     },
     {
-      address: "0x63E77f68fA4774A0e2Fc0a085f02150746dd8230",
-      decimals: 18,
-      places: 2,
-      name: "Renzo ezETH",
-      symbol: "ezETH",
-      iconUrl:
-        "https://file.notion.so/f/f/8918534a-08b2-4581-8604-0c70c8725edf/00c378ba-134a-4438-8064-a7541364b9af/ezeth_token_icon_light_background.svg?id=0ab06ed9-9568-42e1-bd75-936b076e5289&table=block&spaceId=8918534a-08b2-4581-8604-0c70c8725edf&expirationTimestamp=1715385600000&signature=ZW87EbyS8prbj3gd4vzqcBQ36PlTfRM6dKUYfsan3zM&downloadName=ezeth+token+icon+light+background.svg",
-      tags: ["yieldSource", "ezeth"],
-      extensions: {
-        shortName: "Renzo ezETH",
-        protocol: "renzo",
-      },
-    },
-    {
       address: "0xC587D318c555A1E550d97E361932821B925c7D32",
       decimals: 18,
-      places: 2,
+      places: 4,
       name: "RocketPool ETH",
       symbol: "RETH",
       iconUrl:
@@ -57,6 +43,20 @@ export const sepoliaAppConfig: AppConfig = {
       extensions: {
         shortName: "Rocket Pool ETH",
         protocol: "rocketPool",
+      },
+    },
+    {
+      address: "0x63E77f68fA4774A0e2Fc0a085f02150746dd8230",
+      decimals: 18,
+      places: 4,
+      name: "Renzo ezETH",
+      symbol: "ezETH",
+      iconUrl:
+        "https://file.notion.so/f/f/8918534a-08b2-4581-8604-0c70c8725edf/00c378ba-134a-4438-8064-a7541364b9af/ezeth_token_icon_light_background.svg?id=0ab06ed9-9568-42e1-bd75-936b076e5289&table=block&spaceId=8918534a-08b2-4581-8604-0c70c8725edf&expirationTimestamp=1715385600000&signature=ZW87EbyS8prbj3gd4vzqcBQ36PlTfRM6dKUYfsan3zM&downloadName=ezeth+token+icon+light+background.svg",
+      tags: ["yieldSource", "ezeth"],
+      extensions: {
+        shortName: "Renzo ezETH",
+        protocol: "renzo",
       },
     },
     {

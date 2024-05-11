@@ -20,7 +20,7 @@ interface GetHyperdriveConfigParams {
   sharesTokenIconUrl: string;
   depositOptions: DepositOptions;
   withdrawalOptions: WithdrawalOptions;
-  tokenPlaces?: number;
+  tokenPlaces: number;
   tags?: string[];
 }
 
@@ -38,11 +38,9 @@ export async function getCustomHyperdrive({
   sharesTokenIconUrl,
   depositOptions,
   withdrawalOptions,
-  tokenPlaces = 2,
+  tokenPlaces,
   tags = [],
 }: GetHyperdriveConfigParams): Promise<GetCustomHyperdriveResult> {
-  // All Hyperdrive instances have a shareToken function, but the SDK needs to
-  // be updated, using RethHyperdrive for now.
   const readHyperdrive = new ReadHyperdrive({
     address: hyperdriveAddress,
     publicClient,
