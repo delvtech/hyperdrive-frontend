@@ -4,7 +4,7 @@ import { Address } from "viem";
 export interface HyperdriveConfig {
   address: Address;
   name: string;
-
+  version: string;
   decimals: number;
 
   /**

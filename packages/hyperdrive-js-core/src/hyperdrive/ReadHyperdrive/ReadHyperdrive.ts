@@ -63,6 +63,10 @@ export class ReadHyperdrive extends ReadModel {
     });
   }
 
+  async getVersion(): Promise<string> {
+    return this.contract.read("version");
+  }
+
   /**
    * Returns the base token of the pool.
    *

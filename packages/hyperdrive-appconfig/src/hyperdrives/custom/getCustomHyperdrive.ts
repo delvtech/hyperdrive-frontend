@@ -48,6 +48,7 @@ export async function getCustomHyperdrive({
     publicClient,
   });
 
+  const version = await readHyperdrive.getVersion();
   const poolConfig = await readHyperdrive.getPoolConfig();
   const sharesToken = await readHyperdrive.getSharesToken();
   const sharesTokenConfig = await getTokenConfig({
@@ -75,6 +76,7 @@ export async function getCustomHyperdrive({
 
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdriveAddress,
+    version,
     name: hyperdriveName,
     decimals: await readHyperdrive.getDecimals(),
     baseToken: baseTokenConfig.address,
