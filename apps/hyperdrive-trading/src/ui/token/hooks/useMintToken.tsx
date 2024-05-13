@@ -1,4 +1,3 @@
-import { ERC20Mintable } from "@delvtech/hyperdrive-artifacts/ERC20Mintable";
 import { TokenConfig } from "@hyperdrive/appconfig";
 import { useAddRecentTransaction } from "@rainbow-me/rainbowkit";
 import toast from "react-hot-toast";
@@ -8,7 +7,7 @@ import { waitForTransactionAndInvalidateCache } from "src/network/waitForTransac
 import { ETH_MAGIC_NUMBER } from "src/token/ETH_MAGIC_NUMBER";
 import TransactionToast from "src/ui/base/components/Toaster/TransactionToast";
 import { SUCCESS_TOAST_DURATION } from "src/ui/base/toasts";
-import { Address, formatUnits } from "viem";
+import { Address, formatUnits, parseAbi } from "viem";
 import { sepolia } from "viem/chains";
 import {
   useChainId,
@@ -66,7 +65,9 @@ export function useMintToken({
         return writeContract(
           {
             address: token.address,
-            abi: ERC20Mintable.abi,
+            abi: parseAbi([
+              "function mint(address destination, uint256 mintAmount)",
+            ]),
             functionName: "mint",
             args: [destination, mintAmount],
           },

@@ -1,15 +1,11 @@
-import { IHyperdrive } from "@delvtech/hyperdrive-artifacts/IHyperdrive";
+import { ReadHyperdrive } from "@delvtech/hyperdrive-js-core";
 import { QueryStatus, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
-import { Address, ContractFunctionReturnType } from "viem";
+import { Address } from "viem";
 export function useMarketState(hyperdrive: Address): {
   marketState:
-    | ContractFunctionReturnType<
-        typeof IHyperdrive.abi,
-        "view",
-        "getMarketState"
-      >
+    | Awaited<ReturnType<ReadHyperdrive["getMarketState"]>>
     | undefined;
   marketStateStatus: QueryStatus;
 } {
