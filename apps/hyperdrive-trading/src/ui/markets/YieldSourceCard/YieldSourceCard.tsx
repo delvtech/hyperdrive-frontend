@@ -52,11 +52,15 @@ export function YieldSourceCard({
 
   return (
     <Well transparent interactive>
-      <div className="flex w-[700px] flex-col gap-2">
+      <div className="flex w-full flex-col gap-2 md:w-[700px]">
         {/* Card header */}
-        <div className="flex justify-between gap-4 p-4">
-          <div className="flex gap-5">
-            <img src={yieldSourceProtocol.iconUrl} className="h-20" />
+        <div className="flex flex-col justify-between gap-4 sm:flex-row md:p-4 ">
+          {/* Yield source name, icon, and rate */}
+          <div className="flex gap-2 sm:gap-5">
+            <img
+              src={yieldSourceProtocol.iconUrl}
+              className="h-20 scale-75 sm:scale-100"
+            />
             <div>
               <h3 className="mb-1">{sharesToken.extensions.shortName}</h3>
               {vaultRateStatus === "loading" && !vaultRate ? (
@@ -74,21 +78,18 @@ export function YieldSourceCard({
             </div>
           </div>
 
-          <div className="flex flex-col text-neutral-content ">
+          {/* Deposit assets */}
+          <div className="flex items-center justify-center gap-2 text-neutral-content sm:flex-col">
             <span className="mb-2 flex">Deposit assets</span>
             <div className="daisy-avatar-group inline-flex justify-center -space-x-6 rtl:space-x-reverse">
               {isBaseTokenDepositEnabled ? (
-                <div className="daisy-avatar">
-                  <div className="w-12">
-                    <img src={baseToken.iconUrl} />
-                  </div>
+                <div className="daisy-avatar w-12 scale-75 sm:scale-100">
+                  <img src={baseToken.iconUrl} />
                 </div>
               ) : null}
               {isShareTokenDepositsEnabled ? (
-                <div className="daisy-avatar">
-                  <div className="w-12">
-                    <img src={sharesToken.iconUrl} />
-                  </div>
+                <div className="daisy-avatar w-12 scale-75 sm:scale-100">
+                  <img src={sharesToken.iconUrl} />
                 </div>
               ) : null}
             </div>
