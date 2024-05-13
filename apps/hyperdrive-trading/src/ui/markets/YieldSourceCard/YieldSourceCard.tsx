@@ -9,7 +9,9 @@ import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { Badge } from "src/ui/base/components/Badge";
 import { Well } from "src/ui/base/components/Well/Well";
-import { YieldSourceMarketsTable } from "src/ui/markets/YieldSourceMarketsTable/YieldSourceMarketsTable";
+import { useIsTailwindLessThanSm } from "src/ui/base/mediaBreakpoints";
+import { YieldSourceMarketsTableDesktop } from "src/ui/markets/YieldSourceMarketsTable/YieldSourceMarketsTableDesktop";
+import { YieldSourceMarketsTableMobile } from "src/ui/markets/YieldSourceMarketsTable/YieldSourceMarketsTableMobile";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 
 export function YieldSourceCard({
@@ -18,6 +20,8 @@ export function YieldSourceCard({
   yieldSourceProtocol: Protocol;
 }): ReactElement | null {
   const appConfig = useAppConfig();
+
+  const isSmallScreen = useIsTailwindLessThanSm();
 
   // Extract the list of pools that have this yield source
   const pools = findYieldSourceHyperdrives({
@@ -51,17 +55,18 @@ export function YieldSourceCard({
   });
 
   return (
-    <Well transparent interactive>
-      <div className="flex w-full flex-col gap-2 md:w-[700px]">
-        {/* Card header */}
-        <div className="flex flex-col justify-between gap-4 sm:flex-row md:p-4 ">
-          {/* Yield source name, icon, and rate */}
-          <div className="flex gap-2 sm:gap-5">
-            <img
-              src={yieldSourceProtocol.iconUrl}
-              className="h-20 scale-75 sm:scale-100"
-            />
+    <Well transparent interactive block={isSmallScreen}>
+      <div className="flex flex-col gap-12 md:w-[700px] md:gap-2">
+        <div className="flex flex-col justify-between gap-8 sm:flex-row md:p-4 ">
+          {/* Card header */}
+          <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-5">
             <div>
+              <img
+                src={yieldSourceProtocol.iconUrl}
+                className="h-20 scale-75 sm:scale-100 "
+              />
+            </div>
+            <div className="text-center md:text-left">
               <h3 className="mb-1">{sharesToken.extensions.shortName}</h3>
               {vaultRateStatus === "loading" && !vaultRate ? (
                 <Skeleton className="w-42 h-8" />
@@ -79,8 +84,8 @@ export function YieldSourceCard({
           </div>
 
           {/* Deposit assets */}
-          <div className="flex items-center justify-center gap-2 text-neutral-content sm:flex-col">
-            <span className="mb-2 flex">Deposit assets</span>
+          <div className="flex flex-col items-center justify-center gap-2 text-neutral-content ">
+            <span>Deposit assets</span>
             <div className="daisy-avatar-group inline-flex justify-center -space-x-6 rtl:space-x-reverse">
               {isBaseTokenDepositEnabled ? (
                 <div className="daisy-avatar w-12 scale-75 sm:scale-100">
@@ -95,9 +100,15 @@ export function YieldSourceCard({
             </div>
           </div>
         </div>
-
         {/* Pools Table */}
-        <YieldSourceMarketsTable protocol={yieldSourceProtocol} />
+        {isSmallScreen ? (
+          <div className="flex flex-col items-center justify-center text-neutral-content">
+            <span>Markets</span>
+            <YieldSourceMarketsTableMobile protocol={yieldSourceProtocol} />
+          </div>
+        ) : (
+          <YieldSourceMarketsTableDesktop protocol={yieldSourceProtocol} />
+        )}{" "}
       </div>
     </Well>
   );
