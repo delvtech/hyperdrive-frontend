@@ -1,4 +1,5 @@
 import { ClosedShort } from "@delvtech/hyperdrive-viem";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -9,8 +10,10 @@ import {
   flexRender,
   getCoreRowModel,
   getPaginationRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -114,7 +117,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
   });
 
   return [
-    columnHelper.display({
+    columnHelper.accessor((row) => formatDate(Number(row.maturity * 1000n)), {
       header: `Matures On`,
       cell: ({ row }) => {
         const maturity = formatDate(Number(row.original.maturity * 1000n));
@@ -181,7 +184,16 @@ export function ClosedShortsTable({
       ? getMobileColumns(hyperdrive, appConfig)
       : getColumns(hyperdrive, appConfig),
     data: reversedClosedShorts,
+    initialState: {
+      sorting: [
+        {
+          id: "closedTimestamp",
+          desc: true,
+        },
+      ],
+    },
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
 
@@ -218,15 +230,25 @@ export function ClosedShortsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky text-sm font-normal text-gray-400"
+                  className="sticky z-10 text-sm font-normal text-gray-400"
                   key={header.id}
                 >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+                  <div
+                    className={classNames({
+                      "flex cursor-pointer select-none items-center gap-2":
+                        header.column.getCanSort(),
+                    })}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )}
+                    {{
+                      asc: <ChevronUpIcon height={15} />,
+                      desc: <ChevronDownIcon height={15} />,
+                    }[header.column.getIsSorted() as string] ?? null}
+                  </div>
                 </th>
               ))}
             </tr>

@@ -1,4 +1,5 @@
 import { ClosedLong } from "@delvtech/hyperdrive-viem";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
   AppConfig,
   EmptyExtensions,
@@ -11,6 +12,7 @@ import {
   flexRender,
   getCoreRowModel,
   getPaginationRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
 import classNames from "classnames";
@@ -122,29 +124,38 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     tokens: appConfig.tokens,
   });
   return [
-    columnHelper.display({
+    columnHelper.accessor((row) => formatDate(Number(row.maturity * 1000n)), {
       header: `Matures On`,
+      id: "maturationDate",
       cell: ({ row }) => {
         const maturity = formatDate(Number(row.original.maturity * 1000n));
         return <span>{maturity}</span>;
       },
     }),
-    columnHelper.display({
-      id: "size",
-      header: `Size (hy${baseToken.symbol})`,
-      cell: ({ row }) => {
-        return (
-          <span className="flex w-20 justify-end">
-            {formatBalance({
-              balance: row.original.bondAmount,
-              decimals: baseToken.decimals,
-              places: baseToken.places,
-            })}
-          </span>
-        );
+    columnHelper.accessor(
+      (row) =>
+        formatBalance({
+          balance: row.bondAmount,
+          decimals: baseToken.decimals,
+          places: baseToken.places,
+        }),
+      {
+        id: "size",
+        header: `Size (hy${baseToken.symbol})`,
+        cell: ({ row }) => {
+          return (
+            <span className="flex w-20 justify-end">
+              {formatBalance({
+                balance: row.original.bondAmount,
+                decimals: baseToken.decimals,
+                places: baseToken.places,
+              })}
+            </span>
+          );
+        },
       },
-    }),
-    columnHelper.display({
+    ),
+    columnHelper.accessor("baseAmount", {
       id: "baseReceived",
       header: `Value Received (${baseToken.symbol})`,
       cell: ({ row }) => {
@@ -158,6 +169,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
     }),
     columnHelper.accessor("closedTimestamp", {
       header: `Closed On`,
+      id: "closedTimestamp",
       cell: ({ row }) => {
         return formatDate(Number(row.original.closedTimestamp * 1000n));
       },
@@ -184,6 +196,15 @@ export function ClosedLongsTable({
       ? getMobileColumns(hyperdrive, appConfig)
       : getColumns(hyperdrive, appConfig),
     data: reversedClosedLongs, // show most recently closed first, TODO: refactor to interactive column sorting
+    initialState: {
+      sorting: [
+        {
+          id: "closedTimestamp",
+          desc: true,
+        },
+      ],
+    },
+    getSortedRowModel: getSortedRowModel(),
     getCoreRowModel: getCoreRowModel(),
     getPaginationRowModel: getPaginationRowModel(),
   });
@@ -222,15 +243,25 @@ export function ClosedLongsTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky text-sm font-normal text-neutral-content"
+                  className="sticky z-10 text-sm font-normal text-gray-400"
                   key={header.id}
                 >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+                  <div
+                    className={classNames({
+                      "flex cursor-pointer select-none items-center gap-2":
+                        header.column.getCanSort(),
+                    })}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )}
+                    {{
+                      asc: <ChevronUpIcon height={15} />,
+                      desc: <ChevronDownIcon height={15} />,
+                    }[header.column.getIsSorted() as string] ?? null}
+                  </div>
                 </th>
               ))}
             </tr>
