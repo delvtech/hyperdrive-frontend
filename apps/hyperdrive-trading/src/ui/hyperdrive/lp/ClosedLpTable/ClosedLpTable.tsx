@@ -2,6 +2,7 @@ import {
   ClosedLpShares,
   RedeemedWithdrawalShares,
 } from "@delvtech/hyperdrive-viem";
+import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/16/solid";
 import {
   AppConfig,
   HyperdriveConfig,
@@ -11,8 +12,10 @@ import {
   createColumnHelper,
   flexRender,
   getCoreRowModel,
+  getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table";
+import classNames from "classnames";
 import { ReactElement, useMemo } from "react";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -139,7 +142,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
         );
       },
     }),
-    columnHelper.display({
+    columnHelper.accessor("lpSharePrice", {
       header: "Shares Closed",
       cell: ({ row }) => {
         const isWithdrawalShare = row.original.redeemedTimestamp;
@@ -191,7 +194,7 @@ function getColumns(hyperdrive: HyperdriveConfig, appConfig: AppConfig) {
         );
       },
     }),
-    columnHelper.display({
+    columnHelper.accessor("closedTimestamp", {
       header: "Closed On",
       cell: ({ row }) => {
         const closedTimestamp =
@@ -232,7 +235,16 @@ export function ClosedLpTable({
     columns: isTailwindSmallScreen
       ? getMobileColumns(hyperdrive, appConfig)
       : getColumns(hyperdrive, appConfig),
+    initialState: {
+      sorting: [
+        {
+          id: "closedTimestamp",
+          desc: true,
+        },
+      ],
+    },
     getCoreRowModel: getCoreRowModel(),
+    getSortedRowModel: getSortedRowModel(),
   });
   if (!account) {
     return (
@@ -264,15 +276,25 @@ export function ClosedLpTable({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky top-0 bg-base-100 text-sm font-normal text-gray-400"
+                  className="sticky z-10 text-sm font-normal text-gray-400"
                   key={header.id}
                 >
-                  {header.isPlaceholder
-                    ? null
-                    : flexRender(
-                        header.column.columnDef.header,
-                        header.getContext(),
-                      )}
+                  <div
+                    className={classNames({
+                      "flex cursor-pointer select-none items-center gap-2":
+                        header.column.getCanSort(),
+                    })}
+                    onClick={header.column.getToggleSortingHandler()}
+                  >
+                    {flexRender(
+                      header.column.columnDef.header,
+                      header.getContext(),
+                    )}
+                    {{
+                      asc: <ChevronUpIcon height={15} />,
+                      desc: <ChevronDownIcon height={15} />,
+                    }[header.column.getIsSorted() as string] ?? null}
+                  </div>
                 </th>
               ))}
             </tr>
