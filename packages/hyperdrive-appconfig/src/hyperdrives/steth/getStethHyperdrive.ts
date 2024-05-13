@@ -26,6 +26,7 @@ export async function getStethHyperdrive({
     address: hyperdriveAddress,
     publicClient,
   });
+  const version = await readHyperdrive.getVersion();
   const poolConfig = await readHyperdrive.getPoolConfig();
 
   const sharesToken = await readHyperdrive.getSharesToken();
@@ -53,6 +54,7 @@ export async function getStethHyperdrive({
 
   const hyperdriveConfig: HyperdriveConfig = {
     address: hyperdriveAddress,
+    version,
     name: hyperdriveName,
     decimals: 18, // Longs, shorts, and LP tokens are assumed to be 18 decimals
     baseToken: baseTokenConfig.address,
