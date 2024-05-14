@@ -1,4 +1,4 @@
-import { Long } from "@delvtech/hyperdrive-js-core";
+import { Long } from "@delvtech/hyperdrive-viem";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
