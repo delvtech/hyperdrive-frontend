@@ -12,7 +12,7 @@ export function Landing(): ReactElement | null {
   const isSmallScreenView = useIsTailwindSmallScreen();
 
   return (
-    <div className="flex flex-col items-center gap-14 px-4 py-8">
+    <div className="flex flex-col items-center gap-16 px-4 py-8">
       <CommonHeadTags />
       <Hero />
       <div className="flex w-full flex-col items-center">
