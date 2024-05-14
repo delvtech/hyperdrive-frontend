@@ -9,7 +9,7 @@ export const sepoliaAppConfig: AppConfig = {
   ],
   tokens: [
     {
-      address: "0xD8a5c98e985986754D608782Bb58717A0168B21d",
+      address: "0xc1225aF2ec10e1E11327991FF7986D949c811a6c",
       decimals: 18,
       places: 4,
       name: "Liquid staked Ether 2.0",
@@ -32,21 +32,7 @@ export const sepoliaAppConfig: AppConfig = {
       iconUrl: "https://cryptologos.cc/logos/ethereum-eth-logo.png?v=029",
     },
     {
-      address: "0xC587D318c555A1E550d97E361932821B925c7D32",
-      decimals: 18,
-      places: 4,
-      name: "RocketPool ETH",
-      symbol: "RETH",
-      iconUrl:
-        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
-      tags: ["yieldSource", "reth"],
-      extensions: {
-        shortName: "Rocket Pool ETH",
-        protocol: "rocketPool",
-      },
-    },
-    {
-      address: "0x63E77f68fA4774A0e2Fc0a085f02150746dd8230",
+      address: "0x7A6dD07e475b9aeF770e36A86991dBFcb042B497",
       decimals: 18,
       places: 4,
       name: "Renzo ezETH",
@@ -60,7 +46,7 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xF6e2b70278f7887eE611bd4E52DD26e9353fDD67",
+      address: "0x10dfe1Ec5b368005D12e8BD6BEFCbE63D05Ec56a",
       decimals: 18,
       places: 2,
       name: "Savings DAI",
@@ -73,7 +59,7 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xE10C83109537670946955404e11Ea2E1210AA8A9",
+      address: "0x4A49991d18cD735d21157D3C90817692226115aD",
       decimals: 18,
       places: 2,
       name: "DAI",
@@ -83,15 +69,29 @@ export const sepoliaAppConfig: AppConfig = {
       tags: [],
       extensions: {},
     },
+    {
+      address: "0xA46ad5B24caAdC100005065e636654598D6b9ffC",
+      decimals: 18,
+      places: 4,
+      name: "RocketPool ETH",
+      symbol: "RETH",
+      iconUrl:
+        "https://cryptologos.cc/logos/rocket-pool-eth-reth-logo.svg?v=031",
+      tags: ["yieldSource", "reth"],
+      extensions: {
+        shortName: "Rocket Pool ETH",
+        protocol: "rocketPool",
+      },
+    },
   ],
   hyperdrives: [
     {
-      address: "0xF2A8f3dcc019FD8F3EF286fe88F7efdd0c4D4b0c",
+      address: "0x3963057c63c6e0D4419fF9E7A8c93b50Df96E1B9",
       version: "v1.0.6",
       name: "14d DAI-Maker DSR",
       decimals: 18,
-      baseToken: "0xE10C83109537670946955404e11Ea2E1210AA8A9",
-      sharesToken: "0xF6e2b70278f7887eE611bd4E52DD26e9353fDD67",
+      baseToken: "0x4A49991d18cD735d21157D3C90817692226115aD",
+      sharesToken: "0x10dfe1Ec5b368005D12e8BD6BEFCbE63D05Ec56a",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
@@ -101,9 +101,9 @@ export const sepoliaAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        baseToken: "0xE10C83109537670946955404e11Ea2E1210AA8A9",
-        vaultSharesToken: "0xF6e2b70278f7887eE611bd4E52DD26e9353fDD67",
-        linkerFactory: "0xf039Fd46fE8d81c116Cf4bdC787B3272A4C52815",
+        baseToken: "0x4A49991d18cD735d21157D3C90817692226115aD",
+        vaultSharesToken: "0x10dfe1Ec5b368005D12e8BD6BEFCbE63D05Ec56a",
+        linkerFactory: "0x5F24E6Bbb16C7F080d1009b90B57C793f9704922",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
         initialVaultSharePrice: 1000000000000000000n,
@@ -125,12 +125,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x4B86AF92Cb944B88089B2429234293B12AEBCEFA",
+      address: "0xAa1Ee91f7487c4811EB0Adc74A81ac14770C06B7",
       version: "v1.0.6",
       name: "30d DAI-Maker DSR",
       decimals: 18,
-      baseToken: "0xE10C83109537670946955404e11Ea2E1210AA8A9",
-      sharesToken: "0xF6e2b70278f7887eE611bd4E52DD26e9353fDD67",
+      baseToken: "0x4A49991d18cD735d21157D3C90817692226115aD",
+      sharesToken: "0x10dfe1Ec5b368005D12e8BD6BEFCbE63D05Ec56a",
       depositOptions: {
         isBaseTokenDepositEnabled: true,
         isShareTokenDepositsEnabled: true,
@@ -140,9 +140,9 @@ export const sepoliaAppConfig: AppConfig = {
         isShareTokenWithdrawalEnabled: true,
       },
       poolConfig: {
-        baseToken: "0xE10C83109537670946955404e11Ea2E1210AA8A9",
-        vaultSharesToken: "0xF6e2b70278f7887eE611bd4E52DD26e9353fDD67",
-        linkerFactory: "0xf039Fd46fE8d81c116Cf4bdC787B3272A4C52815",
+        baseToken: "0x4A49991d18cD735d21157D3C90817692226115aD",
+        vaultSharesToken: "0x10dfe1Ec5b368005D12e8BD6BEFCbE63D05Ec56a",
+        linkerFactory: "0x5F24E6Bbb16C7F080d1009b90B57C793f9704922",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
         initialVaultSharePrice: 1000000445205479451n,
@@ -164,12 +164,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xeD86be3F545F4F5d487DE637fdf4ceB6ab16F982",
+      address: "0x04E493F7eb61D88D4A85c094F161EE5Ce4B518AC",
       version: "v1.0.6",
       name: "14d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0xD8a5c98e985986754D608782Bb58717A0168B21d",
+      sharesToken: "0xc1225aF2ec10e1E11327991FF7986D949c811a6c",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -180,11 +180,11 @@ export const sepoliaAppConfig: AppConfig = {
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0xD8a5c98e985986754D608782Bb58717A0168B21d",
-        linkerFactory: "0xf039Fd46fE8d81c116Cf4bdC787B3272A4C52815",
+        vaultSharesToken: "0xc1225aF2ec10e1E11327991FF7986D949c811a6c",
+        linkerFactory: "0x5F24E6Bbb16C7F080d1009b90B57C793f9704922",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 1000000825722983250n,
+        initialVaultSharePrice: 1000000852359208520n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -203,12 +203,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0x36916729B314D8e3d1a450B5850268d203425a03",
+      address: "0x92771EFB34883b58ee08c190818f70cF9A6AA18a",
       version: "v1.0.6",
       name: "30d ETH-Lido stETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0xD8a5c98e985986754D608782Bb58717A0168B21d",
+      sharesToken: "0xc1225aF2ec10e1E11327991FF7986D949c811a6c",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -219,11 +219,11 @@ export const sepoliaAppConfig: AppConfig = {
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0xD8a5c98e985986754D608782Bb58717A0168B21d",
-        linkerFactory: "0xf039Fd46fE8d81c116Cf4bdC787B3272A4C52815",
+        vaultSharesToken: "0xc1225aF2ec10e1E11327991FF7986D949c811a6c",
+        linkerFactory: "0x5F24E6Bbb16C7F080d1009b90B57C793f9704922",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 1000000958904169000n,
+        initialVaultSharePrice: 1000000958904157820n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -242,12 +242,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xBEd9572dF3683E9d713ee8d5bFa53C0ea2706022",
+      address: "0x6C5D13970cc91D67a39d8470bd0d14f25ccb098E",
       version: "v1.0.6",
       name: "14d ETH-Rocket Pool ETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0xC587D318c555A1E550d97E361932821B925c7D32",
+      sharesToken: "0xA46ad5B24caAdC100005065e636654598D6b9ffC",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -258,11 +258,11 @@ export const sepoliaAppConfig: AppConfig = {
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0xC587D318c555A1E550d97E361932821B925c7D32",
-        linkerFactory: "0xf039Fd46fE8d81c116Cf4bdC787B3272A4C52815",
+        vaultSharesToken: "0xA46ad5B24caAdC100005065e636654598D6b9ffC",
+        linkerFactory: "0x5F24E6Bbb16C7F080d1009b90B57C793f9704922",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 1000000905631659050n,
+        initialVaultSharePrice: 1000000852359208520n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -281,12 +281,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xaE815d2229545C67c9C32744e5476D7B04E0017C",
+      address: "0x415Be6153753D7eB68Bb128a9669ccaCBB6cdCC9",
       version: "v1.0.6",
       name: "30d ETH-Rocket Pool ETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0xC587D318c555A1E550d97E361932821B925c7D32",
+      sharesToken: "0xA46ad5B24caAdC100005065e636654598D6b9ffC",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -297,11 +297,11 @@ export const sepoliaAppConfig: AppConfig = {
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0xC587D318c555A1E550d97E361932821B925c7D32",
-        linkerFactory: "0xf039Fd46fE8d81c116Cf4bdC787B3272A4C52815",
+        vaultSharesToken: "0xA46ad5B24caAdC100005065e636654598D6b9ffC",
+        linkerFactory: "0x5F24E6Bbb16C7F080d1009b90B57C793f9704922",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 1000001038812825287n,
+        initialVaultSharePrice: 1000000998858497852n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -320,12 +320,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xA955F5d36D3a8Af3739600e49376d65c4fa99412",
+      address: "0x51EdA7aB144D89d0CDF8F0d6770533f0f15646FB",
       version: "v1.0.6",
       name: "14d ETH-Renzo ezETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0x63E77f68fA4774A0e2Fc0a085f02150746dd8230",
+      sharesToken: "0x7A6dD07e475b9aeF770e36A86991dBFcb042B497",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -336,11 +336,11 @@ export const sepoliaAppConfig: AppConfig = {
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0x63E77f68fA4774A0e2Fc0a085f02150746dd8230",
-        linkerFactory: "0xf039Fd46fE8d81c116Cf4bdC787B3272A4C52815",
+        vaultSharesToken: "0x7A6dD07e475b9aeF770e36A86991dBFcb042B497",
+        linkerFactory: "0x5F24E6Bbb16C7F080d1009b90B57C793f9704922",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 199960202403963n,
+        initialVaultSharePrice: 1000001491629000696n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
@@ -359,12 +359,12 @@ export const sepoliaAppConfig: AppConfig = {
       },
     },
     {
-      address: "0xA2Ad31DaEbfE222dc96810898EF7FC239daAb580",
+      address: "0xb84726022004990E7C6CE597559b73739C95e6ac",
       version: "v1.0.6",
       name: "30d ETH-Renzo ezETH",
       decimals: 18,
       baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-      sharesToken: "0x63E77f68fA4774A0e2Fc0a085f02150746dd8230",
+      sharesToken: "0x7A6dD07e475b9aeF770e36A86991dBFcb042B497",
       depositOptions: {
         isBaseTokenDepositEnabled: false,
         isShareTokenDepositsEnabled: true,
@@ -375,11 +375,11 @@ export const sepoliaAppConfig: AppConfig = {
       },
       poolConfig: {
         baseToken: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE",
-        vaultSharesToken: "0x63E77f68fA4774A0e2Fc0a085f02150746dd8230",
-        linkerFactory: "0xf039Fd46fE8d81c116Cf4bdC787B3272A4C52815",
+        vaultSharesToken: "0x7A6dD07e475b9aeF770e36A86991dBFcb042B497",
+        linkerFactory: "0x5F24E6Bbb16C7F080d1009b90B57C793f9704922",
         linkerCodeHash:
           "0x9a69ff3b9a110deacb7d941d71222642f269891c0da9fcc15ec7c63fbd216b3f",
-        initialVaultSharePrice: 199960123842816n,
+        initialVaultSharePrice: 1000001611492174563n,
         minimumShareReserves: 1000000000000000n,
         minimumTransactionAmount: 1000000000000000n,
         circuitBreakerDelta: 600000000000000000n,
