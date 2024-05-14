@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-js-core
 
+## 1.0.1
+
+### Patch Changes
+
+- e43604f: Add getVersion to ReadHyperdrive
+
 ## 1.0.0
 
 ### Patch Changes
