@@ -13,6 +13,7 @@ import { convertMillisecondsToDays } from "src/base/convertMillisecondsToDays";
 import { formatRate } from "src/base/formatRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import LoadingState from "src/ui/base/components/LoadingState";
+import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { TextWithTooltip } from "src/ui/base/components/Tooltip/TextWithTooltip";
 import { formatCompact } from "src/ui/base/formatting/formatCompact";
 import { LpApyCell } from "src/ui/markets/AllMarketsTable/LpApyCell";
@@ -45,7 +46,14 @@ export function YieldSourceMarketsTableDesktop({
   if (status === "loading") {
     return <LoadingState />;
   }
-  console.log("status", status);
+
+  if (status === "error") {
+    return (
+      <div className="flex flex-1 justify-center p-20">
+        <NonIdealState heading="No pools found" />
+      </div>
+    );
+  }
 
   return (
     <table className="daisy-table daisy-table-zebra daisy-table-lg mt-8">
