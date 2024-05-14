@@ -23,6 +23,8 @@ import { Address } from "viem";
 
 const columnHelper = createColumnHelper<YieldSourceMarketsTableRowData>();
 
+const EMPTY_ARRAY: YieldSourceMarketsTableRowData[] = [];
+
 export function YieldSourceMarketsTableMobile({
   protocol,
 }: {
@@ -34,7 +36,7 @@ export function YieldSourceMarketsTableMobile({
 
   const tableInstance = useReactTable({
     columns: getMobileColumns(appConfig),
-    data: rowData || [],
+    data: rowData || EMPTY_ARRAY,
     getCoreRowModel: getCoreRowModel(),
   });
 

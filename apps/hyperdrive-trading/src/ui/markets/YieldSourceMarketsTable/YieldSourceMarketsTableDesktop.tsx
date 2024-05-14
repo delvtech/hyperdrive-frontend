@@ -25,6 +25,8 @@ import { Address } from "viem";
 
 const columnHelper = createColumnHelper<YieldSourceMarketsTableRowData>();
 
+const EMPTY_ARRAY: YieldSourceMarketsTableRowData[] = [];
+
 export function YieldSourceMarketsTableDesktop({
   protocol,
 }: {
@@ -36,13 +38,14 @@ export function YieldSourceMarketsTableDesktop({
 
   const tableInstance = useReactTable({
     columns: getColumns(appConfig),
-    data: rowData || [],
+    data: rowData || EMPTY_ARRAY,
     getCoreRowModel: getCoreRowModel(),
   });
 
   if (status === "loading") {
     return <LoadingState />;
   }
+  console.log("status", status);
 
   return (
     <table className="daisy-table daisy-table-zebra daisy-table-lg mt-8">
