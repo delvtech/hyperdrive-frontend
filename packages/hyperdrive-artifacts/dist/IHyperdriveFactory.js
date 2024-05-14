@@ -315,6 +315,19 @@ export const IHyperdriveFactory = {
                 {
                     "indexed": true,
                     "internalType": "address",
+                    "name": "deployerCoordinatorManager",
+                    "type": "address"
+                }
+            ],
+            "name": "DeployerCoordinatorManagerUpdated",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": true,
+                    "internalType": "address",
                     "name": "deployerCoordinator",
                     "type": "address"
                 }

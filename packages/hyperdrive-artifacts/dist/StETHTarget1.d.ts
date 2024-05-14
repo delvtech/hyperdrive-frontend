@@ -160,12 +160,12 @@ export declare const StETHTarget1: {
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
@@ -245,12 +245,12 @@ export declare const StETHTarget1: {
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
@@ -290,12 +290,12 @@ export declare const StETHTarget1: {
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
@@ -325,8 +325,18 @@ export declare const StETHTarget1: {
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "fees";
+            readonly name: "amount";
             readonly type: "uint256";
+        }, {
+            readonly indexed: false;
+            readonly internalType: "uint256";
+            readonly name: "vaultSharePrice";
+            readonly type: "uint256";
+        }, {
+            readonly indexed: false;
+            readonly internalType: "bool";
+            readonly name: "asBase";
+            readonly type: "bool";
         }];
         readonly name: "CollectGovernanceFee";
         readonly type: "event";
@@ -400,12 +410,12 @@ export declare const StETHTarget1: {
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
@@ -440,12 +450,12 @@ export declare const StETHTarget1: {
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
@@ -480,12 +490,12 @@ export declare const StETHTarget1: {
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
@@ -550,12 +560,12 @@ export declare const StETHTarget1: {
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
@@ -585,12 +595,12 @@ export declare const StETHTarget1: {
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "baseAmount";
+            readonly name: "amount";
             readonly type: "uint256";
         }, {
             readonly indexed: false;
             readonly internalType: "uint256";
-            readonly name: "vaultShareAmount";
+            readonly name: "vaultSharePrice";
             readonly type: "uint256";
         }, {
             readonly indexed: false;

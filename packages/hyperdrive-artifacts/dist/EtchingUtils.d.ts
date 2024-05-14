@@ -332,7 +332,7 @@ export declare const EtchingUtils: {
             readonly name: "";
             readonly type: "bool";
         }];
-        readonly stateMutability: "nonpayable";
+        readonly stateMutability: "view";
         readonly type: "function";
     }, {
         readonly inputs: readonly [];
@@ -370,6 +370,25 @@ export declare const EtchingUtils: {
             readonly internalType: "address[]";
             readonly name: "targetedContracts_";
             readonly type: "address[]";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [];
+        readonly name: "targetInterfaces";
+        readonly outputs: readonly [{
+            readonly components: readonly [{
+                readonly internalType: "address";
+                readonly name: "addr";
+                readonly type: "address";
+            }, {
+                readonly internalType: "string[]";
+                readonly name: "artifacts";
+                readonly type: "string[]";
+            }];
+            readonly internalType: "struct StdInvariant.FuzzInterface[]";
+            readonly name: "targetedInterfaces_";
+            readonly type: "tuple[]";
         }];
         readonly stateMutability: "view";
         readonly type: "function";
@@ -413,6 +432,7 @@ export declare const EtchingUtils: {
         readonly "targetArtifactSelectors()": "66d9a9a0";
         readonly "targetArtifacts()": "85226c81";
         readonly "targetContracts()": "3f7286f4";
+        readonly "targetInterfaces()": "2ade3880";
         readonly "targetSelectors()": "916a17c6";
         readonly "targetSenders()": "3e5e3c23";
     };

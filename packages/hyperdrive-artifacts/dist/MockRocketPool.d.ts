@@ -322,22 +322,12 @@ export declare const MockRocketPool: {
         readonly stateMutability: "view";
         readonly type: "function";
     }, {
-        readonly inputs: readonly [];
-        readonly name: "getBufferedEther";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "pure";
-        readonly type: "function";
-    }, {
         readonly inputs: readonly [{
             readonly internalType: "uint256";
-            readonly name: "_sharesAmount";
+            readonly name: "_rethAmount";
             readonly type: "uint256";
         }];
-        readonly name: "getPooledEthByShares";
+        readonly name: "getEthValue";
         readonly outputs: readonly [{
             readonly internalType: "uint256";
             readonly name: "";
@@ -357,6 +347,20 @@ export declare const MockRocketPool: {
         readonly type: "function";
     }, {
         readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_ethAmount";
+            readonly type: "uint256";
+        }];
+        readonly name: "getRethValue";
+        readonly outputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "";
+            readonly type: "uint256";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
             readonly internalType: "bytes4";
             readonly name: "";
             readonly type: "bytes4";
@@ -366,20 +370,6 @@ export declare const MockRocketPool: {
             readonly internalType: "bytes32";
             readonly name: "";
             readonly type: "bytes32";
-        }];
-        readonly stateMutability: "view";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "_ethAmount";
-            readonly type: "uint256";
-        }];
-        readonly name: "getSharesByPooledEth";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
         }];
         readonly stateMutability: "view";
         readonly type: "function";
@@ -448,6 +438,20 @@ export declare const MockRocketPool: {
     }, {
         readonly inputs: readonly [];
         readonly name: "isCompetitionMode";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "isUnrestricted";
         readonly outputs: readonly [{
             readonly internalType: "bool";
             readonly name: "";
@@ -569,6 +573,16 @@ export declare const MockRocketPool: {
         readonly type: "function";
     }, {
         readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_maxMintAmount";
+            readonly type: "uint256";
+        }];
+        readonly name: "setMaxMintAmount";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
             readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
@@ -626,6 +640,20 @@ export declare const MockRocketPool: {
     }, {
         readonly inputs: readonly [{
             readonly internalType: "address";
+            readonly name: "_target";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "_status";
+            readonly type: "bool";
+        }];
+        readonly name: "setUnrestrictedMintStatus";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
             readonly name: "user";
             readonly type: "address";
         }, {
@@ -640,20 +668,6 @@ export declare const MockRocketPool: {
         readonly name: "setUserRole";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
-        readonly type: "function";
-    }, {
-        readonly inputs: readonly [{
-            readonly internalType: "address";
-            readonly name: "_account";
-            readonly type: "address";
-        }];
-        readonly name: "sharesOf";
-        readonly outputs: readonly [{
-            readonly internalType: "uint256";
-            readonly name: "";
-            readonly type: "uint256";
-        }];
-        readonly stateMutability: "view";
         readonly type: "function";
     }, {
         readonly inputs: readonly [{
@@ -793,17 +807,17 @@ export declare const MockRocketPool: {
         readonly "decimals()": "313ce567";
         readonly "doesRoleHaveCapability(uint8,bytes4)": "e688747b";
         readonly "doesUserHaveRole(address,uint8)": "ea7ca276";
-        readonly "getBufferedEther()": "47b714e0";
-        readonly "getPooledEthByShares(uint256)": "7a28fb88";
+        readonly "getEthValue(uint256)": "8b32fa23";
         readonly "getRate()": "679aefce";
+        readonly "getRethValue(uint256)": "4346f03e";
         readonly "getRolesWithCapability(bytes4)": "ed0d0efb";
-        readonly "getSharesByPooledEth(uint256)": "19208451";
         readonly "getTargetCustomAuthority(address)": "c53a3985";
         readonly "getTotalPooledEther()": "37cfdaca";
         readonly "getTotalShares()": "d5002f2e";
         readonly "getUserRoles(address)": "06a36aee";
         readonly "isCapabilityPublic(bytes4)": "0bade8a4";
         readonly "isCompetitionMode()": "7a8c63b5";
+        readonly "isUnrestricted(address)": "aed30777";
         readonly "maxMintAmount()": "239c70ae";
         readonly "mint(address,uint256)": "40c10f19";
         readonly "mint(uint256)": "a0712d68";
@@ -812,12 +826,13 @@ export declare const MockRocketPool: {
         readonly "owner()": "8da5cb5b";
         readonly "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": "d505accf";
         readonly "setAuthority(address)": "7a9e5e4b";
+        readonly "setMaxMintAmount(uint256)": "088a4ed0";
         readonly "setPublicCapability(bytes4,bool)": "4b5159da";
         readonly "setRate(uint256)": "34fcf437";
         readonly "setRoleCapability(uint8,bytes4,bool)": "0ea9b75b";
         readonly "setTargetCustomAuthority(address,address)": "728b952b";
+        readonly "setUnrestrictedMintStatus(address,bool)": "05f05a94";
         readonly "setUserRole(address,uint8,bool)": "67aff484";
-        readonly "sharesOf(address)": "f5eb42dc";
         readonly "submit(address)": "a1903eab";
         readonly "symbol()": "95d89b41";
         readonly "totalSupply()": "18160ddd";

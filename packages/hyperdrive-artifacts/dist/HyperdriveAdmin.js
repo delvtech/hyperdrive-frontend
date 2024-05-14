@@ -23,13 +23,13 @@ export const HyperdriveAdmin = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256"
                 },
                 {
@@ -128,13 +128,13 @@ export const HyperdriveAdmin = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256"
                 },
                 {
@@ -183,13 +183,13 @@ export const HyperdriveAdmin = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256"
                 },
                 {
@@ -226,8 +226,20 @@ export const HyperdriveAdmin = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "fees",
+                    "name": "amount",
                     "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "vaultSharePrice",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bool",
+                    "name": "asBase",
+                    "type": "bool"
                 }
             ],
             "name": "CollectGovernanceFee",
@@ -320,13 +332,13 @@ export const HyperdriveAdmin = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256"
                 },
                 {
@@ -369,13 +381,13 @@ export const HyperdriveAdmin = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256"
                 },
                 {
@@ -418,13 +430,13 @@ export const HyperdriveAdmin = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256"
                 },
                 {
@@ -505,13 +517,13 @@ export const HyperdriveAdmin = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256"
                 },
                 {
@@ -548,13 +560,13 @@ export const HyperdriveAdmin = {
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "baseAmount",
+                    "name": "amount",
                     "type": "uint256"
                 },
                 {
                     "indexed": false,
                     "internalType": "uint256",
-                    "name": "vaultShareAmount",
+                    "name": "vaultSharePrice",
                     "type": "uint256"
                 },
                 {

@@ -249,6 +249,16 @@ export declare const IHyperdriveFactory: {
         readonly inputs: readonly [{
             readonly indexed: true;
             readonly internalType: "address";
+            readonly name: "deployerCoordinatorManager";
+            readonly type: "address";
+        }];
+        readonly name: "DeployerCoordinatorManagerUpdated";
+        readonly type: "event";
+    }, {
+        readonly anonymous: false;
+        readonly inputs: readonly [{
+            readonly indexed: true;
+            readonly internalType: "address";
             readonly name: "deployerCoordinator";
             readonly type: "address";
         }];
