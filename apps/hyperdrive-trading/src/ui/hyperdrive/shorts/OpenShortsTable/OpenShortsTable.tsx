@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { OpenShort } from "@delvtech/hyperdrive-viem";
+import { OpenShort } from "@delvtech/hyperdrive-js-core";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
@@ -46,18 +46,17 @@ export function OpenShortsTable({
     );
   }
 
-  if (marketState?.isPaused) {
-    return (
-      <div className="my-28">
-        <NonIdealState
-          heading="Market Paused"
-          text="This market is currently paused. You cannot open new positions but you may close existing ones."
-        />
-      </div>
-    );
-  }
-
   if (!openShorts?.length && openShortsStatus === "success") {
+    if (marketState?.isPaused) {
+      return (
+        <div className="my-28">
+          <NonIdealState
+            heading="Market Paused"
+            text="This market is currently paused. You cannot open new positions but you may close existing ones."
+          />
+        </div>
+      );
+    }
     return (
       <div className="my-28">
         <NonIdealState

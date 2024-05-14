@@ -1,4 +1,4 @@
-import { Long } from "@delvtech/hyperdrive-viem";
+import { Long } from "@delvtech/hyperdrive-js-core";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 import {
   AppConfig,
@@ -80,17 +80,18 @@ export function OpenLongsTableDesktop({
       />
     );
   }
-  if (marketState?.isPaused) {
-    return (
-      <div className="my-28">
-        <NonIdealState
-          heading="Market Paused"
-          text="This market is currently paused. You cannot open new positions but you may close existing ones."
-        />
-      </div>
-    );
-  }
+
   if (!openLongs?.length && openLongsStatus === "success") {
+    if (marketState?.isPaused) {
+      return (
+        <div className="my-28">
+          <NonIdealState
+            heading="Market Paused"
+            text="This market is currently paused. You cannot open new positions but you may close existing ones."
+          />
+        </div>
+      );
+    }
     return (
       <div className="my-28">
         <NonIdealState
