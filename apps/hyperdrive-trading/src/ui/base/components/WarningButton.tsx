@@ -14,7 +14,7 @@ export function WarningButton({
     >
       <button
         disabled
-        className="disabled daisy-btn daisy-btn-circle daisy-btn-warning flex w-auto px-4 disabled:bg-warning disabled:text-base-100 disabled:opacity-30"
+        className="disabled daisy-btn daisy-btn-circle daisy-btn-warning flex w-auto min-w-40 px-4 disabled:bg-warning disabled:text-base-100 disabled:opacity-30"
       >
         {icon}
         {label}

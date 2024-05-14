@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-key */
-import { OpenShort } from "@delvtech/hyperdrive-js-core";
+import { OpenShort } from "@delvtech/hyperdrive-viem";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";

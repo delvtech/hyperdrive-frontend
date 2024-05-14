@@ -24,6 +24,7 @@ import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { Pagination } from "src/ui/base/components/Pagination";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { MaturesOnCell } from "src/ui/hyperdrive/MaturesOnCell/MaturesOnCell";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { CloseLongModalButton } from "src/ui/hyperdrive/longs/CloseLongModalButton/CloseLongModalButton";
 import { OpenLongModalButton } from "src/ui/hyperdrive/longs/OpenLongModalButton/OpenLongModalButton";
 import { CurrentValueCell } from "src/ui/hyperdrive/longs/OpenLongsTable/CurrentValueCell";
@@ -37,6 +38,7 @@ export function OpenLongsTableMobile({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
+  const { marketState } = useMarketState(hyperdrive.address);
   const appConfig = useAppConfig();
   const { openLongs, openLongsStatus } = useOpenLongs({
     account,
@@ -78,6 +80,16 @@ export function OpenLongsTableMobile({
     );
   }
   if (!openLongs?.length && openLongsStatus === "success") {
+    if (marketState?.isPaused) {
+      return (
+        <div className="my-28">
+          <NonIdealState
+            heading="Market Paused"
+            text="This market is currently paused. You cannot open new positions but you may close existing ones."
+          />
+        </div>
+      );
+    }
     return (
       <div className="my-28">
         <NonIdealState
