@@ -80,7 +80,7 @@ export function RevokeAllowanceModalButton({
             </button>
             <div className="flex flex-col items-start">
               <h5 className="mb-2 font-bold">Revoke {token.symbol}</h5>
-              <p className="flex max-w-[250px] text-left text-sm text-gray-400">
+              <p className="flex max-w-[250px] text-left text-sm text-neutral-content">
                 Revoke {token.symbol} allowance for this account
               </p>
             </div>

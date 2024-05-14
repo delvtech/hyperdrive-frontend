@@ -50,7 +50,7 @@ export function YieldSourceMarketsTable({
         {tableInstance.getHeaderGroups().map((headerGroup) => (
           <tr key={headerGroup.id}>
             {headerGroup.headers.map((header) => (
-              <th className="font-normal text-gray-400" key={header.id}>
+              <th className="font-normal text-neutral-content" key={header.id}>
                 {header.isPlaceholder
                   ? null
                   : flexRender(
