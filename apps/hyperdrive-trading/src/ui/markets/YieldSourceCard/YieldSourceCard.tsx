@@ -57,7 +57,7 @@ export function YieldSourceCard({
   return (
     <Well transparent interactive block={isSmallScreen}>
       <div className="flex flex-col gap-12 md:w-[700px] md:gap-2">
-        <div className="flex flex-col justify-between gap-8 sm:flex-row md:p-4 ">
+        <div className="flex flex-col justify-between gap-2 sm:flex-row sm:gap-8 md:p-4">
           {/* Card header */}
           <div className="flex flex-col items-center gap-2 sm:flex-row sm:gap-5">
             <div>
@@ -84,7 +84,7 @@ export function YieldSourceCard({
           </div>
 
           {/* Deposit assets */}
-          <div className="flex flex-col items-center justify-center gap-2 text-neutral-content ">
+          <div className="flex items-center justify-center gap-2 text-neutral-content sm:flex-col">
             <span>Deposit assets</span>
             <div className="daisy-avatar-group inline-flex justify-center -space-x-6 rtl:space-x-reverse">
               {isBaseTokenDepositEnabled ? (
