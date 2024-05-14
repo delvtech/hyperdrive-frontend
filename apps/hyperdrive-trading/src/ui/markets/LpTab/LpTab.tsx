@@ -41,7 +41,7 @@ export function LpTab({
     <MarketDetailsTab
       positions={
         <div className="flex flex-col items-center">
-          <div className="flex w-full items-center justify-between p-8">
+          <div className="flex w-full flex-col justify-between gap-8 p-8 lg:flex-row lg:items-center lg:gap-0">
             <h5 className="font-medium">LP Position</h5>
             <div className="flex items-center gap-4">
               {(lpShares && lpSharesStatus === "success") ||
