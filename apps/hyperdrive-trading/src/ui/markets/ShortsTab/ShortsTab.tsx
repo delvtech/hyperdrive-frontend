@@ -1,8 +1,11 @@
+import { PauseCircleIcon } from "@heroicons/react/16/solid";
 import { findBaseToken, HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import Skeleton from "react-loading-skeleton";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
+import { WarningButton } from "src/ui/base/components/WarningButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { ClosedShortsTable } from "src/ui/hyperdrive/shorts/ClosedShortsTable/ClosedShortsTable";
 import { useOpenShorts } from "src/ui/hyperdrive/shorts/hooks/useOpenShorts";
 import { useTotalShortsValue } from "src/ui/hyperdrive/shorts/hooks/useTotalShortsValue";
@@ -20,6 +23,7 @@ export function ShortsTab({
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
   const { address: account } = useAccount();
   const appConfig = useAppConfig();
+  const { marketState } = useMarketState(hyperdrive.address);
   const { openShorts } = useOpenShorts({
     account,
     hyperdriveAddress: hyperdrive.address,
@@ -60,10 +64,18 @@ export function ShortsTab({
               )}
             </div>
             <div className="flex items-center gap-4">
-              {account && openShorts?.length ? (
+              {account && openShorts?.length && !marketState?.isPaused ? (
                 <OpenShortModalButton
                   modalId="open-short"
                   hyperdrive={hyperdrive}
+                />
+              ) : null}
+
+              {marketState?.isPaused ? (
+                <WarningButton
+                  label="Market Paused"
+                  icon={<PauseCircleIcon width={16} />}
+                  tooltip="This market is currently paused. You cannot open new positions but you may close existing ones."
                 />
               ) : null}
               <OpenClosedFilter />
