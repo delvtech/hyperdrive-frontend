@@ -30,6 +30,11 @@ export function useIsTailwindLargeScreen(): boolean {
   return isXl;
 }
 
+export function useIsTailwindLessThanSm(): boolean {
+  const isLessThanSm = useMedia(`(max-width: ${SMALL_BREAKPOINT}px)`);
+  return isLessThanSm;
+}
+
 function useIsTailwindSm(): boolean {
   const isLessThanMd = useMedia(`(max-width: ${MEDIUM_BREAKPOINT}px)`);
   return isLessThanMd;

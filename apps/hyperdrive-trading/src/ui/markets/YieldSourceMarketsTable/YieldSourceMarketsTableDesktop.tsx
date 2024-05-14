@@ -25,7 +25,7 @@ import { Address } from "viem";
 
 const columnHelper = createColumnHelper<YieldSourceMarketsTableRowData>();
 
-export function YieldSourceMarketsTable({
+export function YieldSourceMarketsTableDesktop({
   protocol,
 }: {
   protocol: Protocol;
