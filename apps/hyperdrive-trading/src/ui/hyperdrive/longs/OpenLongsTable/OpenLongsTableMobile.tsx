@@ -111,7 +111,7 @@ export function OpenLongsTableMobile({
             <tr key={headerGroup.id}>
               {headerGroup.headers.map((header) => (
                 <th
-                  className="sticky z-10 font-normal text-gray-400"
+                  className="sticky z-10 font-normal text-neutral-content"
                   key={header.id}
                 >
                   <div

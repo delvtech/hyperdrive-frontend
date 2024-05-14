@@ -43,7 +43,7 @@ export function ApproveTokenChoices({
         <div className="flex items-center justify-between">
           <div className="flex flex-col items-start">
             <h5 className="mb-2 font-bold">Approve {token.symbol}</h5>
-            <p className="flex text-left text-sm text-gray-400">
+            <p className="flex text-left text-sm text-neutral-content">
               Approve this market to spend your {token.symbol}
             </p>
           </div>
