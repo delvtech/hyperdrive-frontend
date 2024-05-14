@@ -427,13 +427,21 @@ export class ReadHyperdrive extends ReadModel {
   > {
     const openLongEvents = await this.contract.getEvents("OpenLong", options);
     const closeLongEvents = await this.contract.getEvents("CloseLong", options);
+    const decimals = await this.getDecimals();
     return [...openLongEvents, ...closeLongEvents]
       .map(({ args, eventName, blockNumber, transactionHash }) => {
+        const baseAmount = args.asBase
+          ? args.amount
+          : convertSharesToBase({
+              sharesAmount: args.amount,
+              vaultSharePrice: args.vaultSharePrice,
+              decimals,
+            });
         return {
           trader: args.trader,
           assetId: args.assetId,
           bondAmount: args.bondAmount,
-          baseAmount: args.baseAmount,
+          baseAmount,
           eventName,
           blockNumber,
           transactionHash,
@@ -461,16 +469,26 @@ export class ReadHyperdrive extends ReadModel {
       "CloseShort",
       options,
     );
+    const decimals = await this.getDecimals();
     return [...openShortEvents, ...closeShortEvents]
-      .map(({ args, eventName, blockNumber, transactionHash }) => ({
-        trader: args.trader,
-        assetId: args.assetId,
-        bondAmount: args.bondAmount,
-        baseAmount: args.baseAmount,
-        eventName,
-        blockNumber,
-        transactionHash,
-      }))
+      .map(({ args, eventName, blockNumber, transactionHash }) => {
+        const baseAmount = args.asBase
+          ? args.amount
+          : convertSharesToBase({
+              sharesAmount: args.amount,
+              vaultSharePrice: args.vaultSharePrice,
+              decimals,
+            });
+        return {
+          trader: args.trader,
+          assetId: args.assetId,
+          bondAmount: args.bondAmount,
+          baseAmount,
+          eventName,
+          blockNumber,
+          transactionHash,
+        };
+      })
       .sort((a, b) => Number(a.blockNumber) - Number(b.blockNumber));
   }
 
@@ -581,9 +599,11 @@ export class ReadHyperdrive extends ReadModel {
   private _calcOpenLongs({
     openLongEvents,
     closeLongEvents,
+    decimals,
   }: {
     openLongEvents: Event<HyperdriveAbi, "OpenLong">[];
     closeLongEvents: Event<HyperdriveAbi, "CloseLong">[];
+    decimals: number;
   }): Long[] {
     // Put open and long events in block order. We spread openLongEvents first
     // since you have to open a long before you can close one.
@@ -603,10 +623,18 @@ export class ReadHyperdrive extends ReadModel {
         bondAmount: 0n,
       };
 
+      const baseAmount = event.args.asBase
+        ? event.args.amount
+        : convertSharesToBase({
+            sharesAmount: event.args.amount,
+            vaultSharePrice: event.args.vaultSharePrice,
+            decimals,
+          });
+
       if (event.eventName === "OpenLong") {
         const updatedLong: Long = {
           ...long,
-          baseAmountPaid: long.baseAmountPaid + event.args.baseAmount,
+          baseAmountPaid: long.baseAmountPaid + baseAmount,
           bondAmount: long.bondAmount + event.args.bondAmount,
         };
         openLongs[assetId] = updatedLong;
@@ -624,7 +652,7 @@ export class ReadHyperdrive extends ReadModel {
         // they received back from the running total
         const updatedLong: Long = {
           ...long,
-          baseAmountPaid: long.baseAmountPaid - event.args.baseAmount,
+          baseAmountPaid: long.baseAmountPaid - baseAmount,
           bondAmount: long.bondAmount - event.args.bondAmount,
         };
         openLongs[assetId] = updatedLong;
@@ -658,9 +686,12 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
+    const decimals = await this.getDecimals();
+
     return this._calcOpenLongs({
       openLongEvents,
       closeLongEvents,
+      decimals,
     });
   }
 
@@ -743,13 +774,22 @@ export class ReadHyperdrive extends ReadModel {
           fixedRatePaid: 0n,
         };
 
+        const decimals = await this.getDecimals();
+        const baseAmount = event.args.asBase
+          ? event.args.amount
+          : convertSharesToBase({
+              sharesAmount: event.args.amount,
+              vaultSharePrice: event.args.vaultSharePrice,
+              decimals,
+            });
+
         const { eventName } = event;
         switch (eventName) {
           // When you open a short, we add up how much you've paid and your new
           // total bond amount, then update the average price and fixed rate
           // paid
           case "OpenShort":
-            short.baseAmountPaid += event.args.baseAmount;
+            short.baseAmountPaid += baseAmount;
             short.bondAmount += event.args.bondAmount;
             short.baseProceeds += event.args.baseProceeds;
             short.fixedRatePaid = calculateAprFromPrice({
@@ -770,7 +810,7 @@ export class ReadHyperdrive extends ReadModel {
             }
             // otherwise just subtract the amount of bonds they closed and baseAmount
             // they received back from the running total
-            short.baseAmountPaid -= event.args.baseAmount;
+            short.baseAmountPaid -= baseAmount;
             short.bondAmount -= event.args.bondAmount;
             short.baseProceeds -= event.args.basePayment;
             short.fixedRatePaid = calculateAprFromPrice({
@@ -808,21 +848,23 @@ export class ReadHyperdrive extends ReadModel {
       toBlock,
     });
 
+    const decimals = await this.getDecimals();
     const closedLongsList: ClosedLong[] = await Promise.all(
       closedLongs.map(async (event) => {
         const assetId = event.args.assetId;
 
-        const { vaultShareAmount, asBase, baseAmount } = event.args;
-        const finalBaseAmount = calculateBaseAmount({
-          vaultShareAmount,
-          asBase,
-          baseAmount,
-        });
+        const baseAmount = event.args.asBase
+          ? event.args.amount
+          : convertSharesToBase({
+              sharesAmount: event.args.amount,
+              vaultSharePrice: event.args.vaultSharePrice,
+              decimals,
+            });
 
         return {
           assetId,
           bondAmount: event.args.bondAmount,
-          baseAmount: finalBaseAmount,
+          baseAmount,
           baseAmountPaid: 0n, // TODO: Remove this field, this is copy/paste from @hyperdrive/queries
           maturity: event.args.maturityTime,
           closedTimestamp: (
@@ -853,6 +895,7 @@ export class ReadHyperdrive extends ReadModel {
     });
 
     const { checkpointDuration } = await this.getPoolConfig(options);
+    const decimals = await this.getDecimals();
     const closedShortsList: ClosedShort[] = await Promise.all(
       closedShorts.map(async (event) => {
         const { assetId, maturityTime } = event.args;
@@ -860,18 +903,19 @@ export class ReadHyperdrive extends ReadModel {
           blockNumber: event.blockNumber,
         });
 
-        const { vaultShareAmount, asBase, baseAmount } = event.args;
-        const finalBaseAmount = calculateBaseAmount({
-          vaultShareAmount,
-          asBase,
-          baseAmount,
-        });
+        const baseAmount = event.args.asBase
+          ? event.args.amount
+          : convertSharesToBase({
+              sharesAmount: event.args.amount,
+              vaultSharePrice: event.args.vaultSharePrice,
+              decimals,
+            });
 
         return {
           hyperdriveAddress: this.contract.address,
           assetId,
           bondAmount: event.args.bondAmount,
-          baseAmountReceived: finalBaseAmount,
+          baseAmountReceived: baseAmount,
           maturity: maturityTime,
           closedTimestamp: timestamp,
           checkpointId: getCheckpointId(timestamp, checkpointDuration),
@@ -1044,10 +1088,12 @@ export class ReadHyperdrive extends ReadModel {
       },
     );
 
-    const { lpShareBalance, baseAmountPaid } = this._calcOpenLpPosition(
+    const decimals = await this.getDecimals();
+    const { lpShareBalance, baseAmountPaid } = this._calcOpenLpPosition({
       addLiquidityEvents,
       removeLiquidityEvents,
-    );
+      decimals,
+    });
 
     let baseValue = 0n;
     let sharesValue = 0n;
@@ -1099,18 +1145,33 @@ export class ReadHyperdrive extends ReadModel {
    * Combine the adds and removes in order of block number to get the full
    * transaction history in the order the user executed them
    */
-  private _calcOpenLpPosition(
+  private _calcOpenLpPosition({
+    addLiquidityEvents,
+    removeLiquidityEvents,
+    decimals,
+  }: {
+    decimals: number;
     addLiquidityEvents: {
       eventName: "AddLiquidity";
       blockNumber?: bigint;
-      args: { lpAmount: bigint; baseAmount: bigint };
-    }[],
+      args: {
+        lpAmount: bigint;
+        amount: bigint;
+        vaultSharePrice: bigint;
+        asBase: boolean;
+      };
+    }[];
     removeLiquidityEvents: {
       eventName: "RemoveLiquidity";
       blockNumber?: bigint;
-      args: { lpAmount: bigint; baseAmount: bigint };
-    }[],
-  ) {
+      args: {
+        lpAmount: bigint;
+        amount: bigint;
+        vaultSharePrice: bigint;
+        asBase: boolean;
+      };
+    }[];
+  }) {
     const combinedEventsInOrder = [
       ...addLiquidityEvents,
       ...removeLiquidityEvents,
@@ -1119,14 +1180,22 @@ export class ReadHyperdrive extends ReadModel {
     let baseAmountPaid = 0n;
     let lpShareBalance = 0n;
     combinedEventsInOrder.forEach((event) => {
+      const baseAmount = event.args.asBase
+        ? event.args.amount
+        : convertSharesToBase({
+            sharesAmount: event.args.amount,
+            vaultSharePrice: event.args.vaultSharePrice,
+            decimals,
+          });
+
       if (event.eventName === "AddLiquidity") {
         lpShareBalance = dnum.add(
-          [lpShareBalance, 18],
-          [event.args.lpAmount, 18],
+          [lpShareBalance, decimals],
+          [event.args.lpAmount, decimals],
         )[0];
         baseAmountPaid = dnum.add(
-          [baseAmountPaid, 18],
-          [event.args.baseAmount, 18],
+          [baseAmountPaid, decimals],
+          [baseAmount, decimals],
         )[0];
       }
 
@@ -1141,12 +1210,12 @@ export class ReadHyperdrive extends ReadModel {
         // otherwise just subtract the amount of lp shares they closed and baseAmount
         // they received back from the running total
         lpShareBalance = dnum.subtract(
-          [lpShareBalance, 18],
-          [event.args.lpAmount, 18],
+          [lpShareBalance, decimals],
+          [event.args.lpAmount, decimals],
         )[0];
         baseAmountPaid = dnum.subtract(
-          [baseAmountPaid, 18],
-          [event.args.baseAmount, 18],
+          [baseAmountPaid, decimals],
+          [baseAmount, decimals],
         )[0];
       }
     });
@@ -1171,10 +1240,24 @@ export class ReadHyperdrive extends ReadModel {
         toBlock: getBlockFromReadOptions(options),
       },
     );
+    const decimals = await this.getDecimals();
     return Promise.all(
       removeLiquidityEvents.map(async ({ blockNumber, args }) => {
-        const { lpAmount, withdrawalShareAmount, baseAmount, lpSharePrice } =
-          args;
+        const {
+          lpAmount,
+          withdrawalShareAmount,
+          asBase,
+          amount,
+          lpSharePrice,
+        } = args;
+
+        const baseAmount = asBase
+          ? amount
+          : convertSharesToBase({
+              sharesAmount: args.amount,
+              vaultSharePrice: args.vaultSharePrice,
+              decimals,
+            });
 
         return {
           lpAmount,
@@ -1226,20 +1309,22 @@ export class ReadHyperdrive extends ReadModel {
       },
     );
 
+    const decimals = await this.getDecimals();
     return Promise.all(
       redeemedWithdrawalShareEvents.map(async ({ blockNumber, args }) => {
-        const { withdrawalShareAmount, baseAmount, asBase, vaultShareAmount } =
-          args;
+        const { withdrawalShareAmount, amount, asBase, vaultSharePrice } = args;
+        const baseAmount = asBase
+          ? args.amount
+          : convertSharesToBase({
+              sharesAmount: amount,
+              vaultSharePrice,
+              decimals,
+            });
 
-        const finalBaseAmount = calculateBaseAmount({
-          vaultShareAmount,
-          asBase,
-          baseAmount,
-        });
         return {
           hyperdriveAddress: this.contract.address,
           withdrawalShareAmount,
-          baseAmount: finalBaseAmount,
+          baseAmount,
           redeemedTimestamp: (
             await getBlockOrThrow(this.network, { blockNumber })
           ).timestamp,
