@@ -752,81 +752,77 @@ export class ReadHyperdrive extends ReadModel {
 
     const openShorts: Record<string, OpenShort> = {};
 
-    await Promise.all(
-      orderedShortEvents.map(async (event) => {
-        const assetId = event.args.assetId.toString();
-        const { timestamp } = await getBlockOrThrow(this.network, {
-          blockNumber: event.blockNumber,
-        });
+    for (const event of orderedShortEvents) {
+      const assetId = event.args.assetId.toString();
+      const { timestamp } = await getBlockOrThrow(this.network, {
+        blockNumber: event.blockNumber,
+      });
 
-        // Create a default empty short that we will update based on the events
-        const short: OpenShort = openShorts[assetId] || {
-          hyperdriveAddress,
-          assetId: event.args.assetId,
-          maturity: event.args.maturityTime,
-          checkpointId: getCheckpointId(timestamp, checkpointDuration),
-          // The openedTimestamp will always reflect the latest short, if you open
-          // twice in the same checkpoint
-          openedTimestamp: timestamp,
-          baseAmountPaid: 0n,
-          bondAmount: 0n,
-          baseProceeds: 0n,
-          fixedRatePaid: 0n,
-        };
+      // Create a default empty short that we will update based on the events
+      // const short: OpenShort = openShorts[assetId] || {
+      openShorts[assetId] = openShorts[assetId] || {
+        hyperdriveAddress,
+        assetId: event.args.assetId,
+        maturity: event.args.maturityTime,
+        checkpointId: getCheckpointId(timestamp, checkpointDuration),
+        // The openedTimestamp will always reflect the latest short, if you open
+        // twice in the same checkpoint
+        openedTimestamp: timestamp,
+        baseAmountPaid: 0n,
+        bondAmount: 0n,
+        baseProceeds: 0n,
+        fixedRatePaid: 0n,
+      };
 
-        const decimals = await this.getDecimals();
-        const baseAmount = event.args.asBase
-          ? event.args.amount
-          : convertSharesToBase({
-              sharesAmount: event.args.amount,
-              vaultSharePrice: event.args.vaultSharePrice,
-              decimals,
-            });
+      const decimals = await this.getDecimals();
+      const baseAmount = event.args.asBase
+        ? event.args.amount
+        : convertSharesToBase({
+            sharesAmount: event.args.amount,
+            vaultSharePrice: event.args.vaultSharePrice,
+            decimals,
+          });
 
-        const { eventName } = event;
-        switch (eventName) {
-          // When you open a short, we add up how much you've paid and your new
-          // total bond amount, then update the average price and fixed rate
-          // paid
-          case "OpenShort":
-            short.baseAmountPaid += baseAmount;
-            short.bondAmount += event.args.bondAmount;
-            short.baseProceeds += event.args.baseProceeds;
-            short.fixedRatePaid = calculateAprFromPrice({
-              positionDuration,
-              baseAmount: short.baseProceeds,
-              bondAmount: short.bondAmount,
-            });
+      const { eventName } = event;
+      switch (eventName) {
+        // When you open a short, we add up how much you've paid and your new
+        // total bond amount, then update the average price and fixed rate
+        // paid
+        case "OpenShort":
+          openShorts[assetId].baseAmountPaid += baseAmount;
+          openShorts[assetId].bondAmount += event.args.bondAmount;
+          openShorts[assetId].baseProceeds += event.args.baseProceeds;
+          openShorts[assetId].fixedRatePaid = calculateAprFromPrice({
+            positionDuration,
+            baseAmount: openShorts[assetId].baseProceeds,
+            bondAmount: openShorts[assetId].bondAmount,
+          });
+          continue;
 
-            openShorts[assetId] = short;
-            return;
-
-          case "CloseShort": {
-            // If a user closes their whole position, we should remove the whole
-            // position since it's basically starting over
-            if (event.args.bondAmount === short.bondAmount) {
-              delete openShorts[assetId];
-              return;
-            }
-            // otherwise just subtract the amount of bonds they closed and baseAmount
-            // they received back from the running total
-            short.baseAmountPaid -= baseAmount;
-            short.bondAmount -= event.args.bondAmount;
-            short.baseProceeds -= event.args.basePayment;
-            short.fixedRatePaid = calculateAprFromPrice({
-              positionDuration,
-              baseAmount: short.baseProceeds,
-              bondAmount: short.bondAmount,
-            });
-            openShorts[assetId] = short;
-            return;
+        case "CloseShort": {
+          // If a user closes their whole position, we should remove the whole
+          // position since it's basically starting over
+          if (event.args.bondAmount === openShorts[assetId].bondAmount) {
+            delete openShorts[assetId];
+            continue;
           }
-
-          default:
-            assertNever(eventName);
+          // otherwise just subtract the amount of bonds they closed and baseAmount
+          // they received back from the running total
+          openShorts[assetId].baseAmountPaid -= baseAmount;
+          openShorts[assetId].bondAmount -= event.args.bondAmount;
+          openShorts[assetId].baseProceeds -= event.args.basePayment;
+          openShorts[assetId].fixedRatePaid = calculateAprFromPrice({
+            positionDuration,
+            baseAmount: openShorts[assetId].baseProceeds,
+            bondAmount: openShorts[assetId].bondAmount,
+          });
+          continue;
         }
-      }),
-    );
+
+        default:
+          assertNever(eventName);
+      }
+    }
 
     return Object.values(openShorts).filter((short) => short.bondAmount);
   }
