@@ -23,7 +23,7 @@ export function PositionCard({
         </div>
         <h4 className="mb-6 font-medium">{title}</h4>
         <p className="text-p2 mb-8 text-neutral-content">{subtitle}</p>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 text-neutral-content">
           {checklist.map((item, idx) => (
             <ChecklistItem key={idx} checked readOnly variant="success">
               {item}
