@@ -46,7 +46,7 @@ export function FAQEntries(): JSX.Element {
                 "daisy-btn-md justify-start text-left text-md hover:opacity-100",
                 {
                   "font-normal opacity-80 ": selectedFAQKey !== key,
-                  "font-medium text-neutral-content": selectedFAQKey === key,
+                  "font-medium": selectedFAQKey === key,
                 },
               )}
             >
@@ -57,8 +57,8 @@ export function FAQEntries(): JSX.Element {
 
         {/* answers */}
         <div className="col-span-2 flex flex-col">
-          <h4 className="mb-4 text-neutral-content">{selectedFAQ?.question}</h4>
-          <div className="text-base-content">{selectedFAQ?.answer}</div>
+          <h4 className="mb-4 ">{selectedFAQ?.question}</h4>
+          <div className="opacity-80">{selectedFAQ?.answer}</div>
         </div>
       </div>
     </div>
