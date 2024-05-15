@@ -1,6 +1,9 @@
+import { findHyperdriveConfig } from "@hyperdrive/appconfig";
 import { useQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
 import { makeQueryKey } from "src/base/makeQueryKey";
+import { convertSharesToBase } from "src/hyperdrive/convertSharesToBase";
+import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { useReadHyperdrive } from "src/ui/hyperdrive/hooks/useReadHyperdrive";
 import { Address, Hash } from "viem";
 export type TransactionData = {
@@ -24,6 +27,11 @@ export function useTransactionData({
   isLoading: boolean;
 } {
   const readHyperdrive = useReadHyperdrive(hyperdriveAddress);
+  const appConfig = useAppConfig();
+  const { decimals } = findHyperdriveConfig({
+    hyperdriveAddress,
+    hyperdrives: appConfig.hyperdrives,
+  });
 
   const { data: longs, status: longEventsStatus } = useQuery({
     queryKey: makeQueryKey("longEvents", { hyperdriveAddress }),
@@ -57,7 +65,13 @@ export function useTransactionData({
           .slice(0, 100)
           .map(({ args, blockNumber, eventName, transactionHash }) => ({
             trader: args.provider,
-            baseAmount: args.baseAmount,
+            baseAmount: args.asBase
+              ? args.amount
+              : convertSharesToBase({
+                  sharesAmount: args.amount,
+                  vaultSharePrice: args.vaultSharePrice,
+                  decimals,
+                }),
             lpSharePrice: args.lpSharePrice,
             eventName,
             blockNumber,
@@ -70,7 +84,13 @@ export function useTransactionData({
           .slice(0, 100)
           .map(({ args, blockNumber, eventName, transactionHash }) => ({
             trader: args.provider,
-            baseAmount: args.baseAmount,
+            baseAmount: args.asBase
+              ? args.amount
+              : convertSharesToBase({
+                  sharesAmount: args.amount,
+                  vaultSharePrice: args.vaultSharePrice,
+                  decimals,
+                }),
             withdrawalShares: args.withdrawalShareAmount,
             lpSharePrice: args.lpSharePrice,
             eventName,
@@ -84,7 +104,13 @@ export function useTransactionData({
           .slice(0, 100)
           .map(({ args, blockNumber, eventName, transactionHash }) => ({
             trader: args.provider,
-            baseAmount: args.baseAmount,
+            baseAmount: args.asBase
+              ? args.amount
+              : convertSharesToBase({
+                  sharesAmount: args.amount,
+                  vaultSharePrice: args.vaultSharePrice,
+                  decimals,
+                }),
             eventName,
             blockNumber,
             transactionHash,
@@ -93,7 +119,7 @@ export function useTransactionData({
     }
 
     return data;
-  }, [longs, lpEvents, shorts]);
+  }, [decimals, longs, lpEvents, shorts]);
 
   return {
     data,
