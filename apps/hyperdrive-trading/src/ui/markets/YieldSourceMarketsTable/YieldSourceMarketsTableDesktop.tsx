@@ -152,7 +152,7 @@ function getColumns(appConfig: AppConfig) {
       cell: ({ getValue }) => {
         const termLength = getValue();
         return (
-          <div key="term" className="flex items-center">
+          <div key="term" className="text-nowrap">
             {convertMillisecondsToDays(Number(termLength * 1000n))} days
           </div>
         );
@@ -226,7 +226,7 @@ function getColumns(appConfig: AppConfig) {
         return (
           <span
             key="liquidity"
-            className="flex flex-row items-center justify-start"
+            className="flex flex-row items-center justify-start text-nowrap"
           >
             {formatCompact({
               value: liquidity,
