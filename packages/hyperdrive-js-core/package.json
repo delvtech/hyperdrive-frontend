@@ -1,6 +1,6 @@
 {
   "name": "@delvtech/hyperdrive-js-core",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "license": "AGPL-3.0",
   "type": "module",
   "scripts": {
@@ -12,16 +12,16 @@
   },
   "peerDependencies": {
     "@delvtech/evm-client": "^0.4.2",
-    "@delvtech/hyperdrive-artifacts": "^0.2.0"
+    "@delvtech/hyperdrive-artifacts": "^0.3.0"
   },
   "dependencies": {
-    "@delvtech/hyperdrive-wasm": "^0.13.0",
+    "@delvtech/hyperdrive-wasm": "^0.14.0",
     "lodash.groupby": "^4.6.0",
     "lodash.mapvalues": "^4.6.0"
   },
   "devDependencies": {
     "@delvtech/evm-client": "^0.4.2",
-    "@delvtech/hyperdrive-artifacts": "^0.2.0",
+    "@delvtech/hyperdrive-artifacts": "^0.3.0",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
     "@hyperdrive/tsconfig": "*",

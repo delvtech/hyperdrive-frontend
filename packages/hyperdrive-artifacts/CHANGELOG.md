@@ -1,5 +1,11 @@
 # @delvtech/hyperdrive-artifacts
 
+## 0.3.0
+
+### Minor Changes
+
+- 95b0406: Upgrade to the latest v1.0.6 smart contracts
+
 ## 0.2.0
 
 ### Minor Changes
