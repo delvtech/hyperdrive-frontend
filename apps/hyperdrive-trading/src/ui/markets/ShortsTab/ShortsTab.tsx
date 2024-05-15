@@ -66,6 +66,7 @@ export function ShortsTab({
                   hyperdrive={hyperdrive}
                 />
               ) : null}
+
               <OpenClosedFilter />
             </div>
           </div>

@@ -3,6 +3,7 @@ import { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { AddLiquidityModalButton } from "src/ui/hyperdrive/lp/AddLiquidityModalButton/AddLiquidityModalButton";
 import { ClosedLpTable } from "src/ui/hyperdrive/lp/ClosedLpTable/ClosedLpTable";
 import { OpenLpSharesCard } from "src/ui/hyperdrive/lp/OpenLpSharesCard/OpenLpSharesCard";
@@ -21,6 +22,7 @@ export function LpTab({
 }): ReactElement {
   const { address: account } = useAccount();
 
+  const { marketState } = useMarketState(hyperdrive.address);
   const activeOpenOrClosedTab = useOpenOrClosedSearchParam();
 
   const { lpShares, lpSharesStatus } = useLpShares({
@@ -37,7 +39,7 @@ export function LpTab({
     <MarketDetailsTab
       positions={
         <div className="flex flex-col items-center">
-          <div className="flex w-full items-center justify-between p-8">
+          <div className="flex w-full flex-col justify-between gap-8 p-8 lg:flex-row lg:items-center lg:gap-0">
             <h5 className="font-medium">LP Position</h5>
             <div className="flex items-center gap-4">
               {(lpShares && lpSharesStatus === "success") ||
@@ -84,6 +86,16 @@ export function LpTab({
                   lpSharesStatus === "success" &&
                   withdrawalSharesStatus === "success"
                 ) {
+                  if (marketState?.isPaused) {
+                    return (
+                      <div className="my-28">
+                        <NonIdealState
+                          heading="Market Paused"
+                          text="This market is currently paused. You cannot open new positions but you may close existing ones."
+                        />
+                      </div>
+                    );
+                  }
                   return (
                     <div className="my-20">
                       <NonIdealState

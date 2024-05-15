@@ -1,7 +1,9 @@
-import { XMarkIcon } from "@heroicons/react/24/solid";
+import { PauseCircleIcon, XMarkIcon } from "@heroicons/react/24/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { Modal } from "src/ui/base/components/Modal/Modal";
+import { WarningButton } from "src/ui/base/components/WarningButton";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenShortForm } from "src/ui/hyperdrive/shorts/OpenShortForm/OpenShortForm";
 
 export interface OpenShortModalButtonProps {
@@ -12,8 +14,19 @@ export function OpenShortModalButton({
   modalId,
   hyperdrive,
 }: OpenShortModalButtonProps): ReactElement {
+  const { marketState } = useMarketState(hyperdrive.address);
   function closeModal() {
     (window as any)[modalId].close();
+  }
+
+  if (marketState?.isPaused) {
+    return (
+      <WarningButton
+        label="Market Paused"
+        icon={<PauseCircleIcon width={16} />}
+        tooltip="This market is currently paused. You cannot open new positions but you may close existing ones."
+      />
+    );
   }
 
   return (
