@@ -21,12 +21,15 @@ export function setupReadHyperdrive() {
     network: network,
   });
 
+  const contract =
+    readHyperdrive.contract as unknown as CachedReadContract<HyperdriveAbi> &
+      ReadContractStub<HyperdriveAbi>;
+
+  contract.stubRead({ functionName: "decimals", value: 18 });
   return {
     // The ReadHyperdrive class doesn't infer that the contract is a Stub
     // so we need to cast it to the correct type.
-    contract:
-      readHyperdrive.contract as unknown as CachedReadContract<HyperdriveAbi> &
-        ReadContractStub<HyperdriveAbi>,
+    contract,
     network,
     readHyperdrive,
   };

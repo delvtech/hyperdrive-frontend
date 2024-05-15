@@ -456,6 +456,20 @@ export declare const MockLido: {
         readonly stateMutability: "view";
         readonly type: "function";
     }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "";
+            readonly type: "address";
+        }];
+        readonly name: "isUnrestricted";
+        readonly outputs: readonly [{
+            readonly internalType: "bool";
+            readonly name: "";
+            readonly type: "bool";
+        }];
+        readonly stateMutability: "view";
+        readonly type: "function";
+    }, {
         readonly inputs: readonly [];
         readonly name: "maxMintAmount";
         readonly outputs: readonly [{
@@ -569,6 +583,16 @@ export declare const MockLido: {
         readonly type: "function";
     }, {
         readonly inputs: readonly [{
+            readonly internalType: "uint256";
+            readonly name: "_maxMintAmount";
+            readonly type: "uint256";
+        }];
+        readonly name: "setMaxMintAmount";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
             readonly internalType: "bytes4";
             readonly name: "functionSig";
             readonly type: "bytes4";
@@ -620,6 +644,20 @@ export declare const MockLido: {
             readonly type: "address";
         }];
         readonly name: "setTargetCustomAuthority";
+        readonly outputs: readonly [];
+        readonly stateMutability: "nonpayable";
+        readonly type: "function";
+    }, {
+        readonly inputs: readonly [{
+            readonly internalType: "address";
+            readonly name: "_target";
+            readonly type: "address";
+        }, {
+            readonly internalType: "bool";
+            readonly name: "_status";
+            readonly type: "bool";
+        }];
+        readonly name: "setUnrestrictedMintStatus";
         readonly outputs: readonly [];
         readonly stateMutability: "nonpayable";
         readonly type: "function";
@@ -804,6 +842,7 @@ export declare const MockLido: {
         readonly "getUserRoles(address)": "06a36aee";
         readonly "isCapabilityPublic(bytes4)": "0bade8a4";
         readonly "isCompetitionMode()": "7a8c63b5";
+        readonly "isUnrestricted(address)": "aed30777";
         readonly "maxMintAmount()": "239c70ae";
         readonly "mint(address,uint256)": "40c10f19";
         readonly "mint(uint256)": "a0712d68";
@@ -812,10 +851,12 @@ export declare const MockLido: {
         readonly "owner()": "8da5cb5b";
         readonly "permit(address,address,uint256,uint256,uint8,bytes32,bytes32)": "d505accf";
         readonly "setAuthority(address)": "7a9e5e4b";
+        readonly "setMaxMintAmount(uint256)": "088a4ed0";
         readonly "setPublicCapability(bytes4,bool)": "4b5159da";
         readonly "setRate(uint256)": "34fcf437";
         readonly "setRoleCapability(uint8,bytes4,bool)": "0ea9b75b";
         readonly "setTargetCustomAuthority(address,address)": "728b952b";
+        readonly "setUnrestrictedMintStatus(address,bool)": "05f05a94";
         readonly "setUserRole(address,uint8,bool)": "67aff484";
         readonly "sharesOf(address)": "f5eb42dc";
         readonly "submit(address)": "a1903eab";
