@@ -6,6 +6,7 @@ import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
+import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { OpenShortModalButton } from "src/ui/hyperdrive/shorts/OpenShortModalButton/OpenShortModalButton";
 import { OpenShortsTableDesktop } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableDesktop";
 import { OpenShortsTableMobile } from "src/ui/hyperdrive/shorts/OpenShortsTable/OpenShortsTableMobile";
@@ -18,7 +19,7 @@ export function OpenShortsTable({
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
   const { address: account } = useAccount();
-
+  const { marketState } = useMarketState(hyperdrive.address);
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const { openShorts, openShortsStatus } = useOpenShorts({
     account,
@@ -46,6 +47,16 @@ export function OpenShortsTable({
   }
 
   if (!openShorts?.length && openShortsStatus === "success") {
+    if (marketState?.isPaused) {
+      return (
+        <div className="my-28">
+          <NonIdealState
+            heading="Market Paused"
+            text="This market is currently paused. You cannot open new positions but you may close existing ones."
+          />
+        </div>
+      );
+    }
     return (
       <div className="my-28">
         <NonIdealState
