@@ -1,10 +1,8 @@
-import { PauseCircleIcon } from "@heroicons/react/16/solid";
 import { HyperdriveConfig } from "@hyperdrive/appconfig";
 import { ReactElement } from "react";
 import { ConnectWalletButton } from "src/ui/base/components/ConnectWallet";
 import LoadingState from "src/ui/base/components/LoadingState";
 import { NonIdealState } from "src/ui/base/components/NonIdealState";
-import { WarningButton } from "src/ui/base/components/WarningButton";
 import { useMarketState } from "src/ui/hyperdrive/hooks/useMarketState";
 import { AddLiquidityModalButton } from "src/ui/hyperdrive/lp/AddLiquidityModalButton/AddLiquidityModalButton";
 import { ClosedLpTable } from "src/ui/hyperdrive/lp/ClosedLpTable/ClosedLpTable";
@@ -46,18 +44,9 @@ export function LpTab({
             <div className="flex items-center gap-4">
               {(lpShares && lpSharesStatus === "success") ||
               (withdrawalShares && withdrawalSharesStatus === "success") ? (
-                !marketState?.isPaused ? (
-                  <AddLiquidityModalButton
-                    modalId="add-lp"
-                    hyperdrive={hyperdrive}
-                  />
-                ) : null
-              ) : null}
-              {marketState?.isPaused ? (
-                <WarningButton
-                  label="Market Paused"
-                  icon={<PauseCircleIcon width={16} />}
-                  tooltip="This market is currently paused. You cannot open new positions but you may close existing ones."
+                <AddLiquidityModalButton
+                  modalId="add-lp"
+                  hyperdrive={hyperdrive}
                 />
               ) : null}
               <OpenClosedFilter />
