@@ -26,6 +26,11 @@ export function usePreviewOpenLong({
 
   const queryEnabled = !!amountIn && !!readHyperdrive;
 
+  console.log("in usePreviewOpenLong", {
+    amountIn,
+    asBase,
+  });
+
   const { data, status } = useQuery({
     queryKey: makeQueryKey("previewOpenLong", {
       hyperdrive: hyperdriveAddress,

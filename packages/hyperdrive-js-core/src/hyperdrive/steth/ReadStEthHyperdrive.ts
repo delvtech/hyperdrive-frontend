@@ -109,17 +109,32 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       });
     }
 
+    // 100 stEth
+    // asBase = false
+
+    // inside steth hyperdrive:
+    //    100 stEth -> .98 Lido Shares
+
     async previewOpenLong({
-      amountIn: _amountIn,
+      amountIn,
       asBase,
       options,
     }: Parameters<ReadHyperdrive["previewOpenLong"]>[0]): ReturnType<
       ReadHyperdrive["previewOpenLong"]
     > {
-      let amountIn = _amountIn;
+      console.log("in ReadStEthHyperdrive.previewOpenLong", {
+        amountIn,
+        asBase,
+        options,
+      });
 
+      // steth tokens as input must be converted to shares
       if (!asBase && !this.isUsingSharesAccounting) {
-        amountIn = await this.convertToShares(amountIn, options);
+        return super.previewOpenLong({
+          amountIn,
+          asBase: true,
+          options,
+        });
       }
 
       return super.previewOpenLong({
@@ -319,11 +334,12 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         ethAmount: stEthAmount,
         options,
       });
+
       // FIXME: Remove and find solution for mainnet
       // This is needed because the conversion done before submitting the
       // transaction to open a position and by the time the position TX is
       // submitted, the share price could have changed.
-      return sharesAmount - (sharesAmount % BigInt(1e16));
+      return sharesAmount - (sharesAmount % BigInt(1e2));
     }
 
     /**

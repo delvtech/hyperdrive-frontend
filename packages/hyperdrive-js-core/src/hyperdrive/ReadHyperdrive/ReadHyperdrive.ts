@@ -1351,6 +1351,12 @@ export class ReadHyperdrive extends ReadModel {
     const poolConfig = await this.getPoolConfig(options);
     const poolInfo = await this.getPoolInfo(options);
 
+    console.log("In ReadHyperdrive.previewOpenLong", {
+      amountIn,
+      asBase,
+      options,
+    });
+
     const { timestamp: blockTimestamp } = await getBlockOrThrow(
       this.network,
       options,
@@ -1362,15 +1368,29 @@ export class ReadHyperdrive extends ReadModel {
 
     const decimals = await this.getDecimals();
 
+    // .98 Lido Shares
+    // asBase = false
+
+    // inside steth hyperdrive:
+    //   .98 LidoShares -> 101 Eth
+
     // calcOpenLong only accepts base, so if the user is depositing shares we
     // need to convert that value to base before we can preview the trade for them
     let depositAmountConvertedToBase = amountIn;
     if (!asBase) {
+      // in a steth market, convert the  steth tokens given into shares, then
+      // convert shares to base
       depositAmountConvertedToBase = convertSharesToBase({
         decimals,
         sharesAmount: amountIn,
         vaultSharePrice: poolInfo.vaultSharePrice,
       });
+      console.log(
+        "depositAmountConvertedToBase",
+        depositAmountConvertedToBase,
+        "using vaultSharePrice of",
+        poolInfo.vaultSharePrice,
+      );
     }
 
     const spotPriceAfterOpen = BigInt(
@@ -1499,10 +1519,6 @@ export class ReadHyperdrive extends ReadModel {
         convertBigIntsToStrings(poolInfo),
         convertBigIntsToStrings(poolConfig),
         amountOfBondsToShort.toString(),
-        hyperwasm.spotPrice(
-          convertBigIntsToStrings(poolInfo),
-          convertBigIntsToStrings(poolConfig),
-        ),
       ),
     );
     let curveFee = curveFeeInBase;
