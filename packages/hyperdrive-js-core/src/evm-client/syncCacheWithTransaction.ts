@@ -13,23 +13,25 @@ import { Abi } from "abitype";
  * This decorator accepts an argument of cache keys to clear. By default it will
  * clear the entire cache.
  *
- * Example:
- *
+ * @example
+ * ```ts
  * class ReadWriteFooBar extends CachedReadWriteContract {
  *
  *   // Listen for tx complete and clear the entire cache
  *   @syncCacheWithTransaction()
  *   setFoo() {
- *    return this.contract.write("setFoo", []);
+ *     return this.contract.write("setFoo", []);
  *   }
  *
  *   // Listen for tx complete and clear a partial or specific cache entry
  *   @syncCacheWithTransaction({ cacheEntries: [{ functionName: "getBar" }]})
  *   setBar() {
- *    return this.contract.write("setBar", []);
+ *     return this.contract.write("setBar", []);
  *   }
  * }
+ * ```
  *
+ * @internal
  */
 export function syncCacheWithTransaction<TAbi extends Abi>(options?: {
   cacheEntries?: {
