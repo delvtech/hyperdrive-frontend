@@ -6849,10 +6849,10 @@ d3-format@^3.1.0:
   resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-3.1.0.tgz#9260e23a28ea5cb109e93b21a06e24e2ebd55641"
   integrity sha512-YyUI6AEuY/Wpt8KWLgZHsIU86atmikuoOmCfommt0LYHiQSPjvX2AcFc38PX0CBpr2RCyZhjex+NS/LPOv6YqA==
 
-daisyui@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-4.10.2.tgz#c0e072b94ccaa0326d1fdec26e8dc163ac070561"
-  integrity sha512-eCWS1W/JPyxW9IvlgW5m0R6rp9ZhRsBTW37rvEUthckkjsV04u8XipV519OoccSA46ixhSJa3q7XLI1WUFtRCA==
+daisyui@^4.11.1:
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-4.11.1.tgz#9216de97107bffe2b7c6e4dfa28dbe7147e89e9d"
+  integrity sha512-obT9CUbQdW6eoHwSeT5VwaRrWlwrM4OT5qlfdJ0oQlSIEYhwnEl2+L2fwu5PioLbitwuMdYC2X8I1cyy8Pf6LQ==
   dependencies:
     css-selector-tokenizer "^0.8"
     culori "^3"
