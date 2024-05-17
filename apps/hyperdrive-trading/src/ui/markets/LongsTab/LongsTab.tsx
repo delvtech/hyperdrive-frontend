@@ -43,7 +43,7 @@ export function LongsTab({
               {!isLoading ? (
                 <>
                   {openLongs?.length ? (
-                    <p className="text-xs text-neutral-content">
+                    <p className="text-sm text-neutral-content">
                       Total Value:{" "}
                       {formatBalance({
                         balance: totalLongsValue || 0n,
