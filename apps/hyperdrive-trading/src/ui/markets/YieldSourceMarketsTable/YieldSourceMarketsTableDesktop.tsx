@@ -99,6 +99,7 @@ export function YieldSourceMarketsTableDesktop({
                       className={classNames({
                         "rounded-l-lg": cell.column.id.includes("term"),
                         "rounded-r-lg": cell.column.id.includes("go-to-market"),
+                        "gradient-text ": cell.column.id.includes("fixed-apr"),
                       })}
                       key={cell.id}
                     >

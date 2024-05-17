@@ -74,7 +74,7 @@ export function YieldSourceCard({
                 <Badge>
                   <span className="font-dmMono text-neutral-content">
                     Variable APY @{" "}
-                    <span className="text-primary">
+                    <span className="font-bold text-base-content">
                       {vaultRate?.formatted}%
                     </span>
                   </span>
