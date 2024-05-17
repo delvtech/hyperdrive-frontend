@@ -1,6 +1,8 @@
-import { createNetwork } from "@delvtech/evm-client-viem";
+import {
+  createCachedReadContract,
+  createNetwork,
+} from "@delvtech/evm-client-viem";
 import { ReadMetaMorphoHyperdrive as ReadMetaMorphoHyperdriveBase } from "@delvtech/hyperdrive-js-core";
-import { createReadContractFactory } from "src/evm-client/createReadContractFactory";
 import { ReadHyperdriveOptions } from "src/hyperdrive/ReadHyperdrive";
 
 export class ReadMetaMorphoHyperdrive extends ReadMetaMorphoHyperdriveBase {
@@ -14,11 +16,14 @@ export class ReadMetaMorphoHyperdrive extends ReadMetaMorphoHyperdriveBase {
     super({
       address,
       cache,
-      contractFactory: createReadContractFactory({
-        publicClient,
-        cache,
-        namespace,
-      }),
+      contractFactory: (options) => {
+        return createCachedReadContract({
+          publicClient,
+          cache,
+          namespace,
+          ...options,
+        });
+      },
       name,
       namespace,
       network: createNetwork(publicClient),

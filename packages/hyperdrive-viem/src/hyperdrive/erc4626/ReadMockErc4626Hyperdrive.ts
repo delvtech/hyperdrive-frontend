@@ -1,6 +1,8 @@
-import { createNetwork } from "@delvtech/evm-client-viem";
+import {
+  createCachedReadContract,
+  createNetwork,
+} from "@delvtech/evm-client-viem";
 import { ReadMockErc4626Hyperdrive as ReadMockErc4626HyperdriveBase } from "@delvtech/hyperdrive-js-core";
-import { createReadContractFactory } from "src/evm-client/createReadContractFactory";
 import { ReadHyperdriveOptions } from "src/hyperdrive/ReadHyperdrive";
 
 export class ReadMockErc4626Hyperdrive extends ReadMockErc4626HyperdriveBase {
@@ -14,11 +16,14 @@ export class ReadMockErc4626Hyperdrive extends ReadMockErc4626HyperdriveBase {
     super({
       address,
       cache,
-      contractFactory: createReadContractFactory({
-        publicClient,
-        cache,
-        namespace,
-      }),
+      contractFactory: (options) => {
+        return createCachedReadContract({
+          publicClient,
+          cache,
+          namespace,
+          ...options,
+        });
+      },
       name,
       namespace,
       network: createNetwork(publicClient),
