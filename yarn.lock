@@ -1476,10 +1476,20 @@
   dependencies:
     "@delvtech/evm-client" "0.4.2"
 
-"@delvtech/evm-client@0.4.2", "@delvtech/evm-client@^0.4.2":
+"@delvtech/evm-client@0.4.2":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.4.2.tgz#11a26ec4e9ddf6093771edb09343d9d5d1b3dc3f"
   integrity sha512-9aJvszoCg3sfWwo4uHDS/S5nlJ8rIgsqD2nwbKjO/hn/lYFKYViOLMJVIY+vcmyhZpvjgU+ihdpbPnDZe4LHkw==
+  dependencies:
+    "@types/lodash.ismatch" "^4.4.9"
+    fast-safe-stringify "^2.1.1"
+    lodash.ismatch "^4.4.0"
+    lru-cache "^10.0.1"
+
+"@delvtech/evm-client@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.5.0.tgz#c7ebba842ada95b52b14c143bf5ac29db6559e58"
+  integrity sha512-9GdrAbqBCnpGwfSP+cEKFQJ/xTxHzibx7wjexRz7ORNSWHPnF8oEKICKh4G2WHa9/SHYBVc5F3imPXz5bdqioA==
   dependencies:
     "@types/lodash.ismatch" "^4.4.9"
     fast-safe-stringify "^2.1.1"
