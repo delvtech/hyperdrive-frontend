@@ -271,11 +271,11 @@ export default command({
     const name = await options.name();
 
     const deployedContract = await deployer.deploy({
-      name: "HyperdriveFactory",
+      name: name || "HyperdriveFactory",
       abi: HyperdriveFactory.abi,
       bytecode: HyperdriveFactory.bytecode,
-      args: [
-        {
+      args: {
+        _factoryConfig: {
           governance,
           hyperdriveGovernance,
           defaultPausers,
@@ -305,8 +305,7 @@ export default command({
           linkerFactory: linker,
           linkerCodeHash: linkerHash,
         },
-        name,
-      ],
+      },
     });
 
     next(deployedContract);

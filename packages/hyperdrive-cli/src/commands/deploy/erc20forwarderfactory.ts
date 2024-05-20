@@ -12,7 +12,7 @@ export default command({
       name: "ERC20ForwarderFactory",
       abi: ERC20ForwarderFactory.abi,
       bytecode: ERC20ForwarderFactory.bytecode,
-      args: [],
+      args: {},
     });
 
     next(deployedContract);

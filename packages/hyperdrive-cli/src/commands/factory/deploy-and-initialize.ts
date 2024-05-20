@@ -1,3 +1,8 @@
+import {
+  createNetwork,
+  createReadWriteContract,
+  ReadWriteContract,
+} from "@delvtech/evm-client-viem";
 import { ERC20ForwarderFactory } from "@delvtech/hyperdrive-artifacts/ERC20ForwarderFactory";
 import { HyperdriveFactory } from "@delvtech/hyperdrive-artifacts/HyperdriveFactory";
 import { command } from "clide-js";
@@ -329,21 +334,48 @@ export default command({
       salt,
     ]);
 
-    const target0 = await walletClient.writeContract({
-      address,
-      abi: HyperdriveFactory.abi,
-      functionName: "deployTarget",
-      args: [
-        id,
-        coordinator as Address,
-        config,
-        extraData || "0x0",
-        fixedAprInt,
-        timeStretchAprInt,
-        BigInt(0),
-        salt,
-      ],
+    const network = createNetwork(publicClient);
+    const contract: ReadWriteContract<typeof HyperdriveFactory.abi> =
+      createReadWriteContract({
+        abi: HyperdriveFactory.abi,
+        address,
+        publicClient,
+        walletClient,
+      });
+
+    const target0Hash = await contract.write("deployTarget", {
+      _config: config,
+      _deployerCoordinator: coordinator as Address,
+      _targetIndex: BigInt(0),
+      _deploymentId: id,
+      _extraData: extraData || "0x0",
+      _fixedAPR: fixedAprInt,
+      _timeStretchAPR: timeStretchAprInt,
+      _salt: salt,
     });
+
+    await network.waitForTransaction(target0Hash);
+    const tx = await network.getTransaction(target0Hash);
+
+    if (tx) {
+      console.log(tx.input); // TODO: How do I get the address of the deployed contract?
+    }
+
+    // const target0 = await walletClient.writeContract({
+    //   address,
+    //   abi: HyperdriveFactory.abi,
+    //   functionName: "deployTarget",
+    //   args: [
+    //     id,
+    //     coordinator as Address,
+    //     config,
+    //     extraData || "0x0",
+    //     fixedAprInt,
+    //     timeStretchAprInt,
+    //     BigInt(0),
+    //     salt,
+    //   ],
+    // });
 
     const target1 = await walletClient.writeContract({
       address,

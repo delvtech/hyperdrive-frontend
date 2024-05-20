@@ -48,12 +48,12 @@ export default command({
       name: "MockLido",
       abi: MockLido.abi,
       bytecode: MockLido.bytecode,
-      args: [
-        BigInt(parseUnits(rate, 18)),
-        (admin || account.address) as Address,
-        isCompetitionMode,
-        BigInt(parseUnits(max, 18)),
-      ],
+      args: {
+        _initialRate: BigInt(parseUnits(rate, 18)),
+        _admin: (admin || account.address) as Address,
+        _isCompetitionMode: isCompetitionMode,
+        _maxMintAmount: BigInt(parseUnits(max, 18)),
+      },
     });
 
     next(deployedContract);

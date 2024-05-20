@@ -1476,6 +1476,13 @@
   dependencies:
     "@delvtech/evm-client" "0.4.2"
 
+"@delvtech/evm-client-viem@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.6.1.tgz#d8cc37b6a7b5a4ab5957e0bcba4428ddfd3a61e7"
+  integrity sha512-LtJ9hsRPjqqMZ08+Rwz/spcCEX9WO5Kl94wQPXt/6nwFtCQS+Q7zqBOGruxYT93cRnlLvdI3wLdf26NNY3zFsw==
+  dependencies:
+    "@delvtech/evm-client" "0.5.1"
+
 "@delvtech/evm-client@0.4.2", "@delvtech/evm-client@^0.4.2":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.4.2.tgz#11a26ec4e9ddf6093771edb09343d9d5d1b3dc3f"
@@ -1485,6 +1492,21 @@
     fast-safe-stringify "^2.1.1"
     lodash.ismatch "^4.4.0"
     lru-cache "^10.0.1"
+
+"@delvtech/evm-client@0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.5.1.tgz#b69bd04ecb9f1690c1ce94acb7362e4d30b9e1e5"
+  integrity sha512-Ixx7coKko1l9i2CkrrkhzRVnxzf+b3ROEppWvN7Q0+Gx3DLq1lq8oorXjZb5dZhs5K07LtJM7sUJLztxx8BIEA==
+  dependencies:
+    "@types/lodash.ismatch" "^4.4.9"
+    fast-safe-stringify "^2.1.1"
+    lodash.ismatch "^4.4.0"
+    lru-cache "^10.0.1"
+
+"@delvtech/hyperdrive-artifacts@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@delvtech/hyperdrive-artifacts/-/hyperdrive-artifacts-0.1.0.tgz#3251ccdea962912ea0b2efacfad864e5db933320"
+  integrity sha512-JDVp2YkLFvDjjMaMhAADLw/VJE6DSSQSBB7DNE3Mwk8sHGrZwdKcNQsShKkl9t9AZzthXthl2gMTNKsChYx6zA==
 
 "@discoveryjs/json-ext@0.5.7":
   version "0.5.7"
@@ -4364,6 +4386,13 @@
   version "17.0.45"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.45.tgz#2c0fafd78705e7a18b7906b5201a522719dc5190"
   integrity sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==
+
+"@types/node@^20.12.7":
+  version "20.12.12"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.12.12.tgz#7cbecdf902085cec634fdb362172dfe12b8f2050"
+  integrity sha512-eWLDGF/FOSPtAvEqeRAQ4C8LSA7M1I7i0ky1I8U7kD1J5ITyW3AsRhQrKVoWf5pFKZ2kILsEGJhsI9r93PYnOw==
+  dependencies:
+    undici-types "~5.26.4"
 
 "@types/node@^20.12.8":
   version "20.12.8"
@@ -11190,6 +11219,11 @@ lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
+
+lodash.uniqby@^4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
+  integrity sha512-e/zcLx6CSbmaEgFHCA7BnoQKyCtKMxnuWrJygbwPs/AIn+IMKl66L8/s+wBUn5LRw2pZx3bUHibiV1b6aTWIww==
 
 lodash@^4.17.11, lodash@^4.17.20, lodash@^4.17.21:
   version "4.17.21"

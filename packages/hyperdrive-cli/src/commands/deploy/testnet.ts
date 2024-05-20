@@ -148,14 +148,14 @@ export default command({
         name: "DAI",
         abi: ERC20Mintable.abi,
         bytecode: ERC20Mintable.bytecode,
-        args: [
-          "DAI",
-          "DAI",
-          18,
+        args: {
+          name: "DAI",
+          symbol: "DAI",
+          decimals: 18,
           admin,
-          isCompetitionMode,
-          BigInt(parseUnits(maxMintAmount, 18)),
-        ],
+          isCompetitionMode_: isCompetitionMode,
+          maxMintAmount_: BigInt(parseUnits(maxMintAmount, 18)),
+        },
       });
 
       daiAddress = address;
@@ -175,15 +175,15 @@ export default command({
         name: "sDAI",
         abi: MockERC4626.abi,
         bytecode: MockERC4626.bytecode,
-        args: [
-          daiAddress as Address,
-          "Savings DAI",
-          "sDAI",
-          BigInt(parseUnits(rate, 18)),
-          admin,
-          isCompetitionMode,
-          BigInt(parseUnits(maxMintAmount, 18)),
-        ],
+        args: {
+          _asset: daiAddress as Address,
+          _name: "Savings DAI",
+          _symbol: "sDAI",
+          _initialRate: BigInt(parseUnits(rate, 18)),
+          _admin: admin,
+          _isCompetitionMode: isCompetitionMode,
+          _maxMintAmount: BigInt(parseUnits(maxMintAmount, 18)),
+        },
       });
 
       sDaiAddress = address;
@@ -203,12 +203,12 @@ export default command({
         name: "stETH",
         abi: MockLido.abi,
         bytecode: MockLido.bytecode,
-        args: [
-          BigInt(parseUnits(rate, 18)),
-          admin,
-          isCompetitionMode,
-          BigInt(parseUnits(maxMintAmount, 18)),
-        ],
+        args: {
+          _initialRate: BigInt(parseUnits(rate, 18)),
+          _admin: admin,
+          _isCompetitionMode: isCompetitionMode,
+          _maxMintAmount: BigInt(parseUnits(maxMintAmount, 18)),
+        },
       });
 
       stEthAddress = address;
@@ -255,7 +255,7 @@ export default command({
       name: "ERC20ForwarderFactory",
       abi: ERC20ForwarderFactory.abi,
       bytecode: ERC20ForwarderFactory.bytecode,
-      args: [],
+      args: {},
     });
 
     // =========================================================================
@@ -277,57 +277,57 @@ export default command({
         name: "ERC4626HyperdriveCoreDeployer",
         abi: ERC4626HyperdriveCoreDeployer.abi,
         bytecode: ERC4626HyperdriveCoreDeployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target0 = await deployer.deploy({
         name: "ERC4626Target0Deployer",
         abi: ERC4626Target0Deployer.abi,
         bytecode: ERC4626Target0Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target1 = await deployer.deploy({
         name: "ERC4626Target1Deployer",
         abi: ERC4626Target1Deployer.abi,
         bytecode: ERC4626Target1Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target2 = await deployer.deploy({
         name: "ERC4626Target2Deployer",
         abi: ERC4626Target2Deployer.abi,
         bytecode: ERC4626Target2Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target3 = await deployer.deploy({
         name: "ERC4626Target3Deployer",
         abi: ERC4626Target3Deployer.abi,
         bytecode: ERC4626Target3Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target4 = await deployer.deploy({
         name: "ERC4626Target4Deployer",
         abi: ERC4626Target4Deployer.abi,
         bytecode: ERC4626Target4Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       await deployer.deploy({
         name: "ERC4626HyperdriveDeployerCoordinator",
         abi: ERC4626HyperdriveDeployerCoordinator.abi,
         bytecode: ERC4626HyperdriveDeployerCoordinator.bytecode,
-        args: [
-          factoryAddress,
-          core.address,
-          target0.address,
-          target1.address,
-          target2.address,
-          target3.address,
-          target4.address,
-        ],
+        args: {
+          _factory: factoryAddress,
+          _coreDeployer: core.address,
+          _target0Deployer: target0.address,
+          _target1Deployer: target1.address,
+          _target2Deployer: target2.address,
+          _target3Deployer: target3.address,
+          _target4Deployer: target4.address,
+        },
       });
     }
 
@@ -339,58 +339,58 @@ export default command({
         name: "StETHHyperdriveCoreDeployer",
         abi: StETHHyperdriveCoreDeployer.abi,
         bytecode: StETHHyperdriveCoreDeployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target0 = await deployer.deploy({
         name: "StETHTarget0Deployer",
         abi: StETHTarget0Deployer.abi,
         bytecode: StETHTarget0Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target1 = await deployer.deploy({
         name: "StETHTarget1Deployer",
         abi: StETHTarget1Deployer.abi,
         bytecode: StETHTarget1Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target2 = await deployer.deploy({
         name: "StETHTarget2Deployer",
         abi: StETHTarget2Deployer.abi,
         bytecode: StETHTarget2Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target3 = await deployer.deploy({
         name: "StETHTarget3Deployer",
         abi: StETHTarget3Deployer.abi,
         bytecode: StETHTarget3Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       const target4 = await deployer.deploy({
         name: "StETHTarget4Deployer",
         abi: StETHTarget4Deployer.abi,
         bytecode: StETHTarget4Deployer.bytecode,
-        args: [],
+        args: {},
       });
 
       await deployer.deploy({
         name: "StETHHyperdriveDeployerCoordinator",
         abi: StETHHyperdriveDeployerCoordinator.abi,
         bytecode: StETHHyperdriveDeployerCoordinator.bytecode,
-        args: [
-          factoryAddress,
-          core.address,
-          target0.address,
-          target1.address,
-          target2.address,
-          target3.address,
-          target4.address,
-          stEthAddress as Address,
-        ],
+        args: {
+          _factory: factoryAddress,
+          _coreDeployer: core.address,
+          _target0Deployer: target0.address,
+          _target1Deployer: target1.address,
+          _target2Deployer: target2.address,
+          _target3Deployer: target3.address,
+          _target4Deployer: target4.address,
+          _lido: stEthAddress as Address,
+        },
       });
     }
 
@@ -398,14 +398,12 @@ export default command({
     // 8. Registry
     // =========================================================================
 
-    const name = await options.name();
-
     {
       const { address } = await deployer.deploy({
         name: "HyperdriveRegistry",
         abi: HyperdriveRegistry.abi,
         bytecode: HyperdriveRegistry.bytecode,
-        args: [name],
+        args: {},
       });
 
       await walletClient.writeContract({

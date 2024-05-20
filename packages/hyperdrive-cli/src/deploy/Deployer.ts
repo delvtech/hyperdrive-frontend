@@ -1,9 +1,9 @@
+import { ConstructorArgs, objectToArray } from "@delvtech/evm-client-viem";
 import signale from "signale";
 import {
   Abi,
   Account,
   Chain,
-  DeployContractParameters,
   Hex,
   PublicClient,
   Transport,
@@ -42,17 +42,28 @@ export class Deployer {
   async deploy<TAbi extends Abi>({
     name,
     abi,
-    args,
+    args: _argsObject,
     bytecode,
     onSubmitted,
   }: {
     name: string;
     abi: TAbi;
-    args: DeployContractParameters<TAbi>["args"];
+    // TODO: Fix this type in evm-client
+    args: ConstructorArgs<TAbi> extends never
+      ? Record<string, never> | undefined
+      : ConstructorArgs<TAbi>;
     bytecode: Hex;
     onSubmitted?: (txHash: string) => void;
   }): Promise<DeployedContractInfo> {
     signale.pending(`Deploying ${name}...`);
+
+    const args = objectToArray({
+      abi: abi as Abi,
+      kind: "inputs",
+      type: "constructor",
+      name: undefined,
+      value: _argsObject,
+    });
 
     const hash = await this.walletClient.deployContract({
       abi,

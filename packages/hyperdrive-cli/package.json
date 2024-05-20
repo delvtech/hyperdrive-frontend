@@ -28,6 +28,7 @@
     }
   },
   "dependencies": {
+    "@delvtech/evm-client-viem": "^0.6.1",
     "@delvtech/hyperdrive-artifacts": "^0.1.0",
     "ajv": "^8.12.0",
     "clide-js": "^0.1.5",

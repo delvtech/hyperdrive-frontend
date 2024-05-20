@@ -76,15 +76,15 @@ export default command({
       name: "MockERC4626",
       abi: MockERC4626.abi,
       bytecode: MockERC4626.bytecode,
-      args: [
-        token as Address,
-        name,
-        symbol,
-        BigInt(parseUnits(rate.toString(), 18)),
-        (admin || account.address) as Address,
-        isCompetitionMode,
-        BigInt(parseUnits(max, 18)),
-      ],
+      args: {
+        _asset: token as Address,
+        _name: name,
+        _symbol: symbol,
+        _initialRate: BigInt(parseUnits(rate.toString(), 18)),
+        _admin: (admin || account.address) as Address,
+        _isCompetitionMode: isCompetitionMode,
+        _maxMintAmount: BigInt(parseUnits(max, 18)),
+      },
     });
 
     next(deployedContract);

@@ -68,14 +68,14 @@ export default command({
       name: "ERC20Mintable",
       abi: ERC20Mintable.abi,
       bytecode: ERC20Mintable.bytecode,
-      args: [
+      args: {
         name,
         symbol,
         decimals,
-        (admin || account.address) as Address,
-        isCompetitionMode,
-        BigInt(parseUnits(max, decimals)),
-      ],
+        admin: (admin || account.address) as Address,
+        isCompetitionMode_: isCompetitionMode,
+        maxMintAmount_: BigInt(parseUnits(max, decimals)),
+      },
     });
 
     next(deployedContract);
