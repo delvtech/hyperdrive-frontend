@@ -1545,7 +1545,8 @@ export class ReadHyperdrive extends ReadModel {
   }): Promise<{ maxBondsOut: bigint; flatFee: bigint }> {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
-    const currentTime = dnum.from(Math.floor(Date.now() / 1000), 18)[0];
+
+    const currentTime = BigInt(Math.floor(Date.now() / 1000));
 
     let bondAmountInConvertedToBase = bondAmountIn;
     if (!asBase) {

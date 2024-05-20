@@ -75,15 +75,18 @@ export function CloseLongForm({
   });
 
   // Preview the amount of base or shares they get back from closing their long.
-  const { amountOut: withdrawAmount, previewCloseLongStatus } =
-    usePreviewCloseLong({
-      hyperdriveAddress: hyperdrive.address,
-      maturityTime: long.maturity,
-      bondAmountIn: bondAmountAsBigInt,
-      minOutput: parseUnits("0", baseToken.decimals),
-      destination: account,
-      asBase: activeWithdrawToken.address === baseToken.address,
-    });
+  const {
+    amountOut: withdrawAmount,
+    flatFee,
+    previewCloseLongStatus,
+  } = usePreviewCloseLong({
+    hyperdriveAddress: hyperdrive.address,
+    maturityTime: long.maturity,
+    bondAmountIn: bondAmountAsBigInt,
+    minOutput: parseUnits("0", baseToken.decimals),
+    destination: account,
+    asBase: activeWithdrawToken.address === baseToken.address,
+  });
 
   const minAmountOutAfterSlippage =
     withdrawAmount &&
@@ -169,21 +172,38 @@ export function CloseLongForm({
         ) : undefined
       }
       transactionPreview={
-        <LabelValue
-          label="You receive"
-          value={
-            <p className="font-bold">
-              {withdrawAmount
-                ? `${formatBalance({
-                    balance: withdrawAmount,
-                    decimals: baseToken.decimals,
-                    places: baseToken.places,
-                  })}`
-                : "0"}{" "}
-              {activeWithdrawToken.symbol}
-            </p>
-          }
-        />
+        <>
+          <LabelValue
+            label="You receive"
+            value={
+              <p className="font-bold">
+                {withdrawAmount
+                  ? `${formatBalance({
+                      balance: withdrawAmount,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
+          <LabelValue
+            label="You pay"
+            value={
+              <p className="font-bold">
+                {flatFee
+                  ? `${formatBalance({
+                      balance: flatFee,
+                      decimals: 18,
+                      places: 10,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
+        </>
       }
       actionButton={(() => {
         if (!account) {
