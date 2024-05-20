@@ -43,6 +43,8 @@ async function main() {
 
   // Reset the output dir and build the package with the "@delvtech/" scope
   console.log("Building package...");
+  const changelogPath = resolve(outDir, "CHANGELOG.md");
+  const changelog = readFileSync(changelogPath, "utf8");
   rmSync(outDir, { recursive: true, force: true });
   const buildProcessResult = spawnSync(
     "npx",
@@ -60,6 +62,7 @@ async function main() {
       stdio: "inherit",
     },
   );
+  writeFileSync(changelogPath, changelog);
 
   if (buildProcessResult.error) {
     process.exit(1);
