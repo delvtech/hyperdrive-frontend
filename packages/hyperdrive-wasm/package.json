@@ -15,5 +15,8 @@
   "sideEffects": [
     "./snippets/*"
   ],
-  "main": "hyperdrive_wasm.js"
+  "main": "hyperdrive_wasm.js",
+  "publishConfig": {
+    "access": "public"
+  }
 }
