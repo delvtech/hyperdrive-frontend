@@ -74,7 +74,7 @@ export function YieldSourceCard({
                 <Badge>
                   <span className="font-dmMono text-neutral-content">
                     Variable APY @{" "}
-                    <span className="font-bold text-base-content">
+                    <span className="text-base-content">
                       {vaultRate?.formatted}%
                     </span>
                   </span>
@@ -86,14 +86,21 @@ export function YieldSourceCard({
           {/* Deposit assets */}
           <div className="flex items-center justify-center gap-2 text-neutral-content sm:flex-col">
             <span>Deposit assets</span>
-            <div className="daisy-avatar-group inline-flex justify-center -space-x-6 rtl:space-x-reverse">
+            {/* DaisyUI note: overflow-visible enables tooltips to be shown in the daisy-avatar-group */}
+            <div className="daisy-avatar-group inline-flex justify-center -space-x-6 overflow-visible rtl:space-x-reverse">
               {isBaseTokenDepositEnabled ? (
-                <div className="daisy-avatar w-12 scale-75 sm:scale-100">
+                <div
+                  className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
+                  data-tip={baseToken.symbol}
+                >
                   <img src={baseToken.iconUrl} />
                 </div>
               ) : null}
               {isShareTokenDepositsEnabled ? (
-                <div className="daisy-avatar w-12 scale-75 sm:scale-100">
+                <div
+                  className="daisy-avatar daisy-tooltip daisy-tooltip-bottom w-12 scale-75 overflow-visible sm:scale-100"
+                  data-tip={sharesToken.symbol}
+                >
                   <img src={sharesToken.iconUrl} />
                 </div>
               ) : null}
