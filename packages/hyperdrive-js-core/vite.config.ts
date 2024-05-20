@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [tsconfigPaths()],
   test: {
     alias: {
-      "@delvtech/hyperdrive-wasm?v0.13.0": "@delvtech/hyperdrive-wasm",
+      "@delvtech/hyperdrive-wasm?v0.14.0": "@delvtech/hyperdrive-wasm",
     },
   },
 });
