@@ -1567,7 +1567,7 @@ export class ReadHyperdrive extends ReadModel {
       ),
     );
 
-    const maxBondsOutInShares = BigInt(
+    const maxBondsOut = BigInt(
       hyperwasm.calcCloseLong(
         convertBigIntsToStrings(info),
         convertBigIntsToStrings(config),
@@ -1576,15 +1576,6 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-
-    let maxBondsOut = maxBondsOutInShares;
-    if (asBase) {
-      maxBondsOut = convertSharesToBase({
-        sharesAmount: maxBondsOutInShares,
-        vaultSharePrice: info.vaultSharePrice,
-        decimals: await this.getDecimals(),
-      });
-    }
 
     return {
       maxBondsOut,

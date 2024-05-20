@@ -6,12 +6,14 @@ import {
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
+import { convertBaseToShares } from "src/hyperdrive/convertBaseToShares";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
+import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
@@ -33,6 +35,7 @@ export function CloseLongForm({
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const appConfig = useAppConfig();
+  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { address: account } = useAccount();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -85,13 +88,22 @@ export function CloseLongForm({
     bondAmountIn: bondAmountAsBigInt,
     minOutput: parseUnits("0", baseToken.decimals),
     destination: account,
-    asBase: activeWithdrawToken.address === baseToken.address,
+    asBase: false,
   });
 
+  const withdrawAmountConverted = withdrawAmount;
+  if (activeWithdrawToken.address === baseToken.address) {
+    convertBaseToShares({
+      decimals: hyperdrive.decimals,
+      baseAmount: withdrawAmount,
+      vaultSharePrice: poolInfo?.vaultSharePrice,
+    });
+  }
+
   const minAmountOutAfterSlippage =
-    withdrawAmount &&
+    withdrawAmountConverted &&
     adjustAmountByPercentage({
-      amount: withdrawAmount,
+      amount: withdrawAmountConverted,
       percentage: parseUnits("1", activeWithdrawToken.decimals),
       decimals: activeWithdrawToken.decimals,
       direction: "down",
@@ -177,9 +189,9 @@ export function CloseLongForm({
             label="You receive"
             value={
               <p className="font-bold">
-                {withdrawAmount
+                {withdrawAmountConverted
                   ? `${formatBalance({
-                      balance: withdrawAmount,
+                      balance: withdrawAmountConverted,
                       decimals: baseToken.decimals,
                       places: baseToken.places,
                     })}`
