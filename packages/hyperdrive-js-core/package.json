@@ -20,7 +20,7 @@
     "lodash.mapvalues": "^4.6.0"
   },
   "devDependencies": {
-    "@delvtech/evm-client": "^0.5.0",
+    "@delvtech/evm-client": "^0.5.1",
     "@delvtech/hyperdrive-artifacts": "^0.3.0",
     "@hyperdrive/eslint-config": "*",
     "@hyperdrive/prettier-config": "*",
