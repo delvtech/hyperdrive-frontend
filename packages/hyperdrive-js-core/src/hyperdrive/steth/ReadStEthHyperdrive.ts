@@ -151,7 +151,7 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
         });
       }
 
-      const amountOut = await super.previewCloseLong({
+      const { flatFee, maxBondsOut } = await super.previewCloseLong({
         maturityTime,
         bondAmountIn,
         minAmountOut,
@@ -162,10 +162,13 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       });
 
       if (requiresConversion) {
-        return this.convertToStEth(amountOut, { blockTag: "latest" });
+        const convertedStEthAmount = await this.convertToStEth(maxBondsOut, {
+          blockTag: "latest",
+        });
+        return { maxBondsOut: convertedStEthAmount, flatFee };
       }
 
-      return amountOut;
+      return { maxBondsOut, flatFee };
     }
 
     async previewOpenShort({

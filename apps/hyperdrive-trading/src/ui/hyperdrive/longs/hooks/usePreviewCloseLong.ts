@@ -61,12 +61,9 @@ export function usePreviewCloseLong({
             minAmountOut: minOutput,
             destination,
             asBase,
-            options: {
-              from: account,
-            },
           })
       : undefined,
   });
 
-  return { amountOut: data, previewCloseLongStatus: status };
+  return { amountOut: data?.maxBondsOut, previewCloseLongStatus: status };
 }

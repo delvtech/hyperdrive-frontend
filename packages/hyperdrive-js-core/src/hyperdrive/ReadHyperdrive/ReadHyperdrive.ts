@@ -1526,7 +1526,7 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Predicts the amount of base asset a user will receive when closing a long.
    */
-  previewCloseLong({
+  async previewCloseLong({
     maturityTime,
     bondAmountIn,
     minAmountOut,
@@ -1541,18 +1541,57 @@ export class ReadHyperdrive extends ReadModel {
     destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): Promise<bigint> {
-    return this.contract.simulateWrite(
-      "closeLong",
-      {
-        _maturityTime: maturityTime,
-        _bondAmount: bondAmountIn,
-        _minOutput: minAmountOut,
-        _options: { destination, asBase, extraData },
-      },
-      options,
+    options?: ContractReadOptions;
+  }): Promise<{ maxBondsOut: bigint; flatFee: bigint }> {
+    const config = await this.getPoolConfig(options);
+    const info = await this.getPoolInfo(options);
+    const currentTime = dnum.from(Math.floor(Date.now() / 1000), 18)[0];
+
+    let bondAmountInConvertedToBase = bondAmountIn;
+    if (!asBase) {
+      bondAmountInConvertedToBase = convertSharesToBase({
+        sharesAmount: bondAmountIn,
+        vaultSharePrice: info.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
+    }
+
+    const flatFeeInBase = BigInt(
+      hyperwasm.closeLongFlatFee(
+        convertBigIntsToStrings(info),
+        convertBigIntsToStrings(config),
+        bondAmountInConvertedToBase.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
     );
+
+    const maxBondsOut = BigInt(
+      hyperwasm.calcCloseLong(
+        convertBigIntsToStrings(info),
+        convertBigIntsToStrings(config),
+        bondAmountInConvertedToBase.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+    let maxBondsOutConvertedToShares = maxBondsOut;
+    if (!asBase) {
+      maxBondsOutConvertedToShares = convertBaseToShares({
+        baseAmount: maxBondsOut,
+        vaultSharePrice: info.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
+      return {
+        maxBondsOut: maxBondsOutConvertedToShares,
+        flatFee: flatFeeInBase,
+      };
+    }
+
+    return {
+      maxBondsOut,
+      flatFee: flatFeeInBase,
+    };
   }
 
   /**
