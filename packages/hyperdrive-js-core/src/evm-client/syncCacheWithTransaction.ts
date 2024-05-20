@@ -64,7 +64,7 @@ export function syncCacheWithTransaction<TAbi extends Abi>(options?: {
       network.waitForTransaction(hash).then(() => {
         if (options?.cacheEntries) {
           options.cacheEntries.forEach((cacheKey) => {
-            return contract.deleteReadMatch(
+            return contract.deleteReadsMatching(
               cacheKey.functionName,
               cacheKey.args,
               cacheKey.options,
