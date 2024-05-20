@@ -1,4 +1,5 @@
 import {
+  Block,
   BlockTag,
   CachedReadContract,
   ContractGetEventsOptions,
@@ -33,7 +34,6 @@ import { getCheckpointId } from "src/pool/getCheckpointId";
 import { calculateShortAccruedYield } from "src/shorts/calculateShortAccruedYield";
 import { ClosedShort, OpenShort } from "src/shorts/types";
 import { ReadErc20 } from "src/token/erc20/ReadErc20";
-import { ReadMockErc4626 } from "src/token/erc4626/ReadMockErc4626";
 import { ReadEth } from "src/token/eth/ReadEth";
 import { RedeemedWithdrawalShares } from "src/withdrawalShares/RedeemedWithdrawalShares";
 import { WITHDRAW_SHARES_ASSET_ID } from "src/withdrawalShares/assetId";
@@ -111,19 +111,76 @@ export class ReadHyperdrive extends ReadModel {
     return this.contract.read("decimals");
   }
 
+  /**
+   * Get a standardized variable rate using vault share prices from checkpoints in
+   * the last `timeRange` seconds.
+   *
+   * Note: This function will throw an error if the pool was deployed within the
+   * last `timeRange` seconds.
+   *
+   * See Agent0 for calculation:
+   * https://github.com/delvtech/agent0/blob/854e9392e09898e65aeed0040c5e648c8d3d1380/src/agent0/ethpy/hyperdrive/interface/read_interface.py#L421
+   *
+   * @param timeRange The time range (in seconds) to use to calculate the variable
+   * rate to look for checkpoints.
+   */
   async getYieldSourceRate({
+    timeRange,
     options,
   }: {
+    timeRange: bigint;
     options?: ContractReadOptions;
   }): Promise<bigint> {
-    const { vaultSharesToken } = await this.getPoolConfig(options);
-    const vault = new ReadMockErc4626({
-      address: vaultSharesToken,
-      contractFactory: this.contractFactory,
-      namespace: this.contract.namespace,
-      network: this.network,
+    // Get the vault share price of the checkpoint in the past `timeRange`
+    const { timestamp: currentBlockTime } = (await this.network.getBlock({
+      blockTag: "latest",
+    })) as Block; // safe to cast because there's always a "latest" block
+    const { checkpointDuration } = await this.getPoolConfig();
+    const startCheckpointId = getCheckpointId(
+      currentBlockTime - timeRange,
+      checkpointDuration,
+    );
+    const { vaultSharePrice: startVaultSharePrice } = await this.getCheckpoint({
+      checkpointId: startCheckpointId,
     });
-    return vault.getRate(options);
+
+    // Vault share price is 0 if checkpoint doesn't exist
+    // This happens if the pool was deployed within the past `timeRange`
+    if (!startVaultSharePrice) {
+      throw new Error("Checkpoint doesn't exist for the given time range.");
+    }
+
+    // We can also get the current vault share price instead of getting it from
+    // the latest checkpoint
+    const currentCheckpointId = getCheckpointId(
+      currentBlockTime,
+      checkpointDuration,
+    );
+
+    let { vaultSharePrice: currentVaultSharePrice } = await this.getCheckpoint({
+      checkpointId: currentCheckpointId,
+    });
+    // If the current checkpoint doesn't exist (due to checkpoint not being made
+    // yet), we use the current vault share price
+    if (!currentVaultSharePrice) {
+      currentVaultSharePrice = await (await this.getPoolInfo()).vaultSharePrice;
+    }
+    const rateOfReturn =
+      (currentVaultSharePrice - startVaultSharePrice) / startVaultSharePrice;
+    // Annualized the rate of return
+    const annualizedRateOfReturn =
+      (rateOfReturn * BigInt(60 * 60 * 24 * 365)) / timeRange;
+
+    return annualizedRateOfReturn;
+
+    // const { vaultSharesToken } = await this.getPoolConfig(options);
+    // const vault = new ReadMockErc4626({
+    //   address: vaultSharesToken,
+    //   contractFactory: this.contractFactory,
+    //   namespace: this.contract.namespace,
+    //   network: this.network,
+    // });
+    // return vault.getRate(options);
   }
 
   getCheckpoint({
