@@ -1547,51 +1547,48 @@ export class ReadHyperdrive extends ReadModel {
     const info = await this.getPoolInfo(options);
 
     const currentTime = BigInt(Math.floor(Date.now() / 1000));
-
-    let bondAmountInConvertedToBase = bondAmountIn;
+    let bondAmountInConvertedToShares = bondAmountIn;
     if (!asBase) {
-      bondAmountInConvertedToBase = convertSharesToBase({
+      bondAmountInConvertedToShares = convertSharesToBase({
         sharesAmount: bondAmountIn,
         vaultSharePrice: info.vaultSharePrice,
         decimals: await this.getDecimals(),
       });
     }
 
-    const flatFeeInBase = BigInt(
+    // Calculate fees
+    const flatFee = BigInt(
       hyperwasm.closeLongFlatFee(
         convertBigIntsToStrings(info),
         convertBigIntsToStrings(config),
-        bondAmountInConvertedToBase.toString(),
+        bondAmountInConvertedToShares.toString(),
         maturityTime.toString(),
         currentTime.toString(),
       ),
     );
 
-    const maxBondsOut = BigInt(
+    const maxBondsOutInShares = BigInt(
       hyperwasm.calcCloseLong(
         convertBigIntsToStrings(info),
         convertBigIntsToStrings(config),
-        bondAmountInConvertedToBase.toString(),
+        bondAmountInConvertedToShares.toString(),
         maturityTime.toString(),
         currentTime.toString(),
       ),
     );
-    let maxBondsOutConvertedToShares = maxBondsOut;
-    if (!asBase) {
-      maxBondsOutConvertedToShares = convertBaseToShares({
-        baseAmount: maxBondsOut,
+
+    let maxBondsOut = maxBondsOutInShares;
+    if (asBase) {
+      maxBondsOut = convertSharesToBase({
+        sharesAmount: maxBondsOutInShares,
         vaultSharePrice: info.vaultSharePrice,
         decimals: await this.getDecimals(),
       });
-      return {
-        maxBondsOut: maxBondsOutConvertedToShares,
-        flatFee: flatFeeInBase,
-      };
     }
 
     return {
       maxBondsOut,
-      flatFee: flatFeeInBase,
+      flatFee,
     };
   }
 
