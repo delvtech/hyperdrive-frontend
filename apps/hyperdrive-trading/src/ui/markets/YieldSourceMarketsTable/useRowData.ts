@@ -50,7 +50,15 @@ export function useRowData(
                 });
                 const liquidity = await readHyperdrive.getPresentValue();
 
-                const vaultRate = await readHyperdrive.getYieldSourceRate({});
+                let vaultRate = 0n;
+                try {
+                  vaultRate = await readHyperdrive.getYieldSourceRate({
+                    timeRange: 604_800n, // 1 week in seconds
+                  });
+                } catch (e) {
+                  vaultRate = 0n;
+                }
+
                 const fixedApr = await readHyperdrive.getSpotRate();
                 const shortApy = await readHyperdrive.getImpliedRate({
                   bondAmount: parseUnits("1", hyperdrive.decimals),
