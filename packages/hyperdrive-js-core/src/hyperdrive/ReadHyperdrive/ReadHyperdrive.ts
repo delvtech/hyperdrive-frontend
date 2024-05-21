@@ -1547,43 +1547,30 @@ export class ReadHyperdrive extends ReadModel {
     const info = await this.getPoolInfo(options);
 
     const currentTime = BigInt(Math.floor(Date.now() / 1000));
-    let bondAmountInConvertedToShares = bondAmountIn;
-    if (!asBase) {
-      bondAmountInConvertedToShares = convertSharesToBase({
-        sharesAmount: bondAmountIn,
-        vaultSharePrice: info.vaultSharePrice,
-        decimals: await this.getDecimals(),
-      });
-    }
-
     // Calculate fees
-    const flatFee = BigInt(
+    const flatFeeInShares = BigInt(
       hyperwasm.closeLongFlatFee(
         convertBigIntsToStrings(info),
         convertBigIntsToStrings(config),
-        bondAmountInConvertedToShares.toString(),
+        bondAmountIn.toString(),
         maturityTime.toString(),
         currentTime.toString(),
       ),
     );
-    const curveFee = BigInt(
+    const curveFeeInShares = BigInt(
       hyperwasm.closeLongCurveFee(
         convertBigIntsToStrings(info),
         convertBigIntsToStrings(config),
-        bondAmountInConvertedToShares.toString(),
+        bondAmountIn.toString(),
         maturityTime.toString(),
         currentTime.toString(),
       ),
     );
-    const convertedFeeAmount = convertSharesToBase({
-      sharesAmount: flatFee + curveFee,
-      vaultSharePrice: info.vaultSharePrice,
-      decimals: await this.getDecimals(),
-    });
+
     // console.log(dnum.format([flatFee, 18]), "flatFee");
     // console.log(dnum.format([curveFee, 18]), "curveFee");
 
-    const maxBondsOutInShares = BigInt(
+    const maxOutInShares = BigInt(
       hyperwasm.calcCloseLong(
         convertBigIntsToStrings(info),
         convertBigIntsToStrings(config),
@@ -1592,38 +1579,25 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-    let maxBondsOut = maxBondsOutInShares;
+    let maxOut = maxOutInShares;
+    let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
     if (asBase) {
-      maxBondsOut = convertSharesToBase({
-        sharesAmount: maxBondsOutInShares,
+      maxOut = convertSharesToBase({
+        sharesAmount: maxOutInShares,
+        vaultSharePrice: info.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
+      flatPlusCurveFee = convertSharesToBase({
+        sharesAmount: flatPlusCurveFee,
         vaultSharePrice: info.vaultSharePrice,
         decimals: await this.getDecimals(),
       });
     }
-    // const maxBondsOut = !asBase
-    //   ? maxBondsOutInShares
-    //   : convertSharesToBase({
-    //       sharesAmount: maxBondsOutInShares,
-    //       vaultSharePrice: info.vaultSharePrice,
-    //       decimals: await this.getDecimals(),
-    //     });
-
-    // console.log(dnum.format([maxBondsOut, 18]), "maxBondsOutShares");
-    // console.log(
-    //   dnum.format([
-    //     convertSharesToBase({
-    //       sharesAmount: maxBondsOutInShares,
-    //       vaultSharePrice: info.vaultSharePrice,
-    //       decimals: await this.getDecimals(),
-    //     }),
-    //     18,
-    //   ]),
-    //   "maxBondsOutInBase",
-    // );
 
     return {
-      maxBondsOut,
-      flatPlusCurveFee: convertedFeeAmount,
+      // TODO: Rename this to maxAmountOut
+      maxBondsOut: maxOut,
+      flatPlusCurveFee,
     };
   }
 
