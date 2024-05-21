@@ -26,7 +26,9 @@ export function useYieldSourceRate({
     }),
     queryFn: queryEnabled
       ? async () => {
-          const rate = await readHyperdrive.getYieldSourceRate({});
+          const rate = await readHyperdrive.getYieldSourceRate({
+            timeRange: 604_800n, // 1 week in seconds
+          });
           return {
             vaultRate: rate,
             formatted: formatRate(rate),

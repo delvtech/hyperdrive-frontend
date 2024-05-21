@@ -1,4 +1,4 @@
-import { ContractReadOptions, ReadContract } from "@delvtech/evm-client";
+import { ReadContract } from "@delvtech/evm-client";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
@@ -16,11 +16,7 @@ export class ReadMetaMorphoHyperdrive extends readMetaMorphoHyperdriveMixin(
 /**
  * @internal
  */
-export interface ReadMetaMorphoHyperdriveMixin {
-  getYieldSourceRate(options?: {
-    options?: ContractReadOptions;
-  }): Promise<bigint>;
-}
+export interface ReadMetaMorphoHyperdriveMixin {}
 
 /**
  * @internal
@@ -49,19 +45,6 @@ export function readMetaMorphoHyperdriveMixin<
         cache,
         namespace,
       });
-    }
-    async getYieldSourceRate({
-      options,
-    }: {
-      options?: ContractReadOptions | undefined;
-    }): Promise<bigint> {
-      const sharesToken = await this.getSharesToken();
-      const rate = await this.metaMorphoContract.read(
-        "supplyAPYVault",
-        { vault: sharesToken.address },
-        options,
-      );
-      return rate;
     }
   };
 }
