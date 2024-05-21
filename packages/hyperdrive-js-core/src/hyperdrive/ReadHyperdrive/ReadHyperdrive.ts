@@ -196,7 +196,7 @@ export class ReadHyperdrive extends ReadModel {
   }
 
   /**
-   * Gets the implied variable rate of opening a short
+   * Gets the implied variable rate of opening a short.
    */
   async getImpliedRate({
     bondAmount,

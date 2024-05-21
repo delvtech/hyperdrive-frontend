@@ -43,6 +43,8 @@ async function main() {
 
   // Reset the output dir and build the package with the "@delvtech/" scope
   console.log("Building package...");
+  const changelogPath = resolve(outDir, "CHANGELOG.md");
+  const changelog = readFileSync(changelogPath, "utf8");
   rmSync(outDir, { recursive: true, force: true });
   const buildProcessResult = spawnSync(
     "npx",
@@ -60,6 +62,7 @@ async function main() {
       stdio: "inherit",
     },
   );
+  writeFileSync(changelogPath, changelog);
 
   if (buildProcessResult.error) {
     process.exit(1);
@@ -95,16 +98,23 @@ export const wasmBuffer: ArrayBuffer;`,
   rmSync(wasmPath);
   rmSync(resolve(outDir, "hyperdrive_wasm_bg.wasm.d.ts"));
 
-  // Remove the wasm binary from the package.json files list and add a main
-  // field for improved commonjs compatibility.
   const packageJsonPath = resolve(outDir, "package.json");
   const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf8"));
+
+  // Remove the wasm binary from the package.json files list.
   packageJson.files = packageJson.files.filter(
     (filename: string) => !filename.startsWith("hyperdrive_wasm_bg.wasm"),
   );
-  packageJson.main = "hyperdrive_wasm.js";
-  writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
 
+  // Add a main field for improved commonjs compatibility.
+  packageJson.main = "hyperdrive_wasm.js";
+  
+  // Explicitly set the publishConfig access to public to ensure it's published
+  // by changesets.
+  packageJson.publishConfig = { access: "public" };
+  
+  writeFileSync(packageJsonPath, JSON.stringify(packageJson, null, 2));
+  
   // Remove the .gitignore, we want the compiled wasm to be checked in
   rmSync(resolve(outDir, ".gitignore"));
 }

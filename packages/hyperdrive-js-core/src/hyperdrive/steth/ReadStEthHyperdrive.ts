@@ -1,4 +1,6 @@
 import { ContractReadOptions } from "@delvtech/evm-client";
+import { fetchJson } from "src/base/fetchJson";
+import { MAINNET, SEPOLIA } from "src/base/knownChainIds";
 import { Constructor } from "src/base/types";
 import {
   ReadHyperdrive,
@@ -92,6 +94,27 @@ export function readStEthHyperdriveMixin<T extends Constructor<ReadHyperdrive>>(
       this.contract.clearCache();
     }
 
+    async getYieldSourceRate({
+      options,
+    }: {
+      options?: ContractReadOptions | undefined;
+    }): Promise<bigint> {
+      const chainId = await this.network.getChainId();
+      switch (chainId) {
+        // Mainnet: Use the official lido api for the yield source rate
+        // See: https://docs.lido.fi/integrations/api/#lido-apr
+        case MAINNET:
+          const lidoSevenDayMovingAverage = await fetchJson<{
+            data: { smaApr: number };
+          }>("https://eth-api.lido.fi/v1/protocol/steth/apr/sma");
+          return BigInt(lidoSevenDayMovingAverage.data.smaApr);
+
+        // Testnet: Use getRate from the default yield source contract
+        case SEPOLIA:
+        default:
+          return super.getYieldSourceRate({ options });
+      }
+    }
     async getBaseToken(): Promise<ReadEth> {
       return new ReadEth({
         contractFactory: this.contractFactory,

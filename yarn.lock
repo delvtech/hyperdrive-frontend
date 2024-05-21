@@ -1469,17 +1469,17 @@
   dependencies:
     "@jridgewell/trace-mapping" "0.3.9"
 
-"@delvtech/evm-client-viem@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.4.2.tgz#feddd8a4793cf342e8d03f34b4146858cd0f27bc"
-  integrity sha512-WvC7V+Sg+i0T44aZ58zqNyDRksZpGwLRhguaEQEqwkKMJffSs2u1foUEE92oTEnNfKMrsx33i6/by05tlKkYTw==
+"@delvtech/evm-client-viem@^0.6.1":
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client-viem/-/evm-client-viem-0.6.1.tgz#d8cc37b6a7b5a4ab5957e0bcba4428ddfd3a61e7"
+  integrity sha512-LtJ9hsRPjqqMZ08+Rwz/spcCEX9WO5Kl94wQPXt/6nwFtCQS+Q7zqBOGruxYT93cRnlLvdI3wLdf26NNY3zFsw==
   dependencies:
-    "@delvtech/evm-client" "0.4.2"
+    "@delvtech/evm-client" "0.5.1"
 
-"@delvtech/evm-client@0.4.2", "@delvtech/evm-client@^0.4.2":
-  version "0.4.2"
-  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.4.2.tgz#11a26ec4e9ddf6093771edb09343d9d5d1b3dc3f"
-  integrity sha512-9aJvszoCg3sfWwo4uHDS/S5nlJ8rIgsqD2nwbKjO/hn/lYFKYViOLMJVIY+vcmyhZpvjgU+ihdpbPnDZe4LHkw==
+"@delvtech/evm-client@0.5.1", "@delvtech/evm-client@^0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@delvtech/evm-client/-/evm-client-0.5.1.tgz#b69bd04ecb9f1690c1ce94acb7362e4d30b9e1e5"
+  integrity sha512-Ixx7coKko1l9i2CkrrkhzRVnxzf+b3ROEppWvN7Q0+Gx3DLq1lq8oorXjZb5dZhs5K07LtJM7sUJLztxx8BIEA==
   dependencies:
     "@types/lodash.ismatch" "^4.4.9"
     fast-safe-stringify "^2.1.1"
@@ -6849,10 +6849,10 @@ d3-format@^3.1.0:
   resolved "https://registry.yarnpkg.com/d3-format/-/d3-format-3.1.0.tgz#9260e23a28ea5cb109e93b21a06e24e2ebd55641"
   integrity sha512-YyUI6AEuY/Wpt8KWLgZHsIU86atmikuoOmCfommt0LYHiQSPjvX2AcFc38PX0CBpr2RCyZhjex+NS/LPOv6YqA==
 
-daisyui@^4.10.2:
-  version "4.10.2"
-  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-4.10.2.tgz#c0e072b94ccaa0326d1fdec26e8dc163ac070561"
-  integrity sha512-eCWS1W/JPyxW9IvlgW5m0R6rp9ZhRsBTW37rvEUthckkjsV04u8XipV519OoccSA46ixhSJa3q7XLI1WUFtRCA==
+daisyui@^4.11.1:
+  version "4.11.1"
+  resolved "https://registry.yarnpkg.com/daisyui/-/daisyui-4.11.1.tgz#9216de97107bffe2b7c6e4dfa28dbe7147e89e9d"
+  integrity sha512-obT9CUbQdW6eoHwSeT5VwaRrWlwrM4OT5qlfdJ0oQlSIEYhwnEl2+L2fwu5PioLbitwuMdYC2X8I1cyy8Pf6LQ==
   dependencies:
     css-selector-tokenizer "^0.8"
     culori "^3"
