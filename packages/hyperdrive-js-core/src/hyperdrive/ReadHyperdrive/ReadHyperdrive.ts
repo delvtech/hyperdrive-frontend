@@ -1,4 +1,5 @@
 import {
+  Block,
   BlockTag,
   CachedReadContract,
   ContractGetEventsOptions,
@@ -123,27 +124,49 @@ export class ReadHyperdrive extends ReadModel {
    * @param timeRange The time range (in seconds) to use to calculate the variable
    * rate to look for checkpoints.
    */
+
+  async getInitializationBlock(): Promise<Block> {
+    const events = await this.contract.getEvents("Initialize");
+
+    if (!events.length || events[0].blockNumber === undefined) {
+      throw new Error("Pool has not been initialized, no block found.");
+    }
+    const blockNumber = events[0].blockNumber;
+
+    return getBlockOrThrow(this.network, { blockNumber });
+  }
+
   async getYieldSourceRate({
-    timeRange,
+    blockRange,
   }: {
-    timeRange: bigint;
+    blockRange: bigint;
   }): Promise<bigint> {
-    const { blockNumber: currentBlockNumber } = await getBlockOrThrow(
-      this.network,
-    );
+    // Attempt to fetch the blocks first to fail early if the block is not found
+    const currentBlock = await getBlockOrThrow(this.network);
+    const startBlockNumber = currentBlock.blockNumber! - blockRange;
+    const startBlock = await getBlockOrThrow(this.network, {
+      blockNumber: startBlockNumber,
+    });
 
-    // Get the vault share price from the past `timeRange` seconds ago
-    // note, blocks occur every 12 seconds TODO: Move to evm-client for this.network.getBlocks
-    const startBlock = (currentBlockNumber as bigint) - timeRange / 12n;
+    // validate the time range
+    const { blockNumber: initializationBlock } =
+      await this.getInitializationBlock();
+    if (initializationBlock && startBlockNumber < initializationBlock) {
+      throw new Error(
+        `Unable to calculate yield source APY. Attempted to fetch data from block ${startBlockNumber}, but the pool was initilized at block ${initializationBlock}.`,
+      );
+    }
 
-    // Get the info from startBlock to get the starting vault share price
+    // Get the info from fromBlock to get the starting vault share price
     const { vaultSharePrice: startVaultSharePrice } = await this.getPoolInfo({
-      blockNumber: startBlock,
+      blockNumber: startBlockNumber,
     });
 
     // Get the current vaultSharePrice from the latest pool info
     const { vaultSharePrice: currentVaultSharePrice } =
       await this.getPoolInfo();
+
+    const timeRange = currentBlock.timestamp - startBlock.timestamp;
 
     // Calculate the annualized rate of return
     // using dnum for division here, as dividing two 18-decimals numbers causes
