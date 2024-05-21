@@ -125,7 +125,7 @@ function formatMobileColumnData(
       ),
     },
     { name: "Fixed APR", value: `${formatRate(row.fixedApr)}%` },
-    { name: "Short APY", value: `${formatRate(row.shortApy)}%` },
+    { name: "Short HPR", value: `${formatRate(row.shortApy)}%` },
     {
       name: "LP APY",
       value: <LpApyCell hyperdriveAddress={row.market.address} />,

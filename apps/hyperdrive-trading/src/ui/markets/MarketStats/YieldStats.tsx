@@ -76,7 +76,7 @@ export function YieldStats({
           </Animated>
           <Animated isActive={position === "Shorts"}>
             <Stat
-              label="Short APY"
+              label="Short HPR"
               value={
                 impliedRateStatus === "loading" && impliedRate === undefined ? (
                   <Skeleton className="w-20" />
@@ -86,7 +86,7 @@ export function YieldStats({
                   </span>
                 )
               }
-              description="Effective rate of return that a Short position accrues, taking into consideration the fixed rate paid to open the Short, the variable rate being earned (on full face value), and the maximum loss on capital."
+              description="Holding period return on shorts assuming the current variable rate stays the same until maturity."
               tooltipPosition={"right"}
             />
           </Animated>
