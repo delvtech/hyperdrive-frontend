@@ -75,15 +75,16 @@ export function CloseLongForm({
   });
 
   // Preview the amount of base or shares they get back from closing their long.
-  const { amountOut: withdrawAmount, previewCloseLongStatus } =
-    usePreviewCloseLong({
-      hyperdriveAddress: hyperdrive.address,
-      maturityTime: long.maturity,
-      bondAmountIn: bondAmountAsBigInt,
-      minOutput: parseUnits("0", baseToken.decimals),
-      destination: account,
-      asBase: activeWithdrawToken.address === baseToken.address,
-    });
+  const {
+    maxAmountOut: withdrawAmount,
+    flatPlusCurveFee,
+    previewCloseLongStatus,
+  } = usePreviewCloseLong({
+    hyperdriveAddress: hyperdrive.address,
+    maturityTime: long.maturity,
+    bondAmountIn: bondAmountAsBigInt,
+    asBase: activeWithdrawToken.address === baseToken.address,
+  });
 
   const minAmountOutAfterSlippage =
     withdrawAmount &&
@@ -169,21 +170,39 @@ export function CloseLongForm({
         ) : undefined
       }
       transactionPreview={
-        <LabelValue
-          label="You receive"
-          value={
-            <p className="font-bold">
-              {withdrawAmount
-                ? `${formatBalance({
-                    balance: withdrawAmount,
-                    decimals: baseToken.decimals,
-                    places: baseToken.places,
-                  })}`
-                : "0"}{" "}
-              {activeWithdrawToken.symbol}
-            </p>
-          }
-        />
+        <>
+          <LabelValue
+            label="You receive"
+            value={
+              <p className="font-bold">
+                {withdrawAmount
+                  ? `${formatBalance({
+                      balance: withdrawAmount,
+                      decimals: baseToken.decimals,
+                      places: baseToken.places,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
+          <LabelValue
+            label="Pool fee"
+            value={
+              <p className="font-bold">
+                {flatPlusCurveFee
+                  ? `${formatBalance({
+                      balance: flatPlusCurveFee,
+                      decimals: 18,
+                      // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
+                      places: 4,
+                    })}`
+                  : "0"}{" "}
+                {activeWithdrawToken.symbol}
+              </p>
+            }
+          />
+        </>
       }
       actionButton={(() => {
         if (!account) {

@@ -12,7 +12,7 @@ import * as dnum from "dnum";
 import { assertNever } from "src/base/assertNever";
 import { convertBigIntsToStrings } from "src/base/convertBigIntsToStrings";
 import { convertSecondsToYearFraction } from "src/base/convertSecondsToYearFraction";
-import { MAX_UINT256, ZERO_ADDRESS } from "src/base/numbers";
+import { MAX_UINT256 } from "src/base/numbers";
 import { sumBigInt } from "src/base/sumBigInt";
 import { getBlockFromReadOptions } from "src/evm-client/utils/getBlockFromReadOptions";
 import { getBlockOrThrow } from "src/evm-client/utils/getBlockOrThrow";
@@ -1576,33 +1576,68 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Predicts the amount of base asset a user will receive when closing a long.
    */
-  previewCloseLong({
+  async previewCloseLong({
     maturityTime,
     bondAmountIn,
-    minAmountOut,
-    destination,
     asBase,
-    extraData = ZERO_ADDRESS,
     options,
   }: {
     maturityTime: bigint;
     bondAmountIn: bigint;
-    minAmountOut: bigint;
-    destination: `0x${string}`;
     asBase: boolean;
-    extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
-  }): Promise<bigint> {
-    return this.contract.simulateWrite(
-      "closeLong",
-      {
-        _maturityTime: maturityTime,
-        _bondAmount: bondAmountIn,
-        _minOutput: minAmountOut,
-        _options: { destination, asBase, extraData },
-      },
-      options,
+    options?: ContractReadOptions;
+  }): Promise<{ maxAmountOut: bigint; flatPlusCurveFee: bigint }> {
+    const config = await this.getPoolConfig(options);
+    const info = await this.getPoolInfo(options);
+    const currentTime = BigInt(Math.floor(Date.now() / 1000));
+
+    const flatFeeInShares = BigInt(
+      hyperwasm.closeLongFlatFee(
+        convertBigIntsToStrings(info),
+        convertBigIntsToStrings(config),
+        bondAmountIn.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
     );
+    const curveFeeInShares = BigInt(
+      hyperwasm.closeLongCurveFee(
+        convertBigIntsToStrings(info),
+        convertBigIntsToStrings(config),
+        bondAmountIn.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+
+    const maxOutInShares = BigInt(
+      hyperwasm.calcCloseLong(
+        convertBigIntsToStrings(info),
+        convertBigIntsToStrings(config),
+        bondAmountIn.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+    let maxAmountOut = maxOutInShares;
+    let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
+    if (asBase) {
+      maxAmountOut = convertSharesToBase({
+        sharesAmount: maxOutInShares,
+        vaultSharePrice: info.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
+      flatPlusCurveFee = convertSharesToBase({
+        sharesAmount: flatPlusCurveFee,
+        vaultSharePrice: info.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
+    }
+
+    return {
+      maxAmountOut,
+      flatPlusCurveFee,
+    };
   }
 
   /**

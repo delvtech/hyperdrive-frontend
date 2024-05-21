@@ -8,8 +8,6 @@ import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
 import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
-import { parseUnits } from "viem";
-import { useAccount } from "wagmi";
 
 export function CurrentValueCell({
   row,
@@ -18,7 +16,6 @@ export function CurrentValueCell({
   row: Long;
   hyperdrive: HyperdriveConfig;
 }): ReactElement {
-  const { address: account } = useAccount();
   const isTailwindSmallScreen = useIsTailwindSmallScreen();
   const appConfig = useAppConfig();
   const baseToken = findBaseToken({
@@ -27,13 +24,11 @@ export function CurrentValueCell({
   });
   const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
 
-  const { amountOut: sharesAmountOut, previewCloseLongStatus } =
+  const { maxAmountOut: sharesAmountOut, previewCloseLongStatus } =
     usePreviewCloseLong({
       hyperdriveAddress: hyperdrive.address,
       maturityTime: row.maturity,
       bondAmountIn: row.bondAmount,
-      minOutput: parseUnits("0", baseToken.decimals),
-      destination: account,
       // Not all hyperdrives can close to base, but they can all close to
       // shares! To make this component easy, we'll always preview to shares
       // then do the conversion to base ourselves.
