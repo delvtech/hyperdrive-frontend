@@ -20,7 +20,7 @@ interface UsePreviewCloseLongOptions {
 
 interface UsePreviewCloseLongResult {
   amountOut: bigint | undefined;
-  flatFee: bigint | undefined;
+  flatPlusCurveFee: bigint | undefined;
   previewCloseLongStatus: QueryStatus;
 }
 
@@ -68,7 +68,7 @@ export function usePreviewCloseLong({
 
   return {
     amountOut: data?.maxBondsOut,
-    flatFee: data?.flatFee,
+    flatPlusCurveFee: data?.flatPlusCurveFee,
     previewCloseLongStatus: status,
   };
 }

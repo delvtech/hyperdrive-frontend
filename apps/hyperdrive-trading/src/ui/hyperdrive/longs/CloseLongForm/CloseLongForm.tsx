@@ -6,7 +6,6 @@ import {
 } from "@hyperdrive/appconfig";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { MouseEvent, ReactElement } from "react";
-import { convertBaseToShares } from "src/hyperdrive/convertBaseToShares";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { LabelValue } from "src/ui/base/components/LabelValue";
 import { LoadingButton } from "src/ui/base/components/LoadingButton";
@@ -80,7 +79,7 @@ export function CloseLongForm({
   // Preview the amount of base or shares they get back from closing their long.
   const {
     amountOut: withdrawAmount,
-    flatFee,
+    flatPlusCurveFee,
     previewCloseLongStatus,
   } = usePreviewCloseLong({
     hyperdriveAddress: hyperdrive.address,
@@ -88,22 +87,13 @@ export function CloseLongForm({
     bondAmountIn: bondAmountAsBigInt,
     minOutput: parseUnits("0", baseToken.decimals),
     destination: account,
-    asBase: false,
+    asBase: activeWithdrawToken.address === baseToken.address,
   });
 
-  const withdrawAmountConverted = withdrawAmount;
-  if (activeWithdrawToken.address === baseToken.address) {
-    convertBaseToShares({
-      decimals: hyperdrive.decimals,
-      baseAmount: withdrawAmount,
-      vaultSharePrice: poolInfo?.vaultSharePrice,
-    });
-  }
-
   const minAmountOutAfterSlippage =
-    withdrawAmountConverted &&
+    withdrawAmount &&
     adjustAmountByPercentage({
-      amount: withdrawAmountConverted,
+      amount: withdrawAmount,
       percentage: parseUnits("1", activeWithdrawToken.decimals),
       decimals: activeWithdrawToken.decimals,
       direction: "down",
@@ -189,9 +179,9 @@ export function CloseLongForm({
             label="You receive"
             value={
               <p className="font-bold">
-                {withdrawAmountConverted
+                {withdrawAmount
                   ? `${formatBalance({
-                      balance: withdrawAmountConverted,
+                      balance: withdrawAmount,
                       decimals: baseToken.decimals,
                       places: baseToken.places,
                     })}`
@@ -204,9 +194,9 @@ export function CloseLongForm({
             label="You pay"
             value={
               <p className="font-bold">
-                {flatFee
+                {flatPlusCurveFee
                   ? `${formatBalance({
-                      balance: flatFee,
+                      balance: flatPlusCurveFee,
                       decimals: 18,
                       places: 10,
                     })}`

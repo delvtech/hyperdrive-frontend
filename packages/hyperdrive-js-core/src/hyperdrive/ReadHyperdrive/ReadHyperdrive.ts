@@ -1542,7 +1542,7 @@ export class ReadHyperdrive extends ReadModel {
     asBase: boolean;
     extraData?: `0x${string}`;
     options?: ContractReadOptions;
-  }): Promise<{ maxBondsOut: bigint; flatFee: bigint }> {
+  }): Promise<{ maxBondsOut: bigint; flatPlusCurveFee: bigint }> {
     const config = await this.getPoolConfig(options);
     const info = await this.getPoolInfo(options);
 
@@ -1566,9 +1566,8 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-
-    const maxBondsOut = BigInt(
-      hyperwasm.calcCloseLong(
+    const curveFee = BigInt(
+      hyperwasm.closeLongCurveFee(
         convertBigIntsToStrings(info),
         convertBigIntsToStrings(config),
         bondAmountInConvertedToShares.toString(),
@@ -1577,9 +1576,55 @@ export class ReadHyperdrive extends ReadModel {
       ),
     );
 
+    const convertedFeeAmount = convertSharesToBase({
+      sharesAmount: flatFee + curveFee,
+      vaultSharePrice: info.vaultSharePrice,
+      decimals: await this.getDecimals(),
+    });
+    // console.log(dnum.format([flatFee, 18]), "flatFee");
+    // console.log(dnum.format([curveFee, 18]), "curveFee");
+
+    const maxBondsOutInShares = BigInt(
+      hyperwasm.calcCloseLong(
+        convertBigIntsToStrings(info),
+        convertBigIntsToStrings(config),
+        bondAmountInConvertedToShares.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+    let maxBondsOut = maxBondsOutInShares;
+    if (asBase) {
+      maxBondsOut = convertSharesToBase({
+        sharesAmount: maxBondsOutInShares,
+        vaultSharePrice: info.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
+    }
+    // const maxBondsOut = !asBase
+    //   ? maxBondsOutInShares
+    //   : convertSharesToBase({
+    //       sharesAmount: maxBondsOutInShares,
+    //       vaultSharePrice: info.vaultSharePrice,
+    //       decimals: await this.getDecimals(),
+    //     });
+
+    // console.log(dnum.format([maxBondsOut, 18]), "maxBondsOutShares");
+    // console.log(
+    //   dnum.format([
+    //     convertSharesToBase({
+    //       sharesAmount: maxBondsOutInShares,
+    //       vaultSharePrice: info.vaultSharePrice,
+    //       decimals: await this.getDecimals(),
+    //     }),
+    //     18,
+    //   ]),
+    //   "maxBondsOutInBase",
+    // );
+
     return {
       maxBondsOut,
-      flatFee,
+      flatPlusCurveFee: convertedFeeAmount,
     };
   }
 
