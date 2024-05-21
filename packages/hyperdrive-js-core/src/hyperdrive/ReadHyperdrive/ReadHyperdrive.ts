@@ -1,5 +1,4 @@
 import {
-  Block,
   BlockTag,
   CachedReadContract,
   ContractGetEventsOptions,
@@ -129,38 +128,22 @@ export class ReadHyperdrive extends ReadModel {
   }: {
     timeRange: bigint;
   }): Promise<bigint> {
-    // Get the vault share price of the checkpoint in the past `timeRange`
-    const { timestamp: currentBlockTime } =
-      (await this.network.getBlock()) as Block; // safe to cast because there's always a latest block
-    const { checkpointDuration } = await this.getPoolConfig();
-    const startCheckpointId = getCheckpointId(
-      currentBlockTime - timeRange,
-      checkpointDuration,
+    const { blockNumber: currentBlockNumber } = await getBlockOrThrow(
+      this.network,
     );
-    const { vaultSharePrice: startVaultSharePrice } = await this.getCheckpoint({
-      checkpointId: startCheckpointId,
+
+    // Get the vault share price from the past `timeRange` seconds ago
+    // note, blocks occur every 12 seconds TODO: Move to evm-client for this.network.getBlocks
+    const startBlock = (currentBlockNumber as bigint) - timeRange / 12n;
+
+    // Get the info from startBlock to get the starting vault share price
+    const { vaultSharePrice: startVaultSharePrice } = await this.getPoolInfo({
+      blockNumber: startBlock,
     });
 
-    // Vault share price is 0 if checkpoint doesn't exist
-    // This happens if the pool was deployed within the past `timeRange`
-    if (!startVaultSharePrice) {
-      throw new Error("Checkpoint doesn't exist for the given time range.");
-    }
-
-    // We can also get the current vault share price instead of getting it from
-    // the latest checkpoint
-    const currentCheckpointId = getCheckpointId(
-      currentBlockTime,
-      checkpointDuration,
-    );
-    let { vaultSharePrice: currentVaultSharePrice } = await this.getCheckpoint({
-      checkpointId: currentCheckpointId,
-    });
-    // If the current checkpoint doesn't exist (due to checkpoint not being made
-    // yet), we use the current vault share price
-    if (!currentVaultSharePrice) {
-      currentVaultSharePrice = await (await this.getPoolInfo()).vaultSharePrice;
-    }
+    // Get the current vaultSharePrice from the latest pool info
+    const { vaultSharePrice: currentVaultSharePrice } =
+      await this.getPoolInfo();
 
     // Calculate the annualized rate of return
     // using dnum for division here, as dividing two 18-decimals numbers causes
