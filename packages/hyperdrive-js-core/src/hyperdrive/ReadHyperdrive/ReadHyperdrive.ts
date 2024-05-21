@@ -1643,7 +1643,7 @@ export class ReadHyperdrive extends ReadModel {
   /**
    * Predicts the amount of base asset a user will receive when closing a short.
    */
-  previewCloseShort({
+  async previewCloseShort({
     maturityTime,
     shortAmountIn,
     minAmountOut,
@@ -1658,18 +1658,70 @@ export class ReadHyperdrive extends ReadModel {
     destination: `0x${string}`;
     asBase: boolean;
     extraData?: `0x${string}`;
-    options?: ContractWriteOptions;
+    options?: ContractReadOptions;
   }): Promise<bigint> {
-    return this.contract.simulateWrite(
-      "closeShort",
-      {
-        _maturityTime: maturityTime,
-        _bondAmount: shortAmountIn,
-        _minOutput: minAmountOut,
-        _options: { destination, asBase, extraData },
-      },
+    const poolConfig = await this.getPoolConfig(options);
+    const poolInfo = await this.getPoolInfo(options);
+    const decimals = await this.getDecimals();
+    const { timestamp: blockTimestamp } = await getBlockOrThrow(
+      this.network,
       options,
     );
+    const checkpointId = getCheckpointId(
+      blockTimestamp,
+      poolConfig.checkpointDuration,
+    );
+    const { vaultSharePrice: openSharePrice } = await this.getCheckpoint({
+      checkpointId,
+    });
+
+    const currentTime = BigInt(Math.floor(Date.now() / 1000));
+
+    // const flatFeeInShares = BigInt(
+    //   hyperwasm.closeShortFlatFee(
+    //     convertBigIntsToStrings(info),
+    //     convertBigIntsToStrings(config),
+    //     shortAmountIn.toString(),
+    //     maturityTime.toString(),
+    //     currentTime.toString(),
+    //   ),
+    // );
+    // const curveFeeInShares = BigInt(
+    //   hyperwasm.closeShortCurveFee(
+    //     convertBigIntsToStrings(info),
+    //     convertBigIntsToStrings(config),
+    //     shortAmountIn.toString(),
+    //     maturityTime.toString(),
+    //     currentTime.toString(),
+    //   ),
+    // );
+
+    const maxOutInShares = BigInt(
+      hyperwasm.calcCloseShort(
+        convertBigIntsToStrings(poolInfo),
+        convertBigIntsToStrings(poolConfig),
+        shortAmountIn.toString(),
+        openSharePrice.toString(),
+        poolInfo.vaultSharePrice.toString(),
+        maturityTime.toString(),
+        currentTime.toString(),
+      ),
+    );
+    let maxAmountOut = maxOutInShares;
+    // let flatPlusCurveFee = flatFeeInShares + curveFeeInShares;
+    if (asBase) {
+      maxAmountOut = convertSharesToBase({
+        sharesAmount: maxOutInShares,
+        vaultSharePrice: poolInfo.vaultSharePrice,
+        decimals: await this.getDecimals(),
+      });
+      // flatPlusCurveFee = convertSharesToBase({
+      //   sharesAmount: flatPlusCurveFee,
+      //   vaultSharePrice: info.vaultSharePrice,
+      //   decimals: await this.getDecimals(),
+      // });
+    }
+    return maxAmountOut;
   }
 
   /**
