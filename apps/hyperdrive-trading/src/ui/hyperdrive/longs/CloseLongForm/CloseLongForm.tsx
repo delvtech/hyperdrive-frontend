@@ -187,7 +187,7 @@ export function CloseLongForm({
             }
           />
           <LabelValue
-            label="You pay"
+            label="Pool fee"
             value={
               <p className="font-bold">
                 {flatPlusCurveFee
