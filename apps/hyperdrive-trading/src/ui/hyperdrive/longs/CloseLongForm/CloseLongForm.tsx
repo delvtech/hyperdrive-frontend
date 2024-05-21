@@ -83,8 +83,6 @@ export function CloseLongForm({
     hyperdriveAddress: hyperdrive.address,
     maturityTime: long.maturity,
     bondAmountIn: bondAmountAsBigInt,
-    minOutput: parseUnits("0", baseToken.decimals),
-    destination: account,
     asBase: activeWithdrawToken.address === baseToken.address,
   });
 
