@@ -126,10 +126,8 @@ export class ReadHyperdrive extends ReadModel {
    */
   async getYieldSourceRate({
     timeRange,
-    options,
   }: {
     timeRange: bigint;
-    options?: ContractReadOptions;
   }): Promise<bigint> {
     // Get the vault share price of the checkpoint in the past `timeRange`
     const { timestamp: currentBlockTime } = (await this.network.getBlock({
@@ -156,7 +154,6 @@ export class ReadHyperdrive extends ReadModel {
       currentBlockTime,
       checkpointDuration,
     );
-
     let { vaultSharePrice: currentVaultSharePrice } = await this.getCheckpoint({
       checkpointId: currentCheckpointId,
     });
@@ -165,22 +162,19 @@ export class ReadHyperdrive extends ReadModel {
     if (!currentVaultSharePrice) {
       currentVaultSharePrice = await (await this.getPoolInfo()).vaultSharePrice;
     }
-    const rateOfReturn =
-      (currentVaultSharePrice - startVaultSharePrice) / startVaultSharePrice;
-    // Annualized the rate of return
+
+    // Calculate the annualized rate of return
+    // using dnum for division here, as dividing two 18-decimals numbers causes
+    // problems, (ie: rateOfReturn is 0 when using normal js division operator)
+    const decimals = await this.getDecimals();
+    const rateOfReturn = dnum.divide(
+      [currentVaultSharePrice - startVaultSharePrice, decimals],
+      [startVaultSharePrice, decimals],
+    )[0];
     const annualizedRateOfReturn =
       (rateOfReturn * BigInt(60 * 60 * 24 * 365)) / timeRange;
 
     return annualizedRateOfReturn;
-
-    // const { vaultSharesToken } = await this.getPoolConfig(options);
-    // const vault = new ReadMockErc4626({
-    //   address: vaultSharesToken,
-    //   contractFactory: this.contractFactory,
-    //   namespace: this.contract.namespace,
-    //   network: this.network,
-    // });
-    // return vault.getRate(options);
   }
 
   getCheckpoint({
