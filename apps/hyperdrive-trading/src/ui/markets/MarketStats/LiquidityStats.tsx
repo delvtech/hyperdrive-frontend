@@ -58,7 +58,7 @@ export function LiquidityStats({
           />
           <Stat
             label={`Available (${baseToken.symbol})`}
-            description={`The idle liquidity available for trading and exiting LP positions`}
+            description={`The idle liquidity available for opening Longs and Shorts, and exiting LP positions`}
             value={
               idleLiquidityStatus === "loading" &&
               idleLiquidity === undefined ? (
@@ -78,13 +78,11 @@ export function LiquidityStats({
           <Stat
             description={`The amount of hy${
               baseToken.symbol
-            } (either longs or shorts) that have been traded in the last 24 hours.\n\nLong volume: ${formatBalance(
-              {
-                balance: longVolume || 0n,
-                decimals: baseToken.decimals,
-                places: baseToken.places,
-              },
-            )} hy${baseToken.symbol} \nShort volume: ${formatBalance({
+            } traded in the last 24 hours.\n\nLong volume: ${formatBalance({
+              balance: longVolume || 0n,
+              decimals: baseToken.decimals,
+              places: baseToken.places,
+            })} hy${baseToken.symbol} \nShort volume: ${formatBalance({
               balance: shortVolume || 0n,
               decimals: baseToken.decimals,
               places: baseToken.places,
