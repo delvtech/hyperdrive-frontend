@@ -6,7 +6,6 @@ import Skeleton from "react-loading-skeleton";
 import { formatRate } from "src/base/formatRate";
 import { parseUnits } from "src/base/parseUnits";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
-import { Badge } from "src/ui/base/components/Badge";
 import { Stat } from "src/ui/base/components/Stat";
 import { Well } from "src/ui/base/components/Well/Well";
 import { useIsTailwindSmallScreen } from "src/ui/base/mediaBreakpoints";
@@ -14,6 +13,7 @@ import { useCurrentFixedAPR } from "src/ui/hyperdrive/hooks/useCurrentFixedAPR";
 import { useLpApy } from "src/ui/hyperdrive/hooks/useLpApy";
 import { useImpliedRate } from "src/ui/hyperdrive/shorts/hooks/useImpliedRate";
 import { MARKET_DETAILS_ROUTE } from "src/ui/markets/routes";
+import { YieldSourceRateBadge } from "src/ui/vaults/YieldSourceRateBadge";
 import { useYieldSourceRate } from "src/ui/vaults/useYieldSourceRate";
 export function YieldStats({
   hyperdrive,
@@ -31,7 +31,7 @@ export function YieldStats({
   const { fixedAPR, fixedAPRStatus } = useCurrentFixedAPR(hyperdrive.address);
   const { lpApy, lpApyStatus } = useLpApy(hyperdrive.address);
 
-  const { vaultRate, vaultRateStatus } = useYieldSourceRate({
+  const { vaultRate } = useYieldSourceRate({
     hyperdriveAddress: hyperdrive.address,
   });
 
@@ -50,14 +50,12 @@ export function YieldStats({
         <div className="flex justify-between gap-20">
           <h5 className="flex text-neutral-content">Yield</h5>
           <div className="font-dmMono text-neutral-content">
-            {vaultRateStatus === "loading" && vaultRate === undefined ? (
-              <Skeleton className="w-20" />
-            ) : (
-              <Badge>
-                {sharesToken.extensions.shortName} @ {vaultRate?.formatted || 0}
-                % APY
-              </Badge>
-            )}
+            <YieldSourceRateBadge
+              hyperdriveAddress={hyperdrive.address}
+              labelRenderer={(vaultRate) =>
+                `${sharesToken.extensions.shortName} @ ${vaultRate.formatted || 0} % APY`
+              }
+            />
           </div>
         </div>
         <div className="flex flex-wrap gap-16">
