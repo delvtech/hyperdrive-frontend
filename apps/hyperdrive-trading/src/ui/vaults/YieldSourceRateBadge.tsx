@@ -19,7 +19,7 @@ export function YieldSourceRateBadge({
   });
 
   if (vaultRateStatus === "loading" && !vaultRate) {
-    <Skeleton className="w-42 h-8" />;
+    return <Skeleton className="w-42 h-8" />;
   }
 
   if (!vaultRate?.vaultRate) {
