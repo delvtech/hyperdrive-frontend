@@ -32,7 +32,7 @@ const erc4626HyperdriveSharesTokenSymbols: Uppercase<string>[] = [
   "DELV",
   "SDAI",
 ];
-const metaMorphoSharesTokenSymbols: Uppercase<string>[] = ["MMHYDAI"];
+const metaMorphoSharesTokenSymbols: Uppercase<string>[] = ["HYPERDRIVEDAI"];
 
 // Tags
 const ERC4626_SHARE_TOKEN_TAGS = ["erc4626"];
@@ -62,7 +62,7 @@ const knownHyperdriveMetadata: Record<
     tags: ERC4626_SHARE_TOKEN_TAGS,
     tokenPlaces: 2,
   },
-  MMHYDAI: {
+  HYPERDRIVEDAI: {
     sharesTokenExtensions: metaMorphoExtensions,
     baseTokenIconUrl: DAI_ICON_URL,
     sharesTokenIconUrl: MORPHO_ICON_URL,
