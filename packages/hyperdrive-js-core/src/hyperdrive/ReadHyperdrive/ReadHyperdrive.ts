@@ -130,9 +130,8 @@ export class ReadHyperdrive extends ReadModel {
     timeRange: bigint;
   }): Promise<bigint> {
     // Get the vault share price of the checkpoint in the past `timeRange`
-    const { timestamp: currentBlockTime } = (await this.network.getBlock({
-      blockTag: "latest",
-    })) as Block; // safe to cast because there's always a "latest" block
+    const { timestamp: currentBlockTime } =
+      (await this.network.getBlock()) as Block; // safe to cast because there's always a latest block
     const { checkpointDuration } = await this.getPoolConfig();
     const startCheckpointId = getCheckpointId(
       currentBlockTime - timeRange,
