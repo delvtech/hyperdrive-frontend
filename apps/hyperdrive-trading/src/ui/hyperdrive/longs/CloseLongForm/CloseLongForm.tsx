@@ -12,7 +12,6 @@ import { LoadingButton } from "src/ui/base/components/LoadingButton";
 import { formatBalance } from "src/ui/base/formatting/formatBalance";
 import { useActiveItem } from "src/ui/base/hooks/useActiveItem";
 import { useNumericInput } from "src/ui/base/hooks/useNumericInput";
-import { usePoolInfo } from "src/ui/hyperdrive/hooks/usePoolInfo";
 import { useCloseLong } from "src/ui/hyperdrive/longs/hooks/useCloseLong";
 import { usePreviewCloseLong } from "src/ui/hyperdrive/longs/hooks/usePreviewCloseLong";
 import { TransactionView } from "src/ui/hyperdrive/TransactionView";
@@ -34,7 +33,6 @@ export function CloseLongForm({
   onCloseLong,
 }: CloseLongFormProps): ReactElement {
   const appConfig = useAppConfig();
-  const { poolInfo } = usePoolInfo({ hyperdriveAddress: hyperdrive.address });
   const { address: account } = useAccount();
   const baseToken = findBaseToken({
     baseTokenAddress: hyperdrive.baseToken,
@@ -78,7 +76,7 @@ export function CloseLongForm({
 
   // Preview the amount of base or shares they get back from closing their long.
   const {
-    amountOut: withdrawAmount,
+    maxAmountOut: withdrawAmount,
     flatPlusCurveFee,
     previewCloseLongStatus,
   } = usePreviewCloseLong({
@@ -198,7 +196,8 @@ export function CloseLongForm({
                   ? `${formatBalance({
                       balance: flatPlusCurveFee,
                       decimals: 18,
-                      places: 10,
+                      // The default places value is not always precise enough to show the correct number of decimal places for positions that haven't matured.
+                      places: 4,
                     })}`
                   : "0"}{" "}
                 {activeWithdrawToken.symbol}
