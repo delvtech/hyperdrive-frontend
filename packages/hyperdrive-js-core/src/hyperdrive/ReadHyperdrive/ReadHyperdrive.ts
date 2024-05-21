@@ -1575,7 +1575,6 @@ export class ReadHyperdrive extends ReadModel {
         currentTime.toString(),
       ),
     );
-
     const convertedFeeAmount = convertSharesToBase({
       sharesAmount: flatFee + curveFee,
       vaultSharePrice: info.vaultSharePrice,
@@ -1588,7 +1587,7 @@ export class ReadHyperdrive extends ReadModel {
       hyperwasm.calcCloseLong(
         convertBigIntsToStrings(info),
         convertBigIntsToStrings(config),
-        bondAmountInConvertedToShares.toString(),
+        bondAmountIn.toString(),
         maturityTime.toString(),
         currentTime.toString(),
       ),
