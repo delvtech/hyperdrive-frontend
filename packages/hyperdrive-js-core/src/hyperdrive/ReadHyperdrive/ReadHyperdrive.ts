@@ -124,43 +124,49 @@ export class ReadHyperdrive extends ReadModel {
    * @param timeRange The time range (in seconds) to use to calculate the variable
    * rate to look for checkpoints.
    */
+
+  async getInitializationBlock(): Promise<Block> {
+    const events = await this.contract.getEvents("Initialize");
+
+    if (!events.length || events[0].blockNumber === undefined) {
+      throw new Error("Pool has not been initialized, no block found.");
+    }
+    const blockNumber = events[0].blockNumber;
+
+    return getBlockOrThrow(this.network, { blockNumber });
+  }
+
   async getYieldSourceRate({
-    timeRange,
+    blockRange,
   }: {
-    timeRange: bigint;
+    blockRange: bigint;
   }): Promise<bigint> {
-    // Get the vault share price of the checkpoint in the past `timeRange`
-    const { timestamp: currentBlockTime } =
-      (await this.network.getBlock()) as Block; // safe to cast because there's always a latest block
-    const { checkpointDuration } = await this.getPoolConfig();
-    const startCheckpointId = getCheckpointId(
-      currentBlockTime - timeRange,
-      checkpointDuration,
-    );
-    const { vaultSharePrice: startVaultSharePrice } = await this.getCheckpoint({
-      checkpointId: startCheckpointId,
+    // Attempt to fetch the blocks first to fail early if the block is not found
+    const currentBlock = await getBlockOrThrow(this.network);
+    const startBlockNumber = currentBlock.blockNumber! - blockRange;
+    const startBlock = await getBlockOrThrow(this.network, {
+      blockNumber: startBlockNumber,
     });
 
-    // Vault share price is 0 if checkpoint doesn't exist
-    // This happens if the pool was deployed within the past `timeRange`
-    if (!startVaultSharePrice) {
-      throw new Error("Checkpoint doesn't exist for the given time range.");
+    // validate the time range
+    const { blockNumber: initializationBlock } =
+      await this.getInitializationBlock();
+    if (initializationBlock && startBlockNumber < initializationBlock) {
+      throw new Error(
+        `Unable to calculate yield source APY. Attempted to fetch data from block ${startBlockNumber}, but the pool was initilized at block ${initializationBlock}.`,
+      );
     }
 
-    // We can also get the current vault share price instead of getting it from
-    // the latest checkpoint
-    const currentCheckpointId = getCheckpointId(
-      currentBlockTime,
-      checkpointDuration,
-    );
-    let { vaultSharePrice: currentVaultSharePrice } = await this.getCheckpoint({
-      checkpointId: currentCheckpointId,
+    // Get the info from fromBlock to get the starting vault share price
+    const { vaultSharePrice: startVaultSharePrice } = await this.getPoolInfo({
+      blockNumber: startBlockNumber,
     });
-    // If the current checkpoint doesn't exist (due to checkpoint not being made
-    // yet), we use the current vault share price
-    if (!currentVaultSharePrice) {
-      currentVaultSharePrice = await (await this.getPoolInfo()).vaultSharePrice;
-    }
+
+    // Get the current vaultSharePrice from the latest pool info
+    const { vaultSharePrice: currentVaultSharePrice } =
+      await this.getPoolInfo();
+
+    const timeRange = currentBlock.timestamp - startBlock.timestamp;
 
     // Calculate the annualized rate of return
     // using dnum for division here, as dividing two 18-decimals numbers causes

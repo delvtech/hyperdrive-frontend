@@ -7,6 +7,7 @@ import {
 import { UseQueryResult, useQuery } from "@tanstack/react-query";
 import { makeQueryKey } from "src/base/makeQueryKey";
 import { getReadHyperdrive } from "src/hyperdrive/getReadHyperdrive";
+import { getYieldSourceRate } from "src/hyperdrive/getYieldSourceRate";
 import { useAppConfig } from "src/ui/appconfig/useAppConfig";
 import { parseUnits } from "viem";
 import { usePublicClient } from "wagmi";
@@ -50,14 +51,9 @@ export function useRowData(
                 });
                 const liquidity = await readHyperdrive.getPresentValue();
 
-                let vaultRate = 0n;
-                try {
-                  vaultRate = await readHyperdrive.getYieldSourceRate({
-                    timeRange: 604_800n, // 1 week in seconds
-                  });
-                } catch (e) {
-                  vaultRate = 0n;
-                }
+                // Get the apy from 48 hours ago, but if that doesn't exist
+                // (since the pool is too new), then grab the all time apy
+                const vaultRate = await getYieldSourceRate(readHyperdrive);
 
                 const fixedApr = await readHyperdrive.getSpotRate();
                 const shortApy = await readHyperdrive.getImpliedRate({
